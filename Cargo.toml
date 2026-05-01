@@ -13,6 +13,7 @@ unity2 = { git = "https://github.com/DivineDragonFanClub/unity2" }
 
 [features]
 default = []
+all = ["app", "combat", "moon_sharp", "nintendo", "nn", "root", "system", "tm_pro", "unity_engine"]
 "app-abscommand" = ["app-abscommand-types"]
 "app-accessoryblankmenuitem" = ["app-accessoryblankmenuitem-types"]
 "app-accessorydata" = ["app-accessorydata-types"]
