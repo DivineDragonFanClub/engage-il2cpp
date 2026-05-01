@@ -16,6 +16,15 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          swap-storage: false
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@nightly
         with:
@@ -78,9 +87,12 @@ jobs:
           EOF
       - name: Build docs
         env:
-          RUSTFLAGS: "--cfg skyline_std_v3 -Cdebuginfo=0"
+          RUSTFLAGS: "--cfg skyline_std_v3 -Cdebuginfo=0 -Ccodegen-units=1"
+          RUSTDOCFLAGS: "-Cdebuginfo=0 -Ccodegen-units=1"
           SKYLINE_ADD_NRO_HEADER: "1"
           CARGO_INCREMENTAL: "0"
+          CARGO_PROFILE_DOC_DEBUG: "0"
+          CARGO_PROFILE_DEV_DEBUG: "0"
         run: |
           rustup run skyline-v3 cargo doc \
             --target $HOME/.cargo/skyline/aarch64-skyline-switch.json \
@@ -88,7 +100,7 @@ jobs:
             -Z build-std=core,alloc,std,panic_abort \
             --features all \
             --no-deps \
-            -j 2
+            -j 1
       - name: Add redirect
         run: echo '<meta http-equiv="refresh" content="0;url=engage_il2cpp/index.html">' > target/aarch64-skyline-switch/doc/index.html
       - name: Remove lock file
