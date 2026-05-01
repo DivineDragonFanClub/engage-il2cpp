@@ -1,0 +1,23 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdevice/XRDevice.md")))]
+#[::unity2::class(namespace = "UnityEngine.XR", name = "XRDevice")]
+#[parent(crate::system::object::Object)]
+pub struct XRDevice {
+    #[static_field]
+    #[rename(name = "deviceLoaded")]
+    pub device_loaded: crate::system::action_1::Action_1<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "unity_engine-xr-xrdevice")]
+#[::unity2::methods]
+impl XRDevice {
+    #[method(name = "InvokeDeviceLoaded", args = 1)]
+    pub fn invoke_device_loaded(loaded_device_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

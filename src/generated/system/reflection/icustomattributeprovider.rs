@@ -1,0 +1,20 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/icustomattributeprovider/ICustomAttributeProvider.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "ICustomAttributeProvider")]
+pub struct ICustomAttributeProvider {}
+
+#[cfg(feature = "system-reflection-icustomattributeprovider")]
+#[::unity2::methods]
+impl ICustomAttributeProvider {
+    #[method(name = "GetCustomAttributes", args = 2)]
+    pub fn get_custom_attributes(
+        self,
+        attribute_type: ::unity2::SystemType,
+        inherit: bool,
+    ) -> ::unity2::Array<crate::system::object::Object>;
+
+    #[method(name = "IsDefined", args = 2)]
+    pub fn is_defined(self, attribute_type: ::unity2::SystemType, inherit: bool) -> bool;
+}

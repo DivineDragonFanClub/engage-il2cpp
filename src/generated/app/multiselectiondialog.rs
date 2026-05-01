@@ -1,0 +1,56 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/multiselectiondialog/MultiSelectionDialog.md")))]
+#[::unity2::class(namespace = "App", name = "MultiSelectionDialog")]
+#[parent(crate::app::basicdialog::BasicDialog)]
+pub struct MultiSelectionDialog {}
+
+#[cfg(feature = "app-multiselectiondialog")]
+#[::unity2::methods]
+impl MultiSelectionDialog {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> ();
+
+    #[method(name = "CreateBasicDialogBind", args = 2)]
+    pub fn create_basic_dialog_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> crate::app::basicdialog::BasicDialog;
+}
+
+#[cfg(feature = "app-multiselectiondialog")]
+impl MultiSelectionDialog {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MultiSelectionDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMultiSelectionDialogMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}

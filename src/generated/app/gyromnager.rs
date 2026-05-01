@@ -1,0 +1,105 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gyromnager/GyroMnager_DeviceType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GyroMnager_DeviceType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GyroMnager_DeviceType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GyroMnager.DeviceType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GyroMnager_DeviceType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GyroMnager_DeviceType {
+    pub fn joy_left() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn joy_right() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn handheld() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn full_key() -> Self {
+        Self { value: 0 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gyromnager/GyroMnager.md")))]
+#[::unity2::class(namespace = "App", name = "GyroMnager")]
+#[parent(crate::system::object::Object)]
+pub struct GyroMnager {
+    #[rename(name = "m_IsSampling")]
+    pub m_is_sampling: bool,
+    #[rename(name = "m_HandleCoount")]
+    pub m_handle_coount: i32,
+}
+
+#[cfg(feature = "app-gyromnager")]
+#[::unity2::methods]
+impl GyroMnager {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "StartSampling", args = 0)]
+    pub fn start_sampling(self) -> ();
+
+    #[method(name = "StopSampling", args = 0)]
+    pub fn stop_sampling(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+}
+
+#[cfg(feature = "app-gyromnager")]
+impl GyroMnager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GyroMnager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGyroMnagerMethods>::ctor(this);
+        this
+    }
+}

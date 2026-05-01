@@ -1,0 +1,85 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/musclesquatjudgeareadata/MuscleSquatJudgeAreaData.md")))]
+#[::unity2::class(namespace = "App", name = "MuscleSquatJudgeAreaData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: musclesquatjudgeareadata :: MuscleSquatJudgeAreaData >)]
+pub struct MuscleSquatJudgeAreaData {}
+
+#[cfg(feature = "app-musclesquatjudgeareadata")]
+#[::unity2::methods]
+impl MuscleSquatJudgeAreaData {
+    #[method(name = "get_ID", args = 0)]
+    pub fn get_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_ID", args = 1)]
+    pub fn set_id(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_BadFrameFirst", args = 0)]
+    pub fn get_bad_frame_first(self) -> f32;
+
+    #[method(name = "set_BadFrameFirst", args = 1)]
+    pub fn set_bad_frame_first(self, value: f32) -> ();
+
+    #[method(name = "get_GoodFrameFirst", args = 0)]
+    pub fn get_good_frame_first(self) -> f32;
+
+    #[method(name = "set_GoodFrameFirst", args = 1)]
+    pub fn set_good_frame_first(self, value: f32) -> ();
+
+    #[method(name = "get_PerfectFrameFirst", args = 0)]
+    pub fn get_perfect_frame_first(self) -> f32;
+
+    #[method(name = "set_PerfectFrameFirst", args = 1)]
+    pub fn set_perfect_frame_first(self, value: f32) -> ();
+
+    #[method(name = "get_PerfectFrameLatter", args = 0)]
+    pub fn get_perfect_frame_latter(self) -> f32;
+
+    #[method(name = "set_PerfectFrameLatter", args = 1)]
+    pub fn set_perfect_frame_latter(self, value: f32) -> ();
+
+    #[method(name = "get_GoodFrameLatter", args = 0)]
+    pub fn get_good_frame_latter(self) -> f32;
+
+    #[method(name = "set_GoodFrameLatter", args = 1)]
+    pub fn set_good_frame_latter(self, value: f32) -> ();
+
+    #[method(name = "get_BadFrameLatter", args = 0)]
+    pub fn get_bad_frame_latter(self) -> f32;
+
+    #[method(name = "set_BadFrameLatter", args = 1)]
+    pub fn set_bad_frame_latter(self, value: f32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+}
+
+#[cfg(feature = "app-musclesquatjudgeareadata")]
+impl MuscleSquatJudgeAreaData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleSquatJudgeAreaData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMuscleSquatJudgeAreaDataMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,175 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/drawobjectspass/DrawObjectsPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "DrawObjectsPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct DrawObjectsPass {
+    #[rename(name = "m_FilteringSettings")]
+    pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+    #[rename(name = "m_RenderStateBlock")]
+    pub m_render_state_block: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
+    #[rename(name = "m_ShaderTagIdList")]
+    pub m_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    >,
+    #[rename(name = "m_ProfilerTag")]
+    pub m_profiler_tag: ::unity2::Il2CppString,
+    #[rename(name = "m_ProfilingSampler")]
+    pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[rename(name = "m_IsOpaque")]
+    pub m_is_opaque: bool,
+    #[static_field]
+    #[rename(name = "s_DrawObjectPassDataPropID")]
+    pub s_draw_object_pass_data_prop_id: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-drawobjectspass")]
+#[::unity2::methods]
+impl DrawObjectsPass {
+    #[method(name = ".ctor", args = 8)]
+    pub fn ctor(
+        self,
+        profiler_tag: ::unity2::Il2CppString,
+        shader_tag_ids: ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+        opaque: bool,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
+        stencil_reference: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 7)]
+    pub fn ctor_2(
+        self,
+        profiler_tag: ::unity2::Il2CppString,
+        opaque: bool,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
+        stencil_reference: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 7)]
+    pub fn ctor_3(
+        self,
+        profile_id: crate::unity_engine::rendering::universal::urpprofileid::URPProfileId,
+        opaque: bool,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
+        stencil_reference: i32,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-drawobjectspass")]
+impl DrawObjectsPass {
+    pub fn new(
+        profiler_tag: ::unity2::Il2CppString,
+        shader_tag_ids: ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+        opaque: bool,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
+        stencil_reference: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DrawObjectsPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDrawObjectsPassMethods>::ctor(
+            this,
+            profiler_tag,
+            shader_tag_ids,
+            opaque,
+            evt,
+            render_queue_range,
+            layer_mask,
+            stencil_state,
+            stencil_reference,
+        );
+        this
+    }
+
+    pub fn new_2(
+        profiler_tag: ::unity2::Il2CppString,
+        opaque: bool,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
+        stencil_reference: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DrawObjectsPass),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IDrawObjectsPassMethods>::ctor_2(
+            this,
+            profiler_tag,
+            opaque,
+            evt,
+            render_queue_range,
+            layer_mask,
+            stencil_state,
+            stencil_reference,
+        );
+        this
+    }
+
+    pub fn new_3(
+        profile_id: crate::unity_engine::rendering::universal::urpprofileid::URPProfileId,
+        opaque: bool,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
+        stencil_reference: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DrawObjectsPass),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as IDrawObjectsPassMethods>::ctor_3(
+            this,
+            profile_id,
+            opaque,
+            evt,
+            render_queue_range,
+            layer_mask,
+            stencil_state,
+            stencil_reference,
+        );
+        this
+    }
+}

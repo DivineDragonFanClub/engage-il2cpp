@@ -1,0 +1,82 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusmyinfocontent/VersusMyInfoContent.md")))]
+#[::unity2::class(namespace = "App", name = "VersusMyInfoContent")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct VersusMyInfoContent {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_MyIdAnim")]
+    pub m_my_id_anim: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_MyRankAnim")]
+    pub m_my_rank_anim: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_MyIdText")]
+    pub m_my_id_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_MyRankText")]
+    pub m_my_rank_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-versusmyinfocontent")]
+#[::unity2::methods]
+impl VersusMyInfoContent {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "Create", args = 0)]
+    pub fn create() -> crate::app::versusmyinfocontent::VersusMyInfoContent;
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[method(name = "initialize", args = 0)]
+    pub fn initialize(self) -> ();
+
+    #[method(name = "PlayOut", args = 0)]
+    pub fn play_out(self) -> ();
+
+    #[method(name = "PlayInCasual", args = 1)]
+    pub fn play_in_casual(self, my_id_casual: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "PlayInRanked", args = 2)]
+    pub fn play_in_ranked(
+        self,
+        my_id_ranked: ::unity2::Il2CppString,
+        my_rank: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-versusmyinfocontent")]
+impl VersusMyInfoContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusMyInfoContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusMyInfoContentMethods>::ctor(this);
+        this
+    }
+}

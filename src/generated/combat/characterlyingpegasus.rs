@@ -1,0 +1,92 @@
+
+use crate::combat::characterlying::CharacterLying;
+use crate::combat::characterlying::ICharacterLying;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterlyingpegasus/CharacterLyingPegasus.md")))]
+#[::unity2::class(namespace = "Combat", name = "CharacterLyingPegasus")]
+#[parent(crate::combat::characterlying::CharacterLying)]
+pub struct CharacterLyingPegasus {
+    #[rename(name = "m_WasHumanLanded")]
+    pub m_was_human_landed: bool,
+    #[rename(name = "m_WasRideLanded")]
+    pub m_was_ride_landed: bool,
+    #[rename(name = "m_HumanOrient")]
+    pub m_human_orient: crate::combat::tr::TR,
+    #[rename(name = "m_RideOrient")]
+    pub m_ride_orient: crate::combat::tr::TR,
+    #[rename(name = "m_SkipFrames")]
+    pub m_skip_frames: i32,
+    #[rename(name = "m_RidePushedLocalRotation")]
+    pub m_ride_pushed_local_rotation: crate::unity_engine::quaternion::Quaternion,
+    #[rename(name = "m_IsCollide")]
+    pub m_is_collide: bool,
+    #[rename(name = "m_LastSafetyCTransXZ")]
+    pub m_last_safety_c_trans_xz: crate::combat::fxz::FXZ,
+    #[rename(name = "m_LastLookAtRideLoc")]
+    pub m_last_look_at_ride_loc: crate::combat::fxz::FXZ,
+    #[rename(name = "c_hip_ride_jnt")]
+    pub c_hip_ride_jnt: crate::unity_engine::transform::Transform,
+}
+
+#[cfg(feature = "combat-characterlyingpegasus")]
+#[::unity2::methods]
+impl CharacterLyingPegasus {
+    #[method(name = "IsNeedToWork", args = 1)]
+    pub fn is_need_to_work(chr: crate::combat::character::Character) -> bool;
+
+    #[method(name = "MyStart", args = 1)]
+    pub fn my_start(self, die_hash: i32) -> ();
+
+    #[method(name = "MakeMyDeadPose", args = 0)]
+    pub fn make_my_dead_pose(self) -> ();
+
+    #[method(name = "MyUpdate", args = 0)]
+    pub fn my_update(self) -> ();
+
+    #[method(name = "MyLateUpdate", args = 0)]
+    pub fn my_late_update(self) -> ();
+
+    #[method(name = "GetGroundTR", args = 1)]
+    pub fn get_ground_tr(pos: crate::unity_engine::vector3::Vector3) -> crate::combat::tr::TR;
+
+    #[method(name = "GetGroundTR", args = 2)]
+    pub fn get_ground_tr_2(
+        pos: crate::unity_engine::vector3::Vector3,
+        abcd: crate::unity_engine::vector4::Vector4,
+    ) -> crate::combat::tr::TR;
+
+    #[method(name = "OnLandHuman", args = 0)]
+    pub fn on_land_human(self) -> ();
+
+    #[method(name = "OnLandPegasus", args = 0)]
+    pub fn on_land_pegasus(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-characterlyingpegasus")]
+impl CharacterLyingPegasus {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterLyingPegasus),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharacterLyingPegasusMethods>::ctor(this);
+        this
+    }
+}

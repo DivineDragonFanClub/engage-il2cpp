@@ -1,0 +1,40 @@
+
+use crate::app::menuitem::IMenuItem;
+use crate::app::menuitem::MenuItem;
+use crate::app::paramitem::IParamItem;
+use crate::app::paramitem::ParamItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/instanceitem_1/InstanceItem_1.md")))]
+#[::unity2::class(namespace = "App", name = "InstanceItem`1")]
+pub struct InstanceItem_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "m_Instance")]
+    pub m_instance: T0,
+}
+
+#[cfg(feature = "app-instanceitem_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> InstanceItem_1<T0> {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, instance: T0) -> ();
+
+    #[method(name = "get_Instance", args = 0)]
+    pub fn get_instance(self) -> T0;
+}
+
+#[cfg(feature = "app-instanceitem_1")]
+impl<T0: ::unity2::ClassIdentity> InstanceItem_1<T0> {
+    pub fn new(instance: T0) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InstanceItem_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInstanceItem_1Methods<T0>>::ctor(this, instance);
+        this
+    }
+}

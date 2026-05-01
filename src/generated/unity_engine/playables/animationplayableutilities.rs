@@ -1,0 +1,23 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/animationplayableutilities/AnimationPlayableUtilities.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Playables",
+    name = "AnimationPlayableUtilities"
+)]
+#[parent(crate::system::object::Object)]
+pub struct AnimationPlayableUtilities {}
+
+#[cfg(feature = "unity_engine-playables-animationplayableutilities")]
+#[::unity2::methods]
+impl AnimationPlayableUtilities {
+    #[method(name = "Play", args = 3)]
+    pub fn play(
+        animator: crate::unity_engine::animator::Animator,
+        playable: crate::unity_engine::playables::playable::Playable,
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+    ) -> ();
+}

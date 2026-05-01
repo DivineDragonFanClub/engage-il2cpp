@@ -1,0 +1,36 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
+use crate::unity_engine::playables::playablebehaviour::PlayableBehaviour;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomfadecolor/MyRoomFadeColor.md")))]
+#[::unity2::class(namespace = "App", name = "MyRoomFadeColor")]
+#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
+pub struct MyRoomFadeColor {
+    #[rename(name = "color")]
+    pub color: crate::unity_engine::color::Color,
+}
+
+#[cfg(feature = "app-myroomfadecolor")]
+#[::unity2::methods]
+impl MyRoomFadeColor {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-myroomfadecolor")]
+impl MyRoomFadeColor {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomFadeColor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomFadeColorMethods>::ctor(this);
+        this
+    }
+}

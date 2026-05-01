@@ -1,0 +1,419 @@
+
+use crate::app::bitfield32::BitField32;
+use crate::app::bitfield32::IBitField32;
+use crate::app::bitfieldcommon::BitFieldCommon;
+use crate::app::bitfieldcommon::IBitFieldCommon;
+use crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1;
+use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo.md")))]
+#[::unity2::class(namespace = "App", name = "PhotographDisposInfo")]
+#[parent(crate::system::object::Object)]
+pub struct PhotographDisposInfo {
+    #[static_field]
+    #[rename(name = "s_FruitsPath")]
+    pub s_fruits_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "s_WaterCanPath")]
+    pub s_water_can_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "s_BrushPath")]
+    pub s_brush_path: ::unity2::Il2CppString,
+    #[rename(name = "m_IsVisible")]
+    pub m_is_visible: bool,
+    #[rename(name = "m_Locator")]
+    pub m_locator: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_LookTarget")]
+    pub m_look_target: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_PauseGroupNameList")]
+    pub m_pause_group_name_list: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "m_AnimeControllerDic")]
+    pub m_anime_controller_dic: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
+    >,
+    #[rename(name = "m_Flag")]
+    pub m_flag: crate::app::photographdisposinfo::PhotographDisposInfo_FlagField,
+    #[rename(name = "m_IsLoadingCharacter")]
+    pub m_is_loading_character: bool,
+    #[rename(name = "m_CharacterIdList")]
+    pub m_character_id_list:
+        crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    #[rename(name = "m_CurrentCharacterId")]
+    pub m_current_character_id: ::unity2::Il2CppString,
+    #[rename(name = "m_CharacterType")]
+    pub m_character_type: crate::app::photographdisposinfo::PhotographDisposInfo_CharacterType,
+    #[rename(name = "m_CharacterCmp")]
+    pub m_character_cmp: crate::combat::character::Character,
+    #[rename(name = "m_IsLookAtCamera")]
+    pub m_is_look_at_camera: bool,
+    #[rename(name = "m_LookAtRate")]
+    pub m_look_at_rate: f32,
+    #[rename(name = "m_PauseDataList")]
+    pub m_pause_data_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::photographpausedata::PhotographPauseData,
+    >,
+    #[rename(name = "m_CurrentPauseData")]
+    pub m_current_pause_data: crate::app::photographpausedata::PhotographPauseData,
+    #[rename(name = "m_HoldItem")]
+    pub m_hold_item: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_HoldWeapon")]
+    pub m_hold_weapon: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_HoldWeaponData")]
+    pub m_hold_weapon_data: crate::app::itemdata::ItemData,
+    #[rename(name = "m_HoldWeaponPath")]
+    pub m_hold_weapon_path: ::unity2::Il2CppString,
+    #[rename(name = "m_IsLoadingWeapon")]
+    pub m_is_loading_weapon: bool,
+}
+
+#[cfg(feature = "app-photographdisposinfo")]
+#[::unity2::methods]
+impl PhotographDisposInfo {
+    #[method(name = "get_PauseGroupNameList", args = 0)]
+    pub fn get_pause_group_name_list(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "get_Flag", args = 0)]
+    pub fn get_flag(self) -> crate::app::photographdisposinfo::PhotographDisposInfo_FlagField;
+
+    #[method(name = "get_IsLoading", args = 0)]
+    pub fn get_is_loading(self) -> bool;
+
+    #[method(name = "get_CharacterIdList", args = 0)]
+    pub fn get_character_id_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+
+    #[method(name = "get_CurrentCharacterId", args = 0)]
+    pub fn get_current_character_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_CurrentCharacterId", args = 1)]
+    pub fn set_current_character_id(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_CharaType", args = 0)]
+    pub fn get_chara_type(
+        self,
+    ) -> crate::app::photographdisposinfo::PhotographDisposInfo_CharacterType;
+
+    #[method(name = "get_PauseDataList", args = 0)]
+    pub fn get_pause_data_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::photographpausedata::PhotographPauseData,
+    >;
+
+    #[method(name = "get_CurrentPauseData", args = 0)]
+    pub fn get_current_pause_data(self) -> crate::app::photographpausedata::PhotographPauseData;
+
+    #[method(name = "get_IsLookAtCamera", args = 0)]
+    pub fn get_is_look_at_camera(self) -> bool;
+
+    #[method(name = "set_IsLookAtCamera", args = 1)]
+    pub fn set_is_look_at_camera(self, value: bool) -> ();
+
+    #[method(name = "set_LookAtRate", args = 1)]
+    pub fn set_look_at_rate(self, value: f32) -> ();
+
+    #[method(name = "get_BodyAccDataList", args = 0)]
+    pub fn get_body_acc_data_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>;
+
+    #[method(name = "set_BodyAccDataList", args = 1)]
+    pub fn set_body_acc_data_list(
+        self,
+        value: crate::system::collections::generic::list_1::List_1<
+            crate::app::accessorydata::AccessoryData,
+        >,
+    ) -> ();
+
+    #[method(name = "get_BodyAccData", args = 0)]
+    pub fn get_body_acc_data(self) -> crate::app::accessorydata::AccessoryData;
+
+    #[method(name = "set_BodyAccData", args = 1)]
+    pub fn set_body_acc_data(self, value: crate::app::accessorydata::AccessoryData) -> ();
+
+    #[method(name = "get_FaceAccDataList", args = 0)]
+    pub fn get_face_acc_data_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::accessorydata::AccessoryData>;
+
+    #[method(name = "set_FaceAccDataList", args = 1)]
+    pub fn set_face_acc_data_list(
+        self,
+        value: crate::system::collections::generic::list_1::List_1<
+            crate::app::accessorydata::AccessoryData,
+        >,
+    ) -> ();
+
+    #[method(name = "get_FaceAccData", args = 0)]
+    pub fn get_face_acc_data(self) -> crate::app::accessorydata::AccessoryData;
+
+    #[method(name = "set_FaceAccData", args = 1)]
+    pub fn set_face_acc_data(self, value: crate::app::accessorydata::AccessoryData) -> ();
+
+    #[method(name = "get_WeaponDataList", args = 0)]
+    pub fn get_weapon_data_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>;
+
+    #[method(name = "set_WeaponDataList", args = 1)]
+    pub fn set_weapon_data_list(
+        self,
+        value: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+    ) -> ();
+
+    #[method(name = "get_WeaponData", args = 0)]
+    pub fn get_weapon_data(self) -> crate::app::itemdata::ItemData;
+
+    #[method(name = "set_WeaponData", args = 1)]
+    pub fn set_weapon_data(self, value: crate::app::itemdata::ItemData) -> ();
+
+    #[method(name = "set_IsVisible", args = 1)]
+    pub fn set_is_visible(self, value: bool) -> ();
+
+    #[method(name = "get_Female", args = 0)]
+    pub fn get_female(self) -> crate::app::accessoryshoputility::AccessoryShopUtility_Female;
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        locator: crate::unity_engine::gameobject::GameObject,
+        select_spot: crate::app::photographspotdata::PhotographSpotData,
+        locator_no: i32,
+        anime_controller_dic: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
+        >,
+    ) -> ();
+
+    #[method(name = "GetRandomPause", args = 1)]
+    pub fn get_random_pause(
+        self,
+        chara_id: ::unity2::Il2CppString,
+    ) -> crate::app::photographpausedata::PhotographPauseData;
+
+    #[method(name = "SetUpCharacter", args = 6)]
+    pub fn set_up_character(
+        self,
+        character_id: ::unity2::Il2CppString,
+        pause_data: crate::app::photographpausedata::PhotographPauseData,
+        body_acc: crate::app::accessorydata::AccessoryData,
+        face_acc: crate::app::accessorydata::AccessoryData,
+        weapon_data: crate::app::itemdata::ItemData,
+        is_random: bool,
+    ) -> ();
+
+    #[method(name = "UpdateLook", args = 0)]
+    pub fn update_look(self) -> ();
+
+    #[method(name = "InitCharacter", args = 6)]
+    pub fn init_character(
+        self,
+        character_id: ::unity2::Il2CppString,
+        pause_data: crate::app::photographpausedata::PhotographPauseData,
+        body_acc: crate::app::accessorydata::AccessoryData,
+        face_acc: crate::app::accessorydata::AccessoryData,
+        weapon_data: crate::app::itemdata::ItemData,
+        is_random: bool,
+    ) -> ();
+
+    #[method(name = "SetUpPause", args = 0)]
+    pub fn set_up_pause(self) -> ();
+
+    #[method(name = "SetupWeapon", args = 0)]
+    pub fn setup_weapon(self) -> ();
+
+    #[method(name = "DestroyWeapon", args = 0)]
+    pub fn destroy_weapon(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-photographdisposinfo")]
+impl PhotographDisposInfo {
+    pub fn new(
+        locator: crate::unity_engine::gameobject::GameObject,
+        select_spot: crate::app::photographspotdata::PhotographSpotData,
+        locator_no: i32,
+        anime_controller_dic: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographDisposInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographDisposInfoMethods>::ctor(
+            this,
+            locator,
+            select_spot,
+            locator_no,
+            anime_controller_dic,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_Flags.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct PhotographDisposInfo_Flags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for PhotographDisposInfo_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "PhotographDisposInfo.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PhotographDisposInfo_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl PhotographDisposInfo_Flags {
+    pub fn training() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn pool_side() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn in_pool() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn can_dispos_god() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn mascot() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn sitting() -> Self {
+        Self { value: 32 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_CharacterType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct PhotographDisposInfo_CharacterType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for PhotographDisposInfo_CharacterType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "PhotographDisposInfo.CharacterType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PhotographDisposInfo_CharacterType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl PhotographDisposInfo_CharacterType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn unit_m() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn unit_f() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn god_m() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn god_f() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn mascot() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md")))]
+#[::unity2::class(namespace = "App", name = "PhotographDisposInfo.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags >)]
+pub struct PhotographDisposInfo_FlagField {}
+
+#[cfg(feature = "app-photographdisposinfo")]
+#[::unity2::methods]
+impl PhotographDisposInfo_FlagField {
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::photographdisposinfo::PhotographDisposInfo_Flags)
+        -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-photographdisposinfo")]
+impl PhotographDisposInfo_FlagField {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographDisposInfo_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographDisposInfo_FlagFieldMethods>::ctor(this);
+        this
+    }
+}

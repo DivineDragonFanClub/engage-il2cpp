@@ -1,0 +1,114 @@
+
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemno::BasicDialogItemNo;
+use crate::app::basicdialogitemno::IBasicDialogItemNo;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaysetpublishmodedialog/RelaySetPublishModeDialog_YesMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "RelaySetPublishModeDialog.YesMenuItem")]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct RelaySetPublishModeDialog_YesMenuItem {}
+
+#[cfg(feature = "app-relaysetpublishmodedialog")]
+#[::unity2::methods]
+impl RelaySetPublishModeDialog_YesMenuItem {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-relaysetpublishmodedialog")]
+impl RelaySetPublishModeDialog_YesMenuItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelaySetPublishModeDialog_YesMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelaySetPublishModeDialog_YesMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaysetpublishmodedialog/RelaySetPublishModeDialog_NoMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "RelaySetPublishModeDialog.NoMenuItem")]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct RelaySetPublishModeDialog_NoMenuItem {}
+
+#[cfg(feature = "app-relaysetpublishmodedialog")]
+#[::unity2::methods]
+impl RelaySetPublishModeDialog_NoMenuItem {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-relaysetpublishmodedialog")]
+impl RelaySetPublishModeDialog_NoMenuItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelaySetPublishModeDialog_NoMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelaySetPublishModeDialog_NoMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaysetpublishmodedialog/RelaySetPublishModeDialog.md")))]
+#[::unity2::class(namespace = "App", name = "RelaySetPublishModeDialog")]
+#[parent(crate::system::object::Object)]
+pub struct RelaySetPublishModeDialog {}
+
+#[cfg(feature = "app-relaysetpublishmodedialog")]
+#[::unity2::methods]
+impl RelaySetPublishModeDialog {
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relaysetpublishmodedialog")]
+impl RelaySetPublishModeDialog {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelaySetPublishModeDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelaySetPublishModeDialogMethods>::ctor(this);
+        this
+    }
+}

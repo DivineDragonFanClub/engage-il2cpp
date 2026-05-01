@@ -1,0 +1,56 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmirrorcamera/MapMirrorCamera.md")))]
+#[::unity2::class(namespace = "App", name = "MapMirrorCamera")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct MapMirrorCamera {
+    #[rename(name = "m_renderCamera")]
+    pub m_render_camera: crate::unity_engine::camera::Camera,
+    #[rename(name = "m_OffsetY")]
+    pub m_offset_y: f32,
+    #[rename(name = "m_MarginForChara")]
+    pub m_margin_for_chara: f32,
+    #[rename(name = "m_MarginForMapObj")]
+    pub m_margin_for_map_obj: f32,
+    #[rename(name = "m_UseEditorCamera")]
+    pub m_use_editor_camera: bool,
+}
+
+#[cfg(feature = "app-mapmirrorcamera")]
+#[::unity2::methods]
+impl MapMirrorCamera {
+    #[method(name = "UpdateRenderCamera", args = 1)]
+    pub fn update_render_camera(self, main_camera: crate::unity_engine::camera::Camera) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapmirrorcamera")]
+impl MapMirrorCamera {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapMirrorCamera),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapMirrorCameraMethods>::ctor(this);
+        this
+    }
+}

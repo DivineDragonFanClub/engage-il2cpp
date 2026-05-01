@@ -1,0 +1,127 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/shadervariantcollection/ShaderVariantCollection.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "ShaderVariantCollection")]
+#[parent(crate::unity_engine::object_2::Object_2)]
+pub struct ShaderVariantCollection {}
+
+#[cfg(feature = "unity_engine-shadervariantcollection")]
+#[::unity2::methods]
+impl ShaderVariantCollection {
+    #[method(name = "get_shaderCount", args = 0)]
+    pub fn get_shader_count(self) -> i32;
+
+    #[method(name = "get_variantCount", args = 0)]
+    pub fn get_variant_count(self) -> i32;
+
+    #[method(name = "get_isWarmedUp", args = 0)]
+    pub fn get_is_warmed_up(self) -> bool;
+
+    #[method(name = "AddVariant", args = 3)]
+    pub fn add_variant(
+        self,
+        shader: crate::unity_engine::shader::Shader,
+        pass_type: crate::unity_engine::rendering::passtype::PassType,
+        keywords: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> bool;
+
+    #[method(name = "RemoveVariant", args = 3)]
+    pub fn remove_variant(
+        self,
+        shader: crate::unity_engine::shader::Shader,
+        pass_type: crate::unity_engine::rendering::passtype::PassType,
+        keywords: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> bool;
+
+    #[method(name = "ContainsVariant", args = 3)]
+    pub fn contains_variant(
+        self,
+        shader: crate::unity_engine::shader::Shader,
+        pass_type: crate::unity_engine::rendering::passtype::PassType,
+        keywords: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> bool;
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "WarmUp", args = 0)]
+    pub fn warm_up(self) -> ();
+
+    #[method(name = "Internal_Create", args = 1)]
+    pub fn internal_create(
+        svc: crate::unity_engine::shadervariantcollection::ShaderVariantCollection,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Add", args = 1)]
+    pub fn add(
+        self,
+        variant : crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant,
+    ) -> bool;
+
+    #[method(name = "Remove", args = 1)]
+    pub fn remove(
+        self,
+        variant : crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant,
+    ) -> bool;
+
+    #[method(name = "Contains", args = 1)]
+    pub fn contains(
+        self,
+        variant : crate :: unity_engine :: shadervariantcollection :: ShaderVariantCollection_ShaderVariant,
+    ) -> bool;
+}
+
+#[cfg(feature = "unity_engine-shadervariantcollection")]
+impl ShaderVariantCollection {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShaderVariantCollection),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShaderVariantCollectionMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/shadervariantcollection/ShaderVariantCollection_ShaderVariant.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ShaderVariantCollection_ShaderVariant {
+    pub shader: crate::unity_engine::shader::Shader,
+    pub pass_type: crate::unity_engine::rendering::passtype::PassType,
+    pub keywords: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+impl ::unity2::ClassIdentity for ShaderVariantCollection_ShaderVariant {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ShaderVariantCollection.ShaderVariant";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ShaderVariantCollection_ShaderVariant {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

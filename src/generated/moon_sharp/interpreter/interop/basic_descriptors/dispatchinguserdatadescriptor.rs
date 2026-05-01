@@ -1,0 +1,275 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/basic_descriptors/dispatchinguserdatadescriptor/DispatchingUserDataDescriptor.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors",
+    name = "DispatchingUserDataDescriptor"
+)]
+#[parent(crate::system::object::Object)]
+pub struct DispatchingUserDataDescriptor {
+# [rename (name = "m_ExtMethodsVersion")] pub m_ext_methods_version : i32 ,
+# [rename (name = "m_MetaMembers")] pub m_meta_members : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface > ,
+# [rename (name = "m_Members")] pub m_members : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface > ,
+# [static_field] # [rename (name = "SPECIALNAME_INDEXER_GET")] pub specialname_indexer_get : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SPECIALNAME_INDEXER_SET")] pub specialname_indexer_set : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SPECIALNAME_CAST_EXPLICIT")] pub specialname_cast_explicit : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "SPECIALNAME_CAST_IMPLICIT")] pub specialname_cast_implicit : :: unity2 :: Il2CppString ,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-dispatchinguserdatadescriptor")]
+#[::unity2::methods]
+impl DispatchingUserDataDescriptor {
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "set_Type", args = 1)]
+    pub fn set_type(self, value: ::unity2::SystemType) -> ();
+
+    #[method(name = "get_FriendlyName", args = 0)]
+    pub fn get_friendly_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_FriendlyName", args = 1)]
+    pub fn set_friendly_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, r#type: ::unity2::SystemType, friendly_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "AddMetaMember", args = 2)]
+    pub fn add_meta_member(
+        self,
+        name: ::unity2::Il2CppString,
+        desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
+    ) -> ();
+
+    #[method(name = "AddDynValue", args = 2)]
+    pub fn add_dyn_value(
+        self,
+        name: ::unity2::Il2CppString,
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> ();
+
+    #[method(name = "AddMember", args = 2)]
+    pub fn add_member(
+        self,
+        name: ::unity2::Il2CppString,
+        desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
+    ) -> ();
+
+    #[method(name = "get_MemberNames", args = 0)]
+    pub fn get_member_names(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>;
+
+    #[method(name = "get_Members", args = 0)]
+    pub fn get_members (self ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface > > ;
+
+    #[method(name = "FindMember", args = 1)]
+    pub fn find_member (self , member_name : :: unity2 :: Il2CppString) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface ;
+
+    #[method(name = "RemoveMember", args = 1)]
+    pub fn remove_member(self, member_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_MetaMemberNames", args = 0)]
+    pub fn get_meta_member_names(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity2::Il2CppString>;
+
+    #[method(name = "get_MetaMembers", args = 0)]
+    pub fn get_meta_members (self ,) -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: system :: collections :: generic :: keyvaluepair_2 :: KeyValuePair_2 < :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface > > ;
+
+    #[method(name = "FindMetaMember", args = 1)]
+    pub fn find_meta_member (self , member_name : :: unity2 :: Il2CppString) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface ;
+
+    #[method(name = "RemoveMetaMember", args = 1)]
+    pub fn remove_meta_member(self, member_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "AddMemberTo", args = 3)]
+    pub fn add_member_to(
+        self,
+        members : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface >,
+        name: ::unity2::Il2CppString,
+        desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
+    ) -> ();
+
+    #[method(name = "Index", args = 4)]
+    pub fn index(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        index: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        is_direct_indexing: bool,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "TryIndexOnExtMethod", args = 3)]
+    pub fn try_index_on_ext_method(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        index_name: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "HasMember", args = 1)]
+    pub fn has_member(self, exact_name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "HasMetaMember", args = 1)]
+    pub fn has_meta_member(self, exact_name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "TryIndex", args = 3)]
+    pub fn try_index(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        index_name: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "SetIndex", args = 5)]
+    pub fn set_index(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        index: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        is_direct_indexing: bool,
+    ) -> bool;
+
+    #[method(name = "TrySetIndex", args = 4)]
+    pub fn try_set_index(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        index_name: ::unity2::Il2CppString,
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> bool;
+
+    #[method(
+        name = "MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize",
+        args = 0
+    )]
+    pub fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(
+        self,
+    ) -> ();
+
+    #[method(name = "Camelify", args = 1)]
+    pub fn camelify(name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[method(name = "UpperFirstLetter", args = 1)]
+    pub fn upper_first_letter(name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[method(name = "AsString", args = 1)]
+    pub fn as_string(self, obj: crate::system::object::Object) -> ::unity2::Il2CppString;
+
+    #[method(name = "ExecuteIndexer", args = 5)]
+    pub fn execute_indexer(
+        self,
+        mdesc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        index: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "MetaIndex", args = 3)]
+    pub fn meta_index(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        metaname: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "PerformComparison", args = 3)]
+    pub fn perform_comparison(
+        self,
+        obj: crate::system::object::Object,
+        p1: crate::system::object::Object,
+        p2: crate::system::object::Object,
+    ) -> i32;
+
+    #[method(name = "MultiDispatchLessThanOrEqual", args = 2)]
+    pub fn multi_dispatch_less_than_or_equal(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "MultiDispatchLessThan", args = 2)]
+    pub fn multi_dispatch_less_than(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "TryDispatchLength", args = 2)]
+    pub fn try_dispatch_length(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "MultiDispatchEqual", args = 2)]
+    pub fn multi_dispatch_equal(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "CheckEquality", args = 3)]
+    pub fn check_equality(
+        self,
+        obj: crate::system::object::Object,
+        p1: crate::system::object::Object,
+        p2: crate::system::object::Object,
+    ) -> bool;
+
+    #[method(name = "DispatchMetaOnMethod", args = 3)]
+    pub fn dispatch_meta_on_method(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        method_name: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "TryDispatchToNumber", args = 2)]
+    pub fn try_dispatch_to_number(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "TryDispatchToBool", args = 2)]
+    pub fn try_dispatch_to_bool(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "IsTypeCompatible", args = 2)]
+    pub fn is_type_compatible(
+        self,
+        r#type: ::unity2::SystemType,
+        obj: crate::system::object::Object,
+    ) -> bool;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-dispatchinguserdatadescriptor")]
+impl DispatchingUserDataDescriptor {
+    pub fn new(r#type: ::unity2::SystemType, friendly_name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DispatchingUserDataDescriptor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDispatchingUserDataDescriptorMethods>::ctor(this, r#type, friendly_name);
+        this
+    }
+}

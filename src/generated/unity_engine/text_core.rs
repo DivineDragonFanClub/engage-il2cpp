@@ -1,0 +1,19 @@
+
+#[cfg(any(feature = "unity_engine-text_core-faceinfo-types"))]
+pub mod faceinfo;
+#[cfg(any(feature = "unity_engine-text_core-faceinfo-types"))]
+pub use faceinfo::*;
+#[cfg(any(feature = "unity_engine-text_core-glyph-types"))]
+pub mod glyph;
+#[cfg(any(feature = "unity_engine-text_core-glyph-types"))]
+pub use glyph::*;
+#[cfg(any(feature = "unity_engine-text_core-glyphmetrics-types"))]
+pub mod glyphmetrics;
+#[cfg(any(feature = "unity_engine-text_core-glyphmetrics-types"))]
+pub use glyphmetrics::*;
+#[cfg(any(feature = "unity_engine-text_core-glyphrect-types"))]
+pub mod glyphrect;
+#[cfg(any(feature = "unity_engine-text_core-glyphrect-types"))]
+pub use glyphrect::*;
+#[cfg(any(feature = "unity_engine-text_core-low_level-fontengine-types", feature = "unity_engine-text_core-low_level-fontengineerror-types", feature = "unity_engine-text_core-low_level-fontengineutilities-types", feature = "unity_engine-text_core-low_level-fontfeaturelookupflags-types", feature = "unity_engine-text_core-low_level-glyphadjustmentrecord-types", feature = "unity_engine-text_core-low_level-glyphloadflags-types", feature = "unity_engine-text_core-low_level-glyphmarshallingstruct-types", feature = "unity_engine-text_core-low_level-glyphpackingmode-types", feature = "unity_engine-text_core-low_level-glyphpairadjustmentrecord-types", feature = "unity_engine-text_core-low_level-glyphrendermode-types", feature = "unity_engine-text_core-low_level-glyphvaluerecord-types"))]
+pub mod low_level;

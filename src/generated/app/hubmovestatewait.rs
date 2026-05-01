@@ -1,0 +1,78 @@
+
+use crate::app::hubmovestate::HubMoveState;
+use crate::app::hubmovestate::IHubMoveState;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmovestatewait/HubMoveStateWait.md")))]
+#[::unity2::class(namespace = "App", name = "HubMoveStateWait")]
+#[parent(crate::app::hubmovestate::HubMoveState)]
+pub struct HubMoveStateWait {
+    #[rename(name = "m_unit")]
+    pub m_unit: crate::app::hubunitcontroller::HubUnitController,
+    #[rename(name = "m_target")]
+    pub m_target: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_bodyAnim")]
+    pub m_body_anim: ::unity2::Il2CppString,
+    #[rename(name = "m_faceAnim")]
+    pub m_face_anim: ::unity2::Il2CppString,
+    #[rename(name = "m_isTurn")]
+    pub m_is_turn: bool,
+    #[rename(name = "m_startSec")]
+    pub m_start_sec: f32,
+    #[rename(name = "m_endSec")]
+    pub m_end_sec: f32,
+    #[rename(name = "m_interval")]
+    pub m_interval: f32,
+}
+
+#[cfg(feature = "app-hubmovestatewait")]
+#[::unity2::methods]
+impl HubMoveStateWait {
+    #[method(name = ".ctor", args = 7)]
+    pub fn ctor(
+        self,
+        unit: crate::app::hubunitcontroller::HubUnitController,
+        target: crate::unity_engine::vector3::Vector3,
+        body_anim: ::unity2::Il2CppString,
+        face_anim: ::unity2::Il2CppString,
+        is_turn: bool,
+        start_sec: f32,
+        end_sec: f32,
+    ) -> ();
+
+    #[method(name = "IsEnd", args = 0)]
+    pub fn is_end(self) -> bool;
+
+    #[method(name = "Start", args = 1)]
+    pub fn start(self, resume: bool) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+}
+
+#[cfg(feature = "app-hubmovestatewait")]
+impl HubMoveStateWait {
+    pub fn new(
+        unit: crate::app::hubunitcontroller::HubUnitController,
+        target: crate::unity_engine::vector3::Vector3,
+        body_anim: ::unity2::Il2CppString,
+        face_anim: ::unity2::Il2CppString,
+        is_turn: bool,
+        start_sec: f32,
+        end_sec: f32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMoveStateWait),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMoveStateWaitMethods>::ctor(
+            this, unit, target, body_anim, face_anim, is_turn, start_sec, end_sec,
+        );
+        this
+    }
+}

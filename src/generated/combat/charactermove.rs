@@ -1,0 +1,242 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactermove/CharacterMove.md")))]
+#[::unity2::class(namespace = "Combat", name = "CharacterMove")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct CharacterMove {
+    #[rename(name = "_cp")]
+    pub cp: crate::combat::character::Character,
+    #[rename(name = "MaxRunSpeedKMPS")]
+    pub max_run_speed_kmps: f32,
+    #[rename(name = "TimeToMaxSpeed")]
+    pub time_to_max_speed: f32,
+    #[rename(name = "TimeToZero")]
+    pub time_to_zero: f32,
+    #[rename(name = "HeightSmoothRatio")]
+    pub height_smooth_ratio: f32,
+    #[rename(name = "StairInterpolationLimit")]
+    pub stair_interpolation_limit: f32,
+    #[rename(name = "m_State")]
+    pub m_state: crate::combat::charactermove::CharacterMove_State,
+    #[rename(name = "m_Goal")]
+    pub m_goal: crate::combat::fxz::FXZ,
+    #[rename(name = "m_Velocity")]
+    pub m_velocity: f32,
+    #[rename(name = "m_PrevY")]
+    pub m_prev_y: f32,
+    #[rename(name = "m_Jump")]
+    pub m_jump: crate::combat::characterjump::CharacterJump,
+}
+
+#[cfg(feature = "combat-charactermove")]
+#[::unity2::methods]
+impl CharacterMove {
+    #[method(name = "get_CP", args = 0)]
+    pub fn get_cp(self) -> crate::combat::character::Character;
+
+    #[method(name = "get_MaxRunSpeed", args = 0)]
+    pub fn get_max_run_speed(self) -> f32;
+
+    #[method(name = "set_MaxRunSpeed", args = 1)]
+    pub fn set_max_run_speed(self, value: f32) -> ();
+
+    #[method(name = "get_Acceleration", args = 0)]
+    pub fn get_acceleration(self) -> f32;
+
+    #[method(name = "get_Deceleration", args = 0)]
+    pub fn get_deceleration(self) -> f32;
+
+    #[method(name = "Stabilize", args = 0)]
+    pub fn stabilize(self) -> ();
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = "WarpTo", args = 1)]
+    pub fn warp_to(self, goal: crate::combat::fxz::FXZ) -> ();
+
+    #[method(name = "RunTo", args = 2)]
+    pub fn run_to(
+        self,
+        goal: crate::combat::fxz::FXZ,
+        mode: crate::combat::charactermove::CharacterMove_StartMode,
+    ) -> ();
+
+    #[method(name = "RunTo", args = 2)]
+    pub fn run_to_2(self, goal: crate::combat::fxz::FXZ, from_max_speed: bool) -> ();
+
+    #[method(name = "JumpTo", args = 3)]
+    pub fn jump_to(
+        self,
+        goal: crate::unity_engine::vector3::Vector3,
+        duration: f32,
+        is_grounding: bool,
+    ) -> ();
+
+    #[method(name = "JumpTo", args = 2)]
+    pub fn jump_to_2(
+        self,
+        target: crate::unity_engine::transform::Transform,
+        ev: crate::unity_engine::animationevent::AnimationEvent,
+    ) -> ();
+
+    #[method(name = "Brake", args = 0)]
+    pub fn brake(self) -> ();
+
+    #[method(name = "Stop", args = 0)]
+    pub fn stop(self) -> ();
+
+    #[method(name = "UpdateMoving", args = 0)]
+    pub fn update_moving(self) -> ();
+
+    #[method(name = "UpdateRun", args = 0)]
+    pub fn update_run(self) -> ();
+
+    #[method(name = "UpdateRunBrake", args = 0)]
+    pub fn update_run_brake(self) -> ();
+
+    #[method(name = "AdvanceTimeAndGetDT", args = 0)]
+    pub fn advance_time_and_get_dt(self) -> f32;
+
+    #[method(name = "UpdateJump", args = 0)]
+    pub fn update_jump(self) -> ();
+
+    #[method(name = "CalcTimeToArrive", args = 2)]
+    pub fn calc_time_to_arrive(self, dist: f32, run_max_speed: bool) -> f32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-charactermove")]
+impl CharacterMove {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterMove),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharacterMoveMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactermove/CharacterMove_StartMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CharacterMove_StartMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CharacterMove_StartMode {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CharacterMove.StartMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CharacterMove_StartMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CharacterMove_StartMode {
+    pub fn from_start() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn from_loop() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn from_max_speed() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactermove/CharacterMove_State.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CharacterMove_State {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CharacterMove_State {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CharacterMove.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CharacterMove_State {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CharacterMove_State {
+    pub fn waiting() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn running() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn braking() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn jumping() -> Self {
+        Self { value: 3 }
+    }
+}

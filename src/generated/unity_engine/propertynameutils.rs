@@ -1,0 +1,24 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/propertynameutils/PropertyNameUtils.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "PropertyNameUtils")]
+#[parent(crate::system::object::Object)]
+pub struct PropertyNameUtils {}
+
+#[cfg(feature = "unity_engine-propertynameutils")]
+#[::unity2::methods]
+impl PropertyNameUtils {
+    #[method(name = "PropertyNameFromString", args = 1)]
+    pub fn property_name_from_string(
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::propertyname::PropertyName;
+
+    #[method(name = "PropertyNameFromString_Injected", args = 2)]
+    pub fn property_name_from_string_injected(
+        name: ::unity2::Il2CppString,
+        ret: crate::unity_engine::propertyname::PropertyName,
+    ) -> ();
+}

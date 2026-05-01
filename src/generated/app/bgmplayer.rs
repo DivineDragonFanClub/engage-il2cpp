@@ -1,0 +1,60 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/bgmplayer/BgmPlayer.md")))]
+#[::unity2::class(namespace = "App", name = "BgmPlayer")]
+#[parent(crate::system::object::Object)]
+pub struct BgmPlayer {}
+
+#[cfg(feature = "app-bgmplayer")]
+#[::unity2::methods]
+impl BgmPlayer {
+    #[method(name = "PauseCurrentBgm", args = 0)]
+    pub fn pause_current_bgm(self) -> ();
+
+    #[method(name = "IsPlaying", args = 0)]
+    pub fn is_playing(self) -> bool;
+
+    #[method(name = "IsPlaying", args = 1)]
+    pub fn is_playing_2(self, event_name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "Play", args = 1)]
+    pub fn play(self, event_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "PlaySelect", args = 1)]
+    pub fn play_select(self, event_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "Stop", args = 0)]
+    pub fn stop(self) -> ();
+
+    #[method(name = "Tick", args = 1)]
+    pub fn tick(self, menu: crate::app::myroomsoundmenu::MyRoomSoundMenu) -> ();
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[method(name = "PlaySound", args = 1)]
+    pub fn play_sound(
+        event_name: ::unity2::Il2CppString,
+    ) -> crate::app::gamesound::GameSound_Handle;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-bgmplayer")]
+impl BgmPlayer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BgmPlayer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBgmPlayerMethods>::ctor(this);
+        this
+    }
+}

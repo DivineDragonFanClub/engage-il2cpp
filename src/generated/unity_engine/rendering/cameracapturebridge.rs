@@ -1,0 +1,62 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/cameracapturebridge/CameraCaptureBridge.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "CameraCaptureBridge")]
+#[parent(crate::system::object::Object)]
+pub struct CameraCaptureBridge {
+    #[static_field]
+    #[rename(name = "actionDict")]
+    pub action_dict: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::unity_engine::camera::Camera,
+        crate::system::collections::generic::hashset_1::HashSet_1<
+            crate::system::action_2::Action_2<
+                crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+                crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+            >,
+        >,
+    >,
+}
+
+#[cfg(feature = "unity_engine-rendering-cameracapturebridge")]
+#[::unity2::methods]
+impl CameraCaptureBridge {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+
+    #[method(name = "get_enabled", args = 0)]
+    pub fn get_enabled() -> bool;
+
+    #[method(name = "set_enabled", args = 1)]
+    pub fn set_enabled(value: bool) -> ();
+
+    #[method(name = "GetCaptureActions", args = 1)]
+    pub fn get_capture_actions(
+        camera: crate::unity_engine::camera::Camera,
+    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<
+        crate::system::action_2::Action_2<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        >,
+    >;
+
+    #[method(name = "AddCaptureAction", args = 2)]
+    pub fn add_capture_action(
+        camera: crate::unity_engine::camera::Camera,
+        action: crate::system::action_2::Action_2<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        >,
+    ) -> ();
+
+    #[method(name = "RemoveCaptureAction", args = 2)]
+    pub fn remove_capture_action(
+        camera: crate::unity_engine::camera::Camera,
+        action: crate::system::action_2::Action_2<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+            crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        >,
+    ) -> ();
+}

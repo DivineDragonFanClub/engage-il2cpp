@@ -1,0 +1,81 @@
+
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetargetmanager/DragonRideTargetManager.md")))]
+#[::unity2::class(namespace = "App", name = "DragonRideTargetManager")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: dragonridetargetmanager :: DragonRideTargetManager >)]
+pub struct DragonRideTargetManager {
+    #[rename(name = "MaxArrayCount")]
+    pub max_array_count: i32,
+    #[rename(name = "m_Prefab")]
+    pub m_prefab: crate::app::resourcegameobject::ResourceGameObject,
+    #[rename(name = "m_ReserveTargetParent")]
+    pub m_reserve_target_parent: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ReturnTargetCount")]
+    pub m_return_target_count: i32,
+    #[rename(name = "m_ReservePopupParent")]
+    pub m_reserve_popup_parent: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ReturnPopupCount")]
+    pub m_return_popup_count: i32,
+    #[rename(name = "m_TargetArray")]
+    pub m_target_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+    #[rename(name = "m_PopupArray")]
+    pub m_popup_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+    #[rename(name = "m_ObjUseCount")]
+    pub m_obj_use_count: i32,
+    #[rename(name = "m_PopupUseCount")]
+    pub m_popup_use_count: i32,
+}
+
+#[cfg(feature = "app-dragonridetargetmanager")]
+#[::unity2::methods]
+impl DragonRideTargetManager {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Destruct", args = 0)]
+    pub fn destruct(self) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[method(name = "GetMaxCount", args = 0)]
+    pub fn get_max_count(self) -> i32;
+
+    #[method(name = "RentalTarget", args = 0)]
+    pub fn rental_target(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "RentalPopup", args = 0)]
+    pub fn rental_popup(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "CheckReserveListCondition", args = 0)]
+    pub fn check_reserve_list_condition(self) -> ();
+
+    #[method(name = "ReturnReserveTarget", args = 1)]
+    pub fn return_reserve_target(self, target: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "ReturnReservePopup", args = 1)]
+    pub fn return_reserve_popup(self, target: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "HideAllTarget", args = 0)]
+    pub fn hide_all_target(self) -> ();
+}
+
+#[cfg(feature = "app-dragonridetargetmanager")]
+impl DragonRideTargetManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideTargetManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideTargetManagerMethods>::ctor(this);
+        this
+    }
+}

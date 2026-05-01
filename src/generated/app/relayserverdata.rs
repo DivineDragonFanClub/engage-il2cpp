@@ -1,0 +1,84 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayserverdata/RelayServerData.md")))]
+#[::unity2::class(namespace = "App", name = "RelayServerData")]
+#[parent(crate::system::object::Object)]
+pub struct RelayServerData {
+    #[static_field]
+    #[rename(name = "BufferSize")]
+    pub buffer_size: i32,
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: u16,
+    #[rename(name = "m_Buffer")]
+    pub m_buffer: ::unity2::Array<u8>,
+    #[rename(name = "m_Stream")]
+    pub m_stream: crate::app::stream_2::Stream_2,
+    #[rename(name = "m_Message")]
+    pub m_message: u8,
+    #[rename(name = "m_LeavingUnitData")]
+    pub m_leaving_unit_data: crate::system::collections::generic::list_1::List_1<
+        crate::app::relayleavingunitdata::RelayLeavingUnitData,
+    >,
+    #[rename(name = "m_IsEmpty")]
+    pub m_is_empty: bool,
+}
+
+#[cfg(feature = "app-relayserverdata")]
+#[::unity2::methods]
+impl RelayServerData {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "SetBinary", args = 1)]
+    pub fn set_binary(self, bin: ::unity2::Array<u8>) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "Serialize", args = 0)]
+    pub fn serialize(self) -> ();
+
+    #[method(name = "Deserialize", args = 0)]
+    pub fn deserialize(self) -> bool;
+
+    #[method(name = "get_Buffer", args = 0)]
+    pub fn get_buffer(self) -> ::unity2::Array<u8>;
+
+    #[method(name = "get_Size", args = 0)]
+    pub fn get_size(self) -> i32;
+
+    #[method(name = "get_IsEmpty", args = 0)]
+    pub fn get_is_empty(self) -> bool;
+
+    #[method(name = "get_Message", args = 0)]
+    pub fn get_message(self) -> u8;
+
+    #[method(name = "set_Message", args = 1)]
+    pub fn set_message(self, value: u8) -> ();
+
+    #[method(name = "get_LeavingUnitData", args = 0)]
+    pub fn get_leaving_unit_data(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::relayleavingunitdata::RelayLeavingUnitData,
+    >;
+}
+
+#[cfg(feature = "app-relayserverdata")]
+impl RelayServerData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayServerData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayServerDataMethods>::ctor(this);
+        this
+    }
+}

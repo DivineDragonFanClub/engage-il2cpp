@@ -1,0 +1,41 @@
+
+use crate::app::procdesc::IProcDesc;
+use crate::app::procdesc::ProcDesc;
+use crate::app::procdescjumpfunc::IProcDescJumpFunc;
+use crate::app::procdescjumpfunc::ProcDescJumpFunc;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdescmjumpfalse/ProcDescMJumpFalse.md")))]
+#[::unity2::class(namespace = "App", name = "ProcDescMJumpFalse")]
+#[parent(crate::app::procdescjumpfunc::ProcDescJumpFunc)]
+pub struct ProcDescMJumpFalse {
+    #[rename(name = "m_Method")]
+    pub m_method: crate::app::procboolmethod::ProcBoolMethod,
+}
+
+#[cfg(feature = "app-procdescmjumpfalse")]
+#[::unity2::methods]
+impl ProcDescMJumpFalse {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, method: crate::app::procboolmethod::ProcBoolMethod, label: i32) -> ();
+
+    #[method(name = "IsJump", args = 1)]
+    pub fn is_jump(self, inst: crate::app::procinst::ProcInst) -> bool;
+}
+
+#[cfg(feature = "app-procdescmjumpfalse")]
+impl ProcDescMJumpFalse {
+    pub fn new(method: crate::app::procboolmethod::ProcBoolMethod, label: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProcDescMJumpFalse),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProcDescMJumpFalseMethods>::ctor(this, method, label);
+        this
+    }
+}

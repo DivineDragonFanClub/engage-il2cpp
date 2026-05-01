@@ -1,0 +1,20 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::reflection::localvariableinfo::ILocalVariableInfo;
+use crate::system::reflection::localvariableinfo::LocalVariableInfo;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/emit/localbuilder/LocalBuilder.md")))]
+#[::unity2::class(namespace = "System.Reflection.Emit", name = "LocalBuilder")]
+#[parent(crate::system::reflection::localvariableinfo::LocalVariableInfo)]
+pub struct LocalBuilder {
+    #[rename(name = "name")]
+    pub name: ::unity2::Il2CppString,
+    #[rename(name = "ilgen")]
+    pub ilgen: crate::system::reflection::emit::ilgenerator::ILGenerator,
+    #[rename(name = "startOffset")]
+    pub start_offset: i32,
+    #[rename(name = "endOffset")]
+    pub end_offset: i32,
+}

@@ -1,0 +1,108 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterjump/CharacterJump.md")))]
+#[::unity2::class(namespace = "Combat", name = "CharacterJump")]
+#[parent(crate::system::object::Object)]
+pub struct CharacterJump {
+    #[rename(name = "m_Chr")]
+    pub m_chr: crate::combat::character::Character,
+    #[rename(name = "m_Target")]
+    pub m_target: crate::unity_engine::transform::Transform,
+    #[rename(name = "m_StartPos")]
+    pub m_start_pos: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_GoalPos")]
+    pub m_goal_pos: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_PullOffset")]
+    pub m_pull_offset: f32,
+    #[rename(name = "m_Elapsed")]
+    pub m_elapsed: f32,
+    #[rename(name = "m_Duration")]
+    pub m_duration: f32,
+    #[rename(name = "m_CurveType")]
+    pub m_curve_type: crate::app::curve::Curve_Type,
+    #[rename(name = "m_bGrounding")]
+    pub m_b_grounding: bool,
+}
+
+#[cfg(feature = "combat-characterjump")]
+#[::unity2::methods]
+impl CharacterJump {
+    #[method(name = "get_IsEnd", args = 0)]
+    pub fn get_is_end(self) -> bool;
+
+    #[method(name = "ClampToBorder", args = 3)]
+    pub fn clamp_to_border(
+        start: crate::unity_engine::vector3::Vector3,
+        goal: crate::unity_engine::vector3::Vector3,
+        is_big: bool,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "ClampToBorder", args = 3)]
+    pub fn clamp_to_border_2(
+        start: crate::unity_engine::vector3::Vector3,
+        goal: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "ClampToBorder", args = 3)]
+    pub fn clamp_to_border_3(
+        start: crate::unity_engine::vector3::Vector3,
+        goal: crate::unity_engine::vector3::Vector3,
+        chr: crate::combat::character::Character,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "ClampToBorder", args = 4)]
+    pub fn clamp_to_border_4(
+        start: crate::unity_engine::vector3::Vector3,
+        goal: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        offset: crate::unity_engine::vector3::Vector3,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "JumpTo", args = 5)]
+    pub fn jump_to(
+        self,
+        chr: crate::combat::character::Character,
+        goal: crate::unity_engine::vector3::Vector3,
+        pull_offset: f32,
+        duration: f32,
+        is_grounding: bool,
+    ) -> ();
+
+    #[method(name = "JumpTo", args = 5)]
+    pub fn jump_to_2(
+        self,
+        chr: crate::combat::character::Character,
+        target: crate::unity_engine::transform::Transform,
+        pull_offset: f32,
+        duration: f32,
+        is_grounding: bool,
+    ) -> ();
+
+    #[method(name = "Stop", args = 0)]
+    pub fn stop(self) -> ();
+
+    #[method(name = "Update", args = 1)]
+    pub fn update(self, delta_time: f32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-characterjump")]
+impl CharacterJump {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterJump),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharacterJumpMethods>::ctor(this);
+        this
+    }
+}

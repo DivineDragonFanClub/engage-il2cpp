@@ -1,0 +1,225 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::rendering::universal::scriptablerenderer::IScriptableRenderer;
+use crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer_Profiling.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ForwardRenderer.Profiling"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ForwardRenderer_Profiling {
+    #[static_field]
+    #[rename(name = "k_Name")]
+    pub k_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "createCameraRenderTarget")]
+    pub create_camera_render_target:
+        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrenderer")]
+#[::unity2::methods]
+impl ForwardRenderer_Profiling {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer_RenderPassInputSummary.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ForwardRenderer_RenderPassInputSummary {
+    pub requires_depth_texture: bool,
+    pub requires_depth_prepass: bool,
+    pub requires_normals_texture: bool,
+    pub requires_color_texture: bool,
+}
+
+impl ::unity2::ClassIdentity for ForwardRenderer_RenderPassInputSummary {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "ForwardRenderer.RenderPassInputSummary";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ForwardRenderer_RenderPassInputSummary {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ForwardRenderer"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer)]
+pub struct ForwardRenderer {
+# [static_field] # [rename (name = "k_DepthStencilBufferBits")] pub k_depth_stencil_buffer_bits : i32 ,
+# [rename (name = "m_ColorGradingLutPass")] pub m_color_grading_lut_pass : crate :: unity_engine :: rendering :: universal :: internal :: colorgradinglutpass :: ColorGradingLutPass ,
+# [rename (name = "m_DepthPrepass")] pub m_depth_prepass : crate :: unity_engine :: rendering :: universal :: internal :: depthonlypass :: DepthOnlyPass ,
+# [rename (name = "m_DepthNormalPrepass")] pub m_depth_normal_prepass : crate :: unity_engine :: rendering :: universal :: internal :: depthnormalonlypass :: DepthNormalOnlyPass ,
+# [rename (name = "m_MainLightShadowCasterPass")] pub m_main_light_shadow_caster_pass : crate :: unity_engine :: rendering :: universal :: internal :: mainlightshadowcasterpass :: MainLightShadowCasterPass ,
+# [rename (name = "m_AdditionalLightsShadowCasterPass")] pub m_additional_lights_shadow_caster_pass : crate :: unity_engine :: rendering :: universal :: internal :: additionallightsshadowcasterpass :: AdditionalLightsShadowCasterPass ,
+# [rename (name = "m_GBufferPass")] pub m_g_buffer_pass : crate :: unity_engine :: rendering :: universal :: internal :: gbufferpass :: GBufferPass ,
+# [rename (name = "m_GBufferCopyDepthPass")] pub m_g_buffer_copy_depth_pass : crate :: unity_engine :: rendering :: universal :: internal :: copydepthpass :: CopyDepthPass ,
+# [rename (name = "m_TileDepthRangePass")] pub m_tile_depth_range_pass : crate :: unity_engine :: rendering :: universal :: internal :: tiledepthrangepass :: TileDepthRangePass ,
+# [rename (name = "m_TileDepthRangeExtraPass")] pub m_tile_depth_range_extra_pass : crate :: unity_engine :: rendering :: universal :: internal :: tiledepthrangepass :: TileDepthRangePass ,
+# [rename (name = "m_DeferredPass")] pub m_deferred_pass : crate :: unity_engine :: rendering :: universal :: internal :: deferredpass :: DeferredPass ,
+# [rename (name = "m_RenderOpaqueForwardOnlyPass")] pub m_render_opaque_forward_only_pass : crate :: unity_engine :: rendering :: universal :: internal :: drawobjectspass :: DrawObjectsPass ,
+# [rename (name = "m_RenderOpaqueForwardPass")] pub m_render_opaque_forward_pass : crate :: unity_engine :: rendering :: universal :: internal :: drawobjectspass :: DrawObjectsPass ,
+# [rename (name = "m_DrawSkyboxPass")] pub m_draw_skybox_pass : crate :: unity_engine :: rendering :: universal :: drawskyboxpass :: DrawSkyboxPass ,
+# [rename (name = "m_CopyDepthPass")] pub m_copy_depth_pass : crate :: unity_engine :: rendering :: universal :: internal :: copydepthpass :: CopyDepthPass ,
+# [rename (name = "m_CopyColorPass")] pub m_copy_color_pass : crate :: unity_engine :: rendering :: universal :: internal :: copycolorpass :: CopyColorPass ,
+# [rename (name = "m_TransparentSettingsPass")] pub m_transparent_settings_pass : crate :: unity_engine :: rendering :: universal :: transparentsettingspass :: TransparentSettingsPass ,
+# [rename (name = "m_RenderTransparentForwardPass")] pub m_render_transparent_forward_pass : crate :: unity_engine :: rendering :: universal :: internal :: drawobjectspass :: DrawObjectsPass ,
+# [rename (name = "m_OnRenderObjectCallbackPass")] pub m_on_render_object_callback_pass : crate :: unity_engine :: rendering :: universal :: invokeonrenderobjectcallbackpass :: InvokeOnRenderObjectCallbackPass ,
+# [rename (name = "m_PostProcessPass")] pub m_post_process_pass : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass ,
+# [rename (name = "m_FinalPostProcessPass")] pub m_final_post_process_pass : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass ,
+# [rename (name = "m_FinalBlitPass")] pub m_final_blit_pass : crate :: unity_engine :: rendering :: universal :: internal :: finalblitpass :: FinalBlitPass ,
+# [rename (name = "m_CapturePass")] pub m_capture_pass : crate :: unity_engine :: rendering :: universal :: capturepass :: CapturePass ,
+# [rename (name = "m_XROcclusionMeshPass")] pub m_xr_occlusion_mesh_pass : crate :: unity_engine :: rendering :: universal :: xrocclusionmeshpass :: XROcclusionMeshPass ,
+# [rename (name = "m_XRCopyDepthPass")] pub m_xr_copy_depth_pass : crate :: unity_engine :: rendering :: universal :: internal :: copydepthpass :: CopyDepthPass ,
+# [rename (name = "m_ActiveCameraColorAttachment")] pub m_active_camera_color_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_ActiveCameraDepthAttachment")] pub m_active_camera_depth_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_CameraColorAttachment")] pub m_camera_color_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_CameraDepthAttachment")] pub m_camera_depth_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_DepthTexture")] pub m_depth_texture : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_NormalsTexture")] pub m_normals_texture : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_GBufferHandles")] pub m_g_buffer_handles : :: unity2 :: Array < crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle > ,
+# [rename (name = "m_OpaqueColor")] pub m_opaque_color : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_AfterPostProcessColor")] pub m_after_post_process_color : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_ColorGradingLut")] pub m_color_grading_lut : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_DepthInfoTexture")] pub m_depth_info_texture : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_TileDepthInfoTexture")] pub m_tile_depth_info_texture : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_ForwardLights")] pub m_forward_lights : crate :: unity_engine :: rendering :: universal :: internal :: forwardlights :: ForwardLights ,
+# [rename (name = "m_DeferredLights")] pub m_deferred_lights : crate :: unity_engine :: rendering :: universal :: internal :: deferredlights :: DeferredLights ,
+# [rename (name = "m_RenderingMode")] pub m_rendering_mode : crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode ,
+# [rename (name = "m_DefaultStencilState")] pub m_default_stencil_state : crate :: unity_engine :: rendering :: stencilstate :: StencilState ,
+# [rename (name = "m_BlitMaterial")] pub m_blit_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_CopyDepthMaterial")] pub m_copy_depth_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_SamplingMaterial")] pub m_sampling_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_ScreenspaceShadowsMaterial")] pub m_screenspace_shadows_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_TileDepthInfoMaterial")] pub m_tile_depth_info_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_TileDeferredMaterial")] pub m_tile_deferred_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_StencilDeferredMaterial")] pub m_stencil_deferred_material : crate :: unity_engine :: material :: Material ,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrenderer")]
+#[::unity2::methods]
+impl ForwardRenderer {
+    #[method(name = "get_renderingMode", args = 0)]
+    pub fn get_rendering_mode(
+        self,
+    ) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode;
+
+    #[method(name = "get_actualRenderingMode", args = 0)]
+    pub fn get_actual_rendering_mode(
+        self,
+    ) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode;
+
+    #[method(name = "get_accurateGbufferNormals", args = 0)]
+    pub fn get_accurate_gbuffer_normals(self) -> bool;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        data: crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData,
+    ) -> ();
+
+    #[method(name = "Dispose", args = 1)]
+    pub fn dispose(self, disposing: bool) -> ();
+
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "SetupLights", args = 2)]
+    pub fn setup_lights(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "SetupCullingParameters", args = 2)]
+    pub fn setup_culling_parameters(
+        self,
+        culling_parameters : crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> ();
+
+    #[method(name = "FinishRendering", args = 1)]
+    pub fn finish_rendering(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[method(name = "EnqueueDeferred", args = 4)]
+    pub fn enqueue_deferred(
+        self,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+        has_depth_prepass: bool,
+        apply_main_shadow: bool,
+        apply_additional_shadow: bool,
+    ) -> ();
+
+    #[method(name = "GetRenderPassInputs", args = 1)]
+    pub fn get_render_pass_inputs (self , rendering_data : crate :: unity_engine :: rendering :: universal :: renderingdata :: RenderingData) -> crate :: unity_engine :: rendering :: universal :: forwardrenderer :: ForwardRenderer_RenderPassInputSummary ;
+
+    #[method(name = "CreateCameraRenderTarget", args = 4)]
+    pub fn create_camera_render_target(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        descriptor: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+        create_color: bool,
+        create_depth: bool,
+    ) -> ();
+
+    #[method(name = "PlatformRequiresExplicitMsaaResolve", args = 0)]
+    pub fn platform_requires_explicit_msaa_resolve(self) -> bool;
+
+    #[method(name = "RequiresIntermediateColorTexture", args = 1)]
+    pub fn requires_intermediate_color_texture(
+        self,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> bool;
+
+    #[method(name = "CanCopyDepth", args = 1)]
+    pub fn can_copy_depth(
+        self,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> bool;
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrenderer")]
+impl ForwardRenderer {
+    pub fn new(
+        data: crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ForwardRenderer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IForwardRendererMethods>::ctor(this, data);
+        this
+    }
+}

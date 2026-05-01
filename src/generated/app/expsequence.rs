@@ -1,0 +1,79 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/expsequence/ExpSequence.md")))]
+#[::unity2::class(namespace = "App", name = "ExpSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct ExpSequence {
+    #[static_field]
+    #[rename(name = "resNameC")]
+    pub res_name_c: ::unity2::Il2CppString,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_Exp")]
+    pub m_exp: i32,
+    #[rename(name = "m_SkillPoint")]
+    pub m_skill_point: i32,
+    #[rename(name = "m_isExpSe")]
+    pub m_is_exp_se: bool,
+    #[rename(name = "m_Window")]
+    pub m_window: crate::app::expsetter::ExpSetter,
+}
+
+#[cfg(feature = "app-expsequence")]
+#[::unity2::methods]
+impl ExpSequence {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(self, unit: crate::app::unit::Unit, exp: i32, skill_point: i32) -> ();
+
+    #[method(name = "SoundStart", args = 0)]
+    pub fn sound_start(self) -> ();
+
+    #[method(name = "SoundStop", args = 0)]
+    pub fn sound_stop(self) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[method(name = "WaitLoad", args = 0)]
+    pub fn wait_load(self) -> ();
+
+    #[method(name = "Open", args = 0)]
+    pub fn open(self) -> ();
+
+    #[method(name = "WaitAnime", args = 0)]
+    pub fn wait_anime(self) -> ();
+
+    #[method(name = "Release", args = 0)]
+    pub fn release(self) -> ();
+
+    #[method(name = "UpdateAddExp", args = 0)]
+    pub fn update_add_exp(self) -> ();
+
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        exp: i32,
+        skill_point: i32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-expsequence")]
+impl ExpSequence {
+    pub fn new(unit: crate::app::unit::Unit, exp: i32, skill_point: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ExpSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExpSequenceMethods>::ctor(this, unit, exp, skill_point);
+        this
+    }
+}

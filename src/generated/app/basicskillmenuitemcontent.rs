@@ -1,0 +1,163 @@
+
+use crate::app::basicmenuitemcontent::BasicMenuItemContent;
+use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent_SubText.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct BasicSkillMenuItemContent_SubText {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for BasicSkillMenuItemContent_SubText {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BasicSkillMenuItemContent.SubText";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BasicSkillMenuItemContent_SubText {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl BasicSkillMenuItemContent_SubText {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn person() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn job() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn inheritance() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn ring() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn god() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn engage_attack() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn equiped() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn double() -> Self {
+        Self { value: 8 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicskillmenuitemcontent/BasicSkillMenuItemContent.md")))]
+#[::unity2::class(namespace = "App", name = "BasicSkillMenuItemContent")]
+#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
+pub struct BasicSkillMenuItemContent {
+    #[rename(name = "m_Icon")]
+    pub m_icon: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Name")]
+    pub m_name: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_SubText")]
+    pub m_sub_text: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Border")]
+    pub m_border: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Efficacy")]
+    pub m_efficacy: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+    #[rename(name = "m_IsDouble")]
+    pub m_is_double: bool,
+}
+
+#[cfg(feature = "app-basicskillmenuitemcontent")]
+#[::unity2::methods]
+impl BasicSkillMenuItemContent {
+    #[method(name = "UpdateTextColor", args = 0)]
+    pub fn update_text_color(self) -> ();
+
+    #[method(name = "SetIconColor", args = 1)]
+    pub fn set_icon_color(self, is_active_icon: bool) -> ();
+
+    #[method(name = "FindGameObject", args = 1)]
+    pub fn find_game_object(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "SetupObjects", args = 0)]
+    pub fn setup_objects(self) -> ();
+
+    #[method(name = "Blank", args = 0)]
+    pub fn blank(self) -> ();
+
+    #[method(name = "Build", args = 1)]
+    pub fn build(self, menu_item: crate::app::basicmenuitem::BasicMenuItem) -> ();
+
+    #[method(name = "BuildText", args = 0)]
+    pub fn build_text(self) -> ();
+
+    #[method(name = "BuildText", args = 2)]
+    pub fn build_text_2(self, skill: crate::app::skilldata::SkillData, is_active_icon: bool) -> ();
+
+    #[method(name = "BuildSubText", args = 0)]
+    pub fn build_sub_text(self) -> ();
+
+    #[method(name = "BuildTextColor", args = 0)]
+    pub fn build_text_color(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-basicskillmenuitemcontent")]
+impl BasicSkillMenuItemContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BasicSkillMenuItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBasicSkillMenuItemContentMethods>::ctor(this);
+        this
+    }
+}

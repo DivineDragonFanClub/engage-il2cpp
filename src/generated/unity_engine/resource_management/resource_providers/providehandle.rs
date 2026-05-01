@@ -1,0 +1,87 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/providehandle/ProvideHandle.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ProvideHandle {
+    pub m_version: i32,
+    pub m_internal_op: crate :: unity_engine :: resource_management :: async_operations :: igenericprovideroperation :: IGenericProviderOperation,
+    pub m_resource_manager: crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
+}
+
+impl ::unity2::ClassIdentity for ProvideHandle {
+    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.ResourceProviders";
+
+    const NAME: &'static str = "ProvideHandle";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ProvideHandle {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-providehandle")]
+#[::unity2::methods(value)]
+impl ProvideHandle {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        rm: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+        op : crate :: unity_engine :: resource_management :: async_operations :: igenericprovideroperation :: IGenericProviderOperation,
+    ) -> ();
+
+    #[method(name = "get_InternalOp", args = 0)]
+    pub fn get_internal_op (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: igenericprovideroperation :: IGenericProviderOperation ;
+
+    #[method(name = "get_ResourceManager", args = 0)]
+    pub fn get_resource_manager(
+        self,
+    ) -> crate::unity_engine::resource_management::resourcemanager::ResourceManager;
+
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "get_Location", args = 0)]
+    pub fn get_location (self ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation ;
+
+    #[method(name = "get_DependencyCount", args = 0)]
+    pub fn get_dependency_count(self) -> i32;
+
+    #[method(name = "GetDependencies", args = 1)]
+    pub fn get_dependencies(
+        self,
+        list: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::system::object::Object,
+        >,
+    ) -> ();
+
+    #[method(name = "SetProgressCallback", args = 1)]
+    pub fn set_progress_callback(self, callback: crate::system::func_1::Func_1<f32>) -> ();
+
+    #[method(name = "SetDownloadProgressCallbacks", args = 1)]
+    pub fn set_download_progress_callbacks(
+        self,
+        callback : crate :: system :: func_1 :: Func_1 < crate :: unity_engine :: resource_management :: async_operations :: downloadstatus :: DownloadStatus >,
+    ) -> ();
+
+    #[method(name = "SetWaitForCompletionCallback", args = 1)]
+    pub fn set_wait_for_completion_callback(
+        self,
+        callback: crate::system::func_1::Func_1<bool>,
+    ) -> ();
+}

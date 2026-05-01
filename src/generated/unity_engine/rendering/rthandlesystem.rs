@@ -1,0 +1,306 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/rthandlesystem/RTHandleSystem_ResizeMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RTHandleSystem_ResizeMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RTHandleSystem_ResizeMode {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "RTHandleSystem.ResizeMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RTHandleSystem_ResizeMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RTHandleSystem_ResizeMode {
+    pub fn auto() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn on_demand() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/rthandlesystem/RTHandleSystem.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "RTHandleSystem")]
+#[parent(crate::system::object::Object)]
+pub struct RTHandleSystem {
+    #[rename(name = "m_HardwareDynamicResRequested")]
+    pub m_hardware_dynamic_res_requested: bool,
+    #[rename(name = "m_ScaledRTSupportsMSAA")]
+    pub m_scaled_rt_supports_msaa: bool,
+    #[rename(name = "m_ScaledRTCurrentMSAASamples")]
+    pub m_scaled_rt_current_msaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
+    #[rename(name = "m_AutoSizedRTs")]
+    pub m_auto_sized_r_ts: crate::system::collections::generic::hashset_1::HashSet_1<
+        crate::unity_engine::rendering::rthandle::RTHandle,
+    >,
+    #[rename(name = "m_AutoSizedRTsArray")]
+    pub m_auto_sized_r_ts_array:
+        ::unity2::Array<crate::unity_engine::rendering::rthandle::RTHandle>,
+    #[rename(name = "m_ResizeOnDemandRTs")]
+    pub m_resize_on_demand_r_ts: crate::system::collections::generic::hashset_1::HashSet_1<
+        crate::unity_engine::rendering::rthandle::RTHandle,
+    >,
+    #[rename(name = "m_RTHandleProperties")]
+    pub m_rt_handle_properties:
+        crate::unity_engine::rendering::rthandleproperties::RTHandleProperties,
+    #[rename(name = "m_MaxWidths")]
+    pub m_max_widths: i32,
+    #[rename(name = "m_MaxHeights")]
+    pub m_max_heights: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-rthandlesystem")]
+#[::unity2::methods]
+impl RTHandleSystem {
+    #[method(name = "get_rtHandleProperties", args = 0)]
+    pub fn get_rt_handle_properties(
+        self,
+    ) -> crate::unity_engine::rendering::rthandleproperties::RTHandleProperties;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "Initialize", args = 4)]
+    pub fn initialize(
+        self,
+        width: i32,
+        height: i32,
+        scaled_r_tsupports_msaa: bool,
+        scaled_rtmsaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
+    ) -> ();
+
+    #[method(name = "Release", args = 1)]
+    pub fn release(self, rth: crate::unity_engine::rendering::rthandle::RTHandle) -> ();
+
+    #[method(name = "Remove", args = 1)]
+    pub fn remove(self, rth: crate::unity_engine::rendering::rthandle::RTHandle) -> ();
+
+    #[method(name = "ResetReferenceSize", args = 2)]
+    pub fn reset_reference_size(self, width: i32, height: i32) -> ();
+
+    #[method(name = "SetReferenceSize", args = 3)]
+    pub fn set_reference_size(
+        self,
+        width: i32,
+        height: i32,
+        msaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
+    ) -> ();
+
+    #[method(name = "SetReferenceSize", args = 4)]
+    pub fn set_reference_size_2(
+        self,
+        width: i32,
+        height: i32,
+        msaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
+        reset: bool,
+    ) -> ();
+
+    #[method(name = "SetHardwareDynamicResolutionState", args = 1)]
+    pub fn set_hardware_dynamic_resolution_state(self, enable_hw_dynamic_res: bool) -> ();
+
+    #[method(name = "SwitchResizeMode", args = 2)]
+    pub fn switch_resize_mode(
+        self,
+        rth: crate::unity_engine::rendering::rthandle::RTHandle,
+        mode: crate::unity_engine::rendering::rthandlesystem::RTHandleSystem_ResizeMode,
+    ) -> ();
+
+    #[method(name = "DemandResize", args = 1)]
+    pub fn demand_resize(self, rth: crate::unity_engine::rendering::rthandle::RTHandle) -> ();
+
+    #[method(name = "GetMaxWidth", args = 0)]
+    pub fn get_max_width(self) -> i32;
+
+    #[method(name = "GetMaxHeight", args = 0)]
+    pub fn get_max_height(self) -> i32;
+
+    #[method(name = "Dispose", args = 1)]
+    pub fn dispose_2(self, disposing: bool) -> ();
+
+    #[method(name = "Resize", args = 5)]
+    pub fn resize(
+        self,
+        width: i32,
+        height: i32,
+        msaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
+        size_changed: bool,
+        msaa_sample_changed: bool,
+    ) -> ();
+
+    #[method(name = "Alloc", args = 19)]
+    pub fn alloc(
+        self,
+        width: i32,
+        height: i32,
+        slices: i32,
+        depth_buffer_bits: crate::unity_engine::rendering::depthbits::DepthBits,
+        color_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        filter_mode: crate::unity_engine::filtermode::FilterMode,
+        wrap_mode: crate::unity_engine::texturewrapmode::TextureWrapMode,
+        dimension: crate::unity_engine::rendering::texturedimension::TextureDimension,
+        enable_random_write: bool,
+        use_mip_map: bool,
+        auto_generate_mips: bool,
+        is_shadow_map: bool,
+        aniso_level: i32,
+        mip_map_bias: f32,
+        msaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
+        bind_texture_ms: bool,
+        use_dynamic_scale: bool,
+        memoryless: crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 18)]
+    pub fn alloc_2(
+        self,
+        scale_factor: crate::unity_engine::vector2::Vector2,
+        slices: i32,
+        depth_buffer_bits: crate::unity_engine::rendering::depthbits::DepthBits,
+        color_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        filter_mode: crate::unity_engine::filtermode::FilterMode,
+        wrap_mode: crate::unity_engine::texturewrapmode::TextureWrapMode,
+        dimension: crate::unity_engine::rendering::texturedimension::TextureDimension,
+        enable_random_write: bool,
+        use_mip_map: bool,
+        auto_generate_mips: bool,
+        is_shadow_map: bool,
+        aniso_level: i32,
+        mip_map_bias: f32,
+        enable_msaa: bool,
+        bind_texture_ms: bool,
+        use_dynamic_scale: bool,
+        memoryless: crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 18)]
+    pub fn alloc_3(
+        self,
+        scale_func: crate::unity_engine::rendering::scalefunc::ScaleFunc,
+        slices: i32,
+        depth_buffer_bits: crate::unity_engine::rendering::depthbits::DepthBits,
+        color_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        filter_mode: crate::unity_engine::filtermode::FilterMode,
+        wrap_mode: crate::unity_engine::texturewrapmode::TextureWrapMode,
+        dimension: crate::unity_engine::rendering::texturedimension::TextureDimension,
+        enable_random_write: bool,
+        use_mip_map: bool,
+        auto_generate_mips: bool,
+        is_shadow_map: bool,
+        aniso_level: i32,
+        mip_map_bias: f32,
+        enable_msaa: bool,
+        bind_texture_ms: bool,
+        use_dynamic_scale: bool,
+        memoryless: crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "AllocAutoSizedRenderTexture", args = 19)]
+    pub fn alloc_auto_sized_render_texture(
+        self,
+        width: i32,
+        height: i32,
+        slices: i32,
+        depth_buffer_bits: crate::unity_engine::rendering::depthbits::DepthBits,
+        color_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        filter_mode: crate::unity_engine::filtermode::FilterMode,
+        wrap_mode: crate::unity_engine::texturewrapmode::TextureWrapMode,
+        dimension: crate::unity_engine::rendering::texturedimension::TextureDimension,
+        enable_random_write: bool,
+        use_mip_map: bool,
+        auto_generate_mips: bool,
+        is_shadow_map: bool,
+        aniso_level: i32,
+        mip_map_bias: f32,
+        enable_msaa: bool,
+        bind_texture_ms: bool,
+        use_dynamic_scale: bool,
+        memoryless: crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 1)]
+    pub fn alloc_4(
+        self,
+        texture: crate::unity_engine::rendertexture::RenderTexture,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 1)]
+    pub fn alloc_5(
+        self,
+        texture: crate::unity_engine::texture::Texture,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 1)]
+    pub fn alloc_6(
+        self,
+        texture: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 2)]
+    pub fn alloc_7(
+        self,
+        texture: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 1)]
+    pub fn alloc_8(
+        tex: crate::unity_engine::rendering::rthandle::RTHandle,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "DumpRTInfo", args = 0)]
+    pub fn dump_rt_info(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "unity_engine-rendering-rthandlesystem")]
+impl RTHandleSystem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RTHandleSystem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRTHandleSystemMethods>::ctor(this);
+        this
+    }
+}

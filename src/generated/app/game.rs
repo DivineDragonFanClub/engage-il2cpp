@@ -1,0 +1,20 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/game/Game.md")))]
+#[::unity2::class(namespace = "App", name = "Game")]
+#[parent(crate::system::object::Object)]
+pub struct Game {
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: i32,
+}
+
+#[cfg(feature = "app-game")]
+#[::unity2::methods]
+impl Game {
+    #[method(name = "GetPatchName", args = 0)]
+    pub fn get_patch_name() -> ::unity2::Il2CppString;
+}

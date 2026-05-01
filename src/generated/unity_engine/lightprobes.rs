@@ -1,0 +1,152 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/lightprobes/LightProbes.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "LightProbes")]
+#[parent(crate::unity_engine::object_2::Object_2)]
+pub struct LightProbes {
+    #[static_field]
+    #[rename(name = "tetrahedralizationCompleted")]
+    pub tetrahedralization_completed: crate::system::action::Action,
+    #[static_field]
+    #[rename(name = "needsRetetrahedralization")]
+    pub needs_retetrahedralization: crate::system::action::Action,
+}
+
+#[cfg(feature = "unity_engine-lightprobes")]
+#[::unity2::methods]
+impl LightProbes {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "add_tetrahedralizationCompleted", args = 1)]
+    pub fn add_tetrahedralization_completed(value: crate::system::action::Action) -> ();
+
+    #[method(name = "remove_tetrahedralizationCompleted", args = 1)]
+    pub fn remove_tetrahedralization_completed(value: crate::system::action::Action) -> ();
+
+    #[method(name = "Internal_CallTetrahedralizationCompletedFunction", args = 0)]
+    pub fn internal_call_tetrahedralization_completed_function() -> ();
+
+    #[method(name = "add_needsRetetrahedralization", args = 1)]
+    pub fn add_needs_retetrahedralization(value: crate::system::action::Action) -> ();
+
+    #[method(name = "remove_needsRetetrahedralization", args = 1)]
+    pub fn remove_needs_retetrahedralization(value: crate::system::action::Action) -> ();
+
+    #[method(name = "Internal_CallNeedsRetetrahedralizationFunction", args = 0)]
+    pub fn internal_call_needs_retetrahedralization_function() -> ();
+
+    #[method(name = "Tetrahedralize", args = 0)]
+    pub fn tetrahedralize() -> ();
+
+    #[method(name = "TetrahedralizeAsync", args = 0)]
+    pub fn tetrahedralize_async() -> ();
+
+    #[method(name = "GetInterpolatedProbe", args = 3)]
+    pub fn get_interpolated_probe(
+        position: crate::unity_engine::vector3::Vector3,
+        renderer: crate::unity_engine::renderer::Renderer,
+        probe: crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+    ) -> ();
+
+    #[method(name = "AreLightProbesAllowed", args = 1)]
+    pub fn are_light_probes_allowed(renderer: crate::unity_engine::renderer::Renderer) -> bool;
+
+    #[method(name = "CalculateInterpolatedLightAndOcclusionProbes", args = 3)]
+    pub fn calculate_interpolated_light_and_occlusion_probes(
+        positions: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        light_probes: ::unity2::Array<
+            crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+        >,
+        occlusion_probes: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+    ) -> ();
+
+    #[method(name = "CalculateInterpolatedLightAndOcclusionProbes", args = 3)]
+    pub fn calculate_interpolated_light_and_occlusion_probes_2(
+        positions: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::vector3::Vector3,
+        >,
+        light_probes: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+        >,
+        occlusion_probes: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::vector4::Vector4,
+        >,
+    ) -> ();
+
+    #[method(
+        name = "CalculateInterpolatedLightAndOcclusionProbes_Internal",
+        args = 4
+    )]
+    pub fn calculate_interpolated_light_and_occlusion_probes_internal(
+        positions: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        positions_count: i32,
+        light_probes: ::unity2::Array<
+            crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+        >,
+        occlusion_probes: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+    ) -> ();
+
+    #[method(name = "get_positions", args = 0)]
+    pub fn get_positions(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3>;
+
+    #[method(name = "get_bakedProbes", args = 0)]
+    pub fn get_baked_probes(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2>;
+
+    #[method(name = "set_bakedProbes", args = 1)]
+    pub fn set_baked_probes(
+        self,
+        value: ::unity2::Array<
+            crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+        >,
+    ) -> ();
+
+    #[method(name = "get_count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[method(name = "get_cellCount", args = 0)]
+    pub fn get_cell_count(self) -> i32;
+
+    #[method(name = "GetInterpolatedLightProbe", args = 3)]
+    pub fn get_interpolated_light_probe(
+        self,
+        position: crate::unity_engine::vector3::Vector3,
+        renderer: crate::unity_engine::renderer::Renderer,
+        coefficients: ::unity2::Array<f32>,
+    ) -> ();
+
+    #[method(name = "get_coefficients", args = 0)]
+    pub fn get_coefficients(self) -> ::unity2::Array<f32>;
+
+    #[method(name = "set_coefficients", args = 1)]
+    pub fn set_coefficients(self, value: ::unity2::Array<f32>) -> ();
+
+    #[method(name = "GetInterpolatedProbe_Injected", args = 3)]
+    pub fn get_interpolated_probe_injected(
+        position: crate::unity_engine::vector3::Vector3,
+        renderer: crate::unity_engine::renderer::Renderer,
+        probe: crate::unity_engine::rendering::sphericalharmonicsl2::SphericalHarmonicsL2,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-lightprobes")]
+impl LightProbes {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LightProbes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILightProbesMethods>::ctor(this);
+        this
+    }
+}

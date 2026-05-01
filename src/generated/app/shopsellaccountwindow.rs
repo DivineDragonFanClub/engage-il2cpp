@@ -1,0 +1,76 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopsellaccountwindow/ShopSellAccountWindow.md")))]
+#[::unity2::class(namespace = "App", name = "ShopSellAccountWindow")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct ShopSellAccountWindow {
+    #[rename(name = "m_CountTitleText")]
+    pub m_count_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_CountValueText")]
+    pub m_count_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TotalTitleText")]
+    pub m_total_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TotalValueText")]
+    pub m_total_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TotalValueGText")]
+    pub m_total_value_g_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+}
+
+#[cfg(feature = "app-shopsellaccountwindow")]
+#[::unity2::methods]
+impl ShopSellAccountWindow {
+    #[method(name = "get_m_Count", args = 0)]
+    pub fn get_m_count(self) -> i32;
+
+    #[method(name = "set_m_Count", args = 1)]
+    pub fn set_m_count(self, value: i32) -> ();
+
+    #[method(name = "get_m_Total", args = 0)]
+    pub fn get_m_total(self) -> i32;
+
+    #[method(name = "set_m_Total", args = 1)]
+    pub fn set_m_total(self, value: i32) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "UpdateInfo", args = 2)]
+    pub fn update_info(self, item_count: i32, total_value: i32) -> ();
+
+    #[method(name = "ClearInfo", args = 0)]
+    pub fn clear_info(self) -> ();
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-shopsellaccountwindow")]
+impl ShopSellAccountWindow {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopSellAccountWindow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopSellAccountWindowMethods>::ctor(this);
+        this
+    }
+}

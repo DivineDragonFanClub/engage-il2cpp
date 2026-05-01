@@ -1,0 +1,187 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/puppet/Puppet_Hand.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Puppet_Hand {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Puppet_Hand {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "Puppet.Hand";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Puppet_Hand {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Puppet_Hand {
+    pub fn right() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn left() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/puppet/Puppet.md")))]
+#[::unity2::class(namespace = "Combat", name = "Puppet")]
+#[parent(crate::system::object::Object)]
+pub struct Puppet {
+    #[rename(name = "m_BodyInst")]
+    pub m_body_inst: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RideInst")]
+    pub m_ride_inst: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_BodyAnim")]
+    pub m_body_anim: crate::unity_engine::animationclip::AnimationClip,
+    #[rename(name = "m_RideAnim")]
+    pub m_ride_anim: crate::unity_engine::animationclip::AnimationClip,
+    #[rename(name = "m_Joint")]
+    pub m_joint: crate::combat::characterjoint::CharacterJoint,
+    #[rename(name = "m_Proportion")]
+    pub m_proportion: crate::combat::proportionparameters::ProportionParameters,
+    #[rename(name = "m_InitialTransform")]
+    pub m_initial_transform: crate::combat::tr::TR,
+    #[rename(name = "m_LastEvalTime")]
+    pub m_last_eval_time: f32,
+    #[rename(name = "m_DestroyableGOs")]
+    pub m_destroyable_g_os: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_trailSlots")]
+    pub m_trail_slots: ::unity2::Array<crate::unity_engine::transform::Transform>,
+}
+
+#[cfg(feature = "combat-puppet")]
+#[::unity2::methods]
+impl Puppet {
+    #[method(name = "get_RightRoot", args = 0)]
+    pub fn get_right_root(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_RightTip", args = 0)]
+    pub fn get_right_tip(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_LeftRoot", args = 0)]
+    pub fn get_left_root(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_LeftTip", args = 0)]
+    pub fn get_left_tip(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_HumanAnimationClip", args = 0)]
+    pub fn get_human_animation_clip(self) -> crate::unity_engine::animationclip::AnimationClip;
+
+    #[method(name = "get_RideAnimationClip", args = 0)]
+    pub fn get_ride_animation_clip(self) -> crate::unity_engine::animationclip::AnimationClip;
+
+    #[method(name = "get_HumanGameObject", args = 0)]
+    pub fn get_human_game_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "get_BaseGameObject", args = 0)]
+    pub fn get_base_game_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "get_RootTransform", args = 0)]
+    pub fn get_root_transform(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(
+        self,
+        joint_name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_IsRiding", args = 0)]
+    pub fn get_is_riding(self) -> bool;
+
+    #[method(name = "get_IsFlying", args = 0)]
+    pub fn get_is_flying(self) -> bool;
+
+    #[method(name = "get_IsHorse", args = 0)]
+    pub fn get_is_horse(self) -> bool;
+
+    #[method(name = "get_IsValid", args = 0)]
+    pub fn get_is_valid(self) -> bool;
+
+    #[method(name = "set_IsValid", args = 1)]
+    pub fn set_is_valid(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        body_inst: crate::unity_engine::gameobject::GameObject,
+        body_anim: crate::unity_engine::animationclip::AnimationClip,
+        ride_inst: crate::unity_engine::gameobject::GameObject,
+        ride_anim: crate::unity_engine::animationclip::AnimationClip,
+    ) -> ();
+
+    #[method(name = "CreateWeaponTrailSlots", args = 0)]
+    pub fn create_weapon_trail_slots(self) -> ();
+
+    #[method(name = "CreateSlot", args = 3)]
+    pub fn create_slot(
+        self,
+        parent: crate::unity_engine::transform::Transform,
+        offset: crate::unity_engine::vector3::Vector3,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "Evaluate", args = 1)]
+    pub fn evaluate(self, time: f32) -> ();
+
+    #[method(name = "ClearRootMovedAfterEvaluate", args = 0)]
+    pub fn clear_root_moved_after_evaluate(self) -> ();
+
+    #[method(name = "AddDestroyableGOs", args = 1)]
+    pub fn add_destroyable_g_os(
+        self,
+        gos: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+    ) -> ();
+}
+
+#[cfg(feature = "combat-puppet")]
+impl Puppet {
+    pub fn new(
+        body_inst: crate::unity_engine::gameobject::GameObject,
+        body_anim: crate::unity_engine::animationclip::AnimationClip,
+        ride_inst: crate::unity_engine::gameobject::GameObject,
+        ride_anim: crate::unity_engine::animationclip::AnimationClip,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Puppet),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPuppetMethods>::ctor(this, body_inst, body_anim, ride_inst, ride_anim);
+        this
+    }
+}

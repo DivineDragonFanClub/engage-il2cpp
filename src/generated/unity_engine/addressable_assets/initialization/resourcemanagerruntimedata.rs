@@ -1,0 +1,114 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/initialization/resourcemanagerruntimedata/ResourceManagerRuntimeData.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets.Initialization",
+    name = "ResourceManagerRuntimeData"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ResourceManagerRuntimeData {
+# [static_field] # [rename (name = "kCatalogAddress")] pub k_catalog_address : :: unity2 :: Il2CppString ,
+# [rename (name = "m_buildTarget")] pub m_build_target : :: unity2 :: Il2CppString ,
+# [rename (name = "m_SettingsHash")] pub m_settings_hash : :: unity2 :: Il2CppString ,
+# [rename (name = "m_CatalogLocations")] pub m_catalog_locations : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationdata :: ResourceLocationData > ,
+# [rename (name = "m_ProfileEvents")] pub m_profile_events : bool ,
+# [rename (name = "m_LogResourceManagerExceptions")] pub m_log_resource_manager_exceptions : bool ,
+# [rename (name = "m_ExtraInitializationData")] pub m_extra_initialization_data : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData > ,
+# [rename (name = "m_DisableCatalogUpdateOnStart")] pub m_disable_catalog_update_on_start : bool ,
+# [rename (name = "m_IsLocalCatalogInBundle")] pub m_is_local_catalog_in_bundle : bool ,
+# [rename (name = "m_CertificateHandlerType")] pub m_certificate_handler_type : crate :: unity_engine :: resource_management :: util :: serializedtype :: SerializedType ,
+# [rename (name = "m_AddressablesVersion")] pub m_addressables_version : :: unity2 :: Il2CppString ,
+# [rename (name = "m_maxConcurrentWebRequests")] pub m_max_concurrent_web_requests : i32 ,
+# [rename (name = "m_CatalogRequestsTimeout")] pub m_catalog_requests_timeout : i32 ,
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-initialization-resourcemanagerruntimedata")]
+#[::unity2::methods]
+impl ResourceManagerRuntimeData {
+    #[method(name = "get_BuildTarget", args = 0)]
+    pub fn get_build_target(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_BuildTarget", args = 1)]
+    pub fn set_build_target(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_SettingsHash", args = 0)]
+    pub fn get_settings_hash(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_SettingsHash", args = 1)]
+    pub fn set_settings_hash(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_CatalogLocations", args = 0)]
+    pub fn get_catalog_locations (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationdata :: ResourceLocationData > ;
+
+    #[method(name = "get_ProfileEvents", args = 0)]
+    pub fn get_profile_events(self) -> bool;
+
+    #[method(name = "set_ProfileEvents", args = 1)]
+    pub fn set_profile_events(self, value: bool) -> ();
+
+    #[method(name = "get_LogResourceManagerExceptions", args = 0)]
+    pub fn get_log_resource_manager_exceptions(self) -> bool;
+
+    #[method(name = "set_LogResourceManagerExceptions", args = 1)]
+    pub fn set_log_resource_manager_exceptions(self, value: bool) -> ();
+
+    #[method(name = "get_InitializationObjects", args = 0)]
+    pub fn get_initialization_objects (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData > ;
+
+    #[method(name = "get_DisableCatalogUpdateOnStartup", args = 0)]
+    pub fn get_disable_catalog_update_on_startup(self) -> bool;
+
+    #[method(name = "set_DisableCatalogUpdateOnStartup", args = 1)]
+    pub fn set_disable_catalog_update_on_startup(self, value: bool) -> ();
+
+    #[method(name = "get_IsLocalCatalogInBundle", args = 0)]
+    pub fn get_is_local_catalog_in_bundle(self) -> bool;
+
+    #[method(name = "set_IsLocalCatalogInBundle", args = 1)]
+    pub fn set_is_local_catalog_in_bundle(self, value: bool) -> ();
+
+    #[method(name = "get_CertificateHandlerType", args = 0)]
+    pub fn get_certificate_handler_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "set_CertificateHandlerType", args = 1)]
+    pub fn set_certificate_handler_type(self, value: ::unity2::SystemType) -> ();
+
+    #[method(name = "get_AddressablesVersion", args = 0)]
+    pub fn get_addressables_version(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_AddressablesVersion", args = 1)]
+    pub fn set_addressables_version(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_MaxConcurrentWebRequests", args = 0)]
+    pub fn get_max_concurrent_web_requests(self) -> i32;
+
+    #[method(name = "set_MaxConcurrentWebRequests", args = 1)]
+    pub fn set_max_concurrent_web_requests(self, value: i32) -> ();
+
+    #[method(name = "get_CatalogRequestsTimeout", args = 0)]
+    pub fn get_catalog_requests_timeout(self) -> i32;
+
+    #[method(name = "set_CatalogRequestsTimeout", args = 1)]
+    pub fn set_catalog_requests_timeout(self, value: i32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-initialization-resourcemanagerruntimedata")]
+impl ResourceManagerRuntimeData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceManagerRuntimeData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceManagerRuntimeDataMethods>::ctor(this);
+        this
+    }
+}

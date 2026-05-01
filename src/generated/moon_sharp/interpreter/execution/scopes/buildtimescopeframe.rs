@@ -1,0 +1,102 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/execution/scopes/buildtimescopeframe/BuildTimeScopeFrame.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Execution.Scopes",
+    name = "BuildTimeScopeFrame"
+)]
+#[parent(crate::system::object::Object)]
+pub struct BuildTimeScopeFrame {
+    #[rename(name = "m_ScopeTreeRoot")]
+    pub m_scope_tree_root:
+        crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
+    #[rename(name = "m_ScopeTreeHead")]
+    pub m_scope_tree_head:
+        crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
+    #[rename(name = "m_ScopeFrame")]
+    pub m_scope_frame:
+        crate::moon_sharp::interpreter::execution::runtimescopeframe::RuntimeScopeFrame,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeframe")]
+#[::unity2::methods]
+impl BuildTimeScopeFrame {
+    #[method(name = "get_HasVarArgs", args = 0)]
+    pub fn get_has_var_args(self) -> bool;
+
+    #[method(name = "set_HasVarArgs", args = 1)]
+    pub fn set_has_var_args(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, has_var_args: bool) -> ();
+
+    #[method(name = "PushBlock", args = 0)]
+    pub fn push_block(self) -> ();
+
+    #[method(name = "PopBlock", args = 0)]
+    pub fn pop_block(
+        self,
+    ) -> crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock;
+
+    #[method(name = "GetRuntimeFrameData", args = 0)]
+    pub fn get_runtime_frame_data(
+        self,
+    ) -> crate::moon_sharp::interpreter::execution::runtimescopeframe::RuntimeScopeFrame;
+
+    #[method(name = "Find", args = 1)]
+    pub fn find(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef;
+
+    #[method(name = "DefineLocal", args = 1)]
+    pub fn define_local(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef;
+
+    #[method(name = "TryDefineLocal", args = 1)]
+    pub fn try_define_local(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef;
+
+    #[method(name = "ResolveLRefs", args = 0)]
+    pub fn resolve_l_refs(self) -> ();
+
+    #[method(name = "AllocVar", args = 1)]
+    pub fn alloc_var(self, var: crate::moon_sharp::interpreter::symbolref::SymbolRef) -> i32;
+
+    #[method(name = "GetPosForNextVar", args = 0)]
+    pub fn get_pos_for_next_var(self) -> i32;
+
+    #[method(name = "DefineLabel", args = 1)]
+    pub fn define_label(
+        self,
+        label: crate::moon_sharp::interpreter::tree::statements::labelstatement::LabelStatement,
+    ) -> ();
+
+    #[method(name = "RegisterGoto", args = 1)]
+    pub fn register_goto(
+        self,
+        gotostat: crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement,
+    ) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeframe")]
+impl BuildTimeScopeFrame {
+    pub fn new(has_var_args: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BuildTimeScopeFrame),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBuildTimeScopeFrameMethods>::ctor(this, has_var_args);
+        this
+    }
+}

@@ -1,0 +1,337 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldeploy/MapPanelDeploy.md")))]
+#[::unity2::class(namespace = "App", name = "MapPanelDeploy")]
+pub struct MapPanelDeploy {
+    #[rename(name = "m_MeshList")]
+    pub m_mesh_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::mappaneldeploy::MapPanelDeploy_MeshIndex,
+    >,
+    #[rename(name = "m_MoveImage")]
+    pub m_move_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_AttackImage")]
+    pub m_attack_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_HealImage")]
+    pub m_heal_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_SupportImage")]
+    pub m_support_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_InterferenceImage")]
+    pub m_interference_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::app::mappaneldeploy::MapPanelDeploy_Mode,
+    #[rename(name = "m_IsUpdate")]
+    pub m_is_update: bool,
+    #[rename(name = "m_TempImage")]
+    pub m_temp_image: crate::app::mapimagecorebit::MapImageCoreBit,
+    #[rename(name = "m_Scale")]
+    pub m_scale: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_Alpha")]
+    pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_Range")]
+    pub m_range: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_MoveColor")]
+    pub m_move_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_AttackColor")]
+    pub m_attack_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_HealColor")]
+    pub m_heal_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_SupportColor")]
+    pub m_support_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_InterferenceColor")]
+    pub m_interference_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_AlphaCurve")]
+    pub m_alpha_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "m_IsIntegration")]
+    pub m_is_integration: bool,
+    #[rename(name = "m_IntegrationImage")]
+    pub m_integration_image: crate::app::mapimagecorebit::MapImageCoreBit,
+    #[rename(name = "m_Time")]
+    pub m_time: f32,
+}
+
+#[cfg(feature = "app-mappaneldeploy")]
+#[::unity2::methods]
+impl MapPanelDeploy {
+    #[method(name = "get_SubMeshCount", args = 0)]
+    pub fn get_sub_mesh_count(self) -> i32;
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "SetMode", args = 2)]
+    pub fn set_mode(
+        self,
+        mode: crate::app::mappaneldeploy::MapPanelDeploy_Mode,
+        is_force_update: bool,
+    ) -> ();
+
+    #[method(name = "UpdateMode", args = 1)]
+    pub fn update_mode(self, mode: crate::app::mappaneldeploy::MapPanelDeploy_Mode) -> ();
+
+    #[method(name = "UpdateVertex", args = 1)]
+    pub fn update_vertex(self, mode: crate::app::mappaneldeploy::MapPanelDeploy_Mode) -> ();
+
+    #[method(name = "GetSourceMaterials", args = 0)]
+    pub fn get_source_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "UpdatePanelAlpha", args = 0)]
+    pub fn update_panel_alpha(self) -> ();
+
+    #[method(name = "UpdateScale", args = 1)]
+    pub fn update_scale(self, scale: f32) -> ();
+
+    #[method(name = "UpdateRange", args = 1)]
+    pub fn update_range(self, range: f32) -> ();
+
+    #[method(name = "GetMode", args = 0)]
+    pub fn get_mode(self) -> crate::app::mappaneldeploy::MapPanelDeploy_Mode;
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "Instant", args = 0)]
+    pub fn instant(self) -> ();
+
+    #[method(name = "SetVertexMoveAndAttack", args = 0)]
+    pub fn set_vertex_move_and_attack(self) -> ();
+
+    #[method(name = "SetMesh", args = 3)]
+    pub fn set_mesh(
+        self,
+        image: crate::app::mapimagecorebit::MapImageCoreBit,
+        index: crate::app::mappaneldeploy::MapPanelDeploy_MeshIndex,
+        color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = "SetVertexAttack", args = 0)]
+    pub fn set_vertex_attack(self) -> ();
+
+    #[method(name = "SetVertexWarp", args = 0)]
+    pub fn set_vertex_warp(self) -> ();
+
+    #[method(name = "SetVertexCreation", args = 0)]
+    pub fn set_vertex_creation(self) -> ();
+
+    #[method(name = "get_IsIntegration", args = 0)]
+    pub fn get_is_integration(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mappaneldeploy")]
+impl MapPanelDeploy {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPanelDeploy),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPanelDeployMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldeploy/MapPanelDeploy_MeshIndex.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapPanelDeploy_MeshIndex {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapPanelDeploy_MeshIndex {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPanelDeploy.MeshIndex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapPanelDeploy_MeshIndex {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapPanelDeploy_MeshIndex {
+    pub fn r#move() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn heal() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn support() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn interference() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldeploy/MapPanelDeploy_Mode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapPanelDeploy_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapPanelDeploy_Mode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPanelDeploy.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapPanelDeploy_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapPanelDeploy_Mode {
+    pub fn hide() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn move_thinly() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn move_free() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn dance() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn engage() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn direct() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn unit_command() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn unit_menu() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn target() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn talk() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn trick_thinly() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn trick() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn warp() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn rewarp() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn interference() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn torch() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn creation() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn cannon() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn fire_cannon() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn full_bullet_charge() -> Self {
+        Self { value: 23 }
+    }
+}

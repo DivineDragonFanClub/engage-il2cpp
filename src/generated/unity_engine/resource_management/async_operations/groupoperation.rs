@@ -1,0 +1,177 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1;
+use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/async_operations/groupoperation/GroupOperation.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.AsyncOperations",
+    name = "GroupOperation"
+)]
+# [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > >)]
+pub struct GroupOperation {
+# [rename (name = "m_InternalOnComplete")] pub m_internal_on_complete : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > ,
+# [rename (name = "m_LoadedCount")] pub m_loaded_count : i32 ,
+# [rename (name = "m_Settings")] pub m_settings : crate :: unity_engine :: resource_management :: async_operations :: groupoperation :: GroupOperation_GroupOperationSettings ,
+# [rename (name = "debugName")] pub debug_name : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_MaxDisplayedLocationLength")] pub k_max_displayed_location_length : i32 ,
+# [rename (name = "m_CachedDependencyLocations")] pub m_cached_dependency_locations : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < :: unity2 :: Il2CppString > ,
+}
+
+#[cfg(feature = "unity_engine-resource_management-async_operations-groupoperation")]
+#[::unity2::methods]
+impl GroupOperation {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "InvokeWaitForCompletion", args = 0)]
+    pub fn invoke_wait_for_completion(self) -> bool;
+
+    #[method(
+        name = "UnityEngine.ResourceManagement.AsyncOperations.ICachable.get_Key",
+        args = 0
+    )]
+    pub fn unity_engine_resource_management_async_operations_i_cachable_get_key(
+        self,
+    ) -> crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey;
+
+    #[method(
+        name = "UnityEngine.ResourceManagement.AsyncOperations.ICachable.set_Key",
+        args = 1
+    )]
+    pub fn unity_engine_resource_management_async_operations_i_cachable_set_key(
+        self,
+        value : crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey,
+    ) -> ();
+
+    #[method(name = "GetDependentOps", args = 0)]
+    pub fn get_dependent_ops (self ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > ;
+
+    #[method(name = "GetDependencies", args = 1)]
+    pub fn get_dependencies(
+        self,
+        deps : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+    ) -> ();
+
+    #[method(name = "ReleaseDependencies", args = 0)]
+    pub fn release_dependencies(self) -> ();
+
+    #[method(name = "GetDownloadStatus", args = 1)]
+    pub fn get_download_status(
+        self,
+        visited: crate::system::collections::generic::hashset_1::HashSet_1<
+            crate::system::object::Object,
+        >,
+    ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus;
+
+    #[method(name = "DependenciesAreUnchanged", args = 1)]
+    pub fn dependencies_are_unchanged(
+        self,
+        deps : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+    ) -> bool;
+
+    #[method(name = "get_DebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+
+    #[method(name = "CompleteIfDependenciesComplete", args = 0)]
+    pub fn complete_if_dependencies_complete(self) -> ();
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[method(name = "get_Progress", args = 0)]
+    pub fn get_progress(self) -> f32;
+
+    #[method(name = "Init", args = 3)]
+    pub fn init(
+        self,
+        operations : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+        release_dependencies_on_failure: bool,
+        allow_failed_dependencies: bool,
+    ) -> ();
+
+    #[method(name = "Init", args = 2)]
+    pub fn init_2(
+        self,
+        operations : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+        settings : crate :: unity_engine :: resource_management :: async_operations :: groupoperation :: GroupOperation_GroupOperationSettings,
+    ) -> ();
+
+    #[method(name = "OnOperationCompleted", args = 1)]
+    pub fn on_operation_completed(
+        self,
+        op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-async_operations-groupoperation")]
+impl GroupOperation {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GroupOperation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGroupOperationMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/async_operations/groupoperation/GroupOperation_GroupOperationSettings.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GroupOperation_GroupOperationSettings {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GroupOperation_GroupOperationSettings {
+    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.AsyncOperations";
+
+    const NAME: &'static str = "GroupOperation.GroupOperationSettings";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GroupOperation_GroupOperationSettings {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GroupOperation_GroupOperationSettings {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn release_dependencies_on_failure() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn allow_failed_dependencies() -> Self {
+        Self { value: 2 }
+    }
+}

@@ -1,0 +1,94 @@
+
+use crate::app::sortconstant::ISortConstant;
+use crate::app::sortconstant::SortConstant;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortgeneric/SortGeneric_DelegateComparer_1.md")))]
+#[::unity2::class(namespace = "App", name = "SortGeneric.DelegateComparer`1")]
+pub struct SortGeneric_DelegateComparer_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "m_Comparison")]
+    pub m_comparison: crate::system::comparison_1::Comparison_1<T0>,
+}
+
+#[cfg(feature = "app-sortgeneric")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> SortGeneric_DelegateComparer_1<T0> {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, comparison: crate::system::comparison_1::Comparison_1<T0>) -> ();
+
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(self, a: T0, b: T0) -> i32;
+}
+
+#[cfg(feature = "app-sortgeneric")]
+impl<T0: ::unity2::ClassIdentity> SortGeneric_DelegateComparer_1<T0> {
+    pub fn new(comparison: crate::system::comparison_1::Comparison_1<T0>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortGeneric_DelegateComparer_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortGeneric_DelegateComparer_1Methods<T0>>::ctor(this, comparison);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortgeneric/SortGeneric_ElementComparer_1.md")))]
+#[::unity2::class(namespace = "App", name = "SortGeneric.ElementComparer`1")]
+pub struct SortGeneric_ElementComparer_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-sortgeneric")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> SortGeneric_ElementComparer_1<T0> {
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(self, a: T0, b: T0) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortgeneric")]
+impl<T0: ::unity2::ClassIdentity> SortGeneric_ElementComparer_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortGeneric_ElementComparer_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortGeneric_ElementComparer_1Methods<T0>>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortgeneric/SortGeneric.md")))]
+#[::unity2::class(namespace = "App", name = "SortGeneric")]
+#[parent(crate::app::sortconstant::SortConstant)]
+pub struct SortGeneric {}
+
+#[cfg(feature = "app-sortgeneric")]
+#[::unity2::methods]
+impl SortGeneric {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortgeneric")]
+impl SortGeneric {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortGeneric),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortGenericMethods>::ctor(this);
+        this
+    }
+}

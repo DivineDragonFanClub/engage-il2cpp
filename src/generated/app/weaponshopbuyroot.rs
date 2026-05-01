@@ -1,0 +1,260 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponshopbuyroot/WeaponShopBuyRoot.md")))]
+#[::unity2::class(namespace = "App", name = "WeaponShopBuyRoot")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct WeaponShopBuyRoot {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_RootCanvasGroup")]
+    pub m_root_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+    #[rename(name = "m_MenuObject")]
+    pub m_menu_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_UnitItemMenuContent")]
+    pub m_unit_item_menu_content: crate::app::unititemmenucontent::UnitItemMenuContent,
+    #[rename(name = "m_HoldingInfoWindowObject")]
+    pub m_holding_info_window_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ItemHelpObject")]
+    pub m_item_help_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_UnitImageObject")]
+    pub m_unit_image_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_PriceDownObject")]
+    pub m_price_down_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_PriceDownText")]
+    pub m_price_down_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_EquipableWeaponsCaptionText")]
+    pub m_equipable_weapons_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_EquipableWeaponInfo")]
+    pub m_equipable_weapon_info:
+        ::unity2::Array<crate::app::weaponshopbuyroot::WeaponShopBuyRoot_EquipableWeaponInfo>,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_WeaponShopBuyMenu")]
+    pub m_weapon_shop_buy_menu: crate::app::weaponshopbuymenu::WeaponShopBuyMenu,
+    #[rename(name = "m_UnitItemMenu")]
+    pub m_unit_item_menu: crate::app::unititemmenu::UnitItemMenu,
+    #[rename(name = "m_WeaponHoldingInfoWindow")]
+    pub m_weapon_holding_info_window: crate::app::weaponholdinginfowindow::WeaponHoldingInfoWindow,
+    #[rename(name = "m_ItemMenuDetailSetter")]
+    pub m_item_menu_detail_setter: crate::app::itemmenudetailsetter::ItemMenuDetailSetter,
+    #[rename(name = "m_ReturnEventHandler")]
+    pub m_return_event_handler: crate::app::weaponshopbuyroot::WeaponShopBuyRoot_ReturnEventHandler,
+    #[rename(name = "m_YesNoDialog")]
+    pub m_yes_no_dialog: crate::app::exchangeyesnodialog::ExchangeYesNoDialog,
+    #[rename(name = "m_SendItemMenu")]
+    pub m_send_item_menu: crate::app::procinst::ProcInst,
+    #[rename(name = "m_DiscardItemMenu")]
+    pub m_discard_item_menu: crate::app::procinst::ProcInst,
+    #[rename(name = "m_UnitItem")]
+    pub m_unit_item: crate::app::unititem::UnitItem,
+    #[rename(name = "m_ItemData")]
+    pub m_item_data: crate::app::itemdata::ItemData,
+    #[rename(name = "m_IsSendingItemToTransporter")]
+    pub m_is_sending_item_to_transporter: bool,
+    #[rename(name = "m_IsSendingUnitItem")]
+    pub m_is_sending_unit_item: bool,
+    #[rename(name = "m_SendingUnitItemIndex")]
+    pub m_sending_unit_item_index: i32,
+    #[rename(name = "m_IsDiscardingTransporterItem")]
+    pub m_is_discarding_transporter_item: bool,
+    #[rename(name = "m_DiscardingTransporterItemIndex")]
+    pub m_discarding_transporter_item_index: i32,
+    #[rename(name = "m_ExistingOwner")]
+    pub m_existing_owner: bool,
+    #[rename(name = "m_ItemDetailDisplayWithUnit")]
+    pub m_item_detail_display_with_unit: bool,
+}
+
+#[cfg(feature = "app-weaponshopbuyroot")]
+#[::unity2::methods]
+impl WeaponShopBuyRoot {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        existing_owner: bool,
+        return_event_handler: crate::app::weaponshopbuyroot::WeaponShopBuyRoot_ReturnEventHandler,
+    ) -> crate::app::weaponshopbuyroot::WeaponShopBuyRoot;
+
+    #[method(name = "Create", args = 4)]
+    pub fn create(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        existing_owner: bool,
+        return_event_handler: crate::app::weaponshopbuyroot::WeaponShopBuyRoot_ReturnEventHandler,
+    ) -> ();
+
+    #[method(name = "Destroy", args = 1)]
+    pub fn destroy(root: crate::app::weaponshopbuyroot::WeaponShopBuyRoot) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "UpdateItemDetail", args = 0)]
+    pub fn update_item_detail(self) -> ();
+
+    #[method(name = "UpdateEquipableWeaponInfo", args = 0)]
+    pub fn update_equipable_weapon_info(self) -> ();
+
+    #[method(name = "OnChangeUnitToPrev", args = 1)]
+    pub fn on_change_unit_to_prev(self, unit_item: crate::app::unititem::UnitItem) -> ();
+
+    #[method(name = "OnChangeUnitToNext", args = 1)]
+    pub fn on_change_unit_to_next(self, unit_item: crate::app::unititem::UnitItem) -> ();
+
+    #[method(name = "OnSwitchDetailDisplayWay", args = 0)]
+    pub fn on_switch_detail_display_way(self) -> ();
+
+    #[method(name = "OnSelectMenuItem", args = 1)]
+    pub fn on_select_menu_item(self, unit_item: crate::app::unititem::UnitItem) -> ();
+
+    #[method(name = "OnDecideMenuItem", args = 1)]
+    pub fn on_decide_menu_item(self, item_data: crate::app::itemdata::ItemData) -> bool;
+
+    #[method(name = "OnYesToBuy", args = 0)]
+    pub fn on_yes_to_buy(self) -> ();
+
+    #[method(name = "OnDecideToSendItem", args = 2)]
+    pub fn on_decide_to_send_item(self, is_selecting_unit_item: bool, unit_item_index: i32) -> ();
+
+    #[method(name = "OnCancelToSendItem", args = 0)]
+    pub fn on_cancel_to_send_item(self) -> ();
+
+    #[method(name = "OnDecidelToDiscardItem", args = 2)]
+    pub fn on_decidel_to_discard_item(
+        self,
+        transporter_is_selected: bool,
+        transporter_item_index: i32,
+    ) -> ();
+
+    #[method(name = "OnCancelToDiscardItem", args = 0)]
+    pub fn on_cancel_to_discard_item(self) -> ();
+
+    #[method(name = "OnBuy", args = 0)]
+    pub fn on_buy(self) -> ();
+
+    #[method(name = "OnRequestClose", args = 0)]
+    pub fn on_request_close(self) -> ();
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[method(name = "SetUnitImageActive", args = 1)]
+    pub fn set_unit_image_active(self, is_active: bool) -> ();
+}
+
+#[cfg(feature = "app-weaponshopbuyroot")]
+impl WeaponShopBuyRoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyRoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyRootMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponshopbuyroot/WeaponShopBuyRoot_EquipableWeaponInfo.md")))]
+#[::unity2::class(namespace = "App", name = "WeaponShopBuyRoot.EquipableWeaponInfo")]
+#[parent(crate::system::object::Object)]
+pub struct WeaponShopBuyRoot_EquipableWeaponInfo {
+    #[rename(name = "m_Root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_IconImage")]
+    pub m_icon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_LevelText")]
+    pub m_level_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-weaponshopbuyroot")]
+#[::unity2::methods]
+impl WeaponShopBuyRoot_EquipableWeaponInfo {
+    #[method(name = "Set", args = 3)]
+    pub fn set(
+        self,
+        item_kinds: crate::app::itemdata::ItemData_Kinds,
+        weapon_level: crate::app::weaponlevel::WeaponLevel_Kind,
+        job_data: crate::app::jobdata::JobData,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-weaponshopbuyroot")]
+impl WeaponShopBuyRoot_EquipableWeaponInfo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyRoot_EquipableWeaponInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyRoot_EquipableWeaponInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponshopbuyroot/WeaponShopBuyRoot_ReturnEventHandler.md")))]
+#[::unity2::class(namespace = "App", name = "WeaponShopBuyRoot.ReturnEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct WeaponShopBuyRoot_ReturnEventHandler {}
+
+#[cfg(feature = "app-weaponshopbuyroot")]
+#[::unity2::methods]
+impl WeaponShopBuyRoot_ReturnEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-weaponshopbuyroot")]
+impl WeaponShopBuyRoot_ReturnEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyRoot_ReturnEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}

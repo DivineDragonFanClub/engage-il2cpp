@@ -1,0 +1,31 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/videoplayer_2/VideoPlayer_2.md")))]
+#[::unity2::class(namespace = "UnityEngine.Switch", name = "VideoPlayer")]
+#[parent(crate::system::object::Object)]
+pub struct VideoPlayer_2 {}
+
+#[cfg(feature = "unity_engine-switch-videoplayer_2")]
+#[::unity2::methods]
+impl VideoPlayer_2 {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-switch-videoplayer_2")]
+impl VideoPlayer_2 {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VideoPlayer_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVideoPlayer_2Methods>::ctor(this);
+        this
+    }
+}

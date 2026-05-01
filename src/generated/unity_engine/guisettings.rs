@@ -1,0 +1,42 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/guisettings/GUISettings.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "GUISettings")]
+#[parent(crate::system::object::Object)]
+pub struct GUISettings {
+    #[rename(name = "m_DoubleClickSelectsWord")]
+    pub m_double_click_selects_word: bool,
+    #[rename(name = "m_TripleClickSelectsLine")]
+    pub m_triple_click_selects_line: bool,
+    #[rename(name = "m_CursorColor")]
+    pub m_cursor_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_CursorFlashSpeed")]
+    pub m_cursor_flash_speed: f32,
+    #[rename(name = "m_SelectionColor")]
+    pub m_selection_color: crate::unity_engine::color::Color,
+}
+
+#[cfg(feature = "unity_engine-guisettings")]
+#[::unity2::methods]
+impl GUISettings {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-guisettings")]
+impl GUISettings {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUISettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUISettingsMethods>::ctor(this);
+        this
+    }
+}

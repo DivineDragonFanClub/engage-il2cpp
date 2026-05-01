@@ -1,0 +1,243 @@
+
+use crate::app::bitfield32::BitField32;
+use crate::app::bitfield32::IBitField32;
+use crate::app::bitfieldcommon::BitFieldCommon;
+use crate::app::bitfieldcommon::IBitFieldCommon;
+use crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1;
+use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md")))]
+#[::unity2::class(namespace = "App", name = "GameUserGlobalData.FlagsField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >)]
+pub struct GameUserGlobalData_FlagsField {}
+
+#[cfg(feature = "app-gameuserglobaldata")]
+#[::unity2::methods]
+impl GameUserGlobalData_FlagsField {
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::gameuserglobaldata::GameUserGlobalData_Flags) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gameuserglobaldata")]
+impl GameUserGlobalData_FlagsField {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserGlobalData_FlagsField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserGlobalData_FlagsFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserglobaldata/GameUserGlobalData.md")))]
+#[::unity2::class(namespace = "App", name = "GameUserGlobalData")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData >)]
+pub struct GameUserGlobalData {
+    #[rename(name = "m_CompletedHash")]
+    pub m_completed_hash:
+        crate::system::collections::generic::hashset_1::HashSet_1<::unity2::Il2CppString>,
+    #[rename(name = "m_CompletedList")]
+    pub m_completed_list:
+        crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "app-gameuserglobaldata")]
+#[::unity2::methods]
+impl GameUserGlobalData {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "GetLastSaveDataType", args = 0)]
+    pub fn get_last_save_data_type(self) -> crate::app::gamesavedata::GameSaveData_Types;
+
+    #[method(name = "GetLastSaveDataIndex", args = 0)]
+    pub fn get_last_save_data_index(self) -> i32;
+
+    #[method(name = "GetLastSaveDataIndex", args = 1)]
+    pub fn get_last_save_data_index_2(
+        self,
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+    ) -> i32;
+
+    #[method(name = "SetLastSaveDataInfo", args = 2)]
+    pub fn set_last_save_data_info(
+        self,
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        index: i32,
+    ) -> ();
+
+    #[method(name = "IsLastSaveDataInfo", args = 2)]
+    pub fn is_last_save_data_info(
+        self,
+        r#type: crate::app::gamesavedata::GameSaveData_Types,
+        index: i32,
+    ) -> bool;
+
+    #[method(name = "get_Version", args = 0)]
+    pub fn get_version(self) -> i32;
+
+    #[method(name = "OnSerialize", args = 1)]
+    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "OnDeserialize", args = 2)]
+    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
+
+    #[method(name = "set_LastSaveDataType", args = 1)]
+    pub fn set_last_save_data_type(self, value: crate::app::gamesavedata::GameSaveData_Types)
+        -> ();
+
+    #[method(name = "set_LastSaveDataIndex", args = 1)]
+    pub fn set_last_save_data_index(self, value: i32) -> ();
+
+    #[method(name = "get_IdentifierCount", args = 0)]
+    pub fn get_identifier_count(self) -> u32;
+
+    #[method(name = "set_IdentifierCount", args = 1)]
+    pub fn set_identifier_count(self, value: u32) -> ();
+
+    #[method(name = "get_Flag", args = 0)]
+    pub fn get_flag(self) -> crate::app::gameuserglobaldata::GameUserGlobalData_FlagsField;
+
+    #[method(name = "Completed", args = 0)]
+    pub fn completed(self) -> ();
+
+    #[method(name = "ClearCompleted", args = 0)]
+    pub fn clear_completed(self) -> ();
+
+    #[method(name = "IsCompleted", args = 0)]
+    pub fn is_completed(self) -> bool;
+
+    #[method(name = "SetCompleted", args = 1)]
+    pub fn set_completed(self, chapter: crate::app::chapterdata::ChapterData) -> ();
+
+    #[method(name = "ClearCompleted", args = 1)]
+    pub fn clear_completed_2(self, chapter: crate::app::chapterdata::ChapterData) -> ();
+
+    #[method(name = "IsCompleted", args = 1)]
+    pub fn is_completed_2(self, cid: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "CreateIdentifier", args = 0)]
+    pub fn create_identifier() -> u64;
+}
+
+#[cfg(feature = "app-gameuserglobaldata")]
+impl GameUserGlobalData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserGlobalData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserGlobalDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserglobaldata/GameUserGlobalData_Flags.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GameUserGlobalData_Flags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GameUserGlobalData_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameUserGlobalData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GameUserGlobalData_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GameUserGlobalData_Flags {
+    pub fn cleared_difficulty_normal() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn cleared_difficulty_hard() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn cleared_difficulty_lunatic() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn cleared_difficulty_mask() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn cleared_mode_classic() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn cleared_mode_casual() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn cleared_mode_phoenix() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn cleared_mode_mask() -> Self {
+        Self { value: 56 }
+    }
+
+    pub fn cleared_mask() -> Self {
+        Self { value: 63 }
+    }
+
+    pub fn dlc_news_patch0() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn dlc_news_patch1() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn dlc_news_patch2() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn dlc_news_patch3() -> Self {
+        Self { value: 512 }
+    }
+}

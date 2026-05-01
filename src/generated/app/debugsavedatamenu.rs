@@ -1,0 +1,37 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugsavedatamenu/DebugSaveDataMenu.md")))]
+#[::unity2::class(namespace = "App", name = "DebugSaveDataMenu")]
+#[parent(crate::system::object::Object)]
+pub struct DebugSaveDataMenu {}
+
+#[cfg(feature = "app-debugsavedatamenu")]
+#[::unity2::methods]
+impl DebugSaveDataMenu {
+    #[method(name = "CreateBindSave", args = 1)]
+    pub fn create_bind_save(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "CreateBindLoad", args = 1)]
+    pub fn create_bind_load(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugsavedatamenu")]
+impl DebugSaveDataMenu {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugSaveDataMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugSaveDataMenuMethods>::ctor(this);
+        this
+    }
+}

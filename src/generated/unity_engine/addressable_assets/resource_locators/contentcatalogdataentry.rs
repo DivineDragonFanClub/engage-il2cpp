@@ -1,0 +1,111 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/resource_locators/contentcatalogdataentry/ContentCatalogDataEntry.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets.ResourceLocators",
+    name = "ContentCatalogDataEntry"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ContentCatalogDataEntry {}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry")]
+#[::unity2::methods]
+impl ContentCatalogDataEntry {
+    #[method(name = "get_InternalId", args = 0)]
+    pub fn get_internal_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_InternalId", args = 1)]
+    pub fn set_internal_id(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Provider", args = 0)]
+    pub fn get_provider(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Provider", args = 1)]
+    pub fn set_provider(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Keys", args = 0)]
+    pub fn get_keys(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::system::object::Object>;
+
+    #[method(name = "set_Keys", args = 1)]
+    pub fn set_keys(
+        self,
+        value: crate::system::collections::generic::list_1::List_1<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = "get_Dependencies", args = 0)]
+    pub fn get_dependencies(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::system::object::Object>;
+
+    #[method(name = "set_Dependencies", args = 1)]
+    pub fn set_dependencies(
+        self,
+        value: crate::system::collections::generic::list_1::List_1<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = "get_Data", args = 0)]
+    pub fn get_data(self) -> crate::system::object::Object;
+
+    #[method(name = "set_Data", args = 1)]
+    pub fn set_data(self, value: crate::system::object::Object) -> ();
+
+    #[method(name = "get_ResourceType", args = 0)]
+    pub fn get_resource_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "set_ResourceType", args = 1)]
+    pub fn set_resource_type(self, value: ::unity2::SystemType) -> ();
+
+    #[method(name = ".ctor", args = 6)]
+    pub fn ctor(
+        self,
+        r#type: ::unity2::SystemType,
+        internal_id: ::unity2::Il2CppString,
+        provider: ::unity2::Il2CppString,
+        keys: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+            crate::system::object::Object,
+        >,
+        dependencies: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+            crate::system::object::Object,
+        >,
+        extra_data: ::unity2::IlInstance,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry")]
+impl ContentCatalogDataEntry {
+    pub fn new(
+        r#type: ::unity2::SystemType,
+        internal_id: ::unity2::Il2CppString,
+        provider: ::unity2::Il2CppString,
+        keys: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+            crate::system::object::Object,
+        >,
+        dependencies: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+            crate::system::object::Object,
+        >,
+        extra_data: ::unity2::IlInstance,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ContentCatalogDataEntry),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IContentCatalogDataEntryMethods>::ctor(
+            this,
+            r#type,
+            internal_id,
+            provider,
+            keys,
+            dependencies,
+            extra_data,
+        );
+        this
+    }
+}

@@ -1,0 +1,78 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/quantizer/Quantizer.md")))]
+#[::unity2::class(namespace = "Combat", name = "Quantizer")]
+#[parent(crate::system::object::Object)]
+pub struct Quantizer {}
+
+#[cfg(feature = "combat-quantizer")]
+#[::unity2::methods]
+impl Quantizer {
+    #[method(name = "FItoVec3", args = 2)]
+    pub fn f_ito_vec3(f: f32, i: i32) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "FXZtoI", args = 1)]
+    pub fn fx_zto_i(xz: crate::combat::fxz::FXZ) -> i32;
+
+    #[method(name = "ItoFXZ", args = 1)]
+    pub fn ito_fxz(i: i32) -> crate::combat::fxz::FXZ;
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/quantizer/Quantizer_MajorAxis.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Quantizer_MajorAxis {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Quantizer_MajorAxis {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "Quantizer.MajorAxis";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Quantizer_MajorAxis {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Quantizer_MajorAxis {
+    pub fn x() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn y() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn z() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn mask() -> Self {
+        Self { value: 3 }
+    }
+}

@@ -1,0 +1,46 @@
+
+use crate::app::calculatormanager::CalculatorManager;
+use crate::app::calculatormanager::ICalculatorManager;
+use crate::app::calculatorutil::CalculatorUtil;
+use crate::app::calculatorutil::ICalculatorUtil;
+use crate::app::systemcalculator::ISystemCalculator;
+use crate::app::systemcalculator::SystemCalculator;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/systemcalculatorinstance_1/SystemCalculatorInstance_1.md")))]
+#[::unity2::class(namespace = "App", name = "SystemCalculatorInstance`1")]
+pub struct SystemCalculatorInstance_1<T0: ::unity2::ClassIdentity> {
+    #[static_field]
+    #[rename(name = "s_Instance")]
+    pub s_instance: T0,
+}
+
+#[cfg(feature = "app-systemcalculatorinstance_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> SystemCalculatorInstance_1<T0> {
+    #[method(name = "get_Instance", args = 0)]
+    pub fn get_instance() -> T0;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-systemcalculatorinstance_1")]
+impl<T0: ::unity2::ClassIdentity> SystemCalculatorInstance_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculatorInstance_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculatorInstance_1Methods<T0>>::ctor(this);
+        this
+    }
+}

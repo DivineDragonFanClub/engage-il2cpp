@@ -1,0 +1,47 @@
+
+use crate::combat::actionbase::ActionBase;
+use crate::combat::actionbase::IActionBase;
+use crate::combat::state::IState;
+use crate::combat::state::State;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiondive/ActionDive.md")))]
+#[::unity2::class(namespace = "Combat", name = "ActionDive")]
+#[parent(crate::combat::actionbase::ActionBase)]
+pub struct ActionDive {}
+
+#[cfg(feature = "combat-actiondive")]
+#[::unity2::methods]
+impl ActionDive {
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, chr: crate::combat::character::Character) -> ();
+
+    #[method(name = "OnEnter", args = 0)]
+    pub fn on_enter(self) -> ();
+
+    #[method(name = "OnUpdate", args = 0)]
+    pub fn on_update(self) -> ();
+
+    #[method(name = "OnExit", args = 0)]
+    pub fn on_exit(self) -> ();
+}
+
+#[cfg(feature = "combat-actiondive")]
+impl ActionDive {
+    pub fn new(chr: crate::combat::character::Character) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ActionDive),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IActionDiveMethods>::ctor(this, chr);
+        this
+    }
+}

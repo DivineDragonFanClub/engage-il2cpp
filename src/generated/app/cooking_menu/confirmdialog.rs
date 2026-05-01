@@ -1,0 +1,99 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::yesnodialog::IYesNoDialog;
+use crate::app::yesnodialog::YesNoDialog;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/confirmdialog/ConfirmDialog_ConfirmDialogItemYes.md")))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "ConfirmDialog.ConfirmDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct ConfirmDialog_ConfirmDialogItemYes {
+    #[rename(name = "m_Action")]
+    pub m_action: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-cooking_menu-confirmdialog")]
+#[::unity2::methods]
+impl ConfirmDialog_ConfirmDialogItemYes {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, text: ::unity2::Il2CppString, action: crate::system::action::Action) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-cooking_menu-confirmdialog")]
+impl ConfirmDialog_ConfirmDialogItemYes {
+    pub fn new(text: ::unity2::Il2CppString, action: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConfirmDialog_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConfirmDialog_ConfirmDialogItemYesMethods>::ctor(this, text, action);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/confirmdialog/ConfirmDialog.md")))]
+#[::unity2::class(namespace = "App.CookingMenu", name = "ConfirmDialog")]
+#[parent(crate::app::yesnodialog::YesNoDialog)]
+pub struct ConfirmDialog {}
+
+#[cfg(feature = "app-cooking_menu-confirmdialog")]
+#[::unity2::methods]
+impl ConfirmDialog {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        action: crate::system::action::Action,
+    ) -> ();
+
+    #[method(name = "GetOpenSoundEvent", args = 0)]
+    pub fn get_open_sound_event(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-cooking_menu-confirmdialog")]
+impl ConfirmDialog {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConfirmDialogMethods>::ctor(this, menu_item_list);
+        this
+    }
+}

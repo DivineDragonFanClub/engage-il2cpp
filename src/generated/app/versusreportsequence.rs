@@ -1,0 +1,291 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemno::BasicDialogItemNo;
+use crate::app::basicdialogitemno::IBasicDialogItemNo;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::yesnodialog::IYesNoDialog;
+use crate::app::yesnodialog::YesNoDialog;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusreportsequence/VersusReportSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct VersusReportSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for VersusReportSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "VersusReportSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for VersusReportSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl VersusReportSequence_Label {
+    pub fn type_menu() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn reason() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemNo"
+)]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
+    #[rename(name = "m_Action")]
+    pub m_action: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+#[::unity2::methods]
+impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, action: crate::system::action::Action) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo {
+    pub fn new(action: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemNoMethods>::ctor(
+            this, action,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog.md")))]
+#[::unity2::class(namespace = "App", name = "VersusReportSequence.ConfirmDialog")]
+#[parent(crate::app::yesnodialog::YesNoDialog)]
+pub struct VersusReportSequence_ConfirmDialog {
+    #[rename(name = "m_CancelCallback")]
+    pub m_cancel_callback: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+#[::unity2::methods]
+impl VersusReportSequence_ConfirmDialog {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        cancel_callback: crate::system::action::Action,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        decide_callback: crate::system::action::Action,
+        cancel_callback: crate::system::action::Action,
+    ) -> ();
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence_ConfirmDialog {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        cancel_callback: crate::system::action::Action,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusReportSequence_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusReportSequence_ConfirmDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            cancel_callback,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusreportsequence/VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusReportSequence.ConfirmDialog.ConfirmDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
+    #[rename(name = "m_Action")]
+    pub m_action: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+#[::unity2::methods]
+impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, text: ::unity2::Il2CppString, action: crate::system::action::Action) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes {
+    pub fn new(text: ::unity2::Il2CppString, action: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusReportSequence_ConfirmDialog_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusReportSequence_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
+            this, text, action,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusreportsequence/VersusReportSequence.md")))]
+#[::unity2::class(namespace = "App", name = "VersusReportSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct VersusReportSequence {
+    #[rename(name = "m_Content")]
+    pub m_content: crate::app::versusviolationtopcontent::VersusViolationTopContent,
+    #[rename(name = "m_Bg")]
+    pub m_bg: crate::app::menubg::MenuBg,
+    #[rename(name = "m_MapTexture")]
+    pub m_map_texture: crate::unity_engine::texture2d::Texture2D,
+    #[rename(name = "m_Reason")]
+    pub m_reason: ::unity2::Il2CppString,
+    #[rename(name = "m_ReasonDisplay")]
+    pub m_reason_display: ::unity2::Il2CppString,
+    #[rename(name = "m_IsReported")]
+    pub m_is_reported: bool,
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+#[::unity2::methods]
+impl VersusReportSequence {
+    #[method(name = "LoadResources", args = 0)]
+    pub fn load_resources(self) -> ();
+
+    #[method(name = "IsLoadingResources", args = 0)]
+    pub fn is_loading_resources(self) -> bool;
+
+    #[method(name = "UnloadResources", args = 0)]
+    pub fn unload_resources(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Notice", args = 0)]
+    pub fn notice(self) -> ();
+
+    #[method(name = "CreateContent", args = 0)]
+    pub fn create_content(self) -> ();
+
+    #[method(name = "OpenMenu", args = 0)]
+    pub fn open_menu(self) -> ();
+
+    #[method(name = "InputKeyboard", args = 0)]
+    pub fn input_keyboard(self) -> ();
+
+    #[method(name = "CheckReason", args = 0)]
+    pub fn check_reason(self) -> ();
+
+    #[method(name = "OpenConfirmDialog", args = 0)]
+    pub fn open_confirm_dialog(self) -> ();
+
+    #[method(name = "Report", args = 0)]
+    pub fn report(self) -> ();
+
+    #[method(name = "ShowDialog", args = 0)]
+    pub fn show_dialog(self) -> ();
+
+    #[method(name = "End", args = 0)]
+    pub fn end(self) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "SetReason", args = 1)]
+    pub fn set_reason(self, reason: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-versusreportsequence")]
+impl VersusReportSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusReportSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusReportSequenceMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,13 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/itimelineevaluatecallback/ITimelineEvaluateCallback.md")))]
+#[::unity2::class(namespace = "UnityEngine.Timeline", name = "ITimelineEvaluateCallback")]
+pub struct ITimelineEvaluateCallback {}
+
+#[cfg(feature = "unity_engine-timeline-itimelineevaluatecallback")]
+#[::unity2::methods]
+impl ITimelineEvaluateCallback {
+    #[method(name = "Evaluate", args = 0)]
+    pub fn evaluate(self) -> ();
+}

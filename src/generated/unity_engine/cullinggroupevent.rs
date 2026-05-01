@@ -1,0 +1,36 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/cullinggroupevent/CullingGroupEvent.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct CullingGroupEvent {
+    pub m_index: i32,
+    pub m_prev_state: u8,
+    pub m_this_state: u8,
+}
+
+impl ::unity2::ClassIdentity for CullingGroupEvent {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "CullingGroupEvent";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CullingGroupEvent {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

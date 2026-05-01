@@ -1,0 +1,698 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_ForceFunction.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor.ForceFunction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapFor_ForceFunction {}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor_ForceFunction {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, force_type: crate::app::force::Force_Type) -> ();
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_ForceFunction {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_ForceFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_ForceFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_TargetFunction.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor.TargetFunction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapFor_TargetFunction {}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor_TargetFunction {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 7)]
+    pub fn invoke(
+        self,
+        attack_x: i32,
+        attack_z: i32,
+        target_x: i32,
+        target_z: i32,
+        target: crate::app::unit::Unit,
+        item_mask: u32,
+        specified_item: crate::app::unititem::UnitItem,
+    ) -> ();
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_TargetFunction {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_TargetFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_TargetFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_Unit2Function.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor.Unit2Function")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapFor_Unit2Function {}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor_Unit2Function {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unit::Unit) -> crate::app::mapfor::MapFor_Return;
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_Unit2Function {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_Unit2Function),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_Unit2FunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_PokeFunction.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor.PokeFunction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapFor_PokeFunction {}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor_PokeFunction {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(self, x: i32, z: i32, inspector: crate::app::pokeinspector::PokeInspector) -> ();
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_PokeFunction {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_PokeFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_PokeFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_Return.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapFor_Return {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapFor_Return {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapFor.Return";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapFor_Return {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapFor_Return {
+    pub fn r#continue() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn done() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_UnitPosFunction.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor.UnitPosFunction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapFor_UnitPosFunction {}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor_UnitPosFunction {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(self, unit: crate::app::unit::Unit, x: i32, z: i32) -> ();
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_UnitPosFunction {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_UnitPosFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_UnitPosFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_Pos2Function.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor.Pos2Function")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapFor_Pos2Function {}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor_Pos2Function {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, x: i32, z: i32) -> crate::app::mapfor::MapFor_Return;
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_Pos2Function {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_Pos2Function),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_Pos2FunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_Range2Function.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor.Range2Function")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapFor_Range2Function {}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor_Range2Function {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(self, x: i32, z: i32, range: i32) -> crate::app::mapfor::MapFor_Return;
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_Range2Function {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_Range2Function),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_Range2FunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_PosFunction.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor.PosFunction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapFor_PosFunction {}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor_PosFunction {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, x: i32, z: i32) -> ();
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_PosFunction {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_PosFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_PosFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_DestroyFunction.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor.DestroyFunction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapFor_DestroyFunction {}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor_DestroyFunction {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 5)]
+    pub fn invoke(self, x: i32, z: i32, target_x: i32, target_z: i32, item_index: i32) -> ();
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_DestroyFunction {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_DestroyFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_DestroyFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor")]
+#[parent(crate::system::object::Object)]
+pub struct MapFor {
+    #[static_field]
+    #[rename(name = "RhombusX")]
+    pub rhombus_x: ::unity2::Array<i32>,
+    #[static_field]
+    #[rename(name = "RhombusZ")]
+    pub rhombus_z: ::unity2::Array<i32>,
+}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor {
+    #[method(name = "EachPoke", args = 2)]
+    pub fn each_poke(
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        func: crate::app::mapfor::MapFor_PosFunction,
+    ) -> ();
+
+    #[method(name = "EachPoke", args = 2)]
+    pub fn each_poke_2(
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        func: crate::app::mapfor::MapFor_PokeFunction,
+    ) -> ();
+
+    #[method(name = "EachDestroy", args = 2)]
+    pub fn each_destroy(
+        unit: crate::app::unit::Unit,
+        func: crate::app::mapfor::MapFor_DestroyFunction,
+    ) -> ();
+
+    #[method(name = "EachDestroy", args = 4)]
+    pub fn each_destroy_2(
+        inspector: crate::app::pokeinspector::PokeInspector,
+        unit: crate::app::unit::Unit,
+        item_mask: u32,
+        func: crate::app::mapfor::MapFor_DestroyFunction,
+    ) -> ();
+
+    #[method(name = "EachPlayArea", args = 1)]
+    pub fn each_play_area(func: crate::app::mapfor::MapFor_PosFunction) -> ();
+
+    #[method(name = "EachPlayArea2", args = 1)]
+    pub fn each_play_area2(func: crate::app::mapfor::MapFor_Pos2Function) -> ();
+
+    #[method(name = "EachRange", args = 5)]
+    pub fn each_range(
+        px: i32,
+        pz: i32,
+        near: i32,
+        far: i32,
+        func: crate::app::mapfor::MapFor_RangeFunction,
+    ) -> ();
+
+    #[method(name = "EachRange2", args = 5)]
+    pub fn each_range2(
+        px: i32,
+        pz: i32,
+        near: i32,
+        far: i32,
+        func: crate::app::mapfor::MapFor_Range2Function,
+    ) -> ();
+
+    #[method(name = "EachRange", args = 6)]
+    pub fn each_range_2(
+        unit: crate::app::unit::Unit,
+        px: i32,
+        pz: i32,
+        near: i32,
+        far: i32,
+        func: crate::app::mapfor::MapFor_RangeFunction,
+    ) -> ();
+
+    #[method(name = "EachTarget", args = 9)]
+    pub fn each_target(
+        unit: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        near: i32,
+        far: i32,
+        item_mask: u32,
+        specified_item: crate::app::unititem::UnitItem,
+        command_skill: crate::app::skilldata::SkillData,
+        func: crate::app::mapfor::MapFor_TargetFunction,
+    ) -> ();
+
+    #[method(name = "EachLine", args = 5)]
+    pub fn each_line(
+        x0: i32,
+        z0: i32,
+        x1: i32,
+        z1: i32,
+        func: crate::app::mapfor::MapFor_Pos2Function,
+    ) -> ();
+
+    #[method(name = "EachRhombus", args = 4)]
+    pub fn each_rhombus(
+        x: i32,
+        z: i32,
+        range: i32,
+        func: crate::app::mapfor::MapFor_PosFunction,
+    ) -> ();
+
+    #[method(name = "EachForce", args = 1)]
+    pub fn each_force(func: crate::app::mapfor::MapFor_ForceFunction) -> ();
+
+    #[method(name = "EachForce2", args = 1)]
+    pub fn each_force2(func: crate::app::mapfor::MapFor_Force2Function) -> ();
+
+    #[method(name = "EachAllyForce", args = 2)]
+    pub fn each_ally_force(
+        force_type: crate::app::force::Force_Type,
+        func: crate::app::mapfor::MapFor_ForceFunction,
+    ) -> ();
+
+    #[method(name = "EachEnemyForce", args = 2)]
+    pub fn each_enemy_force(
+        force_type: crate::app::force::Force_Type,
+        func: crate::app::mapfor::MapFor_ForceFunction,
+    ) -> ();
+
+    #[method(name = "EachUnit", args = 1)]
+    pub fn each_unit(func: crate::app::mapfor::MapFor_UnitFunction) -> ();
+
+    #[method(name = "EachForceUnit", args = 2)]
+    pub fn each_force_unit(
+        force_type: crate::app::force::Force_Type,
+        func: crate::app::mapfor::MapFor_UnitFunction,
+    ) -> ();
+
+    #[method(name = "EachSelfForceUnit", args = 1)]
+    pub fn each_self_force_unit(func: crate::app::mapfor::MapFor_UnitFunction) -> ();
+
+    #[method(name = "EachForceUnit", args = 2)]
+    pub fn each_force_unit_2(
+        force_type: crate::app::force::Force_Type,
+        func: crate::app::mapfor::MapFor_Unit2Function,
+    ) -> ();
+
+    #[method(name = "EachAllyUnit", args = 2)]
+    pub fn each_ally_unit(
+        force_type: crate::app::force::Force_Type,
+        func: crate::app::mapfor::MapFor_UnitFunction,
+    ) -> ();
+
+    #[method(name = "EachAllyUnit2", args = 2)]
+    pub fn each_ally_unit2(
+        force_type: crate::app::force::Force_Type,
+        func: crate::app::mapfor::MapFor_Unit2Function,
+    ) -> ();
+
+    #[method(name = "EachEnemyUnit", args = 2)]
+    pub fn each_enemy_unit(
+        force_type: crate::app::force::Force_Type,
+        func: crate::app::mapfor::MapFor_UnitFunction,
+    ) -> ();
+
+    #[method(name = "EachEnemyUnit2", args = 2)]
+    pub fn each_enemy_unit2(
+        force_type: crate::app::force::Force_Type,
+        func: crate::app::mapfor::MapFor_Unit2Function,
+    ) -> ();
+
+    #[method(name = "EachAroundUnit", args = 3)]
+    pub fn each_around_unit(
+        unit: crate::app::unit::Unit,
+        force_type: crate::app::force::Force_Type,
+        func: crate::app::mapfor::MapFor_UnitFunction,
+    ) -> ();
+
+    #[method(name = "EachAroundUnit", args = 2)]
+    pub fn each_around_unit_2(
+        unit: crate::app::unit::Unit,
+        func: crate::app::mapfor::MapFor_UnitFunction,
+    ) -> ();
+
+    #[method(name = "EachRangeUnit", args = 4)]
+    pub fn each_range_unit(
+        unit: crate::app::unit::Unit,
+        force_type: crate::app::force::Force_Type,
+        range: i32,
+        func: crate::app::mapfor::MapFor_UnitFunction,
+    ) -> ();
+
+    #[method(name = "EachRangeUnit", args = 3)]
+    pub fn each_range_unit_2(
+        unit: crate::app::unit::Unit,
+        range: i32,
+        func: crate::app::mapfor::MapFor_UnitFunction,
+    ) -> ();
+
+    #[method(name = "EachRangeUnitSkill", args = 3)]
+    pub fn each_range_unit_skill(
+        target: crate::app::unit::Unit,
+        timing: crate::app::skilldata::SkillData_Timings,
+        func: crate::app::mapfor::MapFor_UnitSkillFunction,
+    ) -> ();
+
+    #[method(name = "EachRangeUnitAround", args = 3)]
+    pub fn each_range_unit_around(
+        unit: crate::app::unit::Unit,
+        skill: crate::app::skilldata::SkillData,
+        func: crate::app::mapfor::MapFor_UnitFunction,
+    ) -> ();
+
+    #[method(name = "EachRangeUnitSupport", args = 3)]
+    pub fn each_range_unit_support(
+        unit: crate::app::unit::Unit,
+        skill: crate::app::skilldata::SkillData,
+        func: crate::app::mapfor::MapFor_UnitFunction,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapForMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_Force2Function.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor.Force2Function")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapFor_Force2Function {}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor_Force2Function {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        force_type: crate::app::force::Force_Type,
+    ) -> crate::app::mapfor::MapFor_Return;
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_Force2Function {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_Force2Function),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_Force2FunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_RangeFunction.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor.RangeFunction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapFor_RangeFunction {}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor_RangeFunction {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(self, x: i32, z: i32, range: i32) -> ();
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_RangeFunction {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_RangeFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_RangeFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_UnitFunction.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor.UnitFunction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapFor_UnitFunction {}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor_UnitFunction {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_UnitFunction {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_UnitFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_UnitFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapfor/MapFor_UnitSkillFunction.md")))]
+#[::unity2::class(namespace = "App", name = "MapFor.UnitSkillFunction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapFor_UnitSkillFunction {}
+
+#[cfg(feature = "app-mapfor")]
+#[::unity2::methods]
+impl MapFor_UnitSkillFunction {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        unit: crate::app::unit::Unit,
+        skill: crate::app::skilldata::SkillData,
+    ) -> ();
+}
+
+#[cfg(feature = "app-mapfor")]
+impl MapFor_UnitSkillFunction {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapFor_UnitSkillFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapFor_UnitSkillFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}

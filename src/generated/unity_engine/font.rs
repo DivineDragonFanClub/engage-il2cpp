@@ -1,0 +1,99 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/font/Font_FontTextureRebuildCallback.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "Font.FontTextureRebuildCallback")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct Font_FontTextureRebuildCallback {}
+
+#[cfg(feature = "unity_engine-font")]
+#[::unity2::methods]
+impl Font_FontTextureRebuildCallback {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-font")]
+impl Font_FontTextureRebuildCallback {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Font_FontTextureRebuildCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFont_FontTextureRebuildCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/font/Font.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "Font")]
+#[parent(crate::unity_engine::object_2::Object_2)]
+pub struct Font {
+    #[static_field]
+    #[rename(name = "textureRebuilt")]
+    pub texture_rebuilt: crate::system::action_1::Action_1<crate::unity_engine::font::Font>,
+    #[rename(name = "m_FontTextureRebuildCallback")]
+    pub m_font_texture_rebuild_callback: crate::unity_engine::font::Font_FontTextureRebuildCallback,
+}
+
+#[cfg(feature = "unity_engine-font")]
+#[::unity2::methods]
+impl Font {
+    #[method(name = "add_textureRebuilt", args = 1)]
+    pub fn add_texture_rebuilt(
+        value: crate::system::action_1::Action_1<crate::unity_engine::font::Font>,
+    ) -> ();
+
+    #[method(name = "remove_textureRebuilt", args = 1)]
+    pub fn remove_texture_rebuilt(
+        value: crate::system::action_1::Action_1<crate::unity_engine::font::Font>,
+    ) -> ();
+
+    #[method(name = "get_material", args = 0)]
+    pub fn get_material(self) -> crate::unity_engine::material::Material;
+
+    #[method(name = "get_dynamic", args = 0)]
+    pub fn get_dynamic(self) -> bool;
+
+    #[method(name = "get_fontSize", args = 0)]
+    pub fn get_font_size(self) -> i32;
+
+    #[method(name = "InvokeTextureRebuilt_Internal", args = 1)]
+    pub fn invoke_texture_rebuilt_internal(font: crate::unity_engine::font::Font) -> ();
+
+    #[method(name = "HasCharacter", args = 1)]
+    pub fn has_character(self, c: u16) -> bool;
+
+    #[method(name = "HasCharacter", args = 1)]
+    pub fn has_character_2(self, c: i32) -> bool;
+
+    #[method(name = "GetCharacterInfo", args = 4)]
+    pub fn get_character_info(
+        self,
+        ch: u16,
+        info: crate::unity_engine::characterinfo::CharacterInfo,
+        size: i32,
+        style: crate::unity_engine::fontstyle::FontStyle,
+    ) -> bool;
+
+    #[method(name = "GetCharacterInfo", args = 2)]
+    pub fn get_character_info_2(
+        self,
+        ch: u16,
+        info: crate::unity_engine::characterinfo::CharacterInfo,
+    ) -> bool;
+}

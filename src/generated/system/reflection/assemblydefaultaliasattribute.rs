@@ -1,0 +1,34 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/assemblydefaultaliasattribute/AssemblyDefaultAliasAttribute.md")))]
+#[::unity2::class(
+    namespace = "System.Reflection",
+    name = "AssemblyDefaultAliasAttribute"
+)]
+pub struct AssemblyDefaultAliasAttribute {
+    #[rename(name = "m_defaultAlias")]
+    pub m_default_alias: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "system-reflection-assemblydefaultaliasattribute")]
+#[::unity2::methods]
+impl AssemblyDefaultAliasAttribute {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, default_alias: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "system-reflection-assemblydefaultaliasattribute")]
+impl AssemblyDefaultAliasAttribute {
+    pub fn new(default_alias: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssemblyDefaultAliasAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssemblyDefaultAliasAttributeMethods>::ctor(this, default_alias);
+        this
+    }
+}

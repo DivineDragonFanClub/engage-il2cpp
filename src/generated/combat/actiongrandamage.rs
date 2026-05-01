@@ -1,0 +1,54 @@
+
+use crate::combat::actionbase::ActionBase;
+use crate::combat::actionbase::IActionBase;
+use crate::combat::actiondisposerholder::ActionDisposerHolder;
+use crate::combat::actiondisposerholder::IActionDisposerHolder;
+use crate::combat::actiongranbase::ActionGranBase;
+use crate::combat::actiongranbase::IActionGranBase;
+use crate::combat::state::IState;
+use crate::combat::state::State;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiongrandamage/ActionGranDamage.md")))]
+#[::unity2::class(namespace = "Combat", name = "ActionGranDamage")]
+#[parent(crate::combat::actiongranbase::ActionGranBase)]
+pub struct ActionGranDamage {
+    #[rename(name = "m_TimeToEraseInAir")]
+    pub m_time_to_erase_in_air: f32,
+}
+
+#[cfg(feature = "combat-actiongrandamage")]
+#[::unity2::methods]
+impl ActionGranDamage {
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, chr: crate::combat::character::Character) -> ();
+
+    #[method(name = "OnEnter", args = 0)]
+    pub fn on_enter(self) -> ();
+
+    #[method(name = "OnUpdate", args = 0)]
+    pub fn on_update(self) -> ();
+
+    #[method(name = "OnExit", args = 0)]
+    pub fn on_exit(self) -> ();
+}
+
+#[cfg(feature = "combat-actiongrandamage")]
+impl ActionGranDamage {
+    pub fn new(chr: crate::combat::character::Character) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ActionGranDamage),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IActionGranDamageMethods>::ctor(this, chr);
+        this
+    }
+}

@@ -1,0 +1,34 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/pointer/Pointer.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "Pointer")]
+#[parent(crate::system::object::Object)]
+pub struct Pointer {
+    #[rename(name = "_ptrType")]
+    pub ptr_type: crate::system::runtimetype::RuntimeType,
+}
+
+#[cfg(feature = "system-reflection-pointer")]
+#[::unity2::methods]
+impl Pointer {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "system-reflection-pointer")]
+impl Pointer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Pointer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPointerMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,1318 @@
+
+use crate::app::bitfield32::BitField32;
+use crate::app::bitfield32::IBitField32;
+use crate::app::bitfieldcommon::BitFieldCommon;
+use crate::app::bitfieldcommon::IBitFieldCommon;
+use crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1;
+use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_Attrs.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ItemData_Attrs {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ItemData_Attrs {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ItemData.Attrs";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ItemData_Attrs {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ItemData_Attrs {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn physical() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn magic() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_AddTargets.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ItemData_AddTargets {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ItemData_AddTargets {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ItemData.AddTargets";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ItemData_AddTargets {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ItemData_AddTargets {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn self_() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn around() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn whole() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_WeaponAttrs.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ItemData_WeaponAttrs {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ItemData_WeaponAttrs {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ItemData.WeaponAttrs";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ItemData_WeaponAttrs {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ItemData_WeaponAttrs {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn fire() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn thunder() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn wind() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn ice() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn light() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn dark() -> Self {
+        Self { value: 6 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_Kinds.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ItemData_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ItemData_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ItemData.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ItemData_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ItemData_Kinds {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn sword() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn lance() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn axe() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn bow() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn dagger() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn magic() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn fist() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn special() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn tool() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn shield() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn accessory() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn precious() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn refine_iron() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn refine_steel() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn refine_silver() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn piece_of_bond() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn gold() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn weapon_num() -> Self {
+        Self { value: 10 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_UseTypes.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ItemData_UseTypes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ItemData_UseTypes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ItemData.UseTypes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ItemData_UseTypes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ItemData_UseTypes {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn heal() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn rest_heal() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn revive() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn warp() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn rescue() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn engage_add() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn rewarp() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn freeze() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn sleep() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn silence() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn charm() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn berserk() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn weakness() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn again() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn torch() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn food() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn rest() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn sight_up() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn weapon_level_up() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn grow_up() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn enhance() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn cc_master() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn cc_change() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn cc_extra() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn creation() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn draw() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn gain_exp() -> Self {
+        Self { value: 28 }
+    }
+
+    pub fn stun() -> Self {
+        Self { value: 29 }
+    }
+
+    pub fn detox() -> Self {
+        Self { value: 30 }
+    }
+
+    pub fn give_skill() -> Self {
+        Self { value: 31 }
+    }
+
+    pub fn foodstuff() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn gift() -> Self {
+        Self { value: 33 }
+    }
+
+    pub fn material() -> Self {
+        Self { value: 34 }
+    }
+
+    pub fn fishing_rod() -> Self {
+        Self { value: 35 }
+    }
+
+    pub fn bless() -> Self {
+        Self { value: 36 }
+    }
+
+    pub fn bless_rest() -> Self {
+        Self { value: 37 }
+    }
+
+    pub fn bless_plus() -> Self {
+        Self { value: 38 }
+    }
+
+    pub fn bless_rest_plus() -> Self {
+        Self { value: 39 }
+    }
+
+    pub fn cc_enchant() -> Self {
+        Self { value: 40 }
+    }
+
+    pub fn cc_gunner() -> Self {
+        Self { value: 41 }
+    }
+
+    pub fn gain_skill_point() -> Self {
+        Self { value: 42 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_FlagField.md")))]
+#[::unity2::class(namespace = "App", name = "ItemData.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: itemdata :: ItemData_Flags >)]
+pub struct ItemData_FlagField {}
+
+#[cfg(feature = "app-itemdata")]
+#[::unity2::methods]
+impl ItemData_FlagField {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::itemdata::ItemData_Flags) -> ();
+
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::itemdata::ItemData_Flags) -> i32;
+}
+
+#[cfg(feature = "app-itemdata")]
+impl ItemData_FlagField {
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    pub fn new_2(f: crate::app::itemdata::ItemData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IItemData_FlagFieldMethods>::ctor_2(this, f);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_Flags.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ItemData_Flags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ItemData_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ItemData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ItemData_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ItemData_Flags {
+    pub fn rarity() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn not_trade() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn can_use() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn only_chapter() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn only_enemy() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn only_male() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn only_female() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn engage() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn ignore_weapon_level() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn unpublic() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn not_entrust() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn invert_interact() -> Self {
+        Self { value: 2048 }
+    }
+
+    pub fn download() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn key_door() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn key_treasure_box() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn ai_unequipable() -> Self {
+        Self { value: 32768 }
+    }
+
+    pub fn reverse_attribute() -> Self {
+        Self { value: 65536 }
+    }
+
+    pub fn lunch_box() -> Self {
+        Self { value: 131072 }
+    }
+
+    pub fn simple_help() -> Self {
+        Self { value: 262144 }
+    }
+
+    pub fn range_target() -> Self {
+        Self { value: 524288 }
+    }
+
+    pub fn ignore_combat() -> Self {
+        Self { value: 1048576 }
+    }
+
+    pub fn forced_combat() -> Self {
+        Self { value: 2097152 }
+    }
+
+    pub fn bless() -> Self {
+        Self { value: 16777216 }
+    }
+
+    pub fn breath() -> Self {
+        Self { value: 33554432 }
+    }
+
+    pub fn dragon() -> Self {
+        Self { value: 67108864 }
+    }
+
+    pub fn bullet() -> Self {
+        Self { value: 134217728 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData.md")))]
+#[::unity2::class(namespace = "App", name = "ItemData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: itemdata :: ItemData >)]
+pub struct ItemData {
+    #[static_field]
+    #[rename(name = "MAX_NAME_LENGTH")]
+    pub max_name_length: i32,
+    #[static_field]
+    #[rename(name = "RANGE_INF")]
+    pub range_inf: i32,
+    #[static_field]
+    #[rename(name = "ENDURANCE_INF")]
+    pub endurance_inf: i32,
+    #[static_field]
+    #[rename(name = "HIT_INF")]
+    pub hit_inf: i32,
+    #[rename(name = "m_IsWeapon")]
+    pub m_is_weapon: bool,
+    #[rename(name = "FlagName")]
+    pub flag_name: ::unity2::Il2CppString,
+    #[rename(name = "m_PrefixlessIid")]
+    pub m_prefixless_iid: ::unity2::Il2CppString,
+    #[rename(name = "m_EnchantHash")]
+    pub m_enchant_hash: i32,
+    #[rename(name = "m_WeaponLevel")]
+    pub m_weapon_level: crate::app::weaponlevel::WeaponLevel_Kind,
+    #[rename(name = "m_UnitItem")]
+    pub m_unit_item: crate::app::unititem::UnitItem,
+    #[static_field]
+    #[rename(name = "EmptyEnchantHash")]
+    pub empty_enchant_hash: i32,
+    #[static_field]
+    #[rename(name = "MaxInventory")]
+    pub max_inventory: i32,
+    #[static_field]
+    #[rename(name = "MaxRefine")]
+    pub max_refine: i32,
+}
+
+#[cfg(feature = "app-itemdata")]
+#[::unity2::methods]
+impl ItemData {
+    #[method(name = "GetKindName", args = 1)]
+    pub fn get_kind_name(kind: crate::app::itemdata::ItemData_Kinds) -> ::unity2::Il2CppString;
+
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_Iid", args = 0)]
+    pub fn get_iid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Iid", args = 1)]
+    pub fn set_iid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Help", args = 0)]
+    pub fn get_help(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Help", args = 1)]
+    pub fn set_help(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Tutorial", args = 0)]
+    pub fn get_tutorial(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Tutorial", args = 1)]
+    pub fn set_tutorial(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Aid", args = 0)]
+    pub fn get_aid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Aid", args = 1)]
+    pub fn set_aid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Kind", args = 0)]
+    pub fn get_kind(self) -> crate::app::itemdata::ItemData_Kinds;
+
+    #[method(name = "set_Kind", args = 1)]
+    pub fn set_kind(self, value: crate::app::itemdata::ItemData_Kinds) -> ();
+
+    #[method(name = "get_Attr", args = 0)]
+    pub fn get_attr(self) -> crate::app::itemdata::ItemData_Attrs;
+
+    #[method(name = "set_Attr", args = 1)]
+    pub fn set_attr(self, value: crate::app::itemdata::ItemData_Attrs) -> ();
+
+    #[method(name = "get_UseType", args = 0)]
+    pub fn get_use_type(self) -> crate::app::itemdata::ItemData_UseTypes;
+
+    #[method(name = "set_UseType", args = 1)]
+    pub fn set_use_type(self, value: crate::app::itemdata::ItemData_UseTypes) -> ();
+
+    #[method(name = "get_WeaponAttr", args = 0)]
+    pub fn get_weapon_attr(self) -> crate::app::itemdata::ItemData_WeaponAttrs;
+
+    #[method(name = "set_WeaponAttr", args = 1)]
+    pub fn set_weapon_attr(self, value: crate::app::itemdata::ItemData_WeaponAttrs) -> ();
+
+    #[method(name = "get_Icon", args = 0)]
+    pub fn get_icon(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Icon", args = 1)]
+    pub fn set_icon(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Endurance", args = 0)]
+    pub fn get_endurance(self) -> u8;
+
+    #[method(name = "set_Endurance", args = 1)]
+    pub fn set_endurance(self, value: u8) -> ();
+
+    #[method(name = "get_Power", args = 0)]
+    pub fn get_power(self) -> u8;
+
+    #[method(name = "set_Power", args = 1)]
+    pub fn set_power(self, value: u8) -> ();
+
+    #[method(name = "get_Weight", args = 0)]
+    pub fn get_weight(self) -> u8;
+
+    #[method(name = "set_Weight", args = 1)]
+    pub fn set_weight(self, value: u8) -> ();
+
+    #[method(name = "get_RangeI", args = 0)]
+    pub fn get_range_i(self) -> u8;
+
+    #[method(name = "set_RangeI", args = 1)]
+    pub fn set_range_i(self, value: u8) -> ();
+
+    #[method(name = "get_RangeO", args = 0)]
+    pub fn get_range_o(self) -> u8;
+
+    #[method(name = "set_RangeO", args = 1)]
+    pub fn set_range_o(self, value: u8) -> ();
+
+    #[method(name = "get_Distance", args = 0)]
+    pub fn get_distance(self) -> u8;
+
+    #[method(name = "set_Distance", args = 1)]
+    pub fn set_distance(self, value: u8) -> ();
+
+    #[method(name = "get_Hit", args = 0)]
+    pub fn get_hit(self) -> i16;
+
+    #[method(name = "set_Hit", args = 1)]
+    pub fn set_hit(self, value: i16) -> ();
+
+    #[method(name = "get_Critical", args = 0)]
+    pub fn get_critical(self) -> i16;
+
+    #[method(name = "set_Critical", args = 1)]
+    pub fn set_critical(self, value: i16) -> ();
+
+    #[method(name = "get_Avoid", args = 0)]
+    pub fn get_avoid(self) -> i16;
+
+    #[method(name = "set_Avoid", args = 1)]
+    pub fn set_avoid(self, value: i16) -> ();
+
+    #[method(name = "get_Secure", args = 0)]
+    pub fn get_secure(self) -> i16;
+
+    #[method(name = "set_Secure", args = 1)]
+    pub fn set_secure(self, value: i16) -> ();
+
+    #[method(name = "get_Price", args = 0)]
+    pub fn get_price(self) -> i32;
+
+    #[method(name = "set_Price", args = 1)]
+    pub fn set_price(self, value: i32) -> ();
+
+    #[method(name = "get_WeaponLevel", args = 0)]
+    pub fn get_weapon_level(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_WeaponLevel", args = 1)]
+    pub fn set_weapon_level(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_RodType", args = 0)]
+    pub fn get_rod_type(self) -> crate::app::itemdata::ItemData_RodTypes;
+
+    #[method(name = "set_RodType", args = 1)]
+    pub fn set_rod_type(self, value: crate::app::itemdata::ItemData_RodTypes) -> ();
+
+    #[method(name = "get_RodExp", args = 0)]
+    pub fn get_rod_exp(self) -> u8;
+
+    #[method(name = "set_RodExp", args = 1)]
+    pub fn set_rod_exp(self, value: u8) -> ();
+
+    #[method(name = "get_RateArena", args = 0)]
+    pub fn get_rate_arena(self) -> u8;
+
+    #[method(name = "set_RateArena", args = 1)]
+    pub fn set_rate_arena(self, value: u8) -> ();
+
+    #[method(name = "get_ShootEffect", args = 0)]
+    pub fn get_shoot_effect(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_ShootEffect", args = 1)]
+    pub fn set_shoot_effect(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_HitEffect", args = 0)]
+    pub fn get_hit_effect(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_HitEffect", args = 1)]
+    pub fn set_hit_effect(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_CannonEffect", args = 0)]
+    pub fn get_cannon_effect(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_CannonEffect", args = 1)]
+    pub fn set_cannon_effect(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_OverlapTerrain", args = 0)]
+    pub fn get_overlap_terrain(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_OverlapTerrain", args = 1)]
+    pub fn set_overlap_terrain(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Flag", args = 0)]
+    pub fn get_flag(self) -> crate::app::itemdata::ItemData_FlagField;
+
+    #[method(name = "set_Flag", args = 1)]
+    pub fn set_flag(self, value: crate::app::itemdata::ItemData_FlagField) -> ();
+
+    #[method(name = "get_Enhance", args = 0)]
+    pub fn get_enhance(self) -> crate::app::capabilitysbyte::CapabilitySbyte;
+
+    #[method(name = "set_Enhance", args = 1)]
+    pub fn set_enhance(self, value: crate::app::capabilitysbyte::CapabilitySbyte) -> ();
+
+    #[method(name = "get_GrowRatio", args = 0)]
+    pub fn get_grow_ratio(self) -> crate::app::capabilitysbyte::CapabilitySbyte;
+
+    #[method(name = "set_GrowRatio", args = 1)]
+    pub fn set_grow_ratio(self, value: crate::app::capabilitysbyte::CapabilitySbyte) -> ();
+
+    #[method(name = "get_EquipCondition", args = 0)]
+    pub fn get_equip_condition(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_EquipCondition", args = 1)]
+    pub fn set_equip_condition(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_EquipSids", args = 0)]
+    pub fn get_equip_sids(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_EquipSids", args = 1)]
+    pub fn set_equip_sids(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_PassiveSids", args = 0)]
+    pub fn get_passive_sids(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_PassiveSids", args = 1)]
+    pub fn set_passive_sids(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_GiveSids", args = 0)]
+    pub fn get_give_sids(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_GiveSids", args = 1)]
+    pub fn set_give_sids(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_AddTarget", args = 0)]
+    pub fn get_add_target(self) -> crate::app::itemdata::ItemData_AddTargets;
+
+    #[method(name = "set_AddTarget", args = 1)]
+    pub fn set_add_target(self, value: crate::app::itemdata::ItemData_AddTargets) -> ();
+
+    #[method(name = "get_AddType", args = 0)]
+    pub fn get_add_type(self) -> crate::app::itemdata::ItemData_UseTypes;
+
+    #[method(name = "set_AddType", args = 1)]
+    pub fn set_add_type(self, value: crate::app::itemdata::ItemData_UseTypes) -> ();
+
+    #[method(name = "get_AddPower", args = 0)]
+    pub fn get_add_power(self) -> u8;
+
+    #[method(name = "set_AddPower", args = 1)]
+    pub fn set_add_power(self, value: u8) -> ();
+
+    #[method(name = "get_AddRange", args = 0)]
+    pub fn get_add_range(self) -> u8;
+
+    #[method(name = "set_AddRange", args = 1)]
+    pub fn set_add_range(self, value: u8) -> ();
+
+    #[method(name = "get_AddSids", args = 0)]
+    pub fn get_add_sids(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_AddSids", args = 1)]
+    pub fn set_add_sids(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_AddEffect", args = 0)]
+    pub fn get_add_effect(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_AddEffect", args = 1)]
+    pub fn set_add_effect(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_AddHelp", args = 0)]
+    pub fn get_add_help(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_AddHelp", args = 1)]
+    pub fn set_add_help(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_HighRankItem", args = 0)]
+    pub fn get_high_rank_item(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_HighRankItem", args = 1)]
+    pub fn set_high_rank_item(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_EquipSkills", args = 0)]
+    pub fn get_equip_skills(self) -> crate::app::skillarray::SkillArray;
+
+    #[method(name = "get_PassiveSkills", args = 0)]
+    pub fn get_passive_skills(self) -> crate::app::skillarray::SkillArray;
+
+    #[method(name = "get_GiveSkills", args = 0)]
+    pub fn get_give_skills(self) -> crate::app::skillarray::SkillArray;
+
+    #[method(name = "get_EnchantSkills1", args = 0)]
+    pub fn get_enchant_skills1(self) -> crate::app::skillarray::SkillArray;
+
+    #[method(name = "get_EnchantSkills2", args = 0)]
+    pub fn get_enchant_skills2(self) -> crate::app::skillarray::SkillArray;
+
+    #[method(name = "get_EnchantSkills3", args = 0)]
+    pub fn get_enchant_skills3(self) -> crate::app::skillarray::SkillArray;
+
+    #[method(name = "get_EnchantSkills4", args = 0)]
+    pub fn get_enchant_skills4(self) -> crate::app::skillarray::SkillArray;
+
+    #[method(name = "get_AttackMotion", args = 0)]
+    pub fn get_attack_motion(self) -> crate::app::unitanim::UnitAnim_Types;
+
+    #[method(name = "set_AttackMotion", args = 1)]
+    pub fn set_attack_motion(self, value: crate::app::unitanim::UnitAnim_Types) -> ();
+
+    #[method(name = "CanUse", args = 0)]
+    pub fn can_use(self) -> bool;
+
+    #[method(name = "CanSelfTarget", args = 1)]
+    pub fn can_self_target(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "GetEnchantHash", args = 0)]
+    pub fn get_enchant_hash(self) -> i32;
+
+    #[method(name = "HasEnchantHash", args = 0)]
+    pub fn has_enchant_hash(self) -> bool;
+
+    #[method(name = "GetPrefixlessIid", args = 0)]
+    pub fn get_prefixless_iid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "CanExpend", args = 0)]
+    pub fn can_expend(self) -> bool;
+
+    #[method(name = "IsWeapon", args = 0)]
+    pub fn is_weapon(self) -> bool;
+
+    #[method(name = "IsPhysical", args = 0)]
+    pub fn is_physical(self) -> bool;
+
+    #[method(name = "IsMagic", args = 0)]
+    pub fn is_magic(self) -> bool;
+
+    #[method(name = "IsBreath", args = 0)]
+    pub fn is_breath(self) -> bool;
+
+    #[method(name = "IsFlag", args = 1)]
+    pub fn is_flag(self, flags: crate::app::itemdata::ItemData_Flags) -> bool;
+
+    #[method(name = "IsSurehit", args = 0)]
+    pub fn is_surehit(self) -> bool;
+
+    #[method(name = "IsClassChange", args = 0)]
+    pub fn is_class_change(self) -> bool;
+
+    #[method(name = "IsMaterial", args = 0)]
+    pub fn is_material(self) -> bool;
+
+    #[method(name = "IsLongRange", args = 0)]
+    pub fn is_long_range(self) -> bool;
+
+    #[method(name = "IsRangeTarget", args = 0)]
+    pub fn is_range_target(self) -> bool;
+
+    #[method(name = "IsRangeUseType", args = 1)]
+    pub fn is_range_use_type(self, use_type: crate::app::itemdata::ItemData_UseTypes) -> bool;
+
+    #[method(name = "IsRangeHeal", args = 0)]
+    pub fn is_range_heal(self) -> bool;
+
+    #[method(name = "IsRangeRestHeal", args = 0)]
+    pub fn is_range_rest_heal(self) -> bool;
+
+    #[method(name = "IsRangeAgain", args = 0)]
+    pub fn is_range_again(self) -> bool;
+
+    #[method(name = "IsRangeEngageAdd", args = 0)]
+    pub fn is_range_engage_add(self) -> bool;
+
+    #[method(name = "IsBless", args = 0)]
+    pub fn is_bless(self) -> bool;
+
+    #[method(name = "IsDownload", args = 0)]
+    pub fn is_download(self) -> bool;
+
+    #[method(name = "IsUnknown", args = 0)]
+    pub fn is_unknown(self) -> bool;
+
+    #[method(name = "IsSingleRod", args = 0)]
+    pub fn is_single_rod(self) -> bool;
+
+    #[method(name = "GetTimes", args = 0)]
+    pub fn get_times(self) -> i32;
+
+    #[method(name = "GetPrice", args = 1)]
+    pub fn get_price_2(self, endurance: i32) -> i32;
+
+    #[method(name = "GetUnitItem", args = 1)]
+    pub fn get_unit_item(self, unit: crate::app::unit::Unit) -> crate::app::unititem::UnitItem;
+
+    #[method(name = "GetUnitItem", args = 0)]
+    pub fn get_unit_item_2(self) -> crate::app::unititem::UnitItem;
+
+    #[method(name = "GetFontColor", args = 1)]
+    pub fn get_font_color(self, is_active: bool) -> crate::unity_engine::color::Color;
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[method(name = "CalcEnchantHash", args = 0)]
+    pub fn calc_enchant_hash(self) -> i32;
+
+    #[method(name = "HasFlagName", args = 0)]
+    pub fn has_flag_name(self) -> bool;
+
+    #[method(name = "CalcAttr", args = 0)]
+    pub fn calc_attr(self) -> crate::app::itemdata::ItemData_Attrs;
+
+    #[method(name = "GetAttrNameMID", args = 0)]
+    pub fn get_attr_name_mid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetAttrHelpMID", args = 0)]
+    pub fn get_attr_help_mid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "TryGetSkill", args = 2)]
+    pub fn try_get_skill(
+        skills: ::unity2::Array<::unity2::Il2CppString>,
+        index: i32,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetEnchantSkills", args = 1)]
+    pub fn get_enchant_skills(self, level: i32) -> crate::app::skillarray::SkillArray;
+
+    #[method(name = "OnCompleted", args = 0)]
+    pub fn on_completed(self) -> ();
+
+    #[method(name = "Serialize", args = 2)]
+    pub fn serialize(
+        stream: crate::app::stream_2::Stream_2,
+        item: crate::app::itemdata::ItemData,
+    ) -> ();
+
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(stream: crate::app::stream_2::Stream_2) -> crate::app::itemdata::ItemData;
+
+    #[method(name = "TrySerialize", args = 2)]
+    pub fn try_serialize(
+        stream: crate::app::stream_2::Stream_2,
+        item: crate::app::itemdata::ItemData,
+    ) -> ();
+
+    #[method(name = "TryDeserialize", args = 1)]
+    pub fn try_deserialize(
+        stream: crate::app::stream_2::Stream_2,
+    ) -> crate::app::itemdata::ItemData;
+
+    #[method(name = "CreateSimpleWeapon", args = 2)]
+    pub fn create_simple_weapon(
+        kind: crate::app::itemdata::ItemData_Kinds,
+        is_bullet: bool,
+    ) -> crate::app::itemdata::ItemData;
+
+    #[method(name = "IsInventory", args = 0)]
+    pub fn is_inventory(self) -> bool;
+
+    #[method(name = "GetInventory", args = 0)]
+    pub fn get_inventory(self) -> i32;
+
+    #[method(name = "GetMaxInventory", args = 0)]
+    pub fn get_max_inventory(self) -> i32;
+
+    #[method(name = "SetInventory", args = 1)]
+    pub fn set_inventory(self, count: i32) -> ();
+
+    #[method(name = "AddInventory", args = 1)]
+    pub fn add_inventory(self, count: i32) -> ();
+
+    #[method(name = "RegistGlobalFlags", args = 0)]
+    pub fn regist_global_flags() -> ();
+
+    #[method(name = "GetUseEffect", args = 0)]
+    pub fn get_use_effect(self) -> crate::app::effectdata::EffectData;
+
+    #[method(name = "GetEnchantEffect", args = 0)]
+    pub fn get_enchant_effect(self) -> crate::app::effectdata::EffectData;
+
+    #[method(name = "IsDragon", args = 0)]
+    pub fn is_dragon(self) -> bool;
+
+    #[method(name = "IsBullet", args = 0)]
+    pub fn is_bullet(self) -> bool;
+
+    #[method(name = "CanEnchant", args = 0)]
+    pub fn can_enchant(self) -> bool;
+
+    #[method(name = "get_MasterProof", args = 0)]
+    pub fn get_master_proof() -> crate::app::itemdata::ItemData;
+
+    #[method(name = "get_ChangeProof", args = 0)]
+    pub fn get_change_proof() -> crate::app::itemdata::ItemData;
+
+    #[method(name = "get_EnchantProof", args = 0)]
+    pub fn get_enchant_proof() -> crate::app::itemdata::ItemData;
+
+    #[method(name = "get_GunnerProof", args = 0)]
+    pub fn get_gunner_proof() -> crate::app::itemdata::ItemData;
+
+    #[method(name = "ReplaceHighRank", args = 1)]
+    pub fn replace_high_rank(
+        iids: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "GetEnchantRangeI", args = 0)]
+    pub fn get_enchant_range_i(self) -> i32;
+
+    #[method(name = "GetEnchantRangeO", args = 0)]
+    pub fn get_enchant_range_o(self) -> i32;
+
+    #[method(name = "GetGainExp", args = 0)]
+    pub fn get_gain_exp(self) -> i32;
+
+    #[method(name = "GetGainSkillPoint", args = 0)]
+    pub fn get_gain_skill_point(self) -> i32;
+}
+
+#[cfg(feature = "app-itemdata")]
+impl ItemData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemdata/ItemData_RodTypes.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ItemData_RodTypes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ItemData_RodTypes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ItemData.RodTypes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ItemData_RodTypes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ItemData_RodTypes {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn basic() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn heal() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn interference() -> Self {
+        Self { value: 3 }
+    }
+}

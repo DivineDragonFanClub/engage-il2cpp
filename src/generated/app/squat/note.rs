@@ -1,0 +1,350 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note.md")))]
+#[::unity2::class(namespace = "App.Squat", name = "Note")]
+#[parent(crate::system::object::Object)]
+pub struct Note {
+    #[static_field]
+    #[rename(name = "cUIRootPath")]
+    pub c_ui_root_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cUINotesLeft")]
+    pub c_ui_notes_left: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cUINotesRight")]
+    pub c_ui_notes_right: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cUINotesUp")]
+    pub c_ui_notes_up: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cUINotesDown")]
+    pub c_ui_notes_down: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cUINotesClockwise")]
+    pub c_ui_notes_clockwise: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cUINotesUnclockwise")]
+    pub c_ui_notes_unclockwise: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "DisplayHeight")]
+    pub display_height: f32,
+    #[rename(name = "m_NodeImage")]
+    pub m_node_image: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ImageAnime")]
+    pub m_image_anime: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_ImageTrans")]
+    pub m_image_trans: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_StickImageTrans")]
+    pub m_stick_image_trans: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_BaseTrans")]
+    pub m_base_trans: crate::unity_engine::transform::Transform,
+    #[rename(name = "m_BaseHeightPerFrame")]
+    pub m_base_height_per_frame: f32,
+    #[rename(name = "m_BaseDiffLength")]
+    pub m_base_diff_length: f32,
+    #[rename(name = "m_StickRangeMult")]
+    pub m_stick_range_mult: f32,
+    #[rename(name = "m_Timer")]
+    pub m_timer: f32,
+    #[rename(name = "m_ClockwiseTimer")]
+    pub m_clockwise_timer: f32,
+    #[rename(name = "m_TimeMult")]
+    pub m_time_mult: f32,
+    #[rename(name = "m_IsPlayClockwiseInputAnime")]
+    pub m_is_play_clockwise_input_anime: bool,
+    #[rename(name = "m_FirstP")]
+    pub m_first_p: f32,
+    #[rename(name = "m_FirstG")]
+    pub m_first_g: f32,
+    #[rename(name = "m_FirstB")]
+    pub m_first_b: f32,
+    #[rename(name = "m_LatterP")]
+    pub m_latter_p: f32,
+    #[rename(name = "m_LatterG")]
+    pub m_latter_g: f32,
+    #[rename(name = "m_LatterB")]
+    pub m_latter_b: f32,
+}
+
+#[cfg(feature = "app-squat-note")]
+#[::unity2::methods]
+impl Note {
+    #[method(name = "get_NoteType", args = 0)]
+    pub fn get_note_type(self) -> crate::app::squat::note::Note_Type;
+
+    #[method(name = "set_NoteType", args = 1)]
+    pub fn set_note_type(self, value: crate::app::squat::note::Note_Type) -> ();
+
+    #[method(name = "get_IsFinish", args = 0)]
+    pub fn get_is_finish(self) -> bool;
+
+    #[method(name = "set_IsFinish", args = 1)]
+    pub fn set_is_finish(self, value: bool) -> ();
+
+    #[method(name = "get_IsTrigger", args = 0)]
+    pub fn get_is_trigger(self) -> bool;
+
+    #[method(name = "set_IsTrigger", args = 1)]
+    pub fn set_is_trigger(self, value: bool) -> ();
+
+    #[method(name = "get_IsAccepted", args = 0)]
+    pub fn get_is_accepted(self) -> bool;
+
+    #[method(name = "set_IsAccepted", args = 1)]
+    pub fn set_is_accepted(self, value: bool) -> ();
+
+    #[method(name = "get_IsClockwiseCheck", args = 0)]
+    pub fn get_is_clockwise_check(self) -> bool;
+
+    #[method(name = "set_IsClockwiseCheck", args = 1)]
+    pub fn set_is_clockwise_check(self, value: bool) -> ();
+
+    #[method(name = "get_Result", args = 0)]
+    pub fn get_result(self) -> crate::app::squat::note::Note_ResultRank;
+
+    #[method(name = "set_Result", args = 1)]
+    pub fn set_result(self, value: crate::app::squat::note::Note_ResultRank) -> ();
+
+    #[method(name = "get_RectPos", args = 0)]
+    pub fn get_rect_pos(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "SetJudgeParam", args = 1)]
+    pub fn set_judge_param(
+        self,
+        set_judge: crate::app::musclesquatjudgeareadata::MuscleSquatJudgeAreaData,
+    ) -> ();
+
+    #[method(name = "CreateArrow", args = 7)]
+    pub fn create_arrow(
+        self,
+        is_right: bool,
+        canvas: crate::unity_engine::gameobject::GameObject,
+        set_type: crate::app::squat::note::Note_Type,
+        set_time: f32,
+        move_height_pf: f32,
+        base_trans: crate::unity_engine::transform::Transform,
+        first_time_mult: f32,
+    ) -> ();
+
+    #[method(name = "CreateClockWise", args = 9)]
+    pub fn create_clock_wise(
+        self,
+        is_right: bool,
+        canvas: crate::unity_engine::gameobject::GameObject,
+        set_type: crate::app::squat::note::Note_Type,
+        start_time: f32,
+        end_time: f32,
+        move_height_pf: f32,
+        base_trans: crate::unity_engine::transform::Transform,
+        first_time_mult: f32,
+        radius_count: i32,
+    ) -> ();
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[method(name = "Tick", args = 11)]
+    pub fn tick(
+        self,
+        time_mult: f32,
+        stick: crate::app::squat::stick::Stick,
+        height_pf: f32,
+        is_top: bool,
+        setfb: f32,
+        setfg: f32,
+        setfp: f32,
+        setlp: f32,
+        setlg: f32,
+        setlb: f32,
+        overwrite_range: f32,
+    ) -> ();
+
+    #[method(name = "TickArrow", args = 4)]
+    pub fn tick_arrow(
+        self,
+        is_top: bool,
+        center: f32,
+        not_check_area: f32,
+        stick: crate::app::squat::stick::Stick,
+    ) -> ();
+
+    #[method(name = "TickArrowJudge", args = 3)]
+    pub fn tick_arrow_judge(
+        self,
+        center: f32,
+        not_check_area: f32,
+        stick: crate::app::squat::stick::Stick,
+    ) -> ();
+
+    #[method(name = "TickClockwise", args = 3)]
+    pub fn tick_clockwise(
+        self,
+        is_top: bool,
+        stick: crate::app::squat::stick::Stick,
+        overwrite_range: f32,
+    ) -> ();
+
+    #[method(name = "TickClockwiseJudge", args = 1)]
+    pub fn tick_clockwise_judge(self, stick: crate::app::squat::stick::Stick) -> ();
+}
+
+#[cfg(feature = "app-squat-note")]
+impl Note {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Note),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INoteMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_ResultRank.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Note_ResultRank {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Note_ResultRank {
+    const NAMESPACE: &'static str = "App.Squat";
+
+    const NAME: &'static str = "Note.ResultRank";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Note_ResultRank {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Note_ResultRank {
+    pub fn perfect() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn good() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn bad() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn miss() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn assist() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn rank_num() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_Type.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Note_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Note_Type {
+    const NAMESPACE: &'static str = "App.Squat";
+
+    const NAME: &'static str = "Note.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Note_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Note_Type {
+    pub fn skip() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn left() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn up() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn down() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn clockwise() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn un_clockwise() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn clockwise_end() -> Self {
+        Self { value: 50 }
+    }
+
+    pub fn un_clockwise_end() -> Self {
+        Self { value: 60 }
+    }
+
+    pub fn type_count() -> Self {
+        Self { value: 61 }
+    }
+}

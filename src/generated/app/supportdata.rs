@@ -1,0 +1,73 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdataarray_1::IStructDataArray_1;
+use crate::app::structdataarray_1::StructDataArray_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/supportdata/SupportData.md")))]
+#[::unity2::class(namespace = "App", name = "SupportData")]
+# [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: supportdata :: SupportData >)]
+pub struct SupportData {}
+
+#[cfg(feature = "app-supportdata")]
+#[::unity2::methods]
+impl SupportData {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_Level", args = 0)]
+    pub fn get_level(self) -> i8;
+
+    #[method(name = "set_Level", args = 1)]
+    pub fn set_level(self, value: i8) -> ();
+
+    #[method(name = "get_Hit", args = 0)]
+    pub fn get_hit(self) -> i8;
+
+    #[method(name = "set_Hit", args = 1)]
+    pub fn set_hit(self, value: i8) -> ();
+
+    #[method(name = "get_Critical", args = 0)]
+    pub fn get_critical(self) -> i8;
+
+    #[method(name = "set_Critical", args = 1)]
+    pub fn set_critical(self, value: i8) -> ();
+
+    #[method(name = "get_Avoid", args = 0)]
+    pub fn get_avoid(self) -> i8;
+
+    #[method(name = "set_Avoid", args = 1)]
+    pub fn set_avoid(self, value: i8) -> ();
+
+    #[method(name = "get_Secure", args = 0)]
+    pub fn get_secure(self) -> i8;
+
+    #[method(name = "set_Secure", args = 1)]
+    pub fn set_secure(self, value: i8) -> ();
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-supportdata")]
+impl SupportData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SupportData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISupportDataMethods>::ctor(this);
+        this
+    }
+}

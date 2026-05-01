@@ -1,0 +1,96 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/togglegroup/ToggleGroup.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "ToggleGroup")]
+#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
+pub struct ToggleGroup {
+    #[rename(name = "m_AllowSwitchOff")]
+    pub m_allow_switch_off: bool,
+    #[rename(name = "m_Toggles")]
+    pub m_toggles: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::ui::toggle::Toggle,
+    >,
+}
+
+#[cfg(feature = "unity_engine-ui-togglegroup")]
+#[::unity2::methods]
+impl ToggleGroup {
+    #[method(name = "get_allowSwitchOff", args = 0)]
+    pub fn get_allow_switch_off(self) -> bool;
+
+    #[method(name = "set_allowSwitchOff", args = 1)]
+    pub fn set_allow_switch_off(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "ValidateToggleIsInGroup", args = 1)]
+    pub fn validate_toggle_is_in_group(self, toggle: crate::unity_engine::ui::toggle::Toggle)
+        -> ();
+
+    #[method(name = "NotifyToggleOn", args = 2)]
+    pub fn notify_toggle_on(
+        self,
+        toggle: crate::unity_engine::ui::toggle::Toggle,
+        send_callback: bool,
+    ) -> ();
+
+    #[method(name = "UnregisterToggle", args = 1)]
+    pub fn unregister_toggle(self, toggle: crate::unity_engine::ui::toggle::Toggle) -> ();
+
+    #[method(name = "RegisterToggle", args = 1)]
+    pub fn register_toggle(self, toggle: crate::unity_engine::ui::toggle::Toggle) -> ();
+
+    #[method(name = "EnsureValidState", args = 0)]
+    pub fn ensure_valid_state(self) -> ();
+
+    #[method(name = "AnyTogglesOn", args = 0)]
+    pub fn any_toggles_on(self) -> bool;
+
+    #[method(name = "ActiveToggles", args = 0)]
+    pub fn active_toggles(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::unity_engine::ui::toggle::Toggle,
+    >;
+
+    #[method(name = "GetFirstActiveToggle", args = 0)]
+    pub fn get_first_active_toggle(self) -> crate::unity_engine::ui::toggle::Toggle;
+
+    #[method(name = "SetAllTogglesOff", args = 1)]
+    pub fn set_all_toggles_off(self, send_callback: bool) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-togglegroup")]
+impl ToggleGroup {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ToggleGroup),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IToggleGroupMethods>::ctor(this);
+        this
+    }
+}

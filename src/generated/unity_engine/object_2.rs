@@ -1,0 +1,275 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/object_2/Object_2.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "Object")]
+#[parent(crate::system::object::Object)]
+pub struct Object_2 {
+    #[rename(name = "m_CachedPtr")]
+    pub m_cached_ptr: ::unity2::IntPtr,
+    #[static_field]
+    #[rename(name = "OffsetOfInstanceIDInCPlusPlusObject")]
+    pub offset_of_instance_id_in_c_plus_plus_object: i32,
+    #[static_field]
+    #[rename(name = "objectIsNullMessage")]
+    pub object_is_null_message: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cloneDestroyedMessage")]
+    pub clone_destroyed_message: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "unity_engine-object_2")]
+#[::unity2::methods]
+impl Object_2 {
+    #[method(name = "GetInstanceID", args = 0)]
+    pub fn get_instance_id(self) -> i32;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, other: crate::system::object::Object) -> bool;
+
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(exists: crate::unity_engine::object_2::Object_2) -> bool;
+
+    #[method(name = "CompareBaseObjects", args = 2)]
+    pub fn compare_base_objects(
+        lhs: crate::unity_engine::object_2::Object_2,
+        rhs: crate::unity_engine::object_2::Object_2,
+    ) -> bool;
+
+    #[method(name = "EnsureRunningOnMainThread", args = 0)]
+    pub fn ensure_running_on_main_thread(self) -> ();
+
+    #[method(name = "IsNativeObjectAlive", args = 1)]
+    pub fn is_native_object_alive(o: crate::unity_engine::object_2::Object_2) -> bool;
+
+    #[method(name = "GetCachedPtr", args = 0)]
+    pub fn get_cached_ptr(self) -> ::unity2::IntPtr;
+
+    #[method(name = "get_name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "Instantiate", args = 3)]
+    pub fn instantiate(
+        original: crate::unity_engine::object_2::Object_2,
+        position: crate::unity_engine::vector3::Vector3,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "Instantiate", args = 4)]
+    pub fn instantiate_2(
+        original: crate::unity_engine::object_2::Object_2,
+        position: crate::unity_engine::vector3::Vector3,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+        parent: crate::unity_engine::transform::Transform,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "Instantiate", args = 1)]
+    pub fn instantiate_3(
+        original: crate::unity_engine::object_2::Object_2,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "Instantiate", args = 2)]
+    pub fn instantiate_4(
+        original: crate::unity_engine::object_2::Object_2,
+        parent: crate::unity_engine::transform::Transform,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "Instantiate", args = 3)]
+    pub fn instantiate_5(
+        original: crate::unity_engine::object_2::Object_2,
+        parent: crate::unity_engine::transform::Transform,
+        instantiate_in_world_space: bool,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "Destroy", args = 2)]
+    pub fn destroy(obj: crate::unity_engine::object_2::Object_2, t: f32) -> ();
+
+    #[method(name = "Destroy", args = 1)]
+    pub fn destroy_2(obj: crate::unity_engine::object_2::Object_2) -> ();
+
+    #[method(name = "DestroyImmediate", args = 2)]
+    pub fn destroy_immediate(
+        obj: crate::unity_engine::object_2::Object_2,
+        allow_destroying_assets: bool,
+    ) -> ();
+
+    #[method(name = "DestroyImmediate", args = 1)]
+    pub fn destroy_immediate_2(obj: crate::unity_engine::object_2::Object_2) -> ();
+
+    #[method(name = "FindObjectsOfType", args = 1)]
+    pub fn find_objects_of_type(
+        r#type: ::unity2::SystemType,
+    ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2>;
+
+    #[method(name = "FindObjectsOfType", args = 2)]
+    pub fn find_objects_of_type_2(
+        r#type: ::unity2::SystemType,
+        include_inactive: bool,
+    ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2>;
+
+    #[method(name = "DontDestroyOnLoad", args = 1)]
+    pub fn dont_destroy_on_load(target: crate::unity_engine::object_2::Object_2) -> ();
+
+    #[method(name = "get_hideFlags", args = 0)]
+    pub fn get_hide_flags(self) -> crate::unity_engine::hideflags::HideFlags;
+
+    #[method(name = "set_hideFlags", args = 1)]
+    pub fn set_hide_flags(self, value: crate::unity_engine::hideflags::HideFlags) -> ();
+
+    #[method(name = "DestroyObject", args = 2)]
+    pub fn destroy_object(obj: crate::unity_engine::object_2::Object_2, t: f32) -> ();
+
+    #[method(name = "DestroyObject", args = 1)]
+    pub fn destroy_object_2(obj: crate::unity_engine::object_2::Object_2) -> ();
+
+    #[method(name = "FindSceneObjectsOfType", args = 1)]
+    pub fn find_scene_objects_of_type(
+        r#type: ::unity2::SystemType,
+    ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2>;
+
+    #[method(name = "FindObjectsOfTypeIncludingAssets", args = 1)]
+    pub fn find_objects_of_type_including_assets(
+        r#type: ::unity2::SystemType,
+    ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2>;
+
+    #[method(name = "FindObjectsOfTypeAll", args = 1)]
+    pub fn find_objects_of_type_all(
+        r#type: ::unity2::SystemType,
+    ) -> ::unity2::Array<crate::unity_engine::object_2::Object_2>;
+
+    #[method(name = "CheckNullArgument", args = 2)]
+    pub fn check_null_argument(
+        arg: crate::system::object::Object,
+        message: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "FindObjectOfType", args = 1)]
+    pub fn find_object_of_type(
+        r#type: ::unity2::SystemType,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "FindObjectOfType", args = 2)]
+    pub fn find_object_of_type_2(
+        r#type: ::unity2::SystemType,
+        include_inactive: bool,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "op_Equality", args = 2)]
+    pub fn op_equality(
+        x: crate::unity_engine::object_2::Object_2,
+        y: crate::unity_engine::object_2::Object_2,
+    ) -> bool;
+
+    #[method(name = "op_Inequality", args = 2)]
+    pub fn op_inequality(
+        x: crate::unity_engine::object_2::Object_2,
+        y: crate::unity_engine::object_2::Object_2,
+    ) -> bool;
+
+    #[method(name = "GetOffsetOfInstanceIDInCPlusPlusObject", args = 0)]
+    pub fn get_offset_of_instance_id_in_c_plus_plus_object() -> i32;
+
+    #[method(name = "CurrentThreadIsMainThread", args = 0)]
+    pub fn current_thread_is_main_thread() -> bool;
+
+    #[method(name = "Internal_CloneSingle", args = 1)]
+    pub fn internal_clone_single(
+        data: crate::unity_engine::object_2::Object_2,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "Internal_CloneSingleWithParent", args = 3)]
+    pub fn internal_clone_single_with_parent(
+        data: crate::unity_engine::object_2::Object_2,
+        parent: crate::unity_engine::transform::Transform,
+        world_position_stays: bool,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "Internal_InstantiateSingle", args = 3)]
+    pub fn internal_instantiate_single(
+        data: crate::unity_engine::object_2::Object_2,
+        pos: crate::unity_engine::vector3::Vector3,
+        rot: crate::unity_engine::quaternion::Quaternion,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "Internal_InstantiateSingleWithParent", args = 4)]
+    pub fn internal_instantiate_single_with_parent(
+        data: crate::unity_engine::object_2::Object_2,
+        parent: crate::unity_engine::transform::Transform,
+        pos: crate::unity_engine::vector3::Vector3,
+        rot: crate::unity_engine::quaternion::Quaternion,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "ToString", args = 1)]
+    pub fn to_string_2(obj: crate::unity_engine::object_2::Object_2) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetName", args = 1)]
+    pub fn get_name_2(obj: crate::unity_engine::object_2::Object_2) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsPersistent", args = 1)]
+    pub fn is_persistent(obj: crate::unity_engine::object_2::Object_2) -> bool;
+
+    #[method(name = "SetName", args = 2)]
+    pub fn set_name_2(
+        obj: crate::unity_engine::object_2::Object_2,
+        name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "DoesObjectWithInstanceIDExist", args = 1)]
+    pub fn does_object_with_instance_id_exist(instance_id: i32) -> bool;
+
+    #[method(name = "FindObjectFromInstanceID", args = 1)]
+    pub fn find_object_from_instance_id(
+        instance_id: i32,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "ForceLoadFromInstanceID", args = 1)]
+    pub fn force_load_from_instance_id(instance_id: i32)
+        -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+
+    #[method(name = "Internal_InstantiateSingle_Injected", args = 3)]
+    pub fn internal_instantiate_single_injected(
+        data: crate::unity_engine::object_2::Object_2,
+        pos: crate::unity_engine::vector3::Vector3,
+        rot: crate::unity_engine::quaternion::Quaternion,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "Internal_InstantiateSingleWithParent_Injected", args = 4)]
+    pub fn internal_instantiate_single_with_parent_injected(
+        data: crate::unity_engine::object_2::Object_2,
+        parent: crate::unity_engine::transform::Transform,
+        pos: crate::unity_engine::vector3::Vector3,
+        rot: crate::unity_engine::quaternion::Quaternion,
+    ) -> crate::unity_engine::object_2::Object_2;
+}
+
+#[cfg(feature = "unity_engine-object_2")]
+impl Object_2 {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Object_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IObject_2Methods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,59 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/magicsignal/MagicSignal.md")))]
+#[::unity2::class(namespace = "Combat", name = "MagicSignal")]
+#[parent(crate::system::object::Object)]
+pub struct MagicSignal {
+    #[rename(name = "level")]
+    pub level: crate::combat::magiclevels::MagicLevels,
+    #[rename(name = "frame")]
+    pub frame: f32,
+    #[rename(name = "command")]
+    pub command: crate::combat::magiccommand::MagicCommand,
+    #[rename(name = "prefab")]
+    pub prefab: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "parentName")]
+    pub parent_name: ::unity2::Il2CppString,
+    #[rename(name = "connect")]
+    pub connect: crate::combat::particleconnect::ParticleConnect,
+    #[rename(name = "intParameter")]
+    pub int_parameter: i32,
+    #[rename(name = "floatParameter")]
+    pub float_parameter: f32,
+    #[rename(name = "stringParameter")]
+    pub string_parameter: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "combat-magicsignal")]
+#[::unity2::methods]
+impl MagicSignal {
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(a: crate::combat::magicsignal::MagicSignal) -> bool;
+
+    #[method(name = "get_Time", args = 0)]
+    pub fn get_time(self) -> f32;
+
+    #[method(name = "IsFiredBetween", args = 2)]
+    pub fn is_fired_between(self, prev_time: f32, curr_time: f32) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-magicsignal")]
+impl MagicSignal {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MagicSignal),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMagicSignalMethods>::ctor(this);
+        this
+    }
+}

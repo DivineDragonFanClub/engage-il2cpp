@@ -1,0 +1,22 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/iproxyfactory/IProxyFactory.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "IProxyFactory")]
+pub struct IProxyFactory {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-iproxyfactory")]
+#[::unity2::methods]
+impl IProxyFactory {
+    #[method(name = "CreateProxyObject", args = 1)]
+    pub fn create_proxy_object(
+        self,
+        o: crate::system::object::Object,
+    ) -> crate::system::object::Object;
+
+    #[method(name = "get_TargetType", args = 0)]
+    pub fn get_target_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "get_ProxyType", args = 0)]
+    pub fn get_proxy_type(self) -> ::unity2::SystemType;
+}

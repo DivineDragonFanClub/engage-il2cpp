@@ -1,0 +1,48 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/uivertex/UIVertex.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct UIVertex {
+    pub position: crate::unity_engine::vector3::Vector3,
+    pub normal: crate::unity_engine::vector3::Vector3,
+    pub tangent: crate::unity_engine::vector4::Vector4,
+    pub color: crate::unity_engine::color32::Color32,
+    pub uv0: crate::unity_engine::vector4::Vector4,
+    pub uv1: crate::unity_engine::vector4::Vector4,
+    pub uv2: crate::unity_engine::vector4::Vector4,
+    pub uv3: crate::unity_engine::vector4::Vector4,
+}
+
+impl ::unity2::ClassIdentity for UIVertex {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "UIVertex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UIVertex {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-uivertex")]
+#[::unity2::methods(value)]
+impl UIVertex {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

@@ -1,0 +1,220 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenusequence/SaveDataMenuSequence.md")))]
+#[::unity2::class(namespace = "App", name = "SaveDataMenuSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: savedatamenusequence :: SaveDataMenuSequence >)]
+pub struct SaveDataMenuSequence {
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::app::savedatamenusequence::SaveDataMenuSequence_Mode,
+    #[rename(name = "m_saveDataHeaderReader")]
+    pub m_save_data_header_reader: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader,
+}
+
+#[cfg(feature = "app-savedatamenusequence")]
+#[::unity2::methods]
+impl SaveDataMenuSequence {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, mode: crate::app::savedatamenusequence::SaveDataMenuSequence_Mode) -> ();
+
+    #[method(name = "GetMode", args = 0)]
+    pub fn get_mode(self) -> crate::app::savedatamenusequence::SaveDataMenuSequence_Mode;
+
+    #[method(name = "LoadHeader", args = 0)]
+    pub fn load_header(self) -> ();
+
+    #[method(name = "IsLoadingHeader", args = 0)]
+    pub fn is_loading_header(self) -> bool;
+
+    #[method(name = "Branch", args = 0)]
+    pub fn branch(self) -> ();
+
+    #[method(name = "CreateLoadMenu", args = 0)]
+    pub fn create_load_menu(self) -> ();
+
+    #[method(name = "CreateSaveMenu", args = 0)]
+    pub fn create_save_menu(self) -> ();
+
+    #[method(name = "CreateSuspendMenu", args = 0)]
+    pub fn create_suspend_menu(self) -> ();
+
+    #[method(name = "CreateCopyMenu", args = 0)]
+    pub fn create_copy_menu(self) -> ();
+
+    #[method(name = "CreateDeleteMenu", args = 0)]
+    pub fn create_delete_menu(self) -> ();
+
+    #[method(name = "GetProcDesc", args = 0)]
+    pub fn get_proc_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        mode: crate::app::savedatamenusequence::SaveDataMenuSequence_Mode,
+    ) -> ();
+}
+
+#[cfg(feature = "app-savedatamenusequence")]
+impl SaveDataMenuSequence {
+    pub fn new(mode: crate::app::savedatamenusequence::SaveDataMenuSequence_Mode) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveDataMenuSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveDataMenuSequenceMethods>::ctor(this, mode);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenusequence/SaveDataMenuSequence_Mode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SaveDataMenuSequence_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SaveDataMenuSequence_Mode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SaveDataMenuSequence.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SaveDataMenuSequence_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SaveDataMenuSequence_Mode {
+    pub fn load() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn save_from_menu() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn save_from_period() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn save_from_ending() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn suspend() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn copy() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn delete() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 7 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedatamenusequence/SaveDataMenuSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SaveDataMenuSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SaveDataMenuSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SaveDataMenuSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SaveDataMenuSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SaveDataMenuSequence_Label {
+    pub fn start() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn load_menu() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn save_menu_from_menu() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn save_menu_from_period() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn save_menu_from_ending() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn suspend_menu() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn copy_menu() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn delete_menu() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 8 }
+    }
+}

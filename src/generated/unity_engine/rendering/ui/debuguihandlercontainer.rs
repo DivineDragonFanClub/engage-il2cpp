@@ -1,0 +1,68 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/ui/debuguihandlercontainer/DebugUIHandlerContainer.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.UI",
+    name = "DebugUIHandlerContainer"
+)]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct DebugUIHandlerContainer {
+    #[rename(name = "contentHolder")]
+    pub content_holder: crate::unity_engine::recttransform::RectTransform,
+}
+
+#[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]
+#[::unity2::methods]
+impl DebugUIHandlerContainer {
+    #[method(name = "GetFirstItem", args = 0)]
+    pub fn get_first_item(
+        self,
+    ) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
+
+    #[method(name = "GetLastItem", args = 0)]
+    pub fn get_last_item(
+        self,
+    ) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
+
+    #[method(name = "IsDirectChild", args = 1)]
+    pub fn is_direct_child(
+        self,
+        widget: crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
+    ) -> bool;
+
+    #[method(name = "GetActiveChildren", args = 0)]
+    pub fn get_active_children(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
+    >;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-ui-debuguihandlercontainer")]
+impl DebugUIHandlerContainer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUIHandlerContainer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUIHandlerContainerMethods>::ctor(this);
+        this
+    }
+}

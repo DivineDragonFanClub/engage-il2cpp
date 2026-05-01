@@ -1,0 +1,39 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdataarray_1::IStructDataArray_1;
+use crate::app::structdataarray_1::StructDataArray_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatortable2d_1/CalculatorTable2D_1.md")))]
+#[::unity2::class(namespace = "App", name = "CalculatorTable2D`1")]
+pub struct CalculatorTable2D_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-calculatortable2d_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> CalculatorTable2D_1<T0> {
+    #[method(name = "GetTable", args = 2)]
+    pub fn get_table(name: ::unity2::Il2CppString, index: i32) -> T0;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-calculatortable2d_1")]
+impl<T0: ::unity2::ClassIdentity> CalculatorTable2D_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CalculatorTable2D_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICalculatorTable2D_1Methods<T0>>::ctor(this);
+        this
+    }
+}

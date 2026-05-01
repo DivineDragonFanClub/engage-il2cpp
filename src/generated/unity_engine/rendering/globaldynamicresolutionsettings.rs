@@ -1,0 +1,48 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/globaldynamicresolutionsettings/GlobalDynamicResolutionSettings.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct GlobalDynamicResolutionSettings {
+    pub enabled: bool,
+    pub max_percentage: f32,
+    pub min_percentage: f32,
+    pub dyn_res_type: crate::unity_engine::rendering::dynamicresolutiontype::DynamicResolutionType,
+    pub upsample_filter:
+        crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter,
+    pub force_resolution: bool,
+    pub forced_percentage: f32,
+}
+
+impl ::unity2::ClassIdentity for GlobalDynamicResolutionSettings {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "GlobalDynamicResolutionSettings";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GlobalDynamicResolutionSettings {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-globaldynamicresolutionsettings")]
+#[::unity2::methods(value)]
+impl GlobalDynamicResolutionSettings {
+    #[method(name = "NewDefault", args = 0)]
+    pub fn new_default () -> crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings ;
+}

@@ -1,0 +1,284 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectdata/EffectData_Types.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EffectData_Types {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EffectData_Types {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "EffectData.Types";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EffectData_Types {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EffectData_Types {
+    pub fn once() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn endless() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectdata/EffectData_Residents.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EffectData_Residents {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EffectData_Residents {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "EffectData.Residents";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EffectData_Residents {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EffectData_Residents {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn map() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn combat() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn both() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectdata/EffectData.md")))]
+#[::unity2::class(namespace = "App", name = "EffectData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectdata :: EffectData >)]
+pub struct EffectData {
+    #[rename(name = "m_FilePaths")]
+    pub m_file_paths: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "s_Binder")]
+    pub s_binder: crate::app::bindholder::BindHolder,
+}
+
+#[cfg(feature = "app-effectdata")]
+#[::unity2::methods]
+impl EffectData {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_Eid", args = 0)]
+    pub fn get_eid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Eid", args = 1)]
+    pub fn set_eid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_FilePath", args = 0)]
+    pub fn get_file_path(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_FilePath", args = 1)]
+    pub fn set_file_path(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_SoundLabel", args = 0)]
+    pub fn get_sound_label(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_SoundLabel", args = 1)]
+    pub fn set_sound_label(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> crate::app::effectdata::EffectData_Types;
+
+    #[method(name = "set_Type", args = 1)]
+    pub fn set_type(self, value: crate::app::effectdata::EffectData_Types) -> ();
+
+    #[method(name = "get_DelayTime", args = 0)]
+    pub fn get_delay_time(self) -> f32;
+
+    #[method(name = "set_DelayTime", args = 1)]
+    pub fn set_delay_time(self, value: f32) -> ();
+
+    #[method(name = "get_WaitTime", args = 0)]
+    pub fn get_wait_time(self) -> f32;
+
+    #[method(name = "set_WaitTime", args = 1)]
+    pub fn set_wait_time(self, value: f32) -> ();
+
+    #[method(name = "get_ShakeTime", args = 0)]
+    pub fn get_shake_time(self) -> f32;
+
+    #[method(name = "set_ShakeTime", args = 1)]
+    pub fn set_shake_time(self, value: f32) -> ();
+
+    #[method(name = "get_ShakeMagnitude", args = 0)]
+    pub fn get_shake_magnitude(self) -> f32;
+
+    #[method(name = "set_ShakeMagnitude", args = 1)]
+    pub fn set_shake_magnitude(self, value: f32) -> ();
+
+    #[method(name = "get_Resident", args = 0)]
+    pub fn get_resident(self) -> crate::app::effectdata::EffectData_Residents;
+
+    #[method(name = "set_Resident", args = 1)]
+    pub fn set_resident(self, value: crate::app::effectdata::EffectData_Residents) -> ();
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetPath", args = 1)]
+    pub fn get_path(self, mode: crate::app::effectdata::EffectData_Modes)
+        -> ::unity2::Il2CppString;
+
+    #[method(name = "PlayCombat", args = 1)]
+    pub fn play_combat(
+        self,
+        parent: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::app::resourceobject::ResourceObject;
+
+    #[method(name = "PlayBmap", args = 1)]
+    pub fn play_bmap(
+        self,
+        parent: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::app::resourceobject::ResourceObject;
+
+    #[method(name = "Play", args = 3)]
+    pub fn play(
+        self,
+        mode: crate::app::effectdata::EffectData_Modes,
+        parent: crate::unity_engine::gameobject::GameObject,
+        delay_time: f32,
+    ) -> crate::app::resourceobject::ResourceObject;
+
+    #[method(name = "IsBind", args = 0)]
+    pub fn is_bind() -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-effectdata")]
+impl EffectData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EffectData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEffectDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectdata/EffectData_Modes.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EffectData_Modes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EffectData_Modes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "EffectData.Modes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EffectData_Modes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EffectData_Modes {
+    pub fn bmap() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn combat() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 2 }
+    }
+}

@@ -1,0 +1,34 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/defaultexecutionorder/DefaultExecutionOrder.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "DefaultExecutionOrder")]
+pub struct DefaultExecutionOrder {
+    #[rename(name = "m_Order")]
+    pub m_order: i32,
+}
+
+#[cfg(feature = "unity_engine-defaultexecutionorder")]
+#[::unity2::methods]
+impl DefaultExecutionOrder {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, order: i32) -> ();
+
+    #[method(name = "get_order", args = 0)]
+    pub fn get_order(self) -> i32;
+}
+
+#[cfg(feature = "unity_engine-defaultexecutionorder")]
+impl DefaultExecutionOrder {
+    pub fn new(order: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DefaultExecutionOrder),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDefaultExecutionOrderMethods>::ctor(this, order);
+        this
+    }
+}

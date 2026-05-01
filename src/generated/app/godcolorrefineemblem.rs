@@ -1,0 +1,57 @@
+
+use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1;
+use crate::app::singletonscriptableobject_1::SingletonScriptableObject_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godcolorrefineemblem/GodColorRefineEmblem.md")))]
+#[::unity2::class(namespace = "App", name = "GodColorRefineEmblem")]
+# [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: godcolorrefineemblem :: GodColorRefineEmblem >)]
+pub struct GodColorRefineEmblem {
+    #[rename(name = "マルス")]
+    pub _unnamed: crate::unity_engine::color::Color,
+    #[rename(name = "God15")]
+    pub god15: crate::unity_engine::color::Color,
+    #[rename(name = "God16")]
+    pub god16: crate::unity_engine::color::Color,
+    #[rename(name = "God17")]
+    pub god17: crate::unity_engine::color::Color,
+    #[rename(name = "God18")]
+    pub god18: crate::unity_engine::color::Color,
+    #[rename(name = "God19")]
+    pub god19: crate::unity_engine::color::Color,
+    #[rename(name = "God20")]
+    pub god20: crate::unity_engine::color::Color,
+    #[rename(name = "God21")]
+    pub god21: crate::unity_engine::color::Color,
+}
+
+#[cfg(feature = "app-godcolorrefineemblem")]
+#[::unity2::methods]
+impl GodColorRefineEmblem {
+    #[method(name = "GetColor", args = 1)]
+    pub fn get_color(self, god: crate::app::goddata::GodData) -> crate::unity_engine::color::Color;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-godcolorrefineemblem")]
+impl GodColorRefineEmblem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodColorRefineEmblem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodColorRefineEmblemMethods>::ctor(this);
+        this
+    }
+}

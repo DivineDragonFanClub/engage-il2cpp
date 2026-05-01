@@ -1,0 +1,16 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/imovehandler/IMoveHandler.md")))]
+#[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IMoveHandler")]
+pub struct IMoveHandler {}
+
+#[cfg(feature = "unity_engine-event_systems-imovehandler")]
+#[::unity2::methods]
+impl IMoveHandler {
+    #[method(name = "OnMove", args = 1)]
+    pub fn on_move(
+        self,
+        event_data: crate::unity_engine::event_systems::axiseventdata::AxisEventData,
+    ) -> ();
+}

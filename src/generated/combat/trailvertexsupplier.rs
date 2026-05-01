@@ -1,0 +1,88 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/trailvertexsupplier/TrailVertexSupplier.md")))]
+#[::unity2::class(namespace = "Combat", name = "TrailVertexSupplier")]
+#[parent(crate::system::object::Object)]
+pub struct TrailVertexSupplier {
+    #[static_field]
+    #[rename(name = "NumElements")]
+    pub num_elements: i32,
+    #[static_field]
+    #[rename(name = "MaxBufferingDuration")]
+    pub max_buffering_duration: f32,
+    #[static_field]
+    #[rename(name = "DecayRate")]
+    pub decay_rate: f32,
+    #[rename(name = "CP")]
+    pub cp: crate::combat::character::Character,
+    #[rename(name = "m_Track")]
+    pub m_track: crate::combat::trailtrack::TrailTrack,
+    #[rename(name = "m_ClipLength")]
+    pub m_clip_length: f32,
+    #[rename(name = "m_Vertices")]
+    pub m_vertices: ::unity2::Array<crate::combat::trailvertex::TrailVertex>,
+    #[rename(name = "m_DeltaAlpha")]
+    pub m_delta_alpha: f32,
+    #[rename(name = "m_WeaponRootOffset")]
+    pub m_weapon_root_offset: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_WeaponTipOffset")]
+    pub m_weapon_tip_offset: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_HandIndex")]
+    pub m_hand_index: i32,
+    #[rename(name = "m_HandTransform")]
+    pub m_hand_transform: crate::unity_engine::transform::Transform,
+    #[rename(name = "m_ElapsedTime")]
+    pub m_elapsed_time: f32,
+}
+
+#[cfg(feature = "combat-trailvertexsupplier")]
+#[::unity2::methods]
+impl TrailVertexSupplier {
+    #[method(name = "get_Alpha", args = 0)]
+    pub fn get_alpha(self) -> f32;
+
+    #[method(name = "set_Alpha", args = 1)]
+    pub fn set_alpha(self, value: f32) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, chr: crate::combat::character::Character, hand: i32) -> ();
+
+    #[method(name = "SetupWeaponLengthOffset", args = 0)]
+    pub fn setup_weapon_length_offset(self) -> ();
+
+    #[method(name = "Update", args = 3)]
+    pub fn update(
+        self,
+        dt: f32,
+        in_root_pos: crate::unity_engine::vector3::Vector3,
+        in_tip_pos: crate::unity_engine::vector3::Vector3,
+    ) -> ();
+
+    #[method(name = "SendToMesh", args = 2)]
+    pub fn send_to_mesh(
+        self,
+        pos_r: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        pos_t: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+    ) -> ();
+}
+
+#[cfg(feature = "combat-trailvertexsupplier")]
+impl TrailVertexSupplier {
+    pub fn new(chr: crate::combat::character::Character, hand: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TrailVertexSupplier),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITrailVertexSupplierMethods>::ctor(this, chr, hand);
+        this
+    }
+}

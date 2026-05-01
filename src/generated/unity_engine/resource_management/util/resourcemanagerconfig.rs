@@ -1,0 +1,44 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/util/resourcemanagerconfig/ResourceManagerConfig.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.Util",
+    name = "ResourceManagerConfig"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ResourceManagerConfig {}
+
+#[cfg(feature = "unity_engine-resource_management-util-resourcemanagerconfig")]
+#[::unity2::methods]
+impl ResourceManagerConfig {
+    #[method(name = "ExtractKeyAndSubKey", args = 3)]
+    pub fn extract_key_and_sub_key(
+        key_obj: crate::system::object::Object,
+        main_key: ::unity2::Il2CppString,
+        sub_key: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[method(name = "IsPathRemote", args = 1)]
+    pub fn is_path_remote(path: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "StripQueryParameters", args = 1)]
+    pub fn strip_query_parameters(path: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[method(name = "ShouldPathUseWebRequest", args = 1)]
+    pub fn should_path_use_web_request(path: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "CreateArrayResult", args = 2)]
+    pub fn create_array_result(
+        r#type: ::unity2::SystemType,
+        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+    ) -> ::unity2::IlInstance;
+
+    #[method(name = "CreateListResult", args = 2)]
+    pub fn create_list_result(
+        r#type: ::unity2::SystemType,
+        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+    ) -> crate::system::collections::ilist::IList;
+}

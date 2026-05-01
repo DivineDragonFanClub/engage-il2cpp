@@ -1,0 +1,70 @@
+
+use crate::app::minimappanelbase::IMiniMapPanelBase;
+use crate::app::minimappanelbase::MiniMapPanelBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::ui::graphic::Graphic;
+use crate::unity_engine::ui::graphic::IGraphic;
+use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
+use crate::unity_engine::ui::maskablegraphic::MaskableGraphic;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimappanelframefordangerallrenderer/MiniMapPanelFrameForDangerAllRenderer.md")))]
+#[::unity2::class(namespace = "App", name = "MiniMapPanelFrameForDangerAllRenderer")]
+#[parent(crate::app::minimappanelbase::MiniMapPanelBase)]
+pub struct MiniMapPanelFrameForDangerAllRenderer {
+    #[rename(name = "m_RodDanger")]
+    pub m_rod_danger: crate::unity_engine::material::Material,
+    #[rename(name = "m_AttackDanger")]
+    pub m_attack_danger: crate::unity_engine::material::Material,
+    #[rename(name = "m_AppendDanger1")]
+    pub m_append_danger1: crate::unity_engine::material::Material,
+    #[rename(name = "m_AppendDanger2")]
+    pub m_append_danger2: crate::unity_engine::material::Material,
+}
+
+#[cfg(feature = "app-minimappanelframefordangerallrenderer")]
+#[::unity2::methods]
+impl MiniMapPanelFrameForDangerAllRenderer {
+    #[method(name = "GetSourceMaterials", args = 0)]
+    pub fn get_source_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "GetMapPanelMaterials", args = 0)]
+    pub fn get_map_panel_materials(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "CreatePanelMesh", args = 0)]
+    pub fn create_panel_mesh(self) -> ();
+
+    #[method(name = "CreatePanelDangerAllMesh", args = 0)]
+    pub fn create_panel_danger_all_mesh(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-minimappanelframefordangerallrenderer")]
+impl MiniMapPanelFrameForDangerAllRenderer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MiniMapPanelFrameForDangerAllRenderer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMiniMapPanelFrameForDangerAllRendererMethods>::ctor(this);
+        this
+    }
+}

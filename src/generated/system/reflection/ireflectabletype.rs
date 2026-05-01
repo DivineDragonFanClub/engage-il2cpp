@@ -1,0 +1,13 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/ireflectabletype/IReflectableType.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "IReflectableType")]
+pub struct IReflectableType {}
+
+#[cfg(feature = "system-reflection-ireflectabletype")]
+#[::unity2::methods]
+impl IReflectableType {
+    #[method(name = "GetTypeInfo", args = 0)]
+    pub fn get_type_info(self) -> crate::system::reflection::typeinfo::TypeInfo;
+}

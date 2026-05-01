@@ -1,0 +1,25 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/interopregistrationpolicy/InteropRegistrationPolicy.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "InteropRegistrationPolicy"
+)]
+#[parent(crate::system::object::Object)]
+pub struct InteropRegistrationPolicy {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-interopregistrationpolicy")]
+#[::unity2::methods]
+impl InteropRegistrationPolicy {
+    #[method(name = "get_Default", args = 0)]
+    pub fn get_default () -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy ;
+
+    #[method(name = "get_Explicit", args = 0)]
+    pub fn get_explicit () -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy ;
+
+    #[method(name = "get_Automatic", args = 0)]
+    pub fn get_automatic () -> crate :: moon_sharp :: interpreter :: interop :: registration_policies :: iregistrationpolicy :: IRegistrationPolicy ;
+}

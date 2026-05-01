@@ -1,0 +1,58 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineitemdetailwindow/RefineItemDetailWindow.md")))]
+#[::unity2::class(namespace = "App", name = "RefineItemDetailWindow")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct RefineItemDetailWindow {
+    #[rename(name = "m_ItemMenuDetailSetter")]
+    pub m_item_menu_detail_setter: crate::app::itemmenudetailsetter::ItemMenuDetailSetter,
+    #[rename(name = "m_ItemNameContent")]
+    pub m_item_name_content: crate::app::basicitemmenuitemcontent::BasicItemMenuItemContent,
+}
+
+#[cfg(feature = "app-refineitemdetailwindow")]
+#[::unity2::methods]
+impl RefineItemDetailWindow {
+    #[method(name = "Build", args = 0)]
+    pub fn build(self) -> ();
+
+    #[method(name = "SetData", args = 1)]
+    pub fn set_data(self, unit_item_base: crate::app::unititem::UnitItem) -> ();
+
+    #[method(name = "SetData", args = 3)]
+    pub fn set_data_2(
+        self,
+        unit_item_base: crate::app::unititem::UnitItem,
+        unit_item_target: crate::app::unititem::UnitItem,
+        revealed: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refineitemdetailwindow")]
+impl RefineItemDetailWindow {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineItemDetailWindow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineItemDetailWindowMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,18 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/ivertexmodifier/IVertexModifier.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "IVertexModifier")]
+pub struct IVertexModifier {}
+
+#[cfg(feature = "unity_engine-ui-ivertexmodifier")]
+#[::unity2::methods]
+impl IVertexModifier {
+    #[method(name = "ModifyVertices", args = 1)]
+    pub fn modify_vertices(
+        self,
+        verts: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::uivertex::UIVertex,
+        >,
+    ) -> ();
+}

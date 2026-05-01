@@ -1,0 +1,34 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/assemblyinformationalversionattribute/AssemblyInformationalVersionAttribute.md")))]
+#[::unity2::class(
+    namespace = "System.Reflection",
+    name = "AssemblyInformationalVersionAttribute"
+)]
+pub struct AssemblyInformationalVersionAttribute {
+    #[rename(name = "m_informationalVersion")]
+    pub m_informational_version: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "system-reflection-assemblyinformationalversionattribute")]
+#[::unity2::methods]
+impl AssemblyInformationalVersionAttribute {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, informational_version: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "system-reflection-assemblyinformationalversionattribute")]
+impl AssemblyInformationalVersionAttribute {
+    pub fn new(informational_version: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssemblyInformationalVersionAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssemblyInformationalVersionAttributeMethods>::ctor(this, informational_version);
+        this
+    }
+}

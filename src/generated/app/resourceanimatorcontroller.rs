@@ -1,0 +1,35 @@
+
+use crate::app::resourcehandle_2::IResourceHandle_2;
+use crate::app::resourcehandle_2::ResourceHandle_2;
+use crate::app::tresourcehandle_1::ITResourceHandle_1;
+use crate::app::tresourcehandle_1::TResourceHandle_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourceanimatorcontroller/ResourceAnimatorController.md")))]
+#[::unity2::class(namespace = "App", name = "ResourceAnimatorController")]
+# [parent (crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController >)]
+pub struct ResourceAnimatorController {}
+
+#[cfg(feature = "app-resourceanimatorcontroller")]
+#[::unity2::methods]
+impl ResourceAnimatorController {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-resourceanimatorcontroller")]
+impl ResourceAnimatorController {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceAnimatorController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceAnimatorControllerMethods>::ctor(this);
+        this
+    }
+}

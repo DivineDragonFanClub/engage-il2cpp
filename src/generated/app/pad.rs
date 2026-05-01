@@ -1,0 +1,337 @@
+
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/pad/Pad_Mode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Pad_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Pad_Mode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Pad.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Pad_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Pad_Mode {
+    pub fn switch() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn xbox() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn xbox_ab_swap() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn ps3() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn elecom() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn cyber_gadget() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn keyboard() -> Self {
+        Self { value: 6 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/pad/Pad.md")))]
+#[::unity2::class(namespace = "App", name = "Pad")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: pad :: Pad >)]
+pub struct Pad {
+    #[static_field]
+    #[rename(name = "A")]
+    pub a: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "B")]
+    pub b: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "X")]
+    pub x: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "Y")]
+    pub y: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "StickL")]
+    pub stick_l: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "StickR")]
+    pub stick_r: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "L")]
+    pub l: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "R")]
+    pub r: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "ZL")]
+    pub zl: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "ZR")]
+    pub zr: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "Plus")]
+    pub plus: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "Minus")]
+    pub minus: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "Left")]
+    pub left: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "Up")]
+    pub up: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "Right")]
+    pub right: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "Down")]
+    pub down: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "StickLLeft")]
+    pub stick_l_left: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "StickLUp")]
+    pub stick_l_up: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "StickLRight")]
+    pub stick_l_right: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "StickLDown")]
+    pub stick_l_down: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "StickRLeft")]
+    pub stick_r_left: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "StickRUp")]
+    pub stick_r_up: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "StickRRight")]
+    pub stick_r_right: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "StickRDown")]
+    pub stick_r_down: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "LeftSL")]
+    pub left_sl: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "LeftSR")]
+    pub left_sr: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "RightSL")]
+    pub right_sl: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "RightSR")]
+    pub right_sr: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "AnyButton")]
+    pub any_button: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "AnyCross")]
+    pub any_cross: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "AnyLeft")]
+    pub any_left: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "AnyUp")]
+    pub any_up: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "AnyRight")]
+    pub any_right: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "AnyDown")]
+    pub any_down: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "SpeedUp")]
+    pub speed_up: crate::nn::hid::npadbutton::NpadButton,
+    #[rename(name = "m_OldButtons")]
+    pub m_old_buttons: crate::nn::hid::npadbutton::NpadButton,
+    #[static_field]
+    #[rename(name = "REPAT_FIRST")]
+    pub repat_first: i32,
+    #[static_field]
+    #[rename(name = "REPAT_CONTINUE")]
+    pub repat_continue: i32,
+    #[rename(name = "m_RepeatButtons")]
+    pub m_repeat_buttons: crate::nn::hid::npadbutton::NpadButton,
+    #[rename(name = "m_RepeatCount")]
+    pub m_repeat_count: i32,
+    #[rename(name = "m_HoldCount")]
+    pub m_hold_count: i32,
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::app::pad::Pad_Mode,
+    #[rename(name = "m_Vibration")]
+    pub m_vibration: crate::app::vibrationmanager::VibrationManager,
+    #[rename(name = "m_ControllerSupportApplet")]
+    pub m_controller_support_applet: crate::app::controllersupportapplet::ControllerSupportApplet,
+    #[rename(name = "m_GyroMnager")]
+    pub m_gyro_mnager: crate::app::gyromnager::GyroMnager,
+}
+
+#[cfg(feature = "app-pad")]
+#[::unity2::methods]
+impl Pad {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "GetMode", args = 0)]
+    pub fn get_mode(self) -> crate::app::pad::Pad_Mode;
+
+    #[method(name = "GetInputMode", args = 0)]
+    pub fn get_input_mode(self) -> crate::app::pad::Pad_Mode;
+
+    #[method(name = "GetStickValue", args = 1)]
+    pub fn get_stick_value(self, key: ::unity2::Il2CppString) -> i32;
+
+    #[method(name = "OnUpdate", args = 0)]
+    pub fn on_update(self) -> ();
+
+    #[method(name = "UpdateDebugPad", args = 0)]
+    pub fn update_debug_pad(self) -> ();
+
+    #[method(name = "UpdateExclusive", args = 1)]
+    pub fn update_exclusive(self, button: crate::nn::hid::npadbutton::NpadButton) -> ();
+
+    #[method(name = "UpdateExclusive", args = 0)]
+    pub fn update_exclusive_2(self) -> ();
+
+    #[method(name = "CheckPadState", args = 0)]
+    pub fn check_pad_state(self) -> bool;
+
+    #[method(name = "IsButton", args = 1)]
+    pub fn is_button(buttons: crate::nn::hid::npadbutton::NpadButton) -> bool;
+
+    #[method(name = "IsTrigger", args = 1)]
+    pub fn is_trigger(buttons: crate::nn::hid::npadbutton::NpadButton) -> bool;
+
+    #[method(name = "IsRepeat", args = 1)]
+    pub fn is_repeat(buttons: crate::nn::hid::npadbutton::NpadButton) -> bool;
+
+    #[method(name = "IsRelease", args = 1)]
+    pub fn is_release(buttons: crate::nn::hid::npadbutton::NpadButton) -> bool;
+
+    #[method(name = "GetStickLX", args = 0)]
+    pub fn get_stick_lx() -> f32;
+
+    #[method(name = "GetStickLY", args = 0)]
+    pub fn get_stick_ly() -> f32;
+
+    #[method(name = "GetStickRX", args = 0)]
+    pub fn get_stick_rx() -> f32;
+
+    #[method(name = "GetStickRY", args = 0)]
+    pub fn get_stick_ry() -> f32;
+
+    #[method(name = "GetStickLX", args = 1)]
+    pub fn get_stick_lx_2(allowance: f32) -> f32;
+
+    #[method(name = "GetStickLY", args = 1)]
+    pub fn get_stick_ly_2(allowance: f32) -> f32;
+
+    #[method(name = "GetStickRX", args = 1)]
+    pub fn get_stick_rx_2(allowance: f32) -> f32;
+
+    #[method(name = "GetStickRY", args = 1)]
+    pub fn get_stick_ry_2(allowance: f32) -> f32;
+
+    #[method(name = "GetAllowance", args = 2)]
+    pub fn get_allowance(value: f32, allowance: f32) -> f32;
+
+    #[method(name = "Vibration", args = 0)]
+    pub fn vibration() -> crate::app::vibrationmanager::VibrationManager;
+
+    #[method(name = "Gyro", args = 0)]
+    pub fn gyro() -> crate::app::gyromnager::GyroMnager;
+
+    #[method(name = "GetStepCount", args = 0)]
+    pub fn get_step_count() -> i32;
+
+    #[method(name = "GetHoldCount", args = 0)]
+    pub fn get_hold_count() -> i32;
+
+    #[method(name = "SetEnableControllerSupport", args = 1)]
+    pub fn set_enable_controller_support(is_enable: bool) -> ();
+
+    #[method(name = "IsDebugTrigger", args = 0)]
+    pub fn is_debug_trigger() -> bool;
+
+    #[method(name = "IsDebugSkip", args = 0)]
+    pub fn is_debug_skip() -> bool;
+
+    #[method(name = "DebugRecordStart", args = 0)]
+    pub fn debug_record_start() -> ();
+
+    #[method(name = "DebugRecordStop", args = 0)]
+    pub fn debug_record_stop() -> ();
+
+    #[method(name = "DebugRecordPlay", args = 0)]
+    pub fn debug_record_play() -> ();
+
+    #[method(name = "IsDebugRecording", args = 0)]
+    pub fn is_debug_recording() -> bool;
+
+    #[method(name = "DebugHookButton", args = 1)]
+    pub fn debug_hook_button(buttons: i32) -> ();
+
+    #[method(name = "DebugHookStickL", args = 2)]
+    pub fn debug_hook_stick_l(x: f32, y: f32) -> ();
+
+    #[method(name = "DebugHookStickR", args = 2)]
+    pub fn debug_hook_stick_r(x: f32, y: f32) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-pad")]
+impl Pad {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Pad),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPadMethods>::ctor(this);
+        this
+    }
+}

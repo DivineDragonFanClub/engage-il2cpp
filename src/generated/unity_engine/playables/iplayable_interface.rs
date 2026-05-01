@@ -1,0 +1,13 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/iplayable_interface/IPlayable_Interface.md")))]
+#[::unity2::class(namespace = "UnityEngine.Playables", name = "IPlayable")]
+pub struct IPlayable_Interface {}
+
+#[cfg(feature = "unity_engine-playables-iplayable_interface")]
+#[::unity2::methods]
+impl IPlayable_Interface {
+    #[method(name = "GetHandle", args = 0)]
+    pub fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle;
+}

@@ -1,0 +1,164 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopsellroot/ShopSellRoot.md")))]
+#[::unity2::class(namespace = "App", name = "ShopSellRoot")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct ShopSellRoot {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_UnitNameText")]
+    pub m_unit_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_MenuObject")]
+    pub m_menu_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_DetailInfoWindowObject")]
+    pub m_detail_info_window_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_AccountWindowObject")]
+    pub m_account_window_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_UnitImageObject")]
+    pub m_unit_image_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_ShopSellMenu")]
+    pub m_shop_sell_menu: crate::app::shopsellmenu::ShopSellMenu,
+    #[rename(name = "m_ItemMenuDetailSetter")]
+    pub m_item_menu_detail_setter: crate::app::itemmenudetailsetter::ItemMenuDetailSetter,
+    #[rename(name = "m_AccountWindow")]
+    pub m_account_window: crate::app::shopsellaccountwindow::ShopSellAccountWindow,
+    #[rename(name = "m_ReturnEventHandler")]
+    pub m_return_event_handler: crate::app::shopsellroot::ShopSellRoot_ReturnEventHandler,
+    #[rename(name = "m_UnitItem")]
+    pub m_unit_item: crate::app::unititem::UnitItem,
+    #[rename(name = "m_ItemDetailDisplayWithUnit")]
+    pub m_item_detail_display_with_unit: bool,
+}
+
+#[cfg(feature = "app-shopsellroot")]
+#[::unity2::methods]
+impl ShopSellRoot {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        return_event_handler: crate::app::shopsellroot::ShopSellRoot_ReturnEventHandler,
+    ) -> crate::app::shopsellroot::ShopSellRoot;
+
+    #[method(name = "Create", args = 3)]
+    pub fn create(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        return_event_handler: crate::app::shopsellroot::ShopSellRoot_ReturnEventHandler,
+    ) -> ();
+
+    #[method(name = "Destroy", args = 1)]
+    pub fn destroy(root: crate::app::shopsellroot::ShopSellRoot) -> ();
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy_2(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "UpdateItemDetail", args = 0)]
+    pub fn update_item_detail(self) -> ();
+
+    #[method(name = "SetUnitImageActive", args = 1)]
+    pub fn set_unit_image_active(self, is_active: bool) -> ();
+
+    #[method(name = "OnChangeUnitToPrev", args = 0)]
+    pub fn on_change_unit_to_prev(self) -> ();
+
+    #[method(name = "OnChangeUnitToNext", args = 0)]
+    pub fn on_change_unit_to_next(self) -> ();
+
+    #[method(name = "OnSwitchDetailDisplayWay", args = 0)]
+    pub fn on_switch_detail_display_way(self) -> ();
+
+    #[method(name = "OnSelectMenuItem", args = 1)]
+    pub fn on_select_menu_item(self, unit_item: crate::app::unititem::UnitItem) -> ();
+
+    #[method(name = "OnDecideItem", args = 2)]
+    pub fn on_decide_item(self, item_count: i32, total_value: i32) -> ();
+
+    #[method(name = "OnCancelItem", args = 2)]
+    pub fn on_cancel_item(self, item_count: i32, total_value: i32) -> ();
+
+    #[method(name = "OnDecideToSell", args = 0)]
+    pub fn on_decide_to_sell(self) -> ();
+
+    #[method(name = "Sell", args = 0)]
+    pub fn sell(self) -> ();
+
+    #[method(name = "OnRequestCloseMenu", args = 0)]
+    pub fn on_request_close_menu(self) -> ();
+}
+
+#[cfg(feature = "app-shopsellroot")]
+impl ShopSellRoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopSellRoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopSellRootMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopsellroot/ShopSellRoot_ReturnEventHandler.md")))]
+#[::unity2::class(namespace = "App", name = "ShopSellRoot.ReturnEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ShopSellRoot_ReturnEventHandler {}
+
+#[cfg(feature = "app-shopsellroot")]
+#[::unity2::methods]
+impl ShopSellRoot_ReturnEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-shopsellroot")]
+impl ShopSellRoot_ReturnEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopSellRoot_ReturnEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopSellRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}

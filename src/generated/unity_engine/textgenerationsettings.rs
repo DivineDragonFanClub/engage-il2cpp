@@ -1,0 +1,75 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/textgenerationsettings/TextGenerationSettings.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TextGenerationSettings {
+    pub font: crate::unity_engine::font::Font,
+    pub color: crate::unity_engine::color::Color,
+    pub font_size: i32,
+    pub line_spacing: f32,
+    pub rich_text: bool,
+    pub scale_factor: f32,
+    pub font_style: crate::unity_engine::fontstyle::FontStyle,
+    pub text_anchor: crate::unity_engine::textanchor::TextAnchor,
+    pub align_by_geometry: bool,
+    pub resize_text_for_best_fit: bool,
+    pub resize_text_min_size: i32,
+    pub resize_text_max_size: i32,
+    pub update_bounds: bool,
+    pub vertical_overflow: crate::unity_engine::verticalwrapmode::VerticalWrapMode,
+    pub horizontal_overflow: crate::unity_engine::horizontalwrapmode::HorizontalWrapMode,
+    pub generation_extents: crate::unity_engine::vector2::Vector2,
+    pub pivot: crate::unity_engine::vector2::Vector2,
+    pub generate_out_of_bounds: bool,
+}
+
+impl ::unity2::ClassIdentity for TextGenerationSettings {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "TextGenerationSettings";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TextGenerationSettings {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-textgenerationsettings")]
+#[::unity2::methods(value)]
+impl TextGenerationSettings {
+    #[method(name = "CompareColors", args = 2)]
+    pub fn compare_colors(
+        self,
+        left: crate::unity_engine::color::Color,
+        right: crate::unity_engine::color::Color,
+    ) -> bool;
+
+    #[method(name = "CompareVector2", args = 2)]
+    pub fn compare_vector2(
+        self,
+        left: crate::unity_engine::vector2::Vector2,
+        right: crate::unity_engine::vector2::Vector2,
+    ) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(
+        self,
+        other: crate::unity_engine::textgenerationsettings::TextGenerationSettings,
+    ) -> bool;
+}

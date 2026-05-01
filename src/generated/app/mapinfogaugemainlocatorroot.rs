@@ -1,0 +1,152 @@
+
+use crate::app::mapinfobase::IMapInfoBase;
+use crate::app::mapinfobase::MapInfoBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot_OnMapStatus.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapInfoGaugeMainLocatorRoot_OnMapStatus {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapInfoGaugeMainLocatorRoot_OnMapStatus {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapInfoGaugeMainLocatorRoot.OnMapStatus";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapInfoGaugeMainLocatorRoot_OnMapStatus {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapInfoGaugeMainLocatorRoot_OnMapStatus {
+    pub fn size1x1() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn size2x2() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn size3x3() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn size5x5() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot.md")))]
+#[::unity2::class(namespace = "App", name = "MapInfoGaugeMainLocatorRoot")]
+#[parent(crate::app::mapinfobase::MapInfoBase)]
+pub struct MapInfoGaugeMainLocatorRoot {
+    #[rename(name = "m_MainLocatorRoot")]
+    pub m_main_locator_root: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-mapinfogaugemainlocatorroot")]
+#[::unity2::methods]
+impl MapInfoGaugeMainLocatorRoot {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "UpdatePosition", args = 1)]
+    pub fn update_position(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "UpdateParam", args = 1)]
+    pub fn update_param(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "IsSetPosition", args = 0)]
+    pub fn is_set_position(self) -> bool;
+
+    #[method(name = "IsSetParam", args = 0)]
+    pub fn is_set_param(self) -> bool;
+
+    #[method(name = "SetIcon", args = 1)]
+    pub fn set_icon(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "DeleteDisuseLocatorRoot", args = 1)]
+    pub fn delete_disuse_locator_root(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "IsDisplayOutside", args = 4)]
+    pub fn is_display_outside(
+        self,
+        unit: crate::app::unit::Unit,
+        width: f32,
+        height: f32,
+        camera: crate::unity_engine::camera::Camera,
+    ) -> bool;
+
+    #[method(name = "InitHpForecast", args = 0)]
+    pub fn init_hp_forecast(self) -> ();
+
+    #[method(name = "SetHpForecast", args = 2)]
+    pub fn set_hp_forecast(self, before: i32, after: i32) -> ();
+
+    #[method(name = "InitBreak", args = 0)]
+    pub fn init_break(self) -> ();
+
+    #[method(name = "SetBreak", args = 1)]
+    pub fn set_break(self, is_break: bool) -> ();
+
+    #[method(name = "get_IsComplete", args = 0)]
+    pub fn get_is_complete(self) -> bool;
+
+    #[method(name = "set_IsComplete", args = 1)]
+    pub fn set_is_complete(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapinfogaugemainlocatorroot")]
+impl MapInfoGaugeMainLocatorRoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapInfoGaugeMainLocatorRoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapInfoGaugeMainLocatorRootMethods>::ctor(this);
+        this
+    }
+}

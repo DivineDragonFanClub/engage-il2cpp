@@ -1,0 +1,64 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/compatiblecomparer/CompatibleComparer.md")))]
+#[::unity2::class(namespace = "System.Collections", name = "CompatibleComparer")]
+#[parent(crate::system::object::Object)]
+pub struct CompatibleComparer {
+    #[rename(name = "_comparer")]
+    pub comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
+    #[rename(name = "_hcp")]
+    pub hcp: crate::system::collections::ihashcodeprovider::IHashCodeProvider,
+}
+
+#[cfg(feature = "system-collections-compatiblecomparer")]
+#[::unity2::methods]
+impl CompatibleComparer {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
+        hash_code_provider: crate::system::collections::ihashcodeprovider::IHashCodeProvider,
+    ) -> ();
+
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(self, a: crate::system::object::Object, b: crate::system::object::Object)
+        -> i32;
+
+    #[method(name = "Equals", args = 2)]
+    pub fn equals(self, a: crate::system::object::Object, b: crate::system::object::Object)
+        -> bool;
+
+    #[method(name = "GetHashCode", args = 1)]
+    pub fn get_hash_code(self, obj: crate::system::object::Object) -> i32;
+
+    #[method(name = "get_Comparer", args = 0)]
+    pub fn get_comparer(
+        self,
+    ) -> crate::system::collections::icomparer_interface::IComparer_Interface;
+
+    #[method(name = "get_HashCodeProvider", args = 0)]
+    pub fn get_hash_code_provider(
+        self,
+    ) -> crate::system::collections::ihashcodeprovider::IHashCodeProvider;
+}
+
+#[cfg(feature = "system-collections-compatiblecomparer")]
+impl CompatibleComparer {
+    pub fn new(
+        comparer: crate::system::collections::icomparer_interface::IComparer_Interface,
+        hash_code_provider: crate::system::collections::ihashcodeprovider::IHashCodeProvider,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CompatibleComparer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICompatibleComparerMethods>::ctor(this, comparer, hash_code_provider);
+        this
+    }
+}

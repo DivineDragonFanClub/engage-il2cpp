@@ -1,0 +1,81 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingresultmenu/FortuneTellingResultMenu.md")))]
+#[::unity2::class(namespace = "App", name = "FortuneTellingResultMenu")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct FortuneTellingResultMenu {
+    #[static_field]
+    #[rename(name = "ForceMask")]
+    pub force_mask: u32,
+    #[static_field]
+    #[rename(name = "MessageKind")]
+    pub message_kind: i32,
+    #[rename(name = "m_unitName")]
+    pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_cardRoot")]
+    pub m_card_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_result0Title")]
+    pub m_result0_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_result0Text")]
+    pub m_result0_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_result1Title")]
+    pub m_result1_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_result1Text")]
+    pub m_result1_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_cardKind")]
+    pub m_card_kind: i32,
+    #[rename(name = "m_bCardPositive")]
+    pub m_b_card_positive: bool,
+    #[rename(name = "m_cardAnimator")]
+    pub m_card_animator: crate::unity_engine::animator::Animator,
+}
+
+#[cfg(feature = "app-fortunetellingresultmenu")]
+#[::unity2::methods]
+impl FortuneTellingResultMenu {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Init", args = 1)]
+    pub fn init(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "GetResultMessage", args = 0)]
+    pub fn get_result_message(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-fortunetellingresultmenu")]
+impl FortuneTellingResultMenu {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FortuneTellingResultMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFortuneTellingResultMenuMethods>::ctor(this);
+        this
+    }
+}

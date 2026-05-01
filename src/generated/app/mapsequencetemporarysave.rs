@@ -1,0 +1,52 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencetemporarysave/MapSequenceTemporarySave.md")))]
+#[::unity2::class(namespace = "App", name = "MapSequenceTemporarySave")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct MapSequenceTemporarySave {
+    #[rename(name = "m_IsSuccess")]
+    pub m_is_success: bool,
+}
+
+#[cfg(feature = "app-mapsequencetemporarysave")]
+#[::unity2::methods]
+impl MapSequenceTemporarySave {
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "Write", args = 0)]
+    pub fn write(self) -> ();
+
+    #[method(name = "PostWrite", args = 0)]
+    pub fn post_write(self) -> ();
+
+    #[method(name = "OnResult", args = 2)]
+    pub fn on_result(
+        self,
+        is_success: bool,
+        header: crate::app::gamesavedataheader::GameSaveDataHeader,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencetemporarysave")]
+impl MapSequenceTemporarySave {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceTemporarySave),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceTemporarySaveMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,250 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridepresetparamdata/DragonRidePresetParamData_CourseData.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DragonRidePresetParamData_CourseData {
+    pub course_id: i32,
+    pub suicide_time: f32,
+    pub suicide_random: f32,
+}
+
+impl ::unity2::ClassIdentity for DragonRidePresetParamData_CourseData {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DragonRidePresetParamData.CourseData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DragonRidePresetParamData_CourseData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridepresetparamdata/DragonRidePresetParamData.md")))]
+#[::unity2::class(namespace = "App", name = "DragonRidePresetParamData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: dragonridepresetparamdata :: DragonRidePresetParamData >)]
+pub struct DragonRidePresetParamData {}
+
+#[cfg(feature = "app-dragonridepresetparamdata")]
+#[::unity2::methods]
+impl DragonRidePresetParamData {
+    #[method(name = "get_Group", args = 0)]
+    pub fn get_group(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Group", args = 1)]
+    pub fn set_group(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_IsTimeTest", args = 0)]
+    pub fn get_is_time_test(self) -> i32;
+
+    #[method(name = "set_IsTimeTest", args = 1)]
+    pub fn set_is_time_test(self, value: i32) -> ();
+
+    #[method(name = "get_IsWalkThroughON", args = 0)]
+    pub fn get_is_walk_through_on(self) -> i32;
+
+    #[method(name = "set_IsWalkThroughON", args = 1)]
+    pub fn set_is_walk_through_on(self, value: i32) -> ();
+
+    #[method(name = "get_Course_1", args = 0)]
+    pub fn get_course_1(self) -> i32;
+
+    #[method(name = "set_Course_1", args = 1)]
+    pub fn set_course_1(self, value: i32) -> ();
+
+    #[method(name = "get_Stime_1", args = 0)]
+    pub fn get_stime_1(self) -> f32;
+
+    #[method(name = "set_Stime_1", args = 1)]
+    pub fn set_stime_1(self, value: f32) -> ();
+
+    #[method(name = "get_Srandom_1", args = 0)]
+    pub fn get_srandom_1(self) -> f32;
+
+    #[method(name = "set_Srandom_1", args = 1)]
+    pub fn set_srandom_1(self, value: f32) -> ();
+
+    #[method(name = "get_Course_2", args = 0)]
+    pub fn get_course_2(self) -> i32;
+
+    #[method(name = "set_Course_2", args = 1)]
+    pub fn set_course_2(self, value: i32) -> ();
+
+    #[method(name = "get_Stime_2", args = 0)]
+    pub fn get_stime_2(self) -> f32;
+
+    #[method(name = "set_Stime_2", args = 1)]
+    pub fn set_stime_2(self, value: f32) -> ();
+
+    #[method(name = "get_Srandom_2", args = 0)]
+    pub fn get_srandom_2(self) -> f32;
+
+    #[method(name = "set_Srandom_2", args = 1)]
+    pub fn set_srandom_2(self, value: f32) -> ();
+
+    #[method(name = "get_Course_3", args = 0)]
+    pub fn get_course_3(self) -> i32;
+
+    #[method(name = "set_Course_3", args = 1)]
+    pub fn set_course_3(self, value: i32) -> ();
+
+    #[method(name = "get_Stime_3", args = 0)]
+    pub fn get_stime_3(self) -> f32;
+
+    #[method(name = "set_Stime_3", args = 1)]
+    pub fn set_stime_3(self, value: f32) -> ();
+
+    #[method(name = "get_Srandom_3", args = 0)]
+    pub fn get_srandom_3(self) -> f32;
+
+    #[method(name = "set_Srandom_3", args = 1)]
+    pub fn set_srandom_3(self, value: f32) -> ();
+
+    #[method(name = "get_Course_4", args = 0)]
+    pub fn get_course_4(self) -> i32;
+
+    #[method(name = "set_Course_4", args = 1)]
+    pub fn set_course_4(self, value: i32) -> ();
+
+    #[method(name = "get_Stime_4", args = 0)]
+    pub fn get_stime_4(self) -> f32;
+
+    #[method(name = "set_Stime_4", args = 1)]
+    pub fn set_stime_4(self, value: f32) -> ();
+
+    #[method(name = "get_Srandom_4", args = 0)]
+    pub fn get_srandom_4(self) -> f32;
+
+    #[method(name = "set_Srandom_4", args = 1)]
+    pub fn set_srandom_4(self, value: f32) -> ();
+
+    #[method(name = "get_Course_5", args = 0)]
+    pub fn get_course_5(self) -> i32;
+
+    #[method(name = "set_Course_5", args = 1)]
+    pub fn set_course_5(self, value: i32) -> ();
+
+    #[method(name = "get_Stime_5", args = 0)]
+    pub fn get_stime_5(self) -> f32;
+
+    #[method(name = "set_Stime_5", args = 1)]
+    pub fn set_stime_5(self, value: f32) -> ();
+
+    #[method(name = "get_Srandom_5", args = 0)]
+    pub fn get_srandom_5(self) -> f32;
+
+    #[method(name = "set_Srandom_5", args = 1)]
+    pub fn set_srandom_5(self, value: f32) -> ();
+
+    #[method(name = "get_Course_6", args = 0)]
+    pub fn get_course_6(self) -> i32;
+
+    #[method(name = "set_Course_6", args = 1)]
+    pub fn set_course_6(self, value: i32) -> ();
+
+    #[method(name = "get_Stime_6", args = 0)]
+    pub fn get_stime_6(self) -> f32;
+
+    #[method(name = "set_Stime_6", args = 1)]
+    pub fn set_stime_6(self, value: f32) -> ();
+
+    #[method(name = "get_Srandom_6", args = 0)]
+    pub fn get_srandom_6(self) -> f32;
+
+    #[method(name = "set_Srandom_6", args = 1)]
+    pub fn set_srandom_6(self, value: f32) -> ();
+
+    #[method(name = "get_Course_7", args = 0)]
+    pub fn get_course_7(self) -> i32;
+
+    #[method(name = "set_Course_7", args = 1)]
+    pub fn set_course_7(self, value: i32) -> ();
+
+    #[method(name = "get_Stime_7", args = 0)]
+    pub fn get_stime_7(self) -> f32;
+
+    #[method(name = "set_Stime_7", args = 1)]
+    pub fn set_stime_7(self, value: f32) -> ();
+
+    #[method(name = "get_Srandom_7", args = 0)]
+    pub fn get_srandom_7(self) -> f32;
+
+    #[method(name = "set_Srandom_7", args = 1)]
+    pub fn set_srandom_7(self, value: f32) -> ();
+
+    #[method(name = "get_Course_8", args = 0)]
+    pub fn get_course_8(self) -> i32;
+
+    #[method(name = "set_Course_8", args = 1)]
+    pub fn set_course_8(self, value: i32) -> ();
+
+    #[method(name = "get_Stime_8", args = 0)]
+    pub fn get_stime_8(self) -> f32;
+
+    #[method(name = "set_Stime_8", args = 1)]
+    pub fn set_stime_8(self, value: f32) -> ();
+
+    #[method(name = "get_Srandom_8", args = 0)]
+    pub fn get_srandom_8(self) -> f32;
+
+    #[method(name = "set_Srandom_8", args = 1)]
+    pub fn set_srandom_8(self, value: f32) -> ();
+
+    #[method(name = "get_CourseSet", args = 0)]
+    pub fn get_course_set(
+        self,
+    ) -> ::unity2::Array<crate::app::dragonridepresetparamdata::DragonRidePresetParamData_CourseData>;
+
+    #[method(name = "set_CourseSet", args = 1)]
+    pub fn set_course_set(
+        self,
+        value: ::unity2::Array<
+            crate::app::dragonridepresetparamdata::DragonRidePresetParamData_CourseData,
+        >,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+}
+
+#[cfg(feature = "app-dragonridepresetparamdata")]
+impl DragonRidePresetParamData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRidePresetParamData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRidePresetParamDataMethods>::ctor(this);
+        this
+    }
+}

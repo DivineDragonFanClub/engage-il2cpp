@@ -1,0 +1,63 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/audio/audioplayableoutput/AudioPlayableOutput.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AudioPlayableOutput {
+    pub m_handle: crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
+}
+
+impl ::unity2::ClassIdentity for AudioPlayableOutput {
+    const NAMESPACE: &'static str = "UnityEngine.Audio";
+
+    const NAME: &'static str = "AudioPlayableOutput";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AudioPlayableOutput {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-audio-audioplayableoutput")]
+#[::unity2::methods(value)]
+impl AudioPlayableOutput {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        handle: crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
+    ) -> ();
+
+    #[method(name = "GetHandle", args = 0)]
+    pub fn get_handle(
+        self,
+    ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle;
+
+    #[method(name = "op_Explicit", args = 1)]
+    pub fn op_explicit(
+        output: crate::unity_engine::playables::playableoutput::PlayableOutput,
+    ) -> crate::unity_engine::audio::audioplayableoutput::AudioPlayableOutput;
+
+    #[method(name = "SetEvaluateOnSeek", args = 1)]
+    pub fn set_evaluate_on_seek(self, value: bool) -> ();
+
+    #[method(name = "InternalSetEvaluateOnSeek", args = 2)]
+    pub fn internal_set_evaluate_on_seek(
+        output: crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
+        value: bool,
+    ) -> ();
+}

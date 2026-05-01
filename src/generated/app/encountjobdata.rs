@@ -1,0 +1,190 @@
+
+use crate::app::bitfield32::BitField32;
+use crate::app::bitfield32::IBitField32;
+use crate::app::bitfieldcommon::BitFieldCommon;
+use crate::app::bitfieldcommon::IBitFieldCommon;
+use crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1;
+use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/encountjobdata/EncountJobData_FlagField.md")))]
+#[::unity2::class(namespace = "App", name = "EncountJobData.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: encountjobdata :: EncountJobData_Flags >)]
+pub struct EncountJobData_FlagField {}
+
+#[cfg(feature = "app-encountjobdata")]
+#[::unity2::methods]
+impl EncountJobData_FlagField {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::encountjobdata::EncountJobData_Flags) -> ();
+
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::encountjobdata::EncountJobData_Flags) -> i32;
+}
+
+#[cfg(feature = "app-encountjobdata")]
+impl EncountJobData_FlagField {
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EncountJobData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEncountJobData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    pub fn new_2(f: crate::app::encountjobdata::EncountJobData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EncountJobData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IEncountJobData_FlagFieldMethods>::ctor_2(this, f);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/encountjobdata/EncountJobData_Flags.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EncountJobData_Flags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EncountJobData_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "EncountJobData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EncountJobData_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EncountJobData_Flags {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn cc_random_selected() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn reserve() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/encountjobdata/EncountJobData.md")))]
+#[::unity2::class(namespace = "App", name = "EncountJobData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: encountjobdata :: EncountJobData >)]
+pub struct EncountJobData {}
+
+#[cfg(feature = "app-encountjobdata")]
+#[::unity2::methods]
+impl EncountJobData {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_EJid", args = 0)]
+    pub fn get_e_jid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_EJid", args = 1)]
+    pub fn set_e_jid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Jobs", args = 0)]
+    pub fn get_jobs(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_Jobs", args = 1)]
+    pub fn set_jobs(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_Flag", args = 0)]
+    pub fn get_flag(self) -> crate::app::encountjobdata::EncountJobData_FlagField;
+
+    #[method(name = "set_Flag", args = 1)]
+    pub fn set_flag(self, value: crate::app::encountjobdata::EncountJobData_FlagField) -> ();
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetJid", args = 1)]
+    pub fn get_jid(self, index: i32) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetJidList", args = 0)]
+    pub fn get_jid_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+
+    #[method(name = "GetJidCount", args = 0)]
+    pub fn get_jid_count(self) -> i32;
+
+    #[method(name = "GetPrefixlessEJid", args = 0)]
+    pub fn get_prefixless_e_jid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsCcRandomSelected", args = 0)]
+    pub fn is_cc_random_selected(self) -> bool;
+
+    #[method(name = "GetFromJid", args = 1)]
+    pub fn get_from_jid(jid: ::unity2::Il2CppString) -> crate::app::encountjobdata::EncountJobData;
+
+    #[method(name = "IsContainsFromJid", args = 1)]
+    pub fn is_contains_from_jid(self, jid: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-encountjobdata")]
+impl EncountJobData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EncountJobData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEncountJobDataMethods>::ctor(this);
+        this
+    }
+}

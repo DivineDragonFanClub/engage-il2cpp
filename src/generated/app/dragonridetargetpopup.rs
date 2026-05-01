@@ -1,0 +1,64 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetargetpopup/DragonRideTargetPopup.md")))]
+#[::unity2::class(namespace = "App", name = "DragonRideTargetPopup")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct DragonRideTargetPopup {
+    #[rename(name = "m_RectTransform")]
+    pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_Camera")]
+    pub m_camera: crate::app::dragonridecamera::DragonRideCamera,
+    #[rename(name = "m_WorldPos")]
+    pub m_world_pos: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_Config")]
+    pub m_config: crate::app::dragonrideconfig::DragonRideConfig,
+    #[rename(name = "m_AliveTimer")]
+    pub m_alive_timer: f32,
+}
+
+#[cfg(feature = "app-dragonridetargetpopup")]
+#[::unity2::methods]
+impl DragonRideTargetPopup {
+    #[method(name = "get_IsAlive", args = 0)]
+    pub fn get_is_alive(self) -> bool;
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "Init", args = 3)]
+    pub fn init(
+        self,
+        pos: crate::unity_engine::vector3::Vector3,
+        camera: crate::app::dragonridecamera::DragonRideCamera,
+        config: crate::app::dragonrideconfig::DragonRideConfig,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-dragonridetargetpopup")]
+impl DragonRideTargetPopup {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideTargetPopup),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideTargetPopupMethods>::ctor(this);
+        this
+    }
+}

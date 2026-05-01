@@ -1,0 +1,73 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/vfx/vfxeventattribute/VFXEventAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine.VFX", name = "VFXEventAttribute")]
+#[parent(crate::system::object::Object)]
+pub struct VFXEventAttribute {
+    #[rename(name = "m_Ptr")]
+    pub m_ptr: ::unity2::IntPtr,
+    #[rename(name = "m_Owner")]
+    pub m_owner: bool,
+    #[rename(name = "m_VfxAsset")]
+    pub m_vfx_asset: crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
+}
+
+#[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
+#[::unity2::methods]
+impl VFXEventAttribute {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        ptr: ::unity2::IntPtr,
+        owner: bool,
+        vfx_asset: crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
+    ) -> ();
+
+    #[method(name = "Internal_Create", args = 0)]
+    pub fn internal_create() -> ::unity2::IntPtr;
+
+    #[method(name = "Internal_InstanciateVFXEventAttribute", args = 1)]
+    pub fn internal_instanciate_vfx_event_attribute(
+        vfx_asset: crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
+    ) -> crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute;
+
+    #[method(name = "Internal_InitFromAsset", args = 1)]
+    pub fn internal_init_from_asset(
+        self,
+        vfx_asset: crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
+    ) -> ();
+
+    #[method(name = "Release", args = 0)]
+    pub fn release(self) -> ();
+
+    #[method(name = "Finalize", args = 0)]
+    pub fn finalize(self) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "Internal_Destroy", args = 1)]
+    pub fn internal_destroy(ptr: ::unity2::IntPtr) -> ();
+}
+
+#[cfg(feature = "unity_engine-vfx-vfxeventattribute")]
+impl VFXEventAttribute {
+    pub fn new(
+        ptr: ::unity2::IntPtr,
+        owner: bool,
+        vfx_asset: crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VFXEventAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVFXEventAttributeMethods>::ctor(this, ptr, owner, vfx_asset);
+        this
+    }
+}

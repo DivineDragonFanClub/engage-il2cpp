@@ -1,0 +1,198 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence.md")))]
+#[::unity2::class(namespace = "App", name = "FortuneTellingResultSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: fortunetellingresultsequence :: FortuneTellingResultSequence >)]
+pub struct FortuneTellingResultSequence {
+    #[static_field]
+    #[rename(name = "ResPaths")]
+    pub res_paths: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "m_RootAnim")]
+    pub m_root_anim: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_CardAnim")]
+    pub m_card_anim: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_ObjCharaImage")]
+    pub m_obj_chara_image: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ObjUnitName")]
+    pub m_obj_unit_name: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ObjResultMessage")]
+    pub m_obj_result_message: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_GameObject")]
+    pub m_game_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Window")]
+    pub m_window: crate::app::fortunetellingresultmenu::FortuneTellingResultMenu,
+    #[static_field]
+    #[rename(name = "m_unit")]
+    pub m_unit: crate::app::unit::Unit,
+}
+
+#[cfg(feature = "app-fortunetellingresultsequence")]
+#[::unity2::methods]
+impl FortuneTellingResultSequence {
+    #[method(name = "ResPath", args = 1)]
+    pub fn res_path(
+        id: crate::app::fortunetellingresultsequence::FortuneTellingResultSequence_ResId,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        character: crate::combat::character::Character,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "CreateDesc", args = 0)]
+    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "LoadRes", args = 0)]
+    pub fn load_res(self) -> ();
+
+    #[method(name = "IsLoadingRes", args = 0)]
+    pub fn is_loading_res(self) -> bool;
+
+    #[method(name = "Open", args = 0)]
+    pub fn open(self) -> ();
+
+    #[method(name = "IsAnimEnd", args = 0)]
+    pub fn is_anim_end(self) -> bool;
+
+    #[method(name = "ResultTalk", args = 0)]
+    pub fn result_talk(self) -> ();
+
+    #[method(name = "MenuClose", args = 0)]
+    pub fn menu_close(self) -> ();
+
+    #[method(name = "IsMenuClose", args = 0)]
+    pub fn is_menu_close(self) -> bool;
+
+    #[method(name = "MenuCloseEnd", args = 0)]
+    pub fn menu_close_end(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-fortunetellingresultsequence")]
+impl FortuneTellingResultSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FortuneTellingResultSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFortuneTellingResultSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence_ResId.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FortuneTellingResultSequence_ResId {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FortuneTellingResultSequence_ResId {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FortuneTellingResultSequence.ResId";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FortuneTellingResultSequence_ResId {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FortuneTellingResultSequence_ResId {
+    pub fn root() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn eff_primary() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn eff_reverse() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn count() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingresultsequence/FortuneTellingResultSequence_Label2.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FortuneTellingResultSequence_Label2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FortuneTellingResultSequence_Label2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FortuneTellingResultSequence.Label2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FortuneTellingResultSequence_Label2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FortuneTellingResultSequence_Label2 {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+    }
+}

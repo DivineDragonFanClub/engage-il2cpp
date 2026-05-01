@@ -1,0 +1,115 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobintroinfosetter/JobIntroInfoSetter.md")))]
+#[::unity2::class(namespace = "App", name = "JobIntroInfoSetter")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct JobIntroInfoSetter {
+    #[rename(name = "Icon")]
+    pub icon: crate::app::uniticon::UnitIcon,
+    #[rename(name = "JobName")]
+    pub job_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "Style")]
+    pub style: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "Category")]
+    pub category: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "Weapons")]
+    pub weapons: ::unity2::Array<crate::app::jobintroinfosetter::JobIntroInfoSetter_WeaponSetter>,
+    #[rename(name = "Message")]
+    pub message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "StyleInfo")]
+    pub style_info: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "CategoryInfo")]
+    pub category_info: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "WeaponInfo")]
+    pub weapon_info: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-jobintroinfosetter")]
+#[::unity2::methods]
+impl JobIntroInfoSetter {
+    #[method(name = "SetData", args = 1)]
+    pub fn set_data(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-jobintroinfosetter")]
+impl JobIntroInfoSetter {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(JobIntroInfoSetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IJobIntroInfoSetterMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobintroinfosetter/JobIntroInfoSetter_WeaponSetter.md")))]
+#[::unity2::class(namespace = "App", name = "JobIntroInfoSetter.WeaponSetter")]
+#[parent(crate::system::object::Object)]
+pub struct JobIntroInfoSetter_WeaponSetter {
+    #[rename(name = "Weapon")]
+    pub weapon: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "Weapon0")]
+    pub weapon0: crate::unity_engine::ui::image::Image,
+    #[rename(name = "SlashWeapon1")]
+    pub slash_weapon1: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "Weapon1")]
+    pub weapon1: crate::unity_engine::ui::image::Image,
+    #[rename(name = "SlashWeapon2")]
+    pub slash_weapon2: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "Weapon2")]
+    pub weapon2: crate::unity_engine::ui::image::Image,
+    #[rename(name = "WeaponText")]
+    pub weapon_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-jobintroinfosetter")]
+#[::unity2::methods]
+impl JobIntroInfoSetter_WeaponSetter {
+    #[method(name = "Set", args = 4)]
+    pub fn set(
+        self,
+        kinds: ::unity2::Array<crate::app::itemdata::ItemData_Kinds>,
+        level: crate::app::weaponlevel::WeaponLevel_Kind,
+        job_data: crate::app::jobdata::JobData,
+        count: i32,
+    ) -> ();
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-jobintroinfosetter")]
+impl JobIntroInfoSetter_WeaponSetter {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(JobIntroInfoSetter_WeaponSetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IJobIntroInfoSetter_WeaponSetterMethods>::ctor(this);
+        this
+    }
+}

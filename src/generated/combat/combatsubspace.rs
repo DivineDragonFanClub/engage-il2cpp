@@ -1,0 +1,52 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/combatsubspace/CombatSubspace.md")))]
+#[::unity2::class(namespace = "Combat", name = "CombatSubspace")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct CombatSubspace {
+    #[static_field]
+    #[rename(name = "s_SpaceHandle")]
+    pub s_space_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+    #[static_field]
+    #[rename(name = "FadeLayer")]
+    pub fade_layer: crate::app::fade::Fade_Layer,
+    #[static_field]
+    #[rename(name = "FadeTime")]
+    pub fade_time: f32,
+}
+
+#[cfg(feature = "combat-combatsubspace")]
+#[::unity2::methods]
+impl CombatSubspace {
+    #[method(name = "RelocateToGround", args = 0)]
+    pub fn relocate_to_ground() -> ();
+
+    #[method(name = "IsSubspace", args = 0)]
+    pub fn is_subspace() -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "combat-combatsubspace")]
+impl CombatSubspace {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CombatSubspace),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICombatSubspaceMethods>::ctor(this);
+        this
+    }
+}

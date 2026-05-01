@@ -1,0 +1,70 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubtalkrelative/HubTalkRelative.md")))]
+#[::unity2::class(namespace = "App", name = "HubTalkRelative")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: hubtalkrelative :: HubTalkRelative >)]
+pub struct HubTalkRelative {}
+
+#[cfg(feature = "app-hubtalkrelative")]
+#[::unity2::methods]
+impl HubTalkRelative {
+    #[method(name = "get_PID", args = 0)]
+    pub fn get_pid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_PID", args = 1)]
+    pub fn set_pid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_PID1", args = 0)]
+    pub fn get_pid1(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_PID1", args = 1)]
+    pub fn set_pid1(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_PID2", args = 0)]
+    pub fn get_pid2(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_PID2", args = 1)]
+    pub fn set_pid2(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_PID3", args = 0)]
+    pub fn get_pid3(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_PID3", args = 1)]
+    pub fn set_pid3(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_PID4", args = 0)]
+    pub fn get_pid4(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_PID4", args = 1)]
+    pub fn set_pid4(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubtalkrelative")]
+impl HubTalkRelative {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubTalkRelative),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubTalkRelativeMethods>::ctor(this);
+        this
+    }
+}

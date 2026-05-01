@@ -1,0 +1,72 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/cubemapface/CubemapFace.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CubemapFace {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CubemapFace {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "CubemapFace";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CubemapFace {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CubemapFace {
+    pub fn unknown() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn positive_x() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn negative_x() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn positive_y() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn negative_y() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn positive_z() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn negative_z() -> Self {
+        Self { value: 5 }
+    }
+}

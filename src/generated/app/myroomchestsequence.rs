@@ -1,0 +1,255 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemno::BasicDialogItemNo;
+use crate::app::basicdialogitemno::IBasicDialogItemNo;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::app::yesnodialog::IYesNoDialog;
+use crate::app::yesnodialog::YesNoDialog;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "MyRoomChestSequence.ChestConfirmDialog.ConfirmDialogItemNo"
+)]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo {}
+
+#[cfg(feature = "app-myroomchestsequence")]
+#[::unity2::methods]
+impl MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-myroomchestsequence")]
+impl MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomChestSequence_ChestConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "MyRoomChestSequence.ChestConfirmDialog.ReturnRingDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes {}
+
+#[cfg(feature = "app-myroomchestsequence")]
+#[::unity2::methods]
+impl MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-myroomchestsequence")]
+impl MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomChestSequence_ChestConfirmDialog_ReturnRingDialogItemYesMethods>::ctor(
+            this,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "MyRoomChestSequence.ChestConfirmDialog.PickUpRingDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes {}
+
+#[cfg(feature = "app-myroomchestsequence")]
+#[::unity2::methods]
+impl MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-myroomchestsequence")]
+impl MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomChestSequence_ChestConfirmDialog_PickUpRingDialogItemYesMethods>::ctor(
+            this,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomchestsequence/MyRoomChestSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MyRoomChestSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MyRoomChestSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MyRoomChestSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MyRoomChestSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MyRoomChestSequence_Label {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn select() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomchestsequence/MyRoomChestSequence_ChestConfirmDialog.md")))]
+#[::unity2::class(namespace = "App", name = "MyRoomChestSequence.ChestConfirmDialog")]
+#[parent(crate::app::yesnodialog::YesNoDialog)]
+pub struct MyRoomChestSequence_ChestConfirmDialog {}
+
+#[cfg(feature = "app-myroomchestsequence")]
+#[::unity2::methods]
+impl MyRoomChestSequence_ChestConfirmDialog {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-myroomchestsequence")]
+impl MyRoomChestSequence_ChestConfirmDialog {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomChestSequence_ChestConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomChestSequence_ChestConfirmDialogMethods>::ctor(this, menu_item_list);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomchestsequence/MyRoomChestSequence.md")))]
+#[::unity2::class(namespace = "App", name = "MyRoomChestSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomchestsequence :: MyRoomChestSequence >)]
+pub struct MyRoomChestSequence {}
+
+#[cfg(feature = "app-myroomchestsequence")]
+#[::unity2::methods]
+impl MyRoomChestSequence {
+    #[method(name = "get_Player", args = 0)]
+    pub fn get_player(self) -> crate::app::hubplayercontroller::HubPlayerController;
+
+    #[method(name = "Entry", args = 0)]
+    pub fn entry(self) -> ();
+
+    #[method(name = "Exit", args = 0)]
+    pub fn exit(self) -> ();
+
+    #[method(name = "CreateDesc", args = 0)]
+    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-myroomchestsequence")]
+impl MyRoomChestSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomChestSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomChestSequenceMethods>::ctor(this);
+        this
+    }
+}

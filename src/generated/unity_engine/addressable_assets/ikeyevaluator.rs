@@ -1,0 +1,16 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/ikeyevaluator/IKeyEvaluator.md")))]
+#[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "IKeyEvaluator")]
+pub struct IKeyEvaluator {}
+
+#[cfg(feature = "unity_engine-addressable_assets-ikeyevaluator")]
+#[::unity2::methods]
+impl IKeyEvaluator {
+    #[method(name = "get_RuntimeKey", args = 0)]
+    pub fn get_runtime_key(self) -> crate::system::object::Object;
+
+    #[method(name = "RuntimeKeyIsValid", args = 0)]
+    pub fn runtime_key_is_valid(self) -> bool;
+}

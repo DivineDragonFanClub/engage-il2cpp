@@ -1,0 +1,66 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/playableasset/PlayableAsset.md")))]
+#[::unity2::class(namespace = "UnityEngine.Playables", name = "PlayableAsset")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct PlayableAsset {}
+
+#[cfg(feature = "unity_engine-playables-playableasset")]
+#[::unity2::methods]
+impl PlayableAsset {
+    #[method(name = "CreatePlayable", args = 2)]
+    pub fn create_playable(
+        self,
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        owner: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::unity_engine::playables::playable::Playable;
+
+    #[method(name = "get_duration", args = 0)]
+    pub fn get_duration(self) -> f64;
+
+    #[method(name = "get_outputs", args = 0)]
+    pub fn get_outputs(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::unity_engine::playables::playablebinding::PlayableBinding,
+    >;
+
+    #[method(name = "Internal_CreatePlayable", args = 4)]
+    pub fn internal_create_playable(
+        asset: crate::unity_engine::playables::playableasset::PlayableAsset,
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        go: crate::unity_engine::gameobject::GameObject,
+        ptr: ::unity2::IntPtr,
+    ) -> ();
+
+    #[method(name = "Internal_GetPlayableAssetDuration", args = 2)]
+    pub fn internal_get_playable_asset_duration(
+        asset: crate::unity_engine::playables::playableasset::PlayableAsset,
+        ptr_to_double: ::unity2::IntPtr,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-playables-playableasset")]
+impl PlayableAsset {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PlayableAsset),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPlayableAssetMethods>::ctor(this);
+        this
+    }
+}

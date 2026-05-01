@@ -1,0 +1,37 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/wwwform/WWWForm.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "WWWForm")]
+#[parent(crate::system::object::Object)]
+pub struct WWWForm {
+    #[rename(name = "formData")]
+    pub form_data: crate::system::collections::generic::list_1::List_1<::unity2::Array<u8>>,
+    #[rename(name = "fieldNames")]
+    pub field_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    #[rename(name = "fileNames")]
+    pub file_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    #[rename(name = "types")]
+    pub types: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    #[rename(name = "boundary")]
+    pub boundary: ::unity2::Array<u8>,
+    #[rename(name = "containsFiles")]
+    pub contains_files: bool,
+}
+
+#[cfg(feature = "unity_engine-wwwform")]
+#[::unity2::methods]
+impl WWWForm {
+    #[method(name = "get_headers", args = 0)]
+    pub fn get_headers(
+        self,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        ::unity2::Il2CppString,
+    >;
+
+    #[method(name = "get_data", args = 0)]
+    pub fn get_data(self) -> ::unity2::Array<u8>;
+}

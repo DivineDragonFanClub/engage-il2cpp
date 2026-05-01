@@ -1,0 +1,26 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/signaltowhom/SignalToWhom.md")))]
+#[::unity2::class(namespace = "Combat", name = "SignalToWhom")]
+#[parent(crate::system::object::Object)]
+pub struct SignalToWhom {
+    #[static_field]
+    #[rename(name = "Player")]
+    pub player: i32,
+    #[static_field]
+    #[rename(name = "Enemy")]
+    pub enemy: i32,
+    #[static_field]
+    #[rename(name = "Optional")]
+    pub optional: i32,
+}
+
+#[cfg(feature = "combat-signaltowhom")]
+#[::unity2::methods]
+impl SignalToWhom {
+    #[method(name = "IsForMe", args = 2)]
+    pub fn is_for_me(cp: crate::combat::character::Character, target_side: i32) -> bool;
+}

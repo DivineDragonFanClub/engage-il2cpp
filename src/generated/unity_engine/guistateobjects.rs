@@ -1,0 +1,29 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/guistateobjects/GUIStateObjects.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "GUIStateObjects")]
+#[parent(crate::system::object::Object)]
+pub struct GUIStateObjects {
+    #[static_field]
+    #[rename(name = "s_StateCache")]
+    pub s_state_cache: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        i32,
+        crate::system::object::Object,
+    >,
+}
+
+#[cfg(feature = "unity_engine-guistateobjects")]
+#[::unity2::methods]
+impl GUIStateObjects {
+    #[method(name = "GetStateObject", args = 2)]
+    pub fn get_state_object(
+        t: ::unity2::SystemType,
+        control_id: i32,
+    ) -> crate::system::object::Object;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

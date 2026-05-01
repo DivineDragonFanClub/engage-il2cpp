@@ -1,0 +1,173 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::yesnodialog::IYesNoDialog;
+use crate::app::yesnodialog::YesNoDialog;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringselectconfirmdialog/RingSelectConfirmDialog.md")))]
+#[::unity2::class(namespace = "App", name = "RingSelectConfirmDialog")]
+#[parent(crate::app::yesnodialog::YesNoDialog)]
+pub struct RingSelectConfirmDialog {
+    #[static_field]
+    #[rename(name = "m_unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[static_field]
+    #[rename(name = "m_nextGod")]
+    pub m_next_god: crate::app::godunit::GodUnit,
+    #[static_field]
+    #[rename(name = "m_nextRing")]
+    pub m_next_ring: crate::app::unitring::UnitRing,
+}
+
+#[cfg(feature = "app-ringselectconfirmdialog")]
+#[::unity2::methods]
+impl RingSelectConfirmDialog {
+    #[method(name = "CreateBindGod", args = 3)]
+    pub fn create_bind_god(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        next_god: crate::app::godunit::GodUnit,
+    ) -> ();
+
+    #[method(name = "CreateBindRing", args = 3)]
+    pub fn create_bind_ring(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        next_ring: crate::app::unitring::UnitRing,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        next_god: crate::app::godunit::GodUnit,
+        next_ring: crate::app::unitring::UnitRing,
+    ) -> ();
+
+    #[method(name = "CreateSetTitle", args = 1)]
+    pub fn create_set_title(next_god: crate::app::godunit::GodUnit) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateSetTitle", args = 1)]
+    pub fn create_set_title_2(next_ring: crate::app::unitring::UnitRing) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateSetTitle", args = 3)]
+    pub fn create_set_title_3(
+        next_name: ::unity2::Il2CppString,
+        old_equip_unit_name: ::unity2::Il2CppString,
+        is_armlet: bool,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateChangeTitle", args = 2)]
+    pub fn create_change_title(
+        unit: crate::app::unit::Unit,
+        next_god: crate::app::godunit::GodUnit,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateChangeTitle", args = 2)]
+    pub fn create_change_title_2(
+        unit: crate::app::unit::Unit,
+        next_ring: crate::app::unitring::UnitRing,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateChangeTitle", args = 5)]
+    pub fn create_change_title_3(
+        remove_name: ::unity2::Il2CppString,
+        next_name: ::unity2::Il2CppString,
+        old_equip_unit_name: ::unity2::Il2CppString,
+        is_remove_armlet: bool,
+        is_next_armlet: bool,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateRemoveTitle", args = 1)]
+    pub fn create_remove_title(remove_god: crate::app::godunit::GodUnit) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateRemoveTitle", args = 1)]
+    pub fn create_remove_title_2(
+        remove_ring: crate::app::unitring::UnitRing,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateRemoveTitle", args = 2)]
+    pub fn create_remove_title_3(
+        remove_name: ::unity2::Il2CppString,
+        is_armlet: bool,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-ringselectconfirmdialog")]
+impl RingSelectConfirmDialog {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingSelectConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingSelectConfirmDialogMethods>::ctor(this, menu_item_list);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringselectconfirmdialog/RingSelectConfirmDialog_ConfirmYesDialogItem.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RingSelectConfirmDialog.ConfirmYesDialogItem"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct RingSelectConfirmDialog_ConfirmYesDialogItem {}
+
+#[cfg(feature = "app-ringselectconfirmdialog")]
+#[::unity2::methods]
+impl RingSelectConfirmDialog_ConfirmYesDialogItem {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, text: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "RemoveOld", args = 1)]
+    pub fn remove_old(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-ringselectconfirmdialog")]
+impl RingSelectConfirmDialog_ConfirmYesDialogItem {
+    pub fn new(text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingSelectConfirmDialog_ConfirmYesDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingSelectConfirmDialog_ConfirmYesDialogItemMethods>::ctor(this, text);
+        this
+    }
+}

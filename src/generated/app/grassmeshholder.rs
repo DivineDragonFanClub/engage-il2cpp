@@ -1,0 +1,59 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/grassmeshholder/GrassMeshHolder.md")))]
+#[::unity2::class(namespace = "App", name = "GrassMeshHolder")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct GrassMeshHolder {
+    #[static_field]
+    #[rename(name = "StartNameWithOrgMeshNoVersion")]
+    pub start_name_with_org_mesh_no_version: i32,
+    #[static_field]
+    #[rename(name = "UV3MeshNoVersion")]
+    pub uv3_mesh_no_version: i32,
+    #[static_field]
+    #[rename(name = "CurrentVersion")]
+    pub current_version: i32,
+    #[rename(name = "m_version")]
+    pub m_version: i32,
+    #[rename(name = "m_splitNum")]
+    pub m_split_num: i32,
+    #[rename(name = "m_offset")]
+    pub m_offset: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_size")]
+    pub m_size: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_meshes")]
+    pub m_meshes:
+        crate::system::collections::generic::list_1::List_1<crate::unity_engine::mesh::Mesh>,
+}
+
+#[cfg(feature = "app-grassmeshholder")]
+#[::unity2::methods]
+impl GrassMeshHolder {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-grassmeshholder")]
+impl GrassMeshHolder {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GrassMeshHolder),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGrassMeshHolderMethods>::ctor(this);
+        this
+    }
+}

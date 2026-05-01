@@ -1,0 +1,35 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/light2dlookuptexture/Light2DLookupTexture.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal",
+    name = "Light2DLookupTexture"
+)]
+#[parent(crate::system::object::Object)]
+pub struct Light2DLookupTexture {
+    #[static_field]
+    #[rename(name = "s_PointLightLookupTexture")]
+    pub s_point_light_lookup_texture: crate::unity_engine::texture2d::Texture2D,
+    #[static_field]
+    #[rename(name = "s_FalloffLookupTexture")]
+    pub s_falloff_lookup_texture: crate::unity_engine::texture2d::Texture2D,
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-light2dlookuptexture")]
+#[::unity2::methods]
+impl Light2DLookupTexture {
+    #[method(name = "GetLightLookupTexture", args = 0)]
+    pub fn get_light_lookup_texture() -> crate::unity_engine::texture::Texture;
+
+    #[method(name = "GetFalloffLookupTexture", args = 0)]
+    pub fn get_falloff_lookup_texture() -> crate::unity_engine::texture::Texture;
+
+    #[method(name = "CreatePointLightLookupTexture", args = 0)]
+    pub fn create_point_light_lookup_texture() -> crate::unity_engine::texture2d::Texture2D;
+
+    #[method(name = "CreateFalloffLookupTexture", args = 0)]
+    pub fn create_falloff_lookup_texture() -> crate::unity_engine::texture2d::Texture2D;
+}

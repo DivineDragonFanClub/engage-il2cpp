@@ -1,0 +1,40 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/goldgainsequence/GoldGainSequence.md")))]
+#[::unity2::class(namespace = "App", name = "GoldGainSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct GoldGainSequence {}
+
+#[cfg(feature = "app-goldgainsequence")]
+#[::unity2::methods]
+impl GoldGainSequence {
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        gold: i32,
+        label: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-goldgainsequence")]
+impl GoldGainSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GoldGainSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGoldGainSequenceMethods>::ctor(this);
+        this
+    }
+}

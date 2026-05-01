@@ -1,0 +1,43 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
+use crate::unity_engine::rendering::volumeparameter::VolumeParameter;
+use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
+use crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/vector4parameter/Vector4Parameter.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "Vector4Parameter")]
+# [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: vector4 :: Vector4 >)]
+pub struct Vector4Parameter {}
+
+#[cfg(feature = "unity_engine-rendering-vector4parameter")]
+#[::unity2::methods]
+impl Vector4Parameter {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, value: crate::unity_engine::vector4::Vector4, override_state: bool) -> ();
+
+    #[method(name = "Interp", args = 3)]
+    pub fn interp(
+        self,
+        from: crate::unity_engine::vector4::Vector4,
+        to: crate::unity_engine::vector4::Vector4,
+        t: f32,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-vector4parameter")]
+impl Vector4Parameter {
+    pub fn new(value: crate::unity_engine::vector4::Vector4, override_state: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Vector4Parameter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVector4ParameterMethods>::ctor(this, value, override_state);
+        this
+    }
+}

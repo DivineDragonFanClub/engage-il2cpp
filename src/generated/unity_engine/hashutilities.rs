@@ -1,0 +1,19 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/hashutilities/HashUtilities.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "HashUtilities")]
+#[parent(crate::system::object::Object)]
+pub struct HashUtilities {}
+
+#[cfg(feature = "unity_engine-hashutilities")]
+#[::unity2::methods]
+impl HashUtilities {
+    #[method(name = "AppendHash", args = 2)]
+    pub fn append_hash(
+        in_hash: crate::unity_engine::hash128::Hash128,
+        out_hash: crate::unity_engine::hash128::Hash128,
+    ) -> ();
+}

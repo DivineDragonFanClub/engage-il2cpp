@@ -1,0 +1,104 @@
+
+use crate::app::basicmenucontent::BasicMenuContent;
+use crate::app::basicmenucontent::IBasicMenuContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshopexchangecountmenucontent/RefineShopExchangeCountMenuContent.md")))]
+#[::unity2::class(namespace = "App", name = "RefineShopExchangeCountMenuContent")]
+#[parent(crate::app::basicmenucontent::BasicMenuContent)]
+pub struct RefineShopExchangeCountMenuContent {
+    #[rename(name = "m_HelpText")]
+    pub m_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_SourceCaptionText")]
+    pub m_source_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_SourceIconImage")]
+    pub m_source_icon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_SourceNameText")]
+    pub m_source_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_SourceValueText")]
+    pub m_source_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TargetCaptionText")]
+    pub m_target_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TargetIconImage")]
+    pub m_target_icon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_TargetNameText")]
+    pub m_target_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TargetValueText")]
+    pub m_target_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ArrowLeft")]
+    pub m_arrow_left: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ArrowRignt")]
+    pub m_arrow_rignt: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_CountUpDownText")]
+    pub m_count_up_down_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_DecideText")]
+    pub m_decide_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_MenuItemContent")]
+    pub m_menu_item_content: crate::app::basicmenuitemcontent::BasicMenuItemContent,
+    #[rename(name = "m_textBaseColor")]
+    pub m_text_base_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_NotEnnoughColor")]
+    pub m_not_ennough_color: crate::unity_engine::color::Color,
+}
+
+#[cfg(feature = "app-refineshopexchangecountmenucontent")]
+#[::unity2::methods]
+impl RefineShopExchangeCountMenuContent {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Build", args = 0)]
+    pub fn build(self) -> ();
+
+    #[method(name = "BuildMenuItemContent", args = 0)]
+    pub fn build_menu_item_content(self) -> ();
+
+    #[method(name = "GetMenuItemContentMax", args = 0)]
+    pub fn get_menu_item_content_max(self) -> i32;
+
+    #[method(name = "CalcCursorMovedPosY", args = 1)]
+    pub fn calc_cursor_moved_pos_y(self, menu_item_index: i32) -> f32;
+
+    #[method(name = "CalcW", args = 0)]
+    pub fn calc_w(self) -> f32;
+
+    #[method(name = "CalcH", args = 0)]
+    pub fn calc_h(self) -> f32;
+
+    #[method(name = "Open", args = 0)]
+    pub fn open(self) -> ();
+
+    #[method(name = "UpdateValues", args = 0)]
+    pub fn update_values(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refineshopexchangecountmenucontent")]
+impl RefineShopExchangeCountMenuContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopExchangeCountMenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopExchangeCountMenuContentMethods>::ctor(this);
+        this
+    }
+}

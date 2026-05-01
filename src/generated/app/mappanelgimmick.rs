@@ -1,0 +1,113 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappanelgimmick/MapPanelGimmick.md")))]
+#[::unity2::class(namespace = "App", name = "MapPanelGimmick")]
+pub struct MapPanelGimmick {
+    #[rename(name = "m_Alpha")]
+    pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_GimmickImage")]
+    pub m_gimmick_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_GimmickColor")]
+    pub m_gimmick_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_IsUpdate")]
+    pub m_is_update: bool,
+    #[rename(name = "previousCount")]
+    pub previous_count: i32,
+}
+
+#[cfg(feature = "app-mappanelgimmick")]
+#[::unity2::methods]
+impl MapPanelGimmick {
+    #[method(name = "get_SubMeshCount", args = 0)]
+    pub fn get_sub_mesh_count(self) -> i32;
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "GetSourceMaterials", args = 0)]
+    pub fn get_source_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "SetVertex", args = 0)]
+    pub fn set_vertex(self) -> ();
+
+    #[method(name = "NeedUpdate", args = 0)]
+    pub fn need_update(self) -> ();
+
+    #[method(name = "SetMesh", args = 0)]
+    pub fn set_mesh(self) -> ();
+
+    #[method(name = "UpdateRequest", args = 0)]
+    pub fn update_request() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mappanelgimmick")]
+impl MapPanelGimmick {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPanelGimmick),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPanelGimmickMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappanelgimmick/MapPanelGimmick_MeshIndex.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapPanelGimmick_MeshIndex {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapPanelGimmick_MeshIndex {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPanelGimmick.MeshIndex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapPanelGimmick_MeshIndex {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapPanelGimmick_MeshIndex {
+    pub fn gimmick() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 1 }
+    }
+}

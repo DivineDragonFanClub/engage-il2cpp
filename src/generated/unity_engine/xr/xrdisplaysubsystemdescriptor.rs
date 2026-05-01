@@ -1,0 +1,35 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::integratedsubsystemdescriptor::IIntegratedSubsystemDescriptor;
+use crate::unity_engine::integratedsubsystemdescriptor::IntegratedSubsystemDescriptor;
+use crate::unity_engine::integratedsubsystemdescriptor_1::IIntegratedSubsystemDescriptor_1;
+use crate::unity_engine::integratedsubsystemdescriptor_1::IntegratedSubsystemDescriptor_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrdisplaysubsystemdescriptor/XRDisplaySubsystemDescriptor.md")))]
+#[::unity2::class(namespace = "UnityEngine.XR", name = "XRDisplaySubsystemDescriptor")]
+# [parent (crate :: unity_engine :: integratedsubsystemdescriptor_1 :: IntegratedSubsystemDescriptor_1 < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem >)]
+pub struct XRDisplaySubsystemDescriptor {}
+
+#[cfg(feature = "unity_engine-xr-xrdisplaysubsystemdescriptor")]
+#[::unity2::methods]
+impl XRDisplaySubsystemDescriptor {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-xr-xrdisplaysubsystemdescriptor")]
+impl XRDisplaySubsystemDescriptor {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(XRDisplaySubsystemDescriptor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IXRDisplaySubsystemDescriptorMethods>::ctor(this);
+        this
+    }
+}

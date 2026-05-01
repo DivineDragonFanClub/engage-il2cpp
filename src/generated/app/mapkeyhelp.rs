@@ -1,0 +1,324 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp.md")))]
+#[::unity2::class(namespace = "App", name = "MapKeyHelp")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapkeyhelp :: MapKeyHelp >)]
+pub struct MapKeyHelp {
+    #[static_field]
+    #[rename(name = "ShowTime")]
+    pub show_time: f32,
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::app::mapkeyhelp::MapKeyHelp_Mode,
+    #[rename(name = "m_TemporaryHidingCount")]
+    pub m_temporary_hiding_count: i32,
+    #[rename(name = "m_LastType")]
+    pub m_last_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
+    #[rename(name = "m_RequestType")]
+    pub m_request_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
+    #[rename(name = "m_Progress")]
+    pub m_progress: f32,
+}
+
+#[cfg(feature = "app-mapkeyhelp")]
+#[::unity2::methods]
+impl MapKeyHelp {
+    #[method(name = "CreateAsync", args = 1)]
+    pub fn create_async(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "IsCreating", args = 0)]
+    pub fn is_creating() -> bool;
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy() -> ();
+
+    #[method(name = "GetRequestType", args = 0)]
+    pub fn get_request_type(self) -> crate::app::mapkeyhelp::MapKeyHelp_Types;
+
+    #[method(name = "RequestToChange", args = 1)]
+    pub fn request_to_change(self, r#type: crate::app::mapkeyhelp::MapKeyHelp_Types) -> ();
+
+    #[method(name = "ShowImmediate", args = 0)]
+    pub fn show_immediate(self) -> ();
+
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[method(name = "BeginTemporaryHiding", args = 0)]
+    pub fn begin_temporary_hiding(self) -> ();
+
+    #[method(name = "EndTemporaryHiding", args = 1)]
+    pub fn end_temporary_hiding(self, is_reset_measuring: bool) -> ();
+
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "Measure", args = 0)]
+    pub fn measure(self) -> ();
+
+    #[method(name = "Setup", args = 1)]
+    pub fn setup(self, r#type: crate::app::mapkeyhelp::MapKeyHelp_Types) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapkeyhelp")]
+impl MapKeyHelp {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapKeyHelp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapKeyHelpMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Types.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapKeyHelp_Types {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapKeyHelp_Types {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapKeyHelp.Types";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapKeyHelp_Types {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapKeyHelp_Types {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn free_for_unit_info() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn free_for_danger() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn pick_for_unit_info() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn pick_for_unit_info_engage_on() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn pick_for_unit_info_engage_off() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn pick_for_my_info() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn pick_for_my_info_engage_on() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn pick_for_my_info_engage_off() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn pick_for_danger_weapon_change() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn pick_for_danger_weapon_change_engage_on() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn pick_for_danger_weapon_change_engage_off() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn pick_for_danger() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn pick_for_danger_engage_on() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn pick_for_danger_engage_off() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn entrust() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn enemy_or_ally() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn system_menu() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn job_intro() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn sortie_top() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn replay() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn gmap_idle() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn gmap_moving() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn map_edit_free() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn map_edit_free_on_unit() -> Self {
+        Self { value: 24 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapKeyHelp_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapKeyHelp_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapKeyHelp.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapKeyHelp_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapKeyHelp_Label {
+    pub fn stay() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn measure() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Mode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapKeyHelp_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapKeyHelp_Mode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapKeyHelp.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapKeyHelp_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapKeyHelp_Mode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn stay_show() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn stay_hide() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn measure() -> Self {
+        Self { value: 3 }
+    }
+}

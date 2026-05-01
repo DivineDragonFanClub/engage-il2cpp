@@ -1,0 +1,83 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop.Converters",
+    name = "StringConversions"
+)]
+#[parent(crate::system::object::Object)]
+pub struct StringConversions {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-converters-stringconversions")]
+#[::unity2::methods]
+impl StringConversions {
+    #[method(name = "GetStringSubtype", args = 1)]
+    pub fn get_string_subtype (desired_type : :: unity2 :: SystemType) -> crate :: moon_sharp :: interpreter :: interop :: converters :: stringconversions :: StringConversions_StringSubtype ;
+
+    #[method(name = "ConvertString", args = 4)]
+    pub fn convert_string(
+        string_sub_type : crate :: moon_sharp :: interpreter :: interop :: converters :: stringconversions :: StringConversions_StringSubtype,
+        str: ::unity2::Il2CppString,
+        desired_type: ::unity2::SystemType,
+        data_type: crate::moon_sharp::interpreter::datatype::DataType,
+    ) -> crate::system::object::Object;
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/converters/stringconversions/StringConversions_StringSubtype.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct StringConversions_StringSubtype {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for StringConversions_StringSubtype {
+    const NAMESPACE: &'static str = "MoonSharp.Interpreter.Interop.Converters";
+
+    const NAME: &'static str = "StringConversions.StringSubtype";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for StringConversions_StringSubtype {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl StringConversions_StringSubtype {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn string() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn string_builder() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn char() -> Self {
+        Self { value: 3 }
+    }
+}

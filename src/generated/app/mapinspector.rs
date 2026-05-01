@@ -1,0 +1,360 @@
+
+use crate::app::scriptutil::IScriptUtil;
+use crate::app::scriptutil::ScriptUtil;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinspector/MapInspector_Kind.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapInspector_Kind {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapInspector_Kind {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapInspector.Kind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapInspector_Kind {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapInspector_Kind {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn turn() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn turn_after() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn turn_end() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn area() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn tbox() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn door() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn torch() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn visit() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn escape() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn breakdown() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn breakdown_enemy() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn waypoint() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn command() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn die() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn revive_before() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn revive_after() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn fixed() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn talk() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn battle_before() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn battle_talk() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn battle_after() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn pickup() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn target_select() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn unit_command_prepare() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn unit_command_interrupt() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn engage_before() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn engage_after() -> Self {
+        Self { value: 28 }
+    }
+
+    pub fn cannon() -> Self {
+        Self { value: 29 }
+    }
+
+    pub fn help_spot() -> Self {
+        Self { value: 30 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 31 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinspector/MapInspector.md")))]
+#[::unity2::class(namespace = "App", name = "MapInspector")]
+#[parent(crate::app::scriptutil::ScriptUtil)]
+pub struct MapInspector {
+    #[rename(name = "m_Kind")]
+    pub m_kind: crate::app::mapinspector::MapInspector_Kind,
+    #[rename(name = "m_Condition")]
+    pub m_condition: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    #[rename(name = "m_Function")]
+    pub m_function: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    #[rename(name = "m_Args")]
+    pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+}
+
+#[cfg(feature = "app-mapinspector")]
+#[::unity2::methods]
+impl MapInspector {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, kind: crate::app::mapinspector::MapInspector_Kind) -> ();
+
+    #[method(name = "GetKind", args = 0)]
+    pub fn get_kind(self) -> crate::app::mapinspector::MapInspector_Kind;
+
+    #[method(name = "GetFunction", args = 0)]
+    pub fn get_function(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "GetArgs", args = 0)]
+    pub fn get_args(self) -> ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>;
+
+    #[method(name = "GetCondition", args = 0)]
+    pub fn get_condition(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "IsCondition", args = 0)]
+    pub fn is_condition(self) -> bool;
+
+    #[method(name = "IsInside", args = 2)]
+    pub fn is_inside(self, x: i32, z: i32) -> bool;
+
+    #[method(name = "Completed", args = 0)]
+    pub fn completed(self) -> ();
+
+    #[method(name = "IsValue", args = 2)]
+    pub fn is_value(self, self_: i32, other: i32) -> bool;
+
+    #[method(name = "IsEanble", args = 0)]
+    pub fn is_eanble(self) -> bool;
+
+    #[method(name = "IsEanble", args = 1)]
+    pub fn is_eanble_2(self, arg: i32) -> bool;
+
+    #[method(name = "IsEanble", args = 2)]
+    pub fn is_eanble_3(self, arg1: i32, arg2: i32) -> bool;
+
+    #[method(name = "IsEanble", args = 3)]
+    pub fn is_eanble_4(self, arg1: i32, arg2: i32, arg3: i32) -> bool;
+
+    #[method(name = "IsEanble", args = 4)]
+    pub fn is_eanble_5(self, arg1: i32, arg2: i32, arg3: i32, arg4: i32) -> bool;
+
+    #[method(name = "IsTerminated", args = 4)]
+    pub fn is_terminated(self, arg1: i32, arg2: i32, arg3: i32, arg4: i32) -> bool;
+
+    #[method(name = "get_Color", args = 0)]
+    pub fn get_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[method(name = "get_X1", args = 0)]
+    pub fn get_x1(self) -> i32;
+
+    #[method(name = "get_Z1", args = 0)]
+    pub fn get_z1(self) -> i32;
+
+    #[method(name = "get_X2", args = 0)]
+    pub fn get_x2(self) -> i32;
+
+    #[method(name = "get_Z2", args = 0)]
+    pub fn get_z2(self) -> i32;
+
+    #[method(name = "get_W", args = 0)]
+    pub fn get_w(self) -> i32;
+
+    #[method(name = "get_H", args = 0)]
+    pub fn get_h(self) -> i32;
+
+    #[method(name = "get_Hp", args = 0)]
+    pub fn get_hp(self) -> i32;
+
+    #[method(name = "set_Hp", args = 1)]
+    pub fn set_hp(self, value: i32) -> ();
+
+    #[method(name = "get_MaxHp", args = 0)]
+    pub fn get_max_hp(self) -> i32;
+
+    #[method(name = "set_MaxHp", args = 1)]
+    pub fn set_max_hp(self, value: i32) -> ();
+
+    #[method(name = "GetCompleted", args = 0)]
+    pub fn get_completed(self) -> i32;
+
+    #[method(name = "CanBreakable", args = 0)]
+    pub fn can_breakable(self) -> bool;
+
+    #[method(name = "CanBreakable", args = 1)]
+    pub fn can_breakable_2(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "CanBreakable", args = 1)]
+    pub fn can_breakable_3(self, force: crate::app::force::Force_Type) -> bool;
+
+    #[method(name = "CanUseCannon", args = 0)]
+    pub fn can_use_cannon(self) -> bool;
+
+    #[method(name = "CanShowBreakIcon", args = 0)]
+    pub fn can_show_break_icon(self) -> bool;
+
+    #[method(name = "PreCall", args = 1)]
+    pub fn pre_call(self, super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "PostCall", args = 1)]
+    pub fn post_call(self, super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "Resume", args = 1)]
+    pub fn resume(self, super_: crate::app::procinst::ProcInst) -> crate::app::procinst::ProcInst;
+
+    #[method(name = "SetFunction", args = 1)]
+    pub fn set_function(
+        self,
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> crate::app::mapinspector::MapInspector;
+
+    #[method(name = "SetArgs", args = 1)]
+    pub fn set_args(
+        self,
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::app::mapinspector::MapInspector;
+
+    #[method(name = "SetCondition", args = 1)]
+    pub fn set_condition(
+        self,
+        condition: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> crate::app::mapinspector::MapInspector;
+
+    #[method(name = "ResetCondition", args = 0)]
+    pub fn reset_condition(self) -> crate::app::mapinspector::MapInspector;
+
+    #[method(name = "GetGlobalKey", args = 0)]
+    pub fn get_global_key(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "SetGlobalKey", args = 0)]
+    pub fn set_global_key(self) -> ();
+
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(exists: crate::app::mapinspector::MapInspector) -> bool;
+
+    #[method(name = "CanEnter", args = 2)]
+    pub fn can_enter(x: i32, z: i32) -> bool;
+
+    #[method(name = "CanEnterAround", args = 0)]
+    pub fn can_enter_around(self) -> bool;
+}
+
+#[cfg(feature = "app-mapinspector")]
+impl MapInspector {
+    pub fn new(kind: crate::app::mapinspector::MapInspector_Kind) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapInspector),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapInspectorMethods>::ctor(this, kind);
+        this
+    }
+}

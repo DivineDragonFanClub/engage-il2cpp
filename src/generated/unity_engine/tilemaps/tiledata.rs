@@ -1,0 +1,64 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/tilemaps/tiledata/TileData.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TileData {
+    pub m_sprite: crate::unity_engine::sprite::Sprite,
+    pub m_color: crate::unity_engine::color::Color,
+    pub m_transform: crate::unity_engine::matrix4x4::Matrix4x4,
+    pub m_game_object: crate::unity_engine::gameobject::GameObject,
+    pub m_flags: crate::unity_engine::tilemaps::tileflags::TileFlags,
+    pub m_collider_type: crate::unity_engine::tilemaps::tile::Tile_ColliderType,
+}
+
+impl ::unity2::ClassIdentity for TileData {
+    const NAMESPACE: &'static str = "UnityEngine.Tilemaps";
+
+    const NAME: &'static str = "TileData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TileData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-tilemaps-tiledata")]
+#[::unity2::methods(value)]
+impl TileData {
+    #[method(name = "set_sprite", args = 1)]
+    pub fn set_sprite(self, value: crate::unity_engine::sprite::Sprite) -> ();
+
+    #[method(name = "set_color", args = 1)]
+    pub fn set_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "set_transform", args = 1)]
+    pub fn set_transform(self, value: crate::unity_engine::matrix4x4::Matrix4x4) -> ();
+
+    #[method(name = "set_gameObject", args = 1)]
+    pub fn set_game_object(self, value: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "set_flags", args = 1)]
+    pub fn set_flags(self, value: crate::unity_engine::tilemaps::tileflags::TileFlags) -> ();
+
+    #[method(name = "set_colliderType", args = 1)]
+    pub fn set_collider_type(
+        self,
+        value: crate::unity_engine::tilemaps::tile::Tile_ColliderType,
+    ) -> ();
+}

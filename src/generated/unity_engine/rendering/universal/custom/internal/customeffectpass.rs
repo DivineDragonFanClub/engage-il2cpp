@@ -1,0 +1,76 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/customeffectpass/CustomEffectPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+    name = "CustomEffectPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct CustomEffectPass {
+    #[static_field]
+    #[rename(name = "m_ProfilerTag")]
+    pub m_profiler_tag: ::unity2::Il2CppString,
+    #[rename(name = "m_ProfilingSampler")]
+    pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[rename(name = "m_FilteringSettings")]
+    pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+    #[rename(name = "m_EffectTagId")]
+    pub m_effect_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[rename(name = "m_EffectFullTagId")]
+    pub m_effect_full_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[rename(name = "m_ShouldSetEffectDepth")]
+    pub m_should_set_effect_depth: bool,
+    #[rename(name = "m_EffectDepthId")]
+    pub m_effect_depth_id:
+        crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customeffectpass")]
+#[::unity2::methods]
+impl CustomEffectPass {
+    #[method(name = "get_forceHalfEffectToDrawFull", args = 0)]
+    pub fn get_force_half_effect_to_draw_full(self) -> bool;
+
+    #[method(name = "set_forceHalfEffectToDrawFull", args = 1)]
+    pub fn set_force_half_effect_to_draw_full(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+    ) -> ();
+
+    #[method(name = "SetEffectDepth", args = 1)]
+    pub fn set_effect_depth(self, id: i32) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customeffectpass")]
+impl CustomEffectPass {
+    pub fn new(
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomEffectPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomEffectPassMethods>::ctor(this, evt, layer_mask);
+        this
+    }
+}

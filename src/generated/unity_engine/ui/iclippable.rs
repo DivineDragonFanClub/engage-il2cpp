@@ -1,0 +1,28 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/iclippable/IClippable.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "IClippable")]
+pub struct IClippable {}
+
+#[cfg(feature = "unity_engine-ui-iclippable")]
+#[::unity2::methods]
+impl IClippable {
+    #[method(name = "get_gameObject", args = 0)]
+    pub fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "RecalculateClipping", args = 0)]
+    pub fn recalculate_clipping(self) -> ();
+
+    #[method(name = "get_rectTransform", args = 0)]
+    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[method(name = "Cull", args = 2)]
+    pub fn cull(self, clip_rect: crate::unity_engine::rect::Rect, valid_rect: bool) -> ();
+
+    #[method(name = "SetClipRect", args = 2)]
+    pub fn set_clip_rect(self, value: crate::unity_engine::rect::Rect, valid_rect: bool) -> ();
+
+    #[method(name = "SetClipSoftness", args = 1)]
+    pub fn set_clip_softness(self, clip_softness: crate::unity_engine::vector2::Vector2) -> ();
+}

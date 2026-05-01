@@ -1,0 +1,210 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemno::BasicDialogItemNo;
+use crate::app::basicdialogitemno::IBasicDialogItemNo;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::yesnodialog::IYesNoDialog;
+use crate::app::yesnodialog::YesNoDialog;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNo.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ArenaExpUnitSelectMenuItem.ConfirmDialog.ConfirmDialogItemNo"
+)]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNo {}
+
+#[cfg(feature = "app-arenaexpunitselectmenuitem")]
+#[::unity2::methods]
+impl ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNo {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-arenaexpunitselectmenuitem")]
+impl ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ArenaExpUnitSelectMenuItem.ConfirmDialog.ConfirmDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes {
+    #[rename(name = "m_DecideAction")]
+    pub m_decide_action: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-arenaexpunitselectmenuitem")]
+#[::unity2::methods]
+impl ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, decide_action: crate::system::action::Action) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-arenaexpunitselectmenuitem")]
+impl ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes {
+    pub fn new(decide_action: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
+            this,
+            decide_action,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem_ConfirmDialog.md")))]
+#[::unity2::class(namespace = "App", name = "ArenaExpUnitSelectMenuItem.ConfirmDialog")]
+#[parent(crate::app::yesnodialog::YesNoDialog)]
+pub struct ArenaExpUnitSelectMenuItem_ConfirmDialog {
+    #[rename(name = "m_DecideAction")]
+    pub m_decide_action: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-arenaexpunitselectmenuitem")]
+#[::unity2::methods]
+impl ArenaExpUnitSelectMenuItem_ConfirmDialog {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        decide_action: crate::system::action::Action,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        decide_action: crate::system::action::Action,
+    ) -> ();
+}
+
+#[cfg(feature = "app-arenaexpunitselectmenuitem")]
+impl ArenaExpUnitSelectMenuItem_ConfirmDialog {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        decide_action: crate::system::action::Action,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaExpUnitSelectMenuItem_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaExpUnitSelectMenuItem_ConfirmDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            decide_action,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "ArenaExpUnitSelectMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct ArenaExpUnitSelectMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_DecideEventHandler,
+    #[rename(name = "m_SelectEventHandler")]
+    pub m_select_event_handler:
+        crate::app::arenaexpunitselectmenu::ArenaExpUnitSelectMenu_SelectEventHandler,
+}
+
+#[cfg(feature = "app-arenaexpunitselectmenuitem")]
+#[::unity2::methods]
+impl ArenaExpUnitSelectMenuItem {
+    #[method(name = "get_Unit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+
+    #[method(name = "set_Unit", args = 1)]
+    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
+
+    #[method(name = "get_IsSelectable", args = 0)]
+    pub fn get_is_selectable(self) -> bool;
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        decide_event_handler : crate :: app :: arenaexpunitselectmenu :: ArenaExpUnitSelectMenu_DecideEventHandler,
+        select_event_handler : crate :: app :: arenaexpunitselectmenu :: ArenaExpUnitSelectMenu_SelectEventHandler,
+    ) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+}
+
+#[cfg(feature = "app-arenaexpunitselectmenuitem")]
+impl ArenaExpUnitSelectMenuItem {
+    pub fn new(
+        unit: crate::app::unit::Unit,
+        decide_event_handler : crate :: app :: arenaexpunitselectmenu :: ArenaExpUnitSelectMenu_DecideEventHandler,
+        select_event_handler : crate :: app :: arenaexpunitselectmenu :: ArenaExpUnitSelectMenu_SelectEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaExpUnitSelectMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaExpUnitSelectMenuItemMethods>::ctor(
+            this,
+            unit,
+            decide_event_handler,
+            select_event_handler,
+        );
+        this
+    }
+}

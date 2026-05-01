@@ -1,0 +1,39 @@
+
+use crate::app::calculatorcommand::CalculatorCommand;
+use crate::app::calculatorcommand::ICalculatorCommand;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamemodecommand/GameModeCommand.md")))]
+#[::unity2::class(namespace = "App", name = "GameModeCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct GameModeCommand {}
+
+#[cfg(feature = "app-gamemodecommand")]
+#[::unity2::methods]
+impl GameModeCommand {
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gamemodecommand")]
+impl GameModeCommand {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameModeCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameModeCommandMethods>::ctor(this);
+        this
+    }
+}

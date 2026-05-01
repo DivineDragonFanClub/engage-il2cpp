@@ -1,0 +1,39 @@
+
+use crate::combat::state::IState;
+use crate::combat::state::State;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actionenablelookik/ActionEnableLookIK.md")))]
+#[::unity2::class(namespace = "Combat", name = "ActionEnableLookIK")]
+#[parent(crate::combat::state::State)]
+pub struct ActionEnableLookIK {}
+
+#[cfg(feature = "combat-actionenablelookik")]
+#[::unity2::methods]
+impl ActionEnableLookIK {
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "OnEnter", args = 0)]
+    pub fn on_enter(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-actionenablelookik")]
+impl ActionEnableLookIK {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ActionEnableLookIK),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IActionEnableLookIKMethods>::ctor(this);
+        this
+    }
+}

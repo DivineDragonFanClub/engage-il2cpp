@@ -1,0 +1,132 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/coremodules/CoreModules.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CoreModules {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CoreModules {
+    const NAMESPACE: &'static str = "MoonSharp.Interpreter";
+
+    const NAME: &'static str = "CoreModules";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CoreModules {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CoreModules {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn basic() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn global_consts() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn table_iterators() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn metatables() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn string() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn load_methods() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn table() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn error_handling() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn math() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn coroutine() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn bit32() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn os_time() -> Self {
+        Self { value: 2048 }
+    }
+
+    pub fn os_system() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn io() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn debug() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn dynamic() -> Self {
+        Self { value: 32768 }
+    }
+
+    pub fn json() -> Self {
+        Self { value: 65536 }
+    }
+
+    pub fn preset_hard_sandbox() -> Self {
+        Self { value: 1387 }
+    }
+
+    pub fn preset_soft_sandbox() -> Self {
+        Self { value: 102383 }
+    }
+
+    pub fn preset_default() -> Self {
+        Self { value: 114687 }
+    }
+
+    pub fn preset_complete() -> Self {
+        Self { value: 131071 }
+    }
+}

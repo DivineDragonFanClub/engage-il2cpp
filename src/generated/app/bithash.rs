@@ -1,0 +1,94 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/bithash/BitHash.md")))]
+#[::unity2::class(namespace = "App", name = "BitHash")]
+#[parent(crate::system::object::Object)]
+pub struct BitHash {
+    #[rename(name = "m_Shift")]
+    pub m_shift: i32,
+    #[rename(name = "m_Mask")]
+    pub m_mask: i32,
+    #[rename(name = "m_List")]
+    pub m_list: crate::system::collections::generic::list_1::List_1<i32>,
+    #[rename(name = "m_Names")]
+    pub m_names: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    #[rename(name = "m_Dictionary")]
+    pub m_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
+    #[rename(name = "m_Bits")]
+    pub m_bits: ::unity2::Array<u8>,
+}
+
+#[cfg(feature = "app-bithash")]
+#[::unity2::methods]
+impl BitHash {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, shift: i32) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "Add", args = 1)]
+    pub fn add_2(self, conditions: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "Test", args = 1)]
+    pub fn test(self, key: i32) -> bool;
+
+    #[method(name = "Test", args = 2)]
+    pub fn test_2(self, key1: i32, key2: i32) -> bool;
+
+    #[method(name = "Test", args = 3)]
+    pub fn test_3(self, key1: i32, key2: i32, key3: i32) -> bool;
+
+    #[method(name = "Test", args = 4)]
+    pub fn test_4(self, key1: i32, key2: i32, key3: i32, key4: i32) -> bool;
+
+    #[method(name = "Test", args = 1)]
+    pub fn test_5(self, keys: ::unity2::Array<i32>) -> bool;
+
+    #[method(name = "Test", args = 1)]
+    pub fn test_6(self, keys: crate::system::collections::generic::list_1::List_1<i32>) -> bool;
+
+    #[method(name = "Not", args = 1)]
+    pub fn not(self, key: i32) -> bool;
+
+    #[method(name = "Not", args = 1)]
+    pub fn not_2(self, keys: ::unity2::Array<i32>) -> bool;
+
+    #[method(name = "Not", args = 1)]
+    pub fn not_3(self, keys: crate::system::collections::generic::list_1::List_1<i32>) -> bool;
+
+    #[method(name = "CalcKey", args = 2)]
+    pub fn calc_key(name: ::unity2::Il2CppString, shift: i32) -> i32;
+
+    #[method(name = "Test", args = 1)]
+    pub fn test_7(self, key: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "get_Names", args = 0)]
+    pub fn get_names(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+}
+
+#[cfg(feature = "app-bithash")]
+impl BitHash {
+    pub fn new(shift: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BitHash),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBitHashMethods>::ctor(this, shift);
+        this
+    }
+}

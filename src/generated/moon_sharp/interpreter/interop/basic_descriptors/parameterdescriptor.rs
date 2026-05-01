@@ -1,0 +1,179 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/basic_descriptors/parameterdescriptor/ParameterDescriptor.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors",
+    name = "ParameterDescriptor"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ParameterDescriptor {
+    #[rename(name = "m_OriginalType")]
+    pub m_original_type: ::unity2::SystemType,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-parameterdescriptor")]
+#[::unity2::methods]
+impl ParameterDescriptor {
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "set_Type", args = 1)]
+    pub fn set_type(self, value: ::unity2::SystemType) -> ();
+
+    #[method(name = "get_HasDefaultValue", args = 0)]
+    pub fn get_has_default_value(self) -> bool;
+
+    #[method(name = "set_HasDefaultValue", args = 1)]
+    pub fn set_has_default_value(self, value: bool) -> ();
+
+    #[method(name = "get_DefaultValue", args = 0)]
+    pub fn get_default_value(self) -> crate::system::object::Object;
+
+    #[method(name = "set_DefaultValue", args = 1)]
+    pub fn set_default_value(self, value: crate::system::object::Object) -> ();
+
+    #[method(name = "get_IsOut", args = 0)]
+    pub fn get_is_out(self) -> bool;
+
+    #[method(name = "set_IsOut", args = 1)]
+    pub fn set_is_out(self, value: bool) -> ();
+
+    #[method(name = "get_IsRef", args = 0)]
+    pub fn get_is_ref(self) -> bool;
+
+    #[method(name = "set_IsRef", args = 1)]
+    pub fn set_is_ref(self, value: bool) -> ();
+
+    #[method(name = "get_IsVarArgs", args = 0)]
+    pub fn get_is_var_args(self) -> bool;
+
+    #[method(name = "set_IsVarArgs", args = 1)]
+    pub fn set_is_var_args(self, value: bool) -> ();
+
+    #[method(name = "get_HasBeenRestricted", args = 0)]
+    pub fn get_has_been_restricted(self) -> bool;
+
+    #[method(name = "get_OriginalType", args = 0)]
+    pub fn get_original_type(self) -> ::unity2::SystemType;
+
+    #[method(name = ".ctor", args = 7)]
+    pub fn ctor(
+        self,
+        name: ::unity2::Il2CppString,
+        r#type: ::unity2::SystemType,
+        has_default_value: bool,
+        default_value: ::unity2::IlInstance,
+        is_out: bool,
+        is_ref: bool,
+        is_var_args: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 8)]
+    pub fn ctor_2(
+        self,
+        name: ::unity2::Il2CppString,
+        r#type: ::unity2::SystemType,
+        has_default_value: bool,
+        default_value: crate::system::object::Object,
+        is_out: bool,
+        is_ref: bool,
+        is_var_args: bool,
+        type_restriction: ::unity2::SystemType,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_3(self, pi: crate::system::reflection::parameterinfo::ParameterInfo) -> ();
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "RestrictType", args = 1)]
+    pub fn restrict_type(self, r#type: ::unity2::SystemType) -> ();
+
+    #[method(name = "PrepareForWiring", args = 1)]
+    pub fn prepare_for_wiring(self, table: crate::moon_sharp::interpreter::table::Table) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-parameterdescriptor")]
+impl ParameterDescriptor {
+    pub fn new(
+        name: ::unity2::Il2CppString,
+        r#type: ::unity2::SystemType,
+        has_default_value: bool,
+        default_value: ::unity2::IlInstance,
+        is_out: bool,
+        is_ref: bool,
+        is_var_args: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ParameterDescriptor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IParameterDescriptorMethods>::ctor(
+            this,
+            name,
+            r#type,
+            has_default_value,
+            default_value,
+            is_out,
+            is_ref,
+            is_var_args,
+        );
+        this
+    }
+
+    pub fn new_2(
+        name: ::unity2::Il2CppString,
+        r#type: ::unity2::SystemType,
+        has_default_value: bool,
+        default_value: crate::system::object::Object,
+        is_out: bool,
+        is_ref: bool,
+        is_var_args: bool,
+        type_restriction: ::unity2::SystemType,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ParameterDescriptor),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IParameterDescriptorMethods>::ctor_2(
+            this,
+            name,
+            r#type,
+            has_default_value,
+            default_value,
+            is_out,
+            is_ref,
+            is_var_args,
+            type_restriction,
+        );
+        this
+    }
+
+    pub fn new_3(pi: crate::system::reflection::parameterinfo::ParameterInfo) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ParameterDescriptor),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as IParameterDescriptorMethods>::ctor_3(this, pi);
+        this
+    }
+}

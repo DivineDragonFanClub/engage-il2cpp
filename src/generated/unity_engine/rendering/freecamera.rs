@@ -1,0 +1,107 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/freecamera/FreeCamera.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "FreeCamera")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct FreeCamera {
+    #[rename(name = "m_LookSpeedController")]
+    pub m_look_speed_controller: f32,
+    #[rename(name = "m_LookSpeedMouse")]
+    pub m_look_speed_mouse: f32,
+    #[rename(name = "m_MoveSpeed")]
+    pub m_move_speed: f32,
+    #[rename(name = "m_MoveSpeedIncrement")]
+    pub m_move_speed_increment: f32,
+    #[rename(name = "m_Turbo")]
+    pub m_turbo: f32,
+    #[static_field]
+    #[rename(name = "kMouseX")]
+    pub k_mouse_x: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kMouseY")]
+    pub k_mouse_y: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kRightStickX")]
+    pub k_right_stick_x: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kRightStickY")]
+    pub k_right_stick_y: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kVertical")]
+    pub k_vertical: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kHorizontal")]
+    pub k_horizontal: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kYAxis")]
+    pub k_y_axis: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kSpeedAxis")]
+    pub k_speed_axis: ::unity2::Il2CppString,
+    #[rename(name = "inputRotateAxisX")]
+    pub input_rotate_axis_x: f32,
+    #[rename(name = "inputRotateAxisY")]
+    pub input_rotate_axis_y: f32,
+    #[rename(name = "inputChangeSpeed")]
+    pub input_change_speed: f32,
+    #[rename(name = "inputVertical")]
+    pub input_vertical: f32,
+    #[rename(name = "inputHorizontal")]
+    pub input_horizontal: f32,
+    #[rename(name = "inputYAxis")]
+    pub input_y_axis: f32,
+    #[rename(name = "leftShiftBoost")]
+    pub left_shift_boost: bool,
+    #[rename(name = "leftShift")]
+    pub left_shift: bool,
+    #[rename(name = "fire1")]
+    pub fire1: bool,
+}
+
+#[cfg(feature = "unity_engine-rendering-freecamera")]
+#[::unity2::methods]
+impl FreeCamera {
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "RegisterInputs", args = 0)]
+    pub fn register_inputs(self) -> ();
+
+    #[method(name = "UpdateInputs", args = 0)]
+    pub fn update_inputs(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-freecamera")]
+impl FreeCamera {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FreeCamera),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFreeCameraMethods>::ctor(this);
+        this
+    }
+}

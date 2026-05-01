@@ -1,0 +1,173 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponsequence/RefineGodWeaponSequence.md")))]
+#[::unity2::class(namespace = "App", name = "RefineGodWeaponSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RefineGodWeaponSequence {
+    #[rename(name = "m_ShopMenuResult")]
+    pub m_shop_menu_result: crate::app::refinegodweapontopmenu::RefineGodWeaponTopMenu_Result2,
+    #[rename(name = "m_MenuResult")]
+    pub m_menu_result: crate::app::basicmenu::BasicMenu_Result,
+    #[rename(name = "m_WeaponModelRenderer")]
+    pub m_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+    #[rename(name = "m_RefineGodWeaponRoot")]
+    pub m_refine_god_weapon_root: crate::app::refinegodweaponroot::RefineGodWeaponRoot,
+    #[rename(name = "m_GodUnit")]
+    pub m_god_unit: crate::app::godunit::GodUnit,
+    #[rename(name = "m_GodWeapon")]
+    pub m_god_weapon: crate::app::itemdata::ItemData,
+    #[rename(name = "m_RefineKind")]
+    pub m_refine_kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
+    #[rename(name = "m_WeaponSelectMenuScrollIndex")]
+    pub m_weapon_select_menu_scroll_index: i32,
+}
+
+#[cfg(feature = "app-refinegodweaponsequence")]
+#[::unity2::methods]
+impl RefineGodWeaponSequence {
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "CreateDesc", args = 0)]
+    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "LoadResources", args = 0)]
+    pub fn load_resources(self) -> ();
+
+    #[method(name = "IsLoadingResources", args = 0)]
+    pub fn is_loading_resources(self) -> bool;
+
+    #[method(name = "StartSequence", args = 0)]
+    pub fn start_sequence(self) -> ();
+
+    #[method(name = "CreateRefineGodWeaponTopMenu", args = 0)]
+    pub fn create_refine_god_weapon_top_menu(self) -> ();
+
+    #[method(name = "CreateRefineGodWeaponRoot", args = 0)]
+    pub fn create_refine_god_weapon_root(self) -> ();
+
+    #[method(name = "DestroyRefineGodWeaponRoot", args = 0)]
+    pub fn destroy_refine_god_weapon_root(self) -> ();
+
+    #[method(name = "CreateRefineGodWeaponSelectMenu", args = 0)]
+    pub fn create_refine_god_weapon_select_menu(self) -> ();
+
+    #[method(name = "CreateRefineGodWeaponParamMenu", args = 0)]
+    pub fn create_refine_god_weapon_param_menu(self) -> ();
+
+    #[method(name = "CreateRefineGodWeaponSelectMenuForReset", args = 0)]
+    pub fn create_refine_god_weapon_select_menu_for_reset(self) -> ();
+
+    #[method(name = "CreateRefineGodWeaponParamMenuForReset", args = 0)]
+    pub fn create_refine_god_weapon_param_menu_for_reset(self) -> ();
+
+    #[method(name = "EndSequence", args = 0)]
+    pub fn end_sequence(self) -> ();
+}
+
+#[cfg(feature = "app-refinegodweaponsequence")]
+impl RefineGodWeaponSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponsequence/RefineGodWeaponSequence_Label2.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RefineGodWeaponSequence_Label2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RefineGodWeaponSequence_Label2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RefineGodWeaponSequence.Label2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RefineGodWeaponSequence_Label2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RefineGodWeaponSequence_Label2 {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn top() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn prepare_to_refine() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn weapon_select_to_refine() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn refine() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn finish_to_refine() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn prepare_to_reset() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn weapon_select_to_reset() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn reset() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn finish_to_reset() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 10 }
+    }
+}

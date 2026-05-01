@@ -1,0 +1,45 @@
+
+use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1;
+use crate::app::singletonscriptableobject_1::SingletonScriptableObject_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fontlist/FontList.md")))]
+#[::unity2::class(namespace = "App", name = "FontList")]
+# [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: fontlist :: FontList >)]
+pub struct FontList {
+    #[rename(name = "m_FontArray")]
+    pub m_font_array: ::unity2::Array<crate::tm_pro::tmp_fontasset::TMP_FontAsset>,
+    #[rename(name = "m_ReplaceCharactar")]
+    pub m_replace_charactar: u16,
+}
+
+#[cfg(feature = "app-fontlist")]
+#[::unity2::methods]
+impl FontList {
+    #[method(name = "CheckFontExist", args = 1)]
+    pub fn check_font_exist(text: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-fontlist")]
+impl FontList {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FontList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFontListMethods>::ctor(this);
+        this
+    }
+}

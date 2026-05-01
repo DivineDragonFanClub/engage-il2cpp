@@ -1,0 +1,16 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/ipointerdownhandler/IPointerDownHandler.md")))]
+#[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IPointerDownHandler")]
+pub struct IPointerDownHandler {}
+
+#[cfg(feature = "unity_engine-event_systems-ipointerdownhandler")]
+#[::unity2::methods]
+impl IPointerDownHandler {
+    #[method(name = "OnPointerDown", args = 1)]
+    pub fn on_pointer_down(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+}

@@ -1,0 +1,136 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dishresultdialog/DishResultDialog.md")))]
+#[::unity2::class(namespace = "App", name = "DishResultDialog")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct DishResultDialog {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_DishResultRoot")]
+    pub m_dish_result_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ResultContent")]
+    pub m_result_content: crate::app::dishresultdialogcontent::DishResultDialogContent,
+    #[rename(name = "m_Dish")]
+    pub m_dish: crate::app::dish::Dish,
+    #[rename(name = "m_SelectedUnits")]
+    pub m_selected_units:
+        crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+}
+
+#[cfg(feature = "app-dishresultdialog")]
+#[::unity2::methods]
+impl DishResultDialog {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        dish: crate::app::dish::Dish,
+        selected_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    ) -> ();
+
+    #[method(name = "CreateWindow", args = 0)]
+    pub fn create_window(self) -> ();
+
+    #[method(name = "IsOpening", args = 0)]
+    pub fn is_opening(self) -> bool;
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[method(name = "IsClosing", args = 0)]
+    pub fn is_closing(self) -> bool;
+
+    #[method(name = "DeleteWindow", args = 0)]
+    pub fn delete_window(self) -> ();
+
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        dish: crate::app::dish::Dish,
+        selected_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    ) -> ();
+}
+
+#[cfg(feature = "app-dishresultdialog")]
+impl DishResultDialog {
+    pub fn new(
+        dish: crate::app::dish::Dish,
+        selected_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishResultDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishResultDialogMethods>::ctor(this, dish, selected_units);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dishresultdialog/DishResultDialog_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct DishResultDialog_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for DishResultDialog_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DishResultDialog.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DishResultDialog_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl DishResultDialog_Label {
+    pub fn init() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn tick() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 2 }
+    }
+}

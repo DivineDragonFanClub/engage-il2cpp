@@ -1,0 +1,255 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SortieSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SortieSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SortieSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SortieSequence_Label {
+    pub fn notice() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn top_menu() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn selection_unit() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn position_change() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn inventory() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn god() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn tutorial() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn reliance() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn weapon_shop() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn item_shop() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn friend_list() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn ring_list() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn config() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn save() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 14 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence.md")))]
+#[::unity2::class(namespace = "App", name = "SortieSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequence :: SortieSequence >)]
+pub struct SortieSequence {
+    #[static_field]
+    #[rename(name = "s_IsDecidedToBattle")]
+    pub s_is_decided_to_battle: bool,
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::app::sortiesequence::SortieSequence_Modes,
+}
+
+#[cfg(feature = "app-sortiesequence")]
+#[::unity2::methods]
+impl SortieSequence {
+    #[method(name = "CreateBindMap", args = 1)]
+    pub fn create_bind_map(
+        super_: crate::app::procinst::ProcInst,
+    ) -> crate::app::procinst::ProcInst;
+
+    #[method(name = "CreateBindHub", args = 1)]
+    pub fn create_bind_hub(
+        super_: crate::app::procinst::ProcInst,
+    ) -> crate::app::procinst::ProcInst;
+
+    #[method(name = "CreateBindEdit", args = 1)]
+    pub fn create_bind_edit(
+        super_: crate::app::procinst::ProcInst,
+    ) -> crate::app::procinst::ProcInst;
+
+    #[method(name = "CreateBindImpl", args = 2)]
+    pub fn create_bind_impl(
+        super_: crate::app::procinst::ProcInst,
+        mode: crate::app::sortiesequence::SortieSequence_Modes,
+    ) -> crate::app::procinst::ProcInst;
+
+    #[method(name = "DecideToBattle", args = 0)]
+    pub fn decide_to_battle() -> ();
+
+    #[method(name = "IsDecidedToBattle", args = 0)]
+    pub fn is_decided_to_battle() -> bool;
+
+    #[method(name = "get_Mode", args = 0)]
+    pub fn get_mode(self) -> crate::app::sortiesequence::SortieSequence_Modes;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, mode: crate::app::sortiesequence::SortieSequence_Modes) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "OnShutdown", args = 0)]
+    pub fn on_shutdown(self) -> ();
+
+    #[method(name = "SetupUnits", args = 0)]
+    pub fn setup_units(self) -> ();
+
+    #[method(name = "PostSetupUnits", args = 0)]
+    pub fn post_setup_units(self) -> ();
+
+    #[method(name = "TryShowTutorial", args = 0)]
+    pub fn try_show_tutorial(self) -> ();
+
+    #[method(name = "Notice", args = 0)]
+    pub fn notice(self) -> ();
+
+    #[method(name = "ResetManagers", args = 0)]
+    pub fn reset_managers(self) -> ();
+
+    #[method(name = "ShowHelp", args = 0)]
+    pub fn show_help(self) -> ();
+
+    #[method(name = "HideHelp", args = 0)]
+    pub fn hide_help(self) -> ();
+
+    #[method(name = "PlayBgm", args = 0)]
+    pub fn play_bgm(self) -> ();
+
+    #[method(name = "StopBgm", args = 0)]
+    pub fn stop_bgm(self) -> ();
+
+    #[method(name = "StopFieldBgmForRelayTakeOver", args = 0)]
+    pub fn stop_field_bgm_for_relay_take_over(self) -> ();
+}
+
+#[cfg(feature = "app-sortiesequence")]
+impl SortieSequence {
+    pub fn new(mode: crate::app::sortiesequence::SortieSequence_Modes) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieSequenceMethods>::ctor(this, mode);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Modes.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SortieSequence_Modes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SortieSequence_Modes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieSequence.Modes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SortieSequence_Modes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SortieSequence_Modes {
+    pub fn map() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn hub() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn edit() -> Self {
+        Self { value: 2 }
+    }
+}

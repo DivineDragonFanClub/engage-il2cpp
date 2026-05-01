@@ -1,0 +1,60 @@
+
+use crate::moon_sharp::interpreter::interpreterexception::IInterpreterException;
+use crate::moon_sharp::interpreter::interpreterexception::InterpreterException;
+use crate::moon_sharp::interpreter::scriptruntimeexception::IScriptRuntimeException;
+use crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/dynamicexpressionexception/DynamicExpressionException.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter",
+    name = "DynamicExpressionException"
+)]
+#[parent(crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException)]
+pub struct DynamicExpressionException {}
+
+#[cfg(feature = "moon_sharp-interpreter-dynamicexpressionexception")]
+#[::unity2::methods]
+impl DynamicExpressionException {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, message: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-dynamicexpressionexception")]
+impl DynamicExpressionException {
+    pub fn new(
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DynamicExpressionException),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDynamicExpressionExceptionMethods>::ctor(this, format, args);
+        this
+    }
+
+    pub fn new_2(message: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DynamicExpressionException),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IDynamicExpressionExceptionMethods>::ctor_2(this, message);
+        this
+    }
+}

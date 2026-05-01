@@ -1,0 +1,118 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBase;
+use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/textdataprovider/TextDataProvider.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "TextDataProvider"
+)]
+# [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
+pub struct TextDataProvider {}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
+#[::unity2::methods]
+impl TextDataProvider {
+    #[method(name = "get_IgnoreFailures", args = 0)]
+    pub fn get_ignore_failures(self) -> bool;
+
+    #[method(name = "set_IgnoreFailures", args = 1)]
+    pub fn set_ignore_failures(self, value: bool) -> ();
+
+    #[method(name = "Convert", args = 2)]
+    pub fn convert(
+        self,
+        r#type: ::unity2::SystemType,
+        text: ::unity2::Il2CppString,
+    ) -> crate::system::object::Object;
+
+    #[method(name = "Provide", args = 1)]
+    pub fn provide(
+        self,
+        provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
+impl TextDataProvider {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TextDataProvider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITextDataProviderMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/textdataprovider/TextDataProvider_InternalOp.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "TextDataProvider.InternalOp"
+)]
+#[parent(crate::system::object::Object)]
+pub struct TextDataProvider_InternalOp {
+# [rename (name = "m_Provider")] pub m_provider : crate :: unity_engine :: resource_management :: resource_providers :: textdataprovider :: TextDataProvider ,
+# [rename (name = "m_RequestOperation")] pub m_request_operation : crate :: unity_engine :: networking :: unitywebrequestasyncoperation :: UnityWebRequestAsyncOperation ,
+# [rename (name = "m_RequestQueueOperation")] pub m_request_queue_operation : crate :: unity_engine :: resource_management :: webrequestqueueoperation :: WebRequestQueueOperation ,
+# [rename (name = "m_PI")] pub m_pi : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle ,
+# [rename (name = "m_IgnoreFailures")] pub m_ignore_failures : bool ,
+# [rename (name = "m_Complete")] pub m_complete : bool ,
+# [rename (name = "m_Timeout")] pub m_timeout : i32 ,
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
+#[::unity2::methods]
+impl TextDataProvider_InternalOp {
+    #[method(name = "GetPercentComplete", args = 0)]
+    pub fn get_percent_complete(self) -> f32;
+
+    #[method(name = "Start", args = 2)]
+    pub fn start(
+        self,
+        provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+        raw_provider : crate :: unity_engine :: resource_management :: resource_providers :: textdataprovider :: TextDataProvider,
+    ) -> ();
+
+    #[method(name = "WaitForCompletionHandler", args = 0)]
+    pub fn wait_for_completion_handler(self) -> bool;
+
+    #[method(name = "RequestOperation_completed", args = 1)]
+    pub fn request_operation_completed(
+        self,
+        op: crate::unity_engine::asyncoperation::AsyncOperation,
+    ) -> ();
+
+    #[method(name = "ConvertText", args = 1)]
+    pub fn convert_text(self, text: ::unity2::Il2CppString) -> crate::system::object::Object;
+
+    #[method(name = "SendWebRequest", args = 1)]
+    pub fn send_web_request(self, path: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
+impl TextDataProvider_InternalOp {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TextDataProvider_InternalOp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITextDataProvider_InternalOpMethods>::ctor(this);
+        this
+    }
+}

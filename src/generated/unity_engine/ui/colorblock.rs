@@ -1,0 +1,110 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/colorblock/ColorBlock.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ColorBlock {
+    pub m_normal_color: crate::unity_engine::color::Color,
+    pub m_highlighted_color: crate::unity_engine::color::Color,
+    pub m_pressed_color: crate::unity_engine::color::Color,
+    pub m_selected_color: crate::unity_engine::color::Color,
+    pub m_disabled_color: crate::unity_engine::color::Color,
+    pub m_color_multiplier: f32,
+    pub m_fade_duration: f32,
+}
+
+impl ::unity2::ClassIdentity for ColorBlock {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "ColorBlock";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ColorBlock {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-colorblock")]
+#[::unity2::methods(value)]
+impl ColorBlock {
+    #[method(name = "get_normalColor", args = 0)]
+    pub fn get_normal_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "set_normalColor", args = 1)]
+    pub fn set_normal_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "get_highlightedColor", args = 0)]
+    pub fn get_highlighted_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "set_highlightedColor", args = 1)]
+    pub fn set_highlighted_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "get_pressedColor", args = 0)]
+    pub fn get_pressed_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "set_pressedColor", args = 1)]
+    pub fn set_pressed_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "get_selectedColor", args = 0)]
+    pub fn get_selected_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "set_selectedColor", args = 1)]
+    pub fn set_selected_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "get_disabledColor", args = 0)]
+    pub fn get_disabled_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "set_disabledColor", args = 1)]
+    pub fn set_disabled_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "get_colorMultiplier", args = 0)]
+    pub fn get_color_multiplier(self) -> f32;
+
+    #[method(name = "set_colorMultiplier", args = 1)]
+    pub fn set_color_multiplier(self, value: f32) -> ();
+
+    #[method(name = "get_fadeDuration", args = 0)]
+    pub fn get_fade_duration(self) -> f32;
+
+    #[method(name = "set_fadeDuration", args = 1)]
+    pub fn set_fade_duration(self, value: f32) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, obj: crate::system::object::Object) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_2(self, other: crate::unity_engine::ui::colorblock::ColorBlock) -> bool;
+
+    #[method(name = "op_Equality", args = 2)]
+    pub fn op_equality(
+        point1: crate::unity_engine::ui::colorblock::ColorBlock,
+        point2: crate::unity_engine::ui::colorblock::ColorBlock,
+    ) -> bool;
+
+    #[method(name = "op_Inequality", args = 2)]
+    pub fn op_inequality(
+        point1: crate::unity_engine::ui::colorblock::ColorBlock,
+        point2: crate::unity_engine::ui::colorblock::ColorBlock,
+    ) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+}

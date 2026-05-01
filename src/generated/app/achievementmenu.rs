@@ -1,0 +1,299 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
+use crate::app::exchangeyesnodialog::IExchangeYesNoDialog;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievementmenu/AchievementMenu.md")))]
+#[::unity2::class(namespace = "App", name = "AchievementMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct AchievementMenu {
+    #[static_field]
+    #[rename(name = "m_SelectCategory")]
+    pub m_select_category: i32,
+    #[static_field]
+    #[rename(name = "m_DispAchievementKind")]
+    pub m_disp_achievement_kind: ::unity2::Array<bool>,
+    #[rename(name = "m_MenuSelectList")]
+    pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::basicmenuselect::BasicMenuSelect,
+    >,
+}
+
+#[cfg(feature = "app-achievementmenu")]
+#[::unity2::methods]
+impl AchievementMenu {
+    #[method(name = "GetSelectCategory", args = 0)]
+    pub fn get_select_category(self) -> i32;
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::achievementmenucontent::AchievementMenuContent,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "KeyLeft", args = 1)]
+    pub fn key_left(self, is_trigger: bool) -> ();
+
+    #[method(name = "KeyRight", args = 1)]
+    pub fn key_right(self, is_trigger: bool) -> ();
+
+    #[method(name = "CustomCall", args = 0)]
+    pub fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "UpdateAchievementList", args = 1)]
+    pub fn update_achievement_list(self, is_sort: bool) -> ();
+
+    #[method(name = "CreateMenuItem", args = 0)]
+    pub fn create_menu_item(
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[method(name = "UpdateDispAchievementCategory", args = 1)]
+    pub fn update_disp_achievement_category(
+        disp_category: crate::app::achievedata::AchieveData_Categories,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[method(name = "UpdateDispAchievementStateCleared", args = 0)]
+    pub fn update_disp_achievement_state_cleared(
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[method(name = "GetAllRewardNum", args = 0)]
+    pub fn get_all_reward_num(self) -> i32;
+
+    #[method(name = "GetAllReward", args = 0)]
+    pub fn get_all_reward(self) -> ();
+
+    #[method(name = "SetDisplayFromKind", args = 1)]
+    pub fn set_display_from_kind(data: crate::app::achievedata::AchieveData) -> bool;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-achievementmenu")]
+impl AchievementMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::achievementmenucontent::AchievementMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AchievementMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAchievementMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievementmenu/AchievementMenu_AchievementMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "AchievementMenu.AchievementMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct AchievementMenu_AchievementMenuItem {}
+
+#[cfg(feature = "app-achievementmenu")]
+#[::unity2::methods]
+impl AchievementMenu_AchievementMenuItem {
+    #[method(name = "get_AchieveData", args = 0)]
+    pub fn get_achieve_data(self) -> crate::app::achievedata::AchieveData;
+
+    #[method(name = "set_AchieveData", args = 1)]
+    pub fn set_achieve_data(self, value: crate::app::achievedata::AchieveData) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, achieve_data: crate::app::achievedata::AchieveData) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-achievementmenu")]
+impl AchievementMenu_AchievementMenuItem {
+    pub fn new(achieve_data: crate::app::achievedata::AchieveData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AchievementMenu_AchievementMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAchievementMenu_AchievementMenuItemMethods>::ctor(this, achieve_data);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievementmenu/AchievementMenu_GetBondsExchangeDialog.md")))]
+#[::unity2::class(namespace = "App", name = "AchievementMenu.GetBondsExchangeDialog")]
+#[parent(crate::app::exchangeyesnodialog::ExchangeYesNoDialog)]
+pub struct AchievementMenu_GetBondsExchangeDialog {}
+
+#[cfg(feature = "app-achievementmenu")]
+#[::unity2::methods]
+impl AchievementMenu_GetBondsExchangeDialog {
+    #[method(name = ".ctor", args = 9)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::exchangedialogcontent::ExchangeDialogContent,
+        top_message: ::unity2::Il2CppString,
+        get_item_title: ::unity2::Il2CppString,
+        get_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        get_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        cost_item_title: ::unity2::Il2CppString,
+        cost_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        message: ::unity2::Il2CppString,
+        bonds_num: i32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-achievementmenu")]
+impl AchievementMenu_GetBondsExchangeDialog {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::exchangedialogcontent::ExchangeDialogContent,
+        top_message: ::unity2::Il2CppString,
+        get_item_title: ::unity2::Il2CppString,
+        get_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        get_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        cost_item_title: ::unity2::Il2CppString,
+        cost_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AchievementMenu_GetBondsExchangeDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAchievementMenu_GetBondsExchangeDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            top_message,
+            get_item_title,
+            get_item_param_list,
+            get_money_param,
+            cost_item_title,
+            cost_item_param_list,
+            cost_money_param,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievementmenu/AchievementMenu_YesMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "AchievementMenu.YesMenuItem")]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct AchievementMenu_YesMenuItem {
+    #[rename(name = "m_YesEventHandler")]
+    pub m_yes_event_handler: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-achievementmenu")]
+#[::unity2::methods]
+impl AchievementMenu_YesMenuItem {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, yes_event_handler: crate::system::action::Action) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-achievementmenu")]
+impl AchievementMenu_YesMenuItem {
+    pub fn new(yes_event_handler: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AchievementMenu_YesMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAchievementMenu_YesMenuItemMethods>::ctor(this, yes_event_handler);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/achievementmenu/AchievementMenu_AchievementMenuNoneItem.md")))]
+#[::unity2::class(namespace = "App", name = "AchievementMenu.AchievementMenuNoneItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct AchievementMenu_AchievementMenuNoneItem {}
+
+#[cfg(feature = "app-achievementmenu")]
+#[::unity2::methods]
+impl AchievementMenu_AchievementMenuNoneItem {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+}
+
+#[cfg(feature = "app-achievementmenu")]
+impl AchievementMenu_AchievementMenuNoneItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AchievementMenu_AchievementMenuNoneItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAchievementMenu_AchievementMenuNoneItemMethods>::ctor(this);
+        this
+    }
+}

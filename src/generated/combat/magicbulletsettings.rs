@@ -1,0 +1,58 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/magicbulletsettings/MagicBulletSettings.md")))]
+#[::unity2::class(namespace = "Combat", name = "MagicBulletSettings")]
+#[parent(crate::system::object::Object)]
+pub struct MagicBulletSettings {
+    #[rename(name = "HomeNodeName")]
+    pub home_node_name: ::unity2::Il2CppString,
+    #[rename(name = "TargetNodeName")]
+    pub target_node_name: ::unity2::Il2CppString,
+    #[rename(name = "DecayFrame")]
+    pub decay_frame: f32,
+    #[rename(name = "ArrivalType")]
+    pub arrival_type: crate::combat::magicarrivaltype::MagicArrivalType,
+    #[rename(name = "MoveSpeed")]
+    pub move_speed: f32,
+    #[rename(name = "EaseType")]
+    pub ease_type: crate::app::curve::Curve_Type,
+    #[rename(name = "EasePower")]
+    pub ease_power: i32,
+    #[rename(name = "ConstantArrivalFrame")]
+    pub constant_arrival_frame: f32,
+}
+
+#[cfg(feature = "combat-magicbulletsettings")]
+#[::unity2::methods]
+impl MagicBulletSettings {
+    #[method(name = "get_DecayTime", args = 0)]
+    pub fn get_decay_time(self) -> f32;
+
+    #[method(name = "CalcFlyingTime", args = 2)]
+    pub fn calc_flying_time(
+        self,
+        start_pos: crate::unity_engine::vector3::Vector3,
+        end_pos: crate::unity_engine::vector3::Vector3,
+    ) -> f32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-magicbulletsettings")]
+impl MagicBulletSettings {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MagicBulletSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMagicBulletSettingsMethods>::ctor(this);
+        this
+    }
+}

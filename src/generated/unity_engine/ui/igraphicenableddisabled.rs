@@ -1,0 +1,13 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/igraphicenableddisabled/IGraphicEnabledDisabled.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "IGraphicEnabledDisabled")]
+pub struct IGraphicEnabledDisabled {}
+
+#[cfg(feature = "unity_engine-ui-igraphicenableddisabled")]
+#[::unity2::methods]
+impl IGraphicEnabledDisabled {
+    #[method(name = "OnSiblingGraphicEnabledDisabled", args = 0)]
+    pub fn on_sibling_graphic_enabled_disabled(self) -> ();
+}

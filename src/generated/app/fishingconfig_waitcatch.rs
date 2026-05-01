@@ -1,0 +1,72 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingconfig_waitcatch/FishingConfig_WaitCatch.md")))]
+#[::unity2::class(namespace = "App", name = "FishingConfig_WaitCatch")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct FishingConfig_WaitCatch {
+    #[rename(name = "m_FishChangeAppearTime")]
+    pub m_fish_change_appear_time: f32,
+    #[rename(name = "m_FishChangePercentage")]
+    pub m_fish_change_percentage: f32,
+    #[rename(name = "m_FishFaintPercentage")]
+    pub m_fish_faint_percentage: f32,
+    #[rename(name = "m_FishFaintMaxCount")]
+    pub m_fish_faint_max_count: i32,
+    #[rename(name = "m_FishCatchingTimeMax")]
+    pub m_fish_catching_time_max: f32,
+    #[rename(name = "m_LureCameraDiff")]
+    pub m_lure_camera_diff: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_LureCameraRot")]
+    pub m_lure_camera_rot: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_AssistShowSec")]
+    pub m_assist_show_sec: f32,
+    #[rename(name = "m_FakeVibeTimeMult")]
+    pub m_fake_vibe_time_mult: f32,
+    #[rename(name = "m_CatchVibeTimeMult")]
+    pub m_catch_vibe_time_mult: f32,
+    #[rename(name = "m_CatchVibePower_Tiny")]
+    pub m_catch_vibe_power_tiny: f32,
+    #[rename(name = "m_CatchVibeTime_Tiny")]
+    pub m_catch_vibe_time_tiny: f32,
+    #[rename(name = "m_CatchVibePower_Middle")]
+    pub m_catch_vibe_power_middle: f32,
+    #[rename(name = "m_CatchVibeTime_Middle")]
+    pub m_catch_vibe_time_middle: f32,
+    #[rename(name = "m_CatchVibePower_Giant")]
+    pub m_catch_vibe_power_giant: f32,
+    #[rename(name = "m_CatchVibeTime_Giant")]
+    pub m_catch_vibe_time_giant: f32,
+}
+
+#[cfg(feature = "app-fishingconfig_waitcatch")]
+#[::unity2::methods]
+impl FishingConfig_WaitCatch {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-fishingconfig_waitcatch")]
+impl FishingConfig_WaitCatch {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingConfig_WaitCatch),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingConfig_WaitCatchMethods>::ctor(this);
+        this
+    }
+}

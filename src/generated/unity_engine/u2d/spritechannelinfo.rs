@@ -1,0 +1,50 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/u2d/spritechannelinfo/SpriteChannelInfo.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct SpriteChannelInfo {
+    pub m_buffer: ::unity2::IntPtr,
+    pub m_count: i32,
+    pub m_offset: i32,
+    pub m_stride: i32,
+}
+
+impl ::unity2::ClassIdentity for SpriteChannelInfo {
+    const NAMESPACE: &'static str = "UnityEngine.U2D";
+
+    const NAME: &'static str = "SpriteChannelInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SpriteChannelInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-u2d-spritechannelinfo")]
+#[::unity2::methods(value)]
+impl SpriteChannelInfo {
+    #[method(name = "get_count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[method(name = "get_offset", args = 0)]
+    pub fn get_offset(self) -> i32;
+
+    #[method(name = "get_stride", args = 0)]
+    pub fn get_stride(self) -> i32;
+}

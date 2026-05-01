@@ -1,0 +1,108 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapactor/MapActor_MoveResult.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapActor_MoveResult {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapActor_MoveResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapActor.MoveResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapActor_MoveResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapActor_MoveResult {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn hit() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapactor/MapActor.md")))]
+#[::unity2::class(namespace = "App", name = "MapActor")]
+#[parent(crate::system::object::Object)]
+pub struct MapActor {
+    #[static_field]
+    #[rename(name = "MoveTime")]
+    pub move_time: f32,
+    #[static_field]
+    #[rename(name = "StickMargin")]
+    pub stick_margin: f32,
+}
+
+#[cfg(feature = "app-mapactor")]
+#[::unity2::methods]
+impl MapActor {
+    #[method(name = "IsInvasion", args = 4)]
+    pub fn is_invasion(ox: i32, oz: i32, nx: i32, nz: i32) -> bool;
+
+    #[method(name = "IsDiagonallyDir", args = 4)]
+    pub fn is_diagonally_dir(ox: i32, oz: i32, nx: i32, nz: i32) -> bool;
+
+    #[method(name = "IsConnect", args = 3)]
+    pub fn is_connect(x: i32, z: i32, dir: crate::app::dir_2::Dir_Type) -> bool;
+
+    #[method(name = "Extrusion", args = 2)]
+    pub fn extrusion(
+        pos: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "TickMove", args = 1)]
+    pub fn tick_move(unit: crate::app::unit::Unit) -> crate::app::mapactor::MapActor_MoveResult;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapactor")]
+impl MapActor {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapActor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapActorMethods>::ctor(this);
+        this
+    }
+}

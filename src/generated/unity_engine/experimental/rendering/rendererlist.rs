@@ -1,0 +1,50 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/rendererlist/RendererList.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RendererList {}
+
+impl ::unity2::ClassIdentity for RendererList {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering";
+
+    const NAME: &'static str = "RendererList";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RendererList {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-rendererlist")]
+#[::unity2::methods(value)]
+impl RendererList {
+    #[method(name = "get_isValid", args = 0)]
+    pub fn get_is_valid(self) -> bool;
+
+    #[method(name = "set_isValid", args = 1)]
+    pub fn set_is_valid(self, value: bool) -> ();
+
+    #[method(name = "Create", args = 1)]
+    pub fn create(
+        desc: crate::unity_engine::experimental::rendering::rendererlistdesc::RendererListDesc,
+    ) -> crate::unity_engine::experimental::rendering::rendererlist::RendererList;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

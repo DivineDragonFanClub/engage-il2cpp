@@ -1,0 +1,129 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadingmanager/LoadingManager.md")))]
+#[::unity2::class(namespace = "App", name = "LoadingManager")]
+#[parent(crate::system::object::Object)]
+pub struct LoadingManager {
+    #[static_field]
+    #[rename(name = "s_Binder")]
+    pub s_binder: crate::app::bindholder::BindHolder,
+    #[static_field]
+    #[rename(name = "s_Timer")]
+    pub s_timer: crate::app::timer::Timer,
+    #[static_field]
+    #[rename(name = "s_FadeBind")]
+    pub s_fade_bind: bool,
+}
+
+#[cfg(feature = "app-loadingmanager")]
+#[::unity2::methods]
+impl LoadingManager {
+    #[method(name = "Bind", args = 0)]
+    pub fn bind() -> ();
+
+    #[method(name = "Bind", args = 1)]
+    pub fn bind_2(mode: crate::app::loadingmanager::LoadingManager_Modes) -> ();
+
+    #[method(name = "BindForCook", args = 3)]
+    pub fn bind_for_cook(
+        hero_unit: crate::app::unit::Unit,
+        eat_unit0: crate::app::unit::Unit,
+        eat_unit1: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update() -> ();
+
+    #[method(name = "Unbind", args = 0)]
+    pub fn unbind() -> ();
+
+    #[method(name = "IsBind", args = 0)]
+    pub fn is_bind() -> bool;
+
+    #[method(name = "TryFadeBind", args = 0)]
+    pub fn try_fade_bind() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-loadingmanager")]
+impl LoadingManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LoadingManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILoadingManagerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadingmanager/LoadingManager_Modes.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct LoadingManager_Modes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for LoadingManager_Modes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "LoadingManager.Modes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for LoadingManager_Modes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl LoadingManager_Modes {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn map() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn hub() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn gmap() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn cook() -> Self {
+        Self { value: 4 }
+    }
+}

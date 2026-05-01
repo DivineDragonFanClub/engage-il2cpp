@@ -1,0 +1,184 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rewindsequence/RewindSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RewindSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RewindSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RewindSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RewindSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RewindSequence_Label {
+    pub fn start() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn menu() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn execute_rewind() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn cancel_rewind() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rewindsequence/RewindSequence.md")))]
+#[::unity2::class(namespace = "App", name = "RewindSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: rewindsequence :: RewindSequence >)]
+pub struct RewindSequence {
+    #[static_field]
+    #[rename(name = "EffectForStartPath")]
+    pub effect_for_start_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "EffectForStart_Sec")]
+    pub effect_for_start_sec: f32,
+    #[static_field]
+    #[rename(name = "EffectUnitForStart_Sec")]
+    pub effect_unit_for_start_sec: f32,
+    #[static_field]
+    #[rename(name = "EffectForExecuteRewind_Sec")]
+    pub effect_for_execute_rewind_sec: f32,
+    #[static_field]
+    #[rename(name = "EffectForCancelRewind_Sec")]
+    pub effect_for_cancel_rewind_sec: f32,
+    #[rename(name = "m_IsRewindToPhaseBegin")]
+    pub m_is_rewind_to_phase_begin: bool,
+    #[rename(name = "m_WaitTime")]
+    pub m_wait_time: f32,
+    #[rename(name = "m_EffectForStartObject")]
+    pub m_effect_for_start_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_CursorInitX")]
+    pub m_cursor_init_x: i32,
+    #[rename(name = "m_CursorInitZ")]
+    pub m_cursor_init_z: i32,
+}
+
+#[cfg(feature = "app-rewindsequence")]
+#[::unity2::methods]
+impl RewindSequence {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "LoadResource", args = 0)]
+    pub fn load_resource(self) -> ();
+
+    #[method(name = "UnloadResource", args = 0)]
+    pub fn unload_resource(self) -> ();
+
+    #[method(name = "IsLoadingResource", args = 0)]
+    pub fn is_loading_resource(self) -> bool;
+
+    #[method(name = "InitEffectForStart", args = 0)]
+    pub fn init_effect_for_start(self) -> ();
+
+    #[method(name = "WaitEffectForStart", args = 0)]
+    pub fn wait_effect_for_start(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "CreateMenu", args = 0)]
+    pub fn create_menu(self) -> ();
+
+    #[method(name = "InitEffectForExecuteRewind", args = 0)]
+    pub fn init_effect_for_execute_rewind(self) -> ();
+
+    #[method(name = "WaitEffectForExecuteRewind", args = 0)]
+    pub fn wait_effect_for_execute_rewind(self) -> ();
+
+    #[method(name = "ExecuteRewind", args = 0)]
+    pub fn execute_rewind(self) -> ();
+
+    #[method(name = "InitEffectForCancelRewind", args = 0)]
+    pub fn init_effect_for_cancel_rewind(self) -> ();
+
+    #[method(name = "WaitEffectForCancelRewind", args = 0)]
+    pub fn wait_effect_for_cancel_rewind(self) -> ();
+
+    #[method(name = "ReturnMapCursor", args = 0)]
+    pub fn return_map_cursor(self) -> ();
+
+    #[method(name = "CancelRewind", args = 0)]
+    pub fn cancel_rewind(self) -> ();
+
+    #[method(name = "GetDesc", args = 0)]
+    pub fn get_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "SetRewindToPhaseBegin", args = 1)]
+    pub fn set_rewind_to_phase_begin(self, is_rewind_to_phase_begin: bool) -> ();
+
+    #[method(name = "JumpToExecuteRewind", args = 0)]
+    pub fn jump_to_execute_rewind(self) -> ();
+
+    #[method(name = "JumpToCancelRewind", args = 0)]
+    pub fn jump_to_cancel_rewind(self) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-rewindsequence")]
+impl RewindSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindSequenceMethods>::ctor(this);
+        this
+    }
+}

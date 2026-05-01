@@ -1,0 +1,109 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdataarray_1::IStructDataArray_1;
+use crate::app::structdataarray_1::StructDataArray_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/musclesquatscorepatterndata/MuscleSquatScorePatternData.md")))]
+#[::unity2::class(namespace = "App", name = "MuscleSquatScorePatternData")]
+# [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: musclesquatscorepatterndata :: MuscleSquatScorePatternData >)]
+pub struct MuscleSquatScorePatternData {}
+
+#[cfg(feature = "app-musclesquatscorepatterndata")]
+#[::unity2::methods]
+impl MuscleSquatScorePatternData {
+    #[method(name = "get_TypeA_L", args = 0)]
+    pub fn get_type_a_l(self) -> i32;
+
+    #[method(name = "set_TypeA_L", args = 1)]
+    pub fn set_type_a_l(self, value: i32) -> ();
+
+    #[method(name = "get_TypeA_R", args = 0)]
+    pub fn get_type_a_r(self) -> i32;
+
+    #[method(name = "set_TypeA_R", args = 1)]
+    pub fn set_type_a_r(self, value: i32) -> ();
+
+    #[method(name = "get_TypeB_L", args = 0)]
+    pub fn get_type_b_l(self) -> i32;
+
+    #[method(name = "set_TypeB_L", args = 1)]
+    pub fn set_type_b_l(self, value: i32) -> ();
+
+    #[method(name = "get_TypeB_R", args = 0)]
+    pub fn get_type_b_r(self) -> i32;
+
+    #[method(name = "set_TypeB_R", args = 1)]
+    pub fn set_type_b_r(self, value: i32) -> ();
+
+    #[method(name = "get_TypeC_L", args = 0)]
+    pub fn get_type_c_l(self) -> i32;
+
+    #[method(name = "set_TypeC_L", args = 1)]
+    pub fn set_type_c_l(self, value: i32) -> ();
+
+    #[method(name = "get_TypeC_R", args = 0)]
+    pub fn get_type_c_r(self) -> i32;
+
+    #[method(name = "set_TypeC_R", args = 1)]
+    pub fn set_type_c_r(self, value: i32) -> ();
+
+    #[method(name = "get_TypeD_L", args = 0)]
+    pub fn get_type_d_l(self) -> i32;
+
+    #[method(name = "set_TypeD_L", args = 1)]
+    pub fn set_type_d_l(self, value: i32) -> ();
+
+    #[method(name = "get_TypeD_R", args = 0)]
+    pub fn get_type_d_r(self) -> i32;
+
+    #[method(name = "set_TypeD_R", args = 1)]
+    pub fn set_type_d_r(self, value: i32) -> ();
+
+    #[method(name = "get_TypeE_L", args = 0)]
+    pub fn get_type_e_l(self) -> i32;
+
+    #[method(name = "set_TypeE_L", args = 1)]
+    pub fn set_type_e_l(self, value: i32) -> ();
+
+    #[method(name = "get_TypeE_R", args = 0)]
+    pub fn get_type_e_r(self) -> i32;
+
+    #[method(name = "set_TypeE_R", args = 1)]
+    pub fn set_type_e_r(self, value: i32) -> ();
+
+    #[method(name = "get_Ensure", args = 0)]
+    pub fn get_ensure(self) -> i32;
+
+    #[method(name = "set_Ensure", args = 1)]
+    pub fn set_ensure(self, value: i32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+}
+
+#[cfg(feature = "app-musclesquatscorepatterndata")]
+impl MuscleSquatScorePatternData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleSquatScorePatternData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMuscleSquatScorePatternDataMethods>::ctor(this);
+        this
+    }
+}

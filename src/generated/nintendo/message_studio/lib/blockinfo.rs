@@ -1,0 +1,38 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nintendo/message_studio/lib/blockinfo/BlockInfo.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BlockInfo {
+    pub data: ::unity2::IntPtr,
+    pub block_name: ::unity2::Array<u8>,
+    pub data_size: u32,
+    pub flags: u16,
+    pub padding: u16,
+}
+
+impl ::unity2::ClassIdentity for BlockInfo {
+    const NAMESPACE: &'static str = "Nintendo.MessageStudio.Lib";
+
+    const NAME: &'static str = "BlockInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BlockInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

@@ -1,0 +1,95 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/volumecomponent/VolumeComponent.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "VolumeComponent")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct VolumeComponent {
+    #[rename(name = "active")]
+    pub active: bool,
+    #[rename(name = "m_AdvancedMode")]
+    pub m_advanced_mode: bool,
+}
+
+#[cfg(feature = "unity_engine-rendering-volumecomponent")]
+#[::unity2::methods]
+impl VolumeComponent {
+    #[method(name = "get_displayName", args = 0)]
+    pub fn get_display_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_displayName", args = 1)]
+    pub fn set_display_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_parameters", args = 0)]
+    pub fn get_parameters(
+        self,
+    ) -> crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<
+        crate::unity_engine::rendering::volumeparameter::VolumeParameter,
+    >;
+
+    #[method(name = "set_parameters", args = 1)]
+    pub fn set_parameters(
+        self,
+        value: crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<
+            crate::unity_engine::rendering::volumeparameter::VolumeParameter,
+        >,
+    ) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "Override", args = 2)]
+    pub fn r#override(
+        self,
+        state: crate::unity_engine::rendering::volumecomponent::VolumeComponent,
+        interp_factor: f32,
+    ) -> ();
+
+    #[method(name = "SetAllOverridesTo", args = 1)]
+    pub fn set_all_overrides_to(self, state: bool) -> ();
+
+    #[method(name = "SetAllOverridesTo", args = 2)]
+    pub fn set_all_overrides_to_2(
+        self,
+        enumerable: crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+            crate::unity_engine::rendering::volumeparameter::VolumeParameter,
+        >,
+        state: bool,
+    ) -> ();
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "Release", args = 0)]
+    pub fn release(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-volumecomponent")]
+impl VolumeComponent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VolumeComponent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVolumeComponentMethods>::ctor(this);
+        this
+    }
+}

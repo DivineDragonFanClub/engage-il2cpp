@@ -1,0 +1,205 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit_CancelEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ProfileCardAlbumListMenuOverLimit.CancelEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ProfileCardAlbumListMenuOverLimit_CancelEventHandler {}
+
+#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
+#[::unity2::methods]
+impl ProfileCardAlbumListMenuOverLimit_CancelEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        super_: crate::app::procinst::ProcInst,
+    ) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
+impl ProfileCardAlbumListMenuOverLimit_CancelEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardAlbumListMenuOverLimit_CancelEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardAlbumListMenuOverLimit_CancelEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ProfileCardAlbumListMenuOverLimit.ProfileCardAlbumListMenuOverLimitItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem {
+# [rename (name = "m_Profile")] pub m_profile : crate :: app :: profilecard :: ProfileCard ,
+# [rename (name = "m_CancelEventHandler")] pub m_cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler ,
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
+#[::unity2::methods]
+impl ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        profile: crate::app::profilecard::ProfileCard,
+        cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler,
+    ) -> ();
+
+    #[method(name = "OnBuildMenuItemContent", args = 0)]
+    pub fn on_build_menu_item_content(self) -> ();
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "get_Profile", args = 0)]
+    pub fn get_profile(self) -> crate::app::profilecard::ProfileCard;
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
+impl ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem {
+    pub fn new(
+        profile: crate::app::profilecard::ProfileCard,
+        cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        < Self as IProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItemMethods > :: ctor (this , profile , cancel_event_handler) ;
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit.md")))]
+#[::unity2::class(namespace = "App", name = "ProfileCardAlbumListMenuOverLimit")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct ProfileCardAlbumListMenuOverLimit {
+# [rename (name = "m_ProfileList")] pub m_profile_list : crate :: app :: profilelist :: ProfileList ,
+# [rename (name = "m_ProfileCardAlbumRoot")] pub m_profile_card_album_root : crate :: app :: profilecardalbumroot :: ProfileCardAlbumRoot ,
+# [rename (name = "m_ProfileCardRoot")] pub m_profile_card_root : crate :: app :: profilecardroot :: ProfileCardRoot ,
+# [rename (name = "m_CancelEventHandler")] pub m_cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler ,
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
+#[::unity2::methods]
+impl ProfileCardAlbumListMenuOverLimit {
+    #[method(name = "CreateBind", args = 5)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        profile_list: crate::app::profilelist::ProfileList,
+        menu_content: crate::app::profilecardalbumlistmenucontent::ProfileCardAlbumListMenuContent,
+        profiled_card_album_root: crate::app::profilecardalbumroot::ProfileCardAlbumRoot,
+        cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler,
+    ) -> crate::app::profilecardalbumlistmenuoverlimit::ProfileCardAlbumListMenuOverLimit;
+
+    #[method(name = "CreateMenuItem", args = 2)]
+    pub fn create_menu_item(
+        profile_list: crate::app::profilelist::ProfileList,
+        cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[method(name = "CreateMenuItemRebuild", args = 3)]
+    pub fn create_menu_item_rebuild(
+        profile_list: crate::app::profilelist::ProfileList,
+        old_menu_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        profile_list: crate::app::profilelist::ProfileList,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        profile_card_album_root: crate::app::profilecardalbumroot::ProfileCardAlbumRoot,
+        cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "UpdateCardRoot", args = 2)]
+    pub fn update_card_root(
+        self,
+        profile_card: crate::app::profilecard::ProfileCard,
+        select_index: i32,
+    ) -> ();
+
+    #[method(name = "RebuildMenu", args = 0)]
+    pub fn rebuild_menu(self) -> ();
+
+    #[method(name = "RemoveProfileCard", args = 1)]
+    pub fn remove_profile_card(self, profile: crate::app::profilecard::ProfileCard) -> ();
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
+impl ProfileCardAlbumListMenuOverLimit {
+    pub fn new(
+        profile_list: crate::app::profilelist::ProfileList,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        profile_card_album_root: crate::app::profilecardalbumroot::ProfileCardAlbumRoot,
+        cancel_event_handler : crate :: app :: profilecardalbumlistmenuoverlimit :: ProfileCardAlbumListMenuOverLimit_CancelEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardAlbumListMenuOverLimit),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardAlbumListMenuOverLimitMethods>::ctor(
+            this,
+            profile_list,
+            menu_item_list,
+            menu_content,
+            profile_card_album_root,
+            cancel_event_handler,
+        );
+        this
+    }
+}

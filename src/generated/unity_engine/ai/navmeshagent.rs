@@ -1,0 +1,55 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ai/navmeshagent/NavMeshAgent.md")))]
+#[::unity2::class(namespace = "UnityEngine.AI", name = "NavMeshAgent")]
+#[parent(crate::unity_engine::behaviour::Behaviour)]
+pub struct NavMeshAgent {}
+
+#[cfg(feature = "unity_engine-ai-navmeshagent")]
+#[::unity2::methods]
+impl NavMeshAgent {
+    #[method(name = "SetDestination", args = 1)]
+    pub fn set_destination(self, target: crate::unity_engine::vector3::Vector3) -> bool;
+
+    #[method(name = "get_steeringTarget", args = 0)]
+    pub fn get_steering_target(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "CalculatePath", args = 2)]
+    pub fn calculate_path(
+        self,
+        target_position: crate::unity_engine::vector3::Vector3,
+        path: crate::unity_engine::ai::navmeshpath::NavMeshPath,
+    ) -> bool;
+
+    #[method(name = "CalculatePathInternal", args = 2)]
+    pub fn calculate_path_internal(
+        self,
+        target_position: crate::unity_engine::vector3::Vector3,
+        path: crate::unity_engine::ai::navmeshpath::NavMeshPath,
+    ) -> bool;
+
+    #[method(name = "set_speed", args = 1)]
+    pub fn set_speed(self, value: f32) -> ();
+
+    #[method(name = "SetDestination_Injected", args = 1)]
+    pub fn set_destination_injected(self, target: crate::unity_engine::vector3::Vector3) -> bool;
+
+    #[method(name = "get_steeringTarget_Injected", args = 1)]
+    pub fn get_steering_target_injected(self, ret: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "CalculatePathInternal_Injected", args = 2)]
+    pub fn calculate_path_internal_injected(
+        self,
+        target_position: crate::unity_engine::vector3::Vector3,
+        path: crate::unity_engine::ai::navmeshpath::NavMeshPath,
+    ) -> bool;
+}

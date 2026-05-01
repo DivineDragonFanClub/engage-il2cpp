@@ -1,0 +1,213 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_textutilities/TMP_TextUtilities_LineSegment.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TMP_TextUtilities_LineSegment {
+    pub point1: crate::unity_engine::vector3::Vector3,
+    pub point2: crate::unity_engine::vector3::Vector3,
+}
+
+impl ::unity2::ClassIdentity for TMP_TextUtilities_LineSegment {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_TextUtilities.LineSegment";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_TextUtilities_LineSegment {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_textutilities")]
+#[::unity2::methods(value)]
+impl TMP_TextUtilities_LineSegment {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        p1: crate::unity_engine::vector3::Vector3,
+        p2: crate::unity_engine::vector3::Vector3,
+    ) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_textutilities/TMP_TextUtilities.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_TextUtilities")]
+#[parent(crate::system::object::Object)]
+pub struct TMP_TextUtilities {
+    #[static_field]
+    #[rename(name = "m_rectWorldCorners")]
+    pub m_rect_world_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+    #[static_field]
+    #[rename(name = "k_lookupStringL")]
+    pub k_lookup_string_l: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "k_lookupStringU")]
+    pub k_lookup_string_u: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "tm_pro-tmp_textutilities")]
+#[::unity2::methods]
+impl TMP_TextUtilities {
+    #[method(name = "GetCursorIndexFromPosition", args = 3)]
+    pub fn get_cursor_index_from_position(
+        text_component: crate::tm_pro::tmp_text::TMP_Text,
+        position: crate::unity_engine::vector3::Vector3,
+        camera: crate::unity_engine::camera::Camera,
+    ) -> i32;
+
+    #[method(name = "GetCursorIndexFromPosition", args = 4)]
+    pub fn get_cursor_index_from_position_2(
+        text_component: crate::tm_pro::tmp_text::TMP_Text,
+        position: crate::unity_engine::vector3::Vector3,
+        camera: crate::unity_engine::camera::Camera,
+        cursor: crate::tm_pro::caretposition::CaretPosition,
+    ) -> i32;
+
+    #[method(name = "FindNearestLine", args = 3)]
+    pub fn find_nearest_line(
+        text: crate::tm_pro::tmp_text::TMP_Text,
+        position: crate::unity_engine::vector3::Vector3,
+        camera: crate::unity_engine::camera::Camera,
+    ) -> i32;
+
+    #[method(name = "FindNearestCharacterOnLine", args = 5)]
+    pub fn find_nearest_character_on_line(
+        text: crate::tm_pro::tmp_text::TMP_Text,
+        position: crate::unity_engine::vector3::Vector3,
+        line: i32,
+        camera: crate::unity_engine::camera::Camera,
+        visible_only: bool,
+    ) -> i32;
+
+    #[method(name = "IsIntersectingRectTransform", args = 3)]
+    pub fn is_intersecting_rect_transform(
+        rect_transform: crate::unity_engine::recttransform::RectTransform,
+        position: crate::unity_engine::vector3::Vector3,
+        camera: crate::unity_engine::camera::Camera,
+    ) -> bool;
+
+    #[method(name = "FindIntersectingCharacter", args = 4)]
+    pub fn find_intersecting_character(
+        text: crate::tm_pro::tmp_text::TMP_Text,
+        position: crate::unity_engine::vector3::Vector3,
+        camera: crate::unity_engine::camera::Camera,
+        visible_only: bool,
+    ) -> i32;
+
+    #[method(name = "FindNearestCharacter", args = 4)]
+    pub fn find_nearest_character(
+        text: crate::tm_pro::tmp_text::TMP_Text,
+        position: crate::unity_engine::vector3::Vector3,
+        camera: crate::unity_engine::camera::Camera,
+        visible_only: bool,
+    ) -> i32;
+
+    #[method(name = "FindIntersectingWord", args = 3)]
+    pub fn find_intersecting_word(
+        text: crate::tm_pro::tmp_text::TMP_Text,
+        position: crate::unity_engine::vector3::Vector3,
+        camera: crate::unity_engine::camera::Camera,
+    ) -> i32;
+
+    #[method(name = "FindNearestWord", args = 3)]
+    pub fn find_nearest_word(
+        text: crate::tm_pro::tmp_text::TMP_Text,
+        position: crate::unity_engine::vector3::Vector3,
+        camera: crate::unity_engine::camera::Camera,
+    ) -> i32;
+
+    #[method(name = "FindIntersectingLine", args = 3)]
+    pub fn find_intersecting_line(
+        text: crate::tm_pro::tmp_text::TMP_Text,
+        position: crate::unity_engine::vector3::Vector3,
+        camera: crate::unity_engine::camera::Camera,
+    ) -> i32;
+
+    #[method(name = "FindIntersectingLink", args = 3)]
+    pub fn find_intersecting_link(
+        text: crate::tm_pro::tmp_text::TMP_Text,
+        position: crate::unity_engine::vector3::Vector3,
+        camera: crate::unity_engine::camera::Camera,
+    ) -> i32;
+
+    #[method(name = "FindNearestLink", args = 3)]
+    pub fn find_nearest_link(
+        text: crate::tm_pro::tmp_text::TMP_Text,
+        position: crate::unity_engine::vector3::Vector3,
+        camera: crate::unity_engine::camera::Camera,
+    ) -> i32;
+
+    #[method(name = "PointIntersectRectangle", args = 5)]
+    pub fn point_intersect_rectangle(
+        m: crate::unity_engine::vector3::Vector3,
+        a: crate::unity_engine::vector3::Vector3,
+        b: crate::unity_engine::vector3::Vector3,
+        c: crate::unity_engine::vector3::Vector3,
+        d: crate::unity_engine::vector3::Vector3,
+    ) -> bool;
+
+    #[method(name = "ScreenPointToWorldPointInRectangle", args = 4)]
+    pub fn screen_point_to_world_point_in_rectangle(
+        transform: crate::unity_engine::transform::Transform,
+        screen_point: crate::unity_engine::vector2::Vector2,
+        cam: crate::unity_engine::camera::Camera,
+        world_point: crate::unity_engine::vector3::Vector3,
+    ) -> bool;
+
+    #[method(name = "IntersectLinePlane", args = 4)]
+    pub fn intersect_line_plane(
+        line: crate::tm_pro::tmp_textutilities::TMP_TextUtilities_LineSegment,
+        point: crate::unity_engine::vector3::Vector3,
+        normal: crate::unity_engine::vector3::Vector3,
+        intersecting_point: crate::unity_engine::vector3::Vector3,
+    ) -> bool;
+
+    #[method(name = "DistanceToLine", args = 3)]
+    pub fn distance_to_line(
+        a: crate::unity_engine::vector3::Vector3,
+        b: crate::unity_engine::vector3::Vector3,
+        point: crate::unity_engine::vector3::Vector3,
+    ) -> f32;
+
+    #[method(name = "ToLowerFast", args = 1)]
+    pub fn to_lower_fast(c: u16) -> u16;
+
+    #[method(name = "ToUpperFast", args = 1)]
+    pub fn to_upper_fast(c: u16) -> u16;
+
+    #[method(name = "ToUpperASCIIFast", args = 1)]
+    pub fn to_upper_ascii_fast(c: u32) -> u32;
+
+    #[method(name = "GetHashCode", args = 1)]
+    pub fn get_hash_code(s: ::unity2::Il2CppString) -> i32;
+
+    #[method(name = "GetSimpleHashCode", args = 1)]
+    pub fn get_simple_hash_code(s: ::unity2::Il2CppString) -> i32;
+
+    #[method(name = "GetSimpleHashCodeLowercase", args = 1)]
+    pub fn get_simple_hash_code_lowercase(s: ::unity2::Il2CppString) -> u32;
+
+    #[method(name = "HexToInt", args = 1)]
+    pub fn hex_to_int(hex: u16) -> i32;
+
+    #[method(name = "StringHexToInt", args = 1)]
+    pub fn string_hex_to_int(s: ::unity2::Il2CppString) -> i32;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

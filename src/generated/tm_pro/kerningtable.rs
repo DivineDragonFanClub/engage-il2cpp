@@ -1,0 +1,60 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/kerningtable/KerningTable.md")))]
+#[::unity2::class(namespace = "TMPro", name = "KerningTable")]
+#[parent(crate::system::object::Object)]
+pub struct KerningTable {
+    #[rename(name = "kerningPairs")]
+    pub kerning_pairs: crate::system::collections::generic::list_1::List_1<
+        crate::tm_pro::kerningpair::KerningPair,
+    >,
+}
+
+#[cfg(feature = "tm_pro-kerningtable")]
+#[::unity2::methods]
+impl KerningTable {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "AddKerningPair", args = 0)]
+    pub fn add_kerning_pair(self) -> ();
+
+    #[method(name = "AddKerningPair", args = 3)]
+    pub fn add_kerning_pair_2(self, first: u32, second: u32, offset: f32) -> i32;
+
+    #[method(name = "AddGlyphPairAdjustmentRecord", args = 4)]
+    pub fn add_glyph_pair_adjustment_record(
+        self,
+        first: u32,
+        first_adjustments: crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
+        second: u32,
+        second_adjustments: crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
+    ) -> i32;
+
+    #[method(name = "RemoveKerningPair", args = 2)]
+    pub fn remove_kerning_pair(self, left: i32, right: i32) -> ();
+
+    #[method(name = "RemoveKerningPair", args = 1)]
+    pub fn remove_kerning_pair_2(self, index: i32) -> ();
+
+    #[method(name = "SortKerningPairs", args = 0)]
+    pub fn sort_kerning_pairs(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-kerningtable")]
+impl KerningTable {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(KerningTable),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IKerningTableMethods>::ctor(this);
+        this
+    }
+}

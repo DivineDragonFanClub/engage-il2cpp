@@ -1,0 +1,738 @@
+
+use crate::app::bitfield32::BitField32;
+use crate::app::bitfield32::IBitField32;
+use crate::app::bitfieldcommon::BitFieldCommon;
+use crate::app::bitfieldcommon::IBitFieldCommon;
+use crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1;
+use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
+use crate::app::commonbattlesequence_1::CommonBattleSequence_1;
+use crate::app::commonbattlesequence_1::ICommonBattleSequence_1;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::collections::generic::list_1::IList_1;
+use crate::system::collections::generic::list_1::List_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_BattleUnitScope.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapSequenceBattle_BattleUnitScope {
+    pub m_info: crate::app::battleinfo::BattleInfo,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceBattle_BattleUnitScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceBattle.BattleUnitScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceBattle_BattleUnitScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
+#[::unity2::methods(value)]
+impl MapSequenceBattle_BattleUnitScope {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, info: crate::app::battleinfo::BattleInfo) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_UnitList.md")))]
+#[::unity2::class(namespace = "App", name = "MapSequenceBattle.UnitList")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
+pub struct MapSequenceBattle_UnitList {}
+
+#[cfg(feature = "app-mapsequencebattle")]
+#[::unity2::methods]
+impl MapSequenceBattle_UnitList {
+    #[method(name = "TryAdd", args = 1)]
+    pub fn try_add(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl MapSequenceBattle_UnitList {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceBattle_UnitList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceBattle_UnitListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_BitFieldStatus.md")))]
+#[::unity2::class(namespace = "App", name = "MapSequenceBattle.BitFieldStatus")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsequencebattle :: MapSequenceBattle_Status >)]
+pub struct MapSequenceBattle_BitFieldStatus {}
+
+#[cfg(feature = "app-mapsequencebattle")]
+#[::unity2::methods]
+impl MapSequenceBattle_BitFieldStatus {
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::mapsequencebattle::MapSequenceBattle_Status) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl MapSequenceBattle_BitFieldStatus {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceBattle_BitFieldStatus),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceBattle_BitFieldStatusMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Status.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceBattle_Status {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceBattle_Status {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceBattle.Status";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceBattle_Status {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceBattle_Status {
+    pub fn multi_battle() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn single_rod() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn used_rod() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn used_move() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn last_boss_die() -> Self {
+        Self { value: 16 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle.md")))]
+#[::unity2::class(namespace = "App", name = "MapSequenceBattle")]
+# [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencebattle :: MapSequenceBattle >)]
+pub struct MapSequenceBattle {
+    #[rename(name = "m_Kind")]
+    pub m_kind: crate::app::mapsequencebattle::MapSequenceBattle_Kinds,
+    #[rename(name = "m_TargetIndex")]
+    pub m_target_index: i32,
+    #[rename(name = "m_BattleCount")]
+    pub m_battle_count: i32,
+    #[rename(name = "m_GainExp")]
+    pub m_gain_exp: i32,
+    #[rename(name = "m_ExpStatus")]
+    pub m_exp_status: crate::app::battleinfoside::BattleInfoSide_Status,
+    #[rename(name = "m_ExpendCount")]
+    pub m_expend_count: i32,
+    #[rename(name = "m_StartX")]
+    pub m_start_x: i32,
+    #[rename(name = "m_StartZ")]
+    pub m_start_z: i32,
+    #[rename(name = "m_GrowTalk")]
+    pub m_grow_talk: bool,
+    #[rename(name = "m_Defender")]
+    pub m_defender: crate::app::unit::Unit,
+    #[rename(name = "m_Status")]
+    pub m_status: crate::app::mapsequencebattle::MapSequenceBattle_BitFieldStatus,
+    #[rename(name = "m_DeadUnits")]
+    pub m_dead_units: crate::app::mapsequencebattle::MapSequenceBattle_UnitList,
+    #[rename(name = "m_DieEvents")]
+    pub m_die_events: crate::app::mapsequencebattle::MapSequenceBattle_UnitList,
+    #[rename(name = "m_FadeUnits")]
+    pub m_fade_units: crate::app::mapsequencebattle::MapSequenceBattle_UnitList,
+    #[rename(name = "m_DropUnits")]
+    pub m_drop_units: crate::app::mapsequencebattle::MapSequenceBattle_UnitList,
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
+#[::unity2::methods]
+impl MapSequenceBattle {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "MindStart", args = 0)]
+    pub fn mind_start(self) -> ();
+
+    #[method(name = "MindEnd", args = 0)]
+    pub fn mind_end(self) -> ();
+
+    #[method(name = "CalcBattle", args = 0)]
+    pub fn calc_battle(self) -> ();
+
+    #[method(name = "EngageAttackTelop", args = 0)]
+    pub fn engage_attack_telop(self) -> ();
+
+    #[method(name = "StartBranch", args = 0)]
+    pub fn start_branch(self) -> ();
+
+    #[method(name = "CalcSimple", args = 1)]
+    pub fn calc_simple(self, is_warmup: bool) -> ();
+
+    #[method(name = "CalcSimple", args = 3)]
+    pub fn calc_simple_2(
+        self,
+        info: crate::app::battleinfo::BattleInfo,
+        is_warmup: bool,
+        is_simulation: bool,
+    ) -> ();
+
+    #[method(name = "MultiBattleWarmup", args = 0)]
+    pub fn multi_battle_warmup(self) -> ();
+
+    #[method(name = "MultiBattleTalk", args = 0)]
+    pub fn multi_battle_talk(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "MultiBattleCombat", args = 0)]
+    pub fn multi_battle_combat(self) -> ();
+
+    #[method(name = "MultiBattleBranch", args = 0)]
+    pub fn multi_battle_branch(self) -> ();
+
+    #[method(name = "MultiBattleEnd", args = 0)]
+    pub fn multi_battle_end(self) -> ();
+
+    #[method(name = "MultiBattleNext", args = 0)]
+    pub fn multi_battle_next(self) -> ();
+
+    #[method(name = "MultiBattleResult", args = 0)]
+    pub fn multi_battle_result(self) -> ();
+
+    #[method(name = "MultiBattleGrow", args = 0)]
+    pub fn multi_battle_grow(self) -> ();
+
+    #[method(name = "TryFullBulletExpend", args = 0)]
+    pub fn try_full_bullet_expend(self) -> bool;
+
+    #[method(name = "MultBattleExpend", args = 0)]
+    pub fn mult_battle_expend(self) -> ();
+
+    #[method(name = "BattleBranch", args = 0)]
+    pub fn battle_branch(self) -> ();
+
+    #[method(name = "CombatRotation", args = 0)]
+    pub fn combat_rotation(self) -> ();
+
+    #[method(name = "CombatBattle", args = 0)]
+    pub fn combat_battle(self) -> ();
+
+    #[method(name = "CombatBranch", args = 0)]
+    pub fn combat_branch(self) -> ();
+
+    #[method(name = "SimpleBattle", args = 0)]
+    pub fn simple_battle(self) -> ();
+
+    #[method(name = "MultiBattleOnce", args = 0)]
+    pub fn multi_battle_once(self) -> ();
+
+    #[method(name = "BattleUpdate", args = 0)]
+    pub fn battle_update(self) -> ();
+
+    #[method(name = "CommitBattle", args = 0)]
+    pub fn commit_battle(self) -> ();
+
+    #[method(name = "IsShowSkill", args = 1)]
+    pub fn is_show_skill(skill: crate::app::skilldata::SkillData) -> bool;
+
+    #[method(name = "GetFrequency", args = 0)]
+    pub fn get_frequency(self) -> crate::app::skilldata::SkillData_Frequencies;
+
+    #[method(name = "BattleSkillAfter", args = 0)]
+    pub fn battle_skill_after(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "UpdateAging", args = 2)]
+    pub fn update_aging(
+        side: crate::app::battleinfoside::BattleInfoSide,
+        cycle: crate::app::skilldata::SkillData_Cycles,
+    ) -> ();
+
+    #[method(name = "BattleSkillAround", args = 0)]
+    pub fn battle_skill_around(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "get_CanWaitSkip", args = 0)]
+    pub fn get_can_wait_skip(self) -> bool;
+
+    #[method(name = "GetRodScene", args = 0)]
+    pub fn get_rod_scene(self) -> crate::app::battlescene::BattleScene;
+
+    #[method(name = "GetActionProc", args = 0)]
+    pub fn get_action_proc(self) -> crate::app::procinst::ProcInst;
+
+    #[method(name = "TryWarpImpl", args = 4)]
+    pub fn try_warp_impl(
+        self,
+        rod_unit: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+    ) -> bool;
+
+    #[method(name = "TryWarp", args = 4)]
+    pub fn try_warp(
+        self,
+        rod_unit: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+    ) -> bool;
+
+    #[method(name = "RangeWarp", args = 6)]
+    pub fn range_warp(
+        self,
+        rod_unit: crate::app::unit::Unit,
+        unit: crate::app::unit::Unit,
+        range: i32,
+        warp_x: i32,
+        warp_z: i32,
+        can_self: bool,
+    ) -> ();
+
+    #[method(name = "RangeRescue", args = 3)]
+    pub fn range_rescue(
+        self,
+        rod_unit: crate::app::unit::Unit,
+        unit: crate::app::unit::Unit,
+        range: i32,
+    ) -> ();
+
+    #[method(name = "RangeTorch", args = 3)]
+    pub fn range_torch(
+        self,
+        unit: crate::app::unit::Unit,
+        range: i32,
+        item: crate::app::itemdata::ItemData,
+    ) -> ();
+
+    #[method(name = "GetActionCallback", args = 0)]
+    pub fn get_action_callback(self) -> crate::app::procvoidmethod::ProcVoidMethod;
+
+    #[method(name = "UseRod", args = 0)]
+    pub fn use_rod(self) -> ();
+
+    #[method(name = "UseRest", args = 1)]
+    pub fn use_rest(self, scene: crate::app::battlescene::BattleScene) -> ();
+
+    #[method(name = "UseMove", args = 0)]
+    pub fn use_move(self) -> ();
+
+    #[method(name = "UseFocus", args = 0)]
+    pub fn use_focus(self) -> ();
+
+    #[method(name = "PlayEngageTurnRecoveryEffect", args = 1)]
+    pub fn play_engage_turn_recovery_effect(unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "EngageTurnRecoveryUnit", args = 1)]
+    pub fn engage_turn_recovery_unit(unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "EngageTurnRecovery", args = 0)]
+    pub fn engage_turn_recovery(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "HpStockCreate", args = 0)]
+    pub fn hp_stock_create(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "DestroyAction", args = 0)]
+    pub fn destroy_action(self) -> ();
+
+    #[method(name = "DestroyAfter", args = 0)]
+    pub fn destroy_after(self) -> ();
+
+    #[method(name = "UpdateTerrain", args = 0)]
+    pub fn update_terrain(self) -> ();
+
+    #[method(name = "TryUpdateInfo", args = 1)]
+    pub fn try_update_info(self, side: crate::app::battleside::BattleSide_Type) -> ();
+
+    #[method(name = "TryUpdateInfo", args = 1)]
+    pub fn try_update_info_2(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "UpdateMapInfoUnit", args = 0)]
+    pub fn update_map_info_unit(self) -> ();
+
+    #[method(name = "TerrainSet", args = 1)]
+    pub fn terrain_set(self, side: crate::app::battleinfoside::BattleInfoSide) -> bool;
+
+    #[method(name = "CanGainSituation", args = 0)]
+    pub fn can_gain_situation(self) -> bool;
+
+    #[method(name = "GetWinner", args = 1)]
+    pub fn get_winner(self, dead: crate::app::unit::Unit) -> crate::app::unit::Unit;
+
+    #[method(name = "DropItem", args = 0)]
+    pub fn drop_item(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "PickupItem", args = 0)]
+    pub fn pickup_item(self) -> ();
+
+    #[method(name = "GainGold", args = 0)]
+    pub fn gain_gold(self) -> ();
+
+    #[method(name = "ItemPutOff", args = 3)]
+    pub fn item_put_off(
+        self,
+        unit: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        mid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "ItemExpend", args = 0)]
+    pub fn item_expend(self) -> ();
+
+    #[method(name = "Blow", args = 0)]
+    pub fn blow(self) -> ();
+
+    #[method(name = "DecreaseShell", args = 0)]
+    pub fn decrease_shell(self) -> ();
+
+    #[method(name = "TryAddDead", args = 1)]
+    pub fn try_add_dead(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "Die", args = 0)]
+    pub fn die(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "Grow", args = 0)]
+    pub fn grow(self) -> ();
+
+    #[method(name = "BattleBeforeEvent", args = 0)]
+    pub fn battle_before_event(self) -> ();
+
+    #[method(name = "BattleAfterEvent", args = 0)]
+    pub fn battle_after_event(self) -> ();
+
+    #[method(name = "IsCommandSkill", args = 2)]
+    pub fn is_command_skill(self, skill: crate::app::skilldata::SkillData, before: bool) -> bool;
+
+    #[method(name = "CommandSkillCommit", args = 2)]
+    pub fn command_skill_commit(
+        self,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        result: crate::app::mapskill::MapSkill_Result,
+    ) -> ();
+
+    #[method(name = "CommandSkillBefore", args = 0)]
+    pub fn command_skill_before(self) -> ();
+
+    #[method(name = "CommandSkillAfter", args = 0)]
+    pub fn command_skill_after(self) -> ();
+
+    #[method(name = "GainGuradUnit", args = 0)]
+    pub fn gain_gurad_unit(self) -> ();
+
+    #[method(name = "ToPreBgm", args = 0)]
+    pub fn to_pre_bgm(self) -> ();
+
+    #[method(name = "ToMainBgm", args = 0)]
+    pub fn to_main_bgm(self) -> ();
+
+    #[method(name = "ReturnBgm", args = 0)]
+    pub fn return_bgm(self) -> ();
+
+    #[method(name = "SoundAfterBattle", args = 0)]
+    pub fn sound_after_battle(self) -> ();
+
+    #[method(name = "TryCombatAfterDie", args = 0)]
+    pub fn try_combat_after_die(self) -> ();
+
+    #[method(name = "TryCombatAfterGrow", args = 0)]
+    pub fn try_combat_after_grow(self) -> ();
+
+    #[method(name = "ProcessDeadUnit", args = 0)]
+    pub fn process_dead_unit(self) -> ();
+
+    #[method(name = "FocusMind", args = 0)]
+    pub fn focus_mind(self) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl MapSequenceBattle {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceBattle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceBattleMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Kinds.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceBattle_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceBattle_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceBattle.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceBattle_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceBattle_Kinds {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn battle() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceBattle_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceBattle_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceBattle.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceBattle_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceBattle_Label {
+    pub fn battle_start() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn combat_rod() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn simple_rod() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn combat_battle() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn simple_battle() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn multi_battle_start() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn multi_battle_loop() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn multi_battle_skip() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn multi_battle_end() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn die() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn grow() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn combat_after() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn commit() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn after() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn last_boss_die() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn engage_turn_recovery() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn hp_stock_create() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 18 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_RangeWarpTargets.md")))]
+#[::unity2::class(namespace = "App", name = "MapSequenceBattle.RangeWarpTargets")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
+pub struct MapSequenceBattle_RangeWarpTargets {}
+
+#[cfg(feature = "app-mapsequencebattle")]
+#[::unity2::methods]
+impl MapSequenceBattle_RangeWarpTargets {
+    #[method(name = ".ctor", args = 6)]
+    pub fn ctor(
+        self,
+        rod_unit: crate::app::unit::Unit,
+        unit: crate::app::unit::Unit,
+        range: i32,
+        warp_x: i32,
+        warp_z: i32,
+        can_self: bool,
+    ) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl MapSequenceBattle_RangeWarpTargets {
+    pub fn new(
+        rod_unit: crate::app::unit::Unit,
+        unit: crate::app::unit::Unit,
+        range: i32,
+        warp_x: i32,
+        warp_z: i32,
+        can_self: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceBattle_RangeWarpTargets),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceBattle_RangeWarpTargetsMethods>::ctor(
+            this, rod_unit, unit, range, warp_x, warp_z, can_self,
+        );
+        this
+    }
+}

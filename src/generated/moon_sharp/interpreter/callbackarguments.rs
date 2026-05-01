@@ -1,0 +1,104 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/callbackarguments/CallbackArguments.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter", name = "CallbackArguments")]
+#[parent(crate::system::object::Object)]
+pub struct CallbackArguments {
+    #[rename(name = "m_Args")]
+    pub m_args: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+        crate::moon_sharp::interpreter::dynvalue::DynValue,
+    >,
+    #[rename(name = "m_Count")]
+    pub m_count: i32,
+    #[rename(name = "m_LastIsTuple")]
+    pub m_last_is_tuple: bool,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-callbackarguments")]
+#[::unity2::methods]
+impl CallbackArguments {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        args: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+        >,
+        is_method_call: bool,
+    ) -> ();
+
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[method(name = "get_IsMethodCall", args = 0)]
+    pub fn get_is_method_call(self) -> bool;
+
+    #[method(name = "set_IsMethodCall", args = 1)]
+    pub fn set_is_method_call(self, value: bool) -> ();
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, index: i32) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "RawGet", args = 2)]
+    pub fn raw_get(
+        self,
+        index: i32,
+        translate_voids: bool,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "GetArray", args = 1)]
+    pub fn get_array(
+        self,
+        skip: i32,
+    ) -> ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>;
+
+    #[method(name = "AsType", args = 4)]
+    pub fn as_type(
+        self,
+        arg_num: i32,
+        func_name: ::unity2::Il2CppString,
+        r#type: crate::moon_sharp::interpreter::datatype::DataType,
+        allow_nil: bool,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "AsInt", args = 2)]
+    pub fn as_int(self, arg_num: i32, func_name: ::unity2::Il2CppString) -> i32;
+
+    #[method(name = "AsLong", args = 2)]
+    pub fn as_long(self, arg_num: i32, func_name: ::unity2::Il2CppString) -> i64;
+
+    #[method(name = "AsStringUsingMeta", args = 3)]
+    pub fn as_string_using_meta(
+        self,
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        arg_num: i32,
+        func_name: ::unity2::Il2CppString,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "SkipMethodCall", args = 0)]
+    pub fn skip_method_call(
+        self,
+    ) -> crate::moon_sharp::interpreter::callbackarguments::CallbackArguments;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-callbackarguments")]
+impl CallbackArguments {
+    pub fn new(
+        args: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+        >,
+        is_method_call: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CallbackArguments),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICallbackArgumentsMethods>::ctor(this, args, is_method_call);
+        this
+    }
+}

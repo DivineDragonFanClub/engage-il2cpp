@@ -1,0 +1,35 @@
+
+use crate::app::mapdeploybitimage::IMapDeployBitImage;
+use crate::app::mapdeploybitimage::MapDeployBitImage;
+use crate::app::mapimagecorebit::IMapImageCoreBit;
+use crate::app::mapimagecorebit::MapImageCoreBit;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeployattackimage/MapDeployAttackImage.md")))]
+#[::unity2::class(namespace = "App", name = "MapDeployAttackImage")]
+#[parent(crate::app::mapdeploybitimage::MapDeployBitImage)]
+pub struct MapDeployAttackImage {}
+
+#[cfg(feature = "app-mapdeployattackimage")]
+#[::unity2::methods]
+impl MapDeployAttackImage {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapdeployattackimage")]
+impl MapDeployAttackImage {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDeployAttackImage),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDeployAttackImageMethods>::ctor(this);
+        this
+    }
+}

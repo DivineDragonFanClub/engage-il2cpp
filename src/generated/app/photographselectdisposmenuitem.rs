@@ -1,0 +1,44 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographselectdisposmenuitem/PhotographSelectDisposMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "PhotographSelectDisposMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct PhotographSelectDisposMenuItem {
+    #[rename(name = "m_CharacterID")]
+    pub m_character_id: ::unity2::Il2CppString,
+    #[rename(name = "m_IsMascotArea")]
+    pub m_is_mascot_area: bool,
+}
+
+#[cfg(feature = "app-photographselectdisposmenuitem")]
+#[::unity2::methods]
+impl PhotographSelectDisposMenuItem {
+    #[method(name = "get_CharacterID", args = 0)]
+    pub fn get_character_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_IsMascotArea", args = 0)]
+    pub fn get_is_mascot_area(self) -> bool;
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, character_id: ::unity2::Il2CppString, is_mascot_area: bool) -> ();
+}
+
+#[cfg(feature = "app-photographselectdisposmenuitem")]
+impl PhotographSelectDisposMenuItem {
+    pub fn new(character_id: ::unity2::Il2CppString, is_mascot_area: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographSelectDisposMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographSelectDisposMenuItemMethods>::ctor(this, character_id, is_mascot_area);
+        this
+    }
+}

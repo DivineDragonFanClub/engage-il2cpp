@@ -1,0 +1,132 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardmycardroot/ProfileCardMyCardRoot.md")))]
+#[::unity2::class(namespace = "App", name = "ProfileCardMyCardRoot")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct ProfileCardMyCardRoot {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_ProfileCardRoot")]
+    pub m_profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
+    #[rename(name = "m_SelectEditMenuContent")]
+    pub m_select_edit_menu_content:
+        crate::app::profilecardselecteditmenucontent::ProfileCardSelectEditMenuContent,
+    #[rename(name = "m_MessageSelectMenuContent")]
+    pub m_message_select_menu_content:
+        crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent,
+    #[rename(name = "m_MessageListMenuContent")]
+    pub m_message_list_menu_content:
+        crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent,
+    #[rename(name = "m_TextListMenuContent")]
+    pub m_text_list_menu_content:
+        crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent,
+    #[rename(name = "m_VisualMenuContent")]
+    pub m_visual_menu_content:
+        crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent,
+    #[rename(name = "m_StampRoot")]
+    pub m_stamp_root: crate::app::profilecardstamproot::ProfileCardStampRoot,
+    #[rename(name = "m_StampListMenuContent")]
+    pub m_stamp_list_menu_content:
+        crate::app::profilecardstamplistmenucontent::ProfileCardStampListMenuContent,
+    #[rename(name = "m_PlayTime")]
+    pub m_play_time: f32,
+}
+
+#[cfg(feature = "app-profilecardmycardroot")]
+#[::unity2::methods]
+impl ProfileCardMyCardRoot {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "CreateRoot", args = 0)]
+    pub fn create_root() -> crate::app::profilecardmycardroot::ProfileCardMyCardRoot;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "GetProfileCardRoot", args = 0)]
+    pub fn get_profile_card_root(self) -> crate::app::profilecardroot::ProfileCardRoot;
+
+    #[method(name = "GetProfileCardSelectEditMenuContent", args = 0)]
+    pub fn get_profile_card_select_edit_menu_content(
+        self,
+    ) -> crate::app::profilecardselecteditmenucontent::ProfileCardSelectEditMenuContent;
+
+    #[method(name = "GetProfileCardVisualMenuContent", args = 0)]
+    pub fn get_profile_card_visual_menu_content(
+        self,
+    ) -> crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent;
+
+    #[method(name = "SetProfileCardStampRootActive", args = 1)]
+    pub fn set_profile_card_stamp_root_active(self, actived: bool) -> ();
+
+    #[method(name = "GetProfileCardStampRoot", args = 0)]
+    pub fn get_profile_card_stamp_root(
+        self,
+    ) -> crate::app::profilecardstamproot::ProfileCardStampRoot;
+
+    #[method(name = "GetProfileCardStampListMenuContent", args = 0)]
+    pub fn get_profile_card_stamp_list_menu_content(
+        self,
+    ) -> crate::app::profilecardstamplistmenucontent::ProfileCardStampListMenuContent;
+
+    #[method(name = "GetProfileCardMessageSelectMenuContent", args = 0)]
+    pub fn get_profile_card_message_select_menu_content(
+        self,
+    ) -> crate::app::profilecardmessageselectmenucontent::ProfileCardMessageSelectMenuContent;
+
+    #[method(name = "GetProfileCardMessageListMenuContent", args = 0)]
+    pub fn get_profile_card_message_list_menu_content(
+        self,
+    ) -> crate::app::profilecardmessagelistmenucontent::ProfileCardMessageListMenuContent;
+
+    #[method(name = "GetProfileCardTextListMenuContent", args = 0)]
+    pub fn get_profile_card_text_list_menu_content(
+        self,
+    ) -> crate::app::profilecardtextlistmenucontent::ProfileCardTextListMenuContent;
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[method(name = "IsClosing", args = 0)]
+    pub fn is_closing(self) -> bool;
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+}
+
+#[cfg(feature = "app-profilecardmycardroot")]
+impl ProfileCardMyCardRoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardMyCardRoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardMyCardRootMethods>::ctor(this);
+        this
+    }
+}

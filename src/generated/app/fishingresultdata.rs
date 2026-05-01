@@ -1,0 +1,44 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultdata/FishingResultData.md")))]
+#[::unity2::class(namespace = "App", name = "FishingResultData")]
+#[parent(crate::system::object::Object)]
+pub struct FishingResultData {
+    #[rename(name = "BaseData")]
+    pub base_data: crate::app::fishingfishdata::FishingFishData,
+    #[rename(name = "Size")]
+    pub size: f32,
+    #[rename(name = "Rank")]
+    pub rank: crate::app::fishing::sizerank::SizeRank,
+    #[rename(name = "IsBonus")]
+    pub is_bonus: bool,
+    #[rename(name = "ItemNum")]
+    pub item_num: i32,
+    #[rename(name = "Cench2Inch")]
+    pub cench2_inch: f32,
+}
+
+#[cfg(feature = "app-fishingresultdata")]
+#[::unity2::methods]
+impl FishingResultData {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-fishingresultdata")]
+impl FishingResultData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingResultData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingResultDataMethods>::ctor(this);
+        this
+    }
+}

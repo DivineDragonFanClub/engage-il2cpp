@@ -1,0 +1,213 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::ui::graphic::Graphic;
+use crate::unity_engine::ui::graphic::IGraphic;
+use crate::unity_engine::ui::image::IImage;
+use crate::unity_engine::ui::image::Image;
+use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
+use crate::unity_engine::ui::maskablegraphic::MaskableGraphic;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/uniticon/UnitIcon.md")))]
+#[::unity2::class(namespace = "App", name = "UnitIcon")]
+#[parent(crate::unity_engine::ui::image::Image)]
+pub struct UnitIcon {
+    #[rename(name = "m_IndexAtlas")]
+    pub m_index_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+    #[rename(name = "m_PalleteAtlas")]
+    pub m_pallete_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+    #[rename(name = "m_PalleteSprite")]
+    pub m_pallete_sprite: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_IconName")]
+    pub m_icon_name: ::unity2::Il2CppString,
+    #[rename(name = "m_PalleteName")]
+    pub m_pallete_name: ::unity2::Il2CppString,
+    #[rename(name = "m_Brightness")]
+    pub m_brightness: f32,
+    #[static_field]
+    #[rename(name = "s_TmpVertex")]
+    pub s_tmp_vertex: crate::unity_engine::uivertex::UIVertex,
+    #[static_field]
+    #[rename(name = "s_Key3Dictionary")]
+    pub s_key3_dictionary: crate::app::key3dictionary_2::Key3Dictionary_2<
+        ::unity2::Il2CppString,
+        ::unity2::Il2CppString,
+    >,
+    #[static_field]
+    #[rename(name = "m_EngageNameDictionary")]
+    pub m_engage_name_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        ::unity2::Il2CppString,
+    >,
+    #[static_field]
+    #[rename(name = "m_VariationJobIconIdDictionary")]
+    pub m_variation_job_icon_id_dictionary:
+        crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+        >,
+    #[static_field]
+    #[rename(name = "s_IdTable")]
+    pub s_id_table: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "DARKNESS_ID")]
+    pub darkness_id: ::unity2::Il2CppString,
+    #[rename(name = "m_MaterialInst")]
+    pub m_material_inst: crate::unity_engine::material::Material,
+}
+
+#[cfg(feature = "app-uniticon")]
+#[::unity2::methods]
+impl UnitIcon {
+    #[method(name = "SetBrightness", args = 1)]
+    pub fn set_brightness(self, color: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "SetPalleteSprite", args = 1)]
+    pub fn set_pallete_sprite(self, pallete: crate::unity_engine::sprite::Sprite) -> ();
+
+    #[method(name = "SetIcon", args = 1)]
+    pub fn set_icon(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "SetIconNoEngaging", args = 1)]
+    pub fn set_icon_no_engaging(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "SetIcon", args = 4)]
+    pub fn set_icon_2(
+        self,
+        person: crate::app::persondata::PersonData,
+        job: crate::app::jobdata::JobData,
+        is_female: bool,
+        equip_item: crate::app::unititem::UnitItem,
+    ) -> ();
+
+    #[method(name = "TryInitVariationJobIconIdDictionary", args = 0)]
+    pub fn try_init_variation_job_icon_id_dictionary() -> ();
+
+    #[method(name = "GetIconName", args = 3)]
+    pub fn get_icon_name(
+        person_icon_id: ::unity2::Il2CppString,
+        job_icon_id: ::unity2::Il2CppString,
+        item_icon_id: ::unity2::Il2CppString,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "SetIcon", args = 4)]
+    pub fn set_icon_3(
+        self,
+        person: crate::app::persondata::PersonData,
+        job: crate::app::jobdata::JobData,
+        is_female: bool,
+        item_kind: crate::app::itemdata::ItemData_Kinds,
+    ) -> ();
+
+    #[method(name = "SetIcon", args = 3)]
+    pub fn set_icon_4(
+        self,
+        person: crate::app::persondata::PersonData,
+        god: crate::app::goddata::GodData,
+        is_female: bool,
+    ) -> ();
+
+    #[method(name = "SetIcon", args = 2)]
+    pub fn set_icon_5(self, god: crate::app::goddata::GodData, is_darkness: bool) -> ();
+
+    #[method(name = "SetIcon", args = 3)]
+    pub fn set_icon_6(
+        self,
+        god: crate::app::goddata::GodData,
+        is_female: bool,
+        is_darkness: bool,
+    ) -> ();
+
+    #[method(name = "ConvertPersonIconID", args = 2)]
+    pub fn convert_person_icon_id(
+        original: ::unity2::Il2CppString,
+        is_female: bool,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "TrySet", args = 2)]
+    pub fn try_set(
+        self,
+        index_name: ::unity2::Il2CppString,
+        pallete_name: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[method(name = "ResetIcon", args = 0)]
+    pub fn reset_icon(self) -> ();
+
+    #[method(name = "GetWeaponKindId", args = 1)]
+    pub fn get_weapon_kind_id(
+        self,
+        item_kind: crate::app::itemdata::ItemData_Kinds,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetIndexSprite", args = 1)]
+    pub fn get_index_sprite(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::sprite::Sprite;
+
+    #[method(name = "GetPalleteSprite", args = 1)]
+    pub fn get_pallete_sprite(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::sprite::Sprite;
+
+    #[method(name = "get_material", args = 0)]
+    pub fn get_material(self) -> crate::unity_engine::material::Material;
+
+    #[method(name = "set_material", args = 1)]
+    pub fn set_material(self, value: crate::unity_engine::material::Material) -> ();
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "OnPopulateMesh", args = 1)]
+    pub fn on_populate_mesh(self, vh: crate::unity_engine::ui::vertexhelper::VertexHelper) -> ();
+
+    #[method(name = "UpdateMaterial", args = 0)]
+    pub fn update_material(self) -> ();
+
+    #[method(name = "UpdateIcon", args = 0)]
+    pub fn update_icon(self) -> ();
+
+    #[method(name = "SetRandomIcon", args = 0)]
+    pub fn set_random_icon(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-uniticon")]
+impl UnitIcon {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitIcon),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitIconMethods>::ctor(this);
+        this
+    }
+}

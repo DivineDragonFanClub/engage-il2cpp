@@ -1,0 +1,105 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/cameradata/CameraData.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct CameraData {
+    pub m_view_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
+    pub m_projection_matrix: crate :: unity_engine :: matrix4x4 :: Matrix4x4,
+    pub camera: crate :: unity_engine :: camera :: Camera,
+    pub render_type: crate :: unity_engine :: rendering :: universal :: camerarendertype :: CameraRenderType,
+    pub target_texture: crate :: unity_engine :: rendertexture :: RenderTexture,
+    pub camera_target_descriptor: crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor,
+    pub pixel_rect: crate :: unity_engine :: rect :: Rect,
+    pub pixel_width: i32,
+    pub pixel_height: i32,
+    pub aspect_ratio: f32,
+    pub render_scale: f32,
+    pub clear_depth: bool,
+    pub camera_type: crate :: unity_engine :: cameratype :: CameraType,
+    pub is_default_viewport: bool,
+    pub is_hdr_enabled: bool,
+    pub requires_depth_texture: bool,
+    pub requires_opaque_texture: bool,
+    pub xr_rendering: bool,
+    pub default_opaque_sort_flags: crate :: unity_engine :: rendering :: sortingcriteria :: SortingCriteria,
+    pub xr: crate :: unity_engine :: rendering :: universal :: xrpass :: XRPass,
+    pub is_stereo_enabled: bool,
+    pub max_shadow_distance: f32,
+    pub post_process_enabled: bool,
+    pub capture_actions: crate :: system :: collections :: generic :: ienumerator_1 :: IEnumerator_1 < crate :: system :: action_2 :: Action_2 < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier , crate :: unity_engine :: rendering :: commandbuffer :: CommandBuffer > >,
+    pub volume_layer_mask: crate :: unity_engine :: layermask :: LayerMask,
+    pub volume_trigger: crate :: unity_engine :: transform :: Transform,
+    pub is_stop_na_n_enabled: bool,
+    pub is_dithering_enabled: bool,
+    pub antialiasing: crate :: unity_engine :: rendering :: universal :: antialiasingmode :: AntialiasingMode,
+    pub antialiasing_quality: crate :: unity_engine :: rendering :: universal :: antialiasingquality :: AntialiasingQuality,
+    pub renderer: crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer,
+    pub resolve_final_target: bool,
+    pub is_auto_reduction: bool,
+    pub custom_rendering_flag: crate :: unity_engine :: rendering :: universal :: customcamerarenderingflag :: CustomCameraRenderingFlag,
+}
+
+impl ::unity2::ClassIdentity for CameraData {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "CameraData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CameraData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-cameradata")]
+#[::unity2::methods(value)]
+impl CameraData {
+    #[method(name = "SetViewAndProjectionMatrix", args = 2)]
+    pub fn set_view_and_projection_matrix(
+        self,
+        view_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+        projection_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+    ) -> ();
+
+    #[method(name = "GetViewMatrix", args = 1)]
+    pub fn get_view_matrix(self, view_index: i32) -> crate::unity_engine::matrix4x4::Matrix4x4;
+
+    #[method(name = "GetProjectionMatrix", args = 1)]
+    pub fn get_projection_matrix(
+        self,
+        view_index: i32,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4;
+
+    #[method(name = "GetGPUProjectionMatrix", args = 1)]
+    pub fn get_gpu_projection_matrix(
+        self,
+        view_index: i32,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4;
+
+    #[method(name = "get_requireSrgbConversion", args = 0)]
+    pub fn get_require_srgb_conversion(self) -> bool;
+
+    #[method(name = "get_isSceneViewCamera", args = 0)]
+    pub fn get_is_scene_view_camera(self) -> bool;
+
+    #[method(name = "get_isPreviewCamera", args = 0)]
+    pub fn get_is_preview_camera(self) -> bool;
+
+    #[method(name = "IsCameraProjectionMatrixFlipped", args = 0)]
+    pub fn is_camera_projection_matrix_flipped(self) -> bool;
+}

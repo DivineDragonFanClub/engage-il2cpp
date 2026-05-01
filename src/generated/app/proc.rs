@@ -1,0 +1,327 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/proc/Proc_ProcCallback_1.md")))]
+#[::unity2::class(namespace = "App", name = "Proc.ProcCallback`1")]
+pub struct Proc_ProcCallback_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-proc")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> Proc_ProcCallback_1<T0> {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, inst: T0) -> ();
+}
+
+#[cfg(feature = "app-proc")]
+impl<T0: ::unity2::ClassIdentity> Proc_ProcCallback_1<T0> {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Proc_ProcCallback_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProc_ProcCallback_1Methods<T0>>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/proc/Proc_RootType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Proc_RootType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Proc_RootType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Proc.RootType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Proc_RootType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Proc_RootType {
+    pub fn hi() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn def() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn low() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/proc/Proc.md")))]
+#[::unity2::class(namespace = "App", name = "Proc")]
+#[parent(crate::system::object::Object)]
+pub struct Proc {
+    #[static_field]
+    #[rename(name = "s_Roots")]
+    pub s_roots: ::unity2::Array<crate::app::procinst::ProcInst>,
+}
+
+#[cfg(feature = "app-proc")]
+#[::unity2::methods]
+impl Proc {
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ();
+
+    #[method(name = "Exec", args = 1)]
+    pub fn exec(r#type: crate::app::proc::Proc_RootType) -> ();
+
+    #[method(name = "Sweep", args = 0)]
+    pub fn sweep() -> ();
+
+    #[method(name = "FindByName", args = 1)]
+    pub fn find_by_name(name: ::unity2::Il2CppString) -> crate::app::procinst::ProcInst;
+
+    #[method(name = "KillByName", args = 1)]
+    pub fn kill_by_name(name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "KillByBind", args = 1)]
+    pub fn kill_by_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "GetRoot", args = 1)]
+    pub fn get_root(r#type: crate::app::proc::Proc_RootType) -> crate::app::procinst::ProcInst;
+
+    #[method(name = "GetRootHi", args = 0)]
+    pub fn get_root_hi() -> crate::app::procinst::ProcInst;
+
+    #[method(name = "GetRootDef", args = 0)]
+    pub fn get_root_def() -> crate::app::procinst::ProcInst;
+
+    #[method(name = "GetRootLow", args = 0)]
+    pub fn get_root_low() -> crate::app::procinst::ProcInst;
+
+    #[method(name = "End", args = 0)]
+    pub fn end() -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Halt", args = 0)]
+    pub fn halt() -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Jump", args = 1)]
+    pub fn jump(label: i32) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Jump", args = 1)]
+    pub fn jump_2(label: ::unity2::Il2CppString) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Label", args = 1)]
+    pub fn label(label: i32) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Label", args = 1)]
+    pub fn label_2(label: ::unity2::Il2CppString) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Jump", args = 1)]
+    pub fn jump_3(label: crate::system::valuetype::ValueType) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Label", args = 1)]
+    pub fn label_3(label: crate::system::valuetype::ValueType) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Push", args = 1)]
+    pub fn push(label: i32) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Push", args = 1)]
+    pub fn push_2(label: crate::system::valuetype::ValueType) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Pop", args = 0)]
+    pub fn pop() -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Yield", args = 0)]
+    pub fn r#yield() -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Call", args = 1)]
+    pub fn call(
+        function: crate::app::procvoidfunction::ProcVoidFunction,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Call", args = 1)]
+    pub fn call_2(
+        function: crate::app::procvoidmethod::ProcVoidMethod,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Call", args = 2)]
+    pub fn call_3(
+        function: crate::system::action_2::Action_2<
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+        >,
+        arg: ::unity2::Il2CppString,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Call", args = 2)]
+    pub fn call_4(
+        function: crate::system::action_1::Action_1<::unity2::Il2CppString>,
+        arg: ::unity2::Il2CppString,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Tick", args = 1)]
+    pub fn tick(
+        function: crate::app::procvoidfunction::ProcVoidFunction,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Tick", args = 1)]
+    pub fn tick_2(
+        method: crate::app::procvoidmethod::ProcVoidMethod,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Tick", args = 1)]
+    pub fn tick_3(
+        method: crate::app::procenummethod::ProcEnumMethod,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "WaitTime", args = 1)]
+    pub fn wait_time(second: f32) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "WaitWhileTrue", args = 1)]
+    pub fn wait_while_true(
+        function: crate::app::procboolfunction::ProcBoolFunction,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "WaitWhileFalse", args = 1)]
+    pub fn wait_while_false(
+        function: crate::app::procboolfunction::ProcBoolFunction,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "WaitWhileTrue", args = 1)]
+    pub fn wait_while_true_2(
+        function: crate::app::procboolmethod::ProcBoolMethod,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "WaitWhileFalse", args = 1)]
+    pub fn wait_while_false_2(
+        function: crate::app::procboolmethod::ProcBoolMethod,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "JumpTrue", args = 2)]
+    pub fn jump_true(
+        function: crate::app::procboolfunction::ProcBoolFunction,
+        label: i32,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "JumpTrue", args = 2)]
+    pub fn jump_true_2(
+        function: crate::app::procboolfunction::ProcBoolFunction,
+        label: ::unity2::Il2CppString,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "JumpFalse", args = 2)]
+    pub fn jump_false(
+        function: crate::app::procboolfunction::ProcBoolFunction,
+        label: i32,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "JumpFalse", args = 2)]
+    pub fn jump_false_2(
+        function: crate::app::procboolfunction::ProcBoolFunction,
+        label: ::unity2::Il2CppString,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "JumpTrue", args = 2)]
+    pub fn jump_true_3(
+        function: crate::app::procboolmethod::ProcBoolMethod,
+        label: i32,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "JumpFalse", args = 2)]
+    pub fn jump_false_3(
+        function: crate::app::procboolmethod::ProcBoolMethod,
+        label: i32,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "JumpTrue", args = 2)]
+    pub fn jump_true_4(
+        method: crate::app::procboolmethod::ProcBoolMethod,
+        label: crate::system::valuetype::ValueType,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "JumpFalse", args = 2)]
+    pub fn jump_false_4(
+        method: crate::app::procboolmethod::ProcBoolMethod,
+        label: crate::system::valuetype::ValueType,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Persistent", args = 1)]
+    pub fn persistent(
+        method: crate::app::procvoidmethod::ProcVoidMethod,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "PersistentNull", args = 0)]
+    pub fn persistent_null() -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Sound", args = 1)]
+    pub fn sound(event_name: ::unity2::Il2CppString) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Log", args = 1)]
+    pub fn log(log: ::unity2::Il2CppString) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "Vsync", args = 1)]
+    pub fn vsync(mode: crate::app::gametime::GameTime_VsycMode) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "WaitIsLoading", args = 0)]
+    pub fn wait_is_loading() -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = "GetDebugLog", args = 1)]
+    pub fn get_debug_log(inst: crate::app::procinst::ProcInst) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-proc")]
+impl Proc {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Proc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProcMethods>::ctor(this);
+        this
+    }
+}

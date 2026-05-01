@@ -1,0 +1,76 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_spriteanimator/TMP_SpriteAnimator.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_SpriteAnimator")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct TMP_SpriteAnimator {
+    #[rename(name = "m_animations")]
+    pub m_animations: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, bool>,
+    #[rename(name = "m_TextComponent")]
+    pub m_text_component: crate::tm_pro::tmp_text::TMP_Text,
+}
+
+#[cfg(feature = "tm_pro-tmp_spriteanimator")]
+#[::unity2::methods]
+impl TMP_SpriteAnimator {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "StopAllAnimations", args = 0)]
+    pub fn stop_all_animations(self) -> ();
+
+    #[method(name = "DoSpriteAnimation", args = 5)]
+    pub fn do_sprite_animation(
+        self,
+        current_character: i32,
+        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        start: i32,
+        end: i32,
+        framerate: i32,
+    ) -> ();
+
+    #[method(name = "DoSpriteAnimationInternal", args = 5)]
+    pub fn do_sprite_animation_internal(
+        self,
+        current_character: i32,
+        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        start: i32,
+        end: i32,
+        framerate: i32,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_spriteanimator")]
+impl TMP_SpriteAnimator {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_SpriteAnimator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_SpriteAnimatorMethods>::ctor(this);
+        this
+    }
+}

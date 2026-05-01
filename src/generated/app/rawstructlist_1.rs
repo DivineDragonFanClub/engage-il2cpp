@@ -1,0 +1,65 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rawstructlist_1/RawStructList_1.md")))]
+#[::unity2::class(namespace = "App", name = "RawStructList`1")]
+pub struct RawStructList_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "Count")]
+    pub count: i32,
+    #[rename(name = "Values")]
+    pub values: ::unity2::Array<T0>,
+}
+
+#[cfg(feature = "app-rawstructlist_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> RawStructList_1<T0> {
+    #[method(name = "get_Capacity", args = 0)]
+    pub fn get_capacity(self) -> i32;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, capacity: i32) -> ();
+
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, index: i32) -> T0;
+
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, index: i32, value: T0) -> ();
+
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, value: T0) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "RemoveAt", args = 1)]
+    pub fn remove_at(self, index: i32) -> ();
+
+    #[method(name = "Insert", args = 2)]
+    pub fn insert(self, index: i32, value: T0) -> ();
+
+    #[method(name = "Swap", args = 2)]
+    pub fn swap(self, index1: i32, index2: i32) -> ();
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, i: i32) -> T0;
+
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(self, i: i32, value: T0) -> ();
+}
+
+#[cfg(feature = "app-rawstructlist_1")]
+impl<T0: ::unity2::ClassIdentity> RawStructList_1<T0> {
+    pub fn new(capacity: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RawStructList_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRawStructList_1Methods<T0>>::ctor(this, capacity);
+        this
+    }
+}

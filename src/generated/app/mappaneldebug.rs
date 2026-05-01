@@ -1,0 +1,70 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldebug/MapPanelDebug.md")))]
+#[::unity2::class(namespace = "App", name = "MapPanelDebug")]
+pub struct MapPanelDebug {
+    #[rename(name = "m_Entitys")]
+    pub m_entitys: crate::system::collections::generic::list_1::List_1<
+        crate::app::mappaneldebug::MapPanelDebug_Entity,
+    >,
+}
+
+#[cfg(feature = "app-mappaneldebug")]
+#[::unity2::methods]
+impl MapPanelDebug {
+    #[method(name = "Draw", args = 3)]
+    pub fn draw(x: i32, z: i32, color: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mappaneldebug")]
+impl MapPanelDebug {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPanelDebug),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPanelDebugMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldebug/MapPanelDebug_Entity.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapPanelDebug_Entity {
+    pub x: i32,
+    pub z: i32,
+    pub color: crate::unity_engine::color::Color,
+}
+
+impl ::unity2::ClassIdentity for MapPanelDebug_Entity {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPanelDebug.Entity";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapPanelDebug_Entity {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

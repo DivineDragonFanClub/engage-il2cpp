@@ -1,0 +1,65 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scripting/api_updating/movedfromattribute/MovedFromAttribute.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Scripting.APIUpdating",
+    name = "MovedFromAttribute"
+)]
+pub struct MovedFromAttribute {
+# [rename (name = "data")] pub data : crate :: unity_engine :: scripting :: api_updating :: movedfromattributedata :: MovedFromAttributeData ,
+}
+
+#[cfg(feature = "unity_engine-scripting-api_updating-movedfromattribute")]
+#[::unity2::methods]
+impl MovedFromAttribute {
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        auto_update_api: bool,
+        source_namespace: ::unity2::Il2CppString,
+        source_assembly: ::unity2::Il2CppString,
+        source_class_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, source_namespace: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "unity_engine-scripting-api_updating-movedfromattribute")]
+impl MovedFromAttribute {
+    pub fn new(
+        auto_update_api: bool,
+        source_namespace: ::unity2::Il2CppString,
+        source_assembly: ::unity2::Il2CppString,
+        source_class_name: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MovedFromAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMovedFromAttributeMethods>::ctor(
+            this,
+            auto_update_api,
+            source_namespace,
+            source_assembly,
+            source_class_name,
+        );
+        this
+    }
+
+    pub fn new_2(source_namespace: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MovedFromAttribute),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IMovedFromAttributeMethods>::ctor_2(this, source_namespace);
+        this
+    }
+}

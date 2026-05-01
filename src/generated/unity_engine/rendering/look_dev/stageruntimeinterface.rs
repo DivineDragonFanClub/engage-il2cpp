@@ -1,0 +1,73 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/look_dev/stageruntimeinterface/StageRuntimeInterface.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.LookDev",
+    name = "StageRuntimeInterface"
+)]
+#[parent(crate::system::object::Object)]
+pub struct StageRuntimeInterface {
+    #[rename(name = "m_AddGameObject")]
+    pub m_add_game_object:
+        crate::system::func_2::Func_2<bool, crate::unity_engine::gameobject::GameObject>,
+    #[rename(name = "m_GetCamera")]
+    pub m_get_camera: crate::system::func_1::Func_1<crate::unity_engine::camera::Camera>,
+    #[rename(name = "m_GetSunLight")]
+    pub m_get_sun_light: crate::system::func_1::Func_1<crate::unity_engine::light::Light>,
+    #[rename(name = "SRPData")]
+    pub srp_data: ::unity2::IlInstance,
+}
+
+#[cfg(feature = "unity_engine-rendering-look_dev-stageruntimeinterface")]
+#[::unity2::methods]
+impl StageRuntimeInterface {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        add_game_object: crate::system::func_2::Func_2<
+            bool,
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        get_camera: crate::system::func_1::Func_1<crate::unity_engine::camera::Camera>,
+        get_sun_light: crate::system::func_1::Func_1<crate::unity_engine::light::Light>,
+    ) -> ();
+
+    #[method(name = "AddGameObject", args = 1)]
+    pub fn add_game_object(self, persistent: bool) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "get_camera", args = 0)]
+    pub fn get_camera(self) -> crate::unity_engine::camera::Camera;
+
+    #[method(name = "get_sunLight", args = 0)]
+    pub fn get_sun_light(self) -> crate::unity_engine::light::Light;
+}
+
+#[cfg(feature = "unity_engine-rendering-look_dev-stageruntimeinterface")]
+impl StageRuntimeInterface {
+    pub fn new(
+        add_game_object: crate::system::func_2::Func_2<
+            bool,
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        get_camera: crate::system::func_1::Func_1<crate::unity_engine::camera::Camera>,
+        get_sun_light: crate::system::func_1::Func_1<crate::unity_engine::light::Light>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StageRuntimeInterface),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStageRuntimeInterfaceMethods>::ctor(
+            this,
+            add_game_object,
+            get_camera,
+            get_sun_light,
+        );
+        this
+    }
+}

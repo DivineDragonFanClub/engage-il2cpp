@@ -1,0 +1,52 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::godunitmenuitem::GodUnitMenuItem;
+use crate::app::godunitmenuitem::IGodUnitMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godunitemptymenuitem/GodUnitEmptyMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "GodUnitEmptyMenuItem")]
+#[parent(crate::app::godunitmenuitem::GodUnitMenuItem)]
+pub struct GodUnitEmptyMenuItem {}
+
+#[cfg(feature = "app-godunitemptymenuitem")]
+#[::unity2::methods]
+impl GodUnitEmptyMenuItem {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        select_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler,
+        decide_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,
+    ) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-godunitemptymenuitem")]
+impl GodUnitEmptyMenuItem {
+    pub fn new(
+        select_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler,
+        decide_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodUnitEmptyMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodUnitEmptyMenuItemMethods>::ctor(
+            this,
+            select_event_handler,
+            decide_event_handler,
+        );
+        this
+    }
+}

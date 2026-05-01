@@ -1,0 +1,19 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/iloghandler/ILogHandler.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "ILogHandler")]
+pub struct ILogHandler {}
+
+#[cfg(feature = "unity_engine-iloghandler")]
+#[::unity2::methods]
+impl ILogHandler {
+    #[method(name = "LogFormat", args = 4)]
+    pub fn log_format(
+        self,
+        log_type: crate::unity_engine::logtype::LogType,
+        context: crate::unity_engine::object_2::Object_2,
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+}

@@ -1,0 +1,202 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopunitselectmenu/ShopUnitSelectMenu_DecideEventHandler.md")))]
+#[::unity2::class(namespace = "App", name = "ShopUnitSelectMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ShopUnitSelectMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-shopunitselectmenu")]
+#[::unity2::methods]
+impl ShopUnitSelectMenu_DecideEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(
+        self,
+        result: crate::app::basicmenu::BasicMenu_Result,
+        unit: crate::app::unit::Unit,
+        scroll_index: i32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-shopunitselectmenu")]
+impl ShopUnitSelectMenu_DecideEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopUnitSelectMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopUnitSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopunitselectmenu/ShopUnitSelectMenu.md")))]
+#[::unity2::class(namespace = "App", name = "ShopUnitSelectMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct ShopUnitSelectMenu {
+    #[rename(name = "m_GameObject")]
+    pub m_game_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ShowGodRingIcon")]
+    pub m_show_god_ring_icon: bool,
+}
+
+#[cfg(feature = "app-shopunitselectmenu")]
+#[::unity2::methods]
+impl ShopUnitSelectMenu {
+    #[method(name = "get_m_HelpEventHandler", args = 0)]
+    pub fn get_m_help_event_handler(
+        self,
+    ) -> crate::app::shopunitselectmenu::ShopUnitSelectMenu_HelpEventHandler;
+
+    #[method(name = "set_m_HelpEventHandler", args = 1)]
+    pub fn set_m_help_event_handler(
+        self,
+        value: crate::app::shopunitselectmenu::ShopUnitSelectMenu_HelpEventHandler,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 9)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        default_unit: crate::app::unit::Unit,
+        default_scroll_index: i32,
+        adding_transporter: bool,
+        decide_event_handler: crate::app::shopunitselectmenu::ShopUnitSelectMenu_DecideEventHandler,
+        select_event_handler: crate::app::shopunitselectmenu::ShopUnitSelectMenu_SelectEventHandler,
+        help_event_handler: crate::app::shopunitselectmenu::ShopUnitSelectMenu_HelpEventHandler,
+        show_god_ring_icon: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 7)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::shopunitselectmenucontent::ShopUnitSelectMenuContent,
+        menu_object: crate::unity_engine::gameobject::GameObject,
+        default_menu_item_index: i32,
+        default_scroll_index: i32,
+        help_event_handler: crate::app::shopunitselectmenu::ShopUnitSelectMenu_HelpEventHandler,
+        show_god_ring_icon: bool,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "IsShowGodRingIcon", args = 0)]
+    pub fn is_show_god_ring_icon(self) -> bool;
+}
+
+#[cfg(feature = "app-shopunitselectmenu")]
+impl ShopUnitSelectMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::shopunitselectmenucontent::ShopUnitSelectMenuContent,
+        menu_object: crate::unity_engine::gameobject::GameObject,
+        default_menu_item_index: i32,
+        default_scroll_index: i32,
+        help_event_handler: crate::app::shopunitselectmenu::ShopUnitSelectMenu_HelpEventHandler,
+        show_god_ring_icon: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopUnitSelectMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopUnitSelectMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            menu_object,
+            default_menu_item_index,
+            default_scroll_index,
+            help_event_handler,
+            show_god_ring_icon,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopunitselectmenu/ShopUnitSelectMenu_HelpEventHandler.md")))]
+#[::unity2::class(namespace = "App", name = "ShopUnitSelectMenu.HelpEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ShopUnitSelectMenu_HelpEventHandler {}
+
+#[cfg(feature = "app-shopunitselectmenu")]
+#[::unity2::methods]
+impl ShopUnitSelectMenu_HelpEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, parent: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-shopunitselectmenu")]
+impl ShopUnitSelectMenu_HelpEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopUnitSelectMenu_HelpEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopUnitSelectMenu_HelpEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopunitselectmenu/ShopUnitSelectMenu_SelectEventHandler.md")))]
+#[::unity2::class(namespace = "App", name = "ShopUnitSelectMenu.SelectEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ShopUnitSelectMenu_SelectEventHandler {}
+
+#[cfg(feature = "app-shopunitselectmenu")]
+#[::unity2::methods]
+impl ShopUnitSelectMenu_SelectEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-shopunitselectmenu")]
+impl ShopUnitSelectMenu_SelectEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopUnitSelectMenu_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopUnitSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}

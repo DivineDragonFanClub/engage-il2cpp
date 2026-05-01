@@ -1,0 +1,94 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/debug/Debug.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "Debug")]
+#[parent(crate::system::object::Object)]
+pub struct Debug {
+    #[static_field]
+    #[rename(name = "s_DefaultLogger")]
+    pub s_default_logger: crate::unity_engine::ilogger_interface::ILogger_Interface,
+    #[static_field]
+    #[rename(name = "s_Logger")]
+    pub s_logger: crate::unity_engine::ilogger_interface::ILogger_Interface,
+}
+
+#[cfg(feature = "unity_engine-debug")]
+#[::unity2::methods]
+impl Debug {
+    #[method(name = "get_unityLogger", args = 0)]
+    pub fn get_unity_logger() -> crate::unity_engine::ilogger_interface::ILogger_Interface;
+
+    #[method(name = "Break", args = 0)]
+    pub fn r#break() -> ();
+
+    #[method(name = "Log", args = 1)]
+    pub fn log(message: crate::system::object::Object) -> ();
+
+    #[method(name = "Log", args = 2)]
+    pub fn log_2(
+        message: crate::system::object::Object,
+        context: crate::unity_engine::object_2::Object_2,
+    ) -> ();
+
+    #[method(name = "LogFormat", args = 2)]
+    pub fn log_format(
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = "LogError", args = 1)]
+    pub fn log_error(message: crate::system::object::Object) -> ();
+
+    #[method(name = "LogError", args = 2)]
+    pub fn log_error_2(
+        message: crate::system::object::Object,
+        context: crate::unity_engine::object_2::Object_2,
+    ) -> ();
+
+    #[method(name = "LogErrorFormat", args = 2)]
+    pub fn log_error_format(
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = "LogErrorFormat", args = 3)]
+    pub fn log_error_format_2(
+        context: crate::unity_engine::object_2::Object_2,
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = "LogWarning", args = 1)]
+    pub fn log_warning(message: crate::system::object::Object) -> ();
+
+    #[method(name = "LogWarning", args = 2)]
+    pub fn log_warning_2(
+        message: crate::system::object::Object,
+        context: crate::unity_engine::object_2::Object_2,
+    ) -> ();
+
+    #[method(name = "LogWarningFormat", args = 2)]
+    pub fn log_warning_format(
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = "LogWarningFormat", args = 3)]
+    pub fn log_warning_format_2(
+        context: crate::unity_engine::object_2::Object_2,
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = "get_isDebugBuild", args = 0)]
+    pub fn get_is_debug_build() -> bool;
+
+    #[method(name = "IsLoggingEnabled", args = 0)]
+    pub fn is_logging_enabled() -> bool;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

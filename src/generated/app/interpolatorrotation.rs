@@ -1,0 +1,40 @@
+
+use crate::app::interpolator_1::IInterpolator_1;
+use crate::app::interpolator_1::Interpolator_1;
+use crate::app::interpolatorfloat::IInterpolatorFloat;
+use crate::app::interpolatorfloat::InterpolatorFloat;
+use crate::app::interpolatortime::IInterpolatorTime;
+use crate::app::interpolatortime::InterpolatorTime;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/interpolatorrotation/InterpolatorRotation.md")))]
+#[::unity2::class(namespace = "App", name = "InterpolatorRotation")]
+#[parent(crate::app::interpolatorfloat::InterpolatorFloat)]
+pub struct InterpolatorRotation {}
+
+#[cfg(feature = "app-interpolatorrotation")]
+#[::unity2::methods]
+impl InterpolatorRotation {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, r#type: crate::app::curve::Curve_Type, num: i32) -> ();
+
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, value: f32, time: f32) -> bool;
+}
+
+#[cfg(feature = "app-interpolatorrotation")]
+impl InterpolatorRotation {
+    pub fn new(r#type: crate::app::curve::Curve_Type, num: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InterpolatorRotation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInterpolatorRotationMethods>::ctor(this, r#type, num);
+        this
+    }
+}

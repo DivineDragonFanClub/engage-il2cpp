@@ -1,0 +1,161 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/levelupsequnece/LevelUpSequnece.md")))]
+#[::unity2::class(namespace = "App", name = "LevelUpSequnece")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct LevelUpSequnece {
+    #[rename(name = "ResNameLevelUp")]
+    pub res_name_level_up: ::unity2::Il2CppString,
+    #[rename(name = "ResNameClassChange")]
+    pub res_name_class_change: ::unity2::Il2CppString,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_Grow")]
+    pub m_grow: crate::app::unit::Unit,
+    #[rename(name = "m_Level")]
+    pub m_level: i32,
+    #[rename(name = "m_IsClassChange")]
+    pub m_is_class_change: bool,
+    #[rename(name = "m_TalkMid")]
+    pub m_talk_mid: ::unity2::Il2CppString,
+    #[rename(name = "m_Window")]
+    pub m_window: crate::app::levelupwindowcontroller::LevelUpWindowController,
+    #[rename(name = "m_IsShowCharaImage")]
+    pub m_is_show_chara_image: bool,
+    #[rename(name = "m_IsTalk")]
+    pub m_is_talk: bool,
+    #[rename(name = "m_NowCapabilityIndex")]
+    pub m_now_capability_index: i32,
+    #[rename(name = "m_CapabilityOrder")]
+    pub m_capability_order:
+        ::unity2::Array<crate::app::capabilitydefinition::CapabilityDefinition_Type>,
+}
+
+#[cfg(feature = "app-levelupsequnece")]
+#[::unity2::methods]
+impl LevelUpSequnece {
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        level: i32,
+        is_show_chara_image: bool,
+        is_talk: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(self, unit: crate::app::unit::Unit, grow: crate::app::unit::Unit) -> ();
+
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "GetResName", args = 0)]
+    pub fn get_res_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "Prepare", args = 0)]
+    pub fn prepare(self) -> ();
+
+    #[method(name = "Reflect", args = 0)]
+    pub fn reflect(self) -> ();
+
+    #[method(name = "ReloadActor", args = 0)]
+    pub fn reload_actor(self) -> ();
+
+    #[method(name = "WaitReloadActor", args = 0)]
+    pub fn wait_reload_actor(self) -> ();
+
+    #[method(name = "Effect", args = 0)]
+    pub fn effect(self) -> ();
+
+    #[method(name = "IsLoadingRes", args = 0)]
+    pub fn is_loading_res(self) -> bool;
+
+    #[method(name = "Open", args = 0)]
+    pub fn open(self) -> ();
+
+    #[method(name = "WaitAnime", args = 0)]
+    pub fn wait_anime(self) -> ();
+
+    #[method(name = "CheckParamChange", args = 0)]
+    pub fn check_param_change(self) -> ();
+
+    #[method(name = "GetUpParamCount", args = 0)]
+    pub fn get_up_param_count(self) -> i32;
+
+    #[method(name = "GetLimitParamCount", args = 0)]
+    pub fn get_limit_param_count(self) -> i32;
+
+    #[method(name = "CalcTalkMid", args = 0)]
+    pub fn calc_talk_mid(self) -> ();
+
+    #[method(name = "Talk", args = 0)]
+    pub fn talk(self) -> ();
+
+    #[method(name = "KeyWait", args = 0)]
+    pub fn key_wait(self) -> ();
+
+    #[method(name = "Release", args = 0)]
+    pub fn release(self) -> ();
+
+    #[method(name = "LearnJobSkill", args = 0)]
+    pub fn learn_job_skill(self) -> ();
+
+    #[method(name = "CreateBind", args = 5)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        level: i32,
+        is_show_chara_image: bool,
+        is_talk: bool,
+    ) -> ();
+
+    #[method(name = "CreateBindClassChange", args = 3)]
+    pub fn create_bind_class_change(
+        super_: crate::app::procinst::ProcInst,
+        before_unit: crate::app::unit::Unit,
+        after_unit: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "CreateBindImpl", args = 1)]
+    pub fn create_bind_impl(self, super_: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-levelupsequnece")]
+impl LevelUpSequnece {
+    pub fn new(
+        unit: crate::app::unit::Unit,
+        level: i32,
+        is_show_chara_image: bool,
+        is_talk: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LevelUpSequnece),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILevelUpSequneceMethods>::ctor(this, unit, level, is_show_chara_image, is_talk);
+        this
+    }
+
+    pub fn new_2(unit: crate::app::unit::Unit, grow: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LevelUpSequnece),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ILevelUpSequneceMethods>::ctor_2(this, unit, grow);
+        this
+    }
+}

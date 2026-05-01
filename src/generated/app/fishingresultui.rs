@@ -1,0 +1,193 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI_ResultPhase.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FishingResultUI_ResultPhase {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FishingResultUI_ResultPhase {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FishingResultUI.ResultPhase";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FishingResultUI_ResultPhase {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FishingResultUI_ResultPhase {
+    pub fn before_open() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn open() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn wait_close() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn phase_count() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI_SpriteKind.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FishingResultUI_SpriteKind {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FishingResultUI_SpriteKind {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FishingResultUI.SpriteKind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FishingResultUI_SpriteKind {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FishingResultUI_SpriteKind {
+    pub fn size() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn gyotaku() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI.md")))]
+#[::unity2::class(namespace = "App", name = "FishingResultUI")]
+#[parent(crate::system::object::Object)]
+pub struct FishingResultUI {
+    #[rename(name = "m_Sprites")]
+    pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+    #[static_field]
+    #[rename(name = "cTextureRootPath")]
+    pub c_texture_root_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cResultTextureGold")]
+    pub c_result_texture_gold: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cResultTextureSilver")]
+    pub c_result_texture_silver: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cResultTextureBronze")]
+    pub c_result_texture_bronze: ::unity2::Il2CppString,
+    #[rename(name = "m_Root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Data")]
+    pub m_data: crate::app::fishingresultdata::FishingResultData,
+    #[rename(name = "m_Timer")]
+    pub m_timer: f64,
+    #[rename(name = "m_TimeLimit")]
+    pub m_time_limit: f32,
+    #[rename(name = "m_IsNewRecord")]
+    pub m_is_new_record: bool,
+    #[rename(name = "m_Phase")]
+    pub m_phase: crate::app::fishingresultui::FishingResultUI_ResultPhase,
+}
+
+#[cfg(feature = "app-fishingresultui")]
+#[::unity2::methods]
+impl FishingResultUI {
+    #[method(name = "get_IsReady", args = 0)]
+    pub fn get_is_ready(self) -> bool;
+
+    #[method(name = "get_IsFinish", args = 0)]
+    pub fn get_is_finish(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Init", args = 3)]
+    pub fn init(
+        self,
+        root_obj: crate::unity_engine::gameobject::GameObject,
+        set_data: crate::app::fishingresultdata::FishingResultData,
+        time_limit: f32,
+    ) -> ();
+
+    #[method(name = "OverwriteUserData", args = 0)]
+    pub fn overwrite_user_data(self) -> ();
+
+    #[method(name = "NextPhase", args = 0)]
+    pub fn next_phase(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[method(name = "DestroyResult", args = 0)]
+    pub fn destroy_result(self) -> ();
+
+    #[method(name = "CloseResult", args = 0)]
+    pub fn close_result(self) -> ();
+
+    #[method(name = "IsClosedResult", args = 0)]
+    pub fn is_closed_result(self) -> bool;
+}
+
+#[cfg(feature = "app-fishingresultui")]
+impl FishingResultUI {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingResultUI),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingResultUIMethods>::ctor(this);
+        this
+    }
+}

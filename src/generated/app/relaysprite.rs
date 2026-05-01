@@ -1,0 +1,65 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaysprite/RelaySprite.md")))]
+#[::unity2::class(namespace = "App", name = "RelaySprite")]
+#[parent(crate::system::object::Object)]
+pub struct RelaySprite {
+    #[static_field]
+    #[rename(name = "RelayStampPath")]
+    pub relay_stamp_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "RelayMapPath")]
+    pub relay_map_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "s_RelayStamp")]
+    pub s_relay_stamp: crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,
+    #[static_field]
+    #[rename(name = "s_RelayMapThumb")]
+    pub s_relay_map_thumb: crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,
+}
+
+#[cfg(feature = "app-relaysprite")]
+#[::unity2::methods]
+impl RelaySprite {
+    #[method(name = "LoadAsync", args = 0)]
+    pub fn load_async() -> ();
+
+    #[method(name = "LoadRelayStampAsync", args = 0)]
+    pub fn load_relay_stamp_async() -> ();
+
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading() -> bool;
+
+    #[method(name = "Unload", args = 0)]
+    pub fn unload() -> ();
+
+    #[method(name = "GetStamp", args = 1)]
+    pub fn get_stamp(path: ::unity2::Il2CppString) -> crate::unity_engine::sprite::Sprite;
+
+    #[method(name = "GetMapThumb", args = 1)]
+    pub fn get_map_thumb(cid: ::unity2::Il2CppString) -> crate::unity_engine::sprite::Sprite;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-relaysprite")]
+impl RelaySprite {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelaySprite),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelaySpriteMethods>::ctor(this);
+        this
+    }
+}

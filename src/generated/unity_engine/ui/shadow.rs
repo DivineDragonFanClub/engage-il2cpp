@@ -1,0 +1,100 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::ui::basemesheffect::BaseMeshEffect;
+use crate::unity_engine::ui::basemesheffect::IBaseMeshEffect;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/shadow/Shadow.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "Shadow")]
+#[parent(crate::unity_engine::ui::basemesheffect::BaseMeshEffect)]
+pub struct Shadow {
+    #[rename(name = "m_EffectColor")]
+    pub m_effect_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_EffectDistance")]
+    pub m_effect_distance: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_UseGraphicAlpha")]
+    pub m_use_graphic_alpha: bool,
+    #[static_field]
+    #[rename(name = "kMaxEffectDistance")]
+    pub k_max_effect_distance: f32,
+}
+
+#[cfg(feature = "unity_engine-ui-shadow")]
+#[::unity2::methods]
+impl Shadow {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_effectColor", args = 0)]
+    pub fn get_effect_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "set_effectColor", args = 1)]
+    pub fn set_effect_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "get_effectDistance", args = 0)]
+    pub fn get_effect_distance(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_effectDistance", args = 1)]
+    pub fn set_effect_distance(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_useGraphicAlpha", args = 0)]
+    pub fn get_use_graphic_alpha(self) -> bool;
+
+    #[method(name = "set_useGraphicAlpha", args = 1)]
+    pub fn set_use_graphic_alpha(self, value: bool) -> ();
+
+    #[method(name = "ApplyShadowZeroAlloc", args = 6)]
+    pub fn apply_shadow_zero_alloc(
+        self,
+        verts: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::uivertex::UIVertex,
+        >,
+        color: crate::unity_engine::color32::Color32,
+        start: i32,
+        end: i32,
+        x: f32,
+        y: f32,
+    ) -> ();
+
+    #[method(name = "ApplyShadow", args = 6)]
+    pub fn apply_shadow(
+        self,
+        verts: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::uivertex::UIVertex,
+        >,
+        color: crate::unity_engine::color32::Color32,
+        start: i32,
+        end: i32,
+        x: f32,
+        y: f32,
+    ) -> ();
+
+    #[method(name = "ModifyMesh", args = 1)]
+    pub fn modify_mesh(self, vh: crate::unity_engine::ui::vertexhelper::VertexHelper) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-shadow")]
+impl Shadow {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Shadow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShadowMethods>::ctor(this);
+        this
+    }
+}

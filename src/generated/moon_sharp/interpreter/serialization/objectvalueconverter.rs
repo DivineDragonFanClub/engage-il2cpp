@@ -1,0 +1,23 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/serialization/objectvalueconverter/ObjectValueConverter.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Serialization",
+    name = "ObjectValueConverter"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ObjectValueConverter {}
+
+#[cfg(feature = "moon_sharp-interpreter-serialization-objectvalueconverter")]
+#[::unity2::methods]
+impl ObjectValueConverter {
+    #[method(name = "SerializeObjectToDynValue", args = 3)]
+    pub fn serialize_object_to_dyn_value(
+        script: crate::moon_sharp::interpreter::script::Script,
+        o: crate::system::object::Object,
+        value_for_nulls: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+}

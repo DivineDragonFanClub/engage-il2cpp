@@ -1,0 +1,55 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/execution/runtimescopeblock/RuntimeScopeBlock.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Execution",
+    name = "RuntimeScopeBlock"
+)]
+#[parent(crate::system::object::Object)]
+pub struct RuntimeScopeBlock {}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeblock")]
+#[::unity2::methods]
+impl RuntimeScopeBlock {
+    #[method(name = "get_From", args = 0)]
+    pub fn get_from(self) -> i32;
+
+    #[method(name = "set_From", args = 1)]
+    pub fn set_from(self, value: i32) -> ();
+
+    #[method(name = "get_To", args = 0)]
+    pub fn get_to(self) -> i32;
+
+    #[method(name = "set_To", args = 1)]
+    pub fn set_to(self, value: i32) -> ();
+
+    #[method(name = "get_ToInclusive", args = 0)]
+    pub fn get_to_inclusive(self) -> i32;
+
+    #[method(name = "set_ToInclusive", args = 1)]
+    pub fn set_to_inclusive(self, value: i32) -> ();
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-runtimescopeblock")]
+impl RuntimeScopeBlock {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RuntimeScopeBlock),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRuntimeScopeBlockMethods>::ctor(this);
+        this
+    }
+}

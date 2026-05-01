@@ -1,0 +1,77 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_textelement/TMP_TextElement.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_TextElement")]
+#[parent(crate::system::object::Object)]
+pub struct TMP_TextElement {
+    #[rename(name = "m_ElementType")]
+    pub m_element_type: crate::tm_pro::textelementtype::TextElementType,
+    #[rename(name = "m_Unicode")]
+    pub m_unicode: u32,
+    #[rename(name = "m_TextAsset")]
+    pub m_text_asset: crate::tm_pro::tmp_asset::TMP_Asset,
+    #[rename(name = "m_Glyph")]
+    pub m_glyph: crate::unity_engine::text_core::glyph::Glyph,
+    #[rename(name = "m_GlyphIndex")]
+    pub m_glyph_index: u32,
+    #[rename(name = "m_Scale")]
+    pub m_scale: f32,
+}
+
+#[cfg(feature = "tm_pro-tmp_textelement")]
+#[::unity2::methods]
+impl TMP_TextElement {
+    #[method(name = "get_elementType", args = 0)]
+    pub fn get_element_type(self) -> crate::tm_pro::textelementtype::TextElementType;
+
+    #[method(name = "get_unicode", args = 0)]
+    pub fn get_unicode(self) -> u32;
+
+    #[method(name = "set_unicode", args = 1)]
+    pub fn set_unicode(self, value: u32) -> ();
+
+    #[method(name = "get_textAsset", args = 0)]
+    pub fn get_text_asset(self) -> crate::tm_pro::tmp_asset::TMP_Asset;
+
+    #[method(name = "set_textAsset", args = 1)]
+    pub fn set_text_asset(self, value: crate::tm_pro::tmp_asset::TMP_Asset) -> ();
+
+    #[method(name = "get_glyph", args = 0)]
+    pub fn get_glyph(self) -> crate::unity_engine::text_core::glyph::Glyph;
+
+    #[method(name = "set_glyph", args = 1)]
+    pub fn set_glyph(self, value: crate::unity_engine::text_core::glyph::Glyph) -> ();
+
+    #[method(name = "get_glyphIndex", args = 0)]
+    pub fn get_glyph_index(self) -> u32;
+
+    #[method(name = "set_glyphIndex", args = 1)]
+    pub fn set_glyph_index(self, value: u32) -> ();
+
+    #[method(name = "get_scale", args = 0)]
+    pub fn get_scale(self) -> f32;
+
+    #[method(name = "set_scale", args = 1)]
+    pub fn set_scale(self, value: f32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_textelement")]
+impl TMP_TextElement {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_TextElement),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_TextElementMethods>::ctor(this);
+        this
+    }
+}

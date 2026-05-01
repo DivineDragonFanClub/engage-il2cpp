@@ -1,0 +1,50 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusratecalc/VersusRateCalc.md")))]
+#[::unity2::class(namespace = "App", name = "VersusRateCalc")]
+#[parent(crate::system::object::Object)]
+pub struct VersusRateCalc {
+    #[static_field]
+    #[rename(name = "K")]
+    pub k: i32,
+    #[static_field]
+    #[rename(name = "RateMin")]
+    pub rate_min: i32,
+    #[static_field]
+    #[rename(name = "RateMax")]
+    pub rate_max: i32,
+}
+
+#[cfg(feature = "app-versusratecalc")]
+#[::unity2::methods]
+impl VersusRateCalc {
+    #[method(name = "GetRateDataType", args = 1)]
+    pub fn get_rate_data_type(rate: i32) -> u16;
+
+    #[method(name = "GetWinRate", args = 2)]
+    pub fn get_win_rate(rate: i32, opponent_rate: i32) -> i32;
+
+    #[method(name = "GetLoseRate", args = 2)]
+    pub fn get_lose_rate(rate: i32, opponent_rate: i32) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-versusratecalc")]
+impl VersusRateCalc {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusRateCalc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusRateCalcMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,38 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/runtimeanimatorcontroller/RuntimeAnimatorController.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "RuntimeAnimatorController")]
+#[parent(crate::unity_engine::object_2::Object_2)]
+pub struct RuntimeAnimatorController {}
+
+#[cfg(feature = "unity_engine-runtimeanimatorcontroller")]
+#[::unity2::methods]
+impl RuntimeAnimatorController {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_animationClips", args = 0)]
+    pub fn get_animation_clips(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::animationclip::AnimationClip>;
+}
+
+#[cfg(feature = "unity_engine-runtimeanimatorcontroller")]
+impl RuntimeAnimatorController {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RuntimeAnimatorController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRuntimeAnimatorControllerMethods>::ctor(this);
+        this
+    }
+}

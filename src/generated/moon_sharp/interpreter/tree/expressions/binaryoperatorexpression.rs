@@ -1,0 +1,319 @@
+
+use crate::moon_sharp::interpreter::tree::expression::Expression;
+use crate::moon_sharp::interpreter::tree::expression::IExpression;
+use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+use crate::moon_sharp::interpreter::tree::nodebase::NodeBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Expressions",
+    name = "BinaryOperatorExpression"
+)]
+#[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
+pub struct BinaryOperatorExpression {
+# [static_field] # [rename (name = "POWER")] pub power : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [static_field] # [rename (name = "MUL_DIV_MOD")] pub mul_div_mod : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [static_field] # [rename (name = "ADD_SUB")] pub add_sub : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [static_field] # [rename (name = "STRCAT")] pub strcat : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [static_field] # [rename (name = "COMPARES")] pub compares : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [static_field] # [rename (name = "LOGIC_AND")] pub logic_and : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [static_field] # [rename (name = "LOGIC_OR")] pub logic_or : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [rename (name = "m_Exp1")] pub m_exp1 : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression ,
+# [rename (name = "m_Exp2")] pub m_exp2 : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression ,
+# [rename (name = "m_Operator")] pub m_operator : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+#[::unity2::methods]
+impl BinaryOperatorExpression {
+    #[method(name = "BeginOperatorChain", args = 0)]
+    pub fn begin_operator_chain() -> crate::system::object::Object;
+
+    #[method(name = "AddExpressionToChain", args = 2)]
+    pub fn add_expression_to_chain(
+        chain: crate::system::object::Object,
+        exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+    ) -> ();
+
+    #[method(name = "AddOperatorToChain", args = 2)]
+    pub fn add_operator_to_chain(
+        chain: crate::system::object::Object,
+        op: crate::moon_sharp::interpreter::tree::token::Token,
+    ) -> ();
+
+    #[method(name = "CommitOperatorChain", args = 2)]
+    pub fn commit_operator_chain(
+        chain: crate::system::object::Object,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> crate::moon_sharp::interpreter::tree::expression::Expression;
+
+    #[method(name = "CreatePowerExpression", args = 3)]
+    pub fn create_power_expression(
+        op1: crate::moon_sharp::interpreter::tree::expression::Expression,
+        op2: crate::moon_sharp::interpreter::tree::expression::Expression,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> crate::moon_sharp::interpreter::tree::expression::Expression;
+
+    #[method(name = "AddNode", args = 2)]
+    pub fn add_node(
+        list : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_LinkedList,
+        node : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node,
+    ) -> ();
+
+    #[method(name = "CreateSubTree", args = 2)]
+    pub fn create_sub_tree(
+        list : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_LinkedList,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> crate::moon_sharp::interpreter::tree::expression::Expression;
+
+    #[method(name = "PrioritizeLeftAssociative", args = 3)]
+    pub fn prioritize_left_associative (nodes : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node , lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , operators_to_find : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator) -> crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node ;
+
+    #[method(name = "PrioritizeRightAssociative", args = 3)]
+    pub fn prioritize_right_associative (nodes : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node , lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext , operators_to_find : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator) -> crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node ;
+
+    #[method(name = "ParseBinaryOperator", args = 1)]
+    pub fn parse_binary_operator (token : crate :: moon_sharp :: interpreter :: tree :: token :: Token) -> crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ;
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        exp1: crate::moon_sharp::interpreter::tree::expression::Expression,
+        exp2: crate::moon_sharp::interpreter::tree::expression::Expression,
+        op : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> ();
+
+    #[method(name = "ShouldInvertBoolean", args = 1)]
+    pub fn should_invert_boolean(
+        op : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator,
+    ) -> bool;
+
+    #[method(name = "OperatorToOpCode", args = 1)]
+    pub fn operator_to_op_code(
+        op : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator,
+    ) -> crate::moon_sharp::interpreter::execution::vm::opcode::OpCode;
+
+    #[method(name = "Compile", args = 1)]
+    pub fn compile(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> ();
+
+    #[method(name = "Eval", args = 1)]
+    pub fn eval(
+        self,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "EvalArithmetic", args = 2)]
+    pub fn eval_arithmetic(
+        self,
+        v1: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        v2: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> f64;
+
+    #[method(name = "EvalComparison", args = 3)]
+    pub fn eval_comparison(
+        self,
+        l: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        r: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        op : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator,
+    ) -> bool;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+impl BinaryOperatorExpression {
+    pub fn new(
+        exp1: crate::moon_sharp::interpreter::tree::expression::Expression,
+        exp2: crate::moon_sharp::interpreter::tree::expression::Expression,
+        op : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BinaryOperatorExpression),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBinaryOperatorExpressionMethods>::ctor(this, exp1, exp2, op, lcontext);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_LinkedList.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Expressions",
+    name = "BinaryOperatorExpression.LinkedList"
+)]
+#[parent(crate::system::object::Object)]
+pub struct BinaryOperatorExpression_LinkedList {
+# [rename (name = "Nodes")] pub nodes : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node ,
+# [rename (name = "Last")] pub last : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node ,
+# [rename (name = "OperatorMask")] pub operator_mask : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+#[::unity2::methods]
+impl BinaryOperatorExpression_LinkedList {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+impl BinaryOperatorExpression_LinkedList {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BinaryOperatorExpression_LinkedList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBinaryOperatorExpression_LinkedListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_Operator.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct BinaryOperatorExpression_Operator {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for BinaryOperatorExpression_Operator {
+    const NAMESPACE: &'static str = "MoonSharp.Interpreter.Tree.Expressions";
+
+    const NAME: &'static str = "BinaryOperatorExpression.Operator";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BinaryOperatorExpression_Operator {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl BinaryOperatorExpression_Operator {
+    pub fn not_an_operator() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn or() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn and() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn less() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn greater() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn less_or_equal() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn greater_or_equal() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn not_equal() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn equal() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn str_concat() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn add() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn sub() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn mul() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn div() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn r#mod() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn power() -> Self {
+        Self { value: 32768 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_Node.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Expressions",
+    name = "BinaryOperatorExpression.Node"
+)]
+#[parent(crate::system::object::Object)]
+pub struct BinaryOperatorExpression_Node {
+# [rename (name = "Expr")] pub expr : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression ,
+# [rename (name = "Op")] pub op : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [rename (name = "Prev")] pub prev : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node ,
+# [rename (name = "Next")] pub next : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node ,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+#[::unity2::methods]
+impl BinaryOperatorExpression_Node {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+impl BinaryOperatorExpression_Node {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BinaryOperatorExpression_Node),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBinaryOperatorExpression_NodeMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,32 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scripting/api_updating/apiupdaterruntimehelpers/APIUpdaterRuntimeHelpers.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine._Scripting.APIUpdating",
+    name = "APIUpdaterRuntimeHelpers"
+)]
+#[parent(crate::system::object::Object)]
+pub struct APIUpdaterRuntimeHelpers {}
+
+#[cfg(feature = "unity_engine-scripting-api_updating-apiupdaterruntimehelpers")]
+#[::unity2::methods]
+impl APIUpdaterRuntimeHelpers {
+    #[method(name = "GetMovedFromAttributeDataForType", args = 4)]
+    pub fn get_moved_from_attribute_data_for_type(
+        source_type: ::unity2::SystemType,
+        assembly: ::unity2::Il2CppString,
+        nsp: ::unity2::Il2CppString,
+        klass: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[method(name = "GetObsoleteTypeRedirection", args = 4)]
+    pub fn get_obsolete_type_redirection(
+        source_type: ::unity2::SystemType,
+        assembly_name: ::unity2::Il2CppString,
+        nsp: ::unity2::Il2CppString,
+        class_name: ::unity2::Il2CppString,
+    ) -> bool;
+}

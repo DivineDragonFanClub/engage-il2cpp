@@ -1,0 +1,268 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/humanbodybones/HumanBodyBones.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HumanBodyBones {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HumanBodyBones {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "HumanBodyBones";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HumanBodyBones {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HumanBodyBones {
+    pub fn hips() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn left_upper_leg() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn right_upper_leg() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn left_lower_leg() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn right_lower_leg() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn left_foot() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn right_foot() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn spine() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn chest() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn upper_chest() -> Self {
+        Self { value: 54 }
+    }
+
+    pub fn neck() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn head() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn left_shoulder() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn right_shoulder() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn left_upper_arm() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn right_upper_arm() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn left_lower_arm() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn right_lower_arm() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn left_hand() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn right_hand() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn left_toes() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn right_toes() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn left_eye() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn right_eye() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn jaw() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn left_thumb_proximal() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn left_thumb_intermediate() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn left_thumb_distal() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn left_index_proximal() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn left_index_intermediate() -> Self {
+        Self { value: 28 }
+    }
+
+    pub fn left_index_distal() -> Self {
+        Self { value: 29 }
+    }
+
+    pub fn left_middle_proximal() -> Self {
+        Self { value: 30 }
+    }
+
+    pub fn left_middle_intermediate() -> Self {
+        Self { value: 31 }
+    }
+
+    pub fn left_middle_distal() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn left_ring_proximal() -> Self {
+        Self { value: 33 }
+    }
+
+    pub fn left_ring_intermediate() -> Self {
+        Self { value: 34 }
+    }
+
+    pub fn left_ring_distal() -> Self {
+        Self { value: 35 }
+    }
+
+    pub fn left_little_proximal() -> Self {
+        Self { value: 36 }
+    }
+
+    pub fn left_little_intermediate() -> Self {
+        Self { value: 37 }
+    }
+
+    pub fn left_little_distal() -> Self {
+        Self { value: 38 }
+    }
+
+    pub fn right_thumb_proximal() -> Self {
+        Self { value: 39 }
+    }
+
+    pub fn right_thumb_intermediate() -> Self {
+        Self { value: 40 }
+    }
+
+    pub fn right_thumb_distal() -> Self {
+        Self { value: 41 }
+    }
+
+    pub fn right_index_proximal() -> Self {
+        Self { value: 42 }
+    }
+
+    pub fn right_index_intermediate() -> Self {
+        Self { value: 43 }
+    }
+
+    pub fn right_index_distal() -> Self {
+        Self { value: 44 }
+    }
+
+    pub fn right_middle_proximal() -> Self {
+        Self { value: 45 }
+    }
+
+    pub fn right_middle_intermediate() -> Self {
+        Self { value: 46 }
+    }
+
+    pub fn right_middle_distal() -> Self {
+        Self { value: 47 }
+    }
+
+    pub fn right_ring_proximal() -> Self {
+        Self { value: 48 }
+    }
+
+    pub fn right_ring_intermediate() -> Self {
+        Self { value: 49 }
+    }
+
+    pub fn right_ring_distal() -> Self {
+        Self { value: 50 }
+    }
+
+    pub fn right_little_proximal() -> Self {
+        Self { value: 51 }
+    }
+
+    pub fn right_little_intermediate() -> Self {
+        Self { value: 52 }
+    }
+
+    pub fn right_little_distal() -> Self {
+        Self { value: 53 }
+    }
+
+    pub fn last_bone() -> Self {
+        Self { value: 55 }
+    }
+}

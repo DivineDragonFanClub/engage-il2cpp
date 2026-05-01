@@ -1,0 +1,70 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographcameraparameter/PhotographCameraParameter.md")))]
+#[::unity2::class(namespace = "App", name = "PhotographCameraParameter")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct PhotographCameraParameter {
+    #[rename(name = "m_LimitZoomDistance")]
+    pub m_limit_zoom_distance: f32,
+    #[rename(name = "m_LimitMoveHorizontal")]
+    pub m_limit_move_horizontal: f32,
+    #[rename(name = "m_LimitMoveVertical")]
+    pub m_limit_move_vertical: f32,
+    #[rename(name = "m_LimitAngleY")]
+    pub m_limit_angle_y: f32,
+    #[rename(name = "m_FieldOfView")]
+    pub m_field_of_view: f32,
+    #[rename(name = "m_LimitFov")]
+    pub m_limit_fov: f32,
+}
+
+#[cfg(feature = "app-photographcameraparameter")]
+#[::unity2::methods]
+impl PhotographCameraParameter {
+    #[method(name = "get_Distance", args = 0)]
+    pub fn get_distance(self) -> f32;
+
+    #[method(name = "get_LimitMoveX", args = 0)]
+    pub fn get_limit_move_x(self) -> f32;
+
+    #[method(name = "get_LimitMoveY", args = 0)]
+    pub fn get_limit_move_y(self) -> f32;
+
+    #[method(name = "get_LimitAngleY", args = 0)]
+    pub fn get_limit_angle_y(self) -> f32;
+
+    #[method(name = "get_Fov", args = 0)]
+    pub fn get_fov(self) -> f32;
+
+    #[method(name = "get_LimitFov", args = 0)]
+    pub fn get_limit_fov(self) -> f32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-photographcameraparameter")]
+impl PhotographCameraParameter {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographCameraParameter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographCameraParameterMethods>::ctor(this);
+        this
+    }
+}

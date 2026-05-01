@@ -1,0 +1,76 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographcameracontroller/PhotographCameraController.md")))]
+#[::unity2::class(namespace = "App", name = "PhotographCameraController")]
+#[parent(crate::system::object::Object)]
+pub struct PhotographCameraController {
+    #[rename(name = "m_IsEnable")]
+    pub m_is_enable: bool,
+    #[rename(name = "m_IsPhotographMode")]
+    pub m_is_photograph_mode: bool,
+    #[rename(name = "m_ParameterList")]
+    pub m_parameter_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::photographcameraparameter::PhotographCameraParameter,
+    >,
+    #[rename(name = "m_CurrentParameter")]
+    pub m_current_parameter: crate::app::photographcameraparameter::PhotographCameraParameter,
+    #[rename(name = "m_MoveX")]
+    pub m_move_x: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_MoveY")]
+    pub m_move_y: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_AngleY")]
+    pub m_angle_y: crate::app::interpolatorrotation::InterpolatorRotation,
+    #[rename(name = "m_Fov")]
+    pub m_fov: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_DisposManager")]
+    pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+    #[rename(name = "flg")]
+    pub flg: bool,
+}
+
+#[cfg(feature = "app-photographcameracontroller")]
+#[::unity2::methods]
+impl PhotographCameraController {
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(
+        self,
+        spot: crate::unity_engine::gameobject::GameObject,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+    ) -> ();
+
+    #[method(name = "Enable", args = 0)]
+    pub fn enable(self) -> ();
+
+    #[method(name = "Disable", args = 0)]
+    pub fn disable(self) -> ();
+
+    #[method(name = "SetIsPhotographMode", args = 1)]
+    pub fn set_is_photograph_mode(self, is_photograph_mode: bool) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "SetCameraParameter", args = 0)]
+    pub fn set_camera_parameter(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-photographcameracontroller")]
+impl PhotographCameraController {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographCameraController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographCameraControllerMethods>::ctor(this);
+        this
+    }
+}

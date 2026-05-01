@@ -1,0 +1,102 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/bindings/nativemethodattribute/NativeMethodAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine.Bindings", name = "NativeMethodAttribute")]
+pub struct NativeMethodAttribute {}
+
+#[cfg(feature = "unity_engine-bindings-nativemethodattribute")]
+#[::unity2::methods]
+impl NativeMethodAttribute {
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "set_IsThreadSafe", args = 1)]
+    pub fn set_is_thread_safe(self, value: bool) -> ();
+
+    #[method(name = "set_IsFreeFunction", args = 1)]
+    pub fn set_is_free_function(self, value: bool) -> ();
+
+    #[method(name = "set_ThrowsException", args = 1)]
+    pub fn set_throws_exception(self, value: bool) -> ();
+
+    #[method(name = "set_HasExplicitThis", args = 1)]
+    pub fn set_has_explicit_this(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_3(self, name: ::unity2::Il2CppString, is_free_function: bool) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor_4(
+        self,
+        name: ::unity2::Il2CppString,
+        is_free_function: bool,
+        is_thread_safe: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-bindings-nativemethodattribute")]
+impl NativeMethodAttribute {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NativeMethodAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INativeMethodAttributeMethods>::ctor(this);
+        this
+    }
+
+    pub fn new_2(name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NativeMethodAttribute),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as INativeMethodAttributeMethods>::ctor_2(this, name);
+        this
+    }
+
+    pub fn new_3(name: ::unity2::Il2CppString, is_free_function: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NativeMethodAttribute),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as INativeMethodAttributeMethods>::ctor_3(this, name, is_free_function);
+        this
+    }
+
+    pub fn new_4(
+        name: ::unity2::Il2CppString,
+        is_free_function: bool,
+        is_thread_safe: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NativeMethodAttribute),
+                ::core::stringify!(new_4),
+            )
+        });
+        <Self as INativeMethodAttributeMethods>::ctor_4(
+            this,
+            name,
+            is_free_function,
+            is_thread_safe,
+        );
+        this
+    }
+}

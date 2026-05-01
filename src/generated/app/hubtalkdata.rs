@@ -1,0 +1,70 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubtalkdata/HubTalkData.md")))]
+#[::unity2::class(namespace = "App", name = "HubTalkData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: hubtalkdata :: HubTalkData >)]
+pub struct HubTalkData {}
+
+#[cfg(feature = "app-hubtalkdata")]
+#[::unity2::methods]
+impl HubTalkData {
+    #[method(name = "get_KRID", args = 0)]
+    pub fn get_krid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_KRID", args = 1)]
+    pub fn set_krid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[method(name = "set_Count", args = 1)]
+    pub fn set_count(self, value: i32) -> ();
+
+    #[method(name = "get_Args0", args = 0)]
+    pub fn get_args0(self) -> i32;
+
+    #[method(name = "set_Args0", args = 1)]
+    pub fn set_args0(self, value: i32) -> ();
+
+    #[method(name = "get_Args1", args = 0)]
+    pub fn get_args1(self) -> i32;
+
+    #[method(name = "set_Args1", args = 1)]
+    pub fn set_args1(self, value: i32) -> ();
+
+    #[method(name = "get_Item", args = 0)]
+    pub fn get_item(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Item", args = 1)]
+    pub fn set_item(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubtalkdata")]
+impl HubTalkData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubTalkData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubTalkDataMethods>::ctor(this);
+        this
+    }
+}

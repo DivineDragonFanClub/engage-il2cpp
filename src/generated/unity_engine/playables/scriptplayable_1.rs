@@ -1,0 +1,107 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/scriptplayable_1/ScriptPlayable_1.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ScriptPlayable_1<T0> {
+    pub _phantom: ::core::marker::PhantomData<(T0,)>,
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for ScriptPlayable_1<T0> {
+    const NAMESPACE: &'static str = "UnityEngine.Playables";
+
+    const NAME: &'static str = "ScriptPlayable`1";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                .expect("generic instantiation")
+        })
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for ScriptPlayable_1<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-playables-scriptplayable_1")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity> ScriptPlayable_1<T0> {
+    #[method(name = "get_Null", args = 0)]
+    pub fn get_null() -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<T0>;
+
+    #[method(name = "Create", args = 2)]
+    pub fn create(
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        input_count: i32,
+    ) -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<T0>;
+
+    #[method(name = "Create", args = 3)]
+    pub fn create_2(
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        template: T0,
+        input_count: i32,
+    ) -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<T0>;
+
+    #[method(name = "CreateHandle", args = 3)]
+    pub fn create_handle(
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        template: T0,
+        input_count: i32,
+    ) -> crate::unity_engine::playables::playablehandle::PlayableHandle;
+
+    #[method(name = "CreateScriptInstance", args = 0)]
+    pub fn create_script_instance() -> crate::system::object::Object;
+
+    #[method(name = "CloneScriptInstance", args = 1)]
+    pub fn clone_script_instance(
+        source : crate :: unity_engine :: playables :: iplayablebehaviour_interface :: IPlayableBehaviour_Interface,
+    ) -> crate::system::object::Object;
+
+    #[method(name = "CloneScriptInstanceFromEngineObject", args = 1)]
+    pub fn clone_script_instance_from_engine_object(
+        source: crate::unity_engine::object_2::Object_2,
+    ) -> crate::system::object::Object;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, handle: crate::unity_engine::playables::playablehandle::PlayableHandle)
+        -> ();
+
+    #[method(name = "GetHandle", args = 0)]
+    pub fn get_handle(self) -> crate::unity_engine::playables::playablehandle::PlayableHandle;
+
+    #[method(name = "GetBehaviour", args = 0)]
+    pub fn get_behaviour(self) -> T0;
+
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(
+        playable: crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<T0>,
+    ) -> crate::unity_engine::playables::playable::Playable;
+
+    #[method(name = "op_Explicit", args = 1)]
+    pub fn op_explicit(
+        playable: crate::unity_engine::playables::playable::Playable,
+    ) -> crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<T0>;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(
+        self,
+        other: crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<T0>,
+    ) -> bool;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

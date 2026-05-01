@@ -1,0 +1,175 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent.md")))]
+#[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenuCategoryContent")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct DishSelectMenuCategoryContent {
+# [rename (name = "m_CategoryList")] pub m_category_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_CategoryObject > ,
+# [static_field] # [rename (name = "s_EnableCategoryList")] pub s_enable_category_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_CategoryObject > ,
+# [static_field] # [rename (name = "s_Index")] pub s_index : i32 ,
+# [static_field] # [rename (name = "s_OldIndex")] pub s_old_index : i32 ,
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
+#[::unity2::methods]
+impl DishSelectMenuCategoryContent {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ();
+
+    #[method(name = "Next", args = 1)]
+    pub fn next(self, is_trigger: bool) -> bool;
+
+    #[method(name = "Prev", args = 1)]
+    pub fn prev(self, is_trigger: bool) -> bool;
+
+    #[method(name = "InitObject", args = 0)]
+    pub fn init_object(self) -> ();
+
+    #[method(name = "CheckEnable", args = 1)]
+    pub fn check_enable(
+        self,
+        category : crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_CategoryObject,
+    ) -> bool;
+
+    #[method(name = "SetActive", args = 2)]
+    pub fn set_active(
+        self,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        value: bool,
+    ) -> ();
+
+    #[method(name = "GetCountry", args = 1)]
+    pub fn get_country(
+        category : crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_Category,
+    ) -> crate::app::persondata::PersonData_Country;
+
+    #[method(name = "UpdateIndex", args = 0)]
+    pub fn update_index(self) -> ();
+
+    #[method(name = "IsSetup", args = 0)]
+    pub fn is_setup() -> bool;
+
+    #[method(name = "IsRecommended", args = 0)]
+    pub fn is_recommended() -> bool;
+
+    #[method(name = "IsInitRecommended", args = 0)]
+    pub fn is_init_recommended() -> bool;
+
+    #[method(name = "GetCountry", args = 0)]
+    pub fn get_country_2() -> crate::app::persondata::PersonData_Country;
+
+    #[method(name = "GetIndex", args = 0)]
+    pub fn get_index() -> i32;
+
+    #[method(name = "GetOldIndex", args = 0)]
+    pub fn get_old_index() -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
+impl DishSelectMenuCategoryContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishSelectMenuCategoryContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishSelectMenuCategoryContentMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent_CategoryObject.md")))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "DishSelectMenuCategoryContent.CategoryObject"
+)]
+#[parent(crate::system::object::Object)]
+pub struct DishSelectMenuCategoryContent_CategoryObject {
+# [rename (name = "m_Object")] pub m_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_Category")] pub m_category : crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_Category ,
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
+#[::unity2::methods]
+impl DishSelectMenuCategoryContent_CategoryObject {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
+impl DishSelectMenuCategoryContent_CategoryObject {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishSelectMenuCategoryContent_CategoryObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishSelectMenuCategoryContent_CategoryObjectMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent_Category.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct DishSelectMenuCategoryContent_Category {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for DishSelectMenuCategoryContent_Category {
+    const NAMESPACE: &'static str = "App.CookingMenu";
+
+    const NAME: &'static str = "DishSelectMenuCategoryContent.Category";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DishSelectMenuCategoryContent_Category {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl DishSelectMenuCategoryContent_Category {
+    pub fn _unnamed() -> Self {
+        Self { value: 0 }
+    }
+}

@@ -1,0 +1,69 @@
+
+use crate::app::basicitemmenuitem::BasicItemMenuItem;
+use crate::app::basicitemmenuitem::IBasicItemMenuItem;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::refineshoprefinebasemenuitem::IRefineShopRefineBaseMenuItem;
+use crate::app::refineshoprefinebasemenuitem::RefineShopRefineBaseMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshoprefineemptymenuitem/RefineShopRefineEmptyMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "RefineShopRefineEmptyMenuItem")]
+#[parent(crate::app::refineshoprefinebasemenuitem::RefineShopRefineBaseMenuItem)]
+pub struct RefineShopRefineEmptyMenuItem {
+    #[rename(name = "m_BlankTextMID")]
+    pub m_blank_text_mid: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-refineshoprefineemptymenuitem")]
+#[::unity2::methods]
+impl RefineShopRefineEmptyMenuItem {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        blank_text_mid: ::unity2::Il2CppString,
+        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
+    ) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "OnBuildMenuItemContent", args = 0)]
+    pub fn on_build_menu_item_content(self) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetBlankText", args = 0)]
+    pub fn get_blank_text(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsVisibleItemIconOnBlank", args = 0)]
+    pub fn is_visible_item_icon_on_blank(self) -> bool;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-refineshoprefineemptymenuitem")]
+impl RefineShopRefineEmptyMenuItem {
+    pub fn new(
+        blank_text_mid: ::unity2::Il2CppString,
+        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopRefineEmptyMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopRefineEmptyMenuItemMethods>::ctor(
+            this,
+            blank_text_mid,
+            select_event_handler,
+        );
+        this
+    }
+}

@@ -1,0 +1,61 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/platformmappingservice/PlatformMappingService.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets",
+    name = "PlatformMappingService"
+)]
+#[parent(crate::system::object::Object)]
+pub struct PlatformMappingService {
+    #[static_field]
+    #[rename(name = "s_RuntimeTargetMapping")]
+    pub s_runtime_target_mapping: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::unity_engine::runtimeplatform::RuntimePlatform,
+        crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform,
+    >,
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-platformmappingservice")]
+#[::unity2::methods]
+impl PlatformMappingService {
+    #[method(name = "GetAddressablesPlatformInternal", args = 1)]
+    pub fn get_addressables_platform_internal(
+        platform: crate::unity_engine::runtimeplatform::RuntimePlatform,
+    ) -> crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform;
+
+    #[method(name = "GetAddressablesPlatformPathInternal", args = 1)]
+    pub fn get_addressables_platform_path_internal(
+        platform: crate::unity_engine::runtimeplatform::RuntimePlatform,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetPlatform", args = 0)]
+    pub fn get_platform(
+    ) -> crate::unity_engine::addressable_assets::addressablesplatform::AddressablesPlatform;
+
+    #[method(name = "GetPlatformPathSubFolder", args = 0)]
+    pub fn get_platform_path_sub_folder() -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-platformmappingservice")]
+impl PlatformMappingService {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PlatformMappingService),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPlatformMappingServiceMethods>::ctor(this);
+        this
+    }
+}

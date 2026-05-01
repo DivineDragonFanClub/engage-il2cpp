@@ -1,0 +1,43 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/pieceofbondgainsequence/PieceOfBondGainSequence.md")))]
+#[::unity2::class(namespace = "App", name = "PieceOfBondGainSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct PieceOfBondGainSequence {}
+
+#[cfg(feature = "app-pieceofbondgainsequence")]
+#[::unity2::methods]
+impl PieceOfBondGainSequence {
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        item: crate::app::itemdata::ItemData,
+        count: i32,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind_2(super_: crate::app::procinst::ProcInst, count: i32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-pieceofbondgainsequence")]
+impl PieceOfBondGainSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PieceOfBondGainSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPieceOfBondGainSequenceMethods>::ctor(this);
+        this
+    }
+}

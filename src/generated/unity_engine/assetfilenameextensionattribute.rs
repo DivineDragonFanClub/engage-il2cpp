@@ -1,0 +1,39 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/assetfilenameextensionattribute/AssetFileNameExtensionAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "AssetFileNameExtensionAttribute")]
+pub struct AssetFileNameExtensionAttribute {}
+
+#[cfg(feature = "unity_engine-assetfilenameextensionattribute")]
+#[::unity2::methods]
+impl AssetFileNameExtensionAttribute {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        preferred_extension: ::unity2::Il2CppString,
+        other_extensions: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-assetfilenameextensionattribute")]
+impl AssetFileNameExtensionAttribute {
+    pub fn new(
+        preferred_extension: ::unity2::Il2CppString,
+        other_extensions: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssetFileNameExtensionAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetFileNameExtensionAttributeMethods>::ctor(
+            this,
+            preferred_extension,
+            other_extensions,
+        );
+        this
+    }
+}

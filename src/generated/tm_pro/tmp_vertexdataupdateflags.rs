@@ -1,0 +1,72 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_vertexdataupdateflags/TMP_VertexDataUpdateFlags.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TMP_VertexDataUpdateFlags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TMP_VertexDataUpdateFlags {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_VertexDataUpdateFlags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_VertexDataUpdateFlags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TMP_VertexDataUpdateFlags {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn vertices() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn uv0() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn uv2() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn uv4() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn colors32() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn all() -> Self {
+        Self { value: 255 }
+    }
+}

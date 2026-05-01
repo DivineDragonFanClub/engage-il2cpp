@@ -1,0 +1,49 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/netrestorescope/NetRestoreScope.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct NetRestoreScope {
+    pub m_save_play_time: f32,
+    pub m_is_show_net_terms: bool,
+    pub m_is_show_engage_plus_attention: bool,
+    pub m_is_show_field_bgm_changeable: bool,
+    pub m_variable_writer: crate::app::gameuserrestartdata::GameUserRestartData_VariableWriter,
+    pub m_game_config_writer: crate::app::gameuserrestartdata::GameUserRestartData_GameConfigWriter,
+}
+
+impl ::unity2::ClassIdentity for NetRestoreScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NetRestoreScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NetRestoreScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-netrestorescope")]
+#[::unity2::methods(value)]
+impl NetRestoreScope {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, dummy: i32) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}

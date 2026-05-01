@@ -1,0 +1,56 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/beforerenderhelper/BeforeRenderHelper.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "BeforeRenderHelper")]
+#[parent(crate::system::object::Object)]
+pub struct BeforeRenderHelper {
+    #[static_field]
+    #[rename(name = "s_OrderBlocks")]
+    pub s_order_blocks: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::beforerenderhelper::BeforeRenderHelper_OrderBlock,
+    >,
+}
+
+#[cfg(feature = "unity_engine-beforerenderhelper")]
+#[::unity2::methods]
+impl BeforeRenderHelper {
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke() -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/beforerenderhelper/BeforeRenderHelper_OrderBlock.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BeforeRenderHelper_OrderBlock {
+    pub order: i32,
+    pub callback: crate::unity_engine::events::unityaction::UnityAction,
+}
+
+impl ::unity2::ClassIdentity for BeforeRenderHelper_OrderBlock {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "BeforeRenderHelper.OrderBlock";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BeforeRenderHelper_OrderBlock {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

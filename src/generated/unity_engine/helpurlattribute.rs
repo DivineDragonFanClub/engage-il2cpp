@@ -1,0 +1,35 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/helpurlattribute/HelpURLAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "HelpURLAttribute")]
+pub struct HelpURLAttribute {
+    #[rename(name = "m_Url")]
+    pub m_url: ::unity2::Il2CppString,
+    #[rename(name = "m_Dispatcher")]
+    pub m_dispatcher: bool,
+    #[rename(name = "m_DispatchingFieldName")]
+    pub m_dispatching_field_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "unity_engine-helpurlattribute")]
+#[::unity2::methods]
+impl HelpURLAttribute {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, url: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "unity_engine-helpurlattribute")]
+impl HelpURLAttribute {
+    pub fn new(url: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HelpURLAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHelpURLAttributeMethods>::ctor(this, url);
+        this
+    }
+}

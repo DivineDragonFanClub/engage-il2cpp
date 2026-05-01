@@ -1,0 +1,114 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/gbufferpass/GBufferPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "GBufferPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct GBufferPass {
+    #[static_field]
+    #[rename(name = "s_ShaderTagLit")]
+    pub s_shader_tag_lit: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[static_field]
+    #[rename(name = "s_ShaderTagSimpleLit")]
+    pub s_shader_tag_simple_lit: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[static_field]
+    #[rename(name = "s_ShaderTagUnlit")]
+    pub s_shader_tag_unlit: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[static_field]
+    #[rename(name = "s_ShaderTagUniversalGBuffer")]
+    pub s_shader_tag_universal_g_buffer: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[static_field]
+    #[rename(name = "s_ShaderTagUniversalMaterialType")]
+    pub s_shader_tag_universal_material_type:
+        crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[rename(name = "m_ProfilingSampler")]
+    pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[rename(name = "m_DeferredLights")]
+    pub m_deferred_lights:
+        crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights,
+    #[rename(name = "m_ShaderTagValues")]
+    pub m_shader_tag_values:
+        ::unity2::Array<crate::unity_engine::rendering::shadertagid::ShaderTagId>,
+    #[rename(name = "m_RenderStateBlocks")]
+    pub m_render_state_blocks:
+        ::unity2::Array<crate::unity_engine::rendering::renderstateblock::RenderStateBlock>,
+    #[rename(name = "m_FilteringSettings")]
+    pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+    #[rename(name = "m_RenderStateBlock")]
+    pub m_render_state_block: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-gbufferpass")]
+#[::unity2::methods]
+impl GBufferPass {
+    #[method(name = ".ctor", args = 6)]
+    pub fn ctor(
+        self,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
+        stencil_reference: i32,
+        deferred_lights : crate :: unity_engine :: rendering :: universal :: internal :: deferredlights :: DeferredLights,
+    ) -> ();
+
+    #[method(name = "Configure", args = 2)]
+    pub fn configure(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        camera_texture_descriptor : crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "OnCameraCleanup", args = 1)]
+    pub fn on_camera_cleanup(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-gbufferpass")]
+impl GBufferPass {
+    pub fn new(
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        stencil_state: crate::unity_engine::rendering::stencilstate::StencilState,
+        stencil_reference: i32,
+        deferred_lights : crate :: unity_engine :: rendering :: universal :: internal :: deferredlights :: DeferredLights,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GBufferPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGBufferPassMethods>::ctor(
+            this,
+            evt,
+            render_queue_range,
+            layer_mask,
+            stencil_state,
+            stencil_reference,
+            deferred_lights,
+        );
+        this
+    }
+}

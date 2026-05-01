@@ -1,0 +1,16 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/charactergamestatusex/CharacterGameStatusEx.md")))]
+#[::unity2::class(namespace = "Combat", name = "CharacterGameStatusEx")]
+#[parent(crate::system::object::Object)]
+pub struct CharacterGameStatusEx {}
+
+#[cfg(feature = "combat-charactergamestatusex")]
+#[::unity2::methods]
+impl CharacterGameStatusEx {
+    #[method(name = "IsValid", args = 1)]
+    pub fn is_valid(gs: crate::combat::charactergamestatus::CharacterGameStatus) -> bool;
+}

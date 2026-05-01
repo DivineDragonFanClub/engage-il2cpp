@@ -1,0 +1,75 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/initialization/cacheinitializationdata/CacheInitializationData.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets.Initialization",
+    name = "CacheInitializationData"
+)]
+#[parent(crate::system::object::Object)]
+pub struct CacheInitializationData {
+    #[rename(name = "m_CompressionEnabled")]
+    pub m_compression_enabled: bool,
+    #[rename(name = "m_CacheDirectoryOverride")]
+    pub m_cache_directory_override: ::unity2::Il2CppString,
+    #[rename(name = "m_ExpirationDelay")]
+    pub m_expiration_delay: i32,
+    #[rename(name = "m_LimitCacheSize")]
+    pub m_limit_cache_size: bool,
+    #[rename(name = "m_MaximumCacheSize")]
+    pub m_maximum_cache_size: i64,
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitializationdata")]
+#[::unity2::methods]
+impl CacheInitializationData {
+    #[method(name = "get_CompressionEnabled", args = 0)]
+    pub fn get_compression_enabled(self) -> bool;
+
+    #[method(name = "set_CompressionEnabled", args = 1)]
+    pub fn set_compression_enabled(self, value: bool) -> ();
+
+    #[method(name = "get_CacheDirectoryOverride", args = 0)]
+    pub fn get_cache_directory_override(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_CacheDirectoryOverride", args = 1)]
+    pub fn set_cache_directory_override(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_ExpirationDelay", args = 0)]
+    pub fn get_expiration_delay(self) -> i32;
+
+    #[method(name = "set_ExpirationDelay", args = 1)]
+    pub fn set_expiration_delay(self, value: i32) -> ();
+
+    #[method(name = "get_LimitCacheSize", args = 0)]
+    pub fn get_limit_cache_size(self) -> bool;
+
+    #[method(name = "set_LimitCacheSize", args = 1)]
+    pub fn set_limit_cache_size(self, value: bool) -> ();
+
+    #[method(name = "get_MaximumCacheSize", args = 0)]
+    pub fn get_maximum_cache_size(self) -> i64;
+
+    #[method(name = "set_MaximumCacheSize", args = 1)]
+    pub fn set_maximum_cache_size(self, value: i64) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitializationdata")]
+impl CacheInitializationData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CacheInitializationData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICacheInitializationDataMethods>::ctor(this);
+        this
+    }
+}

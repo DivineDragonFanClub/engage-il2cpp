@@ -1,0 +1,19 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/runtimeanimationeventutility/RuntimeAnimationEventUtility.md")))]
+#[::unity2::class(namespace = "Combat", name = "RuntimeAnimationEventUtility")]
+#[parent(crate::system::object::Object)]
+pub struct RuntimeAnimationEventUtility {}
+
+#[cfg(feature = "combat-runtimeanimationeventutility")]
+#[::unity2::methods]
+impl RuntimeAnimationEventUtility {
+    #[method(name = "FindByName", args = 2)]
+    pub fn find_by_name(
+        events: ::unity2::Array<crate::unity_engine::animationevent::AnimationEvent>,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::animationevent::AnimationEvent;
+}

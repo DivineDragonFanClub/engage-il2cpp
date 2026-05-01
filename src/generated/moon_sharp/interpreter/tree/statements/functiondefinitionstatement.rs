@@ -1,0 +1,75 @@
+
+use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+use crate::moon_sharp::interpreter::tree::nodebase::NodeBase;
+use crate::moon_sharp::interpreter::tree::statement::IStatement;
+use crate::moon_sharp::interpreter::tree::statement::Statement;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/statements/functiondefinitionstatement/FunctionDefinitionStatement.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Statements",
+    name = "FunctionDefinitionStatement"
+)]
+#[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
+pub struct FunctionDefinitionStatement {
+# [rename (name = "m_FuncSymbol")] pub m_func_symbol : crate :: moon_sharp :: interpreter :: symbolref :: SymbolRef ,
+# [rename (name = "m_SourceRef")] pub m_source_ref : crate :: moon_sharp :: interpreter :: debugging :: sourceref :: SourceRef ,
+# [rename (name = "m_Local")] pub m_local : bool ,
+# [rename (name = "m_IsMethodCallingConvention")] pub m_is_method_calling_convention : bool ,
+# [rename (name = "m_MethodName")] pub m_method_name : :: unity2 :: Il2CppString ,
+# [rename (name = "m_FriendlyName")] pub m_friendly_name : :: unity2 :: Il2CppString ,
+# [rename (name = "m_TableAccessors")] pub m_table_accessors : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
+# [rename (name = "m_FuncDef")] pub m_func_def : crate :: moon_sharp :: interpreter :: tree :: expressions :: functiondefinitionexpression :: FunctionDefinitionExpression ,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-functiondefinitionstatement")]
+#[::unity2::methods]
+impl FunctionDefinitionStatement {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        local: bool,
+        local_token: crate::moon_sharp::interpreter::tree::token::Token,
+    ) -> ();
+
+    #[method(name = "Compile", args = 1)]
+    pub fn compile(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> ();
+
+    #[method(name = "SetMethod", args = 1)]
+    pub fn set_method(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> i32;
+
+    #[method(name = "SetFunction", args = 2)]
+    pub fn set_function(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+        num_pop: i32,
+    ) -> i32;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-functiondefinitionstatement")]
+impl FunctionDefinitionStatement {
+    pub fn new(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        local: bool,
+        local_token: crate::moon_sharp::interpreter::tree::token::Token,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FunctionDefinitionStatement),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFunctionDefinitionStatementMethods>::ctor(this, lcontext, local, local_token);
+        this
+    }
+}

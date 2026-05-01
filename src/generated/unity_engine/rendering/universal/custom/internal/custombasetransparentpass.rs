@@ -1,0 +1,106 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custombasetransparentpass/CustomBaseTransparentPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+    name = "CustomBaseTransparentPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct CustomBaseTransparentPass {
+    #[rename(name = "m_FilteringSettings")]
+    pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+    #[rename(name = "m_RenderStateBlock")]
+    pub m_render_state_block: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
+    #[rename(name = "m_DefaultShaderTagId")]
+    pub m_default_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[rename(name = "m_ShaderTagIdList")]
+    pub m_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    >,
+    #[rename(name = "m_UnlitShaderTagId")]
+    pub m_unlit_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[rename(name = "m_ProfilerTag")]
+    pub m_profiler_tag: ::unity2::Il2CppString,
+    #[rename(name = "m_ProfilingSampler")]
+    pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "s_DrawObjectPassDataPropID")]
+    pub s_draw_object_pass_data_prop_id: i32,
+    #[rename(name = "m_NoOverrideStateShaderTagIdList")]
+    pub m_no_override_state_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    >,
+    #[rename(name = "m_MixedResolutionEnabled")]
+    pub m_mixed_resolution_enabled: bool,
+    #[rename(name = "m_ShouldSetEffectDepth")]
+    pub m_should_set_effect_depth: bool,
+    #[rename(name = "m_EffectDepthId")]
+    pub m_effect_depth_id:
+        crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass")]
+#[::unity2::methods]
+impl CustomBaseTransparentPass {
+    #[method(name = "get_statusRenderingFlag", args = 0)]
+    pub fn get_status_rendering_flag(self) -> bool;
+
+    #[method(name = "set_statusRenderingFlag", args = 1)]
+    pub fn set_status_rendering_flag(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        profiler_tag: ::unity2::Il2CppString,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+    ) -> ();
+
+    #[method(name = "SetMixedResolutionEnabled", args = 1)]
+    pub fn set_mixed_resolution_enabled(self, enabled: bool) -> ();
+
+    #[method(name = "SetEffectDepth", args = 1)]
+    pub fn set_effect_depth(self, id: i32) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombasetransparentpass")]
+impl CustomBaseTransparentPass {
+    pub fn new(
+        profiler_tag: ::unity2::Il2CppString,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomBaseTransparentPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomBaseTransparentPassMethods>::ctor(
+            this,
+            profiler_tag,
+            evt,
+            render_queue_range,
+            layer_mask,
+        );
+        this
+    }
+}

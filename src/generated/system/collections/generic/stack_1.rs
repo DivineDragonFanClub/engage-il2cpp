@@ -1,0 +1,160 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/stack_1/Stack_1_Enumerator.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Stack_1_Enumerator<T0> {
+    pub _phantom: ::core::marker::PhantomData<(T0,)>,
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for Stack_1_Enumerator<T0> {
+    const NAMESPACE: &'static str = "System.Collections.Generic";
+
+    const NAME: &'static str = "Stack`1.Enumerator";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                .expect("generic instantiation")
+        })
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for Stack_1_Enumerator<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "system-collections-generic-stack_1")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity> Stack_1_Enumerator<T0> {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, stack: crate::system::collections::generic::stack_1::Stack_1<T0>) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> T0;
+
+    #[method(name = "ThrowEnumerationNotStartedOrEnded", args = 0)]
+    pub fn throw_enumeration_not_started_or_ended(self) -> ();
+
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+
+    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
+    pub fn system_collections_i_enumerator_reset(self) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/stack_1/Stack_1.md")))]
+#[::unity2::class(namespace = "System.Collections.Generic", name = "Stack`1")]
+pub struct Stack_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "_array")]
+    pub array: ::unity2::Array<T0>,
+    #[rename(name = "_size")]
+    pub size: i32,
+    #[rename(name = "_version")]
+    pub version: i32,
+    #[rename(name = "_syncRoot")]
+    pub sync_root: ::unity2::IlInstance,
+    #[static_field]
+    #[rename(name = "DefaultCapacity")]
+    pub default_capacity: i32,
+}
+
+#[cfg(feature = "system-collections-generic-stack_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> Stack_1<T0> {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, capacity: i32) -> ();
+
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
+    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
+
+    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
+    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "Contains", args = 1)]
+    pub fn contains(self, item: T0) -> bool;
+
+    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
+    pub fn system_collections_i_collection_copy_to(
+        self,
+        array: ::unity2::IlInstance,
+        array_index: i32,
+    ) -> ();
+
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator(
+        self,
+    ) -> crate::system::collections::generic::stack_1::Stack_1_Enumerator<T0>;
+
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "Peek", args = 0)]
+    pub fn peek(self) -> T0;
+
+    #[method(name = "Pop", args = 0)]
+    pub fn pop(self) -> T0;
+
+    #[method(name = "Push", args = 1)]
+    pub fn push(self, item: T0) -> ();
+
+    #[method(name = "ThrowForEmptyStack", args = 0)]
+    pub fn throw_for_empty_stack(self) -> ();
+}
+
+#[cfg(feature = "system-collections-generic-stack_1")]
+impl<T0: ::unity2::ClassIdentity> Stack_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Stack_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStack_1Methods<T0>>::ctor(this);
+        this
+    }
+
+    pub fn new_2(capacity: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Stack_1),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IStack_1Methods<T0>>::ctor_2(this, capacity);
+        this
+    }
+}

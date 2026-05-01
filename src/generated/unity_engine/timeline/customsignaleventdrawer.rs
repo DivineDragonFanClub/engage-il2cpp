@@ -1,0 +1,33 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::propertyattribute::IPropertyAttribute;
+use crate::unity_engine::propertyattribute::PropertyAttribute;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/customsignaleventdrawer/CustomSignalEventDrawer.md")))]
+#[::unity2::class(namespace = "UnityEngine.Timeline", name = "CustomSignalEventDrawer")]
+#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
+pub struct CustomSignalEventDrawer {}
+
+#[cfg(feature = "unity_engine-timeline-customsignaleventdrawer")]
+#[::unity2::methods]
+impl CustomSignalEventDrawer {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-timeline-customsignaleventdrawer")]
+impl CustomSignalEventDrawer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomSignalEventDrawer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomSignalEventDrawerMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,19 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/iupdateselectedhandler/IUpdateSelectedHandler.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.EventSystems",
+    name = "IUpdateSelectedHandler"
+)]
+pub struct IUpdateSelectedHandler {}
+
+#[cfg(feature = "unity_engine-event_systems-iupdateselectedhandler")]
+#[::unity2::methods]
+impl IUpdateSelectedHandler {
+    #[method(name = "OnUpdateSelected", args = 1)]
+    pub fn on_update_selected(
+        self,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+}

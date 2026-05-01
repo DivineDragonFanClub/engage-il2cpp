@@ -1,0 +1,86 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowertopmenuroot/CapeTowerTopMenuRoot.md")))]
+#[::unity2::class(namespace = "App", name = "CapeTowerTopMenuRoot")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct CapeTowerTopMenuRoot {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_CapeTowerTopMenuContent")]
+    pub m_cape_tower_top_menu_content: crate::app::capetowertopmenucontent::CapeTowerTopMenuContent,
+    #[rename(name = "m_InfoWindow")]
+    pub m_info_window: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_InfoWindowAnimator")]
+    pub m_info_window_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_InfoWindowCaptionText")]
+    pub m_info_window_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_InfoWindowDescriptionText")]
+    pub m_info_window_description_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-capetowertopmenuroot")]
+#[::unity2::methods]
+impl CapeTowerTopMenuRoot {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "CreateRoot", args = 0)]
+    pub fn create_root() -> crate::app::capetowertopmenuroot::CapeTowerTopMenuRoot;
+
+    #[method(name = "Create", args = 0)]
+    pub fn create(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "GetCapeTowerTopMenuContent", args = 0)]
+    pub fn get_cape_tower_top_menu_content(
+        self,
+    ) -> crate::app::capetowertopmenucontent::CapeTowerTopMenuContent;
+
+    #[method(name = "UpdateInfoWindow", args = 2)]
+    pub fn update_info_window(
+        self,
+        caption_mid: ::unity2::Il2CppString,
+        description_mid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+}
+
+#[cfg(feature = "app-capetowertopmenuroot")]
+impl CapeTowerTopMenuRoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CapeTowerTopMenuRoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICapeTowerTopMenuRootMethods>::ctor(this);
+        this
+    }
+}

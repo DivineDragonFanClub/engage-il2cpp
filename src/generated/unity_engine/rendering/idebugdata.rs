@@ -1,0 +1,13 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/idebugdata/IDebugData.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "IDebugData")]
+pub struct IDebugData {}
+
+#[cfg(feature = "unity_engine-rendering-idebugdata")]
+#[::unity2::methods]
+impl IDebugData {
+    #[method(name = "GetReset", args = 0)]
+    pub fn get_reset(self) -> crate::system::action::Action;
+}

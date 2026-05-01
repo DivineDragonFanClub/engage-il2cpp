@@ -1,0 +1,13 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/animatorlayer/AnimatorLayer.md")))]
+#[::unity2::class(namespace = "Combat", name = "AnimatorLayer")]
+#[parent(crate::system::object::Object)]
+pub struct AnimatorLayer {
+    #[static_field]
+    #[rename(name = "Default")]
+    pub default: i32,
+}

@@ -1,0 +1,78 @@
+
+use crate::app::resourcehandle_2::IResourceHandle_2;
+use crate::app::resourcehandle_2::ResourceHandle_2;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tresourcehandle_1/TResourceHandle_1.md")))]
+#[::unity2::class(namespace = "App", name = "TResourceHandle`1")]
+pub struct TResourceHandle_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-tresourcehandle_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> TResourceHandle_1<T0> {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        path: ::unity2::Il2CppString,
+        completed: crate::system::action_1::Action_1<T0>,
+    ) -> ();
+
+    #[method(name = "GetAsset", args = 0)]
+    pub fn get_asset(self) -> T0;
+
+    #[method(name = "LoadAsync", args = 2)]
+    pub fn load_async(
+        self,
+        path: ::unity2::Il2CppString,
+        completed: crate::system::action_1::Action_1<T0>,
+    ) -> ();
+
+    #[method(name = "Instantiate", args = 2)]
+    pub fn instantiate(
+        self,
+        parent: crate::unity_engine::gameobject::GameObject,
+        name: ::unity2::Il2CppString,
+    ) -> T0;
+
+    #[method(name = "Instantiate", args = 2)]
+    pub fn instantiate_2(
+        self,
+        parent: crate::unity_engine::transform::Transform,
+        name: ::unity2::Il2CppString,
+    ) -> T0;
+}
+
+#[cfg(feature = "app-tresourcehandle_1")]
+impl<T0: ::unity2::ClassIdentity> TResourceHandle_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TResourceHandle_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITResourceHandle_1Methods<T0>>::ctor(this);
+        this
+    }
+
+    pub fn new_2(
+        path: ::unity2::Il2CppString,
+        completed: crate::system::action_1::Action_1<T0>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TResourceHandle_1),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ITResourceHandle_1Methods<T0>>::ctor_2(this, path, completed);
+        this
+    }
+}

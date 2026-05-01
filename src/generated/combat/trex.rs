@@ -1,0 +1,16 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/trex/TREx.md")))]
+#[::unity2::class(namespace = "Combat", name = "TREx")]
+#[parent(crate::system::object::Object)]
+pub struct TREx {}
+
+#[cfg(feature = "combat-trex")]
+#[::unity2::methods]
+impl TREx {
+    #[method(name = "SetTR", args = 2)]
+    pub fn set_tr(t: crate::unity_engine::transform::Transform, tr: crate::combat::tr::TR) -> ();
+}

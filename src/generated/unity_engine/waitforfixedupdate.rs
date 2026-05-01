@@ -1,0 +1,33 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::yieldinstruction::IYieldInstruction;
+use crate::unity_engine::yieldinstruction::YieldInstruction;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/waitforfixedupdate/WaitForFixedUpdate.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "WaitForFixedUpdate")]
+#[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]
+pub struct WaitForFixedUpdate {}
+
+#[cfg(feature = "unity_engine-waitforfixedupdate")]
+#[::unity2::methods]
+impl WaitForFixedUpdate {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-waitforfixedupdate")]
+impl WaitForFixedUpdate {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WaitForFixedUpdate),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWaitForFixedUpdateMethods>::ctor(this);
+        this
+    }
+}

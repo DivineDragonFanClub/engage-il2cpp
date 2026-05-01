@@ -1,0 +1,100 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/shadowmappass/ShadowMapPass.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ShadowMapPass {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ShadowMapPass {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "ShadowMapPass";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ShadowMapPass {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ShadowMapPass {
+    pub fn pointlight_positive_x() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn pointlight_negative_x() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn pointlight_positive_y() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn pointlight_negative_y() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn pointlight_positive_z() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn pointlight_negative_z() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn directional_cascade0() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn directional_cascade1() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn directional_cascade2() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn directional_cascade3() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn spotlight() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn pointlight() -> Self {
+        Self { value: 63 }
+    }
+
+    pub fn directional() -> Self {
+        Self { value: 960 }
+    }
+
+    pub fn all() -> Self {
+        Self { value: 2047 }
+    }
+}

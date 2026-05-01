@@ -1,0 +1,46 @@
+
+use crate::app::structlist_1::IStructList_1;
+use crate::app::structlist_1::StructList_1;
+use crate::system::collections::generic::list_1::IList_1;
+use crate::system::collections::generic::list_1::List_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/structdataarraylist_1/StructDataArrayList_1.md")))]
+#[::unity2::class(namespace = "App", name = "StructDataArrayList`1")]
+pub struct StructDataArrayList_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-structdataarraylist_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> StructDataArrayList_1<T0> {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_ArrayName", args = 0)]
+    pub fn get_array_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_ArrayName", args = 1)]
+    pub fn set_array_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_ArrayHash", args = 0)]
+    pub fn get_array_hash(self) -> i32;
+
+    #[method(name = "set_ArrayHash", args = 1)]
+    pub fn set_array_hash(self, value: i32) -> ();
+}
+
+#[cfg(feature = "app-structdataarraylist_1")]
+impl<T0: ::unity2::ClassIdentity> StructDataArrayList_1<T0> {
+    pub fn new(name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StructDataArrayList_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStructDataArrayList_1Methods<T0>>::ctor(this, name);
+        this
+    }
+}

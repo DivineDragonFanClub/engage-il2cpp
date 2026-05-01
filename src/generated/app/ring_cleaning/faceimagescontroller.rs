@@ -1,0 +1,320 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_AnimType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FaceImagesController_AnimType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FaceImagesController_AnimType {
+    const NAMESPACE: &'static str = "App.RingCleaning";
+
+    const NAME: &'static str = "FaceImagesController.AnimType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FaceImagesController_AnimType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FaceImagesController_AnimType {
+    pub fn none() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn normal() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn surprise() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn smile() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn die() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn relax() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn shy() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_ReturnEntryComponent.md")))]
+#[::unity2::class(
+    namespace = "App.RingCleaning",
+    name = "FaceImagesController.ReturnEntryComponent"
+)]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct FaceImagesController_ReturnEntryComponent {
+    #[rename(name = "m_Character")]
+    pub m_character: crate::combat::character::Character,
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_NowAnimName")]
+    pub m_now_anim_name: ::unity2::Il2CppString,
+    #[rename(name = "m_ChangeAnimName")]
+    pub m_change_anim_name: ::unity2::Il2CppString,
+    #[rename(name = "m_Time")]
+    pub m_time: f32,
+}
+
+#[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
+#[::unity2::methods]
+impl FaceImagesController_ReturnEntryComponent {
+    #[method(name = "SetCharacter", args = 3)]
+    pub fn set_character(
+        self,
+        chara: crate::combat::character::Character,
+        now_anim_name: ::unity2::Il2CppString,
+        change_anim_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
+impl FaceImagesController_ReturnEntryComponent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FaceImagesController_ReturnEntryComponent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFaceImagesController_ReturnEntryComponentMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController.md")))]
+#[::unity2::class(namespace = "App.RingCleaning", name = "FaceImagesController")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct FaceImagesController {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_UnitModelRoot")]
+    pub m_unit_model_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_GodModelRoot")]
+    pub m_god_model_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_UnitChara")]
+    pub m_unit_chara: crate::combat::character::Character,
+    #[rename(name = "m_GodChara")]
+    pub m_god_chara: crate::combat::character::Character,
+    #[rename(name = "m_GodEffectPos")]
+    pub m_god_effect_pos: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_FinishSetupNum")]
+    pub m_finish_setup_num: i32,
+    #[rename(name = "m_IsSetupLookAt")]
+    pub m_is_setup_look_at: bool,
+    #[rename(name = "m_IsFirstCleaning")]
+    pub m_is_first_cleaning: bool,
+    #[rename(name = "m_カメラの高さをキャラクターの頭部に合わせる")]
+    pub m______________________: bool,
+    #[rename(name = "m_カメラの高さ補正値")]
+    pub m__________: f32,
+    #[static_field]
+    #[rename(name = "UnitDefaultAnim")]
+    pub unit_default_anim: ::unity2::Il2CppString,
+    #[rename(name = "m_GodStrongHitIndex")]
+    pub m_god_strong_hit_index: i32,
+    #[rename(name = "GodStrongHitAnim")]
+    pub god_strong_hit_anim: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
+#[::unity2::methods]
+impl FaceImagesController {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "Create", args = 0)]
+    pub fn create() -> crate::app::ring_cleaning::faceimagescontroller::FaceImagesController;
+
+    #[method(name = "Destroy", args = 1)]
+    pub fn destroy(
+        content: crate::app::ring_cleaning::faceimagescontroller::FaceImagesController,
+    ) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "AdjustCameraY", args = 3)]
+    pub fn adjust_camera_y(
+        self,
+        character: crate::combat::character::Character,
+        camera: crate::unity_engine::camera::Camera,
+        is_god: bool,
+    ) -> ();
+
+    #[method(name = "IsCreated", args = 0)]
+    pub fn is_created(self) -> bool;
+
+    #[method(name = "IsSetupFinished", args = 0)]
+    pub fn is_setup_finished(self) -> bool;
+
+    #[method(name = "AdjustCameraY", args = 0)]
+    pub fn adjust_camera_y_2(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "PlayNoteEffect", args = 1)]
+    pub fn play_note_effect(
+        self,
+        strength: crate::app::ringcleaningsequence::RingCleaningSequence_Strength,
+    ) -> ();
+
+    #[method(name = "PlayFacial", args = 2)]
+    pub fn play_facial(
+        self,
+        pattern: crate::app::ring_cleaning::faceimagescontroller::FaceImagesController_PlayPattern,
+        voice_data: crate::app::ringcleaningvoicedata::RingCleaningVoiceData,
+    ) -> ();
+
+    #[method(name = "PlayFacialUnit", args = 2)]
+    pub fn play_facial_unit(
+        self,
+        state: ::unity2::Il2CppString,
+        overwrite: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "PlayFacialGod", args = 3)]
+    pub fn play_facial_god(
+        self,
+        state: ::unity2::Il2CppString,
+        change_anim_name: ::unity2::Il2CppString,
+        overwrite: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "GetGodStrongHitFaceAnim", args = 0)]
+    pub fn get_god_strong_hit_face_anim(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "SetupLookAt", args = 2)]
+    pub fn setup_look_at(
+        self,
+        character: crate::combat::character::Character,
+        target: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ring_cleaning-faceimagescontroller")]
+impl FaceImagesController {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FaceImagesController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFaceImagesControllerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_PlayPattern.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FaceImagesController_PlayPattern {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FaceImagesController_PlayPattern {
+    const NAMESPACE: &'static str = "App.RingCleaning";
+
+    const NAME: &'static str = "FaceImagesController.PlayPattern";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FaceImagesController_PlayPattern {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FaceImagesController_PlayPattern {
+    pub fn anything() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn hit_weak() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn hit_strong() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn clear() -> Self {
+        Self { value: 3 }
+    }
+}

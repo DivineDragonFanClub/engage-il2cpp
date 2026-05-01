@@ -1,0 +1,391 @@
+
+use crate::app::aisimulatorbase::AISimulatorBase;
+use crate::app::aisimulatorbase::IAISimulatorBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aibattlesimulator/AIBattleSimulator_Break.md")))]
+#[::unity2::class(namespace = "App", name = "AIBattleSimulator.Break")]
+#[parent(crate::system::object::Object)]
+pub struct AIBattleSimulator_Break {
+    #[static_field]
+    #[rename(name = "MaxStun")]
+    pub max_stun: f32,
+    #[rename(name = "m_BreakAttack")]
+    pub m_break_attack: f32,
+    #[rename(name = "m_Stun")]
+    pub m_stun: f32,
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+#[::unity2::methods]
+impl AIBattleSimulator_Break {
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(
+        self,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        indication: crate::app::aibattlesimulator::AIBattleSimulator_Indication,
+    ) -> ();
+
+    #[method(name = "Disable", args = 0)]
+    pub fn disable(self) -> ();
+
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, break_attack: f32) -> ();
+
+    #[method(name = "get_BreakAttack", args = 0)]
+    pub fn get_break_attack(self) -> f32;
+
+    #[method(name = "get_Stun", args = 0)]
+    pub fn get_stun(self) -> f32;
+
+    #[method(name = "get_IsNotBreak", args = 0)]
+    pub fn get_is_not_break(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+impl AIBattleSimulator_Break {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIBattleSimulator_Break),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIBattleSimulator_BreakMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aibattlesimulator/AIBattleSimulator_ChainAttackCandidate.md")))]
+#[::unity2::class(namespace = "App", name = "AIBattleSimulator.ChainAttackCandidate")]
+#[parent(crate::system::object::Object)]
+pub struct AIBattleSimulator_ChainAttackCandidate {}
+
+#[cfg(feature = "app-aibattlesimulator")]
+#[::unity2::methods]
+impl AIBattleSimulator_ChainAttackCandidate {
+    #[method(name = "get_Side", args = 0)]
+    pub fn get_side(self) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "set_Side", args = 1)]
+    pub fn set_side(self, value: crate::app::battleinfoside::BattleInfoSide) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+impl AIBattleSimulator_ChainAttackCandidate {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIBattleSimulator_ChainAttackCandidate),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIBattleSimulator_ChainAttackCandidateMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aibattlesimulator/AIBattleSimulator.md")))]
+#[::unity2::class(namespace = "App", name = "AIBattleSimulator")]
+#[parent(crate::app::aisimulatorbase::AISimulatorBase)]
+pub struct AIBattleSimulator {
+    #[static_field]
+    #[rename(name = "MaxSceneTimes")]
+    pub max_scene_times: i32,
+    #[static_field]
+    #[rename(name = "BattleSideOf")]
+    pub battle_side_of: i32,
+    #[static_field]
+    #[rename(name = "BattleSideDf")]
+    pub battle_side_df: i32,
+    #[rename(name = "m_aIndication")]
+    pub m_a_indication:
+        ::unity2::Array<crate::app::aibattlesimulator::AIBattleSimulator_Indication>,
+    #[rename(name = "m_Kill")]
+    pub m_kill: f32,
+    #[rename(name = "m_Dead")]
+    pub m_dead: f32,
+    #[rename(name = "m_Expectation")]
+    pub m_expectation: f32,
+    #[rename(name = "m_ExpectationReceived")]
+    pub m_expectation_received: f32,
+    #[rename(name = "m_Attack")]
+    pub m_attack: f32,
+    #[rename(name = "m_Follow")]
+    pub m_follow: f32,
+    #[rename(name = "m_aChainAttackCandidate")]
+    pub m_a_chain_attack_candidate:
+        ::unity2::Array<crate::app::aibattlesimulator::AIBattleSimulator_ChainAttackCandidate>,
+    #[rename(name = "m_ChainAttackExpectation")]
+    pub m_chain_attack_expectation: f32,
+    #[rename(name = "m_aBreak")]
+    pub m_a_break: ::unity2::Array<crate::app::aibattlesimulator::AIBattleSimulator_Break>,
+    #[rename(name = "m_BattleSides")]
+    pub m_battle_sides: ::unity2::Array<i32>,
+    #[rename(name = "m_OffenseBattleTimes")]
+    pub m_offense_battle_times: i32,
+    #[rename(name = "m_DefenseBattleTimes")]
+    pub m_defense_battle_times: i32,
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+#[::unity2::methods]
+impl AIBattleSimulator {
+    #[method(name = "get_Kill", args = 0)]
+    pub fn get_kill(self) -> f32;
+
+    #[method(name = "get_Dead", args = 0)]
+    pub fn get_dead(self) -> f32;
+
+    #[method(name = "get_Expectation", args = 0)]
+    pub fn get_expectation(self) -> f32;
+
+    #[method(name = "get_Attack", args = 0)]
+    pub fn get_attack(self) -> f32;
+
+    #[method(name = "get_Follow", args = 0)]
+    pub fn get_follow(self) -> f32;
+
+    #[method(name = "get_Power", args = 0)]
+    pub fn get_power(self) -> i32;
+
+    #[method(name = "get_Hit", args = 0)]
+    pub fn get_hit(self) -> f32;
+
+    #[method(name = "get_OffenseBattleTimes", args = 0)]
+    pub fn get_offense_battle_times(self) -> i32;
+
+    #[method(name = "get_DefenseBattleTimes", args = 0)]
+    pub fn get_defense_battle_times(self) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Calculate", args = 11)]
+    pub fn calculate(
+        self,
+        offense: crate::app::unit::Unit,
+        defense: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        range: i32,
+        item_index: i32,
+        skill: crate::app::skilldata::SkillData,
+        defense_x: i32,
+        defense_z: i32,
+        is_remove: bool,
+        battle_count: i32,
+    ) -> ();
+
+    #[method(name = "IsPower0Attack", args = 0)]
+    pub fn is_power0_attack(self) -> bool;
+
+    #[method(name = "CalculateBattleInfo", args = 10)]
+    pub fn calculate_battle_info(
+        self,
+        offense: crate::app::unit::Unit,
+        defense: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        range: i32,
+        unit_item: crate::app::unititem::UnitItem,
+        skill: crate::app::skilldata::SkillData,
+        defense_x: i32,
+        defense_z: i32,
+        battle_count: i32,
+    ) -> ();
+
+    #[method(name = "CalculateIndication", args = 1)]
+    pub fn calculate_indication(self, side: crate::app::battleside::BattleSide_Type) -> ();
+
+    #[method(name = "CalculateKillProbabilityWithoutInterference", args = 1)]
+    pub fn calculate_kill_probability_without_interference(
+        self,
+        side: crate::app::battleside::BattleSide_Type,
+    ) -> ();
+
+    #[method(name = "CalculateKillProbabilityWithoutInterference2", args = 5)]
+    pub fn calculate_kill_probability_without_interference2(
+        self,
+        side: crate::app::battleside::BattleSide_Type,
+        count: i32,
+        times: i32,
+        now_probability: f32,
+        rest_hp: i32,
+    ) -> ();
+
+    #[method(name = "CalculateKillProbabilityWithoutInterference3", args = 6)]
+    pub fn calculate_kill_probability_without_interference3(
+        self,
+        side: crate::app::battleside::BattleSide_Type,
+        count: i32,
+        times: i32,
+        now_probability: f32,
+        rest_hp: i32,
+        damage: i32,
+    ) -> ();
+
+    #[method(name = "GetSceneSide", args = 1)]
+    pub fn get_scene_side(
+        self,
+        side: crate::app::battleside::BattleSide_Type,
+    ) -> crate::app::battleside::BattleSide_Type;
+
+    #[method(name = "CalculateChainIndication", args = 0)]
+    pub fn calculate_chain_indication(self) -> ();
+
+    #[method(name = "CalculateChainAttackIndication", args = 2)]
+    pub fn calculate_chain_attack_indication(
+        self,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        reverse: crate::app::battleinfoside::BattleInfoSide,
+    ) -> ();
+
+    #[method(name = "CalculateScore", args = 1)]
+    pub fn calculate_score(self, is_remove: bool) -> ();
+
+    #[method(name = "KillScoreNormalize", args = 1)]
+    pub fn kill_score_normalize(self, kill: f32) -> u32;
+
+    #[method(name = "ExpectationScoreNormalize", args = 3)]
+    pub fn expectation_score_normalize(self, expectation: f32, bit: i32, max: i32) -> u32;
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+impl AIBattleSimulator {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIBattleSimulator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIBattleSimulatorMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aibattlesimulator/AIBattleSimulator_Indication.md")))]
+#[::unity2::class(namespace = "App", name = "AIBattleSimulator.Indication")]
+#[parent(crate::system::object::Object)]
+pub struct AIBattleSimulator_Indication {
+    #[rename(name = "m_Power")]
+    pub m_power: i32,
+    #[rename(name = "m_SkillPower")]
+    pub m_skill_power: i32,
+    #[rename(name = "m_Hit")]
+    pub m_hit: f32,
+    #[rename(name = "m_Critical")]
+    pub m_critical: f32,
+    #[rename(name = "m_Skill")]
+    pub m_skill: f32,
+    #[rename(name = "m_SkillCritical")]
+    pub m_skill_critical: f32,
+    #[rename(name = "m_Prevent")]
+    pub m_prevent: f32,
+    #[rename(name = "m_Miss")]
+    pub m_miss: f32,
+    #[rename(name = "m_Expectation")]
+    pub m_expectation: f32,
+    #[rename(name = "m_IsSkillKill")]
+    pub m_is_skill_kill: bool,
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+#[::unity2::methods]
+impl AIBattleSimulator_Indication {
+    #[method(name = "get_Power", args = 0)]
+    pub fn get_power(self) -> i32;
+
+    #[method(name = "set_Power", args = 1)]
+    pub fn set_power(self, value: i32) -> ();
+
+    #[method(name = "get_SkillPower", args = 0)]
+    pub fn get_skill_power(self) -> i32;
+
+    #[method(name = "set_SkillPower", args = 1)]
+    pub fn set_skill_power(self, value: i32) -> ();
+
+    #[method(name = "get_Hit", args = 0)]
+    pub fn get_hit(self) -> f32;
+
+    #[method(name = "set_Hit", args = 1)]
+    pub fn set_hit(self, value: f32) -> ();
+
+    #[method(name = "get_Critical", args = 0)]
+    pub fn get_critical(self) -> f32;
+
+    #[method(name = "set_Critical", args = 1)]
+    pub fn set_critical(self, value: f32) -> ();
+
+    #[method(name = "get_Skill", args = 0)]
+    pub fn get_skill(self) -> f32;
+
+    #[method(name = "set_Skill", args = 1)]
+    pub fn set_skill(self, value: f32) -> ();
+
+    #[method(name = "get_SkillCritical", args = 0)]
+    pub fn get_skill_critical(self) -> f32;
+
+    #[method(name = "set_SkillCritical", args = 1)]
+    pub fn set_skill_critical(self, value: f32) -> ();
+
+    #[method(name = "get_Prevent", args = 0)]
+    pub fn get_prevent(self) -> f32;
+
+    #[method(name = "set_Prevent", args = 1)]
+    pub fn set_prevent(self, value: f32) -> ();
+
+    #[method(name = "get_Miss", args = 0)]
+    pub fn get_miss(self) -> f32;
+
+    #[method(name = "set_Miss", args = 1)]
+    pub fn set_miss(self, value: f32) -> ();
+
+    #[method(name = "get_Expectation", args = 0)]
+    pub fn get_expectation(self) -> f32;
+
+    #[method(name = "set_Expectation", args = 1)]
+    pub fn set_expectation(self, value: f32) -> ();
+
+    #[method(name = "get_IsSkillKill", args = 0)]
+    pub fn get_is_skill_kill(self) -> bool;
+
+    #[method(name = "set_IsSkillKill", args = 1)]
+    pub fn set_is_skill_kill(self, value: bool) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+impl AIBattleSimulator_Indication {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIBattleSimulator_Indication),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIBattleSimulator_IndicationMethods>::ctor(this);
+        this
+    }
+}

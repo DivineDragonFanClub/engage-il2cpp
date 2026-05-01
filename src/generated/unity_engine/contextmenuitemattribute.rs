@@ -1,0 +1,38 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::propertyattribute::IPropertyAttribute;
+use crate::unity_engine::propertyattribute::PropertyAttribute;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/contextmenuitemattribute/ContextMenuItemAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "ContextMenuItemAttribute")]
+#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
+pub struct ContextMenuItemAttribute {
+    #[rename(name = "name")]
+    pub name: ::unity2::Il2CppString,
+    #[rename(name = "function")]
+    pub function: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "unity_engine-contextmenuitemattribute")]
+#[::unity2::methods]
+impl ContextMenuItemAttribute {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, name: ::unity2::Il2CppString, function: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "unity_engine-contextmenuitemattribute")]
+impl ContextMenuItemAttribute {
+    pub fn new(name: ::unity2::Il2CppString, function: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ContextMenuItemAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IContextMenuItemAttributeMethods>::ctor(this, name, function);
+        this
+    }
+}

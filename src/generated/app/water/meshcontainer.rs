@@ -1,0 +1,41 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/water/meshcontainer/MeshContainer.md")))]
+#[::unity2::class(namespace = "App.Water", name = "MeshContainer")]
+#[parent(crate::system::object::Object)]
+pub struct MeshContainer {
+    #[rename(name = "mesh")]
+    pub mesh: crate::unity_engine::mesh::Mesh,
+    #[rename(name = "vertices")]
+    pub vertices: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+    #[rename(name = "normals")]
+    pub normals: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+}
+
+#[cfg(feature = "app-water-meshcontainer")]
+#[::unity2::methods]
+impl MeshContainer {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, m: crate::unity_engine::mesh::Mesh) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+}
+
+#[cfg(feature = "app-water-meshcontainer")]
+impl MeshContainer {
+    pub fn new(m: crate::unity_engine::mesh::Mesh) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MeshContainer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMeshContainerMethods>::ctor(this, m);
+        this
+    }
+}

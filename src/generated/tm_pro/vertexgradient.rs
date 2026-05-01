@@ -1,0 +1,53 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/vertexgradient/VertexGradient.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct VertexGradient {
+    pub top_left: crate::unity_engine::color::Color,
+    pub top_right: crate::unity_engine::color::Color,
+    pub bottom_left: crate::unity_engine::color::Color,
+    pub bottom_right: crate::unity_engine::color::Color,
+}
+
+impl ::unity2::ClassIdentity for VertexGradient {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "VertexGradient";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for VertexGradient {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "tm_pro-vertexgradient")]
+#[::unity2::methods(value)]
+impl VertexGradient {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, color: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor_2(
+        self,
+        color0: crate::unity_engine::color::Color,
+        color1: crate::unity_engine::color::Color,
+        color2: crate::unity_engine::color::Color,
+        color3: crate::unity_engine::color::Color,
+    ) -> ();
+}

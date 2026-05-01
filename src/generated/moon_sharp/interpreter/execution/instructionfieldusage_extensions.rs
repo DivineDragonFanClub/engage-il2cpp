@@ -1,0 +1,21 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/execution/instructionfieldusage_extensions/InstructionFieldUsage_Extensions.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Execution",
+    name = "InstructionFieldUsage_Extensions"
+)]
+#[parent(crate::system::object::Object)]
+pub struct InstructionFieldUsage_Extensions {}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-instructionfieldusage_extensions")]
+#[::unity2::methods]
+impl InstructionFieldUsage_Extensions {
+    #[method(name = "GetFieldUsage", args = 1)]
+    pub fn get_field_usage(
+        op: crate::moon_sharp::interpreter::execution::vm::opcode::OpCode,
+    ) -> crate::moon_sharp::interpreter::execution::instructionfieldusage::InstructionFieldUsage;
+}

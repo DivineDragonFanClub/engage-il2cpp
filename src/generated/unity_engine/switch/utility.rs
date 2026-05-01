@@ -1,0 +1,16 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/utility/Utility.md")))]
+#[::unity2::class(namespace = "UnityEngine.Switch", name = "Utility")]
+#[parent(crate::system::object::Object)]
+pub struct Utility {}
+
+#[cfg(feature = "unity_engine-switch-utility")]
+#[::unity2::methods]
+impl Utility {
+    #[method(name = "GetAllocatableNativeMemoryLong", args = 0)]
+    pub fn get_allocatable_native_memory_long() -> i64;
+}

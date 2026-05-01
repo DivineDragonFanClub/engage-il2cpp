@@ -1,0 +1,61 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/keyvaluepair_2/KeyValuePair_2.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct KeyValuePair_2<T0, T1> {
+    pub _phantom: ::core::marker::PhantomData<(T0, T1)>,
+}
+
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::ClassIdentity
+    for KeyValuePair_2<T0, T1>
+{
+    const NAMESPACE: &'static str = "System.Collections.Generic";
+
+    const NAME: &'static str = "KeyValuePair`2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                .make_generic(&[
+                    <T0 as ::unity2::ClassIdentity>::class(),
+                    <T1 as ::unity2::ClassIdentity>::class(),
+                ])
+                .expect("generic instantiation")
+        })
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> ::unity2::IlType
+    for KeyValuePair_2<T0, T1>
+{
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "system-collections-generic-keyvaluepair_2")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> KeyValuePair_2<T0, T1> {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, key: T0, value: T1) -> ();
+
+    #[method(name = "get_Key", args = 0)]
+    pub fn get_key(self) -> T0;
+
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> T1;
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}

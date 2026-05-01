@@ -1,0 +1,130 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayshowdatasequence/RelayShowDataSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayShowDataSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayShowDataSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayShowDataSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayShowDataSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayShowDataSequence_Label {
+    pub fn show() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayshowdatasequence/RelayShowDataSequence.md")))]
+#[::unity2::class(namespace = "App", name = "RelayShowDataSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RelayShowDataSequence {
+    #[rename(name = "m_MetaData")]
+    pub m_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
+    #[rename(name = "m_IsNewPlay")]
+    pub m_is_new_play: bool,
+}
+
+#[cfg(feature = "app-relayshowdatasequence")]
+#[::unity2::methods]
+impl RelayShowDataSequence {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        is_new_play: bool,
+    ) -> ();
+
+    #[method(name = "IsSkipTutorial", args = 0)]
+    pub fn is_skip_tutorial(self) -> bool;
+
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[method(name = "IsSetPublishMode", args = 0)]
+    pub fn is_set_publish_mode(self) -> bool;
+
+    #[method(name = "SetPublishMode", args = 0)]
+    pub fn set_publish_mode(self) -> ();
+
+    #[method(name = "CreateBindTakeOver", args = 2)]
+    pub fn create_bind_take_over(
+        super_: crate::app::procinst::ProcInst,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> ();
+
+    #[method(name = "CreateBindUpload", args = 3)]
+    pub fn create_bind_upload(
+        super_: crate::app::procinst::ProcInst,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        is_new_play: bool,
+    ) -> ();
+
+    #[method(name = "CreateBindImpl", args = 4)]
+    pub fn create_bind_impl(
+        super_: crate::app::procinst::ProcInst,
+        mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        is_new_play: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "app-relayshowdatasequence")]
+impl RelayShowDataSequence {
+    pub fn new(
+        mode: crate::app::relayshowdatadialog::RelayShowDataDialog_Mode,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        is_new_play: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayShowDataSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayShowDataSequenceMethods>::ctor(this, mode, meta_data, is_new_play);
+        this
+    }
+}

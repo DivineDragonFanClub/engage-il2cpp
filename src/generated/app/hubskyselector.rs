@@ -1,0 +1,60 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubskyselector/HubSkySelector.md")))]
+#[::unity2::class(namespace = "App", name = "HubSkySelector")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct HubSkySelector {
+    #[rename(name = "m_materialMorning")]
+    pub m_material_morning: crate::unity_engine::material::Material,
+    #[rename(name = "m_materialDay")]
+    pub m_material_day: crate::unity_engine::material::Material,
+    #[rename(name = "m_materialEvening")]
+    pub m_material_evening: crate::unity_engine::material::Material,
+    #[rename(name = "m_materialNight")]
+    pub m_material_night: crate::unity_engine::material::Material,
+}
+
+#[cfg(feature = "app-hubskyselector")]
+#[::unity2::methods]
+impl HubSkySelector {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "Apply", args = 1)]
+    pub fn apply(self, timezone_type: crate::app::hubutil::HubUtil_TimezoneType) -> ();
+
+    #[method(name = "UpdateTimezoneType", args = 0)]
+    pub fn update_timezone_type(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubskyselector")]
+impl HubSkySelector {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSkySelector),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSkySelectorMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,201 @@
+
+use crate::moon_sharp::interpreter::refidobject::IRefIdObject;
+use crate::moon_sharp::interpreter::refidobject::RefIdObject;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/coroutine_2/Coroutine_2.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter", name = "Coroutine")]
+#[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
+pub struct Coroutine_2 {
+    #[rename(name = "m_ClrCallback")]
+    pub m_clr_callback: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
+    #[rename(name = "m_Processor")]
+    pub m_processor: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-coroutine_2")]
+#[::unity2::methods]
+impl Coroutine_2 {
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> crate::moon_sharp::interpreter::coroutine_2::Coroutine_CoroutineType;
+
+    #[method(name = "set_Type", args = 1)]
+    pub fn set_type(
+        self,
+        value: crate::moon_sharp::interpreter::coroutine_2::Coroutine_CoroutineType,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        function: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(
+        self,
+        proc: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
+    ) -> ();
+
+    #[method(name = "MarkClrCallbackAsDead", args = 0)]
+    pub fn mark_clr_callback_as_dead(self) -> ();
+
+    #[method(name = "AsTypedEnumerable", args = 0)]
+    pub fn as_typed_enumerable(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::moon_sharp::interpreter::dynvalue::DynValue,
+    >;
+
+    #[method(name = "AsEnumerable", args = 0)]
+    pub fn as_enumerable(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::system::object::Object,
+    >;
+
+    #[method(name = "AsUnityCoroutine", args = 0)]
+    pub fn as_unity_coroutine(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "Resume", args = 1)]
+    pub fn resume(
+        self,
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Resume", args = 2)]
+    pub fn resume_2(
+        self,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Resume", args = 0)]
+    pub fn resume_3(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Resume", args = 1)]
+    pub fn resume_4(
+        self,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Resume", args = 1)]
+    pub fn resume_5(
+        self,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Resume", args = 2)]
+    pub fn resume_6(
+        self,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "get_State", args = 0)]
+    pub fn get_state(self) -> crate::moon_sharp::interpreter::coroutinestate::CoroutineState;
+
+    #[method(name = "GetStackTrace", args = 2)]
+    pub fn get_stack_trace(
+        self,
+        skip: i32,
+        entry_source_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+    ) -> ::unity2::Array<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>;
+
+    #[method(name = "get_OwnerScript", args = 0)]
+    pub fn get_owner_script(self) -> crate::moon_sharp::interpreter::script::Script;
+
+    #[method(name = "set_OwnerScript", args = 1)]
+    pub fn set_owner_script(self, value: crate::moon_sharp::interpreter::script::Script) -> ();
+
+    #[method(name = "get_AutoYieldCounter", args = 0)]
+    pub fn get_auto_yield_counter(self) -> i64;
+
+    #[method(name = "set_AutoYieldCounter", args = 1)]
+    pub fn set_auto_yield_counter(self, value: i64) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-coroutine_2")]
+impl Coroutine_2 {
+    pub fn new(
+        function: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Coroutine_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICoroutine_2Methods>::ctor(this, function);
+        this
+    }
+
+    pub fn new_2(
+        proc: crate::moon_sharp::interpreter::execution::vm::processor::Processor,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Coroutine_2),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ICoroutine_2Methods>::ctor_2(this, proc);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/coroutine_2/Coroutine_CoroutineType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Coroutine_CoroutineType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Coroutine_CoroutineType {
+    const NAMESPACE: &'static str = "MoonSharp.Interpreter";
+
+    const NAME: &'static str = "Coroutine.CoroutineType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Coroutine_CoroutineType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Coroutine_CoroutineType {
+    pub fn coroutine() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn clr_callback() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn clr_callback_dead() -> Self {
+        Self { value: 2 }
+    }
+}

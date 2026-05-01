@@ -1,0 +1,154 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procscenemanager/ProcSceneManager_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ProcSceneManager_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ProcSceneManager_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ProcSceneManager.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ProcSceneManager_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ProcSceneManager_Label {
+    pub fn skip() -> Self {
+        Self { value: 0 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procscenemanager/ProcSceneManager.md")))]
+#[::unity2::class(namespace = "App", name = "ProcSceneManager")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct ProcSceneManager {
+    #[static_field]
+    #[rename(name = "Empty")]
+    pub empty: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "s_Handles")]
+    pub s_handles: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::app::resourcehandle_2::ResourceHandle_2,
+    >,
+    #[static_field]
+    #[rename(name = "s_Releases")]
+    pub s_releases: crate::system::collections::generic::list_1::List_1<
+        crate::app::resourcehandle_2::ResourceHandle_2,
+    >,
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+    #[rename(name = "m_Empty")]
+    pub m_empty: crate::app::resourcehandle_2::ResourceHandle_2,
+    #[rename(name = "m_Handle")]
+    pub m_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+}
+
+#[cfg(feature = "app-procscenemanager")]
+#[::unity2::methods]
+impl ProcSceneManager {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        name: ::unity2::Il2CppString,
+        mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+    ) -> ();
+
+    #[method(name = "HasEmptyScene", args = 0)]
+    pub fn has_empty_scene() -> bool;
+
+    #[method(name = "UnloadBranch", args = 0)]
+    pub fn unload_branch(self) -> ();
+
+    #[method(name = "UnloadAsync", args = 0)]
+    pub fn unload_async(self) -> ();
+
+    #[method(name = "WaitAsync", args = 0)]
+    pub fn wait_async(self) -> ();
+
+    #[method(name = "Release", args = 0)]
+    pub fn release(self) -> ();
+
+    #[method(name = "LoadAsync", args = 0)]
+    pub fn load_async(self) -> ();
+
+    #[method(name = "DoneAsync", args = 0)]
+    pub fn done_async(self) -> ();
+
+    #[method(name = "LoadBind", args = 3)]
+    pub fn load_bind(
+        super_: crate::app::procinst::ProcInst,
+        name: ::unity2::Il2CppString,
+        mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+    ) -> ();
+
+    #[method(name = "UnloadBind", args = 1)]
+    pub fn unload_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "UnloadBind", args = 2)]
+    pub fn unload_bind_2(
+        super_: crate::app::procinst::ProcInst,
+        name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "UnloadBindImpl", args = 3)]
+    pub fn unload_bind_impl(
+        super_: crate::app::procinst::ProcInst,
+        name: ::unity2::Il2CppString,
+        mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-procscenemanager")]
+impl ProcSceneManager {
+    pub fn new(
+        name: ::unity2::Il2CppString,
+        mode: crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProcSceneManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProcSceneManagerMethods>::ctor(this, name, mode);
+        this
+    }
+}

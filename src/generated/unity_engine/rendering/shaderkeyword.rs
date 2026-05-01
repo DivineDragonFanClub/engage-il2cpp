@@ -1,0 +1,44 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/shaderkeyword/ShaderKeyword.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ShaderKeyword {
+    pub m_keyword_index: i32,
+}
+
+impl ::unity2::ClassIdentity for ShaderKeyword {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "ShaderKeyword";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ShaderKeyword {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-shaderkeyword")]
+#[::unity2::methods(value)]
+impl ShaderKeyword {
+    #[method(name = "GetGlobalKeywordIndex", args = 1)]
+    pub fn get_global_keyword_index(keyword: ::unity2::Il2CppString) -> i32;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, keyword_name: ::unity2::Il2CppString) -> ();
+}

@@ -1,0 +1,130 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/layoutelement/LayoutElement.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "LayoutElement")]
+#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
+pub struct LayoutElement {
+    #[rename(name = "m_IgnoreLayout")]
+    pub m_ignore_layout: bool,
+    #[rename(name = "m_MinWidth")]
+    pub m_min_width: f32,
+    #[rename(name = "m_MinHeight")]
+    pub m_min_height: f32,
+    #[rename(name = "m_PreferredWidth")]
+    pub m_preferred_width: f32,
+    #[rename(name = "m_PreferredHeight")]
+    pub m_preferred_height: f32,
+    #[rename(name = "m_FlexibleWidth")]
+    pub m_flexible_width: f32,
+    #[rename(name = "m_FlexibleHeight")]
+    pub m_flexible_height: f32,
+    #[rename(name = "m_LayoutPriority")]
+    pub m_layout_priority: i32,
+}
+
+#[cfg(feature = "unity_engine-ui-layoutelement")]
+#[::unity2::methods]
+impl LayoutElement {
+    #[method(name = "get_ignoreLayout", args = 0)]
+    pub fn get_ignore_layout(self) -> bool;
+
+    #[method(name = "set_ignoreLayout", args = 1)]
+    pub fn set_ignore_layout(self, value: bool) -> ();
+
+    #[method(name = "CalculateLayoutInputHorizontal", args = 0)]
+    pub fn calculate_layout_input_horizontal(self) -> ();
+
+    #[method(name = "CalculateLayoutInputVertical", args = 0)]
+    pub fn calculate_layout_input_vertical(self) -> ();
+
+    #[method(name = "get_minWidth", args = 0)]
+    pub fn get_min_width(self) -> f32;
+
+    #[method(name = "set_minWidth", args = 1)]
+    pub fn set_min_width(self, value: f32) -> ();
+
+    #[method(name = "get_minHeight", args = 0)]
+    pub fn get_min_height(self) -> f32;
+
+    #[method(name = "set_minHeight", args = 1)]
+    pub fn set_min_height(self, value: f32) -> ();
+
+    #[method(name = "get_preferredWidth", args = 0)]
+    pub fn get_preferred_width(self) -> f32;
+
+    #[method(name = "set_preferredWidth", args = 1)]
+    pub fn set_preferred_width(self, value: f32) -> ();
+
+    #[method(name = "get_preferredHeight", args = 0)]
+    pub fn get_preferred_height(self) -> f32;
+
+    #[method(name = "set_preferredHeight", args = 1)]
+    pub fn set_preferred_height(self, value: f32) -> ();
+
+    #[method(name = "get_flexibleWidth", args = 0)]
+    pub fn get_flexible_width(self) -> f32;
+
+    #[method(name = "set_flexibleWidth", args = 1)]
+    pub fn set_flexible_width(self, value: f32) -> ();
+
+    #[method(name = "get_flexibleHeight", args = 0)]
+    pub fn get_flexible_height(self) -> f32;
+
+    #[method(name = "set_flexibleHeight", args = 1)]
+    pub fn set_flexible_height(self, value: f32) -> ();
+
+    #[method(name = "get_layoutPriority", args = 0)]
+    pub fn get_layout_priority(self) -> i32;
+
+    #[method(name = "set_layoutPriority", args = 1)]
+    pub fn set_layout_priority(self, value: i32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnTransformParentChanged", args = 0)]
+    pub fn on_transform_parent_changed(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "OnDidApplyAnimationProperties", args = 0)]
+    pub fn on_did_apply_animation_properties(self) -> ();
+
+    #[method(name = "OnBeforeTransformParentChanged", args = 0)]
+    pub fn on_before_transform_parent_changed(self) -> ();
+
+    #[method(name = "SetDirty", args = 0)]
+    pub fn set_dirty(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-layoutelement")]
+impl LayoutElement {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LayoutElement),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILayoutElementMethods>::ctor(this);
+        this
+    }
+}

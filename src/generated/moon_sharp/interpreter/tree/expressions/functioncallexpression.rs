@@ -1,0 +1,79 @@
+
+use crate::moon_sharp::interpreter::tree::expression::Expression;
+use crate::moon_sharp::interpreter::tree::expression::IExpression;
+use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+use crate::moon_sharp::interpreter::tree::nodebase::NodeBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/expressions/functioncallexpression/FunctionCallExpression.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Expressions",
+    name = "FunctionCallExpression"
+)]
+#[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
+pub struct FunctionCallExpression {
+    #[rename(name = "m_Arguments")]
+    pub m_arguments: crate::system::collections::generic::list_1::List_1<
+        crate::moon_sharp::interpreter::tree::expression::Expression,
+    >,
+    #[rename(name = "m_Function")]
+    pub m_function: crate::moon_sharp::interpreter::tree::expression::Expression,
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+    #[rename(name = "m_DebugErr")]
+    pub m_debug_err: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-functioncallexpression")]
+#[::unity2::methods]
+impl FunctionCallExpression {
+    #[method(name = "get_SourceRef", args = 0)]
+    pub fn get_source_ref(self) -> crate::moon_sharp::interpreter::debugging::sourceref::SourceRef;
+
+    #[method(name = "set_SourceRef", args = 1)]
+    pub fn set_source_ref(
+        self,
+        value: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        function: crate::moon_sharp::interpreter::tree::expression::Expression,
+        this_call_name: crate::moon_sharp::interpreter::tree::token::Token,
+    ) -> ();
+
+    #[method(name = "Compile", args = 1)]
+    pub fn compile(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> ();
+
+    #[method(name = "Eval", args = 1)]
+    pub fn eval(
+        self,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-functioncallexpression")]
+impl FunctionCallExpression {
+    pub fn new(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        function: crate::moon_sharp::interpreter::tree::expression::Expression,
+        this_call_name: crate::moon_sharp::interpreter::tree::token::Token,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FunctionCallExpression),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFunctionCallExpressionMethods>::ctor(this, lcontext, function, this_call_name);
+        this
+    }
+}

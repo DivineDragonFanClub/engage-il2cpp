@@ -1,0 +1,344 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringdata/RingData.md")))]
+#[::unity2::class(namespace = "App", name = "RingData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: ringdata :: RingData >)]
+pub struct RingData {
+    #[rename(name = "m_Group")]
+    pub m_group: ::unity2::Il2CppString,
+    #[rename(name = "m_FlagName")]
+    pub m_flag_name: ::unity2::Il2CppString,
+    #[rename(name = "m_JewelColor")]
+    pub m_jewel_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_RimColor")]
+    pub m_rim_color: crate::unity_engine::color::Color,
+}
+
+#[cfg(feature = "app-ringdata")]
+#[::unity2::methods]
+impl RingData {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "GetNextRankData", args = 1)]
+    pub fn get_next_rank_data(rnid: ::unity2::Il2CppString) -> crate::app::ringdata::RingData;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_Rnid", args = 0)]
+    pub fn get_rnid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Rnid", args = 1)]
+    pub fn set_rnid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Help", args = 0)]
+    pub fn get_help(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Help", args = 1)]
+    pub fn set_help(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Gid", args = 0)]
+    pub fn get_gid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Gid", args = 1)]
+    pub fn set_gid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_RingModel", args = 0)]
+    pub fn get_ring_model(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_RingModel", args = 1)]
+    pub fn set_ring_model(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Kind", args = 0)]
+    pub fn get_kind(self) -> crate::app::ringdata::RingData_Kinds;
+
+    #[method(name = "set_Kind", args = 1)]
+    pub fn set_kind(self, value: crate::app::ringdata::RingData_Kinds) -> ();
+
+    #[method(name = "get_Rank", args = 0)]
+    pub fn get_rank(self) -> crate::app::ringdata::RingData_Ranks;
+
+    #[method(name = "set_Rank", args = 1)]
+    pub fn set_rank(self, value: crate::app::ringdata::RingData_Ranks) -> ();
+
+    #[method(name = "get_Icon", args = 0)]
+    pub fn get_icon(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Icon", args = 1)]
+    pub fn set_icon(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Enhance", args = 0)]
+    pub fn get_enhance(self) -> crate::app::capabilitysbyte::CapabilitySbyte;
+
+    #[method(name = "set_Enhance", args = 1)]
+    pub fn set_enhance(self, value: crate::app::capabilitysbyte::CapabilitySbyte) -> ();
+
+    #[method(name = "get_EquipSids", args = 0)]
+    pub fn get_equip_sids(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_EquipSids", args = 1)]
+    pub fn set_equip_sids(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_EquipSkills", args = 0)]
+    pub fn get_equip_skills(self) -> crate::app::skillarray::SkillArray;
+
+    #[method(name = "set_EquipSkills", args = 1)]
+    pub fn set_equip_skills(self, value: crate::app::skillarray::SkillArray) -> ();
+
+    #[method(name = "get_IsSingleRank", args = 0)]
+    pub fn get_is_single_rank(self) -> bool;
+
+    #[method(name = "set_IsSingleRank", args = 1)]
+    pub fn set_is_single_rank(self, value: bool) -> ();
+
+    #[method(name = "get_JewelColorR", args = 0)]
+    pub fn get_jewel_color_r(self) -> u8;
+
+    #[method(name = "set_JewelColorR", args = 1)]
+    pub fn set_jewel_color_r(self, value: u8) -> ();
+
+    #[method(name = "get_JewelColorG", args = 0)]
+    pub fn get_jewel_color_g(self) -> u8;
+
+    #[method(name = "set_JewelColorG", args = 1)]
+    pub fn set_jewel_color_g(self, value: u8) -> ();
+
+    #[method(name = "get_JewelColorB", args = 0)]
+    pub fn get_jewel_color_b(self) -> u8;
+
+    #[method(name = "set_JewelColorB", args = 1)]
+    pub fn set_jewel_color_b(self, value: u8) -> ();
+
+    #[method(name = "get_RimColorR", args = 0)]
+    pub fn get_rim_color_r(self) -> u8;
+
+    #[method(name = "set_RimColorR", args = 1)]
+    pub fn set_rim_color_r(self, value: u8) -> ();
+
+    #[method(name = "get_RimColorG", args = 0)]
+    pub fn get_rim_color_g(self) -> u8;
+
+    #[method(name = "set_RimColorG", args = 1)]
+    pub fn set_rim_color_g(self, value: u8) -> ();
+
+    #[method(name = "get_RimColorB", args = 0)]
+    pub fn get_rim_color_b(self) -> u8;
+
+    #[method(name = "set_RimColorB", args = 1)]
+    pub fn set_rim_color_b(self, value: u8) -> ();
+
+    #[method(name = "get_Group", args = 0)]
+    pub fn get_group(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_FlagName", args = 0)]
+    pub fn get_flag_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_JewelColor", args = 0)]
+    pub fn get_jewel_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "get_RimColor", args = 0)]
+    pub fn get_rim_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[method(name = "CopyRingColor", args = 0)]
+    pub fn copy_ring_color(self) -> ();
+
+    #[method(name = "SetKind", args = 0)]
+    pub fn set_kind_2(self) -> ();
+
+    #[method(name = "OnRelease", args = 0)]
+    pub fn on_release(self) -> ();
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetFullName", args = 0)]
+    pub fn get_full_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetRareColorData", args = 0)]
+    pub fn get_rare_color_data(self) -> crate::app::ringdata::RingData;
+
+    #[method(name = "SetProcurement", args = 0)]
+    pub fn set_procurement(self) -> ();
+
+    #[method(name = "IsProcurement", args = 0)]
+    pub fn is_procurement(self) -> bool;
+
+    #[method(name = "RegistGlobalFlags", args = 0)]
+    pub fn regist_global_flags() -> ();
+
+    #[method(name = "GetPrefabPath", args = 0)]
+    pub fn get_prefab_path(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetPrefabPath", args = 1)]
+    pub fn get_prefab_path_2(self, gid: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetGodList", args = 0)]
+    pub fn get_god_list(
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+
+    #[method(name = "Serialize", args = 2)]
+    pub fn serialize(
+        stream: crate::app::stream_2::Stream_2,
+        ring: crate::app::ringdata::RingData,
+    ) -> ();
+
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(stream: crate::app::stream_2::Stream_2) -> crate::app::ringdata::RingData;
+
+    #[method(name = "TrySerialize", args = 2)]
+    pub fn try_serialize(
+        stream: crate::app::stream_2::Stream_2,
+        ring: crate::app::ringdata::RingData,
+    ) -> ();
+
+    #[method(name = "TryDeserialize", args = 1)]
+    pub fn try_deserialize(
+        stream: crate::app::stream_2::Stream_2,
+    ) -> crate::app::ringdata::RingData;
+}
+
+#[cfg(feature = "app-ringdata")]
+impl RingData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringdata/RingData_Ranks.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingData_Ranks {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingData_Ranks {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingData.Ranks";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingData_Ranks {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingData_Ranks {
+    pub fn c() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn b() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn a() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn s() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringdata/RingData_Kinds.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingData_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingData_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingData.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingData_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingData_Kinds {
+    pub fn common() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn emblem() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn color() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+    }
+}

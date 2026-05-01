@@ -1,0 +1,41 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/grandewbrain/GrandewBrain.md")))]
+#[::unity2::class(namespace = "Combat", name = "GrandewBrain")]
+#[parent(crate::system::object::Object)]
+pub struct GrandewBrain {
+    #[rename(name = "CP")]
+    pub cp: crate::combat::character::Character,
+    #[rename(name = "m_Master")]
+    pub m_master: crate::combat::character::Character,
+    #[rename(name = "m_Enemy")]
+    pub m_enemy: crate::combat::character::Character,
+}
+
+#[cfg(feature = "combat-grandewbrain")]
+#[::unity2::methods]
+impl GrandewBrain {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, grandew: crate::combat::character::Character) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "combat-grandewbrain")]
+impl GrandewBrain {
+    pub fn new(grandew: crate::combat::character::Character) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GrandewBrain),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGrandewBrainMethods>::ctor(this, grandew);
+        this
+    }
+}

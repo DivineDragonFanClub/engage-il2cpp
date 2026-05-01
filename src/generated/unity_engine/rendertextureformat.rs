@@ -1,0 +1,156 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendertextureformat/RenderTextureFormat.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RenderTextureFormat {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RenderTextureFormat {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "RenderTextureFormat";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RenderTextureFormat {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RenderTextureFormat {
+    pub fn argb32() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn depth() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn argb_half() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn shadowmap() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn rgb565() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn argb4444() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn argb1555() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn default() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn argb2101010() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn default_hdr() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn argb64() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn argb_float() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn rg_float() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn rg_half() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn r_float() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn r_half() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn r8() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn argb_int() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn rg_int() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn r_int() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn bgra32() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn rgb111110_float() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn rg32() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn rgbau_short() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn rg16() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn bgra10101010_xr() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn bgr101010_xr() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn r16() -> Self {
+        Self { value: 28 }
+    }
+}

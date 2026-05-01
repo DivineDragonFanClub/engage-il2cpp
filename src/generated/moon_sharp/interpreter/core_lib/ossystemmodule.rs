@@ -1,0 +1,73 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/core_lib/ossystemmodule/OsSystemModule.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter.CoreLib", name = "OsSystemModule")]
+#[parent(crate::system::object::Object)]
+pub struct OsSystemModule {}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-ossystemmodule")]
+#[::unity2::methods]
+impl OsSystemModule {
+    #[method(name = "execute", args = 2)]
+    pub fn execute(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "exit", args = 2)]
+    pub fn exit(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "getenv", args = 2)]
+    pub fn getenv(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "remove", args = 2)]
+    pub fn remove(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "rename", args = 2)]
+    pub fn rename(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "setlocale", args = 2)]
+    pub fn setlocale(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "tmpname", args = 2)]
+    pub fn tmpname(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-ossystemmodule")]
+impl OsSystemModule {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(OsSystemModule),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IOsSystemModuleMethods>::ctor(this);
+        this
+    }
+}

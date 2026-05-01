@@ -1,0 +1,149 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use crate::unity_engine::tilemaps::tilebase::ITileBase;
+use crate::unity_engine::tilemaps::tilebase::TileBase;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/tilemaps/tile/Tile.md")))]
+#[::unity2::class(namespace = "UnityEngine.Tilemaps", name = "Tile")]
+#[parent(crate::unity_engine::tilemaps::tilebase::TileBase)]
+pub struct Tile {
+    #[rename(name = "m_Sprite")]
+    pub m_sprite: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_Color")]
+    pub m_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_Transform")]
+    pub m_transform: crate::unity_engine::matrix4x4::Matrix4x4,
+    #[rename(name = "m_InstancedGameObject")]
+    pub m_instanced_game_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Flags")]
+    pub m_flags: crate::unity_engine::tilemaps::tileflags::TileFlags,
+    #[rename(name = "m_ColliderType")]
+    pub m_collider_type: crate::unity_engine::tilemaps::tile::Tile_ColliderType,
+}
+
+#[cfg(feature = "unity_engine-tilemaps-tile")]
+#[::unity2::methods]
+impl Tile {
+    #[method(name = "get_sprite", args = 0)]
+    pub fn get_sprite(self) -> crate::unity_engine::sprite::Sprite;
+
+    #[method(name = "set_sprite", args = 1)]
+    pub fn set_sprite(self, value: crate::unity_engine::sprite::Sprite) -> ();
+
+    #[method(name = "get_color", args = 0)]
+    pub fn get_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "set_color", args = 1)]
+    pub fn set_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "get_transform", args = 0)]
+    pub fn get_transform(self) -> crate::unity_engine::matrix4x4::Matrix4x4;
+
+    #[method(name = "set_transform", args = 1)]
+    pub fn set_transform(self, value: crate::unity_engine::matrix4x4::Matrix4x4) -> ();
+
+    #[method(name = "get_gameObject", args = 0)]
+    pub fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "set_gameObject", args = 1)]
+    pub fn set_game_object(self, value: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "get_flags", args = 0)]
+    pub fn get_flags(self) -> crate::unity_engine::tilemaps::tileflags::TileFlags;
+
+    #[method(name = "set_flags", args = 1)]
+    pub fn set_flags(self, value: crate::unity_engine::tilemaps::tileflags::TileFlags) -> ();
+
+    #[method(name = "get_colliderType", args = 0)]
+    pub fn get_collider_type(self) -> crate::unity_engine::tilemaps::tile::Tile_ColliderType;
+
+    #[method(name = "set_colliderType", args = 1)]
+    pub fn set_collider_type(
+        self,
+        value: crate::unity_engine::tilemaps::tile::Tile_ColliderType,
+    ) -> ();
+
+    #[method(name = "GetTileData", args = 3)]
+    pub fn get_tile_data(
+        self,
+        position: crate::unity_engine::vector3int::Vector3Int,
+        tilemap: crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface,
+        tile_data: crate::unity_engine::tilemaps::tiledata::TileData,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-tilemaps-tile")]
+impl Tile {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Tile),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITileMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/tilemaps/tile/Tile_ColliderType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Tile_ColliderType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Tile_ColliderType {
+    const NAMESPACE: &'static str = "UnityEngine.Tilemaps";
+
+    const NAME: &'static str = "Tile.ColliderType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Tile_ColliderType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Tile_ColliderType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn sprite() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn grid() -> Self {
+        Self { value: 2 }
+    }
+}

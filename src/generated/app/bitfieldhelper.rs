@@ -1,0 +1,38 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/bitfieldhelper/BitFieldHelper.md")))]
+#[::unity2::class(namespace = "App", name = "BitFieldHelper")]
+#[parent(crate::system::object::Object)]
+pub struct BitFieldHelper {}
+
+#[cfg(feature = "app-bitfieldhelper")]
+#[::unity2::methods]
+impl BitFieldHelper {
+    #[method(name = "GetByNames", args = 2)]
+    pub fn get_by_names(src_type: ::unity2::SystemType, src_value: i32) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetByNames", args = 2)]
+    pub fn get_by_names_2(src_type: ::unity2::SystemType, src_value: i64)
+        -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-bitfieldhelper")]
+impl BitFieldHelper {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BitFieldHelper),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBitFieldHelperMethods>::ctor(this);
+        this
+    }
+}

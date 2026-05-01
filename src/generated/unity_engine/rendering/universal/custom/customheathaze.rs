@@ -1,0 +1,59 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::rendering::volumecomponent::IVolumeComponent;
+use crate::unity_engine::rendering::volumecomponent::VolumeComponent;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/customheathaze/CustomHeatHaze.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom",
+    name = "CustomHeatHaze"
+)]
+#[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
+pub struct CustomHeatHaze {
+    #[rename(name = "intensity")]
+    pub intensity: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+    #[rename(name = "cycle")]
+    pub cycle: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+    #[rename(name = "cycleU")]
+    pub cycle_u: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+    #[rename(name = "cycleV")]
+    pub cycle_v: crate::unity_engine::rendering::clampedfloatparameter::ClampedFloatParameter,
+    #[rename(name = "beginToApply")]
+    pub begin_to_apply: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+    #[rename(name = "beginFadeWidth")]
+    pub begin_fade_width: crate::unity_engine::rendering::minfloatparameter::MinFloatParameter,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-customheathaze")]
+#[::unity2::methods]
+impl CustomHeatHaze {
+    #[method(name = "IsActive", args = 0)]
+    pub fn is_active(self) -> bool;
+
+    #[method(name = "IsTileCompatible", args = 0)]
+    pub fn is_tile_compatible(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-customheathaze")]
+impl CustomHeatHaze {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomHeatHaze),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomHeatHazeMethods>::ctor(this);
+        this
+    }
+}

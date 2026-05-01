@@ -1,0 +1,107 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::IShadowCasterGroup2D;
+use crate::unity_engine::experimental::rendering::universal::shadowcastergroup2d::ShadowCasterGroup2D;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/shadowcaster2d/ShadowCaster2D.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal",
+    name = "ShadowCaster2D"
+)]
+# [parent (crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D)]
+pub struct ShadowCaster2D {
+# [rename (name = "m_HasRenderer")] pub m_has_renderer : bool ,
+# [rename (name = "m_UseRendererSilhouette")] pub m_use_renderer_silhouette : bool ,
+# [rename (name = "m_CastsShadows")] pub m_casts_shadows : bool ,
+# [rename (name = "m_SelfShadows")] pub m_self_shadows : bool ,
+# [rename (name = "m_ApplyToSortingLayers")] pub m_apply_to_sorting_layers : :: unity2 :: Array < i32 > ,
+# [rename (name = "m_ShapePath")] pub m_shape_path : :: unity2 :: Array < crate :: unity_engine :: vector3 :: Vector3 > ,
+# [rename (name = "m_ShapePathHash")] pub m_shape_path_hash : i32 ,
+# [rename (name = "m_Mesh")] pub m_mesh : crate :: unity_engine :: mesh :: Mesh ,
+# [rename (name = "m_InstanceId")] pub m_instance_id : i32 ,
+# [rename (name = "m_ShadowCasterGroup")] pub m_shadow_caster_group : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D ,
+# [rename (name = "m_PreviousShadowCasterGroup")] pub m_previous_shadow_caster_group : crate :: unity_engine :: experimental :: rendering :: universal :: shadowcastergroup2d :: ShadowCasterGroup2D ,
+# [rename (name = "m_PreviousShadowGroup")] pub m_previous_shadow_group : i32 ,
+# [rename (name = "m_PreviousCastsShadows")] pub m_previous_casts_shadows : bool ,
+# [rename (name = "m_PreviousPathHash")] pub m_previous_path_hash : i32 ,
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcaster2d")]
+#[::unity2::methods]
+impl ShadowCaster2D {
+    #[method(name = "get_mesh", args = 0)]
+    pub fn get_mesh(self) -> crate::unity_engine::mesh::Mesh;
+
+    #[method(name = "get_shapePath", args = 0)]
+    pub fn get_shape_path(self) -> ::unity2::Array<crate::unity_engine::vector3::Vector3>;
+
+    #[method(name = "get_shapePathHash", args = 0)]
+    pub fn get_shape_path_hash(self) -> i32;
+
+    #[method(name = "set_shapePathHash", args = 1)]
+    pub fn set_shape_path_hash(self, value: i32) -> ();
+
+    #[method(name = "set_useRendererSilhouette", args = 1)]
+    pub fn set_use_renderer_silhouette(self, value: bool) -> ();
+
+    #[method(name = "get_useRendererSilhouette", args = 0)]
+    pub fn get_use_renderer_silhouette(self) -> bool;
+
+    #[method(name = "set_selfShadows", args = 1)]
+    pub fn set_self_shadows(self, value: bool) -> ();
+
+    #[method(name = "get_selfShadows", args = 0)]
+    pub fn get_self_shadows(self) -> bool;
+
+    #[method(name = "set_castsShadows", args = 1)]
+    pub fn set_casts_shadows(self, value: bool) -> ();
+
+    #[method(name = "get_castsShadows", args = 0)]
+    pub fn get_casts_shadows(self) -> bool;
+
+    #[method(name = "SetDefaultSortingLayers", args = 0)]
+    pub fn set_default_sorting_layers() -> ::unity2::Array<i32>;
+
+    #[method(name = "IsShadowedLayer", args = 1)]
+    pub fn is_shadowed_layer(self, layer: i32) -> bool;
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowcaster2d")]
+impl ShadowCaster2D {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShadowCaster2D),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShadowCaster2DMethods>::ctor(this);
+        this
+    }
+}

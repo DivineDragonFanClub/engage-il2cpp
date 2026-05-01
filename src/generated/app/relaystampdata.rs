@@ -1,0 +1,264 @@
+
+use crate::app::bitfield32::BitField32;
+use crate::app::bitfield32::IBitField32;
+use crate::app::bitfieldcommon::BitFieldCommon;
+use crate::app::bitfieldcommon::IBitFieldCommon;
+use crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1;
+use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaystampdata/RelayStampData.md")))]
+#[::unity2::class(namespace = "App", name = "RelayStampData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relaystampdata :: RelayStampData >)]
+pub struct RelayStampData {}
+
+#[cfg(feature = "app-relaystampdata")]
+#[::unity2::methods]
+impl RelayStampData {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_SerialNo", args = 0)]
+    pub fn get_serial_no(self) -> u8;
+
+    #[method(name = "set_SerialNo", args = 1)]
+    pub fn set_serial_no(self, value: u8) -> ();
+
+    #[method(name = "get_Pid", args = 0)]
+    pub fn get_pid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Pid", args = 1)]
+    pub fn set_pid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Gid", args = 0)]
+    pub fn get_gid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Gid", args = 1)]
+    pub fn set_gid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Kind", args = 0)]
+    pub fn get_kind(self) -> crate::app::relaystampdata::RelayStampData_Kinds;
+
+    #[method(name = "set_Kind", args = 1)]
+    pub fn set_kind(self, value: crate::app::relaystampdata::RelayStampData_Kinds) -> ();
+
+    #[method(name = "get_Sort", args = 0)]
+    pub fn get_sort(self) -> i32;
+
+    #[method(name = "set_Sort", args = 1)]
+    pub fn set_sort(self, value: i32) -> ();
+
+    #[method(name = "get_Flag", args = 0)]
+    pub fn get_flag(self) -> crate::app::relaystampdata::RelayStampData_FlagField;
+
+    #[method(name = "set_Flag", args = 1)]
+    pub fn set_flag(self, value: crate::app::relaystampdata::RelayStampData_FlagField) -> ();
+
+    #[method(name = "get_Voice", args = 0)]
+    pub fn get_voice(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Voice", args = 1)]
+    pub fn set_voice(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "GetMessage", args = 0)]
+    pub fn get_message(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "TryGetFromSerialNo", args = 1)]
+    pub fn try_get_from_serial_no(serial_no: u8) -> crate::app::relaystampdata::RelayStampData;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relaystampdata")]
+impl RelayStampData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayStampData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayStampDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaystampdata/RelayStampData_FlagField.md")))]
+#[::unity2::class(namespace = "App", name = "RelayStampData.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relaystampdata :: RelayStampData_Flags >)]
+pub struct RelayStampData_FlagField {}
+
+#[cfg(feature = "app-relaystampdata")]
+#[::unity2::methods]
+impl RelayStampData_FlagField {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::relaystampdata::RelayStampData_Flags) -> ();
+
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::relaystampdata::RelayStampData_Flags) -> i32;
+}
+
+#[cfg(feature = "app-relaystampdata")]
+impl RelayStampData_FlagField {
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayStampData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayStampData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    pub fn new_2(f: crate::app::relaystampdata::RelayStampData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayStampData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IRelayStampData_FlagFieldMethods>::ctor_2(this, f);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaystampdata/RelayStampData_Flags.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayStampData_Flags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayStampData_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayStampData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayStampData_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayStampData_Flags {
+    pub fn no_filter() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaystampdata/RelayStampData_Kinds.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayStampData_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayStampData_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayStampData.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayStampData_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayStampData_Kinds {
+    pub fn lithos() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn filene() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn brodia() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn ircion() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn solum() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn other() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn god() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn count() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn country_count() -> Self {
+        Self { value: 6 }
+    }
+}

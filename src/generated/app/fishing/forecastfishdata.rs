@@ -1,0 +1,62 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishing/forecastfishdata/ForecastFishData.md")))]
+#[::unity2::class(namespace = "App.Fishing", name = "ForecastFishData")]
+#[parent(crate::system::object::Object)]
+pub struct ForecastFishData {
+    #[rename(name = "m_FishData")]
+    pub m_fish_data: crate::app::fishingfishdata::FishingFishData,
+    #[rename(name = "m_SizeMult")]
+    pub m_size_mult: f32,
+    #[rename(name = "m_Priority")]
+    pub m_priority: f32,
+}
+
+#[cfg(feature = "app-fishing-forecastfishdata")]
+#[::unity2::methods]
+impl ForecastFishData {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor_2(
+        self,
+        data: crate::app::fishingfishdata::FishingFishData,
+        size_mult: f32,
+        priority: f32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-fishing-forecastfishdata")]
+impl ForecastFishData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ForecastFishData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IForecastFishDataMethods>::ctor(this);
+        this
+    }
+
+    pub fn new_2(
+        data: crate::app::fishingfishdata::FishingFishData,
+        size_mult: f32,
+        priority: f32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ForecastFishData),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IForecastFishDataMethods>::ctor_2(this, data, size_mult, priority);
+        this
+    }
+}

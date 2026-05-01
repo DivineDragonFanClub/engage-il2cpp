@@ -1,0 +1,92 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapgroundcollider/GmapGroundCollider.md")))]
+#[::unity2::class(namespace = "App", name = "GmapGroundCollider")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct GmapGroundCollider {
+    #[rename(name = "m_GroundType")]
+    pub m_ground_type: crate::app::gmapgroundcollider::GmapGroundCollider_Type,
+}
+
+#[cfg(feature = "app-gmapgroundcollider")]
+#[::unity2::methods]
+impl GmapGroundCollider {
+    #[method(name = "OnValidate", args = 0)]
+    pub fn on_validate(self) -> ();
+
+    #[method(name = "get_GroundType", args = 0)]
+    pub fn get_ground_type(self) -> crate::app::gmapgroundcollider::GmapGroundCollider_Type;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapgroundcollider")]
+impl GmapGroundCollider {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapGroundCollider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapGroundColliderMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapgroundcollider/GmapGroundCollider_Type.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GmapGroundCollider_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GmapGroundCollider_Type {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GmapGroundCollider.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GmapGroundCollider_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GmapGroundCollider_Type {
+    pub fn _unnamed() -> Self {
+        Self { value: 0 }
+    }
+}

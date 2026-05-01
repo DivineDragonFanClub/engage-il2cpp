@@ -1,0 +1,143 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/navigation/Navigation_Mode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Navigation_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Navigation_Mode {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "Navigation.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Navigation_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Navigation_Mode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn horizontal() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn vertical() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn automatic() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn explicit() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/navigation/Navigation.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Navigation {
+    pub m_mode: crate::unity_engine::ui::navigation::Navigation_Mode,
+    pub m_wrap_around: bool,
+    pub m_select_on_up: crate::unity_engine::ui::selectable::Selectable,
+    pub m_select_on_down: crate::unity_engine::ui::selectable::Selectable,
+    pub m_select_on_left: crate::unity_engine::ui::selectable::Selectable,
+    pub m_select_on_right: crate::unity_engine::ui::selectable::Selectable,
+}
+
+impl ::unity2::ClassIdentity for Navigation {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "Navigation";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Navigation {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-navigation")]
+#[::unity2::methods(value)]
+impl Navigation {
+    #[method(name = "get_mode", args = 0)]
+    pub fn get_mode(self) -> crate::unity_engine::ui::navigation::Navigation_Mode;
+
+    #[method(name = "set_mode", args = 1)]
+    pub fn set_mode(self, value: crate::unity_engine::ui::navigation::Navigation_Mode) -> ();
+
+    #[method(name = "get_wrapAround", args = 0)]
+    pub fn get_wrap_around(self) -> bool;
+
+    #[method(name = "set_wrapAround", args = 1)]
+    pub fn set_wrap_around(self, value: bool) -> ();
+
+    #[method(name = "get_selectOnUp", args = 0)]
+    pub fn get_select_on_up(self) -> crate::unity_engine::ui::selectable::Selectable;
+
+    #[method(name = "set_selectOnUp", args = 1)]
+    pub fn set_select_on_up(self, value: crate::unity_engine::ui::selectable::Selectable) -> ();
+
+    #[method(name = "get_selectOnDown", args = 0)]
+    pub fn get_select_on_down(self) -> crate::unity_engine::ui::selectable::Selectable;
+
+    #[method(name = "set_selectOnDown", args = 1)]
+    pub fn set_select_on_down(self, value: crate::unity_engine::ui::selectable::Selectable) -> ();
+
+    #[method(name = "get_selectOnLeft", args = 0)]
+    pub fn get_select_on_left(self) -> crate::unity_engine::ui::selectable::Selectable;
+
+    #[method(name = "set_selectOnLeft", args = 1)]
+    pub fn set_select_on_left(self, value: crate::unity_engine::ui::selectable::Selectable) -> ();
+
+    #[method(name = "get_selectOnRight", args = 0)]
+    pub fn get_select_on_right(self) -> crate::unity_engine::ui::selectable::Selectable;
+
+    #[method(name = "set_selectOnRight", args = 1)]
+    pub fn set_select_on_right(self, value: crate::unity_engine::ui::selectable::Selectable) -> ();
+
+    #[method(name = "get_defaultNavigation", args = 0)]
+    pub fn get_default_navigation() -> crate::unity_engine::ui::navigation::Navigation;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, other: crate::unity_engine::ui::navigation::Navigation) -> bool;
+}

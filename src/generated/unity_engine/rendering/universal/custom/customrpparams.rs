@@ -1,0 +1,63 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/customrpparams/CustomRPParams.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom",
+    name = "CustomRPParams"
+)]
+#[parent(crate::system::object::Object)]
+pub struct CustomRPParams {
+    #[rename(name = "blurEnabled")]
+    pub blur_enabled: bool,
+    #[rename(name = "blurLevels")]
+    pub blur_levels: i32,
+    #[rename(name = "captureEnabled")]
+    pub capture_enabled: bool,
+    #[rename(name = "finalMonoColor")]
+    pub final_mono_color: crate::unity_engine::color::Color,
+    #[rename(name = "finalMonoColorRate")]
+    pub final_mono_color_rate: f32,
+    #[rename(name = "specialFilterEnabled")]
+    pub special_filter_enabled: bool,
+    #[rename(name = "specialFilterColor")]
+    pub special_filter_color: crate::unity_engine::color::Color,
+    #[rename(name = "specialFilterSaturation")]
+    pub special_filter_saturation: f32,
+    #[rename(name = "specialFilterRate")]
+    pub special_filter_rate: f32,
+    #[rename(name = "specialFilterWhiteRate")]
+    pub special_filter_white_rate: f32,
+    #[rename(name = "specialFilterWhitePoint")]
+    pub special_filter_white_point: f32,
+    #[rename(name = "silhouetteColors")]
+    pub silhouette_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+    #[rename(name = "exposures")]
+    pub exposures: ::unity2::Array<f32>,
+    #[rename(name = "lodFadeBias")]
+    pub lod_fade_bias: f32,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-customrpparams")]
+#[::unity2::methods]
+impl CustomRPParams {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-customrpparams")]
+impl CustomRPParams {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomRPParams),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomRPParamsMethods>::ctor(this);
+        this
+    }
+}

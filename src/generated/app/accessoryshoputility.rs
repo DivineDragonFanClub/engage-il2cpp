@@ -1,0 +1,98 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessoryshoputility/AccessoryShopUtility_Female.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AccessoryShopUtility_Female {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AccessoryShopUtility_Female {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AccessoryShopUtility.Female";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AccessoryShopUtility_Female {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AccessoryShopUtility_Female {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn male() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn female() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessoryshoputility/AccessoryShopUtility.md")))]
+#[::unity2::class(namespace = "App", name = "AccessoryShopUtility")]
+#[parent(crate::system::object::Object)]
+pub struct AccessoryShopUtility {}
+
+#[cfg(feature = "app-accessoryshoputility")]
+#[::unity2::methods]
+impl AccessoryShopUtility {
+    #[method(name = "GetPrivateDressAid", args = 1)]
+    pub fn get_private_dress_aid(unit: crate::app::unit::Unit) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetAccessoryName", args = 2)]
+    pub fn get_accessory_name(
+        accessory_data: crate::app::accessorydata::AccessoryData,
+        female: crate::app::accessoryshoputility::AccessoryShopUtility_Female,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetAccessoryHelp", args = 2)]
+    pub fn get_accessory_help(
+        accessory_data: crate::app::accessorydata::AccessoryData,
+        female: crate::app::accessoryshoputility::AccessoryShopUtility_Female,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-accessoryshoputility")]
+impl AccessoryShopUtility {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopUtility),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopUtilityMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,168 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubfleamarketsequence/HubFleaMarketSequence.md")))]
+#[::unity2::class(namespace = "App", name = "HubFleaMarketSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct HubFleaMarketSequence {
+    #[static_field]
+    #[rename(name = "RandomGiftCount")]
+    pub random_gift_count: i32,
+    #[rename(name = "m_ShopMenuResult")]
+    pub m_shop_menu_result: crate::app::itemshoptopmenu::ItemShopTopMenu_Result2,
+    #[rename(name = "m_ShopUnitSelectMenuResult")]
+    pub m_shop_unit_select_menu_result: crate::app::basicmenu::BasicMenu_Result,
+    #[rename(name = "m_UnitSelectRoot")]
+    pub m_unit_select_root: crate::app::shopunitselectroot::ShopUnitSelectRoot,
+    #[rename(name = "m_FleaMarketBuyRoot")]
+    pub m_flea_market_buy_root: crate::app::fleamarketbuyroot::FleaMarketBuyRoot,
+    #[rename(name = "m_ItemShopSellRoot")]
+    pub m_item_shop_sell_root: crate::app::shopsellroot::ShopSellRoot,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_UnitSelectMenuScrollIndex")]
+    pub m_unit_select_menu_scroll_index: i32,
+    #[rename(name = "m_IsEnabledVoice")]
+    pub m_is_enabled_voice: bool,
+    #[rename(name = "m_FishingPlayCountAtStart")]
+    pub m_fishing_play_count_at_start: i32,
+}
+
+#[cfg(feature = "app-hubfleamarketsequence")]
+#[::unity2::methods]
+impl HubFleaMarketSequence {
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst, is_enabled_voice: bool) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, is_enabled_voice: bool) -> ();
+
+    #[method(name = "CreateDesc", args = 0)]
+    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "LoadResources", args = 0)]
+    pub fn load_resources(self) -> ();
+
+    #[method(name = "IsLoadingResources", args = 0)]
+    pub fn is_loading_resources(self) -> bool;
+
+    #[method(name = "StartSequence", args = 0)]
+    pub fn start_sequence(self) -> ();
+
+    #[method(name = "CreateFleaMarketTopMenu", args = 0)]
+    pub fn create_flea_market_top_menu(self) -> ();
+
+    #[method(name = "CreateShopUnitSelectMenu", args = 0)]
+    pub fn create_shop_unit_select_menu(self) -> ();
+
+    #[method(name = "DestroyShopUnitSelectMenu", args = 0)]
+    pub fn destroy_shop_unit_select_menu(self) -> ();
+
+    #[method(name = "CreateFleaMarketBuyMenu", args = 0)]
+    pub fn create_flea_market_buy_menu(self) -> ();
+
+    #[method(name = "DestroyFleaMarketBuyMenu", args = 0)]
+    pub fn destroy_flea_market_buy_menu(self) -> ();
+
+    #[method(name = "CreateFleaMarketSellMenu", args = 0)]
+    pub fn create_flea_market_sell_menu(self) -> ();
+
+    #[method(name = "DestroyFleaMarketSellMenu", args = 0)]
+    pub fn destroy_flea_market_sell_menu(self) -> ();
+
+    #[method(name = "SetFishingPlayCount", args = 0)]
+    pub fn set_fishing_play_count(self) -> ();
+
+    #[method(name = "EndSequence", args = 0)]
+    pub fn end_sequence(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-hubfleamarketsequence")]
+impl HubFleaMarketSequence {
+    pub fn new(is_enabled_voice: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubFleaMarketSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubFleaMarketSequenceMethods>::ctor(this, is_enabled_voice);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubfleamarketsequence/HubFleaMarketSequence_Label2.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubFleaMarketSequence_Label2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubFleaMarketSequence_Label2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubFleaMarketSequence.Label2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubFleaMarketSequence_Label2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubFleaMarketSequence_Label2 {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn top() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn unit_select_to_buy() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn buy() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn unit_select_to_sell() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn sell() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 6 }
+    }
+}

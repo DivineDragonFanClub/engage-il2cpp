@@ -1,0 +1,13 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/itimelineclipasset/ITimelineClipAsset.md")))]
+#[::unity2::class(namespace = "UnityEngine.Timeline", name = "ITimelineClipAsset")]
+pub struct ITimelineClipAsset {}
+
+#[cfg(feature = "unity_engine-timeline-itimelineclipasset")]
+#[::unity2::methods]
+impl ITimelineClipAsset {
+    #[method(name = "get_clipCaps", args = 0)]
+    pub fn get_clip_caps(self) -> crate::unity_engine::timeline::clipcaps::ClipCaps;
+}

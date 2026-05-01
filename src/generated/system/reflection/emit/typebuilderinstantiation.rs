@@ -1,0 +1,26 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::reflection::memberinfo::IMemberInfo;
+use crate::system::reflection::memberinfo::MemberInfo;
+use crate::system::reflection::typeinfo::ITypeInfo;
+use crate::system::reflection::typeinfo::TypeInfo;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/emit/typebuilderinstantiation/TypeBuilderInstantiation.md")))]
+#[::unity2::class(
+    namespace = "System.Reflection.Emit",
+    name = "TypeBuilderInstantiation"
+)]
+#[parent(crate::system::reflection::typeinfo::TypeInfo)]
+pub struct TypeBuilderInstantiation {}
+
+#[cfg(feature = "system-reflection-emit-typebuilderinstantiation")]
+#[::unity2::methods]
+impl TypeBuilderInstantiation {
+    #[method(name = "MakeGenericType", args = 2)]
+    pub fn make_generic_type(
+        r#type: ::unity2::SystemType,
+        type_arguments: ::unity2::Array<::unity2::SystemType>,
+    ) -> ::unity2::SystemType;
+}

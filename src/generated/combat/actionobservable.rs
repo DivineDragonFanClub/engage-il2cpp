@@ -1,0 +1,59 @@
+
+use crate::combat::actionbase::ActionBase;
+use crate::combat::actionbase::IActionBase;
+use crate::combat::actiondisposerholder::ActionDisposerHolder;
+use crate::combat::actiondisposerholder::IActionDisposerHolder;
+use crate::combat::state::IState;
+use crate::combat::state::State;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actionobservable/ActionObservable.md")))]
+#[::unity2::class(namespace = "Combat", name = "ActionObservable")]
+#[parent(crate::combat::actiondisposerholder::ActionDisposerHolder)]
+pub struct ActionObservable {}
+
+#[cfg(feature = "combat-actionobservable")]
+#[::unity2::methods]
+impl ActionObservable {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        chr: crate::combat::character::Character,
+        phase: crate::combat::phase::Phase,
+    ) -> ();
+
+    #[method(name = "OnEnter", args = 0)]
+    pub fn on_enter(self) -> ();
+
+    #[method(name = "OnUpdate", args = 0)]
+    pub fn on_update(self) -> ();
+
+    #[method(name = "OnExit", args = 0)]
+    pub fn on_exit(self) -> ();
+
+    #[method(name = "OnEnterAttack", args = 0)]
+    pub fn on_enter_attack(self) -> ();
+
+    #[method(name = "OnHitPassed", args = 1)]
+    pub fn on_hit_passed(self, ev: crate::unity_engine::animationevent::AnimationEvent) -> ();
+}
+
+#[cfg(feature = "combat-actionobservable")]
+impl ActionObservable {
+    pub fn new(
+        chr: crate::combat::character::Character,
+        phase: crate::combat::phase::Phase,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ActionObservable),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IActionObservableMethods>::ctor(this, chr, phase);
+        this
+    }
+}

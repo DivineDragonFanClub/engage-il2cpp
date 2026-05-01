@@ -1,0 +1,35 @@
+
+use crate::app::resourcehandle_2::IResourceHandle_2;
+use crate::app::resourcehandle_2::ResourceHandle_2;
+use crate::app::tresourcehandle_1::ITResourceHandle_1;
+use crate::app::tresourcehandle_1::TResourceHandle_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourcegameobject/ResourceGameObject.md")))]
+#[::unity2::class(namespace = "App", name = "ResourceGameObject")]
+# [parent (crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: gameobject :: GameObject >)]
+pub struct ResourceGameObject {}
+
+#[cfg(feature = "app-resourcegameobject")]
+#[::unity2::methods]
+impl ResourceGameObject {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-resourcegameobject")]
+impl ResourceGameObject {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceGameObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceGameObjectMethods>::ctor(this);
+        this
+    }
+}

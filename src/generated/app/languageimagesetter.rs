@@ -1,0 +1,69 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/languageimagesetter/LanguageImageSetter.md")))]
+#[::unity2::class(namespace = "App", name = "LanguageImageSetter")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct LanguageImageSetter {
+    #[rename(name = "m_Target")]
+    pub m_target: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_Sprite_JP_Japanese")]
+    pub m_sprite_jp_japanese: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_Sprite_US_English")]
+    pub m_sprite_us_english: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_Sprite_US_French")]
+    pub m_sprite_us_french: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_Sprite_US_Spanish")]
+    pub m_sprite_us_spanish: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_Sprite_EU_English")]
+    pub m_sprite_eu_english: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_Sprite_EU_French")]
+    pub m_sprite_eu_french: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_Sprite_EU_Spanish")]
+    pub m_sprite_eu_spanish: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_Sprite_EU_German")]
+    pub m_sprite_eu_german: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_Sprite_EU_Italian")]
+    pub m_sprite_eu_italian: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_Sprite_CN_Traditional")]
+    pub m_sprite_cn_traditional: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_Sprite_CN_Simplified")]
+    pub m_sprite_cn_simplified: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_Sprite_KR_Korean")]
+    pub m_sprite_kr_korean: crate::unity_engine::sprite::Sprite,
+}
+
+#[cfg(feature = "app-languageimagesetter")]
+#[::unity2::methods]
+impl LanguageImageSetter {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-languageimagesetter")]
+impl LanguageImageSetter {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LanguageImageSetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILanguageImageSetterMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,83 @@
+
+use crate::app::helpitembase::HelpItemBase;
+use crate::app::helpitembase::IHelpItemBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpitemunitskill/HelpItemUnitSkill.md")))]
+#[::unity2::class(namespace = "App", name = "HelpItemUnitSkill")]
+#[parent(crate::app::helpitembase::HelpItemBase)]
+pub struct HelpItemUnitSkill {
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+    #[rename(name = "m_IsPack")]
+    pub m_is_pack: bool,
+    #[rename(name = "m_tempUnit")]
+    pub m_temp_unit: crate::app::unit::Unit,
+}
+
+#[cfg(feature = "app-helpitemunitskill")]
+#[::unity2::methods]
+impl HelpItemUnitSkill {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "GetSkillList", args = 1)]
+    pub fn get_skill_list(
+        self,
+        unit: crate::app::unit::Unit,
+    ) -> ::unity2::Array<crate::app::infoutil::InfoUtil_StatusSkill>;
+
+    #[method(name = "GetIndexSkill", args = 2)]
+    pub fn get_index_skill(
+        self,
+        unit: crate::app::unit::Unit,
+        icon_index: i32,
+    ) -> crate::app::skilldata::SkillData;
+
+    #[method(name = "GetIndexSkillCategory", args = 2)]
+    pub fn get_index_skill_category(
+        self,
+        unit: crate::app::unit::Unit,
+        icon_index: i32,
+    ) -> crate::app::skilldata::SkillData_Categorys;
+
+    #[method(name = "IsValid", args = 0)]
+    pub fn is_valid(self) -> bool;
+
+    #[method(name = "SetContents", args = 1)]
+    pub fn set_contents(self, setter: crate::app::helpparamsetter::HelpParamSetter) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-helpitemunitskill")]
+impl HelpItemUnitSkill {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HelpItemUnitSkill),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHelpItemUnitSkillMethods>::ctor(this);
+        this
+    }
+}

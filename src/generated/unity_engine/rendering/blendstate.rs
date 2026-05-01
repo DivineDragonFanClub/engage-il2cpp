@@ -1,0 +1,71 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/blendstate/BlendState.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BlendState {
+    pub m_blend_state0:
+        crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState,
+    pub m_blend_state1:
+        crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState,
+    pub m_blend_state2:
+        crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState,
+    pub m_blend_state3:
+        crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState,
+    pub m_blend_state4:
+        crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState,
+    pub m_blend_state5:
+        crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState,
+    pub m_blend_state6:
+        crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState,
+    pub m_blend_state7:
+        crate::unity_engine::rendering::rendertargetblendstate::RenderTargetBlendState,
+    pub m_separate_mrt_blend_states: u8,
+    pub m_alpha_to_mask: u8,
+    pub m_padding: i16,
+}
+
+impl ::unity2::ClassIdentity for BlendState {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "BlendState";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BlendState {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-blendstate")]
+#[::unity2::methods(value)]
+impl BlendState {
+    #[method(name = "get_defaultValue", args = 0)]
+    pub fn get_default_value() -> crate::unity_engine::rendering::blendstate::BlendState;
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, separate_mrt_blend: bool, alpha_to_mask: bool) -> ();
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, other: crate::unity_engine::rendering::blendstate::BlendState) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_2(self, obj: crate::system::object::Object) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+}

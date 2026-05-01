@@ -1,0 +1,44 @@
+
+use crate::combat::deco_rod::Deco_Rod;
+use crate::combat::deco_rod::IDeco_Rod;
+use crate::combat::decorator::Decorator;
+use crate::combat::decorator::IDecorator;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/deco_rodblock/Deco_RodBlock.md")))]
+#[::unity2::class(namespace = "Combat", name = "Deco_RodBlock")]
+#[parent(crate::combat::deco_rod::Deco_Rod)]
+pub struct Deco_RodBlock {}
+
+#[cfg(feature = "combat-deco_rodblock")]
+#[::unity2::methods]
+impl Deco_RodBlock {
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsAvailable", args = 1)]
+    pub fn is_available(that: crate::combat::decoratorargs::DecoratorArgs) -> bool;
+
+    #[method(name = "OnEnter", args = 0)]
+    pub fn on_enter(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-deco_rodblock")]
+impl Deco_RodBlock {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Deco_RodBlock),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDeco_RodBlockMethods>::ctor(this);
+        this
+    }
+}

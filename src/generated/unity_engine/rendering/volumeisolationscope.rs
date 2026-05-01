@@ -1,0 +1,42 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/volumeisolationscope/VolumeIsolationScope.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct VolumeIsolationScope {}
+
+impl ::unity2::ClassIdentity for VolumeIsolationScope {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "VolumeIsolationScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for VolumeIsolationScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-volumeisolationscope")]
+#[::unity2::methods(value)]
+impl VolumeIsolationScope {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unused: bool) -> ();
+
+    #[method(name = "System.IDisposable.Dispose", args = 0)]
+    pub fn system_i_disposable_dispose(self) -> ();
+}

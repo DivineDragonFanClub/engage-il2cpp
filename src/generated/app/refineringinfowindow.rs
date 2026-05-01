@@ -1,0 +1,155 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineringinfowindow/RefineRingInfoWindow_RingRefinedInfo.md")))]
+#[::unity2::class(namespace = "App", name = "RefineRingInfoWindow.RingRefinedInfo")]
+#[parent(crate::system::object::Object)]
+pub struct RefineRingInfoWindow_RingRefinedInfo {
+    #[rename(name = "m_NameText")]
+    pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_RingCImage")]
+    pub m_ring_c_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RingBImage")]
+    pub m_ring_b_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RingAImage")]
+    pub m_ring_a_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RingSImage")]
+    pub m_ring_s_image: crate::unity_engine::ui::image::Image,
+}
+
+#[cfg(feature = "app-refineringinfowindow")]
+#[::unity2::methods]
+impl RefineRingInfoWindow_RingRefinedInfo {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refineringinfowindow")]
+impl RefineRingInfoWindow_RingRefinedInfo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineRingInfoWindow_RingRefinedInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineRingInfoWindow_RingRefinedInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineringinfowindow/RefineRingInfoWindow.md")))]
+#[::unity2::class(namespace = "App", name = "RefineRingInfoWindow")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct RefineRingInfoWindow {
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_GodNameText")]
+    pub m_god_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TotalCountCaption")]
+    pub m_total_count_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TotalCountValue")]
+    pub m_total_count_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_KindCountCaption")]
+    pub m_kind_count_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_KindCountValue")]
+    pub m_kind_count_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_KindCountMax")]
+    pub m_kind_count_max: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_CompleteStar")]
+    pub m_complete_star: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RingRefinedInfo")]
+    pub m_ring_refined_info:
+        ::unity2::Array<crate::app::refineringinfowindow::RefineRingInfoWindow_RingRefinedInfo>,
+}
+
+#[cfg(feature = "app-refineringinfowindow")]
+#[::unity2::methods]
+impl RefineRingInfoWindow {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Open", args = 0)]
+    pub fn open(self) -> ();
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[method(name = "SetData", args = 1)]
+    pub fn set_data(self, god_unit: crate::app::godunit::GodUnit) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refineringinfowindow")]
+impl RefineRingInfoWindow {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineRingInfoWindow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineRingInfoWindowMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineringinfowindow/RefineRingInfoWindow_RingRefineStatistics.md")))]
+#[::unity2::class(namespace = "App", name = "RefineRingInfoWindow.RingRefineStatistics")]
+#[parent(crate::system::object::Object)]
+pub struct RefineRingInfoWindow_RingRefineStatistics {
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+    #[rename(name = "m_ExistS")]
+    pub m_exist_s: bool,
+    #[rename(name = "m_ExistA")]
+    pub m_exist_a: bool,
+    #[rename(name = "m_ExistB")]
+    pub m_exist_b: bool,
+    #[rename(name = "m_ExistC")]
+    pub m_exist_c: bool,
+    #[rename(name = "m_RefinedS")]
+    pub m_refined_s: bool,
+    #[rename(name = "m_RefinedA")]
+    pub m_refined_a: bool,
+    #[rename(name = "m_RefinedB")]
+    pub m_refined_b: bool,
+    #[rename(name = "m_RefinedC")]
+    pub m_refined_c: bool,
+}
+
+#[cfg(feature = "app-refineringinfowindow")]
+#[::unity2::methods]
+impl RefineRingInfoWindow_RingRefineStatistics {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refineringinfowindow")]
+impl RefineRingInfoWindow_RingRefineStatistics {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineRingInfoWindow_RingRefineStatistics),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineRingInfoWindow_RingRefineStatisticsMethods>::ctor(this);
+        this
+    }
+}

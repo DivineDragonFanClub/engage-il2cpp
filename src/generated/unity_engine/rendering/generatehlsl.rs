@@ -1,0 +1,79 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/generatehlsl/GenerateHLSL.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "GenerateHLSL")]
+pub struct GenerateHLSL {
+    #[rename(name = "packingRules")]
+    pub packing_rules: crate::unity_engine::rendering::packingrules::PackingRules,
+    #[rename(name = "containsPackedFields")]
+    pub contains_packed_fields: bool,
+    #[rename(name = "needAccessors")]
+    pub need_accessors: bool,
+    #[rename(name = "needSetters")]
+    pub need_setters: bool,
+    #[rename(name = "needParamDebug")]
+    pub need_param_debug: bool,
+    #[rename(name = "paramDefinesStart")]
+    pub param_defines_start: i32,
+    #[rename(name = "omitStructDeclaration")]
+    pub omit_struct_declaration: bool,
+    #[rename(name = "generateCBuffer")]
+    pub generate_c_buffer: bool,
+    #[rename(name = "constantRegister")]
+    pub constant_register: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-generatehlsl")]
+#[::unity2::methods]
+impl GenerateHLSL {
+    #[method(name = ".ctor", args = 9)]
+    pub fn ctor(
+        self,
+        rules: crate::unity_engine::rendering::packingrules::PackingRules,
+        need_accessors: bool,
+        need_setters: bool,
+        need_param_debug: bool,
+        param_defines_start: i32,
+        omit_struct_declaration: bool,
+        contains_packed_fields: bool,
+        generate_c_buffer: bool,
+        constant_register: i32,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-generatehlsl")]
+impl GenerateHLSL {
+    pub fn new(
+        rules: crate::unity_engine::rendering::packingrules::PackingRules,
+        need_accessors: bool,
+        need_setters: bool,
+        need_param_debug: bool,
+        param_defines_start: i32,
+        omit_struct_declaration: bool,
+        contains_packed_fields: bool,
+        generate_c_buffer: bool,
+        constant_register: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GenerateHLSL),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGenerateHLSLMethods>::ctor(
+            this,
+            rules,
+            need_accessors,
+            need_setters,
+            need_param_debug,
+            param_defines_start,
+            omit_struct_declaration,
+            contains_packed_fields,
+            generate_c_buffer,
+            constant_register,
+        );
+        this
+    }
+}

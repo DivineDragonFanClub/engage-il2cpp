@@ -1,0 +1,54 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/hierarchycache/HierarchyCache.md")))]
+#[::unity2::class(namespace = "Combat", name = "HierarchyCache")]
+#[parent(crate::system::object::Object)]
+pub struct HierarchyCache {
+    #[rename(name = "dic")]
+    pub dic: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::unity_engine::transform::Transform,
+    >,
+}
+
+#[cfg(feature = "combat-hierarchycache")]
+#[::unity2::methods]
+impl HierarchyCache {
+    #[method(name = "get_Dic", args = 0)]
+    pub fn get_dic(
+        self,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::unity_engine::transform::Transform,
+    >;
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root: crate::unity_engine::transform::Transform) -> ();
+
+    #[method(name = "AddRange", args = 1)]
+    pub fn add_range(self, root: crate::unity_engine::transform::Transform) -> ();
+}
+
+#[cfg(feature = "combat-hierarchycache")]
+impl HierarchyCache {
+    pub fn new(root: crate::unity_engine::transform::Transform) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HierarchyCache),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHierarchyCacheMethods>::ctor(this, root);
+        this
+    }
+}

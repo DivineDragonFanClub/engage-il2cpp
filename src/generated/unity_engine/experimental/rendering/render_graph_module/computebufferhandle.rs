@@ -1,0 +1,55 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/computebufferhandle/ComputeBufferHandle.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ComputeBufferHandle {
+    pub handle: crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle,
+}
+
+impl ::unity2::ClassIdentity for ComputeBufferHandle {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
+
+    const NAME: &'static str = "ComputeBufferHandle";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ComputeBufferHandle {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-computebufferhandle")]
+#[::unity2::methods(value)]
+impl ComputeBufferHandle {
+    #[method(name = "get_nullHandle", args = 0)]
+    pub fn get_null_handle () -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle ;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, handle: i32) -> ();
+
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(
+        buffer : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: computebufferhandle :: ComputeBufferHandle,
+    ) -> crate::unity_engine::computebuffer::ComputeBuffer;
+
+    #[method(name = "IsValid", args = 0)]
+    pub fn is_valid(self) -> bool;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

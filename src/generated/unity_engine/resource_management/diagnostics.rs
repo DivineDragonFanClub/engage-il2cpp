@@ -1,0 +1,13 @@
+
+#[cfg(any(feature = "unity_engine-resource_management-diagnostics-diagnosticevent-types"))]
+pub mod diagnosticevent;
+#[cfg(any(feature = "unity_engine-resource_management-diagnostics-diagnosticevent-types"))]
+pub use diagnosticevent::*;
+#[cfg(any(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector-types"))]
+pub mod diagnosticeventcollector;
+#[cfg(any(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector-types"))]
+pub use diagnosticeventcollector::*;
+#[cfg(any(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton-types"))]
+pub mod diagnosticeventcollectorsingleton;
+#[cfg(any(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton-types"))]
+pub use diagnosticeventcollectorsingleton::*;

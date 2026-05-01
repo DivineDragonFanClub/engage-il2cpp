@@ -1,0 +1,241 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/language/Language_Voices.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Language_Voices {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Language_Voices {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Language.Voices";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Language_Voices {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Language_Voices {
+    pub fn japanese() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn english() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/language/Language_Langs.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Language_Langs {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Language_Langs {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Language.Langs";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Language_Langs {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Language_Langs {
+    pub fn jp_japanese() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn us_english() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn us_french() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn us_spanish() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn eu_english() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn eu_french() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn eu_spanish() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn eu_german() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn eu_italian() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn cn_traditional() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn cn_simplified() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn kr_korean() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 12 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/language/Language.md")))]
+#[::unity2::class(namespace = "App", name = "Language")]
+#[parent(crate::system::object::Object)]
+pub struct Language {
+    #[static_field]
+    #[rename(name = "s_Lang")]
+    pub s_lang: crate::app::language::Language_Langs,
+    #[static_field]
+    #[rename(name = "s_Voice")]
+    pub s_voice: crate::app::language::Language_Voices,
+    #[static_field]
+    #[rename(name = "s_LangChanged")]
+    pub s_lang_changed: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-language")]
+#[::unity2::methods]
+impl Language {
+    #[method(name = "add_s_LangChanged", args = 1)]
+    pub fn add_s_lang_changed(value: crate::system::action::Action) -> ();
+
+    #[method(name = "remove_s_LangChanged", args = 1)]
+    pub fn remove_s_lang_changed(value: crate::system::action::Action) -> ();
+
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ();
+
+    #[method(name = "SetLangAndVoiceFirst", args = 2)]
+    pub fn set_lang_and_voice_first(
+        lang: crate::app::language::Language_Langs,
+        voice: crate::app::language::Language_Voices,
+    ) -> ();
+
+    #[method(name = "GetLang", args = 0)]
+    pub fn get_lang() -> crate::app::language::Language_Langs;
+
+    #[method(name = "add_LangChanged", args = 1)]
+    pub fn add_lang_changed(value: crate::system::action::Action) -> ();
+
+    #[method(name = "remove_LangChanged", args = 1)]
+    pub fn remove_lang_changed(value: crate::system::action::Action) -> ();
+
+    #[method(name = "GetSortKey", args = 2)]
+    pub fn get_sort_key(
+        lang: crate::app::language::Language_Langs,
+        font: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+    ) -> i32;
+
+    #[method(name = "SetLang", args = 1)]
+    pub fn set_lang(lang: crate::app::language::Language_Langs) -> ();
+
+    #[method(name = "GetVoice", args = 0)]
+    pub fn get_voice() -> crate::app::language::Language_Voices;
+
+    #[method(name = "SetVoice", args = 1)]
+    pub fn set_voice(voice: crate::app::language::Language_Voices) -> ();
+
+    #[method(name = "ReflectSetting", args = 0)]
+    pub fn reflect_setting() -> ();
+
+    #[method(name = "SaveSetting", args = 1)]
+    pub fn save_setting(parent: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "GetLangName", args = 1)]
+    pub fn get_lang_name(lang: crate::app::language::Language_Langs) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetVoiceName", args = 1)]
+    pub fn get_voice_name(voice: crate::app::language::Language_Voices) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsTalkLayout2Lines", args = 1)]
+    pub fn is_talk_layout2_lines(lang: crate::app::language::Language_Langs) -> bool;
+
+    #[method(name = "GetLangDesired", args = 0)]
+    pub fn get_lang_desired() -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-language")]
+impl Language {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Language),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILanguageMethods>::ctor(this);
+        this
+    }
+}

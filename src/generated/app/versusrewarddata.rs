@@ -1,0 +1,73 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusrewarddata/VersusRewardData.md")))]
+#[::unity2::class(namespace = "App", name = "VersusRewardData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: versusrewarddata :: VersusRewardData >)]
+pub struct VersusRewardData {}
+
+#[cfg(feature = "app-versusrewarddata")]
+#[::unity2::methods]
+impl VersusRewardData {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_TypeID", args = 0)]
+    pub fn get_type_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_TypeID", args = 1)]
+    pub fn set_type_id(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Iids", args = 0)]
+    pub fn get_iids(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_Iids", args = 1)]
+    pub fn set_iids(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_Nums", args = 0)]
+    pub fn get_nums(self) -> ::unity2::Array<i32>;
+
+    #[method(name = "set_Nums", args = 1)]
+    pub fn set_nums(self, value: ::unity2::Array<i32>) -> ();
+
+    #[method(name = "get_Conditions", args = 0)]
+    pub fn get_conditions(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_Conditions", args = 1)]
+    pub fn set_conditions(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "OnCompleted", args = 0)]
+    pub fn on_completed(self) -> ();
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "TryGetRandomItem", args = 2)]
+    pub fn try_get_random_item(self, iid: ::unity2::Il2CppString, num: i32) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-versusrewarddata")]
+impl VersusRewardData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusRewardData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusRewardDataMethods>::ctor(this);
+        this
+    }
+}

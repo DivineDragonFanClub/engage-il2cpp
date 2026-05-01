@@ -1,0 +1,84 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/glyphloadflags/GlyphLoadFlags.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GlyphLoadFlags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GlyphLoadFlags {
+    const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
+
+    const NAME: &'static str = "GlyphLoadFlags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GlyphLoadFlags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GlyphLoadFlags {
+    pub fn load_default() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn load_no_scale() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn load_no_hinting() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn load_render() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn load_no_bitmap() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn load_force_autohint() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn load_monochrome() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn load_no_autohint() -> Self {
+        Self { value: 32768 }
+    }
+
+    pub fn load_compute_metrics() -> Self {
+        Self { value: 2097152 }
+    }
+
+    pub fn load_bitmap_metrics_only() -> Self {
+        Self { value: 4194304 }
+    }
+}

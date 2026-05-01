@@ -1,0 +1,41 @@
+
+use crate::app::procdesc::IProcDesc;
+use crate::app::procdesc::ProcDesc;
+use crate::app::procdesctickbase::IProcDescTickBase;
+use crate::app::procdesctickbase::ProcDescTickBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdescmtick/ProcDescMTick.md")))]
+#[::unity2::class(namespace = "App", name = "ProcDescMTick")]
+#[parent(crate::app::procdesctickbase::ProcDescTickBase)]
+pub struct ProcDescMTick {
+    #[rename(name = "m_Method")]
+    pub m_method: crate::app::procvoidmethod::ProcVoidMethod,
+}
+
+#[cfg(feature = "app-procdescmtick")]
+#[::unity2::methods]
+impl ProcDescMTick {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, method: crate::app::procvoidmethod::ProcVoidMethod) -> ();
+
+    #[method(name = "ExecuteImpl", args = 1)]
+    pub fn execute_impl(self, inst: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-procdescmtick")]
+impl ProcDescMTick {
+    pub fn new(method: crate::app::procvoidmethod::ProcVoidMethod) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProcDescMTick),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProcDescMTickMethods>::ctor(this, method);
+        this
+    }
+}

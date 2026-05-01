@@ -1,0 +1,198 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequenceinventory/SortieSequenceInventory_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SortieSequenceInventory_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SortieSequenceInventory_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieSequenceInventory.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SortieSequenceInventory_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SortieSequenceInventory_Label {
+    pub fn main_menu() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn r#loop() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn main_menu_from_trade() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn main_menu_only_activate_unit_menu() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn main_menu_only_activate_pool_menu() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn sub_menu() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn trade() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 7 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequenceinventory/SortieSequenceInventory.md")))]
+#[::unity2::class(namespace = "App", name = "SortieSequenceInventory")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequenceinventory :: SortieSequenceInventory >)]
+pub struct SortieSequenceInventory {
+    #[static_field]
+    #[rename(name = "ResNameC")]
+    pub res_name_c: ::unity2::Il2CppString,
+    #[rename(name = "m_GameObject")]
+    pub m_game_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Window")]
+    pub m_window: crate::app::inventoryroot::InventoryRoot,
+    #[rename(name = "m_VisibilytyOfUnitInfo")]
+    pub m_visibilyty_of_unit_info: bool,
+    #[rename(name = "m_CharaImage")]
+    pub m_chara_image: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_CharaImageRight")]
+    pub m_chara_image_right: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-sortiesequenceinventory")]
+#[::unity2::methods]
+impl SortieSequenceInventory {
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "CreateBindTransporter", args = 1)]
+    pub fn create_bind_transporter(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "CreateBindCommon", args = 3)]
+    pub fn create_bind_common(
+        super_: crate::app::procinst::ProcInst,
+        mode: crate::app::sortieinventorymanager::SortieInventoryManager_Modes,
+        name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, mode: crate::app::sortieinventorymanager::SortieInventoryManager_Modes)
+        -> ();
+
+    #[method(name = "LoadRes", args = 0)]
+    pub fn load_res(self) -> ();
+
+    #[method(name = "IsLoadingRes", args = 0)]
+    pub fn is_loading_res(self) -> bool;
+
+    #[method(name = "Open", args = 0)]
+    pub fn open(self) -> ();
+
+    #[method(name = "OpenTitleBar", args = 0)]
+    pub fn open_title_bar(self) -> ();
+
+    #[method(name = "HasDoneAfterBuild", args = 0)]
+    pub fn has_done_after_build(self) -> bool;
+
+    #[method(name = "StartMenu", args = 0)]
+    pub fn start_menu(self) -> ();
+
+    #[method(name = "GetCurrentMenu", args = 0)]
+    pub fn get_current_menu(self) -> crate::app::basicmenu::BasicMenu;
+
+    #[method(name = "Tutorial", args = 0)]
+    pub fn tutorial(self) -> ();
+
+    #[method(name = "MenuTick", args = 0)]
+    pub fn menu_tick(self) -> ();
+
+    #[method(name = "MainMenuOnlyActivateUnitMenu", args = 0)]
+    pub fn main_menu_only_activate_unit_menu(self) -> ();
+
+    #[method(name = "MainMenuOnlyActivatePoolMenu", args = 0)]
+    pub fn main_menu_only_activate_pool_menu(self) -> ();
+
+    #[method(name = "CreateSubMenu", args = 0)]
+    pub fn create_sub_menu(self) -> ();
+
+    #[method(name = "MenuOpenOtherThanCharaImage", args = 0)]
+    pub fn menu_open_other_than_chara_image(self) -> ();
+
+    #[method(name = "MenuCloseOtherThanCharaImage", args = 0)]
+    pub fn menu_close_other_than_chara_image(self) -> ();
+
+    #[method(name = "IsMenuCloseOtherThanCharaImage", args = 0)]
+    pub fn is_menu_close_other_than_chara_image(self) -> bool;
+
+    #[method(name = "ToTrade", args = 0)]
+    pub fn to_trade(self) -> ();
+
+    #[method(name = "EndTrade", args = 0)]
+    pub fn end_trade(self) -> ();
+
+    #[method(name = "MenuClose", args = 0)]
+    pub fn menu_close(self) -> ();
+
+    #[method(name = "IsClosed", args = 0)]
+    pub fn is_closed(self) -> bool;
+
+    #[method(name = "MenuCloseEnd", args = 0)]
+    pub fn menu_close_end(self) -> ();
+
+    #[method(name = "SetMenuActive", args = 2)]
+    pub fn set_menu_active(self, menu: crate::app::basicmenu::BasicMenu, b_active: bool) -> ();
+}
+
+#[cfg(feature = "app-sortiesequenceinventory")]
+impl SortieSequenceInventory {
+    pub fn new(mode: crate::app::sortieinventorymanager::SortieInventoryManager_Modes) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieSequenceInventory),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieSequenceInventoryMethods>::ctor(this, mode);
+        this
+    }
+}

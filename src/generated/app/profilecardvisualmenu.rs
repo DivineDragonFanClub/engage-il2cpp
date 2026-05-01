@@ -1,0 +1,275 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::gridmenu::GridMenu;
+use crate::app::gridmenu::IGridMenu;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardvisualmenu/ProfileCardVisualMenu_DisposeEventHandler.md")))]
+#[::unity2::class(namespace = "App", name = "ProfileCardVisualMenu.DisposeEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ProfileCardVisualMenu_DisposeEventHandler {}
+
+#[cfg(feature = "app-profilecardvisualmenu")]
+#[::unity2::methods]
+impl ProfileCardVisualMenu_DisposeEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-profilecardvisualmenu")]
+impl ProfileCardVisualMenu_DisposeEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardVisualMenu_DisposeEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardVisualMenu_DisposeEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardvisualmenu/ProfileCardVisualMenu_DecideEventHandler.md")))]
+#[::unity2::class(namespace = "App", name = "ProfileCardVisualMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ProfileCardVisualMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-profilecardvisualmenu")]
+#[::unity2::methods]
+impl ProfileCardVisualMenu_DecideEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        category: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
+        id: ::unity2::Il2CppString,
+    ) -> ();
+}
+
+#[cfg(feature = "app-profilecardvisualmenu")]
+impl ProfileCardVisualMenu_DecideEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardVisualMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardVisualMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardvisualmenu/ProfileCardVisualMenu_Category.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ProfileCardVisualMenu_Category {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ProfileCardVisualMenu_Category {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ProfileCardVisualMenu.Category";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ProfileCardVisualMenu_Category {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ProfileCardVisualMenu_Category {
+    pub fn bg() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn frame() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn text_deco() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn text_color() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn character_stamp() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardvisualmenu/ProfileCardVisualMenu.md")))]
+#[::unity2::class(namespace = "App", name = "ProfileCardVisualMenu")]
+#[parent(crate::app::gridmenu::GridMenu)]
+pub struct ProfileCardVisualMenu {
+    #[rename(name = "CaptionMid")]
+    pub caption_mid: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "m_MenuItemIndexNone")]
+    pub m_menu_item_index_none: i32,
+    #[rename(name = "m_ProfileCardRoot")]
+    pub m_profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
+    #[rename(name = "m_MyProfileCardTemp")]
+    pub m_my_profile_card_temp: crate::app::profilecard::ProfileCard,
+    #[rename(name = "m_DecidedMenuItemIndex")]
+    pub m_decided_menu_item_index: i32,
+    #[rename(name = "m_Category")]
+    pub m_category: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
+    #[rename(name = "m_Selects")]
+    pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DecideEventHandler,
+    #[rename(name = "m_DisposeEventHandler")]
+    pub m_dispose_event_handler:
+        crate::app::profilecardvisualmenu::ProfileCardVisualMenu_DisposeEventHandler,
+}
+
+#[cfg(feature = "app-profilecardvisualmenu")]
+#[::unity2::methods]
+impl ProfileCardVisualMenu {
+    #[method(name = "CreateBind", args = 7)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_content: crate::app::profilecardvisualmenucontent::ProfileCardVisualMenuContent,
+        profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
+        my_profile_card_temp: crate::app::profilecard::ProfileCard,
+        initial_category: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
+        decide_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler,
+        dispose_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler,
+    ) -> crate::app::profilecardvisualmenu::ProfileCardVisualMenu;
+
+    #[method(name = "CreateMenuItem", args = 3)]
+    pub fn create_menu_item(
+        category: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
+        my_profile_card_temp: crate::app::profilecard::ProfileCard,
+        initial_decided_index: i32,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[method(name = ".ctor", args = 8)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::gridmenucontent::GridMenuContent,
+        profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
+        my_profile_card_temp: crate::app::profilecard::ProfileCard,
+        category: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
+        initial_decided_index: i32,
+        decide_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler,
+        dispose_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler,
+    ) -> ();
+
+    #[method(name = "OnBuild", args = 1)]
+    pub fn on_build(self, is_first_build: bool) -> ();
+
+    #[method(name = "RebuildMenu", args = 0)]
+    pub fn rebuild_menu(self) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetSelect", args = 0)]
+    pub fn get_select(self) -> crate::app::basicmenuselect::BasicMenuSelect;
+
+    #[method(name = "UpdateDecided", args = 1)]
+    pub fn update_decided(self, menu_item_index: i32) -> bool;
+
+    #[method(name = "UpdateDecidedRemovable", args = 1)]
+    pub fn update_decided_removable(self, menu_item_index: i32) -> ();
+
+    #[method(name = "UpdateProfileData", args = 1)]
+    pub fn update_profile_data(self, remove: bool) -> ::unity2::Il2CppString;
+
+    #[method(name = "UpdateContent", args = 0)]
+    pub fn update_content(self) -> ();
+
+    #[method(name = "UpdateCardRoot", args = 1)]
+    pub fn update_card_root(self, menu_item_index: i32) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-profilecardvisualmenu")]
+impl ProfileCardVisualMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::gridmenucontent::GridMenuContent,
+        profile_card_root: crate::app::profilecardroot::ProfileCardRoot,
+        my_profile_card_temp: crate::app::profilecard::ProfileCard,
+        category: crate::app::profilecardvisualmenu::ProfileCardVisualMenu_Category,
+        initial_decided_index: i32,
+        decide_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DecideEventHandler,
+        dispose_event_handler : crate :: app :: profilecardvisualmenu :: ProfileCardVisualMenu_DisposeEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardVisualMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardVisualMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            profile_card_root,
+            my_profile_card_temp,
+            category,
+            initial_decided_index,
+            decide_event_handler,
+            dispose_event_handler,
+        );
+        this
+    }
+}

@@ -1,0 +1,53 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_lineinfo/TMP_LineInfo.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TMP_LineInfo {
+    pub control_character_count: i32,
+    pub character_count: i32,
+    pub visible_character_count: i32,
+    pub space_count: i32,
+    pub word_count: i32,
+    pub first_character_index: i32,
+    pub first_visible_character_index: i32,
+    pub last_character_index: i32,
+    pub last_visible_character_index: i32,
+    pub length: f32,
+    pub line_height: f32,
+    pub ascender: f32,
+    pub baseline: f32,
+    pub descender: f32,
+    pub max_advance: f32,
+    pub width: f32,
+    pub margin_left: f32,
+    pub margin_right: f32,
+    pub alignment: crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
+    pub line_extents: crate::tm_pro::extents::Extents,
+}
+
+impl ::unity2::ClassIdentity for TMP_LineInfo {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_LineInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_LineInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

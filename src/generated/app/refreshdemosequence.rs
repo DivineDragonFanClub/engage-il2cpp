@@ -1,0 +1,171 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshdemosequence/RefreshDemoSequence.md")))]
+#[::unity2::class(namespace = "App", name = "RefreshDemoSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RefreshDemoSequence {
+    #[static_field]
+    #[rename(name = "s_BasketPath")]
+    pub s_basket_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "s_FruitsPath")]
+    pub s_fruits_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "s_AOCHumMPath")]
+    pub s_aoc_hum_m_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "s_AOCHumFPath")]
+    pub s_aoc_hum_f_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "s_AOCHorsePath")]
+    pub s_aoc_horse_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "s_AOCc400Path")]
+    pub s_ao_cc400_path: ::unity2::Il2CppString,
+    #[rename(name = "m_RefreshArea")]
+    pub m_refresh_area: crate::app::refreshdemosequence::RefreshDemoSequence_RefreshArea,
+    #[rename(name = "m_SelectUnitList")]
+    pub m_select_unit_list:
+        crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    #[rename(name = "m_AreaObject")]
+    pub m_area_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_LoadingCount")]
+    pub m_loading_count: i32,
+    #[rename(name = "m_MainCamera")]
+    pub m_main_camera: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_DemoCameraHandle")]
+    pub m_demo_camera_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+    #[rename(name = "m_DemoCamera")]
+    pub m_demo_camera: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ReliancePopUp")]
+    pub m_reliance_pop_up: crate::app::reliancepopupcontroller::ReliancePopUpController,
+}
+
+#[cfg(feature = "app-refreshdemosequence")]
+#[::unity2::methods]
+impl RefreshDemoSequence {
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        aid: ::unity2::Il2CppString,
+        unit1: crate::app::unit::Unit,
+        unit2: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        aid: ::unity2::Il2CppString,
+        unit1: crate::app::unit::Unit,
+        unit2: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "CreateDesc", args = 0)]
+    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "StartSequence", args = 0)]
+    pub fn start_sequence(self) -> ();
+
+    #[method(name = "CreateUnit", args = 2)]
+    pub fn create_unit(self, unit: crate::app::unit::Unit, locator_num: i32) -> ();
+
+    #[method(name = "CreateHorse", args = 2)]
+    pub fn create_horse(self, pid: ::unity2::Il2CppString, locator_num: i32) -> ();
+
+    #[method(name = "IsWaitingSetup", args = 0)]
+    pub fn is_waiting_setup(self) -> bool;
+
+    #[method(name = "PlayDemo", args = 0)]
+    pub fn play_demo(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "EndSequence", args = 0)]
+    pub fn end_sequence(self) -> ();
+
+    #[method(name = "LoadResource", args = 0)]
+    pub fn load_resource(self) -> ();
+
+    #[method(name = "IsLoadingResource", args = 0)]
+    pub fn is_loading_resource(self) -> bool;
+
+    #[method(name = "UnloadResource", args = 0)]
+    pub fn unload_resource(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-refreshdemosequence")]
+impl RefreshDemoSequence {
+    pub fn new(
+        aid: ::unity2::Il2CppString,
+        unit1: crate::app::unit::Unit,
+        unit2: crate::app::unit::Unit,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshDemoSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshDemoSequenceMethods>::ctor(this, aid, unit1, unit2);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshdemosequence/RefreshDemoSequence_RefreshArea.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RefreshDemoSequence_RefreshArea {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RefreshDemoSequence_RefreshArea {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RefreshDemoSequence.RefreshArea";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RefreshDemoSequence_RefreshArea {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RefreshDemoSequence_RefreshArea {
+    pub fn pool() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn orchard() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn stable() -> Self {
+        Self { value: 2 }
+    }
+}

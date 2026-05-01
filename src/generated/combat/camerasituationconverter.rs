@@ -1,0 +1,124 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/camerasituationconverter/CameraSituationConverter.md")))]
+#[::unity2::class(namespace = "Combat", name = "CameraSituationConverter")]
+#[parent(crate::system::object::Object)]
+pub struct CameraSituationConverter {}
+
+#[cfg(feature = "combat-camerasituationconverter")]
+#[::unity2::methods]
+impl CameraSituationConverter {
+    #[method(name = "get_Converters", args = 0)]
+    pub fn get_converters(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::combat::situation_converter::baseconverter::BaseConverter,
+    >;
+
+    #[method(name = "get_DataSet", args = 0)]
+    pub fn get_data_set(self) -> crate::combat::situation_converter::cameradataset::CameraDataSet;
+
+    #[method(name = "SetupConverter", args = 3)]
+    pub fn setup_converter(
+        record: crate::combat::combatrecord::CombatRecord,
+        swt: crate::combat::cameraswitch::CameraSwitch,
+        pos_data: crate::combat::camerapositiondata::CameraPositionData,
+    ) -> crate::combat::camerasituationconverter::CameraSituationConverter;
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        record: crate::combat::combatrecord::CombatRecord,
+        swt: crate::combat::cameraswitch::CameraSwitch,
+        pos_data: crate::combat::camerapositiondata::CameraPositionData,
+    ) -> ();
+
+    #[method(name = "GetCameraPosition", args = 2)]
+    pub fn get_camera_position(
+        self,
+        situation: crate::combat::camerasituation::CameraSituation,
+        arg: ::unity2::Il2CppString,
+    ) -> crate::combat::cameraposition::CameraPosition;
+}
+
+#[cfg(feature = "combat-camerasituationconverter")]
+impl CameraSituationConverter {
+    pub fn new(
+        record: crate::combat::combatrecord::CombatRecord,
+        swt: crate::combat::cameraswitch::CameraSwitch,
+        pos_data: crate::combat::camerapositiondata::CameraPositionData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CameraSituationConverter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICameraSituationConverterMethods>::ctor(this, record, swt, pos_data);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/camerasituationconverter/CameraSituationConverter_CameraLocateStyle.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CameraSituationConverter_CameraLocateStyle {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CameraSituationConverter_CameraLocateStyle {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CameraSituationConverter.CameraLocateStyle";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CameraSituationConverter_CameraLocateStyle {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CameraSituationConverter_CameraLocateStyle {
+    pub fn normal() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn m000() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn last_boss() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn look_up() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn high() -> Self {
+        Self { value: 512 }
+    }
+}

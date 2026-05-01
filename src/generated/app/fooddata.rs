@@ -1,0 +1,161 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fooddata/FoodData_FoodCountry.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FoodData_FoodCountry {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FoodData_FoodCountry {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FoodData.FoodCountry";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FoodData_FoodCountry {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FoodData_FoodCountry {
+    pub fn filene() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn brodia() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn solum() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn ircion() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn lithos() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn other() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fooddata/FoodData.md")))]
+#[::unity2::class(namespace = "App", name = "FoodData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fooddata :: FoodData >)]
+pub struct FoodData {}
+
+#[cfg(feature = "app-fooddata")]
+#[::unity2::methods]
+impl FoodData {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_Fid", args = 0)]
+    pub fn get_fid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Fid", args = 1)]
+    pub fn set_fid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Message", args = 0)]
+    pub fn get_message(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Message", args = 1)]
+    pub fn set_message(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Enhance", args = 0)]
+    pub fn get_enhance(self) -> crate::app::capabilitysbyte::CapabilitySbyte;
+
+    #[method(name = "set_Enhance", args = 1)]
+    pub fn set_enhance(self, value: crate::app::capabilitysbyte::CapabilitySbyte) -> ();
+
+    #[method(name = "get_Foodstuffs", args = 0)]
+    pub fn get_foodstuffs(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_Foodstuffs", args = 1)]
+    pub fn set_foodstuffs(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_Country", args = 0)]
+    pub fn get_country(self) -> crate::app::persondata::PersonData_Country;
+
+    #[method(name = "set_Country", args = 1)]
+    pub fn set_country(self, value: crate::app::persondata::PersonData_Country) -> ();
+
+    #[method(name = "get_PrefabName", args = 0)]
+    pub fn get_prefab_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_PrefabName", args = 1)]
+    pub fn set_prefab_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_SeEvent", args = 0)]
+    pub fn get_se_event(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_SeEvent", args = 1)]
+    pub fn set_se_event(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetDifficulty", args = 1)]
+    pub fn get_difficulty(
+        self,
+        pid: ::unity2::Il2CppString,
+    ) -> crate::app::cookdata::CookData_Difficulty;
+}
+
+#[cfg(feature = "app-fooddata")]
+impl FoodData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FoodData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFoodDataMethods>::ctor(this);
+        this
+    }
+}

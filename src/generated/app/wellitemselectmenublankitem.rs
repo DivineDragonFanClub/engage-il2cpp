@@ -1,0 +1,46 @@
+
+use crate::app::basicitemmenuitem::BasicItemMenuItem;
+use crate::app::basicitemmenuitem::IBasicItemMenuItem;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::wellitemselectmenuitem::IWellItemSelectMenuItem;
+use crate::app::wellitemselectmenuitem::WellItemSelectMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellitemselectmenublankitem/WellItemSelectMenuBlankItem.md")))]
+#[::unity2::class(namespace = "App", name = "WellItemSelectMenuBlankItem")]
+#[parent(crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)]
+pub struct WellItemSelectMenuBlankItem {}
+
+#[cfg(feature = "app-wellitemselectmenublankitem")]
+#[::unity2::methods]
+impl WellItemSelectMenuBlankItem {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "IsVisibleItemIconOnBlank", args = 0)]
+    pub fn is_visible_item_icon_on_blank(self) -> bool;
+}
+
+#[cfg(feature = "app-wellitemselectmenublankitem")]
+impl WellItemSelectMenuBlankItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WellItemSelectMenuBlankItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWellItemSelectMenuBlankItemMethods>::ctor(this);
+        this
+    }
+}

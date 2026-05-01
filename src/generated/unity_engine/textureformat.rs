@@ -1,0 +1,324 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/textureformat/TextureFormat.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TextureFormat {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TextureFormat {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "TextureFormat";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TextureFormat {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TextureFormat {
+    pub fn alpha8() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn argb4444() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn rgb24() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn rgba32() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn argb32() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn rgb565() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn r16() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn dxt1() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn dxt5() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn rgba4444() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn bgra32() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn r_half() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn rg_half() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn rgba_half() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn r_float() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn rg_float() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn rgba_float() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn yuy2() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn rgb9e5_float() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn bc4() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn bc5() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn bc6h() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn bc7() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn dxt1_crunched() -> Self {
+        Self { value: 28 }
+    }
+
+    pub fn dxt5_crunched() -> Self {
+        Self { value: 29 }
+    }
+
+    pub fn pvrtc_rgb2() -> Self {
+        Self { value: 30 }
+    }
+
+    pub fn pvrtc_rgba2() -> Self {
+        Self { value: 31 }
+    }
+
+    pub fn pvrtc_rgb4() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn pvrtc_rgba4() -> Self {
+        Self { value: 33 }
+    }
+
+    pub fn etc_rgb4() -> Self {
+        Self { value: 34 }
+    }
+
+    pub fn eac_r() -> Self {
+        Self { value: 41 }
+    }
+
+    pub fn eac_r_signed() -> Self {
+        Self { value: 42 }
+    }
+
+    pub fn eac_rg() -> Self {
+        Self { value: 43 }
+    }
+
+    pub fn eac_rg_signed() -> Self {
+        Self { value: 44 }
+    }
+
+    pub fn etc2_rgb() -> Self {
+        Self { value: 45 }
+    }
+
+    pub fn etc2_rgba1() -> Self {
+        Self { value: 46 }
+    }
+
+    pub fn etc2_rgba8() -> Self {
+        Self { value: 47 }
+    }
+
+    pub fn astc_4x4() -> Self {
+        Self { value: 48 }
+    }
+
+    pub fn astc_5x5() -> Self {
+        Self { value: 49 }
+    }
+
+    pub fn astc_6x6() -> Self {
+        Self { value: 50 }
+    }
+
+    pub fn astc_8x8() -> Self {
+        Self { value: 51 }
+    }
+
+    pub fn astc_10x10() -> Self {
+        Self { value: 52 }
+    }
+
+    pub fn astc_12x12() -> Self {
+        Self { value: 53 }
+    }
+
+    pub fn etc_rgb4_3ds() -> Self {
+        Self { value: 60 }
+    }
+
+    pub fn etc_rgba8_3ds() -> Self {
+        Self { value: 61 }
+    }
+
+    pub fn rg16() -> Self {
+        Self { value: 62 }
+    }
+
+    pub fn r8() -> Self {
+        Self { value: 63 }
+    }
+
+    pub fn etc_rgb4_crunched() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn etc2_rgba8_crunched() -> Self {
+        Self { value: 65 }
+    }
+
+    pub fn astc_hdr_4x4() -> Self {
+        Self { value: 66 }
+    }
+
+    pub fn astc_hdr_5x5() -> Self {
+        Self { value: 67 }
+    }
+
+    pub fn astc_hdr_6x6() -> Self {
+        Self { value: 68 }
+    }
+
+    pub fn astc_hdr_8x8() -> Self {
+        Self { value: 69 }
+    }
+
+    pub fn astc_hdr_10x10() -> Self {
+        Self { value: 70 }
+    }
+
+    pub fn astc_hdr_12x12() -> Self {
+        Self { value: 71 }
+    }
+
+    pub fn rg32() -> Self {
+        Self { value: 72 }
+    }
+
+    pub fn rgb48() -> Self {
+        Self { value: 73 }
+    }
+
+    pub fn rgba64() -> Self {
+        Self { value: 74 }
+    }
+
+    pub fn astc_rgb_4x4() -> Self {
+        Self { value: 48 }
+    }
+
+    pub fn astc_rgb_5x5() -> Self {
+        Self { value: 49 }
+    }
+
+    pub fn astc_rgb_6x6() -> Self {
+        Self { value: 50 }
+    }
+
+    pub fn astc_rgb_8x8() -> Self {
+        Self { value: 51 }
+    }
+
+    pub fn astc_rgb_10x10() -> Self {
+        Self { value: 52 }
+    }
+
+    pub fn astc_rgb_12x12() -> Self {
+        Self { value: 53 }
+    }
+
+    pub fn astc_rgba_4x4() -> Self {
+        Self { value: 54 }
+    }
+
+    pub fn astc_rgba_5x5() -> Self {
+        Self { value: 55 }
+    }
+
+    pub fn astc_rgba_6x6() -> Self {
+        Self { value: 56 }
+    }
+
+    pub fn astc_rgba_8x8() -> Self {
+        Self { value: 57 }
+    }
+
+    pub fn astc_rgba_10x10() -> Self {
+        Self { value: 58 }
+    }
+
+    pub fn astc_rgba_12x12() -> Self {
+        Self { value: 59 }
+    }
+}

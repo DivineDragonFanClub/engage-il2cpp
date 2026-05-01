@@ -1,0 +1,230 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::gui::GUI;
+use crate::unity_engine::gui::IGUI;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gx/GX.md")))]
+#[::unity2::class(namespace = "App", name = "GX")]
+#[parent(crate::unity_engine::gui::GUI)]
+pub struct GX {
+    #[static_field]
+    #[rename(name = "scrollBaseColor")]
+    pub scroll_base_color: crate::unity_engine::color::Color,
+    #[static_field]
+    #[rename(name = "scrollBarColor")]
+    pub scroll_bar_color: crate::unity_engine::color::Color,
+    #[static_field]
+    #[rename(name = "CanvasSizeX")]
+    pub canvas_size_x: f32,
+    #[static_field]
+    #[rename(name = "CanvasSizeY")]
+    pub canvas_size_y: f32,
+    #[static_field]
+    #[rename(name = "CanvasHalfX")]
+    pub canvas_half_x: f32,
+    #[static_field]
+    #[rename(name = "CanvasHalfY")]
+    pub canvas_half_y: f32,
+}
+
+#[cfg(feature = "app-gx")]
+#[::unity2::methods]
+impl GX {
+    #[method(name = "GetAnchorDir", args = 1)]
+    pub fn get_anchor_dir(
+        anchor: crate::app::gx::GX_Anchor,
+    ) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "GetAnchorPos", args = 1)]
+    pub fn get_anchor_pos(
+        anchor: crate::app::gx::GX_Anchor,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "GetReduceRect", args = 2)]
+    pub fn get_reduce_rect(
+        rect: crate::unity_engine::rect::Rect,
+        size: f32,
+    ) -> crate::unity_engine::rect::Rect;
+
+    #[method(name = "GetReduceRect", args = 3)]
+    pub fn get_reduce_rect_2(
+        rect: crate::unity_engine::rect::Rect,
+        size_x: f32,
+        size_y: f32,
+    ) -> crate::unity_engine::rect::Rect;
+
+    #[method(name = "GetLocalRect", args = 1)]
+    pub fn get_local_rect(rect: crate::unity_engine::rect::Rect)
+        -> crate::unity_engine::rect::Rect;
+
+    #[method(name = "SetupScreenMatrix", args = 1)]
+    pub fn setup_screen_matrix(anchor: crate::app::gx::GX_Anchor) -> ();
+
+    #[method(name = "GetScreenSpaceMatrix", args = 1)]
+    pub fn get_screen_space_matrix(
+        anchor: crate::app::gx::GX_Anchor,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4;
+
+    #[method(name = "DrawRect", args = 2)]
+    pub fn draw_rect(
+        rect: crate::unity_engine::rect::Rect,
+        color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = "DrawRect", args = 5)]
+    pub fn draw_rect_2(
+        x: f32,
+        y: f32,
+        w: f32,
+        h: f32,
+        color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = "DrawText", args = 6)]
+    pub fn draw_text(
+        x: f32,
+        y: f32,
+        w: f32,
+        h: f32,
+        color: crate::unity_engine::color::Color,
+        text: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "DrawText", args = 3)]
+    pub fn draw_text_2(
+        rect: crate::unity_engine::rect::Rect,
+        color: crate::unity_engine::color::Color,
+        text: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "BeginScreenClip", args = 1)]
+    pub fn begin_screen_clip(rect: crate::unity_engine::rect::Rect) -> ();
+
+    #[method(name = "BeginScreenClip", args = 4)]
+    pub fn begin_screen_clip_2(x: f32, y: f32, width: f32, height: f32) -> ();
+
+    #[method(name = "EndScreenClip", args = 0)]
+    pub fn end_screen_clip() -> ();
+
+    #[method(name = "DrawScrollBar", args = 6)]
+    pub fn draw_scroll_bar(
+        x: f32,
+        y: f32,
+        color: crate::unity_engine::color::Color,
+        height: f32,
+        pos: f32,
+        max: f32,
+    ) -> ();
+
+    #[method(name = "GetTextSize", args = 2)]
+    pub fn get_text_size(
+        style: crate::unity_engine::guistyle::GUIStyle,
+        text: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "GetTextSize", args = 1)]
+    pub fn get_text_size_2(text: ::unity2::Il2CppString) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-gx")]
+impl GX {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GX),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGXMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gx/GX_Anchor.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GX_Anchor {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GX_Anchor {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GX.Anchor";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GX_Anchor {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GX_Anchor {
+    pub fn center() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn left_up() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn up() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn right_up() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn right_down() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn down() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn left_down() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn left() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 9 }
+    }
+}

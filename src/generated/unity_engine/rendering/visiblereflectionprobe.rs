@@ -1,0 +1,58 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/visiblereflectionprobe/VisibleReflectionProbe.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct VisibleReflectionProbe {
+    pub m_bounds: crate::unity_engine::bounds::Bounds,
+    pub m_local_to_world_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+    pub m_hdr_data: crate::unity_engine::vector4::Vector4,
+    pub m_center: crate::unity_engine::vector3::Vector3,
+    pub m_blend_distance: f32,
+    pub m_importance: i32,
+    pub m_box_projection: i32,
+    pub m_instance_id: i32,
+    pub m_texture_id: i32,
+}
+
+impl ::unity2::ClassIdentity for VisibleReflectionProbe {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "VisibleReflectionProbe";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for VisibleReflectionProbe {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-visiblereflectionprobe")]
+#[::unity2::methods(value)]
+impl VisibleReflectionProbe {
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(
+        self,
+        other: crate::unity_engine::rendering::visiblereflectionprobe::VisibleReflectionProbe,
+    ) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_2(self, obj: crate::system::object::Object) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+}

@@ -1,0 +1,38 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::combat::combatsubspace::CombatSubspace;
+use crate::combat::combatsubspace::ICombatSubspace;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/combatsubspaceback/CombatSubspaceBack.md")))]
+#[::unity2::class(namespace = "Combat", name = "CombatSubspaceBack")]
+#[parent(crate::combat::combatsubspace::CombatSubspace)]
+pub struct CombatSubspaceBack {}
+
+#[cfg(feature = "combat-combatsubspaceback")]
+#[::unity2::methods]
+impl CombatSubspaceBack {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "SwapScene", args = 0)]
+    pub fn swap_scene() -> ();
+}
+
+#[cfg(feature = "combat-combatsubspaceback")]
+impl CombatSubspaceBack {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CombatSubspaceBack),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICombatSubspaceBackMethods>::ctor(this);
+        this
+    }
+}

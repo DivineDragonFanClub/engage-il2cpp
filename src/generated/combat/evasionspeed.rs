@@ -1,0 +1,48 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/evasionspeed/EvasionSpeed.md")))]
+#[::unity2::class(namespace = "Combat", name = "EvasionSpeed")]
+#[parent(crate::system::object::Object)]
+pub struct EvasionSpeed {
+    #[rename(name = "m_EvasionSpeedCurve")]
+    pub m_evasion_speed_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "t")]
+    pub t: f32,
+}
+
+#[cfg(feature = "combat-evasionspeed")]
+#[::unity2::methods]
+impl EvasionSpeed {
+    #[method(name = "get_Speed", args = 0)]
+    pub fn get_speed(self) -> f32;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, curve: crate::unity_engine::animationcurve::AnimationCurve) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+}
+
+#[cfg(feature = "combat-evasionspeed")]
+impl EvasionSpeed {
+    pub fn new(curve: crate::unity_engine::animationcurve::AnimationCurve) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EvasionSpeed),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEvasionSpeedMethods>::ctor(this, curve);
+        this
+    }
+}

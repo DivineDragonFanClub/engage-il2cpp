@@ -1,0 +1,18 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/preloaddata/PreloadData.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "PreloadData")]
+#[parent(crate::unity_engine::object_2::Object_2)]
+pub struct PreloadData {}
+
+#[cfg(feature = "unity_engine-preloaddata")]
+#[::unity2::methods]
+impl PreloadData {
+    #[method(name = "PreloadDataDontStripMe", args = 0)]
+    pub fn preload_data_dont_strip_me(self) -> ();
+}

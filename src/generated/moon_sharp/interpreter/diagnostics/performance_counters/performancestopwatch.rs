@@ -1,0 +1,55 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/diagnostics/performance_counters/performancestopwatch/PerformanceStopwatch.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Diagnostics.PerformanceCounters",
+    name = "PerformanceStopwatch"
+)]
+#[parent(crate::system::object::Object)]
+pub struct PerformanceStopwatch {
+    #[rename(name = "m_Count")]
+    pub m_count: i32,
+    #[rename(name = "m_Reentrant")]
+    pub m_reentrant: i32,
+    #[rename(name = "m_Counter")]
+    pub m_counter:
+        crate::moon_sharp::interpreter::diagnostics::performancecounter::PerformanceCounter,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-diagnostics-performance_counters-performancestopwatch")]
+#[::unity2::methods]
+impl PerformanceStopwatch {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        perfcounter : crate :: moon_sharp :: interpreter :: diagnostics :: performancecounter :: PerformanceCounter,
+    ) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "GetResult", args = 0)]
+    pub fn get_result(
+        self,
+    ) -> crate::moon_sharp::interpreter::diagnostics::performanceresult::PerformanceResult;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-diagnostics-performance_counters-performancestopwatch")]
+impl PerformanceStopwatch {
+    pub fn new(
+        perfcounter : crate :: moon_sharp :: interpreter :: diagnostics :: performancecounter :: PerformanceCounter,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PerformanceStopwatch),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPerformanceStopwatchMethods>::ctor(this, perfcounter);
+        this
+    }
+}

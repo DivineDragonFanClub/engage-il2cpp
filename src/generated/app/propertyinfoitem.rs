@@ -1,0 +1,51 @@
+
+use crate::app::memberinfoitem_1::IMemberInfoItem_1;
+use crate::app::memberinfoitem_1::MemberInfoItem_1;
+use crate::app::menuitem::IMenuItem;
+use crate::app::menuitem::MenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/propertyinfoitem/PropertyInfoItem.md")))]
+#[::unity2::class(namespace = "App", name = "PropertyInfoItem")]
+# [parent (crate :: app :: memberinfoitem_1 :: MemberInfoItem_1 < crate :: system :: reflection :: propertyinfo :: PropertyInfo >)]
+pub struct PropertyInfoItem {}
+
+#[cfg(feature = "app-propertyinfoitem")]
+#[::unity2::methods]
+impl PropertyInfoItem {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        obj: crate::system::object::Object,
+        info: crate::system::reflection::propertyinfo::PropertyInfo,
+    ) -> ();
+
+    #[method(name = "GetValueType", args = 0)]
+    pub fn get_value_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "GetValue", args = 0)]
+    pub fn get_value(self) -> crate::system::object::Object;
+
+    #[method(name = "SetValue", args = 1)]
+    pub fn set_value(self, value: crate::system::object::Object) -> ();
+}
+
+#[cfg(feature = "app-propertyinfoitem")]
+impl PropertyInfoItem {
+    pub fn new(
+        obj: crate::system::object::Object,
+        info: crate::system::reflection::propertyinfo::PropertyInfo,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PropertyInfoItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPropertyInfoItemMethods>::ctor(this, obj, info);
+        this
+    }
+}

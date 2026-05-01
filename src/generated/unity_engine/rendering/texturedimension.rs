@@ -1,0 +1,76 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/texturedimension/TextureDimension.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TextureDimension {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TextureDimension {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "TextureDimension";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TextureDimension {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TextureDimension {
+    pub fn unknown() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn any() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn tex2_d() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn tex3_d() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn cube() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn tex2_d_array() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn cube_array() -> Self {
+        Self { value: 6 }
+    }
+}

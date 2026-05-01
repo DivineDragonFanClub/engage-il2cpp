@@ -1,0 +1,124 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaybackupdata/RelayBackupData_Kinds.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayBackupData_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayBackupData_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayBackupData.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayBackupData_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayBackupData_Kinds {
+    pub fn replay() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn all() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaybackupdata/RelayBackupData.md")))]
+#[::unity2::class(namespace = "App", name = "RelayBackupData")]
+#[parent(crate::system::object::Object)]
+pub struct RelayBackupData {
+    #[static_field]
+    #[rename(name = "BufferSizeReplay")]
+    pub buffer_size_replay: i32,
+    #[static_field]
+    #[rename(name = "BufferSizeAll")]
+    pub buffer_size_all: i32,
+    #[static_field]
+    #[rename(name = "VersionReplay")]
+    pub version_replay: u8,
+    #[static_field]
+    #[rename(name = "VersionAll")]
+    pub version_all: u8,
+    #[rename(name = "m_Kind")]
+    pub m_kind: crate::app::relaybackupdata::RelayBackupData_Kinds,
+    #[rename(name = "m_Buffer")]
+    pub m_buffer: ::unity2::Array<u8>,
+    #[rename(name = "m_Stream")]
+    pub m_stream: crate::app::stream_2::Stream_2,
+    #[rename(name = "m_SaveData")]
+    pub m_save_data: crate::app::gamesavedata::GameSaveData,
+}
+
+#[cfg(feature = "app-relaybackupdata")]
+#[::unity2::methods]
+impl RelayBackupData {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, kind: crate::app::relaybackupdata::RelayBackupData_Kinds) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "Serialize", args = 0)]
+    pub fn serialize(self) -> ();
+
+    #[method(name = "Deserialize", args = 0)]
+    pub fn deserialize(self) -> ();
+
+    #[method(name = "SerializeForReplay", args = 0)]
+    pub fn serialize_for_replay(self) -> ();
+
+    #[method(name = "DeserializeForReplay", args = 0)]
+    pub fn deserialize_for_replay(self) -> ();
+
+    #[method(name = "SerializeForAll", args = 0)]
+    pub fn serialize_for_all(self) -> ();
+
+    #[method(name = "DeserializeForAll", args = 0)]
+    pub fn deserialize_for_all(self) -> ();
+
+    #[method(name = "GetBufferSize", args = 1)]
+    pub fn get_buffer_size(kind: crate::app::relaybackupdata::RelayBackupData_Kinds) -> i32;
+}
+
+#[cfg(feature = "app-relaybackupdata")]
+impl RelayBackupData {
+    pub fn new(kind: crate::app::relaybackupdata::RelayBackupData_Kinds) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayBackupData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayBackupDataMethods>::ctor(this, kind);
+        this
+    }
+}

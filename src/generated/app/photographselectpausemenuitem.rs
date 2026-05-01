@@ -1,0 +1,68 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographselectpausemenuitem/PhotographSelectPauseMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "PhotographSelectPauseMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct PhotographSelectPauseMenuItem {
+    #[rename(name = "m_PauseData")]
+    pub m_pause_data: crate::app::photographpausedata::PhotographPauseData,
+    #[rename(name = "m_DisposManager")]
+    pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+    #[rename(name = "m_IsCurrentPause")]
+    pub m_is_current_pause: bool,
+    #[rename(name = "m_CharacterId")]
+    pub m_character_id: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-photographselectpausemenuitem")]
+#[::unity2::methods]
+impl PhotographSelectPauseMenuItem {
+    #[method(name = "get_IsCurrentPause", args = 0)]
+    pub fn get_is_current_pause(self) -> bool;
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        pause_data: crate::app::photographpausedata::PhotographPauseData,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        is_current_pause: bool,
+    ) -> ();
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-photographselectpausemenuitem")]
+impl PhotographSelectPauseMenuItem {
+    pub fn new(
+        pause_data: crate::app::photographpausedata::PhotographPauseData,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        is_current_pause: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographSelectPauseMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographSelectPauseMenuItemMethods>::ctor(
+            this,
+            pause_data,
+            dispos_manager,
+            is_current_pause,
+        );
+        this
+    }
+}

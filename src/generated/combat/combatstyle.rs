@@ -1,0 +1,148 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/combatstyle/CombatStyle.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CombatStyle {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CombatStyle {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CombatStyle";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CombatStyle {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CombatStyle {
+    pub fn pre_talk() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn die_talk() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn get_exp() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn level_up() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn standing_die() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn brawl() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn shoot() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn sky() -> Self {
+        Self { value: 2048 }
+    }
+
+    pub fn dive() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn run_start() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn fortress() -> Self {
+        Self { value: 32768 }
+    }
+
+    pub fn crosscut() -> Self {
+        Self { value: 65536 }
+    }
+
+    pub fn chase_arrow() -> Self {
+        Self { value: 131072 }
+    }
+
+    pub fn chain_attack() -> Self {
+        Self { value: 262144 }
+    }
+
+    pub fn chain_guard() -> Self {
+        Self { value: 524288 }
+    }
+
+    pub fn last_boss() -> Self {
+        Self { value: 2097152 }
+    }
+
+    pub fn dragon_change() -> Self {
+        Self { value: 4194304 }
+    }
+
+    pub fn full_bullet() -> Self {
+        Self { value: 8388608 }
+    }
+
+    pub fn rescue_draw() -> Self {
+        Self { value: 16777216 }
+    }
+
+    pub fn cannon() -> Self {
+        Self { value: 33554432 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 67108864 }
+    }
+
+    pub fn dance() -> Self {
+        Self { value: 134217728 }
+    }
+
+    pub fn engage_attack() -> Self {
+        Self { value: 268435456 }
+    }
+
+    pub fn job_intro() -> Self {
+        Self { value: 536870912 }
+    }
+
+    pub fn training() -> Self {
+        Self { value: 1073741824 }
+    }
+
+    pub fn eternal() -> Self {
+        Self { value: -2147483648 }
+    }
+}

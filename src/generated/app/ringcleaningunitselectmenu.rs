@@ -1,0 +1,314 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::yesnodialog::IYesNoDialog;
+use crate::app::yesnodialog::YesNoDialog;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RingCleaningUnitSelectMenu.RingCleaningUnitSelectMenuItem.ConfirmDialog"
+)]
+#[parent(crate::app::yesnodialog::YesNoDialog)]
+pub struct RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog {}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+#[::unity2::methods]
+impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        action: crate::system::action::Action,
+    ) -> ();
+}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        < Self as IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogMethods > :: ctor (this , menu_item_list) ;
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RingCleaningUnitSelectMenu.RingCleaningUnitSelectMenuItem.ConfirmDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes {
+    #[rename(name = "m_Action")]
+    pub m_action: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+#[::unity2::methods]
+impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, action: crate::system::action::Action, text: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes {
+    pub fn new(action: crate::system::action::Action, text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        < Self as IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYesMethods > :: ctor (this , action , text) ;
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu.md")))]
+#[::unity2::class(namespace = "App", name = "RingCleaningUnitSelectMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct RingCleaningUnitSelectMenu {
+    #[static_field]
+    #[rename(name = "ForceMask")]
+    pub force_mask: u32,
+    #[rename(name = "m_GodList")]
+    pub m_god_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_GodParam,
+    >,
+    #[rename(name = "m_GodListIndex")]
+    pub m_god_list_index: i32,
+}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+#[::unity2::methods]
+impl RingCleaningUnitSelectMenu {
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        decide_event_handler : crate :: app :: ringcleaningunitselectmenu :: RingCleaningUnitSelectMenu_DecideEventHandler,
+        select_unit: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content : crate :: app :: ringcleaningunitselectmenucontent :: RingCleaningUnitSelectMenuContent,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "AfterBuild", args = 0)]
+    pub fn after_build(self) -> ();
+
+    #[method(name = "UpdateUnit", args = 1)]
+    pub fn update_unit(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "CustomCall", args = 0)]
+    pub fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+impl RingCleaningUnitSelectMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content : crate :: app :: ringcleaningunitselectmenucontent :: RingCleaningUnitSelectMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingCleaningUnitSelectMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingCleaningUnitSelectMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_DecideEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RingCleaningUnitSelectMenu.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RingCleaningUnitSelectMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+#[::unity2::methods]
+impl RingCleaningUnitSelectMenu_DecideEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+impl RingCleaningUnitSelectMenu_DecideEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingCleaningUnitSelectMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingCleaningUnitSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_GodParam.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RingCleaningUnitSelectMenu_GodParam {
+    pub god: crate::app::godunit::GodUnit,
+    pub r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+}
+
+impl ::unity2::ClassIdentity for RingCleaningUnitSelectMenu_GodParam {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingCleaningUnitSelectMenu.GodParam";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingCleaningUnitSelectMenu_GodParam {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RingCleaningUnitSelectMenu.RingCleaningUnitSelectMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem {
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_bSelect")]
+    pub m_b_select: bool,
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::ringcleaningunitselectmenu::RingCleaningUnitSelectMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+#[::unity2::methods]
+impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem {
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        index: i32,
+        unit: crate::app::unit::Unit,
+        decide_event_handler : crate :: app :: ringcleaningunitselectmenu :: RingCleaningUnitSelectMenu_DecideEventHandler,
+        select_unit: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "GetUnit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem {
+    pub fn new(
+        index: i32,
+        unit: crate::app::unit::Unit,
+        decide_event_handler : crate :: app :: ringcleaningunitselectmenu :: RingCleaningUnitSelectMenu_DecideEventHandler,
+        select_unit: crate::app::unit::Unit,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItemMethods>::ctor(
+            this,
+            index,
+            unit,
+            decide_event_handler,
+            select_unit,
+        );
+        this
+    }
+}

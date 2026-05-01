@@ -1,0 +1,66 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/dressutility/DressUtility.md")))]
+#[::unity2::class(namespace = "Combat", name = "DressUtility")]
+#[parent(crate::system::object::Object)]
+pub struct DressUtility {
+    #[rename(name = "bodyCache")]
+    pub body_cache: crate::combat::hierarchycache::HierarchyCache,
+}
+
+#[cfg(feature = "combat-dressutility")]
+#[::unity2::methods]
+impl DressUtility {
+    #[method(name = "get_Cache", args = 0)]
+    pub fn get_cache(self) -> crate::combat::hierarchycache::HierarchyCache;
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, body_root: crate::unity_engine::transform::Transform) -> ();
+
+    #[method(name = "TransplantDressOnlyBones", args = 1)]
+    pub fn transplant_dress_only_bones(
+        self,
+        dress: crate::unity_engine::transform::Transform,
+    ) -> ();
+
+    #[method(name = "TransplantSkinnedMesh", args = 3)]
+    pub fn transplant_skinned_mesh(
+        self,
+        dress_go: crate::unity_engine::gameobject::GameObject,
+        dress_meshes: ::unity2::Array<
+            crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,
+        >,
+        parent_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "TransplantMesh", args = 2)]
+    pub fn transplant_mesh(
+        self,
+        acc_go: crate::unity_engine::gameobject::GameObject,
+        parent_name: ::unity2::Il2CppString,
+    ) -> ();
+}
+
+#[cfg(feature = "combat-dressutility")]
+impl DressUtility {
+    pub fn new(body_root: crate::unity_engine::transform::Transform) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DressUtility),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDressUtilityMethods>::ctor(this, body_root);
+        this
+    }
+}

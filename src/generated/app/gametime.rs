@@ -1,0 +1,320 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gametime/GameTime.md")))]
+#[::unity2::class(namespace = "App", name = "GameTime")]
+#[parent(crate::system::object::Object)]
+pub struct GameTime {
+    #[static_field]
+    #[rename(name = "DefaultFixedDeltaTime")]
+    pub default_fixed_delta_time: f32,
+    #[static_field]
+    #[rename(name = "LocalTimeScale")]
+    pub local_time_scale: ::unity2::Array<f32>,
+    #[static_field]
+    #[rename(name = "s_VsyncStack")]
+    pub s_vsync_stack: crate::system::collections::generic::stack_1::Stack_1<i32>,
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: i32,
+    #[static_field]
+    #[rename(name = "s_PlayTime")]
+    pub s_play_time: i32,
+    #[static_field]
+    #[rename(name = "s_WatchTime")]
+    pub s_watch_time: i32,
+    #[static_field]
+    #[rename(name = "MaxTime")]
+    pub max_time: i32,
+    #[static_field]
+    #[rename(name = "TimeUnit")]
+    pub time_unit: i32,
+    #[static_field]
+    #[rename(name = "TimeInv")]
+    pub time_inv: f32,
+    #[static_field]
+    #[rename(name = "MaxTimeFloat")]
+    pub max_time_float: f32,
+}
+
+#[cfg(feature = "app-gametime")]
+#[::unity2::methods]
+impl GameTime {
+    #[method(name = "get_Time", args = 0)]
+    pub fn get_time() -> f32;
+
+    #[method(name = "get_UnscaledTime", args = 0)]
+    pub fn get_unscaled_time() -> f32;
+
+    #[method(name = "get_RealTime", args = 0)]
+    pub fn get_real_time() -> f64;
+
+    #[method(name = "get_DeltaTime", args = 0)]
+    pub fn get_delta_time() -> f32;
+
+    #[method(name = "get_UnscaledDeltaTime", args = 0)]
+    pub fn get_unscaled_delta_time() -> f32;
+
+    #[method(name = "get_FrameCount", args = 0)]
+    pub fn get_frame_count() -> i32;
+
+    #[method(name = "get_TimeScale", args = 0)]
+    pub fn get_time_scale() -> f32;
+
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ();
+
+    #[method(name = "SetTimeScale", args = 2)]
+    pub fn set_time_scale(ch: crate::app::gametime::GameTime_Ch, scale: f32) -> f32;
+
+    #[method(name = "GetTimeScale", args = 1)]
+    pub fn get_time_scale_2(ch: crate::app::gametime::GameTime_Ch) -> f32;
+
+    #[method(name = "UpdateTimeScale", args = 0)]
+    pub fn update_time_scale() -> ();
+
+    #[method(name = "PushVsyncCount", args = 1)]
+    pub fn push_vsync_count(mode: crate::app::gametime::GameTime_VsycMode) -> ();
+
+    #[method(name = "PopVsyncCount", args = 0)]
+    pub fn pop_vsync_count() -> ();
+
+    #[method(name = "SetVsyncCount", args = 1)]
+    pub fn set_vsync_count(mode: crate::app::gametime::GameTime_VsycMode) -> ();
+
+    #[method(name = "SetVsyncCount", args = 1)]
+    pub fn set_vsync_count_2(count: i32) -> ();
+
+    #[method(name = "get_VsyncDeltaCount", args = 0)]
+    pub fn get_vsync_delta_count() -> i32;
+
+    #[method(name = "get_VsyncDeltaTime", args = 0)]
+    pub fn get_vsync_delta_time() -> f32;
+
+    #[method(name = "get_VsyncFixedCount", args = 0)]
+    pub fn get_vsync_fixed_count() -> i32;
+
+    #[method(name = "get_VsyncFixedTime", args = 0)]
+    pub fn get_vsync_fixed_time() -> f32;
+
+    #[method(name = "GetTimeRatio", args = 1)]
+    pub fn get_time_ratio(time: f32) -> f32;
+
+    #[method(name = "get_PlayTime", args = 0)]
+    pub fn get_play_time() -> f32;
+
+    #[method(name = "set_PlayTime", args = 1)]
+    pub fn set_play_time(value: f32) -> ();
+
+    #[method(name = "get_WatchTime", args = 0)]
+    pub fn get_watch_time() -> f32;
+
+    #[method(name = "set_WatchTime", args = 1)]
+    pub fn set_watch_time(value: f32) -> ();
+
+    #[method(name = "get_IsWatching", args = 0)]
+    pub fn get_is_watching() -> bool;
+
+    #[method(name = "set_IsWatching", args = 1)]
+    pub fn set_is_watching(value: bool) -> ();
+
+    #[method(name = "WatchStart", args = 0)]
+    pub fn watch_start() -> ();
+
+    #[method(name = "WatchStop", args = 0)]
+    pub fn watch_stop() -> ();
+
+    #[method(name = "WatchReset", args = 0)]
+    pub fn watch_reset() -> ();
+
+    #[method(name = "ToHour", args = 1)]
+    pub fn to_hour(time: f32) -> i32;
+
+    #[method(name = "ToMinute", args = 1)]
+    pub fn to_minute(time: f32) -> i32;
+
+    #[method(name = "ToSecond", args = 1)]
+    pub fn to_second(time: f32) -> i32;
+
+    #[method(name = "ToDebug", args = 1)]
+    pub fn to_debug(time: f32) -> ::unity2::Il2CppString;
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset() -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update() -> ();
+
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-gametime")]
+impl GameTime {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameTime),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameTimeMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gametime/GameTime_Ch.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GameTime_Ch {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GameTime_Ch {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameTime.Ch";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GameTime_Ch {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GameTime_Ch {
+    pub fn game() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn combat() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn scene() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn pause() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn debug() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gametime/GameTime_VsycMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GameTime_VsycMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GameTime_VsycMode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameTime.VsycMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GameTime_VsycMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GameTime_VsycMode {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn slow() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn fast() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn system() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn movie() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn demo() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn combat() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn hub() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn bmap() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn gmap() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ending() -> Self {
+        Self { value: 2 }
+    }
+}

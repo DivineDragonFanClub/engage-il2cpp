@@ -1,0 +1,60 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_fontfeaturetable/TMP_FontFeatureTable.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_FontFeatureTable")]
+#[parent(crate::system::object::Object)]
+pub struct TMP_FontFeatureTable {
+    #[rename(name = "m_GlyphPairAdjustmentRecords")]
+    pub m_glyph_pair_adjustment_records: crate::system::collections::generic::list_1::List_1<
+        crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
+    >,
+    #[rename(name = "m_GlyphPairAdjustmentRecordLookupDictionary")]
+    pub m_glyph_pair_adjustment_record_lookup_dictionary:
+        crate::system::collections::generic::dictionary_2::Dictionary_2<
+            u32,
+            crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
+        >,
+}
+
+#[cfg(feature = "tm_pro-tmp_fontfeaturetable")]
+#[::unity2::methods]
+impl TMP_FontFeatureTable {
+    #[method(name = "get_glyphPairAdjustmentRecords", args = 0)]
+    pub fn get_glyph_pair_adjustment_records(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
+    >;
+
+    #[method(name = "set_glyphPairAdjustmentRecords", args = 1)]
+    pub fn set_glyph_pair_adjustment_records(
+        self,
+        value: crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
+        >,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "SortGlyphPairAdjustmentRecords", args = 0)]
+    pub fn sort_glyph_pair_adjustment_records(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_fontfeaturetable")]
+impl TMP_FontFeatureTable {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_FontFeatureTable),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_FontFeatureTableMethods>::ctor(this);
+        this
+    }
+}

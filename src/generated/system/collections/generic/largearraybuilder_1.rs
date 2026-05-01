@@ -1,0 +1,69 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/largearraybuilder_1/LargeArrayBuilder_1.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct LargeArrayBuilder_1<T0> {
+    pub _phantom: ::core::marker::PhantomData<(T0,)>,
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for LargeArrayBuilder_1<T0> {
+    const NAMESPACE: &'static str = "System.Collections.Generic";
+
+    const NAME: &'static str = "LargeArrayBuilder`1";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                .expect("generic instantiation")
+        })
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for LargeArrayBuilder_1<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "system-collections-generic-largearraybuilder_1")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity> LargeArrayBuilder_1<T0> {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, initialize: bool) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, max_capacity: i32) -> ();
+
+    #[method(name = "AddRange", args = 1)]
+    pub fn add_range(
+        self,
+        items: crate::system::collections::generic::ienumerable_1::IEnumerable_1<T0>,
+    ) -> ();
+
+    #[method(name = "CopyTo", args = 3)]
+    pub fn copy_to(self, array: ::unity2::Array<T0>, array_index: i32, count: i32) -> ();
+
+    #[method(name = "GetBuffer", args = 1)]
+    pub fn get_buffer(self, index: i32) -> ::unity2::Array<T0>;
+
+    #[method(name = "ToArray", args = 0)]
+    pub fn to_array(self) -> ::unity2::Array<T0>;
+
+    #[method(name = "TryMove", args = 1)]
+    pub fn try_move(self, array: ::unity2::Array<T0>) -> bool;
+
+    #[method(name = "AllocateBuffer", args = 0)]
+    pub fn allocate_buffer(self) -> ();
+}

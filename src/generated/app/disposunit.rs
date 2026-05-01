@@ -1,0 +1,104 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposunit/DisposUnit_Item.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DisposUnit_Item {
+    pub m_item: ::unity2::Il2CppString,
+    pub m_is_drop: bool,
+}
+
+impl ::unity2::ClassIdentity for DisposUnit_Item {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DisposUnit.Item";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DisposUnit_Item {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposunit/DisposUnit.md")))]
+#[::unity2::class(namespace = "App", name = "DisposUnit")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct DisposUnit {
+    #[static_field]
+    #[rename(name = "LevelMax")]
+    pub level_max: i32,
+    #[rename(name = "m_Person")]
+    pub m_person: ::unity2::Il2CppString,
+    #[rename(name = "m_Job")]
+    pub m_job: ::unity2::Il2CppString,
+    #[rename(name = "m_Force")]
+    pub m_force: ::unity2::Il2CppString,
+    #[rename(name = "m_Level")]
+    pub m_level: i32,
+    #[rename(name = "m_Normal")]
+    pub m_normal: bool,
+    #[rename(name = "m_Hard")]
+    pub m_hard: bool,
+    #[rename(name = "m_Lunatic")]
+    pub m_lunatic: bool,
+    #[rename(name = "新規生成")]
+    pub _unnamed: bool,
+    #[rename(name = "m_Items")]
+    pub m_items: ::unity2::Array<crate::app::disposunit::DisposUnit_Item>,
+}
+
+#[cfg(feature = "app-disposunit")]
+#[::unity2::methods]
+impl DisposUnit {
+    #[method(name = "GetForceType", args = 0)]
+    pub fn get_force_type(self) -> crate::app::force::Force_Type;
+
+    #[method(name = "GetForceNames", args = 0)]
+    pub fn get_force_names() -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "GetForceName", args = 1)]
+    pub fn get_force_name(index: i32) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetForceIndex", args = 1)]
+    pub fn get_force_index(name: ::unity2::Il2CppString) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-disposunit")]
+impl DisposUnit {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DisposUnit),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDisposUnitMethods>::ctor(this);
+        this
+    }
+}

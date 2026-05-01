@@ -1,0 +1,68 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godlevelupsequence/GodLevelUpSequence.md")))]
+#[::unity2::class(namespace = "App", name = "GodLevelUpSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct GodLevelUpSequence {
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_GodUnit")]
+    pub m_god_unit: crate::app::godunit::GodUnit,
+    #[rename(name = "m_GodData")]
+    pub m_god_data: crate::app::goddata::GodData,
+    #[rename(name = "m_PrevAptitude")]
+    pub m_prev_aptitude: crate::app::weaponmask::WeaponMask,
+}
+
+#[cfg(feature = "app-godlevelupsequence")]
+#[::unity2::methods]
+impl GodLevelUpSequence {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        god_unit: crate::app::godunit::GodUnit,
+        unit: crate::app::unit::Unit,
+        god_data: crate::app::goddata::GodData,
+    ) -> ();
+
+    #[method(name = "LeveUp", args = 0)]
+    pub fn leve_up(self) -> ();
+
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        god_unit: crate::app::godunit::GodUnit,
+        unit: crate::app::unit::Unit,
+        god_data: crate::app::goddata::GodData,
+    ) -> ();
+}
+
+#[cfg(feature = "app-godlevelupsequence")]
+impl GodLevelUpSequence {
+    pub fn new(
+        god_unit: crate::app::godunit::GodUnit,
+        unit: crate::app::unit::Unit,
+        god_data: crate::app::goddata::GodData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodLevelUpSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodLevelUpSequenceMethods>::ctor(this, god_unit, unit, god_data);
+        this
+    }
+}

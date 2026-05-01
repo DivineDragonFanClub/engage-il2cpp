@@ -1,0 +1,163 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalsequence/AnimalSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AnimalSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AnimalSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AnimalSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AnimalSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AnimalSequence_Label {
+    pub fn init() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn main() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn load() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalsequence/AnimalSequence.md")))]
+#[::unity2::class(namespace = "App", name = "AnimalSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalsequence :: AnimalSequence >)]
+pub struct AnimalSequence {
+    #[rename(name = "AnimalList")]
+    pub animal_list: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "AnimalLoadingCount")]
+    pub animal_loading_count: i32,
+}
+
+#[cfg(feature = "app-animalsequence")]
+#[::unity2::methods]
+impl AnimalSequence {
+    #[method(name = "get_Player", args = 0)]
+    pub fn get_player(self) -> crate::app::hubplayercontroller::HubPlayerController;
+
+    #[method(name = "get_Camera", args = 0)]
+    pub fn get_camera(self) -> crate::app::hubcamera::HubCamera;
+
+    #[method(name = "get_IsDirtyFlag", args = 0)]
+    pub fn get_is_dirty_flag(self) -> bool;
+
+    #[method(name = "set_IsDirtyFlag", args = 1)]
+    pub fn set_is_dirty_flag(self, value: bool) -> ();
+
+    #[method(name = "IsDirty", args = 0)]
+    pub fn is_dirty(self) -> bool;
+
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
+
+    #[method(name = "Exit", args = 0)]
+    pub fn exit(self) -> ();
+
+    #[method(name = "CreateMenu", args = 0)]
+    pub fn create_menu(self) -> ();
+
+    #[method(name = "Prepare", args = 0)]
+    pub fn prepare(self) -> ();
+
+    #[method(name = "ClearLocator", args = 1)]
+    pub fn clear_locator(self, locator: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "SetupCharacterFadeLength", args = 2)]
+    pub fn setup_character_fade_length(
+        self,
+        chara: crate::combat::character::Character,
+        fade_distance: f32,
+    ) -> ();
+
+    #[method(name = "SetupCharacterFadeRadius", args = 2)]
+    pub fn setup_character_fade_radius(
+        self,
+        chara: crate::combat::character::Character,
+        radius: f32,
+    ) -> ();
+
+    #[method(name = "LoadCharacter", args = 4)]
+    pub fn load_character(
+        self,
+        pid: ::unity2::Il2CppString,
+        locator: crate::unity_engine::gameobject::GameObject,
+        access: crate::app::hubaccess::HubAccess,
+        callback: crate::system::action_1::Action_1<
+            crate::app::hubunitcontroller::HubUnitController,
+        >,
+    ) -> ();
+
+    #[method(name = "Load", args = 0)]
+    pub fn load(self) -> ();
+
+    #[method(name = "PostLoad", args = 0)]
+    pub fn post_load(self) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> crate::app::procinst::ProcInst;
+
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-animalsequence")]
+impl AnimalSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimalSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimalSequenceMethods>::ctor(this);
+        this
+    }
+}

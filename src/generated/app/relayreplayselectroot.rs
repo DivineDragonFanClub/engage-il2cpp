@@ -1,0 +1,91 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayreplayselectroot/RelayReplaySelectRoot.md")))]
+#[::unity2::class(namespace = "App", name = "RelayReplaySelectRoot")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct RelayReplaySelectRoot {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_MapHelpObject")]
+    pub m_map_help_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_PlayerListObject")]
+    pub m_player_list_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_MapMenu")]
+    pub m_map_menu: crate::app::relayreplaymenu::RelayReplayMenu,
+    #[rename(name = "m_WdwMapHelp")]
+    pub m_wdw_map_help: crate::app::relaywdwmaphelp::RelayWdwMapHelp,
+    #[rename(name = "m_WdwPlayerList")]
+    pub m_wdw_player_list: crate::app::relaywdwplayerlist::RelayWdwPlayerList,
+}
+
+#[cfg(feature = "app-relayreplayselectroot")]
+#[::unity2::methods]
+impl RelayReplaySelectRoot {
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        search_results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+    ) -> crate::app::relayreplayselectroot::RelayReplaySelectRoot;
+
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Create", args = 2)]
+    pub fn create(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        search_results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+    ) -> ();
+
+    #[method(name = "OnSelectMenuItem", args = 1)]
+    pub fn on_select_menu_item(
+        self,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> ();
+
+    #[method(name = "OnDecideMenuItem", args = 0)]
+    pub fn on_decide_menu_item(self) -> ();
+
+    #[method(name = "OnRequestCloseMenu", args = 0)]
+    pub fn on_request_close_menu(self) -> ();
+}
+
+#[cfg(feature = "app-relayreplayselectroot")]
+impl RelayReplaySelectRoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayReplaySelectRoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayReplaySelectRootMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,87 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/animationtriggers/AnimationTriggers.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "AnimationTriggers")]
+#[parent(crate::system::object::Object)]
+pub struct AnimationTriggers {
+    #[static_field]
+    #[rename(name = "kDefaultNormalAnimName")]
+    pub k_default_normal_anim_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kDefaultHighlightedAnimName")]
+    pub k_default_highlighted_anim_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kDefaultPressedAnimName")]
+    pub k_default_pressed_anim_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kDefaultSelectedAnimName")]
+    pub k_default_selected_anim_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kDefaultDisabledAnimName")]
+    pub k_default_disabled_anim_name: ::unity2::Il2CppString,
+    #[rename(name = "m_NormalTrigger")]
+    pub m_normal_trigger: ::unity2::Il2CppString,
+    #[rename(name = "m_HighlightedTrigger")]
+    pub m_highlighted_trigger: ::unity2::Il2CppString,
+    #[rename(name = "m_PressedTrigger")]
+    pub m_pressed_trigger: ::unity2::Il2CppString,
+    #[rename(name = "m_SelectedTrigger")]
+    pub m_selected_trigger: ::unity2::Il2CppString,
+    #[rename(name = "m_DisabledTrigger")]
+    pub m_disabled_trigger: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "unity_engine-ui-animationtriggers")]
+#[::unity2::methods]
+impl AnimationTriggers {
+    #[method(name = "get_normalTrigger", args = 0)]
+    pub fn get_normal_trigger(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_normalTrigger", args = 1)]
+    pub fn set_normal_trigger(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_highlightedTrigger", args = 0)]
+    pub fn get_highlighted_trigger(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_highlightedTrigger", args = 1)]
+    pub fn set_highlighted_trigger(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_pressedTrigger", args = 0)]
+    pub fn get_pressed_trigger(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_pressedTrigger", args = 1)]
+    pub fn set_pressed_trigger(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_selectedTrigger", args = 0)]
+    pub fn get_selected_trigger(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_selectedTrigger", args = 1)]
+    pub fn set_selected_trigger(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_disabledTrigger", args = 0)]
+    pub fn get_disabled_trigger(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_disabledTrigger", args = 1)]
+    pub fn set_disabled_trigger(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-animationtriggers")]
+impl AnimationTriggers {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimationTriggers),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimationTriggersMethods>::ctor(this);
+        this
+    }
+}

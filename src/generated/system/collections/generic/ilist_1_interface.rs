@@ -1,0 +1,25 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/ilist_1_interface/IList_1_Interface.md")))]
+#[::unity2::class(namespace = "System.Collections.Generic", name = "IList`1")]
+pub struct IList_1_Interface<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "system-collections-generic-ilist_1_interface")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> IList_1_Interface<T0> {
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, index: i32) -> T0;
+
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(self, index: i32, value: T0) -> ();
+
+    #[method(name = "IndexOf", args = 1)]
+    pub fn index_of(self, item: T0) -> i32;
+
+    #[method(name = "Insert", args = 2)]
+    pub fn insert(self, index: i32, item: T0) -> ();
+
+    #[method(name = "RemoveAt", args = 1)]
+    pub fn remove_at(self, index: i32) -> ();
+}

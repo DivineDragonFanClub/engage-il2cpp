@@ -1,0 +1,43 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/assettabledemo/AssetTableDemo.md")))]
+#[::unity2::class(namespace = "Combat", name = "AssetTableDemo")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct AssetTableDemo {
+    #[rename(name = "Items")]
+    pub items: crate::system::collections::generic::list_1::List_1<
+        crate::combat::assettableitem::AssetTableItem,
+    >,
+}
+
+#[cfg(feature = "combat-assettabledemo")]
+#[::unity2::methods]
+impl AssetTableDemo {
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-assettabledemo")]
+impl AssetTableDemo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssetTableDemo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetTableDemoMethods>::ctor(this);
+        this
+    }
+}

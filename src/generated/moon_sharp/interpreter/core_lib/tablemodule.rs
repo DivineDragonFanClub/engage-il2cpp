@@ -1,0 +1,87 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/core_lib/tablemodule/TableModule.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter.CoreLib", name = "TableModule")]
+#[parent(crate::system::object::Object)]
+pub struct TableModule {}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-tablemodule")]
+#[::unity2::methods]
+impl TableModule {
+    #[method(name = "unpack", args = 2)]
+    pub fn unpack(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "pack", args = 2)]
+    pub fn pack(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "sort", args = 2)]
+    pub fn sort(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "SortComparer", args = 4)]
+    pub fn sort_comparer(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        a: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        b: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        lt: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> i32;
+
+    #[method(name = "LuaComparerToClrComparer", args = 2)]
+    pub fn lua_comparer_to_clr_comparer(
+        dyn_value1: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        dyn_value2: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> i32;
+
+    #[method(name = "insert", args = 2)]
+    pub fn insert(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "remove", args = 2)]
+    pub fn remove(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "concat", args = 2)]
+    pub fn concat(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "GetTableLength", args = 2)]
+    pub fn get_table_length(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        vlist: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-tablemodule")]
+impl TableModule {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TableModule),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITableModuleMethods>::ctor(this);
+        this
+    }
+}

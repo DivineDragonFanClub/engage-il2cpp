@@ -1,0 +1,73 @@
+
+use crate::app::commonreliancetalksequence::CommonRelianceTalkSequence;
+use crate::app::commonreliancetalksequence::ICommonRelianceTalkSequence;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencereliancetalk/SortieSequenceRelianceTalk.md")))]
+#[::unity2::class(namespace = "App", name = "SortieSequenceRelianceTalk")]
+#[parent(crate::app::commonreliancetalksequence::CommonRelianceTalkSequence)]
+pub struct SortieSequenceRelianceTalk {
+    #[rename(name = "m_UnitA")]
+    pub m_unit_a: crate::app::unit::Unit,
+    #[rename(name = "m_AsciiNameA")]
+    pub m_ascii_name_a: ::unity2::Il2CppString,
+    #[rename(name = "m_UnitB")]
+    pub m_unit_b: crate::app::unit::Unit,
+    #[rename(name = "m_AsciiNameB")]
+    pub m_ascii_name_b: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-sortiesequencereliancetalk")]
+#[::unity2::methods]
+impl SortieSequenceRelianceTalk {
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit_a: crate::app::unit::Unit,
+        unit_b: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, unit_a: crate::app::unit::Unit, unit_b: crate::app::unit::Unit) -> ();
+
+    #[method(name = "CreateMessFileName", args = 1)]
+    pub fn create_mess_file_name(self, is_reverse: bool) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateMessFileName", args = 2)]
+    pub fn create_mess_file_name_2(
+        self,
+        ascii_name_a: ::unity2::Il2CppString,
+        ascii_name_b: ::unity2::Il2CppString,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateMid", args = 0)]
+    pub fn create_mid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetRelianceLevelText", args = 1)]
+    pub fn get_reliance_level_text(
+        self,
+        reliance_level: crate::app::reliancedata::RelianceData_Level,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "LevelUp", args = 0)]
+    pub fn level_up(self) -> ();
+}
+
+#[cfg(feature = "app-sortiesequencereliancetalk")]
+impl SortieSequenceRelianceTalk {
+    pub fn new(unit_a: crate::app::unit::Unit, unit_b: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieSequenceRelianceTalk),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieSequenceRelianceTalkMethods>::ctor(this, unit_a, unit_b);
+        this
+    }
+}

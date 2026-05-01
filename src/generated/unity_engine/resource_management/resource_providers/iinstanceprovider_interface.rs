@@ -1,0 +1,28 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/iinstanceprovider_interface/IInstanceProvider_Interface.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "IInstanceProvider"
+)]
+pub struct IInstanceProvider_Interface {}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-iinstanceprovider_interface")]
+#[::unity2::methods]
+impl IInstanceProvider_Interface {
+    #[method(name = "ProvideInstance", args = 3)]
+    pub fn provide_instance(
+        self,
+        resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
+        prefab_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject >,
+        instantiate_parameters : crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "ReleaseInstance", args = 2)]
+    pub fn release_instance(
+        self,
+        resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
+        instance: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+}

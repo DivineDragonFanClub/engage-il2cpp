@@ -1,0 +1,72 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusmapeditcategorycontent/VersusMapEditCategoryContent.md")))]
+#[::unity2::class(namespace = "App", name = "VersusMapEditCategoryContent")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct VersusMapEditCategoryContent {
+    #[rename(name = "m_Num")]
+    pub m_num: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Highlight")]
+    pub m_highlight: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Data")]
+    pub m_data: crate::app::mapeditorcategorydata::MapEditorCategoryData,
+    #[rename(name = "m_Sprite")]
+    pub m_sprite: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_Image")]
+    pub m_image: crate::unity_engine::ui::image::Image,
+}
+
+#[cfg(feature = "app-versusmapeditcategorycontent")]
+#[::unity2::methods]
+impl VersusMapEditCategoryContent {
+    #[method(name = "Initialize", args = 2)]
+    pub fn initialize(
+        self,
+        category: crate::app::mapeditorcategorydata::MapEditorCategoryData,
+        icon: crate::unity_engine::sprite::Sprite,
+    ) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "GetCategoryData", args = 0)]
+    pub fn get_category_data(self) -> crate::app::mapeditorcategorydata::MapEditorCategoryData;
+
+    #[method(name = "SetTextNum", args = 2)]
+    pub fn set_text_num(self, num: i32, num_max: i32) -> ();
+
+    #[method(name = "TurnOnHighlight", args = 0)]
+    pub fn turn_on_highlight(self) -> ();
+
+    #[method(name = "TurnOffHighlight", args = 0)]
+    pub fn turn_off_highlight(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-versusmapeditcategorycontent")]
+impl VersusMapEditCategoryContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusMapEditCategoryContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusMapEditCategoryContentMethods>::ctor(this);
+        this
+    }
+}

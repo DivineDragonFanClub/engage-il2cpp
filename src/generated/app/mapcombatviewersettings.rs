@@ -1,0 +1,109 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapcombatviewersettings/MapCombatViewerSettings.md")))]
+#[::unity2::class(namespace = "App", name = "MapCombatViewerSettings")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct MapCombatViewerSettings {
+    #[rename(name = "FieldName")]
+    pub field_name: ::unity2::Il2CppString,
+    #[rename(name = "Characters")]
+    pub characters: ::unity2::Array<crate::app::characteridset::CharacterIdSet>,
+    #[rename(name = "RandomPosition")]
+    pub random_position: bool,
+    #[rename(name = "RandomCharacter")]
+    pub random_character: bool,
+    #[rename(name = "PlayerAttack")]
+    pub player_attack: bool,
+    #[rename(name = "EternalCombat")]
+    pub eternal_combat: bool,
+    #[rename(name = "RepeatCombat")]
+    pub repeat_combat: bool,
+    #[rename(name = "CharaSelectRandomly")]
+    pub chara_select_randomly: bool,
+    #[rename(name = "SortiePreset")]
+    pub sortie_preset: i32,
+    #[rename(name = "BattlePreset")]
+    pub battle_preset: i32,
+    #[rename(name = "CombatSeed")]
+    pub combat_seed: u32,
+    #[static_field]
+    #[rename(name = "ChainAttackCount")]
+    pub chain_attack_count: i32,
+    #[static_field]
+    #[rename(name = "ChainGuardCount")]
+    pub chain_guard_count: i32,
+    #[static_field]
+    #[rename(name = "Id2Name")]
+    pub id2_name: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "SortiePresets")]
+    pub sortie_presets: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "BattlePresets")]
+    pub battle_presets: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "app-mapcombatviewersettings")]
+#[::unity2::methods]
+impl MapCombatViewerSettings {
+    #[method(name = "get_NeedRefresh", args = 0)]
+    pub fn get_need_refresh(self) -> bool;
+
+    #[method(name = "set_NeedRefresh", args = 1)]
+    pub fn set_need_refresh(self, value: bool) -> ();
+
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize(self) -> ();
+
+    #[method(name = "GetHash", args = 0)]
+    pub fn get_hash(self) -> i32;
+
+    #[method(name = "Validate", args = 0)]
+    pub fn validate(self) -> ();
+
+    #[method(name = "LoadSortiePreset", args = 1)]
+    pub fn load_sortie_preset(self, preset_id: i32) -> ();
+
+    #[method(name = "LoadBattlePreset", args = 1)]
+    pub fn load_battle_preset(self, preset_id: i32) -> ();
+
+    #[method(name = "LoadBattlePreset", args = 1)]
+    pub fn load_battle_preset_2(self, record: crate::combat::combatrecord::CombatRecord) -> ();
+
+    #[method(name = "SetCharacterRandom", args = 0)]
+    pub fn set_character_random(self) -> ();
+
+    #[method(name = "SettingRandamCharacter", args = 1)]
+    pub fn setting_randam_character(self, side: i32) -> ();
+
+    #[method(name = "SetCharacterParamRandom", args = 0)]
+    pub fn set_character_param_random(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-mapcombatviewersettings")]
+impl MapCombatViewerSettings {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapCombatViewerSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapCombatViewerSettingsMethods>::ctor(this);
+        this
+    }
+}

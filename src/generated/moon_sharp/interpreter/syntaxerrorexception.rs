@@ -1,0 +1,158 @@
+
+use crate::moon_sharp::interpreter::interpreterexception::IInterpreterException;
+use crate::moon_sharp::interpreter::interpreterexception::InterpreterException;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/syntaxerrorexception/SyntaxErrorException.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter", name = "SyntaxErrorException")]
+#[parent(crate::moon_sharp::interpreter::interpreterexception::InterpreterException)]
+pub struct SyntaxErrorException {}
+
+#[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
+#[::unity2::methods]
+impl SyntaxErrorException {
+    #[method(name = "get_Token", args = 0)]
+    pub fn get_token(self) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "set_Token", args = 1)]
+    pub fn set_token(self, value: crate::moon_sharp::interpreter::tree::token::Token) -> ();
+
+    #[method(name = "get_ToLine", args = 0)]
+    pub fn get_to_line(self) -> i32;
+
+    #[method(name = "get_FromLine", args = 0)]
+    pub fn get_from_line(self) -> i32;
+
+    #[method(name = "get_IsPrematureStreamTermination", args = 0)]
+    pub fn get_is_premature_stream_termination(self) -> bool;
+
+    #[method(name = "set_IsPrematureStreamTermination", args = 1)]
+    pub fn set_is_premature_stream_termination(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        t: crate::moon_sharp::interpreter::tree::token::Token,
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        t: crate::moon_sharp::interpreter::tree::token::Token,
+        message: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor_3(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor_4(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        message: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_5(
+        self,
+        syntax_error_exception : crate :: moon_sharp :: interpreter :: syntaxerrorexception :: SyntaxErrorException,
+    ) -> ();
+
+    #[method(name = "DecorateMessage", args = 1)]
+    pub fn decorate_message(self, script: crate::moon_sharp::interpreter::script::Script) -> ();
+
+    #[method(name = "Rethrow", args = 0)]
+    pub fn rethrow(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-syntaxerrorexception")]
+impl SyntaxErrorException {
+    pub fn new(
+        t: crate::moon_sharp::interpreter::tree::token::Token,
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SyntaxErrorException),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISyntaxErrorExceptionMethods>::ctor(this, t, format, args);
+        this
+    }
+
+    pub fn new_2(
+        t: crate::moon_sharp::interpreter::tree::token::Token,
+        message: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SyntaxErrorException),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ISyntaxErrorExceptionMethods>::ctor_2(this, t, message);
+        this
+    }
+
+    pub fn new_3(
+        script: crate::moon_sharp::interpreter::script::Script,
+        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SyntaxErrorException),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as ISyntaxErrorExceptionMethods>::ctor_3(this, script, sref, format, args);
+        this
+    }
+
+    pub fn new_4(
+        script: crate::moon_sharp::interpreter::script::Script,
+        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        message: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SyntaxErrorException),
+                ::core::stringify!(new_4),
+            )
+        });
+        <Self as ISyntaxErrorExceptionMethods>::ctor_4(this, script, sref, message);
+        this
+    }
+
+    pub fn new_5(
+        syntax_error_exception : crate :: moon_sharp :: interpreter :: syntaxerrorexception :: SyntaxErrorException,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SyntaxErrorException),
+                ::core::stringify!(new_5),
+            )
+        });
+        <Self as ISyntaxErrorExceptionMethods>::ctor_5(this, syntax_error_exception);
+        this
+    }
+}

@@ -1,0 +1,71 @@
+
+use crate::app::menuitem::IMenuItem;
+use crate::app::menuitem::MenuItem;
+use crate::app::stringitem::IStringItem;
+use crate::app::stringitem::StringItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugshopmenu/DebugShopMenu_ShopCallItem.md")))]
+#[::unity2::class(namespace = "App", name = "DebugShopMenu.ShopCallItem")]
+#[parent(crate::app::stringitem::StringItem)]
+pub struct DebugShopMenu_ShopCallItem {
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+}
+
+#[cfg(feature = "app-debugshopmenu")]
+#[::unity2::methods]
+impl DebugShopMenu_ShopCallItem {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, name: ::unity2::Il2CppString, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+}
+
+#[cfg(feature = "app-debugshopmenu")]
+impl DebugShopMenu_ShopCallItem {
+    pub fn new(name: ::unity2::Il2CppString, unit: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugShopMenu_ShopCallItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugShopMenu_ShopCallItemMethods>::ctor(this, name, unit);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugshopmenu/DebugShopMenu.md")))]
+#[::unity2::class(namespace = "App", name = "DebugShopMenu")]
+#[parent(crate::system::object::Object)]
+pub struct DebugShopMenu {}
+
+#[cfg(feature = "app-debugshopmenu")]
+#[::unity2::methods]
+impl DebugShopMenu {
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugshopmenu")]
+impl DebugShopMenu {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugShopMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugShopMenuMethods>::ctor(this);
+        this
+    }
+}

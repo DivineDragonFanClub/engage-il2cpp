@@ -1,0 +1,438 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_ClipExtrapolation.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TimelineClip_ClipExtrapolation {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TimelineClip_ClipExtrapolation {
+    const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+    const NAME: &'static str = "TimelineClip.ClipExtrapolation";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TimelineClip_ClipExtrapolation {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TimelineClip_ClipExtrapolation {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn hold() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn r#loop() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn ping_pong() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn r#continue() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip.md")))]
+#[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineClip")]
+#[parent(crate::system::object::Object)]
+pub struct TimelineClip {
+    #[static_field]
+    #[rename(name = "k_LatestVersion")]
+    pub k_latest_version: i32,
+    #[rename(name = "m_Version")]
+    pub m_version: i32,
+    #[static_field]
+    #[rename(name = "kDefaultClipCaps")]
+    pub k_default_clip_caps: crate::unity_engine::timeline::clipcaps::ClipCaps,
+    #[static_field]
+    #[rename(name = "kDefaultClipDurationInSeconds")]
+    pub k_default_clip_duration_in_seconds: f32,
+    #[static_field]
+    #[rename(name = "kTimeScaleMin")]
+    pub k_time_scale_min: f64,
+    #[static_field]
+    #[rename(name = "kTimeScaleMax")]
+    pub k_time_scale_max: f64,
+    #[static_field]
+    #[rename(name = "kDefaultCurvesName")]
+    pub k_default_curves_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kMinDuration")]
+    pub k_min_duration: f64,
+    #[static_field]
+    #[rename(name = "kMaxTimeValue")]
+    pub k_max_time_value: f64,
+    #[rename(name = "m_Start")]
+    pub m_start: f64,
+    #[rename(name = "m_ClipIn")]
+    pub m_clip_in: f64,
+    #[rename(name = "m_Asset")]
+    pub m_asset: crate::unity_engine::object_2::Object_2,
+    #[rename(name = "m_Duration")]
+    pub m_duration: f64,
+    #[rename(name = "m_TimeScale")]
+    pub m_time_scale: f64,
+    #[rename(name = "m_ParentTrack")]
+    pub m_parent_track: crate::unity_engine::timeline::trackasset::TrackAsset,
+    #[rename(name = "m_EaseInDuration")]
+    pub m_ease_in_duration: f64,
+    #[rename(name = "m_EaseOutDuration")]
+    pub m_ease_out_duration: f64,
+    #[rename(name = "m_BlendInDuration")]
+    pub m_blend_in_duration: f64,
+    #[rename(name = "m_BlendOutDuration")]
+    pub m_blend_out_duration: f64,
+    #[rename(name = "m_MixInCurve")]
+    pub m_mix_in_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "m_MixOutCurve")]
+    pub m_mix_out_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "m_BlendInCurveMode")]
+    pub m_blend_in_curve_mode:
+        crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode,
+    #[rename(name = "m_BlendOutCurveMode")]
+    pub m_blend_out_curve_mode:
+        crate::unity_engine::timeline::timelineclip::TimelineClip_BlendCurveMode,
+    #[rename(name = "m_ExposedParameterNames")]
+    pub m_exposed_parameter_names:
+        crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    #[rename(name = "m_AnimationCurves")]
+    pub m_animation_curves: crate::unity_engine::animationclip::AnimationClip,
+    #[rename(name = "m_Recordable")]
+    pub m_recordable: bool,
+    #[rename(name = "m_PostExtrapolationMode")]
+    pub m_post_extrapolation_mode:
+        crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+    #[rename(name = "m_PreExtrapolationMode")]
+    pub m_pre_extrapolation_mode:
+        crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+    #[rename(name = "m_PostExtrapolationTime")]
+    pub m_post_extrapolation_time: f64,
+    #[rename(name = "m_PreExtrapolationTime")]
+    pub m_pre_extrapolation_time: f64,
+    #[rename(name = "m_DisplayName")]
+    pub m_display_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "unity_engine-timeline-timelineclip")]
+#[::unity2::methods]
+impl TimelineClip {
+    #[method(name = "UpgradeToLatestVersion", args = 0)]
+    pub fn upgrade_to_latest_version(self) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, parent: crate::unity_engine::timeline::trackasset::TrackAsset) -> ();
+
+    #[method(name = "get_timeScale", args = 0)]
+    pub fn get_time_scale(self) -> f64;
+
+    #[method(name = "get_start", args = 0)]
+    pub fn get_start(self) -> f64;
+
+    #[method(name = "set_start", args = 1)]
+    pub fn set_start(self, value: f64) -> ();
+
+    #[method(name = "get_duration", args = 0)]
+    pub fn get_duration(self) -> f64;
+
+    #[method(name = "set_duration", args = 1)]
+    pub fn set_duration(self, value: f64) -> ();
+
+    #[method(name = "get_end", args = 0)]
+    pub fn get_end(self) -> f64;
+
+    #[method(name = "get_clipIn", args = 0)]
+    pub fn get_clip_in(self) -> f64;
+
+    #[method(name = "get_displayName", args = 0)]
+    pub fn get_display_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_displayName", args = 1)]
+    pub fn set_display_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_curves", args = 0)]
+    pub fn get_curves(self) -> crate::unity_engine::animationclip::AnimationClip;
+
+    #[method(
+        name = "UnityEngine.Timeline.ICurvesOwner.get_defaultCurvesName",
+        args = 0
+    )]
+    pub fn unity_engine_timeline_i_curves_owner_get_default_curves_name(
+        self,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_asset", args = 0)]
+    pub fn get_asset(self) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "set_asset", args = 1)]
+    pub fn set_asset(self, value: crate::unity_engine::object_2::Object_2) -> ();
+
+    #[method(name = "UnityEngine.Timeline.ICurvesOwner.get_assetOwner", args = 0)]
+    pub fn unity_engine_timeline_i_curves_owner_get_asset_owner(
+        self,
+    ) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "UnityEngine.Timeline.ICurvesOwner.get_targetTrack", args = 0)]
+    pub fn unity_engine_timeline_i_curves_owner_get_target_track(
+        self,
+    ) -> crate::unity_engine::timeline::trackasset::TrackAsset;
+
+    #[method(name = "get_parentTrack", args = 0)]
+    pub fn get_parent_track(self) -> crate::unity_engine::timeline::trackasset::TrackAsset;
+
+    #[method(name = "set_parentTrack", args = 1)]
+    pub fn set_parent_track(
+        self,
+        value: crate::unity_engine::timeline::trackasset::TrackAsset,
+    ) -> ();
+
+    #[method(name = "get_easeInDuration", args = 0)]
+    pub fn get_ease_in_duration(self) -> f64;
+
+    #[method(name = "get_easeOutDuration", args = 0)]
+    pub fn get_ease_out_duration(self) -> f64;
+
+    #[method(name = "get_blendInDuration", args = 0)]
+    pub fn get_blend_in_duration(self) -> f64;
+
+    #[method(name = "get_blendOutDuration", args = 0)]
+    pub fn get_blend_out_duration(self) -> f64;
+
+    #[method(name = "get_hasBlendIn", args = 0)]
+    pub fn get_has_blend_in(self) -> bool;
+
+    #[method(name = "get_hasBlendOut", args = 0)]
+    pub fn get_has_blend_out(self) -> bool;
+
+    #[method(name = "get_mixInCurve", args = 0)]
+    pub fn get_mix_in_curve(self) -> crate::unity_engine::animationcurve::AnimationCurve;
+
+    #[method(name = "set_mixInCurve", args = 1)]
+    pub fn set_mix_in_curve(self, value: crate::unity_engine::animationcurve::AnimationCurve)
+        -> ();
+
+    #[method(name = "get_mixInDuration", args = 0)]
+    pub fn get_mix_in_duration(self) -> f64;
+
+    #[method(name = "get_mixOutCurve", args = 0)]
+    pub fn get_mix_out_curve(self) -> crate::unity_engine::animationcurve::AnimationCurve;
+
+    #[method(name = "set_mixOutCurve", args = 1)]
+    pub fn set_mix_out_curve(
+        self,
+        value: crate::unity_engine::animationcurve::AnimationCurve,
+    ) -> ();
+
+    #[method(name = "get_mixOutTime", args = 0)]
+    pub fn get_mix_out_time(self) -> f64;
+
+    #[method(name = "get_mixOutDuration", args = 0)]
+    pub fn get_mix_out_duration(self) -> f64;
+
+    #[method(name = "get_recordable", args = 0)]
+    pub fn get_recordable(self) -> bool;
+
+    #[method(name = "set_recordable", args = 1)]
+    pub fn set_recordable(self, value: bool) -> ();
+
+    #[method(name = "get_clipCaps", args = 0)]
+    pub fn get_clip_caps(self) -> crate::unity_engine::timeline::clipcaps::ClipCaps;
+
+    #[method(name = "Hash", args = 0)]
+    pub fn hash(self) -> i32;
+
+    #[method(name = "EvaluateMixOut", args = 1)]
+    pub fn evaluate_mix_out(self, time: f64) -> f32;
+
+    #[method(name = "EvaluateMixIn", args = 1)]
+    pub fn evaluate_mix_in(self, time: f64) -> f32;
+
+    #[method(name = "GetDefaultMixInCurve", args = 0)]
+    pub fn get_default_mix_in_curve() -> crate::unity_engine::animationcurve::AnimationCurve;
+
+    #[method(name = "GetDefaultMixOutCurve", args = 0)]
+    pub fn get_default_mix_out_curve() -> crate::unity_engine::animationcurve::AnimationCurve;
+
+    #[method(name = "ToLocalTime", args = 1)]
+    pub fn to_local_time(self, time: f64) -> f64;
+
+    #[method(name = "get_animationClip", args = 0)]
+    pub fn get_animation_clip(self) -> crate::unity_engine::animationclip::AnimationClip;
+
+    #[method(name = "SanitizeTimeValue", args = 2)]
+    pub fn sanitize_time_value(value: f64, default_value: f64) -> f64;
+
+    #[method(name = "get_postExtrapolationMode", args = 0)]
+    pub fn get_post_extrapolation_mode(
+        self,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation;
+
+    #[method(name = "set_postExtrapolationMode", args = 1)]
+    pub fn set_post_extrapolation_mode(
+        self,
+        value: crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+    ) -> ();
+
+    #[method(name = "get_preExtrapolationMode", args = 0)]
+    pub fn get_pre_extrapolation_mode(
+        self,
+    ) -> crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation;
+
+    #[method(name = "set_preExtrapolationMode", args = 1)]
+    pub fn set_pre_extrapolation_mode(
+        self,
+        value: crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+    ) -> ();
+
+    #[method(name = "SetPostExtrapolationTime", args = 1)]
+    pub fn set_post_extrapolation_time(self, time: f64) -> ();
+
+    #[method(name = "SetPreExtrapolationTime", args = 1)]
+    pub fn set_pre_extrapolation_time(self, time: f64) -> ();
+
+    #[method(name = "IsPreExtrapolatedTime", args = 1)]
+    pub fn is_pre_extrapolated_time(self, sequence_time: f64) -> bool;
+
+    #[method(name = "IsPostExtrapolatedTime", args = 1)]
+    pub fn is_post_extrapolated_time(self, sequence_time: f64) -> bool;
+
+    #[method(name = "get_extrapolatedStart", args = 0)]
+    pub fn get_extrapolated_start(self) -> f64;
+
+    #[method(name = "get_extrapolatedDuration", args = 0)]
+    pub fn get_extrapolated_duration(self) -> f64;
+
+    #[method(name = "GetExtrapolatedTime", args = 3)]
+    pub fn get_extrapolated_time(
+        time: f64,
+        mode: crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation,
+        duration: f64,
+    ) -> f64;
+
+    #[method(
+        name = "UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize",
+        args = 0
+    )]
+    pub fn unity_engine_i_serialization_callback_receiver_on_before_serialize(self) -> ();
+
+    #[method(
+        name = "UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize",
+        args = 0
+    )]
+    pub fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(self) -> ();
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "UpdateDirty", args = 2)]
+    pub fn update_dirty(self, old_value: f64, new_value: f64) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-timeline-timelineclip")]
+impl TimelineClip {
+    pub fn new(parent: crate::unity_engine::timeline::trackasset::TrackAsset) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TimelineClip),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITimelineClipMethods>::ctor(this, parent);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_BlendCurveMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TimelineClip_BlendCurveMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TimelineClip_BlendCurveMode {
+    const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+    const NAME: &'static str = "TimelineClip.BlendCurveMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TimelineClip_BlendCurveMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TimelineClip_BlendCurveMode {
+    pub fn auto() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn manual() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Timeline",
+    name = "TimelineClip.TimelineClipUpgrade"
+)]
+#[parent(crate::system::object::Object)]
+pub struct TimelineClip_TimelineClipUpgrade {}
+
+#[cfg(feature = "unity_engine-timeline-timelineclip")]
+#[::unity2::methods]
+impl TimelineClip_TimelineClipUpgrade {
+    #[method(name = "UpgradeClipInFromGlobalToLocal", args = 1)]
+    pub fn upgrade_clip_in_from_global_to_local(
+        clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
+    ) -> ();
+}

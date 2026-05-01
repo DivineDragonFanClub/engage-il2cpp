@@ -1,0 +1,84 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterillusion/CharacterIllusion.md")))]
+#[::unity2::class(namespace = "Combat", name = "CharacterIllusion")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct CharacterIllusion {
+    #[rename(name = "NumIllusions")]
+    pub num_illusions: i32,
+    #[rename(name = "Interval")]
+    pub interval: f32,
+    #[rename(name = "_cp")]
+    pub cp: crate::combat::character::Character,
+    #[rename(name = "illusionHistory")]
+    pub illusion_history: ::unity2::Array<::unity2::Array<crate::combat::bakedmesh::BakedMesh>>,
+    #[rename(name = "index")]
+    pub index: i32,
+    #[rename(name = "freqency")]
+    pub freqency: f32,
+    #[rename(name = "illusionGOs")]
+    pub illusion_g_os: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+    #[rename(name = "srcSkinnedMeshRenderers")]
+    pub src_skinned_mesh_renderers:
+        ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>,
+    #[rename(name = "srcMeshFilters")]
+    pub src_mesh_filters: ::unity2::Array<crate::unity_engine::meshfilter::MeshFilter>,
+    #[rename(name = "srcMeshRenderers")]
+    pub src_mesh_renderers: ::unity2::Array<crate::unity_engine::meshrenderer::MeshRenderer>,
+    #[rename(name = "initialized")]
+    pub initialized: bool,
+}
+
+#[cfg(feature = "combat-characterillusion")]
+#[::unity2::methods]
+impl CharacterIllusion {
+    #[method(name = "get_CP", args = 0)]
+    pub fn get_cp(self) -> crate::combat::character::Character;
+
+    #[method(name = "On", args = 0)]
+    pub fn on(self) -> ();
+
+    #[method(name = "Off", args = 0)]
+    pub fn off(self) -> ();
+
+    #[method(name = "Stop", args = 0)]
+    pub fn stop(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "MyUpdate", args = 0)]
+    pub fn my_update(self) -> ();
+
+    #[method(name = "Capture", args = 1)]
+    pub fn capture(self, dst_meshes: ::unity2::Array<crate::combat::bakedmesh::BakedMesh>) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-characterillusion")]
+impl CharacterIllusion {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterIllusion),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharacterIllusionMethods>::ctor(this);
+        this
+    }
+}

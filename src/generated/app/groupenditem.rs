@@ -1,0 +1,39 @@
+
+use crate::app::menuitem::IMenuItem;
+use crate::app::menuitem::MenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/groupenditem/GroupEndItem.md")))]
+#[::unity2::class(namespace = "App", name = "GroupEndItem")]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct GroupEndItem {}
+
+#[cfg(feature = "app-groupenditem")]
+#[::unity2::methods]
+impl GroupEndItem {
+    #[method(name = "GetKind", args = 0)]
+    pub fn get_kind(self) -> crate::app::menuitem::MenuItem_Kind;
+
+    #[method(name = "IsVisible", args = 0)]
+    pub fn is_visible(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-groupenditem")]
+impl GroupEndItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GroupEndItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGroupEndItemMethods>::ctor(this);
+        this
+    }
+}

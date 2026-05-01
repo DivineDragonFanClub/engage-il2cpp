@@ -1,0 +1,45 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/forcetexturesetter/ForceTextureSetter.md")))]
+#[::unity2::class(namespace = "App", name = "ForceTextureSetter")]
+#[parent(crate::system::object::Object)]
+pub struct ForceTextureSetter {
+    #[rename(name = "m_image")]
+    pub m_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_playerTexture")]
+    pub m_player_texture: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_enemyTexture")]
+    pub m_enemy_texture: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_allyTexture")]
+    pub m_ally_texture: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_f4thTexture")]
+    pub m_f4th_texture: crate::unity_engine::sprite::Sprite,
+}
+
+#[cfg(feature = "app-forcetexturesetter")]
+#[::unity2::methods]
+impl ForceTextureSetter {
+    #[method(name = "SetTexture", args = 1)]
+    pub fn set_texture(self, r#type: crate::app::force::Force_Type) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-forcetexturesetter")]
+impl ForceTextureSetter {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ForceTextureSetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IForceTextureSetterMethods>::ctor(this);
+        this
+    }
+}

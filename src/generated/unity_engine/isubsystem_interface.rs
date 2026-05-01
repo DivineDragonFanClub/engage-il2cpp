@@ -1,0 +1,6 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/isubsystem_interface/ISubsystem_Interface.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "ISubsystem")]
+pub struct ISubsystem_Interface {}

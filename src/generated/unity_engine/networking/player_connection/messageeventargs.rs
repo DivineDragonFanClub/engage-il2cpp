@@ -1,0 +1,39 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/player_connection/messageeventargs/MessageEventArgs.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Networking.PlayerConnection",
+    name = "MessageEventArgs"
+)]
+#[parent(crate::system::object::Object)]
+pub struct MessageEventArgs {
+    #[rename(name = "playerId")]
+    pub player_id: i32,
+    #[rename(name = "data")]
+    pub data: ::unity2::Array<u8>,
+}
+
+#[cfg(feature = "unity_engine-networking-player_connection-messageeventargs")]
+#[::unity2::methods]
+impl MessageEventArgs {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-networking-player_connection-messageeventargs")]
+impl MessageEventArgs {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MessageEventArgs),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMessageEventArgsMethods>::ctor(this);
+        this
+    }
+}

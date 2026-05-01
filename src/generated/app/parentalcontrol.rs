@@ -1,0 +1,73 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/parentalcontrol/ParentalControl.md")))]
+#[::unity2::class(namespace = "App", name = "ParentalControl")]
+#[parent(crate::system::object::Object)]
+pub struct ParentalControl {
+    #[static_field]
+    #[rename(name = "s_IsBeginFC")]
+    pub s_is_begin_fc: bool,
+}
+
+#[cfg(feature = "app-parentalcontrol")]
+#[::unity2::methods]
+impl ParentalControl {
+    #[method(name = "BeginFreeCommunication", args = 1)]
+    pub fn begin_free_communication(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "get_ResultBeginFreeCommunication", args = 0)]
+    pub fn get_result_begin_free_communication() -> bool;
+
+    #[method(name = "EndFreeCommunication", args = 0)]
+    pub fn end_free_communication() -> ();
+
+    #[method(name = "IsFreeCommunicationAvailable", args = 0)]
+    pub fn is_free_communication_available() -> bool;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/parentalcontrol/ParentalControl_BeginFCSequence.md")))]
+#[::unity2::class(namespace = "App", name = "ParentalControl.BeginFCSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct ParentalControl_BeginFCSequence {}
+
+#[cfg(feature = "app-parentalcontrol")]
+#[::unity2::methods]
+impl ParentalControl_BeginFCSequence {
+    #[method(name = "NetKeepAliveOn", args = 0)]
+    pub fn net_keep_alive_on(self) -> ();
+
+    #[method(name = "NetKeepAliveOff", args = 0)]
+    pub fn net_keep_alive_off(self) -> ();
+
+    #[method(name = "TryBegin", args = 0)]
+    pub fn try_begin(self) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-parentalcontrol")]
+impl ParentalControl_BeginFCSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ParentalControl_BeginFCSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IParentalControl_BeginFCSequenceMethods>::ctor(this);
+        this
+    }
+}

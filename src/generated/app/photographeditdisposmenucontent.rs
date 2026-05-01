@@ -1,0 +1,81 @@
+
+use crate::app::basicmenucontent::BasicMenuContent;
+use crate::app::basicmenucontent::IBasicMenuContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographeditdisposmenucontent/PhotographEditDisposMenuContent.md")))]
+#[::unity2::class(namespace = "App", name = "PhotographEditDisposMenuContent")]
+#[parent(crate::app::basicmenucontent::BasicMenuContent)]
+pub struct PhotographEditDisposMenuContent {
+    #[rename(name = "m_ArrowRoot")]
+    pub m_arrow_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_BodyAccIcon")]
+    pub m_body_acc_icon: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_FaceAccIcon")]
+    pub m_face_acc_icon: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_WeaponOrScarfIcon")]
+    pub m_weapon_or_scarf_icon: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_PauseCount")]
+    pub m_pause_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-photographeditdisposmenucontent")]
+#[::unity2::methods]
+impl PhotographEditDisposMenuContent {
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        return_handler : crate :: app :: photographeditdisposmenu :: PhotographEditDisposMenu_ReturnHandler,
+    ) -> ();
+
+    #[method(name = "UpdateUIObj", args = 4)]
+    pub fn update_ui_obj(
+        self,
+        is_arrow_active: bool,
+        is_mascot: bool,
+        pause_no: i32,
+        pause_count: i32,
+    ) -> ();
+
+    #[method(name = "CalcW", args = 0)]
+    pub fn calc_w(self) -> f32;
+
+    #[method(name = "CalcH", args = 0)]
+    pub fn calc_h(self) -> f32;
+
+    #[method(name = "CalcCursorMovedPosX", args = 1)]
+    pub fn calc_cursor_moved_pos_x(self, menu_item_idx: i32) -> f32;
+
+    #[method(name = "CalcCursorMovedPosY", args = 1)]
+    pub fn calc_cursor_moved_pos_y(self, menu_item_idx: i32) -> f32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-photographeditdisposmenucontent")]
+impl PhotographEditDisposMenuContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographEditDisposMenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographEditDisposMenuContentMethods>::ctor(this);
+        this
+    }
+}

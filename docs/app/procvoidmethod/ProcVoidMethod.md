@@ -1,0 +1,9 @@
+A structure representing a call to a method that returns nothing.
+
+## Methods
+
+### `new`
+
+Prepare a ProcVoidMethod using your target and method of choice.
+
+Do be aware that despite the target argument being immutable, the receiving method can, in fact, mutate the target.

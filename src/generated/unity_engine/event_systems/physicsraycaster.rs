@@ -1,0 +1,141 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::baseraycaster::BaseRaycaster;
+use crate::unity_engine::event_systems::baseraycaster::IBaseRaycaster;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/physicsraycaster/PhysicsRaycaster.md")))]
+#[::unity2::class(namespace = "UnityEngine.EventSystems", name = "PhysicsRaycaster")]
+#[parent(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)]
+pub struct PhysicsRaycaster {
+    #[static_field]
+    #[rename(name = "kNoEventMaskSet")]
+    pub k_no_event_mask_set: i32,
+    #[rename(name = "m_EventCamera")]
+    pub m_event_camera: crate::unity_engine::camera::Camera,
+    #[rename(name = "m_EventMask")]
+    pub m_event_mask: crate::unity_engine::layermask::LayerMask,
+    #[rename(name = "m_MaxRayIntersections")]
+    pub m_max_ray_intersections: i32,
+    #[rename(name = "m_LastMaxRayIntersections")]
+    pub m_last_max_ray_intersections: i32,
+    #[rename(name = "m_Hits")]
+    pub m_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+#[::unity2::methods]
+impl PhysicsRaycaster {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_eventCamera", args = 0)]
+    pub fn get_event_camera(self) -> crate::unity_engine::camera::Camera;
+
+    #[method(name = "get_depth", args = 0)]
+    pub fn get_depth(self) -> i32;
+
+    #[method(name = "get_finalEventMask", args = 0)]
+    pub fn get_final_event_mask(self) -> i32;
+
+    #[method(name = "get_eventMask", args = 0)]
+    pub fn get_event_mask(self) -> crate::unity_engine::layermask::LayerMask;
+
+    #[method(name = "set_eventMask", args = 1)]
+    pub fn set_event_mask(self, value: crate::unity_engine::layermask::LayerMask) -> ();
+
+    #[method(name = "get_maxRayIntersections", args = 0)]
+    pub fn get_max_ray_intersections(self) -> i32;
+
+    #[method(name = "set_maxRayIntersections", args = 1)]
+    pub fn set_max_ray_intersections(self, value: i32) -> ();
+
+    #[method(name = "ComputeRayAndDistance", args = 4)]
+    pub fn compute_ray_and_distance(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        ray: crate::unity_engine::ray::Ray,
+        event_display_index: i32,
+        distance_to_clip_plane: f32,
+    ) -> bool;
+
+    #[method(name = "Raycast", args = 2)]
+    pub fn raycast(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        result_append_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::event_systems::raycastresult::RaycastResult,
+        >,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+impl PhysicsRaycaster {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhysicsRaycaster),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhysicsRaycasterMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/physicsraycaster/PhysicsRaycaster_RaycastHitComparer.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.EventSystems",
+    name = "PhysicsRaycaster.RaycastHitComparer"
+)]
+#[parent(crate::system::object::Object)]
+pub struct PhysicsRaycaster_RaycastHitComparer {
+    #[static_field]
+    #[rename(name = "instance")]
+    pub instance:
+        crate::unity_engine::event_systems::physicsraycaster::PhysicsRaycaster_RaycastHitComparer,
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+#[::unity2::methods]
+impl PhysicsRaycaster_RaycastHitComparer {
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(
+        self,
+        x: crate::unity_engine::raycasthit::RaycastHit,
+        y: crate::unity_engine::raycasthit::RaycastHit,
+    ) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-event_systems-physicsraycaster")]
+impl PhysicsRaycaster_RaycastHitComparer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhysicsRaycaster_RaycastHitComparer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhysicsRaycaster_RaycastHitComparerMethods>::ctor(this);
+        this
+    }
+}

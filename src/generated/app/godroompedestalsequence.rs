@@ -1,0 +1,252 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godroompedestalsequence/GodRoomPedestalSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GodRoomPedestalSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GodRoomPedestalSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GodRoomPedestalSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GodRoomPedestalSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GodRoomPedestalSequence_Label {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn top() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn skill_inheritance() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn ring_gacha() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn ring_gacha_select_god() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn ring_gacha_select_times() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn ring_gacha_execute() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn ring_gacha_end() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn ring_merge() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn ring_merge_menu() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn ring_merge_execute() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn ring_merge_end() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn ring_cleaning() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn refine_god_weapon() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 14 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godroompedestalsequence/GodRoomPedestalSequence.md")))]
+#[::unity2::class(namespace = "App", name = "GodRoomPedestalSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct GodRoomPedestalSequence {
+    #[rename(name = "m_TopMenuResult")]
+    pub m_top_menu_result: crate::app::godroompedestaltopmenu::GodRoomPedestalTopMenu_Result2,
+    #[rename(name = "m_Result")]
+    pub m_result: crate::app::basicmenu::BasicMenu_Result,
+    #[rename(name = "m_RefineRingUnitSelectMenu")]
+    pub m_refine_ring_unit_select_menu:
+        crate::app::refineringunitselectmenu::RefineRingUnitSelectMenu,
+    #[rename(name = "m_RefineRingTimesSelectMenu")]
+    pub m_refine_ring_times_select_menu:
+        crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu,
+    #[rename(name = "m_GodUnit")]
+    pub m_god_unit: crate::app::godunit::GodUnit,
+    #[rename(name = "m_RingGachaTimes")]
+    pub m_ring_gacha_times: i32,
+    #[rename(name = "m_UnitRingList")]
+    pub m_unit_ring_list:
+        crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>,
+    #[rename(name = "m_NewRingList")]
+    pub m_new_ring_list: crate::system::collections::generic::list_1::List_1<bool>,
+    #[rename(name = "m_SynthesisRingMenu")]
+    pub m_synthesis_ring_menu: crate::app::synthesisringmenutop::SynthesisRingMenuTop,
+    #[rename(name = "m_SynthesisResultSet")]
+    pub m_synthesis_result_set: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
+    #[rename(name = "m_GeneratedNewRings")]
+    pub m_generated_new_rings: bool,
+}
+
+#[cfg(feature = "app-godroompedestalsequence")]
+#[::unity2::methods]
+impl GodRoomPedestalSequence {
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "CreateDesc", args = 0)]
+    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "LoadResources", args = 0)]
+    pub fn load_resources(self) -> ();
+
+    #[method(name = "IsLoadingResources", args = 0)]
+    pub fn is_loading_resources(self) -> bool;
+
+    #[method(name = "StartSequence", args = 0)]
+    pub fn start_sequence(self) -> ();
+
+    #[method(name = "CreateTopMenu", args = 0)]
+    pub fn create_top_menu(self) -> ();
+
+    #[method(name = "CreateSkillInheritance", args = 0)]
+    pub fn create_skill_inheritance(self) -> ();
+
+    #[method(name = "DestroySkillInheritance", args = 0)]
+    pub fn destroy_skill_inheritance(self) -> ();
+
+    #[method(name = "LoadResourcesForRefineRing", args = 0)]
+    pub fn load_resources_for_refine_ring(self) -> ();
+
+    #[method(name = "IsLoadingResourcesForRefineRing", args = 0)]
+    pub fn is_loading_resources_for_refine_ring(self) -> bool;
+
+    #[method(name = "CreateGodSelectMenuForRefineRing", args = 0)]
+    pub fn create_god_select_menu_for_refine_ring(self) -> ();
+
+    #[method(name = "DestroyGodSelectMenuForRefineRing", args = 0)]
+    pub fn destroy_god_select_menu_for_refine_ring(self) -> ();
+
+    #[method(name = "CreateRingGachaTimesSelectMenu", args = 0)]
+    pub fn create_ring_gacha_times_select_menu(self) -> ();
+
+    #[method(name = "DestroyRingGachaTimesSelectMenu", args = 0)]
+    pub fn destroy_ring_gacha_times_select_menu(self) -> ();
+
+    #[method(name = "ExecuteRingGacha", args = 0)]
+    pub fn execute_ring_gacha(self) -> ();
+
+    #[method(name = "CreateRingGachaDemoSequence", args = 0)]
+    pub fn create_ring_gacha_demo_sequence(self) -> ();
+
+    #[method(name = "AddAchieveOfRefineRing", args = 0)]
+    pub fn add_achieve_of_refine_ring(self) -> ();
+
+    #[method(name = "UnloadResourcesForRefineRing", args = 0)]
+    pub fn unload_resources_for_refine_ring(self) -> ();
+
+    #[method(name = "LoadResourcesForSynthesisRing", args = 0)]
+    pub fn load_resources_for_synthesis_ring(self) -> ();
+
+    #[method(name = "IsLoadingResourcesForSynthesisRing", args = 0)]
+    pub fn is_loading_resources_for_synthesis_ring(self) -> bool;
+
+    #[method(name = "CreateSynthesisRingMenuTop", args = 0)]
+    pub fn create_synthesis_ring_menu_top(self) -> ();
+
+    #[method(name = "DestroySynthesisRingMenuTop", args = 0)]
+    pub fn destroy_synthesis_ring_menu_top(self) -> ();
+
+    #[method(name = "ExecuteRingMerge", args = 0)]
+    pub fn execute_ring_merge(self) -> ();
+
+    #[method(name = "CreateRingMergeDemoSequence", args = 0)]
+    pub fn create_ring_merge_demo_sequence(self) -> ();
+
+    #[method(name = "UnloadResourcesForSynthesisRing", args = 0)]
+    pub fn unload_resources_for_synthesis_ring(self) -> ();
+
+    #[method(name = "CreateRingCleaningMenu", args = 0)]
+    pub fn create_ring_cleaning_menu(self) -> ();
+
+    #[method(name = "DestroyRingCleaningMenu", args = 0)]
+    pub fn destroy_ring_cleaning_menu(self) -> ();
+
+    #[method(name = "CreateRefineGodWeapon", args = 0)]
+    pub fn create_refine_god_weapon(self) -> ();
+
+    #[method(name = "DestroyRefineGodWeapon", args = 0)]
+    pub fn destroy_refine_god_weapon(self) -> ();
+
+    #[method(name = "EndSequence", args = 0)]
+    pub fn end_sequence(self) -> ();
+
+    #[method(name = "TransitTopTitle", args = 0)]
+    pub fn transit_top_title(self) -> ();
+}
+
+#[cfg(feature = "app-godroompedestalsequence")]
+impl GodRoomPedestalSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodRoomPedestalSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodRoomPedestalSequenceMethods>::ctor(this);
+        this
+    }
+}

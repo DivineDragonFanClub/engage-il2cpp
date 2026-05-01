@@ -1,0 +1,147 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/rthandles/RTHandles.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "RTHandles")]
+#[parent(crate::system::object::Object)]
+pub struct RTHandles {
+    #[static_field]
+    #[rename(name = "s_DefaultInstance")]
+    pub s_default_instance: crate::unity_engine::rendering::rthandlesystem::RTHandleSystem,
+}
+
+#[cfg(feature = "unity_engine-rendering-rthandles")]
+#[::unity2::methods]
+impl RTHandles {
+    #[method(name = "get_maxWidth", args = 0)]
+    pub fn get_max_width() -> i32;
+
+    #[method(name = "get_maxHeight", args = 0)]
+    pub fn get_max_height() -> i32;
+
+    #[method(name = "get_rtHandleProperties", args = 0)]
+    pub fn get_rt_handle_properties(
+    ) -> crate::unity_engine::rendering::rthandleproperties::RTHandleProperties;
+
+    #[method(name = "Alloc", args = 19)]
+    pub fn alloc(
+        width: i32,
+        height: i32,
+        slices: i32,
+        depth_buffer_bits: crate::unity_engine::rendering::depthbits::DepthBits,
+        color_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        filter_mode: crate::unity_engine::filtermode::FilterMode,
+        wrap_mode: crate::unity_engine::texturewrapmode::TextureWrapMode,
+        dimension: crate::unity_engine::rendering::texturedimension::TextureDimension,
+        enable_random_write: bool,
+        use_mip_map: bool,
+        auto_generate_mips: bool,
+        is_shadow_map: bool,
+        aniso_level: i32,
+        mip_map_bias: f32,
+        msaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
+        bind_texture_ms: bool,
+        use_dynamic_scale: bool,
+        memoryless: crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 18)]
+    pub fn alloc_2(
+        scale_factor: crate::unity_engine::vector2::Vector2,
+        slices: i32,
+        depth_buffer_bits: crate::unity_engine::rendering::depthbits::DepthBits,
+        color_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        filter_mode: crate::unity_engine::filtermode::FilterMode,
+        wrap_mode: crate::unity_engine::texturewrapmode::TextureWrapMode,
+        dimension: crate::unity_engine::rendering::texturedimension::TextureDimension,
+        enable_random_write: bool,
+        use_mip_map: bool,
+        auto_generate_mips: bool,
+        is_shadow_map: bool,
+        aniso_level: i32,
+        mip_map_bias: f32,
+        enable_msaa: bool,
+        bind_texture_ms: bool,
+        use_dynamic_scale: bool,
+        memoryless: crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 18)]
+    pub fn alloc_3(
+        scale_func: crate::unity_engine::rendering::scalefunc::ScaleFunc,
+        slices: i32,
+        depth_buffer_bits: crate::unity_engine::rendering::depthbits::DepthBits,
+        color_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        filter_mode: crate::unity_engine::filtermode::FilterMode,
+        wrap_mode: crate::unity_engine::texturewrapmode::TextureWrapMode,
+        dimension: crate::unity_engine::rendering::texturedimension::TextureDimension,
+        enable_random_write: bool,
+        use_mip_map: bool,
+        auto_generate_mips: bool,
+        is_shadow_map: bool,
+        aniso_level: i32,
+        mip_map_bias: f32,
+        enable_msaa: bool,
+        bind_texture_ms: bool,
+        use_dynamic_scale: bool,
+        memoryless: crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 1)]
+    pub fn alloc_4(
+        tex: crate::unity_engine::texture::Texture,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 1)]
+    pub fn alloc_5(
+        tex: crate::unity_engine::rendertexture::RenderTexture,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 1)]
+    pub fn alloc_6(
+        tex: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 2)]
+    pub fn alloc_7(
+        tex: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Alloc", args = 1)]
+    pub fn alloc_8(
+        tex: crate::unity_engine::rendering::rthandle::RTHandle,
+    ) -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Initialize", args = 4)]
+    pub fn initialize(
+        width: i32,
+        height: i32,
+        scaled_r_tsupports_msaa: bool,
+        scaled_rtmsaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
+    ) -> ();
+
+    #[method(name = "Release", args = 1)]
+    pub fn release(rth: crate::unity_engine::rendering::rthandle::RTHandle) -> ();
+
+    #[method(name = "SetHardwareDynamicResolutionState", args = 1)]
+    pub fn set_hardware_dynamic_resolution_state(hw_dynamic_res_requested: bool) -> ();
+
+    #[method(name = "SetReferenceSize", args = 3)]
+    pub fn set_reference_size(
+        width: i32,
+        height: i32,
+        msaa_samples: crate::unity_engine::rendering::msaasamples::MSAASamples,
+    ) -> ();
+
+    #[method(name = "ResetReferenceSize", args = 2)]
+    pub fn reset_reference_size(width: i32, height: i32) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

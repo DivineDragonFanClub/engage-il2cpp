@@ -1,0 +1,42 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/caretinfo/CaretInfo.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct CaretInfo {
+    pub index: i32,
+    pub position: crate::tm_pro::caretposition::CaretPosition,
+}
+
+impl ::unity2::ClassIdentity for CaretInfo {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "CaretInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CaretInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "tm_pro-caretinfo")]
+#[::unity2::methods(value)]
+impl CaretInfo {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, index: i32, position: crate::tm_pro::caretposition::CaretPosition) -> ();
+}

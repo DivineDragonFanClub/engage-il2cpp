@@ -1,0 +1,57 @@
+
+use crate::app::procdesc::IProcDesc;
+use crate::app::procdesc::ProcDesc;
+use crate::app::procdesccallbase::IProcDescCallBase;
+use crate::app::procdesccallbase::ProcDescCallBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdescargs/ProcDescArgS.md")))]
+#[::unity2::class(namespace = "App", name = "ProcDescArgS")]
+#[parent(crate::app::procdesccallbase::ProcDescCallBase)]
+pub struct ProcDescArgS {
+    #[rename(name = "m_Function")]
+    pub m_function:
+        crate::system::action_2::Action_2<crate::app::procinst::ProcInst, ::unity2::Il2CppString>,
+    #[rename(name = "m_Arg")]
+    pub m_arg: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-procdescargs")]
+#[::unity2::methods]
+impl ProcDescArgS {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        function: crate::system::action_2::Action_2<
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+        >,
+        arg: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "ExecuteImpl", args = 1)]
+    pub fn execute_impl(self, inst: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-procdescargs")]
+impl ProcDescArgS {
+    pub fn new(
+        function: crate::system::action_2::Action_2<
+            crate::app::procinst::ProcInst,
+            ::unity2::Il2CppString,
+        >,
+        arg: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProcDescArgS),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProcDescArgSMethods>::ctor(this, function, arg);
+        this
+    }
+}

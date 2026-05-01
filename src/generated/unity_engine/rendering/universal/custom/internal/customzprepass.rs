@@ -1,0 +1,101 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/customzprepass/CustomZPrePass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+    name = "CustomZPrePass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct CustomZPrePass {
+    #[static_field]
+    #[rename(name = "m_ProfilerTag")]
+    pub m_profiler_tag: ::unity2::Il2CppString,
+    #[rename(name = "m_ProfilingSampler")]
+    pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[rename(name = "m_OpaqueFilter")]
+    pub m_opaque_filter: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+    #[rename(name = "m_AlphaTestFilter")]
+    pub m_alpha_test_filter: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+    #[rename(name = "m_ShaderTagId")]
+    pub m_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[rename(name = "m_ShaderTagIdList")]
+    pub m_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    >,
+    #[rename(name = "m_MapCustomDepthShaderTagId")]
+    pub m_map_custom_depth_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[rename(name = "m_MapLeafDepthShaderTagId")]
+    pub m_map_leaf_depth_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[rename(name = "m_OverrideMaterial")]
+    pub m_override_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_IsOverrideEnabled")]
+    pub m_is_override_enabled: bool,
+    #[rename(name = "m_SortingCriteria")]
+    pub m_sorting_criteria: crate::unity_engine::rendering::sortingcriteria::SortingCriteria,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customzprepass")]
+#[::unity2::methods]
+impl CustomZPrePass {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        override_material: crate::unity_engine::material::Material,
+    ) -> ();
+
+    #[method(name = "SetOverrideEnabled", args = 1)]
+    pub fn set_override_enabled(self, is_enabled: bool) -> ();
+
+    #[method(name = "SetSortingCriteria", args = 1)]
+    pub fn set_sorting_criteria(
+        self,
+        criteria : crate :: unity_engine :: rendering :: universal :: zprepasssortingcriteria :: ZPrepassSortingCriteria,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "SetupCommonDrawSettings", args = 2)]
+    pub fn setup_common_draw_settings(
+        self,
+        draw_settings: crate::unity_engine::rendering::drawingsettings::DrawingSettings,
+        shader_pass_index: i32,
+    ) -> i32;
+
+    #[method(name = "SetupCustomDepthDrawSettings", args = 2)]
+    pub fn setup_custom_depth_draw_settings(
+        self,
+        draw_settings: crate::unity_engine::rendering::drawingsettings::DrawingSettings,
+        shader_pass_index: i32,
+    ) -> i32;
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customzprepass")]
+impl CustomZPrePass {
+    pub fn new(
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        override_material: crate::unity_engine::material::Material,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomZPrePass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomZPrePassMethods>::ctor(this, evt, layer_mask, override_material);
+        this
+    }
+}

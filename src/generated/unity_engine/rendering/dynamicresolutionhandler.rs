@@ -1,0 +1,143 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/dynamicresolutionhandler/DynamicResolutionHandler.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "DynamicResolutionHandler")]
+#[parent(crate::system::object::Object)]
+pub struct DynamicResolutionHandler {
+    #[rename(name = "m_Enabled")]
+    pub m_enabled: bool,
+    #[rename(name = "m_MinScreenFraction")]
+    pub m_min_screen_fraction: f32,
+    #[rename(name = "m_MaxScreenFraction")]
+    pub m_max_screen_fraction: f32,
+    #[rename(name = "m_CurrentFraction")]
+    pub m_current_fraction: f32,
+    #[rename(name = "m_PrevFraction")]
+    pub m_prev_fraction: f32,
+    #[rename(name = "m_ForcingRes")]
+    pub m_forcing_res: bool,
+    #[rename(name = "m_CurrentCameraRequest")]
+    pub m_current_camera_request: bool,
+    #[rename(name = "m_ForceSoftwareFallback")]
+    pub m_force_software_fallback: bool,
+    #[rename(name = "m_PrevHWScaleWidth")]
+    pub m_prev_hw_scale_width: f32,
+    #[rename(name = "m_PrevHWScaleHeight")]
+    pub m_prev_hw_scale_height: f32,
+    #[rename(name = "m_LastScaledSize")]
+    pub m_last_scaled_size: crate::unity_engine::vector2int::Vector2Int,
+    #[rename(name = "m_ScalerType")]
+    pub m_scaler_type:
+        crate::unity_engine::rendering::dynamicresscalepolicytype::DynamicResScalePolicyType,
+    #[rename(name = "cachedOriginalSize")]
+    pub cached_original_size: crate::unity_engine::vector2int::Vector2Int,
+    #[rename(name = "type")]
+    pub r#type: crate::unity_engine::rendering::dynamicresolutiontype::DynamicResolutionType,
+    #[rename(name = "m_DynamicResMethod")]
+    pub m_dynamic_res_method: crate::unity_engine::rendering::performdynamicres::PerformDynamicRes,
+    #[static_field]
+    #[rename(name = "s_Instance")]
+    pub s_instance:
+        crate::unity_engine::rendering::dynamicresolutionhandler::DynamicResolutionHandler,
+}
+
+#[cfg(feature = "unity_engine-rendering-dynamicresolutionhandler")]
+#[::unity2::methods]
+impl DynamicResolutionHandler {
+    #[method(name = "get_filter", args = 0)]
+    pub fn get_filter(
+        self,
+    ) -> crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter;
+
+    #[method(name = "set_filter", args = 1)]
+    pub fn set_filter(
+        self,
+        value: crate::unity_engine::rendering::dynamicresupscalefilter::DynamicResUpscaleFilter,
+    ) -> ();
+
+    #[method(name = "get_finalViewport", args = 0)]
+    pub fn get_final_viewport(self) -> crate::unity_engine::vector2int::Vector2Int;
+
+    #[method(name = "set_finalViewport", args = 1)]
+    pub fn set_final_viewport(self, value: crate::unity_engine::vector2int::Vector2Int) -> ();
+
+    #[method(name = "get_instance", args = 0)]
+    pub fn get_instance(
+    ) -> crate::unity_engine::rendering::dynamicresolutionhandler::DynamicResolutionHandler;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "DefaultDynamicResMethod", args = 0)]
+    pub fn default_dynamic_res_method() -> f32;
+
+    #[method(name = "ProcessSettings", args = 1)]
+    pub fn process_settings(
+        self,
+        settings : crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings,
+    ) -> ();
+
+    #[method(name = "SetDynamicResScaler", args = 2)]
+    pub fn set_dynamic_res_scaler(
+        scaler: crate::unity_engine::rendering::performdynamicres::PerformDynamicRes,
+        scaler_type : crate :: unity_engine :: rendering :: dynamicresscalepolicytype :: DynamicResScalePolicyType,
+    ) -> ();
+
+    #[method(name = "SetCurrentCameraRequest", args = 1)]
+    pub fn set_current_camera_request(self, camera_request: bool) -> ();
+
+    #[method(name = "Update", args = 2)]
+    pub fn update(
+        self,
+        settings : crate :: unity_engine :: rendering :: globaldynamicresolutionsettings :: GlobalDynamicResolutionSettings,
+        on_resolution_change: crate::system::action::Action,
+    ) -> ();
+
+    #[method(name = "SoftwareDynamicResIsEnabled", args = 0)]
+    pub fn software_dynamic_res_is_enabled(self) -> bool;
+
+    #[method(name = "HardwareDynamicResIsEnabled", args = 0)]
+    pub fn hardware_dynamic_res_is_enabled(self) -> bool;
+
+    #[method(name = "RequestsHardwareDynamicResolution", args = 0)]
+    pub fn requests_hardware_dynamic_resolution(self) -> bool;
+
+    #[method(name = "DynamicResolutionEnabled", args = 0)]
+    pub fn dynamic_resolution_enabled(self) -> bool;
+
+    #[method(name = "ForceSoftwareFallback", args = 0)]
+    pub fn force_software_fallback(self) -> ();
+
+    #[method(name = "GetScaledSize", args = 1)]
+    pub fn get_scaled_size(
+        self,
+        size: crate::unity_engine::vector2int::Vector2Int,
+    ) -> crate::unity_engine::vector2int::Vector2Int;
+
+    #[method(name = "GetCurrentScale", args = 0)]
+    pub fn get_current_scale(self) -> f32;
+
+    #[method(name = "GetLastScaledSize", args = 0)]
+    pub fn get_last_scaled_size(self) -> crate::unity_engine::vector2int::Vector2Int;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-dynamicresolutionhandler")]
+impl DynamicResolutionHandler {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DynamicResolutionHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDynamicResolutionHandlerMethods>::ctor(this);
+        this
+    }
+}

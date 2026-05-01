@@ -1,0 +1,22 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/compatibility/framework/Framework.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter.Compatibility", name = "Framework")]
+#[parent(crate::system::object::Object)]
+pub struct Framework {
+# [static_field] # [rename (name = "s_FrameworkCurrent")] pub s_framework_current : crate :: moon_sharp :: interpreter :: compatibility :: frameworks :: frameworkcurrent :: FrameworkCurrent ,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-compatibility-framework")]
+#[::unity2::methods]
+impl Framework {
+    #[method(name = "get_Do", args = 0)]
+    pub fn get_do(
+    ) -> crate::moon_sharp::interpreter::compatibility::frameworks::frameworkbase::FrameworkBase;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

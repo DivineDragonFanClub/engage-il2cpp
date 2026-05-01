@@ -1,0 +1,88 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/inputfeaturetype/InputFeatureType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct InputFeatureType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for InputFeatureType {
+    const NAMESPACE: &'static str = "UnityEngine.XR";
+
+    const NAME: &'static str = "InputFeatureType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for InputFeatureType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl InputFeatureType {
+    pub fn custom() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn binary() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn discrete_states() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn axis1_d() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn axis2_d() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn axis3_d() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn rotation() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn hand() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn bone() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn eyes() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn k_unity_xr_input_feature_type_invalid() -> Self {
+        Self { value: -1 }
+    }
+}

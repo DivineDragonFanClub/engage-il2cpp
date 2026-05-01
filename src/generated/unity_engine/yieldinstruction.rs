@@ -1,0 +1,31 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/yieldinstruction/YieldInstruction.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "YieldInstruction")]
+#[parent(crate::system::object::Object)]
+pub struct YieldInstruction {}
+
+#[cfg(feature = "unity_engine-yieldinstruction")]
+#[::unity2::methods]
+impl YieldInstruction {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-yieldinstruction")]
+impl YieldInstruction {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(YieldInstruction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IYieldInstructionMethods>::ctor(this);
+        this
+    }
+}

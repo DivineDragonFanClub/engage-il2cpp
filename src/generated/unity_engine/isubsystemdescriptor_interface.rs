@@ -1,0 +1,13 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/isubsystemdescriptor_interface/ISubsystemDescriptor_Interface.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "ISubsystemDescriptor")]
+pub struct ISubsystemDescriptor_Interface {}
+
+#[cfg(feature = "unity_engine-isubsystemdescriptor_interface")]
+#[::unity2::methods]
+impl ISubsystemDescriptor_Interface {
+    #[method(name = "get_id", args = 0)]
+    pub fn get_id(self) -> ::unity2::Il2CppString;
+}

@@ -1,0 +1,453 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TalkSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TalkSequence_Label {
+    const NAMESPACE: &'static str = "App.Talk3D";
+
+    const NAME: &'static str = "TalkSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TalkSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TalkSequence_Label {
+    pub fn load() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn fade_in() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn sound_before() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn main() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn sound_after() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn check_continue() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn skip() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn close() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn skip_wait_to_end() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 9 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence.md")))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: talk3_d :: talksequence :: TalkSequence >)]
+pub struct TalkSequence {
+    #[static_field]
+    #[rename(name = "sm_IsContinue")]
+    pub sm_is_continue: bool,
+    #[static_field]
+    #[rename(name = "sm_ReservedPrefabRootObject")]
+    pub sm_reserved_prefab_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_PrefabRootObject")]
+    pub m_prefab_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_TalkSound")]
+    pub m_talk_sound: crate::app::talksound::TalkSound,
+    #[rename(name = "m_TagParser")]
+    pub m_tag_parser: crate::app::talk3_d::talktagparser::TalkTagParser,
+    #[rename(name = "m_TalkPtr")]
+    pub m_talk_ptr: crate::app::talk3_d::talkptr::TalkPtr,
+    #[rename(name = "m_ReservedTag")]
+    pub m_reserved_tag: crate::app::talk3_d::talktag::TalkTag,
+    #[rename(name = "m_ReplaceText")]
+    pub m_replace_text: crate::app::talk3_d::talksequence::TalkSequence_ReplaceText,
+    #[rename(name = "m_BindProc")]
+    pub m_bind_proc: crate::app::procinst::ProcInst,
+    #[rename(name = "m_ErrorMessageBuilder")]
+    pub m_error_message_builder: crate::app::talk3_d::talkbuilder::TalkBuilder,
+    #[rename(name = "m_IsStartByContinuousNumber")]
+    pub m_is_start_by_continuous_number: bool,
+    #[rename(name = "m_IsFlushedSoundList")]
+    pub m_is_flushed_sound_list: bool,
+    #[rename(name = "m_IsShowMapTerrainInfo")]
+    pub m_is_show_map_terrain_info: bool,
+    #[rename(name = "m_IsBindMapCamera")]
+    pub m_is_bind_map_camera: bool,
+    #[rename(name = "m_IsPushedUnitInfo")]
+    pub m_is_pushed_unit_info: bool,
+    #[rename(name = "m_LoadedSoundBankNameList")]
+    pub m_loaded_sound_bank_name_list:
+        crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    #[rename(name = "m_IsLoadingCharacter")]
+    pub m_is_loading_character: bool,
+    #[static_field]
+    #[rename(name = "LoadingCharacterTimeoutCounterMax")]
+    pub loading_character_timeout_counter_max: f32,
+    #[rename(name = "m_LoadingCharacterTimeoutCounter")]
+    pub m_loading_character_timeout_counter: f32,
+    #[rename(name = "m_ReplaceTalkerNameDictionary")]
+    pub m_replace_talker_name_dictionary:
+        crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            ::unity2::Il2CppString,
+        >,
+}
+
+#[cfg(feature = "app-talk3_d-talksequence")]
+#[::unity2::methods]
+impl TalkSequence {
+    #[method(name = "get_Mid", args = 0)]
+    pub fn get_mid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Mid", args = 1)]
+    pub fn set_mid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_TalkType", args = 0)]
+    pub fn get_talk_type(self) -> crate::app::talk3_d::talk_2::Talk_TalkType;
+
+    #[method(name = "set_TalkType", args = 1)]
+    pub fn set_talk_type(self, value: crate::app::talk3_d::talk_2::Talk_TalkType) -> ();
+
+    #[method(name = "get_ActivePid", args = 0)]
+    pub fn get_active_pid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_ActivePid", args = 1)]
+    pub fn set_active_pid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_StrToLowerTrigger", args = 0)]
+    pub fn get_str_to_lower_trigger(self) -> bool;
+
+    #[method(name = "set_StrToLowerTrigger", args = 1)]
+    pub fn set_str_to_lower_trigger(self, value: bool) -> ();
+
+    #[method(name = "get_IsLatestStrPatchim1", args = 0)]
+    pub fn get_is_latest_str_patchim1(self) -> bool;
+
+    #[method(name = "set_IsLatestStrPatchim1", args = 1)]
+    pub fn set_is_latest_str_patchim1(self, value: bool) -> ();
+
+    #[method(name = "get_IsLatestStrPatchim2", args = 0)]
+    pub fn get_is_latest_str_patchim2(self) -> bool;
+
+    #[method(name = "set_IsLatestStrPatchim2", args = 1)]
+    pub fn set_is_latest_str_patchim2(self, value: bool) -> ();
+
+    #[method(name = "EnableIsLoadingCharacter", args = 0)]
+    pub fn enable_is_loading_character(self) -> ();
+
+    #[method(name = "DisableIsLoadingCharacter", args = 0)]
+    pub fn disable_is_loading_character(self) -> ();
+
+    #[method(name = "GetReplaceTalkerName", args = 1)]
+    pub fn get_replace_talker_name(self, pid: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[method(name = "AddReplaceTalkerName", args = 2)]
+    pub fn add_replace_talker_name(
+        self,
+        pid: ::unity2::Il2CppString,
+        talker_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "ReserveTalkPrefab", args = 0)]
+    pub fn reserve_talk_prefab() -> ();
+
+    #[method(name = "CreateTalkPrefab", args = 0)]
+    pub fn create_talk_prefab() -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "IsFastForward", args = 0)]
+    pub fn is_fast_forward() -> bool;
+
+    #[method(name = "Start", args = 2)]
+    pub fn start(self, mid: ::unity2::Il2CppString, is_continuous_number: bool) -> ();
+
+    #[method(name = "Restart", args = 2)]
+    pub fn restart(self, mid: ::unity2::Il2CppString, is_continuous_number: bool) -> ();
+
+    #[method(name = "StartImpl", args = 2)]
+    pub fn start_impl(self, mid: ::unity2::Il2CppString, is_continuous_number: bool) -> ();
+
+    #[method(name = "InitTalk", args = 1)]
+    pub fn init_talk(self, mid: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "TryNextLabel", args = 0)]
+    pub fn try_next_label(self) -> ();
+
+    #[method(name = "FlushSoundList", args = 1)]
+    pub fn flush_sound_list(self, is_exec_before_of_now_label: bool) -> ();
+
+    #[method(name = "WaitCamera", args = 0)]
+    pub fn wait_camera(self) -> ();
+
+    #[method(name = "TryMapCameraBind", args = 0)]
+    pub fn try_map_camera_bind(self) -> ();
+
+    #[method(name = "TryMapCameraUnbind", args = 0)]
+    pub fn try_map_camera_unbind(self) -> ();
+
+    #[method(name = "LoadSoundBank", args = 0)]
+    pub fn load_sound_bank(self) -> ();
+
+    #[method(name = "WaitSoundbankLoading", args = 0)]
+    pub fn wait_soundbank_loading(self) -> ();
+
+    #[method(name = "LoadScene", args = 0)]
+    pub fn load_scene(self) -> ();
+
+    #[method(name = "Finish", args = 1)]
+    pub fn finish(self, is_end_continuous_number: bool) -> ();
+
+    #[method(name = "Release", args = 0)]
+    pub fn release(self) -> ();
+
+    #[method(name = "GetActiveCharacter", args = 0)]
+    pub fn get_active_character(self) -> crate::combat::character::Character;
+
+    #[method(name = "GetPersonVoice", args = 0)]
+    pub fn get_person_voice(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "TryPlayVoice", args = 1)]
+    pub fn try_play_voice(self, character: crate::combat::character::Character) -> ();
+
+    #[method(name = "StopAllVoice", args = 0)]
+    pub fn stop_all_voice(self) -> ();
+
+    #[method(name = "Persistent", args = 0)]
+    pub fn persistent(self) -> ();
+
+    #[method(name = "TickSoundBefore", args = 0)]
+    pub fn tick_sound_before(self) -> ();
+
+    #[method(name = "TickSoundAfter", args = 0)]
+    pub fn tick_sound_after(self) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[method(name = "ProcessMessage", args = 1)]
+    pub fn process_message(self, add_char_count: i32) -> ();
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[method(name = "WaitClose", args = 0)]
+    pub fn wait_close(self) -> ();
+
+    #[method(name = "CheckContinue", args = 0)]
+    pub fn check_continue(self) -> ();
+
+    #[method(name = "BeginContinueTalk", args = 0)]
+    pub fn begin_continue_talk() -> ();
+
+    #[method(name = "EndContinueTalk", args = 0)]
+    pub fn end_continue_talk() -> ();
+
+    #[method(name = "StartKeyWait", args = 0)]
+    pub fn start_key_wait(self) -> ();
+
+    #[method(name = "StartTimeWait", args = 1)]
+    pub fn start_time_wait(self, sec: f32) -> ();
+
+    #[method(name = "StartFadeOut", args = 2)]
+    pub fn start_fade_out(self, time: f32, color: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "StartFadeIn", args = 1)]
+    pub fn start_fade_in(self, time: f32) -> ();
+
+    #[method(name = "SetReplaceText", args = 1)]
+    pub fn set_replace_text(self, text: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "WaitGameSkipEnd", args = 0)]
+    pub fn wait_game_skip_end(self) -> ();
+
+    #[method(name = "Skip", args = 0)]
+    pub fn skip(self) -> ();
+
+    #[method(name = "StartTextScroll", args = 0)]
+    pub fn start_text_scroll(self) -> ();
+
+    #[method(name = "EndTextScroll", args = 0)]
+    pub fn end_text_scroll(self) -> ();
+
+    #[method(name = "BindParent", args = 0)]
+    pub fn bind_parent(self) -> ();
+
+    #[method(name = "UnbindParent", args = 0)]
+    pub fn unbind_parent(self) -> ();
+
+    #[method(name = "GetDesc", args = 0)]
+    pub fn get_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "Create", args = 1)]
+    pub fn create(
+        parent: crate::app::procinst::ProcInst,
+    ) -> crate::app::talk3_d::talksequence::TalkSequence;
+
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "OnShutdown", args = 0)]
+    pub fn on_shutdown(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talksequence")]
+impl TalkSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_PlayMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TalkSequence_PlayMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TalkSequence_PlayMode {
+    const NAMESPACE: &'static str = "App.Talk3D";
+
+    const NAME: &'static str = "TalkSequence.PlayMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TalkSequence_PlayMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TalkSequence_PlayMode {
+    pub fn manual() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn auto_play() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_ReplaceText.md")))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkSequence.ReplaceText")]
+#[parent(crate::system::object::Object)]
+pub struct TalkSequence_ReplaceText {
+    #[rename(name = "m_Text")]
+    pub m_text: ::unity2::Il2CppString,
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+}
+
+#[cfg(feature = "app-talk3_d-talksequence")]
+#[::unity2::methods]
+impl TalkSequence_ReplaceText {
+    #[method(name = "set_Text", args = 1)]
+    pub fn set_text(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Text", args = 0)]
+    pub fn get_text(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "Next", args = 0)]
+    pub fn next(self) -> ();
+
+    #[method(name = "get_CurrentCharacter", args = 0)]
+    pub fn get_current_character(self) -> u16;
+
+    #[method(name = "NeedReplace", args = 0)]
+    pub fn need_replace(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talksequence")]
+impl TalkSequence_ReplaceText {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkSequence_ReplaceText),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkSequence_ReplaceTextMethods>::ctor(this);
+        this
+    }
+}

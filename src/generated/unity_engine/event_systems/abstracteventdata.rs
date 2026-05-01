@@ -1,0 +1,43 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/abstracteventdata/AbstractEventData.md")))]
+#[::unity2::class(namespace = "UnityEngine.EventSystems", name = "AbstractEventData")]
+#[parent(crate::system::object::Object)]
+pub struct AbstractEventData {
+    #[rename(name = "m_Used")]
+    pub m_used: bool,
+}
+
+#[cfg(feature = "unity_engine-event_systems-abstracteventdata")]
+#[::unity2::methods]
+impl AbstractEventData {
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "Use", args = 0)]
+    pub fn r#use(self) -> ();
+
+    #[method(name = "get_used", args = 0)]
+    pub fn get_used(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-event_systems-abstracteventdata")]
+impl AbstractEventData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AbstractEventData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAbstractEventDataMethods>::ctor(this);
+        this
+    }
+}

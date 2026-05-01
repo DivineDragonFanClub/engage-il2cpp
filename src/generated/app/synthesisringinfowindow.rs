@@ -1,0 +1,210 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_RingEnhance.md")))]
+#[::unity2::class(namespace = "App", name = "SynthesisRingInfoWindow.RingEnhance")]
+#[parent(crate::system::object::Object)]
+pub struct SynthesisRingInfoWindow_RingEnhance {
+    #[rename(name = "m_ParentObject")]
+    pub m_parent_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_TitleText")]
+    pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ValueText")]
+    pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ArrowImage")]
+    pub m_arrow_image: crate::unity_engine::ui::image::Image,
+}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+#[::unity2::methods]
+impl SynthesisRingInfoWindow_RingEnhance {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+impl SynthesisRingInfoWindow_RingEnhance {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SynthesisRingInfoWindow_RingEnhance),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISynthesisRingInfoWindow_RingEnhanceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_CharaPhoto.md")))]
+#[::unity2::class(namespace = "App", name = "SynthesisRingInfoWindow.CharaPhoto")]
+#[parent(crate::system::object::Object)]
+pub struct SynthesisRingInfoWindow_CharaPhoto {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RootAnimator")]
+    pub m_root_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_CharaImage")]
+    pub m_chara_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_FrameImage")]
+    pub m_frame_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_IsSetup")]
+    pub m_is_setup: bool,
+}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+#[::unity2::methods]
+impl SynthesisRingInfoWindow_CharaPhoto {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "FadeIn", args = 0)]
+    pub fn fade_in(self) -> ();
+
+    #[method(name = "FadeOut", args = 0)]
+    pub fn fade_out(self) -> ();
+
+    #[method(name = "SetRingChara", args = 1)]
+    pub fn set_ring_chara(self, ring_data: crate::app::ringdata::RingData) -> ();
+}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+impl SynthesisRingInfoWindow_CharaPhoto {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SynthesisRingInfoWindow_CharaPhoto),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISynthesisRingInfoWindow_CharaPhotoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/synthesisringinfowindow/SynthesisRingInfoWindow.md")))]
+#[::unity2::class(namespace = "App", name = "SynthesisRingInfoWindow")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct SynthesisRingInfoWindow {
+    #[rename(name = "m_NeededTitleText")]
+    pub m_needed_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_NeededRingIconImage")]
+    pub m_needed_ring_icon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_CharacterNameText")]
+    pub m_character_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_NeededValueText")]
+    pub m_needed_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_PiecesOfBondText")]
+    pub m_pieces_of_bond_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_PiecesOfBondValueText")]
+    pub m_pieces_of_bond_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_BasePhotos")]
+    pub m_base_photos:
+        ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto>,
+    #[rename(name = "m_BasePhotoIdx")]
+    pub m_base_photo_idx: i32,
+    #[rename(name = "m_BaseRingImage")]
+    pub m_base_ring_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_BaseRingNameText")]
+    pub m_base_ring_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_BaseRingEnhances")]
+    pub m_base_ring_enhances:
+        ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_RingEnhance>,
+    #[rename(name = "m_BaseRingCountCaptionText")]
+    pub m_base_ring_count_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_BaseRingCountBeforeText")]
+    pub m_base_ring_count_before_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_BaseRingCountAfterText")]
+    pub m_base_ring_count_after_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_SynthesisedPhotos")]
+    pub m_synthesised_photos:
+        ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto>,
+    #[rename(name = "m_SynthesisedPhotoIdx")]
+    pub m_synthesised_photo_idx: i32,
+    #[rename(name = "m_SynthesisedRingImage")]
+    pub m_synthesised_ring_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_SynthesisedRingNameText")]
+    pub m_synthesised_ring_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_SynthesisedRingEnhances")]
+    pub m_synthesised_ring_enhances:
+        ::unity2::Array<crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_RingEnhance>,
+    #[rename(name = "m_SynthesisedRingCountCaptionText")]
+    pub m_synthesised_ring_count_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_SynthesisedRingCountBeforeText")]
+    pub m_synthesised_ring_count_before_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_SynthesisedRingCountAfterText")]
+    pub m_synthesised_ring_count_after_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_SkillParentObject")]
+    pub m_skill_parent_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_SkillIconImage")]
+    pub m_skill_icon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_SkillNameText")]
+    pub m_skill_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_SkillHelpText")]
+    pub m_skill_help_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_MaterialBefore")]
+    pub m_material_before: crate::unity_engine::material::Material,
+    #[rename(name = "m_MaterialAfter")]
+    pub m_material_after: crate::unity_engine::material::Material,
+}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+#[::unity2::methods]
+impl SynthesisRingInfoWindow {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "Open", args = 0)]
+    pub fn open(self) -> ();
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[method(name = "SetData", args = 1)]
+    pub fn set_data(self, ring_data: crate::app::ringdata::RingData) -> ();
+
+    #[method(name = "SetupCharaImage", args = 3)]
+    pub fn setup_chara_image(
+        self,
+        photo: ::unity2::Array<
+            crate::app::synthesisringinfowindow::SynthesisRingInfoWindow_CharaPhoto,
+        >,
+        idx: i32,
+        data: crate::app::ringdata::RingData,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+impl SynthesisRingInfoWindow {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SynthesisRingInfoWindow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISynthesisRingInfoWindowMethods>::ctor(this);
+        this
+    }
+}

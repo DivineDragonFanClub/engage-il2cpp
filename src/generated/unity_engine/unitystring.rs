@@ -1,0 +1,19 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/unitystring/UnityString.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "UnityString")]
+#[parent(crate::system::object::Object)]
+pub struct UnityString {}
+
+#[cfg(feature = "unity_engine-unitystring")]
+#[::unity2::methods]
+impl UnityString {
+    #[method(name = "Format", args = 2)]
+    pub fn format(
+        fmt: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ::unity2::Il2CppString;
+}

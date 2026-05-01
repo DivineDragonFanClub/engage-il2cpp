@@ -1,0 +1,40 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterobservable/CharacterObservable.md")))]
+#[::unity2::class(namespace = "Combat", name = "CharacterObservable")]
+#[parent(crate::system::object::Object)]
+pub struct CharacterObservable {
+    #[rename(name = "CP")]
+    pub cp: crate::combat::character::Character,
+}
+
+#[cfg(feature = "combat-characterobservable")]
+#[::unity2::methods]
+impl CharacterObservable {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, owner: crate::combat::character::Character) -> ();
+
+    #[method(name = "Finalize", args = 0)]
+    pub fn finalize(self) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "combat-characterobservable")]
+impl CharacterObservable {
+    pub fn new(owner: crate::combat::character::Character) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterObservable),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharacterObservableMethods>::ctor(this, owner);
+        this
+    }
+}

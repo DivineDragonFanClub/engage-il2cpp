@@ -1,0 +1,106 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/playablebinding/PlayableBinding_CreateOutputMethod.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Playables",
+    name = "PlayableBinding.CreateOutputMethod"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct PlayableBinding_CreateOutputMethod {}
+
+#[cfg(feature = "unity_engine-playables-playablebinding")]
+#[::unity2::methods]
+impl PlayableBinding_CreateOutputMethod {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::playables::playableoutput::PlayableOutput;
+}
+
+#[cfg(feature = "unity_engine-playables-playablebinding")]
+impl PlayableBinding_CreateOutputMethod {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PlayableBinding_CreateOutputMethod),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPlayableBinding_CreateOutputMethodMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/playablebinding/PlayableBinding.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct PlayableBinding {
+    pub m_stream_name: ::unity2::Il2CppString,
+    pub m_source_object: crate::unity_engine::object_2::Object_2,
+    pub m_source_binding_type: ::unity2::SystemType,
+    pub m_create_output_method:
+        crate::unity_engine::playables::playablebinding::PlayableBinding_CreateOutputMethod,
+}
+
+impl ::unity2::ClassIdentity for PlayableBinding {
+    const NAMESPACE: &'static str = "UnityEngine.Playables";
+
+    const NAME: &'static str = "PlayableBinding";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PlayableBinding {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-playables-playablebinding")]
+#[::unity2::methods(value)]
+impl PlayableBinding {
+    #[method(name = "get_streamName", args = 0)]
+    pub fn get_stream_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_sourceObject", args = 0)]
+    pub fn get_source_object(self) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "CreateOutput", args = 1)]
+    pub fn create_output(
+        self,
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+    ) -> crate::unity_engine::playables::playableoutput::PlayableOutput;
+
+    #[method(name = "CreateInternal", args = 4)]
+    pub fn create_internal(
+        name: ::unity2::Il2CppString,
+        source_object: crate::unity_engine::object_2::Object_2,
+        source_type: ::unity2::SystemType,
+        create_function : crate :: unity_engine :: playables :: playablebinding :: PlayableBinding_CreateOutputMethod,
+    ) -> crate::unity_engine::playables::playablebinding::PlayableBinding;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

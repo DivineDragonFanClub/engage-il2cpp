@@ -1,0 +1,39 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/lwrp/lightweightrenderpipeline/LightweightRenderPipeline.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.LWRP",
+    name = "LightweightRenderPipeline"
+)]
+#[parent(crate::system::object::Object)]
+pub struct LightweightRenderPipeline {}
+
+#[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipeline")]
+#[::unity2::methods]
+impl LightweightRenderPipeline {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        asset : crate :: unity_engine :: rendering :: lwrp :: lightweightrenderpipelineasset :: LightweightRenderPipelineAsset,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-lwrp-lightweightrenderpipeline")]
+impl LightweightRenderPipeline {
+    pub fn new(
+        asset : crate :: unity_engine :: rendering :: lwrp :: lightweightrenderpipelineasset :: LightweightRenderPipelineAsset,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LightweightRenderPipeline),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILightweightRenderPipelineMethods>::ctor(this, asset);
+        this
+    }
+}

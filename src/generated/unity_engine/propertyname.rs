@@ -1,0 +1,62 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/propertyname/PropertyName.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct PropertyName {
+    pub id: i32,
+}
+
+impl ::unity2::ClassIdentity for PropertyName {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "PropertyName";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PropertyName {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-propertyname")]
+#[::unity2::methods(value)]
+impl PropertyName {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, other: crate::unity_engine::propertyname::PropertyName) -> ();
+
+    #[method(name = "op_Equality", args = 2)]
+    pub fn op_equality(
+        lhs: crate::unity_engine::propertyname::PropertyName,
+        rhs: crate::unity_engine::propertyname::PropertyName,
+    ) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, other: crate::system::object::Object) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_2(self, other: crate::unity_engine::propertyname::PropertyName) -> bool;
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}

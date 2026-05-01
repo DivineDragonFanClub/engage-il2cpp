@@ -1,0 +1,51 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rawvaluelist/RawValueList.md")))]
+#[::unity2::class(namespace = "App", name = "RawValueList")]
+#[parent(crate::system::object::Object)]
+pub struct RawValueList {
+    #[rename(name = "Count")]
+    pub count: i32,
+    #[rename(name = "Values")]
+    pub values: ::unity2::Array<crate::system::valuetype::ValueType>,
+}
+
+#[cfg(feature = "app-rawvaluelist")]
+#[::unity2::methods]
+impl RawValueList {
+    #[method(name = "get_Capacity", args = 0)]
+    pub fn get_capacity(self) -> i32;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, capacity: i32) -> ();
+
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, index: i32) -> crate::system::valuetype::ValueType;
+
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, index: i32, value: crate::system::valuetype::ValueType) -> ();
+
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, value: crate::system::valuetype::ValueType) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[cfg(feature = "app-rawvaluelist")]
+impl RawValueList {
+    pub fn new(capacity: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RawValueList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRawValueListMethods>::ctor(this, capacity);
+        this
+    }
+}

@@ -1,0 +1,240 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::rendering::universal::scriptablerendererdata::IScriptableRendererData;
+use crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_ShaderResources.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ForwardRendererData.ShaderResources"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ForwardRendererData_ShaderResources {
+    #[rename(name = "blitPS")]
+    pub blit_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "zprepass")]
+    pub zprepass: crate::unity_engine::shader::Shader,
+    #[rename(name = "downsampleDepth")]
+    pub downsample_depth: crate::unity_engine::shader::Shader,
+    #[rename(name = "halfResoComposite")]
+    pub half_reso_composite: crate::unity_engine::shader::Shader,
+    #[rename(name = "lightOcclusion")]
+    pub light_occlusion: crate::unity_engine::shader::Shader,
+    #[rename(name = "copyDepthPS")]
+    pub copy_depth_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "screenSpaceShadowPS")]
+    pub screen_space_shadow_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "samplingPS")]
+    pub sampling_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "tileDepthInfoPS")]
+    pub tile_depth_info_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "tileDeferredPS")]
+    pub tile_deferred_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "stencilDeferredPS")]
+    pub stencil_deferred_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "fallbackErrorPS")]
+    pub fallback_error_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "materialErrorPS")]
+    pub material_error_ps: crate::unity_engine::shader::Shader,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
+#[::unity2::methods]
+impl ForwardRendererData_ShaderResources {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
+impl ForwardRendererData_ShaderResources {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ForwardRendererData_ShaderResources),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IForwardRendererData_ShaderResourcesMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ForwardRendererData"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]
+pub struct ForwardRendererData {
+# [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
+# [rename (name = "xrSystemData")] pub xr_system_data : crate :: unity_engine :: rendering :: universal :: xrsystemdata :: XRSystemData ,
+# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_ShaderResources ,
+# [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [rename (name = "m_DefaultStencilState")] pub m_default_stencil_state : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
+# [rename (name = "m_ShadowTransparentReceive")] pub m_shadow_transparent_receive : bool ,
+# [rename (name = "m_RenderingMode")] pub m_rendering_mode : crate :: unity_engine :: rendering :: universal :: renderingmode :: RenderingMode ,
+# [rename (name = "m_AccurateGbufferNormals")] pub m_accurate_gbuffer_normals : bool ,
+# [rename (name = "m_MixedResolutionFlag")] pub m_mixed_resolution_flag : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag ,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
+#[::unity2::methods]
+impl ForwardRendererData {
+    #[method(name = "Create", args = 0)]
+    pub fn create(
+        self,
+    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
+
+    #[method(name = "get_opaqueLayerMask", args = 0)]
+    pub fn get_opaque_layer_mask(self) -> crate::unity_engine::layermask::LayerMask;
+
+    #[method(name = "set_opaqueLayerMask", args = 1)]
+    pub fn set_opaque_layer_mask(self, value: crate::unity_engine::layermask::LayerMask) -> ();
+
+    #[method(name = "get_transparentLayerMask", args = 0)]
+    pub fn get_transparent_layer_mask(self) -> crate::unity_engine::layermask::LayerMask;
+
+    #[method(name = "set_transparentLayerMask", args = 1)]
+    pub fn set_transparent_layer_mask(self, value: crate::unity_engine::layermask::LayerMask)
+        -> ();
+
+    #[method(name = "get_defaultStencilState", args = 0)]
+    pub fn get_default_stencil_state(
+        self,
+    ) -> crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData;
+
+    #[method(name = "set_defaultStencilState", args = 1)]
+    pub fn set_default_stencil_state(
+        self,
+        value: crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData,
+    ) -> ();
+
+    #[method(name = "get_shadowTransparentReceive", args = 0)]
+    pub fn get_shadow_transparent_receive(self) -> bool;
+
+    #[method(name = "set_shadowTransparentReceive", args = 1)]
+    pub fn set_shadow_transparent_receive(self, value: bool) -> ();
+
+    #[method(name = "get_renderingMode", args = 0)]
+    pub fn get_rendering_mode(
+        self,
+    ) -> crate::unity_engine::rendering::universal::renderingmode::RenderingMode;
+
+    #[method(name = "set_renderingMode", args = 1)]
+    pub fn set_rendering_mode(
+        self,
+        value: crate::unity_engine::rendering::universal::renderingmode::RenderingMode,
+    ) -> ();
+
+    #[method(name = "get_accurateGbufferNormals", args = 0)]
+    pub fn get_accurate_gbuffer_normals(self) -> bool;
+
+    #[method(name = "set_accurateGbufferNormals", args = 1)]
+    pub fn set_accurate_gbuffer_normals(self, value: bool) -> ();
+
+    #[method(name = "get_mixedResolutionFlag", args = 0)]
+    pub fn get_mixed_resolution_flag (self ,) -> crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag ;
+
+    #[method(name = "set_mixedResolutionFlag", args = 1)]
+    pub fn set_mixed_resolution_flag(
+        self,
+        value : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag,
+    ) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
+impl ForwardRendererData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ForwardRendererData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IForwardRendererDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_MixedResolutionFlag.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ForwardRendererData_MixedResolutionFlag {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ForwardRendererData_MixedResolutionFlag {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "ForwardRendererData.MixedResolutionFlag";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ForwardRendererData_MixedResolutionFlag {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ForwardRendererData_MixedResolutionFlag {
+    pub fn off() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn effect_half_bilinear() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn effect_half_bilateral2x() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn effect_half_bilateral4x() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn effect_mixed() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn effect_full() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn count() -> Self {
+        Self { value: 6 }
+    }
+}

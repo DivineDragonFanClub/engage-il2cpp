@@ -1,0 +1,43 @@
+
+use crate::system::collections::generic::dictionary_2::Dictionary_2;
+use crate::system::collections::generic::dictionary_2::IDictionary_2;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/serializeddictionary_2/SerializedDictionary_2.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "SerializedDictionary`2")]
+pub struct SerializedDictionary_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
+    #[rename(name = "m_Keys")]
+    pub m_keys: crate::system::collections::generic::list_1::List_1<T0>,
+    #[rename(name = "m_Values")]
+    pub m_values: crate::system::collections::generic::list_1::List_1<T1>,
+}
+
+#[cfg(feature = "unity_engine-rendering-serializeddictionary_2")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SerializedDictionary_2<T0, T1> {
+    #[method(name = "OnBeforeSerialize", args = 0)]
+    pub fn on_before_serialize(self) -> ();
+
+    #[method(name = "OnAfterDeserialize", args = 0)]
+    pub fn on_after_deserialize(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-serializeddictionary_2")]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SerializedDictionary_2<T0, T1> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SerializedDictionary_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISerializedDictionary_2Methods<T0, T1>>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,104 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::confirmdialogitemfunc::ConfirmDialogItemFunc;
+use crate::app::confirmdialogitemfunc::IConfirmDialogItemFunc;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubgotomap/HubGoToMap_GoToDialogItem.md")))]
+#[::unity2::class(namespace = "App", name = "HubGoToMap.GoToDialogItem")]
+#[parent(crate::app::confirmdialogitemfunc::ConfirmDialogItemFunc)]
+pub struct HubGoToMap_GoToDialogItem {
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::app::gmapmode::GmapMode_Mode,
+}
+
+#[cfg(feature = "app-hubgotomap")]
+#[::unity2::methods]
+impl HubGoToMap_GoToDialogItem {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        label: ::unity2::Il2CppString,
+        func: crate::system::action::Action,
+        mode: crate::app::gmapmode::GmapMode_Mode,
+    ) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-hubgotomap")]
+impl HubGoToMap_GoToDialogItem {
+    pub fn new(
+        label: ::unity2::Il2CppString,
+        func: crate::system::action::Action,
+        mode: crate::app::gmapmode::GmapMode_Mode,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubGoToMap_GoToDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubGoToMap_GoToDialogItemMethods>::ctor(this, label, func, mode);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubgotomap/HubGoToMap.md")))]
+#[::unity2::class(namespace = "App", name = "HubGoToMap")]
+#[parent(crate::app::basicdialog::BasicDialog)]
+pub struct HubGoToMap {}
+
+#[cfg(feature = "app-hubgotomap")]
+#[::unity2::methods]
+impl HubGoToMap {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        func: crate::system::action::Action,
+    ) -> crate::app::hubgotomap::HubGoToMap;
+}
+
+#[cfg(feature = "app-hubgotomap")]
+impl HubGoToMap {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubGoToMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubGoToMapMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}

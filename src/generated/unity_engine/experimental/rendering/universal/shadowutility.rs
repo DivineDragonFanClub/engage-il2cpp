@@ -1,0 +1,153 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/shadowutility/ShadowUtility_Edge.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ShadowUtility_Edge {
+    pub vertex_index0: i32,
+    pub vertex_index1: i32,
+    pub tangent: crate::unity_engine::vector4::Vector4,
+    pub compare_reversed: bool,
+}
+
+impl ::unity2::ClassIdentity for ShadowUtility_Edge {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+
+    const NAME: &'static str = "ShadowUtility.Edge";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ShadowUtility_Edge {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
+#[::unity2::methods(value)]
+impl ShadowUtility_Edge {
+    #[method(name = "AssignVertexIndices", args = 2)]
+    pub fn assign_vertex_indices(self, vi0: i32, vi1: i32) -> ();
+
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(
+        self,
+        a : crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge,
+        b : crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge,
+    ) -> i32;
+
+    #[method(name = "CompareTo", args = 1)]
+    pub fn compare_to(
+        self,
+        edge_to_compare : crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge,
+    ) -> i32;
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/shadowutility/ShadowUtility.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal",
+    name = "ShadowUtility"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ShadowUtility {}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
+#[::unity2::methods]
+impl ShadowUtility {
+    #[method(name = "CreateEdge", args = 4)]
+    pub fn create_edge(
+        triangle_index_a: i32,
+        triangle_index_b: i32,
+        vertices: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::vector3::Vector3,
+        >,
+        triangles: crate::system::collections::generic::list_1::List_1<i32>,
+    ) -> crate::unity_engine::experimental::rendering::universal::shadowutility::ShadowUtility_Edge;
+
+    #[method(name = "PopulateEdgeArray", args = 3)]
+    pub fn populate_edge_array(
+        vertices: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::vector3::Vector3,
+        >,
+        triangles: crate::system::collections::generic::list_1::List_1<i32>,
+        edges : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge >,
+    ) -> ();
+
+    #[method(name = "IsOutsideEdge", args = 2)]
+    pub fn is_outside_edge(
+        edge_index: i32,
+        edges_to_process : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge >,
+    ) -> bool;
+
+    #[method(name = "SortEdges", args = 1)]
+    pub fn sort_edges(
+        edges_to_process : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge >,
+    ) -> ();
+
+    #[method(name = "CreateShadowTriangles", args = 5)]
+    pub fn create_shadow_triangles(
+        vertices: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::vector3::Vector3,
+        >,
+        colors: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::color::Color,
+        >,
+        triangles: crate::system::collections::generic::list_1::List_1<i32>,
+        tangents: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::vector4::Vector4,
+        >,
+        edges : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: experimental :: rendering :: universal :: shadowutility :: ShadowUtility_Edge >,
+    ) -> ();
+
+    #[method(name = "InterpCustomVertexData", args = 3)]
+    pub fn interp_custom_vertex_data(
+        position : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3,
+        data: ::unity2::Array<crate::system::object::Object>,
+        weights: ::unity2::Array<f32>,
+    ) -> crate::system::object::Object;
+
+    #[method(name = "InitializeTangents", args = 2)]
+    pub fn initialize_tangents(
+        tangents_to_add: i32,
+        tangents: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::vector4::Vector4,
+        >,
+    ) -> ();
+
+    #[method(name = "GenerateShadowMesh", args = 2)]
+    pub fn generate_shadow_mesh(
+        mesh: crate::unity_engine::mesh::Mesh,
+        shape_path: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-shadowutility")]
+impl ShadowUtility {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShadowUtility),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShadowUtilityMethods>::ctor(this);
+        this
+    }
+}

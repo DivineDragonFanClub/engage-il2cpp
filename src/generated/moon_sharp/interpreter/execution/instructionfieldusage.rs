@@ -1,0 +1,76 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/execution/instructionfieldusage/InstructionFieldUsage.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct InstructionFieldUsage {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for InstructionFieldUsage {
+    const NAMESPACE: &'static str = "MoonSharp.Interpreter.Execution";
+
+    const NAME: &'static str = "InstructionFieldUsage";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for InstructionFieldUsage {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl InstructionFieldUsage {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn symbol() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn symbol_list() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn name() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn value() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn num_val() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn num_val2() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn num_val_as_code_address() -> Self {
+        Self { value: 32784 }
+    }
+}

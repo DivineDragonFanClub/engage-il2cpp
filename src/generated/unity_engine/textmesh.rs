@@ -1,0 +1,32 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/textmesh/TextMesh.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "TextMesh")]
+#[parent(crate::unity_engine::component::Component)]
+pub struct TextMesh {}
+
+#[cfg(feature = "unity_engine-textmesh")]
+#[::unity2::methods]
+impl TextMesh {
+    #[method(name = "set_text", args = 1)]
+    pub fn set_text(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "set_fontSize", args = 1)]
+    pub fn set_font_size(self, value: i32) -> ();
+
+    #[method(name = "set_anchor", args = 1)]
+    pub fn set_anchor(self, value: crate::unity_engine::textanchor::TextAnchor) -> ();
+
+    #[method(name = "set_color", args = 1)]
+    pub fn set_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "set_color_Injected", args = 1)]
+    pub fn set_color_injected(self, value: crate::unity_engine::color::Color) -> ();
+}

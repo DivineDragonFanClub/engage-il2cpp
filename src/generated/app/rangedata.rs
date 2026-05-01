@@ -1,0 +1,289 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdataarray_1::IStructDataArray_1;
+use crate::app::structdataarray_1::StructDataArray_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Offset.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RangeData_Offset {
+    pub x: i8,
+    pub z: i8,
+    pub target: crate::app::rangedata::RangeData_Targets,
+}
+
+impl ::unity2::ClassIdentity for RangeData_Offset {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RangeData.Offset";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RangeData_Offset {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-rangedata")]
+#[::unity2::methods(value)]
+impl RangeData_Offset {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(self, x: i32, z: i32, target: crate::app::rangedata::RangeData_Targets) -> ();
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Targets.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RangeData_Targets {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RangeData_Targets {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RangeData.Targets";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RangeData_Targets {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RangeData_Targets {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn self_() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn enemy() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn friend() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn both() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData.md")))]
+#[::unity2::class(namespace = "App", name = "RangeData")]
+# [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: rangedata :: RangeData >)]
+pub struct RangeData {
+    #[rename(name = "m_Values")]
+    pub m_values: ::unity2::Array<i8>,
+    #[static_field]
+    #[rename(name = "s_DirOffsets")]
+    pub s_dir_offsets: crate::app::rangedata::RangeData_DirOffsets,
+}
+
+#[cfg(feature = "app-rangedata")]
+#[::unity2::methods]
+impl RangeData {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_Value1", args = 0)]
+    pub fn get_value1(self) -> i8;
+
+    #[method(name = "set_Value1", args = 1)]
+    pub fn set_value1(self, value: i8) -> ();
+
+    #[method(name = "get_Value2", args = 0)]
+    pub fn get_value2(self) -> i8;
+
+    #[method(name = "set_Value2", args = 1)]
+    pub fn set_value2(self, value: i8) -> ();
+
+    #[method(name = "get_Value3", args = 0)]
+    pub fn get_value3(self) -> i8;
+
+    #[method(name = "set_Value3", args = 1)]
+    pub fn set_value3(self, value: i8) -> ();
+
+    #[method(name = "get_Value4", args = 0)]
+    pub fn get_value4(self) -> i8;
+
+    #[method(name = "set_Value4", args = 1)]
+    pub fn set_value4(self, value: i8) -> ();
+
+    #[method(name = "get_Value5", args = 0)]
+    pub fn get_value5(self) -> i8;
+
+    #[method(name = "set_Value5", args = 1)]
+    pub fn set_value5(self, value: i8) -> ();
+
+    #[method(name = "get_Value6", args = 0)]
+    pub fn get_value6(self) -> i8;
+
+    #[method(name = "set_Value6", args = 1)]
+    pub fn set_value6(self, value: i8) -> ();
+
+    #[method(name = "get_Value7", args = 0)]
+    pub fn get_value7(self) -> i8;
+
+    #[method(name = "set_Value7", args = 1)]
+    pub fn set_value7(self, value: i8) -> ();
+
+    #[method(name = "get_Value8", args = 0)]
+    pub fn get_value8(self) -> i8;
+
+    #[method(name = "set_Value8", args = 1)]
+    pub fn set_value8(self, value: i8) -> ();
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[method(name = "Commit", args = 0)]
+    pub fn commit() -> ();
+
+    #[method(name = "GetCenter", args = 1)]
+    pub fn get_center(name: ::unity2::Il2CppString) -> crate::app::rangedata::RangeData_Targets;
+
+    #[method(name = "GetOffsets", args = 2)]
+    pub fn get_offsets(
+        name: ::unity2::Il2CppString,
+        dir: crate::app::dir_2::Dir_Type,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>;
+
+    #[method(name = "RotationOffset", args = 2)]
+    pub fn rotation_offset(
+        list: crate::system::collections::generic::list_1::List_1<
+            crate::app::rangedata::RangeData_Offset,
+        >,
+        angle: f32,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset>;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-rangedata")]
+impl RangeData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RangeData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRangeDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_DirOffsets.md")))]
+#[::unity2::class(namespace = "App", name = "RangeData.DirOffsets")]
+#[parent(crate::system::object::Object)]
+pub struct RangeData_DirOffsets {
+    #[rename(name = "m_Offsets")]
+    pub m_offsets: ::unity2::Array<
+        crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::system::collections::generic::list_1::List_1<
+                crate::app::rangedata::RangeData_Offset,
+            >,
+        >,
+    >,
+    #[rename(name = "m_Centers")]
+    pub m_centers: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::app::rangedata::RangeData_Targets,
+    >,
+}
+
+#[cfg(feature = "app-rangedata")]
+#[::unity2::methods]
+impl RangeData_DirOffsets {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "AddCenter", args = 2)]
+    pub fn add_center(
+        self,
+        name: ::unity2::Il2CppString,
+        target: crate::app::rangedata::RangeData_Targets,
+    ) -> ();
+
+    #[method(name = "GetCenter", args = 1)]
+    pub fn get_center(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::app::rangedata::RangeData_Targets;
+
+    #[method(name = "GetOffest", args = 1)]
+    pub fn get_offest(
+        self,
+        dir: crate::app::dir_2::Dir_Type,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::system::collections::generic::list_1::List_1<
+            crate::app::rangedata::RangeData_Offset,
+        >,
+    >;
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[cfg(feature = "app-rangedata")]
+impl RangeData_DirOffsets {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RangeData_DirOffsets),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRangeData_DirOffsetsMethods>::ctor(this);
+        this
+    }
+}

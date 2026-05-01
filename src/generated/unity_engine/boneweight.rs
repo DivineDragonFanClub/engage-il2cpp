@@ -1,0 +1,78 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/boneweight/BoneWeight.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BoneWeight {
+    pub m_weight0: f32,
+    pub m_weight1: f32,
+    pub m_weight2: f32,
+    pub m_weight3: f32,
+    pub m_bone_index0: i32,
+    pub m_bone_index1: i32,
+    pub m_bone_index2: i32,
+    pub m_bone_index3: i32,
+}
+
+impl ::unity2::ClassIdentity for BoneWeight {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "BoneWeight";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BoneWeight {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-boneweight")]
+#[::unity2::methods(value)]
+impl BoneWeight {
+    #[method(name = "get_weight0", args = 0)]
+    pub fn get_weight0(self) -> f32;
+
+    #[method(name = "get_weight1", args = 0)]
+    pub fn get_weight1(self) -> f32;
+
+    #[method(name = "get_weight2", args = 0)]
+    pub fn get_weight2(self) -> f32;
+
+    #[method(name = "get_weight3", args = 0)]
+    pub fn get_weight3(self) -> f32;
+
+    #[method(name = "get_boneIndex0", args = 0)]
+    pub fn get_bone_index0(self) -> i32;
+
+    #[method(name = "get_boneIndex1", args = 0)]
+    pub fn get_bone_index1(self) -> i32;
+
+    #[method(name = "get_boneIndex2", args = 0)]
+    pub fn get_bone_index2(self) -> i32;
+
+    #[method(name = "get_boneIndex3", args = 0)]
+    pub fn get_bone_index3(self) -> i32;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, other: crate::system::object::Object) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_2(self, other: crate::unity_engine::boneweight::BoneWeight) -> bool;
+}

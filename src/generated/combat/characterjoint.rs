@@ -1,0 +1,516 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterjoint/CharacterJoint.md")))]
+#[::unity2::class(namespace = "Combat", name = "CharacterJoint")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct CharacterJoint {
+    #[rename(name = "_cp")]
+    pub cp: crate::combat::character::Character,
+    #[rename(name = "usePositionCache")]
+    pub use_position_cache: bool,
+    #[rename(name = "_c_trans")]
+    pub c_trans: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_c_trans")]
+    pub cached_c_trans: bool,
+    #[rename(name = "_c_trans_ride")]
+    pub c_trans_ride: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_c_trans_ride")]
+    pub cached_c_trans_ride: bool,
+    #[rename(name = "_c_hip_jnt")]
+    pub c_hip_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_c_hip_jnt")]
+    pub cached_c_hip_jnt: bool,
+    #[rename(name = "_c_head_loc")]
+    pub c_head_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_c_head_loc")]
+    pub cached_c_head_loc: bool,
+    #[rename(name = "_c_ride_loc")]
+    pub c_ride_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_c_ride_loc")]
+    pub cached_c_ride_loc: bool,
+    #[rename(name = "_l_wpn1_loc")]
+    pub l_wpn1_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_wpn1_loc")]
+    pub cached_l_wpn1_loc: bool,
+    #[rename(name = "_r_wpn1_loc")]
+    pub r_wpn1_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_wpn1_loc")]
+    pub cached_r_wpn1_loc: bool,
+    #[rename(name = "_hand01_jnt")]
+    pub hand01_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_hand01_jnt")]
+    pub cached_hand01_jnt: bool,
+    #[rename(name = "_l_leg_loc")]
+    pub l_leg_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_leg_loc")]
+    pub cached_l_leg_loc: bool,
+    #[rename(name = "_r_leg_loc")]
+    pub r_leg_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_leg_loc")]
+    pub cached_r_leg_loc: bool,
+    #[rename(name = "_l_limbF_loc")]
+    pub l_limb_f_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_limbF_loc")]
+    pub cached_l_limb_f_loc: bool,
+    #[rename(name = "_l_limbR_loc")]
+    pub l_limb_r_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_limbR_loc")]
+    pub cached_l_limb_r_loc: bool,
+    #[rename(name = "_r_limbF_loc")]
+    pub r_limb_f_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_limbF_loc")]
+    pub cached_r_limb_f_loc: bool,
+    #[rename(name = "_r_limbR_loc")]
+    pub r_limb_r_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_limbR_loc")]
+    pub cached_r_limb_r_loc: bool,
+    #[rename(name = "_camLookAt_loc")]
+    pub cam_look_at_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_camLookAt_loc")]
+    pub cached_cam_look_at_loc: bool,
+    #[rename(name = "_camFollow_loc")]
+    pub cam_follow_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_camFollow_loc")]
+    pub cached_cam_follow_loc: bool,
+    #[rename(name = "_lookAt_loc")]
+    pub look_at_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_lookAt_loc")]
+    pub cached_look_at_loc: bool,
+    #[rename(name = "_lookAt_ride_loc")]
+    pub look_at_ride_loc: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_lookAt_ride_loc")]
+    pub cached_look_at_ride_loc: bool,
+    #[rename(name = "_c_neck_jnt")]
+    pub c_neck_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_c_neck_jnt")]
+    pub cached_c_neck_jnt: bool,
+    #[rename(name = "_c_head_jnt")]
+    pub c_head_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_c_head_jnt")]
+    pub cached_c_head_jnt: bool,
+    #[rename(name = "_c_spine1_jnt")]
+    pub c_spine1_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_c_spine1_jnt")]
+    pub cached_c_spine1_jnt: bool,
+    #[rename(name = "_c_spine2_jnt")]
+    pub c_spine2_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_c_spine2_jnt")]
+    pub cached_c_spine2_jnt: bool,
+    #[rename(name = "_l_cla_jnt")]
+    pub l_cla_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_cla_jnt")]
+    pub cached_l_cla_jnt: bool,
+    #[rename(name = "_r_cla_jnt")]
+    pub r_cla_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_cla_jnt")]
+    pub cached_r_cla_jnt: bool,
+    #[rename(name = "_l_arm1_jnt")]
+    pub l_arm1_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_arm1_jnt")]
+    pub cached_l_arm1_jnt: bool,
+    #[rename(name = "_r_arm1_jnt")]
+    pub r_arm1_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_arm1_jnt")]
+    pub cached_r_arm1_jnt: bool,
+    #[rename(name = "_l_arm3_jnt")]
+    pub l_arm3_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_arm3_jnt")]
+    pub cached_l_arm3_jnt: bool,
+    #[rename(name = "_r_arm3_jnt")]
+    pub r_arm3_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_arm3_jnt")]
+    pub cached_r_arm3_jnt: bool,
+    #[rename(name = "_l_leg1_jnt")]
+    pub l_leg1_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_leg1_jnt")]
+    pub cached_l_leg1_jnt: bool,
+    #[rename(name = "_r_leg1_jnt")]
+    pub r_leg1_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_leg1_jnt")]
+    pub cached_r_leg1_jnt: bool,
+    #[rename(name = "_l_leg3_jnt")]
+    pub l_leg3_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_leg3_jnt")]
+    pub cached_l_leg3_jnt: bool,
+    #[rename(name = "_r_leg3_jnt")]
+    pub r_leg3_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_leg3_jnt")]
+    pub cached_r_leg3_jnt: bool,
+    #[rename(name = "_l_shldrArmr_jnt")]
+    pub l_shldr_armr_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_shldrArmr_jnt")]
+    pub cached_l_shldr_armr_jnt: bool,
+    #[rename(name = "_r_shldrArmr_jnt")]
+    pub r_shldr_armr_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_shldrArmr_jnt")]
+    pub cached_r_shldr_armr_jnt: bool,
+    #[rename(name = "_l_arm1vol_jnt")]
+    pub l_arm1vol_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_arm1vol_jnt")]
+    pub cached_l_arm1vol_jnt: bool,
+    #[rename(name = "_r_arm1vol_jnt")]
+    pub r_arm1vol_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_arm1vol_jnt")]
+    pub cached_r_arm1vol_jnt: bool,
+    #[rename(name = "_l_arm2vol_jnt")]
+    pub l_arm2vol_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_arm2vol_jnt")]
+    pub cached_l_arm2vol_jnt: bool,
+    #[rename(name = "_r_arm2vol_jnt")]
+    pub r_arm2vol_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_arm2vol_jnt")]
+    pub cached_r_arm2vol_jnt: bool,
+    #[rename(name = "_l_leg1vol_jnt")]
+    pub l_leg1vol_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_leg1vol_jnt")]
+    pub cached_l_leg1vol_jnt: bool,
+    #[rename(name = "_r_leg1vol_jnt")]
+    pub r_leg1vol_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_leg1vol_jnt")]
+    pub cached_r_leg1vol_jnt: bool,
+    #[rename(name = "_l_leg2vol_jnt")]
+    pub l_leg2vol_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_leg2vol_jnt")]
+    pub cached_l_leg2vol_jnt: bool,
+    #[rename(name = "_r_leg2vol_jnt")]
+    pub r_leg2vol_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_leg2vol_jnt")]
+    pub cached_r_leg2vol_jnt: bool,
+    #[rename(name = "_l_bust_jnt")]
+    pub l_bust_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_l_bust_jnt")]
+    pub cached_l_bust_jnt: bool,
+    #[rename(name = "_r_bust_jnt")]
+    pub r_bust_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_r_bust_jnt")]
+    pub cached_r_bust_jnt: bool,
+    #[rename(name = "_c_spine1vol_jnt")]
+    pub c_spine1vol_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_c_spine1vol_jnt")]
+    pub cached_c_spine1vol_jnt: bool,
+    #[rename(name = "_c_spine2vol_jnt")]
+    pub c_spine2vol_jnt: crate::unity_engine::transform::Transform,
+    #[rename(name = "cached_c_spine2vol_jnt")]
+    pub cached_c_spine2vol_jnt: bool,
+}
+
+#[cfg(feature = "combat-characterjoint")]
+#[::unity2::methods]
+impl CharacterJoint {
+    #[method(name = "get_CP", args = 0)]
+    pub fn get_cp(self) -> crate::combat::character::Character;
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "GetTR_AtoB", args = 1)]
+    pub fn get_tr_ato_b(self, s: ::unity2::Il2CppString) -> crate::combat::tr::TR;
+
+    #[method(name = "get_IsLateUpdate", args = 0)]
+    pub fn get_is_late_update(self) -> bool;
+
+    #[method(name = "set_IsLateUpdate", args = 1)]
+    pub fn set_is_late_update(self, value: bool) -> ();
+
+    #[method(name = "get_IsAvailable", args = 0)]
+    pub fn get_is_available(self) -> bool;
+
+    #[method(name = "RunScheduler", args = 0)]
+    pub fn run_scheduler(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = "get_c_trans_position", args = 0)]
+    pub fn get_c_trans_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_c_trans_position", args = 1)]
+    pub fn set_c_trans_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_c_trans_ride_position", args = 0)]
+    pub fn get_c_trans_ride_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_c_trans_ride_position", args = 1)]
+    pub fn set_c_trans_ride_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_c_hip_jnt_position", args = 0)]
+    pub fn get_c_hip_jnt_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_c_hip_jnt_position", args = 1)]
+    pub fn set_c_hip_jnt_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_c_head_loc_position", args = 0)]
+    pub fn get_c_head_loc_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_c_head_loc_position", args = 1)]
+    pub fn set_c_head_loc_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_c_ride_loc_position", args = 0)]
+    pub fn get_c_ride_loc_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_c_ride_loc_position", args = 1)]
+    pub fn set_c_ride_loc_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_c_spine2_jnt_position", args = 0)]
+    pub fn get_c_spine2_jnt_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_c_spine2_jnt_position", args = 1)]
+    pub fn set_c_spine2_jnt_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_l_wpn1_loc_position", args = 0)]
+    pub fn get_l_wpn1_loc_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_l_wpn1_loc_position", args = 1)]
+    pub fn set_l_wpn1_loc_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_r_wpn1_loc_position", args = 0)]
+    pub fn get_r_wpn1_loc_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_r_wpn1_loc_position", args = 1)]
+    pub fn set_r_wpn1_loc_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_hand01_jnt_position", args = 0)]
+    pub fn get_hand01_jnt_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_hand01_jnt_position", args = 1)]
+    pub fn set_hand01_jnt_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_l_leg_loc_position", args = 0)]
+    pub fn get_l_leg_loc_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_l_leg_loc_position", args = 1)]
+    pub fn set_l_leg_loc_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_r_leg_loc_position", args = 0)]
+    pub fn get_r_leg_loc_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_r_leg_loc_position", args = 1)]
+    pub fn set_r_leg_loc_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_l_limbF_loc_position", args = 0)]
+    pub fn get_l_limb_f_loc_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_l_limbF_loc_position", args = 1)]
+    pub fn set_l_limb_f_loc_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_l_limbR_loc_position", args = 0)]
+    pub fn get_l_limb_r_loc_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_l_limbR_loc_position", args = 1)]
+    pub fn set_l_limb_r_loc_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_r_limbF_loc_position", args = 0)]
+    pub fn get_r_limb_f_loc_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_r_limbF_loc_position", args = 1)]
+    pub fn set_r_limb_f_loc_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_r_limbR_loc_position", args = 0)]
+    pub fn get_r_limb_r_loc_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_r_limbR_loc_position", args = 1)]
+    pub fn set_r_limb_r_loc_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_camLookAt_loc_position", args = 0)]
+    pub fn get_cam_look_at_loc_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_camLookAt_loc_position", args = 1)]
+    pub fn set_cam_look_at_loc_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_camFollow_loc_position", args = 0)]
+    pub fn get_cam_follow_loc_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_camFollow_loc_position", args = 1)]
+    pub fn set_cam_follow_loc_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_lookAt_loc_position", args = 0)]
+    pub fn get_look_at_loc_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_lookAt_loc_position", args = 1)]
+    pub fn set_look_at_loc_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "UpdatePositionCache", args = 0)]
+    pub fn update_position_cache(self) -> ();
+
+    #[method(name = "get_c_trans", args = 0)]
+    pub fn get_c_trans(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_c_trans_ride", args = 0)]
+    pub fn get_c_trans_ride(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_c_hip_jnt", args = 0)]
+    pub fn get_c_hip_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_c_head_loc", args = 0)]
+    pub fn get_c_head_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_c_ride_loc", args = 0)]
+    pub fn get_c_ride_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_wpn1_loc", args = 0)]
+    pub fn get_l_wpn1_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_wpn1_loc", args = 0)]
+    pub fn get_r_wpn1_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_hand01_jnt", args = 0)]
+    pub fn get_hand01_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_leg_loc", args = 0)]
+    pub fn get_l_leg_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_leg_loc", args = 0)]
+    pub fn get_r_leg_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_limbF_loc", args = 0)]
+    pub fn get_l_limb_f_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_limbR_loc", args = 0)]
+    pub fn get_l_limb_r_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_limbF_loc", args = 0)]
+    pub fn get_r_limb_f_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_limbR_loc", args = 0)]
+    pub fn get_r_limb_r_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_camLookAt_loc", args = 0)]
+    pub fn get_cam_look_at_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_camFollow_loc", args = 0)]
+    pub fn get_cam_follow_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_lookAt_loc", args = 0)]
+    pub fn get_look_at_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_lookAt_ride_loc", args = 0)]
+    pub fn get_look_at_ride_loc(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_c_neck_jnt", args = 0)]
+    pub fn get_c_neck_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_c_head_jnt", args = 0)]
+    pub fn get_c_head_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_c_spine1_jnt", args = 0)]
+    pub fn get_c_spine1_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_c_spine2_jnt", args = 0)]
+    pub fn get_c_spine2_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_cla_jnt", args = 0)]
+    pub fn get_l_cla_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_cla_jnt", args = 0)]
+    pub fn get_r_cla_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_arm1_jnt", args = 0)]
+    pub fn get_l_arm1_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_arm1_jnt", args = 0)]
+    pub fn get_r_arm1_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_arm3_jnt", args = 0)]
+    pub fn get_l_arm3_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_arm3_jnt", args = 0)]
+    pub fn get_r_arm3_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_leg1_jnt", args = 0)]
+    pub fn get_l_leg1_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_leg1_jnt", args = 0)]
+    pub fn get_r_leg1_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_leg3_jnt", args = 0)]
+    pub fn get_l_leg3_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_leg3_jnt", args = 0)]
+    pub fn get_r_leg3_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_shldrArmr_jnt", args = 0)]
+    pub fn get_l_shldr_armr_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_shldrArmr_jnt", args = 0)]
+    pub fn get_r_shldr_armr_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_arm1vol_jnt", args = 0)]
+    pub fn get_l_arm1vol_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_arm1vol_jnt", args = 0)]
+    pub fn get_r_arm1vol_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_arm2vol_jnt", args = 0)]
+    pub fn get_l_arm2vol_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_arm2vol_jnt", args = 0)]
+    pub fn get_r_arm2vol_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_leg1vol_jnt", args = 0)]
+    pub fn get_l_leg1vol_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_leg1vol_jnt", args = 0)]
+    pub fn get_r_leg1vol_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_leg2vol_jnt", args = 0)]
+    pub fn get_l_leg2vol_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_leg2vol_jnt", args = 0)]
+    pub fn get_r_leg2vol_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_l_bust_jnt", args = 0)]
+    pub fn get_l_bust_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_r_bust_jnt", args = 0)]
+    pub fn get_r_bust_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_c_spine1vol_jnt", args = 0)]
+    pub fn get_c_spine1vol_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_c_spine2vol_jnt", args = 0)]
+    pub fn get_c_spine2vol_jnt(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "ImportCacheFromHierarchyCache", args = 1)]
+    pub fn import_cache_from_hierarchy_cache(
+        self,
+        hc: crate::combat::hierarchycache::HierarchyCache,
+    ) -> ();
+
+    #[method(name = "Flush", args = 0)]
+    pub fn flush(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-characterjoint")]
+impl CharacterJoint {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterJoint),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharacterJointMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,89 @@
+
+use crate::app::basicmenuitemcontent::BasicMenuItemContent;
+use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/commonrewardmenuitemcontent/CommonRewardMenuItemContent.md")))]
+#[::unity2::class(namespace = "App", name = "CommonRewardMenuItemContent")]
+#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
+pub struct CommonRewardMenuItemContent {
+    #[rename(name = "m_ImageFace")]
+    pub m_image_face: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_UnitName")]
+    pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_LevelValue")]
+    pub m_level_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ExpValue")]
+    pub m_exp_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ExpAddValue")]
+    pub m_exp_add_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ObjGauge")]
+    pub m_obj_gauge: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ObjExpValue")]
+    pub m_obj_exp_value: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ObjExpMax")]
+    pub m_obj_exp_max: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ImageGauge")]
+    pub m_image_gauge: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_GaugeMaxColor")]
+    pub m_gauge_max_color: crate::unity_engine::material::Material,
+    #[rename(name = "m_AnimLevelUp")]
+    pub m_anim_level_up: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_AnimAddValue")]
+    pub m_anim_add_value: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_ImageArrow")]
+    pub m_image_arrow: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_StockExp")]
+    pub m_stock_exp: i32,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_IsPlaySoundExp")]
+    pub m_is_play_sound_exp: bool,
+}
+
+#[cfg(feature = "app-commonrewardmenuitemcontent")]
+#[::unity2::methods]
+impl CommonRewardMenuItemContent {
+    #[method(name = "Build", args = 1)]
+    pub fn build(self, menu_item: crate::app::basicmenuitem::BasicMenuItem) -> ();
+
+    #[method(name = "BuildTextColor", args = 0)]
+    pub fn build_text_color(self) -> ();
+
+    #[method(name = "StartGauge", args = 0)]
+    pub fn start_gauge(self) -> ();
+
+    #[method(name = "UpdateGauge", args = 1)]
+    pub fn update_gauge(self, speed: i32) -> ();
+
+    #[method(name = "IsGaugeEnd", args = 0)]
+    pub fn is_gauge_end(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-commonrewardmenuitemcontent")]
+impl CommonRewardMenuItemContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CommonRewardMenuItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICommonRewardMenuItemContentMethods>::ctor(this);
+        this
+    }
+}

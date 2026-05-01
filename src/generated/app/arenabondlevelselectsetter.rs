@@ -1,0 +1,52 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenabondlevelselectsetter/ArenaBondLevelSelectSetter.md")))]
+#[::unity2::class(namespace = "App", name = "ArenaBondLevelSelectSetter")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct ArenaBondLevelSelectSetter {
+    #[rename(name = "m_Abilitys")]
+    pub m_abilitys:
+        ::unity2::Array<crate::app::ringlistskillmenuitemcontent::RingListSkillMenuItemContent>,
+}
+
+#[cfg(feature = "app-arenabondlevelselectsetter")]
+#[::unity2::methods]
+impl ArenaBondLevelSelectSetter {
+    #[method(name = "SetData", args = 4)]
+    pub fn set_data(
+        self,
+        god: crate::app::godunit::GodUnit,
+        from_lv: i32,
+        to_lv: i32,
+        cap_lv: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-arenabondlevelselectsetter")]
+impl ArenaBondLevelSelectSetter {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondLevelSelectSetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondLevelSelectSetterMethods>::ctor(this);
+        this
+    }
+}

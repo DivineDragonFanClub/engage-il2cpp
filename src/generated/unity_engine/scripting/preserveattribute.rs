@@ -1,0 +1,28 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scripting/preserveattribute/PreserveAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine.Scripting", name = "PreserveAttribute")]
+pub struct PreserveAttribute {}
+
+#[cfg(feature = "unity_engine-scripting-preserveattribute")]
+#[::unity2::methods]
+impl PreserveAttribute {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-scripting-preserveattribute")]
+impl PreserveAttribute {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PreserveAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPreserveAttributeMethods>::ctor(this);
+        this
+    }
+}

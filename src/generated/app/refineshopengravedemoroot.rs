@@ -1,0 +1,107 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshopengravedemoroot/RefineShopEngraveDemoRoot.md")))]
+#[::unity2::class(namespace = "App", name = "RefineShopEngraveDemoRoot")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct RefineShopEngraveDemoRoot {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_WeaponModelObject")]
+    pub m_weapon_model_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_GodSymbolFront")]
+    pub m_god_symbol_front: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_GodSymbolBack")]
+    pub m_god_symbol_back: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_GodSymbolEff")]
+    pub m_god_symbol_eff: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_EffLight")]
+    pub m_eff_light: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_WeaponIconFrameBefore")]
+    pub m_weapon_icon_frame_before: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_WeaponNameTextBefore")]
+    pub m_weapon_name_text_before: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_WeaponIconFrameAfter")]
+    pub m_weapon_icon_frame_after: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_WeaponNameTextAfter")]
+    pub m_weapon_name_text_after: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_RefineShopEngraveDemo")]
+    pub m_refine_shop_engrave_demo: crate::app::refineshopengravedemo::RefineShopEngraveDemo,
+    #[rename(name = "m_ShopWeaponModelRenderer")]
+    pub m_shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_UnitItem")]
+    pub m_unit_item: crate::app::unititem::UnitItem,
+    #[rename(name = "m_Material")]
+    pub m_material: crate::unity_engine::material::Material,
+}
+
+#[cfg(feature = "app-refineshopengravedemoroot")]
+#[::unity2::methods]
+impl RefineShopEngraveDemoRoot {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "Create", args = 3)]
+    pub fn create(
+        refine_shop_engrave_demo: crate::app::refineshopengravedemo::RefineShopEngraveDemo,
+        shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+        base_unit_item: crate::app::unititem::UnitItem,
+    ) -> crate::app::refineshopengravedemoroot::RefineShopEngraveDemoRoot;
+
+    #[method(name = "CreateInside", args = 3)]
+    pub fn create_inside(
+        self,
+        refine_shop_engrave_demo: crate::app::refineshopengravedemo::RefineShopEngraveDemo,
+        shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+        base_unit_item: crate::app::unititem::UnitItem,
+    ) -> ();
+
+    #[method(name = "Build", args = 0)]
+    pub fn build(self) -> ();
+
+    #[method(name = "IsPlaying", args = 0)]
+    pub fn is_playing(self) -> bool;
+
+    #[method(name = "IsDestroyed", args = 0)]
+    pub fn is_destroyed(self) -> bool;
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refineshopengravedemoroot")]
+impl RefineShopEngraveDemoRoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopEngraveDemoRoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopEngraveDemoRootMethods>::ctor(this);
+        this
+    }
+}

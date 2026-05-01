@@ -1,0 +1,81 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versuseditmenuitem/VersusEditMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "VersusEditMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct VersusEditMenuItem {
+    #[rename(name = "m_Data")]
+    pub m_data: crate::app::mapeditorobjectdata::MapEditorObjectData,
+    #[rename(name = "m_Category")]
+    pub m_category: crate::app::mapeditorcategorydata::MapEditorCategoryData,
+    #[rename(name = "m_OnSelectCallback")]
+    pub m_on_select_callback:
+        crate::system::action_1::Action_1<crate::app::mapeditorcategorydata::MapEditorCategoryData>,
+}
+
+#[cfg(feature = "app-versuseditmenuitem")]
+#[::unity2::methods]
+impl VersusEditMenuItem {
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Index", args = 0)]
+    pub fn get_index(self) -> i32;
+
+    #[method(name = "set_Index", args = 1)]
+    pub fn set_index(self, value: i32) -> ();
+
+    #[method(name = "get_CategoryIcon", args = 0)]
+    pub fn get_category_icon(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_CategoryIcon", args = 1)]
+    pub fn set_category_icon(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        index: i32,
+        data: crate::app::mapeditorobjectdata::MapEditorObjectData,
+        on_select_callback: crate::system::action_1::Action_1<
+            crate::app::mapeditorcategorydata::MapEditorCategoryData,
+        >,
+    ) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+}
+
+#[cfg(feature = "app-versuseditmenuitem")]
+impl VersusEditMenuItem {
+    pub fn new(
+        index: i32,
+        data: crate::app::mapeditorobjectdata::MapEditorObjectData,
+        on_select_callback: crate::system::action_1::Action_1<
+            crate::app::mapeditorcategorydata::MapEditorCategoryData,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusEditMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusEditMenuItemMethods>::ctor(this, index, data, on_select_callback);
+        this
+    }
+}

@@ -1,0 +1,104 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenabondgodselectskilllistsetter/ArenaBondGodSelectSkillListSetter.md")))]
+#[::unity2::class(namespace = "App", name = "ArenaBondGodSelectSkillListSetter")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct ArenaBondGodSelectSkillListSetter {
+    #[rename(name = "m_MessageRoot")]
+    pub m_message_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Message")]
+    pub m_message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_AddAbilitys")]
+    pub m_add_abilitys: ::unity2::Array<
+        crate::app::arenabondgodselectskilllistsetter::ArenaBondGodSelectSkillListSetter_AddAbility,
+    >,
+}
+
+#[cfg(feature = "app-arenabondgodselectskilllistsetter")]
+#[::unity2::methods]
+impl ArenaBondGodSelectSkillListSetter {
+    #[method(name = "SetData", args = 2)]
+    pub fn set_data(self, unit: crate::app::unit::Unit, god: crate::app::godunit::GodUnit) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-arenabondgodselectskilllistsetter")]
+impl ArenaBondGodSelectSkillListSetter {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondGodSelectSkillListSetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondGodSelectSkillListSetterMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/arenabondgodselectskilllistsetter/ArenaBondGodSelectSkillListSetter_AddAbility.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ArenaBondGodSelectSkillListSetter.AddAbility"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ArenaBondGodSelectSkillListSetter_AddAbility {
+    #[rename(name = "m_Root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_LvValue")]
+    pub m_lv_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TalkRoot")]
+    pub m_talk_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Abilitys")]
+    pub m_abilitys:
+        ::unity2::Array<crate::app::ringlistskillmenuitemcontent::RingListSkillMenuItemContent>,
+}
+
+#[cfg(feature = "app-arenabondgodselectskilllistsetter")]
+#[::unity2::methods]
+impl ArenaBondGodSelectSkillListSetter_AddAbility {
+    #[method(name = "SetData", args = 3)]
+    pub fn set_data(
+        self,
+        lv: i32,
+        is_level_cap_talk: bool,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+
+    #[method(name = "SetEmpty", args = 0)]
+    pub fn set_empty(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-arenabondgodselectskilllistsetter")]
+impl ArenaBondGodSelectSkillListSetter_AddAbility {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondGodSelectSkillListSetter_AddAbility),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondGodSelectSkillListSetter_AddAbilityMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,36 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/dictionarypool_2/DictionaryPool_2.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "DictionaryPool`2")]
+pub struct DictionaryPool_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
+    #[static_field]
+    #[rename(name = "s_Pool")]
+    pub s_pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<
+        crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>,
+    >,
+}
+
+#[cfg(feature = "unity_engine-rendering-dictionarypool_2")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> DictionaryPool_2<T0, T1> {
+    #[method(name = "Get", args = 0)]
+    pub fn get() -> crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>;
+
+    #[method(name = "Get", args = 1)]
+    pub fn get_2(
+        value: crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>,
+    ) -> crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<
+        crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>,
+    >;
+
+    #[method(name = "Release", args = 1)]
+    pub fn release(
+        to_release: crate::system::collections::generic::dictionary_2::Dictionary_2<T0, T1>,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

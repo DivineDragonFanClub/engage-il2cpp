@@ -1,0 +1,46 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/trailvertex/TrailVertex.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TrailVertex {
+    pub pos_r: crate::unity_engine::vector3::Vector3,
+    pub pos_t: crate::unity_engine::vector3::Vector3,
+}
+
+impl ::unity2::ClassIdentity for TrailVertex {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "TrailVertex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TrailVertex {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "combat-trailvertex")]
+#[::unity2::methods(value)]
+impl TrailVertex {
+    #[method(name = "Set", args = 2)]
+    pub fn set(
+        self,
+        pos_root: crate::unity_engine::vector3::Vector3,
+        pos_tip: crate::unity_engine::vector3::Vector3,
+    ) -> ();
+}

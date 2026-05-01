@@ -1,0 +1,196 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::rendering::universal::scriptablerendererdata::IScriptableRendererData;
+use crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/renderer2ddata/Renderer2DData.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal",
+    name = "Renderer2DData"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]
+pub struct Renderer2DData {
+# [rename (name = "m_TransparencySortMode")] pub m_transparency_sort_mode : crate :: unity_engine :: transparencysortmode :: TransparencySortMode ,
+# [rename (name = "m_TransparencySortAxis")] pub m_transparency_sort_axis : crate :: unity_engine :: vector3 :: Vector3 ,
+# [rename (name = "m_HDREmulationScale")] pub m_hdr_emulation_scale : f32 ,
+# [rename (name = "m_LightBlendStyles")] pub m_light_blend_styles : :: unity2 :: Array < crate :: unity_engine :: experimental :: rendering :: universal :: light2dblendstyle :: Light2DBlendStyle > ,
+# [rename (name = "m_UseDepthStencilBuffer")] pub m_use_depth_stencil_buffer : bool ,
+# [rename (name = "m_ShapeLightShader")] pub m_shape_light_shader : crate :: unity_engine :: shader :: Shader ,
+# [rename (name = "m_ShapeLightVolumeShader")] pub m_shape_light_volume_shader : crate :: unity_engine :: shader :: Shader ,
+# [rename (name = "m_PointLightShader")] pub m_point_light_shader : crate :: unity_engine :: shader :: Shader ,
+# [rename (name = "m_PointLightVolumeShader")] pub m_point_light_volume_shader : crate :: unity_engine :: shader :: Shader ,
+# [rename (name = "m_BlitShader")] pub m_blit_shader : crate :: unity_engine :: shader :: Shader ,
+# [rename (name = "m_ShadowGroupShader")] pub m_shadow_group_shader : crate :: unity_engine :: shader :: Shader ,
+# [rename (name = "m_RemoveSelfShadowShader")] pub m_remove_self_shadow_shader : crate :: unity_engine :: shader :: Shader ,
+# [rename (name = "m_PostProcessData")] pub m_post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
+# [rename (name = "normalsRenderTarget")] pub normals_render_target : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "shadowsRenderTarget")] pub shadows_render_target : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2ddata")]
+#[::unity2::methods]
+impl Renderer2DData {
+    #[method(name = "get_hdrEmulationScale", args = 0)]
+    pub fn get_hdr_emulation_scale(self) -> f32;
+
+    #[method(name = "get_lightBlendStyles", args = 0)]
+    pub fn get_light_blend_styles (self ,) -> :: unity2 :: Array < crate :: unity_engine :: experimental :: rendering :: universal :: light2dblendstyle :: Light2DBlendStyle > ;
+
+    #[method(name = "get_useDepthStencilBuffer", args = 0)]
+    pub fn get_use_depth_stencil_buffer(self) -> bool;
+
+    #[method(name = "get_shapeLightShader", args = 0)]
+    pub fn get_shape_light_shader(self) -> crate::unity_engine::shader::Shader;
+
+    #[method(name = "get_shapeLightVolumeShader", args = 0)]
+    pub fn get_shape_light_volume_shader(self) -> crate::unity_engine::shader::Shader;
+
+    #[method(name = "get_pointLightShader", args = 0)]
+    pub fn get_point_light_shader(self) -> crate::unity_engine::shader::Shader;
+
+    #[method(name = "get_pointLightVolumeShader", args = 0)]
+    pub fn get_point_light_volume_shader(self) -> crate::unity_engine::shader::Shader;
+
+    #[method(name = "get_blitShader", args = 0)]
+    pub fn get_blit_shader(self) -> crate::unity_engine::shader::Shader;
+
+    #[method(name = "get_shadowGroupShader", args = 0)]
+    pub fn get_shadow_group_shader(self) -> crate::unity_engine::shader::Shader;
+
+    #[method(name = "get_removeSelfShadowShader", args = 0)]
+    pub fn get_remove_self_shadow_shader(self) -> crate::unity_engine::shader::Shader;
+
+    #[method(name = "get_postProcessData", args = 0)]
+    pub fn get_post_process_data(
+        self,
+    ) -> crate::unity_engine::rendering::universal::postprocessdata::PostProcessData;
+
+    #[method(name = "get_transparencySortMode", args = 0)]
+    pub fn get_transparency_sort_mode(
+        self,
+    ) -> crate::unity_engine::transparencysortmode::TransparencySortMode;
+
+    #[method(name = "get_transparencySortAxis", args = 0)]
+    pub fn get_transparency_sort_axis(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "Create", args = 0)]
+    pub fn create(
+        self,
+    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "get_lightMaterials", args = 0)]
+    pub fn get_light_materials(
+        self,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+        u32,
+        crate::unity_engine::material::Material,
+    >;
+
+    #[method(name = "get_shadowMaterials", args = 0)]
+    pub fn get_shadow_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "set_shadowMaterials", args = 1)]
+    pub fn set_shadow_materials(
+        self,
+        value: ::unity2::Array<crate::unity_engine::material::Material>,
+    ) -> ();
+
+    #[method(name = "get_removeSelfShadowMaterials", args = 0)]
+    pub fn get_remove_self_shadow_materials(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "set_removeSelfShadowMaterials", args = 1)]
+    pub fn set_remove_self_shadow_materials(
+        self,
+        value: ::unity2::Array<crate::unity_engine::material::Material>,
+    ) -> ();
+
+    #[method(name = "get_lightCullResult", args = 0)]
+    pub fn get_light_cull_result (self ,) -> crate :: unity_engine :: experimental :: rendering :: universal :: ilight2dcullresult_interface :: ILight2DCullResult_Interface ;
+
+    #[method(name = "set_lightCullResult", args = 1)]
+    pub fn set_light_cull_result(
+        self,
+        value : crate :: unity_engine :: experimental :: rendering :: universal :: ilight2dcullresult_interface :: ILight2DCullResult_Interface,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2ddata")]
+impl Renderer2DData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Renderer2DData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRenderer2DDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/renderer2ddata/Renderer2DData_Renderer2DDefaultMaterialType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Renderer2DData_Renderer2DDefaultMaterialType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Renderer2DData_Renderer2DDefaultMaterialType {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+
+    const NAME: &'static str = "Renderer2DData.Renderer2DDefaultMaterialType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Renderer2DData_Renderer2DDefaultMaterialType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Renderer2DData_Renderer2DDefaultMaterialType {
+    pub fn lit() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn unlit() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn custom() -> Self {
+        Self { value: 2 }
+    }
+}

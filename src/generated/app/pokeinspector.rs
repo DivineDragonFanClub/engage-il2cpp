@@ -1,0 +1,163 @@
+
+use crate::app::mapinspector::IMapInspector;
+use crate::app::mapinspector::MapInspector;
+use crate::app::scriptutil::IScriptUtil;
+use crate::app::scriptutil::ScriptUtil;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/pokeinspector/PokeInspector.md")))]
+#[::unity2::class(namespace = "App", name = "PokeInspector")]
+#[parent(crate::app::mapinspector::MapInspector)]
+pub struct PokeInspector {
+    #[rename(name = "m_X")]
+    pub m_x: i32,
+    #[rename(name = "m_Z")]
+    pub m_z: i32,
+    #[rename(name = "m_W")]
+    pub m_w: i32,
+    #[rename(name = "m_H")]
+    pub m_h: i32,
+    #[rename(name = "m_MaxHp")]
+    pub m_max_hp: i32,
+    #[rename(name = "m_Person")]
+    pub m_person: i32,
+    #[rename(name = "m_HpLabel")]
+    pub m_hp_label: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-pokeinspector")]
+#[::unity2::methods]
+impl PokeInspector {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, kind: crate::app::mapinspector::MapInspector_Kind) -> ();
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor_2(
+        self,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        x: i32,
+        z: i32,
+        w: i32,
+        h: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_3(
+        self,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[method(name = "get_X1", args = 0)]
+    pub fn get_x1(self) -> i32;
+
+    #[method(name = "get_Z1", args = 0)]
+    pub fn get_z1(self) -> i32;
+
+    #[method(name = "get_X2", args = 0)]
+    pub fn get_x2(self) -> i32;
+
+    #[method(name = "get_Z2", args = 0)]
+    pub fn get_z2(self) -> i32;
+
+    #[method(name = "get_MaxHp", args = 0)]
+    pub fn get_max_hp(self) -> i32;
+
+    #[method(name = "get_Hp", args = 0)]
+    pub fn get_hp(self) -> i32;
+
+    #[method(name = "set_Hp", args = 1)]
+    pub fn set_hp(self, value: i32) -> ();
+
+    #[method(name = "GetLabel", args = 0)]
+    pub fn get_label(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetRange", args = 0)]
+    pub fn get_range(self) -> i32;
+
+    #[method(name = "GetNearX", args = 1)]
+    pub fn get_near_x(self, x: i32) -> i32;
+
+    #[method(name = "GetNearZ", args = 1)]
+    pub fn get_near_z(self, z: i32) -> i32;
+
+    #[method(name = "GetDistance", args = 2)]
+    pub fn get_distance(self, x: i32, z: i32) -> i32;
+
+    #[method(name = "IsSightOut", args = 2)]
+    pub fn is_sight_out(self, x: i32, z: i32) -> bool;
+
+    #[method(name = "IsEanble", args = 2)]
+    pub fn is_eanble(self, x: i32, z: i32) -> bool;
+
+    #[method(name = "IsEanble", args = 3)]
+    pub fn is_eanble_2(self, x: i32, z: i32, person: i32) -> bool;
+
+    #[method(name = "SetPos", args = 4)]
+    pub fn set_pos(
+        self,
+        x: i32,
+        z: i32,
+        w: i32,
+        h: i32,
+    ) -> crate::app::pokeinspector::PokeInspector;
+
+    #[method(name = "SetMaxHp", args = 1)]
+    pub fn set_max_hp(self, max_hp: i32) -> crate::app::pokeinspector::PokeInspector;
+}
+
+#[cfg(feature = "app-pokeinspector")]
+impl PokeInspector {
+    pub fn new(kind: crate::app::mapinspector::MapInspector_Kind) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PokeInspector),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPokeInspectorMethods>::ctor(this, kind);
+        this
+    }
+
+    pub fn new_2(
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        x: i32,
+        z: i32,
+        w: i32,
+        h: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PokeInspector),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IPokeInspectorMethods>::ctor_2(this, kind, x, z, w, h);
+        this
+    }
+
+    pub fn new_3(
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PokeInspector),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as IPokeInspectorMethods>::ctor_3(this, kind, args);
+        this
+    }
+}

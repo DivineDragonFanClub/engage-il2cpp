@@ -1,0 +1,36 @@
+
+use crate::system::collections::generic::list_1::IList_1;
+use crate::system::collections::generic::list_1::List_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatortable/CalculatorTable.md")))]
+#[::unity2::class(namespace = "App", name = "CalculatorTable")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < i32 >)]
+pub struct CalculatorTable {}
+
+#[cfg(feature = "app-calculatortable")]
+#[::unity2::methods]
+impl CalculatorTable {
+    #[method(name = "GetValue", args = 3)]
+    pub fn get_value(self, value: i32, min: i32, max: i32) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-calculatortable")]
+impl CalculatorTable {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CalculatorTable),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICalculatorTableMethods>::ctor(this);
+        this
+    }
+}

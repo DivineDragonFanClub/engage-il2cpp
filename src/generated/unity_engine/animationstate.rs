@@ -1,0 +1,42 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::trackedreference::ITrackedReference;
+use crate::unity_engine::trackedreference::TrackedReference;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animationstate/AnimationState.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "AnimationState")]
+#[parent(crate::unity_engine::trackedreference::TrackedReference)]
+pub struct AnimationState {}
+
+#[cfg(feature = "unity_engine-animationstate")]
+#[::unity2::methods]
+impl AnimationState {
+    #[method(name = "set_normalizedTime", args = 1)]
+    pub fn set_normalized_time(self, value: f32) -> ();
+
+    #[method(name = "set_layer", args = 1)]
+    pub fn set_layer(self, value: i32) -> ();
+
+    #[method(name = "get_clip", args = 0)]
+    pub fn get_clip(self) -> crate::unity_engine::animationclip::AnimationClip;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-animationstate")]
+impl AnimationState {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimationState),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimationStateMethods>::ctor(this);
+        this
+    }
+}

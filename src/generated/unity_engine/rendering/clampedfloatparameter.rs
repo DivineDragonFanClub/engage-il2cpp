@@ -1,0 +1,48 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::floatparameter::FloatParameter;
+use crate::unity_engine::rendering::floatparameter::IFloatParameter;
+use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
+use crate::unity_engine::rendering::volumeparameter::VolumeParameter;
+use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
+use crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/clampedfloatparameter/ClampedFloatParameter.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "ClampedFloatParameter")]
+#[parent(crate::unity_engine::rendering::floatparameter::FloatParameter)]
+pub struct ClampedFloatParameter {
+    #[rename(name = "min")]
+    pub min: f32,
+    #[rename(name = "max")]
+    pub max: f32,
+}
+
+#[cfg(feature = "unity_engine-rendering-clampedfloatparameter")]
+#[::unity2::methods]
+impl ClampedFloatParameter {
+    #[method(name = "get_value", args = 0)]
+    pub fn get_value(self) -> f32;
+
+    #[method(name = "set_value", args = 1)]
+    pub fn set_value(self, value: f32) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(self, value: f32, min: f32, max: f32, override_state: bool) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-clampedfloatparameter")]
+impl ClampedFloatParameter {
+    pub fn new(value: f32, min: f32, max: f32, override_state: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ClampedFloatParameter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IClampedFloatParameterMethods>::ctor(this, value, min, max, override_state);
+        this
+    }
+}

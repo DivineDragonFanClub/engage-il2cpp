@@ -1,0 +1,156 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/renderer/Renderer.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "Renderer")]
+#[parent(crate::unity_engine::component::Component)]
+pub struct Renderer {}
+
+#[cfg(feature = "unity_engine-renderer")]
+#[::unity2::methods]
+impl Renderer {
+    #[method(name = "get_bounds", args = 0)]
+    pub fn get_bounds(self) -> crate::unity_engine::bounds::Bounds;
+
+    #[method(name = "SetStaticLightmapST", args = 1)]
+    pub fn set_static_lightmap_st(self, st: crate::unity_engine::vector4::Vector4) -> ();
+
+    #[method(name = "GetMaterial", args = 0)]
+    pub fn get_material(self) -> crate::unity_engine::material::Material;
+
+    #[method(name = "GetSharedMaterial", args = 0)]
+    pub fn get_shared_material(self) -> crate::unity_engine::material::Material;
+
+    #[method(name = "SetMaterial", args = 1)]
+    pub fn set_material(self, m: crate::unity_engine::material::Material) -> ();
+
+    #[method(name = "GetMaterialArray", args = 0)]
+    pub fn get_material_array(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "SetMaterialArray", args = 1)]
+    pub fn set_material_array(
+        self,
+        m: ::unity2::Array<crate::unity_engine::material::Material>,
+    ) -> ();
+
+    #[method(name = "Internal_SetPropertyBlock", args = 1)]
+    pub fn internal_set_property_block(
+        self,
+        properties: crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
+    ) -> ();
+
+    #[method(name = "SetPropertyBlock", args = 1)]
+    pub fn set_property_block(
+        self,
+        properties: crate::unity_engine::materialpropertyblock::MaterialPropertyBlock,
+    ) -> ();
+
+    #[method(name = "get_enabled", args = 0)]
+    pub fn get_enabled(self) -> bool;
+
+    #[method(name = "set_enabled", args = 1)]
+    pub fn set_enabled(self, value: bool) -> ();
+
+    #[method(name = "get_isVisible", args = 0)]
+    pub fn get_is_visible(self) -> bool;
+
+    #[method(name = "get_shadowCastingMode", args = 0)]
+    pub fn get_shadow_casting_mode(
+        self,
+    ) -> crate::unity_engine::rendering::shadowcastingmode::ShadowCastingMode;
+
+    #[method(name = "set_shadowCastingMode", args = 1)]
+    pub fn set_shadow_casting_mode(
+        self,
+        value: crate::unity_engine::rendering::shadowcastingmode::ShadowCastingMode,
+    ) -> ();
+
+    #[method(name = "set_receiveShadows", args = 1)]
+    pub fn set_receive_shadows(self, value: bool) -> ();
+
+    #[method(name = "set_motionVectorGenerationMode", args = 1)]
+    pub fn set_motion_vector_generation_mode(
+        self,
+        value: crate::unity_engine::motionvectorgenerationmode::MotionVectorGenerationMode,
+    ) -> ();
+
+    #[method(name = "get_sortingLayerID", args = 0)]
+    pub fn get_sorting_layer_id(self) -> i32;
+
+    #[method(name = "set_sortingLayerID", args = 1)]
+    pub fn set_sorting_layer_id(self, value: i32) -> ();
+
+    #[method(name = "get_sortingOrder", args = 0)]
+    pub fn get_sorting_order(self) -> i32;
+
+    #[method(name = "set_sortingOrder", args = 1)]
+    pub fn set_sorting_order(self, value: i32) -> ();
+
+    #[method(name = "get_lightmapIndex", args = 0)]
+    pub fn get_lightmap_index(self) -> i32;
+
+    #[method(name = "set_lightmapIndex", args = 1)]
+    pub fn set_lightmap_index(self, value: i32) -> ();
+
+    #[method(name = "get_lightmapScaleOffset", args = 0)]
+    pub fn get_lightmap_scale_offset(self) -> crate::unity_engine::vector4::Vector4;
+
+    #[method(name = "set_lightmapScaleOffset", args = 1)]
+    pub fn set_lightmap_scale_offset(self, value: crate::unity_engine::vector4::Vector4) -> ();
+
+    #[method(name = "GetSharedMaterialArray", args = 0)]
+    pub fn get_shared_material_array(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "get_materials", args = 0)]
+    pub fn get_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "set_materials", args = 1)]
+    pub fn set_materials(
+        self,
+        value: ::unity2::Array<crate::unity_engine::material::Material>,
+    ) -> ();
+
+    #[method(name = "set_sharedMaterial", args = 1)]
+    pub fn set_shared_material(self, value: crate::unity_engine::material::Material) -> ();
+
+    #[method(name = "get_sharedMaterials", args = 0)]
+    pub fn get_shared_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "set_sharedMaterials", args = 1)]
+    pub fn set_shared_materials(
+        self,
+        value: ::unity2::Array<crate::unity_engine::material::Material>,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_bounds_Injected", args = 1)]
+    pub fn get_bounds_injected(self, ret: crate::unity_engine::bounds::Bounds) -> ();
+
+    #[method(name = "SetStaticLightmapST_Injected", args = 1)]
+    pub fn set_static_lightmap_st_injected(self, st: crate::unity_engine::vector4::Vector4) -> ();
+}
+
+#[cfg(feature = "unity_engine-renderer")]
+impl Renderer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Renderer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRendererMethods>::ctor(this);
+        this
+    }
+}

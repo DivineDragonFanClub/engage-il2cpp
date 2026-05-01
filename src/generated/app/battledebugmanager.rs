@@ -1,0 +1,51 @@
+
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battledebugmanager/BattleDebugManager.md")))]
+#[::unity2::class(namespace = "App", name = "BattleDebugManager")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: battledebugmanager :: BattleDebugManager >)]
+pub struct BattleDebugManager {
+    #[rename(name = "m_Visible")]
+    pub m_visible: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        bool,
+    >,
+}
+
+#[cfg(feature = "app-battledebugmanager")]
+#[::unity2::methods]
+impl BattleDebugManager {
+    #[method(name = "IsVisible", args = 1)]
+    pub fn is_visible(self, name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "SetVisible", args = 2)]
+    pub fn set_visible(self, name: ::unity2::Il2CppString, enable: bool) -> ();
+
+    #[method(name = "Serialize", args = 0)]
+    pub fn serialize(self) -> ();
+
+    #[method(name = "Deserialize", args = 0)]
+    pub fn deserialize(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-battledebugmanager")]
+impl BattleDebugManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleDebugManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleDebugManagerMethods>::ctor(this);
+        this
+    }
+}

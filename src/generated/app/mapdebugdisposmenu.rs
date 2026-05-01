@@ -1,0 +1,194 @@
+
+use crate::app::menuitem::IMenuItem;
+use crate::app::menuitem::MenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DisposMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "MapDebugDisposMenu.DisposMenuItem")]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct MapDebugDisposMenu_DisposMenuItem {
+    #[rename(name = "m_Group")]
+    pub m_group: ::unity2::Il2CppString,
+    #[rename(name = "m_PositionGroup")]
+    pub m_position_group:
+        crate::app::mapdebugdisposmenu::MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+}
+
+#[cfg(feature = "app-mapdebugdisposmenu")]
+#[::unity2::methods]
+impl MapDebugDisposMenu_DisposMenuItem {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        group: ::unity2::Il2CppString,
+        position_group : crate :: app :: mapdebugdisposmenu :: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "DrawCell", args = 2)]
+    pub fn draw_cell(group: ::unity2::Il2CppString, position: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::menuitem::MenuItem_Result;
+}
+
+#[cfg(feature = "app-mapdebugdisposmenu")]
+impl MapDebugDisposMenu_DisposMenuItem {
+    pub fn new(
+        group: ::unity2::Il2CppString,
+        position_group : crate :: app :: mapdebugdisposmenu :: MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDebugDisposMenu_DisposMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDebugDisposMenu_DisposMenuItemMethods>::ctor(this, group, position_group);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdebugdisposmenu/MapDebugDisposMenu.md")))]
+#[::unity2::class(namespace = "App", name = "MapDebugDisposMenu")]
+#[parent(crate::system::object::Object)]
+pub struct MapDebugDisposMenu {}
+
+#[cfg(feature = "app-mapdebugdisposmenu")]
+#[::unity2::methods]
+impl MapDebugDisposMenu {
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapdebugdisposmenu")]
+impl MapDebugDisposMenu {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDebugDisposMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDebugDisposMenuMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "MapDebugDisposMenu.DisposMenuItem.SharedPositionGroup"
+)]
+#[parent(crate::system::object::Object)]
+pub struct MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup {
+    #[rename(name = "m_PositionGroup")]
+    pub m_position_group: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-mapdebugdisposmenu")]
+#[::unity2::methods]
+impl MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup {
+    #[method(name = "Set", args = 1)]
+    pub fn set(self, position_group: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapdebugdisposmenu")]
+impl MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDebugDisposMenu_DisposMenuItem_SharedPositionGroup),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDebugDisposMenu_DisposMenuItem_SharedPositionGroupMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdebugdisposmenu/MapDebugDisposMenu_DeleteForceMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "MapDebugDisposMenu.DeleteForceMenuItem")]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct MapDebugDisposMenu_DeleteForceMenuItem {
+    #[rename(name = "m_ForceType")]
+    pub m_force_type: crate::app::force::Force_Type,
+    #[rename(name = "m_ForceName")]
+    pub m_force_name: ::unity2::Il2CppString,
+    #[rename(name = "m_ForceUnitCount")]
+    pub m_force_unit_count: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-mapdebugdisposmenu")]
+#[::unity2::methods]
+impl MapDebugDisposMenu_DeleteForceMenuItem {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, force_type: crate::app::force::Force_Type) -> ();
+
+    #[method(name = "GetColumnCount", args = 0)]
+    pub fn get_column_count(self) -> i32;
+
+    #[method(name = "GetColumnWidth0", args = 0)]
+    pub fn get_column_width0(self) -> f32;
+
+    #[method(name = "GetColumnWidth1", args = 0)]
+    pub fn get_column_width1(self) -> f32;
+
+    #[method(name = "GetColumnWidth2", args = 0)]
+    pub fn get_column_width2(self) -> f32;
+
+    #[method(name = "GetColumnName0", args = 0)]
+    pub fn get_column_name0(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetColumnName1", args = 0)]
+    pub fn get_column_name1(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetColumnName2", args = 0)]
+    pub fn get_column_name2(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+}
+
+#[cfg(feature = "app-mapdebugdisposmenu")]
+impl MapDebugDisposMenu_DeleteForceMenuItem {
+    pub fn new(force_type: crate::app::force::Force_Type) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDebugDisposMenu_DeleteForceMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDebugDisposMenu_DeleteForceMenuItemMethods>::ctor(this, force_type);
+        this
+    }
+}

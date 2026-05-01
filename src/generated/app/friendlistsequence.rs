@@ -1,0 +1,277 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/friendlistsequence/FriendListSequence_ProcZoom.md")))]
+#[::unity2::class(namespace = "App", name = "FriendListSequence.ProcZoom")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct FriendListSequence_ProcZoom {
+    #[rename(name = "m_ZoomObject")]
+    pub m_zoom_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_FriendListContent")]
+    pub m_friend_list_content: crate::app::friendlistcontent::FriendListContent,
+    #[rename(name = "m_Picture")]
+    pub m_picture: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_IsPictureS")]
+    pub m_is_picture_s: bool,
+}
+
+#[cfg(feature = "app-friendlistsequence")]
+#[::unity2::methods]
+impl FriendListSequence_ProcZoom {
+    #[method(name = "Open", args = 0)]
+    pub fn open(self) -> ();
+
+    #[method(name = "WaitOpen", args = 0)]
+    pub fn wait_open(self) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[method(name = "WaitClose", args = 0)]
+    pub fn wait_close(self) -> ();
+
+    #[method(name = "End", args = 0)]
+    pub fn end(self) -> ();
+
+    #[method(name = "CreateBindS", args = 4)]
+    pub fn create_bind_s(
+        parent: crate::app::procinst::ProcInst,
+        zoom_object: crate::unity_engine::gameobject::GameObject,
+        texture: crate::unity_engine::texture2d::Texture2D,
+        friend_list_content: crate::app::friendlistcontent::FriendListContent,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 5)]
+    pub fn create_bind(
+        parent: crate::app::procinst::ProcInst,
+        zoom_object: crate::unity_engine::gameobject::GameObject,
+        picture: crate::unity_engine::sprite::Sprite,
+        is_picture_s: bool,
+        friend_list_content: crate::app::friendlistcontent::FriendListContent,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-friendlistsequence")]
+impl FriendListSequence_ProcZoom {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FriendListSequence_ProcZoom),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFriendListSequence_ProcZoomMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/friendlistsequence/FriendListSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FriendListSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FriendListSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FriendListSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FriendListSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FriendListSequence_Label {
+    pub fn start() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn load() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn open() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn main() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn prepare_page_change() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn page_change() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn list_cancel() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn close() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 8 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/friendlistsequence/FriendListSequence.md")))]
+#[::unity2::class(namespace = "App", name = "FriendListSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: friendlistsequence :: FriendListSequence >)]
+pub struct FriendListSequence {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "StampAtlasPath")]
+    pub stamp_atlas_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "CharaImageFolder")]
+    pub chara_image_folder: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "CharaImageFolderS")]
+    pub chara_image_folder_s: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "m_OpenTime")]
+    pub m_open_time: f32,
+    #[static_field]
+    #[rename(name = "m_PageChangeTime")]
+    pub m_page_change_time: f32,
+    #[rename(name = "m_FriendListObject")]
+    pub m_friend_list_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_FriendListContent")]
+    pub m_friend_list_content: crate::app::friendlistcontent::FriendListContent,
+    #[rename(name = "m_CanvasGroup")]
+    pub m_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+    #[rename(name = "m_RootAnimator")]
+    pub m_root_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_CharaSpritePathArray")]
+    pub m_chara_sprite_path_array: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "m_CharaSpriteArray")]
+    pub m_chara_sprite_array: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+    #[rename(name = "m_ActiveCharaSpriteIndex")]
+    pub m_active_chara_sprite_index: i32,
+    #[rename(name = "m_CharaSpritePathS")]
+    pub m_chara_sprite_path_s: ::unity2::Il2CppString,
+    #[rename(name = "m_CharaTextureS")]
+    pub m_chara_texture_s: crate::unity_engine::texture2d::Texture2D,
+    #[static_field]
+    #[rename(name = "FirstPage")]
+    pub first_page: i32,
+    #[rename(name = "m_Page")]
+    pub m_page: i32,
+    #[rename(name = "m_NextPage")]
+    pub m_next_page: i32,
+    #[rename(name = "m_FriendListDataArray")]
+    pub m_friend_list_data_array: crate::system::collections::generic::list_1::List_1<
+        crate::app::friendlistdata::FriendListData,
+    >,
+    #[rename(name = "m_StampAtlasManager")]
+    pub m_stamp_atlas_manager: crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,
+}
+
+#[cfg(feature = "app-friendlistsequence")]
+#[::unity2::methods]
+impl FriendListSequence {
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab(self) -> bool;
+
+    #[method(name = "IsLoadingSprite", args = 0)]
+    pub fn is_loading_sprite(self) -> bool;
+
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize(self) -> ();
+
+    #[method(name = "WaitFriendListContent", args = 0)]
+    pub fn wait_friend_list_content(self) -> ();
+
+    #[method(name = "TickOpen", args = 0)]
+    pub fn tick_open(self) -> ();
+
+    #[method(name = "GetNextPage", args = 1)]
+    pub fn get_next_page(self, now_page: i32) -> i32;
+
+    #[method(name = "GetPrevPage", args = 1)]
+    pub fn get_prev_page(self, now_page: i32) -> i32;
+
+    #[method(name = "TickMain", args = 0)]
+    pub fn tick_main(self) -> ();
+
+    #[method(name = "PreparePageChange", args = 0)]
+    pub fn prepare_page_change(self) -> ();
+
+    #[method(name = "StartPageChange", args = 0)]
+    pub fn start_page_change(self) -> ();
+
+    #[method(name = "TickPageChange", args = 0)]
+    pub fn tick_page_change(self) -> ();
+
+    #[method(name = "ListCancel", args = 0)]
+    pub fn list_cancel(self) -> ();
+
+    #[method(name = "WaitClose", args = 0)]
+    pub fn wait_close(self) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(parent: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-friendlistsequence")]
+impl FriendListSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FriendListSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFriendListSequenceMethods>::ctor(this);
+        this
+    }
+}

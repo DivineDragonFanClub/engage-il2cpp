@@ -1,0 +1,652 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::app::yesnodialog::IYesNoDialog;
+use crate::app::yesnodialog::YesNoDialog;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_RButtonHoldSequence.md")))]
+#[::unity2::class(namespace = "App", name = "RingCleaningSequence.RButtonHoldSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RingCleaningSequence_RButtonHoldSequence {
+    #[rename(name = "m_Cloth")]
+    pub m_cloth: crate::app::ringcleaningcloth::RingCleaningCloth,
+    #[rename(name = "m_Callback")]
+    pub m_callback: crate::system::action::Action,
+    #[rename(name = "m_HoldCounter")]
+    pub m_hold_counter: i32,
+    #[rename(name = "HoldCounterThreshold")]
+    pub hold_counter_threshold: i32,
+    #[rename(name = "m_IsTrigger")]
+    pub m_is_trigger: bool,
+    #[rename(name = "GapSize")]
+    pub gap_size: f32,
+}
+
+#[cfg(feature = "app-ringcleaningsequence")]
+#[::unity2::methods]
+impl RingCleaningSequence_RButtonHoldSequence {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        cloth: crate::app::ringcleaningcloth::RingCleaningCloth,
+        callback: crate::system::action::Action,
+    ) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[method(name = "PlayRubEffect", args = 0)]
+    pub fn play_rub_effect(self) -> ();
+
+    #[method(name = "End", args = 0)]
+    pub fn end(self) -> ();
+
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        cloth: crate::app::ringcleaningcloth::RingCleaningCloth,
+        callback: crate::system::action::Action,
+    ) -> ();
+}
+
+#[cfg(feature = "app-ringcleaningsequence")]
+impl RingCleaningSequence_RButtonHoldSequence {
+    pub fn new(
+        cloth: crate::app::ringcleaningcloth::RingCleaningCloth,
+        callback: crate::system::action::Action,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingCleaningSequence_RButtonHoldSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingCleaningSequence_RButtonHoldSequenceMethods>::ctor(this, cloth, callback);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_Strength.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingCleaningSequence_Strength {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingCleaningSequence_Strength {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingCleaningSequence.Strength";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingCleaningSequence_Strength {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingCleaningSequence_Strength {
+    pub fn strong() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn weak() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingCleaningSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingCleaningSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingCleaningSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingCleaningSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingCleaningSequence_Label {
+    pub fn init() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn tick() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn tick_continue() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn finish_cleaning() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn reset_rotation() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn play_telop() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 6 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_GodType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingCleaningSequence_GodType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingCleaningSequence_GodType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingCleaningSequence.GodType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingCleaningSequence_GodType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingCleaningSequence_GodType {
+    pub fn none() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn three_edelgard() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn three_dimitri() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn three_claude() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn chrom_reflet() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_RButtonHoldSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingCleaningSequence_RButtonHoldSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingCleaningSequence_RButtonHoldSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingCleaningSequence.RButtonHoldSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingCleaningSequence_RButtonHoldSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingCleaningSequence_RButtonHoldSequence_Label {
+    pub fn end() -> Self {
+        Self { value: 0 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence.md")))]
+#[::unity2::class(namespace = "App", name = "RingCleaningSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringcleaningsequence :: RingCleaningSequence >)]
+pub struct RingCleaningSequence {
+    #[rename(name = "m_SceneResourceHandle")]
+    pub m_scene_resource_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+    #[rename(name = "m_DisableList")]
+    pub m_disable_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[static_field]
+    #[rename(name = "InfoPrefab")]
+    pub info_prefab: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "FinishTelopPrefab")]
+    pub finish_telop_prefab: ::unity2::Il2CppString,
+    #[rename(name = "m_RingController")]
+    pub m_ring_controller: crate::app::ringcleaningringcontroller::RingCleaningRingController,
+    #[rename(name = "m_FaceImage")]
+    pub m_face_image: crate::app::ring_cleaning::faceimagescontroller::FaceImagesController,
+    #[rename(name = "m_Camera")]
+    pub m_camera: crate::unity_engine::camera::Camera,
+    #[rename(name = "m_Info")]
+    pub m_info: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_InfoRoot")]
+    pub m_info_root: crate::app::ringcleaningroot::RingCleaningRoot,
+    #[rename(name = "m_Cloth")]
+    pub m_cloth: crate::app::ringcleaningcloth::RingCleaningCloth,
+    #[rename(name = "m_TelopObject")]
+    pub m_telop_object: crate::unity_engine::gameobject::GameObject,
+    #[static_field]
+    #[rename(name = "WeakNotHitValue")]
+    pub weak_not_hit_value: i32,
+    #[static_field]
+    #[rename(name = "WeakHitValue")]
+    pub weak_hit_value: i32,
+    #[static_field]
+    #[rename(name = "StrongNotHitValue")]
+    pub strong_not_hit_value: i32,
+    #[static_field]
+    #[rename(name = "StrongHitValue")]
+    pub strong_hit_value: i32,
+}
+
+#[cfg(feature = "app-ringcleaningsequence")]
+#[::unity2::methods]
+impl RingCleaningSequence {
+    #[method(name = "get_SceneName", args = 0)]
+    pub fn get_scene_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_ReturnSceneName", args = 0)]
+    pub fn get_return_scene_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_EngageZonePrefab", args = 0)]
+    pub fn get_engage_zone_prefab(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_EngageZonePrefab", args = 1)]
+    pub fn set_engage_zone_prefab(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_IsPlayableTelop", args = 0)]
+    pub fn get_is_playable_telop(self) -> bool;
+
+    #[method(name = "set_IsPlayableTelop", args = 1)]
+    pub fn set_is_playable_telop(self, value: bool) -> ();
+
+    #[method(name = "get_SelectedGodUnit", args = 0)]
+    pub fn get_selected_god_unit() -> crate::app::godunit::GodUnit;
+
+    #[method(name = "set_SelectedGodUnit", args = 1)]
+    pub fn set_selected_god_unit(value: crate::app::godunit::GodUnit) -> ();
+
+    #[method(name = "get_SelectedGodType", args = 0)]
+    pub fn get_selected_god_type() -> crate::app::ringcleaningsequence::RingCleaningSequence_GodType;
+
+    #[method(name = "set_SelectedGodType", args = 1)]
+    pub fn set_selected_god_type(
+        value: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+    ) -> ();
+
+    #[method(name = "get_SelectedUnit", args = 0)]
+    pub fn get_selected_unit() -> crate::app::unit::Unit;
+
+    #[method(name = "set_SelectedUnit", args = 1)]
+    pub fn set_selected_unit(value: crate::app::unit::Unit) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
+
+    #[method(name = "LoadScene", args = 0)]
+    pub fn load_scene(self) -> ();
+
+    #[method(name = "LoadPrefabs", args = 0)]
+    pub fn load_prefabs(self) -> ();
+
+    #[method(name = "IsLoadingPrefabs", args = 0)]
+    pub fn is_loading_prefabs(self) -> bool;
+
+    #[method(name = "CreateObjectFromPrefab", args = 0)]
+    pub fn create_object_from_prefab(self) -> ();
+
+    #[method(name = "InitAfterLoadedScene", args = 0)]
+    pub fn init_after_loaded_scene(self) -> ();
+
+    #[method(name = "InstantiateEngageZone", args = 0)]
+    pub fn instantiate_engage_zone(self) -> ();
+
+    #[method(name = "IsLoadingKeyHelp", args = 0)]
+    pub fn is_loading_key_help(self) -> bool;
+
+    #[method(name = "IsCreatingCharacter", args = 0)]
+    pub fn is_creating_character(self) -> bool;
+
+    #[method(name = "AdjustFaceCamera", args = 0)]
+    pub fn adjust_face_camera(self) -> ();
+
+    #[method(name = "PersistentTick", args = 0)]
+    pub fn persistent_tick(self) -> ();
+
+    #[method(name = "StartTick", args = 0)]
+    pub fn start_tick(self) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[method(name = "CleanRing", args = 2)]
+    pub fn clean_ring(
+        self,
+        strength: crate::app::ringcleaningsequence::RingCleaningSequence_Strength,
+        hit_result: crate::app::ringcleaningsequence::RingCleaningSequence_HitResult,
+    ) -> ();
+
+    #[method(name = "CleanRingWeak", args = 1)]
+    pub fn clean_ring_weak(
+        self,
+        hit_result: crate::app::ringcleaningsequence::RingCleaningSequence_HitResult,
+    ) -> ();
+
+    #[method(name = "CleanRingStrong", args = 1)]
+    pub fn clean_ring_strong(
+        self,
+        hit_result: crate::app::ringcleaningsequence::RingCleaningSequence_HitResult,
+    ) -> ();
+
+    #[method(name = "CompleteCleaning", args = 1)]
+    pub fn complete_cleaning(
+        self,
+        strength: crate::app::ringcleaningsequence::RingCleaningSequence_Strength,
+    ) -> ();
+
+    #[method(name = "GetSelectedGodUnitGid", args = 0)]
+    pub fn get_selected_god_unit_gid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "CleaningAction", args = 0)]
+    pub fn cleaning_action(self) -> ();
+
+    #[method(name = "StrongCleaningAction", args = 0)]
+    pub fn strong_cleaning_action(self) -> ();
+
+    #[method(name = "DecreaseDirty", args = 1)]
+    pub fn decrease_dirty(self, decrease: i32) -> i32;
+
+    #[method(name = "AddBondExp", args = 2)]
+    pub fn add_bond_exp(
+        self,
+        is_finish: bool,
+        strength: crate::app::ringcleaningsequence::RingCleaningSequence_Strength,
+    ) -> ();
+
+    #[method(name = "ResetRotation", args = 0)]
+    pub fn reset_rotation(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "PlayTelop", args = 0)]
+    pub fn play_telop(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "End", args = 0)]
+    pub fn end(self) -> ();
+
+    #[method(name = "UnloadScene", args = 0)]
+    pub fn unload_scene(self) -> ();
+
+    #[method(name = "Final", args = 0)]
+    pub fn r#final(self) -> ();
+
+    #[method(name = "BackgroundUnbind", args = 0)]
+    pub fn background_unbind(self) -> ();
+
+    #[method(name = "BackgroundBind", args = 0)]
+    pub fn background_bind(self) -> ();
+
+    #[method(name = "PlayGlitterEffect", args = 2)]
+    pub fn play_glitter_effect(
+        self,
+        strength: crate::app::ringcleaningsequence::RingCleaningSequence_Strength,
+        hit_result: crate::app::ringcleaningsequence::RingCleaningSequence_HitResult,
+    ) -> ();
+
+    #[method(name = "GetCleaningValue", args = 2)]
+    pub fn get_cleaning_value(
+        self,
+        strength: crate::app::ringcleaningsequence::RingCleaningSequence_Strength,
+        is_hit: bool,
+    ) -> i32;
+
+    #[method(name = "GetMultiChangeIndex", args = 1)]
+    pub fn get_multi_change_index(
+        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+    ) -> i32;
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "ForEachCanCleanGodUnit", args = 1)]
+    pub fn for_each_can_clean_god_unit(
+        func: crate::system::action_1::Action_1<crate::app::godunit::GodUnit>,
+    ) -> ();
+}
+
+#[cfg(feature = "app-ringcleaningsequence")]
+impl RingCleaningSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingCleaningSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingCleaningSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_ConfirmDialogItemYes.md")))]
+#[::unity2::class(namespace = "App", name = "RingCleaningSequence.ConfirmDialogItemYes")]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct RingCleaningSequence_ConfirmDialogItemYes {
+    #[rename(name = "m_Action")]
+    pub m_action: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-ringcleaningsequence")]
+#[::unity2::methods]
+impl RingCleaningSequence_ConfirmDialogItemYes {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, action: crate::system::action::Action, text: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-ringcleaningsequence")]
+impl RingCleaningSequence_ConfirmDialogItemYes {
+    pub fn new(action: crate::system::action::Action, text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingCleaningSequence_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingCleaningSequence_ConfirmDialogItemYesMethods>::ctor(this, action, text);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_ExitConfirmDialog.md")))]
+#[::unity2::class(namespace = "App", name = "RingCleaningSequence.ExitConfirmDialog")]
+#[parent(crate::app::yesnodialog::YesNoDialog)]
+pub struct RingCleaningSequence_ExitConfirmDialog {}
+
+#[cfg(feature = "app-ringcleaningsequence")]
+#[::unity2::methods]
+impl RingCleaningSequence_ExitConfirmDialog {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        action: crate::system::action::Action,
+    ) -> ();
+}
+
+#[cfg(feature = "app-ringcleaningsequence")]
+impl RingCleaningSequence_ExitConfirmDialog {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingCleaningSequence_ExitConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingCleaningSequence_ExitConfirmDialogMethods>::ctor(this, menu_item_list);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningsequence/RingCleaningSequence_HitResult.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingCleaningSequence_HitResult {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingCleaningSequence_HitResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingCleaningSequence.HitResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingCleaningSequence_HitResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingCleaningSequence_HitResult {
+    pub fn not_hit() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn near() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn hit() -> Self {
+        Self { value: 2 }
+    }
+}

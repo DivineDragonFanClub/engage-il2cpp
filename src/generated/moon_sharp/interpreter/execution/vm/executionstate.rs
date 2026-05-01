@@ -1,0 +1,47 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/execution/vm/executionstate/ExecutionState.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Execution.VM",
+    name = "ExecutionState"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ExecutionState {
+    #[rename(name = "ValueStack")]
+    pub value_stack: crate::moon_sharp::interpreter::data_structs::faststack_1::FastStack_1<
+        crate::moon_sharp::interpreter::dynvalue::DynValue,
+    >,
+    #[rename(name = "ExecutionStack")]
+    pub execution_stack: crate::moon_sharp::interpreter::data_structs::faststack_1::FastStack_1<
+        crate::moon_sharp::interpreter::execution::vm::callstackitem::CallStackItem,
+    >,
+    #[rename(name = "InstructionPtr")]
+    pub instruction_ptr: i32,
+    #[rename(name = "State")]
+    pub state: crate::moon_sharp::interpreter::coroutinestate::CoroutineState,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-executionstate")]
+#[::unity2::methods]
+impl ExecutionState {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-executionstate")]
+impl ExecutionState {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ExecutionState),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExecutionStateMethods>::ctor(this);
+        this
+    }
+}

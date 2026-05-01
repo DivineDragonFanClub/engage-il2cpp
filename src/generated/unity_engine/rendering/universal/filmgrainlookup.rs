@@ -1,0 +1,88 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/filmgrainlookup/FilmGrainLookup.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FilmGrainLookup {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FilmGrainLookup {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "FilmGrainLookup";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FilmGrainLookup {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FilmGrainLookup {
+    pub fn thin1() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn thin2() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn medium1() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn medium2() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn medium3() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn medium4() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn medium5() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn medium6() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn large01() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn large02() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn custom() -> Self {
+        Self { value: 10 }
+    }
+}

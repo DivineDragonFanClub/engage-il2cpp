@@ -1,0 +1,130 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::procscenesequence_1::IProcSceneSequence_1;
+use crate::app::procscenesequence_1::ProcSceneSequence_1;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingpicturebooksequence/FishingPictureBookSequence.md")))]
+#[::unity2::class(namespace = "App", name = "FishingPictureBookSequence")]
+# [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)]
+pub struct FishingPictureBookSequence {
+    #[static_field]
+    #[rename(name = "cTextureAtlasPath")]
+    pub c_texture_atlas_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cResultTextureGold")]
+    pub c_result_texture_gold: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cResultTextureSilver")]
+    pub c_result_texture_silver: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cResultTextureBronze")]
+    pub c_result_texture_bronze: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-fishingpicturebooksequence")]
+#[::unity2::methods]
+impl FishingPictureBookSequence {
+    #[method(name = "OnShutdown", args = 0)]
+    pub fn on_shutdown(self) -> ();
+
+    #[method(name = "LoadResource", args = 0)]
+    pub fn load_resource(self) -> ();
+
+    #[method(name = "IsLoadingResource", args = 0)]
+    pub fn is_loading_resource(self) -> bool;
+
+    #[method(name = "Open", args = 0)]
+    pub fn open(self) -> ();
+
+    #[method(name = "UnloadResource", args = 0)]
+    pub fn unload_resource(self) -> ();
+
+    #[method(name = "Exit", args = 0)]
+    pub fn exit(self) -> ();
+
+    #[method(name = "CreatePictureBookMenu", args = 0)]
+    pub fn create_picture_book_menu(self) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-fishingpicturebooksequence")]
+impl FishingPictureBookSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingPictureBookSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingPictureBookSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingpicturebooksequence/FishingPictureBookSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FishingPictureBookSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FishingPictureBookSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FishingPictureBookSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FishingPictureBookSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FishingPictureBookSequence_Label {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ready_menu() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn create_menu() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 3 }
+    }
+}

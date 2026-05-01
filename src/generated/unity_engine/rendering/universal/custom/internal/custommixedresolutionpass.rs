@@ -1,0 +1,221 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+    name = "CustomMixedResolutionPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct CustomMixedResolutionPass {
+    #[static_field]
+    #[rename(name = "m_ProfilerTag")]
+    pub m_profiler_tag: ::unity2::Il2CppString,
+    #[rename(name = "m_ProfilingSampler")]
+    pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[rename(name = "m_HalfColorHandle")]
+    pub m_half_color_handle:
+        crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    #[rename(name = "m_HalfDepthHandle")]
+    pub m_half_depth_handle:
+        crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    #[rename(name = "m_EffectSoftParticleDepthHandle")]
+    pub m_effect_soft_particle_depth_handle:
+        crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    #[rename(name = "m_EdgeHandle")]
+    pub m_edge_handle:
+        crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    #[rename(name = "m_CopyDepthMaterial")]
+    pub m_copy_depth_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_CompositeMaterial")]
+    pub m_composite_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_FullScreenTriangle")]
+    pub m_full_screen_triangle: crate::unity_engine::mesh::Mesh,
+    #[rename(name = "m_FilteringSettings")]
+    pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+    #[rename(name = "m_EffectTagId")]
+    pub m_effect_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[rename(name = "m_MixedRenderState")]
+    pub m_mixed_render_state: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")]
+#[::unity2::methods]
+impl CustomMixedResolutionPass {
+    #[method(name = "get_downsampleType", args = 0)]
+    pub fn get_downsample_type (self ,) -> crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass_DownsampleType ;
+
+    #[method(name = "set_downsampleType", args = 1)]
+    pub fn set_downsample_type(
+        self,
+        value : crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass_DownsampleType,
+    ) -> ();
+
+    #[method(name = "get_compositeType", args = 0)]
+    pub fn get_composite_type (self ,) -> crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass_CompositeType ;
+
+    #[method(name = "set_compositeType", args = 1)]
+    pub fn set_composite_type(
+        self,
+        value : crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass_CompositeType,
+    ) -> ();
+
+    #[method(name = "get_mixHalfAndFull", args = 0)]
+    pub fn get_mix_half_and_full(self) -> bool;
+
+    #[method(name = "set_mixHalfAndFull", args = 1)]
+    pub fn set_mix_half_and_full(self, value: bool) -> ();
+
+    #[method(name = "get_srcDepth", args = 0)]
+    pub fn get_src_depth(
+        self,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
+
+    #[method(name = "set_srcDepth", args = 1)]
+    pub fn set_src_depth(
+        self,
+        value: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        copy_depth_material: crate::unity_engine::material::Material,
+        composite_material: crate::unity_engine::material::Material,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")]
+impl CustomMixedResolutionPass {
+    pub fn new(
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        copy_depth_material: crate::unity_engine::material::Material,
+        composite_material: crate::unity_engine::material::Material,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomMixedResolutionPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomMixedResolutionPassMethods>::ctor(
+            this,
+            evt,
+            layer_mask,
+            copy_depth_material,
+            composite_material,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass_DownsampleType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CustomMixedResolutionPass_DownsampleType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CustomMixedResolutionPass_DownsampleType {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Custom.Internal";
+
+    const NAME: &'static str = "CustomMixedResolutionPass.DownsampleType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CustomMixedResolutionPass_DownsampleType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CustomMixedResolutionPass_DownsampleType {
+    pub fn average() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn min_max() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custommixedresolutionpass/CustomMixedResolutionPass_CompositeType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CustomMixedResolutionPass_CompositeType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CustomMixedResolutionPass_CompositeType {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Custom.Internal";
+
+    const NAME: &'static str = "CustomMixedResolutionPass.CompositeType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CustomMixedResolutionPass_CompositeType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CustomMixedResolutionPass_CompositeType {
+    pub fn bilinear() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn bilateral4x() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn bilateral2x() -> Self {
+        Self { value: 2 }
+    }
+}

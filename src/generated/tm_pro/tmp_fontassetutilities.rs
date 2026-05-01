@@ -1,0 +1,94 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_fontassetutilities/TMP_FontAssetUtilities.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_FontAssetUtilities")]
+#[parent(crate::system::object::Object)]
+pub struct TMP_FontAssetUtilities {
+    #[static_field]
+    #[rename(name = "s_Instance")]
+    pub s_instance: crate::tm_pro::tmp_fontassetutilities::TMP_FontAssetUtilities,
+    #[static_field]
+    #[rename(name = "k_SearchedAssets")]
+    pub k_searched_assets: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
+    #[static_field]
+    #[rename(name = "k_IsFontEngineInitialized")]
+    pub k_is_font_engine_initialized: bool,
+}
+
+#[cfg(feature = "tm_pro-tmp_fontassetutilities")]
+#[::unity2::methods]
+impl TMP_FontAssetUtilities {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+
+    #[method(name = "get_instance", args = 0)]
+    pub fn get_instance() -> crate::tm_pro::tmp_fontassetutilities::TMP_FontAssetUtilities;
+
+    #[method(name = "GetCharacterFromFontAsset", args = 6)]
+    pub fn get_character_from_font_asset(
+        unicode: u32,
+        source_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        include_fallbacks: bool,
+        font_style: crate::tm_pro::fontstyles::FontStyles,
+        font_weight: crate::tm_pro::fontweight::FontWeight,
+        is_alternative_typeface: bool,
+    ) -> crate::tm_pro::tmp_character::TMP_Character;
+
+    #[method(name = "GetCharacterFromFontAsset_Internal", args = 6)]
+    pub fn get_character_from_font_asset_internal(
+        unicode: u32,
+        source_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        include_fallbacks: bool,
+        font_style: crate::tm_pro::fontstyles::FontStyles,
+        font_weight: crate::tm_pro::fontweight::FontWeight,
+        is_alternative_typeface: bool,
+    ) -> crate::tm_pro::tmp_character::TMP_Character;
+
+    #[method(name = "GetCharacterFromFontAssets", args = 7)]
+    pub fn get_character_from_font_assets(
+        unicode: u32,
+        source_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        font_assets: crate::system::collections::generic::list_1::List_1<
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        >,
+        include_fallbacks: bool,
+        font_style: crate::tm_pro::fontstyles::FontStyles,
+        font_weight: crate::tm_pro::fontweight::FontWeight,
+        is_alternative_typeface: bool,
+    ) -> crate::tm_pro::tmp_character::TMP_Character;
+
+    #[method(name = "GetSpriteCharacterFromSpriteAsset", args = 3)]
+    pub fn get_sprite_character_from_sprite_asset(
+        unicode: u32,
+        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        include_fallbacks: bool,
+    ) -> crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter;
+
+    #[method(name = "GetSpriteCharacterFromSpriteAsset_Internal", args = 3)]
+    pub fn get_sprite_character_from_sprite_asset_internal(
+        unicode: u32,
+        sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        include_fallbacks: bool,
+    ) -> crate::tm_pro::tmp_spritecharacter::TMP_SpriteCharacter;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_fontassetutilities")]
+impl TMP_FontAssetUtilities {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_FontAssetUtilities),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_FontAssetUtilitiesMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,34 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequestassetbundle/UnityWebRequestAssetBundle.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Networking",
+    name = "UnityWebRequestAssetBundle"
+)]
+#[parent(crate::system::object::Object)]
+pub struct UnityWebRequestAssetBundle {}
+
+#[cfg(feature = "unity_engine-networking-unitywebrequestassetbundle")]
+#[::unity2::methods]
+impl UnityWebRequestAssetBundle {
+    #[method(name = "GetAssetBundle", args = 1)]
+    pub fn get_asset_bundle(
+        uri: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest;
+
+    #[method(name = "GetAssetBundle", args = 2)]
+    pub fn get_asset_bundle_2(
+        uri: ::unity2::Il2CppString,
+        crc: u32,
+    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest;
+
+    #[method(name = "GetAssetBundle", args = 3)]
+    pub fn get_asset_bundle_3(
+        uri: ::unity2::Il2CppString,
+        cached_asset_bundle: crate::unity_engine::cachedassetbundle::CachedAssetBundle,
+        crc: u32,
+    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest;
+}

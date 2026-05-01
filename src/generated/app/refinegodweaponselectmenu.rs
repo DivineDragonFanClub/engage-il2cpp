@@ -1,0 +1,267 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponselectmenu/RefineGodWeaponSelectMenu_SelectEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineGodWeaponSelectMenu.SelectEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineGodWeaponSelectMenu_SelectEventHandler {}
+
+#[cfg(feature = "app-refinegodweaponselectmenu")]
+#[::unity2::methods]
+impl RefineGodWeaponSelectMenu_SelectEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        god_unit: crate::app::godunit::GodUnit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> ();
+}
+
+#[cfg(feature = "app-refinegodweaponselectmenu")]
+impl RefineGodWeaponSelectMenu_SelectEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponSelectMenu_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponselectmenu/RefineGodWeaponSelectMenu_RequestCloseEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineGodWeaponSelectMenu.RequestCloseEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineGodWeaponSelectMenu_RequestCloseEventHandler {}
+
+#[cfg(feature = "app-refinegodweaponselectmenu")]
+#[::unity2::methods]
+impl RefineGodWeaponSelectMenu_RequestCloseEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-refinegodweaponselectmenu")]
+impl RefineGodWeaponSelectMenu_RequestCloseEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponSelectMenu_RequestCloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponSelectMenu_RequestCloseEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponselectmenu/RefineGodWeaponSelectMenu.md")))]
+#[::unity2::class(namespace = "App", name = "RefineGodWeaponSelectMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct RefineGodWeaponSelectMenu {
+    #[rename(name = "m_Selects")]
+    pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
+    #[rename(name = "m_SelectEventHandler")]
+    pub m_select_event_handler:
+        crate::app::refinegodweaponselectmenu::RefineGodWeaponSelectMenu_SelectEventHandler,
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::refinegodweaponselectmenu::RefineGodWeaponSelectMenu_DecideEventHandler,
+    #[rename(name = "m_RequestCloseEventHandler")]
+    pub m_request_close_event_handler:
+        crate::app::refinegodweaponselectmenu::RefineGodWeaponSelectMenu_RequestCloseEventHandler,
+}
+
+#[cfg(feature = "app-refinegodweaponselectmenu")]
+#[::unity2::methods]
+impl RefineGodWeaponSelectMenu {
+    #[method(name = "get_m_GodUnitList", args = 0)]
+    pub fn get_m_god_unit_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit>;
+
+    #[method(name = "set_m_GodUnitList", args = 1)]
+    pub fn set_m_god_unit_list(
+        self,
+        value: crate::system::collections::generic::list_1::List_1<crate::app::godunit::GodUnit>,
+    ) -> ();
+
+    #[method(name = "get_m_GodUnitIndex", args = 0)]
+    pub fn get_m_god_unit_index(self) -> i32;
+
+    #[method(name = "set_m_GodUnitIndex", args = 1)]
+    pub fn set_m_god_unit_index(self, value: i32) -> ();
+
+    #[method(name = "get_m_GodUnit", args = 0)]
+    pub fn get_m_god_unit(self) -> crate::app::godunit::GodUnit;
+
+    #[method(name = "set_m_GodUnit", args = 1)]
+    pub fn set_m_god_unit(self, value: crate::app::godunit::GodUnit) -> ();
+
+    #[method(name = "CreateBind", args = 8)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_content : crate :: app :: refinegodweaponselectmenucontent :: RefineGodWeaponSelectMenuContent,
+        initial_god_unit: crate::app::godunit::GodUnit,
+        initial_god_weapon: crate::app::itemdata::ItemData,
+        initial_scroll_index: i32,
+        select_event_handler : crate :: app :: refinegodweaponselectmenu :: RefineGodWeaponSelectMenu_SelectEventHandler,
+        decide_event_handler : crate :: app :: refinegodweaponselectmenu :: RefineGodWeaponSelectMenu_DecideEventHandler,
+        request_close_event_handler : crate :: app :: refinegodweaponselectmenu :: RefineGodWeaponSelectMenu_RequestCloseEventHandler,
+    ) -> crate::app::refinegodweaponselectmenu::RefineGodWeaponSelectMenu;
+
+    #[method(name = "CreateMenuItem", args = 4)]
+    pub fn create_menu_item(
+        god_unit: crate::app::godunit::GodUnit,
+        select_event_handler : crate :: app :: refinegodweaponselectmenu :: RefineGodWeaponSelectMenu_SelectEventHandler,
+        decide_event_handler : crate :: app :: refinegodweaponselectmenu :: RefineGodWeaponSelectMenu_DecideEventHandler,
+        request_close_event_handler : crate :: app :: refinegodweaponselectmenu :: RefineGodWeaponSelectMenu_RequestCloseEventHandler,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[method(name = ".ctor", args = 9)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        god_unit_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::godunit::GodUnit,
+        >,
+        initial_god_unit: crate::app::godunit::GodUnit,
+        initial_god_weapon: crate::app::itemdata::ItemData,
+        initial_scroll_index: i32,
+        select_event_handler : crate :: app :: refinegodweaponselectmenu :: RefineGodWeaponSelectMenu_SelectEventHandler,
+        decide_event_handler : crate :: app :: refinegodweaponselectmenu :: RefineGodWeaponSelectMenu_DecideEventHandler,
+        request_close_event_handler : crate :: app :: refinegodweaponselectmenu :: RefineGodWeaponSelectMenu_RequestCloseEventHandler,
+    ) -> ();
+
+    #[method(name = "OnBuild", args = 1)]
+    pub fn on_build(self, is_first_build: bool) -> ();
+
+    #[method(name = "RebuildMenu", args = 0)]
+    pub fn rebuild_menu(self) -> ();
+
+    #[method(name = "RebuildMenuItem", args = 0)]
+    pub fn rebuild_menu_item(self) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetSelect", args = 0)]
+    pub fn get_select(self) -> crate::app::basicmenuselect::BasicMenuSelect;
+
+    #[method(name = "KeyLeft", args = 1)]
+    pub fn key_left(self, is_trigger: bool) -> ();
+
+    #[method(name = "KeyRight", args = 1)]
+    pub fn key_right(self, is_trigger: bool) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+}
+
+#[cfg(feature = "app-refinegodweaponselectmenu")]
+impl RefineGodWeaponSelectMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        god_unit_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::godunit::GodUnit,
+        >,
+        initial_god_unit: crate::app::godunit::GodUnit,
+        initial_god_weapon: crate::app::itemdata::ItemData,
+        initial_scroll_index: i32,
+        select_event_handler : crate :: app :: refinegodweaponselectmenu :: RefineGodWeaponSelectMenu_SelectEventHandler,
+        decide_event_handler : crate :: app :: refinegodweaponselectmenu :: RefineGodWeaponSelectMenu_DecideEventHandler,
+        request_close_event_handler : crate :: app :: refinegodweaponselectmenu :: RefineGodWeaponSelectMenu_RequestCloseEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponSelectMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponSelectMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            god_unit_list,
+            initial_god_unit,
+            initial_god_weapon,
+            initial_scroll_index,
+            select_event_handler,
+            decide_event_handler,
+            request_close_event_handler,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponselectmenu/RefineGodWeaponSelectMenu_DecideEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineGodWeaponSelectMenu.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineGodWeaponSelectMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-refinegodweaponselectmenu")]
+#[::unity2::methods]
+impl RefineGodWeaponSelectMenu_DecideEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        god_unit: crate::app::godunit::GodUnit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> ();
+}
+
+#[cfg(feature = "app-refinegodweaponselectmenu")]
+impl RefineGodWeaponSelectMenu_DecideEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponSelectMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}

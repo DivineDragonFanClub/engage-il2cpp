@@ -1,0 +1,68 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/transparentsettingspass/TransparentSettingsPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "TransparentSettingsPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct TransparentSettingsPass {
+    #[rename(name = "m_shouldReceiveShadows")]
+    pub m_should_receive_shadows: bool,
+    #[static_field]
+    #[rename(name = "m_ProfilerTag")]
+    pub m_profiler_tag: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "m_ProfilingSampler")]
+    pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-transparentsettingspass")]
+#[::unity2::methods]
+impl TransparentSettingsPass {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        shadow_receive_supported: bool,
+    ) -> ();
+
+    #[method(name = "Setup", args = 1)]
+    pub fn setup(
+        self,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> bool;
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-transparentsettingspass")]
+impl TransparentSettingsPass {
+    pub fn new(
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        shadow_receive_supported: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TransparentSettingsPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITransparentSettingsPassMethods>::ctor(this, evt, shadow_receive_supported);
+        this
+    }
+}

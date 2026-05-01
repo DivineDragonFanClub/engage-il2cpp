@@ -1,0 +1,39 @@
+
+use crate::app::calculatormanager::CalculatorManager;
+use crate::app::calculatormanager::ICalculatorManager;
+use crate::app::calculatorutil::CalculatorUtil;
+use crate::app::calculatorutil::ICalculatorUtil;
+use crate::app::systemcalculator::ISystemCalculator;
+use crate::app::systemcalculator::SystemCalculator;
+use crate::app::systemcalculatorinstance_1::ISystemCalculatorInstance_1;
+use crate::app::systemcalculatorinstance_1::SystemCalculatorInstance_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamecalculator/GameCalculator.md")))]
+#[::unity2::class(namespace = "App", name = "GameCalculator")]
+# [parent (crate :: app :: systemcalculatorinstance_1 :: SystemCalculatorInstance_1 < crate :: app :: gamecalculator :: GameCalculator >)]
+pub struct GameCalculator {}
+
+#[cfg(feature = "app-gamecalculator")]
+#[::unity2::methods]
+impl GameCalculator {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gamecalculator")]
+impl GameCalculator {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameCalculator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameCalculatorMethods>::ctor(this);
+        this
+    }
+}

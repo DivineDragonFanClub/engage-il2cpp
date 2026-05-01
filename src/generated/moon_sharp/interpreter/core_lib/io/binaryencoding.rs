@@ -1,0 +1,63 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/core_lib/io/binaryencoding/BinaryEncoding.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.CoreLib.IO",
+    name = "BinaryEncoding"
+)]
+pub struct BinaryEncoding {}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-io-binaryencoding")]
+#[::unity2::methods]
+impl BinaryEncoding {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "GetByteCount", args = 3)]
+    pub fn get_byte_count(self, chars: ::unity2::Array<u16>, index: i32, count: i32) -> i32;
+
+    #[method(name = "GetBytes", args = 5)]
+    pub fn get_bytes(
+        self,
+        chars: ::unity2::Array<u16>,
+        char_index: i32,
+        char_count: i32,
+        bytes: ::unity2::Array<u8>,
+        byte_index: i32,
+    ) -> i32;
+
+    #[method(name = "GetCharCount", args = 3)]
+    pub fn get_char_count(self, bytes: ::unity2::Array<u8>, index: i32, count: i32) -> i32;
+
+    #[method(name = "GetChars", args = 5)]
+    pub fn get_chars(
+        self,
+        bytes: ::unity2::Array<u8>,
+        byte_index: i32,
+        byte_count: i32,
+        chars: ::unity2::Array<u16>,
+        char_index: i32,
+    ) -> i32;
+
+    #[method(name = "GetMaxByteCount", args = 1)]
+    pub fn get_max_byte_count(self, char_count: i32) -> i32;
+
+    #[method(name = "GetMaxCharCount", args = 1)]
+    pub fn get_max_char_count(self, byte_count: i32) -> i32;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-io-binaryencoding")]
+impl BinaryEncoding {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BinaryEncoding),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBinaryEncodingMethods>::ctor(this);
+        this
+    }
+}

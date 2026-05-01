@@ -1,0 +1,177 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingunitselectmenu/FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "FortuneTellingUnitSelectMenu.FortuneTellingUnitSelectMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem {
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_bSelect")]
+    pub m_b_select: bool,
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::fortunetellingunitselectmenu::FortuneTellingUnitSelectMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-fortunetellingunitselectmenu")]
+#[::unity2::methods]
+impl FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        decide_event_handler : crate :: app :: fortunetellingunitselectmenu :: FortuneTellingUnitSelectMenu_DecideEventHandler,
+        select_unit: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "GetUnit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+}
+
+#[cfg(feature = "app-fortunetellingunitselectmenu")]
+impl FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem {
+    pub fn new(
+        unit: crate::app::unit::Unit,
+        decide_event_handler : crate :: app :: fortunetellingunitselectmenu :: FortuneTellingUnitSelectMenu_DecideEventHandler,
+        select_unit: crate::app::unit::Unit,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFortuneTellingUnitSelectMenu_FortuneTellingUnitSelectMenuItemMethods>::ctor(
+            this,
+            unit,
+            decide_event_handler,
+            select_unit,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingunitselectmenu/FortuneTellingUnitSelectMenu_DecideEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "FortuneTellingUnitSelectMenu.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct FortuneTellingUnitSelectMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-fortunetellingunitselectmenu")]
+#[::unity2::methods]
+impl FortuneTellingUnitSelectMenu_DecideEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-fortunetellingunitselectmenu")]
+impl FortuneTellingUnitSelectMenu_DecideEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FortuneTellingUnitSelectMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFortuneTellingUnitSelectMenu_DecideEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingunitselectmenu/FortuneTellingUnitSelectMenu.md")))]
+#[::unity2::class(namespace = "App", name = "FortuneTellingUnitSelectMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct FortuneTellingUnitSelectMenu {
+    #[static_field]
+    #[rename(name = "ForceMask")]
+    pub force_mask: u32,
+}
+
+#[cfg(feature = "app-fortunetellingunitselectmenu")]
+#[::unity2::methods]
+impl FortuneTellingUnitSelectMenu {
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        decide_event_handler : crate :: app :: fortunetellingunitselectmenu :: FortuneTellingUnitSelectMenu_DecideEventHandler,
+        select_unit: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content : crate :: app :: fortunetellingunitselectmenucontent :: FortuneTellingUnitSelectMenuContent,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "AfterBuild", args = 0)]
+    pub fn after_build(self) -> ();
+
+    #[method(name = "GetEndUnitNum", args = 0)]
+    pub fn get_end_unit_num(self) -> i32;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-fortunetellingunitselectmenu")]
+impl FortuneTellingUnitSelectMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content : crate :: app :: fortunetellingunitselectmenucontent :: FortuneTellingUnitSelectMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FortuneTellingUnitSelectMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFortuneTellingUnitSelectMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}

@@ -1,0 +1,37 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::joint::IJoint;
+use crate::unity_engine::joint::Joint;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/fixedjoint/FixedJoint.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "FixedJoint")]
+#[parent(crate::unity_engine::joint::Joint)]
+pub struct FixedJoint {}
+
+#[cfg(feature = "unity_engine-fixedjoint")]
+#[::unity2::methods]
+impl FixedJoint {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-fixedjoint")]
+impl FixedJoint {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FixedJoint),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFixedJointMethods>::ctor(this);
+        this
+    }
+}

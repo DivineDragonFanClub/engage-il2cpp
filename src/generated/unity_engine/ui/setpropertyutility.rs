@@ -1,0 +1,19 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/setpropertyutility/SetPropertyUtility.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "SetPropertyUtility")]
+#[parent(crate::system::object::Object)]
+pub struct SetPropertyUtility {}
+
+#[cfg(feature = "unity_engine-ui-setpropertyutility")]
+#[::unity2::methods]
+impl SetPropertyUtility {
+    #[method(name = "SetColor", args = 2)]
+    pub fn set_color(
+        current_value: crate::unity_engine::color::Color,
+        new_value: crate::unity_engine::color::Color,
+    ) -> bool;
+}

@@ -1,0 +1,16 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/u2d/pixelperfectrendering/PixelPerfectRendering.md")))]
+#[::unity2::class(namespace = "UnityEngine.U2D", name = "PixelPerfectRendering")]
+#[parent(crate::system::object::Object)]
+pub struct PixelPerfectRendering {}
+
+#[cfg(feature = "unity_engine-u2d-pixelperfectrendering")]
+#[::unity2::methods]
+impl PixelPerfectRendering {
+    #[method(name = "set_pixelSnapSpacing", args = 1)]
+    pub fn set_pixel_snap_spacing(value: f32) -> ();
+}

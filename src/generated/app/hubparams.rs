@@ -1,0 +1,82 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubparams/HubParams.md")))]
+#[::unity2::class(namespace = "App", name = "HubParams")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct HubParams {
+    #[rename(name = "m_DisplayUnitNum")]
+    pub m_display_unit_num: i32,
+    #[rename(name = "m_PadThreshold")]
+    pub m_pad_threshold: f32,
+    #[rename(name = "m_MaxSpeed")]
+    pub m_max_speed: f32,
+    #[rename(name = "m_Accel")]
+    pub m_accel: f32,
+    #[rename(name = "m_Decel")]
+    pub m_decel: f32,
+    #[rename(name = "m_RotateSpeedRate")]
+    pub m_rotate_speed_rate: f32,
+    #[rename(name = "m_DashStopTime")]
+    pub m_dash_stop_time: f32,
+    #[rename(name = "m_SpeedCurve")]
+    pub m_speed_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "m_DashSpeedIntensity")]
+    pub m_dash_speed_intensity: f32,
+    #[rename(name = "m_GravityY")]
+    pub m_gravity_y: f32,
+    #[rename(name = "m_TurnCurve")]
+    pub m_turn_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "m_MinLookAtDist")]
+    pub m_min_look_at_dist: f32,
+    #[rename(name = "m_MaxLookAtDist")]
+    pub m_max_look_at_dist: f32,
+    #[rename(name = "m_PlayerBodyWeight")]
+    pub m_player_body_weight: f32,
+    #[rename(name = "m_PlayerHeadWeight")]
+    pub m_player_head_weight: f32,
+    #[rename(name = "m_OthersBodyWeight")]
+    pub m_others_body_weight: f32,
+    #[rename(name = "m_OthersHeadWeight")]
+    pub m_others_head_weight: f32,
+    #[rename(name = "m_Allowance")]
+    pub m_allowance: f32,
+}
+
+#[cfg(feature = "app-hubparams")]
+#[::unity2::methods]
+impl HubParams {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubparams")]
+impl HubParams {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubParams),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubParamsMethods>::ctor(this);
+        this
+    }
+}

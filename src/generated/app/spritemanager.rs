@@ -1,0 +1,51 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/spritemanager/SpriteManager.md")))]
+#[::unity2::class(namespace = "App", name = "SpriteManager")]
+#[parent(crate::system::object::Object)]
+pub struct SpriteManager {
+    #[rename(name = "m_Sprites")]
+    pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+    #[rename(name = "m_Dictionary")]
+    pub m_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::unity_engine::sprite::Sprite,
+    >,
+}
+
+#[cfg(feature = "app-spritemanager")]
+#[::unity2::methods]
+impl SpriteManager {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Load", args = 1)]
+    pub fn load(self, path: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "Unload", args = 0)]
+    pub fn unload(self) -> ();
+
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, name: ::unity2::Il2CppString) -> crate::unity_engine::sprite::Sprite;
+
+    #[method(name = "TryGet", args = 1)]
+    pub fn try_get(self, name: ::unity2::Il2CppString) -> crate::unity_engine::sprite::Sprite;
+}
+
+#[cfg(feature = "app-spritemanager")]
+impl SpriteManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SpriteManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISpriteManagerMethods>::ctor(this);
+        this
+    }
+}

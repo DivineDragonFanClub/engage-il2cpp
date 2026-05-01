@@ -1,0 +1,328 @@
+
+use crate::app::calculatorutil::CalculatorUtil;
+use crate::app::calculatorutil::ICalculatorUtil;
+use crate::system::collections::generic::dictionary_2::Dictionary_2;
+use crate::system::collections::generic::dictionary_2::IDictionary_2;
+use crate::system::collections::generic::stack_1::IStack_1;
+use crate::system::collections::generic::stack_1::Stack_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatormanager/CalculatorManager_StackPool.md")))]
+#[::unity2::class(namespace = "App", name = "CalculatorManager.StackPool")]
+# [parent (crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: calculatormanager :: CalculatorManager_CommandStack >)]
+pub struct CalculatorManager_StackPool {}
+
+#[cfg(feature = "app-calculatormanager")]
+#[::unity2::methods]
+impl CalculatorManager_StackPool {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-calculatormanager")]
+impl CalculatorManager_StackPool {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CalculatorManager_StackPool),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICalculatorManager_StackPoolMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatormanager/CalculatorManager.md")))]
+#[::unity2::class(namespace = "App", name = "CalculatorManager")]
+#[parent(crate::app::calculatorutil::CalculatorUtil)]
+pub struct CalculatorManager {
+    #[static_field]
+    #[rename(name = "s_lockObject")]
+    pub s_lock_object: ::unity2::IlInstance,
+    #[rename(name = "m_CommandList")]
+    pub m_command_list: crate::app::calculatormanager::CalculatorManager_CommandList,
+    #[static_field]
+    #[rename(name = "STACK_MAX")]
+    pub stack_max: i32,
+    #[static_field]
+    #[rename(name = "ARGS_MAX")]
+    pub args_max: i32,
+    #[rename(name = "m_Pool")]
+    pub m_pool: crate::app::calculatormanager::CalculatorManager_StackPool,
+}
+
+#[cfg(feature = "app-calculatormanager")]
+#[::unity2::methods]
+impl CalculatorManager {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "FindCommand", args = 1)]
+    pub fn find_command(self, key: i32) -> crate::app::calculatorcommand::CalculatorCommand;
+
+    #[method(name = "FindCommand", args = 1)]
+    pub fn find_command_2(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::app::calculatorcommand::CalculatorCommand;
+
+    #[method(name = "AddCommand", args = 1)]
+    pub fn add_command(
+        self,
+        command: crate::app::calculatorcommand::CalculatorCommand,
+    ) -> crate::app::calculatorcommand::CalculatorCommand;
+
+    #[method(name = "AddCommand", args = 2)]
+    pub fn add_command_2(
+        self,
+        name: ::unity2::Il2CppString,
+        func: ::unity2::Il2CppString,
+    ) -> crate::app::calculatorcommand::CalculatorCommand;
+
+    #[method(name = "AddCommand", args = 2)]
+    pub fn add_command_3(
+        self,
+        name: ::unity2::Il2CppString,
+        value: f32,
+    ) -> crate::app::calculatorcommand::CalculatorCommand;
+
+    #[method(name = "RemoveCommand", args = 1)]
+    pub fn remove_command(self, command: crate::app::calculatorcommand::CalculatorCommand) -> ();
+
+    #[method(name = "RemoveCommand", args = 1)]
+    pub fn remove_command_2(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "ClearCommand", args = 0)]
+    pub fn clear_command(self) -> ();
+
+    #[method(name = "RunCommand", args = 1)]
+    pub fn run_command(self, name: ::unity2::Il2CppString) -> f32;
+
+    #[method(name = "RunCommand", args = 3)]
+    pub fn run_command_2(
+        self,
+        name: ::unity2::Il2CppString,
+        obj1: ::unity2::IlInstance,
+        obj2: ::unity2::IlInstance,
+    ) -> f32;
+
+    #[method(name = "RunCommand", args = 2)]
+    pub fn run_command_3(
+        self,
+        name: ::unity2::Il2CppString,
+        args: crate::system::collections::generic::list_1::List_1<f32>,
+    ) -> f32;
+
+    #[method(name = "RunCommand", args = 4)]
+    pub fn run_command_4(
+        self,
+        name: ::unity2::Il2CppString,
+        args: crate::system::collections::generic::list_1::List_1<f32>,
+        obj1: ::unity2::IlInstance,
+        obj2: ::unity2::IlInstance,
+    ) -> f32;
+
+    #[method(name = "Dump", args = 0)]
+    pub fn dump(self) -> ();
+
+    #[method(name = "Calculate", args = 3)]
+    pub fn calculate(
+        self,
+        name: ::unity2::Il2CppString,
+        obj1: crate::system::object::Object,
+        obj2: crate::system::object::Object,
+    ) -> f32;
+
+    #[method(name = "Calculate", args = 3)]
+    pub fn calculate_2(
+        self,
+        calcurator: crate::app::stringcalculator::StringCalculator,
+        obj1: crate::system::object::Object,
+        obj2: crate::system::object::Object,
+    ) -> f32;
+
+    #[method(name = "Calculate", args = 5)]
+    pub fn calculate_3(
+        self,
+        calcurator: crate::app::stringcalculator::StringCalculator,
+        command: crate::app::calculatorcommand::CalculatorCommand,
+        args: crate::system::collections::generic::list_1::List_1<f32>,
+        obj1: crate::system::object::Object,
+        obj2: crate::system::object::Object,
+    ) -> f32;
+
+    #[method(name = "Calculate", args = 4)]
+    pub fn calculate_4(
+        self,
+        calcurator: crate::app::stringcalculator::StringCalculator,
+        args: crate::system::collections::generic::list_1::List_1<f32>,
+        obj1: crate::system::object::Object,
+        obj2: crate::system::object::Object,
+    ) -> f32;
+
+    #[method(name = "Execute", args = 3)]
+    pub fn execute(
+        self,
+        name: ::unity2::Il2CppString,
+        obj1: crate::system::object::Object,
+        obj2: crate::system::object::Object,
+    ) -> f32;
+
+    #[method(name = "GetValueImpl", args = 3)]
+    pub fn get_value_impl(
+        self,
+        entity: crate::app::calculatorutil::CalculatorUtil_Entity,
+        obj1: crate::system::object::Object,
+        obj2: crate::system::object::Object,
+    ) -> f32;
+
+    #[method(name = "GetArgsImpl", args = 2)]
+    pub fn get_args_impl(
+        self,
+        entity: crate::app::calculatorutil::CalculatorUtil_Entity,
+        stack: crate::app::calculatormanager::CalculatorManager_CommandStack,
+    ) -> f32;
+
+    #[method(name = "FuncImpl", args = 4)]
+    pub fn func_impl(
+        self,
+        command: crate::app::calculatorcommand::CalculatorCommand,
+        args: crate::system::collections::generic::list_1::List_1<f32>,
+        obj1: crate::system::object::Object,
+        obj2: crate::system::object::Object,
+    ) -> f32;
+
+    #[method(name = "FuncImpl", args = 5)]
+    pub fn func_impl_2(
+        self,
+        entity: crate::app::calculatorutil::CalculatorUtil_Entity,
+        stack: crate::app::calculatormanager::CalculatorManager_CommandStack,
+        value: f32,
+        obj1: crate::system::object::Object,
+        obj2: crate::system::object::Object,
+    ) -> f32;
+
+    #[method(name = "FuncImpl", args = 4)]
+    pub fn func_impl_3(
+        self,
+        entity: crate::app::calculatorutil::CalculatorUtil_Entity,
+        arg: ::unity2::Il2CppString,
+        obj1: crate::system::object::Object,
+        obj2: crate::system::object::Object,
+    ) -> f32;
+
+    #[method(name = "FuncImpl", args = 3)]
+    pub fn func_impl_4(
+        self,
+        entity: crate::app::calculatorutil::CalculatorUtil_Entity,
+        obj1: crate::system::object::Object,
+        obj2: crate::system::object::Object,
+    ) -> f32;
+
+    #[method(name = "SetValueImpl", args = 4)]
+    pub fn set_value_impl(
+        self,
+        entity: crate::app::calculatorutil::CalculatorUtil_Entity,
+        value: f32,
+        obj1: crate::system::object::Object,
+        obj2: crate::system::object::Object,
+    ) -> ();
+
+    #[method(name = "GetCommandCollection", args = 0)]
+    pub fn get_command_collection(
+        self,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2_ValueCollection<
+        i32,
+        crate::app::calculatorcommand::CalculatorCommand,
+    >;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-calculatormanager")]
+impl CalculatorManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CalculatorManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICalculatorManagerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatormanager/CalculatorManager_CommandList.md")))]
+#[::unity2::class(namespace = "App", name = "CalculatorManager.CommandList")]
+# [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: app :: calculatorcommand :: CalculatorCommand >)]
+pub struct CalculatorManager_CommandList {}
+
+#[cfg(feature = "app-calculatormanager")]
+#[::unity2::methods]
+impl CalculatorManager_CommandList {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-calculatormanager")]
+impl CalculatorManager_CommandList {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CalculatorManager_CommandList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICalculatorManager_CommandListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatormanager/CalculatorManager_CommandStack.md")))]
+#[::unity2::class(namespace = "App", name = "CalculatorManager.CommandStack")]
+#[parent(crate::system::object::Object)]
+pub struct CalculatorManager_CommandStack {
+    #[rename(name = "ValueStack")]
+    pub value_stack: crate::system::collections::generic::stack_1::Stack_1<f32>,
+    #[rename(name = "IndexStack")]
+    pub index_stack: crate::system::collections::generic::stack_1::Stack_1<i32>,
+    #[rename(name = "StackArgs")]
+    pub stack_args: crate::system::collections::generic::list_1::List_1<f32>,
+    #[rename(name = "LocalArgs")]
+    pub local_args: crate::system::collections::generic::list_1::List_1<f32>,
+    #[rename(name = "TempArgs")]
+    pub temp_args: crate::system::collections::generic::list_1::List_1<f32>,
+}
+
+#[cfg(feature = "app-calculatormanager")]
+#[::unity2::methods]
+impl CalculatorManager_CommandStack {
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-calculatormanager")]
+impl CalculatorManager_CommandStack {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CalculatorManager_CommandStack),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICalculatorManager_CommandStackMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,32 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scene_management/scenemanagerapiinternal/SceneManagerAPIInternal.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.SceneManagement",
+    name = "SceneManagerAPIInternal"
+)]
+#[parent(crate::system::object::Object)]
+pub struct SceneManagerAPIInternal {}
+
+#[cfg(feature = "unity_engine-scene_management-scenemanagerapiinternal")]
+#[::unity2::methods]
+impl SceneManagerAPIInternal {
+    #[method(name = "LoadSceneAsyncNameIndexInternal", args = 4)]
+    pub fn load_scene_async_name_index_internal(
+        scene_name: ::unity2::Il2CppString,
+        scene_build_index: i32,
+        parameters: crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,
+        must_complete_next_frame: bool,
+    ) -> crate::unity_engine::asyncoperation::AsyncOperation;
+
+    #[method(name = "LoadSceneAsyncNameIndexInternal_Injected", args = 4)]
+    pub fn load_scene_async_name_index_internal_injected(
+        scene_name: ::unity2::Il2CppString,
+        scene_build_index: i32,
+        parameters: crate::unity_engine::scene_management::loadsceneparameters::LoadSceneParameters,
+        must_complete_next_frame: bool,
+    ) -> crate::unity_engine::asyncoperation::AsyncOperation;
+}

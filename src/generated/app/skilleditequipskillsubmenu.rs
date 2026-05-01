@@ -1,0 +1,166 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_RemoveMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "SkillEditEquipSkillSubMenu.RemoveMenuItem")]
+#[parent(crate::app::skilleditequipskillsubmenu::SkillEditEquipSkillSubMenu_BaseEquipMenuItem)]
+pub struct SkillEditEquipSkillSubMenu_RemoveMenuItem {}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+#[::unity2::methods]
+impl SkillEditEquipSkillSubMenu_RemoveMenuItem {
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+impl SkillEditEquipSkillSubMenu_RemoveMenuItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SkillEditEquipSkillSubMenu_RemoveMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISkillEditEquipSkillSubMenu_RemoveMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_TradeMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "SkillEditEquipSkillSubMenu.TradeMenuItem")]
+#[parent(crate::app::skilleditequipskillsubmenu::SkillEditEquipSkillSubMenu_BaseEquipMenuItem)]
+pub struct SkillEditEquipSkillSubMenu_TradeMenuItem {}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+#[::unity2::methods]
+impl SkillEditEquipSkillSubMenu_TradeMenuItem {
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+impl SkillEditEquipSkillSubMenu_TradeMenuItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SkillEditEquipSkillSubMenu_TradeMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISkillEditEquipSkillSubMenu_TradeMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu_BaseEquipMenuItem.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "SkillEditEquipSkillSubMenu.BaseEquipMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct SkillEditEquipSkillSubMenu_BaseEquipMenuItem {}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+#[::unity2::methods]
+impl SkillEditEquipSkillSubMenu_BaseEquipMenuItem {
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "OnBuildMenuItemContent", args = 0)]
+    pub fn on_build_menu_item_content(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+impl SkillEditEquipSkillSubMenu_BaseEquipMenuItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SkillEditEquipSkillSubMenu_BaseEquipMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISkillEditEquipSkillSubMenu_BaseEquipMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilleditequipskillsubmenu/SkillEditEquipSkillSubMenu.md")))]
+#[::unity2::class(namespace = "App", name = "SkillEditEquipSkillSubMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct SkillEditEquipSkillSubMenu {}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+#[::unity2::methods]
+impl SkillEditEquipSkillSubMenu {
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        parent_menu: crate::app::basicmenu::BasicMenu,
+        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-skilleditequipskillsubmenu")]
+impl SkillEditEquipSkillSubMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SkillEditEquipSkillSubMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISkillEditEquipSkillSubMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}

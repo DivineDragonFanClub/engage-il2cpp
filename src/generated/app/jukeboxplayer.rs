@@ -1,0 +1,42 @@
+
+use crate::app::bgmplayer::BgmPlayer;
+use crate::app::bgmplayer::IBgmPlayer;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jukeboxplayer/JukeboxPlayer.md")))]
+#[::unity2::class(namespace = "App", name = "JukeboxPlayer")]
+#[parent(crate::app::bgmplayer::BgmPlayer)]
+pub struct JukeboxPlayer {}
+
+#[cfg(feature = "app-jukeboxplayer")]
+#[::unity2::methods]
+impl JukeboxPlayer {
+    #[method(name = "IsPlaying", args = 1)]
+    pub fn is_playing(self, event_name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "Play", args = 1)]
+    pub fn play(self, event_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "Stop", args = 0)]
+    pub fn stop(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-jukeboxplayer")]
+impl JukeboxPlayer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(JukeboxPlayer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IJukeboxPlayerMethods>::ctor(this);
+        this
+    }
+}

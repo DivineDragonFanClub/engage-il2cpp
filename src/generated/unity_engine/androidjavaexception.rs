@@ -1,0 +1,38 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/androidjavaexception/AndroidJavaException.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "AndroidJavaException")]
+pub struct AndroidJavaException {
+    #[rename(name = "mJavaStackTrace")]
+    pub m_java_stack_trace: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "unity_engine-androidjavaexception")]
+#[::unity2::methods]
+impl AndroidJavaException {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        message: ::unity2::Il2CppString,
+        java_stack_trace: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "get_StackTrace", args = 0)]
+    pub fn get_stack_trace(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "unity_engine-androidjavaexception")]
+impl AndroidJavaException {
+    pub fn new(message: ::unity2::Il2CppString, java_stack_trace: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AndroidJavaException),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAndroidJavaExceptionMethods>::ctor(this, message, java_stack_trace);
+        this
+    }
+}

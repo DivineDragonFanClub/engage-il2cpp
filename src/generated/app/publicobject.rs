@@ -1,0 +1,154 @@
+
+use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+use crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/publicobject/PublicObject_Func_1.md")))]
+#[::unity2::class(namespace = "App", name = "PublicObject.Func`1")]
+pub struct PublicObject_Func_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-publicobject")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> PublicObject_Func_1<T0> {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, group: ::unity2::Il2CppString, obj: T0) -> ();
+}
+
+#[cfg(feature = "app-publicobject")]
+impl<T0: ::unity2::ClassIdentity> PublicObject_Func_1<T0> {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PublicObject_Func_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPublicObject_Func_1Methods<T0>>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/publicobject/PublicObject.md")))]
+#[::unity2::class(namespace = "App", name = "PublicObject")]
+# [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: publicobject :: PublicObject >)]
+pub struct PublicObject {
+    #[static_field]
+    #[rename(name = "AssetName")]
+    pub asset_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "AssetPath")]
+    pub asset_path: ::unity2::Il2CppString,
+    #[rename(name = "m_Groups")]
+    pub m_groups: ::unity2::Array<crate::app::publicobject::PublicObject_Group>,
+    #[static_field]
+    #[rename(name = "s_Dictionary")]
+    pub s_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::unity_engine::object_2::Object_2,
+    >,
+}
+
+#[cfg(feature = "app-publicobject")]
+#[::unity2::methods]
+impl PublicObject {
+    #[method(name = "LoadAsync", args = 0)]
+    pub fn load_async() -> ();
+
+    #[method(name = "WarmUpImpl", args = 0)]
+    pub fn warm_up_impl(self) -> ();
+
+    #[method(name = "TryCreateDictionary", args = 0)]
+    pub fn try_create_dictionary(self) -> ();
+
+    #[method(name = "DumpImpl", args = 0)]
+    pub fn dump_impl(self) -> ();
+
+    #[method(name = "WarmUp", args = 0)]
+    pub fn warm_up() -> ();
+
+    #[method(name = "Instantiate", args = 2)]
+    pub fn instantiate(
+        name: ::unity2::Il2CppString,
+        parent: crate::unity_engine::transform::Transform,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "Instantiate", args = 2)]
+    pub fn instantiate_2(
+        name: ::unity2::Il2CppString,
+        parent: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "Dump", args = 0)]
+    pub fn dump() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-publicobject")]
+impl PublicObject {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PublicObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPublicObjectMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/publicobject/PublicObject_Group.md")))]
+#[::unity2::class(namespace = "App", name = "PublicObject.Group")]
+#[parent(crate::system::object::Object)]
+pub struct PublicObject_Group {
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+    #[rename(name = "m_Objects")]
+    pub m_objects: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+}
+
+#[cfg(feature = "app-publicobject")]
+#[::unity2::methods]
+impl PublicObject_Group {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-publicobject")]
+impl PublicObject_Group {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PublicObject_Group),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPublicObject_GroupMethods>::ctor(this);
+        this
+    }
+}

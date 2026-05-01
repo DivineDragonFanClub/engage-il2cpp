@@ -1,0 +1,68 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/events/argumentcache/ArgumentCache.md")))]
+#[::unity2::class(namespace = "UnityEngine.Events", name = "ArgumentCache")]
+#[parent(crate::system::object::Object)]
+pub struct ArgumentCache {
+    #[rename(name = "m_ObjectArgument")]
+    pub m_object_argument: crate::unity_engine::object_2::Object_2,
+    #[rename(name = "m_ObjectArgumentAssemblyTypeName")]
+    pub m_object_argument_assembly_type_name: ::unity2::Il2CppString,
+    #[rename(name = "m_IntArgument")]
+    pub m_int_argument: i32,
+    #[rename(name = "m_FloatArgument")]
+    pub m_float_argument: f32,
+    #[rename(name = "m_StringArgument")]
+    pub m_string_argument: ::unity2::Il2CppString,
+    #[rename(name = "m_BoolArgument")]
+    pub m_bool_argument: bool,
+}
+
+#[cfg(feature = "unity_engine-events-argumentcache")]
+#[::unity2::methods]
+impl ArgumentCache {
+    #[method(name = "get_unityObjectArgument", args = 0)]
+    pub fn get_unity_object_argument(self) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "get_unityObjectArgumentAssemblyTypeName", args = 0)]
+    pub fn get_unity_object_argument_assembly_type_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_intArgument", args = 0)]
+    pub fn get_int_argument(self) -> i32;
+
+    #[method(name = "get_floatArgument", args = 0)]
+    pub fn get_float_argument(self) -> f32;
+
+    #[method(name = "get_stringArgument", args = 0)]
+    pub fn get_string_argument(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_boolArgument", args = 0)]
+    pub fn get_bool_argument(self) -> bool;
+
+    #[method(name = "OnBeforeSerialize", args = 0)]
+    pub fn on_before_serialize(self) -> ();
+
+    #[method(name = "OnAfterDeserialize", args = 0)]
+    pub fn on_after_deserialize(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-events-argumentcache")]
+impl ArgumentCache {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArgumentCache),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArgumentCacheMethods>::ctor(this);
+        this
+    }
+}

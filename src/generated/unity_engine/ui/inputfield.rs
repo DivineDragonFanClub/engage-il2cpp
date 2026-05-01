@@ -1,0 +1,1114 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::events::unityevent_1::IUnityEvent_1;
+use crate::unity_engine::events::unityevent_1::UnityEvent_1;
+use crate::unity_engine::events::unityeventbase::IUnityEventBase;
+use crate::unity_engine::events::unityeventbase::UnityEventBase;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::ui::selectable::ISelectable;
+use crate::unity_engine::ui::selectable::Selectable;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "InputField")]
+#[parent(crate::unity_engine::ui::selectable::Selectable)]
+pub struct InputField {
+    #[rename(name = "m_Keyboard")]
+    pub m_keyboard: crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard,
+    #[static_field]
+    #[rename(name = "kSeparators")]
+    pub k_separators: ::unity2::Array<u16>,
+    #[rename(name = "m_TextComponent")]
+    pub m_text_component: crate::unity_engine::ui::text::Text,
+    #[rename(name = "m_Placeholder")]
+    pub m_placeholder: crate::unity_engine::ui::graphic::Graphic,
+    #[rename(name = "m_ContentType")]
+    pub m_content_type: crate::unity_engine::ui::inputfield::InputField_ContentType,
+    #[rename(name = "m_InputType")]
+    pub m_input_type: crate::unity_engine::ui::inputfield::InputField_InputType,
+    #[rename(name = "m_AsteriskChar")]
+    pub m_asterisk_char: u16,
+    #[rename(name = "m_KeyboardType")]
+    pub m_keyboard_type: crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
+    #[rename(name = "m_LineType")]
+    pub m_line_type: crate::unity_engine::ui::inputfield::InputField_LineType,
+    #[rename(name = "m_HideMobileInput")]
+    pub m_hide_mobile_input: bool,
+    #[rename(name = "m_CharacterValidation")]
+    pub m_character_validation: crate::unity_engine::ui::inputfield::InputField_CharacterValidation,
+    #[rename(name = "m_CharacterLimit")]
+    pub m_character_limit: i32,
+    #[rename(name = "m_OnEndEdit")]
+    pub m_on_end_edit: crate::unity_engine::ui::inputfield::InputField_SubmitEvent,
+    #[rename(name = "m_OnValueChanged")]
+    pub m_on_value_changed: crate::unity_engine::ui::inputfield::InputField_OnChangeEvent,
+    #[rename(name = "m_OnValidateInput")]
+    pub m_on_validate_input: crate::unity_engine::ui::inputfield::InputField_OnValidateInput,
+    #[rename(name = "m_CaretColor")]
+    pub m_caret_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_CustomCaretColor")]
+    pub m_custom_caret_color: bool,
+    #[rename(name = "m_SelectionColor")]
+    pub m_selection_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_Text")]
+    pub m_text: ::unity2::Il2CppString,
+    #[rename(name = "m_CaretBlinkRate")]
+    pub m_caret_blink_rate: f32,
+    #[rename(name = "m_CaretWidth")]
+    pub m_caret_width: i32,
+    #[rename(name = "m_ReadOnly")]
+    pub m_read_only: bool,
+    #[rename(name = "m_ShouldActivateOnSelect")]
+    pub m_should_activate_on_select: bool,
+    #[rename(name = "m_CaretPosition")]
+    pub m_caret_position: i32,
+    #[rename(name = "m_CaretSelectPosition")]
+    pub m_caret_select_position: i32,
+    #[rename(name = "caretRectTrans")]
+    pub caret_rect_trans: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_CursorVerts")]
+    pub m_cursor_verts: ::unity2::Array<crate::unity_engine::uivertex::UIVertex>,
+    #[rename(name = "m_InputTextCache")]
+    pub m_input_text_cache: crate::unity_engine::textgenerator::TextGenerator,
+    #[rename(name = "m_CachedInputRenderer")]
+    pub m_cached_input_renderer: crate::unity_engine::canvasrenderer::CanvasRenderer,
+    #[rename(name = "m_PreventFontCallback")]
+    pub m_prevent_font_callback: bool,
+    #[rename(name = "m_Mesh")]
+    pub m_mesh: crate::unity_engine::mesh::Mesh,
+    #[rename(name = "m_AllowInput")]
+    pub m_allow_input: bool,
+    #[rename(name = "m_ShouldActivateNextUpdate")]
+    pub m_should_activate_next_update: bool,
+    #[rename(name = "m_UpdateDrag")]
+    pub m_update_drag: bool,
+    #[rename(name = "m_DragPositionOutOfBounds")]
+    pub m_drag_position_out_of_bounds: bool,
+    #[static_field]
+    #[rename(name = "kHScrollSpeed")]
+    pub k_h_scroll_speed: f32,
+    #[static_field]
+    #[rename(name = "kVScrollSpeed")]
+    pub k_v_scroll_speed: f32,
+    #[rename(name = "m_CaretVisible")]
+    pub m_caret_visible: bool,
+    #[rename(name = "m_BlinkCoroutine")]
+    pub m_blink_coroutine: crate::unity_engine::coroutine::Coroutine,
+    #[rename(name = "m_BlinkStartTime")]
+    pub m_blink_start_time: f32,
+    #[rename(name = "m_DrawStart")]
+    pub m_draw_start: i32,
+    #[rename(name = "m_DrawEnd")]
+    pub m_draw_end: i32,
+    #[rename(name = "m_DragCoroutine")]
+    pub m_drag_coroutine: crate::unity_engine::coroutine::Coroutine,
+    #[rename(name = "m_OriginalText")]
+    pub m_original_text: ::unity2::Il2CppString,
+    #[rename(name = "m_WasCanceled")]
+    pub m_was_canceled: bool,
+    #[rename(name = "m_HasDoneFocusTransition")]
+    pub m_has_done_focus_transition: bool,
+    #[rename(name = "m_WaitForSecondsRealtime")]
+    pub m_wait_for_seconds_realtime:
+        crate::unity_engine::waitforsecondsrealtime::WaitForSecondsRealtime,
+    #[rename(name = "m_TouchKeyboardAllowsInPlaceEditing")]
+    pub m_touch_keyboard_allows_in_place_editing: bool,
+    #[static_field]
+    #[rename(name = "kEmailSpecialCharacters")]
+    pub k_email_special_characters: ::unity2::Il2CppString,
+    #[rename(name = "m_ProcessingEvent")]
+    pub m_processing_event: crate::unity_engine::event::Event,
+    #[static_field]
+    #[rename(name = "k_MaxTextLength")]
+    pub k_max_text_length: i32,
+}
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+#[::unity2::methods]
+impl InputField {
+    #[method(name = "get_input", args = 0)]
+    pub fn get_input(self) -> crate::unity_engine::event_systems::baseinput::BaseInput;
+
+    #[method(name = "get_compositionString", args = 0)]
+    pub fn get_composition_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_mesh", args = 0)]
+    pub fn get_mesh(self) -> crate::unity_engine::mesh::Mesh;
+
+    #[method(name = "get_cachedInputTextGenerator", args = 0)]
+    pub fn get_cached_input_text_generator(
+        self,
+    ) -> crate::unity_engine::textgenerator::TextGenerator;
+
+    #[method(name = "set_shouldHideMobileInput", args = 1)]
+    pub fn set_should_hide_mobile_input(self, value: bool) -> ();
+
+    #[method(name = "get_shouldHideMobileInput", args = 0)]
+    pub fn get_should_hide_mobile_input(self) -> bool;
+
+    #[method(name = "set_shouldActivateOnSelect", args = 1)]
+    pub fn set_should_activate_on_select(self, value: bool) -> ();
+
+    #[method(name = "get_shouldActivateOnSelect", args = 0)]
+    pub fn get_should_activate_on_select(self) -> bool;
+
+    #[method(name = "get_text", args = 0)]
+    pub fn get_text(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_text", args = 1)]
+    pub fn set_text(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "SetTextWithoutNotify", args = 1)]
+    pub fn set_text_without_notify(self, input: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "SetText", args = 2)]
+    pub fn set_text_2(self, value: ::unity2::Il2CppString, send_callback: bool) -> ();
+
+    #[method(name = "get_isFocused", args = 0)]
+    pub fn get_is_focused(self) -> bool;
+
+    #[method(name = "get_caretBlinkRate", args = 0)]
+    pub fn get_caret_blink_rate(self) -> f32;
+
+    #[method(name = "set_caretBlinkRate", args = 1)]
+    pub fn set_caret_blink_rate(self, value: f32) -> ();
+
+    #[method(name = "get_caretWidth", args = 0)]
+    pub fn get_caret_width(self) -> i32;
+
+    #[method(name = "set_caretWidth", args = 1)]
+    pub fn set_caret_width(self, value: i32) -> ();
+
+    #[method(name = "get_textComponent", args = 0)]
+    pub fn get_text_component(self) -> crate::unity_engine::ui::text::Text;
+
+    #[method(name = "set_textComponent", args = 1)]
+    pub fn set_text_component(self, value: crate::unity_engine::ui::text::Text) -> ();
+
+    #[method(name = "get_placeholder", args = 0)]
+    pub fn get_placeholder(self) -> crate::unity_engine::ui::graphic::Graphic;
+
+    #[method(name = "set_placeholder", args = 1)]
+    pub fn set_placeholder(self, value: crate::unity_engine::ui::graphic::Graphic) -> ();
+
+    #[method(name = "get_caretColor", args = 0)]
+    pub fn get_caret_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "set_caretColor", args = 1)]
+    pub fn set_caret_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "get_customCaretColor", args = 0)]
+    pub fn get_custom_caret_color(self) -> bool;
+
+    #[method(name = "set_customCaretColor", args = 1)]
+    pub fn set_custom_caret_color(self, value: bool) -> ();
+
+    #[method(name = "get_selectionColor", args = 0)]
+    pub fn get_selection_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "set_selectionColor", args = 1)]
+    pub fn set_selection_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "get_onEndEdit", args = 0)]
+    pub fn get_on_end_edit(self) -> crate::unity_engine::ui::inputfield::InputField_SubmitEvent;
+
+    #[method(name = "set_onEndEdit", args = 1)]
+    pub fn set_on_end_edit(
+        self,
+        value: crate::unity_engine::ui::inputfield::InputField_SubmitEvent,
+    ) -> ();
+
+    #[method(name = "get_onValueChange", args = 0)]
+    pub fn get_on_value_change(
+        self,
+    ) -> crate::unity_engine::ui::inputfield::InputField_OnChangeEvent;
+
+    #[method(name = "set_onValueChange", args = 1)]
+    pub fn set_on_value_change(
+        self,
+        value: crate::unity_engine::ui::inputfield::InputField_OnChangeEvent,
+    ) -> ();
+
+    #[method(name = "get_onValueChanged", args = 0)]
+    pub fn get_on_value_changed(
+        self,
+    ) -> crate::unity_engine::ui::inputfield::InputField_OnChangeEvent;
+
+    #[method(name = "set_onValueChanged", args = 1)]
+    pub fn set_on_value_changed(
+        self,
+        value: crate::unity_engine::ui::inputfield::InputField_OnChangeEvent,
+    ) -> ();
+
+    #[method(name = "get_onValidateInput", args = 0)]
+    pub fn get_on_validate_input(
+        self,
+    ) -> crate::unity_engine::ui::inputfield::InputField_OnValidateInput;
+
+    #[method(name = "set_onValidateInput", args = 1)]
+    pub fn set_on_validate_input(
+        self,
+        value: crate::unity_engine::ui::inputfield::InputField_OnValidateInput,
+    ) -> ();
+
+    #[method(name = "get_characterLimit", args = 0)]
+    pub fn get_character_limit(self) -> i32;
+
+    #[method(name = "set_characterLimit", args = 1)]
+    pub fn set_character_limit(self, value: i32) -> ();
+
+    #[method(name = "get_contentType", args = 0)]
+    pub fn get_content_type(self) -> crate::unity_engine::ui::inputfield::InputField_ContentType;
+
+    #[method(name = "set_contentType", args = 1)]
+    pub fn set_content_type(
+        self,
+        value: crate::unity_engine::ui::inputfield::InputField_ContentType,
+    ) -> ();
+
+    #[method(name = "get_lineType", args = 0)]
+    pub fn get_line_type(self) -> crate::unity_engine::ui::inputfield::InputField_LineType;
+
+    #[method(name = "set_lineType", args = 1)]
+    pub fn set_line_type(
+        self,
+        value: crate::unity_engine::ui::inputfield::InputField_LineType,
+    ) -> ();
+
+    #[method(name = "get_inputType", args = 0)]
+    pub fn get_input_type(self) -> crate::unity_engine::ui::inputfield::InputField_InputType;
+
+    #[method(name = "set_inputType", args = 1)]
+    pub fn set_input_type(
+        self,
+        value: crate::unity_engine::ui::inputfield::InputField_InputType,
+    ) -> ();
+
+    #[method(name = "get_touchScreenKeyboard", args = 0)]
+    pub fn get_touch_screen_keyboard(
+        self,
+    ) -> crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard;
+
+    #[method(name = "get_keyboardType", args = 0)]
+    pub fn get_keyboard_type(
+        self,
+    ) -> crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType;
+
+    #[method(name = "set_keyboardType", args = 1)]
+    pub fn set_keyboard_type(
+        self,
+        value: crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType,
+    ) -> ();
+
+    #[method(name = "get_characterValidation", args = 0)]
+    pub fn get_character_validation(
+        self,
+    ) -> crate::unity_engine::ui::inputfield::InputField_CharacterValidation;
+
+    #[method(name = "set_characterValidation", args = 1)]
+    pub fn set_character_validation(
+        self,
+        value: crate::unity_engine::ui::inputfield::InputField_CharacterValidation,
+    ) -> ();
+
+    #[method(name = "get_readOnly", args = 0)]
+    pub fn get_read_only(self) -> bool;
+
+    #[method(name = "set_readOnly", args = 1)]
+    pub fn set_read_only(self, value: bool) -> ();
+
+    #[method(name = "get_multiLine", args = 0)]
+    pub fn get_multi_line(self) -> bool;
+
+    #[method(name = "get_asteriskChar", args = 0)]
+    pub fn get_asterisk_char(self) -> u16;
+
+    #[method(name = "set_asteriskChar", args = 1)]
+    pub fn set_asterisk_char(self, value: u16) -> ();
+
+    #[method(name = "get_wasCanceled", args = 0)]
+    pub fn get_was_canceled(self) -> bool;
+
+    #[method(name = "ClampPos", args = 1)]
+    pub fn clamp_pos(self, pos: i32) -> ();
+
+    #[method(name = "get_caretPositionInternal", args = 0)]
+    pub fn get_caret_position_internal(self) -> i32;
+
+    #[method(name = "set_caretPositionInternal", args = 1)]
+    pub fn set_caret_position_internal(self, value: i32) -> ();
+
+    #[method(name = "get_caretSelectPositionInternal", args = 0)]
+    pub fn get_caret_select_position_internal(self) -> i32;
+
+    #[method(name = "set_caretSelectPositionInternal", args = 1)]
+    pub fn set_caret_select_position_internal(self, value: i32) -> ();
+
+    #[method(name = "get_hasSelection", args = 0)]
+    pub fn get_has_selection(self) -> bool;
+
+    #[method(name = "get_caretPosition", args = 0)]
+    pub fn get_caret_position(self) -> i32;
+
+    #[method(name = "set_caretPosition", args = 1)]
+    pub fn set_caret_position(self, value: i32) -> ();
+
+    #[method(name = "get_selectionAnchorPosition", args = 0)]
+    pub fn get_selection_anchor_position(self) -> i32;
+
+    #[method(name = "set_selectionAnchorPosition", args = 1)]
+    pub fn set_selection_anchor_position(self, value: i32) -> ();
+
+    #[method(name = "get_selectionFocusPosition", args = 0)]
+    pub fn get_selection_focus_position(self) -> i32;
+
+    #[method(name = "set_selectionFocusPosition", args = 1)]
+    pub fn set_selection_focus_position(self, value: i32) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "CaretBlink", args = 0)]
+    pub fn caret_blink(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "SetCaretVisible", args = 0)]
+    pub fn set_caret_visible(self) -> ();
+
+    #[method(name = "SetCaretActive", args = 0)]
+    pub fn set_caret_active(self) -> ();
+
+    #[method(name = "UpdateCaretMaterial", args = 0)]
+    pub fn update_caret_material(self) -> ();
+
+    #[method(name = "OnFocus", args = 0)]
+    pub fn on_focus(self) -> ();
+
+    #[method(name = "SelectAll", args = 0)]
+    pub fn select_all(self) -> ();
+
+    #[method(name = "MoveTextEnd", args = 1)]
+    pub fn move_text_end(self, shift: bool) -> ();
+
+    #[method(name = "MoveTextStart", args = 1)]
+    pub fn move_text_start(self, shift: bool) -> ();
+
+    #[method(name = "get_clipboard", args = 0)]
+    pub fn get_clipboard() -> ::unity2::Il2CppString;
+
+    #[method(name = "set_clipboard", args = 1)]
+    pub fn set_clipboard(value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "TouchScreenKeyboardShouldBeUsed", args = 0)]
+    pub fn touch_screen_keyboard_should_be_used(self) -> bool;
+
+    #[method(name = "InPlaceEditing", args = 0)]
+    pub fn in_place_editing(self) -> bool;
+
+    #[method(name = "InPlaceEditingChanged", args = 0)]
+    pub fn in_place_editing_changed(self) -> bool;
+
+    #[method(name = "UpdateCaretFromKeyboard", args = 0)]
+    pub fn update_caret_from_keyboard(self) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = "ScreenToLocal", args = 1)]
+    pub fn screen_to_local(
+        self,
+        screen: crate::unity_engine::vector2::Vector2,
+    ) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "GetUnclampedCharacterLineFromPosition", args = 2)]
+    pub fn get_unclamped_character_line_from_position(
+        self,
+        pos: crate::unity_engine::vector2::Vector2,
+        generator: crate::unity_engine::textgenerator::TextGenerator,
+    ) -> i32;
+
+    #[method(name = "GetCharacterIndexFromPosition", args = 1)]
+    pub fn get_character_index_from_position(
+        self,
+        pos: crate::unity_engine::vector2::Vector2,
+    ) -> i32;
+
+    #[method(name = "MayDrag", args = 1)]
+    pub fn may_drag(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> bool;
+
+    #[method(name = "OnBeginDrag", args = 1)]
+    pub fn on_begin_drag(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[method(name = "OnDrag", args = 1)]
+    pub fn on_drag(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[method(name = "MouseDragOutsideRect", args = 1)]
+    pub fn mouse_drag_outside_rect(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "OnEndDrag", args = 1)]
+    pub fn on_end_drag(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[method(name = "OnPointerDown", args = 1)]
+    pub fn on_pointer_down(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[method(name = "KeyPressed", args = 1)]
+    pub fn key_pressed(
+        self,
+        evt: crate::unity_engine::event::Event,
+    ) -> crate::unity_engine::ui::inputfield::InputField_EditState;
+
+    #[method(name = "IsValidChar", args = 1)]
+    pub fn is_valid_char(self, c: u16) -> bool;
+
+    #[method(name = "ProcessEvent", args = 1)]
+    pub fn process_event(self, e: crate::unity_engine::event::Event) -> ();
+
+    #[method(name = "OnUpdateSelected", args = 1)]
+    pub fn on_update_selected(
+        self,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "GetSelectedString", args = 0)]
+    pub fn get_selected_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "FindtNextWordBegin", args = 0)]
+    pub fn findt_next_word_begin(self) -> i32;
+
+    #[method(name = "MoveRight", args = 2)]
+    pub fn move_right(self, shift: bool, ctrl: bool) -> ();
+
+    #[method(name = "FindtPrevWordBegin", args = 0)]
+    pub fn findt_prev_word_begin(self) -> i32;
+
+    #[method(name = "MoveLeft", args = 2)]
+    pub fn move_left(self, shift: bool, ctrl: bool) -> ();
+
+    #[method(name = "DetermineCharacterLine", args = 2)]
+    pub fn determine_character_line(
+        self,
+        char_pos: i32,
+        generator: crate::unity_engine::textgenerator::TextGenerator,
+    ) -> i32;
+
+    #[method(name = "LineUpCharacterPosition", args = 2)]
+    pub fn line_up_character_position(self, original_pos: i32, go_to_first_char: bool) -> i32;
+
+    #[method(name = "LineDownCharacterPosition", args = 2)]
+    pub fn line_down_character_position(self, original_pos: i32, go_to_last_char: bool) -> i32;
+
+    #[method(name = "MoveDown", args = 1)]
+    pub fn move_down(self, shift: bool) -> ();
+
+    #[method(name = "MoveDown", args = 2)]
+    pub fn move_down_2(self, shift: bool, go_to_last_char: bool) -> ();
+
+    #[method(name = "MoveUp", args = 1)]
+    pub fn move_up(self, shift: bool) -> ();
+
+    #[method(name = "MoveUp", args = 2)]
+    pub fn move_up_2(self, shift: bool, go_to_first_char: bool) -> ();
+
+    #[method(name = "Delete", args = 0)]
+    pub fn delete(self) -> ();
+
+    #[method(name = "ForwardSpace", args = 0)]
+    pub fn forward_space(self) -> ();
+
+    #[method(name = "Backspace", args = 0)]
+    pub fn backspace(self) -> ();
+
+    #[method(name = "Insert", args = 1)]
+    pub fn insert(self, c: u16) -> ();
+
+    #[method(name = "UpdateTouchKeyboardFromEditChanges", args = 0)]
+    pub fn update_touch_keyboard_from_edit_changes(self) -> ();
+
+    #[method(name = "SendOnValueChangedAndUpdateLabel", args = 0)]
+    pub fn send_on_value_changed_and_update_label(self) -> ();
+
+    #[method(name = "SendOnValueChanged", args = 0)]
+    pub fn send_on_value_changed(self) -> ();
+
+    #[method(name = "SendOnSubmit", args = 0)]
+    pub fn send_on_submit(self) -> ();
+
+    #[method(name = "Append", args = 1)]
+    pub fn append(self, input: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "Append", args = 1)]
+    pub fn append_2(self, input: u16) -> ();
+
+    #[method(name = "UpdateLabel", args = 0)]
+    pub fn update_label(self) -> ();
+
+    #[method(name = "IsSelectionVisible", args = 0)]
+    pub fn is_selection_visible(self) -> bool;
+
+    #[method(name = "GetLineStartPosition", args = 2)]
+    pub fn get_line_start_position(
+        gen: crate::unity_engine::textgenerator::TextGenerator,
+        line: i32,
+    ) -> i32;
+
+    #[method(name = "GetLineEndPosition", args = 2)]
+    pub fn get_line_end_position(
+        gen: crate::unity_engine::textgenerator::TextGenerator,
+        line: i32,
+    ) -> i32;
+
+    #[method(name = "SetDrawRangeToContainCaretPosition", args = 1)]
+    pub fn set_draw_range_to_contain_caret_position(self, caret_pos: i32) -> ();
+
+    #[method(name = "ForceLabelUpdate", args = 0)]
+    pub fn force_label_update(self) -> ();
+
+    #[method(name = "MarkGeometryAsDirty", args = 0)]
+    pub fn mark_geometry_as_dirty(self) -> ();
+
+    #[method(name = "Rebuild", args = 1)]
+    pub fn rebuild(self, update: crate::unity_engine::ui::canvasupdate::CanvasUpdate) -> ();
+
+    #[method(name = "LayoutComplete", args = 0)]
+    pub fn layout_complete(self) -> ();
+
+    #[method(name = "GraphicUpdateComplete", args = 0)]
+    pub fn graphic_update_complete(self) -> ();
+
+    #[method(name = "UpdateGeometry", args = 0)]
+    pub fn update_geometry(self) -> ();
+
+    #[method(name = "AssignPositioningIfNeeded", args = 0)]
+    pub fn assign_positioning_if_needed(self) -> ();
+
+    #[method(name = "OnFillVBO", args = 1)]
+    pub fn on_fill_vbo(self, vbo: crate::unity_engine::mesh::Mesh) -> ();
+
+    #[method(name = "GenerateCaret", args = 2)]
+    pub fn generate_caret(
+        self,
+        vbo: crate::unity_engine::ui::vertexhelper::VertexHelper,
+        rounding_offset: crate::unity_engine::vector2::Vector2,
+    ) -> ();
+
+    #[method(name = "CreateCursorVerts", args = 0)]
+    pub fn create_cursor_verts(self) -> ();
+
+    #[method(name = "GenerateHighlight", args = 2)]
+    pub fn generate_highlight(
+        self,
+        vbo: crate::unity_engine::ui::vertexhelper::VertexHelper,
+        rounding_offset: crate::unity_engine::vector2::Vector2,
+    ) -> ();
+
+    #[method(name = "Validate", args = 3)]
+    pub fn validate(self, text: ::unity2::Il2CppString, pos: i32, ch: u16) -> u16;
+
+    #[method(name = "ActivateInputField", args = 0)]
+    pub fn activate_input_field(self) -> ();
+
+    #[method(name = "ActivateInputFieldInternal", args = 0)]
+    pub fn activate_input_field_internal(self) -> ();
+
+    #[method(name = "OnSelect", args = 1)]
+    pub fn on_select(
+        self,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "OnPointerClick", args = 1)]
+    pub fn on_pointer_click(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[method(name = "DeactivateInputField", args = 0)]
+    pub fn deactivate_input_field(self) -> ();
+
+    #[method(name = "OnDeselect", args = 1)]
+    pub fn on_deselect(
+        self,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "OnSubmit", args = 1)]
+    pub fn on_submit(
+        self,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "EnforceContentType", args = 0)]
+    pub fn enforce_content_type(self) -> ();
+
+    #[method(name = "EnforceTextHOverflow", args = 0)]
+    pub fn enforce_text_h_overflow(self) -> ();
+
+    #[method(name = "SetToCustomIfContentTypeIsNot", args = 1)]
+    pub fn set_to_custom_if_content_type_is_not(
+        self,
+        allowed_content_types: ::unity2::Array<
+            crate::unity_engine::ui::inputfield::InputField_ContentType,
+        >,
+    ) -> ();
+
+    #[method(name = "SetToCustom", args = 0)]
+    pub fn set_to_custom(self) -> ();
+
+    #[method(name = "DoStateTransition", args = 2)]
+    pub fn do_state_transition(
+        self,
+        state: crate::unity_engine::ui::selectable::Selectable_SelectionState,
+        instant: bool,
+    ) -> ();
+
+    #[method(name = "CalculateLayoutInputHorizontal", args = 0)]
+    pub fn calculate_layout_input_horizontal(self) -> ();
+
+    #[method(name = "CalculateLayoutInputVertical", args = 0)]
+    pub fn calculate_layout_input_vertical(self) -> ();
+
+    #[method(name = "get_minWidth", args = 0)]
+    pub fn get_min_width(self) -> f32;
+
+    #[method(name = "get_preferredWidth", args = 0)]
+    pub fn get_preferred_width(self) -> f32;
+
+    #[method(name = "get_flexibleWidth", args = 0)]
+    pub fn get_flexible_width(self) -> f32;
+
+    #[method(name = "get_minHeight", args = 0)]
+    pub fn get_min_height(self) -> f32;
+
+    #[method(name = "get_preferredHeight", args = 0)]
+    pub fn get_preferred_height(self) -> f32;
+
+    #[method(name = "get_flexibleHeight", args = 0)]
+    pub fn get_flexible_height(self) -> f32;
+
+    #[method(name = "get_layoutPriority", args = 0)]
+    pub fn get_layout_priority(self) -> i32;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+
+    #[method(name = "UnityEngine.UI.ICanvasElement.get_transform", args = 0)]
+    pub fn unity_engine_ui_i_canvas_element_get_transform(
+        self,
+    ) -> crate::unity_engine::transform::Transform;
+}
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+impl InputField {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InputField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInputFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_ContentType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct InputField_ContentType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for InputField_ContentType {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "InputField.ContentType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for InputField_ContentType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl InputField_ContentType {
+    pub fn standard() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn autocorrected() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn integer_number() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn decimal_number() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn alphanumeric() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn name() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn email_address() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn password() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn pin() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn custom() -> Self {
+        Self { value: 9 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_InputType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct InputField_InputType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for InputField_InputType {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "InputField.InputType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for InputField_InputType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl InputField_InputType {
+    pub fn standard() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn auto_correct() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn password() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_OnChangeEvent.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "InputField.OnChangeEvent")]
+# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
+pub struct InputField_OnChangeEvent {}
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+#[::unity2::methods]
+impl InputField_OnChangeEvent {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+impl InputField_OnChangeEvent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InputField_OnChangeEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInputField_OnChangeEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_EditState.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct InputField_EditState {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for InputField_EditState {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "InputField.EditState";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for InputField_EditState {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl InputField_EditState {
+    pub fn r#continue() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn finish() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_LineType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct InputField_LineType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for InputField_LineType {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "InputField.LineType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for InputField_LineType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl InputField_LineType {
+    pub fn single_line() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn multi_line_submit() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn multi_line_newline() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_CharacterValidation.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct InputField_CharacterValidation {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for InputField_CharacterValidation {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "InputField.CharacterValidation";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for InputField_CharacterValidation {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl InputField_CharacterValidation {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn integer() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn decimal() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn alphanumeric() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn name() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn email_address() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_SubmitEvent.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "InputField.SubmitEvent")]
+# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
+pub struct InputField_SubmitEvent {}
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+#[::unity2::methods]
+impl InputField_SubmitEvent {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+impl InputField_SubmitEvent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InputField_SubmitEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInputField_SubmitEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_OnValidateInput.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "InputField.OnValidateInput")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct InputField_OnValidateInput {}
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+#[::unity2::methods]
+impl InputField_OnValidateInput {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(self, text: ::unity2::Il2CppString, char_index: i32, added_char: u16) -> u16;
+}
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+impl InputField_OnValidateInput {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InputField_OnValidateInput),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInputField_OnValidateInputMethods>::ctor(this, object, method);
+        this
+    }
+}

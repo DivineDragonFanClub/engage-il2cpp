@@ -1,0 +1,41 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animatortransitioninfo/AnimatorTransitionInfo.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AnimatorTransitionInfo {
+    pub m_full_path: i32,
+    pub m_user_name: i32,
+    pub m_name: i32,
+    pub m_has_fixed_duration: bool,
+    pub m_duration: f32,
+    pub m_normalized_time: f32,
+    pub m_any_state: bool,
+    pub m_transition_type: i32,
+}
+
+impl ::unity2::ClassIdentity for AnimatorTransitionInfo {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "AnimatorTransitionInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AnimatorTransitionInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

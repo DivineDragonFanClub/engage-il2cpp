@@ -1,0 +1,51 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/customenvset/CustomEnvSet.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom",
+    name = "CustomEnvSet"
+)]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct CustomEnvSet {
+    #[rename(name = "reflectionProbes")]
+    pub reflection_probes: ::unity2::Array<crate::unity_engine::reflectionprobe::ReflectionProbe>,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-customenvset")]
+#[::unity2::methods]
+impl CustomEnvSet {
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-customenvset")]
+impl CustomEnvSet {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomEnvSet),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomEnvSetMethods>::ctor(this);
+        this
+    }
+}

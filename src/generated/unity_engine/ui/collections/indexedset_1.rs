@@ -1,0 +1,90 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/collections/indexedset_1/IndexedSet_1.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI.Collections", name = "IndexedSet`1")]
+pub struct IndexedSet_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "m_List")]
+    pub m_list: crate::system::collections::generic::list_1::List_1<T0>,
+    #[rename(name = "m_Dictionary")]
+    pub m_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<T0, i32>,
+}
+
+#[cfg(feature = "unity_engine-ui-collections-indexedset_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> IndexedSet_1<T0> {
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, item: T0) -> ();
+
+    #[method(name = "AddUnique", args = 1)]
+    pub fn add_unique(self, item: T0) -> bool;
+
+    #[method(name = "Remove", args = 1)]
+    pub fn remove(self, item: T0) -> bool;
+
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator(
+        self,
+    ) -> crate::system::collections::generic::ienumerator_1::IEnumerator_1<T0>;
+
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "Contains", args = 1)]
+    pub fn contains(self, item: T0) -> bool;
+
+    #[method(name = "CopyTo", args = 2)]
+    pub fn copy_to(self, array: ::unity2::Array<T0>, array_index: i32) -> ();
+
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[method(name = "get_IsReadOnly", args = 0)]
+    pub fn get_is_read_only(self) -> bool;
+
+    #[method(name = "IndexOf", args = 1)]
+    pub fn index_of(self, item: T0) -> i32;
+
+    #[method(name = "Insert", args = 2)]
+    pub fn insert(self, index: i32, item: T0) -> ();
+
+    #[method(name = "RemoveAt", args = 1)]
+    pub fn remove_at(self, index: i32) -> ();
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, index: i32) -> T0;
+
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(self, index: i32, value: T0) -> ();
+
+    #[method(name = "RemoveAll", args = 1)]
+    pub fn remove_all(self, r#match: crate::system::predicate_1::Predicate_1<T0>) -> ();
+
+    #[method(name = "Sort", args = 1)]
+    pub fn sort(self, sort_layout_function: crate::system::comparison_1::Comparison_1<T0>) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-collections-indexedset_1")]
+impl<T0: ::unity2::ClassIdentity> IndexedSet_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(IndexedSet_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IIndexedSet_1Methods<T0>>::ctor(this);
+        this
+    }
+}

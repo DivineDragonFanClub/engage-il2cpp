@@ -1,0 +1,53 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scripting/api_updating/movedfromattributedata/MovedFromAttributeData.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MovedFromAttributeData {
+    pub class_name: ::unity2::Il2CppString,
+    pub name_space: ::unity2::Il2CppString,
+    pub assembly: ::unity2::Il2CppString,
+    pub class_has_changed: bool,
+    pub name_space_has_changed: bool,
+    pub assembly_has_changed: bool,
+    pub auto_udpate_api: bool,
+}
+
+impl ::unity2::ClassIdentity for MovedFromAttributeData {
+    const NAMESPACE: &'static str = "UnityEngine.Scripting.APIUpdating";
+
+    const NAME: &'static str = "MovedFromAttributeData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MovedFromAttributeData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-scripting-api_updating-movedfromattributedata")]
+#[::unity2::methods(value)]
+impl MovedFromAttributeData {
+    #[method(name = "Set", args = 4)]
+    pub fn set(
+        self,
+        auto_update_api: bool,
+        source_namespace: ::unity2::Il2CppString,
+        source_assembly: ::unity2::Il2CppString,
+        source_class_name: ::unity2::Il2CppString,
+    ) -> ();
+}

@@ -1,0 +1,47 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_math/TMP_Math.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_Math")]
+#[parent(crate::system::object::Object)]
+pub struct TMP_Math {
+    #[static_field]
+    #[rename(name = "FLOAT_MAX")]
+    pub float_max: f32,
+    #[static_field]
+    #[rename(name = "FLOAT_MIN")]
+    pub float_min: f32,
+    #[static_field]
+    #[rename(name = "INT_MAX")]
+    pub int_max: i32,
+    #[static_field]
+    #[rename(name = "INT_MIN")]
+    pub int_min: i32,
+    #[static_field]
+    #[rename(name = "FLOAT_UNSET")]
+    pub float_unset: f32,
+    #[static_field]
+    #[rename(name = "INT_UNSET")]
+    pub int_unset: i32,
+    #[static_field]
+    #[rename(name = "MAX_16BIT")]
+    pub max_16bit: crate::unity_engine::vector2::Vector2,
+    #[static_field]
+    #[rename(name = "MIN_16BIT")]
+    pub min_16bit: crate::unity_engine::vector2::Vector2,
+}
+
+#[cfg(feature = "tm_pro-tmp_math")]
+#[::unity2::methods]
+impl TMP_Math {
+    #[method(name = "Approximately", args = 2)]
+    pub fn approximately(a: f32, b: f32) -> bool;
+
+    #[method(name = "Mod", args = 2)]
+    pub fn r#mod(a: i32, b: i32) -> i32;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

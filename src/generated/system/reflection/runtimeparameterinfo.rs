@@ -1,0 +1,33 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::reflection::parameterinfo::IParameterInfo;
+use crate::system::reflection::parameterinfo::ParameterInfo;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/runtimeparameterinfo/RuntimeParameterInfo.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "RuntimeParameterInfo")]
+#[parent(crate::system::reflection::parameterinfo::ParameterInfo)]
+pub struct RuntimeParameterInfo {}
+
+#[cfg(feature = "system-reflection-runtimeparameterinfo")]
+#[::unity2::methods]
+impl RuntimeParameterInfo {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "system-reflection-runtimeparameterinfo")]
+impl RuntimeParameterInfo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RuntimeParameterInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRuntimeParameterInfoMethods>::ctor(this);
+        this
+    }
+}

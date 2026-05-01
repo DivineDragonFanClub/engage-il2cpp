@@ -1,0 +1,217 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talkcharactercontroller/TalkCharacterController_FadeType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TalkCharacterController_FadeType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TalkCharacterController_FadeType {
+    const NAMESPACE: &'static str = "App.Talk3D";
+
+    const NAME: &'static str = "TalkCharacterController.FadeType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TalkCharacterController_FadeType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TalkCharacterController_FadeType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn r#in() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn out() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talkcharactercontroller/TalkCharacterController.md")))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkCharacterController")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct TalkCharacterController {
+    #[rename(name = "m_FadeType")]
+    pub m_fade_type: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController_FadeType,
+    #[rename(name = "m_FadeTimeTo")]
+    pub m_fade_time_to: f32,
+    #[rename(name = "m_FadeTimer")]
+    pub m_fade_timer: f32,
+    #[rename(name = "m_CurrentAnimeName")]
+    pub m_current_anime_name: ::unity2::Il2CppString,
+    #[rename(name = "m_ReservedFaceAnime")]
+    pub m_reserved_face_anime: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-talk3_d-talkcharactercontroller")]
+#[::unity2::methods]
+impl TalkCharacterController {
+    #[method(name = "get_Pid", args = 0)]
+    pub fn get_pid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Pid", args = 1)]
+    pub fn set_pid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_LocationNameProxy", args = 0)]
+    pub fn get_location_name_proxy(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_LocationNameProxy", args = 1)]
+    pub fn set_location_name_proxy(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_DefaultBodyAnime", args = 0)]
+    pub fn get_default_body_anime(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_DefaultBodyAnime", args = 1)]
+    pub fn set_default_body_anime(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_DisabledAnime", args = 0)]
+    pub fn get_disabled_anime(self) -> bool;
+
+    #[method(name = "set_DisabledAnime", args = 1)]
+    pub fn set_disabled_anime(self, value: bool) -> ();
+
+    #[method(name = "get_Character", args = 0)]
+    pub fn get_character(self) -> crate::combat::character::Character;
+
+    #[method(name = "set_Character", args = 1)]
+    pub fn set_character(self, value: crate::combat::character::Character) -> ();
+
+    #[method(name = "PoolNeedFieldCopyTo", args = 1)]
+    pub fn pool_need_field_copy_to(
+        self,
+        controller: crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
+    ) -> ();
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "TryFindCharacterComponent", args = 0)]
+    pub fn try_find_character_component(self) -> ();
+
+    #[method(name = "Play", args = 2)]
+    pub fn play(self, clip_name: ::unity2::Il2CppString, blend_time: f32) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = "UpdateFadeIn", args = 0)]
+    pub fn update_fade_in(self) -> ();
+
+    #[method(name = "UpdateFadeOut", args = 0)]
+    pub fn update_fade_out(self) -> ();
+
+    #[method(name = "StartFadeIn", args = 1)]
+    pub fn start_fade_in(self, sec: f32) -> ();
+
+    #[method(name = "StartFadeOut", args = 1)]
+    pub fn start_fade_out(self, sec: f32) -> ();
+
+    #[method(name = "GetCurrentPlayAnime", args = 0)]
+    pub fn get_current_play_anime(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "ClearBodyAnimeQueue", args = 0)]
+    pub fn clear_body_anime_queue(self) -> ();
+
+    #[method(name = "PlayDefaultAnime", args = 1)]
+    pub fn play_default_anime(self, soon: bool) -> ();
+
+    #[method(name = "PlayBodyAnime", args = 4)]
+    pub fn play_body_anime(
+        self,
+        name: ::unity2::Il2CppString,
+        transition_duration: f32,
+        soon: bool,
+        force: bool,
+    ) -> ();
+
+    #[method(name = "PlayFaceAnime", args = 2)]
+    pub fn play_face_anime(self, name: ::unity2::Il2CppString, is_fast_forward: bool) -> ();
+
+    #[method(name = "ReserveFaceAnime", args = 1)]
+    pub fn reserve_face_anime(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "PlayReservedFaceAnime", args = 1)]
+    pub fn play_reserved_face_anime(self, is_fast_forward: bool) -> ();
+
+    #[method(name = "GetBodyAnimeNameList", args = 0)]
+    pub fn get_body_anime_name_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+
+    #[method(name = "GetFaceAnimeNameList", args = 0)]
+    pub fn get_face_anime_name_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+
+    #[method(name = "GetAnimeNameList", args = 1)]
+    pub fn get_anime_name_list(
+        self,
+        animator: crate::unity_engine::animator::Animator,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+
+    #[method(name = "IsBodyAnimeEnd", args = 0)]
+    pub fn is_body_anime_end(self) -> bool;
+
+    #[method(name = "IsFading", args = 0)]
+    pub fn is_fading(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talkcharactercontroller")]
+impl TalkCharacterController {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkCharacterController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkCharacterControllerMethods>::ctor(this);
+        this
+    }
+}

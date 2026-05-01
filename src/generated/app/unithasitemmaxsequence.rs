@@ -1,0 +1,139 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unithasitemmaxsequence/UnitHasItemMaxSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitHasItemMaxSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitHasItemMaxSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitHasItemMaxSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitHasItemMaxSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitHasItemMaxSequence_Label {
+    pub fn send_item_menu() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn discard_item_menu() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn execute() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unithasitemmaxsequence/UnitHasItemMaxSequence.md")))]
+#[::unity2::class(namespace = "App", name = "UnitHasItemMaxSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: unithasitemmaxsequence :: UnitHasItemMaxSequence >)]
+pub struct UnitHasItemMaxSequence {
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_GainUnitItem")]
+    pub m_gain_unit_item: crate::app::unititem::UnitItem,
+    #[rename(name = "m_Label")]
+    pub m_label: ::unity2::Il2CppString,
+    #[rename(name = "m_IsSendingUnitItem")]
+    pub m_is_sending_unit_item: bool,
+    #[rename(name = "m_SendingUnitItemIndex")]
+    pub m_sending_unit_item_index: i32,
+    #[rename(name = "m_IsDiscarding")]
+    pub m_is_discarding: bool,
+    #[rename(name = "m_IsDiscardingTransporterItem")]
+    pub m_is_discarding_transporter_item: bool,
+    #[rename(name = "m_DiscardingTransporterItemIndex")]
+    pub m_discarding_transporter_item_index: i32,
+}
+
+#[cfg(feature = "app-unithasitemmaxsequence")]
+#[::unity2::methods]
+impl UnitHasItemMaxSequence {
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        label: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        label: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "CreateDescs", args = 0)]
+    pub fn create_descs(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "ShowGetMessage", args = 0)]
+    pub fn show_get_message(self) -> ();
+
+    #[method(name = "CreateSendItemMenu", args = 0)]
+    pub fn create_send_item_menu(self) -> ();
+
+    #[method(name = "BranchDiscardOrExecute", args = 0)]
+    pub fn branch_discard_or_execute(self) -> ();
+
+    #[method(name = "CreateDiscardItemMenu", args = 0)]
+    pub fn create_discard_item_menu(self) -> ();
+
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+}
+
+#[cfg(feature = "app-unithasitemmaxsequence")]
+impl UnitHasItemMaxSequence {
+    pub fn new(
+        unit: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        label: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitHasItemMaxSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitHasItemMaxSequenceMethods>::ctor(this, unit, unit_item, label);
+        this
+    }
+}

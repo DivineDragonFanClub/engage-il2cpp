@@ -1,0 +1,417 @@
+
+use crate::app::bitfield64::BitField64;
+use crate::app::bitfield64::IBitField64;
+use crate::app::bitfieldcommon::BitFieldCommon;
+use crate::app::bitfieldcommon::IBitFieldCommon;
+use crate::app::bitfieldtemplate64_1::BitFieldTemplate64_1;
+use crate::app::bitfieldtemplate64_1::IBitFieldTemplate64_1;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappanelactive/MapPanelActive_TargetFunc.md")))]
+#[::unity2::class(namespace = "App", name = "MapPanelActive.TargetFunc")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapPanelActive_TargetFunc {}
+
+#[cfg(feature = "app-mappanelactive")]
+#[::unity2::methods]
+impl MapPanelActive_TargetFunc {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, x: i32, z: i32) -> bool;
+}
+
+#[cfg(feature = "app-mappanelactive")]
+impl MapPanelActive_TargetFunc {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPanelActive_TargetFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPanelActive_TargetFuncMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappanelactive/MapPanelActive_FlagField.md")))]
+#[::unity2::class(namespace = "App", name = "MapPanelActive.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > >)]
+pub struct MapPanelActive_FlagField {}
+
+#[cfg(feature = "app-mappanelactive")]
+#[::unity2::methods]
+impl MapPanelActive_FlagField {
+    #[method(name = "ToLong", args = 1)]
+    pub fn to_long(
+        self,
+        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+            crate::app::mapdeploy::MapDeploy,
+        >,
+    ) -> i64;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mappanelactive")]
+impl MapPanelActive_FlagField {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPanelActive_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPanelActive_FlagFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappanelactive/MapPanelActive.md")))]
+#[::unity2::class(namespace = "App", name = "MapPanelActive")]
+pub struct MapPanelActive {
+    #[rename(name = "m_ImageList")]
+    pub m_image_list: ::unity2::Array<
+        crate::system::collections::generic::list_1::List_1<
+            crate::app::mappanelactive::MapPanelActive_MeshIndex,
+        >,
+    >,
+    #[rename(name = "m_MoveImage")]
+    pub m_move_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_AttackImage")]
+    pub m_attack_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_HealImage")]
+    pub m_heal_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_SupportImage")]
+    pub m_support_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_InterferenceImage")]
+    pub m_interference_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_DanceImage")]
+    pub m_dance_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_ActionImage")]
+    pub m_action_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_RangeImage")]
+    pub m_range_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_OverlapImage")]
+    pub m_overlap_image: crate::unity_engine::material::Material,
+    #[rename(name = "m_Mind")]
+    pub m_mind: crate::app::mapmind::MapMind_Type,
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::app::mappaneldeploy::MapPanelDeploy_Mode,
+    #[rename(name = "m_Flag")]
+    pub m_flag: crate::app::mappanelactive::MapPanelActive_FlagField,
+    #[rename(name = "m_IsUpdate")]
+    pub m_is_update: bool,
+    #[rename(name = "m_Alpha")]
+    pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_MoveColor")]
+    pub m_move_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_AttackColor")]
+    pub m_attack_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_HealColor")]
+    pub m_heal_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_SupportColor")]
+    pub m_support_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_InterferenceColor")]
+    pub m_interference_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_DanceColor")]
+    pub m_dance_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_ActionColor")]
+    pub m_action_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_DragonVeinColor")]
+    pub m_dragon_vein_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_OverlapColor")]
+    pub m_overlap_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_AttackRangeColor")]
+    pub m_attack_range_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_HealRangeColor")]
+    pub m_heal_range_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_SupportRangeColor")]
+    pub m_support_range_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_InterferenceRangeColor")]
+    pub m_interference_range_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_WarpRangeColor")]
+    pub m_warp_range_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_DanceRangeColor")]
+    pub m_dance_range_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_ActionRangeColor")]
+    pub m_action_range_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_RangeColor")]
+    pub m_range_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_DisplayColor")]
+    pub m_display_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_TempImage")]
+    pub m_temp_image: crate::app::mapimagecorebit::MapImageCoreBit,
+    #[rename(name = "m_MovingAlpha")]
+    pub m_moving_alpha: crate::app::gamecurve::GameCurve,
+    #[rename(name = "m_StoppedAlpha")]
+    pub m_stopped_alpha: crate::app::gamecurve::GameCurve,
+    #[rename(name = "m_Time")]
+    pub m_time: f32,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[static_field]
+    #[rename(name = "AROUND")]
+    pub around: ::unity2::Array<crate::unity_engine::vector2int::Vector2Int>,
+    #[static_field]
+    #[rename(name = "ROTATION")]
+    pub rotation: ::unity2::Array<i32>,
+}
+
+#[cfg(feature = "app-mappanelactive")]
+#[::unity2::methods]
+impl MapPanelActive {
+    #[method(name = "get_SubMeshCount", args = 0)]
+    pub fn get_sub_mesh_count(self) -> i32;
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "GetSourceMaterials", args = 0)]
+    pub fn get_source_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "UpdatePanelAlpha", args = 0)]
+    pub fn update_panel_alpha(self) -> ();
+
+    #[method(name = "UpdateAlwaysPanelAlpha", args = 0)]
+    pub fn update_always_panel_alpha(self) -> ();
+
+    #[method(name = "UpdateOrderPanelAlpha", args = 0)]
+    pub fn update_order_panel_alpha(self) -> ();
+
+    #[method(name = "GetMode", args = 0)]
+    pub fn get_mode(self) -> crate::app::mappaneldeploy::MapPanelDeploy_Mode;
+
+    #[method(name = "SetMode", args = 3)]
+    pub fn set_mode(
+        self,
+        mode: crate::app::mappaneldeploy::MapPanelDeploy_Mode,
+        is_force_update: bool,
+        command_skill: crate::app::skilldata::SkillData,
+    ) -> ();
+
+    #[method(name = "UpdateMode", args = 0)]
+    pub fn update_mode(self) -> ();
+
+    #[method(name = "UpdateVertex", args = 0)]
+    pub fn update_vertex(self) -> ();
+
+    #[method(name = "SetUnit", args = 1)]
+    pub fn set_unit(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "set_IsUpdate", args = 1)]
+    pub fn set_is_update(self, value: bool) -> ();
+
+    #[method(name = "CanTarget", args = 2)]
+    pub fn can_target(self, unit: crate::app::unit::Unit, target: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "CanAttack", args = 2)]
+    pub fn can_attack(self, unit: crate::app::unit::Unit, target: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "CanUseRod", args = 2)]
+    pub fn can_use_rod(self, unit: crate::app::unit::Unit, target: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "EachTargetCell", args = 5)]
+    pub fn each_target_cell(
+        self,
+        x: i32,
+        z: i32,
+        min_range: i32,
+        max_range: i32,
+        func: crate::app::mappanelactive::MapPanelActive_TargetFunc,
+    ) -> ();
+
+    #[method(name = "SetVertex", args = 0)]
+    pub fn set_vertex(self) -> ();
+
+    #[method(name = "SetMesh", args = 2)]
+    pub fn set_mesh(
+        self,
+        image: crate::app::mapdeploymoveimage::MapDeployMoveImage,
+        index: crate::app::mappanelactive::MapPanelActive_MeshIndex,
+    ) -> ();
+
+    #[method(name = "SetMesh", args = 5)]
+    pub fn set_mesh_2(
+        self,
+        image: crate::app::mapimagecorebit::MapImageCoreBit,
+        index: crate::app::mappanelactive::MapPanelActive_MeshIndex,
+        color: crate::unity_engine::color::Color,
+        display: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<
+            crate::app::mapdeploy::MapDeploy,
+        >,
+        is_ignore_move_image: bool,
+    ) -> ();
+
+    #[method(name = "CanSetMesh", args = 2)]
+    pub fn can_set_mesh(self, x: i32, z: i32) -> bool;
+
+    #[method(name = "CanDrawMoveImage", args = 2)]
+    pub fn can_draw_move_image(self, x: i32, z: i32) -> bool;
+
+    #[method(name = "get_Mind", args = 0)]
+    pub fn get_mind(self) -> crate::app::mapmind::MapMind_Type;
+
+    #[method(name = "set_Mind", args = 1)]
+    pub fn set_mind(self, value: crate::app::mapmind::MapMind_Type) -> ();
+
+    #[method(name = "set_Flag", args = 1)]
+    pub fn set_flag(self, value: crate::app::mappanelactive::MapPanelActive_FlagField) -> ();
+
+    #[method(name = "get_HealColor", args = 0)]
+    pub fn get_heal_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "get_ActionColor", args = 0)]
+    pub fn get_action_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "get_DragonVeinColor", args = 0)]
+    pub fn get_dragon_vein_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "get_AttackRangeColor", args = 0)]
+    pub fn get_attack_range_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "get_HealRangeColor", args = 0)]
+    pub fn get_heal_range_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "get_SupportRangeColor", args = 0)]
+    pub fn get_support_range_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "get_InterferenceRangeColor", args = 0)]
+    pub fn get_interference_range_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "get_WarpRangeColor", args = 0)]
+    pub fn get_warp_range_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "get_DanceRangeColor", args = 0)]
+    pub fn get_dance_range_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "get_ActionRangeColor", args = 0)]
+    pub fn get_action_range_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "set_DisplayColor", args = 1)]
+    pub fn set_display_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "get_RangeColor", args = 0)]
+    pub fn get_range_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "set_RangeColor", args = 1)]
+    pub fn set_range_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-mappanelactive")]
+impl MapPanelActive {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPanelActive),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPanelActiveMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappanelactive/MapPanelActive_MeshIndex.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapPanelActive_MeshIndex {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapPanelActive_MeshIndex {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPanelActive.MeshIndex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapPanelActive_MeshIndex {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapPanelActive_MeshIndex {
+    pub fn r#move() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn heal() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn support() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn interference() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn dance() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn action() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn range() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn overlap() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 9 }
+    }
+}

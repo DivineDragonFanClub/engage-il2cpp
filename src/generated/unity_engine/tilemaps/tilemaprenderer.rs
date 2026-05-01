@@ -1,0 +1,31 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::renderer::IRenderer;
+use crate::unity_engine::renderer::Renderer;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/tilemaps/tilemaprenderer/TilemapRenderer.md")))]
+#[::unity2::class(namespace = "UnityEngine.Tilemaps", name = "TilemapRenderer")]
+#[parent(crate::unity_engine::renderer::Renderer)]
+pub struct TilemapRenderer {}
+
+#[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
+#[::unity2::methods]
+impl TilemapRenderer {
+    #[method(name = "RegisterSpriteAtlasRegistered", args = 0)]
+    pub fn register_sprite_atlas_registered(self) -> ();
+
+    #[method(name = "UnregisterSpriteAtlasRegistered", args = 0)]
+    pub fn unregister_sprite_atlas_registered(self) -> ();
+
+    #[method(name = "OnSpriteAtlasRegistered", args = 1)]
+    pub fn on_sprite_atlas_registered(
+        self,
+        atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+    ) -> ();
+}

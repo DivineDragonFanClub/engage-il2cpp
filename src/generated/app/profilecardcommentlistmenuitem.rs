@@ -1,0 +1,96 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardcommentlistmenuitem/ProfileCardCommentListMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "ProfileCardCommentListMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct ProfileCardCommentListMenuItem {
+    #[rename(name = "m_SelectEventHandler")]
+    pub m_select_event_handler:
+        crate::app::profilecardcommentlistmenu::ProfileCardCommentListMenu_SelectEventHandler,
+}
+
+#[cfg(feature = "app-profilecardcommentlistmenuitem")]
+#[::unity2::methods]
+impl ProfileCardCommentListMenuItem {
+    #[method(name = "get_m_CommentData", args = 0)]
+    pub fn get_m_comment_data(self) -> crate::app::profilecardcommentdata::ProfileCardCommentData;
+
+    #[method(name = "set_m_CommentData", args = 1)]
+    pub fn set_m_comment_data(
+        self,
+        value: crate::app::profilecardcommentdata::ProfileCardCommentData,
+    ) -> ();
+
+    #[method(name = "get_m_Decided", args = 0)]
+    pub fn get_m_decided(self) -> bool;
+
+    #[method(name = "set_m_Decided", args = 1)]
+    pub fn set_m_decided(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        comment_data: crate::app::profilecardcommentdata::ProfileCardCommentData,
+        initial_select: bool,
+        select_event_handler : crate :: app :: profilecardcommentlistmenu :: ProfileCardCommentListMenu_SelectEventHandler,
+    ) -> ();
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[method(name = "OnBuildMenuItemContent", args = 0)]
+    pub fn on_build_menu_item_content(self) -> ();
+
+    #[method(name = "SetInitialColor", args = 0)]
+    pub fn set_initial_color(self) -> ();
+
+    #[method(name = "UpdateFixedCursor", args = 0)]
+    pub fn update_fixed_cursor(self) -> ();
+
+    #[method(name = "UpdateNewIcon", args = 0)]
+    pub fn update_new_icon(self) -> ();
+
+    #[method(name = "SetDecided", args = 2)]
+    pub fn set_decided(self, decided: bool, update_cursor_order: bool) -> ();
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "OnCursorMoveEnd", args = 0)]
+    pub fn on_cursor_move_end(self) -> ();
+
+    #[method(name = "OnDeselect", args = 0)]
+    pub fn on_deselect(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-profilecardcommentlistmenuitem")]
+impl ProfileCardCommentListMenuItem {
+    pub fn new(
+        comment_data: crate::app::profilecardcommentdata::ProfileCardCommentData,
+        initial_select: bool,
+        select_event_handler : crate :: app :: profilecardcommentlistmenu :: ProfileCardCommentListMenu_SelectEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardCommentListMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardCommentListMenuItemMethods>::ctor(
+            this,
+            comment_data,
+            initial_select,
+            select_event_handler,
+        );
+        this
+    }
+}

@@ -1,0 +1,121 @@
+
+use crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::FunctionMemberDescriptorBase;
+use crate::moon_sharp::interpreter::interop::functionmemberdescriptorbase::IFunctionMemberDescriptorBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/objectcallbackmemberdescriptor/ObjectCallbackMemberDescriptor.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "ObjectCallbackMemberDescriptor"
+)]
+# [parent (crate :: moon_sharp :: interpreter :: interop :: functionmemberdescriptorbase :: FunctionMemberDescriptorBase)]
+pub struct ObjectCallbackMemberDescriptor {
+    #[rename(name = "m_CallbackFunc")]
+    pub m_callback_func: crate::system::func_4::Func_4<
+        crate::system::object::Object,
+        crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        crate::system::object::Object,
+    >,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-objectcallbackmemberdescriptor")]
+#[::unity2::methods]
+impl ObjectCallbackMemberDescriptor {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, func_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        func_name: ::unity2::Il2CppString,
+        call_back: crate::system::func_4::Func_4<
+            crate::system::object::Object,
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            crate::system::object::Object,
+        >,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor_3(
+        self,
+        func_name: ::unity2::Il2CppString,
+        call_back: crate::system::func_4::Func_4<
+            crate::system::object::Object,
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            crate::system::object::Object,
+        >,
+        parameters : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor >,
+    ) -> ();
+
+    #[method(name = "Execute", args = 4)]
+    pub fn execute(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-objectcallbackmemberdescriptor")]
+impl ObjectCallbackMemberDescriptor {
+    pub fn new(func_name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ObjectCallbackMemberDescriptor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IObjectCallbackMemberDescriptorMethods>::ctor(this, func_name);
+        this
+    }
+
+    pub fn new_2(
+        func_name: ::unity2::Il2CppString,
+        call_back: crate::system::func_4::Func_4<
+            crate::system::object::Object,
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            crate::system::object::Object,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ObjectCallbackMemberDescriptor),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IObjectCallbackMemberDescriptorMethods>::ctor_2(this, func_name, call_back);
+        this
+    }
+
+    pub fn new_3(
+        func_name: ::unity2::Il2CppString,
+        call_back: crate::system::func_4::Func_4<
+            crate::system::object::Object,
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            crate::system::object::Object,
+        >,
+        parameters : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ObjectCallbackMemberDescriptor),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as IObjectCallbackMemberDescriptorMethods>::ctor_3(
+            this, func_name, call_back, parameters,
+        );
+        this
+    }
+}

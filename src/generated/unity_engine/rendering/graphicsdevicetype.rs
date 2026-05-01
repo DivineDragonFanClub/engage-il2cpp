@@ -1,0 +1,140 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/graphicsdevicetype/GraphicsDeviceType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GraphicsDeviceType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GraphicsDeviceType {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "GraphicsDeviceType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GraphicsDeviceType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GraphicsDeviceType {
+    pub fn open_gl2() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn direct3_d9() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn direct3_d11() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn play_station3() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn null() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn xbox360() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn open_gles2() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn open_gles3() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn play_station_vita() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn play_station4() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn xbox_one() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn play_station_mobile() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn metal() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn open_gl_core() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn direct3_d12() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn n3ds() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn vulkan() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn switch() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn xbox_one_d3d12() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn game_core_xbox_one() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn game_core_scarlett() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn game_core_xbox_series() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn play_station5() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn play_station5_nggc() -> Self {
+        Self { value: 27 }
+    }
+}

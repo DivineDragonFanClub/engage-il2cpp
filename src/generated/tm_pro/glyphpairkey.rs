@@ -1,0 +1,49 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/glyphpairkey/GlyphPairKey.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct GlyphPairKey {
+    pub first_glyph_index: u32,
+    pub second_glyph_index: u32,
+    pub key: u32,
+}
+
+impl ::unity2::ClassIdentity for GlyphPairKey {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "GlyphPairKey";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GlyphPairKey {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "tm_pro-glyphpairkey")]
+#[::unity2::methods(value)]
+impl GlyphPairKey {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, first_glyph_index: u32, second_glyph_index: u32) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(
+        self,
+        record: crate::tm_pro::tmp_glyphpairadjustmentrecord::TMP_GlyphPairAdjustmentRecord,
+    ) -> ();
+}

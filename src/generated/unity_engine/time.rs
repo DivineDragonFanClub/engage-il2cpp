@@ -1,0 +1,67 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/time/Time.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "Time")]
+#[parent(crate::system::object::Object)]
+pub struct Time {}
+
+#[cfg(feature = "unity_engine-time")]
+#[::unity2::methods]
+impl Time {
+    #[method(name = "get_time", args = 0)]
+    pub fn get_time() -> f32;
+
+    #[method(name = "get_timeAsDouble", args = 0)]
+    pub fn get_time_as_double() -> f64;
+
+    #[method(name = "get_timeSinceLevelLoad", args = 0)]
+    pub fn get_time_since_level_load() -> f32;
+
+    #[method(name = "get_deltaTime", args = 0)]
+    pub fn get_delta_time() -> f32;
+
+    #[method(name = "get_fixedTime", args = 0)]
+    pub fn get_fixed_time() -> f32;
+
+    #[method(name = "get_unscaledTime", args = 0)]
+    pub fn get_unscaled_time() -> f32;
+
+    #[method(name = "get_unscaledDeltaTime", args = 0)]
+    pub fn get_unscaled_delta_time() -> f32;
+
+    #[method(name = "get_fixedDeltaTime", args = 0)]
+    pub fn get_fixed_delta_time() -> f32;
+
+    #[method(name = "set_fixedDeltaTime", args = 1)]
+    pub fn set_fixed_delta_time(value: f32) -> ();
+
+    #[method(name = "get_maximumDeltaTime", args = 0)]
+    pub fn get_maximum_delta_time() -> f32;
+
+    #[method(name = "set_maximumDeltaTime", args = 1)]
+    pub fn set_maximum_delta_time(value: f32) -> ();
+
+    #[method(name = "get_smoothDeltaTime", args = 0)]
+    pub fn get_smooth_delta_time() -> f32;
+
+    #[method(name = "set_maximumParticleDeltaTime", args = 1)]
+    pub fn set_maximum_particle_delta_time(value: f32) -> ();
+
+    #[method(name = "get_timeScale", args = 0)]
+    pub fn get_time_scale() -> f32;
+
+    #[method(name = "set_timeScale", args = 1)]
+    pub fn set_time_scale(value: f32) -> ();
+
+    #[method(name = "get_frameCount", args = 0)]
+    pub fn get_frame_count() -> i32;
+
+    #[method(name = "get_realtimeSinceStartup", args = 0)]
+    pub fn get_realtime_since_startup() -> f32;
+
+    #[method(name = "get_realtimeSinceStartupAsDouble", args = 0)]
+    pub fn get_realtime_since_startup_as_double() -> f64;
+}

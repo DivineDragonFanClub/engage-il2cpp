@@ -1,0 +1,69 @@
+
+use crate::moon_sharp::interpreter::tree::expression::Expression;
+use crate::moon_sharp::interpreter::tree::expression::IExpression;
+use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+use crate::moon_sharp::interpreter::tree::nodebase::NodeBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/expressions/unaryoperatorexpression/UnaryOperatorExpression.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Expressions",
+    name = "UnaryOperatorExpression"
+)]
+#[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
+pub struct UnaryOperatorExpression {
+    #[rename(name = "m_Exp")]
+    pub m_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+    #[rename(name = "m_OpText")]
+    pub m_op_text: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]
+#[::unity2::methods]
+impl UnaryOperatorExpression {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        sub_expression: crate::moon_sharp::interpreter::tree::expression::Expression,
+        unary_op_token: crate::moon_sharp::interpreter::tree::token::Token,
+    ) -> ();
+
+    #[method(name = "Compile", args = 1)]
+    pub fn compile(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> ();
+
+    #[method(name = "Eval", args = 1)]
+    pub fn eval(
+        self,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]
+impl UnaryOperatorExpression {
+    pub fn new(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        sub_expression: crate::moon_sharp::interpreter::tree::expression::Expression,
+        unary_op_token: crate::moon_sharp::interpreter::tree::token::Token,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnaryOperatorExpression),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnaryOperatorExpressionMethods>::ctor(
+            this,
+            lcontext,
+            sub_expression,
+            unary_op_token,
+        );
+        this
+    }
+}

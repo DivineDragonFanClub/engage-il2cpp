@@ -1,0 +1,152 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/customshadowcasterpass/CustomShadowCasterPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+    name = "CustomShadowCasterPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct CustomShadowCasterPass {
+    #[static_field]
+    #[rename(name = "k_MaxCascades")]
+    pub k_max_cascades: i32,
+    #[static_field]
+    #[rename(name = "k_ShadowmapBufferBits")]
+    pub k_shadowmap_buffer_bits: i32,
+    #[rename(name = "m_MaxShadowDistanceSq")]
+    pub m_max_shadow_distance_sq: f32,
+    #[rename(name = "m_ShadowmapWidth")]
+    pub m_shadowmap_width: i32,
+    #[rename(name = "m_ShadowmapHeight")]
+    pub m_shadowmap_height: i32,
+    #[rename(name = "m_ShadowCasterCascadesCount")]
+    pub m_shadow_caster_cascades_count: i32,
+    #[rename(name = "m_SupportsBoxFilterForShadows")]
+    pub m_supports_box_filter_for_shadows: bool,
+    #[rename(name = "m_CustomShadowmap")]
+    pub m_custom_shadowmap:
+        crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    #[rename(name = "m_CustomShadowmapTexture")]
+    pub m_custom_shadowmap_texture: crate::unity_engine::rendertexture::RenderTexture,
+    #[rename(name = "m_CustomShadowMatrices")]
+    pub m_custom_shadow_matrices: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4>,
+    #[rename(name = "m_CascadeSlices")]
+    pub m_cascade_slices: ::unity2::Array<
+        crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData,
+    >,
+    #[rename(name = "m_CascadeSplitDistances")]
+    pub m_cascade_split_distances: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+    #[static_field]
+    #[rename(name = "m_ProfilerTag")]
+    pub m_profiler_tag: ::unity2::Il2CppString,
+    #[rename(name = "m_ProfilingSampler")]
+    pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass")]
+#[::unity2::methods]
+impl CustomShadowCasterPass {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+    ) -> ();
+
+    #[method(name = "Setup", args = 1)]
+    pub fn setup(
+        self,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> bool;
+
+    #[method(name = "Configure", args = 2)]
+    pub fn configure(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        camera_texture_descriptor : crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "OnCameraCleanup", args = 1)]
+    pub fn on_camera_cleanup(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "RenderShadowmap", args = 4)]
+    pub fn render_shadowmap(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        cull_results: crate::unity_engine::rendering::cullingresults::CullingResults,
+        light_data: crate::unity_engine::rendering::universal::lightdata::LightData,
+        shadow_data: crate::unity_engine::rendering::universal::shadowdata::ShadowData,
+    ) -> ();
+
+    #[method(name = "SetupCustomShadowReceiverConstants", args = 3)]
+    pub fn setup_custom_shadow_receiver_constants(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        shadow_light: crate::unity_engine::rendering::visiblelight::VisibleLight,
+        soft_shadows: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customshadowcasterpass")]
+impl CustomShadowCasterPass {
+    pub fn new(
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomShadowCasterPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomShadowCasterPassMethods>::ctor(this, evt);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/customshadowcasterpass/CustomShadowCasterPass_CustomShadowConstantBuffer.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+    name = "CustomShadowCasterPass.CustomShadowConstantBuffer"
+)]
+#[parent(crate::system::object::Object)]
+pub struct CustomShadowCasterPass_CustomShadowConstantBuffer {
+    #[static_field]
+    #[rename(name = "_WorldToShadow")]
+    pub world_to_shadow: i32,
+    #[static_field]
+    #[rename(name = "_ShadowParams")]
+    pub shadow_params: i32,
+    #[static_field]
+    #[rename(name = "_ShadowOffset0")]
+    pub shadow_offset0: i32,
+    #[static_field]
+    #[rename(name = "_ShadowOffset1")]
+    pub shadow_offset1: i32,
+    #[static_field]
+    #[rename(name = "_ShadowOffset2")]
+    pub shadow_offset2: i32,
+    #[static_field]
+    #[rename(name = "_ShadowOffset3")]
+    pub shadow_offset3: i32,
+    #[static_field]
+    #[rename(name = "_ShadowmapSize")]
+    pub shadowmap_size: i32,
+}

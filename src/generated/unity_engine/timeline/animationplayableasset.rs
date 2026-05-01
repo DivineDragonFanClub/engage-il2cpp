@@ -1,0 +1,283 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::playables::playableasset::IPlayableAsset;
+use crate::unity_engine::playables::playableasset::PlayableAsset;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset.md")))]
+#[::unity2::class(namespace = "UnityEngine.Timeline", name = "AnimationPlayableAsset")]
+#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
+pub struct AnimationPlayableAsset {
+    #[rename(name = "m_Clip")]
+    pub m_clip: crate::unity_engine::animationclip::AnimationClip,
+    #[rename(name = "m_Position")]
+    pub m_position: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_EulerAngles")]
+    pub m_euler_angles: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_UseTrackMatchFields")]
+    pub m_use_track_match_fields: bool,
+    #[rename(name = "m_MatchTargetFields")]
+    pub m_match_target_fields: crate::unity_engine::timeline::matchtargetfields::MatchTargetFields,
+    #[rename(name = "m_RemoveStartOffset")]
+    pub m_remove_start_offset: bool,
+    #[rename(name = "m_ApplyFootIK")]
+    pub m_apply_foot_ik: bool,
+    #[rename(name = "m_Loop")]
+    pub m_loop:
+        crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode,
+    #[static_field]
+    #[rename(name = "k_LatestVersion")]
+    pub k_latest_version: i32,
+    #[rename(name = "m_Version")]
+    pub m_version: i32,
+    #[rename(name = "m_Rotation")]
+    pub m_rotation: crate::unity_engine::quaternion::Quaternion,
+}
+
+#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
+#[::unity2::methods]
+impl AnimationPlayableAsset {
+    #[method(name = "get_position", args = 0)]
+    pub fn get_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_position", args = 1)]
+    pub fn set_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_rotation", args = 0)]
+    pub fn get_rotation(self) -> crate::unity_engine::quaternion::Quaternion;
+
+    #[method(name = "set_rotation", args = 1)]
+    pub fn set_rotation(self, value: crate::unity_engine::quaternion::Quaternion) -> ();
+
+    #[method(name = "get_eulerAngles", args = 0)]
+    pub fn get_euler_angles(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_eulerAngles", args = 1)]
+    pub fn set_euler_angles(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_useTrackMatchFields", args = 0)]
+    pub fn get_use_track_match_fields(self) -> bool;
+
+    #[method(name = "set_useTrackMatchFields", args = 1)]
+    pub fn set_use_track_match_fields(self, value: bool) -> ();
+
+    #[method(name = "get_matchTargetFields", args = 0)]
+    pub fn get_match_target_fields(
+        self,
+    ) -> crate::unity_engine::timeline::matchtargetfields::MatchTargetFields;
+
+    #[method(name = "set_matchTargetFields", args = 1)]
+    pub fn set_match_target_fields(
+        self,
+        value: crate::unity_engine::timeline::matchtargetfields::MatchTargetFields,
+    ) -> ();
+
+    #[method(name = "get_removeStartOffset", args = 0)]
+    pub fn get_remove_start_offset(self) -> bool;
+
+    #[method(name = "set_removeStartOffset", args = 1)]
+    pub fn set_remove_start_offset(self, value: bool) -> ();
+
+    #[method(name = "get_applyFootIK", args = 0)]
+    pub fn get_apply_foot_ik(self) -> bool;
+
+    #[method(name = "set_applyFootIK", args = 1)]
+    pub fn set_apply_foot_ik(self, value: bool) -> ();
+
+    #[method(name = "get_loop", args = 0)]
+    pub fn get_loop(
+        self,
+    ) -> crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset_LoopMode;
+
+    #[method(name = "set_loop", args = 1)]
+    pub fn set_loop(
+        self,
+        value : crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset_LoopMode,
+    ) -> ();
+
+    #[method(name = "get_hasRootTransforms", args = 0)]
+    pub fn get_has_root_transforms(self) -> bool;
+
+    #[method(name = "get_appliedOffsetMode", args = 0)]
+    pub fn get_applied_offset_mode(
+        self,
+    ) -> crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode;
+
+    #[method(name = "set_appliedOffsetMode", args = 1)]
+    pub fn set_applied_offset_mode(
+        self,
+        value: crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+    ) -> ();
+
+    #[method(name = "get_clip", args = 0)]
+    pub fn get_clip(self) -> crate::unity_engine::animationclip::AnimationClip;
+
+    #[method(name = "set_clip", args = 1)]
+    pub fn set_clip(self, value: crate::unity_engine::animationclip::AnimationClip) -> ();
+
+    #[method(name = "get_duration", args = 0)]
+    pub fn get_duration(self) -> f64;
+
+    #[method(name = "get_outputs", args = 0)]
+    pub fn get_outputs(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::unity_engine::playables::playablebinding::PlayableBinding,
+    >;
+
+    #[method(name = "CreatePlayable", args = 2)]
+    pub fn create_playable(
+        self,
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        go: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::unity_engine::playables::playable::Playable;
+
+    #[method(name = "CreatePlayable", args = 8)]
+    pub fn create_playable_2(
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        clip: crate::unity_engine::animationclip::AnimationClip,
+        position_offset: crate::unity_engine::vector3::Vector3,
+        euler_offset: crate::unity_engine::vector3::Vector3,
+        remove_start_offset: bool,
+        mode: crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+        apply_foot_ik: bool,
+        r#loop : crate :: unity_engine :: timeline :: animationplayableasset :: AnimationPlayableAsset_LoopMode,
+    ) -> crate::unity_engine::playables::playable::Playable;
+
+    #[method(name = "ShouldApplyOffset", args = 2)]
+    pub fn should_apply_offset(
+        mode: crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+        clip: crate::unity_engine::animationclip::AnimationClip,
+    ) -> bool;
+
+    #[method(name = "ShouldApplyScaleRemove", args = 1)]
+    pub fn should_apply_scale_remove(
+        mode: crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode,
+    ) -> bool;
+
+    #[method(name = "get_clipCaps", args = 0)]
+    pub fn get_clip_caps(self) -> crate::unity_engine::timeline::clipcaps::ClipCaps;
+
+    #[method(name = "ResetOffsets", args = 0)]
+    pub fn reset_offsets(self) -> ();
+
+    #[method(name = "GatherProperties", args = 2)]
+    pub fn gather_properties(
+        self,
+        director: crate::unity_engine::playables::playabledirector::PlayableDirector,
+        driver: crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,
+    ) -> ();
+
+    #[method(name = "HasRootTransforms", args = 1)]
+    pub fn has_root_transforms(clip: crate::unity_engine::animationclip::AnimationClip) -> bool;
+
+    #[method(
+        name = "UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize",
+        args = 0
+    )]
+    pub fn unity_engine_i_serialization_callback_receiver_on_before_serialize(self) -> ();
+
+    #[method(
+        name = "UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize",
+        args = 0
+    )]
+    pub fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(self) -> ();
+
+    #[method(name = "OnUpgradeFromVersion", args = 1)]
+    pub fn on_upgrade_from_version(self, old_version: i32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
+impl AnimationPlayableAsset {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimationPlayableAsset),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimationPlayableAssetMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_LoopMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AnimationPlayableAsset_LoopMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AnimationPlayableAsset_LoopMode {
+    const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+    const NAME: &'static str = "AnimationPlayableAsset.LoopMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AnimationPlayableAsset_LoopMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AnimationPlayableAsset_LoopMode {
+    pub fn use_source_asset() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn on() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn off() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Timeline",
+    name = "AnimationPlayableAsset.AnimationPlayableAssetUpgrade"
+)]
+#[parent(crate::system::object::Object)]
+pub struct AnimationPlayableAsset_AnimationPlayableAssetUpgrade {}
+
+#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
+#[::unity2::methods]
+impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade {
+    #[method(name = "ConvertRotationToEuler", args = 1)]
+    pub fn convert_rotation_to_euler(
+        asset: crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset,
+    ) -> ();
+}

@@ -1,0 +1,121 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktag/TalkTag_Result.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TalkTag_Result {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TalkTag_Result {
+    const NAMESPACE: &'static str = "App.Talk3D";
+
+    const NAME: &'static str = "TalkTag.Result";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TalkTag_Result {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TalkTag_Result {
+    pub fn finish() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn add_letter() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn add_letter_retry() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn retry() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn abort() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn can_skip() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn r#continue() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn error() -> Self {
+        Self { value: 7 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktag/TalkTag.md")))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkTag")]
+#[parent(crate::system::object::Object)]
+pub struct TalkTag {}
+
+#[cfg(feature = "app-talk3_d-talktag")]
+#[::unity2::methods]
+impl TalkTag {
+    #[method(name = "Initialize", args = 1)]
+    pub fn initialize(self, talk_ptr: crate::app::talk3_d::talkptr::TalkPtr) -> ();
+
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+
+    #[method(name = "ExecuteForCharacterPreLoad", args = 0)]
+    pub fn execute_for_character_pre_load(self) -> ();
+
+    #[method(name = "NeedFadeWait", args = 0)]
+    pub fn need_fade_wait(self) -> bool;
+
+    #[method(name = "GetResult", args = 0)]
+    pub fn get_result(self) -> crate::app::talk3_d::talktag::TalkTag_Result;
+
+    #[method(name = "GetResultForHeadText", args = 0)]
+    pub fn get_result_for_head_text(self) -> crate::app::talk3_d::talktag::TalkTag_Result;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talktag")]
+impl TalkTag {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkTag),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkTagMethods>::ctor(this);
+        this
+    }
+}

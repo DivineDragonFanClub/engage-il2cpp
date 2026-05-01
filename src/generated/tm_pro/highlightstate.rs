@@ -1,0 +1,67 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/highlightstate/HighlightState.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct HighlightState {
+    pub color: crate::unity_engine::color32::Color32,
+    pub padding: crate::tm_pro::tmp_offset::TMP_Offset,
+}
+
+impl ::unity2::ClassIdentity for HighlightState {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "HighlightState";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HighlightState {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "tm_pro-highlightstate")]
+#[::unity2::methods(value)]
+impl HighlightState {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        color: crate::unity_engine::color32::Color32,
+        padding: crate::tm_pro::tmp_offset::TMP_Offset,
+    ) -> ();
+
+    #[method(name = "op_Equality", args = 2)]
+    pub fn op_equality(
+        lhs: crate::tm_pro::highlightstate::HighlightState,
+        rhs: crate::tm_pro::highlightstate::HighlightState,
+    ) -> bool;
+
+    #[method(name = "op_Inequality", args = 2)]
+    pub fn op_inequality(
+        lhs: crate::tm_pro::highlightstate::HighlightState,
+        rhs: crate::tm_pro::highlightstate::HighlightState,
+    ) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, obj: crate::system::object::Object) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_2(self, other: crate::tm_pro::highlightstate::HighlightState) -> bool;
+}

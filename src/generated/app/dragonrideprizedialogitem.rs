@@ -1,0 +1,43 @@
+
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideprizedialogitem/DragonRidePrizeDialogItem.md")))]
+#[::unity2::class(namespace = "App", name = "DragonRidePrizeDialogItem")]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct DragonRidePrizeDialogItem {}
+
+#[cfg(feature = "app-dragonrideprizedialogitem")]
+#[::unity2::methods]
+impl DragonRidePrizeDialogItem {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, text: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-dragonrideprizedialogitem")]
+impl DragonRidePrizeDialogItem {
+    pub fn new(text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRidePrizeDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRidePrizeDialogItemMethods>::ctor(this, text);
+        this
+    }
+}

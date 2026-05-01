@@ -1,0 +1,31 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/bindings/nativenameattribute/NativeNameAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine.Bindings", name = "NativeNameAttribute")]
+pub struct NativeNameAttribute {}
+
+#[cfg(feature = "unity_engine-bindings-nativenameattribute")]
+#[::unity2::methods]
+impl NativeNameAttribute {
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "unity_engine-bindings-nativenameattribute")]
+impl NativeNameAttribute {
+    pub fn new(name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NativeNameAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INativeNameAttributeMethods>::ctor(this, name);
+        this
+    }
+}

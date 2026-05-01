@@ -1,0 +1,56 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/layermask/LayerMask.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct LayerMask {
+    pub m_mask: i32,
+}
+
+impl ::unity2::ClassIdentity for LayerMask {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "LayerMask";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for LayerMask {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-layermask")]
+#[::unity2::methods(value)]
+impl LayerMask {
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(mask: crate::unity_engine::layermask::LayerMask) -> i32;
+
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit_2(int_val: i32) -> crate::unity_engine::layermask::LayerMask;
+
+    #[method(name = "get_value", args = 0)]
+    pub fn get_value(self) -> i32;
+
+    #[method(name = "LayerToName", args = 1)]
+    pub fn layer_to_name(layer: i32) -> ::unity2::Il2CppString;
+
+    #[method(name = "NameToLayer", args = 1)]
+    pub fn name_to_layer(layer_name: ::unity2::Il2CppString) -> i32;
+
+    #[method(name = "GetMask", args = 1)]
+    pub fn get_mask(layer_names: ::unity2::Array<::unity2::Il2CppString>) -> i32;
+}

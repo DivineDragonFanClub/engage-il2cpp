@@ -1,0 +1,170 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/combatskip/CombatSkip.md")))]
+#[::unity2::class(namespace = "Combat", name = "CombatSkip")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct CombatSkip {
+    #[rename(name = "state")]
+    pub state: crate::combat::combatskip::CombatSkip_State,
+    #[rename(name = "isSoundSkipEnable")]
+    pub is_sound_skip_enable: bool,
+}
+
+#[cfg(feature = "combat-combatskip")]
+#[::unity2::methods]
+impl CombatSkip {
+    #[method(name = "NextState", args = 0)]
+    pub fn next_state(self) -> ();
+
+    #[method(name = "get_IsSkipping", args = 0)]
+    pub fn get_is_skipping(self) -> bool;
+
+    #[method(name = "get_IsBlackout", args = 0)]
+    pub fn get_is_blackout(self) -> bool;
+
+    #[method(name = "get_IsWaiting", args = 0)]
+    pub fn get_is_waiting(self) -> bool;
+
+    #[method(name = "get_IsSkipped", args = 0)]
+    pub fn get_is_skipped(self) -> bool;
+
+    #[method(name = "Enable", args = 0)]
+    pub fn enable(self) -> ();
+
+    #[method(name = "Skip", args = 0)]
+    pub fn skip(self) -> ();
+
+    #[method(name = "IsInstantComeback", args = 1)]
+    pub fn is_instant_comeback(self, rec: crate::combat::combatrecord::CombatRecord) -> bool;
+
+    #[method(name = "InstantComeback", args = 0)]
+    pub fn instant_comeback(self) -> ();
+
+    #[method(name = "Disable", args = 0)]
+    pub fn disable(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "Cleanup1", args = 0)]
+    pub fn cleanup1(self) -> ();
+
+    #[method(name = "Cleanup2", args = 0)]
+    pub fn cleanup2(self) -> ();
+
+    #[method(name = "CleanupHUDs", args = 1)]
+    pub fn cleanup_hu_ds(world: crate::combat::combatworld::CombatWorld) -> ();
+
+    #[method(name = "SkipCharacters", args = 1)]
+    pub fn skip_characters(world: crate::combat::combatworld::CombatWorld) -> ();
+
+    #[method(name = "Cleanup4", args = 0)]
+    pub fn cleanup4(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-combatskip")]
+impl CombatSkip {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CombatSkip),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICombatSkipMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/combatskip/CombatSkip_State.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CombatSkip_State {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CombatSkip_State {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CombatSkip.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CombatSkip_State {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CombatSkip_State {
+    pub fn prohibited() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn waiting() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn fade_out() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn cleanup1() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn cleanup2() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn cleanup3() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn fade_in() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 7 }
+    }
+}

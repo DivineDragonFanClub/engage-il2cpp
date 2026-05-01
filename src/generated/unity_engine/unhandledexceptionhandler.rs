@@ -1,0 +1,16 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/unhandledexceptionhandler/UnhandledExceptionHandler.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "UnhandledExceptionHandler")]
+#[parent(crate::system::object::Object)]
+pub struct UnhandledExceptionHandler {}
+
+#[cfg(feature = "unity_engine-unhandledexceptionhandler")]
+#[::unity2::methods]
+impl UnhandledExceptionHandler {
+    #[method(name = "RegisterUECatcher", args = 0)]
+    pub fn register_ue_catcher() -> ();
+}

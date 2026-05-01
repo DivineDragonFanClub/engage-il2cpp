@@ -1,0 +1,372 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nintendo/message_studio/lib/libms/Libms.md")))]
+#[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "Libms")]
+#[parent(crate::system::object::Object)]
+pub struct Libms {
+    #[static_field]
+    #[rename(name = "LibmsDllFileName")]
+    pub libms_dll_file_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-libms")]
+#[::unity2::methods]
+impl Libms {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+
+    #[method(name = "Alloc", args = 1)]
+    pub fn alloc(size: i32) -> ::unity2::IntPtr;
+
+    #[method(name = "Free", args = 1)]
+    pub fn free(ptr: ::unity2::IntPtr) -> ();
+
+    #[method(name = "LMS_SetMemFuncs", args = 2)]
+    pub fn lms_set_mem_funcs(
+        p_malloc: crate::nintendo::message_studio::lib::libms::Libms_LMSMallocPtr,
+        p_free: crate::nintendo::message_studio::lib::libms::Libms_LMSFreePtr,
+    ) -> ();
+
+    #[method(name = "LMS_InitMessage", args = 1)]
+    pub fn lms_init_message(p_resource: ::unity2::IntPtr) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_CloseMessage", args = 1)]
+    pub fn lms_close_message(p_file: ::unity2::IntPtr) -> ();
+
+    #[method(name = "LMS_SearchMessageBlockByName", args = 2)]
+    pub fn lms_search_message_block_by_name(
+        p_file: ::unity2::IntPtr,
+        p_block_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "LMS_GetMessageBlockInfoByName", args = 2)]
+    pub fn lms_get_message_block_info_by_name(
+        p_file: ::unity2::IntPtr,
+        p_block_name: ::unity2::Il2CppString,
+    ) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetTextNum", args = 1)]
+    pub fn lms_get_text_num(p_file: ::unity2::IntPtr) -> i32;
+
+    #[method(name = "LMS_GetTextIndexByLabel", args = 2)]
+    pub fn lms_get_text_index_by_label(
+        p_file: ::unity2::IntPtr,
+        label_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "LMS_GetText", args = 2)]
+    pub fn lms_get_text(p_file: ::unity2::IntPtr, n_text_index: i32) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetTextSize", args = 2)]
+    pub fn lms_get_text_size(p_file: ::unity2::IntPtr, n_text_index: i32) -> i32;
+
+    #[method(name = "LMS_GetTextByLabel", args = 2)]
+    pub fn lms_get_text_by_label(
+        p_file: ::unity2::IntPtr,
+        label_name: ::unity2::Il2CppString,
+    ) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetTextStyle", args = 2)]
+    pub fn lms_get_text_style(p_file: ::unity2::IntPtr, n_text_index: i32) -> i32;
+
+    #[method(name = "LMS_GetTextStyleByLabel", args = 2)]
+    pub fn lms_get_text_style_by_label(
+        p_file: ::unity2::IntPtr,
+        label_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "LMS_GetAttributeSize", args = 1)]
+    pub fn lms_get_attribute_size(p_file: ::unity2::IntPtr) -> u32;
+
+    #[method(name = "LMS_GetAttribute", args = 2)]
+    pub fn lms_get_attribute(p_file: ::unity2::IntPtr, index: i32) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetAttributeText", args = 2)]
+    pub fn lms_get_attribute_text(p_file: ::unity2::IntPtr, offset: u32) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetAttrFilteredOffset", args = 2)]
+    pub fn lms_get_attr_filtered_offset(p_file: ::unity2::IntPtr, n_attr_index: i32) -> i32;
+
+    #[method(name = "LMS_InitProject", args = 1)]
+    pub fn lms_init_project(p_resource: ::unity2::IntPtr) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_CloseProject", args = 1)]
+    pub fn lms_close_project(p_file: ::unity2::IntPtr) -> ();
+
+    #[method(name = "LMS_SearchProjectBlockByName", args = 2)]
+    pub fn lms_search_project_block_by_name(
+        p_file: ::unity2::IntPtr,
+        p_block_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "LMS_GetColorIndexByName", args = 2)]
+    pub fn lms_get_color_index_by_name(
+        p_file: ::unity2::IntPtr,
+        p_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "LMS_GetColor", args = 3)]
+    pub fn lms_get_color(
+        p_file: ::unity2::IntPtr,
+        n_color_index: i32,
+        p_color: crate::nintendo::message_studio::lib::lmscolor::LMSColor,
+    ) -> i32;
+
+    #[method(name = "LMS_GetColorByName", args = 3)]
+    pub fn lms_get_color_by_name(
+        p_file: ::unity2::IntPtr,
+        p_name: ::unity2::Il2CppString,
+        p_color: crate::nintendo::message_studio::lib::lmscolor::LMSColor,
+    ) -> i32;
+
+    #[method(name = "LMS_GetColorNum", args = 1)]
+    pub fn lms_get_color_num(p_file: ::unity2::IntPtr) -> i32;
+
+    #[method(name = "LMS_GetContentsNum", args = 1)]
+    pub fn lms_get_contents_num(p_file: ::unity2::IntPtr) -> i32;
+
+    #[method(name = "LMS_GetContentPath", args = 2)]
+    pub fn lms_get_content_path(p_file: ::unity2::IntPtr, n_content_index: i32)
+        -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetAttrInfoIndexByName", args = 2)]
+    pub fn lms_get_attr_info_index_by_name(
+        p_file: ::unity2::IntPtr,
+        p_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "LMS_GetAttrType", args = 2)]
+    pub fn lms_get_attr_type(
+        p_file: ::unity2::IntPtr,
+        n_attr_index: i32,
+    ) -> crate::nintendo::message_studio::lib::libmstype::LibmsType;
+
+    #[method(name = "LMS_GetAttrOffset", args = 2)]
+    pub fn lms_get_attr_offset(p_file: ::unity2::IntPtr, n_attr_index: i32) -> i32;
+
+    #[method(name = "LMS_GetAttrTypeByName", args = 2)]
+    pub fn lms_get_attr_type_by_name(
+        p_file: ::unity2::IntPtr,
+        p_name: ::unity2::Il2CppString,
+    ) -> crate::nintendo::message_studio::lib::libmstype::LibmsType;
+
+    #[method(name = "LMS_GetAttrOffsetByName", args = 2)]
+    pub fn lms_get_attr_offset_by_name(
+        p_file: ::unity2::IntPtr,
+        p_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "LMS_GetAttrListItemName", args = 3)]
+    pub fn lms_get_attr_list_item_name(
+        p_file: ::unity2::IntPtr,
+        n_attr_index: i32,
+        n_item_index: i32,
+    ) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetAttrListItemNameByName", args = 3)]
+    pub fn lms_get_attr_list_item_name_by_name(
+        p_file: ::unity2::IntPtr,
+        p_attr_name: ::unity2::Il2CppString,
+        n_item_index: i32,
+    ) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetAttrNum", args = 1)]
+    pub fn lms_get_attr_num(p_file: ::unity2::IntPtr) -> i32;
+
+    #[method(name = "LMS_GetAttrListItemNum", args = 2)]
+    pub fn lms_get_attr_list_item_num(p_file: ::unity2::IntPtr, n_attr_index: i32) -> i32;
+
+    #[method(name = "LMS_GetTagGroupName", args = 2)]
+    pub fn lms_get_tag_group_name(p_file: ::unity2::IntPtr, n_group_id: u16) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetTagName", args = 3)]
+    pub fn lms_get_tag_name(
+        p_file: ::unity2::IntPtr,
+        n_group_id: u16,
+        n_tag_id: u16,
+    ) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetTagParamName", args = 4)]
+    pub fn lms_get_tag_param_name(
+        p_file: ::unity2::IntPtr,
+        n_group_id: u16,
+        n_tag_id: u16,
+        n_param_index: u16,
+    ) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetTagParamType", args = 4)]
+    pub fn lms_get_tag_param_type(
+        p_file: ::unity2::IntPtr,
+        n_group_id: u16,
+        n_tag_id: u16,
+        n_param_index: u16,
+    ) -> crate::nintendo::message_studio::lib::libmstype::LibmsType;
+
+    #[method(name = "LMS_GetTagListItemName", args = 5)]
+    pub fn lms_get_tag_list_item_name(
+        p_file: ::unity2::IntPtr,
+        n_group_id: u16,
+        n_tag_id: u16,
+        n_param_index: u16,
+        n_item_index: u16,
+    ) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetTagGroupNum", args = 1)]
+    pub fn lms_get_tag_group_num(p_file: ::unity2::IntPtr) -> i32;
+
+    #[method(name = "LMS_GetTagNum", args = 2)]
+    pub fn lms_get_tag_num(p_file: ::unity2::IntPtr, n_group_id: u16) -> i32;
+
+    #[method(name = "LMS_GetTagParamNum", args = 3)]
+    pub fn lms_get_tag_param_num(p_file: ::unity2::IntPtr, n_group_id: u16, n_tag_id: u16) -> i32;
+
+    #[method(name = "LMS_GetTagListItemNum", args = 4)]
+    pub fn lms_get_tag_list_item_num(
+        p_file: ::unity2::IntPtr,
+        n_group_id: u16,
+        n_tag_id: u16,
+        n_param_index: u16,
+    ) -> i32;
+
+    #[method(name = "LMS_GetStyleIndexByName", args = 2)]
+    pub fn lms_get_style_index_by_name(
+        p_file: ::unity2::IntPtr,
+        p_style_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "LMS_GetRegionWidth", args = 2)]
+    pub fn lms_get_region_width(p_file: ::unity2::IntPtr, n_style_index: i32) -> i32;
+
+    #[method(name = "LMS_GetRegionWidthByName", args = 2)]
+    pub fn lms_get_region_width_by_name(
+        p_file: ::unity2::IntPtr,
+        p_style_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "LMS_GetLineNum", args = 2)]
+    pub fn lms_get_line_num(p_file: ::unity2::IntPtr, n_style_index: i32) -> i32;
+
+    #[method(name = "LMS_GetLineNumByName", args = 2)]
+    pub fn lms_get_line_num_by_name(
+        p_file: ::unity2::IntPtr,
+        p_style_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "LMS_GetFontIndex", args = 2)]
+    pub fn lms_get_font_index(p_file: ::unity2::IntPtr, n_style_index: i32) -> i32;
+
+    #[method(name = "LMS_GetFontIndexByName", args = 2)]
+    pub fn lms_get_font_index_by_name(
+        p_file: ::unity2::IntPtr,
+        p_style_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "LMS_GetBaseColorIndex", args = 2)]
+    pub fn lms_get_base_color_index(p_file: ::unity2::IntPtr, n_style_index: i32) -> i32;
+
+    #[method(name = "LMS_GetBaseColorIndexByName", args = 2)]
+    pub fn lms_get_base_color_index_by_name(
+        p_file: ::unity2::IntPtr,
+        p_style_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "LMS_GetStyleNum", args = 1)]
+    pub fn lms_get_style_num(p_file: ::unity2::IntPtr) -> i32;
+
+    #[method(name = "LMS_InitFlowchart", args = 1)]
+    pub fn lms_init_flowchart(p_resource: ::unity2::IntPtr) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_CloseFlowchart", args = 1)]
+    pub fn lms_close_flowchart(p_file: ::unity2::IntPtr) -> ();
+
+    #[method(name = "LMS_GetNodeNum", args = 1)]
+    pub fn lms_get_node_num(p_file: ::unity2::IntPtr) -> i32;
+
+    #[method(name = "LMS_GetEntryNodeIndex", args = 2)]
+    pub fn lms_get_entry_node_index(
+        p_file: ::unity2::IntPtr,
+        p_label: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "LMS_GetNodeDataPtr", args = 2)]
+    pub fn lms_get_node_data_ptr(p_file: ::unity2::IntPtr, index: i32) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetFlowNodeIndex", args = 2)]
+    pub fn lms_get_flow_node_index(p_file: ::unity2::IntPtr, p_node: ::unity2::IntPtr) -> i32;
+
+    #[method(name = "LMS_GetCaseIndexesFromBranchNode", args = 2)]
+    pub fn lms_get_case_indexes_from_branch_node(
+        p_file: ::unity2::IntPtr,
+        index: i32,
+    ) -> ::unity2::IntPtr;
+
+    #[method(name = "LMS_GetFlowParamText", args = 2)]
+    pub fn lms_get_flow_param_text(p_file: ::unity2::IntPtr, offset: i32) -> ::unity2::IntPtr;
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nintendo/message_studio/lib/libms/Libms_LMSMallocPtr.md")))]
+#[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "Libms.LMSMallocPtr")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct Libms_LMSMallocPtr {}
+
+#[cfg(feature = "nintendo-message_studio-lib-libms")]
+#[::unity2::methods]
+impl Libms_LMSMallocPtr {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, size: i32) -> ::unity2::IntPtr;
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-libms")]
+impl Libms_LMSMallocPtr {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Libms_LMSMallocPtr),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILibms_LMSMallocPtrMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nintendo/message_studio/lib/libms/Libms_LMSFreePtr.md")))]
+#[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "Libms.LMSFreePtr")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct Libms_LMSFreePtr {}
+
+#[cfg(feature = "nintendo-message_studio-lib-libms")]
+#[::unity2::methods]
+impl Libms_LMSFreePtr {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, ptr: ::unity2::IntPtr) -> ();
+}
+
+#[cfg(feature = "nintendo-message_studio-lib-libms")]
+impl Libms_LMSFreePtr {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Libms_LMSFreePtr),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILibms_LMSFreePtrMethods>::ctor(this, object, method);
+        this
+    }
+}

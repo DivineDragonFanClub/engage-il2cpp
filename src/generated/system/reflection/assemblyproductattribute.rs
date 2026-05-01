@@ -1,0 +1,31 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/assemblyproductattribute/AssemblyProductAttribute.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "AssemblyProductAttribute")]
+pub struct AssemblyProductAttribute {
+    #[rename(name = "m_product")]
+    pub m_product: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "system-reflection-assemblyproductattribute")]
+#[::unity2::methods]
+impl AssemblyProductAttribute {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, product: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "system-reflection-assemblyproductattribute")]
+impl AssemblyProductAttribute {
+    pub fn new(product: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssemblyProductAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssemblyProductAttributeMethods>::ctor(this, product);
+        this
+    }
+}

@@ -1,0 +1,45 @@
+
+use crate::app::irawassetbundle_1::IIRawAssetBundle_1;
+use crate::app::irawassetbundle_1::IRawAssetBundle_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/textassetbundle/TextAssetBundle.md")))]
+#[::unity2::class(namespace = "App", name = "TextAssetBundle")]
+# [parent (crate :: app :: irawassetbundle_1 :: IRawAssetBundle_1 < crate :: unity_engine :: textasset :: TextAsset >)]
+pub struct TextAssetBundle {}
+
+#[cfg(feature = "app-textassetbundle")]
+#[::unity2::methods]
+impl TextAssetBundle {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, path: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "OnLoad", args = 0)]
+    pub fn on_load(self) -> ();
+
+    #[method(name = "OnUnload", args = 0)]
+    pub fn on_unload(self) -> ();
+
+    #[method(name = "get_Bytes", args = 0)]
+    pub fn get_bytes(self) -> ::unity2::Array<u8>;
+
+    #[method(name = "set_Bytes", args = 1)]
+    pub fn set_bytes(self, value: ::unity2::Array<u8>) -> ();
+}
+
+#[cfg(feature = "app-textassetbundle")]
+impl TextAssetBundle {
+    pub fn new(path: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TextAssetBundle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITextAssetBundleMethods>::ctor(this, path);
+        this
+    }
+}

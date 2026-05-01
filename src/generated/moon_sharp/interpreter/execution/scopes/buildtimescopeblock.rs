@@ -1,0 +1,132 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/execution/scopes/buildtimescopeblock/BuildTimeScopeBlock.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Execution.Scopes",
+    name = "BuildTimeScopeBlock"
+)]
+#[parent(crate::system::object::Object)]
+pub struct BuildTimeScopeBlock {
+    #[rename(name = "m_DefinedNames")]
+    pub m_defined_names: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::moon_sharp::interpreter::symbolref::SymbolRef,
+    >,
+    #[rename(name = "m_PendingGotos")]
+    pub m_pending_gotos: crate::system::collections::generic::list_1::List_1<
+        crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement,
+    >,
+    #[rename(name = "m_LocalLabels")]
+    pub m_local_labels: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::moon_sharp::interpreter::tree::statements::labelstatement::LabelStatement,
+    >,
+    #[rename(name = "m_LastDefinedName")]
+    pub m_last_defined_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeblock")]
+#[::unity2::methods]
+impl BuildTimeScopeBlock {
+    #[method(name = "get_Parent", args = 0)]
+    pub fn get_parent(
+        self,
+    ) -> crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock;
+
+    #[method(name = "set_Parent", args = 1)]
+    pub fn set_parent(
+        self,
+        value : crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock,
+    ) -> ();
+
+    #[method(name = "get_ChildNodes", args = 0)]
+    pub fn get_child_nodes(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock,
+    >;
+
+    #[method(name = "set_ChildNodes", args = 1)]
+    pub fn set_child_nodes(
+        self,
+        value : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock >,
+    ) -> ();
+
+    #[method(name = "get_ScopeBlock", args = 0)]
+    pub fn get_scope_block(
+        self,
+    ) -> crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock;
+
+    #[method(name = "set_ScopeBlock", args = 1)]
+    pub fn set_scope_block(
+        self,
+        value: crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
+    ) -> ();
+
+    #[method(name = "Rename", args = 1)]
+    pub fn rename(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        parent : crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock,
+    ) -> ();
+
+    #[method(name = "AddChild", args = 0)]
+    pub fn add_child(
+        self,
+    ) -> crate::moon_sharp::interpreter::execution::scopes::buildtimescopeblock::BuildTimeScopeBlock;
+
+    #[method(name = "Find", args = 1)]
+    pub fn find(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef;
+
+    #[method(name = "Define", args = 1)]
+    pub fn define(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef;
+
+    #[method(name = "ResolveLRefs", args = 1)]
+    pub fn resolve_l_refs(
+        self,
+        build_time_scope_frame : crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeframe :: BuildTimeScopeFrame,
+    ) -> i32;
+
+    #[method(name = "DefineLabel", args = 1)]
+    pub fn define_label(
+        self,
+        label: crate::moon_sharp::interpreter::tree::statements::labelstatement::LabelStatement,
+    ) -> ();
+
+    #[method(name = "RegisterGoto", args = 1)]
+    pub fn register_goto(
+        self,
+        gotostat: crate::moon_sharp::interpreter::tree::statements::gotostatement::GotoStatement,
+    ) -> ();
+
+    #[method(name = "ResolveGotos", args = 0)]
+    pub fn resolve_gotos(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-scopes-buildtimescopeblock")]
+impl BuildTimeScopeBlock {
+    pub fn new(
+        parent : crate :: moon_sharp :: interpreter :: execution :: scopes :: buildtimescopeblock :: BuildTimeScopeBlock,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BuildTimeScopeBlock),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBuildTimeScopeBlockMethods>::ctor(this, parent);
+        this
+    }
+}

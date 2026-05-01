@@ -1,0 +1,325 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_Unit.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CanvasScaler_Unit {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CanvasScaler_Unit {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "CanvasScaler.Unit";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CanvasScaler_Unit {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CanvasScaler_Unit {
+    pub fn centimeters() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn millimeters() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn inches() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn points() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn picas() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "CanvasScaler")]
+#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
+pub struct CanvasScaler {
+    #[rename(name = "m_UiScaleMode")]
+    pub m_ui_scale_mode: crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode,
+    #[rename(name = "m_ReferencePixelsPerUnit")]
+    pub m_reference_pixels_per_unit: f32,
+    #[rename(name = "m_ScaleFactor")]
+    pub m_scale_factor: f32,
+    #[rename(name = "m_ReferenceResolution")]
+    pub m_reference_resolution: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_ScreenMatchMode")]
+    pub m_screen_match_mode: crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode,
+    #[rename(name = "m_MatchWidthOrHeight")]
+    pub m_match_width_or_height: f32,
+    #[static_field]
+    #[rename(name = "kLogBase")]
+    pub k_log_base: f32,
+    #[rename(name = "m_PhysicalUnit")]
+    pub m_physical_unit: crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit,
+    #[rename(name = "m_FallbackScreenDPI")]
+    pub m_fallback_screen_dpi: f32,
+    #[rename(name = "m_DefaultSpriteDPI")]
+    pub m_default_sprite_dpi: f32,
+    #[rename(name = "m_DynamicPixelsPerUnit")]
+    pub m_dynamic_pixels_per_unit: f32,
+    #[rename(name = "m_Canvas")]
+    pub m_canvas: crate::unity_engine::canvas::Canvas,
+    #[rename(name = "m_PrevScaleFactor")]
+    pub m_prev_scale_factor: f32,
+    #[rename(name = "m_PrevReferencePixelsPerUnit")]
+    pub m_prev_reference_pixels_per_unit: f32,
+    #[rename(name = "m_PresetInfoIsWorld")]
+    pub m_preset_info_is_world: bool,
+}
+
+#[cfg(feature = "unity_engine-ui-canvasscaler")]
+#[::unity2::methods]
+impl CanvasScaler {
+    #[method(name = "get_uiScaleMode", args = 0)]
+    pub fn get_ui_scale_mode(self)
+        -> crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode;
+
+    #[method(name = "set_uiScaleMode", args = 1)]
+    pub fn set_ui_scale_mode(
+        self,
+        value: crate::unity_engine::ui::canvasscaler::CanvasScaler_ScaleMode,
+    ) -> ();
+
+    #[method(name = "get_referencePixelsPerUnit", args = 0)]
+    pub fn get_reference_pixels_per_unit(self) -> f32;
+
+    #[method(name = "set_referencePixelsPerUnit", args = 1)]
+    pub fn set_reference_pixels_per_unit(self, value: f32) -> ();
+
+    #[method(name = "get_scaleFactor", args = 0)]
+    pub fn get_scale_factor(self) -> f32;
+
+    #[method(name = "set_scaleFactor", args = 1)]
+    pub fn set_scale_factor(self, value: f32) -> ();
+
+    #[method(name = "get_referenceResolution", args = 0)]
+    pub fn get_reference_resolution(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_referenceResolution", args = 1)]
+    pub fn set_reference_resolution(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_screenMatchMode", args = 0)]
+    pub fn get_screen_match_mode(
+        self,
+    ) -> crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode;
+
+    #[method(name = "set_screenMatchMode", args = 1)]
+    pub fn set_screen_match_mode(
+        self,
+        value: crate::unity_engine::ui::canvasscaler::CanvasScaler_ScreenMatchMode,
+    ) -> ();
+
+    #[method(name = "get_matchWidthOrHeight", args = 0)]
+    pub fn get_match_width_or_height(self) -> f32;
+
+    #[method(name = "set_matchWidthOrHeight", args = 1)]
+    pub fn set_match_width_or_height(self, value: f32) -> ();
+
+    #[method(name = "get_physicalUnit", args = 0)]
+    pub fn get_physical_unit(self) -> crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit;
+
+    #[method(name = "set_physicalUnit", args = 1)]
+    pub fn set_physical_unit(
+        self,
+        value: crate::unity_engine::ui::canvasscaler::CanvasScaler_Unit,
+    ) -> ();
+
+    #[method(name = "get_fallbackScreenDPI", args = 0)]
+    pub fn get_fallback_screen_dpi(self) -> f32;
+
+    #[method(name = "set_fallbackScreenDPI", args = 1)]
+    pub fn set_fallback_screen_dpi(self, value: f32) -> ();
+
+    #[method(name = "get_defaultSpriteDPI", args = 0)]
+    pub fn get_default_sprite_dpi(self) -> f32;
+
+    #[method(name = "set_defaultSpriteDPI", args = 1)]
+    pub fn set_default_sprite_dpi(self, value: f32) -> ();
+
+    #[method(name = "get_dynamicPixelsPerUnit", args = 0)]
+    pub fn get_dynamic_pixels_per_unit(self) -> f32;
+
+    #[method(name = "set_dynamicPixelsPerUnit", args = 1)]
+    pub fn set_dynamic_pixels_per_unit(self, value: f32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "Canvas_preWillRenderCanvases", args = 0)]
+    pub fn canvas_pre_will_render_canvases(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "Handle", args = 0)]
+    pub fn handle(self) -> ();
+
+    #[method(name = "HandleWorldCanvas", args = 0)]
+    pub fn handle_world_canvas(self) -> ();
+
+    #[method(name = "HandleConstantPixelSize", args = 0)]
+    pub fn handle_constant_pixel_size(self) -> ();
+
+    #[method(name = "HandleScaleWithScreenSize", args = 0)]
+    pub fn handle_scale_with_screen_size(self) -> ();
+
+    #[method(name = "HandleConstantPhysicalSize", args = 0)]
+    pub fn handle_constant_physical_size(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-canvasscaler")]
+impl CanvasScaler {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CanvasScaler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICanvasScalerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_ScreenMatchMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CanvasScaler_ScreenMatchMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CanvasScaler_ScreenMatchMode {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "CanvasScaler.ScreenMatchMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CanvasScaler_ScreenMatchMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CanvasScaler_ScreenMatchMode {
+    pub fn match_width_or_height() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn expand() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn shrink() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasscaler/CanvasScaler_ScaleMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CanvasScaler_ScaleMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CanvasScaler_ScaleMode {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "CanvasScaler.ScaleMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CanvasScaler_ScaleMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CanvasScaler_ScaleMode {
+    pub fn constant_pixel_size() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn scale_with_screen_size() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn constant_physical_size() -> Self {
+        Self { value: 2 }
+    }
+}

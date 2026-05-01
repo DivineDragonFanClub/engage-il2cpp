@@ -1,0 +1,80 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/customtransparentslayerpass/CustomTransparentsLayerPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+    name = "CustomTransparentsLayerPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct CustomTransparentsLayerPass {
+    #[rename(name = "m_FilteringSettings")]
+    pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+    #[rename(name = "m_ShaderTagId")]
+    pub m_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[rename(name = "m_ProfilerTag")]
+    pub m_profiler_tag: ::unity2::Il2CppString,
+    #[rename(name = "m_ProfilingSampler")]
+    pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "s_DrawObjectPassDataPropID")]
+    pub s_draw_object_pass_data_prop_id: i32,
+    #[rename(name = "m_DrawObjectPassData")]
+    pub m_draw_object_pass_data: crate::unity_engine::vector4::Vector4,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customtransparentslayerpass")]
+#[::unity2::methods]
+impl CustomTransparentsLayerPass {
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        profiler_tag: ::unity2::Il2CppString,
+        shader_tag: ::unity2::Il2CppString,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customtransparentslayerpass")]
+impl CustomTransparentsLayerPass {
+    pub fn new(
+        profiler_tag: ::unity2::Il2CppString,
+        shader_tag: ::unity2::Il2CppString,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomTransparentsLayerPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomTransparentsLayerPassMethods>::ctor(
+            this,
+            profiler_tag,
+            shader_tag,
+            evt,
+            render_queue_range,
+            layer_mask,
+        );
+        this
+    }
+}

@@ -1,0 +1,38 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::tm_pro::tmp_textelement_legacy::ITMP_TextElement_Legacy;
+use crate::tm_pro::tmp_textelement_legacy::TMP_TextElement_Legacy;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_glyph/TMP_Glyph.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_Glyph")]
+#[parent(crate::tm_pro::tmp_textelement_legacy::TMP_TextElement_Legacy)]
+pub struct TMP_Glyph {}
+
+#[cfg(feature = "tm_pro-tmp_glyph")]
+#[::unity2::methods]
+impl TMP_Glyph {
+    #[method(name = "Clone", args = 1)]
+    pub fn clone(
+        source: crate::tm_pro::tmp_glyph::TMP_Glyph,
+    ) -> crate::tm_pro::tmp_glyph::TMP_Glyph;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_glyph")]
+impl TMP_Glyph {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_Glyph),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_GlyphMethods>::ctor(this);
+        this
+    }
+}

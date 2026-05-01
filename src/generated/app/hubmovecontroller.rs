@@ -1,0 +1,85 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmovecontroller/HubMoveController.md")))]
+#[::unity2::class(namespace = "App", name = "HubMoveController")]
+#[parent(crate::system::object::Object)]
+pub struct HubMoveController {
+    #[rename(name = "m_unit")]
+    pub m_unit: crate::app::hubunitcontroller::HubUnitController,
+    #[rename(name = "m_State")]
+    pub m_state:
+        crate::system::collections::generic::list_1::List_1<crate::app::hubmovestate::HubMoveState>,
+    #[rename(name = "m_current")]
+    pub m_current: crate::app::hubmovestate::HubMoveState,
+    #[rename(name = "m_ActiveIndex")]
+    pub m_active_index: i32,
+}
+
+#[cfg(feature = "app-hubmovecontroller")]
+#[::unity2::methods]
+impl HubMoveController {
+    #[method(name = "get_IsPause", args = 0)]
+    pub fn get_is_pause(self) -> bool;
+
+    #[method(name = "set_IsPause", args = 1)]
+    pub fn set_is_pause(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        unit: crate::app::hubunitcontroller::HubUnitController,
+        move_data: crate::app::structdataarraylist_1::StructDataArrayList_1<
+            crate::app::hubmovedata::HubMoveData,
+        >,
+    ) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "Pause", args = 1)]
+    pub fn pause(self, force: bool) -> ();
+
+    #[method(name = "Resume", args = 0)]
+    pub fn resume(self) -> ();
+
+    #[method(name = "SelectState", args = 0)]
+    pub fn select_state(self) -> crate::app::hubmovestate::HubMoveState;
+
+    #[method(name = "TryGetPosition", args = 1)]
+    pub fn try_get_position(
+        self,
+        locator_name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "GetState", args = 1)]
+    pub fn get_state(
+        self,
+        data: crate::app::hubmovedata::HubMoveData,
+    ) -> crate::app::hubmovestate::HubMoveState;
+
+    #[method(name = "OnDrawGizmos", args = 0)]
+    pub fn on_draw_gizmos(self) -> ();
+}
+
+#[cfg(feature = "app-hubmovecontroller")]
+impl HubMoveController {
+    pub fn new(
+        unit: crate::app::hubunitcontroller::HubUnitController,
+        move_data: crate::app::structdataarraylist_1::StructDataArrayList_1<
+            crate::app::hubmovedata::HubMoveData,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMoveController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMoveControllerMethods>::ctor(this, unit, move_data);
+        this
+    }
+}

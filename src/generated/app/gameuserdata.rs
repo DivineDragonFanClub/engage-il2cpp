@@ -1,0 +1,955 @@
+
+use crate::app::bitfield32::BitField32;
+use crate::app::bitfield32::IBitField32;
+use crate::app::bitfieldcommon::BitFieldCommon;
+use crate::app::bitfieldcommon::IBitFieldCommon;
+use crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1;
+use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
+use crate::app::procdesc::IProcDesc;
+use crate::app::procdesc::ProcDesc;
+use crate::app::procdescuser::IProcDescUser;
+use crate::app::procdescuser::ProcDescUser;
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_StatusField.md")))]
+#[::unity2::class(namespace = "App", name = "GameUserData.StatusField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserdata :: GameUserData_Statuses >)]
+pub struct GameUserData_StatusField {}
+
+#[cfg(feature = "app-gameuserdata")]
+#[::unity2::methods]
+impl GameUserData_StatusField {
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::gameuserdata::GameUserData_Statuses) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gameuserdata")]
+impl GameUserData_StatusField {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserData_StatusField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserData_StatusFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Statuses.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GameUserData_Statuses {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GameUserData_Statuses {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameUserData.Statuses";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GameUserData_Statuses {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GameUserData_Statuses {
+    pub fn contents_mounted() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn finished_setup_map() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn casual() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn phoenix() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn encount_map() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn continued_map() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn fixed_grow() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn completed() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn temporary_saved() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn temporary_loaded() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn net_login_once() -> Self {
+        Self { value: 2048 }
+    }
+
+    pub fn restart_map() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn recollection_map() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn ignore_kizuna() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn evil_completed() -> Self {
+        Self { value: 32768 }
+    }
+
+    pub fn init_begin_of_map() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn init_end_of_map() -> Self {
+        Self { value: 13826 }
+    }
+
+    pub fn init_end_of_contents() -> Self {
+        Self { value: 1537 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_ProcDescSetSequence.md")))]
+#[::unity2::class(namespace = "App", name = "GameUserData.ProcDescSetSequence")]
+#[parent(crate::app::procdescuser::ProcDescUser)]
+pub struct GameUserData_ProcDescSetSequence {
+    #[rename(name = "m_Sequence")]
+    pub m_sequence: crate::app::gameuserdata::GameUserData_Sequences,
+}
+
+#[cfg(feature = "app-gameuserdata")]
+#[::unity2::methods]
+impl GameUserData_ProcDescSetSequence {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, sequence: crate::app::gameuserdata::GameUserData_Sequences) -> ();
+
+    #[method(name = "Execute", args = 1)]
+    pub fn execute(
+        self,
+        inst: crate::app::procinst::ProcInst,
+    ) -> crate::app::procdesc::ProcDesc_Result;
+}
+
+#[cfg(feature = "app-gameuserdata")]
+impl GameUserData_ProcDescSetSequence {
+    pub fn new(sequence: crate::app::gameuserdata::GameUserData_Sequences) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserData_ProcDescSetSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserData_ProcDescSetSequenceMethods>::ctor(this, sequence);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_MapModes.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GameUserData_MapModes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GameUserData_MapModes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameUserData.MapModes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GameUserData_MapModes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GameUserData_MapModes {
+    pub fn story() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn encount() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn challenge() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn relay() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn versus() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn recollection() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Sequences.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GameUserData_Sequences {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GameUserData_Sequences {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameUserData.Sequences";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GameUserData_Sequences {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GameUserData_Sequences {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn chapter_save() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn sortie() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn map() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn hub() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn kizuna() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn gmap() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn chapter() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 8 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData.md")))]
+#[::unity2::class(namespace = "App", name = "GameUserData")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserdata :: GameUserData >)]
+pub struct GameUserData {
+    #[static_field]
+    #[rename(name = "MaxGold")]
+    pub max_gold: i32,
+    #[static_field]
+    #[rename(name = "MaxRefine")]
+    pub max_refine: i32,
+    #[static_field]
+    #[rename(name = "MaxPieceOfBond")]
+    pub max_piece_of_bond: i32,
+    #[static_field]
+    #[rename(name = "MaxVariable")]
+    pub max_variable: i32,
+    #[rename(name = "m_Status")]
+    pub m_status: crate::app::gameuserdata::GameUserData_StatusField,
+    #[rename(name = "m_Sequence")]
+    pub m_sequence: crate::app::gameuserdata::GameUserData_Sequences,
+    #[rename(name = "m_GameMode")]
+    pub m_game_mode: crate::app::gamemode::GameMode,
+    #[rename(name = "m_Difficulty")]
+    pub m_difficulty: crate::app::difficulty::Difficulty,
+    #[rename(name = "m_Chapter")]
+    pub m_chapter: crate::app::chapterdata::ChapterData,
+    #[rename(name = "m_GmapSpot")]
+    pub m_gmap_spot: ::unity2::Il2CppString,
+    #[rename(name = "m_ContentsIndex")]
+    pub m_contents_index: i32,
+    #[rename(name = "m_Variable")]
+    pub m_variable: crate::app::gamevariable::GameVariable,
+    #[rename(name = "m_Gold")]
+    pub m_gold: i32,
+    #[rename(name = "m_Progress")]
+    pub m_progress: i32,
+    #[rename(name = "m_TrainingCount")]
+    pub m_training_count: i32,
+    #[rename(name = "m_ArenaCount")]
+    pub m_arena_count: i32,
+    #[rename(name = "m_UnitInfoMode")]
+    pub m_unit_info_mode: crate::app::unitinfo::UnitInfo_Mode,
+    #[rename(name = "m_PieceOfBond")]
+    pub m_piece_of_bond: i32,
+    #[rename(name = "m_TotalPieceOfBond")]
+    pub m_total_piece_of_bond: i32,
+    #[rename(name = "m_GmapData")]
+    pub m_gmap_data: crate::app::gameusergmapdata::GameUserGmapData,
+    #[rename(name = "m_HubData")]
+    pub m_hub_data: crate::app::gameuserhubdata::GameUserHubData,
+    #[rename(name = "m_ChapterRecord")]
+    pub m_chapter_record: crate::app::chapterrecord::ChapterRecord,
+    #[rename(name = "m_MascotName")]
+    pub m_mascot_name: ::unity2::Il2CppString,
+    #[rename(name = "m_MapEditData")]
+    pub m_map_edit_data: crate::app::mapeditdata::MapEditData,
+    #[rename(name = "m_RelayData")]
+    pub m_relay_data: crate::app::relayuserdata::RelayUserData,
+    #[rename(name = "m_Identifier")]
+    pub m_identifier: u64,
+    #[rename(name = "m_VersusData")]
+    pub m_versus_data: crate::app::versususerdata::VersusUserData,
+    #[rename(name = "m_IsShowNetTerms")]
+    pub m_is_show_net_terms: bool,
+    #[rename(name = "m_IsShowNetHowToReport")]
+    pub m_is_show_net_how_to_report: bool,
+    #[rename(name = "m_EvilDifficulty")]
+    pub m_evil_difficulty: crate::app::difficulty::Difficulty,
+    #[static_field]
+    #[rename(name = "Flag_RefineIron")]
+    pub flag_refine_iron: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "Flag_RefineSteel")]
+    pub flag_refine_steel: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "Flag_RefineSilver")]
+    pub flag_refine_silver: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "ChallengeRouteFlag")]
+    pub challenge_route_flag: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "ChallengeSeedFlag")]
+    pub challenge_seed_flag: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "ChallengeLevelFlag")]
+    pub challenge_level_flag: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "ChallengeBestLevelFlag")]
+    pub challenge_best_level_flag: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "ChallengeOffsetFlag")]
+    pub challenge_offset_flag: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "ChallengeTurnFlag")]
+    pub challenge_turn_flag: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "KeyInvestmentFilene")]
+    pub key_investment_filene: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "KeyInvestmentBrodia")]
+    pub key_investment_brodia: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "KeyInvestmentIrcion")]
+    pub key_investment_ircion: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "KeyInvestmentSolum")]
+    pub key_investment_solum: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "LOCAL_FLAG")]
+    pub local_flag: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "KeyFieldBGM_Changeable")]
+    pub key_field_bgm_changeable: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "CompletedLongEndingFlag")]
+    pub completed_long_ending_flag: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "CompletedEvilFlag")]
+    pub completed_evil_flag: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "Flag_RewindEnable")]
+    pub flag_rewind_enable: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "Flag_RelianceAPlusPermit")]
+    pub flag_reliance_a_plus_permit: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "Flag_GetPromiseRing")]
+    pub flag_get_promise_ring: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "Flag_CC_Enchant")]
+    pub flag_cc_enchant: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "Flag_CC_Gunner")]
+    pub flag_cc_gunner: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-gameuserdata")]
+#[::unity2::methods]
+impl GameUserData {
+    #[method(name = "get_Status", args = 0)]
+    pub fn get_status(self) -> crate::app::gameuserdata::GameUserData_StatusField;
+
+    #[method(name = "get_Sequence", args = 0)]
+    pub fn get_sequence(self) -> crate::app::gameuserdata::GameUserData_Sequences;
+
+    #[method(name = "set_Sequence", args = 1)]
+    pub fn set_sequence(self, value: crate::app::gameuserdata::GameUserData_Sequences) -> ();
+
+    #[method(name = "get_Variable", args = 0)]
+    pub fn get_variable(self) -> crate::app::gamevariable::GameVariable;
+
+    #[method(name = "get_Gold", args = 0)]
+    pub fn get_gold(self) -> i32;
+
+    #[method(name = "set_Gold", args = 1)]
+    pub fn set_gold(self, value: i32) -> ();
+
+    #[method(name = "get_Chapter", args = 0)]
+    pub fn get_chapter(self) -> crate::app::chapterdata::ChapterData;
+
+    #[method(name = "get_ChapterRecord", args = 0)]
+    pub fn get_chapter_record(self) -> crate::app::chapterrecord::ChapterRecord;
+
+    #[method(name = "get_GmapSpot", args = 0)]
+    pub fn get_gmap_spot(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_GmapSpot", args = 1)]
+    pub fn set_gmap_spot(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_GmapData", args = 0)]
+    pub fn get_gmap_data(self) -> crate::app::gameusergmapdata::GameUserGmapData;
+
+    #[method(name = "get_HubData", args = 0)]
+    pub fn get_hub_data(self) -> crate::app::gameuserhubdata::GameUserHubData;
+
+    #[method(name = "get_ContentsIndex", args = 0)]
+    pub fn get_contents_index(self) -> i32;
+
+    #[method(name = "set_ContentsIndex", args = 1)]
+    pub fn set_contents_index(self, value: i32) -> ();
+
+    #[method(name = "get_Progress", args = 0)]
+    pub fn get_progress(self) -> i32;
+
+    #[method(name = "set_Progress", args = 1)]
+    pub fn set_progress(self, value: i32) -> ();
+
+    #[method(name = "get_TrainingCount", args = 0)]
+    pub fn get_training_count(self) -> i32;
+
+    #[method(name = "set_TrainingCount", args = 1)]
+    pub fn set_training_count(self, value: i32) -> ();
+
+    #[method(name = "get_ArenaCount", args = 0)]
+    pub fn get_arena_count(self) -> i32;
+
+    #[method(name = "set_ArenaCount", args = 1)]
+    pub fn set_arena_count(self, value: i32) -> ();
+
+    #[method(name = "get_UnitInfoMode", args = 0)]
+    pub fn get_unit_info_mode(self) -> crate::app::unitinfo::UnitInfo_Mode;
+
+    #[method(name = "set_UnitInfoMode", args = 1)]
+    pub fn set_unit_info_mode(self, value: crate::app::unitinfo::UnitInfo_Mode) -> ();
+
+    #[method(name = "get_RefineIron", args = 0)]
+    pub fn get_refine_iron(self) -> i32;
+
+    #[method(name = "set_RefineIron", args = 1)]
+    pub fn set_refine_iron(self, value: i32) -> ();
+
+    #[method(name = "get_RefineSteel", args = 0)]
+    pub fn get_refine_steel(self) -> i32;
+
+    #[method(name = "set_RefineSteel", args = 1)]
+    pub fn set_refine_steel(self, value: i32) -> ();
+
+    #[method(name = "get_RefineSilver", args = 0)]
+    pub fn get_refine_silver(self) -> i32;
+
+    #[method(name = "set_RefineSilver", args = 1)]
+    pub fn set_refine_silver(self, value: i32) -> ();
+
+    #[method(name = "get_PieceOfBond", args = 0)]
+    pub fn get_piece_of_bond(self) -> i32;
+
+    #[method(name = "set_PieceOfBond", args = 1)]
+    pub fn set_piece_of_bond(self, value: i32) -> ();
+
+    #[method(name = "get_TotalPieceOfBond", args = 0)]
+    pub fn get_total_piece_of_bond(self) -> i32;
+
+    #[method(name = "set_TotalPieceOfBond", args = 1)]
+    pub fn set_total_piece_of_bond(self, value: i32) -> ();
+
+    #[method(name = "set_MascotName", args = 1)]
+    pub fn set_mascot_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_MascotName", args = 0)]
+    pub fn get_mascot_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_MapEditData", args = 0)]
+    pub fn get_map_edit_data(self) -> crate::app::mapeditdata::MapEditData;
+
+    #[method(name = "get_RelayData", args = 0)]
+    pub fn get_relay_data(self) -> crate::app::relayuserdata::RelayUserData;
+
+    #[method(name = "get_VersusData", args = 0)]
+    pub fn get_versus_data(self) -> crate::app::versususerdata::VersusUserData;
+
+    #[method(name = "get_Identifier", args = 0)]
+    pub fn get_identifier(self) -> u64;
+
+    #[method(name = "get_MinChallengeLevel", args = 0)]
+    pub fn get_min_challenge_level() -> i32;
+
+    #[method(name = "get_MaxChallengeLevel", args = 0)]
+    pub fn get_max_challenge_level() -> i32;
+
+    #[method(name = "get_ChallengeRoute", args = 0)]
+    pub fn get_challenge_route(self) -> i32;
+
+    #[method(name = "set_ChallengeRoute", args = 1)]
+    pub fn set_challenge_route(self, value: i32) -> ();
+
+    #[method(name = "get_ChallengeLevel", args = 0)]
+    pub fn get_challenge_level(self) -> i32;
+
+    #[method(name = "set_ChallengeLevel", args = 1)]
+    pub fn set_challenge_level(self, value: i32) -> ();
+
+    #[method(name = "get_ChallengeBestLevel", args = 0)]
+    pub fn get_challenge_best_level(self) -> i32;
+
+    #[method(name = "set_ChallengeBestLevel", args = 1)]
+    pub fn set_challenge_best_level(self, value: i32) -> ();
+
+    #[method(name = "get_ChallengeSeed", args = 0)]
+    pub fn get_challenge_seed(self) -> i32;
+
+    #[method(name = "set_ChallengeSeed", args = 1)]
+    pub fn set_challenge_seed(self, value: i32) -> ();
+
+    #[method(name = "get_ChallengeOffset", args = 0)]
+    pub fn get_challenge_offset(self) -> i32;
+
+    #[method(name = "set_ChallengeOffset", args = 1)]
+    pub fn set_challenge_offset(self, value: i32) -> ();
+
+    #[method(name = "get_ChallengeTurn", args = 0)]
+    pub fn get_challenge_turn(self) -> i32;
+
+    #[method(name = "set_ChallengeTurn", args = 1)]
+    pub fn set_challenge_turn(self, value: i32) -> ();
+
+    #[method(name = "SetChallenge", args = 1)]
+    pub fn set_challenge(self, data: crate::app::challengedata::ChallengeData) -> ();
+
+    #[method(name = "ResetChallenge", args = 0)]
+    pub fn reset_challenge(self) -> ();
+
+    #[method(name = "ResetChallengeSortieCount", args = 0)]
+    pub fn reset_challenge_sortie_count(self) -> ();
+
+    #[method(name = "GetChallengeData", args = 0)]
+    pub fn get_challenge_data(self) -> crate::app::challengedata::ChallengeData;
+
+    #[method(name = "GetChallengeRandom", args = 0)]
+    pub fn get_challenge_random(self) -> crate::app::random_2::Random_2;
+
+    #[method(name = "GetChallengeChapters", args = 0)]
+    pub fn get_challenge_chapters(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::chapterdata::ChapterData>;
+
+    #[method(name = "GetChallengeChapter", args = 1)]
+    pub fn get_challenge_chapter(self, index: i32) -> crate::app::chapterdata::ChapterData;
+
+    #[method(name = "GetChallengeStage", args = 0)]
+    pub fn get_challenge_stage(self) -> i32;
+
+    #[method(name = "GetChallengeStage", args = 1)]
+    pub fn get_challenge_stage_2(self, chapter: crate::app::chapterdata::ChapterData) -> i32;
+
+    #[method(name = "GetChallengeRewardList", args = 0)]
+    pub fn get_challenge_reward_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>;
+
+    #[method(name = "get_InvestmentFilene", args = 0)]
+    pub fn get_investment_filene(self) -> i32;
+
+    #[method(name = "set_InvestmentFilene", args = 1)]
+    pub fn set_investment_filene(self, value: i32) -> ();
+
+    #[method(name = "get_InvestmentBrodia", args = 0)]
+    pub fn get_investment_brodia(self) -> i32;
+
+    #[method(name = "set_InvestmentBrodia", args = 1)]
+    pub fn set_investment_brodia(self, value: i32) -> ();
+
+    #[method(name = "get_InvestmentIrcion", args = 0)]
+    pub fn get_investment_ircion(self) -> i32;
+
+    #[method(name = "set_InvestmentIrcion", args = 1)]
+    pub fn set_investment_ircion(self, value: i32) -> ();
+
+    #[method(name = "get_InvestmentSolum", args = 0)]
+    pub fn get_investment_solum(self) -> i32;
+
+    #[method(name = "set_InvestmentSolum", args = 1)]
+    pub fn set_investment_solum(self, value: i32) -> ();
+
+    #[method(name = "get_FieldBGMPlayer", args = 0)]
+    pub fn get_field_bgm_player(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_FieldBGMPlayer", args = 1)]
+    pub fn set_field_bgm_player(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_FieldBGMEnemy", args = 0)]
+    pub fn get_field_bgm_enemy(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_FieldBGMEnemy", args = 1)]
+    pub fn set_field_bgm_enemy(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "CanChangeFieldBGM", args = 0)]
+    pub fn can_change_field_bgm(self) -> bool;
+
+    #[method(name = "ResetForGame", args = 0)]
+    pub fn reset_for_game(self) -> ();
+
+    #[method(name = "CreateGlobalFlags", args = 0)]
+    pub fn create_global_flags(self) -> ();
+
+    #[method(name = "ResetForBeginOfMap", args = 0)]
+    pub fn reset_for_begin_of_map(self) -> ();
+
+    #[method(name = "ResetForEndOfMap", args = 0)]
+    pub fn reset_for_end_of_map(self) -> ();
+
+    #[method(name = "SetupForChapter", args = 1)]
+    pub fn setup_for_chapter(self, is_resume: bool) -> ();
+
+    #[method(name = "CleanupForChapter", args = 0)]
+    pub fn cleanup_for_chapter(self) -> ();
+
+    #[method(name = "GetMessFileName", args = 0)]
+    pub fn get_mess_file_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "SetChapter", args = 1)]
+    pub fn set_chapter(self, chapter: crate::app::chapterdata::ChapterData) -> ();
+
+    #[method(name = "SetGmapSpot", args = 1)]
+    pub fn set_gmap_spot_2(self, chapter: crate::app::chapterdata::ChapterData) -> ();
+
+    #[method(name = "ResetLastScenarioChapter", args = 0)]
+    pub fn reset_last_scenario_chapter(self) -> ();
+
+    #[method(name = "GetRecordPid", args = 1)]
+    pub fn get_record_pid(unit: crate::app::unit::Unit) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetRecordJid", args = 1)]
+    pub fn get_record_jid(unit: crate::app::unit::Unit) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetRecordGid", args = 1)]
+    pub fn get_record_gid(unit: crate::app::unit::Unit) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetMapMode", args = 0)]
+    pub fn get_map_mode(self) -> crate::app::gameuserdata::GameUserData_MapModes;
+
+    #[method(name = "CompletedChapter", args = 0)]
+    pub fn completed_chapter(self) -> ();
+
+    #[method(name = "CanUpdateHub", args = 1)]
+    pub fn can_update_hub(self, mode: crate::app::gameuserdata::GameUserData_MapModes) -> bool;
+
+    #[method(name = "TryUpdateHub", args = 1)]
+    pub fn try_update_hub(self, mode: crate::app::gameuserdata::GameUserData_MapModes) -> ();
+
+    #[method(name = "AddEncountCounter", args = 1)]
+    pub fn add_encount_counter(
+        self,
+        r#type: crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
+    ) -> ();
+
+    #[method(name = "TryAddEncountCounter", args = 1)]
+    pub fn try_add_encount_counter(
+        self,
+        r#type: crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
+    ) -> ();
+
+    #[method(name = "GetLastScenarioChapter", args = 0)]
+    pub fn get_last_scenario_chapter(self) -> crate::app::chapterdata::ChapterData;
+
+    #[method(name = "GetNextScenarioChapter", args = 0)]
+    pub fn get_next_scenario_chapter(self) -> crate::app::chapterdata::ChapterData;
+
+    #[method(name = "GetNextChapter", args = 0)]
+    pub fn get_next_chapter(self) -> crate::app::chapterdata::ChapterData;
+
+    #[method(name = "GetGameMode", args = 0)]
+    pub fn get_game_mode(self) -> crate::app::gamemode::GameMode;
+
+    #[method(name = "SetGameMode", args = 1)]
+    pub fn set_game_mode(self, game_mode: crate::app::gamemode::GameMode) -> ();
+
+    #[method(name = "GetDifficulty", args = 1)]
+    pub fn get_difficulty(self, is_dynamic: bool) -> crate::app::difficulty::Difficulty;
+
+    #[method(name = "SetDifficulty", args = 1)]
+    pub fn set_difficulty(self, difficulty: crate::app::difficulty::Difficulty) -> ();
+
+    #[method(name = "GetEvilDifficulty", args = 0)]
+    pub fn get_evil_difficulty(self) -> crate::app::difficulty::Difficulty;
+
+    #[method(name = "SetEvilDifficulty", args = 1)]
+    pub fn set_evil_difficulty(self, difficulty: crate::app::difficulty::Difficulty) -> ();
+
+    #[method(name = "GetGrowMode", args = 0)]
+    pub fn get_grow_mode(self) -> crate::app::growmode::GrowMode;
+
+    #[method(name = "SetGrowMode", args = 1)]
+    pub fn set_grow_mode(self, mode: crate::app::growmode::GrowMode) -> ();
+
+    #[method(name = "CommitForGame", args = 0)]
+    pub fn commit_for_game(self) -> ();
+
+    #[method(name = "SetCompleted", args = 1)]
+    pub fn set_completed(self, cid: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "SetCompleted", args = 1)]
+    pub fn set_completed_2(self, chapter: crate::app::chapterdata::ChapterData) -> ();
+
+    #[method(name = "SetCompletedGame", args = 0)]
+    pub fn set_completed_game(self) -> ();
+
+    #[method(name = "ClearCompletedGame", args = 0)]
+    pub fn clear_completed_game(self) -> ();
+
+    #[method(name = "IsCompleted", args = 1)]
+    pub fn is_completed(self, cid: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "IsCompleted", args = 1)]
+    pub fn is_completed_2(self, chapter: crate::app::chapterdata::ChapterData) -> bool;
+
+    #[method(name = "IsCompletedGame", args = 0)]
+    pub fn is_completed_game(self) -> bool;
+
+    #[method(name = "IsAllowEarnings", args = 0)]
+    pub fn is_allow_earnings(self) -> bool;
+
+    #[method(name = "IsOpenSkillMenu", args = 0)]
+    pub fn is_open_skill_menu(self) -> bool;
+
+    #[method(name = "IsEncountMap", args = 0)]
+    pub fn is_encount_map(self) -> bool;
+
+    #[method(name = "IsTrainingMap", args = 0)]
+    pub fn is_training_map(self) -> bool;
+
+    #[method(name = "IsChallengeMap", args = 0)]
+    pub fn is_challenge_map(self) -> bool;
+
+    #[method(name = "IsNextContinueMap", args = 0)]
+    pub fn is_next_continue_map(self) -> bool;
+
+    #[method(name = "IsContinuedMap", args = 0)]
+    pub fn is_continued_map(self) -> bool;
+
+    #[method(name = "IsRestartMap", args = 0)]
+    pub fn is_restart_map(self) -> bool;
+
+    #[method(name = "IsRecollectionMap", args = 0)]
+    pub fn is_recollection_map(self) -> bool;
+
+    #[method(name = "IsEvilMap", args = 0)]
+    pub fn is_evil_map(self) -> bool;
+
+    #[method(name = "IsOppositionMap", args = 0)]
+    pub fn is_opposition_map(self) -> bool;
+
+    #[method(name = "IsTemporary", args = 0)]
+    pub fn is_temporary(self) -> bool;
+
+    #[method(name = "ExistsEncountMob", args = 1)]
+    pub fn exists_encount_mob(chapter: crate::app::chapterdata::ChapterData) -> bool;
+
+    #[method(name = "CompleteEncountMap", args = 0)]
+    pub fn complete_encount_map(self) -> ();
+
+    #[method(name = "GetChallengeDifficulty", args = 1)]
+    pub fn get_challenge_difficulty(level: i32) -> crate::app::difficulty::Difficulty;
+
+    #[method(name = "get_IsNetLoginOnce", args = 0)]
+    pub fn get_is_net_login_once(self) -> bool;
+
+    #[method(name = "set_IsNetLoginOnce", args = 1)]
+    pub fn set_is_net_login_once(self, value: bool) -> ();
+
+    #[method(name = "get_IsShowNetTerms", args = 0)]
+    pub fn get_is_show_net_terms(self) -> bool;
+
+    #[method(name = "set_IsShowNetTerms", args = 1)]
+    pub fn set_is_show_net_terms(self, value: bool) -> ();
+
+    #[method(name = "get_IsShowNetHowToReport", args = 0)]
+    pub fn get_is_show_net_how_to_report(self) -> bool;
+
+    #[method(name = "set_IsShowNetHowToReport", args = 1)]
+    pub fn set_is_show_net_how_to_report(self, value: bool) -> ();
+
+    #[method(name = "get_IsRewindEnable", args = 0)]
+    pub fn get_is_rewind_enable(self) -> bool;
+
+    #[method(name = "set_IsRewindEnable", args = 1)]
+    pub fn set_is_rewind_enable(self, value: bool) -> ();
+
+    #[method(name = "get_IsRelianceAPlusPermit", args = 0)]
+    pub fn get_is_reliance_a_plus_permit(self) -> bool;
+
+    #[method(name = "set_IsRelianceAPlusPermit", args = 1)]
+    pub fn set_is_reliance_a_plus_permit(self, value: bool) -> ();
+
+    #[method(name = "get_IsGetPromiseRing", args = 0)]
+    pub fn get_is_get_promise_ring(self) -> bool;
+
+    #[method(name = "set_IsGetPromiseRing", args = 1)]
+    pub fn set_is_get_promise_ring(self, value: bool) -> ();
+
+    #[method(name = "get_CanCCEnchant", args = 0)]
+    pub fn get_can_cc_enchant(self) -> bool;
+
+    #[method(name = "set_CanCCEnchant", args = 1)]
+    pub fn set_can_cc_enchant(self, value: bool) -> ();
+
+    #[method(name = "get_CanCCGunner", args = 0)]
+    pub fn get_can_cc_gunner(self) -> bool;
+
+    #[method(name = "set_CanCCGunner", args = 1)]
+    pub fn set_can_cc_gunner(self, value: bool) -> ();
+
+    #[method(name = "get_Version", args = 0)]
+    pub fn get_version(self) -> i32;
+
+    #[method(name = "OnSerialize", args = 1)]
+    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "OnDeserialize", args = 2)]
+    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
+
+    #[method(name = "SerializeForMapHistoryReplay", args = 1)]
+    pub fn serialize_for_map_history_replay(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "DeserializeForMapHistoryReplay", args = 1)]
+    pub fn deserialize_for_map_history_replay(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "SerializeForOnline", args = 1)]
+    pub fn serialize_for_online(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "DeserializeForOnline", args = 1)]
+    pub fn deserialize_for_online(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "PSetSequence", args = 1)]
+    pub fn p_set_sequence(
+        sequence: crate::app::gameuserdata::GameUserData_Sequences,
+    ) -> crate::app::procdesc::ProcDesc;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-gameuserdata")]
+impl GameUserData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserDataMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,102 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::baseinputmodule::BaseInputModule;
+use crate::unity_engine::event_systems::baseinputmodule::IBaseInputModule;
+use crate::unity_engine::event_systems::pointerinputmodule::IPointerInputModule;
+use crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/touchinputmodule/TouchInputModule.md")))]
+#[::unity2::class(namespace = "UnityEngine.EventSystems", name = "TouchInputModule")]
+#[parent(crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule)]
+pub struct TouchInputModule {
+    #[rename(name = "m_LastMousePosition")]
+    pub m_last_mouse_position: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_MousePosition")]
+    pub m_mouse_position: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_InputPointerEvent")]
+    pub m_input_pointer_event:
+        crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    #[rename(name = "m_ForceModuleActive")]
+    pub m_force_module_active: bool,
+}
+
+#[cfg(feature = "unity_engine-event_systems-touchinputmodule")]
+#[::unity2::methods]
+impl TouchInputModule {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_allowActivationOnStandalone", args = 0)]
+    pub fn get_allow_activation_on_standalone(self) -> bool;
+
+    #[method(name = "set_allowActivationOnStandalone", args = 1)]
+    pub fn set_allow_activation_on_standalone(self, value: bool) -> ();
+
+    #[method(name = "get_forceModuleActive", args = 0)]
+    pub fn get_force_module_active(self) -> bool;
+
+    #[method(name = "set_forceModuleActive", args = 1)]
+    pub fn set_force_module_active(self, value: bool) -> ();
+
+    #[method(name = "UpdateModule", args = 0)]
+    pub fn update_module(self) -> ();
+
+    #[method(name = "IsModuleSupported", args = 0)]
+    pub fn is_module_supported(self) -> bool;
+
+    #[method(name = "ShouldActivateModule", args = 0)]
+    pub fn should_activate_module(self) -> bool;
+
+    #[method(name = "UseFakeInput", args = 0)]
+    pub fn use_fake_input(self) -> bool;
+
+    #[method(name = "Process", args = 0)]
+    pub fn process(self) -> ();
+
+    #[method(name = "FakeTouches", args = 0)]
+    pub fn fake_touches(self) -> ();
+
+    #[method(name = "ProcessTouchEvents", args = 0)]
+    pub fn process_touch_events(self) -> ();
+
+    #[method(name = "ProcessTouchPress", args = 3)]
+    pub fn process_touch_press(
+        self,
+        pointer_event: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        pressed: bool,
+        released: bool,
+    ) -> ();
+
+    #[method(name = "DeactivateModule", args = 0)]
+    pub fn deactivate_module(self) -> ();
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "unity_engine-event_systems-touchinputmodule")]
+impl TouchInputModule {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TouchInputModule),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITouchInputModuleMethods>::ctor(this);
+        this
+    }
+}

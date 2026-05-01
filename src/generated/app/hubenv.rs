@@ -1,0 +1,129 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubenv/HubEnv.md")))]
+#[::unity2::class(namespace = "App", name = "HubEnv")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct HubEnv {
+    #[rename(name = "m_EnableEditMode")]
+    pub m_enable_edit_mode: bool,
+    #[rename(name = "m_editTimezoneType")]
+    pub m_edit_timezone_type: crate::app::hubutil::HubUtil_TimezoneType,
+    #[rename(name = "m_EnableMorning")]
+    pub m_enable_morning: bool,
+    #[rename(name = "m_MorningAmbientSkyColor")]
+    pub m_morning_ambient_sky_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_MorningAmbientEquatorColor")]
+    pub m_morning_ambient_equator_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_MorningAmbientGroundColor")]
+    pub m_morning_ambient_ground_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_MorningFogColor")]
+    pub m_morning_fog_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_MorningFogStart")]
+    pub m_morning_fog_start: f32,
+    #[rename(name = "m_MorningFogEnd")]
+    pub m_morning_fog_end: f32,
+    #[rename(name = "m_EnableDay")]
+    pub m_enable_day: bool,
+    #[rename(name = "m_DayAmbientSkyColor")]
+    pub m_day_ambient_sky_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_DayAmbientEquatorColor")]
+    pub m_day_ambient_equator_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_DayAmbientGroundColor")]
+    pub m_day_ambient_ground_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_DayFogColor")]
+    pub m_day_fog_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_DayFogStart")]
+    pub m_day_fog_start: f32,
+    #[rename(name = "m_DayFogEnd")]
+    pub m_day_fog_end: f32,
+    #[rename(name = "m_EnableEvening")]
+    pub m_enable_evening: bool,
+    #[rename(name = "m_EveningAmbientSkyColor")]
+    pub m_evening_ambient_sky_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_EveningAmbientEquatorColor")]
+    pub m_evening_ambient_equator_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_EveningAmbientGroundColor")]
+    pub m_evening_ambient_ground_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_EveningFogColor")]
+    pub m_evening_fog_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_EveningFogStart")]
+    pub m_evening_fog_start: f32,
+    #[rename(name = "m_EveningFogEnd")]
+    pub m_evening_fog_end: f32,
+    #[rename(name = "m_EnableNight")]
+    pub m_enable_night: bool,
+    #[rename(name = "m_NightAmbientSkyColor")]
+    pub m_night_ambient_sky_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_NightAmbientEquatorColor")]
+    pub m_night_ambient_equator_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_NightAmbientGroundColor")]
+    pub m_night_ambient_ground_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_NightFogColor")]
+    pub m_night_fog_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_NightFogStart")]
+    pub m_night_fog_start: f32,
+    #[rename(name = "m_NightFogEnd")]
+    pub m_night_fog_end: f32,
+    #[rename(name = "baseTimezoneName")]
+    pub base_timezone_name: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "textureNames")]
+    pub texture_names: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "resourceHandles")]
+    pub resource_handles: crate::system::collections::generic::list_1::List_1<
+        crate::app::resourcehandle_2::ResourceHandle_2,
+    >,
+    #[rename(name = "m_lightmapData")]
+    pub m_lightmap_data: ::unity2::Array<crate::unity_engine::lightmapdata::LightmapData>,
+}
+
+#[cfg(feature = "app-hubenv")]
+#[::unity2::methods]
+impl HubEnv {
+    #[method(name = "Load", args = 2)]
+    pub fn load(
+        self,
+        scene_name: ::unity2::Il2CppString,
+        timezone_type: crate::app::hubutil::HubUtil_TimezoneType,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "Apply", args = 1)]
+    pub fn apply(self, timezone_type: crate::app::hubutil::HubUtil_TimezoneType) -> ();
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading(self) -> bool;
+
+    #[method(name = "ClearResources", args = 0)]
+    pub fn clear_resources(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubenv")]
+impl HubEnv {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubEnv),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubEnvMethods>::ctor(this);
+        this
+    }
+}

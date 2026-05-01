@@ -1,0 +1,62 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemlistdialogitemcontent/ItemListDialogItemContent.md")))]
+#[::unity2::class(namespace = "App", name = "ItemListDialogItemContent")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct ItemListDialogItemContent {
+    #[rename(name = "m_IconImage")]
+    pub m_icon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_NameText")]
+    pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_CountObject")]
+    pub m_count_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_CountText")]
+    pub m_count_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_CountGText")]
+    pub m_count_g_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-itemlistdialogitemcontent")]
+#[::unity2::methods]
+impl ItemListDialogItemContent {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Build", args = 4)]
+    pub fn build(
+        self,
+        sprite: crate::unity_engine::sprite::Sprite,
+        name: ::unity2::Il2CppString,
+        num: i32,
+        enabled_num: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-itemlistdialogitemcontent")]
+impl ItemListDialogItemContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemListDialogItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemListDialogItemContentMethods>::ctor(this);
+        this
+    }
+}

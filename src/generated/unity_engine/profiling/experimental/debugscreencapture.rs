@@ -1,0 +1,45 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/profiling/experimental/debugscreencapture/DebugScreenCapture.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DebugScreenCapture {}
+
+impl ::unity2::ClassIdentity for DebugScreenCapture {
+    const NAMESPACE: &'static str = "UnityEngine.Profiling.Experimental";
+
+    const NAME: &'static str = "DebugScreenCapture";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DebugScreenCapture {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-profiling-experimental-debugscreencapture")]
+#[::unity2::methods(value)]
+impl DebugScreenCapture {
+    #[method(name = "set_imageFormat", args = 1)]
+    pub fn set_image_format(self, value: crate::unity_engine::textureformat::TextureFormat) -> ();
+
+    #[method(name = "set_width", args = 1)]
+    pub fn set_width(self, value: i32) -> ();
+
+    #[method(name = "set_height", args = 1)]
+    pub fn set_height(self, value: i32) -> ();
+}

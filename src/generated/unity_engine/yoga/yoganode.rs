@@ -1,0 +1,36 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/yoga/yoganode/YogaNode.md")))]
+#[::unity2::class(namespace = "UnityEngine.Yoga", name = "YogaNode")]
+#[parent(crate::system::object::Object)]
+pub struct YogaNode {
+    #[rename(name = "_ygNode")]
+    pub yg_node: ::unity2::IntPtr,
+    #[rename(name = "_measureFunction")]
+    pub measure_function: crate::unity_engine::yoga::measurefunction::MeasureFunction,
+    #[rename(name = "_baselineFunction")]
+    pub baseline_function: crate::unity_engine::yoga::baselinefunction::BaselineFunction,
+}
+
+#[cfg(feature = "unity_engine-yoga-yoganode")]
+#[::unity2::methods]
+impl YogaNode {
+    #[method(name = "MeasureInternal", args = 5)]
+    pub fn measure_internal(
+        node: crate::unity_engine::yoga::yoganode::YogaNode,
+        width: f32,
+        width_mode: crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode,
+        height: f32,
+        height_mode: crate::unity_engine::yoga::yogameasuremode::YogaMeasureMode,
+    ) -> crate::unity_engine::yoga::yogasize::YogaSize;
+
+    #[method(name = "BaselineInternal", args = 3)]
+    pub fn baseline_internal(
+        node: crate::unity_engine::yoga::yoganode::YogaNode,
+        width: f32,
+        height: f32,
+    ) -> f32;
+}

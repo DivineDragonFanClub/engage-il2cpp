@@ -1,0 +1,46 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/refidobject/RefIdObject.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter", name = "RefIdObject")]
+#[parent(crate::system::object::Object)]
+pub struct RefIdObject {
+    #[static_field]
+    #[rename(name = "s_RefIDCounter")]
+    pub s_ref_id_counter: i32,
+    #[rename(name = "m_RefID")]
+    pub m_ref_id: i32,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-refidobject")]
+#[::unity2::methods]
+impl RefIdObject {
+    #[method(name = "get_ReferenceID", args = 0)]
+    pub fn get_reference_id(self) -> i32;
+
+    #[method(name = "FormatTypeString", args = 1)]
+    pub fn format_type_string(self, type_string: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-refidobject")]
+impl RefIdObject {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefIdObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefIdObjectMethods>::ctor(this);
+        this
+    }
+}

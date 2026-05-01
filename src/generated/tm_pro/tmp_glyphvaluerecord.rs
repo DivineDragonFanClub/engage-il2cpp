@@ -1,0 +1,86 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_glyphvaluerecord/TMP_GlyphValueRecord.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TMP_GlyphValueRecord {
+    pub m_x_placement: f32,
+    pub m_y_placement: f32,
+    pub m_x_advance: f32,
+    pub m_y_advance: f32,
+}
+
+impl ::unity2::ClassIdentity for TMP_GlyphValueRecord {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_GlyphValueRecord";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_GlyphValueRecord {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_glyphvaluerecord")]
+#[::unity2::methods(value)]
+impl TMP_GlyphValueRecord {
+    #[method(name = "get_xPlacement", args = 0)]
+    pub fn get_x_placement(self) -> f32;
+
+    #[method(name = "set_xPlacement", args = 1)]
+    pub fn set_x_placement(self, value: f32) -> ();
+
+    #[method(name = "get_yPlacement", args = 0)]
+    pub fn get_y_placement(self) -> f32;
+
+    #[method(name = "set_yPlacement", args = 1)]
+    pub fn set_y_placement(self, value: f32) -> ();
+
+    #[method(name = "get_xAdvance", args = 0)]
+    pub fn get_x_advance(self) -> f32;
+
+    #[method(name = "set_xAdvance", args = 1)]
+    pub fn set_x_advance(self, value: f32) -> ();
+
+    #[method(name = "get_yAdvance", args = 0)]
+    pub fn get_y_advance(self) -> f32;
+
+    #[method(name = "set_yAdvance", args = 1)]
+    pub fn set_y_advance(self, value: f32) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(self, x_placement: f32, y_placement: f32, x_advance: f32, y_advance: f32) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(
+        self,
+        value_record: crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_3(
+        self,
+        value_record: crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord,
+    ) -> ();
+
+    #[method(name = "op_Addition", args = 2)]
+    pub fn op_addition(
+        a: crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord,
+        b: crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord,
+    ) -> crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord;
+}

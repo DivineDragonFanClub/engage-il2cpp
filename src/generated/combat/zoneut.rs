@@ -1,0 +1,22 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/zoneut/ZoneUt.md")))]
+#[::unity2::class(namespace = "Combat", name = "ZoneUt")]
+#[parent(crate::system::object::Object)]
+pub struct ZoneUt {}
+
+#[cfg(feature = "combat-zoneut")]
+#[::unity2::methods]
+impl ZoneUt {
+    #[method(name = "Select", args = 2)]
+    pub fn select(zone: i32, last_index: i32) -> i32;
+
+    #[method(name = "IndexToRad", args = 1)]
+    pub fn index_to_rad(zone_index: i32) -> f32;
+
+    #[method(name = "Reverse", args = 1)]
+    pub fn reverse(zone: i32) -> f32;
+}

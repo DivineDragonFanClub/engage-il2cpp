@@ -1,0 +1,49 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::playables::playableasset::IPlayableAsset;
+use crate::unity_engine::playables::playableasset::PlayableAsset;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use crate::unity_engine::timeline::trackasset::ITrackAsset;
+use crate::unity_engine::timeline::trackasset::TrackAsset;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/grouptrack/GroupTrack.md")))]
+#[::unity2::class(namespace = "UnityEngine.Timeline", name = "GroupTrack")]
+#[parent(crate::unity_engine::timeline::trackasset::TrackAsset)]
+pub struct GroupTrack {}
+
+#[cfg(feature = "unity_engine-timeline-grouptrack")]
+#[::unity2::methods]
+impl GroupTrack {
+    #[method(name = "CanCompileClips", args = 0)]
+    pub fn can_compile_clips(self) -> bool;
+
+    #[method(name = "get_outputs", args = 0)]
+    pub fn get_outputs(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::unity_engine::playables::playablebinding::PlayableBinding,
+    >;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-timeline-grouptrack")]
+impl GroupTrack {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GroupTrack),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGroupTrackMethods>::ctor(this);
+        this
+    }
+}

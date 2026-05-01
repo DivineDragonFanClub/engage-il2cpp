@@ -1,0 +1,34 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/customrendertexturemanager/CustomRenderTextureManager.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "CustomRenderTextureManager")]
+#[parent(crate::system::object::Object)]
+pub struct CustomRenderTextureManager {
+    #[static_field]
+    #[rename(name = "textureLoaded")]
+    pub texture_loaded: crate::system::action_1::Action_1<
+        crate::unity_engine::customrendertexture::CustomRenderTexture,
+    >,
+    #[static_field]
+    #[rename(name = "textureUnloaded")]
+    pub texture_unloaded: crate::system::action_1::Action_1<
+        crate::unity_engine::customrendertexture::CustomRenderTexture,
+    >,
+}
+
+#[cfg(feature = "unity_engine-customrendertexturemanager")]
+#[::unity2::methods]
+impl CustomRenderTextureManager {
+    #[method(name = "InvokeOnTextureLoaded_Internal", args = 1)]
+    pub fn invoke_on_texture_loaded_internal(
+        source: crate::unity_engine::customrendertexture::CustomRenderTexture,
+    ) -> ();
+
+    #[method(name = "InvokeOnTextureUnloaded_Internal", args = 1)]
+    pub fn invoke_on_texture_unloaded_internal(
+        source: crate::unity_engine::customrendertexture::CustomRenderTexture,
+    ) -> ();
+}

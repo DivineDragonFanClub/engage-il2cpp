@@ -1,0 +1,16 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/playerprefsutility/PlayerPrefsUtility.md")))]
+#[::unity2::class(namespace = "Combat", name = "PlayerPrefsUtility")]
+#[parent(crate::system::object::Object)]
+pub struct PlayerPrefsUtility {}
+
+#[cfg(feature = "combat-playerprefsutility")]
+#[::unity2::methods]
+impl PlayerPrefsUtility {
+    #[method(name = "GetKeys", args = 0)]
+    pub fn get_keys() -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+}

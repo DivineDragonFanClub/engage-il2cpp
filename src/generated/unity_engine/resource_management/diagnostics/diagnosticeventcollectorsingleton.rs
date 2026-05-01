@@ -1,0 +1,100 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::resource_management::util::componentsingleton_1_2::ComponentSingleton_1_2;
+use crate::unity_engine::resource_management::util::componentsingleton_1_2::IComponentSingleton_1_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/diagnostics/diagnosticeventcollectorsingleton/DiagnosticEventCollectorSingleton.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.Diagnostics",
+    name = "DiagnosticEventCollectorSingleton"
+)]
+# [parent (crate :: unity_engine :: resource_management :: util :: componentsingleton_1_2 :: ComponentSingleton_1_2 < crate :: unity_engine :: resource_management :: diagnostics :: diagnosticeventcollectorsingleton :: DiagnosticEventCollectorSingleton >)]
+pub struct DiagnosticEventCollectorSingleton {
+    #[rename(name = "m_CreatedEvents")]
+    pub m_created_events: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        i32,
+        crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
+    >,
+    #[rename(name = "m_UnhandledEvents")]
+    pub m_unhandled_events: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
+    >,
+    #[rename(name = "m_lastTickSent")]
+    pub m_last_tick_sent: f32,
+    #[rename(name = "m_lastFrame")]
+    pub m_last_frame: i32,
+    #[rename(name = "fpsAvg")]
+    pub fps_avg: f32,
+}
+
+#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton")]
+#[::unity2::methods]
+impl DiagnosticEventCollectorSingleton {
+    #[method(name = "GetGameObjectName", args = 0)]
+    pub fn get_game_object_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "RegisterEventHandler", args = 3)]
+    pub fn register_event_handler(
+        handler: crate::system::action_1::Action_1<
+            crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
+        >,
+        register: bool,
+        create: bool,
+    ) -> bool;
+
+    #[method(name = "RegisterEventHandler", args = 1)]
+    pub fn register_event_handler_2(
+        self,
+        handler: crate::system::action_1::Action_1<
+            crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
+        >,
+    ) -> ();
+
+    #[method(name = "UnregisterEventHandler", args = 1)]
+    pub fn unregister_event_handler(
+        self,
+        handler: crate::system::action_1::Action_1<
+            crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
+        >,
+    ) -> ();
+
+    #[method(name = "PostEvent", args = 1)]
+    pub fn post_event(
+        self,
+        diagnostic_event : crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent,
+    ) -> ();
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollectorsingleton")]
+impl DiagnosticEventCollectorSingleton {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DiagnosticEventCollectorSingleton),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDiagnosticEventCollectorSingletonMethods>::ctor(this);
+        this
+    }
+}

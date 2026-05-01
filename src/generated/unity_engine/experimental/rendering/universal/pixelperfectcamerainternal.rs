@@ -1,0 +1,74 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/pixelperfectcamerainternal/PixelPerfectCameraInternal.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal",
+    name = "PixelPerfectCameraInternal"
+)]
+#[parent(crate::system::object::Object)]
+pub struct PixelPerfectCameraInternal {
+# [rename (name = "m_Component")] pub m_component : crate :: unity_engine :: experimental :: rendering :: universal :: ipixelperfectcamera_interface :: IPixelPerfectCamera_Interface ,
+# [rename (name = "m_SerializableComponent")] pub m_serializable_component : crate :: unity_engine :: experimental :: rendering :: universal :: pixelperfectcamera :: PixelPerfectCamera ,
+# [rename (name = "originalOrthoSize")] pub original_ortho_size : f32 ,
+# [rename (name = "hasPostProcessLayer")] pub has_post_process_layer : bool ,
+# [rename (name = "cropFrameXAndY")] pub crop_frame_x_and_y : bool ,
+# [rename (name = "cropFrameXOrY")] pub crop_frame_x_or_y : bool ,
+# [rename (name = "useStretchFill")] pub use_stretch_fill : bool ,
+# [rename (name = "zoom")] pub zoom : i32 ,
+# [rename (name = "useOffscreenRT")] pub use_offscreen_rt : bool ,
+# [rename (name = "offscreenRTWidth")] pub offscreen_rt_width : i32 ,
+# [rename (name = "offscreenRTHeight")] pub offscreen_rt_height : i32 ,
+# [rename (name = "pixelRect")] pub pixel_rect : crate :: unity_engine :: rect :: Rect ,
+# [rename (name = "orthoSize")] pub ortho_size : f32 ,
+# [rename (name = "unitsPerPixel")] pub units_per_pixel : f32 ,
+# [rename (name = "cinemachineVCamZoom")] pub cinemachine_v_cam_zoom : i32 ,
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]
+#[::unity2::methods]
+impl PixelPerfectCameraInternal {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        component : crate :: unity_engine :: experimental :: rendering :: universal :: ipixelperfectcamera_interface :: IPixelPerfectCamera_Interface,
+    ) -> ();
+
+    #[method(name = "OnBeforeSerialize", args = 0)]
+    pub fn on_before_serialize(self) -> ();
+
+    #[method(name = "OnAfterDeserialize", args = 0)]
+    pub fn on_after_deserialize(self) -> ();
+
+    #[method(name = "CalculateCameraProperties", args = 2)]
+    pub fn calculate_camera_properties(self, screen_width: i32, screen_height: i32) -> ();
+
+    #[method(name = "CalculateFinalBlitPixelRect", args = 2)]
+    pub fn calculate_final_blit_pixel_rect(
+        self,
+        screen_width: i32,
+        screen_height: i32,
+    ) -> crate::unity_engine::rect::Rect;
+
+    #[method(name = "CorrectCinemachineOrthoSize", args = 1)]
+    pub fn correct_cinemachine_ortho_size(self, target_ortho_size: f32) -> f32;
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]
+impl PixelPerfectCameraInternal {
+    pub fn new(
+        component : crate :: unity_engine :: experimental :: rendering :: universal :: ipixelperfectcamera_interface :: IPixelPerfectCamera_Interface,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PixelPerfectCameraInternal),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPixelPerfectCameraInternalMethods>::ctor(this, component);
+        this
+    }
+}

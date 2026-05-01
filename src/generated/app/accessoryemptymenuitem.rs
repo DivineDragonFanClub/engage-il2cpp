@@ -1,0 +1,64 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessoryemptymenuitem/AccessoryEmptyMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "AccessoryEmptyMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct AccessoryEmptyMenuItem {
+    #[rename(name = "m_SelectEventHandler")]
+    pub m_select_event_handler: crate::app::accessorymenuitem::AccessoryMenuItem_SelectEventHandler,
+}
+
+#[cfg(feature = "app-accessoryemptymenuitem")]
+#[::unity2::methods]
+impl AccessoryEmptyMenuItem {
+    #[method(name = "get_m_AccessoryKind", args = 0)]
+    pub fn get_m_accessory_kind(self) -> crate::app::accessorydata::AccessoryData_Kinds;
+
+    #[method(name = "set_m_AccessoryKind", args = 1)]
+    pub fn set_m_accessory_kind(self, value: crate::app::accessorydata::AccessoryData_Kinds) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        name: ::unity2::Il2CppString,
+        select_event_handler: crate::app::accessorymenuitem::AccessoryMenuItem_SelectEventHandler,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "OnBuildMenuItemContent", args = 0)]
+    pub fn on_build_menu_item_content(self) -> ();
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-accessoryemptymenuitem")]
+impl AccessoryEmptyMenuItem {
+    pub fn new(
+        name: ::unity2::Il2CppString,
+        select_event_handler: crate::app::accessorymenuitem::AccessoryMenuItem_SelectEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryEmptyMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryEmptyMenuItemMethods>::ctor(this, name, select_event_handler);
+        this
+    }
+}

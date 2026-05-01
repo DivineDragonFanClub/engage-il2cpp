@@ -1,0 +1,63 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/root/configsequence/ConfigSequence.md")))]
+#[::unity2::class(namespace = "", name = "ConfigSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct ConfigSequence {
+    #[rename(name = "m_ConfigObject")]
+    pub m_config_object: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "root-configsequence")]
+#[::unity2::methods]
+impl ConfigSequence {
+    #[method(name = "LoadResources", args = 0)]
+    pub fn load_resources(self) -> ();
+
+    #[method(name = "UnloadResources", args = 0)]
+    pub fn unload_resources(self) -> ();
+
+    #[method(name = "IsLoadingResources", args = 0)]
+    pub fn is_loading_resources(self) -> bool;
+
+    #[method(name = "StartSequence", args = 0)]
+    pub fn start_sequence(self) -> ();
+
+    #[method(name = "CreateConfigMenu", args = 0)]
+    pub fn create_config_menu(self) -> ();
+
+    #[method(name = "EndSequence", args = 0)]
+    pub fn end_sequence(self) -> ();
+
+    #[method(name = "DestroyConfigMenu", args = 0)]
+    pub fn destroy_config_menu(self) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "root-configsequence")]
+impl ConfigSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConfigSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConfigSequenceMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,20 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/xrutils/XRUtils.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "XRUtils")]
+#[parent(crate::system::object::Object)]
+pub struct XRUtils {}
+
+#[cfg(feature = "unity_engine-rendering-xrutils")]
+#[::unity2::methods]
+impl XRUtils {
+    #[method(name = "DrawOcclusionMesh", args = 3)]
+    pub fn draw_occlusion_mesh(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        camera: crate::unity_engine::camera::Camera,
+        stereo_enabled: bool,
+    ) -> ();
+}

@@ -1,0 +1,38 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::addressable_assets::assetreference::AssetReference;
+use crate::unity_engine::addressable_assets::assetreference::IAssetReference;
+use crate::unity_engine::addressable_assets::assetreferencet_1::AssetReferenceT_1;
+use crate::unity_engine::addressable_assets::assetreferencet_1::IAssetReferenceT_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/assetreferencetexture3d/AssetReferenceTexture3D.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets",
+    name = "AssetReferenceTexture3D"
+)]
+# [parent (crate :: unity_engine :: addressable_assets :: assetreferencet_1 :: AssetReferenceT_1 < crate :: unity_engine :: texture3d :: Texture3D >)]
+pub struct AssetReferenceTexture3D {}
+
+#[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture3d")]
+#[::unity2::methods]
+impl AssetReferenceTexture3D {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, guid: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-assetreferencetexture3d")]
+impl AssetReferenceTexture3D {
+    pub fn new(guid: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssetReferenceTexture3D),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetReferenceTexture3DMethods>::ctor(this, guid);
+        this
+    }
+}

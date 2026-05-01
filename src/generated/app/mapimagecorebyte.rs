@@ -1,0 +1,41 @@
+
+use crate::app::mapimagecore_1::IMapImageCore_1;
+use crate::app::mapimagecore_1::MapImageCore_1;
+use crate::app::mapimageindex::IMapImageIndex;
+use crate::app::mapimageindex::MapImageIndex;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimagecorebyte/MapImageCoreByte.md")))]
+#[::unity2::class(namespace = "App", name = "MapImageCoreByte")]
+# [parent (crate :: app :: mapimagecore_1 :: MapImageCore_1 < u8 >)]
+pub struct MapImageCoreByte {}
+
+#[cfg(feature = "app-mapimagecorebyte")]
+#[::unity2::methods]
+impl MapImageCoreByte {
+    #[method(name = "Add", args = 2)]
+    pub fn add(self, index: i32, v: u8) -> ();
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapimagecorebyte")]
+impl MapImageCoreByte {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapImageCoreByte),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapImageCoreByteMethods>::ctor(this);
+        this
+    }
+}

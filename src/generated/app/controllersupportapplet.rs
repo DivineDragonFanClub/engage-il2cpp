@@ -1,0 +1,93 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/controllersupportapplet/ControllerSupportApplet.md")))]
+#[::unity2::class(namespace = "App", name = "ControllerSupportApplet")]
+#[parent(crate::system::object::Object)]
+pub struct ControllerSupportApplet {
+    #[static_field]
+    #[rename(name = "c_appletWaitTime")]
+    pub c_applet_wait_time: f32,
+    #[rename(name = "m_preOperationMode")]
+    pub m_pre_operation_mode: crate::unity_engine::switch::operation::Operation_OperationMode,
+    #[rename(name = "m_isHandheldMode")]
+    pub m_is_handheld_mode: bool,
+    #[rename(name = "m_DisableCallCount")]
+    pub m_disable_call_count: i32,
+}
+
+#[cfg(feature = "app-controllersupportapplet")]
+#[::unity2::methods]
+impl ControllerSupportApplet {
+    #[method(name = "SetEnableApplet", args = 1)]
+    pub fn set_enable_applet(self, is_enable: bool) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "UpdateConnectController", args = 0)]
+    pub fn update_connect_controller(
+        self,
+    ) -> crate::app::controllersupportapplet::ControllerSupportApplet_CallState;
+
+    #[method(name = "CallControllerSupportApplet", args = 0)]
+    pub fn call_controller_support_applet(self) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/controllersupportapplet/ControllerSupportApplet_CallState.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ControllerSupportApplet_CallState {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ControllerSupportApplet_CallState {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ControllerSupportApplet.CallState";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ControllerSupportApplet_CallState {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ControllerSupportApplet_CallState {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn timer_continue() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn timer_reset() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn immediate() -> Self {
+        Self { value: 3 }
+    }
+}

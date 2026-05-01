@@ -1,0 +1,137 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/rthandle/RTHandle.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "RTHandle")]
+#[parent(crate::system::object::Object)]
+pub struct RTHandle {
+    #[rename(name = "m_Owner")]
+    pub m_owner: crate::unity_engine::rendering::rthandlesystem::RTHandleSystem,
+    #[rename(name = "m_RT")]
+    pub m_rt: crate::unity_engine::rendertexture::RenderTexture,
+    #[rename(name = "m_ExternalTexture")]
+    pub m_external_texture: crate::unity_engine::texture::Texture,
+    #[rename(name = "m_NameID")]
+    pub m_name_id: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+    #[rename(name = "m_EnableMSAA")]
+    pub m_enable_msaa: bool,
+    #[rename(name = "m_EnableRandomWrite")]
+    pub m_enable_random_write: bool,
+    #[rename(name = "m_EnableHWDynamicScale")]
+    pub m_enable_hw_dynamic_scale: bool,
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+    #[rename(name = "scaleFunc")]
+    pub scale_func: crate::unity_engine::rendering::scalefunc::ScaleFunc,
+}
+
+#[cfg(feature = "unity_engine-rendering-rthandle")]
+#[::unity2::methods]
+impl RTHandle {
+    #[method(name = "get_scaleFactor", args = 0)]
+    pub fn get_scale_factor(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_scaleFactor", args = 1)]
+    pub fn set_scale_factor(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_useScaling", args = 0)]
+    pub fn get_use_scaling(self) -> bool;
+
+    #[method(name = "set_useScaling", args = 1)]
+    pub fn set_use_scaling(self, value: bool) -> ();
+
+    #[method(name = "get_referenceSize", args = 0)]
+    pub fn get_reference_size(self) -> crate::unity_engine::vector2int::Vector2Int;
+
+    #[method(name = "set_referenceSize", args = 1)]
+    pub fn set_reference_size(self, value: crate::unity_engine::vector2int::Vector2Int) -> ();
+
+    #[method(name = "get_rtHandleProperties", args = 0)]
+    pub fn get_rt_handle_properties(
+        self,
+    ) -> crate::unity_engine::rendering::rthandleproperties::RTHandleProperties;
+
+    #[method(name = "get_rt", args = 0)]
+    pub fn get_rt(self) -> crate::unity_engine::rendertexture::RenderTexture;
+
+    #[method(name = "get_nameID", args = 0)]
+    pub fn get_name_id(
+        self,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
+
+    #[method(name = "get_name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_isMSAAEnabled", args = 0)]
+    pub fn get_is_msaa_enabled(self) -> bool;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, owner: crate::unity_engine::rendering::rthandlesystem::RTHandleSystem) -> ();
+
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(
+        handle: crate::unity_engine::rendering::rthandle::RTHandle,
+    ) -> crate::unity_engine::rendertexture::RenderTexture;
+
+    #[method(name = "SetRenderTexture", args = 1)]
+    pub fn set_render_texture(self, rt: crate::unity_engine::rendertexture::RenderTexture) -> ();
+
+    #[method(name = "SetTexture", args = 1)]
+    pub fn set_texture(self, tex: crate::unity_engine::texture::Texture) -> ();
+
+    #[method(name = "SetTexture", args = 1)]
+    pub fn set_texture_2(
+        self,
+        tex: crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+    ) -> ();
+
+    #[method(name = "Release", args = 0)]
+    pub fn release(self) -> ();
+
+    #[method(name = "GetScaledSize", args = 1)]
+    pub fn get_scaled_size(
+        self,
+        ref_size: crate::unity_engine::vector2int::Vector2Int,
+    ) -> crate::unity_engine::vector2int::Vector2Int;
+
+    #[method(name = "SwitchToFastMemory", args = 4)]
+    pub fn switch_to_fast_memory(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        residency_fraction: f32,
+        flags: crate::unity_engine::rendering::fastmemoryflags::FastMemoryFlags,
+        copy_contents: bool,
+    ) -> ();
+
+    #[method(name = "CopyToFastMemory", args = 3)]
+    pub fn copy_to_fast_memory(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        residency_fraction: f32,
+        flags: crate::unity_engine::rendering::fastmemoryflags::FastMemoryFlags,
+    ) -> ();
+
+    #[method(name = "SwitchOutFastMemory", args = 2)]
+    pub fn switch_out_fast_memory(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        copy_contents: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-rthandle")]
+impl RTHandle {
+    pub fn new(owner: crate::unity_engine::rendering::rthandlesystem::RTHandleSystem) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RTHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRTHandleMethods>::ctor(this, owner);
+        this
+    }
+}

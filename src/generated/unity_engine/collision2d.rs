@@ -1,0 +1,44 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/collision2d/Collision2D.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "Collision2D")]
+#[parent(crate::system::object::Object)]
+pub struct Collision2D {
+    #[rename(name = "m_Collider")]
+    pub m_collider: i32,
+    #[rename(name = "m_OtherCollider")]
+    pub m_other_collider: i32,
+    #[rename(name = "m_Rigidbody")]
+    pub m_rigidbody: i32,
+    #[rename(name = "m_OtherRigidbody")]
+    pub m_other_rigidbody: i32,
+    #[rename(name = "m_RelativeVelocity")]
+    pub m_relative_velocity: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_Enabled")]
+    pub m_enabled: i32,
+    #[rename(name = "m_ContactCount")]
+    pub m_contact_count: i32,
+    #[rename(name = "m_ReusedContacts")]
+    pub m_reused_contacts: ::unity2::Array<crate::unity_engine::contactpoint2d::ContactPoint2D>,
+    #[rename(name = "m_LegacyContacts")]
+    pub m_legacy_contacts: ::unity2::Array<crate::unity_engine::contactpoint2d::ContactPoint2D>,
+}
+
+#[cfg(feature = "unity_engine-collision2d")]
+#[::unity2::methods]
+impl Collision2D {
+    #[method(name = "get_collider", args = 0)]
+    pub fn get_collider(self) -> crate::unity_engine::collider2d::Collider2D;
+
+    #[method(name = "get_rigidbody", args = 0)]
+    pub fn get_rigidbody(self) -> crate::unity_engine::rigidbody2d::Rigidbody2D;
+
+    #[method(name = "get_gameObject", args = 0)]
+    pub fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "get_relativeVelocity", args = 0)]
+    pub fn get_relative_velocity(self) -> crate::unity_engine::vector2::Vector2;
+}

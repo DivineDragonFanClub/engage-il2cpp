@@ -1,0 +1,130 @@
+
+use crate::app::basicmenucontent::BasicMenuContent;
+use crate::app::basicmenucontent::IBasicMenuContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/wellitemselectmenucontent/WellItemSelectMenuContent.md")))]
+#[::unity2::class(namespace = "App", name = "WellItemSelectMenuContent")]
+#[parent(crate::app::basicmenucontent::BasicMenuContent)]
+pub struct WellItemSelectMenuContent {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ItemListContent")]
+    pub m_item_list_content: crate::app::menuaccessorycontent::MenuAccessoryContent,
+    #[rename(name = "m_ItemHelpContent")]
+    pub m_item_help_content: crate::app::menuaccessorycontent::MenuAccessoryContent,
+    #[rename(name = "m_ExpectedContent")]
+    pub m_expected_content: crate::app::menuaccessorycontent::MenuAccessoryContent,
+    #[rename(name = "m_SelectedItemContentList")]
+    pub m_selected_item_content_list:
+        ::unity2::Array<crate::app::basicitemmenuitemcontent::BasicItemMenuItemContent>,
+    #[rename(name = "m_StarList")]
+    pub m_star_list: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+    #[rename(name = "m_StockValueText")]
+    pub m_stock_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_StockValueMaxText")]
+    pub m_stock_value_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_KindIconBgImageList")]
+    pub m_kind_icon_bg_image_list: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+    #[rename(name = "m_SelectedKindIndex")]
+    pub m_selected_kind_index: i32,
+}
+
+#[cfg(feature = "app-wellitemselectmenucontent")]
+#[::unity2::methods]
+impl WellItemSelectMenuContent {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "Create", args = 0)]
+    pub fn create() -> crate::app::wellitemselectmenucontent::WellItemSelectMenuContent;
+
+    #[method(name = "Destroy", args = 1)]
+    pub fn destroy(content: crate::app::wellitemselectmenucontent::WellItemSelectMenuContent)
+        -> ();
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "InitMenuAccessoryContent", args = 1)]
+    pub fn init_menu_accessory_content(self, menu: crate::app::basicmenu::BasicMenu) -> ();
+
+    #[method(name = "OpenAnime", args = 0)]
+    pub fn open_anime(self) -> ();
+
+    #[method(name = "CloseAnime", args = 0)]
+    pub fn close_anime(self) -> ();
+
+    #[method(name = "GetMenuItemContentMax", args = 0)]
+    pub fn get_menu_item_content_max(self) -> i32;
+
+    #[method(name = "CalcCursorMovedPosY", args = 1)]
+    pub fn calc_cursor_moved_pos_y(self, menu_item_index: i32) -> f32;
+
+    #[method(name = "UpdateSelectedItemList", args = 1)]
+    pub fn update_selected_item_list(
+        self,
+        list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicitemmenuitem::BasicItemMenuItem,
+        >,
+    ) -> ();
+
+    #[method(name = "UpdateExpectedStar", args = 1)]
+    pub fn update_expected_star(self, expected: i32) -> ();
+
+    #[method(name = "UpdateItemHelp", args = 2)]
+    pub fn update_item_help(
+        self,
+        unit: crate::app::unit::Unit,
+        item: crate::app::unititem::UnitItem,
+    ) -> ();
+
+    #[method(name = "SetSelectedItemKindIndex", args = 1)]
+    pub fn set_selected_item_kind_index(self, index: i32) -> ();
+
+    #[method(name = "SetStockValue", args = 1)]
+    pub fn set_stock_value(self, value: i32) -> ();
+
+    #[method(name = "SetStockValueMax", args = 1)]
+    pub fn set_stock_value_max(self, value: i32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-wellitemselectmenucontent")]
+impl WellItemSelectMenuContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WellItemSelectMenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWellItemSelectMenuContentMethods>::ctor(this);
+        this
+    }
+}

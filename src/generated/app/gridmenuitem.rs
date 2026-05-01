@@ -1,0 +1,39 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gridmenuitem/GridMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "GridMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct GridMenuItem {}
+
+#[cfg(feature = "app-gridmenuitem")]
+#[::unity2::methods]
+impl GridMenuItem {
+    #[method(name = "GetWidth", args = 0)]
+    pub fn get_width(self) -> f32;
+
+    #[method(name = "GetHeight", args = 0)]
+    pub fn get_height(self) -> f32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gridmenuitem")]
+impl GridMenuItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GridMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGridMenuItemMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,226 @@
+
+use crate::app::menuitem::IMenuItem;
+use crate::app::menuitem::MenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugunitaccessorymenu/DebugUnitAccessoryMenu_UnitAccessoryItem.md")))]
+#[::unity2::class(namespace = "App", name = "DebugUnitAccessoryMenu.UnitAccessoryItem")]
+#[parent(crate::app::debugunitaccessorymenu::DebugUnitAccessoryMenu_UnitBaseItem)]
+pub struct DebugUnitAccessoryMenu_UnitAccessoryItem {
+    #[rename(name = "m_Label")]
+    pub m_label: ::unity2::Il2CppString,
+    #[rename(name = "m_Kind")]
+    pub m_kind: crate::app::accessorydata::AccessoryData_Kinds,
+}
+
+#[cfg(feature = "app-debugunitaccessorymenu")]
+#[::unity2::methods]
+impl DebugUnitAccessoryMenu_UnitAccessoryItem {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        kind: crate::app::accessorydata::AccessoryData_Kinds,
+    ) -> ();
+
+    #[method(name = "GetColumnCount", args = 0)]
+    pub fn get_column_count(self) -> i32;
+
+    #[method(name = "GetColumnName0", args = 0)]
+    pub fn get_column_name0(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetColumnName1", args = 0)]
+    pub fn get_column_name1(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetColumnWidth0", args = 0)]
+    pub fn get_column_width0(self) -> f32;
+
+    #[method(name = "GetColumnWidth1", args = 0)]
+    pub fn get_column_width1(self) -> f32;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+}
+
+#[cfg(feature = "app-debugunitaccessorymenu")]
+impl DebugUnitAccessoryMenu_UnitAccessoryItem {
+    pub fn new(
+        unit: crate::app::unit::Unit,
+        kind: crate::app::accessorydata::AccessoryData_Kinds,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUnitAccessoryMenu_UnitAccessoryItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUnitAccessoryMenu_UnitAccessoryItemMethods>::ctor(this, unit, kind);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugunitaccessorymenu/DebugUnitAccessoryMenu_UnitAccessoryRemoveItem.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "DebugUnitAccessoryMenu.UnitAccessoryRemoveItem"
+)]
+#[parent(crate::app::debugunitaccessorymenu::DebugUnitAccessoryMenu_UnitBaseItem)]
+pub struct DebugUnitAccessoryMenu_UnitAccessoryRemoveItem {
+    #[rename(name = "m_Kind")]
+    pub m_kind: crate::app::accessorydata::AccessoryData_Kinds,
+}
+
+#[cfg(feature = "app-debugunitaccessorymenu")]
+#[::unity2::methods]
+impl DebugUnitAccessoryMenu_UnitAccessoryRemoveItem {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        kind: crate::app::accessorydata::AccessoryData_Kinds,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+}
+
+#[cfg(feature = "app-debugunitaccessorymenu")]
+impl DebugUnitAccessoryMenu_UnitAccessoryRemoveItem {
+    pub fn new(
+        unit: crate::app::unit::Unit,
+        kind: crate::app::accessorydata::AccessoryData_Kinds,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUnitAccessoryMenu_UnitAccessoryRemoveItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUnitAccessoryMenu_UnitAccessoryRemoveItemMethods>::ctor(this, unit, kind);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugunitaccessorymenu/DebugUnitAccessoryMenu_UnitBaseItem.md")))]
+#[::unity2::class(namespace = "App", name = "DebugUnitAccessoryMenu.UnitBaseItem")]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct DebugUnitAccessoryMenu_UnitBaseItem {
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+}
+
+#[cfg(feature = "app-debugunitaccessorymenu")]
+#[::unity2::methods]
+impl DebugUnitAccessoryMenu_UnitBaseItem {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-debugunitaccessorymenu")]
+impl DebugUnitAccessoryMenu_UnitBaseItem {
+    pub fn new(unit: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUnitAccessoryMenu_UnitBaseItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUnitAccessoryMenu_UnitBaseItemMethods>::ctor(this, unit);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugunitaccessorymenu/DebugUnitAccessoryMenu_UnitAccessoryAddItem.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "DebugUnitAccessoryMenu.UnitAccessoryAddItem"
+)]
+#[parent(crate::app::debugunitaccessorymenu::DebugUnitAccessoryMenu_UnitBaseItem)]
+pub struct DebugUnitAccessoryMenu_UnitAccessoryAddItem {
+    #[rename(name = "m_IsEnable")]
+    pub m_is_enable: bool,
+    #[rename(name = "m_Accessory")]
+    pub m_accessory: crate::app::accessorydata::AccessoryData,
+    #[rename(name = "m_Kind")]
+    pub m_kind: crate::app::accessorydata::AccessoryData_Kinds,
+}
+
+#[cfg(feature = "app-debugunitaccessorymenu")]
+#[::unity2::methods]
+impl DebugUnitAccessoryMenu_UnitAccessoryAddItem {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        accessory: crate::app::accessorydata::AccessoryData,
+        kind: crate::app::accessorydata::AccessoryData_Kinds,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+}
+
+#[cfg(feature = "app-debugunitaccessorymenu")]
+impl DebugUnitAccessoryMenu_UnitAccessoryAddItem {
+    pub fn new(
+        unit: crate::app::unit::Unit,
+        accessory: crate::app::accessorydata::AccessoryData,
+        kind: crate::app::accessorydata::AccessoryData_Kinds,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUnitAccessoryMenu_UnitAccessoryAddItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUnitAccessoryMenu_UnitAccessoryAddItemMethods>::ctor(
+            this, unit, accessory, kind,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugunitaccessorymenu/DebugUnitAccessoryMenu.md")))]
+#[::unity2::class(namespace = "App", name = "DebugUnitAccessoryMenu")]
+#[parent(crate::system::object::Object)]
+pub struct DebugUnitAccessoryMenu {}
+
+#[cfg(feature = "app-debugunitaccessorymenu")]
+#[::unity2::methods]
+impl DebugUnitAccessoryMenu {
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugunitaccessorymenu")]
+impl DebugUnitAccessoryMenu {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUnitAccessoryMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUnitAccessoryMenuMethods>::ctor(this);
+        this
+    }
+}

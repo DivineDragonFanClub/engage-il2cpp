@@ -1,0 +1,28 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/serializefield/SerializeField.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "SerializeField")]
+pub struct SerializeField {}
+
+#[cfg(feature = "unity_engine-serializefield")]
+#[::unity2::methods]
+impl SerializeField {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-serializefield")]
+impl SerializeField {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SerializeField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISerializeFieldMethods>::ctor(this);
+        this
+    }
+}

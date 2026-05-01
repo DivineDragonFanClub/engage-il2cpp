@@ -1,0 +1,51 @@
+
+use crate::app::instanceitem_1::IInstanceItem_1;
+use crate::app::instanceitem_1::InstanceItem_1;
+use crate::app::menuitem::IMenuItem;
+use crate::app::menuitem::MenuItem;
+use crate::app::paramitem::IParamItem;
+use crate::app::paramitem::ParamItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/enumitem_2/EnumItem_2.md")))]
+#[::unity2::class(namespace = "App", name = "EnumItem`2")]
+pub struct EnumItem_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-enumitem_2")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> EnumItem_2<T0, T1> {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, instance: T0) -> ();
+
+    #[method(name = "GetValue", args = 0)]
+    pub fn get_value(self) -> T1;
+
+    #[method(name = "SetValue", args = 1)]
+    pub fn set_value(self, value: T1) -> ();
+
+    #[method(name = "GetColumnName0", args = 0)]
+    pub fn get_column_name0(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetColumnName1", args = 0)]
+    pub fn get_column_name1(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "OnLeftRight", args = 2)]
+    pub fn on_left_right(self, step: i32, is_trigger: bool) -> ();
+}
+
+#[cfg(feature = "app-enumitem_2")]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> EnumItem_2<T0, T1> {
+    pub fn new(instance: T0) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EnumItem_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEnumItem_2Methods<T0, T1>>::ctor(this, instance);
+        this
+    }
+}

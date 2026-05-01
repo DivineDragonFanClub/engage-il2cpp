@@ -1,0 +1,108 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/methodimplattributes/MethodImplAttributes.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MethodImplAttributes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MethodImplAttributes {
+    const NAMESPACE: &'static str = "System.Reflection";
+
+    const NAME: &'static str = "MethodImplAttributes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MethodImplAttributes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MethodImplAttributes {
+    pub fn code_type_mask() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn il() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn native() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn optil() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn runtime() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn managed_mask() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn unmanaged() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn managed() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn forward_ref() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn preserve_sig() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn internal_call() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn synchronized() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn no_inlining() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn aggressive_inlining() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn no_optimization() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn max_method_impl_val() -> Self {
+        Self { value: 65535 }
+    }
+}

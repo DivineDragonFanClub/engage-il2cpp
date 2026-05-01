@@ -1,0 +1,60 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmap/gmappathcollection/GmapPathCollection.md")))]
+#[::unity2::class(namespace = "App.Gmap", name = "GmapPathCollection")]
+#[parent(crate::system::object::Object)]
+pub struct GmapPathCollection {
+    #[rename(name = "m_Root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_PathList")]
+    pub m_path_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+}
+
+#[cfg(feature = "app-gmap-gmappathcollection")]
+#[::unity2::methods]
+impl GmapPathCollection {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "UpdateVisible", args = 0)]
+    pub fn update_visible(self) -> ();
+
+    #[method(name = "SetChild", args = 1)]
+    pub fn set_child(self, path_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "ForEach", args = 1)]
+    pub fn for_each(
+        self,
+        action: crate::system::action_1::Action_1<crate::unity_engine::gameobject::GameObject>,
+    ) -> ();
+
+    #[method(name = "UpdatePathList", args = 0)]
+    pub fn update_path_list(self) -> ();
+
+    #[method(name = "CheckAppearGmapPath", args = 2)]
+    pub fn check_appear_gmap_path(
+        self,
+        start_spot: crate::app::gmapspot::GmapSpot,
+        appear_spot: crate::app::gmapspot::GmapSpot,
+    ) -> crate::unity_engine::gameobject::GameObject;
+}
+
+#[cfg(feature = "app-gmap-gmappathcollection")]
+impl GmapPathCollection {
+    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapPathCollection),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapPathCollectionMethods>::ctor(this, root);
+        this
+    }
+}

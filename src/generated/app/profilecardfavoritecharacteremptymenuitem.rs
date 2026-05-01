@@ -1,0 +1,35 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::profilecardfavoritecharactermenuitem::IProfileCardFavoriteCharacterMenuItem;
+use crate::app::profilecardfavoritecharactermenuitem::ProfileCardFavoriteCharacterMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardfavoritecharacteremptymenuitem/ProfileCardFavoriteCharacterEmptyMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "ProfileCardFavoriteCharacterEmptyMenuItem")]
+#[parent(crate::app::profilecardfavoritecharactermenuitem::ProfileCardFavoriteCharacterMenuItem)]
+pub struct ProfileCardFavoriteCharacterEmptyMenuItem {}
+
+#[cfg(feature = "app-profilecardfavoritecharacteremptymenuitem")]
+#[::unity2::methods]
+impl ProfileCardFavoriteCharacterEmptyMenuItem {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, initial_select: bool) -> ();
+}
+
+#[cfg(feature = "app-profilecardfavoritecharacteremptymenuitem")]
+impl ProfileCardFavoriteCharacterEmptyMenuItem {
+    pub fn new(initial_select: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardFavoriteCharacterEmptyMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardFavoriteCharacterEmptyMenuItemMethods>::ctor(this, initial_select);
+        this
+    }
+}

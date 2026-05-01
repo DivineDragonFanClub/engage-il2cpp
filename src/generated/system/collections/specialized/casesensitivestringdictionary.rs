@@ -1,0 +1,39 @@
+
+use crate::system::collections::specialized::stringdictionary::IStringDictionary;
+use crate::system::collections::specialized::stringdictionary::StringDictionary;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/specialized/casesensitivestringdictionary/CaseSensitiveStringDictionary.md")))]
+#[::unity2::class(
+    namespace = "System.Collections.Specialized",
+    name = "CaseSensitiveStringDictionary"
+)]
+#[parent(crate::system::collections::specialized::stringdictionary::StringDictionary)]
+pub struct CaseSensitiveStringDictionary {}
+
+#[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
+#[::unity2::methods]
+impl CaseSensitiveStringDictionary {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Add", args = 2)]
+    pub fn add(self, key: ::unity2::Il2CppString, value: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
+impl CaseSensitiveStringDictionary {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CaseSensitiveStringDictionary),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICaseSensitiveStringDictionaryMethods>::ctor(this);
+        this
+    }
+}

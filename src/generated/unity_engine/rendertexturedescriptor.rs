@@ -1,0 +1,201 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendertexturedescriptor/RenderTextureDescriptor.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RenderTextureDescriptor {
+    pub graphics_format:
+        crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+    pub depth_buffer_bits: i32,
+    pub flags: crate::unity_engine::rendertexturecreationflags::RenderTextureCreationFlags,
+}
+
+impl ::unity2::ClassIdentity for RenderTextureDescriptor {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "RenderTextureDescriptor";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RenderTextureDescriptor {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendertexturedescriptor")]
+#[::unity2::methods(value)]
+impl RenderTextureDescriptor {
+    #[method(name = "get_width", args = 0)]
+    pub fn get_width(self) -> i32;
+
+    #[method(name = "set_width", args = 1)]
+    pub fn set_width(self, value: i32) -> ();
+
+    #[method(name = "get_height", args = 0)]
+    pub fn get_height(self) -> i32;
+
+    #[method(name = "set_height", args = 1)]
+    pub fn set_height(self, value: i32) -> ();
+
+    #[method(name = "get_msaaSamples", args = 0)]
+    pub fn get_msaa_samples(self) -> i32;
+
+    #[method(name = "set_msaaSamples", args = 1)]
+    pub fn set_msaa_samples(self, value: i32) -> ();
+
+    #[method(name = "get_volumeDepth", args = 0)]
+    pub fn get_volume_depth(self) -> i32;
+
+    #[method(name = "set_volumeDepth", args = 1)]
+    pub fn set_volume_depth(self, value: i32) -> ();
+
+    #[method(name = "get_mipCount", args = 0)]
+    pub fn get_mip_count(self) -> i32;
+
+    #[method(name = "set_mipCount", args = 1)]
+    pub fn set_mip_count(self, value: i32) -> ();
+
+    #[method(name = "get_graphicsFormat", args = 0)]
+    pub fn get_graphics_format(
+        self,
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat;
+
+    #[method(name = "set_graphicsFormat", args = 1)]
+    pub fn set_graphics_format(
+        self,
+        value: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+    ) -> ();
+
+    #[method(name = "set_stencilFormat", args = 1)]
+    pub fn set_stencil_format(
+        self,
+        value: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+    ) -> ();
+
+    #[method(name = "get_colorFormat", args = 0)]
+    pub fn get_color_format(self) -> crate::unity_engine::rendertextureformat::RenderTextureFormat;
+
+    #[method(name = "set_colorFormat", args = 1)]
+    pub fn set_color_format(
+        self,
+        value: crate::unity_engine::rendertextureformat::RenderTextureFormat,
+    ) -> ();
+
+    #[method(name = "get_sRGB", args = 0)]
+    pub fn get_s_rgb(self) -> bool;
+
+    #[method(name = "set_sRGB", args = 1)]
+    pub fn set_s_rgb(self, value: bool) -> ();
+
+    #[method(name = "get_depthBufferBits", args = 0)]
+    pub fn get_depth_buffer_bits(self) -> i32;
+
+    #[method(name = "set_depthBufferBits", args = 1)]
+    pub fn set_depth_buffer_bits(self, value: i32) -> ();
+
+    #[method(name = "get_dimension", args = 0)]
+    pub fn get_dimension(
+        self,
+    ) -> crate::unity_engine::rendering::texturedimension::TextureDimension;
+
+    #[method(name = "set_dimension", args = 1)]
+    pub fn set_dimension(
+        self,
+        value: crate::unity_engine::rendering::texturedimension::TextureDimension,
+    ) -> ();
+
+    #[method(name = "set_shadowSamplingMode", args = 1)]
+    pub fn set_shadow_sampling_mode(
+        self,
+        value: crate::unity_engine::rendering::shadowsamplingmode::ShadowSamplingMode,
+    ) -> ();
+
+    #[method(name = "get_vrUsage", args = 0)]
+    pub fn get_vr_usage(self) -> crate::unity_engine::vrtextureusage::VRTextureUsage;
+
+    #[method(name = "set_vrUsage", args = 1)]
+    pub fn set_vr_usage(self, value: crate::unity_engine::vrtextureusage::VRTextureUsage) -> ();
+
+    #[method(name = "set_memoryless", args = 1)]
+    pub fn set_memoryless(
+        self,
+        value: crate::unity_engine::rendertexturememoryless::RenderTextureMemoryless,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, width: i32, height: i32) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor_2(
+        self,
+        width: i32,
+        height: i32,
+        color_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        depth_buffer_bits: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor_3(
+        self,
+        width: i32,
+        height: i32,
+        color_format: crate::unity_engine::rendertextureformat::RenderTextureFormat,
+        depth_buffer_bits: i32,
+        mip_count: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor_4(
+        self,
+        width: i32,
+        height: i32,
+        color_format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        depth_buffer_bits: i32,
+        mip_count: i32,
+    ) -> ();
+
+    #[method(name = "SetOrClearRenderTextureCreationFlag", args = 2)]
+    pub fn set_or_clear_render_texture_creation_flag(
+        self,
+        value: bool,
+        flag: crate::unity_engine::rendertexturecreationflags::RenderTextureCreationFlags,
+    ) -> ();
+
+    #[method(name = "set_useMipMap", args = 1)]
+    pub fn set_use_mip_map(self, value: bool) -> ();
+
+    #[method(name = "set_autoGenerateMips", args = 1)]
+    pub fn set_auto_generate_mips(self, value: bool) -> ();
+
+    #[method(name = "set_enableRandomWrite", args = 1)]
+    pub fn set_enable_random_write(self, value: bool) -> ();
+
+    #[method(name = "set_bindMS", args = 1)]
+    pub fn set_bind_ms(self, value: bool) -> ();
+
+    #[method(name = "set_createdFromScript", args = 1)]
+    pub fn set_created_from_script(self, value: bool) -> ();
+
+    #[method(name = "get_useDynamicScale", args = 0)]
+    pub fn get_use_dynamic_scale(self) -> bool;
+
+    #[method(name = "set_useDynamicScale", args = 1)]
+    pub fn set_use_dynamic_scale(self, value: bool) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

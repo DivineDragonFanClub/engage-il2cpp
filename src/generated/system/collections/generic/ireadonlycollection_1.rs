@@ -1,0 +1,16 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/ireadonlycollection_1/IReadOnlyCollection_1.md")))]
+#[::unity2::class(
+    namespace = "System.Collections.Generic",
+    name = "IReadOnlyCollection`1"
+)]
+pub struct IReadOnlyCollection_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "system-collections-generic-ireadonlycollection_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> IReadOnlyCollection_1<T0> {
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+}

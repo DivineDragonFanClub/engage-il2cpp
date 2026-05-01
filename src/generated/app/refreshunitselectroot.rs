@@ -1,0 +1,213 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshunitselectroot/RefreshUnitSelectRoot.md")))]
+#[::unity2::class(namespace = "App", name = "RefreshUnitSelectRoot")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct RefreshUnitSelectRoot {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_RefreshUnitSetMenuContent")]
+    pub m_refresh_unit_set_menu_content:
+        crate::app::refreshunitsetmenucontent::RefreshUnitSetMenuContent,
+    #[rename(name = "m_RefreshUnitSelectMenuContent")]
+    pub m_refresh_unit_select_menu_content:
+        crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent,
+    #[rename(name = "m_RefreshFacilitySelectMenuContent")]
+    pub m_refresh_facility_select_menu_content:
+        crate::app::refreshfacilityselectmenucontent::RefreshFacilitySelectMenuContent,
+    #[rename(name = "m_SettingInfoWindowAnimator")]
+    pub m_setting_info_window_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_FacilityWindowCanvasGroup")]
+    pub m_facility_window_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+    #[rename(name = "m_FacilityWindowCaptionText")]
+    pub m_facility_window_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_FacilityWindowNameText")]
+    pub m_facility_window_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_UnitWindowCanvasGroup")]
+    pub m_unit_window_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+    #[rename(name = "m_UnitWindowCaptionText")]
+    pub m_unit_window_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_UnitWindowUnitInfo")]
+    pub m_unit_window_unit_info: ::unity2::Array<
+        crate::app::refreshunitselectroot::RefreshUnitSelectRoot_UnitWindowUnitInfo,
+    >,
+    #[rename(name = "m_RelianceWindowCanvasGroup")]
+    pub m_reliance_window_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+    #[rename(name = "m_RelianceWindowCaptionText")]
+    pub m_reliance_window_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_RelianceWindowRankCImage")]
+    pub m_reliance_window_rank_c_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RelianceWindowRankBImage")]
+    pub m_reliance_window_rank_b_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RelianceWindowRankAImage")]
+    pub m_reliance_window_rank_a_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RelianceWindowRankSImage")]
+    pub m_reliance_window_rank_s_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RelianceWindowNoneImage")]
+    pub m_reliance_window_none_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_HelpWindowObject")]
+    pub m_help_window_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_HelpWindowAnimator")]
+    pub m_help_window_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_HelpWindowCaptionText")]
+    pub m_help_window_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_HelpWindowUnitIcon")]
+    pub m_help_window_unit_icon: ::unity2::Array<crate::app::uniticon::UnitIcon>,
+    #[rename(name = "m_HelpWindowRankRootObject")]
+    pub m_help_window_rank_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_HelpWindowRankCImage")]
+    pub m_help_window_rank_c_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_HelpWindowRankBImage")]
+    pub m_help_window_rank_b_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_HelpWindowRankAImage")]
+    pub m_help_window_rank_a_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_HelpWindowRankSImage")]
+    pub m_help_window_rank_s_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_HelpWindowRankNoneImage")]
+    pub m_help_window_rank_none_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_HelpWindowMessageText")]
+    pub m_help_window_message_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-refreshunitselectroot")]
+#[::unity2::methods]
+impl RefreshUnitSelectRoot {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "CreateRoot", args = 0)]
+    pub fn create_root() -> crate::app::refreshunitselectroot::RefreshUnitSelectRoot;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "GetRefreshUnitSetMenuContent", args = 0)]
+    pub fn get_refresh_unit_set_menu_content(
+        self,
+    ) -> crate::app::refreshunitsetmenucontent::RefreshUnitSetMenuContent;
+
+    #[method(name = "GetRefreshUnitSelectMenuContent", args = 0)]
+    pub fn get_refresh_unit_select_menu_content(
+        self,
+    ) -> crate::app::refreshunitselectmenucontent::RefreshUnitSelectMenuContent;
+
+    #[method(name = "GetRefreshFacilitySelectMenuContent", args = 0)]
+    pub fn get_refresh_facility_select_menu_content(
+        self,
+    ) -> crate::app::refreshfacilityselectmenucontent::RefreshFacilitySelectMenuContent;
+
+    #[method(name = "CloseSettingInfoWindow", args = 0)]
+    pub fn close_setting_info_window(self) -> ();
+
+    #[method(name = "IsClosedSettingInfoWindow", args = 0)]
+    pub fn is_closed_setting_info_window(self) -> bool;
+
+    #[method(name = "SetFacilityWindow", args = 2)]
+    pub fn set_facility_window(
+        self,
+        enabled: bool,
+        facility_data: crate::app::hubfacilitydata::HubFacilityData,
+    ) -> ();
+
+    #[method(name = "SetUnitWindow", args = 2)]
+    pub fn set_unit_window(
+        self,
+        enabled: bool,
+        unit: ::unity2::Array<crate::app::unit::Unit>,
+    ) -> ();
+
+    #[method(name = "SetRelianceWindow", args = 3)]
+    pub fn set_reliance_window(
+        self,
+        enabled: bool,
+        unit0: crate::app::unit::Unit,
+        unit1: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "SetActiveHelpWindow", args = 1)]
+    pub fn set_active_help_window(self, actived: bool) -> ();
+
+    #[method(name = "SetHelpWindow", args = 1)]
+    pub fn set_help_window(self, units: ::unity2::Array<crate::app::unit::Unit>) -> ();
+
+    #[method(name = "SetHelpWindow", args = 2)]
+    pub fn set_help_window_2(
+        self,
+        caption_mid: ::unity2::Il2CppString,
+        message_mid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "CloseHelpWindow", args = 0)]
+    pub fn close_help_window(self) -> ();
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+}
+
+#[cfg(feature = "app-refreshunitselectroot")]
+impl RefreshUnitSelectRoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshUnitSelectRoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshUnitSelectRootMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshunitselectroot/RefreshUnitSelectRoot_UnitWindowUnitInfo.md")))]
+#[::unity2::class(namespace = "App", name = "RefreshUnitSelectRoot.UnitWindowUnitInfo")]
+#[parent(crate::system::object::Object)]
+pub struct RefreshUnitSelectRoot_UnitWindowUnitInfo {
+    #[rename(name = "m_UnitIcon")]
+    pub m_unit_icon: crate::app::uniticon::UnitIcon,
+    #[rename(name = "m_UnitName")]
+    pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-refreshunitselectroot")]
+#[::unity2::methods]
+impl RefreshUnitSelectRoot_UnitWindowUnitInfo {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refreshunitselectroot")]
+impl RefreshUnitSelectRoot_UnitWindowUnitInfo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshUnitSelectRoot_UnitWindowUnitInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods>::ctor(this);
+        this
+    }
+}

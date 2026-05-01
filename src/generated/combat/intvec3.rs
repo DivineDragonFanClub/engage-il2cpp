@@ -1,0 +1,19 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/intvec3/IntVec3.md")))]
+#[::unity2::class(namespace = "Combat", name = "IntVec3")]
+#[parent(crate::system::object::Object)]
+pub struct IntVec3 {}
+
+#[cfg(feature = "combat-intvec3")]
+#[::unity2::methods]
+impl IntVec3 {
+    #[method(name = "Encode", args = 1)]
+    pub fn encode(vector: crate::unity_engine::vector3::Vector3) -> i32;
+
+    #[method(name = "Decode", args = 1)]
+    pub fn decode(int_value: i32) -> crate::unity_engine::vector3::Vector3;
+}

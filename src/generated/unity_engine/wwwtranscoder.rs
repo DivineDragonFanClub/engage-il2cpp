@@ -1,0 +1,85 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/wwwtranscoder/WWWTranscoder.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "WWWTranscoder")]
+#[parent(crate::system::object::Object)]
+pub struct WWWTranscoder {
+    #[static_field]
+    #[rename(name = "ucHexChars")]
+    pub uc_hex_chars: ::unity2::Array<u8>,
+    #[static_field]
+    #[rename(name = "lcHexChars")]
+    pub lc_hex_chars: ::unity2::Array<u8>,
+    #[static_field]
+    #[rename(name = "urlEscapeChar")]
+    pub url_escape_char: u8,
+    #[static_field]
+    #[rename(name = "urlSpace")]
+    pub url_space: ::unity2::Array<u8>,
+    #[static_field]
+    #[rename(name = "dataSpace")]
+    pub data_space: ::unity2::Array<u8>,
+    #[static_field]
+    #[rename(name = "urlForbidden")]
+    pub url_forbidden: ::unity2::Array<u8>,
+    #[static_field]
+    #[rename(name = "qpEscapeChar")]
+    pub qp_escape_char: u8,
+    #[static_field]
+    #[rename(name = "qpSpace")]
+    pub qp_space: ::unity2::Array<u8>,
+    #[static_field]
+    #[rename(name = "qpForbidden")]
+    pub qp_forbidden: ::unity2::Array<u8>,
+}
+
+#[cfg(feature = "unity_engine-wwwtranscoder")]
+#[::unity2::methods]
+impl WWWTranscoder {
+    #[method(name = "Hex2Byte", args = 2)]
+    pub fn hex2_byte(b: ::unity2::Array<u8>, offset: i32) -> u8;
+
+    #[method(name = "Byte2Hex", args = 2)]
+    pub fn byte2_hex(b: u8, hex_chars: ::unity2::Array<u8>) -> ::unity2::Array<u8>;
+
+    #[method(name = "DataEncode", args = 1)]
+    pub fn data_encode(to_encode: ::unity2::Array<u8>) -> ::unity2::Array<u8>;
+
+    #[method(name = "Encode", args = 5)]
+    pub fn encode(
+        input: ::unity2::Array<u8>,
+        escape_char: u8,
+        space: ::unity2::Array<u8>,
+        forbidden: ::unity2::Array<u8>,
+        uppercase: bool,
+    ) -> ::unity2::Array<u8>;
+
+    #[method(name = "ByteArrayContains", args = 2)]
+    pub fn byte_array_contains(array: ::unity2::Array<u8>, b: u8) -> bool;
+
+    #[method(name = "URLDecode", args = 1)]
+    pub fn url_decode(to_encode: ::unity2::Array<u8>) -> ::unity2::Array<u8>;
+
+    #[method(name = "ByteSubArrayEquals", args = 3)]
+    pub fn byte_sub_array_equals(
+        array: ::unity2::Array<u8>,
+        index: i32,
+        comperand: ::unity2::Array<u8>,
+    ) -> bool;
+
+    #[method(name = "Decode", args = 3)]
+    pub fn decode(
+        input: ::unity2::Array<u8>,
+        escape_char: u8,
+        space: ::unity2::Array<u8>,
+    ) -> ::unity2::Array<u8>;
+
+    #[method(name = "SevenBitClean", args = 1)]
+    pub fn seven_bit_clean(input: ::unity2::Array<u8>) -> bool;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

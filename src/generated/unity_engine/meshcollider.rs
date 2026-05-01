@@ -1,0 +1,78 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::collider::Collider;
+use crate::unity_engine::collider::ICollider;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/meshcollider/MeshCollider.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "MeshCollider")]
+#[parent(crate::unity_engine::collider::Collider)]
+pub struct MeshCollider {}
+
+#[cfg(feature = "unity_engine-meshcollider")]
+#[::unity2::methods]
+impl MeshCollider {
+    #[method(name = "get_sharedMesh", args = 0)]
+    pub fn get_shared_mesh(self) -> crate::unity_engine::mesh::Mesh;
+
+    #[method(name = "set_sharedMesh", args = 1)]
+    pub fn set_shared_mesh(self, value: crate::unity_engine::mesh::Mesh) -> ();
+
+    #[method(name = "get_convex", args = 0)]
+    pub fn get_convex(self) -> bool;
+
+    #[method(name = "set_convex", args = 1)]
+    pub fn set_convex(self, value: bool) -> ();
+
+    #[method(name = "get_inflateMesh", args = 0)]
+    pub fn get_inflate_mesh(self) -> bool;
+
+    #[method(name = "set_inflateMesh", args = 1)]
+    pub fn set_inflate_mesh(self, value: bool) -> ();
+
+    #[method(name = "get_cookingOptions", args = 0)]
+    pub fn get_cooking_options(
+        self,
+    ) -> crate::unity_engine::meshcollidercookingoptions::MeshColliderCookingOptions;
+
+    #[method(name = "set_cookingOptions", args = 1)]
+    pub fn set_cooking_options(
+        self,
+        value: crate::unity_engine::meshcollidercookingoptions::MeshColliderCookingOptions,
+    ) -> ();
+
+    #[method(name = "get_skinWidth", args = 0)]
+    pub fn get_skin_width(self) -> f32;
+
+    #[method(name = "set_skinWidth", args = 1)]
+    pub fn set_skin_width(self, value: f32) -> ();
+
+    #[method(name = "get_smoothSphereCollisions", args = 0)]
+    pub fn get_smooth_sphere_collisions(self) -> bool;
+
+    #[method(name = "set_smoothSphereCollisions", args = 1)]
+    pub fn set_smooth_sphere_collisions(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-meshcollider")]
+impl MeshCollider {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MeshCollider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMeshColliderMethods>::ctor(this);
+        this
+    }
+}

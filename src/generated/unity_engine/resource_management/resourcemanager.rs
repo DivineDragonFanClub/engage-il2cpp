@@ -1,0 +1,541 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1;
+use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resourcemanager/ResourceManager_DiagnosticEventType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ResourceManager_DiagnosticEventType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ResourceManager_DiagnosticEventType {
+    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement";
+
+    const NAME: &'static str = "ResourceManager.DiagnosticEventType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ResourceManager_DiagnosticEventType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ResourceManager_DiagnosticEventType {
+    pub fn async_operation_fail() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn async_operation_create() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn async_operation_percent_complete() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn async_operation_complete() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn async_operation_reference_count() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn async_operation_destroy() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resourcemanager/ResourceManager_DiagnosticEventContext.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ResourceManager_DiagnosticEventContext {}
+
+impl ::unity2::ClassIdentity for ResourceManager_DiagnosticEventContext {
+    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement";
+
+    const NAME: &'static str = "ResourceManager.DiagnosticEventContext";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ResourceManager_DiagnosticEventContext {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+#[::unity2::methods(value)]
+impl ResourceManager_DiagnosticEventContext {
+    #[method(name = "get_OperationHandle", args = 0)]
+    pub fn get_operation_handle (self ,) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle ;
+
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type (self ,) -> crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventType ;
+
+    #[method(name = "get_EventValue", args = 0)]
+    pub fn get_event_value(self) -> i32;
+
+    #[method(name = "get_Location", args = 0)]
+    pub fn get_location (self ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation ;
+
+    #[method(name = "get_Context", args = 0)]
+    pub fn get_context(self) -> crate::system::object::Object;
+
+    #[method(name = "get_Error", args = 0)]
+    pub fn get_error(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
+        r#type : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventType,
+        event_value: i32,
+        error: ::unity2::Il2CppString,
+        context: ::unity2::IlInstance,
+    ) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resourcemanager/ResourceManager_InstanceOperation.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement",
+    name = "ResourceManager.InstanceOperation"
+)]
+# [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: unity_engine :: gameobject :: GameObject >)]
+pub struct ResourceManager_InstanceOperation {
+# [rename (name = "m_dependency")] pub m_dependency : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ,
+# [rename (name = "m_instantiationParams")] pub m_instantiation_params : crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters ,
+# [rename (name = "m_instanceProvider")] pub m_instance_provider : crate :: unity_engine :: resource_management :: resource_providers :: iinstanceprovider_interface :: IInstanceProvider_Interface ,
+# [rename (name = "m_instance")] pub m_instance : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_scene")] pub m_scene : crate :: unity_engine :: scene_management :: scene :: Scene ,
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+#[::unity2::methods]
+impl ResourceManager_InstanceOperation {
+    #[method(name = "Init", args = 4)]
+    pub fn init(
+        self,
+        rm: crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+        instance_provider : crate :: unity_engine :: resource_management :: resource_providers :: iinstanceprovider_interface :: IInstanceProvider_Interface,
+        instantiation_params : crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters,
+        dependency : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject >,
+    ) -> ();
+
+    #[method(name = "GetDownloadStatus", args = 1)]
+    pub fn get_download_status(
+        self,
+        visited: crate::system::collections::generic::hashset_1::HashSet_1<
+            crate::system::object::Object,
+        >,
+    ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus;
+
+    #[method(name = "GetDependencies", args = 1)]
+    pub fn get_dependencies(
+        self,
+        deps : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+    ) -> ();
+
+    #[method(name = "get_DebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "InstanceScene", args = 0)]
+    pub fn instance_scene(self) -> crate::unity_engine::scene_management::scene::Scene;
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[method(name = "get_Progress", args = 0)]
+    pub fn get_progress(self) -> f32;
+
+    #[method(name = "InvokeWaitForCompletion", args = 0)]
+    pub fn invoke_wait_for_completion(self) -> bool;
+
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+impl ResourceManager_InstanceOperation {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceManager_InstanceOperation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceManager_InstanceOperationMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resourcemanager/ResourceManager_CompletedOperation_1.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement",
+    name = "ResourceManager.CompletedOperation`1"
+)]
+pub struct ResourceManager_CompletedOperation_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "m_Success")]
+    pub m_success: bool,
+    #[rename(name = "m_ReleaseDependenciesOnFailure")]
+    pub m_release_dependencies_on_failure: bool,
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Init", args = 4)]
+    pub fn init(
+        self,
+        result: T0,
+        success: bool,
+        error_msg: ::unity2::Il2CppString,
+        release_dependencies_on_failure: bool,
+    ) -> ();
+
+    #[method(name = "get_DebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "InvokeWaitForCompletion", args = 0)]
+    pub fn invoke_wait_for_completion(self) -> bool;
+
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+impl<T0: ::unity2::ClassIdentity> ResourceManager_CompletedOperation_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceManager_CompletedOperation_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceManager_CompletedOperation_1Methods<T0>>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resourcemanager/ResourceManager.md")))]
+#[::unity2::class(namespace = "UnityEngine.ResourceManagement", name = "ResourceManager")]
+#[parent(crate::system::object::Object)]
+pub struct ResourceManager {
+# [rename (name = "postProfilerEvents")] pub post_profiler_events : bool ,
+# [rename (name = "CallbackHooksEnabled")] pub callback_hooks_enabled : bool ,
+# [rename (name = "m_allocator")] pub m_allocator : crate :: unity_engine :: resource_management :: util :: iallocationstrategy :: IAllocationStrategy ,
+# [rename (name = "m_UpdateReceiversToRemove")] pub m_update_receivers_to_remove : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: iupdatereceiver :: IUpdateReceiver > ,
+# [rename (name = "m_UpdatingReceivers")] pub m_updating_receivers : bool ,
+# [rename (name = "m_InsideUpdateMethod")] pub m_inside_update_method : bool ,
+# [rename (name = "m_providerMap")] pub m_provider_map : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: resource_management :: resource_providers :: iresourceprovider :: IResourceProvider > ,
+# [rename (name = "m_AssetOperationCache")] pub m_asset_operation_cache : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey , crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
+# [rename (name = "m_TrackedInstanceOperations")] pub m_tracked_instance_operations : crate :: system :: collections :: generic :: hashset_1 :: HashSet_1 < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_InstanceOperation > ,
+# [rename (name = "m_DeferredCompleteCallbacks")] pub m_deferred_complete_callbacks : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
+# [rename (name = "m_obsoleteDiagnosticsHandler")] pub m_obsolete_diagnostics_handler : crate :: system :: action_4 :: Action_4 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventType , i32 , crate :: system :: object :: Object > ,
+# [rename (name = "m_diagnosticsHandler")] pub m_diagnostics_handler : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventContext > ,
+# [rename (name = "m_ReleaseOpNonCached")] pub m_release_op_non_cached : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
+# [rename (name = "m_ReleaseOpCached")] pub m_release_op_cached : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
+# [rename (name = "m_ReleaseInstanceOp")] pub m_release_instance_op : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation > ,
+# [static_field] # [rename (name = "s_GroupOperationTypeHash")] pub s_group_operation_type_hash : i32 ,
+# [static_field] # [rename (name = "s_InstanceOperationTypeHash")] pub s_instance_operation_type_hash : i32 ,
+# [rename (name = "m_RegisteredForCallbacks")] pub m_registered_for_callbacks : bool ,
+# [rename (name = "m_ProviderOperationTypeCache")] pub m_provider_operation_type_cache : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: SystemType , :: unity2 :: SystemType > ,
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+#[::unity2::methods]
+impl ResourceManager {
+    #[method(name = "get_InternalIdTransformFunc", args = 0)]
+    pub fn get_internal_id_transform_func (self ,) -> crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: Il2CppString > ;
+
+    #[method(name = "set_InternalIdTransformFunc", args = 1)]
+    pub fn set_internal_id_transform_func(
+        self,
+        value : crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: Il2CppString >,
+    ) -> ();
+
+    #[method(name = "TransformInternalId", args = 1)]
+    pub fn transform_internal_id(
+        self,
+        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_WebRequestOverride", args = 0)]
+    pub fn get_web_request_override(
+        self,
+    ) -> crate::system::action_1::Action_1<
+        crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
+    >;
+
+    #[method(name = "set_WebRequestOverride", args = 1)]
+    pub fn set_web_request_override(
+        self,
+        value: crate::system::action_1::Action_1<
+            crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
+        >,
+    ) -> ();
+
+    #[method(name = "get_OperationCacheCount", args = 0)]
+    pub fn get_operation_cache_count(self) -> i32;
+
+    #[method(name = "get_InstanceOperationCount", args = 0)]
+    pub fn get_instance_operation_count(self) -> i32;
+
+    #[method(name = "AddUpdateReceiver", args = 1)]
+    pub fn add_update_receiver(
+        self,
+        receiver: crate::unity_engine::resource_management::iupdatereceiver::IUpdateReceiver,
+    ) -> ();
+
+    #[method(name = "RemoveUpdateReciever", args = 1)]
+    pub fn remove_update_reciever(
+        self,
+        receiver: crate::unity_engine::resource_management::iupdatereceiver::IUpdateReceiver,
+    ) -> ();
+
+    #[method(name = "get_Allocator", args = 0)]
+    pub fn get_allocator(
+        self,
+    ) -> crate::unity_engine::resource_management::util::iallocationstrategy::IAllocationStrategy;
+
+    #[method(name = "set_Allocator", args = 1)]
+    pub fn set_allocator(
+        self,
+        value : crate :: unity_engine :: resource_management :: util :: iallocationstrategy :: IAllocationStrategy,
+    ) -> ();
+
+    #[method(name = "get_ResourceProviders", args = 0)]
+    pub fn get_resource_providers (self ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_providers :: iresourceprovider :: IResourceProvider > ;
+
+    #[method(name = "get_CertificateHandlerInstance", args = 0)]
+    pub fn get_certificate_handler_instance(
+        self,
+    ) -> crate::unity_engine::networking::certificatehandler::CertificateHandler;
+
+    #[method(name = "set_CertificateHandlerInstance", args = 1)]
+    pub fn set_certificate_handler_instance(
+        self,
+        value: crate::unity_engine::networking::certificatehandler::CertificateHandler,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        alloc : crate :: unity_engine :: resource_management :: util :: iallocationstrategy :: IAllocationStrategy,
+    ) -> ();
+
+    #[method(name = "OnObjectAdded", args = 1)]
+    pub fn on_object_added(self, obj: crate::system::object::Object) -> ();
+
+    #[method(name = "OnObjectRemoved", args = 1)]
+    pub fn on_object_removed(self, obj: crate::system::object::Object) -> ();
+
+    #[method(name = "RegisterForCallbacks", args = 0)]
+    pub fn register_for_callbacks(self) -> ();
+
+    #[method(name = "ClearDiagnosticsCallback", args = 0)]
+    pub fn clear_diagnostics_callback(self) -> ();
+
+    #[method(name = "ClearDiagnosticCallbacks", args = 0)]
+    pub fn clear_diagnostic_callbacks(self) -> ();
+
+    #[method(name = "UnregisterDiagnosticCallback", args = 1)]
+    pub fn unregister_diagnostic_callback(
+        self,
+        func : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventContext >,
+    ) -> ();
+
+    #[method(name = "RegisterDiagnosticCallback", args = 1)]
+    pub fn register_diagnostic_callback(
+        self,
+        func : crate :: system :: action_4 :: Action_4 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventType , i32 , crate :: system :: object :: Object >,
+    ) -> ();
+
+    #[method(name = "RegisterDiagnosticCallback", args = 1)]
+    pub fn register_diagnostic_callback_2(
+        self,
+        func : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventContext >,
+    ) -> ();
+
+    #[method(name = "PostDiagnosticEvent", args = 1)]
+    pub fn post_diagnostic_event(
+        self,
+        context : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventContext,
+    ) -> ();
+
+    #[method(name = "GetResourceProvider", args = 2)]
+    pub fn get_resource_provider (self , t : :: unity2 :: SystemType , location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation) -> crate :: unity_engine :: resource_management :: resource_providers :: iresourceprovider :: IResourceProvider ;
+
+    #[method(name = "GetDefaultTypeForLocation", args = 1)]
+    pub fn get_default_type_for_location(
+        self,
+        loc : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+    ) -> ::unity2::SystemType;
+
+    #[method(name = "CalculateLocationsHash", args = 2)]
+    pub fn calculate_locations_hash(
+        self,
+        locations : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        t: ::unity2::SystemType,
+    ) -> i32;
+
+    #[method(name = "ProvideResource", args = 3)]
+    pub fn provide_resource (self , location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , desired_type : :: unity2 :: SystemType , release_dependencies_on_failure : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle ;
+
+    #[method(name = "StartOperation", args = 2)]
+    pub fn start_operation (self , operation : crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation , dependency : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle ;
+
+    #[method(name = "OnInstanceOperationDestroy", args = 1)]
+    pub fn on_instance_operation_destroy(
+        self,
+        o : crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation,
+    ) -> ();
+
+    #[method(name = "OnOperationDestroyNonCached", args = 1)]
+    pub fn on_operation_destroy_non_cached(
+        self,
+        o : crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation,
+    ) -> ();
+
+    #[method(name = "OnOperationDestroyCached", args = 1)]
+    pub fn on_operation_destroy_cached(
+        self,
+        o : crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation,
+    ) -> ();
+
+    #[method(name = "AddOperationToCache", args = 2)]
+    pub fn add_operation_to_cache(
+        self,
+        key: crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,
+        operation : crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation,
+    ) -> ();
+
+    #[method(name = "RemoveOperationFromCache", args = 1)]
+    pub fn remove_operation_from_cache(
+        self,
+        key: crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,
+    ) -> bool;
+
+    #[method(name = "IsOperationCached", args = 1)]
+    pub fn is_operation_cached(
+        self,
+        key: crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,
+    ) -> bool;
+
+    #[method(name = "CachedOperationCount", args = 0)]
+    pub fn cached_operation_count(self) -> i32;
+
+    #[method(name = "Release", args = 1)]
+    pub fn release(
+        self,
+        handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
+    ) -> ();
+
+    #[method(name = "Acquire", args = 1)]
+    pub fn acquire(
+        self,
+        handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
+    ) -> ();
+
+    #[method(name = "AcquireGroupOpFromCache", args = 1)]
+    pub fn acquire_group_op_from_cache(
+        self,
+        key: crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,
+    ) -> crate::unity_engine::resource_management::async_operations::groupoperation::GroupOperation;
+
+    #[method(name = "CreateGenericGroupOperation", args = 2)]
+    pub fn create_generic_group_operation (self , operations : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , released_cached_op_on_complete : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > > ;
+
+    #[method(name = "ProvideResourceGroupCached", args = 5)]
+    pub fn provide_resource_group_cached (self , locations : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , group_hash : i32 , desired_type : :: unity2 :: SystemType , callback : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > , release_dependencies_on_failure : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > > ;
+
+    #[method(name = "ProvideScene", args = 5)]
+    pub fn provide_scene (self , scene_provider : crate :: unity_engine :: resource_management :: resource_providers :: isceneprovider_interface :: ISceneProvider_Interface , location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , load_mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , activate_on_load : bool , priority : i32) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[method(name = "ReleaseScene", args = 2)]
+    pub fn release_scene (self , scene_provider : crate :: unity_engine :: resource_management :: resource_providers :: isceneprovider_interface :: ISceneProvider_Interface , scene_load_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[method(name = "ProvideInstance", args = 3)]
+    pub fn provide_instance (self , provider : crate :: unity_engine :: resource_management :: resource_providers :: iinstanceprovider_interface :: IInstanceProvider_Interface , location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , instantiate_parameters : crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ;
+
+    #[method(name = "CleanupSceneInstances", args = 1)]
+    pub fn cleanup_scene_instances(
+        self,
+        scene: crate::unity_engine::scene_management::scene::Scene,
+    ) -> ();
+
+    #[method(name = "ExecuteDeferredCallbacks", args = 0)]
+    pub fn execute_deferred_callbacks(self) -> ();
+
+    #[method(name = "RegisterForDeferredCallback", args = 2)]
+    pub fn register_for_deferred_callback(
+        self,
+        op : crate :: unity_engine :: resource_management :: async_operations :: iasyncoperation :: IAsyncOperation,
+        increment_ref_count: bool,
+    ) -> ();
+
+    #[method(name = "Update", args = 1)]
+    pub fn update(self, unscaled_delta_time: f32) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resourcemanager")]
+impl ResourceManager {
+    pub fn new(
+        alloc : crate :: unity_engine :: resource_management :: util :: iallocationstrategy :: IAllocationStrategy,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceManagerMethods>::ctor(this, alloc);
+        this
+    }
+}

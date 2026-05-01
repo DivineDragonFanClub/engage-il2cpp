@@ -1,0 +1,82 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/vector3int/Vector3Int.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Vector3Int {
+    pub m_x: i32,
+    pub m_y: i32,
+    pub m_z: i32,
+}
+
+impl ::unity2::ClassIdentity for Vector3Int {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "Vector3Int";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Vector3Int {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-vector3int")]
+#[::unity2::methods(value)]
+impl Vector3Int {
+    #[method(name = "get_x", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[method(name = "set_x", args = 1)]
+    pub fn set_x(self, value: i32) -> ();
+
+    #[method(name = "get_y", args = 0)]
+    pub fn get_y(self) -> i32;
+
+    #[method(name = "set_y", args = 1)]
+    pub fn set_y(self, value: i32) -> ();
+
+    #[method(name = "get_z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[method(name = "set_z", args = 1)]
+    pub fn set_z(self, value: i32) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(self, x: i32, y: i32, z: i32) -> ();
+
+    #[method(name = "op_Equality", args = 2)]
+    pub fn op_equality(
+        lhs: crate::unity_engine::vector3int::Vector3Int,
+        rhs: crate::unity_engine::vector3int::Vector3Int,
+    ) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, other: crate::system::object::Object) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_2(self, other: crate::unity_engine::vector3int::Vector3Int) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

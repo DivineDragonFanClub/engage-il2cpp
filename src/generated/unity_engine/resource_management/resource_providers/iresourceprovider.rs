@@ -1,0 +1,45 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/iresourceprovider/IResourceProvider.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "IResourceProvider"
+)]
+pub struct IResourceProvider {}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-iresourceprovider")]
+#[::unity2::methods]
+impl IResourceProvider {
+    #[method(name = "get_ProviderId", args = 0)]
+    pub fn get_provider_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetDefaultType", args = 1)]
+    pub fn get_default_type(
+        self,
+        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+    ) -> ::unity2::SystemType;
+
+    #[method(name = "CanProvide", args = 2)]
+    pub fn can_provide(
+        self,
+        r#type: ::unity2::SystemType,
+        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+    ) -> bool;
+
+    #[method(name = "Provide", args = 1)]
+    pub fn provide(
+        self,
+        provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+    ) -> ();
+
+    #[method(name = "Release", args = 2)]
+    pub fn release(
+        self,
+        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+        asset: crate::system::object::Object,
+    ) -> ();
+
+    #[method(name = "get_BehaviourFlags", args = 0)]
+    pub fn get_behaviour_flags (self ,) -> crate :: unity_engine :: resource_management :: resource_providers :: providerbehaviourflags :: ProviderBehaviourFlags ;
+}

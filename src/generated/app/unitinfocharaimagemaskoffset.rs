@@ -1,0 +1,181 @@
+
+use crate::app::singletonmonobehaviourlist_1::ISingletonMonoBehaviourList_1;
+use crate::app::singletonmonobehaviourlist_1::SingletonMonoBehaviourList_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfocharaimagemaskoffset/UnitInfoCharaImageMaskOffset_Type.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitInfoCharaImageMaskOffset_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitInfoCharaImageMaskOffset_Type {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitInfoCharaImageMaskOffset.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitInfoCharaImageMaskOffset_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitInfoCharaImageMaskOffset_Type {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn left() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfocharaimagemaskoffset/UnitInfoCharaImageMaskOffset.md")))]
+#[::unity2::class(namespace = "App", name = "UnitInfoCharaImageMaskOffset")]
+# [parent (crate :: app :: singletonmonobehaviourlist_1 :: SingletonMonoBehaviourList_1 < crate :: app :: unitinfocharaimagemaskoffset :: UnitInfoCharaImageMaskOffset >)]
+pub struct UnitInfoCharaImageMaskOffset {
+    #[static_field]
+    #[rename(name = "c_DefaultWidth")]
+    pub c_default_width: i32,
+    #[rename(name = "m_Type")]
+    pub m_type: crate::app::unitinfocharaimagemaskoffset::UnitInfoCharaImageMaskOffset_Type,
+    #[rename(name = "m_OffsetU")]
+    pub m_offset_u: f32,
+    #[rename(name = "m_MaskTexture")]
+    pub m_mask_texture: crate::unity_engine::texture::Texture,
+    #[rename(name = "m_MaskTextureOld")]
+    pub m_mask_texture_old: crate::unity_engine::texture::Texture,
+    #[rename(name = "m_Time")]
+    pub m_time: f32,
+    #[rename(name = "m_Offset")]
+    pub m_offset: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_CanvasManager")]
+    pub m_canvas_manager: crate::app::canvasmanager::CanvasManager,
+    #[rename(name = "m_RectTransform")]
+    pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_Image")]
+    pub m_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_MaterialStart")]
+    pub m_material_start: crate::unity_engine::material::Material,
+    #[rename(name = "m_Material")]
+    pub m_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_Texture")]
+    pub m_texture: crate::unity_engine::rendertexture::RenderTexture,
+    #[rename(name = "m_IsStartup")]
+    pub m_is_startup: bool,
+    #[rename(name = "m_IsShow")]
+    pub m_is_show: bool,
+    #[rename(name = "m_IsShowFromUnitInfo")]
+    pub m_is_show_from_unit_info: bool,
+    #[rename(name = "m_IsSetAlphaForced")]
+    pub m_is_set_alpha_forced: bool,
+}
+
+#[cfg(feature = "app-unitinfocharaimagemaskoffset")]
+#[::unity2::methods]
+impl UnitInfoCharaImageMaskOffset {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "Setup", args = 0)]
+    pub fn setup(self) -> ();
+
+    #[method(name = "Cleanup", args = 0)]
+    pub fn cleanup(self) -> ();
+
+    #[method(name = "ResetAlpha", args = 0)]
+    pub fn reset_alpha(self) -> ();
+
+    #[method(name = "SetAlphaForced", args = 2)]
+    pub fn set_alpha_forced(self, alpha: f32, is_show: bool) -> ();
+
+    #[method(name = "SetShowFormUnitInfo", args = 1)]
+    pub fn set_show_form_unit_info(self, is_show: bool) -> ();
+
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[method(name = "UpdateCamera", args = 1)]
+    pub fn update_camera(self, side: crate::app::unitinfo::UnitInfo_Side) -> ();
+
+    #[method(name = "SetCustomOffscreenCameraEnabled", args = 2)]
+    pub fn set_custom_offscreen_camera_enabled(
+        self,
+        side: crate::app::unitinfo::UnitInfo_Side,
+        is_enabled: bool,
+    ) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "get_RenderTexture", args = 0)]
+    pub fn get_render_texture(self) -> crate::unity_engine::rendertexture::RenderTexture;
+
+    #[method(name = "get_Image", args = 0)]
+    pub fn get_image(self) -> crate::unity_engine::ui::image::Image;
+
+    #[method(name = "IsVisible", args = 0)]
+    pub fn is_visible(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitinfocharaimagemaskoffset")]
+impl UnitInfoCharaImageMaskOffset {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitInfoCharaImageMaskOffset),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitInfoCharaImageMaskOffsetMethods>::ctor(this);
+        this
+    }
+}

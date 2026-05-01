@@ -1,0 +1,78 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/execution/scriptloadingcontext/ScriptLoadingContext.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Execution",
+    name = "ScriptLoadingContext"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScriptLoadingContext {}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-scriptloadingcontext")]
+#[::unity2::methods]
+impl ScriptLoadingContext {
+    #[method(name = "get_Script", args = 0)]
+    pub fn get_script(self) -> crate::moon_sharp::interpreter::script::Script;
+
+    #[method(name = "set_Script", args = 1)]
+    pub fn set_script(self, value: crate::moon_sharp::interpreter::script::Script) -> ();
+
+    #[method(name = "get_Scope", args = 0)]
+    pub fn get_scope(
+        self,
+    ) -> crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope;
+
+    #[method(name = "set_Scope", args = 1)]
+    pub fn set_scope(
+        self,
+        value: crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,
+    ) -> ();
+
+    #[method(name = "get_Source", args = 0)]
+    pub fn get_source(self) -> crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode;
+
+    #[method(name = "set_Source", args = 1)]
+    pub fn set_source(
+        self,
+        value: crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,
+    ) -> ();
+
+    #[method(name = "get_Anonymous", args = 0)]
+    pub fn get_anonymous(self) -> bool;
+
+    #[method(name = "set_Anonymous", args = 1)]
+    pub fn set_anonymous(self, value: bool) -> ();
+
+    #[method(name = "get_IsDynamicExpression", args = 0)]
+    pub fn get_is_dynamic_expression(self) -> bool;
+
+    #[method(name = "set_IsDynamicExpression", args = 1)]
+    pub fn set_is_dynamic_expression(self, value: bool) -> ();
+
+    #[method(name = "get_Lexer", args = 0)]
+    pub fn get_lexer(self) -> crate::moon_sharp::interpreter::tree::lexer::Lexer;
+
+    #[method(name = "set_Lexer", args = 1)]
+    pub fn set_lexer(self, value: crate::moon_sharp::interpreter::tree::lexer::Lexer) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, s: crate::moon_sharp::interpreter::script::Script) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-scriptloadingcontext")]
+impl ScriptLoadingContext {
+    pub fn new(s: crate::moon_sharp::interpreter::script::Script) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptLoadingContext),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptLoadingContextMethods>::ctor(this, s);
+        this
+    }
+}

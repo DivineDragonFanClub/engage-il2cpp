@@ -1,0 +1,58 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/util/objectinitializationdata/ObjectInitializationData.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ObjectInitializationData {
+    pub m_id: ::unity2::Il2CppString,
+    pub m_object_type:
+        crate::unity_engine::resource_management::util::serializedtype::SerializedType,
+    pub m_data: ::unity2::Il2CppString,
+}
+
+impl ::unity2::ClassIdentity for ObjectInitializationData {
+    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.Util";
+
+    const NAME: &'static str = "ObjectInitializationData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ObjectInitializationData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-objectinitializationdata")]
+#[::unity2::methods(value)]
+impl ObjectInitializationData {
+    #[method(name = "get_Id", args = 0)]
+    pub fn get_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_ObjectType", args = 0)]
+    pub fn get_object_type(
+        self,
+    ) -> crate::unity_engine::resource_management::util::serializedtype::SerializedType;
+
+    #[method(name = "get_Data", args = 0)]
+    pub fn get_data(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetAsyncInitHandle", args = 2)]
+    pub fn get_async_init_handle (self , rm : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , id_override : :: unity2 :: Il2CppString) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle ;
+}

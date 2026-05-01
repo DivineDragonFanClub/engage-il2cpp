@@ -1,0 +1,116 @@
+
+use crate::app::basicmenuitemcontent::BasicMenuItemContent;
+use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomreliancesubselectitemcontent/MyRoomRelianceSubSelectItemContent.md")))]
+#[::unity2::class(namespace = "App", name = "MyRoomRelianceSubSelectItemContent")]
+#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
+pub struct MyRoomRelianceSubSelectItemContent {
+    #[rename(name = "m_Icon")]
+    pub m_icon: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_TalkIcon")]
+    pub m_talk_icon: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Name")]
+    pub m_name: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RankC")]
+    pub m_rank_c: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RankB")]
+    pub m_rank_b: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RankA")]
+    pub m_rank_a: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RankS")]
+    pub m_rank_s: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Frame")]
+    pub m_frame: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Image")]
+    pub m_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RankCImage")]
+    pub m_rank_c_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RankBImage")]
+    pub m_rank_b_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RankAImage")]
+    pub m_rank_a_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RankSImage")]
+    pub m_rank_s_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RankCImageBase")]
+    pub m_rank_c_image_base: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RankBImageBase")]
+    pub m_rank_b_image_base: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RankAImageBase")]
+    pub m_rank_a_image_base: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RankSImageBase")]
+    pub m_rank_s_image_base: crate::unity_engine::ui::image::Image,
+    #[rename(name = "OpenRank")]
+    pub open_rank: i32,
+}
+
+#[cfg(feature = "app-myroomreliancesubselectitemcontent")]
+#[::unity2::methods]
+impl MyRoomRelianceSubSelectItemContent {
+    #[method(name = "SetupObjects", args = 0)]
+    pub fn setup_objects(self) -> ();
+
+    #[method(name = "SetRankColor", args = 3)]
+    pub fn set_rank_color(
+        self,
+        rank_image: crate::unity_engine::ui::image::Image,
+        base_image: crate::unity_engine::ui::image::Image,
+        color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = "SetRankColorC", args = 1)]
+    pub fn set_rank_color_c(self, color: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "SetRankColorB", args = 1)]
+    pub fn set_rank_color_b(self, color: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "SetRankColorA", args = 1)]
+    pub fn set_rank_color_a(self, color: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "SetRankColorS", args = 1)]
+    pub fn set_rank_color_s(self, color: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "GetCommandColor", args = 0)]
+    pub fn get_command_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "Build", args = 1)]
+    pub fn build(self, menu_item: crate::app::basicmenuitem::BasicMenuItem) -> ();
+
+    #[method(name = "BuildText", args = 0)]
+    pub fn build_text(self) -> ();
+
+    #[method(name = "UpdateTextColor", args = 0)]
+    pub fn update_text_color(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-myroomreliancesubselectitemcontent")]
+impl MyRoomRelianceSubSelectItemContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomRelianceSubSelectItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomRelianceSubSelectItemContentMethods>::ctor(this);
+        this
+    }
+}

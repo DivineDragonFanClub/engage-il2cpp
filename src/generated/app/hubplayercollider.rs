@@ -1,0 +1,79 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplayercollider/HubPlayerCollider.md")))]
+#[::unity2::class(namespace = "App", name = "HubPlayerCollider")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct HubPlayerCollider {
+    #[rename(name = "m_isFront")]
+    pub m_is_front: bool,
+    #[rename(name = "m_Notification")]
+    pub m_notification: crate::app::hubplayercontroller::HubPlayerController,
+    #[rename(name = "m_EnterColliders")]
+    pub m_enter_colliders: crate::system::collections::generic::queue_1::Queue_1<
+        crate::unity_engine::collider::Collider,
+    >,
+    #[rename(name = "m_ExitColliders")]
+    pub m_exit_colliders: crate::system::collections::generic::queue_1::Queue_1<
+        crate::unity_engine::collider::Collider,
+    >,
+}
+
+#[cfg(feature = "app-hubplayercollider")]
+#[::unity2::methods]
+impl HubPlayerCollider {
+    #[method(name = "SetHubPlayerController", args = 1)]
+    pub fn set_hub_player_controller(
+        self,
+        hpc: crate::app::hubplayercontroller::HubPlayerController,
+    ) -> ();
+
+    #[method(name = "IsTarget", args = 1)]
+    pub fn is_target(self, other: crate::unity_engine::collider::Collider) -> bool;
+
+    #[method(name = "OnTriggerEnter", args = 1)]
+    pub fn on_trigger_enter(self, other: crate::unity_engine::collider::Collider) -> ();
+
+    #[method(name = "CallTriggerEnter", args = 1)]
+    pub fn call_trigger_enter(self, other: crate::unity_engine::collider::Collider) -> ();
+
+    #[method(name = "OnTriggerExit", args = 1)]
+    pub fn on_trigger_exit(self, other: crate::unity_engine::collider::Collider) -> ();
+
+    #[method(name = "CallTriggerExit", args = 1)]
+    pub fn call_trigger_exit(self, other: crate::unity_engine::collider::Collider) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "Polling", args = 0)]
+    pub fn polling(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubplayercollider")]
+impl HubPlayerCollider {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubPlayerCollider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubPlayerColliderMethods>::ctor(this);
+        this
+    }
+}

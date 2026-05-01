@@ -1,0 +1,46 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::reflection::fieldinfo::FieldInfo;
+use crate::system::reflection::fieldinfo::IFieldInfo;
+use crate::system::reflection::memberinfo::IMemberInfo;
+use crate::system::reflection::memberinfo::MemberInfo;
+use crate::system::reflection::runtimefieldinfo::IRuntimeFieldInfo;
+use crate::system::reflection::runtimefieldinfo::RuntimeFieldInfo;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/rtfieldinfo/RtFieldInfo.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "RtFieldInfo")]
+#[parent(crate::system::reflection::runtimefieldinfo::RuntimeFieldInfo)]
+pub struct RtFieldInfo {}
+
+#[cfg(feature = "system-reflection-rtfieldinfo")]
+#[::unity2::methods]
+impl RtFieldInfo {
+    #[method(name = "UnsafeGetValue", args = 1)]
+    pub fn unsafe_get_value(
+        self,
+        obj: crate::system::object::Object,
+    ) -> crate::system::object::Object;
+
+    #[method(name = "CheckConsistency", args = 1)]
+    pub fn check_consistency(self, target: crate::system::object::Object) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "system-reflection-rtfieldinfo")]
+impl RtFieldInfo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RtFieldInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRtFieldInfoMethods>::ctor(this);
+        this
+    }
+}

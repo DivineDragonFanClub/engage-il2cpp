@@ -1,0 +1,59 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1;
+use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/async_operations/initalizationobjectsoperation/InitalizationObjectsOperation.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.AsyncOperations",
+    name = "InitalizationObjectsOperation"
+)]
+# [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < bool >)]
+pub struct InitalizationObjectsOperation {
+# [rename (name = "m_RtdOp")] pub m_rtd_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: initialization :: resourcemanagerruntimedata :: ResourceManagerRuntimeData > ,
+# [rename (name = "m_Addressables")] pub m_addressables : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl ,
+# [rename (name = "m_DepOp")] pub m_dep_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > > ,
+}
+
+#[cfg(feature = "unity_engine-resource_management-async_operations-initalizationobjectsoperation")]
+#[::unity2::methods]
+impl InitalizationObjectsOperation {
+    #[method(name = "Init", args = 2)]
+    pub fn init(
+        self,
+        rtd_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: initialization :: resourcemanagerruntimedata :: ResourceManagerRuntimeData >,
+        addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+    ) -> ();
+
+    #[method(name = "get_DebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "LogRuntimeWarnings", args = 1)]
+    pub fn log_runtime_warnings(self, path_to_build_logs: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "InvokeWaitForCompletion", args = 0)]
+    pub fn invoke_wait_for_completion(self) -> bool;
+
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-async_operations-initalizationobjectsoperation")]
+impl InitalizationObjectsOperation {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InitalizationObjectsOperation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInitalizationObjectsOperationMethods>::ctor(this);
+        this
+    }
+}

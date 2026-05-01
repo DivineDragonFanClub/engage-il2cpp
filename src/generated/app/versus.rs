@@ -1,0 +1,874 @@
+
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_CheckDataType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Versus_CheckDataType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Versus_CheckDataType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Versus.CheckDataType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Versus_CheckDataType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Versus_CheckDataType {
+    pub fn none() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn player_casual_meta() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn player_ranked_meta() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn replay_meta() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn opponent_casual_friend() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn opponent_ranked_friend() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn opponent_casual_profile() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn opponent_ranked_profile() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 7 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_Error.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Versus_Error {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Versus_Error {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Versus.Error";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Versus_Error {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Versus_Error {
+    pub fn none() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn ranked_report() -> Self {
+        Self { value: 101 }
+    }
+
+    pub fn ranked_offence_unit_none() -> Self {
+        Self { value: 102 }
+    }
+
+    pub fn invalid_data() -> Self {
+        Self { value: 103 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_DownloadHistory.md")))]
+#[::unity2::class(namespace = "App", name = "Versus.DownloadHistory")]
+#[parent(crate::system::object::Object)]
+pub struct Versus_DownloadHistory {
+    #[static_field]
+    #[rename(name = "CoolTimeSecond")]
+    pub cool_time_second: i64,
+    #[rename(name = "m_DownloadedDataList")]
+    pub m_downloaded_data_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::versus::Versus_DownloadHistory_CheckData,
+    >,
+}
+
+#[cfg(feature = "app-versus")]
+#[::unity2::methods]
+impl Versus_DownloadHistory {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "InitializeCheckData", args = 0)]
+    pub fn initialize_check_data(self) -> ();
+
+    #[method(name = "SetDonwloaded", args = 1)]
+    pub fn set_donwloaded(self, data_type: crate::app::versus::Versus_CheckDataType) -> ();
+
+    #[method(name = "IsDownloaded", args = 1)]
+    pub fn is_downloaded(self, data_type: crate::app::versus::Versus_CheckDataType) -> bool;
+
+    #[method(name = "ResetCheckData", args = 1)]
+    pub fn reset_check_data(self, data_type: crate::app::versus::Versus_CheckDataType) -> ();
+
+    #[method(name = "AllReset", args = 0)]
+    pub fn all_reset(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-versus")]
+impl Versus_DownloadHistory {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Versus_DownloadHistory),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersus_DownloadHistoryMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_VersusCheck.md")))]
+#[::unity2::class(namespace = "App", name = "Versus.VersusCheck")]
+#[parent(crate::system::object::Object)]
+pub struct Versus_VersusCheck {}
+
+#[cfg(feature = "app-versus")]
+#[::unity2::methods]
+impl Versus_VersusCheck {
+    #[method(name = "Validate", args = 0)]
+    pub fn validate() -> bool;
+
+    #[method(name = "ValidateCasual", args = 0)]
+    pub fn validate_casual() -> bool;
+
+    #[method(name = "ValidateRanked", args = 0)]
+    pub fn validate_ranked() -> bool;
+
+    #[method(name = "ValidateSaveEdit", args = 0)]
+    pub fn validate_save_edit() -> bool;
+
+    #[method(name = "ValidateUnits", args = 0)]
+    pub fn validate_units() -> bool;
+
+    #[method(name = "ValidatePlayerUnits", args = 0)]
+    pub fn validate_player_units() -> bool;
+
+    #[method(name = "ValidateUnit", args = 1)]
+    pub fn validate_unit(unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "ValidateParams", args = 1)]
+    pub fn validate_params(unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "ValidateSkills", args = 1)]
+    pub fn validate_skills(unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "ValidateEquipRing", args = 1)]
+    pub fn validate_equip_ring(unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "ValidateJob", args = 1)]
+    pub fn validate_job(unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "ValidateEquipSkill", args = 1)]
+    pub fn validate_equip_skill(skill: crate::app::skilldata::SkillData) -> bool;
+
+    #[method(name = "ValidateGodSkills", args = 2)]
+    pub fn validate_god_skills(
+        god: crate::app::godunit::GodUnit,
+        unit: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "GetGrowthSkills", args = 3)]
+    pub fn get_growth_skills(
+        god: crate::app::godunit::GodUnit,
+        growth_synchro_skills: crate::system::collections::generic::list_1::List_1<
+            ::unity2::Il2CppString,
+        >,
+        growth_engage_skills: crate::system::collections::generic::list_1::List_1<
+            ::unity2::Il2CppString,
+        >,
+    ) -> ();
+
+    #[method(name = "ValidateForce", args = 1)]
+    pub fn validate_force(force_mask: u32) -> bool;
+
+    #[method(name = "ValidateCount", args = 0)]
+    pub fn validate_count() -> bool;
+
+    #[method(name = "ValidateEditMap", args = 0)]
+    pub fn validate_edit_map() -> bool;
+
+    #[method(name = "CountObjects", args = 3)]
+    pub fn count_objects(
+        root: crate::unity_engine::gameobject::GameObject,
+        player: crate::app::versus::Versus_MapObjectCounter,
+        enemy: crate::app::versus::Versus_MapObjectCounter,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-versus")]
+impl Versus_VersusCheck {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Versus_VersusCheck),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersus_VersusCheckMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_Mode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Versus_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Versus_Mode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Versus.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Versus_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Versus_Mode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn edit() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn casual() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn ranked() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn replay() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn mock_battle() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_MapResult.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Versus_MapResult {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Versus_MapResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Versus.MapResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Versus_MapResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Versus_MapResult {
+    pub fn win() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn lose() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn none() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn abort() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_MatchingType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Versus_MatchingType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Versus_MatchingType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Versus.MatchingType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Versus_MatchingType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Versus_MatchingType {
+    pub fn random() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn friend() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn data_code() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn profile() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_DownloadHistory_CheckData.md")))]
+#[::unity2::class(namespace = "App", name = "Versus.DownloadHistory.CheckData")]
+#[parent(crate::system::object::Object)]
+pub struct Versus_DownloadHistory_CheckData {
+    #[rename(name = "m_IsDownloaded")]
+    pub m_is_downloaded: bool,
+    #[rename(name = "m_DataTime")]
+    pub m_data_time: i64,
+}
+
+#[cfg(feature = "app-versus")]
+#[::unity2::methods]
+impl Versus_DownloadHistory_CheckData {
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "IsDownloaded", args = 0)]
+    pub fn is_downloaded(self) -> bool;
+
+    #[method(name = "GetElapsedTime", args = 0)]
+    pub fn get_elapsed_time(self) -> i64;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-versus")]
+impl Versus_DownloadHistory_CheckData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Versus_DownloadHistory_CheckData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersus_DownloadHistory_CheckDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus.md")))]
+#[::unity2::class(namespace = "App", name = "Versus")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: versus :: Versus >)]
+pub struct Versus {
+    #[rename(name = "m_PlayerMetaData")]
+    pub m_player_meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+    #[rename(name = "m_PlayerData")]
+    pub m_player_data: crate::app::versusserverrankeddata::VersusServerRankedData,
+    #[rename(name = "m_PlayerRatingList")]
+    pub m_player_rating_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::nexversus::NexVersus_RatingData,
+    >,
+    #[rename(name = "m_OpponentMetaData")]
+    pub m_opponent_meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+    #[rename(name = "m_OpponentData")]
+    pub m_opponent_data: crate::app::versusserverrankeddata::VersusServerRankedData,
+    #[rename(name = "m_ReplayData")]
+    pub m_replay_data: crate::app::versusserverreplaydata::VersusServerReplayData,
+    #[rename(name = "m_ReplayMetaData")]
+    pub m_replay_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+    #[rename(name = "m_CasualOpponentMetaData")]
+    pub m_casual_opponent_meta_data:
+        crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+    #[rename(name = "m_CasualOpponentData")]
+    pub m_casual_opponent_data: crate::app::versusservercasualdata::VersusServerCasualData,
+    #[rename(name = "m_CasualPlayerData")]
+    pub m_casual_player_data: crate::app::versusservercasualdata::VersusServerCasualData,
+    #[rename(name = "m_CasualPlayerMetaData")]
+    pub m_casual_player_meta_data:
+        crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+    #[rename(name = "m_BackupData")]
+    pub m_backup_data: crate::app::versusbackupdata::VersusBackupData,
+    #[rename(name = "m_EditBackupData")]
+    pub m_edit_backup_data: crate::app::versuseditmodebackupdata::VersusEditModeBackupData,
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::app::versus::Versus_Mode,
+    #[rename(name = "m_MatchingType")]
+    pub m_matching_type: crate::app::versus::Versus_MatchingType,
+    #[rename(name = "m_Error")]
+    pub m_error: crate::app::versus::Versus_Error,
+    #[rename(name = "m_Result")]
+    pub m_result: crate::app::versus::Versus_MapResult,
+    #[rename(name = "m_IsSurrender")]
+    pub m_is_surrender: bool,
+    #[rename(name = "m_CasualMapNumber")]
+    pub m_casual_map_number: i32,
+    #[static_field]
+    #[rename(name = "ReplaySlotCount")]
+    pub replay_slot_count: i32,
+    #[rename(name = "m_IsExistOnServer")]
+    pub m_is_exist_on_server: bool,
+    #[rename(name = "m_History")]
+    pub m_history: crate::app::versus::Versus_DownloadHistory,
+}
+
+#[cfg(feature = "app-versus")]
+#[::unity2::methods]
+impl Versus {
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "IsValid", args = 0)]
+    pub fn is_valid() -> bool;
+
+    #[method(name = "IsVersusMode", args = 0)]
+    pub fn is_versus_mode() -> bool;
+
+    #[method(name = "IsCasual", args = 0)]
+    pub fn is_casual() -> bool;
+
+    #[method(name = "IsRanked", args = 0)]
+    pub fn is_ranked() -> bool;
+
+    #[method(name = "IsMockBattle", args = 0)]
+    pub fn is_mock_battle() -> bool;
+
+    #[method(name = "IsEditMode", args = 0)]
+    pub fn is_edit_mode() -> bool;
+
+    #[method(name = "IsReplay", args = 0)]
+    pub fn is_replay() -> bool;
+
+    #[method(name = "CanSortieRanked", args = 1)]
+    pub fn can_sortie_ranked(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "CanSortieRanked", args = 1)]
+    pub fn can_sortie_ranked_2(self, god: crate::app::godunit::GodUnit) -> bool;
+
+    #[method(name = "SaveCasualUnits", args = 0)]
+    pub fn save_casual_units(self) -> ();
+
+    #[method(name = "SaveCasualUnitsInit", args = 0)]
+    pub fn save_casual_units_init(self) -> ();
+
+    #[method(name = "MapEndEdit", args = 0)]
+    pub fn map_end_edit(self) -> ();
+
+    #[method(name = "ResetResult", args = 0)]
+    pub fn reset_result(self) -> ();
+
+    #[method(name = "SetAbort", args = 0)]
+    pub fn set_abort(self) -> ();
+
+    #[method(name = "SetSurrender", args = 0)]
+    pub fn set_surrender(self) -> ();
+
+    #[method(name = "SetResultReport", args = 0)]
+    pub fn set_result_report(self) -> ();
+
+    #[method(name = "SetError", args = 1)]
+    pub fn set_error(self, error: crate::app::versus::Versus_Error) -> ();
+
+    #[method(name = "MapEndVersus", args = 0)]
+    pub fn map_end_versus(self) -> ();
+
+    #[method(name = "MapEndVersusCasual", args = 0)]
+    pub fn map_end_versus_casual(self) -> ();
+
+    #[method(name = "MapEndVersusRanked", args = 0)]
+    pub fn map_end_versus_ranked(self) -> ();
+
+    #[method(name = "ResetGodPoolId", args = 0)]
+    pub fn reset_god_pool_id(self) -> ();
+
+    #[method(name = "IsExitsOnlineNode", args = 0)]
+    pub fn is_exits_online_node(self) -> bool;
+
+    #[method(name = "MapEndReplay", args = 0)]
+    pub fn map_end_replay(self) -> ();
+
+    #[method(name = "RestoreStoryChapter", args = 0)]
+    pub fn restore_story_chapter(self) -> ();
+
+    #[method(name = "TrySetPlayerMetaData", args = 1)]
+    pub fn try_set_player_meta_data(
+        self,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+    ) -> bool;
+
+    #[method(name = "SetPlayerMetaData", args = 1)]
+    pub fn set_player_meta_data(
+        self,
+        meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+    ) -> ();
+
+    #[method(name = "SetOpponentMetaData", args = 1)]
+    pub fn set_opponent_meta_data(
+        self,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+    ) -> ();
+
+    #[method(name = "SetOpponentMetaData", args = 1)]
+    pub fn set_opponent_meta_data_2(
+        self,
+        meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+    ) -> ();
+
+    #[method(name = "SetPlayerRatingList", args = 1)]
+    pub fn set_player_rating_list(
+        self,
+        rating_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::nexversus::NexVersus_RatingData,
+        >,
+    ) -> ();
+
+    #[method(name = "SetMode", args = 1)]
+    pub fn set_mode(self, mode: crate::app::versus::Versus_Mode) -> ();
+
+    #[method(name = "SetCasualMap", args = 1)]
+    pub fn set_casual_map(self, map_number: i32) -> ();
+
+    #[method(name = "SetMatchingType", args = 1)]
+    pub fn set_matching_type(self, r#type: crate::app::versus::Versus_MatchingType) -> ();
+
+    #[method(name = "IsHavePlayerEditData", args = 0)]
+    pub fn is_have_player_edit_data(self) -> bool;
+
+    #[method(name = "IsSavedLocalEditData", args = 0)]
+    pub fn is_saved_local_edit_data(self) -> bool;
+
+    #[method(name = "IsUseServerEditDataForBattle", args = 0)]
+    pub fn is_use_server_edit_data_for_battle(self) -> bool;
+
+    #[method(name = "IsUseServerEditDataForEdit", args = 0)]
+    pub fn is_use_server_edit_data_for_edit(self) -> bool;
+
+    #[method(name = "GetMyMapEditDataForBattle", args = 0)]
+    pub fn get_my_map_edit_data_for_battle(self) -> crate::app::mapeditdata::MapEditData;
+
+    #[method(name = "GetMyMapEditDataForEdit", args = 0)]
+    pub fn get_my_map_edit_data_for_edit(self) -> crate::app::mapeditdata::MapEditData;
+
+    #[method(name = "GetSortieTitle", args = 0)]
+    pub fn get_sortie_title(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "TryGetOpponentInfo", args = 2)]
+    pub fn try_get_opponent_info(self, name: ::unity2::Il2CppString, principal_id: u64) -> bool;
+
+    #[method(name = "IsUseBackup", args = 0)]
+    pub fn is_use_backup(self) -> bool;
+
+    #[method(name = "SerializeBackup", args = 0)]
+    pub fn serialize_backup(self) -> ();
+
+    #[method(name = "DeserializeBackup", args = 0)]
+    pub fn deserialize_backup(self) -> ();
+
+    #[method(name = "GetCasualSortieMax", args = 0)]
+    pub fn get_casual_sortie_max() -> i32;
+
+    #[method(name = "GetOffenseSortieMax", args = 0)]
+    pub fn get_offense_sortie_max() -> i32;
+
+    #[method(name = "GetDefenseSortieMax", args = 0)]
+    pub fn get_defense_sortie_max() -> i32;
+
+    #[method(name = "get_PlayerMetaData", args = 0)]
+    pub fn get_player_meta_data(
+        self,
+    ) -> crate::app::versusserverrankedmetadata::VersusServerRankedMetaData;
+
+    #[method(name = "get_PlayerData", args = 0)]
+    pub fn get_player_data(self) -> crate::app::versusserverrankeddata::VersusServerRankedData;
+
+    #[method(name = "get_OpponentMetaData", args = 0)]
+    pub fn get_opponent_meta_data(
+        self,
+    ) -> crate::app::versusserverrankedmetadata::VersusServerRankedMetaData;
+
+    #[method(name = "get_OpponentData", args = 0)]
+    pub fn get_opponent_data(self) -> crate::app::versusserverrankeddata::VersusServerRankedData;
+
+    #[method(name = "get_ReplayData", args = 0)]
+    pub fn get_replay_data(self) -> crate::app::versusserverreplaydata::VersusServerReplayData;
+
+    #[method(name = "get_ReplayMetaData", args = 0)]
+    pub fn get_replay_meta_data(
+        self,
+    ) -> crate::app::versusserverreplaymetadata::VersusServerReplayMetaData;
+
+    #[method(name = "get_CasualOpponentMetaData", args = 0)]
+    pub fn get_casual_opponent_meta_data(
+        self,
+    ) -> crate::app::versusservercasualmetadata::VersusServerCasualMetaData;
+
+    #[method(name = "get_CasualOpponentData", args = 0)]
+    pub fn get_casual_opponent_data(
+        self,
+    ) -> crate::app::versusservercasualdata::VersusServerCasualData;
+
+    #[method(name = "get_CasualPlayerData", args = 0)]
+    pub fn get_casual_player_data(
+        self,
+    ) -> crate::app::versusservercasualdata::VersusServerCasualData;
+
+    #[method(name = "get_CasualPlayerMetaData", args = 0)]
+    pub fn get_casual_player_meta_data(
+        self,
+    ) -> crate::app::versusservercasualmetadata::VersusServerCasualMetaData;
+
+    #[method(name = "get_ReturnChapter", args = 0)]
+    pub fn get_return_chapter(self) -> crate::app::chapterdata::ChapterData;
+
+    #[method(name = "set_ReturnChapter", args = 1)]
+    pub fn set_return_chapter(self, value: crate::app::chapterdata::ChapterData) -> ();
+
+    #[method(name = "get_Result", args = 0)]
+    pub fn get_result(self) -> crate::app::versus::Versus_MapResult;
+
+    #[method(name = "get_OpponentResult", args = 0)]
+    pub fn get_opponent_result(self) -> crate::app::versus::Versus_MapResult;
+
+    #[method(name = "get_IsSurrender", args = 0)]
+    pub fn get_is_surrender(self) -> bool;
+
+    #[method(name = "get_VersusMode", args = 0)]
+    pub fn get_versus_mode(self) -> crate::app::versus::Versus_Mode;
+
+    #[method(name = "get_Matching", args = 0)]
+    pub fn get_matching(self) -> crate::app::versus::Versus_MatchingType;
+
+    #[method(name = "get_ResultError", args = 0)]
+    pub fn get_result_error(self) -> crate::app::versus::Versus_Error;
+
+    #[method(name = "get_CasualMapNumber", args = 0)]
+    pub fn get_casual_map_number(self) -> i32;
+
+    #[method(name = "get_IsSucceedDeserializeCasual", args = 0)]
+    pub fn get_is_succeed_deserialize_casual(self) -> bool;
+
+    #[method(name = "set_IsSucceedDeserializeCasual", args = 1)]
+    pub fn set_is_succeed_deserialize_casual(self, value: bool) -> ();
+
+    #[method(name = "get_IsExistRankedOnServer", args = 0)]
+    pub fn get_is_exist_ranked_on_server(self) -> bool;
+
+    #[method(name = "set_IsExistRankedOnServer", args = 1)]
+    pub fn set_is_exist_ranked_on_server(self, value: bool) -> ();
+
+    #[method(name = "get_IsUploadDifferentSaveID", args = 0)]
+    pub fn get_is_upload_different_save_id(self) -> bool;
+
+    #[method(name = "set_IsUploadDifferentSaveID", args = 1)]
+    pub fn set_is_upload_different_save_id(self, value: bool) -> ();
+
+    #[method(name = "get_IsForceEditDataOverwrite", args = 0)]
+    pub fn get_is_force_edit_data_overwrite() -> bool;
+
+    #[method(name = "set_IsForceEditDataOverwrite", args = 1)]
+    pub fn set_is_force_edit_data_overwrite(value: bool) -> ();
+
+    #[method(name = "CheckValid", args = 0)]
+    pub fn check_valid() -> bool;
+
+    #[method(name = "get_History", args = 0)]
+    pub fn get_history(self) -> crate::app::versus::Versus_DownloadHistory;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-versus")]
+impl Versus {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Versus),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versus/Versus_MapObjectCounter.md")))]
+#[::unity2::class(namespace = "App", name = "Versus.MapObjectCounter")]
+#[parent(crate::system::object::Object)]
+pub struct Versus_MapObjectCounter {
+    #[rename(name = "m_Dict")]
+    pub m_dict: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::app::mapeditorcategorydata::MapEditorCategoryData,
+        i32,
+    >,
+}
+
+#[cfg(feature = "app-versus")]
+#[::unity2::methods]
+impl Versus_MapObjectCounter {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, obj_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator(
+        self,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2_Enumerator<
+        crate::app::mapeditorcategorydata::MapEditorCategoryData,
+        i32,
+    >;
+}
+
+#[cfg(feature = "app-versus")]
+impl Versus_MapObjectCounter {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Versus_MapObjectCounter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersus_MapObjectCounterMethods>::ctor(this);
+        this
+    }
+}

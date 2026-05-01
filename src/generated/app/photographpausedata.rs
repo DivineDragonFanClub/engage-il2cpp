@@ -1,0 +1,88 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdataarray_1::IStructDataArray_1;
+use crate::app::structdataarray_1::StructDataArray_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographpausedata/PhotographPauseData.md")))]
+#[::unity2::class(namespace = "App", name = "PhotographPauseData")]
+# [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: photographpausedata :: PhotographPauseData >)]
+pub struct PhotographPauseData {}
+
+#[cfg(feature = "app-photographpausedata")]
+#[::unity2::methods]
+impl PhotographPauseData {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_PauseName", args = 0)]
+    pub fn get_pause_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_PauseName", args = 1)]
+    pub fn set_pause_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_No", args = 0)]
+    pub fn get_no(self) -> i32;
+
+    #[method(name = "set_No", args = 1)]
+    pub fn set_no(self, value: i32) -> ();
+
+    #[method(name = "get_Mid", args = 0)]
+    pub fn get_mid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Mid", args = 1)]
+    pub fn set_mid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_AnimeFrame", args = 0)]
+    pub fn get_anime_frame(self) -> i32;
+
+    #[method(name = "set_AnimeFrame", args = 1)]
+    pub fn set_anime_frame(self, value: i32) -> ();
+
+    #[method(name = "get_FaceAnime", args = 0)]
+    pub fn get_face_anime(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_FaceAnime", args = 1)]
+    pub fn set_face_anime(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_CharaIdList", args = 0)]
+    pub fn get_chara_id_list(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_CharaIdList", args = 1)]
+    pub fn set_chara_id_list(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_WeaponKind", args = 0)]
+    pub fn get_weapon_kind(self) -> crate::app::itemdata::ItemData_Kinds;
+
+    #[method(name = "TryGetOverridePauseData", args = 1)]
+    pub fn try_get_override_pause_data(
+        self,
+        chara_id: ::unity2::Il2CppString,
+    ) -> crate::app::photographpausedata::PhotographPauseData;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-photographpausedata")]
+impl PhotographPauseData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographPauseData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographPauseDataMethods>::ctor(this);
+        this
+    }
+}

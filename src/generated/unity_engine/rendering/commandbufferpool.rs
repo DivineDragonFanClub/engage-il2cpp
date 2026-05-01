@@ -1,0 +1,33 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/commandbufferpool/CommandBufferPool.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "CommandBufferPool")]
+#[parent(crate::system::object::Object)]
+pub struct CommandBufferPool {
+    #[static_field]
+    #[rename(name = "s_BufferPool")]
+    pub s_buffer_pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<
+        crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    >,
+}
+
+#[cfg(feature = "unity_engine-rendering-commandbufferpool")]
+#[::unity2::methods]
+impl CommandBufferPool {
+    #[method(name = "Get", args = 0)]
+    pub fn get() -> crate::unity_engine::rendering::commandbuffer::CommandBuffer;
+
+    #[method(name = "Get", args = 1)]
+    pub fn get_2(
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::rendering::commandbuffer::CommandBuffer;
+
+    #[method(name = "Release", args = 1)]
+    pub fn release(buffer: crate::unity_engine::rendering::commandbuffer::CommandBuffer) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

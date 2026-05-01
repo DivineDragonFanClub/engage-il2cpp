@@ -1,0 +1,33 @@
+
+use crate::app::procdesc::IProcDesc;
+use crate::app::procdesc::ProcDesc;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdescuser/ProcDescUser.md")))]
+#[::unity2::class(namespace = "App", name = "ProcDescUser")]
+#[parent(crate::app::procdesc::ProcDesc)]
+pub struct ProcDescUser {}
+
+#[cfg(feature = "app-procdescuser")]
+#[::unity2::methods]
+impl ProcDescUser {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-procdescuser")]
+impl ProcDescUser {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProcDescUser),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProcDescUserMethods>::ctor(this);
+        this
+    }
+}

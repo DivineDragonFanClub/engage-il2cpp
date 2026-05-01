@@ -1,0 +1,46 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/prefetchedcurve/PrefetchedCurve.md")))]
+#[::unity2::class(namespace = "Combat", name = "PrefetchedCurve")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct PrefetchedCurve {
+    #[rename(name = "RightHand")]
+    pub right_hand: crate::combat::trailtrack::TrailTrack,
+    #[rename(name = "LeftHand")]
+    pub left_hand: crate::combat::trailtrack::TrailTrack,
+}
+
+#[cfg(feature = "combat-prefetchedcurve")]
+#[::unity2::methods]
+impl PrefetchedCurve {
+    #[method(name = "Equals", args = 2)]
+    pub fn equals(
+        a: crate::combat::prefetchedcurve::PrefetchedCurve,
+        b: crate::combat::prefetchedcurve::PrefetchedCurve,
+    ) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-prefetchedcurve")]
+impl PrefetchedCurve {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PrefetchedCurve),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPrefetchedCurveMethods>::ctor(this);
+        this
+    }
+}

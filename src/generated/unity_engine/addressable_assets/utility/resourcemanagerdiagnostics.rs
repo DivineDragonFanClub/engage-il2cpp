@@ -1,0 +1,69 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/utility/resourcemanagerdiagnostics/ResourceManagerDiagnostics.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets.Utility",
+    name = "ResourceManagerDiagnostics"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ResourceManagerDiagnostics {
+    #[rename(name = "m_ResourceManager")]
+    pub m_resource_manager:
+        crate::unity_engine::resource_management::resourcemanager::ResourceManager,
+    #[rename(name = "m_cachedDiagnosticInfo")]
+    pub m_cached_diagnostic_info: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        i32,
+        crate::unity_engine::addressable_assets::utility::diagnosticinfo::DiagnosticInfo,
+    >,
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]
+#[::unity2::methods]
+impl ResourceManagerDiagnostics {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
+    ) -> ();
+
+    #[method(name = "SumDependencyNameHashCodes", args = 1)]
+    pub fn sum_dependency_name_hash_codes(
+        self,
+        handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
+    ) -> i32;
+
+    #[method(name = "CalculateHashCode", args = 1)]
+    pub fn calculate_hash_code(
+        self,
+        handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
+    ) -> i32;
+
+    #[method(name = "OnResourceManagerDiagnosticEvent", args = 1)]
+    pub fn on_resource_manager_diagnostic_event(
+        self,
+        event_context : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager_DiagnosticEventContext,
+    ) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-utility-resourcemanagerdiagnostics")]
+impl ResourceManagerDiagnostics {
+    pub fn new(
+        resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceManagerDiagnostics),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceManagerDiagnosticsMethods>::ctor(this, resource_manager);
+        this
+    }
+}

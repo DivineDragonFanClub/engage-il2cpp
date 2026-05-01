@@ -1,0 +1,73 @@
+
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/shopbuyyesnodialogyesmenuitem/ShopBuyYesNoDialogYesMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "ShopBuyYesNoDialogYesMenuItem")]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct ShopBuyYesNoDialogYesMenuItem {
+    #[rename(name = "m_YesEventHandler")]
+    pub m_yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+}
+
+#[cfg(feature = "app-shopbuyyesnodialogyesmenuitem")]
+#[::unity2::methods]
+impl ShopBuyYesNoDialogYesMenuItem {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        text: ::unity2::Il2CppString,
+        yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+    ) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-shopbuyyesnodialogyesmenuitem")]
+impl ShopBuyYesNoDialogYesMenuItem {
+    pub fn new(
+        yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopBuyYesNoDialogYesMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopBuyYesNoDialogYesMenuItemMethods>::ctor(this, yes_event_handler);
+        this
+    }
+
+    pub fn new_2(
+        text: ::unity2::Il2CppString,
+        yes_event_handler: crate::app::shopbuyyesnodialog::ShopBuyYesNoDialog_YesEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopBuyYesNoDialogYesMenuItem),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IShopBuyYesNoDialogYesMenuItemMethods>::ctor_2(this, text, yes_event_handler);
+        this
+    }
+}

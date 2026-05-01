@@ -1,0 +1,45 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/waittodeleteproc/WaitToDeleteProc.md")))]
+#[::unity2::class(namespace = "App", name = "WaitToDeleteProc")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct WaitToDeleteProc {
+    #[rename(name = "m_WaitedProcInst")]
+    pub m_waited_proc_inst: crate::app::procinst::ProcInst,
+}
+
+#[cfg(feature = "app-waittodeleteproc")]
+#[::unity2::methods]
+impl WaitToDeleteProc {
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        waited_proc_inst: crate::app::procinst::ProcInst,
+        super_: crate::app::procinst::ProcInst,
+    ) -> crate::app::procinst::ProcInst;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, waited_proc_inst: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "CreateDesc", args = 0)]
+    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+}
+
+#[cfg(feature = "app-waittodeleteproc")]
+impl WaitToDeleteProc {
+    pub fn new(waited_proc_inst: crate::app::procinst::ProcInst) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WaitToDeleteProc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWaitToDeleteProcMethods>::ctor(this, waited_proc_inst);
+        this
+    }
+}

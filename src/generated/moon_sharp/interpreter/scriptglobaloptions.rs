@@ -1,0 +1,57 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/scriptglobaloptions/ScriptGlobalOptions.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter", name = "ScriptGlobalOptions")]
+#[parent(crate::system::object::Object)]
+pub struct ScriptGlobalOptions {}
+
+#[cfg(feature = "moon_sharp-interpreter-scriptglobaloptions")]
+#[::unity2::methods]
+impl ScriptGlobalOptions {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_CustomConverters", args = 0)]
+    pub fn get_custom_converters (self ,) -> crate :: moon_sharp :: interpreter :: interop :: customconverterscollection :: CustomConvertersCollection ;
+
+    #[method(name = "set_CustomConverters", args = 1)]
+    pub fn set_custom_converters(
+        self,
+        value : crate :: moon_sharp :: interpreter :: interop :: customconverterscollection :: CustomConvertersCollection,
+    ) -> ();
+
+    #[method(name = "get_Platform", args = 0)]
+    pub fn get_platform(
+        self,
+    ) -> crate::moon_sharp::interpreter::platforms::iplatformaccessor::IPlatformAccessor;
+
+    #[method(name = "set_Platform", args = 1)]
+    pub fn set_platform(
+        self,
+        value: crate::moon_sharp::interpreter::platforms::iplatformaccessor::IPlatformAccessor,
+    ) -> ();
+
+    #[method(name = "get_RethrowExceptionNested", args = 0)]
+    pub fn get_rethrow_exception_nested(self) -> bool;
+
+    #[method(name = "set_RethrowExceptionNested", args = 1)]
+    pub fn set_rethrow_exception_nested(self, value: bool) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-scriptglobaloptions")]
+impl ScriptGlobalOptions {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptGlobalOptions),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptGlobalOptionsMethods>::ctor(this);
+        this
+    }
+}

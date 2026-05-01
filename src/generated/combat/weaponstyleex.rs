@@ -1,0 +1,22 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/weaponstyleex/WeaponStyleEx.md")))]
+#[::unity2::class(namespace = "Combat", name = "WeaponStyleEx")]
+#[parent(crate::system::object::Object)]
+pub struct WeaponStyleEx {}
+
+#[cfg(feature = "combat-weaponstyleex")]
+#[::unity2::methods]
+impl WeaponStyleEx {
+    #[method(name = "IsShootOrMagic", args = 1)]
+    pub fn is_shoot_or_magic(s: crate::combat::weaponstyle::WeaponStyle) -> bool;
+
+    #[method(name = "IsHit", args = 1)]
+    pub fn is_hit(s: crate::combat::weaponstyle::WeaponStyle) -> bool;
+
+    #[method(name = "ToNML", args = 1)]
+    pub fn to_nml(s: crate::combat::weaponstyle::WeaponStyle) -> u16;
+}

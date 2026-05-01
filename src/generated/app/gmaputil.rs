@@ -1,0 +1,111 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmaputil/GmapUtil.md")))]
+#[::unity2::class(namespace = "App", name = "GmapUtil")]
+#[parent(crate::system::object::Object)]
+pub struct GmapUtil {
+    #[static_field]
+    #[rename(name = "RareGoldKey")]
+    pub rare_gold_key: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "RareExpKey")]
+    pub rare_exp_key: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-gmaputil")]
+#[::unity2::methods]
+impl GmapUtil {
+    #[method(name = "get_SortiableCount", args = 0)]
+    pub fn get_sortiable_count() -> i32;
+
+    #[method(name = "set_SortiableCount", args = 1)]
+    pub fn set_sortiable_count(value: i32) -> ();
+
+    #[method(name = "GetEncountRank", args = 1)]
+    pub fn get_encount_rank(gmap_spot: crate::app::gmapspot::GmapSpot) -> i32;
+
+    #[method(name = "GetSortieNum", args = 1)]
+    pub fn get_sortie_num(
+        gmap_spot: crate::app::gmapspot::GmapSpot,
+    ) -> crate::system::collections::generic::list_1::List_1<i32>;
+
+    #[method(name = "CalcEncountRank", args = 2)]
+    pub fn calc_encount_rank(sortie_count: i32, is_dlc_mode: bool) -> i32;
+
+    #[method(name = "GetAverageLevel", args = 2)]
+    pub fn get_average_level(
+        difficulty: crate::app::difficulty::Difficulty,
+        sortie_count: i32,
+    ) -> i32;
+
+    #[method(name = "GetVandreLevel", args = 1)]
+    pub fn get_vandre_level(vandre_unit: crate::app::unit::Unit) -> i32;
+
+    #[method(name = "ReductDispos", args = 1)]
+    pub fn reduct_dispos(
+        dispos_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>;
+
+    #[method(name = "GetEquipableWeapons", args = 2)]
+    pub fn get_equipable_weapons(
+        job: crate::app::jobdata::JobData,
+        selected_mask: crate::app::weaponmask::WeaponMask,
+    ) -> ::unity2::Array<crate::app::itemdata::ItemData_Kinds>;
+
+    #[method(name = "GetDownLevelWeapon", args = 2)]
+    pub fn get_down_level_weapon(
+        item: crate::app::itemdata::ItemData,
+        level: crate::app::weaponlevel::WeaponLevel_Kind,
+    ) -> crate::app::itemdata::ItemData;
+
+    #[method(name = "RegistRareDisposCount", args = 0)]
+    pub fn regist_rare_dispos_count() -> ();
+
+    #[method(name = "GetRareExpDisposCount", args = 0)]
+    pub fn get_rare_exp_dispos_count() -> i32;
+
+    #[method(name = "GetRareGoldDisposCount", args = 0)]
+    pub fn get_rare_gold_dispos_count() -> i32;
+
+    #[method(name = "WeaponMaskToArray", args = 1)]
+    pub fn weapon_mask_to_array(
+        mask: crate::app::weaponmask::WeaponMask,
+    ) -> ::unity2::Array<crate::app::itemdata::ItemData_Kinds>;
+
+    #[method(name = "WeaponArrayToMask", args = 1)]
+    pub fn weapon_array_to_mask(
+        kinds: ::unity2::Array<crate::app::itemdata::ItemData_Kinds>,
+    ) -> crate::app::weaponmask::WeaponMask;
+
+    #[method(name = "IsAppearGradlon", args = 0)]
+    pub fn is_appear_gradlon() -> bool;
+
+    #[method(name = "UpdateVisibleGradlon", args = 0)]
+    pub fn update_visible_gradlon() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-gmaputil")]
+impl GmapUtil {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapUtil),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapUtilMethods>::ctor(this);
+        this
+    }
+}

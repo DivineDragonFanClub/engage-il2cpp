@@ -1,0 +1,162 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/faceinfo/FaceInfo.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FaceInfo {
+    pub m_face_index: i32,
+    pub m_family_name: ::unity2::Il2CppString,
+    pub m_style_name: ::unity2::Il2CppString,
+    pub m_point_size: i32,
+    pub m_scale: f32,
+    pub m_line_height: f32,
+    pub m_ascent_line: f32,
+    pub m_cap_line: f32,
+    pub m_mean_line: f32,
+    pub m_baseline: f32,
+    pub m_descent_line: f32,
+    pub m_superscript_offset: f32,
+    pub m_superscript_size: f32,
+    pub m_subscript_offset: f32,
+    pub m_subscript_size: f32,
+    pub m_underline_offset: f32,
+    pub m_underline_thickness: f32,
+    pub m_strikethrough_offset: f32,
+    pub m_strikethrough_thickness: f32,
+    pub m_tab_width: f32,
+}
+
+impl ::unity2::ClassIdentity for FaceInfo {
+    const NAMESPACE: &'static str = "UnityEngine.TextCore";
+
+    const NAME: &'static str = "FaceInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FaceInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-text_core-faceinfo")]
+#[::unity2::methods(value)]
+impl FaceInfo {
+    #[method(name = "set_familyName", args = 1)]
+    pub fn set_family_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "set_styleName", args = 1)]
+    pub fn set_style_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_pointSize", args = 0)]
+    pub fn get_point_size(self) -> i32;
+
+    #[method(name = "set_pointSize", args = 1)]
+    pub fn set_point_size(self, value: i32) -> ();
+
+    #[method(name = "get_scale", args = 0)]
+    pub fn get_scale(self) -> f32;
+
+    #[method(name = "set_scale", args = 1)]
+    pub fn set_scale(self, value: f32) -> ();
+
+    #[method(name = "get_lineHeight", args = 0)]
+    pub fn get_line_height(self) -> f32;
+
+    #[method(name = "set_lineHeight", args = 1)]
+    pub fn set_line_height(self, value: f32) -> ();
+
+    #[method(name = "get_ascentLine", args = 0)]
+    pub fn get_ascent_line(self) -> f32;
+
+    #[method(name = "set_ascentLine", args = 1)]
+    pub fn set_ascent_line(self, value: f32) -> ();
+
+    #[method(name = "get_capLine", args = 0)]
+    pub fn get_cap_line(self) -> f32;
+
+    #[method(name = "set_capLine", args = 1)]
+    pub fn set_cap_line(self, value: f32) -> ();
+
+    #[method(name = "get_meanLine", args = 0)]
+    pub fn get_mean_line(self) -> f32;
+
+    #[method(name = "set_meanLine", args = 1)]
+    pub fn set_mean_line(self, value: f32) -> ();
+
+    #[method(name = "get_baseline", args = 0)]
+    pub fn get_baseline(self) -> f32;
+
+    #[method(name = "set_baseline", args = 1)]
+    pub fn set_baseline(self, value: f32) -> ();
+
+    #[method(name = "get_descentLine", args = 0)]
+    pub fn get_descent_line(self) -> f32;
+
+    #[method(name = "set_descentLine", args = 1)]
+    pub fn set_descent_line(self, value: f32) -> ();
+
+    #[method(name = "get_superscriptOffset", args = 0)]
+    pub fn get_superscript_offset(self) -> f32;
+
+    #[method(name = "set_superscriptOffset", args = 1)]
+    pub fn set_superscript_offset(self, value: f32) -> ();
+
+    #[method(name = "get_superscriptSize", args = 0)]
+    pub fn get_superscript_size(self) -> f32;
+
+    #[method(name = "set_superscriptSize", args = 1)]
+    pub fn set_superscript_size(self, value: f32) -> ();
+
+    #[method(name = "get_subscriptOffset", args = 0)]
+    pub fn get_subscript_offset(self) -> f32;
+
+    #[method(name = "set_subscriptOffset", args = 1)]
+    pub fn set_subscript_offset(self, value: f32) -> ();
+
+    #[method(name = "get_subscriptSize", args = 0)]
+    pub fn get_subscript_size(self) -> f32;
+
+    #[method(name = "set_subscriptSize", args = 1)]
+    pub fn set_subscript_size(self, value: f32) -> ();
+
+    #[method(name = "get_underlineOffset", args = 0)]
+    pub fn get_underline_offset(self) -> f32;
+
+    #[method(name = "set_underlineOffset", args = 1)]
+    pub fn set_underline_offset(self, value: f32) -> ();
+
+    #[method(name = "get_underlineThickness", args = 0)]
+    pub fn get_underline_thickness(self) -> f32;
+
+    #[method(name = "set_underlineThickness", args = 1)]
+    pub fn set_underline_thickness(self, value: f32) -> ();
+
+    #[method(name = "get_strikethroughOffset", args = 0)]
+    pub fn get_strikethrough_offset(self) -> f32;
+
+    #[method(name = "set_strikethroughOffset", args = 1)]
+    pub fn set_strikethrough_offset(self, value: f32) -> ();
+
+    #[method(name = "set_strikethroughThickness", args = 1)]
+    pub fn set_strikethrough_thickness(self, value: f32) -> ();
+
+    #[method(name = "get_tabWidth", args = 0)]
+    pub fn get_tab_width(self) -> f32;
+
+    #[method(name = "set_tabWidth", args = 1)]
+    pub fn set_tab_width(self, value: f32) -> ();
+}

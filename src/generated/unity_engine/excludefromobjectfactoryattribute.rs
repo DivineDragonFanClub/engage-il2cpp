@@ -1,0 +1,28 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/excludefromobjectfactoryattribute/ExcludeFromObjectFactoryAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "ExcludeFromObjectFactoryAttribute")]
+pub struct ExcludeFromObjectFactoryAttribute {}
+
+#[cfg(feature = "unity_engine-excludefromobjectfactoryattribute")]
+#[::unity2::methods]
+impl ExcludeFromObjectFactoryAttribute {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-excludefromobjectfactoryattribute")]
+impl ExcludeFromObjectFactoryAttribute {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ExcludeFromObjectFactoryAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExcludeFromObjectFactoryAttributeMethods>::ctor(this);
+        this
+    }
+}

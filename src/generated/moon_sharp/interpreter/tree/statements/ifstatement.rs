@@ -1,0 +1,110 @@
+
+use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+use crate::moon_sharp::interpreter::tree::nodebase::NodeBase;
+use crate::moon_sharp::interpreter::tree::statement::IStatement;
+use crate::moon_sharp::interpreter::tree::statement::Statement;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/statements/ifstatement/IfStatement.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Statements",
+    name = "IfStatement"
+)]
+#[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
+pub struct IfStatement {
+    #[rename(name = "m_Ifs")]
+    pub m_ifs: crate::system::collections::generic::list_1::List_1<
+        crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock,
+    >,
+    #[rename(name = "m_Else")]
+    pub m_else: crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock,
+    #[rename(name = "m_End")]
+    pub m_end: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
+#[::unity2::methods]
+impl IfStatement {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> ();
+
+    #[method(name = "CreateIfBlock", args = 1)]
+    pub fn create_if_block(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock;
+
+    #[method(name = "CreateElseBlock", args = 1)]
+    pub fn create_else_block(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock;
+
+    #[method(name = "Compile", args = 1)]
+    pub fn compile(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
+impl IfStatement {
+    pub fn new(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(IfStatement),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IIfStatementMethods>::ctor(this, lcontext);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/statements/ifstatement/IfStatement_IfBlock.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Statements",
+    name = "IfStatement.IfBlock"
+)]
+#[parent(crate::system::object::Object)]
+pub struct IfStatement_IfBlock {
+    #[rename(name = "Exp")]
+    pub exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+    #[rename(name = "Block")]
+    pub block: crate::moon_sharp::interpreter::tree::statement::Statement,
+    #[rename(name = "StackFrame")]
+    pub stack_frame:
+        crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
+    #[rename(name = "Source")]
+    pub source: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
+#[::unity2::methods]
+impl IfStatement_IfBlock {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
+impl IfStatement_IfBlock {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(IfStatement_IfBlock),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IIfStatement_IfBlockMethods>::ctor(this);
+        this
+    }
+}

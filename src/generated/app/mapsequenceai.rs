@@ -1,0 +1,198 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceai/MapSequenceAI.md")))]
+#[::unity2::class(namespace = "App", name = "MapSequenceAI")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequenceai :: MapSequenceAI >)]
+pub struct MapSequenceAI {
+    #[static_field]
+    #[rename(name = "s_AiThread")]
+    pub s_ai_thread: crate::app::mapaithread::MapAiThread,
+    #[rename(name = "m_LastMindX")]
+    pub m_last_mind_x: i32,
+    #[rename(name = "m_LastMindZ")]
+    pub m_last_mind_z: i32,
+    #[rename(name = "m_IsOrderUnitEngageOrGodChange")]
+    pub m_is_order_unit_engage_or_god_change: bool,
+}
+
+#[cfg(feature = "app-mapsequenceai")]
+#[::unity2::methods]
+impl MapSequenceAI {
+    #[method(name = "JumpForRemove", args = 1)]
+    pub fn jump_for_remove(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "JumpForRemagic", args = 1)]
+    pub fn jump_for_remagic(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "JumpForRerewarp", args = 1)]
+    pub fn jump_for_rerewarp(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Setup", args = 0)]
+    pub fn setup(self) -> ();
+
+    #[method(name = "Cleanup", args = 0)]
+    pub fn cleanup(self) -> ();
+
+    #[method(name = "OnPersistent", args = 0)]
+    pub fn on_persistent(self) -> ();
+
+    #[method(name = "Think", args = 0)]
+    pub fn think(self) -> ();
+
+    #[method(name = "Wait", args = 0)]
+    pub fn wait(self) -> bool;
+
+    #[method(name = "Focus", args = 0)]
+    pub fn focus(self) -> ();
+
+    #[method(name = "PickupEvent", args = 0)]
+    pub fn pickup_event(self) -> ();
+
+    #[method(name = "PreMindBranch", args = 0)]
+    pub fn pre_mind_branch(self) -> ();
+
+    #[method(name = "Mind", args = 0)]
+    pub fn mind(self) -> ();
+
+    #[method(name = "GameEndBranch", args = 0)]
+    pub fn game_end_branch(self) -> ();
+
+    #[method(name = "Fixed", args = 0)]
+    pub fn fixed(self) -> ();
+
+    #[method(name = "SetSkippedCamera", args = 0)]
+    pub fn set_skipped_camera(self) -> ();
+
+    #[method(name = "PostEngage", args = 0)]
+    pub fn post_engage(self) -> ();
+
+    #[method(name = "PrepareEngageRewarp", args = 0)]
+    pub fn prepare_engage_rewarp(self) -> ();
+
+    #[method(name = "PostGodChange", args = 0)]
+    pub fn post_god_change(self) -> ();
+
+    #[method(name = "CheckEntrustCancel", args = 1)]
+    pub fn check_entrust_cancel(self, think: bool) -> bool;
+
+    #[method(name = "EntrustCancel", args = 0)]
+    pub fn entrust_cancel(self) -> ();
+
+    #[method(name = "HistoryPickup", args = 1)]
+    pub fn history_pickup(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "EquipShortAfterLongRange", args = 0)]
+    pub fn equip_short_after_long_range(self) -> ();
+
+    #[method(name = "IsSkipTrigger", args = 0)]
+    pub fn is_skip_trigger(self) -> bool;
+
+    #[method(name = "TrySkip", args = 0)]
+    pub fn try_skip(self) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "InitializeThread", args = 0)]
+    pub fn initialize_thread() -> ();
+
+    #[method(name = "FinalizeThread", args = 0)]
+    pub fn finalize_thread() -> ();
+}
+
+#[cfg(feature = "app-mapsequenceai")]
+impl MapSequenceAI {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceAI),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceAIMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceai/MapSequenceAI_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceAI_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceAI_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceAI.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceAI_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceAI_Label {
+    pub fn think() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn mind() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn engage_start() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn engage_link() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn engage_rewarp() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn god_change() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn entrust_cancel() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 7 }
+    }
+}

@@ -1,0 +1,135 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_textinfo/TMP_TextInfo.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_TextInfo")]
+#[parent(crate::system::object::Object)]
+pub struct TMP_TextInfo {
+    #[static_field]
+    #[rename(name = "k_InfinityVectorPositive")]
+    pub k_infinity_vector_positive: crate::unity_engine::vector2::Vector2,
+    #[static_field]
+    #[rename(name = "k_InfinityVectorNegative")]
+    pub k_infinity_vector_negative: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "textComponent")]
+    pub text_component: crate::tm_pro::tmp_text::TMP_Text,
+    #[rename(name = "characterCount")]
+    pub character_count: i32,
+    #[rename(name = "spriteCount")]
+    pub sprite_count: i32,
+    #[rename(name = "spaceCount")]
+    pub space_count: i32,
+    #[rename(name = "wordCount")]
+    pub word_count: i32,
+    #[rename(name = "linkCount")]
+    pub link_count: i32,
+    #[rename(name = "lineCount")]
+    pub line_count: i32,
+    #[rename(name = "pageCount")]
+    pub page_count: i32,
+    #[rename(name = "materialCount")]
+    pub material_count: i32,
+    #[rename(name = "characterInfo")]
+    pub character_info: ::unity2::Array<crate::tm_pro::tmp_characterinfo::TMP_CharacterInfo>,
+    #[rename(name = "wordInfo")]
+    pub word_info: ::unity2::Array<crate::tm_pro::tmp_wordinfo::TMP_WordInfo>,
+    #[rename(name = "linkInfo")]
+    pub link_info: ::unity2::Array<crate::tm_pro::tmp_linkinfo::TMP_LinkInfo>,
+    #[rename(name = "lineInfo")]
+    pub line_info: ::unity2::Array<crate::tm_pro::tmp_lineinfo::TMP_LineInfo>,
+    #[rename(name = "pageInfo")]
+    pub page_info: ::unity2::Array<crate::tm_pro::tmp_pageinfo::TMP_PageInfo>,
+    #[rename(name = "meshInfo")]
+    pub mesh_info: ::unity2::Array<crate::tm_pro::tmp_meshinfo::TMP_MeshInfo>,
+    #[rename(name = "m_CachedMeshInfo")]
+    pub m_cached_mesh_info: ::unity2::Array<crate::tm_pro::tmp_meshinfo::TMP_MeshInfo>,
+}
+
+#[cfg(feature = "tm_pro-tmp_textinfo")]
+#[::unity2::methods]
+impl TMP_TextInfo {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, character_count: i32) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_3(self, text_component: crate::tm_pro::tmp_text::TMP_Text) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "ClearAllData", args = 0)]
+    pub fn clear_all_data(self) -> ();
+
+    #[method(name = "ClearMeshInfo", args = 1)]
+    pub fn clear_mesh_info(self, update_mesh: bool) -> ();
+
+    #[method(name = "ClearAllMeshInfo", args = 0)]
+    pub fn clear_all_mesh_info(self) -> ();
+
+    #[method(name = "ResetVertexLayout", args = 1)]
+    pub fn reset_vertex_layout(self, is_volumetric: bool) -> ();
+
+    #[method(name = "ClearUnusedVertices", args = 1)]
+    pub fn clear_unused_vertices(
+        self,
+        materials: ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
+    ) -> ();
+
+    #[method(name = "ClearLineInfo", args = 0)]
+    pub fn clear_line_info(self) -> ();
+
+    #[method(name = "ClearPageInfo", args = 0)]
+    pub fn clear_page_info(self) -> ();
+
+    #[method(name = "CopyMeshInfoVertexData", args = 0)]
+    pub fn copy_mesh_info_vertex_data(
+        self,
+    ) -> ::unity2::Array<crate::tm_pro::tmp_meshinfo::TMP_MeshInfo>;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_textinfo")]
+impl TMP_TextInfo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_TextInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_TextInfoMethods>::ctor(this);
+        this
+    }
+
+    pub fn new_2(character_count: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_TextInfo),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ITMP_TextInfoMethods>::ctor_2(this, character_count);
+        this
+    }
+
+    pub fn new_3(text_component: crate::tm_pro::tmp_text::TMP_Text) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_TextInfo),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as ITMP_TextInfoMethods>::ctor_3(this, text_component);
+        this
+    }
+}

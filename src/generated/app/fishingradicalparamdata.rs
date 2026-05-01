@@ -1,0 +1,157 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingradicalparamdata/FishingRadicalParamData.md")))]
+#[::unity2::class(namespace = "App", name = "FishingRadicalParamData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fishingradicalparamdata :: FishingRadicalParamData >)]
+pub struct FishingRadicalParamData {
+    #[rename(name = "Param")]
+    pub param:
+        ::unity2::Array<crate::app::fishingradicalparamdata::FishingRadicalParamData_RadicalParam>,
+}
+
+#[cfg(feature = "app-fishingradicalparamdata")]
+#[::unity2::methods]
+impl FishingRadicalParamData {
+    #[method(name = "get_ID", args = 0)]
+    pub fn get_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_ID", args = 1)]
+    pub fn set_id(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Sec_01", args = 0)]
+    pub fn get_sec_01(self) -> f32;
+
+    #[method(name = "set_Sec_01", args = 1)]
+    pub fn set_sec_01(self, value: f32) -> ();
+
+    #[method(name = "get_Power_01", args = 0)]
+    pub fn get_power_01(self) -> f32;
+
+    #[method(name = "set_Power_01", args = 1)]
+    pub fn set_power_01(self, value: f32) -> ();
+
+    #[method(name = "get_Regene_01", args = 0)]
+    pub fn get_regene_01(self) -> f32;
+
+    #[method(name = "set_Regene_01", args = 1)]
+    pub fn set_regene_01(self, value: f32) -> ();
+
+    #[method(name = "get_Sec_02", args = 0)]
+    pub fn get_sec_02(self) -> f32;
+
+    #[method(name = "set_Sec_02", args = 1)]
+    pub fn set_sec_02(self, value: f32) -> ();
+
+    #[method(name = "get_Power_02", args = 0)]
+    pub fn get_power_02(self) -> f32;
+
+    #[method(name = "set_Power_02", args = 1)]
+    pub fn set_power_02(self, value: f32) -> ();
+
+    #[method(name = "get_Regene_02", args = 0)]
+    pub fn get_regene_02(self) -> f32;
+
+    #[method(name = "set_Regene_02", args = 1)]
+    pub fn set_regene_02(self, value: f32) -> ();
+
+    #[method(name = "get_Sec_03", args = 0)]
+    pub fn get_sec_03(self) -> f32;
+
+    #[method(name = "set_Sec_03", args = 1)]
+    pub fn set_sec_03(self, value: f32) -> ();
+
+    #[method(name = "get_Power_03", args = 0)]
+    pub fn get_power_03(self) -> f32;
+
+    #[method(name = "set_Power_03", args = 1)]
+    pub fn set_power_03(self, value: f32) -> ();
+
+    #[method(name = "get_Regene_03", args = 0)]
+    pub fn get_regene_03(self) -> f32;
+
+    #[method(name = "set_Regene_03", args = 1)]
+    pub fn set_regene_03(self, value: f32) -> ();
+
+    #[method(name = "get_Sec_04", args = 0)]
+    pub fn get_sec_04(self) -> f32;
+
+    #[method(name = "set_Sec_04", args = 1)]
+    pub fn set_sec_04(self, value: f32) -> ();
+
+    #[method(name = "get_Power_04", args = 0)]
+    pub fn get_power_04(self) -> f32;
+
+    #[method(name = "set_Power_04", args = 1)]
+    pub fn set_power_04(self, value: f32) -> ();
+
+    #[method(name = "get_Regene_04", args = 0)]
+    pub fn get_regene_04(self) -> f32;
+
+    #[method(name = "set_Regene_04", args = 1)]
+    pub fn set_regene_04(self, value: f32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+}
+
+#[cfg(feature = "app-fishingradicalparamdata")]
+impl FishingRadicalParamData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingRadicalParamData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingRadicalParamDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingradicalparamdata/FishingRadicalParamData_RadicalParam.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FishingRadicalParamData_RadicalParam {
+    pub sec: f32,
+    pub power: f32,
+    pub regene_speed: f32,
+}
+
+impl ::unity2::ClassIdentity for FishingRadicalParamData_RadicalParam {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FishingRadicalParamData.RadicalParam";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FishingRadicalParamData_RadicalParam {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

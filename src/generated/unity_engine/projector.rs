@@ -1,0 +1,25 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/projector/Projector.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "Projector")]
+#[parent(crate::unity_engine::behaviour::Behaviour)]
+pub struct Projector {}
+
+#[cfg(feature = "unity_engine-projector")]
+#[::unity2::methods]
+impl Projector {
+    #[method(name = "get_material", args = 0)]
+    pub fn get_material(self) -> crate::unity_engine::material::Material;
+
+    #[method(name = "set_material", args = 1)]
+    pub fn set_material(self, value: crate::unity_engine::material::Material) -> ();
+}

@@ -1,0 +1,65 @@
+
+use crate::app::helpitembase::HelpItemBase;
+use crate::app::helpitembase::IHelpItemBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpitemweaponlevel/HelpItemWeaponLevel.md")))]
+#[::unity2::class(namespace = "App", name = "HelpItemWeaponLevel")]
+#[parent(crate::app::helpitembase::HelpItemBase)]
+pub struct HelpItemWeaponLevel {
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+    #[rename(name = "m_TempUnit")]
+    pub m_temp_unit: crate::app::unit::Unit,
+}
+
+#[cfg(feature = "app-helpitemweaponlevel")]
+#[::unity2::methods]
+impl HelpItemWeaponLevel {
+    #[method(name = "get_HelpItemType", args = 0)]
+    pub fn get_help_item_type(self) -> crate::app::helpmanager::HelpManager_HelpItemType;
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "GetWeaponKind", args = 2)]
+    pub fn get_weapon_kind(
+        self,
+        unit: crate::app::unit::Unit,
+        index: i32,
+    ) -> crate::app::itemdata::ItemData_Kinds;
+
+    #[method(name = "IsValid", args = 0)]
+    pub fn is_valid(self) -> bool;
+
+    #[method(name = "SetContents", args = 1)]
+    pub fn set_contents(self, setter: crate::app::helpparamsetter::HelpParamSetter) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-helpitemweaponlevel")]
+impl HelpItemWeaponLevel {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HelpItemWeaponLevel),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHelpItemWeaponLevelMethods>::ctor(this);
+        this
+    }
+}

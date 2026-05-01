@@ -1,0 +1,13 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ipaintgetter/IPaintGetter.md")))]
+#[::unity2::class(namespace = "App", name = "IPaintGetter")]
+pub struct IPaintGetter {}
+
+#[cfg(feature = "app-ipaintgetter")]
+#[::unity2::methods]
+impl IPaintGetter {
+    #[method(name = "Get", args = 2)]
+    pub fn get(self, x: f32, y: f32) -> ::unity2::Il2CppString;
+}

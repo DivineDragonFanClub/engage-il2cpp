@@ -1,0 +1,67 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventcamera/EventCamera.md")))]
+#[::unity2::class(namespace = "App", name = "EventCamera")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct EventCamera {
+    #[rename(name = "m_ViewMode")]
+    pub m_view_mode: crate::app::viewmode::ViewMode_Mode,
+    #[rename(name = "m_MainCamera")]
+    pub m_main_camera: crate::unity_engine::camera::Camera,
+    #[rename(name = "m_Camera")]
+    pub m_camera: crate::unity_engine::camera::Camera,
+}
+
+#[cfg(feature = "app-eventcamera")]
+#[::unity2::methods]
+impl EventCamera {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "Play", args = 0)]
+    pub fn play(self) -> ();
+
+    #[method(name = "Stop", args = 0)]
+    pub fn stop(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-eventcamera")]
+impl EventCamera {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventCamera),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventCameraMethods>::ctor(this);
+        this
+    }
+}

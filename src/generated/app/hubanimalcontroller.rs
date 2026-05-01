@@ -1,0 +1,62 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubanimalcontroller/HubAnimalController.md")))]
+#[::unity2::class(namespace = "App", name = "HubAnimalController")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct HubAnimalController {
+    #[rename(name = "m_hubUnit")]
+    pub m_hub_unit: crate::app::hubunitcontroller::HubUnitController,
+    #[rename(name = "m_delay")]
+    pub m_delay: f32,
+    #[rename(name = "m_isSleep")]
+    pub m_is_sleep: bool,
+    #[rename(name = "m_trigger")]
+    pub m_trigger: bool,
+    #[rename(name = "m_rangeAction")]
+    pub m_range_action: crate::app::hubrangeaction::HubRangeAction,
+}
+
+#[cfg(feature = "app-hubanimalcontroller")]
+#[::unity2::methods]
+impl HubAnimalController {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "EnterRange", args = 1)]
+    pub fn enter_range(self, unit: crate::app::hubunitcontroller::HubUnitController) -> ();
+
+    #[method(name = "LeaveRange", args = 1)]
+    pub fn leave_range(self, unit: crate::app::hubunitcontroller::HubUnitController) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubanimalcontroller")]
+impl HubAnimalController {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubAnimalController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubAnimalControllerMethods>::ctor(this);
+        this
+    }
+}

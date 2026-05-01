@@ -1,0 +1,76 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/spookyhash/SpookyHash.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "SpookyHash")]
+#[parent(crate::system::object::Object)]
+pub struct SpookyHash {
+    #[static_field]
+    #[rename(name = "AllowUnalignedRead")]
+    pub allow_unaligned_read: bool,
+}
+
+#[cfg(feature = "unity_engine-spookyhash")]
+#[::unity2::methods]
+impl SpookyHash {
+    #[method(name = "AttemptDetectAllowUnalignedRead", args = 0)]
+    pub fn attempt_detect_allow_unaligned_read() -> bool;
+
+    #[method(name = "EndPartial", args = 12)]
+    pub fn end_partial(
+        h0: u64,
+        h1: u64,
+        h2: u64,
+        h3: u64,
+        h4: u64,
+        h5: u64,
+        h6: u64,
+        h7: u64,
+        h8: u64,
+        h9: u64,
+        h10: u64,
+        h11: u64,
+    ) -> ();
+
+    #[method(name = "Rot64", args = 2)]
+    pub fn rot64(x: u64, k: i32) -> ();
+
+    #[method(name = "ShortMix", args = 4)]
+    pub fn short_mix(h0: u64, h1: u64, h2: u64, h3: u64) -> ();
+
+    #[method(name = "ShortEnd", args = 4)]
+    pub fn short_end(h0: u64, h1: u64, h2: u64, h3: u64) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/spookyhash/SpookyHash_U.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct SpookyHash_U {}
+
+impl ::unity2::ClassIdentity for SpookyHash_U {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "SpookyHash.U";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SpookyHash_U {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

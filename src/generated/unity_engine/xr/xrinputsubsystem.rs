@@ -1,0 +1,50 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::integratedsubsystem::IIntegratedSubsystem;
+use crate::unity_engine::integratedsubsystem::IntegratedSubsystem;
+use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1;
+use crate::unity_engine::integratedsubsystem_1::IntegratedSubsystem_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrinputsubsystem/XRInputSubsystem.md")))]
+#[::unity2::class(namespace = "UnityEngine.XR", name = "XRInputSubsystem")]
+# [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrinputsubsystemdescriptor :: XRInputSubsystemDescriptor >)]
+pub struct XRInputSubsystem {
+    #[rename(name = "trackingOriginUpdated")]
+    pub tracking_origin_updated: crate::system::action_1::Action_1<
+        crate::unity_engine::xr::xrinputsubsystem::XRInputSubsystem,
+    >,
+    #[rename(name = "boundaryChanged")]
+    pub boundary_changed: crate::system::action_1::Action_1<
+        crate::unity_engine::xr::xrinputsubsystem::XRInputSubsystem,
+    >,
+}
+
+#[cfg(feature = "unity_engine-xr-xrinputsubsystem")]
+#[::unity2::methods]
+impl XRInputSubsystem {
+    #[method(name = "InvokeTrackingOriginUpdatedEvent", args = 1)]
+    pub fn invoke_tracking_origin_updated_event(internal_ptr: ::unity2::IntPtr) -> ();
+
+    #[method(name = "InvokeBoundaryChangedEvent", args = 1)]
+    pub fn invoke_boundary_changed_event(internal_ptr: ::unity2::IntPtr) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-xr-xrinputsubsystem")]
+impl XRInputSubsystem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(XRInputSubsystem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IXRInputSubsystemMethods>::ctor(this);
+        this
+    }
+}

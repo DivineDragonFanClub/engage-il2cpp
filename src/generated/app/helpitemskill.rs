@@ -1,0 +1,67 @@
+
+use crate::app::helpitembase::HelpItemBase;
+use crate::app::helpitembase::IHelpItemBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpitemskill/HelpItemSkill.md")))]
+#[::unity2::class(namespace = "App", name = "HelpItemSkill")]
+#[parent(crate::app::helpitembase::HelpItemBase)]
+pub struct HelpItemSkill {
+    #[rename(name = "m_SkillData")]
+    pub m_skill_data: crate::app::skilldata::SkillData,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_IsForcedEngage")]
+    pub m_is_forced_engage: bool,
+    #[rename(name = "m_IsForceDisplay")]
+    pub m_is_force_display: bool,
+}
+
+#[cfg(feature = "app-helpitemskill")]
+#[::unity2::methods]
+impl HelpItemSkill {
+    #[method(name = "SetSkillData", args = 3)]
+    pub fn set_skill_data(
+        self,
+        skill: crate::app::skilldata::SkillData,
+        unit: crate::app::unit::Unit,
+        is_forced_engage: bool,
+    ) -> ();
+
+    #[method(name = "IsValid", args = 0)]
+    pub fn is_valid(self) -> bool;
+
+    #[method(name = "SetContents", args = 1)]
+    pub fn set_contents(self, setter: crate::app::helpparamsetter::HelpParamSetter) -> ();
+
+    #[method(name = "SetForceDisplay", args = 0)]
+    pub fn set_force_display(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-helpitemskill")]
+impl HelpItemSkill {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HelpItemSkill),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHelpItemSkillMethods>::ctor(this);
+        this
+    }
+}

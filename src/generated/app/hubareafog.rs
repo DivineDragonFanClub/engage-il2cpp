@@ -1,0 +1,104 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubareafog/HubAreaFog.md")))]
+#[::unity2::class(namespace = "App", name = "HubAreaFog")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct HubAreaFog {
+    #[rename(name = "m_color")]
+    pub m_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_start")]
+    pub m_start: f32,
+    #[rename(name = "m_end")]
+    pub m_end: f32,
+    #[rename(name = "m_time")]
+    pub m_time: f32,
+    #[rename(name = "m_priority")]
+    pub m_priority: i32,
+    #[rename(name = "m_Ratio")]
+    pub m_ratio: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[static_field]
+    #[rename(name = "m_initialize")]
+    pub m_initialize: bool,
+    #[static_field]
+    #[rename(name = "m_update")]
+    pub m_update: bool,
+    #[static_field]
+    #[rename(name = "m_origColor")]
+    pub m_orig_color: crate::unity_engine::color::Color,
+    #[static_field]
+    #[rename(name = "m_origStart")]
+    pub m_orig_start: f32,
+    #[static_field]
+    #[rename(name = "m_origEnd")]
+    pub m_orig_end: f32,
+    #[static_field]
+    #[rename(name = "m_fogList")]
+    pub m_fog_list:
+        crate::system::collections::generic::list_1::List_1<crate::app::hubareafog::HubAreaFog>,
+}
+
+#[cfg(feature = "app-hubareafog")]
+#[::unity2::methods]
+impl HubAreaFog {
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ();
+
+    #[method(name = "UpdateAll", args = 0)]
+    pub fn update_all() -> ();
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = "GetRatio", args = 0)]
+    pub fn get_ratio(self) -> f32;
+
+    #[method(name = "Active", args = 0)]
+    pub fn active(self) -> ();
+
+    #[method(name = "Inactive", args = 0)]
+    pub fn inactive(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-hubareafog")]
+impl HubAreaFog {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubAreaFog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubAreaFogMethods>::ctor(this);
+        this
+    }
+}

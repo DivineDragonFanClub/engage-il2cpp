@@ -1,0 +1,42 @@
+
+use crate::app::procdesc::IProcDesc;
+use crate::app::procdesc::ProcDesc;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdesctickbase/ProcDescTickBase.md")))]
+#[::unity2::class(namespace = "App", name = "ProcDescTickBase")]
+#[parent(crate::app::procdesc::ProcDesc)]
+pub struct ProcDescTickBase {}
+
+#[cfg(feature = "app-procdesctickbase")]
+#[::unity2::methods]
+impl ProcDescTickBase {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, r#type: crate::app::procdesc::ProcDesc_Type) -> ();
+
+    #[method(name = "Execute", args = 1)]
+    pub fn execute(
+        self,
+        inst: crate::app::procinst::ProcInst,
+    ) -> crate::app::procdesc::ProcDesc_Result;
+
+    #[method(name = "ExecuteImpl", args = 1)]
+    pub fn execute_impl(self, inst: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-procdesctickbase")]
+impl ProcDescTickBase {
+    pub fn new(r#type: crate::app::procdesc::ProcDesc_Type) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProcDescTickBase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProcDescTickBaseMethods>::ctor(this, r#type);
+        this
+    }
+}

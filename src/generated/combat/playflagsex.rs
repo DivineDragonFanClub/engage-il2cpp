@@ -1,0 +1,31 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/playflagsex/PlayFlagsEx.md")))]
+#[::unity2::class(namespace = "Combat", name = "PlayFlagsEx")]
+#[parent(crate::system::object::Object)]
+pub struct PlayFlagsEx {}
+
+#[cfg(feature = "combat-playflagsex")]
+#[::unity2::methods]
+impl PlayFlagsEx {
+    #[method(name = "Any", args = 2)]
+    pub fn any(
+        lhs: crate::combat::playflags::PlayFlags,
+        rhs: crate::combat::playflags::PlayFlags,
+    ) -> bool;
+
+    #[method(name = "NoneOf", args = 2)]
+    pub fn none_of(
+        lhs: crate::combat::playflags::PlayFlags,
+        rhs: crate::combat::playflags::PlayFlags,
+    ) -> bool;
+
+    #[method(name = "All", args = 2)]
+    pub fn all(
+        lhs: crate::combat::playflags::PlayFlags,
+        rhs: crate::combat::playflags::PlayFlags,
+    ) -> bool;
+}

@@ -1,0 +1,35 @@
+
+use crate::app::resourcehandle_2::IResourceHandle_2;
+use crate::app::resourcehandle_2::ResourceHandle_2;
+use crate::app::tresourcehandle_1::ITResourceHandle_1;
+use crate::app::tresourcehandle_1::TResourceHandle_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/resourcetexture2d/ResourceTexture2D.md")))]
+#[::unity2::class(namespace = "App", name = "ResourceTexture2D")]
+# [parent (crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: texture2d :: Texture2D >)]
+pub struct ResourceTexture2D {}
+
+#[cfg(feature = "app-resourcetexture2d")]
+#[::unity2::methods]
+impl ResourceTexture2D {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-resourcetexture2d")]
+impl ResourceTexture2D {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceTexture2D),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceTexture2DMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,68 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/compute_dt_eventargs/Compute_DT_EventArgs.md")))]
+#[::unity2::class(namespace = "TMPro", name = "Compute_DT_EventArgs")]
+#[parent(crate::system::object::Object)]
+pub struct Compute_DT_EventArgs {
+    #[rename(name = "EventType")]
+    pub event_type:
+        crate::tm_pro::compute_distancetransform_eventtypes::Compute_DistanceTransform_EventTypes,
+    #[rename(name = "ProgressPercentage")]
+    pub progress_percentage: f32,
+    #[rename(name = "Colors")]
+    pub colors: ::unity2::Array<crate::unity_engine::color::Color>,
+}
+
+#[cfg(feature = "tm_pro-compute_dt_eventargs")]
+#[::unity2::methods]
+impl Compute_DT_EventArgs {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        r#type : crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes,
+        progress: f32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        r#type : crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes,
+        colors: ::unity2::Array<crate::unity_engine::color::Color>,
+    ) -> ();
+}
+
+#[cfg(feature = "tm_pro-compute_dt_eventargs")]
+impl Compute_DT_EventArgs {
+    pub fn new(
+        r#type : crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes,
+        progress: f32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Compute_DT_EventArgs),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICompute_DT_EventArgsMethods>::ctor(this, r#type, progress);
+        this
+    }
+
+    pub fn new_2(
+        r#type : crate :: tm_pro :: compute_distancetransform_eventtypes :: Compute_DistanceTransform_EventTypes,
+        colors: ::unity2::Array<crate::unity_engine::color::Color>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Compute_DT_EventArgs),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ICompute_DT_EventArgsMethods>::ctor_2(this, r#type, colors);
+        this
+    }
+}

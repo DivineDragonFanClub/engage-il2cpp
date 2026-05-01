@@ -1,0 +1,18 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/irenderpass2d/IRenderPass2D.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal",
+    name = "IRenderPass2D"
+)]
+pub struct IRenderPass2D {}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-irenderpass2d")]
+#[::unity2::methods]
+impl IRenderPass2D {
+    #[method(name = "get_rendererData", args = 0)]
+    pub fn get_renderer_data(
+        self,
+    ) -> crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData;
+}

@@ -1,0 +1,35 @@
+
+use crate::app::mapimagecorebit::IMapImageCoreBit;
+use crate::app::mapimagecorebit::MapImageCoreBit;
+use crate::app::mapimagesightcore::IMapImageSightCore;
+use crate::app::mapimagesightcore::MapImageSightCore;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimagesightfield/MapImageSightField.md")))]
+#[::unity2::class(namespace = "App", name = "MapImageSightField")]
+#[parent(crate::app::mapimagesightcore::MapImageSightCore)]
+pub struct MapImageSightField {}
+
+#[cfg(feature = "app-mapimagesightfield")]
+#[::unity2::methods]
+impl MapImageSightField {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapimagesightfield")]
+impl MapImageSightField {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapImageSightField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapImageSightFieldMethods>::ctor(this);
+        this
+    }
+}

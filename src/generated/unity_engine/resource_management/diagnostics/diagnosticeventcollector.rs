@@ -1,0 +1,70 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/diagnostics/diagnosticeventcollector/DiagnosticEventCollector.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.Diagnostics",
+    name = "DiagnosticEventCollector"
+)]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct DiagnosticEventCollector {
+# [static_field] # [rename (name = "s_Collector")] pub s_collector : crate :: unity_engine :: resource_management :: diagnostics :: diagnosticeventcollector :: DiagnosticEventCollector ,
+}
+
+#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector")]
+#[::unity2::methods]
+impl DiagnosticEventCollector {
+    #[method(name = "FindOrCreateGlobalInstance", args = 0)]
+    pub fn find_or_create_global_instance () -> crate :: unity_engine :: resource_management :: diagnostics :: diagnosticeventcollector :: DiagnosticEventCollector ;
+
+    #[method(name = "RegisterEventHandler", args = 3)]
+    pub fn register_event_handler(
+        handler: crate::system::action_1::Action_1<
+            crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
+        >,
+        register: bool,
+        create: bool,
+    ) -> bool;
+
+    #[method(name = "UnregisterEventHandler", args = 1)]
+    pub fn unregister_event_handler(
+        self,
+        handler: crate::system::action_1::Action_1<
+            crate::unity_engine::resource_management::diagnostics::diagnosticevent::DiagnosticEvent,
+        >,
+    ) -> ();
+
+    #[method(name = "PostEvent", args = 1)]
+    pub fn post_event(
+        self,
+        diagnostic_event : crate :: unity_engine :: resource_management :: diagnostics :: diagnosticevent :: DiagnosticEvent,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-diagnostics-diagnosticeventcollector")]
+impl DiagnosticEventCollector {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DiagnosticEventCollector),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDiagnosticEventCollectorMethods>::ctor(this);
+        this
+    }
+}

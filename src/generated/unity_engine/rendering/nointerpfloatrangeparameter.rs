@@ -1,0 +1,60 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
+use crate::unity_engine::rendering::volumeparameter::VolumeParameter;
+use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
+use crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/nointerpfloatrangeparameter/NoInterpFloatRangeParameter.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering",
+    name = "NoInterpFloatRangeParameter"
+)]
+# [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: vector2 :: Vector2 >)]
+pub struct NoInterpFloatRangeParameter {
+    #[rename(name = "min")]
+    pub min: f32,
+    #[rename(name = "max")]
+    pub max: f32,
+}
+
+#[cfg(feature = "unity_engine-rendering-nointerpfloatrangeparameter")]
+#[::unity2::methods]
+impl NoInterpFloatRangeParameter {
+    #[method(name = "get_value", args = 0)]
+    pub fn get_value(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_value", args = 1)]
+    pub fn set_value(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        value: crate::unity_engine::vector2::Vector2,
+        min: f32,
+        max: f32,
+        override_state: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-nointerpfloatrangeparameter")]
+impl NoInterpFloatRangeParameter {
+    pub fn new(
+        value: crate::unity_engine::vector2::Vector2,
+        min: f32,
+        max: f32,
+        override_state: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NoInterpFloatRangeParameter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INoInterpFloatRangeParameterMethods>::ctor(this, value, min, max, override_state);
+        this
+    }
+}

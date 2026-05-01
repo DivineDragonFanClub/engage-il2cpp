@@ -1,0 +1,676 @@
+
+use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+use crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/soundmanager/SoundManager_ParamFader.md")))]
+#[::unity2::class(namespace = "App", name = "SoundManager.ParamFader")]
+#[parent(crate::system::object::Object)]
+pub struct SoundManager_ParamFader {
+    #[rename(name = "m_now")]
+    pub m_now: f32,
+    #[rename(name = "m_from")]
+    pub m_from: f32,
+    #[rename(name = "m_to")]
+    pub m_to: f32,
+    #[rename(name = "m_time")]
+    pub m_time: f32,
+    #[rename(name = "m_duration")]
+    pub m_duration: f32,
+}
+
+#[cfg(feature = "app-soundmanager")]
+#[::unity2::methods]
+impl SoundManager_ParamFader {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, param: f32, msec: i32) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+}
+
+#[cfg(feature = "app-soundmanager")]
+impl SoundManager_ParamFader {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundManager_ParamFader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundManager_ParamFaderMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/soundmanager/SoundManager.md")))]
+#[::unity2::class(namespace = "App", name = "SoundManager")]
+# [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: soundmanager :: SoundManager >)]
+pub struct SoundManager {
+    #[static_field]
+    #[rename(name = "VoiceVolumeMin")]
+    pub voice_volume_min: f32,
+    #[static_field]
+    #[rename(name = "VoiceVolumeMax")]
+    pub voice_volume_max: f32,
+    #[static_field]
+    #[rename(name = "SeVolumeMin")]
+    pub se_volume_min: f32,
+    #[static_field]
+    #[rename(name = "SeVolumeMax")]
+    pub se_volume_max: f32,
+    #[static_field]
+    #[rename(name = "EventSeGameParamName")]
+    pub event_se_game_param_name: ::unity2::Il2CppString,
+    #[rename(name = "m_isInitialized")]
+    pub m_is_initialized: bool,
+    #[rename(name = "m_masterBaseBgmVolume")]
+    pub m_master_base_bgm_volume: crate::app::soundmanager::SoundManager_ParamFader,
+    #[rename(name = "m_masterBaseSeVolume")]
+    pub m_master_base_se_volume: crate::app::soundmanager::SoundManager_ParamFader,
+    #[rename(name = "m_masterBaseEnvVolume")]
+    pub m_master_base_env_volume: crate::app::soundmanager::SoundManager_ParamFader,
+    #[rename(name = "m_masterBaseVoiceVolume")]
+    pub m_master_base_voice_volume: crate::app::soundmanager::SoundManager_ParamFader,
+    #[rename(name = "m_masterBgmVolumeOld")]
+    pub m_master_bgm_volume_old: f32,
+    #[rename(name = "m_masterSeVolumeOld")]
+    pub m_master_se_volume_old: f32,
+    #[rename(name = "m_masterEnvVolumeOld")]
+    pub m_master_env_volume_old: f32,
+    #[rename(name = "m_masterVoiceVolumeOld")]
+    pub m_master_voice_volume_old: f32,
+    #[rename(name = "m_configBgmVolumeOld")]
+    pub m_config_bgm_volume_old: f32,
+    #[rename(name = "m_configSeVolumeOld")]
+    pub m_config_se_volume_old: f32,
+    #[rename(name = "m_configEnvVolumeOld")]
+    pub m_config_env_volume_old: f32,
+    #[rename(name = "m_configVoiceVolumeOld")]
+    pub m_config_voice_volume_old: f32,
+    #[rename(name = "m_mapCameraHeightRateOld")]
+    pub m_map_camera_height_rate_old: f32,
+    #[rename(name = "m_eventSeVolume")]
+    pub m_event_se_volume: f32,
+    #[rename(name = "m_soundHandleList")]
+    pub m_sound_handle_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::soundsystem::SoundSystem_SoundHandle,
+    >,
+    #[rename(name = "m_deleteSoundHandleList")]
+    pub m_delete_sound_handle_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::soundsystem::SoundSystem_SoundHandle,
+    >,
+    #[rename(name = "m_GlobalEnumParamStack_MapOrCombat")]
+    pub m_global_enum_param_stack_map_or_combat:
+        crate::system::collections::generic::stack_1::Stack_1<u32>,
+    #[rename(name = "m_TimeCounterForUpdateOutput")]
+    pub m_time_counter_for_update_output: f32,
+    #[rename(name = "m_isMuteByGameSkip")]
+    pub m_is_mute_by_game_skip: bool,
+    #[rename(name = "m_lipSyncDataFileDictionary")]
+    pub m_lip_sync_data_file_dictionary:
+        crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::Il2CppString,
+            crate::app::soundsystem::SoundSystem_LipSyncDataFile,
+        >,
+}
+
+#[cfg(feature = "app-soundmanager")]
+#[::unity2::methods]
+impl SoundManager {
+    #[method(name = "get_Param", args = 0)]
+    pub fn get_param(self) -> crate::app::soundsystem::SoundSystem_ISoundParam;
+
+    #[method(name = "set_Param", args = 1)]
+    pub fn set_param(self, value: crate::app::soundsystem::SoundSystem_ISoundParam) -> ();
+
+    #[method(name = "get_Loader", args = 0)]
+    pub fn get_loader(self) -> crate::app::soundsystem::SoundSystem_ISoundLoad;
+
+    #[method(name = "set_Loader", args = 1)]
+    pub fn set_loader(self, value: crate::app::soundsystem::SoundSystem_ISoundLoad) -> ();
+
+    #[method(name = "get_Player", args = 0)]
+    pub fn get_player(self) -> crate::app::soundsystem::SoundSystem_ISoundPlay;
+
+    #[method(name = "set_Player", args = 1)]
+    pub fn set_player(self, value: crate::app::soundsystem::SoundSystem_ISoundPlay) -> ();
+
+    #[method(name = "get_FieldBgmManager", args = 0)]
+    pub fn get_field_bgm_manager(self) -> crate::app::fieldbgmmanager::FieldBgmManager;
+
+    #[method(name = "set_FieldBgmManager", args = 1)]
+    pub fn set_field_bgm_manager(self, value: crate::app::fieldbgmmanager::FieldBgmManager) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
+
+    #[method(name = "ResetMasterVolume", args = 0)]
+    pub fn reset_master_volume(self) -> ();
+
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "SetLanguage", args = 1)]
+    pub fn set_language(self, language: crate::app::language::Language_Langs) -> ();
+
+    #[method(name = "GetEventSeVolume", args = 0)]
+    pub fn get_event_se_volume(self) -> f32;
+
+    #[method(name = "IsEventLoaded", args = 1)]
+    pub fn is_event_loaded(self, event_name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "IsEventPlaying", args = 1)]
+    pub fn is_event_playing(self, event_name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "IsBgmEventPlaying", args = 1)]
+    pub fn is_bgm_event_playing(self, event_name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "FindSoundHandleByEventName", args = 1)]
+    pub fn find_sound_handle_by_event_name(
+        self,
+        event_name: ::unity2::Il2CppString,
+    ) -> crate::app::soundsystem::SoundSystem_SoundHandle;
+
+    #[method(name = "FindSoundHandlesByEventName", args = 1)]
+    pub fn find_sound_handles_by_event_name(
+        self,
+        event_name: ::unity2::Il2CppString,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::soundsystem::SoundSystem_SoundHandle,
+    >;
+
+    #[method(name = "FindSoundHandleByEventId", args = 1)]
+    pub fn find_sound_handle_by_event_id(
+        self,
+        event_id: u32,
+    ) -> crate::app::soundsystem::SoundSystem_SoundHandle;
+
+    #[method(name = "FindSoundHandlesByEventId", args = 1)]
+    pub fn find_sound_handles_by_event_id(
+        self,
+        event_id: u32,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::soundsystem::SoundSystem_SoundHandle,
+    >;
+
+    #[method(name = "GetSoundHandleList", args = 1)]
+    pub fn get_sound_handle_list(
+        self,
+        prefix: ::unity2::Il2CppString,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::soundsystem::SoundSystem_SoundHandle,
+    >;
+
+    #[method(name = "IsEventSePlaying", args = 0)]
+    pub fn is_event_se_playing(self) -> bool;
+
+    #[method(name = "GetAudioListenerObject", args = 0)]
+    pub fn get_audio_listener_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "GetAudioListenerPosition", args = 0)]
+    pub fn get_audio_listener_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "GetAudioListenerRotation", args = 0)]
+    pub fn get_audio_listener_rotation(self) -> crate::unity_engine::quaternion::Quaternion;
+
+    #[method(name = "LoadSound", args = 1)]
+    pub fn load_sound(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "LoadSoundAsync", args = 1)]
+    pub fn load_sound_async(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "IsLoadingSound", args = 0)]
+    pub fn is_loading_sound(self) -> bool;
+
+    #[method(name = "IsLoadingSound", args = 1)]
+    pub fn is_loading_sound_2(self, name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "UnloadSound", args = 1)]
+    pub fn unload_sound(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "UnloadSoundAll", args = 0)]
+    pub fn unload_sound_all(self) -> ();
+
+    #[method(name = "ReloadSoundBySetLanguage", args = 1)]
+    pub fn reload_sound_by_set_language(
+        self,
+        language: crate::app::language::Language_Voices,
+    ) -> ();
+
+    #[method(name = "PrepareEvent", args = 1)]
+    pub fn prepare_event(self, event_name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "PrepareEvent", args = 1)]
+    pub fn prepare_event_2(self, event_name_array: ::unity2::Array<::unity2::Il2CppString>)
+        -> bool;
+
+    #[method(name = "PrepareEventAsync", args = 2)]
+    pub fn prepare_event_async(
+        self,
+        event_name: ::unity2::Il2CppString,
+        result_sound_load: crate::app::soundsystem::SoundSystem_ResultSoundLoad,
+    ) -> bool;
+
+    #[method(name = "PrepareEventAsync", args = 2)]
+    pub fn prepare_event_async_2(
+        self,
+        event_name_array: ::unity2::Array<::unity2::Il2CppString>,
+        result_sound_load: crate::app::soundsystem::SoundSystem_ResultSoundLoad,
+    ) -> bool;
+
+    #[method(name = "UnprepareEvent", args = 1)]
+    pub fn unprepare_event(self, event_name_array: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "UnprepareEvent", args = 1)]
+    pub fn unprepare_event_2(self, event_name_array: ::unity2::Array<::unity2::Il2CppString>)
+        -> ();
+
+    #[method(name = "PrepareSwitch", args = 2)]
+    pub fn prepare_switch(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[method(name = "PrepareSwitch", args = 2)]
+    pub fn prepare_switch_2(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> bool;
+
+    #[method(name = "PrepareSwitchAsync", args = 3)]
+    pub fn prepare_switch_async(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name: ::unity2::Il2CppString,
+        result_sound_load: crate::app::soundsystem::SoundSystem_ResultSoundLoad,
+    ) -> bool;
+
+    #[method(name = "PrepareSwitchAsync", args = 3)]
+    pub fn prepare_switch_async_2(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
+        result_sound_load: crate::app::soundsystem::SoundSystem_ResultSoundLoad,
+    ) -> bool;
+
+    #[method(name = "UnprepareSwitch", args = 2)]
+    pub fn unprepare_switch(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name_array: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "UnprepareSwitch", args = 2)]
+    pub fn unprepare_switch_2(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> ();
+
+    #[method(name = "ClearPrepare", args = 0)]
+    pub fn clear_prepare(self) -> ();
+
+    #[method(name = "GetTemporaryGameObject", args = 0)]
+    pub fn get_temporary_game_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "TryDebugLog", args = 1)]
+    pub fn try_debug_log(event_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "PostEvent", args = 3)]
+    pub fn post_event(
+        self,
+        event_name: ::unity2::Il2CppString,
+        character: crate::combat::character::Character,
+        is_get_position: bool,
+    ) -> crate::app::soundsystem::SoundSystem_SoundHandle;
+
+    #[method(name = "PostEvent", args = 4)]
+    pub fn post_event_2(
+        self,
+        event_name: ::unity2::Il2CppString,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        character: crate::combat::character::Character,
+        is_get_position: bool,
+    ) -> crate::app::soundsystem::SoundSystem_SoundHandle;
+
+    #[method(name = "PostEventWithTemporaryGameObject", args = 4)]
+    pub fn post_event_with_temporary_game_object(
+        self,
+        event_name: ::unity2::Il2CppString,
+        temporary_game_object: crate::unity_engine::gameobject::GameObject,
+        character: crate::combat::character::Character,
+        is_get_position: bool,
+    ) -> crate::app::soundsystem::SoundSystem_SoundHandle;
+
+    #[method(name = "StopSoundOnEvent", args = 2)]
+    pub fn stop_sound_on_event(self, event_name: ::unity2::Il2CppString, fade_msec: i32) -> ();
+
+    #[method(name = "StopSoundOnEvent", args = 3)]
+    pub fn stop_sound_on_event_2(
+        self,
+        event_name: ::unity2::Il2CppString,
+        fade_msec: i32,
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[method(name = "PauseSoundOnEvent", args = 2)]
+    pub fn pause_sound_on_event(self, event_name: ::unity2::Il2CppString, fade_msec: i32) -> ();
+
+    #[method(name = "PauseSoundOnEvent", args = 3)]
+    pub fn pause_sound_on_event_2(
+        self,
+        event_name: ::unity2::Il2CppString,
+        fade_msec: i32,
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[method(name = "ResumeSoundOnEvent", args = 2)]
+    pub fn resume_sound_on_event(self, event_name: ::unity2::Il2CppString, fade_msec: i32) -> ();
+
+    #[method(name = "ResumeSoundOnEvent", args = 3)]
+    pub fn resume_sound_on_event_2(
+        self,
+        event_name: ::unity2::Il2CppString,
+        fade_msec: i32,
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[method(name = "StopByPlayingId", args = 2)]
+    pub fn stop_by_playing_id(self, playing_id: u32, fade_msec: i32) -> ();
+
+    #[method(name = "GetPlayPosition", args = 2)]
+    pub fn get_play_position(self, playing_id: u32, position_offset: i32) -> i32;
+
+    #[method(name = "GetMasterBgmVolume", args = 0)]
+    pub fn get_master_bgm_volume(self) -> f32;
+
+    #[method(name = "GetMasterSeVolume", args = 0)]
+    pub fn get_master_se_volume(self) -> f32;
+
+    #[method(name = "GetMasterEnvVolume", args = 0)]
+    pub fn get_master_env_volume(self) -> f32;
+
+    #[method(name = "GetMasterVoiceVolume", args = 0)]
+    pub fn get_master_voice_volume(self) -> f32;
+
+    #[method(name = "SetMasterBgmVolume", args = 2)]
+    pub fn set_master_bgm_volume(self, vol: f32, fade_msec: i32) -> ();
+
+    #[method(name = "SetMasterSeVolume", args = 2)]
+    pub fn set_master_se_volume(self, vol: f32, fade_msec: i32) -> ();
+
+    #[method(name = "SetMasterEnvVolume", args = 2)]
+    pub fn set_master_env_volume(self, vol: f32, fade_msec: i32) -> ();
+
+    #[method(name = "SetMasterVoiceVolume", args = 2)]
+    pub fn set_master_voice_volume(self, vol: f32, fade_msec: i32) -> ();
+
+    #[method(name = "GetConfigBgmVolume", args = 0)]
+    pub fn get_config_bgm_volume(self) -> f32;
+
+    #[method(name = "GetConfigSeVolume", args = 0)]
+    pub fn get_config_se_volume(self) -> f32;
+
+    #[method(name = "GetConfigEnvVolume", args = 0)]
+    pub fn get_config_env_volume(self) -> f32;
+
+    #[method(name = "GetConfigVoiceVolume", args = 0)]
+    pub fn get_config_voice_volume(self) -> f32;
+
+    #[method(name = "SetConfigBgmVolume", args = 1)]
+    pub fn set_config_bgm_volume(self, vol: f32) -> ();
+
+    #[method(name = "SetConfigSeVolume", args = 1)]
+    pub fn set_config_se_volume(self, vol: f32) -> ();
+
+    #[method(name = "SetConfigEnvVolume", args = 1)]
+    pub fn set_config_env_volume(self, vol: f32) -> ();
+
+    #[method(name = "SetConfigVoiceVolume", args = 1)]
+    pub fn set_config_voice_volume(self, vol: f32) -> ();
+
+    #[method(name = "SetVolume", args = 2)]
+    pub fn set_volume(
+        self,
+        vol: f32,
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[method(name = "GetGlobalEnumParam", args = 2)]
+    pub fn get_global_enum_param(self, value_name: ::unity2::Il2CppString, value: u32) -> bool;
+
+    #[method(name = "GetEnumParam", args = 2)]
+    pub fn get_enum_param(self, value_name: ::unity2::Il2CppString, value: u32) -> bool;
+
+    #[method(name = "GetGameParam", args = 2)]
+    pub fn get_game_param(self, value_name: ::unity2::Il2CppString, value: f32) -> bool;
+
+    #[method(name = "GetGameParam", args = 3)]
+    pub fn get_game_param_2(
+        self,
+        value_name: ::unity2::Il2CppString,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        value: f32,
+    ) -> bool;
+
+    #[method(name = "SetGlobalEnumParam", args = 2)]
+    pub fn set_global_enum_param(
+        self,
+        value_name: ::unity2::Il2CppString,
+        value: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[method(name = "SetGlobalEnumParam", args = 2)]
+    pub fn set_global_enum_param_2(self, value_name: ::unity2::Il2CppString, value: u32) -> bool;
+
+    #[method(name = "SetEnumParam", args = 2)]
+    pub fn set_enum_param(
+        self,
+        value_name: ::unity2::Il2CppString,
+        value: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[method(name = "SetEnumParam", args = 3)]
+    pub fn set_enum_param_2(
+        self,
+        value_name: ::unity2::Il2CppString,
+        value: ::unity2::Il2CppString,
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> bool;
+
+    #[method(name = "SetGameParam", args = 2)]
+    pub fn set_game_param(self, value_name: ::unity2::Il2CppString, value: f32) -> bool;
+
+    #[method(name = "SetGameParam", args = 3)]
+    pub fn set_game_param_2(
+        self,
+        value_name: ::unity2::Il2CppString,
+        value: f32,
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> bool;
+
+    #[method(name = "PushGlobalEnumParam_MapOrCombat", args = 1)]
+    pub fn push_global_enum_param_map_or_combat(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "PopGlobalEnumParam_MapOrCombat", args = 0)]
+    pub fn pop_global_enum_param_map_or_combat(self) -> ();
+
+    #[method(name = "SetPosition", args = 2)]
+    pub fn set_position(
+        self,
+        pos: crate::unity_engine::vector3::Vector3,
+        temporary_game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[method(name = "FieldBgm_IsSetPhaseBgm", args = 0)]
+    pub fn field_bgm_is_set_phase_bgm(self) -> bool;
+
+    #[method(name = "FieldBgm_Init", args = 0)]
+    pub fn field_bgm_init(self) -> ();
+
+    #[method(name = "FieldBgm_Final", args = 1)]
+    pub fn field_bgm_final(self, fade_msec: i32) -> ();
+
+    #[method(name = "FieldBgm_SetPhaseBgm", args = 2)]
+    pub fn field_bgm_set_phase_bgm(
+        self,
+        chapter: crate::app::chapterdata::ChapterData,
+        is_encount: bool,
+    ) -> ();
+
+    #[method(name = "FieldBgm_RestorePhaseBgm", args = 0)]
+    pub fn field_bgm_restore_phase_bgm(self) -> ();
+
+    #[method(name = "FieldBgm_SetPhaseBgm", args = 3)]
+    pub fn field_bgm_set_phase_bgm_2(
+        self,
+        player_phase_bgm: ::unity2::Il2CppString,
+        enemy_phase_bgm: ::unity2::Il2CppString,
+        ally_phase_bgm: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[method(name = "FieldBgm_PlayBgm", args = 1)]
+    pub fn field_bgm_play_bgm(self, force_type: crate::app::force::Force_Type) -> ();
+
+    #[method(name = "FieldBgm_StopBgm", args = 1)]
+    pub fn field_bgm_stop_bgm(self, fade_msec: i32) -> ();
+
+    #[method(name = "FieldBgm_PauseBgm", args = 1)]
+    pub fn field_bgm_pause_bgm(self, fade_msec: i32) -> ();
+
+    #[method(name = "FieldBgm_ResumeBgm", args = 1)]
+    pub fn field_bgm_resume_bgm(self, fade_msec: i32) -> ();
+
+    #[method(name = "FieldBgm_SetBgmVolume", args = 2)]
+    pub fn field_bgm_set_bgm_volume(self, vol: f32, fade_msec: i32) -> ();
+
+    #[method(name = "FieldBgm_SetWarSituationParam", args = 1)]
+    pub fn field_bgm_set_war_situation_param(self, value_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "FieldBgm_RestoreWarSituationParam", args = 0)]
+    pub fn field_bgm_restore_war_situation_param(self) -> ();
+
+    #[method(name = "FieldBgm_StartSpecialBattleBgmContinueTurn", args = 0)]
+    pub fn field_bgm_start_special_battle_bgm_continue_turn(self) -> ();
+
+    #[method(name = "FieldBgm_SetSpecialBattleBgmContinueTurnForRewind", args = 1)]
+    pub fn field_bgm_set_special_battle_bgm_continue_turn_for_rewind(self, turn: i32) -> ();
+
+    #[method(name = "FieldBgm_ChangeForceType", args = 3)]
+    pub fn field_bgm_change_force_type(
+        self,
+        force_type: crate::app::force::Force_Type,
+        super_: crate::app::procinst::ProcInst,
+        is_turn_elapsed: bool,
+    ) -> ();
+
+    #[method(name = "FieldBgm_ChangeForceTypeImm", args = 1)]
+    pub fn field_bgm_change_force_type_imm(self, force_type: crate::app::force::Force_Type) -> ();
+
+    #[method(name = "FieldBgm_SetFirstPlayedFlag", args = 0)]
+    pub fn field_bgm_set_first_played_flag(self) -> ();
+
+    #[method(name = "FieldBgm_PlaySpecialBattleBgm", args = 1)]
+    pub fn field_bgm_play_special_battle_bgm(self, event_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "FieldBgm_PauseSpecialBattleBgm", args = 1)]
+    pub fn field_bgm_pause_special_battle_bgm(self, event_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "FieldBgm_IsSpecialBattleBgmExist", args = 1)]
+    pub fn field_bgm_is_special_battle_bgm_exist(self, event_name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "UpdateListenerPosition", args = 0)]
+    pub fn update_listener_position(self) -> ();
+
+    #[method(name = "UpdateMasterVolume", args = 0)]
+    pub fn update_master_volume(self) -> ();
+
+    #[method(name = "UpdateConfigVolume", args = 0)]
+    pub fn update_config_volume(self) -> ();
+
+    #[method(name = "UpdateMapCameraHeight", args = 0)]
+    pub fn update_map_camera_height(self) -> ();
+
+    #[method(name = "UpdateSoundHandleList", args = 0)]
+    pub fn update_sound_handle_list(self) -> ();
+
+    #[method(name = "UpdateOutputDevice", args = 0)]
+    pub fn update_output_device(self) -> ();
+
+    #[method(name = "MeasureBusVolume", args = 0)]
+    pub fn measure_bus_volume(self) -> ();
+
+    #[method(name = "IsInBmapSequence", args = 0)]
+    pub fn is_in_bmap_sequence(self) -> bool;
+
+    #[method(name = "IsInUnitDetailOrClassChange", args = 0)]
+    pub fn is_in_unit_detail_or_class_change(self) -> bool;
+
+    #[method(name = "IsInCombat", args = 0)]
+    pub fn is_in_combat(self) -> bool;
+
+    #[method(name = "LoadLipSyncDataAsync", args = 1)]
+    pub fn load_lip_sync_data_async(self, lip_sync_data_file_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "UnloadLipSyncData", args = 1)]
+    pub fn unload_lip_sync_data(self, lip_sync_data_file_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "UnloadLipSyncDataAll", args = 0)]
+    pub fn unload_lip_sync_data_all(self) -> ();
+
+    #[method(name = "GetLipSyncData", args = 1)]
+    pub fn get_lip_sync_data(
+        self,
+        event_name: ::unity2::Il2CppString,
+    ) -> crate::app::soundsystem::SoundSystem_LipSyncData;
+}
+
+#[cfg(feature = "app-soundmanager")]
+impl SoundManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundManagerMethods>::ctor(this);
+        this
+    }
+}

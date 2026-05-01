@@ -1,0 +1,107 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotaccdata/MascotAccData_PartsType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MascotAccData_PartsType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MascotAccData_PartsType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MascotAccData.PartsType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MascotAccData_PartsType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MascotAccData_PartsType {
+    pub fn head() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn tail() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotaccdata/MascotAccData.md")))]
+#[::unity2::class(namespace = "App", name = "MascotAccData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: mascotaccdata :: MascotAccData >)]
+pub struct MascotAccData {}
+
+#[cfg(feature = "app-mascotaccdata")]
+#[::unity2::methods]
+impl MascotAccData {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_Aid", args = 0)]
+    pub fn get_aid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Aid", args = 1)]
+    pub fn set_aid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> crate::app::mascotaccdata::MascotAccData_PartsType;
+
+    #[method(name = "set_Type", args = 1)]
+    pub fn set_type(self, value: crate::app::mascotaccdata::MascotAccData_PartsType) -> ();
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mascotaccdata")]
+impl MascotAccData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MascotAccData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMascotAccDataMethods>::ctor(this);
+        this
+    }
+}

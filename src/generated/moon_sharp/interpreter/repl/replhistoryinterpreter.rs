@@ -1,0 +1,59 @@
+
+use crate::moon_sharp::interpreter::repl::replinterpreter::IReplInterpreter;
+use crate::moon_sharp::interpreter::repl::replinterpreter::ReplInterpreter;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/repl/replhistoryinterpreter/ReplHistoryInterpreter.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.REPL",
+    name = "ReplHistoryInterpreter"
+)]
+#[parent(crate::moon_sharp::interpreter::repl::replinterpreter::ReplInterpreter)]
+pub struct ReplHistoryInterpreter {
+    #[rename(name = "m_History")]
+    pub m_history: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "m_Last")]
+    pub m_last: i32,
+    #[rename(name = "m_Navi")]
+    pub m_navi: i32,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-repl-replhistoryinterpreter")]
+#[::unity2::methods]
+impl ReplHistoryInterpreter {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        history_size: i32,
+    ) -> ();
+
+    #[method(name = "Evaluate", args = 1)]
+    pub fn evaluate(
+        self,
+        input: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "HistoryPrev", args = 0)]
+    pub fn history_prev(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "HistoryNext", args = 0)]
+    pub fn history_next(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-repl-replhistoryinterpreter")]
+impl ReplHistoryInterpreter {
+    pub fn new(script: crate::moon_sharp::interpreter::script::Script, history_size: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ReplHistoryInterpreter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IReplHistoryInterpreterMethods>::ctor(this, script, history_size);
+        this
+    }
+}

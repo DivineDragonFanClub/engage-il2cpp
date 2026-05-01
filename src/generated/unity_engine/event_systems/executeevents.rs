@@ -1,0 +1,285 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/executeevents/ExecuteEvents_EventFunction_1.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.EventSystems",
+    name = "ExecuteEvents.EventFunction`1"
+)]
+pub struct ExecuteEvents_EventFunction_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "unity_engine-event_systems-executeevents")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> ExecuteEvents_EventFunction_1<T0> {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        handler: T0,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-event_systems-executeevents")]
+impl<T0: ::unity2::ClassIdentity> ExecuteEvents_EventFunction_1<T0> {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ExecuteEvents_EventFunction_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExecuteEvents_EventFunction_1Methods<T0>>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/executeevents/ExecuteEvents.md")))]
+#[::unity2::class(namespace = "UnityEngine.EventSystems", name = "ExecuteEvents")]
+#[parent(crate::system::object::Object)]
+pub struct ExecuteEvents {
+# [static_field] # [rename (name = "s_PointerEnterHandler")] pub s_pointer_enter_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointerenterhandler :: IPointerEnterHandler > ,
+# [static_field] # [rename (name = "s_PointerExitHandler")] pub s_pointer_exit_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointerexithandler :: IPointerExitHandler > ,
+# [static_field] # [rename (name = "s_PointerDownHandler")] pub s_pointer_down_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointerdownhandler :: IPointerDownHandler > ,
+# [static_field] # [rename (name = "s_PointerUpHandler")] pub s_pointer_up_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointeruphandler :: IPointerUpHandler > ,
+# [static_field] # [rename (name = "s_PointerClickHandler")] pub s_pointer_click_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ipointerclickhandler :: IPointerClickHandler > ,
+# [static_field] # [rename (name = "s_InitializePotentialDragHandler")] pub s_initialize_potential_drag_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iinitializepotentialdraghandler :: IInitializePotentialDragHandler > ,
+# [static_field] # [rename (name = "s_BeginDragHandler")] pub s_begin_drag_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ibegindraghandler :: IBeginDragHandler > ,
+# [static_field] # [rename (name = "s_DragHandler")] pub s_drag_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: idraghandler :: IDragHandler > ,
+# [static_field] # [rename (name = "s_EndDragHandler")] pub s_end_drag_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ienddraghandler :: IEndDragHandler > ,
+# [static_field] # [rename (name = "s_DropHandler")] pub s_drop_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: idrophandler :: IDropHandler > ,
+# [static_field] # [rename (name = "s_ScrollHandler")] pub s_scroll_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iscrollhandler :: IScrollHandler > ,
+# [static_field] # [rename (name = "s_UpdateSelectedHandler")] pub s_update_selected_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iupdateselectedhandler :: IUpdateSelectedHandler > ,
+# [static_field] # [rename (name = "s_SelectHandler")] pub s_select_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iselecthandler :: ISelectHandler > ,
+# [static_field] # [rename (name = "s_DeselectHandler")] pub s_deselect_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: ideselecthandler :: IDeselectHandler > ,
+# [static_field] # [rename (name = "s_MoveHandler")] pub s_move_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: imovehandler :: IMoveHandler > ,
+# [static_field] # [rename (name = "s_SubmitHandler")] pub s_submit_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: isubmithandler :: ISubmitHandler > ,
+# [static_field] # [rename (name = "s_CancelHandler")] pub s_cancel_handler : crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: icancelhandler :: ICancelHandler > ,
+# [static_field] # [rename (name = "s_HandlerListPool")] pub s_handler_list_pool : crate :: unity_engine :: ui :: objectpool_1 :: ObjectPool_1 < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: event_systems :: ieventsystemhandler :: IEventSystemHandler > > ,
+# [static_field] # [rename (name = "s_InternalTransformList")] pub s_internal_transform_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: transform :: Transform > ,
+}
+
+#[cfg(feature = "unity_engine-event_systems-executeevents")]
+#[::unity2::methods]
+impl ExecuteEvents {
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        handler: crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_2(
+        handler: crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_3(
+        handler: crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_4(
+        handler: crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_5(
+        handler: crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_6(
+        handler : crate :: unity_engine :: event_systems :: iinitializepotentialdraghandler :: IInitializePotentialDragHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_7(
+        handler: crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_8(
+        handler: crate::unity_engine::event_systems::idraghandler::IDragHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_9(
+        handler: crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_10(
+        handler: crate::unity_engine::event_systems::idrophandler::IDropHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_11(
+        handler: crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_12(
+        handler: crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_13(
+        handler: crate::unity_engine::event_systems::iselecthandler::ISelectHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_14(
+        handler: crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_15(
+        handler: crate::unity_engine::event_systems::imovehandler::IMoveHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_16(
+        handler: crate::unity_engine::event_systems::isubmithandler::ISubmitHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute_17(
+        handler: crate::unity_engine::event_systems::icancelhandler::ICancelHandler,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "get_pointerEnterHandler", args = 0)]
+    pub fn get_pointer_enter_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointerenterhandler::IPointerEnterHandler,
+    >;
+
+    #[method(name = "get_pointerExitHandler", args = 0)]
+    pub fn get_pointer_exit_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointerexithandler::IPointerExitHandler,
+    >;
+
+    #[method(name = "get_pointerDownHandler", args = 0)]
+    pub fn get_pointer_down_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointerdownhandler::IPointerDownHandler,
+    >;
+
+    #[method(name = "get_pointerUpHandler", args = 0)]
+    pub fn get_pointer_up_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointeruphandler::IPointerUpHandler,
+    >;
+
+    #[method(name = "get_pointerClickHandler", args = 0)]
+    pub fn get_pointer_click_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ipointerclickhandler::IPointerClickHandler,
+    >;
+
+    #[method(name = "get_initializePotentialDrag", args = 0)]
+    pub fn get_initialize_potential_drag () -> crate :: unity_engine :: event_systems :: executeevents :: ExecuteEvents_EventFunction_1 < crate :: unity_engine :: event_systems :: iinitializepotentialdraghandler :: IInitializePotentialDragHandler > ;
+
+    #[method(name = "get_beginDragHandler", args = 0)]
+    pub fn get_begin_drag_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ibegindraghandler::IBeginDragHandler,
+    >;
+
+    #[method(name = "get_dragHandler", args = 0)]
+    pub fn get_drag_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::idraghandler::IDragHandler,
+    >;
+
+    #[method(name = "get_endDragHandler", args = 0)]
+    pub fn get_end_drag_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ienddraghandler::IEndDragHandler,
+    >;
+
+    #[method(name = "get_dropHandler", args = 0)]
+    pub fn get_drop_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::idrophandler::IDropHandler,
+    >;
+
+    #[method(name = "get_scrollHandler", args = 0)]
+    pub fn get_scroll_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::iscrollhandler::IScrollHandler,
+    >;
+
+    #[method(name = "get_updateSelectedHandler", args = 0)]
+    pub fn get_update_selected_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::iupdateselectedhandler::IUpdateSelectedHandler,
+    >;
+
+    #[method(name = "get_selectHandler", args = 0)]
+    pub fn get_select_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::iselecthandler::ISelectHandler,
+    >;
+
+    #[method(name = "get_deselectHandler", args = 0)]
+    pub fn get_deselect_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::ideselecthandler::IDeselectHandler,
+    >;
+
+    #[method(name = "get_moveHandler", args = 0)]
+    pub fn get_move_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::imovehandler::IMoveHandler,
+    >;
+
+    #[method(name = "get_submitHandler", args = 0)]
+    pub fn get_submit_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::isubmithandler::ISubmitHandler,
+    >;
+
+    #[method(name = "get_cancelHandler", args = 0)]
+    pub fn get_cancel_handler(
+    ) -> crate::unity_engine::event_systems::executeevents::ExecuteEvents_EventFunction_1<
+        crate::unity_engine::event_systems::icancelhandler::ICancelHandler,
+    >;
+
+    #[method(name = "GetEventChain", args = 2)]
+    pub fn get_event_chain(
+        root: crate::unity_engine::gameobject::GameObject,
+        event_chain: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::unity_engine::transform::Transform,
+        >,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

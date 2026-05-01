@@ -1,0 +1,57 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::baseraycaster::BaseRaycaster;
+use crate::unity_engine::event_systems::baseraycaster::IBaseRaycaster;
+use crate::unity_engine::event_systems::physicsraycaster::IPhysicsRaycaster;
+use crate::unity_engine::event_systems::physicsraycaster::PhysicsRaycaster;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/physics2draycaster/Physics2DRaycaster.md")))]
+#[::unity2::class(namespace = "UnityEngine.EventSystems", name = "Physics2DRaycaster")]
+#[parent(crate::unity_engine::event_systems::physicsraycaster::PhysicsRaycaster)]
+pub struct Physics2DRaycaster {
+    #[rename(name = "m_Hits")]
+    pub m_hits: ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+}
+
+#[cfg(feature = "unity_engine-event_systems-physics2draycaster")]
+#[::unity2::methods]
+impl Physics2DRaycaster {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Raycast", args = 2)]
+    pub fn raycast(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        result_append_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::event_systems::raycastresult::RaycastResult,
+        >,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-event_systems-physics2draycaster")]
+impl Physics2DRaycaster {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Physics2DRaycaster),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhysics2DRaycasterMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,257 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdataarray_1::IStructDataArray_1;
+use crate::app::structdataarray_1::StructDataArray_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdata/EventData_Commands.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EventData_Commands {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EventData_Commands {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "EventData.Commands";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EventData_Commands {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EventData_Commands {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn label() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn jump() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn wait() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn variant() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn set_background() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn set_back_ground_auto() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn fade_in() -> Self {
+        Self { value: 30 }
+    }
+
+    pub fn fade_out() -> Self {
+        Self { value: 31 }
+    }
+
+    pub fn camera_set_chara_camera() -> Self {
+        Self { value: 40 }
+    }
+
+    pub fn camera_set_scene_camera() -> Self {
+        Self { value: 41 }
+    }
+
+    pub fn camera_set_shake() -> Self {
+        Self { value: 42 }
+    }
+
+    pub fn character_create() -> Self {
+        Self { value: 50 }
+    }
+
+    pub fn character_delete() -> Self {
+        Self { value: 51 }
+    }
+
+    pub fn character_adjust_pos() -> Self {
+        Self { value: 52 }
+    }
+
+    pub fn character_show_hide() -> Self {
+        Self { value: 53 }
+    }
+
+    pub fn character_play_motion() -> Self {
+        Self { value: 54 }
+    }
+
+    pub fn character_wait_motion() -> Self {
+        Self { value: 55 }
+    }
+
+    pub fn character_set_angle() -> Self {
+        Self { value: 56 }
+    }
+
+    pub fn character_reset_angle() -> Self {
+        Self { value: 57 }
+    }
+
+    pub fn message_load() -> Self {
+        Self { value: 60 }
+    }
+
+    pub fn talk_begin() -> Self {
+        Self { value: 61 }
+    }
+
+    pub fn talk_face_begin() -> Self {
+        Self { value: 62 }
+    }
+
+    pub fn picture_show() -> Self {
+        Self { value: 70 }
+    }
+
+    pub fn picture_hide() -> Self {
+        Self { value: 71 }
+    }
+
+    pub fn bgm() -> Self {
+        Self { value: 80 }
+    }
+
+    pub fn se() -> Self {
+        Self { value: 81 }
+    }
+
+    pub fn test_system_voice_load() -> Self {
+        Self { value: 100 }
+    }
+
+    pub fn test_system_voice_unload() -> Self {
+        Self { value: 101 }
+    }
+
+    pub fn test_system_voice_play() -> Self {
+        Self { value: 102 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdata/EventData.md")))]
+#[::unity2::class(namespace = "App", name = "EventData")]
+# [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: eventdata :: EventData >)]
+pub struct EventData {}
+
+#[cfg(feature = "app-eventdata")]
+#[::unity2::methods]
+impl EventData {
+    #[method(name = "get_Command", args = 0)]
+    pub fn get_command(self) -> crate::app::eventdata::EventData_Commands;
+
+    #[method(name = "set_Command", args = 1)]
+    pub fn set_command(self, value: crate::app::eventdata::EventData_Commands) -> ();
+
+    #[method(name = "get_Arg1", args = 0)]
+    pub fn get_arg1(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Arg1", args = 1)]
+    pub fn set_arg1(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Arg2", args = 0)]
+    pub fn get_arg2(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Arg2", args = 1)]
+    pub fn set_arg2(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Arg3", args = 0)]
+    pub fn get_arg3(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Arg3", args = 1)]
+    pub fn set_arg3(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Arg4", args = 0)]
+    pub fn get_arg4(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Arg4", args = 1)]
+    pub fn set_arg4(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Arg5", args = 0)]
+    pub fn get_arg5(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Arg5", args = 1)]
+    pub fn set_arg5(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Arg6", args = 0)]
+    pub fn get_arg6(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Arg6", args = 1)]
+    pub fn set_arg6(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Arg7", args = 0)]
+    pub fn get_arg7(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Arg7", args = 1)]
+    pub fn set_arg7(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Condition", args = 0)]
+    pub fn get_condition(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Condition", args = 1)]
+    pub fn set_condition(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "Load", args = 1)]
+    pub fn load(file_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-eventdata")]
+impl EventData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDataMethods>::ctor(this);
+        this
+    }
+}

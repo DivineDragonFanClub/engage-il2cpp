@@ -1,0 +1,16 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/iassetbundleresource_interface/IAssetBundleResource_Interface.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "IAssetBundleResource"
+)]
+pub struct IAssetBundleResource_Interface {}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-iassetbundleresource_interface")]
+#[::unity2::methods]
+impl IAssetBundleResource_Interface {
+    #[method(name = "GetAssetBundle", args = 0)]
+    pub fn get_asset_bundle(self) -> crate::unity_engine::assetbundle::AssetBundle;
+}

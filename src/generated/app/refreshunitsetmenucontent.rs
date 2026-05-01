@@ -1,0 +1,90 @@
+
+use crate::app::basicmenucontent::BasicMenuContent;
+use crate::app::basicmenucontent::IBasicMenuContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshunitsetmenucontent/RefreshUnitSetMenuContent.md")))]
+#[::unity2::class(namespace = "App", name = "RefreshUnitSetMenuContent")]
+#[parent(crate::app::basicmenucontent::BasicMenuContent)]
+pub struct RefreshUnitSetMenuContent {
+    #[rename(name = "m_DecideMenuContent")]
+    pub m_decide_menu_content:
+        crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent,
+    #[rename(name = "m_FacilityNameText")]
+    pub m_facility_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_PageIconImage")]
+    pub m_page_icon_image: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+    #[rename(name = "m_RelianceCaptionText")]
+    pub m_reliance_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_RelianceRankCImage")]
+    pub m_reliance_rank_c_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RelianceRankBImage")]
+    pub m_reliance_rank_b_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RelianceRankAImage")]
+    pub m_reliance_rank_a_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RelianceRankSImage")]
+    pub m_reliance_rank_s_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RelianceNoneImage")]
+    pub m_reliance_none_image: crate::unity_engine::ui::image::Image,
+}
+
+#[cfg(feature = "app-refreshunitsetmenucontent")]
+#[::unity2::methods]
+impl RefreshUnitSetMenuContent {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "GetRefreshUnitSetDecideMenuContent", args = 0)]
+    pub fn get_refresh_unit_set_decide_menu_content(
+        self,
+    ) -> crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent;
+
+    #[method(name = "CalcCursorMovedPosY", args = 1)]
+    pub fn calc_cursor_moved_pos_y(self, menu_item_index: i32) -> f32;
+
+    #[method(name = "CalcW", args = 0)]
+    pub fn calc_w(self) -> f32;
+
+    #[method(name = "CalcH", args = 0)]
+    pub fn calc_h(self) -> f32;
+
+    #[method(name = "UpdateFacility", args = 3)]
+    pub fn update_facility(
+        self,
+        mid: ::unity2::Il2CppString,
+        index: i32,
+        facility_count: i32,
+    ) -> ();
+
+    #[method(name = "UpdateContent", args = 2)]
+    pub fn update_content(self, unit0: crate::app::unit::Unit, unit1: crate::app::unit::Unit)
+        -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refreshunitsetmenucontent")]
+impl RefreshUnitSetMenuContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshUnitSetMenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshUnitSetMenuContentMethods>::ctor(this);
+        this
+    }
+}

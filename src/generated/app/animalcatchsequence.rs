@@ -1,0 +1,245 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemno::BasicDialogItemNo;
+use crate::app::basicdialogitemno::IBasicDialogItemNo;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::app::yesnodialog::IYesNoDialog;
+use crate::app::yesnodialog::YesNoDialog;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalcatchsequence/AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "AnimalCatchSequence.CatchConfirm.ConfirmDialogItemNo"
+)]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo {}
+
+#[cfg(feature = "app-animalcatchsequence")]
+#[::unity2::methods]
+impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-animalcatchsequence")]
+impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemNoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalcatchsequence/AnimalCatchSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AnimalCatchSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AnimalCatchSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AnimalCatchSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AnimalCatchSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AnimalCatchSequence_Label {
+    pub fn init() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn main() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalcatchsequence/AnimalCatchSequence.md")))]
+#[::unity2::class(namespace = "App", name = "AnimalCatchSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalcatchsequence :: AnimalCatchSequence >)]
+pub struct AnimalCatchSequence {}
+
+#[cfg(feature = "app-animalcatchsequence")]
+#[::unity2::methods]
+impl AnimalCatchSequence {
+    #[method(name = "get_Access", args = 0)]
+    pub fn get_access(self) -> crate::app::hubaccess::HubAccess;
+
+    #[method(name = "set_Access", args = 1)]
+    pub fn set_access(self, value: crate::app::hubaccess::HubAccess) -> ();
+
+    #[method(name = "get_Animal", args = 0)]
+    pub fn get_animal(self) -> crate::app::animaldata::AnimalData;
+
+    #[method(name = "set_Animal", args = 1)]
+    pub fn set_animal(self, value: crate::app::animaldata::AnimalData) -> ();
+
+    #[method(name = "get_Player", args = 0)]
+    pub fn get_player(self) -> crate::app::hubplayercontroller::HubPlayerController;
+
+    #[method(name = "get_Camera", args = 0)]
+    pub fn get_camera(self) -> crate::app::hubcamera::HubCamera;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, access: crate::app::hubaccess::HubAccess) -> ();
+
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
+
+    #[method(name = "Exit", args = 0)]
+    pub fn exit(self) -> ();
+
+    #[method(name = "StartCapture", args = 0)]
+    pub fn start_capture(self) -> ();
+
+    #[method(name = "MainCapture", args = 0)]
+    pub fn main_capture(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "EndCapture", args = 0)]
+    pub fn end_capture(self) -> ();
+
+    #[method(name = "FinishCapture", args = 0)]
+    pub fn finish_capture(self) -> ();
+
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        access: crate::app::hubaccess::HubAccess,
+    ) -> crate::app::procinst::ProcInst;
+}
+
+#[cfg(feature = "app-animalcatchsequence")]
+impl AnimalCatchSequence {
+    pub fn new(access: crate::app::hubaccess::HubAccess) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimalCatchSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimalCatchSequenceMethods>::ctor(this, access);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalcatchsequence/AnimalCatchSequence_CatchConfirm.md")))]
+#[::unity2::class(namespace = "App", name = "AnimalCatchSequence.CatchConfirm")]
+#[parent(crate::app::yesnodialog::YesNoDialog)]
+pub struct AnimalCatchSequence_CatchConfirm {}
+
+#[cfg(feature = "app-animalcatchsequence")]
+#[::unity2::methods]
+impl AnimalCatchSequence_CatchConfirm {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-animalcatchsequence")]
+impl AnimalCatchSequence_CatchConfirm {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimalCatchSequence_CatchConfirm),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimalCatchSequence_CatchConfirmMethods>::ctor(this, menu_item_list);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalcatchsequence/AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "AnimalCatchSequence.CatchConfirm.ConfirmDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes {}
+
+#[cfg(feature = "app-animalcatchsequence")]
+#[::unity2::methods]
+impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-animalcatchsequence")]
+impl AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimalCatchSequence_CatchConfirm_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimalCatchSequence_CatchConfirm_ConfirmDialogItemYesMethods>::ctor(this);
+        this
+    }
+}

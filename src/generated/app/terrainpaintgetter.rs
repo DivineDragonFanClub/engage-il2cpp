@@ -1,0 +1,64 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terrainpaintgetter/TerrainPaintGetter.md")))]
+#[::unity2::class(namespace = "App", name = "TerrainPaintGetter")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct TerrainPaintGetter {
+    #[rename(name = "m_Data")]
+    pub m_data: crate::app::terrainpaintdata::TerrainPaintData,
+    #[rename(name = "m_drawDebugGizmo")]
+    pub m_draw_debug_gizmo: bool,
+    #[rename(name = "m_debugGizmoHeight")]
+    pub m_debug_gizmo_height: f32,
+    #[rename(name = "m_debugGizmoGridColor")]
+    pub m_debug_gizmo_grid_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_debugGizmoDrawIndex")]
+    pub m_debug_gizmo_draw_index: crate::system::collections::generic::list_1::List_1<i32>,
+    #[rename(name = "m_debugGizmoDrawAlpha")]
+    pub m_debug_gizmo_draw_alpha: f32,
+    #[rename(name = "m_debugGizmoDrawColor")]
+    pub m_debug_gizmo_draw_color:
+        crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>,
+}
+
+#[cfg(feature = "app-terrainpaintgetter")]
+#[::unity2::methods]
+impl TerrainPaintGetter {
+    #[method(name = "Get", args = 2)]
+    pub fn get(self, x: f32, y: f32) -> ::unity2::Il2CppString;
+
+    #[method(name = "Get", args = 1)]
+    pub fn get_2(self, pos: crate::unity_engine::vector2::Vector2) -> ::unity2::Il2CppString;
+
+    #[method(name = "OnDrawGizmos", args = 0)]
+    pub fn on_draw_gizmos(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-terrainpaintgetter")]
+impl TerrainPaintGetter {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TerrainPaintGetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITerrainPaintGetterMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,31 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/assemblykeyfileattribute/AssemblyKeyFileAttribute.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "AssemblyKeyFileAttribute")]
+pub struct AssemblyKeyFileAttribute {
+    #[rename(name = "m_keyFile")]
+    pub m_key_file: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "system-reflection-assemblykeyfileattribute")]
+#[::unity2::methods]
+impl AssemblyKeyFileAttribute {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, key_file: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "system-reflection-assemblykeyfileattribute")]
+impl AssemblyKeyFileAttribute {
+    pub fn new(key_file: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssemblyKeyFileAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssemblyKeyFileAttributeMethods>::ctor(this, key_file);
+        this
+    }
+}

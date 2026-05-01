@@ -1,0 +1,68 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rotationorder/RotationOrder.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RotationOrder {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RotationOrder {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "RotationOrder";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RotationOrder {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RotationOrder {
+    pub fn order_xyz() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn order_xzy() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn order_yzx() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn order_yxz() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn order_zxy() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn order_zyx() -> Self {
+        Self { value: 5 }
+    }
+}

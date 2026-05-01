@@ -1,0 +1,47 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/lod/LOD.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct LOD {
+    pub screen_relative_transition_height: f32,
+    pub fade_transition_width: f32,
+    pub renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
+}
+
+impl ::unity2::ClassIdentity for LOD {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "LOD";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for LOD {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-lod")]
+#[::unity2::methods(value)]
+impl LOD {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        screen_relative_transition_height: f32,
+        renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
+    ) -> ();
+}

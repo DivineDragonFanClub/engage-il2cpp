@@ -1,0 +1,48 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/runtimedisplaying/RuntimeDisplaying.md")))]
+#[::unity2::class(namespace = "Combat", name = "RuntimeDisplaying")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct RuntimeDisplaying {
+    #[rename(name = "assetTable")]
+    pub asset_table: crate::combat::assettabledemo::AssetTableDemo,
+}
+
+#[cfg(feature = "combat-runtimedisplaying")]
+#[::unity2::methods]
+impl RuntimeDisplaying {
+    #[method(name = "OnGUI", args = 0)]
+    pub fn on_gui(self) -> ();
+
+    #[method(name = "MakeContents", args = 0)]
+    pub fn make_contents(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-runtimedisplaying")]
+impl RuntimeDisplaying {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RuntimeDisplaying),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRuntimeDisplayingMethods>::ctor(this);
+        this
+    }
+}

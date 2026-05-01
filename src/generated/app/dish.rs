@@ -1,0 +1,278 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_RelianceResult.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Dish_RelianceResult {
+    pub hero_unit_a: i32,
+    pub hero_unit_b: i32,
+    pub unit_a_unit_b: i32,
+    pub hero_unit_a_result: crate::app::dish::Dish_RelianceResult_TryResult,
+    pub hero_unit_b_result: crate::app::dish::Dish_RelianceResult_TryResult,
+    pub unit_a_unit_b_result: crate::app::dish::Dish_RelianceResult_TryResult,
+    pub hero: crate::app::unit::Unit,
+    pub unit_a: crate::app::unit::Unit,
+    pub unit_b: crate::app::unit::Unit,
+}
+
+impl ::unity2::ClassIdentity for Dish_RelianceResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Dish.RelianceResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Dish_RelianceResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_RelianceResult_TryResult.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Dish_RelianceResult_TryResult {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Dish_RelianceResult_TryResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Dish.RelianceResult.TryResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Dish_RelianceResult_TryResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Dish_RelianceResult_TryResult {
+    pub fn none() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn success() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn faileur() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn not_exists() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish.md")))]
+#[::unity2::class(namespace = "App", name = "Dish")]
+#[parent(crate::system::object::Object)]
+pub struct Dish {
+    #[rename(name = "m_Func")]
+    pub m_func: crate::app::tasteconditiondata::TasteConditionData_ConditionFunc,
+    #[rename(name = "m_MakeBentoIid")]
+    pub m_make_bento_iid: ::unity2::Il2CppString,
+    #[rename(name = "m_FoodData")]
+    pub m_food_data: crate::app::fooddata::FoodData,
+}
+
+#[cfg(feature = "app-dish")]
+#[::unity2::methods]
+impl Dish {
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_Enhance", args = 0)]
+    pub fn get_enhance(self) -> crate::app::unitenhancevalues::UnitEnhanceValues;
+
+    #[method(name = "set_Enhance", args = 1)]
+    pub fn set_enhance(self, value: crate::app::unitenhancevalues::UnitEnhanceValues) -> ();
+
+    #[method(name = "get_BonusEnhance", args = 0)]
+    pub fn get_bonus_enhance(self) -> crate::app::unitenhancevalues::UnitEnhanceValues;
+
+    #[method(name = "set_BonusEnhance", args = 1)]
+    pub fn set_bonus_enhance(self, value: crate::app::unitenhancevalues::UnitEnhanceValues) -> ();
+
+    #[method(name = "get_TotalBonusEnhance", args = 0)]
+    pub fn get_total_bonus_enhance(self) -> crate::app::unitenhancevalues::UnitEnhanceValues;
+
+    #[method(name = "set_TotalBonusEnhance", args = 1)]
+    pub fn set_total_bonus_enhance(
+        self,
+        value: crate::app::unitenhancevalues::UnitEnhanceValues,
+    ) -> ();
+
+    #[method(name = "get_RaiseReliance", args = 0)]
+    pub fn get_raise_reliance(self) -> bool;
+
+    #[method(name = "set_RaiseReliance", args = 1)]
+    pub fn set_raise_reliance(self, value: bool) -> ();
+
+    #[method(name = "get_Taste", args = 0)]
+    pub fn get_taste(self) -> crate::app::tastedata::TasteData;
+
+    #[method(name = "set_Taste", args = 1)]
+    pub fn set_taste(self, value: crate::app::tastedata::TasteData) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        food_data: crate::app::fooddata::FoodData,
+        taste_data: crate::app::tastedata::TasteData,
+        raise_reliance: bool,
+    ) -> ();
+
+    #[method(name = "get_Food", args = 0)]
+    pub fn get_food(self) -> crate::app::fooddata::FoodData;
+
+    #[method(name = "GetFoodName", args = 0)]
+    pub fn get_food_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "ApplyEnhance", args = 1)]
+    pub fn apply_enhance(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "ApplyReliance", args = 4)]
+    pub fn apply_reliance(
+        self,
+        hero_unit: crate::app::unit::Unit,
+        unit_a: crate::app::unit::Unit,
+        unit_b: crate::app::unit::Unit,
+        r#type: crate::app::cooking::Cooking_ConversationType,
+    ) -> crate::app::dish::Dish_RelianceResult;
+
+    #[method(name = "CalculateRelianceRiseValue", args = 3)]
+    pub fn calculate_reliance_rise_value(
+        self,
+        unit_a: crate::app::unit::Unit,
+        unit_b: crate::app::unit::Unit,
+        r#type: crate::app::cooking::Cooking_ConversationType,
+    ) -> i32;
+
+    #[method(name = "MakeBento", args = 0)]
+    pub fn make_bento(self) -> crate::app::unititem::UnitItem;
+
+    #[method(name = "SetEnhance", args = 2)]
+    pub fn set_enhance_2(
+        self,
+        food_data: crate::app::fooddata::FoodData,
+        taste_data: crate::app::tastedata::TasteData,
+    ) -> ();
+
+    #[method(name = "CalculateEnhance", args = 2)]
+    pub fn calculate_enhance(
+        self,
+        enhance: crate::app::capabilitysbyte::CapabilitySbyte,
+        taste_data: crate::app::tastedata::TasteData,
+    ) -> crate::app::unitenhancevalues::UnitEnhanceValues;
+
+    #[method(name = "GetLiking", args = 1)]
+    pub fn get_liking(self, unit: crate::app::unit::Unit) -> crate::app::dish::Dish_Liking;
+
+    #[method(name = "GetCondDescription", args = 0)]
+    pub fn get_cond_description(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-dish")]
+impl Dish {
+    pub fn new(
+        unit: crate::app::unit::Unit,
+        food_data: crate::app::fooddata::FoodData,
+        taste_data: crate::app::tastedata::TasteData,
+        raise_reliance: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Dish),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishMethods>::ctor(this, unit, food_data, taste_data, raise_reliance);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dish/Dish_Liking.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Dish_Liking {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Dish_Liking {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Dish.Liking";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Dish_Liking {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Dish_Liking {
+    pub fn none() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn ok() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn like() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn dislike() -> Self {
+        Self { value: 2 }
+    }
+}

@@ -1,0 +1,220 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshopexchangecountmenu/RefineShopExchangeCountMenu_CloseEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineShopExchangeCountMenu.CloseEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineShopExchangeCountMenu_CloseEventHandler {}
+
+#[cfg(feature = "app-refineshopexchangecountmenu")]
+#[::unity2::methods]
+impl RefineShopExchangeCountMenu_CloseEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-refineshopexchangecountmenu")]
+impl RefineShopExchangeCountMenu_CloseEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopExchangeCountMenu_CloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopExchangeCountMenu_CloseEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshopexchangecountmenu/RefineShopExchangeCountMenu.md")))]
+#[::unity2::class(namespace = "App", name = "RefineShopExchangeCountMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct RefineShopExchangeCountMenu {
+    #[static_field]
+    #[rename(name = "ValueMin")]
+    pub value_min: i32,
+    #[static_field]
+    #[rename(name = "SourceValueMin")]
+    pub source_value_min: i32,
+    #[rename(name = "m_Times")]
+    pub m_times: i32,
+    #[rename(name = "m_Min")]
+    pub m_min: bool,
+    #[rename(name = "m_Max")]
+    pub m_max: bool,
+    #[rename(name = "m_CloseEventHandler")]
+    pub m_close_event_handler:
+        crate::app::refineshopexchangecountmenu::RefineShopExchangeCountMenu_CloseEventHandler,
+}
+
+#[cfg(feature = "app-refineshopexchangecountmenu")]
+#[::unity2::methods]
+impl RefineShopExchangeCountMenu {
+    #[method(name = "get_m_SourceMaterialData", args = 0)]
+    pub fn get_m_source_material_data(
+        self,
+    ) -> crate::app::itemrefineexchangedata::ItemRefineExchangeData;
+
+    #[method(name = "set_m_SourceMaterialData", args = 1)]
+    pub fn set_m_source_material_data(
+        self,
+        value: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+    ) -> ();
+
+    #[method(name = "get_m_TargetMaterialData", args = 0)]
+    pub fn get_m_target_material_data(
+        self,
+    ) -> crate::app::itemrefineexchangedata::ItemRefineExchangeData;
+
+    #[method(name = "set_m_TargetMaterialData", args = 1)]
+    pub fn set_m_target_material_data(
+        self,
+        value: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+    ) -> ();
+
+    #[method(name = "get_m_SourceMaterialValue", args = 0)]
+    pub fn get_m_source_material_value(self) -> i32;
+
+    #[method(name = "set_m_SourceMaterialValue", args = 1)]
+    pub fn set_m_source_material_value(self, value: i32) -> ();
+
+    #[method(name = "get_m_TargetMaterialValue", args = 0)]
+    pub fn get_m_target_material_value(self) -> i32;
+
+    #[method(name = "set_m_TargetMaterialValue", args = 1)]
+    pub fn set_m_target_material_value(self, value: i32) -> ();
+
+    #[method(name = "get_m_TargetMaterialValueExpect", args = 0)]
+    pub fn get_m_target_material_value_expect(self) -> i32;
+
+    #[method(name = "set_m_TargetMaterialValueExpect", args = 1)]
+    pub fn set_m_target_material_value_expect(self, value: i32) -> ();
+
+    #[method(name = "get_m_TargetMaterialOverflow", args = 0)]
+    pub fn get_m_target_material_overflow(self) -> i32;
+
+    #[method(name = "set_m_TargetMaterialOverflow", args = 1)]
+    pub fn set_m_target_material_overflow(self, value: i32) -> ();
+
+    #[method(name = "get_m_SourceMaterialValueEnable", args = 0)]
+    pub fn get_m_source_material_value_enable(self) -> bool;
+
+    #[method(name = "set_m_SourceMaterialValueEnable", args = 1)]
+    pub fn set_m_source_material_value_enable(self, value: bool) -> ();
+
+    #[method(name = "get_m_TargetMaterialValueEnable", args = 0)]
+    pub fn get_m_target_material_value_enable(self) -> bool;
+
+    #[method(name = "set_m_TargetMaterialValueEnable", args = 1)]
+    pub fn set_m_target_material_value_enable(self, value: bool) -> ();
+
+    #[method(name = "get_m_ValuableSourceThanTarget", args = 0)]
+    pub fn get_m_valuable_source_than_target(self) -> bool;
+
+    #[method(name = "set_m_ValuableSourceThanTarget", args = 1)]
+    pub fn set_m_valuable_source_than_target(self, value: bool) -> ();
+
+    #[method(name = "CreateBind", args = 7)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_content : crate :: app :: refineshopexchangecountmenucontent :: RefineShopExchangeCountMenuContent,
+        source_material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+        target_material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+        select_event_handler : crate :: app :: refineshopexchangecountmenuitem :: RefineShopExchangeCountMenuItem_SelectEventHandler,
+        decide_event_handler : crate :: app :: refineshopexchangecountmenuitem :: RefineShopExchangeCountMenuItem_DecideEventHandler,
+        close_event_handler : crate :: app :: refineshopexchangecountmenu :: RefineShopExchangeCountMenu_CloseEventHandler,
+    ) -> crate::app::refineshopexchangecountmenu::RefineShopExchangeCountMenu;
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content : crate :: app :: refineshopexchangecountmenucontent :: RefineShopExchangeCountMenuContent,
+        source_material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+        target_material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+        close_event_handler : crate :: app :: refineshopexchangecountmenu :: RefineShopExchangeCountMenu_CloseEventHandler,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "ResetValues", args = 0)]
+    pub fn reset_values(self) -> ();
+
+    #[method(name = "KeyUp", args = 1)]
+    pub fn key_up(self, is_trigger: bool) -> ();
+
+    #[method(name = "KeyDown", args = 1)]
+    pub fn key_down(self, is_trigger: bool) -> ();
+
+    #[method(name = "KeyLeft", args = 1)]
+    pub fn key_left(self, is_trigger: bool) -> ();
+
+    #[method(name = "KeyRight", args = 1)]
+    pub fn key_right(self, is_trigger: bool) -> ();
+
+    #[method(name = "CustomCall", args = 0)]
+    pub fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "OnClose", args = 0)]
+    pub fn on_close(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "CalcValue", args = 1)]
+    pub fn calc_value(self, value_diff: i32) -> bool;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-refineshopexchangecountmenu")]
+impl RefineShopExchangeCountMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content : crate :: app :: refineshopexchangecountmenucontent :: RefineShopExchangeCountMenuContent,
+        source_material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+        target_material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+        close_event_handler : crate :: app :: refineshopexchangecountmenu :: RefineShopExchangeCountMenu_CloseEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopExchangeCountMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopExchangeCountMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            source_material_data,
+            target_material_data,
+            close_event_handler,
+        );
+        this
+    }
+}

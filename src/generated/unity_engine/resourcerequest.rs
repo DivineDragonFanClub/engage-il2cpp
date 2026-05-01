@@ -1,0 +1,46 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::asyncoperation::AsyncOperation;
+use crate::unity_engine::asyncoperation::IAsyncOperation;
+use crate::unity_engine::yieldinstruction::IYieldInstruction;
+use crate::unity_engine::yieldinstruction::YieldInstruction;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resourcerequest/ResourceRequest.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "ResourceRequest")]
+#[parent(crate::unity_engine::asyncoperation::AsyncOperation)]
+pub struct ResourceRequest {
+    #[rename(name = "m_Path")]
+    pub m_path: ::unity2::Il2CppString,
+    #[rename(name = "m_Type")]
+    pub m_type: ::unity2::SystemType,
+}
+
+#[cfg(feature = "unity_engine-resourcerequest")]
+#[::unity2::methods]
+impl ResourceRequest {
+    #[method(name = "GetResult", args = 0)]
+    pub fn get_result(self) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "get_asset", args = 0)]
+    pub fn get_asset(self) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resourcerequest")]
+impl ResourceRequest {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceRequest),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceRequestMethods>::ctor(this);
+        this
+    }
+}

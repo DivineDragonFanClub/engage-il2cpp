@@ -1,0 +1,109 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::text_core::glyph::Glyph;
+use crate::unity_engine::text_core::glyph::IGlyph;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_spriteglyph/TMP_SpriteGlyph.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_SpriteGlyph")]
+#[parent(crate::unity_engine::text_core::glyph::Glyph)]
+pub struct TMP_SpriteGlyph {
+    #[rename(name = "sprite")]
+    pub sprite: crate::unity_engine::sprite::Sprite,
+}
+
+#[cfg(feature = "tm_pro-tmp_spriteglyph")]
+#[::unity2::methods]
+impl TMP_SpriteGlyph {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor_2(
+        self,
+        index: u32,
+        metrics: crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
+        glyph_rect: crate::unity_engine::text_core::glyphrect::GlyphRect,
+        scale: f32,
+        atlas_index: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 6)]
+    pub fn ctor_3(
+        self,
+        index: u32,
+        metrics: crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
+        glyph_rect: crate::unity_engine::text_core::glyphrect::GlyphRect,
+        scale: f32,
+        atlas_index: i32,
+        sprite: crate::unity_engine::sprite::Sprite,
+    ) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_spriteglyph")]
+impl TMP_SpriteGlyph {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_SpriteGlyph),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_SpriteGlyphMethods>::ctor(this);
+        this
+    }
+
+    pub fn new_2(
+        index: u32,
+        metrics: crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
+        glyph_rect: crate::unity_engine::text_core::glyphrect::GlyphRect,
+        scale: f32,
+        atlas_index: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_SpriteGlyph),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ITMP_SpriteGlyphMethods>::ctor_2(
+            this,
+            index,
+            metrics,
+            glyph_rect,
+            scale,
+            atlas_index,
+        );
+        this
+    }
+
+    pub fn new_3(
+        index: u32,
+        metrics: crate::unity_engine::text_core::glyphmetrics::GlyphMetrics,
+        glyph_rect: crate::unity_engine::text_core::glyphrect::GlyphRect,
+        scale: f32,
+        atlas_index: i32,
+        sprite: crate::unity_engine::sprite::Sprite,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_SpriteGlyph),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as ITMP_SpriteGlyphMethods>::ctor_3(
+            this,
+            index,
+            metrics,
+            glyph_rect,
+            scale,
+            atlas_index,
+            sprite,
+        );
+        this
+    }
+}

@@ -1,0 +1,69 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographselectweaponmenuitem/PhotographSelectWeaponMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "PhotographSelectWeaponMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct PhotographSelectWeaponMenuItem {
+    #[rename(name = "m_IsCurrent")]
+    pub m_is_current: bool,
+    #[rename(name = "m_WeaponData")]
+    pub m_weapon_data: crate::app::itemdata::ItemData,
+    #[rename(name = "m_DisposManager")]
+    pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+}
+
+#[cfg(feature = "app-photographselectweaponmenuitem")]
+#[::unity2::methods]
+impl PhotographSelectWeaponMenuItem {
+    #[method(name = "get_IsCurrent", args = 0)]
+    pub fn get_is_current(self) -> bool;
+
+    #[method(name = "get_WeaponData", args = 0)]
+    pub fn get_weapon_data(self) -> crate::app::itemdata::ItemData;
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        weapon_data: crate::app::itemdata::ItemData,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        is_current: bool,
+    ) -> ();
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-photographselectweaponmenuitem")]
+impl PhotographSelectWeaponMenuItem {
+    pub fn new(
+        weapon_data: crate::app::itemdata::ItemData,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        is_current: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographSelectWeaponMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographSelectWeaponMenuItemMethods>::ctor(
+            this,
+            weapon_data,
+            dispos_manager,
+            is_current,
+        );
+        this
+    }
+}

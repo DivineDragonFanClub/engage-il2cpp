@@ -1,0 +1,114 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaywdwmaphelp/RelayWdwMapHelp_ShowItem.md")))]
+#[::unity2::class(namespace = "App", name = "RelayWdwMapHelp.ShowItem")]
+#[parent(crate::system::object::Object)]
+pub struct RelayWdwMapHelp_ShowItem {
+    #[rename(name = "m_Object")]
+    pub m_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Title")]
+    pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-relaywdwmaphelp")]
+#[::unity2::methods]
+impl RelayWdwMapHelp_ShowItem {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, item: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "Set", args = 1)]
+    pub fn set(self, item_data: crate::app::itemdata::ItemData) -> ();
+}
+
+#[cfg(feature = "app-relaywdwmaphelp")]
+impl RelayWdwMapHelp_ShowItem {
+    pub fn new(item: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayWdwMapHelp_ShowItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayWdwMapHelp_ShowItemMethods>::ctor(this, item);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaywdwmaphelp/RelayWdwMapHelp.md")))]
+#[::unity2::class(namespace = "App", name = "RelayWdwMapHelp")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct RelayWdwMapHelp {
+    #[rename(name = "m_MapName")]
+    pub m_map_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Turn")]
+    pub m_turn: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_MapImage")]
+    pub m_map_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_ItemList")]
+    pub m_item_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_IdRoot")]
+    pub m_id_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Id")]
+    pub m_id: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ShowItemList")]
+    pub m_show_item_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::relaywdwmaphelp::RelayWdwMapHelp_ShowItem,
+    >,
+    #[rename(name = "m_AwardItemList")]
+    pub m_award_item_list:
+        crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+}
+
+#[cfg(feature = "app-relaywdwmaphelp")]
+#[::unity2::methods]
+impl RelayWdwMapHelp {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "SetData", args = 1)]
+    pub fn set_data(self, relay_data: crate::app::relaydata::RelayData) -> ();
+
+    #[method(name = "SetData", args = 2)]
+    pub fn set_data_2(
+        self,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        is_replay: bool,
+    ) -> ();
+
+    #[method(name = "SetData", args = 3)]
+    pub fn set_data_3(
+        self,
+        relay_data: crate::app::relaydata::RelayData,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        is_replay: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "app-relaywdwmaphelp")]
+impl RelayWdwMapHelp {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayWdwMapHelp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayWdwMapHelpMethods>::ctor(this);
+        this
+    }
+}

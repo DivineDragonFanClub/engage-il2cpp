@@ -1,0 +1,53 @@
+
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicdialogitemno/BasicDialogItemNo.md")))]
+#[::unity2::class(namespace = "App", name = "BasicDialogItemNo")]
+#[parent(crate::app::basicdialogitem::BasicDialogItem)]
+pub struct BasicDialogItemNo {}
+
+#[cfg(feature = "app-basicdialogitemno")]
+#[::unity2::methods]
+impl BasicDialogItemNo {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, text: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-basicdialogitemno")]
+impl BasicDialogItemNo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BasicDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBasicDialogItemNoMethods>::ctor(this);
+        this
+    }
+
+    pub fn new_2(text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BasicDialogItemNo),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IBasicDialogItemNoMethods>::ctor_2(this, text);
+        this
+    }
+}

@@ -1,0 +1,76 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameraboundingbox/CameraBoundingBox.md")))]
+#[::unity2::class(namespace = "Combat", name = "CameraBoundingBox")]
+#[parent(crate::system::object::Object)]
+pub struct CameraBoundingBox {
+    #[rename(name = "m_CameraDirection")]
+    pub m_camera_direction: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_MatrixWorldToCamera")]
+    pub m_matrix_world_to_camera: crate::unity_engine::matrix4x4::Matrix4x4,
+    #[rename(name = "m_MatrixCameraToWorld")]
+    pub m_matrix_camera_to_world: crate::unity_engine::matrix4x4::Matrix4x4,
+    #[rename(name = "m_Box")]
+    pub m_box: crate::unity_engine::bounds::Bounds,
+    #[rename(name = "m_ScreenSpaceReprojectionRatio")]
+    pub m_screen_space_reprojection_ratio: f32,
+    #[rename(name = "m_IsFinalized")]
+    pub m_is_finalized: bool,
+}
+
+#[cfg(feature = "combat-cameraboundingbox")]
+#[::unity2::methods]
+impl CameraBoundingBox {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        follow_pos: crate::unity_engine::vector3::Vector3,
+        look_at_pos: crate::unity_engine::vector3::Vector3,
+        screen_space_reprojection_ratio: f32,
+    ) -> ();
+
+    #[method(name = "Append", args = 2)]
+    pub fn append(self, pos: crate::unity_engine::vector3::Vector3, size: f32) -> ();
+
+    #[method(name = "CreateBox", args = 0)]
+    pub fn create_box(self) -> ();
+
+    #[method(name = "GetBoxCenter", args = 0)]
+    pub fn get_box_center(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "GetNearestDistance", args = 1)]
+    pub fn get_nearest_distance(self, fov: f32) -> f32;
+
+    #[method(name = "PosInCamera", args = 1)]
+    pub fn pos_in_camera(
+        self,
+        pos: crate::unity_engine::vector3::Vector3,
+    ) -> crate::unity_engine::vector3::Vector3;
+}
+
+#[cfg(feature = "combat-cameraboundingbox")]
+impl CameraBoundingBox {
+    pub fn new(
+        follow_pos: crate::unity_engine::vector3::Vector3,
+        look_at_pos: crate::unity_engine::vector3::Vector3,
+        screen_space_reprojection_ratio: f32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CameraBoundingBox),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICameraBoundingBoxMethods>::ctor(
+            this,
+            follow_pos,
+            look_at_pos,
+            screen_space_reprojection_ratio,
+        );
+        this
+    }
+}

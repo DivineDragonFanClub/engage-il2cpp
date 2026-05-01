@@ -1,0 +1,62 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcollider/RingCollider.md")))]
+#[::unity2::class(namespace = "App", name = "RingCollider")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct RingCollider {
+    #[rename(name = "m_Colliders")]
+    pub m_colliders: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::capsulecollider::CapsuleCollider,
+    >,
+    #[rename(name = "m_Radius")]
+    pub m_radius: f32,
+    #[rename(name = "m_Height")]
+    pub m_height: f32,
+    #[rename(name = "m_ColliderRadius")]
+    pub m_collider_radius: f32,
+}
+
+#[cfg(feature = "app-ringcollider")]
+#[::unity2::methods]
+impl RingCollider {
+    #[method(name = "OnValidate", args = 0)]
+    pub fn on_validate(self) -> ();
+
+    #[method(name = "SetCritical", args = 0)]
+    pub fn set_critical(self) -> i32;
+
+    #[method(name = "ClearCritical", args = 0)]
+    pub fn clear_critical(self) -> ();
+
+    #[method(name = "GetCriticalIndex", args = 0)]
+    pub fn get_critical_index(self) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ringcollider")]
+impl RingCollider {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingCollider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingColliderMethods>::ctor(this);
+        this
+    }
+}

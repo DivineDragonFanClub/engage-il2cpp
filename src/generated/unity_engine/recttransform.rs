@@ -1,0 +1,332 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::transform::ITransform;
+use crate::unity_engine::transform::Transform;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform_ReapplyDrivenProperties.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine",
+    name = "RectTransform.ReapplyDrivenProperties"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RectTransform_ReapplyDrivenProperties {}
+
+#[cfg(feature = "unity_engine-recttransform")]
+#[::unity2::methods]
+impl RectTransform_ReapplyDrivenProperties {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, driven: crate::unity_engine::recttransform::RectTransform) -> ();
+}
+
+#[cfg(feature = "unity_engine-recttransform")]
+impl RectTransform_ReapplyDrivenProperties {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RectTransform_ReapplyDrivenProperties),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRectTransform_ReapplyDrivenPropertiesMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "RectTransform")]
+#[parent(crate::unity_engine::transform::Transform)]
+pub struct RectTransform {
+    #[static_field]
+    #[rename(name = "reapplyDrivenProperties")]
+    pub reapply_driven_properties:
+        crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
+}
+
+#[cfg(feature = "unity_engine-recttransform")]
+#[::unity2::methods]
+impl RectTransform {
+    #[method(name = "add_reapplyDrivenProperties", args = 1)]
+    pub fn add_reapply_driven_properties(
+        value: crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
+    ) -> ();
+
+    #[method(name = "remove_reapplyDrivenProperties", args = 1)]
+    pub fn remove_reapply_driven_properties(
+        value: crate::unity_engine::recttransform::RectTransform_ReapplyDrivenProperties,
+    ) -> ();
+
+    #[method(name = "get_rect", args = 0)]
+    pub fn get_rect(self) -> crate::unity_engine::rect::Rect;
+
+    #[method(name = "get_anchorMin", args = 0)]
+    pub fn get_anchor_min(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_anchorMin", args = 1)]
+    pub fn set_anchor_min(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_anchorMax", args = 0)]
+    pub fn get_anchor_max(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_anchorMax", args = 1)]
+    pub fn set_anchor_max(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_anchoredPosition", args = 0)]
+    pub fn get_anchored_position(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_anchoredPosition", args = 1)]
+    pub fn set_anchored_position(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_sizeDelta", args = 0)]
+    pub fn get_size_delta(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_sizeDelta", args = 1)]
+    pub fn set_size_delta(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_pivot", args = 0)]
+    pub fn get_pivot(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_pivot", args = 1)]
+    pub fn set_pivot(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_anchoredPosition3D", args = 0)]
+    pub fn get_anchored_position3_d(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "set_anchoredPosition3D", args = 1)]
+    pub fn set_anchored_position3_d(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_offsetMin", args = 0)]
+    pub fn get_offset_min(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_offsetMin", args = 1)]
+    pub fn set_offset_min(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_offsetMax", args = 0)]
+    pub fn get_offset_max(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_offsetMax", args = 1)]
+    pub fn set_offset_max(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_drivenByObject", args = 0)]
+    pub fn get_driven_by_object(self) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "set_drivenByObject", args = 1)]
+    pub fn set_driven_by_object(self, value: crate::unity_engine::object_2::Object_2) -> ();
+
+    #[method(name = "get_drivenProperties", args = 0)]
+    pub fn get_driven_properties(
+        self,
+    ) -> crate::unity_engine::driventransformproperties::DrivenTransformProperties;
+
+    #[method(name = "set_drivenProperties", args = 1)]
+    pub fn set_driven_properties(
+        self,
+        value: crate::unity_engine::driventransformproperties::DrivenTransformProperties,
+    ) -> ();
+
+    #[method(name = "ForceUpdateRectTransforms", args = 0)]
+    pub fn force_update_rect_transforms(self) -> ();
+
+    #[method(name = "GetLocalCorners", args = 1)]
+    pub fn get_local_corners(
+        self,
+        four_corners_array: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+    ) -> ();
+
+    #[method(name = "GetWorldCorners", args = 1)]
+    pub fn get_world_corners(
+        self,
+        four_corners_array: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+    ) -> ();
+
+    #[method(name = "SetInsetAndSizeFromParentEdge", args = 3)]
+    pub fn set_inset_and_size_from_parent_edge(
+        self,
+        edge: crate::unity_engine::recttransform::RectTransform_Edge,
+        inset: f32,
+        size: f32,
+    ) -> ();
+
+    #[method(name = "SetSizeWithCurrentAnchors", args = 2)]
+    pub fn set_size_with_current_anchors(
+        self,
+        axis: crate::unity_engine::recttransform::RectTransform_Axis,
+        size: f32,
+    ) -> ();
+
+    #[method(name = "SendReapplyDrivenProperties", args = 1)]
+    pub fn send_reapply_driven_properties(
+        driven: crate::unity_engine::recttransform::RectTransform,
+    ) -> ();
+
+    #[method(name = "GetRectInParentSpace", args = 0)]
+    pub fn get_rect_in_parent_space(self) -> crate::unity_engine::rect::Rect;
+
+    #[method(name = "GetParentSize", args = 0)]
+    pub fn get_parent_size(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_rect_Injected", args = 1)]
+    pub fn get_rect_injected(self, ret: crate::unity_engine::rect::Rect) -> ();
+
+    #[method(name = "get_anchorMin_Injected", args = 1)]
+    pub fn get_anchor_min_injected(self, ret: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "set_anchorMin_Injected", args = 1)]
+    pub fn set_anchor_min_injected(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_anchorMax_Injected", args = 1)]
+    pub fn get_anchor_max_injected(self, ret: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "set_anchorMax_Injected", args = 1)]
+    pub fn set_anchor_max_injected(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_anchoredPosition_Injected", args = 1)]
+    pub fn get_anchored_position_injected(self, ret: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "set_anchoredPosition_Injected", args = 1)]
+    pub fn set_anchored_position_injected(self, value: crate::unity_engine::vector2::Vector2)
+        -> ();
+
+    #[method(name = "get_sizeDelta_Injected", args = 1)]
+    pub fn get_size_delta_injected(self, ret: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "set_sizeDelta_Injected", args = 1)]
+    pub fn set_size_delta_injected(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_pivot_Injected", args = 1)]
+    pub fn get_pivot_injected(self, ret: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "set_pivot_Injected", args = 1)]
+    pub fn set_pivot_injected(self, value: crate::unity_engine::vector2::Vector2) -> ();
+}
+
+#[cfg(feature = "unity_engine-recttransform")]
+impl RectTransform {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RectTransform),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRectTransformMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform_Edge.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RectTransform_Edge {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RectTransform_Edge {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "RectTransform.Edge";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RectTransform_Edge {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RectTransform_Edge {
+    pub fn left() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn top() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn bottom() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/recttransform/RectTransform_Axis.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RectTransform_Axis {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RectTransform_Axis {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "RectTransform.Axis";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RectTransform_Axis {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RectTransform_Axis {
+    pub fn horizontal() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn vertical() -> Self {
+        Self { value: 1 }
+    }
+}

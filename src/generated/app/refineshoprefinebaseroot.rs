@@ -1,0 +1,173 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshoprefinebaseroot/RefineShopRefineBaseRoot_ReturnEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineShopRefineBaseRoot.ReturnEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineShopRefineBaseRoot_ReturnEventHandler {}
+
+#[cfg(feature = "app-refineshoprefinebaseroot")]
+#[::unity2::methods]
+impl RefineShopRefineBaseRoot_ReturnEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 4)]
+    pub fn invoke(
+        self,
+        result: crate::app::basicmenu::BasicMenu_Result,
+        unit: crate::app::unit::Unit,
+        owner_item_index: i32,
+        kind: crate::app::itemdata::ItemData_Kinds,
+    ) -> ();
+}
+
+#[cfg(feature = "app-refineshoprefinebaseroot")]
+impl RefineShopRefineBaseRoot_ReturnEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopRefineBaseRoot_ReturnEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopRefineBaseRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshoprefinebaseroot/RefineShopRefineBaseRoot.md")))]
+#[::unity2::class(namespace = "App", name = "RefineShopRefineBaseRoot")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct RefineShopRefineBaseRoot {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_RefineShopRefineBaseMenuObject")]
+    pub m_refine_shop_refine_base_menu_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_WeaponModelObject")]
+    pub m_weapon_model_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ItemDetailInfoWindowObject")]
+    pub m_item_detail_info_window_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_WeaponRotWaitTime")]
+    pub m_weapon_rot_wait_time: f32,
+    #[rename(name = "m_WeaponRotSpeedAuto")]
+    pub m_weapon_rot_speed_auto: f32,
+    #[rename(name = "m_WeaponRotSpeedMax")]
+    pub m_weapon_rot_speed_max: f32,
+    #[rename(name = "m_WeaponRotStickSense")]
+    pub m_weapon_rot_stick_sense: f32,
+    #[rename(name = "m_WeaponRotWaitTimeCount")]
+    pub m_weapon_rot_wait_time_count: f32,
+    #[rename(name = "m_ReturnEventHandler")]
+    pub m_return_event_handler:
+        crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler,
+    #[rename(name = "m_RefineShopRefineBaseMenu")]
+    pub m_refine_shop_refine_base_menu:
+        crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu,
+    #[rename(name = "m_ItemMenuDetailSetter")]
+    pub m_item_menu_detail_setter: crate::app::itemmenudetailsetter::ItemMenuDetailSetter,
+    #[rename(name = "m_ShopWeaponModelRenderer")]
+    pub m_shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_OwnerItemIndex")]
+    pub m_owner_item_index: i32,
+}
+
+#[cfg(feature = "app-refineshoprefinebaseroot")]
+#[::unity2::methods]
+impl RefineShopRefineBaseRoot {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "CreateBind", args = 6)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+        default_unit: crate::app::unit::Unit,
+        default_item_index: i32,
+        default_item_kind: crate::app::itemdata::ItemData_Kinds,
+        return_event_handler : crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler,
+    ) -> crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot;
+
+    #[method(name = "Create", args = 6)]
+    pub fn create(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        shop_weapon_model_renderer: crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,
+        default_unit: crate::app::unit::Unit,
+        default_item_index: i32,
+        default_item_kind: crate::app::itemdata::ItemData_Kinds,
+        return_event_handler : crate :: app :: refineshoprefinebaseroot :: RefineShopRefineBaseRoot_ReturnEventHandler,
+    ) -> ();
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "OnSelectMenuItem", args = 2)]
+    pub fn on_select_menu_item(
+        self,
+        unit: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> ();
+
+    #[method(name = "OnDecideMenuItem", args = 3)]
+    pub fn on_decide_menu_item(
+        self,
+        unit: crate::app::unit::Unit,
+        owner_item_index: i32,
+        kind: crate::app::itemdata::ItemData_Kinds,
+    ) -> ();
+
+    #[method(name = "OnRequestCloseMenu", args = 0)]
+    pub fn on_request_close_menu(self) -> ();
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+}
+
+#[cfg(feature = "app-refineshoprefinebaseroot")]
+impl RefineShopRefineBaseRoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopRefineBaseRoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopRefineBaseRootMethods>::ctor(this);
+        this
+    }
+}

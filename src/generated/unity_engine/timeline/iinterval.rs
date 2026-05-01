@@ -1,0 +1,16 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/iinterval/IInterval.md")))]
+#[::unity2::class(namespace = "UnityEngine.Timeline", name = "IInterval")]
+pub struct IInterval {}
+
+#[cfg(feature = "unity_engine-timeline-iinterval")]
+#[::unity2::methods]
+impl IInterval {
+    #[method(name = "get_intervalStart", args = 0)]
+    pub fn get_interval_start(self) -> i64;
+
+    #[method(name = "get_intervalEnd", args = 0)]
+    pub fn get_interval_end(self) -> i64;
+}

@@ -1,0 +1,51 @@
+
+use crate::app::irewardsequence::IIRewardSequence;
+use crate::app::irewardsequence::IRewardSequence;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/evilclearrewardsequence/EvilClearRewardSequence.md")))]
+#[::unity2::class(namespace = "App", name = "EvilClearRewardSequence")]
+#[parent(crate::app::irewardsequence::IRewardSequence)]
+pub struct EvilClearRewardSequence {
+    #[static_field]
+    #[rename(name = "FlagName")]
+    pub flag_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-evilclearrewardsequence")]
+#[::unity2::methods]
+impl EvilClearRewardSequence {
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "CanGet", args = 0)]
+    pub fn can_get() -> bool;
+
+    #[method(name = "Reword", args = 0)]
+    pub fn reword(self) -> ();
+
+    #[method(name = "GetDesc", args = 0)]
+    pub fn get_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-evilclearrewardsequence")]
+impl EvilClearRewardSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EvilClearRewardSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEvilClearRewardSequenceMethods>::ctor(this);
+        this
+    }
+}

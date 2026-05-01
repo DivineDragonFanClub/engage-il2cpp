@@ -1,0 +1,1020 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_NextMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceHuman_NextMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceHuman_NextMode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceHuman.NextMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceHuman_NextMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceHuman_NextMode {
+    pub fn closest() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn patrol() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn order() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceHuman_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceHuman_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceHuman.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceHuman_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceHuman_Label {
+    pub fn start_branch() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn free_cursor() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn pick_cursor() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn pick_cursor_resume() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn pick_cursor_tick() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn pick_cursor_wait() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn pick_free_cursor() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn pick_move_resume() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn pick_engage_start() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn pick_engage_cancel() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn system_menu() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn troop_list() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn rewind_menu() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn sortie_position_change() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn sortie_end_dialog() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn unit_move() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn unit_command() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn unit_sub_command() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn item_menu_attack() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn item_menu_engage_attack() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn item_menu_engage_charge() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn item_menu_engage_wait() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn item_menu_engage_rod() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn item_menu_cannon() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn item_menu_destroy() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn item_menu_rod() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn item_menu_item() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn item_menu_trade() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn item_menu_full_bullet() -> Self {
+        Self { value: 28 }
+    }
+
+    pub fn item_menu_enchant_item() -> Self {
+        Self { value: 29 }
+    }
+
+    pub fn item_menu_enchant_weapon() -> Self {
+        Self { value: 30 }
+    }
+
+    pub fn transporter_menu() -> Self {
+        Self { value: 31 }
+    }
+
+    pub fn target_select() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn warp_cursor() -> Self {
+        Self { value: 33 }
+    }
+
+    pub fn rewarp_cursor() -> Self {
+        Self { value: 34 }
+    }
+
+    pub fn creation_cursor() -> Self {
+        Self { value: 35 }
+    }
+
+    pub fn fire_cannon_cursor() -> Self {
+        Self { value: 36 }
+    }
+
+    pub fn full_bullet_cursor() -> Self {
+        Self { value: 37 }
+    }
+
+    pub fn talk() -> Self {
+        Self { value: 38 }
+    }
+
+    pub fn engage_start() -> Self {
+        Self { value: 39 }
+    }
+
+    pub fn engage_link() -> Self {
+        Self { value: 40 }
+    }
+
+    pub fn engage_rewarp() -> Self {
+        Self { value: 41 }
+    }
+
+    pub fn engage_rewarp_cancel() -> Self {
+        Self { value: 42 }
+    }
+
+    pub fn engage_summon_menu() -> Self {
+        Self { value: 43 }
+    }
+
+    pub fn engage_summon_back() -> Self {
+        Self { value: 44 }
+    }
+
+    pub fn god_change() -> Self {
+        Self { value: 45 }
+    }
+
+    pub fn mind() -> Self {
+        Self { value: 46 }
+    }
+
+    pub fn save_menu() -> Self {
+        Self { value: 47 }
+    }
+
+    pub fn suspend_menu() -> Self {
+        Self { value: 48 }
+    }
+
+    pub fn turn_end() -> Self {
+        Self { value: 49 }
+    }
+
+    pub fn job_intro() -> Self {
+        Self { value: 50 }
+    }
+
+    pub fn direct_attack() -> Self {
+        Self { value: 51 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 52 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman.md")))]
+#[::unity2::class(namespace = "App", name = "MapSequenceHuman")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencehuman :: MapSequenceHuman >)]
+pub struct MapSequenceHuman {
+    #[rename(name = "m_JobIntroUnit")]
+    pub m_job_intro_unit: crate::app::unit::Unit,
+    #[rename(name = "m_JobIntroKeyHelpType")]
+    pub m_job_intro_key_help_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
+    #[rename(name = "m_ReturnLabel")]
+    pub m_return_label: crate::app::mapsequencehuman::MapSequenceHuman_Label,
+    #[rename(name = "m_OldUnitX")]
+    pub m_old_unit_x: i32,
+    #[rename(name = "m_OldUnitZ")]
+    pub m_old_unit_z: i32,
+    #[rename(name = "m_OldCursorX")]
+    pub m_old_cursor_x: i32,
+    #[rename(name = "m_OldCursorZ")]
+    pub m_old_cursor_z: i32,
+    #[rename(name = "m_OldPickupX")]
+    pub m_old_pickup_x: i32,
+    #[rename(name = "m_OldPickupZ")]
+    pub m_old_pickup_z: i32,
+    #[rename(name = "m_EngageX")]
+    pub m_engage_x: i32,
+    #[rename(name = "m_EngageZ")]
+    pub m_engage_z: i32,
+    #[rename(name = "m_EnterX")]
+    pub m_enter_x: i32,
+    #[rename(name = "m_EnterZ")]
+    pub m_enter_z: i32,
+    #[rename(name = "m_IsEnemyAttackRange")]
+    pub m_is_enemy_attack_range: bool,
+    #[rename(name = "m_IsUpdateSupportSkill")]
+    pub m_is_update_support_skill: bool,
+    #[rename(name = "m_UpdateSupportSkillUnit")]
+    pub m_update_support_skill_unit: crate::app::unit::Unit,
+    #[rename(name = "m_OperateMode")]
+    pub m_operate_mode: crate::app::mapsequencehuman::MapSequenceHuman_OperateMode,
+    #[static_field]
+    #[rename(name = "PlayerMoveMask")]
+    pub player_move_mask:
+        crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>,
+    #[static_field]
+    #[rename(name = "EnemyMoveMask")]
+    pub enemy_move_mask:
+        crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>,
+    #[static_field]
+    #[rename(name = "FreeWeaponMask")]
+    pub free_weapon_mask:
+        crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>,
+    #[static_field]
+    #[rename(name = "PickWeaponMask")]
+    pub pick_weapon_mask:
+        crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>,
+    #[static_field]
+    #[rename(name = "WaitPickFreeCursor")]
+    pub wait_pick_free_cursor: f32,
+}
+
+#[cfg(feature = "app-mapsequencehuman")]
+#[::unity2::methods]
+impl MapSequenceHuman {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "OnShutdown", args = 0)]
+    pub fn on_shutdown(self) -> ();
+
+    #[method(name = "GetOperateMode", args = 0)]
+    pub fn get_operate_mode(self) -> crate::app::mapsequencehuman::MapSequenceHuman_OperateMode;
+
+    #[method(name = "GetDefaultOperateMode", args = 0)]
+    pub fn get_default_operate_mode(
+        self,
+    ) -> crate::app::mapsequencehuman::MapSequenceHuman_OperateMode;
+
+    #[method(name = "SetOperateMode", args = 1)]
+    pub fn set_operate_mode(
+        self,
+        mode: crate::app::mapsequencehuman::MapSequenceHuman_OperateMode,
+    ) -> ();
+
+    #[method(name = "SetEngagePos", args = 0)]
+    pub fn set_engage_pos(self) -> ();
+
+    #[method(name = "ResetEngagePos", args = 0)]
+    pub fn reset_engage_pos(self) -> ();
+
+    #[method(name = "IsEngagePos", args = 1)]
+    pub fn is_engage_pos(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "SetEnterPos", args = 2)]
+    pub fn set_enter_pos(self, x: i32, z: i32) -> ();
+
+    #[method(name = "GetNextMode", args = 1)]
+    pub fn get_next_mode(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::app::mapsequencehuman::MapSequenceHuman_NextMode;
+
+    #[method(name = "GetManualNextUnit", args = 3)]
+    pub fn get_manual_next_unit(self, x: i32, z: i32, is_reverse: bool) -> crate::app::unit::Unit;
+
+    #[method(name = "GetAutoNextUnit", args = 2)]
+    pub fn get_auto_next_unit(self, x: i32, z: i32) -> crate::app::unit::Unit;
+
+    #[method(name = "StartBranch", args = 0)]
+    pub fn start_branch(self) -> ();
+
+    #[method(name = "FreeCursorPrepare", args = 0)]
+    pub fn free_cursor_prepare(self) -> ();
+
+    #[method(name = "FreeCursorTick", args = 0)]
+    pub fn free_cursor_tick(self) -> ();
+
+    #[method(name = "FreeCursorDecide", args = 0)]
+    pub fn free_cursor_decide(self) -> bool;
+
+    #[method(name = "SystemMenuOpen", args = 0)]
+    pub fn system_menu_open(self) -> ();
+
+    #[method(name = "SortieCursorDecide", args = 0)]
+    pub fn sortie_cursor_decide(self) -> bool;
+
+    #[method(name = "SortieCursorDecideTranspose", args = 0)]
+    pub fn sortie_cursor_decide_transpose(self) -> ();
+
+    #[method(name = "SortieCursorCancel", args = 0)]
+    pub fn sortie_cursor_cancel(self) -> bool;
+
+    #[method(name = "SortieCursorSortieEnd", args = 0)]
+    pub fn sortie_cursor_sortie_end(self) -> bool;
+
+    #[method(name = "SortiePositionChanged", args = 0)]
+    pub fn sortie_position_changed(self) -> ();
+
+    #[method(name = "PickCursorPrepare", args = 0)]
+    pub fn pick_cursor_prepare(self) -> ();
+
+    #[method(name = "UpdateDeploy", args = 1)]
+    pub fn update_deploy(unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "IsMoveOut", args = 3)]
+    pub fn is_move_out(unit: crate::app::unit::Unit, x: i32, z: i32) -> bool;
+
+    #[method(name = "PickCursorResumePrepare", args = 0)]
+    pub fn pick_cursor_resume_prepare(self) -> ();
+
+    #[method(name = "PickupTutorial", args = 0)]
+    pub fn pickup_tutorial(self) -> ();
+
+    #[method(name = "PickupEventBegin", args = 0)]
+    pub fn pickup_event_begin(self) -> ();
+
+    #[method(name = "PickupEvent", args = 0)]
+    pub fn pickup_event(self) -> ();
+
+    #[method(name = "PickupEventEnd", args = 0)]
+    pub fn pickup_event_end(self) -> ();
+
+    #[method(name = "PickCursorTick", args = 0)]
+    pub fn pick_cursor_tick(self) -> ();
+
+    #[method(name = "CommitMapPanelTargetForIndirect", args = 1)]
+    pub fn commit_map_panel_target_for_indirect(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "UpdateSupportSkill", args = 0)]
+    pub fn update_support_skill(self) -> ();
+
+    #[method(name = "UpdateSupportSkill", args = 2)]
+    pub fn update_support_skill_2(self, x: i32, z: i32) -> ();
+
+    #[method(name = "CanShortCommand", args = 1)]
+    pub fn can_short_command(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "CanShortCommandForChangeWeapon", args = 1)]
+    pub fn can_short_command_for_change_weapon(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "PickUnitTick", args = 1)]
+    pub fn pick_unit_tick(
+        self,
+        label: crate::app::mapsequencehuman::MapSequenceHuman_Label,
+    ) -> bool;
+
+    #[method(name = "PickCursorDecide", args = 0)]
+    pub fn pick_cursor_decide(self) -> bool;
+
+    #[method(name = "PickCursorCancel", args = 0)]
+    pub fn pick_cursor_cancel(self) -> bool;
+
+    #[method(name = "PickFreeCursorPrepare", args = 0)]
+    pub fn pick_free_cursor_prepare(self) -> ();
+
+    #[method(name = "UpdateScreenInfoForPickFreeCursor", args = 0)]
+    pub fn update_screen_info_for_pick_free_cursor(self) -> ();
+
+    #[method(name = "UpdateRoute", args = 2)]
+    pub fn update_route(self, x: i32, z: i32) -> ();
+
+    #[method(name = "PickFreeCursorTick", args = 0)]
+    pub fn pick_free_cursor_tick(self) -> ();
+
+    #[method(name = "PickFreeCursorBrunch", args = 0)]
+    pub fn pick_free_cursor_brunch(self) -> ();
+
+    #[method(name = "PickFreeCursorCancel", args = 0)]
+    pub fn pick_free_cursor_cancel(self) -> ();
+
+    #[method(name = "DesignateTargetUnit", args = 0)]
+    pub fn designate_target_unit(self) -> ();
+
+    #[method(name = "PickMoveResume", args = 0)]
+    pub fn pick_move_resume(self) -> ();
+
+    #[method(name = "MoveUnit", args = 0)]
+    pub fn move_unit(self) -> ();
+
+    #[method(name = "WaitMovingUnit", args = 0)]
+    pub fn wait_moving_unit(self) -> ();
+
+    #[method(name = "PostMoveUnit", args = 0)]
+    pub fn post_move_unit(self) -> ();
+
+    #[method(name = "WarpCursorPrepare", args = 0)]
+    pub fn warp_cursor_prepare(self) -> ();
+
+    #[method(name = "WarpCursorTick", args = 0)]
+    pub fn warp_cursor_tick(self) -> ();
+
+    #[method(name = "SetCursorMindForWarp", args = 0)]
+    pub fn set_cursor_mind_for_warp(self) -> ();
+
+    #[method(name = "WarpCursorDecide", args = 0)]
+    pub fn warp_cursor_decide(self) -> bool;
+
+    #[method(name = "WarpCursorCancel", args = 0)]
+    pub fn warp_cursor_cancel(self) -> bool;
+
+    #[method(name = "RewarpCursorPrepare", args = 0)]
+    pub fn rewarp_cursor_prepare(self) -> ();
+
+    #[method(name = "UpdateUnitRewarp", args = 0)]
+    pub fn update_unit_rewarp(self) -> ();
+
+    #[method(name = "RewarpCursorTick", args = 0)]
+    pub fn rewarp_cursor_tick(self) -> ();
+
+    #[method(name = "SetCursorMindForRewarp", args = 0)]
+    pub fn set_cursor_mind_for_rewarp(self) -> ();
+
+    #[method(name = "RewarpCursorDecide", args = 0)]
+    pub fn rewarp_cursor_decide(self) -> bool;
+
+    #[method(name = "RewarpCursorCancel", args = 0)]
+    pub fn rewarp_cursor_cancel(self) -> bool;
+
+    #[method(name = "CreationCursorPrepare", args = 0)]
+    pub fn creation_cursor_prepare(self) -> ();
+
+    #[method(name = "CreationCursorTick", args = 0)]
+    pub fn creation_cursor_tick(self) -> ();
+
+    #[method(name = "SetCursorMindForCreation", args = 0)]
+    pub fn set_cursor_mind_for_creation(self) -> ();
+
+    #[method(name = "CreationCursorDecide", args = 0)]
+    pub fn creation_cursor_decide(self) -> bool;
+
+    #[method(name = "CreationCursorCancel", args = 0)]
+    pub fn creation_cursor_cancel(self) -> bool;
+
+    #[method(name = "FireCannonCursorPrepare", args = 0)]
+    pub fn fire_cannon_cursor_prepare(self) -> ();
+
+    #[method(name = "FireCannonCursorTick", args = 0)]
+    pub fn fire_cannon_cursor_tick(self) -> ();
+
+    #[method(name = "SetCursorMindForFireCannon", args = 0)]
+    pub fn set_cursor_mind_for_fire_cannon(self) -> ();
+
+    #[method(name = "FireCannonCursorDecide", args = 0)]
+    pub fn fire_cannon_cursor_decide(self) -> bool;
+
+    #[method(name = "IsUseFireCannon", args = 2)]
+    pub fn is_use_fire_cannon(self, x: i32, z: i32) -> bool;
+
+    #[method(name = "FireCannonCursorCancel", args = 0)]
+    pub fn fire_cannon_cursor_cancel(self) -> bool;
+
+    #[method(name = "TalkPrepare", args = 0)]
+    pub fn talk_prepare(self) -> ();
+
+    #[method(name = "Talked", args = 0)]
+    pub fn talked(self) -> ();
+
+    #[method(name = "CreateSystemMenu", args = 0)]
+    pub fn create_system_menu(self) -> ();
+
+    #[method(name = "TargetEvent", args = 0)]
+    pub fn target_event(self) -> ();
+
+    #[method(name = "UnitCommandPrepare", args = 0)]
+    pub fn unit_command_prepare(self) -> ();
+
+    #[method(name = "UnitCommandPrepareEvent", args = 0)]
+    pub fn unit_command_prepare_event(self) -> ();
+
+    #[method(name = "UnitCommandCancel", args = 0)]
+    pub fn unit_command_cancel(self) -> ();
+
+    #[method(name = "AttackMenuPrepare", args = 0)]
+    pub fn attack_menu_prepare(self) -> ();
+
+    #[method(name = "RodMenuPrepare", args = 0)]
+    pub fn rod_menu_prepare(self) -> ();
+
+    #[method(name = "UnitMenuPrepare", args = 0)]
+    pub fn unit_menu_prepare(self) -> ();
+
+    #[method(name = "ItemMenuPrepare", args = 0)]
+    pub fn item_menu_prepare(self) -> ();
+
+    #[method(name = "EnchantMenuPrepare", args = 0)]
+    pub fn enchant_menu_prepare(self) -> ();
+
+    #[method(name = "CreateBindAttack", args = 0)]
+    pub fn create_bind_attack(self) -> ();
+
+    #[method(name = "CreateBindEngageAttack", args = 0)]
+    pub fn create_bind_engage_attack(self) -> ();
+
+    #[method(name = "CreateBindEngageCharge", args = 0)]
+    pub fn create_bind_engage_charge(self) -> ();
+
+    #[method(name = "CreateBindEngageWait", args = 0)]
+    pub fn create_bind_engage_wait(self) -> ();
+
+    #[method(name = "CreateBindEngageRewarp", args = 0)]
+    pub fn create_bind_engage_rewarp(self) -> ();
+
+    #[method(name = "CreateBindEngageRod", args = 0)]
+    pub fn create_bind_engage_rod(self) -> ();
+
+    #[method(name = "PreItemMenuTrade", args = 0)]
+    pub fn pre_item_menu_trade(self) -> ();
+
+    #[method(name = "PostItemMenuTrade", args = 0)]
+    pub fn post_item_menu_trade(self) -> ();
+
+    #[method(name = "TransporterMenuInitialize", args = 0)]
+    pub fn transporter_menu_initialize(self) -> ();
+
+    #[method(name = "TransporterMenu", args = 0)]
+    pub fn transporter_menu(self) -> ();
+
+    #[method(name = "TransporterMenuFinalize", args = 0)]
+    pub fn transporter_menu_finalize(self) -> ();
+
+    #[method(name = "ResetTarget", args = 0)]
+    pub fn reset_target(self) -> ();
+
+    #[method(name = "PostEngage", args = 0)]
+    pub fn post_engage(self) -> ();
+
+    #[method(name = "UpdatePosition", args = 0)]
+    pub fn update_position(self) -> ();
+
+    #[method(name = "GameEndBranch", args = 0)]
+    pub fn game_end_branch(self) -> ();
+
+    #[method(name = "MindEncBranch", args = 0)]
+    pub fn mind_enc_branch(self) -> ();
+
+    #[method(name = "AutoTurnEnd", args = 0)]
+    pub fn auto_turn_end(self) -> ();
+
+    #[method(name = "GodOutAll", args = 0)]
+    pub fn god_out_all(self) -> ();
+
+    #[method(name = "HumanTurnEnd", args = 0)]
+    pub fn human_turn_end(self) -> ();
+
+    #[method(name = "JobIntroDecide", args = 3)]
+    pub fn job_intro_decide(
+        self,
+        x: i32,
+        z: i32,
+        label: crate::app::mapsequencehuman::MapSequenceHuman_Label,
+    ) -> bool;
+
+    #[method(name = "JobIntroDecide", args = 1)]
+    pub fn job_intro_decide_2(
+        self,
+        label: crate::app::mapsequencehuman::MapSequenceHuman_Label,
+    ) -> bool;
+
+    #[method(name = "CreateJobIntro", args = 0)]
+    pub fn create_job_intro(self) -> ();
+
+    #[method(name = "JobIntroBranch", args = 0)]
+    pub fn job_intro_branch(self) -> ();
+
+    #[method(name = "JobIntroKeyHelpRequest", args = 0)]
+    pub fn job_intro_key_help_request(self) -> ();
+
+    #[method(name = "JobIntroKeyHelpBack", args = 0)]
+    pub fn job_intro_key_help_back(self) -> ();
+
+    #[method(name = "CanFocusUnit", args = 3)]
+    pub fn can_focus_unit(
+        self,
+        unit: crate::app::unit::Unit,
+        force_type: crate::app::force::Force_Type,
+        skip_unit: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "GetPickUnit", args = 1)]
+    pub fn get_pick_unit(self, unit: crate::app::unit::Unit) -> crate::app::unit::Unit;
+
+    #[method(name = "GetFirstUnit", args = 1)]
+    pub fn get_first_unit(
+        self,
+        force_type: crate::app::force::Force_Type,
+    ) -> crate::app::unit::Unit;
+
+    #[method(name = "GetPatrolUnit", args = 5)]
+    pub fn get_patrol_unit(
+        self,
+        cx: i32,
+        cz: i32,
+        force_type: crate::app::force::Force_Type,
+        is_reverse: bool,
+        skip_unit: crate::app::unit::Unit,
+    ) -> crate::app::unit::Unit;
+
+    #[method(name = "IsGetPatrolUnit", args = 5)]
+    pub fn is_get_patrol_unit(
+        self,
+        x: i32,
+        z: i32,
+        unit: crate::app::unit::Unit,
+        force_type: crate::app::force::Force_Type,
+        skip_unit: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "GetClosestUnit", args = 5)]
+    pub fn get_closest_unit(
+        self,
+        cx: i32,
+        cz: i32,
+        force_type: crate::app::force::Force_Type,
+        is_reverse: bool,
+        skip_unit: crate::app::unit::Unit,
+    ) -> crate::app::unit::Unit;
+
+    #[method(name = "GetOrderUnit", args = 5)]
+    pub fn get_order_unit(
+        self,
+        cx: i32,
+        cz: i32,
+        force_type: crate::app::force::Force_Type,
+        is_reverse: bool,
+        skip_unit: crate::app::unit::Unit,
+    ) -> crate::app::unit::Unit;
+
+    #[method(name = "UpdateMoveImage", args = 2)]
+    pub fn update_move_image(
+        self,
+        unit: crate::app::unit::Unit,
+        weapon_flag: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+            crate::app::mapdeploy::MapDeploy,
+        >,
+    ) -> ();
+
+    #[method(name = "FreeCursorSetMoveImage", args = 1)]
+    pub fn free_cursor_set_move_image(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "UnitInfoTick", args = 0)]
+    pub fn unit_info_tick(self) -> bool;
+
+    #[method(name = "DangerOneTick", args = 0)]
+    pub fn danger_one_tick(self) -> bool;
+
+    #[method(name = "MapNavigationTick", args = 0)]
+    pub fn map_navigation_tick(self) -> ();
+
+    #[method(name = "ShowInfo", args = 0)]
+    pub fn show_info(self) -> ();
+
+    #[method(name = "HideInfo", args = 0)]
+    pub fn hide_info(self) -> ();
+
+    #[method(name = "HidePanel", args = 0)]
+    pub fn hide_panel(self) -> ();
+
+    #[method(name = "UpdateInfo", args = 0)]
+    pub fn update_info(self) -> ();
+
+    #[method(name = "ShowMinimap", args = 0)]
+    pub fn show_minimap(self) -> ();
+
+    #[method(name = "HideMinimap", args = 0)]
+    pub fn hide_minimap(self) -> ();
+
+    #[method(name = "ShowDamageInfo", args = 0)]
+    pub fn show_damage_info(self) -> ();
+
+    #[method(name = "HideDamageInfo", args = 0)]
+    pub fn hide_damage_info(self) -> ();
+
+    #[method(name = "HideInfoExceptUnitInfo", args = 0)]
+    pub fn hide_info_except_unit_info(self) -> ();
+
+    #[method(name = "JumpForRemove", args = 1)]
+    pub fn jump_for_remove(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "JumpForRemagic", args = 1)]
+    pub fn jump_for_remagic(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "SetActiveUnit", args = 2)]
+    pub fn set_active_unit(self, target: crate::app::unit::Unit, is_pickup: bool) -> ();
+
+    #[method(name = "UpdateUnitInfo", args = 1)]
+    pub fn update_unit_info(self, is_update_key_help: bool) -> ();
+
+    #[method(name = "UpdateUnitInfo", args = 3)]
+    pub fn update_unit_info_2(self, x: i32, z: i32, is_update_key_help: bool) -> ();
+
+    #[method(name = "UnitInfoInPickCursor", args = 2)]
+    pub fn unit_info_in_pick_cursor(self, x: i32, z: i32) -> ();
+
+    #[method(name = "HideUnitInfoCharaImage", args = 0)]
+    pub fn hide_unit_info_chara_image(self) -> ();
+
+    #[method(name = "ShowUnitInfoCharaImage", args = 0)]
+    pub fn show_unit_info_chara_image(self) -> ();
+
+    #[method(name = "UnitInfoForPickFreeCursor", args = 0)]
+    pub fn unit_info_for_pick_free_cursor(self) -> ();
+
+    #[method(name = "KeyHelpInFreeCursor", args = 1)]
+    pub fn key_help_in_free_cursor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "GetPickKeyHelpType", args = 3)]
+    pub fn get_pick_key_help_type(
+        self,
+        mind_unit: crate::app::unit::Unit,
+        is_detail: bool,
+        is_weapon_change: bool,
+    ) -> crate::app::mapkeyhelp::MapKeyHelp_Types;
+
+    #[method(name = "KeyHelpInPickCursor", args = 0)]
+    pub fn key_help_in_pick_cursor(self) -> ();
+
+    #[method(name = "KeyHelpInPickCursor", args = 2)]
+    pub fn key_help_in_pick_cursor_2(self, x: i32, z: i32) -> ();
+
+    #[method(name = "PickEngageBranch", args = 0)]
+    pub fn pick_engage_branch(self) -> ();
+
+    #[method(name = "KeyHelpHide", args = 0)]
+    pub fn key_help_hide(self) -> ();
+
+    #[method(name = "UpdateTerrainInfo", args = 0)]
+    pub fn update_terrain_info(self) -> ();
+
+    #[method(name = "UpdateTerrainInfo", args = 2)]
+    pub fn update_terrain_info_2(self, x: i32, z: i32) -> ();
+
+    #[method(name = "UpdateLeftTerrainInfo", args = 2)]
+    pub fn update_left_terrain_info(self, x: i32, z: i32) -> ();
+
+    #[method(name = "GetUnitIndexFromImage", args = 2)]
+    pub fn get_unit_index_from_image(x: i32, z: i32) -> i32;
+
+    #[method(name = "DirectAttackStart", args = 0)]
+    pub fn direct_attack_start(self) -> ();
+
+    #[method(name = "DirectAttackWait", args = 0)]
+    pub fn direct_attack_wait(self) -> ();
+
+    #[method(name = "DirectAttackDecide", args = 0)]
+    pub fn direct_attack_decide(self) -> ();
+
+    #[method(name = "CursorSound", args = 0)]
+    pub fn cursor_sound(self) -> ();
+
+    #[method(name = "EngageRewarpPrepare", args = 0)]
+    pub fn engage_rewarp_prepare(self) -> ();
+
+    #[method(name = "EngageRewarpCancel", args = 0)]
+    pub fn engage_rewarp_cancel(self) -> ();
+
+    #[method(name = "EngageBeforeEvent", args = 0)]
+    pub fn engage_before_event(self) -> ();
+
+    #[method(name = "EngageAfterEvent", args = 0)]
+    pub fn engage_after_event(self) -> ();
+
+    #[method(name = "MapEnd", args = 0)]
+    pub fn map_end(self) -> ();
+
+    #[method(name = "Restart", args = 1)]
+    pub fn restart(
+        self,
+        target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes,
+    ) -> ();
+
+    #[method(name = "SaveAndSuspendMenuBefore", args = 0)]
+    pub fn save_and_suspend_menu_before(self) -> ();
+
+    #[method(name = "SaveAndSuspendMenuAfter", args = 0)]
+    pub fn save_and_suspend_menu_after(self) -> ();
+
+    #[method(name = "MindPrepare", args = 0)]
+    pub fn mind_prepare(self) -> ();
+
+    #[method(name = "UpdateDamageForecast", args = 0)]
+    pub fn update_damage_forecast(self) -> ();
+
+    #[method(name = "get_OldCursorX", args = 0)]
+    pub fn get_old_cursor_x(self) -> i32;
+
+    #[method(name = "get_OldCursorZ", args = 0)]
+    pub fn get_old_cursor_z(self) -> i32;
+
+    #[method(name = "set_EngageX", args = 1)]
+    pub fn set_engage_x(self, value: i32) -> ();
+
+    #[method(name = "set_EngageZ", args = 1)]
+    pub fn set_engage_z(self, value: i32) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind_2(super_: crate::app::procinst::ProcInst, is_resume: bool) -> ();
+}
+
+#[cfg(feature = "app-mapsequencehuman")]
+impl MapSequenceHuman {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceHuman),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceHumanMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_OperateMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceHuman_OperateMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceHuman_OperateMode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceHuman.OperateMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceHuman_OperateMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceHuman_OperateMode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn direct() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn indirect() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn designate() -> Self {
+        Self { value: 3 }
+    }
+}

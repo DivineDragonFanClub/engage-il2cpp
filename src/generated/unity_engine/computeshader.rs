@@ -1,0 +1,24 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/computeshader/ComputeShader.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "ComputeShader")]
+#[parent(crate::unity_engine::object_2::Object_2)]
+pub struct ComputeShader {}
+
+#[cfg(feature = "unity_engine-computeshader")]
+#[::unity2::methods]
+impl ComputeShader {
+    #[method(name = "FindKernel", args = 1)]
+    pub fn find_kernel(self, name: ::unity2::Il2CppString) -> i32;
+
+    #[method(name = "EnableKeyword", args = 1)]
+    pub fn enable_keyword(self, keyword: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "DisableKeyword", args = 1)]
+    pub fn disable_keyword(self, keyword: ::unity2::Il2CppString) -> ();
+}

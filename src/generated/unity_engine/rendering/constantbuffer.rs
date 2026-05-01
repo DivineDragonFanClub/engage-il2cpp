@@ -1,0 +1,163 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/constantbuffer/ConstantBuffer_ConstantBufferBase.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering",
+    name = "ConstantBuffer.ConstantBufferBase"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ConstantBuffer_ConstantBufferBase {}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+#[::unity2::methods]
+impl ConstantBuffer_ConstantBufferBase {
+    #[method(name = "Release", args = 0)]
+    pub fn release(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+impl ConstantBuffer_ConstantBufferBase {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConstantBuffer_ConstantBufferBase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConstantBuffer_ConstantBufferBaseMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/constantbuffer/ConstantBuffer_TypedConstantBuffer_1.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering",
+    name = "ConstantBuffer.TypedConstantBuffer`1"
+)]
+pub struct ConstantBuffer_TypedConstantBuffer_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "m_GlobalBindings")]
+    pub m_global_bindings: crate::system::collections::generic::hashset_1::HashSet_1<i32>,
+    #[rename(name = "m_Data")]
+    pub m_data: ::unity2::Array<T0>,
+    #[static_field]
+    #[rename(name = "s_Instance")]
+    pub s_instance:
+        crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0>,
+    #[rename(name = "m_GPUConstantBuffer")]
+    pub m_gpu_constant_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
+}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> ConstantBuffer_TypedConstantBuffer_1<T0> {
+    #[method(name = "get_instance", args = 0)]
+    pub fn get_instance(
+    ) -> crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0>;
+
+    #[method(name = "set_instance", args = 1)]
+    pub fn set_instance(
+        value: crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<
+            T0,
+        >,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "UpdateData", args = 2)]
+    pub fn update_data(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        data: T0,
+    ) -> ();
+
+    #[method(name = "SetGlobal", args = 2)]
+    pub fn set_global(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        shader_id: i32,
+    ) -> ();
+
+    #[method(name = "Set", args = 3)]
+    pub fn set(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        cs: crate::unity_engine::computeshader::ComputeShader,
+        shader_id: i32,
+    ) -> ();
+
+    #[method(name = "Set", args = 2)]
+    pub fn set_2(self, mat: crate::unity_engine::material::Material, shader_id: i32) -> ();
+
+    #[method(name = "Release", args = 0)]
+    pub fn release(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+impl<T0: ::unity2::ClassIdentity> ConstantBuffer_TypedConstantBuffer_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConstantBuffer_TypedConstantBuffer_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConstantBuffer_TypedConstantBuffer_1Methods<T0>>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/constantbuffer/ConstantBuffer.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "ConstantBuffer")]
+#[parent(crate::system::object::Object)]
+pub struct ConstantBuffer {
+    #[static_field]
+    #[rename(name = "m_RegisteredConstantBuffers")]
+    pub m_registered_constant_buffers: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase,
+    >,
+}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+#[::unity2::methods]
+impl ConstantBuffer {
+    #[method(name = "ReleaseAll", args = 0)]
+    pub fn release_all() -> ();
+
+    #[method(name = "Register", args = 1)]
+    pub fn register(
+        cb: crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-constantbuffer")]
+impl ConstantBuffer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConstantBuffer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConstantBufferMethods>::ctor(this);
+        this
+    }
+}

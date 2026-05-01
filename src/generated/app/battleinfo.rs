@@ -1,0 +1,873 @@
+
+use crate::app::battleside::BattleSide_ContainerArray_1;
+use crate::app::battleside::IBattleSide_ContainerArray_1;
+use crate::app::bitfield32::BitField32;
+use crate::app::bitfield32::IBitField32;
+use crate::app::bitfieldcommon::BitFieldCommon;
+use crate::app::bitfieldcommon::IBitFieldCommon;
+use crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1;
+use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
+use crate::system::collections::generic::list_1::IList_1;
+use crate::system::collections::generic::list_1::List_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_SupportList.md")))]
+#[::unity2::class(namespace = "App", name = "BattleInfo.SupportList")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: battleinfo :: BattleInfo_SupportData >)]
+pub struct BattleInfo_SupportList {
+    #[rename(name = "m_Offense")]
+    pub m_offense: crate::app::unit::Unit,
+    #[rename(name = "m_Defense")]
+    pub m_defense: crate::app::unit::Unit,
+    #[rename(name = "m_Compare")]
+    pub m_compare:
+        crate::system::comparison_1::Comparison_1<crate::app::battleinfo::BattleInfo_SupportData>,
+}
+
+#[cfg(feature = "app-battleinfo")]
+#[::unity2::methods]
+impl BattleInfo_SupportList {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(
+        self,
+        a: crate::app::battleinfo::BattleInfo_SupportData,
+        b: crate::app::battleinfo::BattleInfo_SupportData,
+    ) -> i32;
+
+    #[method(name = "Sort", args = 2)]
+    pub fn sort(self, offense: crate::app::unit::Unit, defense: crate::app::unit::Unit) -> ();
+
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "Add", args = 2)]
+    pub fn add_2(
+        self,
+        unit: crate::app::unit::Unit,
+        status: crate::app::battleinfoside::BattleInfoSide_Status,
+    ) -> ();
+}
+
+#[cfg(feature = "app-battleinfo")]
+impl BattleInfo_SupportList {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleInfo_SupportList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleInfo_SupportListMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo.md")))]
+#[::unity2::class(namespace = "App", name = "BattleInfo")]
+#[parent(crate::system::object::Object)]
+pub struct BattleInfo {
+    #[static_field]
+    #[rename(name = "CriticalFactor")]
+    pub critical_factor: i32,
+    #[rename(name = "m_Flag")]
+    pub m_flag: crate::app::battleinfo::BattleInfo_FlagField,
+    #[rename(name = "m_Sides")]
+    pub m_sides: crate::app::battleinfo::BattleInfo_BattleInfoSideArray,
+    #[rename(name = "m_Supports")]
+    pub m_supports: crate::app::battleinfo::BattleInfo_SupportList,
+    #[rename(name = "m_MainUnitEnum")]
+    pub m_main_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
+    #[rename(name = "m_WholeUnitEnum")]
+    pub m_whole_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
+    #[rename(name = "m_ChainOffenseEnum")]
+    pub m_chain_offense_enum: crate::app::battleinfoenum::BattleInfoEnum,
+    #[rename(name = "m_ChainDefenseEnum")]
+    pub m_chain_defense_enum: crate::app::battleinfoenum::BattleInfoEnum,
+    #[rename(name = "m_ChainUnitEnum")]
+    pub m_chain_unit_enum: crate::app::battleinfoenum::BattleInfoEnum,
+    #[rename(name = "m_TempSkills")]
+    pub m_temp_skills:
+        crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData>,
+    #[rename(name = "m_GuardSide")]
+    pub m_guard_side: crate::app::battleside::BattleSide_Type,
+    #[rename(name = "m_GuardFunc")]
+    pub m_guard_func: crate::app::mapfor::MapFor_RangeFunction,
+}
+
+#[cfg(feature = "app-battleinfo")]
+#[::unity2::methods]
+impl BattleInfo {
+    #[method(name = "get_Range", args = 0)]
+    pub fn get_range(self) -> i32;
+
+    #[method(name = "set_Range", args = 1)]
+    pub fn set_range(self, value: i32) -> ();
+
+    #[method(name = "get_BattleCount", args = 0)]
+    pub fn get_battle_count(self) -> i32;
+
+    #[method(name = "set_BattleCount", args = 1)]
+    pub fn set_battle_count(self, value: i32) -> ();
+
+    #[method(name = "get_SceneResult", args = 0)]
+    pub fn get_scene_result(self) -> crate::app::battlescene::BattleScene_Result;
+
+    #[method(name = "set_SceneResult", args = 1)]
+    pub fn set_scene_result(self, value: crate::app::battlescene::BattleScene_Result) -> ();
+
+    #[method(name = "get_ChainAttackSide", args = 0)]
+    pub fn get_chain_attack_side(self) -> crate::app::battleside::BattleSide_Type;
+
+    #[method(name = "set_ChainAttackSide", args = 1)]
+    pub fn set_chain_attack_side(self, value: crate::app::battleside::BattleSide_Type) -> ();
+
+    #[method(name = "get_ChainAttackCount", args = 0)]
+    pub fn get_chain_attack_count(self) -> i32;
+
+    #[method(name = "set_ChainAttackCount", args = 1)]
+    pub fn set_chain_attack_count(self, value: i32) -> ();
+
+    #[method(name = "get_ChainGuardCount", args = 0)]
+    pub fn get_chain_guard_count(self) -> i32;
+
+    #[method(name = "set_ChainGuardCount", args = 1)]
+    pub fn set_chain_guard_count(self, value: i32) -> ();
+
+    #[method(name = "get_ChainAttackDefeat", args = 0)]
+    pub fn get_chain_attack_defeat(self) -> i32;
+
+    #[method(name = "set_ChainAttackDefeat", args = 1)]
+    pub fn set_chain_attack_defeat(self, value: i32) -> ();
+
+    #[method(name = "get_ChainAttackHit", args = 0)]
+    pub fn get_chain_attack_hit(self) -> i32;
+
+    #[method(name = "set_ChainAttackHit", args = 1)]
+    pub fn set_chain_attack_hit(self, value: i32) -> ();
+
+    #[method(name = "get_ChainAttackCritical", args = 0)]
+    pub fn get_chain_attack_critical(self) -> i32;
+
+    #[method(name = "set_ChainAttackCritical", args = 1)]
+    pub fn set_chain_attack_critical(self, value: i32) -> ();
+
+    #[method(name = "get_ChainAttackDamage", args = 0)]
+    pub fn get_chain_attack_damage(self) -> i32;
+
+    #[method(name = "set_ChainAttackDamage", args = 1)]
+    pub fn set_chain_attack_damage(self, value: i32) -> ();
+
+    #[method(name = "get_TempSkills", args = 0)]
+    pub fn get_temp_skills(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData>;
+
+    #[method(name = "get_SummonRank", args = 0)]
+    pub fn get_summon_rank(self) -> crate::app::persondata::PersonData_Ranks;
+
+    #[method(name = "set_SummonRank", args = 1)]
+    pub fn set_summon_rank(self, value: crate::app::persondata::PersonData_Ranks) -> ();
+
+    #[method(name = "get_SummonColor", args = 0)]
+    pub fn get_summon_color(self) -> crate::app::persondata::PersonData_Colors;
+
+    #[method(name = "set_SummonColor", args = 1)]
+    pub fn set_summon_color(self, value: crate::app::persondata::PersonData_Colors) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Finalize", args = 0)]
+    pub fn finalize(self) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "Reset", args = 1)]
+    pub fn reset(self, flags: crate::app::battleinfo::BattleInfo_Flags) -> ();
+
+    #[method(name = "GetResetFlag", args = 3)]
+    pub fn get_reset_flag(
+        flags: crate::app::battleinfo::BattleInfo_Flags,
+        offense: crate::app::unit::Unit,
+        commmand_skill: crate::app::skilldata::SkillData,
+    ) -> crate::app::battleinfo::BattleInfo_Flags;
+
+    #[method(name = "CalcSimple", args = 2)]
+    pub fn calc_simple(
+        self,
+        offense: crate::app::unit::Unit,
+        flag: crate::app::battleinfo::BattleInfo_Flags,
+    ) -> crate::app::battleinfo::BattleInfo;
+
+    #[method(name = "CalcSimple", args = 4)]
+    pub fn calc_simple_2(
+        self,
+        offense: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        defense: crate::app::unit::Unit,
+        flag: crate::app::battleinfo::BattleInfo_Flags,
+    ) -> ();
+
+    #[method(name = "CalcSimple", args = 6)]
+    pub fn calc_simple_3(
+        self,
+        offense: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        defense: crate::app::unit::Unit,
+        command_skill: crate::app::skilldata::SkillData,
+        flags: crate::app::battleinfo::BattleInfo_Flags,
+        count: i32,
+    ) -> ();
+
+    #[method(name = "CalcSimple", args = 7)]
+    pub fn calc_simple_4(
+        self,
+        offense: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        target_x: i32,
+        target_z: i32,
+        command_skill: crate::app::skilldata::SkillData,
+        flags: crate::app::battleinfo::BattleInfo_Flags,
+        count: i32,
+    ) -> ();
+
+    #[method(name = "CalcSimple", args = 10)]
+    pub fn calc_simple_5(
+        self,
+        offense: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        attack_x: i32,
+        attack_z: i32,
+        defense: crate::app::unit::Unit,
+        target_x: i32,
+        target_z: i32,
+        command_skill: crate::app::skilldata::SkillData,
+        flags: crate::app::battleinfo::BattleInfo_Flags,
+        count: i32,
+    ) -> ();
+
+    #[method(name = "CalcSimple", args = 11)]
+    pub fn calc_simple_6(
+        self,
+        offense: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        attack_x: i32,
+        attack_z: i32,
+        defense: crate::app::unit::Unit,
+        revenge_item: crate::app::unititem::UnitItem,
+        target_x: i32,
+        target_z: i32,
+        command_skill: crate::app::skilldata::SkillData,
+        flags: crate::app::battleinfo::BattleInfo_Flags,
+        count: i32,
+    ) -> ();
+
+    #[method(name = "CalcDestroy", args = 6)]
+    pub fn calc_destroy(
+        self,
+        offense: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        target_x: i32,
+        target_z: i32,
+        flags: crate::app::battleinfo::BattleInfo_Flags,
+        count: i32,
+    ) -> ();
+
+    #[method(name = "CalcSummon", args = 5)]
+    pub fn calc_summon(
+        self,
+        offense: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        rank: crate::app::persondata::PersonData_Ranks,
+        color: crate::app::persondata::PersonData_Colors,
+        is_simulation: bool,
+    ) -> ();
+
+    #[method(name = "CalcDance", args = 3)]
+    pub fn calc_dance(
+        self,
+        offense: crate::app::unit::Unit,
+        defense: crate::app::unit::Unit,
+        is_simulation: bool,
+    ) -> ();
+
+    #[method(name = "CalcEnchant", args = 4)]
+    pub fn calc_enchant(
+        self,
+        offense: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        defense: crate::app::unit::Unit,
+        is_simulation: bool,
+    ) -> ();
+
+    #[method(name = "CalcFlags", args = 0)]
+    pub fn calc_flags(self) -> ();
+
+    #[method(name = "CalcRange", args = 0)]
+    pub fn calc_range(self) -> ();
+
+    #[method(name = "TryGetSupportUnit", args = 3)]
+    pub fn try_get_support_unit(
+        current: crate::app::battleinfoside::BattleInfoSide,
+        x: i32,
+        z: i32,
+    ) -> crate::app::unit::Unit;
+
+    #[method(name = "SetSupportOffense", args = 3)]
+    pub fn set_support_offense(
+        self,
+        support: crate::app::battleside::BattleSide_Type,
+        unit: crate::app::unit::Unit,
+        status: crate::app::battleinfoside::BattleInfoSide_Status,
+    ) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "GetChianSkill", args = 1)]
+    pub fn get_chian_skill(chain: crate::app::unit::Unit) -> crate::app::skilldata::SkillData;
+
+    #[method(name = "CanChainGuard", args = 2)]
+    pub fn can_chain_guard(
+        self,
+        unit: crate::app::unit::Unit,
+        chain: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "CalcSupportDefense", args = 4)]
+    pub fn calc_support_defense(
+        self,
+        support: crate::app::battleside::BattleSide_Type,
+        x: i32,
+        z: i32,
+        current: crate::app::battleinfoside::BattleInfoSide,
+    ) -> crate::app::battleside::BattleSide_Type;
+
+    #[method(name = "CalcChain", args = 0)]
+    pub fn calc_chain(self) -> ();
+
+    #[method(name = "SearchGuard", args = 3)]
+    pub fn search_guard(self, x: i32, z: i32, range: i32) -> ();
+
+    #[method(name = "CalcParam", args = 0)]
+    pub fn calc_param(self) -> ();
+
+    #[method(name = "CalcActiveSkill", args = 1)]
+    pub fn calc_active_skill(self, timing: crate::app::skilldata::SkillData_Timings) -> ();
+
+    #[method(name = "GetFlag", args = 0)]
+    pub fn get_flag(self) -> crate::app::battleinfo::BattleInfo_FlagField;
+
+    #[method(name = "IsFlag", args = 1)]
+    pub fn is_flag(self, flag: crate::app::battleinfo::BattleInfo_Flags) -> bool;
+
+    #[method(name = "GetSide", args = 1)]
+    pub fn get_side(
+        self,
+        r#type: crate::app::battleside::BattleSide_Type,
+    ) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "GetSide", args = 1)]
+    pub fn get_side_2(self, index: i32) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "GetParentSide", args = 1)]
+    pub fn get_parent_side(
+        self,
+        r#type: crate::app::battleside::BattleSide_Type,
+    ) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "GetParentSide", args = 1)]
+    pub fn get_parent_side_2(self, index: i32) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "GetReverseSide", args = 1)]
+    pub fn get_reverse_side(
+        self,
+        r#type: crate::app::battleside::BattleSide_Type,
+    ) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "GetReverseSide", args = 1)]
+    pub fn get_reverse_side_2(self, index: i32) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "GetUnit", args = 1)]
+    pub fn get_unit(
+        self,
+        r#type: crate::app::battleside::BattleSide_Type,
+    ) -> crate::app::unit::Unit;
+
+    #[method(name = "GetUnit", args = 1)]
+    pub fn get_unit_2(self, index: i32) -> crate::app::unit::Unit;
+
+    #[method(name = "PushDetail", args = 0)]
+    pub fn push_detail(self) -> ();
+
+    #[method(name = "PopDetail", args = 0)]
+    pub fn pop_detail(self) -> ();
+
+    #[method(name = "GetMainUnitEnum", args = 0)]
+    pub fn get_main_unit_enum(self) -> crate::app::battleinfoenum::BattleInfoEnum;
+
+    #[method(name = "GetWholeUnitEnum", args = 0)]
+    pub fn get_whole_unit_enum(self) -> crate::app::battleinfoenum::BattleInfoEnum;
+
+    #[method(name = "GetChainOffenseEnum", args = 0)]
+    pub fn get_chain_offense_enum(self) -> crate::app::battleinfoenum::BattleInfoEnum;
+
+    #[method(name = "GetChainDefenseEnum", args = 0)]
+    pub fn get_chain_defense_enum(self) -> crate::app::battleinfoenum::BattleInfoEnum;
+
+    #[method(name = "GetChainUnitEnum", args = 0)]
+    pub fn get_chain_unit_enum(self) -> crate::app::battleinfoenum::BattleInfoEnum;
+
+    #[method(name = "FindDestroySide", args = 0)]
+    pub fn find_destroy_side(self) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "HasChainOffense", args = 1)]
+    pub fn has_chain_offense(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "HasChainDefense", args = 1)]
+    pub fn has_chain_defense(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "ComplementConditions", args = 0)]
+    pub fn complement_conditions(self) -> ();
+
+    #[method(name = "CalcDetail", args = 0)]
+    pub fn calc_detail(self) -> ();
+
+    #[method(name = "CalcBattleTimes", args = 0)]
+    pub fn calc_battle_times(self) -> ();
+
+    #[method(name = "BattleStart", args = 4)]
+    pub fn battle_start(
+        unit: crate::app::unit::Unit,
+        mind: crate::app::mapmind::MapMind_Type,
+        skill: crate::app::skilldata::SkillData,
+        is_simulation: bool,
+    ) -> ();
+
+    #[method(name = "BattleEnd", args = 4)]
+    pub fn battle_end(
+        unit: crate::app::unit::Unit,
+        mind: crate::app::mapmind::MapMind_Type,
+        skill: crate::app::skilldata::SkillData,
+        is_simulation: bool,
+    ) -> ();
+
+    #[method(name = "IsSkillCondtion", args = 3)]
+    pub fn is_skill_condtion(
+        skill: crate::app::skilldata::SkillData,
+        unit: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "CanChainSkill", args = 2)]
+    pub fn can_chain_skill(
+        self,
+        skill: crate::app::skilldata::SkillData,
+        flags: crate::app::skilldata::SkillData_Flags,
+    ) -> bool;
+
+    #[method(name = "CanMoveAttack", args = 2)]
+    pub fn can_move_attack(
+        self,
+        unit: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "CanForceChainAttack", args = 3)]
+    pub fn can_force_chain_attack(
+        self,
+        unit: crate::app::unit::Unit,
+        chain: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "CanJoinChainAttack", args = 3)]
+    pub fn can_join_chain_attack(
+        self,
+        unit: crate::app::unit::Unit,
+        chain: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+    ) -> bool;
+}
+
+#[cfg(feature = "app-battleinfo")]
+impl BattleInfo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_SetupScope.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BattleInfo_SetupScope {
+    pub m_info: crate::app::battleinfo::BattleInfo,
+    pub m_offense: crate::app::unit::Unit,
+    pub m_defense: crate::app::unit::Unit,
+    pub m_updated: u8,
+}
+
+impl ::unity2::ClassIdentity for BattleInfo_SetupScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleInfo.SetupScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BattleInfo_SetupScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+#[::unity2::methods(value)]
+impl BattleInfo_SetupScope {
+    #[method(name = "GetSide", args = 1)]
+    pub fn get_side(
+        self,
+        side: crate::app::battleside::BattleSide_Type,
+    ) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = ".ctor", args = 9)]
+    pub fn ctor(
+        self,
+        info: crate::app::battleinfo::BattleInfo,
+        offense: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        defense: crate::app::unit::Unit,
+        revenge_item: crate::app::unititem::UnitItem,
+        attack_x: i32,
+        attack_z: i32,
+        target_x: i32,
+        target_z: i32,
+    ) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_Flags.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct BattleInfo_Flags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for BattleInfo_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleInfo.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BattleInfo_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl BattleInfo_Flags {
+    pub fn simulation() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn warmup() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn alone() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn event() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn dance() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn training() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn multi_battle() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn bow_cannon() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn magic_cannon() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn fire_cannon() -> Self {
+        Self { value: 2048 }
+    }
+
+    pub fn engage_attack() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn traial() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn ignore_range() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn ignore_position() -> Self {
+        Self { value: 32768 }
+    }
+
+    pub fn ignore_offense_position() -> Self {
+        Self { value: 65536 }
+    }
+
+    pub fn ignore_revenge() -> Self {
+        Self { value: 131072 }
+    }
+
+    pub fn ignore_break() -> Self {
+        Self { value: 262144 }
+    }
+
+    pub fn ignore_terrain() -> Self {
+        Self { value: 524288 }
+    }
+
+    pub fn ignore_support() -> Self {
+        Self { value: 1048576 }
+    }
+
+    pub fn ignore_blow() -> Self {
+        Self { value: 2097152 }
+    }
+
+    pub fn ignore_chain() -> Self {
+        Self { value: 4194304 }
+    }
+
+    pub fn ignore_skill() -> Self {
+        Self { value: 8388608 }
+    }
+
+    pub fn hide_combat_gauge() -> Self {
+        Self { value: 16777216 }
+    }
+
+    pub fn skip_combat_grow() -> Self {
+        Self { value: 33554432 }
+    }
+
+    pub fn full_bullet() -> Self {
+        Self { value: 67108864 }
+    }
+
+    pub fn summon() -> Self {
+        Self { value: 134217728 }
+    }
+
+    pub fn enchant() -> Self {
+        Self { value: 268435456 }
+    }
+
+    pub fn cannon_mask() -> Self {
+        Self { value: 3584 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_BattleInfoSideArray.md")))]
+#[::unity2::class(namespace = "App", name = "BattleInfo.BattleInfoSideArray")]
+# [parent (crate :: app :: battleside :: BattleSide_ContainerArray_1 < crate :: app :: battleinfoside :: BattleInfoSide >)]
+pub struct BattleInfo_BattleInfoSideArray {}
+
+#[cfg(feature = "app-battleinfo")]
+#[::unity2::methods]
+impl BattleInfo_BattleInfoSideArray {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-battleinfo")]
+impl BattleInfo_BattleInfoSideArray {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleInfo_BattleInfoSideArray),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleInfo_BattleInfoSideArrayMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_FlagField.md")))]
+#[::unity2::class(namespace = "App", name = "BattleInfo.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battleinfo :: BattleInfo_Flags >)]
+pub struct BattleInfo_FlagField {}
+
+#[cfg(feature = "app-battleinfo")]
+#[::unity2::methods]
+impl BattleInfo_FlagField {
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::battleinfo::BattleInfo_Flags) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-battleinfo")]
+impl BattleInfo_FlagField {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleInfo_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleInfo_FlagFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_SupportData.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BattleInfo_SupportData {
+    pub unit: crate::app::unit::Unit,
+    pub status: crate::app::battleinfoside::BattleInfoSide_Status,
+}
+
+impl ::unity2::ClassIdentity for BattleInfo_SupportData {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleInfo.SupportData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BattleInfo_SupportData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+#[::unity2::methods(value)]
+impl BattleInfo_SupportData {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        unit: crate::app::unit::Unit,
+        status: crate::app::battleinfoside::BattleInfoSide_Status,
+    ) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_MindScope.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BattleInfo_MindScope {
+    pub m_unit: crate::app::unit::Unit,
+    pub m_skill: crate::app::skilldata::SkillData,
+    pub m_mind: crate::app::mapmind::MapMind_Type,
+}
+
+impl ::unity2::ClassIdentity for BattleInfo_MindScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleInfo.MindScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BattleInfo_MindScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+#[::unity2::methods(value)]
+impl BattleInfo_MindScope {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        mind: crate::app::mapmind::MapMind_Type,
+        skill: crate::app::skilldata::SkillData,
+    ) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}

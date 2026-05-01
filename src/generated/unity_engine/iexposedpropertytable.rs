@@ -1,0 +1,17 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/iexposedpropertytable/IExposedPropertyTable.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "IExposedPropertyTable")]
+pub struct IExposedPropertyTable {}
+
+#[cfg(feature = "unity_engine-iexposedpropertytable")]
+#[::unity2::methods]
+impl IExposedPropertyTable {
+    #[method(name = "GetReferenceValue", args = 2)]
+    pub fn get_reference_value(
+        self,
+        id: crate::unity_engine::propertyname::PropertyName,
+        id_valid: bool,
+    ) -> crate::unity_engine::object_2::Object_2;
+}

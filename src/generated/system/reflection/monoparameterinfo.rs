@@ -1,0 +1,55 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::reflection::parameterinfo::IParameterInfo;
+use crate::system::reflection::parameterinfo::ParameterInfo;
+use crate::system::reflection::runtimeparameterinfo::IRuntimeParameterInfo;
+use crate::system::reflection::runtimeparameterinfo::RuntimeParameterInfo;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/monoparameterinfo/MonoParameterInfo.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "MonoParameterInfo")]
+#[parent(crate::system::reflection::runtimeparameterinfo::RuntimeParameterInfo)]
+pub struct MonoParameterInfo {}
+
+#[cfg(feature = "system-reflection-monoparameterinfo")]
+#[::unity2::methods]
+impl MonoParameterInfo {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        pinfo: crate::system::reflection::parameterinfo::ParameterInfo,
+        member: crate::system::reflection::memberinfo::MemberInfo,
+    ) -> ();
+
+    #[method(name = "get_DefaultValue", args = 0)]
+    pub fn get_default_value(self) -> crate::system::object::Object;
+
+    #[method(name = "GetCustomAttributes", args = 2)]
+    pub fn get_custom_attributes(
+        self,
+        attribute_type: ::unity2::SystemType,
+        inherit: bool,
+    ) -> ::unity2::Array<crate::system::object::Object>;
+
+    #[method(name = "IsDefined", args = 2)]
+    pub fn is_defined(self, attribute_type: ::unity2::SystemType, inherit: bool) -> bool;
+}
+
+#[cfg(feature = "system-reflection-monoparameterinfo")]
+impl MonoParameterInfo {
+    pub fn new(
+        pinfo: crate::system::reflection::parameterinfo::ParameterInfo,
+        member: crate::system::reflection::memberinfo::MemberInfo,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MonoParameterInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMonoParameterInfoMethods>::ctor(this, pinfo, member);
+        this
+    }
+}

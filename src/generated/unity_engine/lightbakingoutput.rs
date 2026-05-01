@@ -1,0 +1,38 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/lightbakingoutput/LightBakingOutput.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct LightBakingOutput {
+    pub probe_occlusion_light_index: i32,
+    pub occlusion_mask_channel: i32,
+    pub lightmap_bake_type: crate::unity_engine::lightmapbaketype::LightmapBakeType,
+    pub mixed_lighting_mode: crate::unity_engine::mixedlightingmode::MixedLightingMode,
+    pub is_baked: bool,
+}
+
+impl ::unity2::ClassIdentity for LightBakingOutput {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "LightBakingOutput";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for LightBakingOutput {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

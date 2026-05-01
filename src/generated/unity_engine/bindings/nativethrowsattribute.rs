@@ -1,0 +1,31 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/bindings/nativethrowsattribute/NativeThrowsAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine.Bindings", name = "NativeThrowsAttribute")]
+pub struct NativeThrowsAttribute {}
+
+#[cfg(feature = "unity_engine-bindings-nativethrowsattribute")]
+#[::unity2::methods]
+impl NativeThrowsAttribute {
+    #[method(name = "set_ThrowsException", args = 1)]
+    pub fn set_throws_exception(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-bindings-nativethrowsattribute")]
+impl NativeThrowsAttribute {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NativeThrowsAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INativeThrowsAttributeMethods>::ctor(this);
+        this
+    }
+}

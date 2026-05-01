@@ -1,0 +1,79 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/shaderdata/ShaderData.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ShaderData")]
+#[parent(crate::system::object::Object)]
+pub struct ShaderData {
+    #[static_field]
+    #[rename(name = "m_Instance")]
+    pub m_instance: crate::unity_engine::rendering::universal::shaderdata::ShaderData,
+    #[rename(name = "m_LightDataBuffer")]
+    pub m_light_data_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
+    #[rename(name = "m_LightIndicesBuffer")]
+    pub m_light_indices_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
+    #[rename(name = "m_ShadowDataBuffer")]
+    pub m_shadow_data_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
+    #[rename(name = "m_ShadowIndicesBuffer")]
+    pub m_shadow_indices_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-shaderdata")]
+#[::unity2::methods]
+impl ShaderData {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_instance", args = 0)]
+    pub fn get_instance() -> crate::unity_engine::rendering::universal::shaderdata::ShaderData;
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "GetLightDataBuffer", args = 1)]
+    pub fn get_light_data_buffer(
+        self,
+        size: i32,
+    ) -> crate::unity_engine::computebuffer::ComputeBuffer;
+
+    #[method(name = "GetLightIndicesBuffer", args = 1)]
+    pub fn get_light_indices_buffer(
+        self,
+        size: i32,
+    ) -> crate::unity_engine::computebuffer::ComputeBuffer;
+
+    #[method(name = "GetShadowDataBuffer", args = 1)]
+    pub fn get_shadow_data_buffer(
+        self,
+        size: i32,
+    ) -> crate::unity_engine::computebuffer::ComputeBuffer;
+
+    #[method(name = "GetShadowIndicesBuffer", args = 1)]
+    pub fn get_shadow_indices_buffer(
+        self,
+        size: i32,
+    ) -> crate::unity_engine::computebuffer::ComputeBuffer;
+
+    #[method(name = "DisposeBuffer", args = 1)]
+    pub fn dispose_buffer(self, buffer: crate::unity_engine::computebuffer::ComputeBuffer) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-shaderdata")]
+impl ShaderData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShaderData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShaderDataMethods>::ctor(this);
+        this
+    }
+}

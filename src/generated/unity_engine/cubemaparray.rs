@@ -1,0 +1,263 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::texture::ITexture;
+use crate::unity_engine::texture::Texture;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/cubemaparray/CubemapArray.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "CubemapArray")]
+#[parent(crate::unity_engine::texture::Texture)]
+pub struct CubemapArray {}
+
+#[cfg(feature = "unity_engine-cubemaparray")]
+#[::unity2::methods]
+impl CubemapArray {
+    #[method(name = "get_isReadable", args = 0)]
+    pub fn get_is_readable(self) -> bool;
+
+    #[method(name = "Internal_CreateImpl", args = 6)]
+    pub fn internal_create_impl(
+        mono: crate::unity_engine::cubemaparray::CubemapArray,
+        ext: i32,
+        count: i32,
+        mip_count: i32,
+        format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
+    ) -> bool;
+
+    #[method(name = "Internal_Create", args = 6)]
+    pub fn internal_create(
+        mono: crate::unity_engine::cubemaparray::CubemapArray,
+        ext: i32,
+        count: i32,
+        mip_count: i32,
+        format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
+    ) -> ();
+
+    #[method(name = "ApplyImpl", args = 2)]
+    pub fn apply_impl(self, update_mipmaps: bool, make_no_longer_readable: bool) -> ();
+
+    #[method(name = "SetPixels", args = 4)]
+    pub fn set_pixels(
+        self,
+        colors: ::unity2::Array<crate::unity_engine::color::Color>,
+        face: crate::unity_engine::cubemapface::CubemapFace,
+        array_element: i32,
+        miplevel: i32,
+    ) -> ();
+
+    #[method(name = "SetPixels", args = 3)]
+    pub fn set_pixels_2(
+        self,
+        colors: ::unity2::Array<crate::unity_engine::color::Color>,
+        face: crate::unity_engine::cubemapface::CubemapFace,
+        array_element: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        width: i32,
+        cubemap_count: i32,
+        format: crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat,
+        flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor_2(
+        self,
+        width: i32,
+        cubemap_count: i32,
+        format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor_3(
+        self,
+        width: i32,
+        cubemap_count: i32,
+        format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
+        mip_count: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor_4(
+        self,
+        width: i32,
+        cubemap_count: i32,
+        texture_format: crate::unity_engine::textureformat::TextureFormat,
+        mip_count: i32,
+        linear: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor_5(
+        self,
+        width: i32,
+        cubemap_count: i32,
+        texture_format: crate::unity_engine::textureformat::TextureFormat,
+        mip_chain: bool,
+        linear: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor_6(
+        self,
+        width: i32,
+        cubemap_count: i32,
+        texture_format: crate::unity_engine::textureformat::TextureFormat,
+        mip_chain: bool,
+    ) -> ();
+
+    #[method(name = "Apply", args = 2)]
+    pub fn apply(self, update_mipmaps: bool, make_no_longer_readable: bool) -> ();
+
+    #[method(name = "Apply", args = 0)]
+    pub fn apply_2(self) -> ();
+
+    #[method(name = "ValidateIsNotCrunched", args = 1)]
+    pub fn validate_is_not_crunched(
+        flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-cubemaparray")]
+impl CubemapArray {
+    pub fn new(
+        width: i32,
+        cubemap_count: i32,
+        format: crate::unity_engine::experimental::rendering::defaultformat::DefaultFormat,
+        flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CubemapArray),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICubemapArrayMethods>::ctor(this, width, cubemap_count, format, flags);
+        this
+    }
+
+    pub fn new_2(
+        width: i32,
+        cubemap_count: i32,
+        format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CubemapArray),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ICubemapArrayMethods>::ctor_2(this, width, cubemap_count, format, flags);
+        this
+    }
+
+    pub fn new_3(
+        width: i32,
+        cubemap_count: i32,
+        format: crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+        flags : crate :: unity_engine :: experimental :: rendering :: texturecreationflags :: TextureCreationFlags,
+        mip_count: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CubemapArray),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as ICubemapArrayMethods>::ctor_3(
+            this,
+            width,
+            cubemap_count,
+            format,
+            flags,
+            mip_count,
+        );
+        this
+    }
+
+    pub fn new_4(
+        width: i32,
+        cubemap_count: i32,
+        texture_format: crate::unity_engine::textureformat::TextureFormat,
+        mip_count: i32,
+        linear: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CubemapArray),
+                ::core::stringify!(new_4),
+            )
+        });
+        <Self as ICubemapArrayMethods>::ctor_4(
+            this,
+            width,
+            cubemap_count,
+            texture_format,
+            mip_count,
+            linear,
+        );
+        this
+    }
+
+    pub fn new_5(
+        width: i32,
+        cubemap_count: i32,
+        texture_format: crate::unity_engine::textureformat::TextureFormat,
+        mip_chain: bool,
+        linear: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CubemapArray),
+                ::core::stringify!(new_5),
+            )
+        });
+        <Self as ICubemapArrayMethods>::ctor_5(
+            this,
+            width,
+            cubemap_count,
+            texture_format,
+            mip_chain,
+            linear,
+        );
+        this
+    }
+
+    pub fn new_6(
+        width: i32,
+        cubemap_count: i32,
+        texture_format: crate::unity_engine::textureformat::TextureFormat,
+        mip_chain: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CubemapArray),
+                ::core::stringify!(new_6),
+            )
+        });
+        <Self as ICubemapArrayMethods>::ctor_6(
+            this,
+            width,
+            cubemap_count,
+            texture_format,
+            mip_chain,
+        );
+        this
+    }
+}

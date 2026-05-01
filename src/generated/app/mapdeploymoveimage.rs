@@ -1,0 +1,69 @@
+
+use crate::app::mapimagecore_1::IMapImageCore_1;
+use crate::app::mapimagecore_1::MapImageCore_1;
+use crate::app::mapimagecoresbyte::IMapImageCoreSbyte;
+use crate::app::mapimagecoresbyte::MapImageCoreSbyte;
+use crate::app::mapimageindex::IMapImageIndex;
+use crate::app::mapimageindex::MapImageIndex;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploymoveimage/MapDeployMoveImage.md")))]
+#[::unity2::class(namespace = "App", name = "MapDeployMoveImage")]
+#[parent(crate::app::mapimagecoresbyte::MapImageCoreSbyte)]
+pub struct MapDeployMoveImage {
+    #[rename(name = "m_Display")]
+    pub m_display: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<
+        crate::app::mapdeploy::MapDeploy,
+    >,
+}
+
+#[cfg(feature = "app-mapdeploymoveimage")]
+#[::unity2::methods]
+impl MapDeployMoveImage {
+    #[method(name = "get_Display", args = 0)]
+    pub fn get_display(
+        self,
+    ) -> crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<
+        crate::app::mapdeploy::MapDeploy,
+    >;
+
+    #[method(name = "set_Display", args = 1)]
+    pub fn set_display(
+        self,
+        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_DisplayType<
+            crate::app::mapdeploy::MapDeploy,
+        >,
+    ) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "Get", args = 2)]
+    pub fn get(self, x: i32, z: i32) -> i8;
+
+    #[method(name = "GetPure", args = 2)]
+    pub fn get_pure(self, x: i32, z: i32) -> i8;
+
+    #[method(name = "GetBool", args = 2)]
+    pub fn get_bool(self, x: i32, z: i32) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapdeploymoveimage")]
+impl MapDeployMoveImage {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDeployMoveImage),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDeployMoveImageMethods>::ctor(this);
+        this
+    }
+}

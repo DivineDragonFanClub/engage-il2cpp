@@ -1,0 +1,44 @@
+
+use crate::combat::state::IState;
+use crate::combat::state::State;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiondisablefootik/ActionDisableFootIK.md")))]
+#[::unity2::class(namespace = "Combat", name = "ActionDisableFootIK")]
+#[parent(crate::combat::state::State)]
+pub struct ActionDisableFootIK {
+    #[rename(name = "m_IsOnlyHorse")]
+    pub m_is_only_horse: bool,
+    #[rename(name = "m_IsOnlyDragonic")]
+    pub m_is_only_dragonic: bool,
+}
+
+#[cfg(feature = "combat-actiondisablefootik")]
+#[::unity2::methods]
+impl ActionDisableFootIK {
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, is_only_horse: bool, is_only_dragonic: bool) -> ();
+
+    #[method(name = "OnEnter", args = 0)]
+    pub fn on_enter(self) -> ();
+}
+
+#[cfg(feature = "combat-actiondisablefootik")]
+impl ActionDisableFootIK {
+    pub fn new(is_only_horse: bool, is_only_dragonic: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ActionDisableFootIK),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IActionDisableFootIKMethods>::ctor(this, is_only_horse, is_only_dragonic);
+        this
+    }
+}

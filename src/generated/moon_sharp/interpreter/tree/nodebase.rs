@@ -1,0 +1,99 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/nodebase/NodeBase.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter.Tree", name = "NodeBase")]
+#[parent(crate::system::object::Object)]
+pub struct NodeBase {}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
+#[::unity2::methods]
+impl NodeBase {
+    #[method(name = "get_Script", args = 0)]
+    pub fn get_script(self) -> crate::moon_sharp::interpreter::script::Script;
+
+    #[method(name = "set_Script", args = 1)]
+    pub fn set_script(self, value: crate::moon_sharp::interpreter::script::Script) -> ();
+
+    #[method(name = "get_LoadingContext", args = 0)]
+    pub fn get_loading_context(
+        self,
+    ) -> crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext;
+
+    #[method(name = "set_LoadingContext", args = 1)]
+    pub fn set_loading_context(
+        self,
+        value : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> ();
+
+    #[method(name = "Compile", args = 1)]
+    pub fn compile(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> ();
+
+    #[method(name = "UnexpectedTokenType", args = 1)]
+    pub fn unexpected_token_type(
+        t: crate::moon_sharp::interpreter::tree::token::Token,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "CheckTokenType", args = 2)]
+    pub fn check_token_type(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        token_type: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "CheckTokenType", args = 3)]
+    pub fn check_token_type_2(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        token_type1: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+        token_type2: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "CheckTokenType", args = 4)]
+    pub fn check_token_type_3(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        token_type1: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+        token_type2: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+        token_type3: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "CheckTokenTypeNotNext", args = 2)]
+    pub fn check_token_type_not_next(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        token_type: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+    ) -> ();
+
+    #[method(name = "CheckMatch", args = 4)]
+    pub fn check_match(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        original_token: crate::moon_sharp::interpreter::tree::token::Token,
+        expected_token_type: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+        expected_token_text: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
+impl NodeBase {
+    pub fn new(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NodeBase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INodeBaseMethods>::ctor(this, lcontext);
+        this
+    }
+}

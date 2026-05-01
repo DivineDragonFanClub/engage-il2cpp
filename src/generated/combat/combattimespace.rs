@@ -1,0 +1,135 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/combattimespace/CombatTimespace.md")))]
+#[::unity2::class(namespace = "Combat", name = "CombatTimespace")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct CombatTimespace {
+    #[static_field]
+    #[rename(name = "s_time")]
+    pub s_time: f32,
+    #[static_field]
+    #[rename(name = "EditorPrefsName")]
+    pub editor_prefs_name: ::unity2::Il2CppString,
+    #[rename(name = "HitStopSpeedCurve")]
+    pub hit_stop_speed_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "EvasionSpeedCurve")]
+    pub evasion_speed_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "SkillDisplayFreezeDuration")]
+    pub skill_display_freeze_duration: f32,
+    #[rename(name = "BossKilledHitStopTime")]
+    pub boss_killed_hit_stop_time: f32,
+    #[rename(name = "BossKilledTimeScale")]
+    pub boss_killed_time_scale: f32,
+    #[rename(name = "BossKilledTimeScaleDuration")]
+    pub boss_killed_time_scale_duration: f32,
+    #[rename(name = "isCombatSkipped")]
+    pub is_combat_skipped: bool,
+}
+
+#[cfg(feature = "combat-combattimespace")]
+#[::unity2::methods]
+impl CombatTimespace {
+    #[method(name = "get_SmoothDeltaTime", args = 0)]
+    pub fn get_smooth_delta_time() -> f32;
+
+    #[method(name = "get_Time", args = 0)]
+    pub fn get_time() -> f32;
+
+    #[method(name = "get_debugTimeScale", args = 0)]
+    pub fn get_debug_time_scale(self) -> f32;
+
+    #[method(name = "set_debugTimeScale", args = 1)]
+    pub fn set_debug_time_scale(self, value: f32) -> ();
+
+    #[method(name = "get_HitStop", args = 0)]
+    pub fn get_hit_stop(self) -> crate::combat::hitstop::HitStop;
+
+    #[method(name = "set_HitStop", args = 1)]
+    pub fn set_hit_stop(self, value: crate::combat::hitstop::HitStop) -> ();
+
+    #[method(name = "get_EvasionSpeed", args = 0)]
+    pub fn get_evasion_speed(self) -> crate::combat::evasionspeed::EvasionSpeed;
+
+    #[method(name = "set_EvasionSpeed", args = 1)]
+    pub fn set_evasion_speed(self, value: crate::combat::evasionspeed::EvasionSpeed) -> ();
+
+    #[method(name = "get_PresentationTimeScale", args = 0)]
+    pub fn get_presentation_time_scale(self) -> f32;
+
+    #[method(name = "set_PresentationTimeScale", args = 1)]
+    pub fn set_presentation_time_scale(self, value: f32) -> ();
+
+    #[method(name = "get_SkillDisplayTimeScale", args = 0)]
+    pub fn get_skill_display_time_scale(self) -> f32;
+
+    #[method(name = "set_SkillDisplayTimeScale", args = 1)]
+    pub fn set_skill_display_time_scale(self, value: f32) -> ();
+
+    #[method(name = "get_UserFastForwardTimeScale", args = 0)]
+    pub fn get_user_fast_forward_time_scale(self) -> f32;
+
+    #[method(name = "set_UserFastForwardTimeScale", args = 1)]
+    pub fn set_user_fast_forward_time_scale(self, value: f32) -> ();
+
+    #[method(name = "get_FinalTimeScale", args = 0)]
+    pub fn get_final_time_scale(self) -> f32;
+
+    #[method(name = "set_FinalTimeScale", args = 1)]
+    pub fn set_final_time_scale(self, value: f32) -> ();
+
+    #[method(name = "MultiplyToWorldTimeScale", args = 1)]
+    pub fn multiply_to_world_time_scale(self, scale: f32) -> ();
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "ResetWorldAndUserTimeScale", args = 0)]
+    pub fn reset_world_and_user_time_scale(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "InternalGUI", args = 0)]
+    pub fn internal_gui(self) -> ();
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "GetCharactersTotalTimeScale", args = 0)]
+    pub fn get_characters_total_time_scale() -> f32;
+
+    #[method(name = "SimulatePhysics", args = 2)]
+    pub fn simulate_physics(total_time: f32, delta_time: f32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-combattimespace")]
+impl CombatTimespace {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CombatTimespace),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICombatTimespaceMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,101 @@
+
+use crate::system::collections::generic::list_1::IList_1;
+use crate::system::collections::generic::list_1::List_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/objectenumerator/ObjectEnumerator.md")))]
+#[::unity2::class(namespace = "App", name = "ObjectEnumerator")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: gameobject :: GameObject >)]
+pub struct ObjectEnumerator {}
+
+#[cfg(feature = "app-objectenumerator")]
+#[::unity2::methods]
+impl ObjectEnumerator {
+    #[method(name = "FindByName", args = 2)]
+    pub fn find_by_name(
+        name: ::unity2::Il2CppString,
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::app::objectenumerator::ObjectEnumerator;
+
+    #[method(name = "FindByNameImpl", args = 2)]
+    pub fn find_by_name_impl(
+        self,
+        name: ::unity2::Il2CppString,
+        scene: crate::unity_engine::scene_management::scene::Scene,
+    ) -> ();
+
+    #[method(name = "FindByNameImpl", args = 2)]
+    pub fn find_by_name_impl_2(
+        self,
+        name: ::unity2::Il2CppString,
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[method(name = "FindByLayer", args = 2)]
+    pub fn find_by_layer(
+        layer: i32,
+        root: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::app::objectenumerator::ObjectEnumerator;
+
+    #[method(name = "FindByLayer", args = 2)]
+    pub fn find_by_layer_2(
+        layer: ::unity2::Il2CppString,
+        root: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::app::objectenumerator::ObjectEnumerator;
+
+    #[method(name = "FindByLayerImpl", args = 2)]
+    pub fn find_by_layer_impl(
+        self,
+        layer: i32,
+        scene: crate::unity_engine::scene_management::scene::Scene,
+    ) -> ();
+
+    #[method(name = "FindByLayerImpl", args = 2)]
+    pub fn find_by_layer_impl_2(
+        self,
+        layer: i32,
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[method(name = "FindParent", args = 1)]
+    pub fn find_parent(
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::app::objectenumerator::ObjectEnumerator;
+
+    #[method(name = "FindParentImpl", args = 1)]
+    pub fn find_parent_impl(self, transform: crate::unity_engine::transform::Transform) -> ();
+
+    #[method(name = "FindChild", args = 1)]
+    pub fn find_child(
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::app::objectenumerator::ObjectEnumerator;
+
+    #[method(name = "FindChildImpl", args = 1)]
+    pub fn find_child_impl(self, transform: crate::unity_engine::transform::Transform) -> ();
+
+    #[method(name = "SetActive", args = 1)]
+    pub fn set_active(self, enabled: bool) -> crate::app::objectenumerator::ObjectEnumerator;
+
+    #[method(name = "Dump", args = 0)]
+    pub fn dump(self) -> crate::app::objectenumerator::ObjectEnumerator;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-objectenumerator")]
+impl ObjectEnumerator {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ObjectEnumerator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IObjectEnumeratorMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,393 @@
+
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maproute/MapRoute.md")))]
+#[::unity2::class(namespace = "App", name = "MapRoute")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maproute :: MapRoute >)]
+pub struct MapRoute {
+    #[static_field]
+    #[rename(name = "Max")]
+    pub max: i32,
+    #[static_field]
+    #[rename(name = "ScoreCross")]
+    pub score_cross: i32,
+    #[static_field]
+    #[rename(name = "ScoreContinue")]
+    pub score_continue: i32,
+    #[static_field]
+    #[rename(name = "ScoreDistance")]
+    pub score_distance: i32,
+    #[static_field]
+    #[rename(name = "ScoreAvoid")]
+    pub score_avoid: i32,
+    #[static_field]
+    #[rename(name = "ScoreDef")]
+    pub score_def: i32,
+    #[rename(name = "m_Routes")]
+    pub m_routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
+    #[rename(name = "m_Count")]
+    pub m_count: u8,
+    #[rename(name = "m_FirstX")]
+    pub m_first_x: i8,
+    #[rename(name = "m_FirstZ")]
+    pub m_first_z: i8,
+    #[rename(name = "m_LastX")]
+    pub m_last_x: i8,
+    #[rename(name = "m_LastZ")]
+    pub m_last_z: i8,
+    #[rename(name = "m_CursorX")]
+    pub m_cursor_x: i8,
+    #[rename(name = "m_CursorZ")]
+    pub m_cursor_z: i8,
+    #[rename(name = "m_Cost")]
+    pub m_cost: u8,
+    #[rename(name = "m_Mind")]
+    pub m_mind: crate::app::mapmind::MapMind_Type,
+    #[rename(name = "m_Active")]
+    pub m_active: bool,
+    #[rename(name = "m_Cells")]
+    pub m_cells: ::unity2::Array<crate::app::mappos::MapPos>,
+}
+
+#[cfg(feature = "app-maproute")]
+#[::unity2::methods]
+impl MapRoute {
+    #[method(name = "GetGoalX", args = 2)]
+    pub fn get_goal_x(x: i32, routes: ::unity2::Array<crate::app::dir_2::Dir_Type>) -> i32;
+
+    #[method(name = "GetGoalZ", args = 2)]
+    pub fn get_goal_z(z: i32, routes: ::unity2::Array<crate::app::dir_2::Dir_Type>) -> i32;
+
+    #[method(name = "GetGoalDir", args = 1)]
+    pub fn get_goal_dir(
+        routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
+    ) -> crate::app::dir_2::Dir_Type;
+
+    #[method(name = "GetGoalX", args = 0)]
+    pub fn get_goal_x_2(self) -> i32;
+
+    #[method(name = "GetGoalZ", args = 0)]
+    pub fn get_goal_z_2(self) -> i32;
+
+    #[method(name = "GetGoalX", args = 1)]
+    pub fn get_goal_x_3(self, x: i32) -> i32;
+
+    #[method(name = "GetGoalZ", args = 1)]
+    pub fn get_goal_z_3(self, z: i32) -> i32;
+
+    #[method(name = "GetGoalDir", args = 0)]
+    pub fn get_goal_dir_2(self) -> crate::app::dir_2::Dir_Type;
+
+    #[method(name = "SetOneRoute", args = 2)]
+    pub fn set_one_route(
+        routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
+        dir: crate::app::dir_2::Dir_Type,
+    ) -> ();
+
+    #[method(name = "SetOneRoute", args = 5)]
+    pub fn set_one_route_2(
+        routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
+        sx: i32,
+        sz: i32,
+        tx: i32,
+        tz: i32,
+    ) -> ();
+
+    #[method(name = "GetRouteCost", args = 4)]
+    pub fn get_route_cost(
+        unit: crate::app::unit::Unit,
+        first_x: i32,
+        first_z: i32,
+        routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
+    ) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "Reset", args = 2)]
+    pub fn reset_2(self, x: i32, z: i32) -> ();
+
+    #[method(name = "Reset", args = 1)]
+    pub fn reset_3(self, mind: crate::app::mapmind::MapMind_Type) -> ();
+
+    #[method(name = "Tick", args = 2)]
+    pub fn tick(self, x: i32, z: i32) -> ();
+
+    #[method(name = "GetMindMask", args = 3)]
+    pub fn get_mind_mask(
+        self,
+        x: i32,
+        z: i32,
+        flag: crate::app::maproute::MapRoute_Flag,
+    ) -> crate::app::maproute::MapRoute_Flag;
+
+    #[method(name = "TickMind", args = 3)]
+    pub fn tick_mind(self, x: i32, z: i32, flag: crate::app::maproute::MapRoute_Flag) -> bool;
+
+    #[method(name = "CanMindSeek", args = 3)]
+    pub fn can_mind_seek(self, x: i32, z: i32, flag: crate::app::maproute::MapRoute_Flag) -> bool;
+
+    #[method(name = "CanPassable", args = 1)]
+    pub fn can_passable(self, deploy: crate::app::mapdeploy::MapDeploy) -> bool;
+
+    #[method(name = "GetCross", args = 2)]
+    pub fn get_cross(self, x: i32, z: i32) -> i32;
+
+    #[method(name = "SetForAI", args = 4)]
+    pub fn set_for_ai(self, first_x: i32, first_z: i32, last_x: i32, last_z: i32) -> ();
+
+    #[method(name = "SetForReplay", args = 4)]
+    pub fn set_for_replay(self, first_x: i32, first_z: i32, last_x: i32, last_z: i32) -> ();
+
+    #[method(name = "SetForResume", args = 4)]
+    pub fn set_for_resume(self, first_x: i32, first_z: i32, last_x: i32, last_z: i32) -> ();
+
+    #[method(name = "SetForEvent", args = 4)]
+    pub fn set_for_event(self, first_x: i32, first_z: i32, last_x: i32, last_z: i32) -> ();
+
+    #[method(name = "SetForEvent", args = 3)]
+    pub fn set_for_event_2(self, first_x: i32, first_z: i32, str: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "SetForEscape", args = 1)]
+    pub fn set_for_escape(self, dir: crate::app::dir_2::Dir_Type) -> ();
+
+    #[method(name = "get_Routes", args = 0)]
+    pub fn get_routes(self) -> ::unity2::Array<crate::app::dir_2::Dir_Type>;
+
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[method(name = "get_FirstX", args = 0)]
+    pub fn get_first_x(self) -> i32;
+
+    #[method(name = "get_FirstZ", args = 0)]
+    pub fn get_first_z(self) -> i32;
+
+    #[method(name = "get_LastX", args = 0)]
+    pub fn get_last_x(self) -> i32;
+
+    #[method(name = "get_LastZ", args = 0)]
+    pub fn get_last_z(self) -> i32;
+
+    #[method(name = "get_CursorX", args = 0)]
+    pub fn get_cursor_x(self) -> i32;
+
+    #[method(name = "get_CursorZ", args = 0)]
+    pub fn get_cursor_z(self) -> i32;
+
+    #[method(name = "get_Mind", args = 0)]
+    pub fn get_mind(self) -> crate::app::mapmind::MapMind_Type;
+
+    #[method(name = "GetMovePower", args = 1)]
+    pub fn get_move_power(self, unit: crate::app::unit::Unit) -> i32;
+
+    #[method(name = "TryAddMove", args = 2)]
+    pub fn try_add_move(self, x: i32, z: i32) -> bool;
+
+    #[method(name = "TickMove", args = 2)]
+    pub fn tick_move(self, x: i32, z: i32) -> ();
+
+    #[method(name = "TickMindHere", args = 3)]
+    pub fn tick_mind_here(self, x: i32, z: i32, flag: crate::app::maproute::MapRoute_Flag) -> bool;
+
+    #[method(name = "TryGetCandidate", args = 8)]
+    pub fn try_get_candidate(
+        self,
+        unit: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        flag: crate::app::maproute::MapRoute_Flag,
+        candidate_x: i32,
+        candidate_z: i32,
+        candidate_mind: crate::app::mapmind::MapMind_Type,
+        candidate_score_terrain: i32,
+    ) -> bool;
+
+    #[method(name = "BeginMaskMove", args = 4)]
+    pub fn begin_mask_move(
+        self,
+        unit: crate::app::unit::Unit,
+        start_x: i32,
+        start_z: i32,
+        move_power: i32,
+    ) -> ();
+
+    #[method(name = "EndMaskMove", args = 0)]
+    pub fn end_mask_move(self) -> ();
+
+    #[method(name = "TickMindSeek", args = 3)]
+    pub fn tick_mind_seek(self, x: i32, z: i32, flag: crate::app::maproute::MapRoute_Flag) -> bool;
+
+    #[method(name = "GetMindSeekScore", args = 1)]
+    pub fn get_mind_seek_score(self, mind: crate::app::mapmind::MapMind_Type) -> i32;
+
+    #[method(name = "GetMindSeekScoreTerrain", args = 3)]
+    pub fn get_mind_seek_score_terrain(self, x: i32, z: i32, range: i32) -> i32;
+
+    #[method(name = "Seek", args = 2)]
+    pub fn seek(self, x: i32, z: i32) -> ();
+
+    #[method(name = "AddRouteLast", args = 1)]
+    pub fn add_route_last(self, dir: crate::app::dir_2::Dir_Type) -> ();
+
+    #[method(name = "AddRouteFirst", args = 1)]
+    pub fn add_route_first(self, dir: crate::app::dir_2::Dir_Type) -> ();
+
+    #[method(name = "Clamp", args = 4)]
+    pub fn clamp(self, first_x: i32, first_z: i32, last_x: i32, last_z: i32) -> ();
+
+    #[method(name = "TryBack", args = 2)]
+    pub fn try_back(self, x: i32, z: i32) -> bool;
+
+    #[method(name = "Back", args = 1)]
+    pub fn back(self, index: i32) -> ();
+
+    #[method(name = "ForEach", args = 4)]
+    pub fn for_each(
+        routes: ::unity2::Array<crate::app::dir_2::Dir_Type>,
+        first_x: i32,
+        first_z: i32,
+        func: crate::app::maproute::MapRoute_Func,
+    ) -> ();
+
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
+
+    #[method(name = "IsActive", args = 0)]
+    pub fn is_active(self) -> bool;
+
+    #[method(name = "SetActive", args = 1)]
+    pub fn set_active(self, active: bool) -> ();
+}
+
+#[cfg(feature = "app-maproute")]
+impl MapRoute {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapRoute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapRouteMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maproute/MapRoute_Flag.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapRoute_Flag {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapRoute_Flag {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapRoute.Flag";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapRoute_Flag {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapRoute_Flag {
+    pub fn attack() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn talk() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn dance() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn informal() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn no_update() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn resume() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn mask_mind() -> Self {
+        Self { value: 95 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maproute/MapRoute_Func.md")))]
+#[::unity2::class(namespace = "App", name = "MapRoute.Func")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapRoute_Func {}
+
+#[cfg(feature = "app-maproute")]
+#[::unity2::methods]
+impl MapRoute_Func {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, x: i32, z: i32) -> ();
+}
+
+#[cfg(feature = "app-maproute")]
+impl MapRoute_Func {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapRoute_Func),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapRoute_FuncMethods>::ctor(this, object, method);
+        this
+    }
+}

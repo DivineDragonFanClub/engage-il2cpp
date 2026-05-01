@@ -1,0 +1,139 @@
+
+use crate::app::talk3_d::talktag::ITalkTag;
+use crate::app::talk3_d::talktag::TalkTag;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagwindow/TalkTagWindow.md")))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkTagWindow")]
+#[parent(crate::app::talk3_d::talktag::TalkTag)]
+pub struct TalkTagWindow {
+    #[rename(name = "m_TagID")]
+    pub m_tag_id: crate::app::talk3_d::talktagwindow::TalkTagWindow_TagID,
+    #[rename(name = "m_Pid")]
+    pub m_pid: ::unity2::Il2CppString,
+    #[rename(name = "m_PidForCreate")]
+    pub m_pid_for_create: ::unity2::Il2CppString,
+    #[rename(name = "m_LocationName")]
+    pub m_location_name: ::unity2::Il2CppString,
+    #[rename(name = "m_ReplaceName")]
+    pub m_replace_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-talk3_d-talktagwindow")]
+#[::unity2::methods]
+impl TalkTagWindow {
+    #[method(name = "Initialize", args = 1)]
+    pub fn initialize(self, talk_ptr: crate::app::talk3_d::talkptr::TalkPtr) -> ();
+
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+
+    #[method(name = "ExecuteForCharacterPreLoad", args = 0)]
+    pub fn execute_for_character_pre_load(self) -> ();
+
+    #[method(name = "GetResult", args = 0)]
+    pub fn get_result(self) -> crate::app::talk3_d::talktag::TalkTag_Result;
+
+    #[method(name = "GetPID", args = 0)]
+    pub fn get_pid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talktagwindow")]
+impl TalkTagWindow {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkTagWindow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkTagWindowMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagwindow/TalkTagWindow_TagID.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TalkTagWindow_TagID {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TalkTagWindow_TagID {
+    const NAMESPACE: &'static str = "App.Talk3D";
+
+    const NAME: &'static str = "TalkTagWindow.TagID";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TalkTagWindow_TagID {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TalkTagWindow_TagID {
+    pub fn make() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn delete() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn active() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn try_make() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn silhouette_on() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn silhouette_off() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn show_model() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn hide_model() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn show_bg() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn hide_bg() -> Self {
+        Self { value: 9 }
+    }
+}

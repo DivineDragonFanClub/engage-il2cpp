@@ -1,0 +1,63 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/raycastresult/RaycastResult.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RaycastResult {
+    pub m_game_object: crate::unity_engine::gameobject::GameObject,
+    pub module: crate::unity_engine::event_systems::baseraycaster::BaseRaycaster,
+    pub distance: f32,
+    pub index: f32,
+    pub depth: i32,
+    pub sorting_layer: i32,
+    pub sorting_order: i32,
+    pub world_position: crate::unity_engine::vector3::Vector3,
+    pub world_normal: crate::unity_engine::vector3::Vector3,
+    pub screen_position: crate::unity_engine::vector2::Vector2,
+    pub display_index: i32,
+}
+
+impl ::unity2::ClassIdentity for RaycastResult {
+    const NAMESPACE: &'static str = "UnityEngine.EventSystems";
+
+    const NAME: &'static str = "RaycastResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RaycastResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-event_systems-raycastresult")]
+#[::unity2::methods(value)]
+impl RaycastResult {
+    #[method(name = "get_gameObject", args = 0)]
+    pub fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "set_gameObject", args = 1)]
+    pub fn set_game_object(self, value: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "get_isValid", args = 0)]
+    pub fn get_is_valid(self) -> bool;
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}

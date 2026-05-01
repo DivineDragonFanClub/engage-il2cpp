@@ -1,0 +1,85 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/profiling/recorder/Recorder.md")))]
+#[::unity2::class(namespace = "UnityEngine.Profiling", name = "Recorder")]
+#[parent(crate::system::object::Object)]
+pub struct Recorder {
+    #[rename(name = "m_Ptr")]
+    pub m_ptr: ::unity2::IntPtr,
+    #[static_field]
+    #[rename(name = "s_InvalidRecorder")]
+    pub s_invalid_recorder: crate::unity_engine::profiling::recorder::Recorder,
+}
+
+#[cfg(feature = "unity_engine-profiling-recorder")]
+#[::unity2::methods]
+impl Recorder {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, ptr: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Finalize", args = 0)]
+    pub fn finalize(self) -> ();
+
+    #[method(name = "get_isValid", args = 0)]
+    pub fn get_is_valid(self) -> bool;
+
+    #[method(name = "DisposeNative", args = 1)]
+    pub fn dispose_native(ptr: ::unity2::IntPtr) -> ();
+
+    #[method(name = "get_enabled", args = 0)]
+    pub fn get_enabled(self) -> bool;
+
+    #[method(name = "set_enabled", args = 1)]
+    pub fn set_enabled(self, value: bool) -> ();
+
+    #[method(name = "IsEnabled", args = 0)]
+    pub fn is_enabled(self) -> bool;
+
+    #[method(name = "get_elapsedNanoseconds", args = 0)]
+    pub fn get_elapsed_nanoseconds(self) -> i64;
+
+    #[method(name = "get_gpuElapsedNanoseconds", args = 0)]
+    pub fn get_gpu_elapsed_nanoseconds(self) -> i64;
+
+    #[method(name = "get_sampleBlockCount", args = 0)]
+    pub fn get_sample_block_count(self) -> i32;
+
+    #[method(name = "get_gpuSampleBlockCount", args = 0)]
+    pub fn get_gpu_sample_block_count(self) -> i32;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-profiling-recorder")]
+impl Recorder {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Recorder),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRecorderMethods>::ctor(this);
+        this
+    }
+
+    pub fn new_2(ptr: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Recorder),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IRecorderMethods>::ctor_2(this, ptr);
+        this
+    }
+}

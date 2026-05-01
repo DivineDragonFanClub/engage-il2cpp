@@ -1,0 +1,23 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/multipledisplayutilities/MultipleDisplayUtilities.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "MultipleDisplayUtilities")]
+#[parent(crate::system::object::Object)]
+pub struct MultipleDisplayUtilities {}
+
+#[cfg(feature = "unity_engine-ui-multipledisplayutilities")]
+#[::unity2::methods]
+impl MultipleDisplayUtilities {
+    #[method(name = "GetRelativeMousePositionForDrag", args = 2)]
+    pub fn get_relative_mouse_position_for_drag(
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        position: crate::unity_engine::vector2::Vector2,
+    ) -> bool;
+
+    #[method(name = "GetMousePositionRelativeToMainDisplayResolution", args = 0)]
+    pub fn get_mouse_position_relative_to_main_display_resolution(
+    ) -> crate::unity_engine::vector2::Vector2;
+}

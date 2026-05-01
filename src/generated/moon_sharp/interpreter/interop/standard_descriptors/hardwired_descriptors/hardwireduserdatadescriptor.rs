@@ -1,0 +1,36 @@
+
+use crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::DispatchingUserDataDescriptor;
+use crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::IDispatchingUserDataDescriptor;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/standard_descriptors/hardwired_descriptors/hardwireduserdatadescriptor/HardwiredUserDataDescriptor.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop.StandardDescriptors.HardwiredDescriptors",
+    name = "HardwiredUserDataDescriptor"
+)]
+# [parent (crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: dispatchinguserdatadescriptor :: DispatchingUserDataDescriptor)]
+pub struct HardwiredUserDataDescriptor {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor")]
+#[::unity2::methods]
+impl HardwiredUserDataDescriptor {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, t: ::unity2::SystemType) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor")]
+impl HardwiredUserDataDescriptor {
+    pub fn new(t: ::unity2::SystemType) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HardwiredUserDataDescriptor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHardwiredUserDataDescriptorMethods>::ctor(this, t);
+        this
+    }
+}

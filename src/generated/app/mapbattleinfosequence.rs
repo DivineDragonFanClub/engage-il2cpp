@@ -1,0 +1,274 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapbattleinfosequence/MapBattleInfoSequence_AttackInfo_SceneResult.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapBattleInfoSequence_AttackInfo_SceneResult {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapBattleInfoSequence_AttackInfo_SceneResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapBattleInfoSequence.AttackInfo.SceneResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapBattleInfoSequence_AttackInfo_SceneResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapBattleInfoSequence_AttackInfo_SceneResult {
+    pub fn r#break() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn chain_attack() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn chain_guard() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn chain_attack_guard() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn none() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapbattleinfosequence/MapBattleInfoSequence_AttackInfo.md")))]
+#[::unity2::class(namespace = "App", name = "MapBattleInfoSequence.AttackInfo")]
+#[parent(crate::system::object::Object)]
+pub struct MapBattleInfoSequence_AttackInfo {}
+
+#[cfg(feature = "app-mapbattleinfosequence")]
+#[::unity2::methods]
+impl MapBattleInfoSequence_AttackInfo {
+    #[method(name = "get_sideType", args = 0)]
+    pub fn get_side_type(self) -> crate::app::battleside::BattleSide_Type;
+
+    #[method(name = "set_sideType", args = 1)]
+    pub fn set_side_type(self, value: crate::app::battleside::BattleSide_Type) -> ();
+
+    #[method(name = "get_deadSide", args = 0)]
+    pub fn get_dead_side(self) -> crate::app::battleside::BattleSide_Type;
+
+    #[method(name = "set_deadSide", args = 1)]
+    pub fn set_dead_side(self, value: crate::app::battleside::BattleSide_Type) -> ();
+
+    #[method(name = "get_offenseResult", args = 0)]
+    pub fn get_offense_result(
+        self,
+    ) -> crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult;
+
+    #[method(name = "set_offenseResult", args = 1)]
+    pub fn set_offense_result(
+        self,
+        value: crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult,
+    ) -> ();
+
+    #[method(name = "get_defenseResult", args = 0)]
+    pub fn get_defense_result(
+        self,
+    ) -> crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult;
+
+    #[method(name = "set_defenseResult", args = 1)]
+    pub fn set_defense_result(
+        self,
+        value: crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo_SceneResult,
+    ) -> ();
+
+    #[method(name = "get_force", args = 0)]
+    pub fn get_force(self) -> crate::app::force::Force_Type;
+
+    #[method(name = "set_force", args = 1)]
+    pub fn set_force(self, value: crate::app::force::Force_Type) -> ();
+
+    #[method(name = "get_atkString", args = 0)]
+    pub fn get_atk_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_atkString", args = 1)]
+    pub fn set_atk_string(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_selfDamage", args = 0)]
+    pub fn get_self_damage(self) -> i32;
+
+    #[method(name = "set_selfDamage", args = 1)]
+    pub fn set_self_damage(self, value: i32) -> ();
+
+    #[method(name = "get_receiveFirstDamage", args = 0)]
+    pub fn get_receive_first_damage(self) -> i32;
+
+    #[method(name = "set_receiveFirstDamage", args = 1)]
+    pub fn set_receive_first_damage(self, value: i32) -> ();
+
+    #[method(name = "get_sendFirstDamage", args = 0)]
+    pub fn get_send_first_damage(self) -> i32;
+
+    #[method(name = "set_sendFirstDamage", args = 1)]
+    pub fn set_send_first_damage(self, value: i32) -> ();
+
+    #[method(name = "get_isHeal", args = 0)]
+    pub fn get_is_heal(self) -> bool;
+
+    #[method(name = "set_isHeal", args = 1)]
+    pub fn set_is_heal(self, value: bool) -> ();
+
+    #[method(name = "get_isChainAtk", args = 0)]
+    pub fn get_is_chain_atk(self) -> bool;
+
+    #[method(name = "set_isChainAtk", args = 1)]
+    pub fn set_is_chain_atk(self, value: bool) -> ();
+
+    #[method(name = "Set", args = 11)]
+    pub fn set(
+        self,
+        side_type: crate::app::battleside::BattleSide_Type,
+        dead_side: crate::app::battleside::BattleSide_Type,
+        atk_string: ::unity2::Il2CppString,
+        self_damage: i32,
+        first_offense_damage: i32,
+        first_defense_damage: i32,
+        offense_result : crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult,
+        defense_result : crate :: app :: mapbattleinfosequence :: MapBattleInfoSequence_AttackInfo_SceneResult,
+        force: crate::app::force::Force_Type,
+        is_heal: bool,
+        is_chain_atk: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapbattleinfosequence")]
+impl MapBattleInfoSequence_AttackInfo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapBattleInfoSequence_AttackInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapBattleInfoSequence_AttackInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapbattleinfosequence/MapBattleInfoSequence.md")))]
+#[::unity2::class(namespace = "App", name = "MapBattleInfoSequence")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct MapBattleInfoSequence {
+    #[rename(name = "m_AttackList")]
+    pub m_attack_list:
+        ::unity2::Array<crate::app::mapbattleinfosequenceattack::MapBattleInfoSequenceAttack>,
+    #[rename(name = "m_HealRoot")]
+    pub m_heal_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Heal")]
+    pub m_heal: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-mapbattleinfosequence")]
+#[::unity2::methods]
+impl MapBattleInfoSequence {
+    #[method(name = "SetBattleInfo", args = 3)]
+    pub fn set_battle_info(
+        self,
+        b_show_wdw: bool,
+        info: crate::app::battleinfo::BattleInfo,
+        scene_list: crate::app::battlescenelist::BattleSceneList,
+    ) -> ();
+
+    #[method(name = "GetSequenceAttack", args = 4)]
+    pub fn get_sequence_attack(
+        info: crate::app::battleinfo::BattleInfo,
+        scene_list: crate::app::battlescenelist::BattleSceneList,
+        attacks: crate::system::collections::generic::list_1::List_1<
+            crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
+        >,
+        is_separator: bool,
+    ) -> ();
+
+    #[method(name = "SetAttackInfo", args = 6)]
+    pub fn set_attack_info(
+        info: crate::app::battleinfo::BattleInfo,
+        scene_list: crate::app::battlescenelist::BattleSceneList,
+        scene_idx: i32,
+        first_offense_damage: i32,
+        first_defense_damage: i32,
+        attack_info: crate::app::mapbattleinfosequence::MapBattleInfoSequence_AttackInfo,
+    ) -> bool;
+
+    #[method(name = "GetChainAttackCount", args = 3)]
+    pub fn get_chain_attack_count(
+        scene_list: crate::app::battlescenelist::BattleSceneList,
+        idx: i32,
+        is_dead: bool,
+    ) -> i32;
+
+    #[method(name = "NextPushAttack", args = 3)]
+    pub fn next_push_attack(
+        scene_list: crate::app::battlescenelist::BattleSceneList,
+        start_idx: i32,
+        is_dead: bool,
+    ) -> i32;
+
+    #[method(name = "PrePopOrder", args = 2)]
+    pub fn pre_pop_order(
+        scene_list: crate::app::battlescenelist::BattleSceneList,
+        start_idx: i32,
+    ) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapbattleinfosequence")]
+impl MapBattleInfoSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapBattleInfoSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapBattleInfoSequenceMethods>::ctor(this);
+        this
+    }
+}

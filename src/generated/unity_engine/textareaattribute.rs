@@ -1,0 +1,38 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::propertyattribute::IPropertyAttribute;
+use crate::unity_engine::propertyattribute::PropertyAttribute;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/textareaattribute/TextAreaAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "TextAreaAttribute")]
+#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
+pub struct TextAreaAttribute {
+    #[rename(name = "minLines")]
+    pub min_lines: i32,
+    #[rename(name = "maxLines")]
+    pub max_lines: i32,
+}
+
+#[cfg(feature = "unity_engine-textareaattribute")]
+#[::unity2::methods]
+impl TextAreaAttribute {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, min_lines: i32, max_lines: i32) -> ();
+}
+
+#[cfg(feature = "unity_engine-textareaattribute")]
+impl TextAreaAttribute {
+    pub fn new(min_lines: i32, max_lines: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TextAreaAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITextAreaAttributeMethods>::ctor(this, min_lines, max_lines);
+        this
+    }
+}

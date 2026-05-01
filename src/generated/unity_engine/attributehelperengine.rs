@@ -1,0 +1,48 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/attributehelperengine/AttributeHelperEngine.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "AttributeHelperEngine")]
+#[parent(crate::system::object::Object)]
+pub struct AttributeHelperEngine {
+    #[static_field]
+    #[rename(name = "_disallowMultipleComponentArray")]
+    pub disallow_multiple_component_array:
+        ::unity2::Array<crate::unity_engine::disallowmultiplecomponent::DisallowMultipleComponent>,
+    #[static_field]
+    #[rename(name = "_executeInEditModeArray")]
+    pub execute_in_edit_mode_array:
+        ::unity2::Array<crate::unity_engine::executeineditmode::ExecuteInEditMode>,
+    #[static_field]
+    #[rename(name = "_requireComponentArray")]
+    pub require_component_array:
+        ::unity2::Array<crate::unity_engine::requirecomponent::RequireComponent>,
+}
+
+#[cfg(feature = "unity_engine-attributehelperengine")]
+#[::unity2::methods]
+impl AttributeHelperEngine {
+    #[method(name = "GetParentTypeDisallowingMultipleInclusion", args = 1)]
+    pub fn get_parent_type_disallowing_multiple_inclusion(
+        r#type: ::unity2::SystemType,
+    ) -> ::unity2::SystemType;
+
+    #[method(name = "GetRequiredComponents", args = 1)]
+    pub fn get_required_components(
+        klass: ::unity2::SystemType,
+    ) -> ::unity2::Array<::unity2::SystemType>;
+
+    #[method(name = "GetExecuteMode", args = 1)]
+    pub fn get_execute_mode(klass: ::unity2::SystemType) -> i32;
+
+    #[method(name = "CheckIsEditorScript", args = 1)]
+    pub fn check_is_editor_script(klass: ::unity2::SystemType) -> i32;
+
+    #[method(name = "GetDefaultExecutionOrderFor", args = 1)]
+    pub fn get_default_execution_order_for(klass: ::unity2::SystemType) -> i32;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

@@ -1,0 +1,74 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/contextmenu/ContextMenu.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "ContextMenu")]
+pub struct ContextMenu {
+    #[rename(name = "menuItem")]
+    pub menu_item: ::unity2::Il2CppString,
+    #[rename(name = "validate")]
+    pub validate: bool,
+    #[rename(name = "priority")]
+    pub priority: i32,
+}
+
+#[cfg(feature = "unity_engine-contextmenu")]
+#[::unity2::methods]
+impl ContextMenu {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, item_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(self, item_name: ::unity2::Il2CppString, is_validate_function: bool) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor_3(
+        self,
+        item_name: ::unity2::Il2CppString,
+        is_validate_function: bool,
+        priority: i32,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-contextmenu")]
+impl ContextMenu {
+    pub fn new(item_name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ContextMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IContextMenuMethods>::ctor(this, item_name);
+        this
+    }
+
+    pub fn new_2(item_name: ::unity2::Il2CppString, is_validate_function: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ContextMenu),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IContextMenuMethods>::ctor_2(this, item_name, is_validate_function);
+        this
+    }
+
+    pub fn new_3(
+        item_name: ::unity2::Il2CppString,
+        is_validate_function: bool,
+        priority: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ContextMenu),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as IContextMenuMethods>::ctor_3(this, item_name, is_validate_function, priority);
+        this
+    }
+}

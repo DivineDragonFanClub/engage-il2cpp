@@ -1,0 +1,66 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshopexchangeresultpopup/RefineShopExchangeResultPopup.md")))]
+#[::unity2::class(namespace = "App", name = "RefineShopExchangeResultPopup")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct RefineShopExchangeResultPopup {
+    #[rename(name = "m_TargetIconImage")]
+    pub m_target_icon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_TargetNameText")]
+    pub m_target_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TargetValueText")]
+    pub m_target_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_SourceIconImage")]
+    pub m_source_icon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_SourceNameText")]
+    pub m_source_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_SourceValueText")]
+    pub m_source_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+}
+
+#[cfg(feature = "app-refineshopexchangeresultpopup")]
+#[::unity2::methods]
+impl RefineShopExchangeResultPopup {
+    #[method(name = "Open", args = 0)]
+    pub fn open(self) -> ();
+
+    #[method(name = "SetData", args = 4)]
+    pub fn set_data(
+        self,
+        target_material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+        target_material_count: i32,
+        source_material_data: crate::app::itemrefineexchangedata::ItemRefineExchangeData,
+        source_material_count: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refineshopexchangeresultpopup")]
+impl RefineShopExchangeResultPopup {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopExchangeResultPopup),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopExchangeResultPopupMethods>::ctor(this);
+        this
+    }
+}

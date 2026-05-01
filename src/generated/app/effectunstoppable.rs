@@ -1,0 +1,58 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectunstoppable/EffectUnstoppable.md")))]
+#[::unity2::class(namespace = "App", name = "EffectUnstoppable")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct EffectUnstoppable {
+    #[rename(name = "m_Threshold")]
+    pub m_threshold: f32,
+    #[rename(name = "m_Position")]
+    pub m_position: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_ParticleSystem")]
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    #[rename(name = "m_IsStopped")]
+    pub m_is_stopped: bool,
+    #[rename(name = "m_StartSound")]
+    pub m_start_sound: ::unity2::Il2CppString,
+    #[rename(name = "m_StopSound")]
+    pub m_stop_sound: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-effectunstoppable")]
+#[::unity2::methods]
+impl EffectUnstoppable {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-effectunstoppable")]
+impl EffectUnstoppable {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EffectUnstoppable),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEffectUnstoppableMethods>::ctor(this);
+        this
+    }
+}

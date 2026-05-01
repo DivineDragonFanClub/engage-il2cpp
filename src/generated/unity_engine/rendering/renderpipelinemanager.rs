@@ -1,0 +1,113 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/renderpipelinemanager/RenderPipelineManager.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "RenderPipelineManager")]
+#[parent(crate::system::object::Object)]
+pub struct RenderPipelineManager {
+    #[static_field]
+    #[rename(name = "s_CurrentPipelineAsset")]
+    pub s_current_pipeline_asset:
+        crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
+    #[static_field]
+    #[rename(name = "s_Cameras")]
+    pub s_cameras: ::unity2::Array<crate::unity_engine::camera::Camera>,
+    #[static_field]
+    #[rename(name = "s_CameraCapacity")]
+    pub s_camera_capacity: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-renderpipelinemanager")]
+#[::unity2::methods]
+impl RenderPipelineManager {
+    #[method(name = "get_currentPipeline", args = 0)]
+    pub fn get_current_pipeline() -> crate::unity_engine::rendering::renderpipeline::RenderPipeline;
+
+    #[method(name = "set_currentPipeline", args = 1)]
+    pub fn set_current_pipeline(
+        value: crate::unity_engine::rendering::renderpipeline::RenderPipeline,
+    ) -> ();
+
+    #[method(name = "add_beginCameraRendering", args = 1)]
+    pub fn add_begin_camera_rendering(
+        value: crate::system::action_2::Action_2<
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            crate::unity_engine::camera::Camera,
+        >,
+    ) -> ();
+
+    #[method(name = "remove_beginCameraRendering", args = 1)]
+    pub fn remove_begin_camera_rendering(
+        value: crate::system::action_2::Action_2<
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            crate::unity_engine::camera::Camera,
+        >,
+    ) -> ();
+
+    #[method(name = "add_endCameraRendering", args = 1)]
+    pub fn add_end_camera_rendering(
+        value: crate::system::action_2::Action_2<
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            crate::unity_engine::camera::Camera,
+        >,
+    ) -> ();
+
+    #[method(name = "remove_endCameraRendering", args = 1)]
+    pub fn remove_end_camera_rendering(
+        value: crate::system::action_2::Action_2<
+            crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+            crate::unity_engine::camera::Camera,
+        >,
+    ) -> ();
+
+    #[method(name = "BeginFrameRendering", args = 2)]
+    pub fn begin_frame_rendering_fn(
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        cameras: ::unity2::Array<crate::unity_engine::camera::Camera>,
+    ) -> ();
+
+    #[method(name = "BeginCameraRendering", args = 2)]
+    pub fn begin_camera_rendering_fn(
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        camera: crate::unity_engine::camera::Camera,
+    ) -> ();
+
+    #[method(name = "EndFrameRendering", args = 2)]
+    pub fn end_frame_rendering_fn(
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        cameras: ::unity2::Array<crate::unity_engine::camera::Camera>,
+    ) -> ();
+
+    #[method(name = "EndCameraRendering", args = 2)]
+    pub fn end_camera_rendering_fn(
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        camera: crate::unity_engine::camera::Camera,
+    ) -> ();
+
+    #[method(name = "CleanupRenderPipeline", args = 0)]
+    pub fn cleanup_render_pipeline() -> ();
+
+    #[method(name = "GetCameras", args = 1)]
+    pub fn get_cameras(
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+    ) -> ();
+
+    #[method(name = "DoRenderLoop_Internal", args = 3)]
+    pub fn do_render_loop_internal(
+        pipe: crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
+        loop_ptr: ::unity2::IntPtr,
+        render_requests: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::camera::Camera_RenderRequest,
+        >,
+    ) -> ();
+
+    #[method(name = "PrepareRenderPipeline", args = 1)]
+    pub fn prepare_render_pipeline(
+        pipeline_asset: crate::unity_engine::rendering::renderpipelineasset::RenderPipelineAsset,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

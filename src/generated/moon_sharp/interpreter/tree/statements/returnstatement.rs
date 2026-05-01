@@ -1,0 +1,78 @@
+
+use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+use crate::moon_sharp::interpreter::tree::nodebase::NodeBase;
+use crate::moon_sharp::interpreter::tree::statement::IStatement;
+use crate::moon_sharp::interpreter::tree::statement::Statement;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/statements/returnstatement/ReturnStatement.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Statements",
+    name = "ReturnStatement"
+)]
+#[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
+pub struct ReturnStatement {
+    #[rename(name = "m_Expression")]
+    pub m_expression: crate::moon_sharp::interpreter::tree::expression::Expression,
+    #[rename(name = "m_Ref")]
+    pub m_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-returnstatement")]
+#[::unity2::methods]
+impl ReturnStatement {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        e: crate::moon_sharp::interpreter::tree::expression::Expression,
+        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> ();
+
+    #[method(name = "Compile", args = 1)]
+    pub fn compile(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-returnstatement")]
+impl ReturnStatement {
+    pub fn new(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        e: crate::moon_sharp::interpreter::tree::expression::Expression,
+        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ReturnStatement),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IReturnStatementMethods>::ctor(this, lcontext, e, sref);
+        this
+    }
+
+    pub fn new_2(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ReturnStatement),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IReturnStatementMethods>::ctor_2(this, lcontext);
+        this
+    }
+}

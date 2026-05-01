@@ -1,0 +1,52 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineringexecute/RefineRingExecute.md")))]
+#[::unity2::class(namespace = "App", name = "RefineRingExecute")]
+#[parent(crate::system::object::Object)]
+pub struct RefineRingExecute {
+    #[static_field]
+    #[rename(name = "m_RefineRingTimesMax")]
+    pub m_refine_ring_times_max: i32,
+}
+
+#[cfg(feature = "app-refineringexecute")]
+#[::unity2::methods]
+impl RefineRingExecute {
+    #[method(name = "Do", args = 3)]
+    pub fn r#do(
+        god_data: crate::app::goddata::GodData,
+        times: i32,
+        new_list: crate::system::collections::generic::list_1::List_1<bool>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::unitring::UnitRing>;
+
+    #[method(name = "AddAchieve", args = 1)]
+    pub fn add_achieve(
+        unit_ring_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::unitring::UnitRing,
+        >,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-refineringexecute")]
+impl RefineRingExecute {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineRingExecute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineRingExecuteMethods>::ctor(this);
+        this
+    }
+}

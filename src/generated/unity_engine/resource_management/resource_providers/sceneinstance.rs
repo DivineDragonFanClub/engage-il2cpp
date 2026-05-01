@@ -1,0 +1,57 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/sceneinstance/SceneInstance.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct SceneInstance {
+    pub m_scene: crate::unity_engine::scene_management::scene::Scene,
+    pub m_operation: crate::unity_engine::asyncoperation::AsyncOperation,
+}
+
+impl ::unity2::ClassIdentity for SceneInstance {
+    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.ResourceProviders";
+
+    const NAME: &'static str = "SceneInstance";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SceneInstance {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneinstance")]
+#[::unity2::methods(value)]
+impl SceneInstance {
+    #[method(name = "get_Scene", args = 0)]
+    pub fn get_scene(self) -> crate::unity_engine::scene_management::scene::Scene;
+
+    #[method(name = "set_Scene", args = 1)]
+    pub fn set_scene(self, value: crate::unity_engine::scene_management::scene::Scene) -> ();
+
+    #[method(name = "Activate", args = 0)]
+    pub fn activate(self) -> ();
+
+    #[method(name = "ActivateAsync", args = 0)]
+    pub fn activate_async(self) -> crate::unity_engine::asyncoperation::AsyncOperation;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, obj: crate::system::object::Object) -> bool;
+}

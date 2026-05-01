@@ -1,0 +1,19 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/util/iinitializableobject/IInitializableObject.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.Util",
+    name = "IInitializableObject"
+)]
+pub struct IInitializableObject {}
+
+#[cfg(feature = "unity_engine-resource_management-util-iinitializableobject")]
+#[::unity2::methods]
+impl IInitializableObject {
+    #[method(name = "Initialize", args = 2)]
+    pub fn initialize(self, id: ::unity2::Il2CppString, data: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "InitializeAsync", args = 3)]
+    pub fn initialize_async (self , rm : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , id : :: unity2 :: Il2CppString , data : :: unity2 :: Il2CppString) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > ;
+}

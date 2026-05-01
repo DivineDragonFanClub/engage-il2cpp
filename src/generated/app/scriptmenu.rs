@@ -1,0 +1,253 @@
+
+use crate::app::debugmenu::DebugMenu;
+use crate::app::debugmenu::IDebugMenu;
+use crate::app::menuitem::IMenuItem;
+use crate::app::menuitem::MenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::scriptutil::IScriptUtil;
+use crate::app::scriptutil::ScriptUtil;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/scriptmenu/ScriptMenu_EventMenu.md")))]
+#[::unity2::class(namespace = "App", name = "ScriptMenu.EventMenu")]
+#[parent(crate::app::debugmenu::DebugMenu)]
+pub struct ScriptMenu_EventMenu {
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+    #[rename(name = "m_Address")]
+    pub m_address: i32,
+    #[rename(name = "m_CancelCall")]
+    pub m_cancel_call: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    #[rename(name = "m_CancelJump")]
+    pub m_cancel_jump: crate::moon_sharp::interpreter::dynvalue::DynValue,
+}
+
+#[cfg(feature = "app-scriptmenu")]
+#[::unity2::methods]
+impl ScriptMenu_EventMenu {
+    #[method(name = "GetIndex", args = 0)]
+    pub fn get_index(self) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "LoadCursor", args = 0)]
+    pub fn load_cursor(self) -> ();
+
+    #[method(name = "ToSelectableIndex", args = 1)]
+    pub fn to_selectable_index(self, select: i32) -> i32;
+
+    #[method(name = "SaveCursor", args = 1)]
+    pub fn save_cursor(self, decide: bool) -> ();
+
+    #[method(name = "OnOpen", args = 0)]
+    pub fn on_open(self) -> ();
+
+    #[method(name = "OnClose", args = 0)]
+    pub fn on_close(self) -> ();
+
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[method(name = "SetCancelCall", args = 1)]
+    pub fn set_cancel_call(self, value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = "SetCancelJump", args = 1)]
+    pub fn set_cancel_jump(self, value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+}
+
+#[cfg(feature = "app-scriptmenu")]
+impl ScriptMenu_EventMenu {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptMenu_EventMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptMenu_EventMenuMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/scriptmenu/ScriptMenu.md")))]
+#[::unity2::class(namespace = "App", name = "ScriptMenu")]
+#[parent(crate::app::scriptutil::ScriptUtil)]
+pub struct ScriptMenu {}
+
+#[cfg(feature = "app-scriptmenu")]
+#[::unity2::methods]
+impl ScriptMenu {
+    #[method(name = "MenuCreate", args = 1)]
+    pub fn menu_create(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "MenuItemCreate", args = 1)]
+    pub fn menu_item_create(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "MenuItemSetMid", args = 1)]
+    pub fn menu_item_set_mid(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[method(name = "MenuItemSetFunc", args = 1)]
+    pub fn menu_item_set_func(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[method(name = "MenuItemSetSelectFunc", args = 1)]
+    pub fn menu_item_set_select_func(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[method(name = "MenuItemSetCondition", args = 1)]
+    pub fn menu_item_set_condition(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[method(name = "MenuAddLabel", args = 1)]
+    pub fn menu_add_label(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[method(name = "MenuCancelCall", args = 1)]
+    pub fn menu_cancel_call(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[method(name = "MenuCancelJump", args = 1)]
+    pub fn menu_cancel_jump(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[method(name = "MenuAddSeparator", args = 1)]
+    pub fn menu_add_separator(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[method(name = "MenuShow", args = 1)]
+    pub fn menu_show(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[method(name = "MenuGetResult", args = 1)]
+    pub fn menu_get_result(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Regist", args = 1)]
+    pub fn regist(script: crate::app::eventscript::EventScript) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-scriptmenu")]
+impl ScriptMenu {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptMenuMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/scriptmenu/ScriptMenu_EventMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "ScriptMenu.EventMenuItem")]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct ScriptMenu_EventMenuItem {
+    #[rename(name = "m_Mid")]
+    pub m_mid: ::unity2::Il2CppString,
+    #[rename(name = "m_Function")]
+    pub m_function: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    #[rename(name = "m_Args")]
+    pub m_args: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    #[rename(name = "m_SelectFunction")]
+    pub m_select_function: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    #[rename(name = "m_SelectArgs")]
+    pub m_select_args: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    #[rename(name = "m_Condition")]
+    pub m_condition: crate::app::scriptutil::ScriptUtil_MenuCondtion,
+}
+
+#[cfg(feature = "app-scriptmenu")]
+#[::unity2::methods]
+impl ScriptMenu_EventMenuItem {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsVisible", args = 0)]
+    pub fn is_visible(self) -> bool;
+
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
+
+    #[method(name = "SetMid", args = 1)]
+    pub fn set_mid(self, mid: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "SetFunc", args = 1)]
+    pub fn set_func(self, func: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = "SetSelectFunc", args = 1)]
+    pub fn set_select_func(self, func: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = "SetArgs", args = 1)]
+    pub fn set_args(self, args: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = "SetSelectArgs", args = 1)]
+    pub fn set_select_args(self, args: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = "SetCondition", args = 1)]
+    pub fn set_condition(self, condition: crate::app::scriptutil::ScriptUtil_MenuCondtion) -> ();
+
+    #[method(name = "SaveCursor", args = 0)]
+    pub fn save_cursor(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+}
+
+#[cfg(feature = "app-scriptmenu")]
+impl ScriptMenu_EventMenuItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptMenu_EventMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptMenu_EventMenuItemMethods>::ctor(this);
+        this
+    }
+}

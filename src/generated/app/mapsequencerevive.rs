@@ -1,0 +1,150 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencerevive/MapSequenceRevive_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceRevive_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceRevive_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceRevive.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceRevive_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceRevive_Label {
+    pub fn revive() -> Self {
+        Self { value: 0 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencerevive/MapSequenceRevive.md")))]
+#[::unity2::class(namespace = "App", name = "MapSequenceRevive")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct MapSequenceRevive {
+    #[rename(name = "m_Units")]
+    pub m_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+}
+
+#[cfg(feature = "app-mapsequencerevive")]
+#[::unity2::methods]
+impl MapSequenceRevive {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    ) -> ();
+
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::app::unit::Unit;
+
+    #[method(name = "Focus", args = 0)]
+    pub fn focus(self) -> ();
+
+    #[method(name = "ReviveBefre", args = 0)]
+    pub fn revive_befre(self) -> ();
+
+    #[method(name = "ControlHpStock", args = 0)]
+    pub fn control_hp_stock(self) -> ();
+
+    #[method(name = "ReviveExec", args = 0)]
+    pub fn revive_exec(self) -> ();
+
+    #[method(name = "ReviveWait", args = 0)]
+    pub fn revive_wait(self) -> ();
+
+    #[method(name = "HideHpStock", args = 0)]
+    pub fn hide_hp_stock(self) -> ();
+
+    #[method(name = "PlayHpStockEffect", args = 0)]
+    pub fn play_hp_stock_effect(self) -> ();
+
+    #[method(name = "IsPlayingHpStockBreakEffect", args = 0)]
+    pub fn is_playing_hp_stock_break_effect(self) -> bool;
+
+    #[method(name = "ShowHpStock", args = 0)]
+    pub fn show_hp_stock(self) -> ();
+
+    #[method(name = "ReleaseHpStock", args = 0)]
+    pub fn release_hp_stock(self) -> ();
+
+    #[method(name = "ReviveAfter", args = 0)]
+    pub fn revive_after(self) -> ();
+
+    #[method(name = "IsNext", args = 0)]
+    pub fn is_next(self) -> bool;
+
+    #[method(name = "CreateBindAfterBattle", args = 2)]
+    pub fn create_bind_after_battle(
+        super_: crate::app::procinst::ProcInst,
+        dead_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    ) -> ();
+
+    #[method(name = "CreateBindTurnBegin", args = 1)]
+    pub fn create_bind_turn_begin(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "CreateBindDeadEvent", args = 2)]
+    pub fn create_bind_dead_event(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    ) -> ();
+
+    #[method(name = "IsTimingTurnBegin", args = 1)]
+    pub fn is_timing_turn_begin(unit: crate::app::unit::Unit) -> bool;
+}
+
+#[cfg(feature = "app-mapsequencerevive")]
+impl MapSequenceRevive {
+    pub fn new(
+        units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceRevive),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceReviveMethods>::ctor(this, units);
+        this
+    }
+}

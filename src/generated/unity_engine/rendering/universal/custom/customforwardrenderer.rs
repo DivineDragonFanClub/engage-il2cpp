@@ -1,0 +1,238 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderer::IScriptableRenderer;
+use crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/customforwardrenderer/CustomForwardRenderer.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom",
+    name = "CustomForwardRenderer"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer)]
+pub struct CustomForwardRenderer {
+# [static_field] # [rename (name = "k_DepthStencilBufferBits")] pub k_depth_stencil_buffer_bits : i32 ,
+# [static_field] # [rename (name = "k_SubLightTag")] pub k_sub_light_tag : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_SetupCustomRPConstants")] pub k_setup_custom_rp_constants : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_CustomExposurePropID")] pub s_custom_exposure_prop_id : i32 ,
+# [static_field] # [rename (name = "s_CustomLodFadeBiasPropID")] pub s_custom_lod_fade_bias_prop_id : i32 ,
+# [rename (name = "m_ColorGradingLutPass")] pub m_color_grading_lut_pass : crate :: unity_engine :: rendering :: universal :: internal :: colorgradinglutpass :: ColorGradingLutPass ,
+# [rename (name = "m_DepthPrepass")] pub m_depth_prepass : crate :: unity_engine :: rendering :: universal :: internal :: depthonlypass :: DepthOnlyPass ,
+# [rename (name = "m_MainLightShadowCasterPass")] pub m_main_light_shadow_caster_pass : crate :: unity_engine :: rendering :: universal :: internal :: mainlightshadowcasterpass :: MainLightShadowCasterPass ,
+# [rename (name = "m_CustomShadowCasterPass")] pub m_custom_shadow_caster_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: customshadowcasterpass :: CustomShadowCasterPass ,
+# [rename (name = "m_CustomShadowNoCasterPass")] pub m_custom_shadow_no_caster_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: customshadownocasterpass :: CustomShadowNoCasterPass ,
+# [rename (name = "m_CustomDecalsPass")] pub m_custom_decals_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: customdecalspass :: CustomDecalsPass ,
+# [rename (name = "m_CustomZPrePass")] pub m_custom_z_pre_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: customzprepass :: CustomZPrePass ,
+# [rename (name = "m_CustomBaseOpaquePass")] pub m_custom_base_opaque_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: custombaseopaquepass :: CustomBaseOpaquePass ,
+# [rename (name = "m_CustomCharaOpaquePass")] pub m_custom_chara_opaque_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: customcharaopaquepass :: CustomCharaOpaquePass ,
+# [rename (name = "m_DrawSkyboxPass")] pub m_draw_skybox_pass : crate :: unity_engine :: rendering :: universal :: drawskyboxpass :: DrawSkyboxPass ,
+# [rename (name = "m_CopyDepthPass")] pub m_copy_depth_pass : crate :: unity_engine :: rendering :: universal :: internal :: copydepthpass :: CopyDepthPass ,
+# [rename (name = "m_CopyColorPass")] pub m_copy_color_pass : crate :: unity_engine :: rendering :: universal :: internal :: copycolorpass :: CopyColorPass ,
+# [rename (name = "m_CustomLightOcclusionPass")] pub m_custom_light_occlusion_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: customlightocclusionpass :: CustomLightOcclusionPass ,
+# [rename (name = "m_TransparentSettingsPass")] pub m_transparent_settings_pass : crate :: unity_engine :: rendering :: universal :: transparentsettingspass :: TransparentSettingsPass ,
+# [rename (name = "m_RenderFormerTransparentForwardPass")] pub m_render_former_transparent_forward_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: custombasetransparentpass :: CustomBaseTransparentPass ,
+# [rename (name = "m_RenderLatterTransparentForwardPass")] pub m_render_latter_transparent_forward_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: custombasetransparentpass :: CustomBaseTransparentPass ,
+# [rename (name = "m_TransparentsLayerPass0")] pub m_transparents_layer_pass0 : crate :: unity_engine :: rendering :: universal :: custom :: internal :: customtransparentslayerpass :: CustomTransparentsLayerPass ,
+# [rename (name = "m_TransparentsLayerPass1")] pub m_transparents_layer_pass1 : crate :: unity_engine :: rendering :: universal :: custom :: internal :: customtransparentslayerpass :: CustomTransparentsLayerPass ,
+# [rename (name = "m_CustomMixedResolutionPass")] pub m_custom_mixed_resolution_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass ,
+# [rename (name = "m_CustomFullEffectPass")] pub m_custom_full_effect_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: customeffectpass :: CustomEffectPass ,
+# [rename (name = "m_PostProcessPass")] pub m_post_process_pass : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass ,
+# [rename (name = "m_FinalPostProcessPass")] pub m_final_post_process_pass : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass ,
+# [rename (name = "m_FinalBlitPass")] pub m_final_blit_pass : crate :: unity_engine :: rendering :: universal :: internal :: finalblitpass :: FinalBlitPass ,
+# [rename (name = "m_CapturePass")] pub m_capture_pass : crate :: unity_engine :: rendering :: universal :: capturepass :: CapturePass ,
+# [rename (name = "m_ZPrepassFeature")] pub m_z_prepass_feature : crate :: unity_engine :: rendering :: universal :: zprepassfeatureset :: ZPrepassFeatureSet ,
+# [rename (name = "zprepassSortingCriteria")] pub zprepass_sorting_criteria : crate :: unity_engine :: rendering :: universal :: zprepasssortingcriteria :: ZPrepassSortingCriteria ,
+# [rename (name = "m_MixedResolutionFlag")] pub m_mixed_resolution_flag : crate :: unity_engine :: rendering :: universal :: forwardrendererdata :: ForwardRendererData_MixedResolutionFlag ,
+# [rename (name = "m_ActiveCameraColorAttachment")] pub m_active_camera_color_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_ActiveCameraDepthAttachment")] pub m_active_camera_depth_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_CameraColorAttachment")] pub m_camera_color_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_CameraDepthAttachment")] pub m_camera_depth_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_DepthTexture")] pub m_depth_texture : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_OpaqueColor")] pub m_opaque_color : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_AfterPostProcessColor")] pub m_after_post_process_color : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_ColorGradingLut")] pub m_color_grading_lut : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_ForwardLights")] pub m_forward_lights : crate :: unity_engine :: rendering :: universal :: internal :: forwardlights :: ForwardLights ,
+# [rename (name = "m_BlitMaterial")] pub m_blit_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_CopyDepthMaterial")] pub m_copy_depth_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_SamplingMaterial")] pub m_sampling_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_ScreenspaceShadowsMaterial")] pub m_screenspace_shadows_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_ZPrepassMaterial")] pub m_z_prepass_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_DownsampleDepthMaterial")] pub m_downsample_depth_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_HalfResoCompositeMaterial")] pub m_half_reso_composite_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_LightOcclusionMaterial")] pub m_light_occlusion_material : crate :: unity_engine :: material :: Material ,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-customforwardrenderer")]
+#[::unity2::methods]
+impl CustomForwardRenderer {
+    #[method(name = "get_isZPrepassEnabled", args = 0)]
+    pub fn get_is_z_prepass_enabled(self) -> bool;
+
+    #[method(name = "get_zprepassFeature", args = 0)]
+    pub fn get_zprepass_feature(
+        self,
+    ) -> crate::unity_engine::rendering::universal::zprepassfeatureset::ZPrepassFeatureSet;
+
+    #[method(name = "set_zprepassFeature", args = 1)]
+    pub fn set_zprepass_feature(
+        self,
+        value: crate::unity_engine::rendering::universal::zprepassfeatureset::ZPrepassFeatureSet,
+    ) -> ();
+
+    #[method(name = "get_decalOcclusionParams", args = 0)]
+    pub fn get_decal_occlusion_params(
+        self,
+    ) -> crate::unity_engine::rendering::universal::custom::decalocclusionparams::DecalOcclusionParams;
+
+    #[method(name = "set_decalOcclusionParams", args = 1)]
+    pub fn set_decal_occlusion_params(
+        self,
+        value : crate :: unity_engine :: rendering :: universal :: custom :: decalocclusionparams :: DecalOcclusionParams,
+    ) -> ();
+
+    #[method(name = "get_customRPParams", args = 0)]
+    pub fn get_custom_rp_params(
+        self,
+    ) -> crate::unity_engine::rendering::universal::custom::customrpparams::CustomRPParams;
+
+    #[method(name = "set_customRPParams", args = 1)]
+    pub fn set_custom_rp_params(
+        self,
+        value: crate::unity_engine::rendering::universal::custom::customrpparams::CustomRPParams,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        data: crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData,
+    ) -> ();
+
+    #[method(name = "GetSubLightTag", args = 0)]
+    pub fn get_sub_light_tag(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "Dispose", args = 1)]
+    pub fn dispose(self, disposing: bool) -> ();
+
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "SetupLights", args = 2)]
+    pub fn setup_lights(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "SetupCullingParameters", args = 2)]
+    pub fn setup_culling_parameters(
+        self,
+        culling_parameters : crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> ();
+
+    #[method(name = "FinishRendering", args = 1)]
+    pub fn finish_rendering(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[method(name = "IsEnabledSharpenFilter", args = 1)]
+    pub fn is_enabled_sharpen_filter(
+        self,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> bool;
+
+    #[method(name = "AcquireCustomBlurParams", args = 3)]
+    pub fn acquire_custom_blur_params(
+        self,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+        custom_blur_enabled: bool,
+        custom_blur_times: i32,
+    ) -> ();
+
+    #[method(name = "AcquireFinalMonoColorToResult", args = 3)]
+    pub fn acquire_final_mono_color_to_result(
+        self,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+        color: crate::unity_engine::color::Color,
+        ratio: f32,
+    ) -> ();
+
+    #[method(name = "IsSpecialFilterEnabled", args = 1)]
+    pub fn is_special_filter_enabled(
+        self,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> bool;
+
+    #[method(name = "CreateCameraRenderTarget", args = 4)]
+    pub fn create_camera_render_target(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        descriptor: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+        create_color: bool,
+        create_depth: bool,
+    ) -> ();
+
+    #[method(name = "PlatformRequiresExplicitMsaaResolve", args = 0)]
+    pub fn platform_requires_explicit_msaa_resolve(self) -> bool;
+
+    #[method(name = "RequiresIntermediateColorTexture", args = 1)]
+    pub fn requires_intermediate_color_texture(
+        self,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> bool;
+
+    #[method(name = "CanCopyDepth", args = 1)]
+    pub fn can_copy_depth(
+        self,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> bool;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-customforwardrenderer")]
+impl CustomForwardRenderer {
+    pub fn new(
+        data: crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomForwardRenderer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomForwardRendererMethods>::ctor(this, data);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/customforwardrenderer/CustomForwardRenderer_Profiling.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom",
+    name = "CustomForwardRenderer.Profiling"
+)]
+#[parent(crate::system::object::Object)]
+pub struct CustomForwardRenderer_Profiling {
+    #[static_field]
+    #[rename(name = "k_Name")]
+    pub k_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "createCameraRenderTarget")]
+    pub create_camera_render_target:
+        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-customforwardrenderer")]
+#[::unity2::methods]
+impl CustomForwardRenderer_Profiling {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

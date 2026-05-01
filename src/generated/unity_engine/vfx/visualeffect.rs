@@ -1,0 +1,50 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/vfx/visualeffect/VisualEffect.md")))]
+#[::unity2::class(namespace = "UnityEngine.VFX", name = "VisualEffect")]
+#[parent(crate::unity_engine::behaviour::Behaviour)]
+pub struct VisualEffect {
+    #[rename(name = "m_cachedEventAttribute")]
+    pub m_cached_event_attribute: crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute,
+    #[rename(name = "outputEventReceived")]
+    pub output_event_received: crate::system::action_1::Action_1<
+        crate::unity_engine::vfx::vfxoutputeventargs::VFXOutputEventArgs,
+    >,
+}
+
+#[cfg(feature = "unity_engine-vfx-visualeffect")]
+#[::unity2::methods]
+impl VisualEffect {
+    #[method(name = "get_visualEffectAsset", args = 0)]
+    pub fn get_visual_effect_asset(
+        self,
+    ) -> crate::unity_engine::vfx::visualeffectasset::VisualEffectAsset;
+
+    #[method(name = "CreateVFXEventAttribute", args = 0)]
+    pub fn create_vfx_event_attribute(
+        self,
+    ) -> crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute;
+
+    #[method(
+        name = "InvokeGetCachedEventAttributeForOutputEvent_Internal",
+        args = 1
+    )]
+    pub fn invoke_get_cached_event_attribute_for_output_event_internal(
+        source: crate::unity_engine::vfx::visualeffect::VisualEffect,
+    ) -> crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute;
+
+    #[method(name = "InvokeOutputEventReceived_Internal", args = 2)]
+    pub fn invoke_output_event_received_internal(
+        source: crate::unity_engine::vfx::visualeffect::VisualEffect,
+        event_name_id: i32,
+    ) -> ();
+}

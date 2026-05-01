@@ -1,0 +1,212 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md")))]
+#[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.ForceList")]
+#[parent(crate::system::object::Object)]
+pub struct UnitInfoViewerSetting_ForceList {
+    #[static_field]
+    #[rename(name = "Types")]
+    pub types: ::unity2::Array<crate::app::force::Force_Type>,
+    #[static_field]
+    #[rename(name = "Names")]
+    pub names: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+#[::unity2::methods]
+impl UnitInfoViewerSetting_ForceList {
+    #[method(name = "GetIndex", args = 1)]
+    pub fn get_index(name: ::unity2::Il2CppString) -> i32;
+
+    #[method(name = "GetForceType", args = 1)]
+    pub fn get_force_type(name: ::unity2::Il2CppString) -> crate::app::force::Force_Type;
+
+    #[method(name = "GetName", args = 1)]
+    pub fn get_name(force_type: crate::app::force::Force_Type) -> ::unity2::Il2CppString;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md")))]
+#[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.UnitData")]
+#[parent(crate::system::object::Object)]
+pub struct UnitInfoViewerSetting_UnitData {
+    #[rename(name = "person")]
+    pub person: ::unity2::Il2CppString,
+    #[rename(name = "job")]
+    pub job: ::unity2::Il2CppString,
+    #[rename(name = "weapon")]
+    pub weapon: ::unity2::Il2CppString,
+    #[rename(name = "force")]
+    pub force: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+#[::unity2::methods]
+impl UnitInfoViewerSetting_UnitData {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+impl UnitInfoViewerSetting_UnitData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitInfoViewerSetting_UnitData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitInfoViewerSetting_UnitDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoviewersetting/UnitInfoViewerSetting.md")))]
+#[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct UnitInfoViewerSetting {
+    #[rename(name = "m_LeftUnit")]
+    pub m_left_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
+    #[rename(name = "m_RightUnit")]
+    pub m_right_unit: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
+    #[rename(name = "m_IsCharaOnlyTransition")]
+    pub m_is_chara_only_transition: bool,
+    #[rename(name = "m_Seq")]
+    pub m_seq: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_Seq,
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+#[::unity2::methods]
+impl UnitInfoViewerSetting {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "CreateUnit", args = 1)]
+    pub fn create_unit(self, side: crate::app::unitinfo::UnitInfo_Side) -> ();
+
+    #[method(name = "GetPerson", args = 1)]
+    pub fn get_person(
+        self,
+        unit_data: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
+    ) -> crate::app::persondata::PersonData;
+
+    #[method(name = "GetJob", args = 1)]
+    pub fn get_job(
+        self,
+        unit_data: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
+    ) -> crate::app::jobdata::JobData;
+
+    #[method(name = "GetWeapon", args = 1)]
+    pub fn get_weapon(
+        self,
+        unit_data: crate::app::unitinfoviewersetting::UnitInfoViewerSetting_UnitData,
+    ) -> crate::app::itemdata::ItemData;
+
+    #[method(name = "IsHidingCanvs", args = 0)]
+    pub fn is_hiding_canvs(self) -> bool;
+
+    #[method(name = "ShowCanvas", args = 0)]
+    pub fn show_canvas(self) -> ();
+
+    #[method(name = "CharaOnlyOn", args = 0)]
+    pub fn chara_only_on(self) -> ();
+
+    #[method(name = "CharaOnlyOff", args = 0)]
+    pub fn chara_only_off(self) -> ();
+
+    #[method(name = "IsCharaOnlyTransition", args = 0)]
+    pub fn is_chara_only_transition(self) -> bool;
+
+    #[method(name = "HasUnit", args = 0)]
+    pub fn has_unit(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+impl UnitInfoViewerSetting {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitInfoViewerSetting),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitInfoViewerSettingMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_Seq.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitInfoViewerSetting_Seq {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitInfoViewerSetting_Seq {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitInfoViewerSetting.Seq";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitInfoViewerSetting_Seq {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitInfoViewerSetting_Seq {
+    pub fn wait_hiding_canvas() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn wait_reshowing_canvas() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn normal() -> Self {
+        Self { value: 2 }
+    }
+}

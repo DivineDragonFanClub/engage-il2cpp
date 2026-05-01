@@ -1,0 +1,54 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/basic_descriptors/memberdescriptor/MemberDescriptor.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors",
+    name = "MemberDescriptor"
+)]
+#[parent(crate::system::object::Object)]
+pub struct MemberDescriptor {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-memberdescriptor")]
+#[::unity2::methods]
+impl MemberDescriptor {
+    #[method(name = "HasAllFlags", args = 2)]
+    pub fn has_all_flags(
+        access : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess,
+        flag : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess,
+    ) -> bool;
+
+    #[method(name = "CanRead", args = 1)]
+    pub fn can_read(
+        desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
+    ) -> bool;
+
+    #[method(name = "CanWrite", args = 1)]
+    pub fn can_write(
+        desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
+    ) -> bool;
+
+    #[method(name = "CanExecute", args = 1)]
+    pub fn can_execute(
+        desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
+    ) -> bool;
+
+    #[method(name = "GetGetterCallbackAsDynValue", args = 3)]
+    pub fn get_getter_callback_as_dyn_value(
+        desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "WithAccessOrNull", args = 2)]
+    pub fn with_access_or_null (desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface , access : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface ;
+
+    #[method(name = "CheckAccess", args = 3)]
+    pub fn check_access(
+        desc : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: imemberdescriptor_interface :: IMemberDescriptor_Interface,
+        access : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess,
+        obj: crate::system::object::Object,
+    ) -> ();
+}

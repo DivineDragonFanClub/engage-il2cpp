@@ -1,0 +1,254 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_Value.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AIValue_Value {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AIValue_Value {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIValue.Value";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIValue_Value {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AIValue_Value {
+    pub fn num() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue.md")))]
+#[::unity2::class(namespace = "App", name = "AIValue")]
+#[parent(crate::system::object::Object)]
+pub struct AIValue {
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: i32,
+    #[rename(name = "m_V")]
+    pub m_v: crate::app::aivalue::AIValue_UnionValue,
+}
+
+#[cfg(feature = "app-aivalue")]
+#[::unity2::methods]
+impl AIValue {
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[method(name = "GetValue", args = 0)]
+    pub fn get_value(self) -> i32;
+
+    #[method(name = "SetValue", args = 1)]
+    pub fn set_value(self, v: i16) -> ();
+
+    #[method(name = "SetPosition", args = 2)]
+    pub fn set_position(self, x: u8, z: u8) -> ();
+
+    #[method(name = "GetPerson", args = 0)]
+    pub fn get_person(self) -> crate::app::persondata::PersonData;
+
+    #[method(name = "GetJob", args = 0)]
+    pub fn get_job(self) -> crate::app::jobdata::JobData;
+
+    #[method(name = "GetTerrain", args = 0)]
+    pub fn get_terrain(self) -> crate::app::terraindata_2::TerrainData_2;
+
+    #[method(name = "GetItem", args = 0)]
+    pub fn get_item(self) -> crate::app::itemdata::ItemData;
+
+    #[method(name = "GetAI", args = 0)]
+    pub fn get_ai(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::aidata::AIData>;
+
+    #[method(name = "GetAIName", args = 0)]
+    pub fn get_ai_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsValidFlagValue", args = 0)]
+    pub fn is_valid_flag_value(self) -> bool;
+
+    #[method(name = "GetFlagValue", args = 0)]
+    pub fn get_flag_value(self) -> i32;
+
+    #[method(name = "SetValue", args = 1)]
+    pub fn set_value_2(self, str: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsSignal", args = 0)]
+    pub fn is_signal(self) -> bool;
+
+    #[method(name = "IsDefault", args = 0)]
+    pub fn is_default(self) -> bool;
+
+    #[method(name = "IsMax", args = 0)]
+    pub fn is_max(self) -> bool;
+
+    #[method(name = "IsSkip", args = 0)]
+    pub fn is_skip(self) -> bool;
+
+    #[method(name = "IsArgument", args = 0)]
+    pub fn is_argument(self) -> bool;
+
+    #[method(name = "GetArgument", args = 2)]
+    pub fn get_argument(
+        self,
+        order: crate::app::aivalue::AIValue_Order,
+        unit: crate::app::unit::Unit,
+    ) -> crate::app::aivalue::AIValue;
+
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "GetString", args = 0)]
+    pub fn get_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "ParseCoord", args = 4)]
+    pub fn parse_coord(str: ::unity2::Il2CppString, index: i32, x: i32, z: i32) -> ();
+
+    #[method(name = "ParseNumber", args = 3)]
+    pub fn parse_number(str: ::unity2::Il2CppString, index: i32, number: i32) -> ();
+
+    #[method(name = "SkipSpace", args = 2)]
+    pub fn skip_space(str: ::unity2::Il2CppString, index: i32) -> i32;
+
+    #[method(name = "IsNumber", args = 1)]
+    pub fn is_number(c: u16) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-aivalue")]
+impl AIValue {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIValue),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIValueMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_UnionValue.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIValue_UnionValue {
+    pub v8_0: u8,
+    pub v8_1: u8,
+    pub v16: i16,
+}
+
+impl ::unity2::ClassIdentity for AIValue_UnionValue {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIValue.UnionValue";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIValue_UnionValue {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_Order.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AIValue_Order {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AIValue_Order {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIValue.Order";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIValue_Order {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AIValue_Order {
+    pub fn cause() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn mind() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 4 }
+    }
+}

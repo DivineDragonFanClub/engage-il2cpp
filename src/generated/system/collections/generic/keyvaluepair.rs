@@ -1,0 +1,19 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/keyvaluepair/KeyValuePair.md")))]
+#[::unity2::class(namespace = "System.Collections.Generic", name = "KeyValuePair")]
+#[parent(crate::system::object::Object)]
+pub struct KeyValuePair {}
+
+#[cfg(feature = "system-collections-generic-keyvaluepair")]
+#[::unity2::methods]
+impl KeyValuePair {
+    #[method(name = "PairToString", args = 2)]
+    pub fn pair_to_string(
+        key: crate::system::object::Object,
+        value: crate::system::object::Object,
+    ) -> ::unity2::Il2CppString;
+}

@@ -1,0 +1,70 @@
+
+use crate::combat::basecameracontroller::BaseCameraController;
+use crate::combat::basecameracontroller::IBaseCameraController;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerbird/CameraControllerBird.md")))]
+#[::unity2::class(namespace = "Combat", name = "CameraControllerBird")]
+#[parent(crate::combat::basecameracontroller::BaseCameraController)]
+pub struct CameraControllerBird {
+    #[rename(name = "CameraPosWalk")]
+    pub camera_pos_walk: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "CameraPosHorse")]
+    pub camera_pos_horse: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "CameraPosFly")]
+    pub camera_pos_fly: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_Time")]
+    pub m_time: f32,
+    #[rename(name = "m_TargetSide")]
+    pub m_target_side: i32,
+}
+
+#[cfg(feature = "combat-cameracontrollerbird")]
+#[::unity2::methods]
+impl CameraControllerBird {
+    #[method(name = "GetVec", args = 1)]
+    pub fn get_vec(
+        self,
+        base_vec: crate::unity_engine::vector3::Vector3,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "CheckUsable", args = 1)]
+    pub fn check_usable(self, is_routine: bool) -> ();
+
+    #[method(name = "Activate", args = 0)]
+    pub fn activate(self) -> ();
+
+    #[method(name = "SetInverse", args = 2)]
+    pub fn set_inverse(self, inv_side: bool, inv_camera: bool) -> ();
+
+    #[method(name = "GetCameraTargets", args = 0)]
+    pub fn get_camera_targets(self) -> ::unity2::Array<i32>;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-cameracontrollerbird")]
+impl CameraControllerBird {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CameraControllerBird),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICameraControllerBirdMethods>::ctor(this);
+        this
+    }
+}

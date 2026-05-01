@@ -1,0 +1,40 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/yieldrequest/YieldRequest.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter", name = "YieldRequest")]
+#[parent(crate::system::object::Object)]
+pub struct YieldRequest {
+    #[rename(name = "ReturnValues")]
+    pub return_values: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-yieldrequest")]
+#[::unity2::methods]
+impl YieldRequest {
+    #[method(name = "get_Forced", args = 0)]
+    pub fn get_forced(self) -> bool;
+
+    #[method(name = "set_Forced", args = 1)]
+    pub fn set_forced(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-yieldrequest")]
+impl YieldRequest {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(YieldRequest),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IYieldRequestMethods>::ctor(this);
+        this
+    }
+}

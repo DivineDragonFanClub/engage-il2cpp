@@ -1,0 +1,56 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/datatypesextension/DataTypesExtension.md")))]
+#[::unity2::class(namespace = "App", name = "DataTypesExtension")]
+#[parent(crate::system::object::Object)]
+pub struct DataTypesExtension {
+    #[static_field]
+    #[rename(name = "DifficultyMidTable")]
+    pub difficulty_mid_table: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "GameModeMidTable")]
+    pub game_mode_mid_table: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "GrowModeMidTable")]
+    pub grow_mode_mid_table: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "DifficultyLabelTable")]
+    pub difficulty_label_table: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "GameModeLabelTable")]
+    pub game_mode_label_table: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "app-datatypesextension")]
+#[::unity2::methods]
+impl DataTypesExtension {
+    #[method(name = "GetName", args = 1)]
+    pub fn get_name(difficulty: crate::app::difficulty::Difficulty) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetName", args = 1)]
+    pub fn get_name_2(game_mode: crate::app::gamemode::GameMode) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetName", args = 1)]
+    pub fn get_name_3(grow_mode: crate::app::growmode::GrowMode) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetName", args = 1)]
+    pub fn get_name_4(gender: crate::app::gender::Gender) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetLabel", args = 1)]
+    pub fn get_label(difficulty: crate::app::difficulty::Difficulty) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetLabel", args = 1)]
+    pub fn get_label_2(game_mode: crate::app::gamemode::GameMode) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsNullOrEmpty", args = 1)]
+    pub fn is_null_or_empty(unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "IsNullOrEmpty", args = 1)]
+    pub fn is_null_or_empty_2(str: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

@@ -1,0 +1,106 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/converters/scripttoclrconversions/ScriptToClrConversions.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop.Converters",
+    name = "ScriptToClrConversions"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScriptToClrConversions {
+    #[static_field]
+    #[rename(name = "WEIGHT_MAX_VALUE")]
+    pub weight_max_value: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_CUSTOM_CONVERTER_MATCH")]
+    pub weight_custom_converter_match: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_EXACT_MATCH")]
+    pub weight_exact_match: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_STRING_TO_STRINGBUILDER")]
+    pub weight_string_to_stringbuilder: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_STRING_TO_CHAR")]
+    pub weight_string_to_char: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_NIL_TO_NULLABLE")]
+    pub weight_nil_to_nullable: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_NIL_TO_REFTYPE")]
+    pub weight_nil_to_reftype: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_VOID_WITH_DEFAULT")]
+    pub weight_void_with_default: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_VOID_WITHOUT_DEFAULT")]
+    pub weight_void_without_default: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_NIL_WITH_DEFAULT")]
+    pub weight_nil_with_default: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_BOOL_TO_STRING")]
+    pub weight_bool_to_string: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_NUMBER_TO_STRING")]
+    pub weight_number_to_string: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_NUMBER_TO_ENUM")]
+    pub weight_number_to_enum: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_USERDATA_TO_STRING")]
+    pub weight_userdata_to_string: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_TABLE_CONVERSION")]
+    pub weight_table_conversion: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_NUMBER_DOWNCAST")]
+    pub weight_number_downcast: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_NO_MATCH")]
+    pub weight_no_match: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_NO_EXTRA_PARAMS_BONUS")]
+    pub weight_no_extra_params_bonus: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_EXTRA_PARAMS_MALUS")]
+    pub weight_extra_params_malus: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_BYREF_BONUSMALUS")]
+    pub weight_byref_bonusmalus: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_VARARGS_MALUS")]
+    pub weight_varargs_malus: i32,
+    #[static_field]
+    #[rename(name = "WEIGHT_VARARGS_EMPTY")]
+    pub weight_varargs_empty: i32,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-converters-scripttoclrconversions")]
+#[::unity2::methods]
+impl ScriptToClrConversions {
+    #[method(name = "DynValueToObject", args = 1)]
+    pub fn dyn_value_to_object(
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> crate::system::object::Object;
+
+    #[method(name = "DynValueToObjectOfType", args = 4)]
+    pub fn dyn_value_to_object_of_type(
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        desired_type: ::unity2::SystemType,
+        default_value: crate::system::object::Object,
+        is_optional: bool,
+    ) -> crate::system::object::Object;
+
+    #[method(name = "DynValueToObjectOfTypeWeight", args = 3)]
+    pub fn dyn_value_to_object_of_type_weight(
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        desired_type: ::unity2::SystemType,
+        is_optional: bool,
+    ) -> i32;
+
+    #[method(name = "GetNumericTypeWeight", args = 1)]
+    pub fn get_numeric_type_weight(desired_type: ::unity2::SystemType) -> i32;
+}

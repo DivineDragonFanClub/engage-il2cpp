@@ -1,0 +1,31 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/assemblycopyrightattribute/AssemblyCopyrightAttribute.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "AssemblyCopyrightAttribute")]
+pub struct AssemblyCopyrightAttribute {
+    #[rename(name = "m_copyright")]
+    pub m_copyright: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "system-reflection-assemblycopyrightattribute")]
+#[::unity2::methods]
+impl AssemblyCopyrightAttribute {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, copyright: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "system-reflection-assemblycopyrightattribute")]
+impl AssemblyCopyrightAttribute {
+    pub fn new(copyright: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssemblyCopyrightAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssemblyCopyrightAttributeMethods>::ctor(this, copyright);
+        this
+    }
+}

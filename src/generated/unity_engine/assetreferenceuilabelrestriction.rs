@@ -1,0 +1,47 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::assetreferenceuirestriction::AssetReferenceUIRestriction;
+use crate::unity_engine::assetreferenceuirestriction::IAssetReferenceUIRestriction;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/assetreferenceuilabelrestriction/AssetReferenceUILabelRestriction.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "AssetReferenceUILabelRestriction")]
+#[parent(crate::unity_engine::assetreferenceuirestriction::AssetReferenceUIRestriction)]
+pub struct AssetReferenceUILabelRestriction {
+    #[rename(name = "m_AllowedLabels")]
+    pub m_allowed_labels: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "m_CachedToString")]
+    pub m_cached_to_string: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]
+#[::unity2::methods]
+impl AssetReferenceUILabelRestriction {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, allowed_labels: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "ValidateAsset", args = 1)]
+    pub fn validate_asset(self, obj: crate::unity_engine::object_2::Object_2) -> bool;
+
+    #[method(name = "ValidateAsset", args = 1)]
+    pub fn validate_asset_2(self, path: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "unity_engine-assetreferenceuilabelrestriction")]
+impl AssetReferenceUILabelRestriction {
+    pub fn new(allowed_labels: ::unity2::Array<::unity2::Il2CppString>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssetReferenceUILabelRestriction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetReferenceUILabelRestrictionMethods>::ctor(this, allowed_labels);
+        this
+    }
+}

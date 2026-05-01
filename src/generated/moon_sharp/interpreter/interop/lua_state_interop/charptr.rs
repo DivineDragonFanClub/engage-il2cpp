@@ -1,0 +1,325 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/lua_state_interop/charptr/CharPtr.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop.LuaStateInterop",
+    name = "CharPtr"
+)]
+#[parent(crate::system::object::Object)]
+pub struct CharPtr {
+    #[rename(name = "chars")]
+    pub chars: ::unity2::Array<u16>,
+    #[rename(name = "index")]
+    pub index: i32,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-charptr")]
+#[::unity2::methods]
+impl CharPtr {
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, offset: i32) -> u16;
+
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(self, offset: i32, value: u16) -> ();
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item_2(self, offset: u32) -> u16;
+
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item_2(self, offset: u32, value: u16) -> ();
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item_3(self, offset: i64) -> u16;
+
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item_3(self, offset: i64, value: u16) -> ();
+
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(
+        str: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr;
+
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit_2(
+        chars: ::unity2::Array<u16>,
+    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr;
+
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit_3(
+        bytes: ::unity2::Array<u8>,
+    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, str: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_3(
+        self,
+        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_4(
+        self,
+        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        index: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_5(self, chars: ::unity2::Array<u16>) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_6(self, chars: ::unity2::Array<u16>, index: i32) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_7(self, bytes: ::unity2::Array<u8>) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_8(self, ptr: ::unity2::IntPtr) -> ();
+
+    #[method(name = "op_Addition", args = 2)]
+    pub fn op_addition(
+        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        offset: i32,
+    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr;
+
+    #[method(name = "op_Subtraction", args = 2)]
+    pub fn op_subtraction(
+        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        offset: i32,
+    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr;
+
+    #[method(name = "op_Addition", args = 2)]
+    pub fn op_addition_2(
+        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        offset: u32,
+    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr;
+
+    #[method(name = "op_Subtraction", args = 2)]
+    pub fn op_subtraction_2(
+        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        offset: u32,
+    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr;
+
+    #[method(name = "inc", args = 0)]
+    pub fn inc(self) -> ();
+
+    #[method(name = "dec", args = 0)]
+    pub fn dec(self) -> ();
+
+    #[method(name = "next", args = 0)]
+    pub fn next(
+        self,
+    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr;
+
+    #[method(name = "prev", args = 0)]
+    pub fn prev(
+        self,
+    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr;
+
+    #[method(name = "add", args = 1)]
+    pub fn add(
+        self,
+        ofs: i32,
+    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr;
+
+    #[method(name = "sub", args = 1)]
+    pub fn sub(
+        self,
+        ofs: i32,
+    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr;
+
+    #[method(name = "op_Equality", args = 2)]
+    pub fn op_equality(
+        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        ch: u16,
+    ) -> bool;
+
+    #[method(name = "op_Equality", args = 2)]
+    pub fn op_equality_2(
+        ch: u16,
+        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+    ) -> bool;
+
+    #[method(name = "op_Inequality", args = 2)]
+    pub fn op_inequality(
+        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        ch: u16,
+    ) -> bool;
+
+    #[method(name = "op_Inequality", args = 2)]
+    pub fn op_inequality_2(
+        ch: u16,
+        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+    ) -> bool;
+
+    #[method(name = "op_Addition", args = 2)]
+    pub fn op_addition_3(
+        ptr1: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        ptr2: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+    ) -> crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr;
+
+    #[method(name = "op_Subtraction", args = 2)]
+    pub fn op_subtraction_3(
+        ptr1: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        ptr2: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+    ) -> i32;
+
+    #[method(name = "op_LessThan", args = 2)]
+    pub fn op_less_than(
+        ptr1: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        ptr2: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+    ) -> bool;
+
+    #[method(name = "op_LessThanOrEqual", args = 2)]
+    pub fn op_less_than_or_equal(
+        ptr1: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        ptr2: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+    ) -> bool;
+
+    #[method(name = "op_GreaterThan", args = 2)]
+    pub fn op_greater_than(
+        ptr1: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        ptr2: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+    ) -> bool;
+
+    #[method(name = "op_GreaterThanOrEqual", args = 2)]
+    pub fn op_greater_than_or_equal(
+        ptr1: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        ptr2: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+    ) -> bool;
+
+    #[method(name = "op_Equality", args = 2)]
+    pub fn op_equality_3(
+        ptr1: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        ptr2: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+    ) -> bool;
+
+    #[method(name = "op_Inequality", args = 2)]
+    pub fn op_inequality_3(
+        ptr1: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        ptr2: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+    ) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, o: crate::system::object::Object) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "ToString", args = 1)]
+    pub fn to_string_2(self, length: i32) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-lua_state_interop-charptr")]
+impl CharPtr {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharPtr),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharPtrMethods>::ctor(this);
+        this
+    }
+
+    pub fn new_2(str: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharPtr),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ICharPtrMethods>::ctor_2(this, str);
+        this
+    }
+
+    pub fn new_3(
+        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharPtr),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as ICharPtrMethods>::ctor_3(this, ptr);
+        this
+    }
+
+    pub fn new_4(
+        ptr: crate::moon_sharp::interpreter::interop::lua_state_interop::charptr::CharPtr,
+        index: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharPtr),
+                ::core::stringify!(new_4),
+            )
+        });
+        <Self as ICharPtrMethods>::ctor_4(this, ptr, index);
+        this
+    }
+
+    pub fn new_5(chars: ::unity2::Array<u16>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharPtr),
+                ::core::stringify!(new_5),
+            )
+        });
+        <Self as ICharPtrMethods>::ctor_5(this, chars);
+        this
+    }
+
+    pub fn new_6(chars: ::unity2::Array<u16>, index: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharPtr),
+                ::core::stringify!(new_6),
+            )
+        });
+        <Self as ICharPtrMethods>::ctor_6(this, chars, index);
+        this
+    }
+
+    pub fn new_7(bytes: ::unity2::Array<u8>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharPtr),
+                ::core::stringify!(new_7),
+            )
+        });
+        <Self as ICharPtrMethods>::ctor_7(this, bytes);
+        this
+    }
+
+    pub fn new_8(ptr: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharPtr),
+                ::core::stringify!(new_8),
+            )
+        });
+        <Self as ICharPtrMethods>::ctor_8(this, ptr);
+        this
+    }
+}

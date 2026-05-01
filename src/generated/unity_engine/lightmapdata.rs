@@ -1,0 +1,53 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/lightmapdata/LightmapData.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "LightmapData")]
+#[parent(crate::system::object::Object)]
+pub struct LightmapData {
+    #[rename(name = "m_Light")]
+    pub m_light: crate::unity_engine::texture2d::Texture2D,
+    #[rename(name = "m_Dir")]
+    pub m_dir: crate::unity_engine::texture2d::Texture2D,
+    #[rename(name = "m_ShadowMask")]
+    pub m_shadow_mask: crate::unity_engine::texture2d::Texture2D,
+}
+
+#[cfg(feature = "unity_engine-lightmapdata")]
+#[::unity2::methods]
+impl LightmapData {
+    #[method(name = "get_lightmapColor", args = 0)]
+    pub fn get_lightmap_color(self) -> crate::unity_engine::texture2d::Texture2D;
+
+    #[method(name = "set_lightmapColor", args = 1)]
+    pub fn set_lightmap_color(self, value: crate::unity_engine::texture2d::Texture2D) -> ();
+
+    #[method(name = "set_lightmapDir", args = 1)]
+    pub fn set_lightmap_dir(self, value: crate::unity_engine::texture2d::Texture2D) -> ();
+
+    #[method(name = "get_shadowMask", args = 0)]
+    pub fn get_shadow_mask(self) -> crate::unity_engine::texture2d::Texture2D;
+
+    #[method(name = "set_shadowMask", args = 1)]
+    pub fn set_shadow_mask(self, value: crate::unity_engine::texture2d::Texture2D) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-lightmapdata")]
+impl LightmapData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LightmapData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILightmapDataMethods>::ctor(this);
+        this
+    }
+}

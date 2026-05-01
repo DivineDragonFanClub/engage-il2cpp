@@ -1,0 +1,28 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/hashutility/HashUtility.md")))]
+#[::unity2::class(namespace = "UnityEngine.Timeline", name = "HashUtility")]
+#[parent(crate::system::object::Object)]
+pub struct HashUtility {}
+
+#[cfg(feature = "unity_engine-timeline-hashutility")]
+#[::unity2::methods]
+impl HashUtility {
+    #[method(name = "CombineHash", args = 2)]
+    pub fn combine_hash(h1: i32, h2: i32) -> i32;
+
+    #[method(name = "CombineHash", args = 3)]
+    pub fn combine_hash_2(h1: i32, h2: i32, h3: i32) -> i32;
+
+    #[method(name = "CombineHash", args = 4)]
+    pub fn combine_hash_3(h1: i32, h2: i32, h3: i32, h4: i32) -> i32;
+
+    #[method(name = "CombineHash", args = 5)]
+    pub fn combine_hash_4(h1: i32, h2: i32, h3: i32, h4: i32, h5: i32) -> i32;
+
+    #[method(name = "CombineHash", args = 6)]
+    pub fn combine_hash_5(h1: i32, h2: i32, h3: i32, h4: i32, h5: i32, h6: i32) -> i32;
+}

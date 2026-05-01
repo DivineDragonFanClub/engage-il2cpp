@@ -1,0 +1,99 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::refineshoprefinebasemenu::IRefineShopRefineBaseMenu;
+use crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshopengraveitemselectmenu/RefineShopEngraveItemSelectMenu.md")))]
+#[::unity2::class(namespace = "App", name = "RefineShopEngraveItemSelectMenu")]
+#[parent(crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu)]
+pub struct RefineShopEngraveItemSelectMenu {}
+
+#[cfg(feature = "app-refineshopengraveitemselectmenu")]
+#[::unity2::methods]
+impl RefineShopEngraveItemSelectMenu {
+    #[method(name = "CreateBind", args = 8)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_object: crate::unity_engine::gameobject::GameObject,
+        default_unit: crate::app::unit::Unit,
+        default_item_index: i32,
+        default_item_kind: crate::app::itemdata::ItemData_Kinds,
+        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
+        decide_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler,
+        request_close_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_RequestCloseEventHandler,
+    ) -> crate::app::refineshopengraveitemselectmenu::RefineShopEngraveItemSelectMenu;
+
+    #[method(name = "CreateMenuItemList", args = 4)]
+    pub fn create_menu_item_list(
+        show_row_num: i32,
+        kind: crate::app::itemdata::ItemData_Kinds,
+        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
+        decide_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[method(name = "IsValidUnitItemToMenuItem", args = 2)]
+    pub fn is_valid_unit_item_to_menu_item(
+        unit_item: crate::app::unititem::UnitItem,
+        kind: crate::app::itemdata::ItemData_Kinds,
+    ) -> bool;
+
+    #[method(name = ".ctor", args = 8)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent,
+        default_unit: crate::app::unit::Unit,
+        default_item_index: i32,
+        kind: crate::app::itemdata::ItemData_Kinds,
+        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
+        decide_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler,
+        request_close_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_RequestCloseEventHandler,
+    ) -> ();
+
+    #[method(name = "RebuildMenuItem", args = 0)]
+    pub fn rebuild_menu_item(self) -> ();
+}
+
+#[cfg(feature = "app-refineshopengraveitemselectmenu")]
+impl RefineShopEngraveItemSelectMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent,
+        default_unit: crate::app::unit::Unit,
+        default_item_index: i32,
+        kind: crate::app::itemdata::ItemData_Kinds,
+        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
+        decide_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler,
+        request_close_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_RequestCloseEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopEngraveItemSelectMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopEngraveItemSelectMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            default_unit,
+            default_item_index,
+            kind,
+            select_event_handler,
+            decide_event_handler,
+            request_close_event_handler,
+        );
+        this
+    }
+}

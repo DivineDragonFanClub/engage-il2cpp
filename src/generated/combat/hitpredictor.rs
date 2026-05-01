@@ -1,0 +1,29 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/hitpredictor/HitPredictor.md")))]
+#[::unity2::class(namespace = "Combat", name = "HitPredictor")]
+#[parent(crate::system::object::Object)]
+pub struct HitPredictor {}
+
+#[cfg(feature = "combat-hitpredictor")]
+#[::unity2::methods]
+impl HitPredictor {
+    #[method(name = "CalcLocalHitTimeFromAttackStart", args = 3)]
+    pub fn calc_local_hit_time_from_attack_start(
+        chr: crate::combat::character::Character,
+        skills: crate::combat::skillstack::SkillStack,
+        anim_time: f32,
+    ) -> f32;
+
+    #[method(name = "PredictHit", args = 2)]
+    pub fn predict_hit(chr: crate::combat::character::Character, start_time: f32) -> f32;
+
+    #[method(name = "PredictShoot", args = 2)]
+    pub fn predict_shoot(chr: crate::combat::character::Character, start_time: f32) -> f32;
+
+    #[method(name = "PredictMagic", args = 2)]
+    pub fn predict_magic(chr: crate::combat::character::Character, start_time: f32) -> f32;
+}

@@ -1,0 +1,62 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredconfig/DeferredConfig.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "DeferredConfig"
+)]
+#[parent(crate::system::object::Object)]
+pub struct DeferredConfig {
+    #[static_field]
+    #[rename(name = "kPreferredCBufferSize")]
+    pub k_preferred_c_buffer_size: i32,
+    #[static_field]
+    #[rename(name = "kPreferredStructuredBufferSize")]
+    pub k_preferred_structured_buffer_size: i32,
+    #[static_field]
+    #[rename(name = "kTilePixelWidth")]
+    pub k_tile_pixel_width: i32,
+    #[static_field]
+    #[rename(name = "kTilePixelHeight")]
+    pub k_tile_pixel_height: i32,
+    #[static_field]
+    #[rename(name = "kTilerDepth")]
+    pub k_tiler_depth: i32,
+    #[static_field]
+    #[rename(name = "kTilerSubdivisions")]
+    pub k_tiler_subdivisions: i32,
+    #[static_field]
+    #[rename(name = "kAvgLightPerTile")]
+    pub k_avg_light_per_tile: i32,
+    #[static_field]
+    #[rename(name = "kTileDepthInfoIntermediateLevel")]
+    pub k_tile_depth_info_intermediate_level: i32,
+    #[static_field]
+    #[rename(name = "kHasNativeQuadSupport")]
+    pub k_has_native_quad_support: bool,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredconfig")]
+#[::unity2::methods]
+impl DeferredConfig {
+    #[method(name = "get_IsOpenGL", args = 0)]
+    pub fn get_is_open_gl() -> bool;
+
+    #[method(name = "set_IsOpenGL", args = 1)]
+    pub fn set_is_open_gl(value: bool) -> ();
+
+    #[method(name = "get_UseCBufferForDepthRange", args = 0)]
+    pub fn get_use_c_buffer_for_depth_range() -> bool;
+
+    #[method(name = "get_UseCBufferForTileList", args = 0)]
+    pub fn get_use_c_buffer_for_tile_list() -> bool;
+
+    #[method(name = "get_UseCBufferForLightData", args = 0)]
+    pub fn get_use_c_buffer_for_light_data() -> bool;
+
+    #[method(name = "get_UseCBufferForLightList", args = 0)]
+    pub fn get_use_c_buffer_for_light_list() -> bool;
+}

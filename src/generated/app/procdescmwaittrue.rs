@@ -1,0 +1,41 @@
+
+use crate::app::procdesc::IProcDesc;
+use crate::app::procdesc::ProcDesc;
+use crate::app::procdescwaitfunc::IProcDescWaitFunc;
+use crate::app::procdescwaitfunc::ProcDescWaitFunc;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdescmwaittrue/ProcDescMWaitTrue.md")))]
+#[::unity2::class(namespace = "App", name = "ProcDescMWaitTrue")]
+#[parent(crate::app::procdescwaitfunc::ProcDescWaitFunc)]
+pub struct ProcDescMWaitTrue {
+    #[rename(name = "m_Method")]
+    pub m_method: crate::app::procboolmethod::ProcBoolMethod,
+}
+
+#[cfg(feature = "app-procdescmwaittrue")]
+#[::unity2::methods]
+impl ProcDescMWaitTrue {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, method: crate::app::procboolmethod::ProcBoolMethod) -> ();
+
+    #[method(name = "IsWait", args = 1)]
+    pub fn is_wait(self, inst: crate::app::procinst::ProcInst) -> bool;
+}
+
+#[cfg(feature = "app-procdescmwaittrue")]
+impl ProcDescMWaitTrue {
+    pub fn new(method: crate::app::procboolmethod::ProcBoolMethod) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProcDescMWaitTrue),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProcDescMWaitTrueMethods>::ctor(this, method);
+        this
+    }
+}

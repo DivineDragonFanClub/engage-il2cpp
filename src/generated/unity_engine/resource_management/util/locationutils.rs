@@ -1,0 +1,28 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/util/locationutils/LocationUtils.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.Util",
+    name = "LocationUtils"
+)]
+#[parent(crate::system::object::Object)]
+pub struct LocationUtils {}
+
+#[cfg(feature = "unity_engine-resource_management-util-locationutils")]
+#[::unity2::methods]
+impl LocationUtils {
+    #[method(name = "LocationEquals", args = 2)]
+    pub fn location_equals(
+        loc1 : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+        loc2 : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+    ) -> bool;
+
+    #[method(name = "DependenciesEqual", args = 2)]
+    pub fn dependencies_equal(
+        deps1 : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        deps2 : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+    ) -> bool;
+}

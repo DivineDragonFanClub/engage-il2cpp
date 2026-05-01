@@ -1,0 +1,58 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/emissionanimation/EmissionAnimation.md")))]
+#[::unity2::class(namespace = "App", name = "EmissionAnimation")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct EmissionAnimation {
+    #[rename(name = "m_EmissionCurve")]
+    pub m_emission_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "m_Materials")]
+    pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+    #[rename(name = "m_EmissionPropertyKey")]
+    pub m_emission_property_key: i32,
+}
+
+#[cfg(feature = "app-emissionanimation")]
+#[::unity2::methods]
+impl EmissionAnimation {
+    #[method(name = "get_IsAnimate", args = 0)]
+    pub fn get_is_animate(self) -> bool;
+
+    #[method(name = "set_IsAnimate", args = 1)]
+    pub fn set_is_animate(self, value: bool) -> ();
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-emissionanimation")]
+impl EmissionAnimation {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EmissionAnimation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEmissionAnimationMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,57 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/signalasset/SignalAsset.md")))]
+#[::unity2::class(namespace = "UnityEngine.Timeline", name = "SignalAsset")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct SignalAsset {
+    #[static_field]
+    #[rename(name = "OnEnableCallback")]
+    pub on_enable_callback:
+        crate::system::action_1::Action_1<crate::unity_engine::timeline::signalasset::SignalAsset>,
+}
+
+#[cfg(feature = "unity_engine-timeline-signalasset")]
+#[::unity2::methods]
+impl SignalAsset {
+    #[method(name = "add_OnEnableCallback", args = 1)]
+    pub fn add_on_enable_callback(
+        value: crate::system::action_1::Action_1<
+            crate::unity_engine::timeline::signalasset::SignalAsset,
+        >,
+    ) -> ();
+
+    #[method(name = "remove_OnEnableCallback", args = 1)]
+    pub fn remove_on_enable_callback(
+        value: crate::system::action_1::Action_1<
+            crate::unity_engine::timeline::signalasset::SignalAsset,
+        >,
+    ) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-timeline-signalasset")]
+impl SignalAsset {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SignalAsset),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISignalAssetMethods>::ctor(this);
+        this
+    }
+}

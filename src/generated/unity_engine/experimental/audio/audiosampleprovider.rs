@@ -1,0 +1,66 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/audio/audiosampleprovider/AudioSampleProvider.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Audio",
+    name = "AudioSampleProvider"
+)]
+#[parent(crate::system::object::Object)]
+pub struct AudioSampleProvider {
+# [rename (name = "sampleFramesAvailable")] pub sample_frames_available : crate :: unity_engine :: experimental :: audio :: audiosampleprovider :: AudioSampleProvider_SampleFramesHandler ,
+# [rename (name = "sampleFramesOverflow")] pub sample_frames_overflow : crate :: unity_engine :: experimental :: audio :: audiosampleprovider :: AudioSampleProvider_SampleFramesHandler ,
+}
+
+#[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider")]
+#[::unity2::methods]
+impl AudioSampleProvider {
+    #[method(name = "InvokeSampleFramesAvailable", args = 1)]
+    pub fn invoke_sample_frames_available(self, sample_frame_count: i32) -> ();
+
+    #[method(name = "InvokeSampleFramesOverflow", args = 1)]
+    pub fn invoke_sample_frames_overflow(self, dropped_sample_frame_count: i32) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/audio/audiosampleprovider/AudioSampleProvider_SampleFramesHandler.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Audio",
+    name = "AudioSampleProvider.SampleFramesHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AudioSampleProvider_SampleFramesHandler {}
+
+#[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider")]
+#[::unity2::methods]
+impl AudioSampleProvider_SampleFramesHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        provider : crate :: unity_engine :: experimental :: audio :: audiosampleprovider :: AudioSampleProvider,
+        sample_frame_count: u32,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider")]
+impl AudioSampleProvider_SampleFramesHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AudioSampleProvider_SampleFramesHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAudioSampleProvider_SampleFramesHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}

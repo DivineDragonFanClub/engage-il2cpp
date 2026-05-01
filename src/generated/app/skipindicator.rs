@@ -1,0 +1,157 @@
+
+use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+use crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skipindicator/SkipIndicator_Seq.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SkipIndicator_Seq {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SkipIndicator_Seq {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SkipIndicator.Seq";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SkipIndicator_Seq {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SkipIndicator_Seq {
+    pub fn hide() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn opening() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn show() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn closing() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skipindicator/SkipIndicator.md")))]
+#[::unity2::class(namespace = "App", name = "SkipIndicator")]
+# [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: skipindicator :: SkipIndicator >)]
+pub struct SkipIndicator {
+    #[rename(name = "m_Skip")]
+    pub m_skip: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Auto")]
+    pub m_auto: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Error")]
+    pub m_error: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_CanvasManager")]
+    pub m_canvas_manager: crate::app::canvasmanager::CanvasManager,
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_Seq")]
+    pub m_seq: crate::app::skipindicator::SkipIndicator_Seq,
+    #[rename(name = "m_IsReqClose")]
+    pub m_is_req_close: bool,
+}
+
+#[cfg(feature = "app-skipindicator")]
+#[::unity2::methods]
+impl SkipIndicator {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "ShowSkipImpl", args = 0)]
+    pub fn show_skip_impl(self) -> ();
+
+    #[method(name = "ShowAutoImpl", args = 0)]
+    pub fn show_auto_impl(self) -> ();
+
+    #[method(name = "ShowErrorImpl", args = 0)]
+    pub fn show_error_impl(self) -> ();
+
+    #[method(name = "HideImpl", args = 0)]
+    pub fn hide_impl(self) -> ();
+
+    #[method(name = "Show", args = 3)]
+    pub fn show(self, is_show_skip: bool, is_show_auto: bool, is_show_error: bool) -> ();
+
+    #[method(name = "IsOpening", args = 0)]
+    pub fn is_opening(self) -> bool;
+
+    #[method(name = "IsClosing", args = 0)]
+    pub fn is_closing(self) -> bool;
+
+    #[method(name = "IsClosed", args = 0)]
+    pub fn is_closed(self) -> bool;
+
+    #[method(name = "GetBool", args = 1)]
+    pub fn get_bool(self, name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "ShowSkip", args = 0)]
+    pub fn show_skip() -> ();
+
+    #[method(name = "ShowAuto", args = 0)]
+    pub fn show_auto() -> ();
+
+    #[method(name = "ShowError", args = 0)]
+    pub fn show_error() -> ();
+
+    #[method(name = "Hide", args = 0)]
+    pub fn hide() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-skipindicator")]
+impl SkipIndicator {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SkipIndicator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISkipIndicatorMethods>::ctor(this);
+        this
+    }
+}

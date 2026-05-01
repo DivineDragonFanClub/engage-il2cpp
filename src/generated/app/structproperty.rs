@@ -1,0 +1,245 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/structproperty/StructProperty.md")))]
+#[::unity2::class(namespace = "App", name = "StructProperty")]
+#[parent(crate::system::object::Object)]
+pub struct StructProperty {}
+
+#[cfg(feature = "app-structproperty")]
+#[::unity2::methods]
+impl StructProperty {
+    #[method(name = "get_kind", args = 0)]
+    pub fn get_kind(self) -> crate::app::structproperty::StructProperty_Kind;
+
+    #[method(name = "set_kind", args = 1)]
+    pub fn set_kind(self, value: crate::app::structproperty::StructProperty_Kind) -> ();
+
+    #[method(name = "get_property", args = 0)]
+    pub fn get_property(self) -> crate::system::reflection::propertyinfo::PropertyInfo;
+
+    #[method(name = "set_property", args = 1)]
+    pub fn set_property(self, value: crate::system::reflection::propertyinfo::PropertyInfo) -> ();
+
+    #[method(name = "get_objProperty", args = 0)]
+    pub fn get_obj_property(self) -> crate::system::reflection::propertyinfo::PropertyInfo;
+
+    #[method(name = "set_objProperty", args = 1)]
+    pub fn set_obj_property(
+        self,
+        value: crate::system::reflection::propertyinfo::PropertyInfo,
+    ) -> ();
+
+    #[method(name = "get_isStruct", args = 0)]
+    pub fn get_is_struct(self) -> bool;
+
+    #[method(name = "set_isStruct", args = 1)]
+    pub fn set_is_struct(self, value: bool) -> ();
+
+    #[method(name = "get_isSetter", args = 0)]
+    pub fn get_is_setter(self) -> bool;
+
+    #[method(name = "set_isSetter", args = 1)]
+    pub fn set_is_setter(self, value: bool) -> ();
+
+    #[method(name = "get_setter", args = 0)]
+    pub fn get_setter(self) -> crate::system::object::Object;
+
+    #[method(name = "set_setter", args = 1)]
+    pub fn set_setter(self, value: crate::system::object::Object) -> ();
+
+    #[method(name = "SetValue", args = 2)]
+    pub fn set_value(
+        self,
+        obj: crate::system::object::Object,
+        value: crate::system::object::Object,
+    ) -> ();
+
+    #[method(name = "GetKind", args = 1)]
+    pub fn get_kind_2(
+        name: ::unity2::Il2CppString,
+    ) -> crate::app::structproperty::StructProperty_Kind;
+
+    #[method(name = "CheckFlagKind", args = 1)]
+    pub fn check_flag_kind(kind: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "CheckReplaceKind", args = 1)]
+    pub fn check_replace_kind(kind: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "ReplaceKind", args = 1)]
+    pub fn replace_kind(kind: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[method(name = "CheckIntFloatKind", args = 1)]
+    pub fn check_int_float_kind(kind: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "CheckArrayKind", args = 1)]
+    pub fn check_array_kind(kind: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-structproperty")]
+impl StructProperty {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StructProperty),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStructPropertyMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/structproperty/StructProperty_Kind.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct StructProperty_Kind {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for StructProperty_Kind {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "StructProperty.Kind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for StructProperty_Kind {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl StructProperty_Kind {
+    pub fn public_string() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn string() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn string_array() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn public_label() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn public_array() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn public_file() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn u8() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn u8_array() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn s8() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn s8_array() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn u16() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn s16() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn u32() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn s32() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn s32_array() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn u64() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn s64() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn f32() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn f32_array() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn bool() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn b8() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn b16() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn b32() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn b64() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn flag32() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn flag64() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn none() -> Self {
+        Self { value: 26 }
+    }
+}

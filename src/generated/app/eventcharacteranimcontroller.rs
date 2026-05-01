@@ -1,0 +1,81 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventcharacteranimcontroller/EventCharacterAnimController.md")))]
+#[::unity2::class(namespace = "App", name = "EventCharacterAnimController")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct EventCharacterAnimController {
+    #[rename(name = "m_character")]
+    pub m_character: crate::combat::character::Character,
+    #[rename(name = "m_simpleAnimation")]
+    pub m_simple_animation:
+        crate::app::eventcharactersimpleanimation::EventCharacterSimpleAnimation,
+    #[rename(name = "m_animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_curBodyAnimName")]
+    pub m_cur_body_anim_name: ::unity2::Il2CppString,
+    #[rename(name = "m_resHandleDictionary")]
+    pub m_res_handle_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::app::tresourcehandle_1::TResourceHandle_1<
+            crate::unity_engine::animationclip::AnimationClip,
+        >,
+    >,
+}
+
+#[cfg(feature = "app-eventcharacteranimcontroller")]
+#[::unity2::methods]
+impl EventCharacterAnimController {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "LoadBodyAnimAsync", args = 1)]
+    pub fn load_body_anim_async(self, body_anim_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "IsLoadingBodyAnim", args = 1)]
+    pub fn is_loading_body_anim(self, body_anim_name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "IsLoadedBodyAnim", args = 1)]
+    pub fn is_loaded_body_anim(self, body_anim_name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "PlayBodyAnim", args = 2)]
+    pub fn play_body_anim(self, body_anim_name: ::unity2::Il2CppString, fade_sec: f32) -> ();
+
+    #[method(name = "Co_PlayBodyAnim", args = 2)]
+    pub fn co_play_body_anim(
+        self,
+        body_anim_name: ::unity2::Il2CppString,
+        fade_sec: f32,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+}
+
+#[cfg(feature = "app-eventcharacteranimcontroller")]
+impl EventCharacterAnimController {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventCharacterAnimController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventCharacterAnimControllerMethods>::ctor(this);
+        this
+    }
+}

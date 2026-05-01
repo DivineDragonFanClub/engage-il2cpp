@@ -1,0 +1,156 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomwakeupselectsequence/MyRoomWakeupSelectSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MyRoomWakeupSelectSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MyRoomWakeupSelectSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MyRoomWakeupSelectSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MyRoomWakeupSelectSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MyRoomWakeupSelectSequence_Label {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn unit_select() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn wakeup() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomwakeupselectsequence/MyRoomWakeupSelectSequence.md")))]
+#[::unity2::class(namespace = "App", name = "MyRoomWakeupSelectSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomwakeupselectsequence :: MyRoomWakeupSelectSequence >)]
+pub struct MyRoomWakeupSelectSequence {
+    #[rename(name = "m_mainContent")]
+    pub m_main_content: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ReservePID")]
+    pub m_reserve_pid: ::unity2::Il2CppString,
+    #[rename(name = "m_ReservePattern")]
+    pub m_reserve_pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
+    #[rename(name = "m_ReserveLevel")]
+    pub m_reserve_level: crate::app::reliancedata::RelianceData_Level,
+    #[rename(name = "m_TmpSelect")]
+    pub m_tmp_select: i32,
+    #[rename(name = "m_TmpScroll")]
+    pub m_tmp_scroll: i32,
+}
+
+#[cfg(feature = "app-myroomwakeupselectsequence")]
+#[::unity2::methods]
+impl MyRoomWakeupSelectSequence {
+    #[method(name = "get_SelectMenuContent", args = 0)]
+    pub fn get_select_menu_content(
+        self,
+    ) -> crate::app::myroomwakeupselectmenucontent::MyRoomWakeupSelectMenuContent;
+
+    #[method(name = "set_SelectMenuContent", args = 1)]
+    pub fn set_select_menu_content(
+        self,
+        value: crate::app::myroomwakeupselectmenucontent::MyRoomWakeupSelectMenuContent,
+    ) -> ();
+
+    #[method(name = "get_Root", args = 0)]
+    pub fn get_root(self) -> crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot;
+
+    #[method(name = "set_Root", args = 1)]
+    pub fn set_root(self, value: crate::app::myroomwakeupselectroot::MyRoomWakeupSelectRoot) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "WaitLoadPrefab", args = 0)]
+    pub fn wait_load_prefab(self) -> ();
+
+    #[method(name = "CreateUnitSelectMenu", args = 0)]
+    pub fn create_unit_select_menu(self) -> ();
+
+    #[method(name = "Entry", args = 0)]
+    pub fn entry(self) -> ();
+
+    #[method(name = "Exit", args = 0)]
+    pub fn exit(self) -> ();
+
+    #[method(name = "ReserveWakeup", args = 3)]
+    pub fn reserve_wakeup(
+        self,
+        pid: ::unity2::Il2CppString,
+        level: crate::app::reliancedata::RelianceData_Level,
+        pattern: crate::app::gamesound::GameSound_WakeupVoicePattern,
+    ) -> ();
+
+    #[method(name = "SaveSelectAndScroll", args = 2)]
+    pub fn save_select_and_scroll(self, select: i32, scroll: i32) -> ();
+
+    #[method(name = "TryStartWakeup", args = 0)]
+    pub fn try_start_wakeup(self) -> ();
+
+    #[method(name = "CreateDesc", args = 0)]
+    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-myroomwakeupselectsequence")]
+impl MyRoomWakeupSelectSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomWakeupSelectSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomWakeupSelectSequenceMethods>::ctor(this);
+        this
+    }
+}

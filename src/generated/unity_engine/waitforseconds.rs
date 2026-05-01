@@ -1,0 +1,36 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::yieldinstruction::IYieldInstruction;
+use crate::unity_engine::yieldinstruction::YieldInstruction;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/waitforseconds/WaitForSeconds.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "WaitForSeconds")]
+#[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]
+pub struct WaitForSeconds {
+    #[rename(name = "m_Seconds")]
+    pub m_seconds: f32,
+}
+
+#[cfg(feature = "unity_engine-waitforseconds")]
+#[::unity2::methods]
+impl WaitForSeconds {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, seconds: f32) -> ();
+}
+
+#[cfg(feature = "unity_engine-waitforseconds")]
+impl WaitForSeconds {
+    pub fn new(seconds: f32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WaitForSeconds),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWaitForSecondsMethods>::ctor(this, seconds);
+        this
+    }
+}

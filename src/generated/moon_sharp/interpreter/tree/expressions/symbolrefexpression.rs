@@ -1,0 +1,98 @@
+
+use crate::moon_sharp::interpreter::tree::expression::Expression;
+use crate::moon_sharp::interpreter::tree::expression::IExpression;
+use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+use crate::moon_sharp::interpreter::tree::nodebase::NodeBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/expressions/symbolrefexpression/SymbolRefExpression.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Expressions",
+    name = "SymbolRefExpression"
+)]
+#[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
+pub struct SymbolRefExpression {
+    #[rename(name = "m_Ref")]
+    pub m_ref: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+    #[rename(name = "m_VarName")]
+    pub m_var_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-symbolrefexpression")]
+#[::unity2::methods]
+impl SymbolRefExpression {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        t: crate::moon_sharp::interpreter::tree::token::Token,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        refr: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+    ) -> ();
+
+    #[method(name = "Compile", args = 1)]
+    pub fn compile(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> ();
+
+    #[method(name = "CompileAssignment", args = 3)]
+    pub fn compile_assignment(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+        stackofs: i32,
+        tupleidx: i32,
+    ) -> ();
+
+    #[method(name = "Eval", args = 1)]
+    pub fn eval(
+        self,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "FindDynamic", args = 1)]
+    pub fn find_dynamic(
+        self,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-symbolrefexpression")]
+impl SymbolRefExpression {
+    pub fn new(
+        t: crate::moon_sharp::interpreter::tree::token::Token,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SymbolRefExpression),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISymbolRefExpressionMethods>::ctor(this, t, lcontext);
+        this
+    }
+
+    pub fn new_2(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        refr: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SymbolRefExpression),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ISymbolRefExpressionMethods>::ctor_2(this, lcontext, refr);
+        this
+    }
+}

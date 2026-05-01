@@ -1,0 +1,103 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/intervaltree_1/IntervalTree_1_Entry.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct IntervalTree_1_Entry<T0> {
+    pub _phantom: ::core::marker::PhantomData<(T0,)>,
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for IntervalTree_1_Entry<T0> {
+    const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+    const NAME: &'static str = "IntervalTree`1.Entry";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                .expect("generic instantiation")
+        })
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for IntervalTree_1_Entry<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/intervaltree_1/IntervalTree_1.md")))]
+#[::unity2::class(namespace = "UnityEngine.Timeline", name = "IntervalTree`1")]
+pub struct IntervalTree_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "m_Entries")]
+    pub m_entries: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::timeline::intervaltree_1::IntervalTree_1_Entry<T0>,
+    >,
+    #[rename(name = "m_Nodes")]
+    pub m_nodes: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::timeline::intervaltreenode::IntervalTreeNode,
+    >,
+}
+
+#[cfg(feature = "unity_engine-timeline-intervaltree_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> IntervalTree_1<T0> {
+    #[method(name = "get_dirty", args = 0)]
+    pub fn get_dirty(self) -> bool;
+
+    #[method(name = "set_dirty", args = 1)]
+    pub fn set_dirty(self, value: bool) -> ();
+
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, item: T0) -> ();
+
+    #[method(name = "IntersectsWith", args = 2)]
+    pub fn intersects_with(
+        self,
+        value: i64,
+        results: crate::system::collections::generic::list_1::List_1<T0>,
+    ) -> ();
+
+    #[method(name = "Query", args = 3)]
+    pub fn query(
+        self,
+        interval_tree_node: crate::unity_engine::timeline::intervaltreenode::IntervalTreeNode,
+        value: i64,
+        results: crate::system::collections::generic::list_1::List_1<T0>,
+    ) -> ();
+
+    #[method(name = "Rebuild", args = 0)]
+    pub fn rebuild(self) -> ();
+
+    #[method(name = "Rebuild", args = 2)]
+    pub fn rebuild_2(self, start: i32, end: i32) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-timeline-intervaltree_1")]
+impl<T0: ::unity2::ClassIdentity> IntervalTree_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(IntervalTree_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IIntervalTree_1Methods<T0>>::ctor(this);
+        this
+    }
+}

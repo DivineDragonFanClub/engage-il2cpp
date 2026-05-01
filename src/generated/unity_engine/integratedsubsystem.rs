@@ -1,0 +1,52 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/integratedsubsystem/IntegratedSubsystem.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "IntegratedSubsystem")]
+#[parent(crate::system::object::Object)]
+pub struct IntegratedSubsystem {
+    #[rename(name = "m_Ptr")]
+    pub m_ptr: ::unity2::IntPtr,
+    #[rename(name = "m_SubsystemDescriptor")]
+    pub m_subsystem_descriptor:
+        crate::unity_engine::isubsystemdescriptor_interface::ISubsystemDescriptor_Interface,
+}
+
+#[cfg(feature = "unity_engine-integratedsubsystem")]
+#[::unity2::methods]
+impl IntegratedSubsystem {
+    #[method(name = "SetHandle", args = 1)]
+    pub fn set_handle(
+        self,
+        subsystem: crate::unity_engine::integratedsubsystem::IntegratedSubsystem,
+    ) -> ();
+
+    #[method(name = "get_running", args = 0)]
+    pub fn get_running(self) -> bool;
+
+    #[method(name = "get_valid", args = 0)]
+    pub fn get_valid(self) -> bool;
+
+    #[method(name = "IsRunning", args = 0)]
+    pub fn is_running(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-integratedsubsystem")]
+impl IntegratedSubsystem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(IntegratedSubsystem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IIntegratedSubsystemMethods>::ctor(this);
+        this
+    }
+}

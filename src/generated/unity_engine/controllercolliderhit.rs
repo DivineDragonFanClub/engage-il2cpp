@@ -1,0 +1,24 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/controllercolliderhit/ControllerColliderHit.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "ControllerColliderHit")]
+#[parent(crate::system::object::Object)]
+pub struct ControllerColliderHit {
+    #[rename(name = "m_Controller")]
+    pub m_controller: crate::unity_engine::charactercontroller::CharacterController,
+    #[rename(name = "m_Collider")]
+    pub m_collider: crate::unity_engine::collider::Collider,
+    #[rename(name = "m_Point")]
+    pub m_point: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_Normal")]
+    pub m_normal: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_MoveDirection")]
+    pub m_move_direction: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_MoveLength")]
+    pub m_move_length: f32,
+    #[rename(name = "m_Push")]
+    pub m_push: i32,
+}

@@ -1,0 +1,191 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/engagesequence/EngageSequence.md")))]
+#[::unity2::class(namespace = "Combat", name = "EngageSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct EngageSequence {
+    #[rename(name = "m_Master")]
+    pub m_master: crate::combat::engagesequence::EngageSequence_Cast,
+    #[rename(name = "m_Grandew")]
+    pub m_grandew: crate::combat::engagesequence::EngageSequence_Cast,
+    #[rename(name = "m_CamGO")]
+    pub m_cam_go: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_bSetupDone")]
+    pub m_b_setup_done: bool,
+    #[rename(name = "m_bSkipped")]
+    pub m_b_skipped: bool,
+}
+
+#[cfg(feature = "combat-engagesequence")]
+#[::unity2::methods]
+impl EngageSequence {
+    #[method(name = "GetMode", args = 0)]
+    pub fn get_mode() -> crate::combat::engagesequence::EngageSequence_Mode;
+
+    #[method(name = "IsExist", args = 0)]
+    pub fn is_exist() -> bool;
+
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit1: crate::app::unit::Unit,
+        unit2: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "CreteaCombatBorders", args = 0)]
+    pub fn cretea_combat_borders(self) -> ();
+
+    #[method(name = "DeleteCombatBorders", args = 0)]
+    pub fn delete_combat_borders(self) -> ();
+
+    #[method(name = "IsSetupDone", args = 0)]
+    pub fn is_setup_done(self) -> bool;
+
+    #[method(name = "WaitFinish", args = 0)]
+    pub fn wait_finish(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, unit1: crate::app::unit::Unit, unit2: crate::app::unit::Unit) -> ();
+
+    #[method(name = "LoadAndSetupAndRun", args = 0)]
+    pub fn load_and_setup_and_run(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "CalcHeightOffset", args = 2)]
+    pub fn calc_height_offset(
+        self,
+        c: crate::combat::character::Character,
+        g: crate::combat::character::Character,
+    ) -> f32;
+
+    #[method(name = "Exit", args = 0)]
+    pub fn exit(self) -> crate::system::collections::ienumerator::IEnumerator;
+}
+
+#[cfg(feature = "combat-engagesequence")]
+impl EngageSequence {
+    pub fn new(unit1: crate::app::unit::Unit, unit2: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EngageSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEngageSequenceMethods>::ctor(this, unit1, unit2);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/engagesequence/EngageSequence_Cast.md")))]
+#[::unity2::class(namespace = "Combat", name = "EngageSequence.Cast")]
+#[parent(crate::system::object::Object)]
+pub struct EngageSequence_Cast {
+    #[rename(name = "Unit")]
+    pub unit: crate::app::unit::Unit,
+    #[rename(name = "God")]
+    pub god: crate::app::godunit::GodUnit,
+    #[rename(name = "GameStatus")]
+    pub game_status: crate::combat::charactergamestatus::CharacterGameStatus,
+    #[rename(name = "Character")]
+    pub character: crate::combat::character::Character,
+}
+
+#[cfg(feature = "combat-engagesequence")]
+#[::unity2::methods]
+impl EngageSequence_Cast {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, god: crate::app::godunit::GodUnit) -> ();
+
+    #[method(name = "Import", args = 1)]
+    pub fn import(self, conditions: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "combat-engagesequence")]
+impl EngageSequence_Cast {
+    pub fn new(unit: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EngageSequence_Cast),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEngageSequence_CastMethods>::ctor(this, unit);
+        this
+    }
+
+    pub fn new_2(god: crate::app::godunit::GodUnit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EngageSequence_Cast),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IEngageSequence_CastMethods>::ctor_2(this, god);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/engagesequence/EngageSequence_Mode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EngageSequence_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EngageSequence_Mode {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "EngageSequence.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EngageSequence_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EngageSequence_Mode {
+    pub fn not_work() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn engage() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn engage_plus() -> Self {
+        Self { value: 2 }
+    }
+}

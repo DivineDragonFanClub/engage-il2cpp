@@ -1,0 +1,45 @@
+
+use crate::moon_sharp::interpreter::loaders::filesystemscriptloader::FileSystemScriptLoader;
+use crate::moon_sharp::interpreter::loaders::filesystemscriptloader::IFileSystemScriptLoader;
+use crate::moon_sharp::interpreter::loaders::scriptloaderbase::IScriptLoaderBase;
+use crate::moon_sharp::interpreter::loaders::scriptloaderbase::ScriptLoaderBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/repl/replinterpreterscriptloader/ReplInterpreterScriptLoader.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.REPL",
+    name = "ReplInterpreterScriptLoader"
+)]
+#[parent(crate::moon_sharp::interpreter::loaders::filesystemscriptloader::FileSystemScriptLoader)]
+pub struct ReplInterpreterScriptLoader {}
+
+#[cfg(feature = "moon_sharp-interpreter-repl-replinterpreterscriptloader")]
+#[::unity2::methods]
+impl ReplInterpreterScriptLoader {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "ResolveModuleName", args = 2)]
+    pub fn resolve_module_name(
+        self,
+        modname: ::unity2::Il2CppString,
+        global_context: crate::moon_sharp::interpreter::table::Table,
+    ) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-repl-replinterpreterscriptloader")]
+impl ReplInterpreterScriptLoader {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ReplInterpreterScriptLoader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IReplInterpreterScriptLoaderMethods>::ctor(this);
+        this
+    }
+}

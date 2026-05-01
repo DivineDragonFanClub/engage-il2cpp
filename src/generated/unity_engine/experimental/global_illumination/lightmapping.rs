@@ -1,0 +1,74 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/global_illumination/lightmapping/Lightmapping.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.GlobalIllumination",
+    name = "Lightmapping"
+)]
+#[parent(crate::system::object::Object)]
+pub struct Lightmapping {
+# [static_field] # [rename (name = "s_DefaultDelegate")] pub s_default_delegate : crate :: unity_engine :: experimental :: global_illumination :: lightmapping :: Lightmapping_RequestLightsDelegate ,
+# [static_field] # [rename (name = "s_RequestLightsDelegate")] pub s_request_lights_delegate : crate :: unity_engine :: experimental :: global_illumination :: lightmapping :: Lightmapping_RequestLightsDelegate ,
+}
+
+#[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
+#[::unity2::methods]
+impl Lightmapping {
+    #[method(name = "SetDelegate", args = 1)]
+    pub fn set_delegate(
+        del : crate :: unity_engine :: experimental :: global_illumination :: lightmapping :: Lightmapping_RequestLightsDelegate,
+    ) -> ();
+
+    #[method(name = "GetDelegate", args = 0)]
+    pub fn get_delegate () -> crate :: unity_engine :: experimental :: global_illumination :: lightmapping :: Lightmapping_RequestLightsDelegate ;
+
+    #[method(name = "ResetDelegate", args = 0)]
+    pub fn reset_delegate() -> ();
+
+    #[method(name = "RequestLights", args = 3)]
+    pub fn request_lights(
+        lights: ::unity2::Array<crate::unity_engine::light::Light>,
+        out_lights_ptr: ::unity2::IntPtr,
+        out_lights_count: i32,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/global_illumination/lightmapping/Lightmapping_RequestLightsDelegate.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.GlobalIllumination",
+    name = "Lightmapping.RequestLightsDelegate"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct Lightmapping_RequestLightsDelegate {}
+
+#[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
+#[::unity2::methods]
+impl Lightmapping_RequestLightsDelegate {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
+impl Lightmapping_RequestLightsDelegate {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Lightmapping_RequestLightsDelegate),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILightmapping_RequestLightsDelegateMethods>::ctor(this, object, method);
+        this
+    }
+}

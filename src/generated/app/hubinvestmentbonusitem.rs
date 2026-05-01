@@ -1,0 +1,52 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdataarray_1::IStructDataArray_1;
+use crate::app::structdataarray_1::StructDataArray_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubinvestmentbonusitem/HubInvestmentBonusItem.md")))]
+#[::unity2::class(namespace = "App", name = "HubInvestmentBonusItem")]
+# [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubinvestmentbonusitem :: HubInvestmentBonusItem >)]
+pub struct HubInvestmentBonusItem {}
+
+#[cfg(feature = "app-hubinvestmentbonusitem")]
+#[::unity2::methods]
+impl HubInvestmentBonusItem {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_ItemId", args = 0)]
+    pub fn get_item_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_ItemId", args = 1)]
+    pub fn set_item_id(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Num", args = 0)]
+    pub fn get_num(self) -> u8;
+
+    #[method(name = "set_Num", args = 1)]
+    pub fn set_num(self, value: u8) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubinvestmentbonusitem")]
+impl HubInvestmentBonusItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubInvestmentBonusItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubInvestmentBonusItemMethods>::ctor(this);
+        this
+    }
+}

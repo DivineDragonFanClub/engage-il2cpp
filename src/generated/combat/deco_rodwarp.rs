@@ -1,0 +1,57 @@
+
+use crate::combat::deco_rod::Deco_Rod;
+use crate::combat::deco_rod::IDeco_Rod;
+use crate::combat::decorator::Decorator;
+use crate::combat::decorator::IDecorator;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/deco_rodwarp/Deco_RodWarp.md")))]
+#[::unity2::class(namespace = "Combat", name = "Deco_RodWarp")]
+#[parent(crate::combat::deco_rod::Deco_Rod)]
+pub struct Deco_RodWarp {
+    #[rename(name = "m_Use")]
+    pub m_use: crate::app::itemdata::ItemData_UseTypes,
+    #[rename(name = "m_Target")]
+    pub m_target: crate::combat::character::Character,
+    #[rename(name = "m_FinalAlpha")]
+    pub m_final_alpha: f32,
+}
+
+#[cfg(feature = "combat-deco_rodwarp")]
+#[::unity2::methods]
+impl Deco_RodWarp {
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsAvailable", args = 1)]
+    pub fn is_available(that: crate::combat::decoratorargs::DecoratorArgs) -> bool;
+
+    #[method(name = "OnEnter", args = 0)]
+    pub fn on_enter(self) -> ();
+
+    #[method(name = "OnHitPassed", args = 1)]
+    pub fn on_hit_passed(self, ev: crate::unity_engine::animationevent::AnimationEvent) -> ();
+
+    #[method(name = "UpdateAlpha", args = 0)]
+    pub fn update_alpha(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-deco_rodwarp")]
+impl Deco_RodWarp {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Deco_RodWarp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDeco_RodWarpMethods>::ctor(this);
+        this
+    }
+}

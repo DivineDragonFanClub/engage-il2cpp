@@ -1,0 +1,38 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/events/unityaction/UnityAction.md")))]
+#[::unity2::class(namespace = "UnityEngine.Events", name = "UnityAction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct UnityAction {}
+
+#[cfg(feature = "unity_engine-events-unityaction")]
+#[::unity2::methods]
+impl UnityAction {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-events-unityaction")]
+impl UnityAction {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnityAction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnityActionMethods>::ctor(this, object, method);
+        this
+    }
+}

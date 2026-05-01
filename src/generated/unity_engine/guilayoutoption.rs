@@ -1,0 +1,139 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/guilayoutoption/GUILayoutOption_Type.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GUILayoutOption_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GUILayoutOption_Type {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "GUILayoutOption.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GUILayoutOption_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GUILayoutOption_Type {
+    pub fn fixed_width() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn fixed_height() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn min_width() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn max_width() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn min_height() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn max_height() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn stretch_width() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn stretch_height() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn align_start() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn align_middle() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn align_end() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn align_justify() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn equal_size() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn spacing() -> Self {
+        Self { value: 13 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/guilayoutoption/GUILayoutOption.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "GUILayoutOption")]
+#[parent(crate::system::object::Object)]
+pub struct GUILayoutOption {
+    #[rename(name = "type")]
+    pub r#type: crate::unity_engine::guilayoutoption::GUILayoutOption_Type,
+    #[rename(name = "value")]
+    pub value: ::unity2::IlInstance,
+}
+
+#[cfg(feature = "unity_engine-guilayoutoption")]
+#[::unity2::methods]
+impl GUILayoutOption {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        r#type: crate::unity_engine::guilayoutoption::GUILayoutOption_Type,
+        value: crate::system::object::Object,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-guilayoutoption")]
+impl GUILayoutOption {
+    pub fn new(
+        r#type: crate::unity_engine::guilayoutoption::GUILayoutOption_Type,
+        value: crate::system::object::Object,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUILayoutOption),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUILayoutOptionMethods>::ctor(this, r#type, value);
+        this
+    }
+}

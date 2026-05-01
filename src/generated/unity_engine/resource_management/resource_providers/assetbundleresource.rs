@@ -1,0 +1,169 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/assetbundleresource/AssetBundleResource.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "AssetBundleResource"
+)]
+#[parent(crate::system::object::Object)]
+pub struct AssetBundleResource {
+# [rename (name = "m_AssetBundle")] pub m_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
+# [rename (name = "m_downloadHandler")] pub m_download_handler : crate :: unity_engine :: networking :: downloadhandlerassetbundle :: DownloadHandlerAssetBundle ,
+# [rename (name = "m_RequestOperation")] pub m_request_operation : crate :: unity_engine :: asyncoperation :: AsyncOperation ,
+# [rename (name = "m_WebRequestQueueOperation")] pub m_web_request_queue_operation : crate :: unity_engine :: resource_management :: webrequestqueueoperation :: WebRequestQueueOperation ,
+# [rename (name = "m_ProvideHandle")] pub m_provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle ,
+# [rename (name = "m_Options")] pub m_options : crate :: unity_engine :: resource_management :: resource_providers :: assetbundlerequestoptions :: AssetBundleRequestOptions ,
+# [rename (name = "m_WebRequestCompletedCallbackCalled")] pub m_web_request_completed_callback_called : bool ,
+# [rename (name = "m_Retries")] pub m_retries : i32 ,
+# [rename (name = "m_BytesToDownload")] pub m_bytes_to_download : i64 ,
+# [rename (name = "m_DownloadedBytes")] pub m_downloaded_bytes : i64 ,
+# [rename (name = "m_Completed")] pub m_completed : bool ,
+# [static_field] # [rename (name = "k_WaitForWebRequestMainThreadSleep")] pub k_wait_for_web_request_main_thread_sleep : i32 ,
+# [rename (name = "m_TransformedInternalId")] pub m_transformed_internal_id : :: unity2 :: Il2CppString ,
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundleresource")]
+#[::unity2::methods]
+impl AssetBundleResource {
+    #[method(name = "CreateWebRequest", args = 1)]
+    pub fn create_web_request(
+        self,
+        loc : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest;
+
+    #[method(name = "CreateWebRequest", args = 1)]
+    pub fn create_web_request_2(
+        self,
+        url: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::networking::unitywebrequest::UnityWebRequest;
+
+    #[method(name = "PercentComplete", args = 0)]
+    pub fn percent_complete(self) -> f32;
+
+    #[method(name = "GetDownloadStatus", args = 0)]
+    pub fn get_download_status(
+        self,
+    ) -> crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus;
+
+    #[method(name = "GetAssetBundle", args = 0)]
+    pub fn get_asset_bundle(self) -> crate::unity_engine::assetbundle::AssetBundle;
+
+    #[method(name = "Start", args = 1)]
+    pub fn start(
+        self,
+        provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+    ) -> ();
+
+    #[method(name = "WaitForCompletionHandler", args = 0)]
+    pub fn wait_for_completion_handler(self) -> bool;
+
+    #[method(name = "AddCallbackInvokeIfDone", args = 2)]
+    pub fn add_callback_invoke_if_done(
+        self,
+        operation: crate::unity_engine::asyncoperation::AsyncOperation,
+        callback: crate::system::action_1::Action_1<
+            crate::unity_engine::asyncoperation::AsyncOperation,
+        >,
+    ) -> ();
+
+    #[method(name = "GetLoadInfo", args = 3)]
+    pub fn get_load_info(
+        handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+        load_type : crate :: unity_engine :: resource_management :: resource_providers :: assetbundleresource :: AssetBundleResource_LoadType,
+        path: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "BeginOperation", args = 0)]
+    pub fn begin_operation(self) -> ();
+
+    #[method(name = "LocalRequestOperationCompleted", args = 1)]
+    pub fn local_request_operation_completed(
+        self,
+        op: crate::unity_engine::asyncoperation::AsyncOperation,
+    ) -> ();
+
+    #[method(name = "CompleteBundleLoad", args = 1)]
+    pub fn complete_bundle_load(self, bundle: crate::unity_engine::assetbundle::AssetBundle) -> ();
+
+    #[method(name = "WebRequestOperationCompleted", args = 1)]
+    pub fn web_request_operation_completed(
+        self,
+        op: crate::unity_engine::asyncoperation::AsyncOperation,
+    ) -> ();
+
+    #[method(name = "Unload", args = 0)]
+    pub fn unload(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-assetbundleresource")]
+impl AssetBundleResource {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssetBundleResource),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetBundleResourceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/assetbundleresource/AssetBundleResource_LoadType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AssetBundleResource_LoadType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AssetBundleResource_LoadType {
+    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.ResourceProviders";
+
+    const NAME: &'static str = "AssetBundleResource.LoadType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AssetBundleResource_LoadType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AssetBundleResource_LoadType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn local() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn web() -> Self {
+        Self { value: 2 }
+    }
+}

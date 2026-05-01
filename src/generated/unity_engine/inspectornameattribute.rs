@@ -1,0 +1,36 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::propertyattribute::IPropertyAttribute;
+use crate::unity_engine::propertyattribute::PropertyAttribute;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/inspectornameattribute/InspectorNameAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "InspectorNameAttribute")]
+#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
+pub struct InspectorNameAttribute {
+    #[rename(name = "displayName")]
+    pub display_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "unity_engine-inspectornameattribute")]
+#[::unity2::methods]
+impl InspectorNameAttribute {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, display_name: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "unity_engine-inspectornameattribute")]
+impl InspectorNameAttribute {
+    pub fn new(display_name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InspectorNameAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInspectorNameAttributeMethods>::ctor(this, display_name);
+        this
+    }
+}

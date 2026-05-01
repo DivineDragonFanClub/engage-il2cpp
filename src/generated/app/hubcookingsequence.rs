@@ -1,0 +1,404 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubcookingsequence/HubCookingSequence_LookTarget.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubCookingSequence_LookTarget {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubCookingSequence_LookTarget {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubCookingSequence.LookTarget";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubCookingSequence_LookTarget {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubCookingSequence_LookTarget {
+    pub fn camera() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn other() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubcookingsequence/HubCookingSequence.md")))]
+#[::unity2::class(namespace = "App", name = "HubCookingSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct HubCookingSequence {
+    #[rename(name = "m_SelectedUnits")]
+    pub m_selected_units:
+        crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    #[rename(name = "m_SelectedFoodstuffs")]
+    pub m_selected_foodstuffs: ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
+    #[rename(name = "m_LoadingCharacterCount")]
+    pub m_loading_character_count: i32,
+    #[rename(name = "m_UnitAccesses")]
+    pub m_unit_accesses:
+        crate::system::collections::generic::list_1::List_1<crate::app::hubaccess::HubAccess>,
+    #[rename(name = "m_Characters")]
+    pub m_characters:
+        crate::system::collections::generic::list_1::List_1<crate::combat::character::Character>,
+    #[rename(name = "m_CurrentCook")]
+    pub m_current_cook: crate::app::cookdata::CookData,
+    #[rename(name = "m_Dish")]
+    pub m_dish: crate::app::dish::Dish,
+    #[rename(name = "m_Bento")]
+    pub m_bento: crate::app::unititem::UnitItem,
+    #[rename(name = "m_ConversationType")]
+    pub m_conversation_type: crate::app::cooking::Cooking_ConversationType,
+    #[rename(name = "m_DishRelianceResult")]
+    pub m_dish_reliance_result: crate::app::dish::Dish_RelianceResult,
+    #[rename(name = "m_DishModelHandle")]
+    pub m_dish_model_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_DishModel")]
+    pub m_dish_model: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_UnitBCameraLocator")]
+    pub m_unit_b_camera_locator: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_PanPositionY")]
+    pub m_pan_position_y: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_PanEularAngle")]
+    pub m_pan_eular_angle: crate::app::interpolatorvector3::InterpolatorVector3,
+    #[rename(name = "m_CharaLight")]
+    pub m_chara_light: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_CharaLightEat")]
+    pub m_chara_light_eat: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ReliancePopUp")]
+    pub m_reliance_pop_up: crate::app::reliancepopupcontroller::ReliancePopUpController,
+    #[rename(name = "m_IsReliancePopupLoaded")]
+    pub m_is_reliance_popup_loaded: bool,
+    #[rename(name = "m_IsSkipDoCooking")]
+    pub m_is_skip_do_cooking: bool,
+    #[rename(name = "m_AddItemUnit")]
+    pub m_add_item_unit: crate::app::unit::Unit,
+    #[rename(name = "m_SoundEvent")]
+    pub m_sound_event: ::unity2::Il2CppString,
+    #[rename(name = "m_VoiceEvent")]
+    pub m_voice_event: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "PanTime")]
+    pub pan_time: f32,
+}
+
+#[cfg(feature = "app-hubcookingsequence")]
+#[::unity2::methods]
+impl HubCookingSequence {
+    #[method(name = "get_SelectedFood", args = 0)]
+    pub fn get_selected_food() -> crate::app::fooddata::FoodData;
+
+    #[method(name = "set_SelectedFood", args = 1)]
+    pub fn set_selected_food(value: crate::app::fooddata::FoodData) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, is_skip: bool) -> ();
+
+    #[method(name = "LoadResources", args = 0)]
+    pub fn load_resources(self) -> ();
+
+    #[method(name = "IsLoadingResources", args = 0)]
+    pub fn is_loading_resources(self) -> bool;
+
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
+
+    #[method(name = "CheckThrowAwayBento", args = 0)]
+    pub fn check_throw_away_bento(self) -> ();
+
+    #[method(name = "OpenStartMenu", args = 0)]
+    pub fn open_start_menu(self) -> ();
+
+    #[method(name = "ExecuteCooking", args = 0)]
+    pub fn execute_cooking(self) -> ();
+
+    #[method(name = "FightVoice", args = 0)]
+    pub fn fight_voice(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "BindCook", args = 0)]
+    pub fn bind_cook(self) -> ();
+
+    #[method(name = "UnbindCook", args = 0)]
+    pub fn unbind_cook(self) -> ();
+
+    #[method(name = "GetCookCharacter", args = 0)]
+    pub fn get_cook_character(self) -> crate::combat::character::Character;
+
+    #[method(name = "SetupModel", args = 0)]
+    pub fn setup_model(self) -> ();
+
+    #[method(name = "EnableCharaLight", args = 0)]
+    pub fn enable_chara_light(self) -> ();
+
+    #[method(name = "SetLook", args = 2)]
+    pub fn set_look(
+        self,
+        no: i32,
+        look_target: crate::app::hubcookingsequence::HubCookingSequence_LookTarget,
+    ) -> ();
+
+    #[method(name = "IsLoadingPlayResources", args = 0)]
+    pub fn is_loading_play_resources(self) -> bool;
+
+    #[method(name = "DoCooking", args = 0)]
+    pub fn do_cooking(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "SetConversation", args = 0)]
+    pub fn set_conversation(self) -> ();
+
+    #[method(name = "SetupSelectUnit", args = 2)]
+    pub fn setup_select_unit(
+        self,
+        locator_name: ::unity2::Il2CppString,
+        pid: ::unity2::Il2CppString,
+    ) -> crate::app::hubaccess::HubAccess;
+
+    #[method(name = "ResetSelectUnit", args = 1)]
+    pub fn reset_select_unit(self, locator_name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "ResultVoice", args = 0)]
+    pub fn result_voice(self) -> ();
+
+    #[method(name = "RelianceUp", args = 0)]
+    pub fn reliance_up(self) -> ();
+
+    #[method(name = "RelianceUpWait", args = 0)]
+    pub fn reliance_up_wait(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "SetConversationCamera", args = 0)]
+    pub fn set_conversation_camera(self) -> ();
+
+    #[method(name = "Conversation1", args = 0)]
+    pub fn conversation1(self) -> ();
+
+    #[method(name = "IsPlayingTelop", args = 0)]
+    pub fn is_playing_telop(self) -> bool;
+
+    #[method(name = "GetConversationLabel", args = 3)]
+    pub fn get_conversation_label(
+        self,
+        unit: crate::app::unit::Unit,
+        order: crate::app::cooking::Cooking_Order,
+        to_unit: crate::app::unit::Unit,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetConversationLabelAboutDelicious", args = 1)]
+    pub fn get_conversation_label_about_delicious(
+        self,
+        unit: crate::app::unit::Unit,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "PanCamera", args = 0)]
+    pub fn pan_camera(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "Conversation2", args = 0)]
+    pub fn conversation2(self) -> ();
+
+    #[method(name = "PopUpReliance", args = 4)]
+    pub fn pop_up_reliance(
+        self,
+        unit_a: crate::app::unit::Unit,
+        unit_b: crate::app::unit::Unit,
+        try_result: crate::app::dish::Dish_RelianceResult_TryResult,
+        value: i32,
+    ) -> ();
+
+    #[method(name = "FinalConversation", args = 0)]
+    pub fn final_conversation(self) -> ();
+
+    #[method(name = "ShowResult", args = 0)]
+    pub fn show_result(self) -> ();
+
+    #[method(name = "SoundResult", args = 0)]
+    pub fn sound_result(self) -> ();
+
+    #[method(name = "IsAvailableBento", args = 0)]
+    pub fn is_available_bento(self) -> bool;
+
+    #[method(name = "GiveBento", args = 0)]
+    pub fn give_bento(self) -> ();
+
+    #[method(name = "ShowBentoResult", args = 0)]
+    pub fn show_bento_result(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "AddAchieveCount", args = 0)]
+    pub fn add_achieve_count(self) -> ();
+
+    #[method(name = "ExitSound", args = 0)]
+    pub fn exit_sound(self) -> ();
+
+    #[method(name = "OpenTitleBar", args = 0)]
+    pub fn open_title_bar(self) -> ();
+
+    #[method(name = "CloseTitleBar", args = 0)]
+    pub fn close_title_bar(self) -> ();
+
+    #[method(name = "Exit", args = 0)]
+    pub fn exit(self) -> ();
+
+    #[method(name = "UnloadResources", args = 0)]
+    pub fn unload_resources(self) -> ();
+
+    #[method(name = "SetRenderParamsEat", args = 0)]
+    pub fn set_render_params_eat(self) -> ();
+
+    #[method(name = "SetEatsShadowPreset", args = 0)]
+    pub fn set_eats_shadow_preset(self) -> ();
+
+    #[method(name = "SetRenderParamsHub", args = 0)]
+    pub fn set_render_params_hub(self) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "GetCurrentCookUnit", args = 0)]
+    pub fn get_current_cook_unit(self) -> crate::app::unit::Unit;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-hubcookingsequence")]
+impl HubCookingSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubCookingSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubCookingSequenceMethods>::ctor(this);
+        this
+    }
+
+    pub fn new_2(is_skip: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubCookingSequence),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IHubCookingSequenceMethods>::ctor_2(this, is_skip);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubcookingsequence/HubCookingSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubCookingSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubCookingSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubCookingSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubCookingSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubCookingSequence_Label {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn init() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn select_dish() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn select_with_units() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn select_foodstuff() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn end_select() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn cook() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn start_cook_play() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn cooking_result() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn add_achieve() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn quit_select() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 11 }
+    }
+}

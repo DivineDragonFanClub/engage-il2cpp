@@ -1,0 +1,101 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hublensflare/HubLensFlare.md")))]
+#[::unity2::class(namespace = "App", name = "HubLensFlare")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct HubLensFlare {
+    #[rename(name = "FlareScale")]
+    pub flare_scale: f32,
+    #[rename(name = "FlareMaxSize")]
+    pub flare_max_size: f32,
+    #[rename(name = "FlareZ")]
+    pub flare_z: f32,
+    #[rename(name = "RotateV")]
+    pub rotate_v: f32,
+    #[rename(name = "m_flare")]
+    pub m_flare: crate::system::collections::generic::list_1::List_1<
+        crate::app::hublensflare::HubLensFlare_Flare,
+    >,
+    #[rename(name = "m_sunPosition")]
+    pub m_sun_position: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_light")]
+    pub m_light: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-hublensflare")]
+#[::unity2::methods]
+impl HubLensFlare {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hublensflare")]
+impl HubLensFlare {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubLensFlare),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubLensFlareMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hublensflare/HubLensFlare_Flare.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct HubLensFlare_Flare {
+    pub game_object: crate::unity_engine::gameobject::GameObject,
+    pub ps: crate::unity_engine::particlesystem::ParticleSystem,
+    pub particles: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+    pub material: crate::unity_engine::material::Material,
+    pub distance: f32,
+    pub scale: f32,
+    pub anglebias: f32,
+}
+
+impl ::unity2::ClassIdentity for HubLensFlare_Flare {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubLensFlare.Flare";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubLensFlare_Flare {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

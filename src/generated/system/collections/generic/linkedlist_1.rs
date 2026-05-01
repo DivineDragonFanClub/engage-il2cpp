@@ -1,0 +1,247 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/linkedlist_1/LinkedList_1_Enumerator.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct LinkedList_1_Enumerator<T0> {
+    pub _phantom: ::core::marker::PhantomData<(T0,)>,
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for LinkedList_1_Enumerator<T0> {
+    const NAMESPACE: &'static str = "System.Collections.Generic";
+
+    const NAME: &'static str = "LinkedList`1.Enumerator";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                .expect("generic instantiation")
+        })
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for LinkedList_1_Enumerator<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "system-collections-generic-linkedlist_1")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity> LinkedList_1_Enumerator<T0> {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T0>,
+    ) -> ();
+
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> T0;
+
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
+    pub fn system_collections_i_enumerator_reset(self) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(
+        name = "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",
+        args = 1
+    )]
+    pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization(
+        self,
+        sender: crate::system::object::Object,
+    ) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/linkedlist_1/LinkedList_1.md")))]
+#[::unity2::class(namespace = "System.Collections.Generic", name = "LinkedList`1")]
+pub struct LinkedList_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "head")]
+    pub head: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
+    #[rename(name = "count")]
+    pub count: i32,
+    #[rename(name = "version")]
+    pub version: i32,
+    #[rename(name = "_syncRoot")]
+    pub sync_root: ::unity2::IlInstance,
+    #[static_field]
+    #[rename(name = "VersionName")]
+    pub version_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "CountName")]
+    pub count_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "ValuesName")]
+    pub values_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "system-collections-generic-linkedlist_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> LinkedList_1<T0> {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[method(name = "get_First", args = 0)]
+    pub fn get_first(
+        self,
+    ) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>;
+
+    #[method(name = "get_Last", args = 0)]
+    pub fn get_last(
+        self,
+    ) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>;
+
+    #[method(name = "AddBefore", args = 2)]
+    pub fn add_before(
+        self,
+        node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
+        new_node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
+    ) -> ();
+
+    #[method(name = "AddFirst", args = 1)]
+    pub fn add_first(
+        self,
+        value: T0,
+    ) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>;
+
+    #[method(name = "AddFirst", args = 1)]
+    pub fn add_first_2(
+        self,
+        node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
+    ) -> ();
+
+    #[method(name = "AddLast", args = 1)]
+    pub fn add_last(
+        self,
+        value: T0,
+    ) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>;
+
+    #[method(name = "AddLast", args = 1)]
+    pub fn add_last_2(
+        self,
+        node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
+    ) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "Contains", args = 1)]
+    pub fn contains(self, value: T0) -> bool;
+
+    #[method(name = "CopyTo", args = 2)]
+    pub fn copy_to(self, array: ::unity2::Array<T0>, index: i32) -> ();
+
+    #[method(name = "Find", args = 1)]
+    pub fn find(
+        self,
+        value: T0,
+    ) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>;
+
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator(
+        self,
+    ) -> crate::system::collections::generic::linkedlist_1::LinkedList_1_Enumerator<T0>;
+
+    #[method(name = "Remove", args = 1)]
+    pub fn remove(self, value: T0) -> bool;
+
+    #[method(name = "Remove", args = 1)]
+    pub fn remove_2(
+        self,
+        node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
+    ) -> ();
+
+    #[method(name = "RemoveFirst", args = 0)]
+    pub fn remove_first(self) -> ();
+
+    #[method(name = "RemoveLast", args = 0)]
+    pub fn remove_last(self) -> ();
+
+    #[method(name = "OnDeserialization", args = 1)]
+    pub fn on_deserialization(self, sender: crate::system::object::Object) -> ();
+
+    #[method(name = "InternalInsertNodeBefore", args = 2)]
+    pub fn internal_insert_node_before(
+        self,
+        node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
+        new_node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
+    ) -> ();
+
+    #[method(name = "InternalInsertNodeToEmptyList", args = 1)]
+    pub fn internal_insert_node_to_empty_list(
+        self,
+        new_node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
+    ) -> ();
+
+    #[method(name = "InternalRemoveNode", args = 1)]
+    pub fn internal_remove_node(
+        self,
+        node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
+    ) -> ();
+
+    #[method(name = "ValidateNewNode", args = 1)]
+    pub fn validate_new_node(
+        self,
+        node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
+    ) -> ();
+
+    #[method(name = "ValidateNode", args = 1)]
+    pub fn validate_node(
+        self,
+        node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T0>,
+    ) -> ();
+
+    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
+    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
+
+    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
+    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
+
+    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
+    pub fn system_collections_i_collection_copy_to(
+        self,
+        array: ::unity2::IlInstance,
+        index: i32,
+    ) -> ();
+
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+}
+
+#[cfg(feature = "system-collections-generic-linkedlist_1")]
+impl<T0: ::unity2::ClassIdentity> LinkedList_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LinkedList_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILinkedList_1Methods<T0>>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,152 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/challengedata/ChallengeData.md")))]
+#[::unity2::class(namespace = "App", name = "ChallengeData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: challengedata :: ChallengeData >)]
+pub struct ChallengeData {
+    #[rename(name = "FlagNameTurn")]
+    pub flag_name_turn: ::unity2::Il2CppString,
+    #[rename(name = "FlagNameLevel")]
+    pub flag_name_level: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "MaxStage")]
+    pub max_stage: i32,
+}
+
+#[cfg(feature = "app-challengedata")]
+#[::unity2::methods]
+impl ChallengeData {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_Cid", args = 0)]
+    pub fn get_cid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Cid", args = 1)]
+    pub fn set_cid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Stage1", args = 0)]
+    pub fn get_stage1(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_Stage1", args = 1)]
+    pub fn set_stage1(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_Stage2", args = 0)]
+    pub fn get_stage2(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_Stage2", args = 1)]
+    pub fn set_stage2(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_Stage3", args = 0)]
+    pub fn get_stage3(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_Stage3", args = 1)]
+    pub fn set_stage3(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_Reward", args = 0)]
+    pub fn get_reward(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Reward", args = 1)]
+    pub fn set_reward(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_UnlockCid", args = 0)]
+    pub fn get_unlock_cid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_UnlockCid", args = 1)]
+    pub fn set_unlock_cid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_SortieCount", args = 0)]
+    pub fn get_sortie_count(self) -> i32;
+
+    #[method(name = "set_SortieCount", args = 1)]
+    pub fn set_sortie_count(self, value: i32) -> ();
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[method(name = "OnCompleted", args = 0)]
+    pub fn on_completed(self) -> ();
+
+    #[method(name = "OnRelease", args = 0)]
+    pub fn on_release(self) -> ();
+
+    #[method(name = "GetRewardList", args = 0)]
+    pub fn get_reward_list(
+        self,
+    ) -> crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::rewarddata::RewardData>;
+
+    #[method(name = "TrySetStage", args = 3)]
+    pub fn try_set_stage(
+        list: crate::system::collections::generic::list_1::List_1<
+            crate::app::chapterdata::ChapterData,
+        >,
+        random: crate::app::random_2::Random_2,
+        stages: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> bool;
+
+    #[method(name = "GetStageList", args = 1)]
+    pub fn get_stage_list(
+        self,
+        random: crate::app::random_2::Random_2,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::chapterdata::ChapterData>;
+
+    #[method(name = "CanSelect", args = 0)]
+    pub fn can_select(self) -> bool;
+
+    #[method(name = "RegistGlobalFlags", args = 0)]
+    pub fn regist_global_flags() -> ();
+
+    #[method(name = "get_BestTurn", args = 0)]
+    pub fn get_best_turn(self) -> i32;
+
+    #[method(name = "set_BestTurn", args = 1)]
+    pub fn set_best_turn(self, value: i32) -> ();
+
+    #[method(name = "get_BestLevel", args = 0)]
+    pub fn get_best_level(self) -> i32;
+
+    #[method(name = "set_BestLevel", args = 1)]
+    pub fn set_best_level(self, value: i32) -> ();
+
+    #[method(name = "IsNew", args = 0)]
+    pub fn is_new(self) -> bool;
+
+    #[method(name = "SawNewAccess", args = 0)]
+    pub fn saw_new_access(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-challengedata")]
+impl ChallengeData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeDataMethods>::ctor(this);
+        this
+    }
+}

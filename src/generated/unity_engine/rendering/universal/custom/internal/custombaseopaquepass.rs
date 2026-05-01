@@ -1,0 +1,148 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/custombaseopaquepass/CustomBaseOpaquePass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+    name = "CustomBaseOpaquePass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct CustomBaseOpaquePass {
+    #[rename(name = "m_FilteringSettings")]
+    pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+    #[rename(name = "m_RenderStateBlock")]
+    pub m_render_state_block: crate::unity_engine::rendering::renderstateblock::RenderStateBlock,
+    #[rename(name = "m_DefaultShaderTagId")]
+    pub m_default_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[rename(name = "m_ShaderTagIdList")]
+    pub m_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    >,
+    #[rename(name = "m_ProfilerTag")]
+    pub m_profiler_tag: ::unity2::Il2CppString,
+    #[rename(name = "m_ProfilingSampler")]
+    pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "s_DrawObjectPassDataPropID")]
+    pub s_draw_object_pass_data_prop_id: i32,
+    #[rename(name = "m_NoOverrideStateShaderTagId")]
+    pub m_no_override_state_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[rename(name = "m_NoOverrideStateShaderTagIdList")]
+    pub m_no_override_state_shader_tag_id_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    >,
+    #[rename(name = "m_DepthState")]
+    pub m_depth_state: crate::unity_engine::rendering::depthstate::DepthState,
+    #[rename(name = "m_ZPrepassEnabled")]
+    pub m_z_prepass_enabled: bool,
+    #[rename(name = "m_ZPrepassOptimizedSort")]
+    pub m_z_prepass_optimized_sort: bool,
+    #[rename(name = "m_BlitMaterial")]
+    pub m_blit_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_SilhouetteColorPropID")]
+    pub m_silhouette_color_prop_id: ::unity2::Array<i32>,
+    #[rename(name = "m_CustomViewport")]
+    pub m_custom_viewport: bool,
+    #[rename(name = "m_CustomViewportRect")]
+    pub m_custom_viewport_rect: crate::unity_engine::rect::Rect,
+    #[rename(name = "m_OriginalViewportRect")]
+    pub m_original_viewport_rect: crate::unity_engine::rect::Rect,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombaseopaquepass")]
+#[::unity2::methods]
+impl CustomBaseOpaquePass {
+    #[method(name = "get_silhouetteColors", args = 0)]
+    pub fn get_silhouette_colors(self) -> ::unity2::Array<crate::unity_engine::vector4::Vector4>;
+
+    #[method(name = "set_silhouetteColors", args = 1)]
+    pub fn set_silhouette_colors(
+        self,
+        value: ::unity2::Array<crate::unity_engine::vector4::Vector4>,
+    ) -> ();
+
+    #[method(name = "get_statusRenderingFlag", args = 0)]
+    pub fn get_status_rendering_flag(self) -> bool;
+
+    #[method(name = "set_statusRenderingFlag", args = 1)]
+    pub fn set_status_rendering_flag(self, value: bool) -> ();
+
+    #[method(name = "get_silhouetteEnabled", args = 0)]
+    pub fn get_silhouette_enabled(self) -> bool;
+
+    #[method(name = "set_silhouetteEnabled", args = 1)]
+    pub fn set_silhouette_enabled(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        profiler_tag: ::unity2::Il2CppString,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        blit_material: crate::unity_engine::material::Material,
+    ) -> ();
+
+    #[method(name = "SetZPrepassFlag", args = 1)]
+    pub fn set_z_prepass_flag(self, zprepass_enabled: bool) -> ();
+
+    #[method(name = "SetZPrepassFlag", args = 2)]
+    pub fn set_z_prepass_flag_2(self, zprepass_enabled: bool, zprepass_optimized_sort: bool) -> ();
+
+    #[method(name = "InternalSetZPrepassFlag", args = 1)]
+    pub fn internal_set_z_prepass_flag(self, zprepass_enabled: bool) -> ();
+
+    #[method(name = "EnableCustomViewport", args = 4)]
+    pub fn enable_custom_viewport(
+        self,
+        original_w: f32,
+        original_h: f32,
+        custom_w: f32,
+        custom_h: f32,
+    ) -> ();
+
+    #[method(name = "DisableCustomViewport", args = 0)]
+    pub fn disable_custom_viewport(self) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-custombaseopaquepass")]
+impl CustomBaseOpaquePass {
+    pub fn new(
+        profiler_tag: ::unity2::Il2CppString,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+        blit_material: crate::unity_engine::material::Material,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomBaseOpaquePass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomBaseOpaquePassMethods>::ctor(
+            this,
+            profiler_tag,
+            evt,
+            render_queue_range,
+            layer_mask,
+            blit_material,
+        );
+        this
+    }
+}

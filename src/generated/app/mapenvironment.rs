@@ -1,0 +1,100 @@
+
+use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+use crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenvironment/MapEnvironment_Param.md")))]
+#[::unity2::class(namespace = "App", name = "MapEnvironment.Param")]
+#[parent(crate::system::object::Object)]
+pub struct MapEnvironment_Param {
+    #[rename(name = "color")]
+    pub color: crate::unity_engine::color::Color,
+    #[rename(name = "start")]
+    pub start: f32,
+    #[rename(name = "end")]
+    pub end: f32,
+    #[rename(name = "useDefaultShadowPreset")]
+    pub use_default_shadow_preset: bool,
+    #[rename(name = "overrideShadowPresetData")]
+    pub override_shadow_preset_data:
+        crate::unity_engine::rendering::universal::custom::customshadowdata::CustomShadowData,
+}
+
+#[cfg(feature = "app-mapenvironment")]
+#[::unity2::methods]
+impl MapEnvironment_Param {
+    #[method(name = "Write", args = 0)]
+    pub fn write(self) -> ();
+
+    #[method(name = "Read", args = 0)]
+    pub fn read(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapenvironment")]
+impl MapEnvironment_Param {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapEnvironment_Param),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapEnvironment_ParamMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapenvironment/MapEnvironment.md")))]
+#[::unity2::class(namespace = "App", name = "MapEnvironment")]
+# [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapenvironment :: MapEnvironment >)]
+pub struct MapEnvironment {
+    #[rename(name = "Bmap")]
+    pub bmap: crate::app::mapenvironment::MapEnvironment_Param,
+    #[rename(name = "Combat")]
+    pub combat: crate::app::mapenvironment::MapEnvironment_Param,
+}
+
+#[cfg(feature = "app-mapenvironment")]
+#[::unity2::methods]
+impl MapEnvironment {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "SetShadowTransition", args = 1)]
+    pub fn set_shadow_transition(self, transition: f32) -> ();
+
+    #[method(name = "SetTransition", args = 1)]
+    pub fn set_transition(self, transition: f32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapenvironment")]
+impl MapEnvironment {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapEnvironment),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapEnvironmentMethods>::ctor(this);
+        this
+    }
+}

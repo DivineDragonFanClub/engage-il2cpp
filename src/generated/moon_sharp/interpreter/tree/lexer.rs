@@ -1,0 +1,171 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/lexer/Lexer.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter.Tree", name = "Lexer")]
+#[parent(crate::system::object::Object)]
+pub struct Lexer {
+    #[rename(name = "m_Current")]
+    pub m_current: crate::moon_sharp::interpreter::tree::token::Token,
+    #[rename(name = "m_Code")]
+    pub m_code: ::unity2::Il2CppString,
+    #[rename(name = "m_PrevLineTo")]
+    pub m_prev_line_to: i32,
+    #[rename(name = "m_PrevColTo")]
+    pub m_prev_col_to: i32,
+    #[rename(name = "m_Cursor")]
+    pub m_cursor: i32,
+    #[rename(name = "m_Line")]
+    pub m_line: i32,
+    #[rename(name = "m_Col")]
+    pub m_col: i32,
+    #[rename(name = "m_SourceId")]
+    pub m_source_id: i32,
+    #[rename(name = "m_AutoSkipComments")]
+    pub m_auto_skip_comments: bool,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-lexer")]
+#[::unity2::methods]
+impl Lexer {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        source_id: i32,
+        script_content: ::unity2::Il2CppString,
+        auto_skip_comments: bool,
+    ) -> ();
+
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "FetchNewToken", args = 0)]
+    pub fn fetch_new_token(self) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "Next", args = 0)]
+    pub fn next(self) -> ();
+
+    #[method(name = "PeekNext", args = 0)]
+    pub fn peek_next(self) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "CursorNext", args = 0)]
+    pub fn cursor_next(self) -> ();
+
+    #[method(name = "CursorChar", args = 0)]
+    pub fn cursor_char(self) -> u16;
+
+    #[method(name = "CursorCharNext", args = 0)]
+    pub fn cursor_char_next(self) -> u16;
+
+    #[method(name = "CursorMatches", args = 1)]
+    pub fn cursor_matches(self, pattern: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "CursorNotEof", args = 0)]
+    pub fn cursor_not_eof(self) -> bool;
+
+    #[method(name = "IsWhiteSpace", args = 1)]
+    pub fn is_white_space(self, c: u16) -> bool;
+
+    #[method(name = "SkipWhiteSpace", args = 0)]
+    pub fn skip_white_space(self) -> ();
+
+    #[method(name = "ReadToken", args = 0)]
+    pub fn read_token(self) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "ReadLongString", args = 4)]
+    pub fn read_long_string(
+        self,
+        from_line: i32,
+        from_col: i32,
+        startpattern: ::unity2::Il2CppString,
+        subtypeforerrors: ::unity2::Il2CppString,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "ReadNumberToken", args = 3)]
+    pub fn read_number_token(
+        self,
+        from_line: i32,
+        from_col: i32,
+        leading_dot: bool,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "CreateSingleCharToken", args = 3)]
+    pub fn create_single_char_token(
+        self,
+        token_type: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+        from_line: i32,
+        from_col: i32,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "ReadHashBang", args = 2)]
+    pub fn read_hash_bang(
+        self,
+        from_line: i32,
+        from_col: i32,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "ReadComment", args = 2)]
+    pub fn read_comment(
+        self,
+        from_line: i32,
+        from_col: i32,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "ReadSimpleStringToken", args = 2)]
+    pub fn read_simple_string_token(
+        self,
+        from_line: i32,
+        from_col: i32,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "PotentiallyDoubleCharOperator", args = 5)]
+    pub fn potentially_double_char_operator(
+        self,
+        expected_second_char: u16,
+        single_char_token: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+        double_char_token: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+        from_line: i32,
+        from_col: i32,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "CreateNameToken", args = 3)]
+    pub fn create_name_token(
+        self,
+        name: ::unity2::Il2CppString,
+        from_line: i32,
+        from_col: i32,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "CreateToken", args = 4)]
+    pub fn create_token(
+        self,
+        token_type: crate::moon_sharp::interpreter::tree::tokentype::TokenType,
+        from_line: i32,
+        from_col: i32,
+        text: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::tree::token::Token;
+
+    #[method(name = "ReadNameToken", args = 0)]
+    pub fn read_name_token(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-lexer")]
+impl Lexer {
+    pub fn new(
+        source_id: i32,
+        script_content: ::unity2::Il2CppString,
+        auto_skip_comments: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Lexer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILexerMethods>::ctor(this, source_id, script_content, auto_skip_comments);
+        this
+    }
+}

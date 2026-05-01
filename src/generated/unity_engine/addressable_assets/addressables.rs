@@ -1,0 +1,391 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/addressables/Addressables.md")))]
+#[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "Addressables")]
+#[parent(crate::system::object::Object)]
+pub struct Addressables {
+    #[static_field]
+    #[rename(name = "reinitializeAddressables")]
+    pub reinitialize_addressables: bool,
+    #[static_field]
+    #[rename(name = "m_AddressablesInstance")]
+    pub m_addressables_instance:
+        crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+    #[static_field]
+    #[rename(name = "kAddressablesRuntimeDataPath")]
+    pub k_addressables_runtime_data_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "k_AddressablesLogConditional")]
+    pub k_addressables_log_conditional: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kAddressablesRuntimeBuildLogPath")]
+    pub k_addressables_runtime_build_log_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "LibraryPath")]
+    pub library_path: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-addressables")]
+#[::unity2::methods]
+impl Addressables {
+    #[method(name = "get_m_Addressables", args = 0)]
+    pub fn get_m_addressables(
+    ) -> crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl;
+
+    #[method(name = "get_ResourceManager", args = 0)]
+    pub fn get_resource_manager(
+    ) -> crate::unity_engine::resource_management::resourcemanager::ResourceManager;
+
+    #[method(name = "get_Instance", args = 0)]
+    pub fn get_instance(
+    ) -> crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl;
+
+    #[method(name = "get_InstanceProvider", args = 0)]
+    pub fn get_instance_provider () -> crate :: unity_engine :: resource_management :: resource_providers :: iinstanceprovider_interface :: IInstanceProvider_Interface ;
+
+    #[method(name = "ResolveInternalId", args = 1)]
+    pub fn resolve_internal_id(id: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_InternalIdTransformFunc", args = 0)]
+    pub fn get_internal_id_transform_func () -> crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: Il2CppString > ;
+
+    #[method(name = "set_InternalIdTransformFunc", args = 1)]
+    pub fn set_internal_id_transform_func(
+        value : crate :: system :: func_2 :: Func_2 < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , :: unity2 :: Il2CppString >,
+    ) -> ();
+
+    #[method(name = "get_WebRequestOverride", args = 0)]
+    pub fn get_web_request_override() -> crate::system::action_1::Action_1<
+        crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
+    >;
+
+    #[method(name = "set_WebRequestOverride", args = 1)]
+    pub fn set_web_request_override(
+        value: crate::system::action_1::Action_1<
+            crate::unity_engine::networking::unitywebrequest::UnityWebRequest,
+        >,
+    ) -> ();
+
+    #[method(name = "get_StreamingAssetsSubFolder", args = 0)]
+    pub fn get_streaming_assets_sub_folder() -> ::unity2::Il2CppString;
+
+    #[method(name = "get_BuildPath", args = 0)]
+    pub fn get_build_path() -> ::unity2::Il2CppString;
+
+    #[method(name = "get_PlayerBuildDataPath", args = 0)]
+    pub fn get_player_build_data_path() -> ::unity2::Il2CppString;
+
+    #[method(name = "get_RuntimePath", args = 0)]
+    pub fn get_runtime_path() -> ::unity2::Il2CppString;
+
+    #[method(name = "get_ResourceLocators", args = 0)]
+    pub fn get_resource_locators () -> crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ;
+
+    #[method(name = "InternalSafeSerializationLog", args = 2)]
+    pub fn internal_safe_serialization_log(
+        msg: ::unity2::Il2CppString,
+        log_type: crate::unity_engine::logtype::LogType,
+    ) -> ();
+
+    #[method(name = "InternalSafeSerializationLogFormat", args = 3)]
+    pub fn internal_safe_serialization_log_format(
+        format: ::unity2::Il2CppString,
+        log_type: crate::unity_engine::logtype::LogType,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = "Log", args = 1)]
+    pub fn log(msg: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "LogFormat", args = 2)]
+    pub fn log_format(
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = "LogWarning", args = 1)]
+    pub fn log_warning(msg: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "LogWarningFormat", args = 2)]
+    pub fn log_warning_format(
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = "LogError", args = 1)]
+    pub fn log_error(msg: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "LogErrorFormat", args = 2)]
+    pub fn log_error_format(
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize () -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ;
+
+    #[method(name = "InitializeAsync", args = 0)]
+    pub fn initialize_async () -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ;
+
+    #[method(name = "LoadContentCatalog", args = 2)]
+    pub fn load_content_catalog (catalog_path : :: unity2 :: Il2CppString , provider_suffix : :: unity2 :: Il2CppString) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ;
+
+    #[method(name = "LoadContentCatalogAsync", args = 2)]
+    pub fn load_content_catalog_async (catalog_path : :: unity2 :: Il2CppString , provider_suffix : :: unity2 :: Il2CppString) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ;
+
+    #[method(name = "LoadContentCatalogAsync", args = 3)]
+    pub fn load_content_catalog_async_2 (catalog_path : :: unity2 :: Il2CppString , auto_release_handle : bool , provider_suffix : :: unity2 :: Il2CppString) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ;
+
+    #[method(name = "get_InitializationOperation", args = 0)]
+    pub fn get_initialization_operation () -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ;
+
+    #[method(name = "LoadResourceLocations", args = 3)]
+    pub fn load_resource_locations (keys : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > , mode : crate :: unity_engine :: addressable_assets :: addressables :: Addressables_MergeMode , r#type : :: unity2 :: SystemType) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > ;
+
+    #[method(name = "LoadResourceLocationsAsync", args = 3)]
+    pub fn load_resource_locations_async (keys : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > , mode : crate :: unity_engine :: addressable_assets :: addressables :: Addressables_MergeMode , r#type : :: unity2 :: SystemType) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > ;
+
+    #[method(name = "LoadResourceLocationsAsync", args = 3)]
+    pub fn load_resource_locations_async_2 (keys : crate :: system :: collections :: ienumerable :: IEnumerable , mode : crate :: unity_engine :: addressable_assets :: addressables :: Addressables_MergeMode , r#type : :: unity2 :: SystemType) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > ;
+
+    #[method(name = "LoadResourceLocations", args = 2)]
+    pub fn load_resource_locations_2 (key : crate :: system :: object :: Object , r#type : :: unity2 :: SystemType) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > ;
+
+    #[method(name = "LoadResourceLocationsAsync", args = 2)]
+    pub fn load_resource_locations_async_3 (key : crate :: system :: object :: Object , r#type : :: unity2 :: SystemType) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > > ;
+
+    #[method(name = "Release", args = 1)]
+    pub fn release(
+        handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
+    ) -> ();
+
+    #[method(name = "ReleaseInstance", args = 1)]
+    pub fn release_instance(instance: crate::unity_engine::gameobject::GameObject) -> bool;
+
+    #[method(name = "ReleaseInstance", args = 1)]
+    pub fn release_instance_2(
+        handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle,
+    ) -> bool;
+
+    #[method(name = "ReleaseInstance", args = 1)]
+    pub fn release_instance_3(
+        handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject >,
+    ) -> bool;
+
+    #[method(name = "GetDownloadSize", args = 1)]
+    pub fn get_download_size (key : crate :: system :: object :: Object) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < i64 > ;
+
+    #[method(name = "GetDownloadSizeAsync", args = 1)]
+    pub fn get_download_size_async (key : crate :: system :: object :: Object) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < i64 > ;
+
+    #[method(name = "GetDownloadSizeAsync", args = 1)]
+    pub fn get_download_size_async_2 (key : :: unity2 :: Il2CppString) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < i64 > ;
+
+    #[method(name = "GetDownloadSizeAsync", args = 1)]
+    pub fn get_download_size_async_3 (keys : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < i64 > ;
+
+    #[method(name = "GetDownloadSizeAsync", args = 1)]
+    pub fn get_download_size_async_4 (keys : crate :: system :: collections :: ienumerable :: IEnumerable) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < i64 > ;
+
+    #[method(name = "DownloadDependencies", args = 1)]
+    pub fn download_dependencies (key : crate :: system :: object :: Object) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle ;
+
+    #[method(name = "DownloadDependenciesAsync", args = 2)]
+    pub fn download_dependencies_async (key : crate :: system :: object :: Object , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle ;
+
+    #[method(name = "DownloadDependenciesAsync", args = 2)]
+    pub fn download_dependencies_async_2 (locations : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle ;
+
+    #[method(name = "DownloadDependenciesAsync", args = 3)]
+    pub fn download_dependencies_async_3 (keys : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > , mode : crate :: unity_engine :: addressable_assets :: addressables :: Addressables_MergeMode , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle ;
+
+    #[method(name = "DownloadDependenciesAsync", args = 3)]
+    pub fn download_dependencies_async_4 (keys : crate :: system :: collections :: ienumerable :: IEnumerable , mode : crate :: unity_engine :: addressable_assets :: addressables :: Addressables_MergeMode , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle ;
+
+    #[method(name = "ClearDependencyCacheAsync", args = 1)]
+    pub fn clear_dependency_cache_async(key: crate::system::object::Object) -> ();
+
+    #[method(name = "ClearDependencyCacheAsync", args = 1)]
+    pub fn clear_dependency_cache_async_2(
+        locations : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+    ) -> ();
+
+    #[method(name = "ClearDependencyCacheAsync", args = 1)]
+    pub fn clear_dependency_cache_async_3(
+        keys: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::system::object::Object,
+        >,
+    ) -> ();
+
+    #[method(name = "ClearDependencyCacheAsync", args = 1)]
+    pub fn clear_dependency_cache_async_4(
+        keys: crate::system::collections::ienumerable::IEnumerable,
+    ) -> ();
+
+    #[method(name = "ClearDependencyCacheAsync", args = 1)]
+    pub fn clear_dependency_cache_async_5(key: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "ClearDependencyCacheAsync", args = 2)]
+    pub fn clear_dependency_cache_async_6 (key : crate :: system :: object :: Object , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > ;
+
+    #[method(name = "ClearDependencyCacheAsync", args = 2)]
+    pub fn clear_dependency_cache_async_7 (locations : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > ;
+
+    #[method(name = "ClearDependencyCacheAsync", args = 2)]
+    pub fn clear_dependency_cache_async_8 (keys : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object > , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > ;
+
+    #[method(name = "ClearDependencyCacheAsync", args = 2)]
+    pub fn clear_dependency_cache_async_9 (keys : crate :: system :: collections :: ienumerable :: IEnumerable , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > ;
+
+    #[method(name = "ClearDependencyCacheAsync", args = 2)]
+    pub fn clear_dependency_cache_async_10 (key : :: unity2 :: Il2CppString , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > ;
+
+    #[method(name = "Instantiate", args = 4)]
+    pub fn instantiate (location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , parent : crate :: unity_engine :: transform :: Transform , instantiate_in_world_space : bool , track_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ;
+
+    #[method(name = "Instantiate", args = 5)]
+    pub fn instantiate_2 (location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , position : crate :: unity_engine :: vector3 :: Vector3 , rotation : crate :: unity_engine :: quaternion :: Quaternion , parent : crate :: unity_engine :: transform :: Transform , track_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ;
+
+    #[method(name = "Instantiate", args = 4)]
+    pub fn instantiate_3 (key : crate :: system :: object :: Object , parent : crate :: unity_engine :: transform :: Transform , instantiate_in_world_space : bool , track_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ;
+
+    #[method(name = "Instantiate", args = 5)]
+    pub fn instantiate_4 (key : crate :: system :: object :: Object , position : crate :: unity_engine :: vector3 :: Vector3 , rotation : crate :: unity_engine :: quaternion :: Quaternion , parent : crate :: unity_engine :: transform :: Transform , track_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ;
+
+    #[method(name = "Instantiate", args = 3)]
+    pub fn instantiate_5 (key : crate :: system :: object :: Object , instantiate_parameters : crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters , track_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ;
+
+    #[method(name = "Instantiate", args = 3)]
+    pub fn instantiate_6 (location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , instantiate_parameters : crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters , track_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ;
+
+    #[method(name = "InstantiateAsync", args = 4)]
+    pub fn instantiate_async (location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , parent : crate :: unity_engine :: transform :: Transform , instantiate_in_world_space : bool , track_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ;
+
+    #[method(name = "InstantiateAsync", args = 5)]
+    pub fn instantiate_async_2 (location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , position : crate :: unity_engine :: vector3 :: Vector3 , rotation : crate :: unity_engine :: quaternion :: Quaternion , parent : crate :: unity_engine :: transform :: Transform , track_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ;
+
+    #[method(name = "InstantiateAsync", args = 4)]
+    pub fn instantiate_async_3 (key : crate :: system :: object :: Object , parent : crate :: unity_engine :: transform :: Transform , instantiate_in_world_space : bool , track_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ;
+
+    #[method(name = "InstantiateAsync", args = 5)]
+    pub fn instantiate_async_4 (key : crate :: system :: object :: Object , position : crate :: unity_engine :: vector3 :: Vector3 , rotation : crate :: unity_engine :: quaternion :: Quaternion , parent : crate :: unity_engine :: transform :: Transform , track_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ;
+
+    #[method(name = "InstantiateAsync", args = 3)]
+    pub fn instantiate_async_5 (key : crate :: system :: object :: Object , instantiate_parameters : crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters , track_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ;
+
+    #[method(name = "InstantiateAsync", args = 3)]
+    pub fn instantiate_async_6 (location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , instantiate_parameters : crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters , track_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > ;
+
+    #[method(name = "LoadScene", args = 4)]
+    pub fn load_scene (key : crate :: system :: object :: Object , load_mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , activate_on_load : bool , priority : i32) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[method(name = "LoadScene", args = 4)]
+    pub fn load_scene_2 (location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , load_mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , activate_on_load : bool , priority : i32) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[method(name = "LoadSceneAsync", args = 4)]
+    pub fn load_scene_async (key : crate :: system :: object :: Object , load_mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , activate_on_load : bool , priority : i32) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[method(name = "LoadSceneAsync", args = 4)]
+    pub fn load_scene_async_2 (location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , load_mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , activate_on_load : bool , priority : i32) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[method(name = "UnloadScene", args = 2)]
+    pub fn unload_scene (scene : crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[method(name = "UnloadScene", args = 2)]
+    pub fn unload_scene_2 (handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[method(name = "UnloadScene", args = 2)]
+    pub fn unload_scene_3 (handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[method(name = "UnloadSceneAsync", args = 2)]
+    pub fn unload_scene_async (scene : crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[method(name = "UnloadSceneAsync", args = 2)]
+    pub fn unload_scene_async_2 (handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[method(name = "UnloadSceneAsync", args = 2)]
+    pub fn unload_scene_async_3 (handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[method(name = "CheckForCatalogUpdates", args = 1)]
+    pub fn check_for_catalog_updates (auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > > ;
+
+    #[method(name = "UpdateCatalogs", args = 2)]
+    pub fn update_catalogs (catalogs : crate :: system :: collections :: generic :: ienumerable_1 :: IEnumerable_1 < :: unity2 :: Il2CppString > , auto_release_handle : bool) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > > ;
+
+    #[method(name = "AddResourceLocator", args = 3)]
+    pub fn add_resource_locator(
+        locator : crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator,
+        local_catalog_hash: ::unity2::Il2CppString,
+        remote_catalog_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+    ) -> ();
+
+    #[method(name = "RemoveResourceLocator", args = 1)]
+    pub fn remove_resource_locator(
+        locator : crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator,
+    ) -> ();
+
+    #[method(name = "ClearResourceLocators", args = 0)]
+    pub fn clear_resource_locators() -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/addressables/Addressables_MergeMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Addressables_MergeMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Addressables_MergeMode {
+    const NAMESPACE: &'static str = "UnityEngine.AddressableAssets";
+
+    const NAME: &'static str = "Addressables.MergeMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Addressables_MergeMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Addressables_MergeMode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn use_first() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn r#union() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn intersection() -> Self {
+        Self { value: 2 }
+    }
+}

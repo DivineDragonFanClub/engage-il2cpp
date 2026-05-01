@@ -1,0 +1,112 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/texteditor/TextEditor.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "TextEditor")]
+#[parent(crate::system::object::Object)]
+pub struct TextEditor {
+    #[rename(name = "keyboardOnScreen")]
+    pub keyboard_on_screen: crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard,
+    #[rename(name = "controlID")]
+    pub control_id: i32,
+    #[rename(name = "style")]
+    pub style: crate::unity_engine::guistyle::GUIStyle,
+    #[rename(name = "multiline")]
+    pub multiline: bool,
+    #[rename(name = "hasHorizontalCursorPos")]
+    pub has_horizontal_cursor_pos: bool,
+    #[rename(name = "isPasswordField")]
+    pub is_password_field: bool,
+    #[rename(name = "scrollOffset")]
+    pub scroll_offset: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_Content")]
+    pub m_content: crate::unity_engine::guicontent::GUIContent,
+    #[rename(name = "m_CursorIndex")]
+    pub m_cursor_index: i32,
+    #[rename(name = "m_SelectIndex")]
+    pub m_select_index: i32,
+    #[rename(name = "m_RevealCursor")]
+    pub m_reveal_cursor: bool,
+    #[rename(name = "m_MouseDragSelectsWholeWords")]
+    pub m_mouse_drag_selects_whole_words: bool,
+    #[rename(name = "m_DblClickInitPos")]
+    pub m_dbl_click_init_pos: i32,
+    #[rename(name = "m_DblClickSnap")]
+    pub m_dbl_click_snap: crate::unity_engine::texteditor::TextEditor_DblClickSnapping,
+    #[rename(name = "m_bJustSelected")]
+    pub m_b_just_selected: bool,
+    #[rename(name = "m_iAltCursorPos")]
+    pub m_i_alt_cursor_pos: i32,
+}
+
+#[cfg(feature = "unity_engine-texteditor")]
+#[::unity2::methods]
+impl TextEditor {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-texteditor")]
+impl TextEditor {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TextEditor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITextEditorMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/texteditor/TextEditor_DblClickSnapping.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TextEditor_DblClickSnapping {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TextEditor_DblClickSnapping {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "TextEditor.DblClickSnapping";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TextEditor_DblClickSnapping {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TextEditor_DblClickSnapping {
+    pub fn words() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn paragraphs() -> Self {
+        Self { value: 1 }
+    }
+}

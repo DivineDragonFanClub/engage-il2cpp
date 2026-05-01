@@ -1,0 +1,19 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/excombatcameratype/ExCombatCameraType.md")))]
+#[::unity2::class(namespace = "Combat", name = "ExCombatCameraType")]
+#[parent(crate::system::object::Object)]
+pub struct ExCombatCameraType {}
+
+#[cfg(feature = "combat-excombatcameratype")]
+#[::unity2::methods]
+impl ExCombatCameraType {
+    #[method(name = "IsInterrupt", args = 1)]
+    pub fn is_interrupt(style: crate::combat::camerasituation::CameraSituation) -> bool;
+
+    #[method(name = "IsDead", args = 1)]
+    pub fn is_dead(style: crate::combat::camerasituation::CameraSituation) -> bool;
+}

@@ -1,0 +1,115 @@
+
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapbattleinfowindow/MapBattleInfoWindow.md")))]
+#[::unity2::class(namespace = "App", name = "MapBattleInfoWindow")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapbattleinfowindow :: MapBattleInfoWindow >)]
+pub struct MapBattleInfoWindow {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "LeftSideObjName")]
+    pub left_side_obj_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "RightSideObjName")]
+    pub right_side_obj_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "BattleSequenceObjName")]
+    pub battle_sequence_obj_name: ::unity2::Il2CppString,
+    #[rename(name = "m_PrefabHandle")]
+    pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_IsValid")]
+    pub m_is_valid: bool,
+    #[rename(name = "m_GameObject")]
+    pub m_game_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_BattleInfoL")]
+    pub m_battle_info_l: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_BattleInfoR")]
+    pub m_battle_info_r: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Singles")]
+    pub m_singles:
+        ::unity2::Array<crate::app::mapbattleinfowindowsingle::MapBattleInfoWindowSingle>,
+    #[rename(name = "m_BattleSequence")]
+    pub m_battle_sequence: crate::app::mapbattleinfosequence::MapBattleInfoSequence,
+    #[rename(name = "m_SupportInfos")]
+    pub m_support_infos: ::unity2::Array<crate::app::supportinfo::SupportInfo>,
+}
+
+#[cfg(feature = "app-mapbattleinfowindow")]
+#[::unity2::methods]
+impl MapBattleInfoWindow {
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading(self) -> bool;
+
+    #[method(name = "SetBattleInfo", args = 2)]
+    pub fn set_battle_info(
+        self,
+        info: crate::app::battleinfo::BattleInfo,
+        scene_list: crate::app::battlescenelist::BattleSceneList,
+    ) -> ();
+
+    #[method(name = "SetWeaponChangeVisible", args = 1)]
+    pub fn set_weapon_change_visible(self, is_visible: bool) -> ();
+
+    #[method(name = "SetEngageCommandVisible", args = 2)]
+    pub fn set_engage_command_visible(
+        self,
+        unit: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "Activate", args = 0)]
+    pub fn activate(self) -> ();
+
+    #[method(name = "Deactivate", args = 0)]
+    pub fn deactivate(self) -> ();
+
+    #[method(name = "IsActive", args = 0)]
+    pub fn is_active(self) -> bool;
+
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "CreateObjects", args = 0)]
+    pub fn create_objects(self) -> ();
+
+    #[method(name = "DestroyObjects", args = 0)]
+    pub fn destroy_objects(self) -> ();
+
+    #[method(name = "get_BattleInfoL", args = 0)]
+    pub fn get_battle_info_l(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "get_BattleInfoR", args = 0)]
+    pub fn get_battle_info_r(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-mapbattleinfowindow")]
+impl MapBattleInfoWindow {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapBattleInfoWindow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapBattleInfoWindowMethods>::ctor(this);
+        this
+    }
+}

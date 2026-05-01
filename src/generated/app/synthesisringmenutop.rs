@@ -1,0 +1,192 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/synthesisringmenutop/SynthesisRingMenuTop.md")))]
+#[::unity2::class(namespace = "App", name = "SynthesisRingMenuTop")]
+#[parent(crate::system::object::Object)]
+pub struct SynthesisRingMenuTop {
+    #[rename(name = "m_SynthesisRingRoot")]
+    pub m_synthesis_ring_root: crate::app::synthesisringroot::SynthesisRingRoot,
+    #[rename(name = "m_SynthesisRingBaseRingMenu")]
+    pub m_synthesis_ring_base_ring_menu:
+        crate::app::synthesisringbaseringmenu::SynthesisRingBaseRingMenu,
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::synthesisringmenutop::SynthesisRingMenuTop_DecideEventHandler,
+    #[rename(name = "m_RingData")]
+    pub m_ring_data: crate::app::ringdata::RingData,
+    #[rename(name = "m_CountBaseRing")]
+    pub m_count_base_ring: i32,
+    #[rename(name = "m_CountPieceOfBonds")]
+    pub m_count_piece_of_bonds: i32,
+    #[rename(name = "m_GodUnitIndex")]
+    pub m_god_unit_index: i32,
+    #[rename(name = "m_MenuSelect")]
+    pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+}
+
+#[cfg(feature = "app-synthesisringmenutop")]
+#[::unity2::methods]
+impl SynthesisRingMenuTop {
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        initial_god_unit_index: i32,
+        initial_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+        decide_event_handler : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_DecideEventHandler,
+    ) -> crate::app::synthesisringmenutop::SynthesisRingMenuTop;
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        initial_god_unit_index: i32,
+        initial_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+        decide_event_handler : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_DecideEventHandler,
+    ) -> ();
+
+    #[method(name = "OnSelect", args = 1)]
+    pub fn on_select(self, ring_data: crate::app::ringdata::RingData) -> ();
+
+    #[method(name = "OnDecideSynthesis", args = 5)]
+    pub fn on_decide_synthesis(
+        self,
+        ring_data: crate::app::ringdata::RingData,
+        count_base_ring: i32,
+        count_piece_of_bonds: i32,
+        god_unit_index: i32,
+        menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+    ) -> ();
+
+    #[method(name = "OnYesToConfirm", args = 0)]
+    pub fn on_yes_to_confirm(self) -> ();
+
+    #[method(name = "OnCancelClose", args = 0)]
+    pub fn on_cancel_close(self) -> ();
+}
+
+#[cfg(feature = "app-synthesisringmenutop")]
+impl SynthesisRingMenuTop {
+    pub fn new(
+        super_: crate::app::procinst::ProcInst,
+        initial_god_unit_index: i32,
+        initial_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+        decide_event_handler : crate :: app :: synthesisringmenutop :: SynthesisRingMenuTop_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SynthesisRingMenuTop),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISynthesisRingMenuTopMethods>::ctor(
+            this,
+            super_,
+            initial_god_unit_index,
+            initial_menu_select,
+            decide_event_handler,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/synthesisringmenutop/SynthesisRingMenuTop_Result.md")))]
+#[::unity2::class(namespace = "App", name = "SynthesisRingMenuTop.Result")]
+#[parent(crate::system::object::Object)]
+pub struct SynthesisRingMenuTop_Result {
+    #[rename(name = "m_Rnid")]
+    pub m_rnid: ::unity2::Il2CppString,
+    #[rename(name = "m_BaseRingCount")]
+    pub m_base_ring_count: i32,
+    #[rename(name = "m_PieceOfBondsCount")]
+    pub m_piece_of_bonds_count: i32,
+    #[rename(name = "m_GodUnitIndex")]
+    pub m_god_unit_index: i32,
+    #[rename(name = "m_MenuSelect")]
+    pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+}
+
+#[cfg(feature = "app-synthesisringmenutop")]
+#[::unity2::methods]
+impl SynthesisRingMenuTop_Result {
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        rnid: ::unity2::Il2CppString,
+        base_ring_count: i32,
+        piece_of_bonds_count: i32,
+        god_unit_index: i32,
+        menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+    ) -> ();
+}
+
+#[cfg(feature = "app-synthesisringmenutop")]
+impl SynthesisRingMenuTop_Result {
+    pub fn new(
+        rnid: ::unity2::Il2CppString,
+        base_ring_count: i32,
+        piece_of_bonds_count: i32,
+        god_unit_index: i32,
+        menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SynthesisRingMenuTop_Result),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISynthesisRingMenuTop_ResultMethods>::ctor(
+            this,
+            rnid,
+            base_ring_count,
+            piece_of_bonds_count,
+            god_unit_index,
+            menu_select,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/synthesisringmenutop/SynthesisRingMenuTop_DecideEventHandler.md")))]
+#[::unity2::class(namespace = "App", name = "SynthesisRingMenuTop.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct SynthesisRingMenuTop_DecideEventHandler {}
+
+#[cfg(feature = "app-synthesisringmenutop")]
+#[::unity2::methods]
+impl SynthesisRingMenuTop_DecideEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
+    ) -> ();
+}
+
+#[cfg(feature = "app-synthesisringmenutop")]
+impl SynthesisRingMenuTop_DecideEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SynthesisRingMenuTop_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISynthesisRingMenuTop_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}

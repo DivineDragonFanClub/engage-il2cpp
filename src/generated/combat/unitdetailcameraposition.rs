@@ -1,0 +1,106 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/unitdetailcameraposition/UnitDetailCameraPosition_CenterType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitDetailCameraPosition_CenterType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitDetailCameraPosition_CenterType {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "UnitDetailCameraPosition.CenterType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitDetailCameraPosition_CenterType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitDetailCameraPosition_CenterType {
+    pub fn master_only() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn emblem_height() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn emblem_center() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn midpoint() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn master_target() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/unitdetailcameraposition/UnitDetailCameraPosition.md")))]
+#[::unity2::class(namespace = "Combat", name = "UnitDetailCameraPosition")]
+#[parent(crate::system::object::Object)]
+pub struct UnitDetailCameraPosition {
+    #[rename(name = "Target")]
+    pub target: crate::combat::camerapositiondata::CameraPositionData_TargetJoint,
+    #[rename(name = "Distance")]
+    pub distance: f32,
+    #[rename(name = "LookatHeightFix")]
+    pub lookat_height_fix: f32,
+    #[rename(name = "FollowHeightFix")]
+    pub follow_height_fix: f32,
+    #[rename(name = "CameraFov")]
+    pub camera_fov: f32,
+    #[rename(name = "SideSlipSize")]
+    pub side_slip_size: f32,
+    #[rename(name = "Center")]
+    pub center: crate::combat::unitdetailcameraposition::UnitDetailCameraPosition_CenterType,
+}
+
+#[cfg(feature = "combat-unitdetailcameraposition")]
+#[::unity2::methods]
+impl UnitDetailCameraPosition {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-unitdetailcameraposition")]
+impl UnitDetailCameraPosition {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitDetailCameraPosition),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitDetailCameraPositionMethods>::ctor(this);
+        this
+    }
+}

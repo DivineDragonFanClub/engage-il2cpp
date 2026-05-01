@@ -1,0 +1,112 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/challengedifficultymanager/ChallengeDifficultyManager_ReturnEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ChallengeDifficultyManager.ReturnEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ChallengeDifficultyManager_ReturnEventHandler {}
+
+#[cfg(feature = "app-challengedifficultymanager")]
+#[::unity2::methods]
+impl ChallengeDifficultyManager_ReturnEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, result: crate::app::basicmenu::BasicMenu_Result, difficulty: i32) -> ();
+}
+
+#[cfg(feature = "app-challengedifficultymanager")]
+impl ChallengeDifficultyManager_ReturnEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeDifficultyManager_ReturnEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeDifficultyManager_ReturnEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/challengedifficultymanager/ChallengeDifficultyManager.md")))]
+#[::unity2::class(namespace = "App", name = "ChallengeDifficultyManager")]
+#[parent(crate::system::object::Object)]
+pub struct ChallengeDifficultyManager {
+    #[rename(name = "m_ReturnEventHandler")]
+    pub m_return_event_handler:
+        crate::app::challengedifficultymanager::ChallengeDifficultyManager_ReturnEventHandler,
+    #[rename(name = "m_Menu")]
+    pub m_menu: crate::app::challengedifficultymenu::ChallengeDifficultyMenu,
+    #[rename(name = "m_ChallengeData")]
+    pub m_challenge_data: crate::app::challengedata::ChallengeData,
+    #[rename(name = "m_Difficulty")]
+    pub m_difficulty: i32,
+}
+
+#[cfg(feature = "app-challengedifficultymanager")]
+#[::unity2::methods]
+impl ChallengeDifficultyManager {
+    #[method(name = "Create", args = 4)]
+    pub fn create(
+        super_: crate::app::procinst::ProcInst,
+        root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
+        challenge_data: crate::app::challengedata::ChallengeData,
+        return_event_handler : crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler,
+    ) -> crate::app::challengedifficultymanager::ChallengeDifficultyManager;
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
+        challenge_data: crate::app::challengedata::ChallengeData,
+        return_event_handler : crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler,
+    ) -> ();
+
+    #[method(name = "OnDecide", args = 1)]
+    pub fn on_decide(self, difficulty: i32) -> ();
+
+    #[method(name = "OnDecideYes", args = 0)]
+    pub fn on_decide_yes(self) -> ();
+
+    #[method(name = "OnRequestClose", args = 1)]
+    pub fn on_request_close(self, difficulty: i32) -> ();
+}
+
+#[cfg(feature = "app-challengedifficultymanager")]
+impl ChallengeDifficultyManager {
+    pub fn new(
+        super_: crate::app::procinst::ProcInst,
+        root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
+        challenge_data: crate::app::challengedata::ChallengeData,
+        return_event_handler : crate :: app :: challengedifficultymanager :: ChallengeDifficultyManager_ReturnEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeDifficultyManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeDifficultyManagerMethods>::ctor(
+            this,
+            super_,
+            root,
+            challenge_data,
+            return_event_handler,
+        );
+        this
+    }
+}

@@ -1,0 +1,94 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/baseinput/BaseInput.md")))]
+#[::unity2::class(namespace = "UnityEngine.EventSystems", name = "BaseInput")]
+#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
+pub struct BaseInput {}
+
+#[cfg(feature = "unity_engine-event_systems-baseinput")]
+#[::unity2::methods]
+impl BaseInput {
+    #[method(name = "get_compositionString", args = 0)]
+    pub fn get_composition_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_imeCompositionMode", args = 0)]
+    pub fn get_ime_composition_mode(
+        self,
+    ) -> crate::unity_engine::imecompositionmode::IMECompositionMode;
+
+    #[method(name = "set_imeCompositionMode", args = 1)]
+    pub fn set_ime_composition_mode(
+        self,
+        value: crate::unity_engine::imecompositionmode::IMECompositionMode,
+    ) -> ();
+
+    #[method(name = "get_compositionCursorPos", args = 0)]
+    pub fn get_composition_cursor_pos(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_compositionCursorPos", args = 1)]
+    pub fn set_composition_cursor_pos(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_mousePresent", args = 0)]
+    pub fn get_mouse_present(self) -> bool;
+
+    #[method(name = "GetMouseButtonDown", args = 1)]
+    pub fn get_mouse_button_down(self, button: i32) -> bool;
+
+    #[method(name = "GetMouseButtonUp", args = 1)]
+    pub fn get_mouse_button_up(self, button: i32) -> bool;
+
+    #[method(name = "GetMouseButton", args = 1)]
+    pub fn get_mouse_button(self, button: i32) -> bool;
+
+    #[method(name = "get_mousePosition", args = 0)]
+    pub fn get_mouse_position(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "get_mouseScrollDelta", args = 0)]
+    pub fn get_mouse_scroll_delta(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "get_touchSupported", args = 0)]
+    pub fn get_touch_supported(self) -> bool;
+
+    #[method(name = "get_touchCount", args = 0)]
+    pub fn get_touch_count(self) -> i32;
+
+    #[method(name = "GetTouch", args = 1)]
+    pub fn get_touch(self, index: i32) -> crate::unity_engine::touch::Touch;
+
+    #[method(name = "GetAxisRaw", args = 1)]
+    pub fn get_axis_raw(self, axis_name: ::unity2::Il2CppString) -> f32;
+
+    #[method(name = "GetButtonDown", args = 1)]
+    pub fn get_button_down(self, button_name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-event_systems-baseinput")]
+impl BaseInput {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BaseInput),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBaseInputMethods>::ctor(this);
+        this
+    }
+}

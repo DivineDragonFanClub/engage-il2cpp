@@ -1,0 +1,54 @@
+
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubresource/HubResource.md")))]
+#[::unity2::class(namespace = "App", name = "HubResource")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: hubresource :: HubResource >)]
+pub struct HubResource {
+    #[rename(name = "resources")]
+    pub resources: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::app::resourcehandle_2::ResourceHandle_2,
+    >,
+}
+
+#[cfg(feature = "app-hubresource")]
+#[::unity2::methods]
+impl HubResource {
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, name: ::unity2::Il2CppString) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading(self) -> bool;
+
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, path: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubresource")]
+impl HubResource {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubResource),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubResourceMethods>::ctor(this);
+        this
+    }
+}

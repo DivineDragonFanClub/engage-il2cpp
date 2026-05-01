@@ -1,0 +1,272 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/rendererlighting/RendererLighting.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal",
+    name = "RendererLighting"
+)]
+#[parent(crate::system::object::Object)]
+pub struct RendererLighting {
+    #[static_field]
+    #[rename(name = "m_ProfilingSampler")]
+    pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "k_NormalsRenderingPassName")]
+    pub k_normals_rendering_pass_name: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[static_field]
+    #[rename(name = "k_NormalClearColor")]
+    pub k_normal_clear_color: crate::unity_engine::color::Color,
+    #[static_field]
+    #[rename(name = "k_SpriteLightKeyword")]
+    pub k_sprite_light_keyword: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "k_UsePointLightCookiesKeyword")]
+    pub k_use_point_light_cookies_keyword: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "k_LightQualityFastKeyword")]
+    pub k_light_quality_fast_keyword: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "k_UseNormalMap")]
+    pub k_use_normal_map: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "k_UseAdditiveBlendingKeyword")]
+    pub k_use_additive_blending_keyword: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "k_UseBlendStyleKeywords")]
+    pub k_use_blend_style_keywords: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "k_BlendFactorsPropIDs")]
+    pub k_blend_factors_prop_i_ds: ::unity2::Array<i32>,
+    #[static_field]
+    #[rename(name = "k_MaskFilterPropIDs")]
+    pub k_mask_filter_prop_i_ds: ::unity2::Array<i32>,
+    #[static_field]
+    #[rename(name = "k_InvertedFilterPropIDs")]
+    pub k_inverted_filter_prop_i_ds: ::unity2::Array<i32>,
+    #[static_field]
+    #[rename(name = "s_RenderTextureFormatToUse")]
+    pub s_render_texture_format_to_use:
+        crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+    #[static_field]
+    #[rename(name = "s_HasSetupRenderTextureFormatToUse")]
+    pub s_has_setup_render_texture_format_to_use: bool,
+    #[static_field]
+    #[rename(name = "k_SrcBlendID")]
+    pub k_src_blend_id: i32,
+    #[static_field]
+    #[rename(name = "k_DstBlendID")]
+    pub k_dst_blend_id: i32,
+    #[static_field]
+    #[rename(name = "k_FalloffIntensityID")]
+    pub k_falloff_intensity_id: i32,
+    #[static_field]
+    #[rename(name = "k_FalloffDistanceID")]
+    pub k_falloff_distance_id: i32,
+    #[static_field]
+    #[rename(name = "k_FalloffOffsetID")]
+    pub k_falloff_offset_id: i32,
+    #[static_field]
+    #[rename(name = "k_LightColorID")]
+    pub k_light_color_id: i32,
+    #[static_field]
+    #[rename(name = "k_VolumeOpacityID")]
+    pub k_volume_opacity_id: i32,
+    #[static_field]
+    #[rename(name = "k_CookieTexID")]
+    pub k_cookie_tex_id: i32,
+    #[static_field]
+    #[rename(name = "k_FalloffLookupID")]
+    pub k_falloff_lookup_id: i32,
+    #[static_field]
+    #[rename(name = "k_LightPositionID")]
+    pub k_light_position_id: i32,
+    #[static_field]
+    #[rename(name = "k_LightInvMatrixID")]
+    pub k_light_inv_matrix_id: i32,
+    #[static_field]
+    #[rename(name = "k_LightNoRotInvMatrixID")]
+    pub k_light_no_rot_inv_matrix_id: i32,
+    #[static_field]
+    #[rename(name = "k_InnerRadiusMultID")]
+    pub k_inner_radius_mult_id: i32,
+    #[static_field]
+    #[rename(name = "k_OuterAngleID")]
+    pub k_outer_angle_id: i32,
+    #[static_field]
+    #[rename(name = "k_InnerAngleMultID")]
+    pub k_inner_angle_mult_id: i32,
+    #[static_field]
+    #[rename(name = "k_LightLookupID")]
+    pub k_light_lookup_id: i32,
+    #[static_field]
+    #[rename(name = "k_IsFullSpotlightID")]
+    pub k_is_full_spotlight_id: i32,
+    #[static_field]
+    #[rename(name = "k_LightZDistanceID")]
+    pub k_light_z_distance_id: i32,
+    #[static_field]
+    #[rename(name = "k_PointLightCookieTexID")]
+    pub k_point_light_cookie_tex_id: i32,
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-rendererlighting")]
+#[::unity2::methods]
+impl RendererLighting {
+    #[method(name = "GetRenderTextureFormat", args = 0)]
+    pub fn get_render_texture_format(
+    ) -> crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat;
+
+    #[method(name = "CreateNormalMapRenderTexture", args = 3)]
+    pub fn create_normal_map_render_texture(
+        pass: crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[method(name = "CreateBlendStyleRenderTexture", args = 4)]
+    pub fn create_blend_style_render_texture(
+        pass: crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        blend_style_index: i32,
+    ) -> ();
+
+    #[method(name = "EnableBlendStyle", args = 3)]
+    pub fn enable_blend_style(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        blend_style_index: i32,
+        enabled: bool,
+    ) -> ();
+
+    #[method(name = "ReleaseRenderTextures", args = 2)]
+    pub fn release_render_textures(
+        pass: crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[method(name = "RenderLightSet", args = 9)]
+    pub fn render_light_set(
+        pass: crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+        blend_style_index: i32,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        layer_to_render: i32,
+        render_texture : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        rt_needs_clear: bool,
+        clear_color: crate::unity_engine::color::Color,
+        lights: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
+        >,
+    ) -> bool;
+
+    #[method(name = "RenderLightVolumeSet", args = 8)]
+    pub fn render_light_volume_set(
+        pass: crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+        blend_style_index: i32,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        layer_to_render: i32,
+        render_texture : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        depth_texture : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        lights: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
+        >,
+    ) -> ();
+
+    #[method(name = "SetShapeLightShaderGlobals", args = 2)]
+    pub fn set_shape_light_shader_globals(
+        pass: crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[method(name = "GetNormalizedInnerRadius", args = 1)]
+    pub fn get_normalized_inner_radius(
+        light: crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
+    ) -> f32;
+
+    #[method(name = "GetNormalizedAngle", args = 1)]
+    pub fn get_normalized_angle(angle: f32) -> f32;
+
+    #[method(name = "GetScaledLightInvMatrix", args = 3)]
+    pub fn get_scaled_light_inv_matrix(
+        light: crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
+        ret_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+        include_rotation: bool,
+    ) -> ();
+
+    #[method(name = "SetPointLightShaderGlobals", args = 2)]
+    pub fn set_point_light_shader_globals(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        light: crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
+    ) -> ();
+
+    #[method(name = "ClearDirtyLighting", args = 3)]
+    pub fn clear_dirty_lighting(
+        pass: crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        blend_styles_used: u32,
+    ) -> ();
+
+    #[method(name = "RenderNormals", args = 6)]
+    pub fn render_normals(
+        pass: crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        cull_results: crate::unity_engine::rendering::cullingresults::CullingResults,
+        draw_settings: crate::unity_engine::rendering::drawingsettings::DrawingSettings,
+        filter_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+        depth_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+    ) -> ();
+
+    #[method(name = "RenderLights", args = 5)]
+    pub fn render_lights(
+        pass: crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        layer_to_render: i32,
+        blend_styles_used: u32,
+    ) -> ();
+
+    #[method(name = "RenderLightVolumes", args = 7)]
+    pub fn render_light_volumes(
+        pass: crate::unity_engine::experimental::rendering::universal::irenderpass2d::IRenderPass2D,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        layer_to_render: i32,
+        render_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        depth_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        blend_styles_used: u32,
+    ) -> ();
+
+    #[method(name = "SetBlendModes", args = 3)]
+    pub fn set_blend_modes(
+        material: crate::unity_engine::material::Material,
+        src: crate::unity_engine::rendering::blendmode::BlendMode,
+        dst: crate::unity_engine::rendering::blendmode::BlendMode,
+    ) -> ();
+
+    #[method(name = "GetLightMaterialIndex", args = 2)]
+    pub fn get_light_material_index(
+        light: crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
+        is_volume: bool,
+    ) -> u32;
+
+    #[method(name = "CreateLightMaterial", args = 3)]
+    pub fn create_light_material(
+        renderer_data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData,
+        light: crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
+        is_volume: bool,
+    ) -> crate::unity_engine::material::Material;
+
+    #[method(name = "GetLightMaterial", args = 3)]
+    pub fn get_light_material(
+        renderer_data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData,
+        light: crate::unity_engine::experimental::rendering::universal::light2d_2::Light2D_2,
+        is_volume: bool,
+    ) -> crate::unity_engine::material::Material;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

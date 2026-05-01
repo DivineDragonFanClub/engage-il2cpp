@@ -1,0 +1,46 @@
+
+use crate::app::singletonscriptableobject_1::ISingletonScriptableObject_1;
+use crate::app::singletonscriptableobject_1::SingletonScriptableObject_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/uicolor/UiColor.md")))]
+#[::unity2::class(namespace = "App", name = "UiColor")]
+# [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: uicolor :: UiColor >)]
+pub struct UiColor {
+    #[rename(name = "紋章士アイコン_出撃")]
+    pub _unnamed: crate::unity_engine::color::Color,
+}
+
+#[cfg(feature = "app-uicolor")]
+#[::unity2::methods]
+impl UiColor {
+    #[method(name = "GetFaceColor", args = 1)]
+    pub fn get_face_color(self, b_on: bool) -> crate::unity_engine::color::Color;
+
+    #[method(name = "GetSymbolColor", args = 1)]
+    pub fn get_symbol_color(self, b_on: bool) -> crate::unity_engine::color::Color;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-uicolor")]
+impl UiColor {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UiColor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUiColorMethods>::ctor(this);
+        this
+    }
+}

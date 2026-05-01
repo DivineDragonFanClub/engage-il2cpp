@@ -1,0 +1,67 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterlod/CharacterLod.md")))]
+#[::unity2::class(namespace = "Combat", name = "CharacterLod")]
+#[parent(crate::system::object::Object)]
+pub struct CharacterLod {
+    #[static_field]
+    #[rename(name = "LOD_VALUES")]
+    pub lod_values: ::unity2::Array<f32>,
+    #[static_field]
+    #[rename(name = "MAX_LOD")]
+    pub max_lod: i32,
+}
+
+#[cfg(feature = "combat-characterlod")]
+#[::unity2::methods]
+impl CharacterLod {
+    #[method(name = "Activate", args = 1)]
+    pub fn activate(objects: ::unity2::Array<crate::unity_engine::transform::Transform>) -> ();
+
+    #[method(name = "HasLod", args = 1)]
+    pub fn has_lod(renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>) -> bool;
+
+    #[method(name = "IsShadowMesh", args = 1)]
+    pub fn is_shadow_mesh(r: crate::unity_engine::renderer::Renderer) -> bool;
+
+    #[method(name = "GetBaseName", args = 1)]
+    pub fn get_base_name(name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetRenderersByLod", args = 2)]
+    pub fn get_renderers_by_lod(
+        key: ::unity2::Il2CppString,
+        renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
+    ) -> ::unity2::Array<crate::unity_engine::renderer::Renderer>;
+
+    #[method(name = "CreateLods", args = 1)]
+    pub fn create_lods(
+        renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
+    ) -> ::unity2::Array<crate::unity_engine::lod::LOD>;
+
+    #[method(name = "Setup", args = 1)]
+    pub fn setup(asset: crate::combat::characterasset::CharacterAsset) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "combat-characterlod")]
+impl CharacterLod {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterLod),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharacterLodMethods>::ctor(this);
+        this
+    }
+}

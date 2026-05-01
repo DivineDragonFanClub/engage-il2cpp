@@ -1,0 +1,50 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusbackupdata/VersusBackupData.md")))]
+#[::unity2::class(namespace = "App", name = "VersusBackupData")]
+#[parent(crate::system::object::Object)]
+pub struct VersusBackupData {
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: u8,
+    #[static_field]
+    #[rename(name = "BufferSize")]
+    pub buffer_size: i32,
+    #[rename(name = "m_Buffer")]
+    pub m_buffer: ::unity2::Array<u8>,
+    #[rename(name = "m_Stream")]
+    pub m_stream: crate::app::stream_2::Stream_2,
+    #[rename(name = "m_SaveData")]
+    pub m_save_data: crate::app::gamesavedata::GameSaveData,
+}
+
+#[cfg(feature = "app-versusbackupdata")]
+#[::unity2::methods]
+impl VersusBackupData {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Serialize", args = 0)]
+    pub fn serialize(self) -> ();
+
+    #[method(name = "Deserialize", args = 0)]
+    pub fn deserialize(self) -> ();
+}
+
+#[cfg(feature = "app-versusbackupdata")]
+impl VersusBackupData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusBackupData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusBackupDataMethods>::ctor(this);
+        this
+    }
+}

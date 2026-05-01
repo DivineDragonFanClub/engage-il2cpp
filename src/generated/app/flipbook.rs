@@ -1,0 +1,175 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/flipbook/Flipbook_Mode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Flipbook_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Flipbook_Mode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Flipbook.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Flipbook_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Flipbook_Mode {
+    pub fn r#loop() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn stop() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn stop_and_hide() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn delete_object() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/flipbook/Flipbook.md")))]
+#[::unity2::class(namespace = "App", name = "Flipbook")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct Flipbook {
+    #[rename(name = "m_patterns")]
+    pub m_patterns: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_span")]
+    pub m_span: f32,
+    #[rename(name = "m_animateStrength")]
+    pub m_animate_strength: bool,
+    #[rename(name = "m_strength")]
+    pub m_strength: f32,
+    #[rename(name = "m_strengthCycle")]
+    pub m_strength_cycle: f32,
+    #[rename(name = "m_mode")]
+    pub m_mode: crate::app::flipbook::Flipbook_Mode,
+    #[rename(name = "m_autoPlay")]
+    pub m_auto_play: bool,
+    #[rename(name = "m_playing")]
+    pub m_playing: bool,
+    #[rename(name = "m_spanIndex")]
+    pub m_span_index: i32,
+    #[rename(name = "m_strengthCycleIndex")]
+    pub m_strength_cycle_index: i32,
+    #[rename(name = "m_patternIndex")]
+    pub m_pattern_index: i32,
+    #[rename(name = "m_patternCount")]
+    pub m_pattern_count: i32,
+    #[rename(name = "m_material")]
+    pub m_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_targetTexture")]
+    pub m_target_texture: ::unity2::Il2CppString,
+    #[rename(name = "m_targetTextureId")]
+    pub m_target_texture_id: i32,
+    #[rename(name = "m_targetStrength")]
+    pub m_target_strength: ::unity2::Il2CppString,
+    #[rename(name = "m_targetStrengthId")]
+    pub m_target_strength_id: i32,
+}
+
+#[cfg(feature = "app-flipbook")]
+#[::unity2::methods]
+impl Flipbook {
+    #[method(name = "get_PatternIndex", args = 0)]
+    pub fn get_pattern_index(self) -> i32;
+
+    #[method(name = "Frac", args = 1)]
+    pub fn frac(self, val: f32) -> f32;
+
+    #[method(name = "GetUvOffset", args = 0)]
+    pub fn get_uv_offset(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "GetUvScale", args = 0)]
+    pub fn get_uv_scale(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "SetUvOffset", args = 0)]
+    pub fn set_uv_offset(self) -> ();
+
+    #[method(name = "SetUvScale", args = 0)]
+    pub fn set_uv_scale(self) -> ();
+
+    #[method(name = "GetStrength", args = 0)]
+    pub fn get_strength(self) -> f32;
+
+    #[method(name = "SetStrength", args = 0)]
+    pub fn set_strength(self) -> ();
+
+    #[method(name = "Play", args = 0)]
+    pub fn play(self) -> ();
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "GetPatternRate", args = 0)]
+    pub fn get_pattern_rate(self) -> f32;
+
+    #[method(name = "get_Playing", args = 0)]
+    pub fn get_playing(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-flipbook")]
+impl Flipbook {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Flipbook),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFlipbookMethods>::ctor(this);
+        this
+    }
+}

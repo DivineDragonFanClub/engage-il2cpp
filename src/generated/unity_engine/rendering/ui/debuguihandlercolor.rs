@@ -1,0 +1,90 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
+use crate::unity_engine::rendering::ui::debuguihandlerwidget::IDebugUIHandlerWidget;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/ui/debuguihandlercolor/DebugUIHandlerColor.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerColor")]
+#[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]
+pub struct DebugUIHandlerColor {
+# [rename (name = "nameLabel")] pub name_label : crate :: unity_engine :: ui :: text :: Text ,
+# [rename (name = "valueToggle")] pub value_toggle : crate :: unity_engine :: rendering :: ui :: uifoldout :: UIFoldout ,
+# [rename (name = "colorImage")] pub color_image : crate :: unity_engine :: ui :: image :: Image ,
+# [rename (name = "fieldR")] pub field_r : crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField ,
+# [rename (name = "fieldG")] pub field_g : crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField ,
+# [rename (name = "fieldB")] pub field_b : crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField ,
+# [rename (name = "fieldA")] pub field_a : crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField ,
+# [rename (name = "m_Field")] pub m_field : crate :: unity_engine :: rendering :: debugui :: DebugUI_ColorField ,
+# [rename (name = "m_Container")] pub m_container : crate :: unity_engine :: rendering :: ui :: debuguihandlercontainer :: DebugUIHandlerContainer ,
+}
+
+#[cfg(feature = "unity_engine-rendering-ui-debuguihandlercolor")]
+#[::unity2::methods]
+impl DebugUIHandlerColor {
+    #[method(name = "SetWidget", args = 1)]
+    pub fn set_widget(self, widget: crate::unity_engine::rendering::debugui::DebugUI_Widget) -> ();
+
+    #[method(name = "SetValue", args = 5)]
+    pub fn set_value(self, x: f32, r: bool, g: bool, b: bool, a: bool) -> ();
+
+    #[method(name = "SetupSettings", args = 1)]
+    pub fn setup_settings(
+        self,
+        field : crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField,
+    ) -> ();
+
+    #[method(name = "OnSelection", args = 2)]
+    pub fn on_selection(
+        self,
+        from_next: bool,
+        previous: crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
+    ) -> bool;
+
+    #[method(name = "OnDeselection", args = 0)]
+    pub fn on_deselection(self) -> ();
+
+    #[method(name = "OnIncrement", args = 1)]
+    pub fn on_increment(self, fast: bool) -> ();
+
+    #[method(name = "OnDecrement", args = 1)]
+    pub fn on_decrement(self, fast: bool) -> ();
+
+    #[method(name = "OnAction", args = 0)]
+    pub fn on_action(self) -> ();
+
+    #[method(name = "UpdateColor", args = 0)]
+    pub fn update_color(self) -> ();
+
+    #[method(name = "Next", args = 0)]
+    pub fn next(
+        self,
+    ) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-ui-debuguihandlercolor")]
+impl DebugUIHandlerColor {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUIHandlerColor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUIHandlerColorMethods>::ctor(this);
+        this
+    }
+}

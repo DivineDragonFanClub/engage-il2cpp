@@ -1,0 +1,125 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_2.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "ObjectPool`1")]
+pub struct ObjectPool_1_2<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "m_Stack")]
+    pub m_stack: crate::system::collections::generic::stack_1::Stack_1<T0>,
+    #[rename(name = "m_ActionOnGet")]
+    pub m_action_on_get: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+    #[rename(name = "m_ActionOnRelease")]
+    pub m_action_on_release: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+    #[rename(name = "m_CollectionCheck")]
+    pub m_collection_check: bool,
+}
+
+#[cfg(feature = "unity_engine-rendering-objectpool_1_2")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> ObjectPool_1_2<T0> {
+    #[method(name = "get_countAll", args = 0)]
+    pub fn get_count_all(self) -> i32;
+
+    #[method(name = "set_countAll", args = 1)]
+    pub fn set_count_all(self, value: i32) -> ();
+
+    #[method(name = "get_countActive", args = 0)]
+    pub fn get_count_active(self) -> i32;
+
+    #[method(name = "get_countInactive", args = 0)]
+    pub fn get_count_inactive(self) -> i32;
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        action_on_get: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+        action_on_release: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+        collection_check: bool,
+    ) -> ();
+
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> T0;
+
+    #[method(name = "Get", args = 1)]
+    pub fn get_2(
+        self,
+        v: T0,
+    ) -> crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_PooledObject<T0>;
+
+    #[method(name = "Release", args = 1)]
+    pub fn release(self, element: T0) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-objectpool_1_2")]
+impl<T0: ::unity2::ClassIdentity> ObjectPool_1_2<T0> {
+    pub fn new(
+        action_on_get: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+        action_on_release: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+        collection_check: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ObjectPool_1_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IObjectPool_1_2Methods<T0>>::ctor(
+            this,
+            action_on_get,
+            action_on_release,
+            collection_check,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_PooledObject.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ObjectPool_1_PooledObject<T0> {
+    pub _phantom: ::core::marker::PhantomData<(T0,)>,
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for ObjectPool_1_PooledObject<T0> {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "ObjectPool`1.PooledObject";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                .expect("generic instantiation")
+        })
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for ObjectPool_1_PooledObject<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-objectpool_1_2")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity> ObjectPool_1_PooledObject<T0> {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        value: T0,
+        pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>,
+    ) -> ();
+
+    #[method(name = "System.IDisposable.Dispose", args = 0)]
+    pub fn system_i_disposable_dispose(self) -> ();
+}

@@ -1,0 +1,124 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBase;
+use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/bundledassetprovider/BundledAssetProvider.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "BundledAssetProvider"
+)]
+# [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
+pub struct BundledAssetProvider {}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
+#[::unity2::methods]
+impl BundledAssetProvider {
+    #[method(name = "Provide", args = 1)]
+    pub fn provide(
+        self,
+        provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
+impl BundledAssetProvider {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BundledAssetProvider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBundledAssetProviderMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/bundledassetprovider/BundledAssetProvider_InternalOp.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "BundledAssetProvider.InternalOp"
+)]
+#[parent(crate::system::object::Object)]
+pub struct BundledAssetProvider_InternalOp {
+    #[rename(name = "m_RequestOperation")]
+    pub m_request_operation: crate::unity_engine::assetbundlerequest::AssetBundleRequest,
+    #[rename(name = "m_Result")]
+    pub m_result: ::unity2::IlInstance,
+    #[rename(name = "m_ProvideHandle")]
+    pub m_provide_handle:
+        crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,
+    #[rename(name = "subObjectName")]
+    pub sub_object_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
+#[::unity2::methods]
+impl BundledAssetProvider_InternalOp {
+    #[method(name = "LoadBundleFromDependecies", args = 1)]
+    pub fn load_bundle_from_dependecies (results : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: system :: object :: Object >) -> crate :: unity_engine :: resource_management :: resource_providers :: iassetbundleresource_interface :: IAssetBundleResource_Interface ;
+
+    #[method(name = "Start", args = 1)]
+    pub fn start(
+        self,
+        provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+    ) -> ();
+
+    #[method(name = "WaitForCompletionHandler", args = 0)]
+    pub fn wait_for_completion_handler(self) -> bool;
+
+    #[method(name = "ActionComplete", args = 1)]
+    pub fn action_complete(self, obj: crate::unity_engine::asyncoperation::AsyncOperation) -> ();
+
+    #[method(name = "GetArrayResult", args = 1)]
+    pub fn get_array_result(
+        self,
+        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+    ) -> ();
+
+    #[method(name = "GetListResult", args = 1)]
+    pub fn get_list_result(
+        self,
+        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+    ) -> ();
+
+    #[method(name = "GetAssetResult", args = 1)]
+    pub fn get_asset_result(self, asset: crate::unity_engine::object_2::Object_2) -> ();
+
+    #[method(name = "GetAssetSubObjectResult", args = 1)]
+    pub fn get_asset_sub_object_result(
+        self,
+        all_assets: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+    ) -> ();
+
+    #[method(name = "CompleteOperation", args = 0)]
+    pub fn complete_operation(self) -> ();
+
+    #[method(name = "ProgressCallback", args = 0)]
+    pub fn progress_callback(self) -> f32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
+impl BundledAssetProvider_InternalOp {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BundledAssetProvider_InternalOp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBundledAssetProvider_InternalOpMethods>::ctor(this);
+        this
+    }
+}

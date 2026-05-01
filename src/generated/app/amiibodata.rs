@@ -1,0 +1,79 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibodata/AmiiboData.md")))]
+#[::unity2::class(namespace = "App", name = "AmiiboData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: amiibodata :: AmiiboData >)]
+pub struct AmiiboData {}
+
+#[cfg(feature = "app-amiibodata")]
+#[::unity2::methods]
+impl AmiiboData {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_NumberingID", args = 0)]
+    pub fn get_numbering_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_NumberingID", args = 1)]
+    pub fn set_numbering_id(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_IIDs", args = 0)]
+    pub fn get_ii_ds(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_IIDs", args = 1)]
+    pub fn set_ii_ds(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_AID", args = 0)]
+    pub fn get_aid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_AID", args = 1)]
+    pub fn set_aid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_BGM", args = 0)]
+    pub fn get_bgm(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_BGM", args = 1)]
+    pub fn set_bgm(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_TicketNum", args = 0)]
+    pub fn get_ticket_num(self) -> i32;
+
+    #[method(name = "set_TicketNum", args = 1)]
+    pub fn set_ticket_num(self, value: i32) -> ();
+
+    #[method(name = "get_KizunaNum", args = 0)]
+    pub fn get_kizuna_num(self) -> i32;
+
+    #[method(name = "set_KizunaNum", args = 1)]
+    pub fn set_kizuna_num(self, value: i32) -> ();
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-amiibodata")]
+impl AmiiboData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AmiiboData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAmiiboDataMethods>::ctor(this);
+        this
+    }
+}

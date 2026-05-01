@@ -1,0 +1,72 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagparser/TalkTagParser.md")))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkTagParser")]
+#[parent(crate::system::object::Object)]
+pub struct TalkTagParser {
+    #[static_field]
+    #[rename(name = "ShiftIn")]
+    pub shift_in: u16,
+    #[static_field]
+    #[rename(name = "ShiftOut")]
+    pub shift_out: u16,
+    #[rename(name = "m_TagDictionary")]
+    pub m_tag_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::app::mess::Mess_TagGroup,
+        crate::app::talk3_d::talktag::TalkTag,
+    >,
+    #[rename(name = "m_TagFinish")]
+    pub m_tag_finish: crate::app::talk3_d::talktagfinish::TalkTagFinish,
+    #[rename(name = "m_TagAddLetter")]
+    pub m_tag_add_letter: crate::app::talk3_d::talktagaddletter::TalkTagAddLetter,
+}
+
+#[cfg(feature = "app-talk3_d-talktagparser")]
+#[::unity2::methods]
+impl TalkTagParser {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Parse", args = 1)]
+    pub fn parse(
+        self,
+        talk_ptr: crate::app::talk3_d::talkptr::TalkPtr,
+    ) -> crate::app::talk3_d::talktag::TalkTag;
+
+    #[method(name = "GetAddLetterTagForReplace", args = 1)]
+    pub fn get_add_letter_tag_for_replace(self, chr: u16) -> crate::app::talk3_d::talktag::TalkTag;
+
+    #[method(name = "ResetLineFeedEnable", args = 0)]
+    pub fn reset_line_feed_enable(self) -> ();
+
+    #[method(name = "GetHeadText", args = 2)]
+    pub fn get_head_text(mid: ::unity2::Il2CppString, num: i32) -> ::unity2::Il2CppString;
+
+    #[method(name = "AddCharToHeadText", args = 6)]
+    pub fn add_char_to_head_text(
+        chr: u16,
+        head: ::unity2::Il2CppString,
+        num: i32,
+        str_to_lower_trigger: bool,
+        is_latest_str_patchim1: bool,
+        is_latest_str_patchim2: bool,
+    ) -> bool;
+}
+
+#[cfg(feature = "app-talk3_d-talktagparser")]
+impl TalkTagParser {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkTagParser),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkTagParserMethods>::ctor(this);
+        this
+    }
+}

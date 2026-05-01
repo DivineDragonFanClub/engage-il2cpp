@@ -1,0 +1,40 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/luatypeextensions/LuaTypeExtensions.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter", name = "LuaTypeExtensions")]
+#[parent(crate::system::object::Object)]
+pub struct LuaTypeExtensions {
+    #[static_field]
+    #[rename(name = "MaxMetaTypes")]
+    pub max_meta_types: crate::moon_sharp::interpreter::datatype::DataType,
+    #[static_field]
+    #[rename(name = "MaxConvertibleTypes")]
+    pub max_convertible_types: crate::moon_sharp::interpreter::datatype::DataType,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-luatypeextensions")]
+#[::unity2::methods]
+impl LuaTypeExtensions {
+    #[method(name = "CanHaveTypeMetatables", args = 1)]
+    pub fn can_have_type_metatables(
+        r#type: crate::moon_sharp::interpreter::datatype::DataType,
+    ) -> bool;
+
+    #[method(name = "ToErrorTypeString", args = 1)]
+    pub fn to_error_type_string(
+        r#type: crate::moon_sharp::interpreter::datatype::DataType,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "ToLuaDebuggerString", args = 1)]
+    pub fn to_lua_debugger_string(
+        r#type: crate::moon_sharp::interpreter::datatype::DataType,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "ToLuaTypeString", args = 1)]
+    pub fn to_lua_type_string(
+        r#type: crate::moon_sharp::interpreter::datatype::DataType,
+    ) -> ::unity2::Il2CppString;
+}

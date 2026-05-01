@@ -1,0 +1,169 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/bitarray/BitArray.md")))]
+#[::unity2::class(namespace = "System.Collections", name = "BitArray")]
+#[parent(crate::system::object::Object)]
+pub struct BitArray {
+    #[static_field]
+    #[rename(name = "BitsPerInt32")]
+    pub bits_per_int32: i32,
+    #[static_field]
+    #[rename(name = "BytesPerInt32")]
+    pub bytes_per_int32: i32,
+    #[static_field]
+    #[rename(name = "BitsPerByte")]
+    pub bits_per_byte: i32,
+    #[rename(name = "m_array")]
+    pub m_array: ::unity2::Array<i32>,
+    #[rename(name = "m_length")]
+    pub m_length: i32,
+    #[rename(name = "_version")]
+    pub version: i32,
+    #[rename(name = "_syncRoot")]
+    pub sync_root: ::unity2::IlInstance,
+    #[static_field]
+    #[rename(name = "_ShrinkThreshold")]
+    pub shrink_threshold: i32,
+}
+
+#[cfg(feature = "system-collections-bitarray")]
+#[::unity2::methods]
+impl BitArray {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(self, length: i32, default_value: bool) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_3(self, values: ::unity2::Array<i32>) -> ();
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, index: i32) -> bool;
+
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, index: i32) -> bool;
+
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, index: i32, value: bool) -> ();
+
+    #[method(name = "SetAll", args = 1)]
+    pub fn set_all(self, value: bool) -> ();
+
+    #[method(name = "get_Length", args = 0)]
+    pub fn get_length(self) -> i32;
+
+    #[method(name = "CopyTo", args = 2)]
+    pub fn copy_to(self, array: ::unity2::IlInstance, index: i32) -> ();
+
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[method(name = "Clone", args = 0)]
+    pub fn clone(self) -> crate::system::object::Object;
+
+    #[method(name = "get_SyncRoot", args = 0)]
+    pub fn get_sync_root(self) -> crate::system::object::Object;
+
+    #[method(name = "get_IsSynchronized", args = 0)]
+    pub fn get_is_synchronized(self) -> bool;
+
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "GetArrayLength", args = 2)]
+    pub fn get_array_length(n: i32, div: i32) -> i32;
+}
+
+#[cfg(feature = "system-collections-bitarray")]
+impl BitArray {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BitArray),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBitArrayMethods>::ctor(this);
+        this
+    }
+
+    pub fn new_2(length: i32, default_value: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BitArray),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IBitArrayMethods>::ctor_2(this, length, default_value);
+        this
+    }
+
+    pub fn new_3(values: ::unity2::Array<i32>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BitArray),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as IBitArrayMethods>::ctor_3(this, values);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/bitarray/BitArray_BitArrayEnumeratorSimple.md")))]
+#[::unity2::class(
+    namespace = "System.Collections",
+    name = "BitArray.BitArrayEnumeratorSimple"
+)]
+#[parent(crate::system::object::Object)]
+pub struct BitArray_BitArrayEnumeratorSimple {
+    #[rename(name = "bitarray")]
+    pub bitarray: crate::system::collections::bitarray::BitArray,
+    #[rename(name = "index")]
+    pub index: i32,
+    #[rename(name = "version")]
+    pub version: i32,
+    #[rename(name = "currentElement")]
+    pub current_element: bool,
+}
+
+#[cfg(feature = "system-collections-bitarray")]
+#[::unity2::methods]
+impl BitArray_BitArrayEnumeratorSimple {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, bitarray: crate::system::collections::bitarray::BitArray) -> ();
+
+    #[method(name = "Clone", args = 0)]
+    pub fn clone(self) -> crate::system::object::Object;
+
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::system::object::Object;
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+}
+
+#[cfg(feature = "system-collections-bitarray")]
+impl BitArray_BitArrayEnumeratorSimple {
+    pub fn new(bitarray: crate::system::collections::bitarray::BitArray) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BitArray_BitArrayEnumeratorSimple),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBitArray_BitArrayEnumeratorSimpleMethods>::ctor(this, bitarray);
+        this
+    }
+}

@@ -1,0 +1,31 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/strongnamekeypair/StrongNameKeyPair.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "StrongNameKeyPair")]
+#[parent(crate::system::object::Object)]
+pub struct StrongNameKeyPair {
+    #[rename(name = "_publicKey")]
+    pub public_key: ::unity2::Array<u8>,
+    #[rename(name = "_keyPairContainer")]
+    pub key_pair_container: ::unity2::Il2CppString,
+    #[rename(name = "_keyPairExported")]
+    pub key_pair_exported: bool,
+    #[rename(name = "_keyPairArray")]
+    pub key_pair_array: ::unity2::Array<u8>,
+}
+
+#[cfg(feature = "system-reflection-strongnamekeypair")]
+#[::unity2::methods]
+impl StrongNameKeyPair {
+    #[method(
+        name = "System.Runtime.Serialization.IDeserializationCallback.OnDeserialization",
+        args = 1
+    )]
+    pub fn system_runtime_serialization_i_deserialization_callback_on_deserialization(
+        self,
+        sender: crate::system::object::Object,
+    ) -> ();
+}

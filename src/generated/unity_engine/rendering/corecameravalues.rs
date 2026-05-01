@@ -1,0 +1,52 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/corecameravalues/CoreCameraValues.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct CoreCameraValues {
+    pub filter_mode: i32,
+    pub culling_mask: u32,
+    pub instance_id: i32,
+}
+
+impl ::unity2::ClassIdentity for CoreCameraValues {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "CoreCameraValues";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CoreCameraValues {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-corecameravalues")]
+#[::unity2::methods(value)]
+impl CoreCameraValues {
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(
+        self,
+        other: crate::unity_engine::rendering::corecameravalues::CoreCameraValues,
+    ) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_2(self, obj: crate::system::object::Object) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+}

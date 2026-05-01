@@ -1,0 +1,39 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/bootconfigdata/BootConfigData.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "BootConfigData")]
+#[parent(crate::system::object::Object)]
+pub struct BootConfigData {
+    #[rename(name = "m_Ptr")]
+    pub m_ptr: ::unity2::IntPtr,
+}
+
+#[cfg(feature = "unity_engine-bootconfigdata")]
+#[::unity2::methods]
+impl BootConfigData {
+    #[method(name = "WrapBootConfigData", args = 1)]
+    pub fn wrap_boot_config_data(
+        native_handle: ::unity2::IntPtr,
+    ) -> crate::unity_engine::bootconfigdata::BootConfigData;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, native_handle: ::unity2::IntPtr) -> ();
+}
+
+#[cfg(feature = "unity_engine-bootconfigdata")]
+impl BootConfigData {
+    pub fn new(native_handle: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BootConfigData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBootConfigDataMethods>::ctor(this, native_handle);
+        this
+    }
+}

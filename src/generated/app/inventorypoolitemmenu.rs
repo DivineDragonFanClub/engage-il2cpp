@@ -1,0 +1,236 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inventorypoolitemmenu/InventoryPoolItemMenu.md")))]
+#[::unity2::class(namespace = "App", name = "InventoryPoolItemMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct InventoryPoolItemMenu {
+    #[static_field]
+    #[rename(name = "ShowRowNum")]
+    pub show_row_num: i32,
+    #[rename(name = "m_SavedFullMenuItemList")]
+    pub m_saved_full_menu_item_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::basicmenuitem::BasicMenuItem,
+    >,
+    #[rename(name = "m_SortMenuItemList")]
+    pub m_sort_menu_item_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::basicmenuitem::BasicMenuItem,
+    >,
+    #[rename(name = "m_ItemKind")]
+    pub m_item_kind: crate::app::itemdata::ItemData_Kinds,
+    #[rename(name = "m_Selects")]
+    pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
+}
+
+#[cfg(feature = "app-inventorypoolitemmenu")]
+#[::unity2::methods]
+impl InventoryPoolItemMenu {
+    #[method(name = "get_m_CommonDisplayIndex", args = 0)]
+    pub fn get_m_common_display_index(self) -> i32;
+
+    #[method(name = "set_m_CommonDisplayIndex", args = 1)]
+    pub fn set_m_common_display_index(self, value: i32) -> ();
+
+    #[method(name = "Create", args = 2)]
+    pub fn create(
+        super_: crate::app::procinst::ProcInst,
+        menu_content: crate::app::inventorypoolitemmenucontent::InventoryPoolItemMenuContent,
+    ) -> crate::app::inventorypoolitemmenu::InventoryPoolItemMenu;
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::inventorypoolitemmenucontent::InventoryPoolItemMenuContent,
+    ) -> ();
+
+    #[method(name = "GetSelectItem", args = 0)]
+    pub fn get_select_item(self) -> crate::app::unititem::UnitItem;
+
+    #[method(name = "SaveSelectItem", args = 0)]
+    pub fn save_select_item(self) -> ();
+
+    #[method(name = "GetSelectUnit", args = 0)]
+    pub fn get_select_unit(self) -> crate::app::unit::Unit;
+
+    #[method(name = "UpdateUnit", args = 1)]
+    pub fn update_unit(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "UpdateUnit", args = 2)]
+    pub fn update_unit_2(self, unit: crate::app::unit::Unit, is_chara_only_on: bool) -> ();
+
+    #[method(name = "SetItemKind", args = 2)]
+    pub fn set_item_kind(
+        self,
+        item_kind: crate::app::itemdata::ItemData_Kinds,
+        is_auto_select: bool,
+    ) -> ();
+
+    #[method(name = "SetFirstKind", args = 1)]
+    pub fn set_first_kind(self, is_auto_select: bool) -> ();
+
+    #[method(name = "SetLastKind", args = 1)]
+    pub fn set_last_kind(self, is_auto_select: bool) -> ();
+
+    #[method(name = "IncKind", args = 0)]
+    pub fn inc_kind(self) -> bool;
+
+    #[method(name = "DecKind", args = 0)]
+    pub fn dec_kind(self) -> bool;
+
+    #[method(name = "ShowCursor", args = 1)]
+    pub fn show_cursor(self, is_show: bool) -> ();
+
+    #[method(name = "IsShowCursor", args = 0)]
+    pub fn is_show_cursor(self) -> bool;
+
+    #[method(name = "EnableInput", args = 1)]
+    pub fn enable_input(self, is_enable: bool) -> ();
+
+    #[method(name = "IsEnableInput", args = 0)]
+    pub fn is_enable_input(self) -> bool;
+
+    #[method(name = "SetSuspend", args = 1)]
+    pub fn set_suspend(self, is_active: bool) -> ();
+
+    #[method(name = "SetFirstSelection", args = 0)]
+    pub fn set_first_selection(self) -> ();
+
+    #[method(name = "ResetFirstSelection", args = 0)]
+    pub fn reset_first_selection(self) -> ();
+
+    #[method(name = "SetSelectIndexOnChangeMenu", args = 2)]
+    pub fn set_select_index_on_change_menu(
+        self,
+        common_display_index: i32,
+        kind: crate::app::inventorypoolitemmenu::InventoryPoolItemMenu_Kinds,
+    ) -> ();
+
+    #[method(name = "HoldSelection", args = 0)]
+    pub fn hold_selection(self) -> ();
+
+    #[method(name = "UpdateMenu", args = 1)]
+    pub fn update_menu(self, is_auto_select: bool) -> ();
+
+    #[method(name = "GetSelectableItemCount", args = 0)]
+    pub fn get_selectable_item_count(self) -> i32;
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "AfterBuild", args = 0)]
+    pub fn after_build(self) -> ();
+
+    #[method(name = "ClampMenuItemIndex", args = 1)]
+    pub fn clamp_menu_item_index(self, item_index: i32) -> i32;
+
+    #[method(name = "KeyUp", args = 1)]
+    pub fn key_up(self, is_trigger: bool) -> ();
+
+    #[method(name = "KeyDown", args = 1)]
+    pub fn key_down(self, is_trigger: bool) -> ();
+
+    #[method(name = "KeyLeft", args = 1)]
+    pub fn key_left(self, is_trigger: bool) -> ();
+
+    #[method(name = "KeyRight", args = 1)]
+    pub fn key_right(self, is_trigger: bool) -> ();
+
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "CustomCall", args = 0)]
+    pub fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "Sort", args = 0)]
+    pub fn sort(self) -> ();
+
+    #[method(name = "ComparePoolMenuItem", args = 2)]
+    pub fn compare_pool_menu_item(
+        x: crate::app::basicmenuitem::BasicMenuItem,
+        y: crate::app::basicmenuitem::BasicMenuItem,
+    ) -> i32;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-inventorypoolitemmenu")]
+impl InventoryPoolItemMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::inventorypoolitemmenucontent::InventoryPoolItemMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InventoryPoolItemMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInventoryPoolItemMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inventorypoolitemmenu/InventoryPoolItemMenu_Kinds.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct InventoryPoolItemMenu_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for InventoryPoolItemMenu_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "InventoryPoolItemMenu.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for InventoryPoolItemMenu_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl InventoryPoolItemMenu_Kinds {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn first() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn last() -> Self {
+        Self { value: 2 }
+    }
+}

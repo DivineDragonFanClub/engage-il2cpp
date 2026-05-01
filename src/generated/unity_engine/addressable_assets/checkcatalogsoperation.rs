@@ -1,0 +1,64 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1;
+use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/checkcatalogsoperation/CheckCatalogsOperation.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets",
+    name = "CheckCatalogsOperation"
+)]
+# [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > >)]
+pub struct CheckCatalogsOperation {
+# [rename (name = "m_Addressables")] pub m_addressables : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl ,
+# [rename (name = "m_LocalHashes")] pub m_local_hashes : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > ,
+# [rename (name = "m_LocatorInfos")] pub m_locator_infos : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl_ResourceLocatorInfo > ,
+# [rename (name = "m_DepOp")] pub m_dep_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle > > ,
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-checkcatalogsoperation")]
+#[::unity2::methods]
+impl CheckCatalogsOperation {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        aa: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+    ) -> ();
+
+    #[method(name = "Start", args = 1)]
+    pub fn start (self , locator_infos : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl_ResourceLocatorInfo >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: Il2CppString > > ;
+
+    #[method(name = "InvokeWaitForCompletion", args = 0)]
+    pub fn invoke_wait_for_completion(self) -> bool;
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[method(name = "GetDependencies", args = 1)]
+    pub fn get_dependencies(
+        self,
+        dependencies : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle :: AsyncOperationHandle >,
+    ) -> ();
+
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-checkcatalogsoperation")]
+impl CheckCatalogsOperation {
+    pub fn new(
+        aa: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CheckCatalogsOperation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICheckCatalogsOperationMethods>::ctor(this, aa);
+        this
+    }
+}

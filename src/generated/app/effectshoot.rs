@@ -1,0 +1,117 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectshoot/EffectShoot_Callback.md")))]
+#[::unity2::class(namespace = "App", name = "EffectShoot.Callback")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct EffectShoot_Callback {}
+
+#[cfg(feature = "app-effectshoot")]
+#[::unity2::methods]
+impl EffectShoot_Callback {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, shoot: crate::app::effectshoot::EffectShoot) -> ();
+}
+
+#[cfg(feature = "app-effectshoot")]
+impl EffectShoot_Callback {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EffectShoot_Callback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEffectShoot_CallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectshoot/EffectShoot.md")))]
+#[::unity2::class(namespace = "App", name = "EffectShoot")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct EffectShoot {
+    #[rename(name = "m_Start")]
+    pub m_start: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_Goal")]
+    pub m_goal: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_Time")]
+    pub m_time: f32,
+    #[rename(name = "m_TotalTime")]
+    pub m_total_time: f32,
+    #[rename(name = "m_DeltaTime")]
+    pub m_delta_time: f32,
+    #[rename(name = "m_Position0")]
+    pub m_position0: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_Position1")]
+    pub m_position1: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_Position2")]
+    pub m_position2: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_Position3")]
+    pub m_position3: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_Callback")]
+    pub m_callback: crate::app::effectshoot::EffectShoot_Callback,
+    #[rename(name = "m_ParticleSystems")]
+    pub m_particle_systems: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem>,
+}
+
+#[cfg(feature = "app-effectshoot")]
+#[::unity2::methods]
+impl EffectShoot {
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "Shoot", args = 0)]
+    pub fn shoot(self) -> ();
+
+    #[method(name = "Shoot", args = 4)]
+    pub fn shoot_2(
+        self,
+        start: crate::unity_engine::vector3::Vector3,
+        goal: crate::unity_engine::vector3::Vector3,
+        time: f32,
+        callback: crate::app::effectshoot::EffectShoot_Callback,
+    ) -> ();
+
+    #[method(name = "SetLoop", args = 1)]
+    pub fn set_loop(self, enable: bool) -> ();
+
+    #[method(name = "Stop", args = 0)]
+    pub fn stop(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-effectshoot")]
+impl EffectShoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EffectShoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEffectShootMethods>::ctor(this);
+        this
+    }
+}

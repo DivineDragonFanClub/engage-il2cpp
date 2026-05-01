@@ -1,0 +1,31 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/disallowmultiplerendererfeature/DisallowMultipleRendererFeature.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "DisallowMultipleRendererFeature"
+)]
+pub struct DisallowMultipleRendererFeature {}
+
+#[cfg(feature = "unity_engine-rendering-universal-disallowmultiplerendererfeature")]
+#[::unity2::methods]
+impl DisallowMultipleRendererFeature {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-disallowmultiplerendererfeature")]
+impl DisallowMultipleRendererFeature {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DisallowMultipleRendererFeature),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDisallowMultipleRendererFeatureMethods>::ctor(this);
+        this
+    }
+}

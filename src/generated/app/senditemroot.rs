@@ -1,0 +1,110 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/senditemroot/SendItemRoot.md")))]
+#[::unity2::class(namespace = "App", name = "SendItemRoot")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct SendItemRoot {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_SendItemMenuContent")]
+    pub m_send_item_menu_content: crate::app::senditemmenucontent::SendItemMenuContent,
+    #[rename(name = "m_MenuHelpObject")]
+    pub m_menu_help_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_MenuHelpAnimator")]
+    pub m_menu_help_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_MessageText")]
+    pub m_message_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ItemHelpObject")]
+    pub m_item_help_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ItemHelpAnimator")]
+    pub m_item_help_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_ItemMenuDetailSetter")]
+    pub m_item_menu_detail_setter: crate::app::itemmenudetailsetter::ItemMenuDetailSetter,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_UnitItem")]
+    pub m_unit_item: crate::app::unititem::UnitItem,
+    #[rename(name = "m_ItemDetailDisplayWithUnit")]
+    pub m_item_detail_display_with_unit: bool,
+}
+
+#[cfg(feature = "app-senditemroot")]
+#[::unity2::methods]
+impl SendItemRoot {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "Create", args = 0)]
+    pub fn create() -> crate::app::senditemroot::SendItemRoot;
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "GetSendItemMenuContent", args = 0)]
+    pub fn get_send_item_menu_content(self)
+        -> crate::app::senditemmenucontent::SendItemMenuContent;
+
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[method(name = "OnSelect", args = 2)]
+    pub fn on_select(
+        self,
+        unit: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> ();
+
+    #[method(name = "OnSwitchDetailDisplayWay", args = 0)]
+    pub fn on_switch_detail_display_way(self) -> ();
+
+    #[method(name = "UpdateItemDetail", args = 0)]
+    pub fn update_item_detail(self) -> ();
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-senditemroot")]
+impl SendItemRoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SendItemRoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISendItemRootMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,112 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/eventtriggertype/EventTriggerType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EventTriggerType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EventTriggerType {
+    const NAMESPACE: &'static str = "UnityEngine.EventSystems";
+
+    const NAME: &'static str = "EventTriggerType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EventTriggerType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EventTriggerType {
+    pub fn pointer_enter() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn pointer_exit() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn pointer_down() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn pointer_up() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn pointer_click() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn drag() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn drop() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn scroll() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn update_selected() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn select() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn deselect() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn initialize_potential_drag() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn begin_drag() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn end_drag() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn submit() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn cancel() -> Self {
+        Self { value: 16 }
+    }
+}

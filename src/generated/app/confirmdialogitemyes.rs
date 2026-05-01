@@ -1,0 +1,52 @@
+
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/confirmdialogitemyes/ConfirmDialogItemYes.md")))]
+#[::unity2::class(namespace = "App", name = "ConfirmDialogItemYes")]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct ConfirmDialogItemYes {
+    #[rename(name = "hubSequence")]
+    pub hub_sequence: crate::app::hubsequence::HubSequence,
+    #[rename(name = "scriptName")]
+    pub script_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-confirmdialogitemyes")]
+#[::unity2::methods]
+impl ConfirmDialogItemYes {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        hub_sequence: crate::app::hubsequence::HubSequence,
+        script_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-confirmdialogitemyes")]
+impl ConfirmDialogItemYes {
+    pub fn new(
+        hub_sequence: crate::app::hubsequence::HubSequence,
+        script_name: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConfirmDialogItemYesMethods>::ctor(this, hub_sequence, script_name);
+        this
+    }
+}

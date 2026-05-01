@@ -1,0 +1,76 @@
+
+use crate::app::basicmenuitemcontent::BasicMenuItemContent;
+use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponparammenuitemcontent/RefineGodWeaponParamMenuItemContent.md")))]
+#[::unity2::class(namespace = "App", name = "RefineGodWeaponParamMenuItemContent")]
+#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
+pub struct RefineGodWeaponParamMenuItemContent {
+    #[rename(name = "m_ParamNameText")]
+    pub m_param_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_NothingNameText")]
+    pub m_nothing_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_LevelParentObject")]
+    pub m_level_parent_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_LevelBeforeCaptionText")]
+    pub m_level_before_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_LevelBeforeValueText")]
+    pub m_level_before_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_LevelArrowText")]
+    pub m_level_arrow_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_LevelAfterCaptionText")]
+    pub m_level_after_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_LevelAfterValueText")]
+    pub m_level_after_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ParamsParentObject")]
+    pub m_params_parent_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_BuildUpValueCaptionText")]
+    pub m_build_up_value_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_BuildUpValueText")]
+    pub m_build_up_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_MaterialIcon")]
+    pub m_material_icon: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_MaterialNameText")]
+    pub m_material_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_MaterialValueText")]
+    pub m_material_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-refinegodweaponparammenuitemcontent")]
+#[::unity2::methods]
+impl RefineGodWeaponParamMenuItemContent {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "BuildText", args = 0)]
+    pub fn build_text(self) -> ();
+
+    #[method(name = "UpdateTextColor", args = 0)]
+    pub fn update_text_color(self) -> ();
+}
+
+#[cfg(feature = "app-refinegodweaponparammenuitemcontent")]
+impl RefineGodWeaponParamMenuItemContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponParamMenuItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponParamMenuItemContentMethods>::ctor(this);
+        this
+    }
+}

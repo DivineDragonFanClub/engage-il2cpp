@@ -1,0 +1,55 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/trackedreference/TrackedReference.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "TrackedReference")]
+#[parent(crate::system::object::Object)]
+pub struct TrackedReference {
+    #[rename(name = "m_Ptr")]
+    pub m_ptr: ::unity2::IntPtr,
+}
+
+#[cfg(feature = "unity_engine-trackedreference")]
+#[::unity2::methods]
+impl TrackedReference {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "op_Equality", args = 2)]
+    pub fn op_equality(
+        x: crate::unity_engine::trackedreference::TrackedReference,
+        y: crate::unity_engine::trackedreference::TrackedReference,
+    ) -> bool;
+
+    #[method(name = "op_Inequality", args = 2)]
+    pub fn op_inequality(
+        x: crate::unity_engine::trackedreference::TrackedReference,
+        y: crate::unity_engine::trackedreference::TrackedReference,
+    ) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, o: crate::system::object::Object) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(exists: crate::unity_engine::trackedreference::TrackedReference) -> bool;
+}
+
+#[cfg(feature = "unity_engine-trackedreference")]
+impl TrackedReference {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TrackedReference),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITrackedReferenceMethods>::ctor(this);
+        this
+    }
+}

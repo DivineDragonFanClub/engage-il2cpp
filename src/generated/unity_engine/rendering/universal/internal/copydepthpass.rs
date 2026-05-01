@@ -1,0 +1,101 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/copydepthpass/CopyDepthPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "CopyDepthPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct CopyDepthPass {
+    #[rename(name = "m_CopyDepthMaterial")]
+    pub m_copy_depth_material: crate::unity_engine::material::Material,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-copydepthpass")]
+#[::unity2::methods]
+impl CopyDepthPass {
+    #[method(name = "get_source", args = 0)]
+    pub fn get_source(
+        self,
+    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle;
+
+    #[method(name = "set_source", args = 1)]
+    pub fn set_source(
+        self,
+        value: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    ) -> ();
+
+    #[method(name = "get_destination", args = 0)]
+    pub fn get_destination(
+        self,
+    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle;
+
+    #[method(name = "set_destination", args = 1)]
+    pub fn set_destination(
+        self,
+        value: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    ) -> ();
+
+    #[method(name = "get_AllocateRT", args = 0)]
+    pub fn get_allocate_rt(self) -> bool;
+
+    #[method(name = "set_AllocateRT", args = 1)]
+    pub fn set_allocate_rt(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        copy_depth_material: crate::unity_engine::material::Material,
+    ) -> ();
+
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(
+        self,
+        source: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+        destination : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle,
+    ) -> ();
+
+    #[method(name = "OnCameraSetup", args = 2)]
+    pub fn on_camera_setup(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "OnCameraCleanup", args = 1)]
+    pub fn on_camera_cleanup(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-copydepthpass")]
+impl CopyDepthPass {
+    pub fn new(
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        copy_depth_material: crate::unity_engine::material::Material,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CopyDepthPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICopyDepthPassMethods>::ctor(this, evt, copy_depth_material);
+        this
+    }
+}

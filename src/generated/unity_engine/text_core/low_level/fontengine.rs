@@ -1,0 +1,167 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/fontengine/FontEngine.md")))]
+#[::unity2::class(namespace = "UnityEngine.TextCore.LowLevel", name = "FontEngine")]
+#[parent(crate::system::object::Object)]
+pub struct FontEngine {
+# [static_field] # [rename (name = "s_Glyphs")] pub s_glyphs : :: unity2 :: Array < crate :: unity_engine :: text_core :: glyph :: Glyph > ,
+# [static_field] # [rename (name = "s_GlyphIndexes_MarshallingArray_A")] pub s_glyph_indexes_marshalling_array_a : :: unity2 :: Array < u32 > ,
+# [static_field] # [rename (name = "s_GlyphMarshallingStruct_IN")] pub s_glyph_marshalling_struct_in : :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct > ,
+# [static_field] # [rename (name = "s_GlyphMarshallingStruct_OUT")] pub s_glyph_marshalling_struct_out : :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct > ,
+# [static_field] # [rename (name = "s_FreeGlyphRects")] pub s_free_glyph_rects : :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > ,
+# [static_field] # [rename (name = "s_UsedGlyphRects")] pub s_used_glyph_rects : :: unity2 :: Array < crate :: unity_engine :: text_core :: glyphrect :: GlyphRect > ,
+# [static_field] # [rename (name = "s_PairAdjustmentRecords_MarshallingArray")] pub s_pair_adjustment_records_marshalling_array : :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord > ,
+# [static_field] # [rename (name = "s_GlyphLookupDictionary")] pub s_glyph_lookup_dictionary : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < u32 , crate :: unity_engine :: text_core :: glyph :: Glyph > ,
+}
+
+#[cfg(feature = "unity_engine-text_core-low_level-fontengine")]
+#[::unity2::methods]
+impl FontEngine {
+    #[method(name = "InitializeFontEngine", args = 0)]
+    pub fn initialize_font_engine(
+    ) -> crate::unity_engine::text_core::low_level::fontengineerror::FontEngineError;
+
+    #[method(name = "InitializeFontEngine_Internal", args = 0)]
+    pub fn initialize_font_engine_internal() -> i32;
+
+    #[method(name = "LoadFontFace", args = 2)]
+    pub fn load_font_face(
+        font: crate::unity_engine::font::Font,
+        point_size: i32,
+    ) -> crate::unity_engine::text_core::low_level::fontengineerror::FontEngineError;
+
+    #[method(name = "LoadFontFace_With_Size_FromFont_Internal", args = 2)]
+    pub fn load_font_face_with_size_from_font_internal(
+        font: crate::unity_engine::font::Font,
+        point_size: i32,
+    ) -> i32;
+
+    #[method(name = "GetFaceInfo", args = 0)]
+    pub fn get_face_info() -> crate::unity_engine::text_core::faceinfo::FaceInfo;
+
+    #[method(name = "GetFaceInfo_Internal", args = 1)]
+    pub fn get_face_info_internal(
+        face_info: crate::unity_engine::text_core::faceinfo::FaceInfo,
+    ) -> i32;
+
+    #[method(name = "GetGlyphIndex", args = 1)]
+    pub fn get_glyph_index(unicode: u32) -> u32;
+
+    #[method(name = "TryGetGlyphWithUnicodeValue", args = 3)]
+    pub fn try_get_glyph_with_unicode_value(
+        unicode: u32,
+        flags: crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
+        glyph: crate::unity_engine::text_core::glyph::Glyph,
+    ) -> bool;
+
+    #[method(name = "TryGetGlyphWithUnicodeValue_Internal", args = 3)]
+    pub fn try_get_glyph_with_unicode_value_internal(
+        unicode: u32,
+        load_flags: crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
+        glyph_struct : crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct,
+    ) -> bool;
+
+    #[method(name = "TryGetGlyphWithIndexValue", args = 3)]
+    pub fn try_get_glyph_with_index_value(
+        glyph_index: u32,
+        flags: crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
+        glyph: crate::unity_engine::text_core::glyph::Glyph,
+    ) -> bool;
+
+    #[method(name = "TryGetGlyphWithIndexValue_Internal", args = 3)]
+    pub fn try_get_glyph_with_index_value_internal(
+        glyph_index: u32,
+        load_flags: crate::unity_engine::text_core::low_level::glyphloadflags::GlyphLoadFlags,
+        glyph_struct : crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct,
+    ) -> bool;
+
+    #[method(name = "TryAddGlyphToTexture", args = 8)]
+    pub fn try_add_glyph_to_texture(
+        glyph_index: u32,
+        padding: i32,
+        packing_mode: crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
+        free_glyph_rects: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::text_core::glyphrect::GlyphRect,
+        >,
+        used_glyph_rects: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::text_core::glyphrect::GlyphRect,
+        >,
+        render_mode: crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+        texture: crate::unity_engine::texture2d::Texture2D,
+        glyph: crate::unity_engine::text_core::glyph::Glyph,
+    ) -> bool;
+
+    #[method(name = "TryAddGlyphToTexture_Internal", args = 10)]
+    pub fn try_add_glyph_to_texture_internal(
+        glyph_index: u32,
+        padding: i32,
+        packing_mode: crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
+        free_glyph_rects: ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>,
+        free_glyph_rect_count: i32,
+        used_glyph_rects: ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>,
+        used_glyph_rect_count: i32,
+        render_mode: crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+        texture: crate::unity_engine::texture2d::Texture2D,
+        glyph : crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct,
+    ) -> bool;
+
+    #[method(name = "TryAddGlyphsToTexture", args = 8)]
+    pub fn try_add_glyphs_to_texture(
+        glyph_indexes: crate::system::collections::generic::list_1::List_1<u32>,
+        padding: i32,
+        packing_mode: crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
+        free_glyph_rects: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::text_core::glyphrect::GlyphRect,
+        >,
+        used_glyph_rects: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::text_core::glyphrect::GlyphRect,
+        >,
+        render_mode: crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+        texture: crate::unity_engine::texture2d::Texture2D,
+        glyphs: ::unity2::Array<crate::unity_engine::text_core::glyph::Glyph>,
+    ) -> bool;
+
+    #[method(name = "TryAddGlyphsToTexture_Internal", args = 11)]
+    pub fn try_add_glyphs_to_texture_internal(
+        glyph_index: ::unity2::Array<u32>,
+        padding: i32,
+        packing_mode: crate::unity_engine::text_core::low_level::glyphpackingmode::GlyphPackingMode,
+        free_glyph_rects: ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>,
+        free_glyph_rect_count: i32,
+        used_glyph_rects: ::unity2::Array<crate::unity_engine::text_core::glyphrect::GlyphRect>,
+        used_glyph_rect_count: i32,
+        render_mode: crate::unity_engine::text_core::low_level::glyphrendermode::GlyphRenderMode,
+        texture: crate::unity_engine::texture2d::Texture2D,
+        glyphs : :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphmarshallingstruct :: GlyphMarshallingStruct >,
+        glyph_count: i32,
+    ) -> bool;
+
+    #[method(name = "GetGlyphPairAdjustmentTable", args = 1)]
+    pub fn get_glyph_pair_adjustment_table (glyph_indexes : :: unity2 :: Array < u32 >) -> :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord > ;
+
+    #[method(name = "GetGlyphPairAdjustmentRecords", args = 2)]
+    pub fn get_glyph_pair_adjustment_records (glyph_indexes : crate :: system :: collections :: generic :: list_1 :: List_1 < u32 > , record_count : i32) -> :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord > ;
+
+    #[method(
+        name = "PopulatePairAdjustmentRecordMarshallingArray_from_GlyphIndexes",
+        args = 2
+    )]
+    pub fn populate_pair_adjustment_record_marshalling_array_from_glyph_indexes(
+        glyph_indexes: ::unity2::Array<u32>,
+        record_count: i32,
+    ) -> i32;
+
+    #[method(name = "GetGlyphPairAdjustmentRecordsFromMarshallingArray", args = 1)]
+    pub fn get_glyph_pair_adjustment_records_from_marshalling_array(
+        glyph_pair_adjustment_records : :: unity2 :: Array < crate :: unity_engine :: text_core :: low_level :: glyphpairadjustmentrecord :: GlyphPairAdjustmentRecord >,
+    ) -> i32;
+
+    #[method(name = "ResetAtlasTexture", args = 1)]
+    pub fn reset_atlas_texture(texture: crate::unity_engine::texture2d::Texture2D) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

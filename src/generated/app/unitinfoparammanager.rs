@@ -1,0 +1,240 @@
+
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparammanager/UnitInfoParamManager_ValueType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitInfoParamManager_ValueType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitInfoParamManager_ValueType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitInfoParamManager.ValueType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitInfoParamManager_ValueType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitInfoParamManager_ValueType {
+    pub fn max_hp() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn rating() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn hit() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn critical() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn avoid() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn secure() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn continuous() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn str() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn magic() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn tech() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn quick() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn def() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn mdef() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn luck() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn phys() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 17 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparammanager/UnitInfoParamManager.md")))]
+#[::unity2::class(namespace = "App", name = "UnitInfoParamManager")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: unitinfoparammanager :: UnitInfoParamManager >)]
+pub struct UnitInfoParamManager {
+    #[rename(name = "m_CalcUnit")]
+    pub m_calc_unit: crate::app::unit::Unit,
+    #[rename(name = "m_BattleInfoParam")]
+    pub m_battle_info_param: crate::app::battleinfoparam::BattleInfoParam,
+    #[rename(name = "m_CalcUnitNoGod")]
+    pub m_calc_unit_no_god: crate::app::unit::Unit,
+    #[rename(name = "m_BattleInfoParamNoGod")]
+    pub m_battle_info_param_no_god: crate::app::battleinfoparam::BattleInfoParam,
+    #[rename(name = "m_CalcUnitNoEffect")]
+    pub m_calc_unit_no_effect: crate::app::unit::Unit,
+    #[rename(name = "m_BattleInfoParamNoEffect")]
+    pub m_battle_info_param_no_effect: crate::app::battleinfoparam::BattleInfoParam,
+    #[rename(name = "m_CalcUnitNoHub")]
+    pub m_calc_unit_no_hub: crate::app::unit::Unit,
+    #[rename(name = "m_BattleInfoParamNoHub")]
+    pub m_battle_info_param_no_hub: crate::app::battleinfoparam::BattleInfoParam,
+    #[rename(name = "m_BattleInfo")]
+    pub m_battle_info: crate::app::battleinfo::BattleInfo,
+    #[rename(name = "m_OldRingOwner")]
+    pub m_old_ring_owner: crate::app::unit::Unit,
+    #[rename(name = "m_param")]
+    pub m_param: ::unity2::Array<crate::app::unitparamdetail::UnitParamDetail>,
+}
+
+#[cfg(feature = "app-unitinfoparammanager")]
+#[::unity2::methods]
+impl UnitInfoParamManager {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "CopyValue", args = 2)]
+    pub fn copy_value(
+        self,
+        r#type: crate::app::unitparamdetail::UnitParamDetail_ValueDetail,
+        value: ::unity2::Array<i32>,
+    ) -> ();
+
+    #[method(name = "MargeMaxEnhanceFactors", args = 2)]
+    pub fn marge_max_enhance_factors(
+        self,
+        factors: crate::app::unitenhancefactors::UnitEnhanceFactors,
+        unit: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "SetUnit", args = 8)]
+    pub fn set_unit(
+        self,
+        unit: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        is_diff_collect: bool,
+        f: crate::app::battleinfo::BattleInfo_Flags,
+        is_god_change: bool,
+        god: crate::app::godunit::GodUnit,
+        ring: crate::app::unitring::UnitRing,
+    ) -> ();
+
+    #[method(name = "ClearUnit", args = 2)]
+    pub fn clear_unit(
+        self,
+        god: crate::app::godunit::GodUnit,
+        ring: crate::app::unitring::UnitRing,
+    ) -> ();
+
+    #[method(name = "GetParam", args = 1)]
+    pub fn get_param(
+        self,
+        r#type: crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType,
+    ) -> crate::app::unitparamdetail::UnitParamDetail;
+
+    #[method(name = "GetParam", args = 1)]
+    pub fn get_param_2(
+        self,
+        r#type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
+    ) -> crate::app::unitparamdetail::UnitParamDetail;
+
+    #[method(name = "ToGrowCapabilityType", args = 1)]
+    pub fn to_grow_capability_type(
+        r#type: crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType,
+    ) -> crate::app::capabilitydefinition::CapabilityDefinition_Type;
+
+    #[method(name = "ToValueType", args = 1)]
+    pub fn to_value_type(
+        r#type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
+    ) -> crate::app::unitinfoparammanager::UnitInfoParamManager_ValueType;
+
+    #[method(name = "GetCalcUnit", args = 0)]
+    pub fn get_calc_unit(self) -> crate::app::unit::Unit;
+
+    #[method(name = "GetCalcNoGod", args = 0)]
+    pub fn get_calc_no_god(self) -> crate::app::unit::Unit;
+
+    #[method(name = "GetCalcNoEnhance", args = 0)]
+    pub fn get_calc_no_enhance(self) -> crate::app::unit::Unit;
+
+    #[method(name = "GetCapabilityRating", args = 2)]
+    pub fn get_capability_rating(
+        self,
+        unit: crate::app::unit::Unit,
+        info: crate::app::battleinfoparam::BattleInfoParam,
+    ) -> i32;
+}
+
+#[cfg(feature = "app-unitinfoparammanager")]
+impl UnitInfoParamManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitInfoParamManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitInfoParamManagerMethods>::ctor(this);
+        this
+    }
+}

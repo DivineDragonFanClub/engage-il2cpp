@@ -1,0 +1,132 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/pinvokeattributes/PInvokeAttributes.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct PInvokeAttributes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for PInvokeAttributes {
+    const NAMESPACE: &'static str = "System.Reflection";
+
+    const NAME: &'static str = "PInvokeAttributes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PInvokeAttributes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl PInvokeAttributes {
+    pub fn no_mangle() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn char_set_mask() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn char_set_not_spec() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn char_set_ansi() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn char_set_unicode() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn char_set_auto() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn best_fit_use_assem() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn best_fit_enabled() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn best_fit_disabled() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn best_fit_mask() -> Self {
+        Self { value: 48 }
+    }
+
+    pub fn throw_on_unmappable_char_use_assem() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn throw_on_unmappable_char_enabled() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn throw_on_unmappable_char_disabled() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn throw_on_unmappable_char_mask() -> Self {
+        Self { value: 12288 }
+    }
+
+    pub fn supports_last_error() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn call_conv_mask() -> Self {
+        Self { value: 1792 }
+    }
+
+    pub fn call_conv_winapi() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn call_conv_cdecl() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn call_conv_stdcall() -> Self {
+        Self { value: 768 }
+    }
+
+    pub fn call_conv_thiscall() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn call_conv_fastcall() -> Self {
+        Self { value: 1280 }
+    }
+
+    pub fn max_value() -> Self {
+        Self { value: 65535 }
+    }
+}

@@ -1,0 +1,83 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmascot/HubMascot.md")))]
+#[::unity2::class(namespace = "App", name = "HubMascot")]
+#[parent(crate::system::object::Object)]
+pub struct HubMascot {
+    #[static_field]
+    #[rename(name = "MascotObject")]
+    pub mascot_object: crate::unity_engine::gameobject::GameObject,
+    #[static_field]
+    #[rename(name = "m_CurrentCharacter")]
+    pub m_current_character: crate::combat::character::Character,
+    #[static_field]
+    #[rename(name = "m_LoadingCharacter")]
+    pub m_loading_character: crate::combat::character::Character,
+    #[static_field]
+    #[rename(name = "m_ParentTransform")]
+    pub m_parent_transform: crate::unity_engine::transform::Transform,
+    #[static_field]
+    #[rename(name = "m_PlayerTransform")]
+    pub m_player_transform: crate::unity_engine::transform::Transform,
+    #[static_field]
+    #[rename(name = "m_Position")]
+    pub m_position: crate::unity_engine::vector3::Vector3,
+    #[static_field]
+    #[rename(name = "m_Rotation")]
+    pub m_rotation: crate::unity_engine::quaternion::Quaternion,
+}
+
+#[cfg(feature = "app-hubmascot")]
+#[::unity2::methods]
+impl HubMascot {
+    #[method(name = "Start", args = 2)]
+    pub fn start(
+        parent: crate::unity_engine::transform::Transform,
+        player: crate::unity_engine::transform::Transform,
+    ) -> ();
+
+    #[method(name = "Load", args = 1)]
+    pub fn load(request_follow_enable: bool) -> ();
+
+    #[method(name = "End", args = 0)]
+    pub fn end() -> ();
+
+    #[method(name = "Stop", args = 0)]
+    pub fn stop() -> ();
+
+    #[method(name = "Restart", args = 0)]
+    pub fn restart() -> ();
+
+    #[method(name = "EnablePlayerFollow", args = 0)]
+    pub fn enable_player_follow() -> ();
+
+    #[method(name = "DisablePlayerFollow", args = 0)]
+    pub fn disable_player_follow() -> ();
+
+    #[method(name = "ChangeMascotColor", args = 0)]
+    pub fn change_mascot_color() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-hubmascot")]
+impl HubMascot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMascot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMascotMethods>::ctor(this);
+        this
+    }
+}

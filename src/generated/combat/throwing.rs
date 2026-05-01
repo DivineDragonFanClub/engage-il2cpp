@@ -1,0 +1,106 @@
+
+use crate::combat::launchbehaviour::ILaunchBehaviour;
+use crate::combat::launchbehaviour::LaunchBehaviour;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/throwing/Throwing.md")))]
+#[::unity2::class(namespace = "Combat", name = "Throwing")]
+#[parent(crate::combat::launchbehaviour::LaunchBehaviour)]
+pub struct Throwing {
+    #[rename(name = "Mass")]
+    pub mass: f32,
+    #[rename(name = "FlySpeed")]
+    pub fly_speed: f32,
+    #[rename(name = "LocalAngularVelocity")]
+    pub local_angular_velocity: f32,
+    #[rename(name = "TrailPrefab")]
+    pub trail_prefab: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "TrailParentNode")]
+    pub trail_parent_node: ::unity2::Il2CppString,
+    #[rename(name = "HitEffectPrefab")]
+    pub hit_effect_prefab: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ShootPassed")]
+    pub m_shoot_passed: bool,
+    #[rename(name = "m_bReached")]
+    pub m_b_reached: bool,
+    #[rename(name = "m_WeaponPrefab")]
+    pub m_weapon_prefab: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_WeaponLength")]
+    pub m_weapon_length: f32,
+    #[rename(name = "m_Parabola")]
+    pub m_parabola: crate::combat::parabola::Parabola,
+    #[rename(name = "m_KnockoffAttack")]
+    pub m_knockoff_attack: i32,
+}
+
+#[cfg(feature = "combat-throwing")]
+#[::unity2::methods]
+impl Throwing {
+    #[method(name = "OnCharacterSetup", args = 1)]
+    pub fn on_character_setup(self, owner: crate::combat::character::Character) -> ();
+
+    #[method(name = "OnEnterAttack", args = 0)]
+    pub fn on_enter_attack(self) -> ();
+
+    #[method(name = "OnHitTimePredicted", args = 1)]
+    pub fn on_hit_time_predicted(self, world_hit_time: f32) -> ();
+
+    #[method(name = "OnReached", args = 0)]
+    pub fn on_reached(self) -> ();
+
+    #[method(name = "FlyingHitReaction", args = 1)]
+    pub fn flying_hit_reaction(self, phase: crate::combat::phase::Phase) -> ();
+
+    #[method(name = "OnHit", args = 0)]
+    pub fn on_hit(self) -> ();
+
+    #[method(name = "OnMiss", args = 0)]
+    pub fn on_miss(self) -> ();
+
+    #[method(name = "OnGuard", args = 0)]
+    pub fn on_guard(self) -> ();
+
+    #[method(name = "OnKnockoff", args = 0)]
+    pub fn on_knockoff(self) -> ();
+
+    #[method(name = "発射", args = 0)]
+    pub fn _unnamed(self) -> ();
+
+    #[method(name = "CalcAimPosition", args = 2)]
+    pub fn calc_aim_position(
+        self,
+        enemy: crate::combat::character::Character,
+        knockoff_attack: i32,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "RecalcFlyingTime", args = 0)]
+    pub fn recalc_flying_time(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-throwing")]
+impl Throwing {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Throwing),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IThrowingMethods>::ctor(this);
+        this
+    }
+}

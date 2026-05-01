@@ -1,0 +1,159 @@
+
+use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+use crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayreplayplayername/RelayReplayPlayerName_Seq.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayReplayPlayerName_Seq {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayReplayPlayerName_Seq {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayReplayPlayerName.Seq";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayReplayPlayerName_Seq {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayReplayPlayerName_Seq {
+    pub fn hide() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn opening() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn show() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn closing() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayreplayplayername/RelayReplayPlayerName.md")))]
+#[::unity2::class(namespace = "App", name = "RelayReplayPlayerName")]
+# [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: relayreplayplayername :: RelayReplayPlayerName >)]
+pub struct RelayReplayPlayerName {
+    #[rename(name = "m_Text")]
+    pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_CanvasManager")]
+    pub m_canvas_manager: crate::app::canvasmanager::CanvasManager,
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_Seq")]
+    pub m_seq: crate::app::relayreplayplayername::RelayReplayPlayerName_Seq,
+    #[rename(name = "m_IsReqClose")]
+    pub m_is_req_close: bool,
+}
+
+#[cfg(feature = "app-relayreplayplayername")]
+#[::unity2::methods]
+impl RelayReplayPlayerName {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "ShowImpl", args = 0)]
+    pub fn show_impl(self) -> ();
+
+    #[method(name = "HideImpl", args = 0)]
+    pub fn hide_impl(self) -> ();
+
+    #[method(name = "UpdatePlayerNameImpl", args = 0)]
+    pub fn update_player_name_impl(self) -> ();
+
+    #[method(name = "IsOpening", args = 0)]
+    pub fn is_opening(self) -> bool;
+
+    #[method(name = "IsClosing", args = 0)]
+    pub fn is_closing(self) -> bool;
+
+    #[method(name = "IsClosed", args = 0)]
+    pub fn is_closed(self) -> bool;
+
+    #[method(name = "GetBool", args = 1)]
+    pub fn get_bool(self, name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "TryShow", args = 0)]
+    pub fn try_show() -> ();
+
+    #[method(name = "TryHide", args = 0)]
+    pub fn try_hide() -> ();
+
+    #[method(name = "TryUpdatePlayerName", args = 0)]
+    pub fn try_update_player_name() -> ();
+
+    #[method(name = "TryCreateAsync", args = 0)]
+    pub fn try_create_async() -> ();
+
+    #[method(name = "IsCreating", args = 0)]
+    pub fn is_creating() -> bool;
+
+    #[method(name = "TryDestroy", args = 0)]
+    pub fn try_destroy() -> ();
+
+    #[method(name = "IsRequired", args = 0)]
+    pub fn is_required() -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relayreplayplayername")]
+impl RelayReplayPlayerName {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayReplayPlayerName),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayReplayPlayerNameMethods>::ctor(this);
+        this
+    }
+}

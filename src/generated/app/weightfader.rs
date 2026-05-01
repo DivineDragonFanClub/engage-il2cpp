@@ -1,0 +1,54 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weightfader/WeightFader.md")))]
+#[::unity2::class(namespace = "App", name = "WeightFader")]
+#[parent(crate::system::object::Object)]
+pub struct WeightFader {
+    #[rename(name = "m_wgt")]
+    pub m_wgt: f32,
+    #[rename(name = "m_wgtFrom")]
+    pub m_wgt_from: f32,
+    #[rename(name = "m_wgtTo")]
+    pub m_wgt_to: f32,
+    #[rename(name = "m_time")]
+    pub m_time: f32,
+    #[rename(name = "m_duration")]
+    pub m_duration: f32,
+}
+
+#[cfg(feature = "app-weightfader")]
+#[::unity2::methods]
+impl WeightFader {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, wgt: f32, msec: f32) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> f32;
+}
+
+#[cfg(feature = "app-weightfader")]
+impl WeightFader {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeightFader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeightFaderMethods>::ctor(this);
+        this
+    }
+}

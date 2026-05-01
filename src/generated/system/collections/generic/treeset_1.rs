@@ -1,0 +1,59 @@
+
+use crate::system::collections::generic::sortedset_1::ISortedSet_1;
+use crate::system::collections::generic::sortedset_1::SortedSet_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/treeset_1/TreeSet_1.md")))]
+#[::unity2::class(namespace = "System.Collections.Generic", name = "TreeSet`1")]
+pub struct TreeSet_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "system-collections-generic-treeset_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> TreeSet_1<T0> {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(
+        self,
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
+            T0,
+        >,
+    ) -> ();
+
+    #[method(name = "AddIfNotPresent", args = 1)]
+    pub fn add_if_not_present(self, item: T0) -> bool;
+}
+
+#[cfg(feature = "system-collections-generic-treeset_1")]
+impl<T0: ::unity2::ClassIdentity> TreeSet_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TreeSet_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITreeSet_1Methods<T0>>::ctor(this);
+        this
+    }
+
+    pub fn new_2(
+        comparer: crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<
+            T0,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TreeSet_1),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ITreeSet_1Methods<T0>>::ctor_2(this, comparer);
+        this
+    }
+}

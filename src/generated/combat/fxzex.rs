@@ -1,0 +1,85 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fxzex/FXZEx_HitPoint.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FXZEx_HitPoint {
+    pub pos: crate::unity_engine::vector3::Vector3,
+    pub nrm: crate::unity_engine::vector3::Vector3,
+    pub col_index: i32,
+}
+
+impl ::unity2::ClassIdentity for FXZEx_HitPoint {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "FXZEx.HitPoint";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FXZEx_HitPoint {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fxzex/FXZEx.md")))]
+#[::unity2::class(namespace = "Combat", name = "FXZEx")]
+#[parent(crate::system::object::Object)]
+pub struct FXZEx {
+    #[static_field]
+    #[rename(name = "layerMask")]
+    pub layer_mask: i32,
+}
+
+#[cfg(feature = "combat-fxzex")]
+#[::unity2::methods]
+impl FXZEx {
+    #[method(name = "get_LayerMask", args = 0)]
+    pub fn get_layer_mask() -> i32;
+
+    #[method(name = "ToXHZ", args = 1)]
+    pub fn to_xhz(
+        xyz: crate::unity_engine::vector3::Vector3,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "ToXHZ", args = 1)]
+    pub fn to_xhz_2(xz: crate::combat::fxz::FXZ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "SampleHeight", args = 1)]
+    pub fn sample_height(xyz: crate::unity_engine::vector3::Vector3) -> f32;
+
+    #[method(name = "SampleHeight", args = 1)]
+    pub fn sample_height_2(xz: crate::combat::fxz::FXZ) -> f32;
+
+    #[method(name = "ToABCD", args = 1)]
+    pub fn to_abcd(
+        xyz: crate::unity_engine::vector3::Vector3,
+    ) -> crate::unity_engine::vector4::Vector4;
+
+    #[method(name = "ToWideABCD", args = 1)]
+    pub fn to_wide_abcd(
+        center_pos: crate::unity_engine::vector3::Vector3,
+    ) -> crate::unity_engine::vector4::Vector4;
+
+    #[method(name = "ToWideABCD", args = 2)]
+    pub fn to_wide_abcd_2(
+        center_pos: crate::unity_engine::vector3::Vector3,
+        out_plane_is_flat: bool,
+    ) -> crate::unity_engine::vector4::Vector4;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

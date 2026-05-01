@@ -1,0 +1,146 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/challengesequence/ChallengeSequence.md")))]
+#[::unity2::class(namespace = "App", name = "ChallengeSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct ChallengeSequence {
+    #[rename(name = "m_ChallengeMapSelectRoot")]
+    pub m_challenge_map_select_root: crate::app::challengemapselectroot::ChallengeMapSelectRoot,
+    #[rename(name = "m_Bg")]
+    pub m_bg: crate::app::menubg::MenuBg,
+    #[rename(name = "m_Result")]
+    pub m_result: crate::app::basicmenu::BasicMenu_Result,
+    #[rename(name = "m_ChallengeData")]
+    pub m_challenge_data: crate::app::challengedata::ChallengeData,
+    #[rename(name = "m_Difficulty")]
+    pub m_difficulty: i32,
+}
+
+#[cfg(feature = "app-challengesequence")]
+#[::unity2::methods]
+impl ChallengeSequence {
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "CreateDesc", args = 0)]
+    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "LoadResources", args = 0)]
+    pub fn load_resources(self) -> ();
+
+    #[method(name = "IsLoadingResources", args = 0)]
+    pub fn is_loading_resources(self) -> bool;
+
+    #[method(name = "StartSequence", args = 0)]
+    pub fn start_sequence(self) -> ();
+
+    #[method(name = "CreateMapSelectRoot", args = 0)]
+    pub fn create_map_select_root(self) -> ();
+
+    #[method(name = "OpenTitle", args = 0)]
+    pub fn open_title(self) -> ();
+
+    #[method(name = "CreateMapSelectMenu", args = 0)]
+    pub fn create_map_select_menu(self) -> ();
+
+    #[method(name = "CreateDifficultyMenu", args = 0)]
+    pub fn create_difficulty_menu(self) -> ();
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[method(name = "IsClosed", args = 0)]
+    pub fn is_closed(self) -> bool;
+
+    #[method(name = "DestroyMapSelectRoot", args = 0)]
+    pub fn destroy_map_select_root(self) -> ();
+
+    #[method(name = "SetupChallenge", args = 0)]
+    pub fn setup_challenge(self) -> ();
+
+    #[method(name = "EndSequence", args = 0)]
+    pub fn end_sequence(self) -> ();
+}
+
+#[cfg(feature = "app-challengesequence")]
+impl ChallengeSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/challengesequence/ChallengeSequence_Label2.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ChallengeSequence_Label2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ChallengeSequence_Label2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ChallengeSequence.Label2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ChallengeSequence_Label2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ChallengeSequence_Label2 {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn map_select_menu() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn difficulty_select_menu() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn end_and_start_map() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn end_and_return() -> Self {
+        Self { value: 4 }
+    }
+}

@@ -1,0 +1,27 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclipcapsextensions/TimelineClipCapsExtensions.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Timeline",
+    name = "TimelineClipCapsExtensions"
+)]
+#[parent(crate::system::object::Object)]
+pub struct TimelineClipCapsExtensions {}
+
+#[cfg(feature = "unity_engine-timeline-timelineclipcapsextensions")]
+#[::unity2::methods]
+impl TimelineClipCapsExtensions {
+    #[method(name = "SupportsExtrapolation", args = 1)]
+    pub fn supports_extrapolation(
+        clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
+    ) -> bool;
+
+    #[method(name = "HasAny", args = 2)]
+    pub fn has_any(
+        caps: crate::unity_engine::timeline::clipcaps::ClipCaps,
+        flags: crate::unity_engine::timeline::clipcaps::ClipCaps,
+    ) -> bool;
+}

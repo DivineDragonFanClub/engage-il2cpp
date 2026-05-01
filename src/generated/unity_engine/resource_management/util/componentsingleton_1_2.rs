@@ -1,0 +1,66 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/util/componentsingleton_1_2/ComponentSingleton_1_2.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.Util",
+    name = "ComponentSingleton`1"
+)]
+pub struct ComponentSingleton_1_2<T0: ::unity2::ClassIdentity> {
+    #[static_field]
+    #[rename(name = "s_Instance")]
+    pub s_instance: T0,
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-componentsingleton_1_2")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> ComponentSingleton_1_2<T0> {
+    #[method(name = "get_Exists", args = 0)]
+    pub fn get_exists() -> bool;
+
+    #[method(name = "get_Instance", args = 0)]
+    pub fn get_instance() -> T0;
+
+    #[method(name = "FindInstance", args = 0)]
+    pub fn find_instance() -> T0;
+
+    #[method(name = "GetGameObjectName", args = 0)]
+    pub fn get_game_object_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateNewSingleton", args = 0)]
+    pub fn create_new_singleton() -> T0;
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "DestroySingleton", args = 0)]
+    pub fn destroy_singleton() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-componentsingleton_1_2")]
+impl<T0: ::unity2::ClassIdentity> ComponentSingleton_1_2<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ComponentSingleton_1_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IComponentSingleton_1_2Methods<T0>>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,578 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::events::unityevent_1::IUnityEvent_1;
+use crate::unity_engine::events::unityevent_1::UnityEvent_1;
+use crate::unity_engine::events::unityeventbase::IUnityEventBase;
+use crate::unity_engine::events::unityeventbase::UnityEventBase;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollrect/ScrollRect_ScrollRectEvent.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "ScrollRect.ScrollRectEvent")]
+# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: vector2 :: Vector2 >)]
+pub struct ScrollRect_ScrollRectEvent {}
+
+#[cfg(feature = "unity_engine-ui-scrollrect")]
+#[::unity2::methods]
+impl ScrollRect_ScrollRectEvent {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-scrollrect")]
+impl ScrollRect_ScrollRectEvent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScrollRect_ScrollRectEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScrollRect_ScrollRectEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollrect/ScrollRect_MovementType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ScrollRect_MovementType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ScrollRect_MovementType {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "ScrollRect.MovementType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ScrollRect_MovementType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ScrollRect_MovementType {
+    pub fn unrestricted() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn elastic() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn clamped() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollrect/ScrollRect_ScrollbarVisibility.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ScrollRect_ScrollbarVisibility {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ScrollRect_ScrollbarVisibility {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "ScrollRect.ScrollbarVisibility";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ScrollRect_ScrollbarVisibility {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ScrollRect_ScrollbarVisibility {
+    pub fn permanent() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn auto_hide() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn auto_hide_and_expand_viewport() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/scrollrect/ScrollRect.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "ScrollRect")]
+#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
+pub struct ScrollRect {
+    #[rename(name = "m_Content")]
+    pub m_content: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_Horizontal")]
+    pub m_horizontal: bool,
+    #[rename(name = "m_Vertical")]
+    pub m_vertical: bool,
+    #[rename(name = "m_MovementType")]
+    pub m_movement_type: crate::unity_engine::ui::scrollrect::ScrollRect_MovementType,
+    #[rename(name = "m_Elasticity")]
+    pub m_elasticity: f32,
+    #[rename(name = "m_Inertia")]
+    pub m_inertia: bool,
+    #[rename(name = "m_DecelerationRate")]
+    pub m_deceleration_rate: f32,
+    #[rename(name = "m_ScrollSensitivity")]
+    pub m_scroll_sensitivity: f32,
+    #[rename(name = "m_Viewport")]
+    pub m_viewport: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_HorizontalScrollbar")]
+    pub m_horizontal_scrollbar: crate::unity_engine::ui::scrollbar::Scrollbar,
+    #[rename(name = "m_VerticalScrollbar")]
+    pub m_vertical_scrollbar: crate::unity_engine::ui::scrollbar::Scrollbar,
+    #[rename(name = "m_HorizontalScrollbarVisibility")]
+    pub m_horizontal_scrollbar_visibility:
+        crate::unity_engine::ui::scrollrect::ScrollRect_ScrollbarVisibility,
+    #[rename(name = "m_VerticalScrollbarVisibility")]
+    pub m_vertical_scrollbar_visibility:
+        crate::unity_engine::ui::scrollrect::ScrollRect_ScrollbarVisibility,
+    #[rename(name = "m_HorizontalScrollbarSpacing")]
+    pub m_horizontal_scrollbar_spacing: f32,
+    #[rename(name = "m_VerticalScrollbarSpacing")]
+    pub m_vertical_scrollbar_spacing: f32,
+    #[rename(name = "m_OnValueChanged")]
+    pub m_on_value_changed: crate::unity_engine::ui::scrollrect::ScrollRect_ScrollRectEvent,
+    #[rename(name = "m_PointerStartLocalCursor")]
+    pub m_pointer_start_local_cursor: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_ContentStartPosition")]
+    pub m_content_start_position: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_ViewRect")]
+    pub m_view_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_ContentBounds")]
+    pub m_content_bounds: crate::unity_engine::bounds::Bounds,
+    #[rename(name = "m_ViewBounds")]
+    pub m_view_bounds: crate::unity_engine::bounds::Bounds,
+    #[rename(name = "m_Velocity")]
+    pub m_velocity: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_Dragging")]
+    pub m_dragging: bool,
+    #[rename(name = "m_Scrolling")]
+    pub m_scrolling: bool,
+    #[rename(name = "m_PrevPosition")]
+    pub m_prev_position: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_PrevContentBounds")]
+    pub m_prev_content_bounds: crate::unity_engine::bounds::Bounds,
+    #[rename(name = "m_PrevViewBounds")]
+    pub m_prev_view_bounds: crate::unity_engine::bounds::Bounds,
+    #[rename(name = "m_HasRebuiltLayout")]
+    pub m_has_rebuilt_layout: bool,
+    #[rename(name = "m_HSliderExpand")]
+    pub m_h_slider_expand: bool,
+    #[rename(name = "m_VSliderExpand")]
+    pub m_v_slider_expand: bool,
+    #[rename(name = "m_HSliderHeight")]
+    pub m_h_slider_height: f32,
+    #[rename(name = "m_VSliderWidth")]
+    pub m_v_slider_width: f32,
+    #[rename(name = "m_Rect")]
+    pub m_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_HorizontalScrollbarRect")]
+    pub m_horizontal_scrollbar_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_VerticalScrollbarRect")]
+    pub m_vertical_scrollbar_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_Tracker")]
+    pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
+    #[rename(name = "m_Corners")]
+    pub m_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+}
+
+#[cfg(feature = "unity_engine-ui-scrollrect")]
+#[::unity2::methods]
+impl ScrollRect {
+    #[method(name = "get_content", args = 0)]
+    pub fn get_content(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[method(name = "set_content", args = 1)]
+    pub fn set_content(self, value: crate::unity_engine::recttransform::RectTransform) -> ();
+
+    #[method(name = "get_horizontal", args = 0)]
+    pub fn get_horizontal(self) -> bool;
+
+    #[method(name = "set_horizontal", args = 1)]
+    pub fn set_horizontal(self, value: bool) -> ();
+
+    #[method(name = "get_vertical", args = 0)]
+    pub fn get_vertical(self) -> bool;
+
+    #[method(name = "set_vertical", args = 1)]
+    pub fn set_vertical(self, value: bool) -> ();
+
+    #[method(name = "get_movementType", args = 0)]
+    pub fn get_movement_type(self) -> crate::unity_engine::ui::scrollrect::ScrollRect_MovementType;
+
+    #[method(name = "set_movementType", args = 1)]
+    pub fn set_movement_type(
+        self,
+        value: crate::unity_engine::ui::scrollrect::ScrollRect_MovementType,
+    ) -> ();
+
+    #[method(name = "get_elasticity", args = 0)]
+    pub fn get_elasticity(self) -> f32;
+
+    #[method(name = "set_elasticity", args = 1)]
+    pub fn set_elasticity(self, value: f32) -> ();
+
+    #[method(name = "get_inertia", args = 0)]
+    pub fn get_inertia(self) -> bool;
+
+    #[method(name = "set_inertia", args = 1)]
+    pub fn set_inertia(self, value: bool) -> ();
+
+    #[method(name = "get_decelerationRate", args = 0)]
+    pub fn get_deceleration_rate(self) -> f32;
+
+    #[method(name = "set_decelerationRate", args = 1)]
+    pub fn set_deceleration_rate(self, value: f32) -> ();
+
+    #[method(name = "get_scrollSensitivity", args = 0)]
+    pub fn get_scroll_sensitivity(self) -> f32;
+
+    #[method(name = "set_scrollSensitivity", args = 1)]
+    pub fn set_scroll_sensitivity(self, value: f32) -> ();
+
+    #[method(name = "get_viewport", args = 0)]
+    pub fn get_viewport(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[method(name = "set_viewport", args = 1)]
+    pub fn set_viewport(self, value: crate::unity_engine::recttransform::RectTransform) -> ();
+
+    #[method(name = "get_horizontalScrollbar", args = 0)]
+    pub fn get_horizontal_scrollbar(self) -> crate::unity_engine::ui::scrollbar::Scrollbar;
+
+    #[method(name = "set_horizontalScrollbar", args = 1)]
+    pub fn set_horizontal_scrollbar(
+        self,
+        value: crate::unity_engine::ui::scrollbar::Scrollbar,
+    ) -> ();
+
+    #[method(name = "get_verticalScrollbar", args = 0)]
+    pub fn get_vertical_scrollbar(self) -> crate::unity_engine::ui::scrollbar::Scrollbar;
+
+    #[method(name = "set_verticalScrollbar", args = 1)]
+    pub fn set_vertical_scrollbar(self, value: crate::unity_engine::ui::scrollbar::Scrollbar)
+        -> ();
+
+    #[method(name = "get_horizontalScrollbarVisibility", args = 0)]
+    pub fn get_horizontal_scrollbar_visibility(
+        self,
+    ) -> crate::unity_engine::ui::scrollrect::ScrollRect_ScrollbarVisibility;
+
+    #[method(name = "set_horizontalScrollbarVisibility", args = 1)]
+    pub fn set_horizontal_scrollbar_visibility(
+        self,
+        value: crate::unity_engine::ui::scrollrect::ScrollRect_ScrollbarVisibility,
+    ) -> ();
+
+    #[method(name = "get_verticalScrollbarVisibility", args = 0)]
+    pub fn get_vertical_scrollbar_visibility(
+        self,
+    ) -> crate::unity_engine::ui::scrollrect::ScrollRect_ScrollbarVisibility;
+
+    #[method(name = "set_verticalScrollbarVisibility", args = 1)]
+    pub fn set_vertical_scrollbar_visibility(
+        self,
+        value: crate::unity_engine::ui::scrollrect::ScrollRect_ScrollbarVisibility,
+    ) -> ();
+
+    #[method(name = "get_horizontalScrollbarSpacing", args = 0)]
+    pub fn get_horizontal_scrollbar_spacing(self) -> f32;
+
+    #[method(name = "set_horizontalScrollbarSpacing", args = 1)]
+    pub fn set_horizontal_scrollbar_spacing(self, value: f32) -> ();
+
+    #[method(name = "get_verticalScrollbarSpacing", args = 0)]
+    pub fn get_vertical_scrollbar_spacing(self) -> f32;
+
+    #[method(name = "set_verticalScrollbarSpacing", args = 1)]
+    pub fn set_vertical_scrollbar_spacing(self, value: f32) -> ();
+
+    #[method(name = "get_onValueChanged", args = 0)]
+    pub fn get_on_value_changed(
+        self,
+    ) -> crate::unity_engine::ui::scrollrect::ScrollRect_ScrollRectEvent;
+
+    #[method(name = "set_onValueChanged", args = 1)]
+    pub fn set_on_value_changed(
+        self,
+        value: crate::unity_engine::ui::scrollrect::ScrollRect_ScrollRectEvent,
+    ) -> ();
+
+    #[method(name = "get_viewRect", args = 0)]
+    pub fn get_view_rect(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[method(name = "get_velocity", args = 0)]
+    pub fn get_velocity(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_velocity", args = 1)]
+    pub fn set_velocity(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_rectTransform", args = 0)]
+    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Rebuild", args = 1)]
+    pub fn rebuild(self, executing: crate::unity_engine::ui::canvasupdate::CanvasUpdate) -> ();
+
+    #[method(name = "LayoutComplete", args = 0)]
+    pub fn layout_complete(self) -> ();
+
+    #[method(name = "GraphicUpdateComplete", args = 0)]
+    pub fn graphic_update_complete(self) -> ();
+
+    #[method(name = "UpdateCachedData", args = 0)]
+    pub fn update_cached_data(self) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "IsActive", args = 0)]
+    pub fn is_active(self) -> bool;
+
+    #[method(name = "EnsureLayoutHasRebuilt", args = 0)]
+    pub fn ensure_layout_has_rebuilt(self) -> ();
+
+    #[method(name = "StopMovement", args = 0)]
+    pub fn stop_movement(self) -> ();
+
+    #[method(name = "OnScroll", args = 1)]
+    pub fn on_scroll(
+        self,
+        data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[method(name = "OnInitializePotentialDrag", args = 1)]
+    pub fn on_initialize_potential_drag(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[method(name = "OnBeginDrag", args = 1)]
+    pub fn on_begin_drag(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[method(name = "OnEndDrag", args = 1)]
+    pub fn on_end_drag(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[method(name = "OnDrag", args = 1)]
+    pub fn on_drag(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[method(name = "SetContentAnchoredPosition", args = 1)]
+    pub fn set_content_anchored_position(
+        self,
+        position: crate::unity_engine::vector2::Vector2,
+    ) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = "UpdatePrevData", args = 0)]
+    pub fn update_prev_data(self) -> ();
+
+    #[method(name = "UpdateScrollbars", args = 1)]
+    pub fn update_scrollbars(self, offset: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_normalizedPosition", args = 0)]
+    pub fn get_normalized_position(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_normalizedPosition", args = 1)]
+    pub fn set_normalized_position(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_horizontalNormalizedPosition", args = 0)]
+    pub fn get_horizontal_normalized_position(self) -> f32;
+
+    #[method(name = "set_horizontalNormalizedPosition", args = 1)]
+    pub fn set_horizontal_normalized_position(self, value: f32) -> ();
+
+    #[method(name = "get_verticalNormalizedPosition", args = 0)]
+    pub fn get_vertical_normalized_position(self) -> f32;
+
+    #[method(name = "set_verticalNormalizedPosition", args = 1)]
+    pub fn set_vertical_normalized_position(self, value: f32) -> ();
+
+    #[method(name = "SetNormalizedPosition", args = 2)]
+    pub fn set_normalized_position_2(self, value: f32, axis: i32) -> ();
+
+    #[method(name = "RubberDelta", args = 2)]
+    pub fn rubber_delta(over_stretching: f32, view_size: f32) -> f32;
+
+    #[method(name = "OnRectTransformDimensionsChange", args = 0)]
+    pub fn on_rect_transform_dimensions_change(self) -> ();
+
+    #[method(name = "get_hScrollingNeeded", args = 0)]
+    pub fn get_h_scrolling_needed(self) -> bool;
+
+    #[method(name = "get_vScrollingNeeded", args = 0)]
+    pub fn get_v_scrolling_needed(self) -> bool;
+
+    #[method(name = "CalculateLayoutInputHorizontal", args = 0)]
+    pub fn calculate_layout_input_horizontal(self) -> ();
+
+    #[method(name = "CalculateLayoutInputVertical", args = 0)]
+    pub fn calculate_layout_input_vertical(self) -> ();
+
+    #[method(name = "get_minWidth", args = 0)]
+    pub fn get_min_width(self) -> f32;
+
+    #[method(name = "get_preferredWidth", args = 0)]
+    pub fn get_preferred_width(self) -> f32;
+
+    #[method(name = "get_flexibleWidth", args = 0)]
+    pub fn get_flexible_width(self) -> f32;
+
+    #[method(name = "get_minHeight", args = 0)]
+    pub fn get_min_height(self) -> f32;
+
+    #[method(name = "get_preferredHeight", args = 0)]
+    pub fn get_preferred_height(self) -> f32;
+
+    #[method(name = "get_flexibleHeight", args = 0)]
+    pub fn get_flexible_height(self) -> f32;
+
+    #[method(name = "get_layoutPriority", args = 0)]
+    pub fn get_layout_priority(self) -> i32;
+
+    #[method(name = "SetLayoutHorizontal", args = 0)]
+    pub fn set_layout_horizontal(self) -> ();
+
+    #[method(name = "SetLayoutVertical", args = 0)]
+    pub fn set_layout_vertical(self) -> ();
+
+    #[method(name = "UpdateScrollbarVisibility", args = 0)]
+    pub fn update_scrollbar_visibility(self) -> ();
+
+    #[method(name = "UpdateOneScrollbarVisibility", args = 4)]
+    pub fn update_one_scrollbar_visibility(
+        x_scrolling_needed: bool,
+        x_axis_enabled: bool,
+        scrollbar_visibility: crate::unity_engine::ui::scrollrect::ScrollRect_ScrollbarVisibility,
+        scrollbar: crate::unity_engine::ui::scrollbar::Scrollbar,
+    ) -> ();
+
+    #[method(name = "UpdateScrollbarLayout", args = 0)]
+    pub fn update_scrollbar_layout(self) -> ();
+
+    #[method(name = "UpdateBounds", args = 0)]
+    pub fn update_bounds(self) -> ();
+
+    #[method(name = "AdjustBounds", args = 4)]
+    pub fn adjust_bounds(
+        view_bounds: crate::unity_engine::bounds::Bounds,
+        content_pivot: crate::unity_engine::vector2::Vector2,
+        content_size: crate::unity_engine::vector3::Vector3,
+        content_pos: crate::unity_engine::vector3::Vector3,
+    ) -> ();
+
+    #[method(name = "GetBounds", args = 0)]
+    pub fn get_bounds(self) -> crate::unity_engine::bounds::Bounds;
+
+    #[method(name = "InternalGetBounds", args = 2)]
+    pub fn internal_get_bounds(
+        corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        view_world_to_local_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+    ) -> crate::unity_engine::bounds::Bounds;
+
+    #[method(name = "CalculateOffset", args = 1)]
+    pub fn calculate_offset(
+        self,
+        delta: crate::unity_engine::vector2::Vector2,
+    ) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "InternalCalculateOffset", args = 6)]
+    pub fn internal_calculate_offset(
+        view_bounds: crate::unity_engine::bounds::Bounds,
+        content_bounds: crate::unity_engine::bounds::Bounds,
+        horizontal: bool,
+        vertical: bool,
+        movement_type: crate::unity_engine::ui::scrollrect::ScrollRect_MovementType,
+        delta: crate::unity_engine::vector2::Vector2,
+    ) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "SetDirty", args = 0)]
+    pub fn set_dirty(self) -> ();
+
+    #[method(name = "SetDirtyCaching", args = 0)]
+    pub fn set_dirty_caching(self) -> ();
+
+    #[method(name = "UnityEngine.UI.ICanvasElement.get_transform", args = 0)]
+    pub fn unity_engine_ui_i_canvas_element_get_transform(
+        self,
+    ) -> crate::unity_engine::transform::Transform;
+}
+
+#[cfg(feature = "unity_engine-ui-scrollrect")]
+impl ScrollRect {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScrollRect),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScrollRectMethods>::ctor(this);
+        this
+    }
+}

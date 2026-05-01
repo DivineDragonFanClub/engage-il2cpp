@@ -1,0 +1,37 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talkcharacterpreloader/TalkCharacterPreLoader.md")))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkCharacterPreLoader")]
+#[parent(crate::system::object::Object)]
+pub struct TalkCharacterPreLoader {}
+
+#[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
+#[::unity2::methods]
+impl TalkCharacterPreLoader {
+    #[method(name = "PreLoadAllCharacter", args = 1)]
+    pub fn pre_load_all_character(mid: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "PreLoadAllCharactorDirect", args = 1)]
+    pub fn pre_load_all_charactor_direct(talk_ptr: crate::app::talk3_d::talkptr::TalkPtr) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talkcharacterpreloader")]
+impl TalkCharacterPreLoader {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkCharacterPreLoader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkCharacterPreLoaderMethods>::ctor(this);
+        this
+    }
+}

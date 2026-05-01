@@ -1,0 +1,123 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::mapbasicmenu::IMapBasicMenu;
+use crate::app::mapbasicmenu::MapBasicMenu;
+use crate::app::mapbasicmenuitem::IMapBasicMenuItem;
+use crate::app::mapbasicmenuitem::MapBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/subordermenu/SubOrderMenu_SubOrderMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "SubOrderMenu.SubOrderMenuItem")]
+#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
+pub struct SubOrderMenu_SubOrderMenuItem {
+    #[rename(name = "m_Entrust")]
+    pub m_entrust: crate::app::unitentrust::UnitEntrust_Type,
+}
+
+#[cfg(feature = "app-subordermenu")]
+#[::unity2::methods]
+impl SubOrderMenu_SubOrderMenuItem {
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, r#type: crate::app::unitentrust::UnitEntrust_Type) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "OnDeselect", args = 0)]
+    pub fn on_deselect(self) -> ();
+
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+}
+
+#[cfg(feature = "app-subordermenu")]
+impl SubOrderMenu_SubOrderMenuItem {
+    pub fn new(r#type: crate::app::unitentrust::UnitEntrust_Type) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SubOrderMenu_SubOrderMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISubOrderMenu_SubOrderMenuItemMethods>::ctor(this, r#type);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/subordermenu/SubOrderMenu.md")))]
+#[::unity2::class(namespace = "App", name = "SubOrderMenu")]
+#[parent(crate::app::mapbasicmenu::MapBasicMenu)]
+pub struct SubOrderMenu {
+    #[static_field]
+    #[rename(name = "m_parentMenu")]
+    pub m_parent_menu: crate::app::mapsystemmenu::MapSystemMenu,
+}
+
+#[cfg(feature = "app-subordermenu")]
+#[::unity2::methods]
+impl SubOrderMenu {
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        parent_menu: crate::app::mapsystemmenu::MapSystemMenu,
+        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+    ) -> ();
+}
+
+#[cfg(feature = "app-subordermenu")]
+impl SubOrderMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SubOrderMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISubOrderMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}

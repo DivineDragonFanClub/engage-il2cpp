@@ -1,0 +1,78 @@
+
+use crate::app::minimappanelbase::IMiniMapPanelBase;
+use crate::app::minimappanelbase::MiniMapPanelBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::ui::graphic::Graphic;
+use crate::unity_engine::ui::graphic::IGraphic;
+use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
+use crate::unity_engine::ui::maskablegraphic::MaskableGraphic;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimappaneldangerrenderer/MiniMapPanelDangerRenderer.md")))]
+#[::unity2::class(namespace = "App", name = "MiniMapPanelDangerRenderer")]
+#[parent(crate::app::minimappanelbase::MiniMapPanelBase)]
+pub struct MiniMapPanelDangerRenderer {
+    #[rename(name = "m_RodDanger_0")]
+    pub m_rod_danger_0: crate::unity_engine::material::Material,
+    #[rename(name = "m_RodDanger_1")]
+    pub m_rod_danger_1: crate::unity_engine::material::Material,
+    #[rename(name = "m_RodDanger_2")]
+    pub m_rod_danger_2: crate::unity_engine::material::Material,
+    #[rename(name = "m_RodDanger_3")]
+    pub m_rod_danger_3: crate::unity_engine::material::Material,
+    #[rename(name = "m_AttackDanger_0")]
+    pub m_attack_danger_0: crate::unity_engine::material::Material,
+    #[rename(name = "m_AttackDanger_1")]
+    pub m_attack_danger_1: crate::unity_engine::material::Material,
+    #[rename(name = "m_AttackDanger_2")]
+    pub m_attack_danger_2: crate::unity_engine::material::Material,
+    #[rename(name = "m_AttackDanger_3")]
+    pub m_attack_danger_3: crate::unity_engine::material::Material,
+}
+
+#[cfg(feature = "app-minimappaneldangerrenderer")]
+#[::unity2::methods]
+impl MiniMapPanelDangerRenderer {
+    #[method(name = "GetSourceMaterials", args = 0)]
+    pub fn get_source_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "GetMapPanelMaterials", args = 0)]
+    pub fn get_map_panel_materials(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "CreatePanelMesh", args = 0)]
+    pub fn create_panel_mesh(self) -> ();
+
+    #[method(name = "CreatePanelDangerMesh", args = 0)]
+    pub fn create_panel_danger_mesh(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-minimappaneldangerrenderer")]
+impl MiniMapPanelDangerRenderer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MiniMapPanelDangerRenderer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMiniMapPanelDangerRendererMethods>::ctor(this);
+        this
+    }
+}

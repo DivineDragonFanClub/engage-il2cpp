@@ -1,0 +1,100 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/text_core/low_level/fontengineerror/FontEngineError.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FontEngineError {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FontEngineError {
+    const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
+
+    const NAME: &'static str = "FontEngineError";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FontEngineError {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FontEngineError {
+    pub fn success() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn invalid_file_path() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn invalid_file_format() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn invalid_file_structure() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn invalid_file() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn invalid_table() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn invalid_glyph_index() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn invalid_character_code() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn invalid_pixel_size() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn invalid_library() -> Self {
+        Self { value: 33 }
+    }
+
+    pub fn invalid_face() -> Self {
+        Self { value: 35 }
+    }
+
+    pub fn invalid_library_or_face() -> Self {
+        Self { value: 41 }
+    }
+
+    pub fn atlas_generation_cancelled() -> Self {
+        Self { value: 100 }
+    }
+
+    pub fn invalid_shared_texture_data() -> Self {
+        Self { value: 101 }
+    }
+}

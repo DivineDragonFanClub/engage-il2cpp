@@ -1,0 +1,380 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitrecord/UnitRecord_DeadFlags.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitRecord_DeadFlags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitRecord_DeadFlags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitRecord.DeadFlags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitRecord_DeadFlags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitRecord_DeadFlags {
+    pub fn encount() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn exist_dead() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitrecord/UnitRecord.md")))]
+#[::unity2::class(namespace = "App", name = "UnitRecord")]
+#[parent(crate::system::object::Object)]
+pub struct UnitRecord {
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: i32,
+    #[static_field]
+    #[rename(name = "s_Names")]
+    pub s_names: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "s_Keys")]
+    pub s_keys: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::app::unitrecord::UnitRecord_Kinds,
+        i32,
+    >,
+    #[static_field]
+    #[rename(name = "s_Kinds")]
+    pub s_kinds: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        i32,
+        crate::app::unitrecord::UnitRecord_Kinds,
+    >,
+    #[rename(name = "m_Values")]
+    pub m_values: ::unity2::Array<i32>,
+}
+
+#[cfg(feature = "app-unitrecord")]
+#[::unity2::methods]
+impl UnitRecord {
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ();
+
+    #[method(name = "GetKey", args = 1)]
+    pub fn get_key(kind: crate::app::unitrecord::UnitRecord_Kinds) -> i32;
+
+    #[method(name = "GetKind", args = 1)]
+    pub fn get_kind(key: i32) -> crate::app::unitrecord::UnitRecord_Kinds;
+
+    #[method(name = "GetName", args = 1)]
+    pub fn get_name(kind: crate::app::unitrecord::UnitRecord_Kinds) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, kind: crate::app::unitrecord::UnitRecord_Kinds) -> i32;
+
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, kind: crate::app::unitrecord::UnitRecord_Kinds, value: i32) -> ();
+
+    #[method(name = "Add", args = 2)]
+    pub fn add(self, kind: crate::app::unitrecord::UnitRecord_Kinds, value: i32) -> ();
+
+    #[method(name = "ResetMapBegin", args = 1)]
+    pub fn reset_map_begin(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "ResetMapEnd", args = 1)]
+    pub fn reset_map_end(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "Copy", args = 1)]
+    pub fn copy(self, src: crate::app::unitrecord::UnitRecord) -> ();
+
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "GetHeroReliance", args = 1)]
+    pub fn get_hero_reliance(unit: crate::app::unit::Unit) -> i32;
+
+    #[method(name = "GetMvpUnit", args = 0)]
+    pub fn get_mvp_unit() -> crate::app::unit::Unit;
+
+    #[method(name = "GetDeadChapter", args = 0)]
+    pub fn get_dead_chapter(self) -> crate::app::chapterdata::ChapterData;
+
+    #[method(name = "SetDeadChapter", args = 1)]
+    pub fn set_dead_chapter(self, chapter: crate::app::chapterdata::ChapterData) -> ();
+
+    #[method(name = "GetDeadFlag", args = 0)]
+    pub fn get_dead_flag(self) -> crate::app::unitrecord::UnitRecord_DeadFlags;
+
+    #[method(name = "SetDeadFlag", args = 1)]
+    pub fn set_dead_flag(self, flags: crate::app::unitrecord::UnitRecord_DeadFlags) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-unitrecord")]
+impl UnitRecord {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitRecord),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitRecordMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitrecord/UnitRecord_Kinds.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitRecord_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitRecord_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitRecord.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitRecord_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitRecord_Kinds {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn sortie_count() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn no_sortie_count() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn continuous_sortie_count() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn continuous_no_sortie_count() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn challenge_sortie_count() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn mvp_count() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn battle_count() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn kill_count() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn dead_chapter() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn dead_flag() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn map_kill_count() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn map_critical_count() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn map_heal_count() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn map_break_count() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn map_damage() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn map_recive_heal_count() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn map_recive_damage() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn map_level_up_count() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn map_engage_count() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn map_dead_count() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn map_battle_exp_give_count() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn map_destroy_exp_count() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn map_rod_exp_count() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn map_interference_exp_count() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn map_dance_exp_count() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn map_recive_attack_count() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn map_last_target() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn map_completed_hp() -> Self {
+        Self { value: 28 }
+    }
+
+    pub fn map_guard_count() -> Self {
+        Self { value: 29 }
+    }
+
+    pub fn map_efficacy_attack_count() -> Self {
+        Self { value: 30 }
+    }
+
+    pub fn map_poision_attack_count() -> Self {
+        Self { value: 31 }
+    }
+
+    pub fn map_smash_attack_count() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn map_skill_count() -> Self {
+        Self { value: 33 }
+    }
+
+    pub fn map_recive_skill_count() -> Self {
+        Self { value: 34 }
+    }
+
+    pub fn map_direct_attack_count() -> Self {
+        Self { value: 35 }
+    }
+
+    pub fn map_indirect_attack_count() -> Self {
+        Self { value: 36 }
+    }
+
+    pub fn map_engage_attack_count() -> Self {
+        Self { value: 37 }
+    }
+
+    pub fn map_chain_attack_count() -> Self {
+        Self { value: 38 }
+    }
+
+    pub fn map_chain_guard_count() -> Self {
+        Self { value: 39 }
+    }
+
+    pub fn map_use_item_count() -> Self {
+        Self { value: 40 }
+    }
+
+    pub fn map_move_distance() -> Self {
+        Self { value: 41 }
+    }
+
+    pub fn map_fixed_cont() -> Self {
+        Self { value: 42 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 43 }
+    }
+
+    pub fn map_begin() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn map_end() -> Self {
+        Self { value: 42 }
+    }
+}

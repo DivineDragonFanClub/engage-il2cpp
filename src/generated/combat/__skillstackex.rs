@@ -1,0 +1,48 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/__skillstackex/__SkillStackEx.md")))]
+#[::unity2::class(namespace = "Combat", name = "__SkillStackEx")]
+#[parent(crate::system::object::Object)]
+pub struct __SkillStackEx {}
+
+#[cfg(feature = "combat-__skillstackex")]
+#[::unity2::methods]
+impl __SkillStackEx {
+    #[method(name = "IsNotNull", args = 1)]
+    pub fn is_not_null(ss: crate::combat::skillstack::SkillStack) -> bool;
+
+    #[method(name = "IsNull", args = 1)]
+    pub fn is_null(ss: crate::combat::skillstack::SkillStack) -> bool;
+
+    #[method(name = "IsNotNull", args = 2)]
+    pub fn is_not_null_2(ss: crate::combat::skillstack::SkillStack, from_side: i32) -> bool;
+
+    #[method(name = "IsNull", args = 2)]
+    pub fn is_null_2(ss: crate::combat::skillstack::SkillStack, from_side: i32) -> bool;
+
+    #[method(name = "Has", args = 2)]
+    pub fn has(ss: crate::combat::skillstack::SkillStack, name: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "Get", args = 2)]
+    pub fn get(
+        ss: crate::combat::skillstack::SkillStack,
+        name: ::unity2::Il2CppString,
+    ) -> crate::combat::skillstack::SkillStack_Packet;
+
+    #[method(name = "Has", args = 3)]
+    pub fn has_2(
+        ss: crate::combat::skillstack::SkillStack,
+        from_side: i32,
+        name: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[method(name = "Get", args = 3)]
+    pub fn get_2(
+        ss: crate::combat::skillstack::SkillStack,
+        from_side: i32,
+        name: ::unity2::Il2CppString,
+    ) -> crate::app::skilldata::SkillData;
+}

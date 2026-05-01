@@ -1,0 +1,75 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineringunitselectmenu/RefineRingUnitSelectMenu.md")))]
+#[::unity2::class(namespace = "App", name = "RefineRingUnitSelectMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct RefineRingUnitSelectMenu {
+    #[rename(name = "m_GodSelectRoot")]
+    pub m_god_select_root: crate::app::godselectroot::GodSelectRoot,
+}
+
+#[cfg(feature = "app-refineringunitselectmenu")]
+#[::unity2::methods]
+impl RefineRingUnitSelectMenu {
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        decide_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,
+        default_god_unit: crate::app::godunit::GodUnit,
+    ) -> crate::app::refineringunitselectmenu::RefineRingUnitSelectMenu;
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,
+        god_select_root: crate::app::godselectroot::GodSelectRoot,
+        god_unit: crate::app::godunit::GodUnit,
+    ) -> ();
+
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "OnClose", args = 0)]
+    pub fn on_close(self) -> ();
+}
+
+#[cfg(feature = "app-refineringunitselectmenu")]
+impl RefineRingUnitSelectMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::godunitselectmenucontent::GodUnitSelectMenuContent,
+        god_select_root: crate::app::godselectroot::GodSelectRoot,
+        god_unit: crate::app::godunit::GodUnit,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineRingUnitSelectMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineRingUnitSelectMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            god_select_root,
+            god_unit,
+        );
+        this
+    }
+}

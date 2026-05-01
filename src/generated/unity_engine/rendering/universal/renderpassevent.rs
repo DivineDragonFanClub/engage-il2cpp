@@ -1,0 +1,100 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/renderpassevent/RenderPassEvent.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RenderPassEvent {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RenderPassEvent {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "RenderPassEvent";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RenderPassEvent {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RenderPassEvent {
+    pub fn before_rendering() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn before_rendering_shadows() -> Self {
+        Self { value: 50 }
+    }
+
+    pub fn after_rendering_shadows() -> Self {
+        Self { value: 100 }
+    }
+
+    pub fn before_rendering_prepasses() -> Self {
+        Self { value: 150 }
+    }
+
+    pub fn after_rendering_pre_passes() -> Self {
+        Self { value: 200 }
+    }
+
+    pub fn before_rendering_opaques() -> Self {
+        Self { value: 250 }
+    }
+
+    pub fn after_rendering_opaques() -> Self {
+        Self { value: 300 }
+    }
+
+    pub fn before_rendering_skybox() -> Self {
+        Self { value: 350 }
+    }
+
+    pub fn after_rendering_skybox() -> Self {
+        Self { value: 400 }
+    }
+
+    pub fn before_rendering_transparents() -> Self {
+        Self { value: 450 }
+    }
+
+    pub fn after_rendering_transparents() -> Self {
+        Self { value: 500 }
+    }
+
+    pub fn before_rendering_post_processing() -> Self {
+        Self { value: 550 }
+    }
+
+    pub fn after_rendering_post_processing() -> Self {
+        Self { value: 600 }
+    }
+
+    pub fn after_rendering() -> Self {
+        Self { value: 1000 }
+    }
+}

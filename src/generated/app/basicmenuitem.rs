@@ -1,0 +1,266 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenuitem/BasicMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "BasicMenuItem")]
+#[parent(crate::system::object::Object)]
+pub struct BasicMenuItem {
+    #[rename(name = "m_menu")]
+    pub m_menu: crate::app::basicmenu::BasicMenu,
+    #[rename(name = "m_menuItemContent")]
+    pub m_menu_item_content: crate::app::basicmenuitemcontent::BasicMenuItemContent,
+    #[rename(name = "m_name")]
+    pub m_name: ::unity2::Il2CppString,
+    #[rename(name = "m_index")]
+    pub m_index: i32,
+    #[rename(name = "m_fullIndex")]
+    pub m_full_index: i32,
+    #[rename(name = "m_attribute")]
+    pub m_attribute: crate::app::basicmenuitem::BasicMenuItem_Attribute,
+    #[rename(name = "m_cursorColor")]
+    pub m_cursor_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_activeTextColor")]
+    pub m_active_text_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_inactiveTextColor")]
+    pub m_inactive_text_color: crate::unity_engine::color::Color,
+}
+
+#[cfg(feature = "app-basicmenuitem")]
+#[::unity2::methods]
+impl BasicMenuItem {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "GetMenu", args = 0)]
+    pub fn get_menu(self) -> crate::app::basicmenu::BasicMenu;
+
+    #[method(name = "GetMenuItemContent", args = 0)]
+    pub fn get_menu_item_content(self) -> crate::app::basicmenuitemcontent::BasicMenuItemContent;
+
+    #[method(name = "GetIndex", args = 0)]
+    pub fn get_index(self) -> i32;
+
+    #[method(name = "GetFullIndex", args = 0)]
+    pub fn get_full_index(self) -> i32;
+
+    #[method(name = "GetAttribute", args = 0)]
+    pub fn get_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "IsSelect", args = 0)]
+    pub fn is_select(self) -> bool;
+
+    #[method(name = "IsAttributeEnable", args = 0)]
+    pub fn is_attribute_enable(self) -> bool;
+
+    #[method(name = "IsAttributeDisable", args = 0)]
+    pub fn is_attribute_disable(self) -> bool;
+
+    #[method(name = "IsAttributeHide", args = 0)]
+    pub fn is_attribute_hide(self) -> bool;
+
+    #[method(name = "IsAttributeBlank", args = 0)]
+    pub fn is_attribute_blank(self) -> bool;
+
+    #[method(name = "IsAttributeSelect", args = 0)]
+    pub fn is_attribute_select(self) -> bool;
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetWidth", args = 0)]
+    pub fn get_width(self) -> f32;
+
+    #[method(name = "GetHeight", args = 0)]
+    pub fn get_height(self) -> f32;
+
+    #[method(name = "SetCursorColor", args = 1)]
+    pub fn set_cursor_color(self, color: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "SetTextColor", args = 2)]
+    pub fn set_text_color(self, color: crate::unity_engine::color::Color, b_inactive: bool) -> ();
+
+    #[method(name = "SetTextColor", args = 2)]
+    pub fn set_text_color_2(
+        self,
+        active_color: crate::unity_engine::color::Color,
+        inactive_color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = "SetCommandColor", args = 2)]
+    pub fn set_command_color(
+        self,
+        color: crate::unity_engine::color::Color,
+        b_inactive: bool,
+    ) -> ();
+
+    #[method(name = "GetCursorColor", args = 0)]
+    pub fn get_cursor_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "GetActiveTextColor", args = 0)]
+    pub fn get_active_text_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "GetInactiveTextColor", args = 0)]
+    pub fn get_inactive_text_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "UpdateCommandColorAsActive", args = 0)]
+    pub fn update_command_color_as_active(self) -> ();
+
+    #[method(name = "ForceRebuildLayout", args = 0)]
+    pub fn force_rebuild_layout(self) -> ();
+
+    #[method(name = "SetMenu", args = 1)]
+    pub fn set_menu(self, menu: crate::app::basicmenu::BasicMenu) -> ();
+
+    #[method(name = "SetMenuItemContent", args = 1)]
+    pub fn set_menu_item_content(
+        self,
+        menu_item_content: crate::app::basicmenuitemcontent::BasicMenuItemContent,
+    ) -> ();
+
+    #[method(name = "SetName", args = 1)]
+    pub fn set_name(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "SetItemIndex", args = 1)]
+    pub fn set_item_index(self, item_index: i32) -> ();
+
+    #[method(name = "SetFullIndex", args = 1)]
+    pub fn set_full_index(self, item_index: i32) -> ();
+
+    #[method(name = "SetAttribute", args = 1)]
+    pub fn set_attribute(self, attribute: crate::app::basicmenuitem::BasicMenuItem_Attribute)
+        -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[method(name = "OnBuildMenuItemContent", args = 0)]
+    pub fn on_build_menu_item_content(self) -> ();
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "OnDeselect", args = 0)]
+    pub fn on_deselect(self) -> ();
+
+    #[method(name = "OnCursorMoveEnd", args = 0)]
+    pub fn on_cursor_move_end(self) -> ();
+
+    #[method(name = "OnClose", args = 0)]
+    pub fn on_close(self) -> ();
+
+    #[method(name = "SystemCall", args = 0)]
+    pub fn system_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "KeyCall", args = 0)]
+    pub fn key_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "YCall", args = 0)]
+    pub fn y_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "LCall", args = 0)]
+    pub fn l_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "RCall", args = 0)]
+    pub fn r_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "PlusCall", args = 0)]
+    pub fn plus_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "MinusCall", args = 0)]
+    pub fn minus_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "CustomCall", args = 0)]
+    pub fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-basicmenuitem")]
+impl BasicMenuItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BasicMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBasicMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenuitem/BasicMenuItem_Attribute.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct BasicMenuItem_Attribute {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for BasicMenuItem_Attribute {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BasicMenuItem.Attribute";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BasicMenuItem_Attribute {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl BasicMenuItem_Attribute {
+    pub fn enable() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn disable() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn hide() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn blank() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn select() -> Self {
+        Self { value: 16 }
+    }
+}

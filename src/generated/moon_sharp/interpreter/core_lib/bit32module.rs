@@ -1,0 +1,134 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/core_lib/bit32module/Bit32Module.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter.CoreLib", name = "Bit32Module")]
+#[parent(crate::system::object::Object)]
+pub struct Bit32Module {
+    #[static_field]
+    #[rename(name = "MASKS")]
+    pub masks: ::unity2::Array<u32>,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-bit32module")]
+#[::unity2::methods]
+impl Bit32Module {
+    #[method(name = "ToUInt32", args = 1)]
+    pub fn to_u_int32(v: crate::moon_sharp::interpreter::dynvalue::DynValue) -> u32;
+
+    #[method(name = "ToInt32", args = 1)]
+    pub fn to_int32(v: crate::moon_sharp::interpreter::dynvalue::DynValue) -> i32;
+
+    #[method(name = "NBitMask", args = 1)]
+    pub fn n_bit_mask(bits: i32) -> u32;
+
+    #[method(name = "Bitwise", args = 3)]
+    pub fn bitwise(
+        func_name: ::unity2::Il2CppString,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        accum_func: crate::system::func_3::Func_3<u32, u32, u32>,
+    ) -> u32;
+
+    #[method(name = "extract", args = 2)]
+    pub fn extract(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "replace", args = 2)]
+    pub fn replace(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "ValidatePosWidth", args = 4)]
+    pub fn validate_pos_width(
+        func: ::unity2::Il2CppString,
+        arg_pos: i32,
+        pos: i32,
+        width: i32,
+    ) -> ();
+
+    #[method(name = "arshift", args = 2)]
+    pub fn arshift(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "rshift", args = 2)]
+    pub fn rshift(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "lshift", args = 2)]
+    pub fn lshift(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "band", args = 2)]
+    pub fn band(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "btest", args = 2)]
+    pub fn btest(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "bor", args = 2)]
+    pub fn bor(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "bnot", args = 2)]
+    pub fn bnot(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "bxor", args = 2)]
+    pub fn bxor(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "lrotate", args = 2)]
+    pub fn lrotate(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "rrotate", args = 2)]
+    pub fn rrotate(
+        execution_context : crate :: moon_sharp :: interpreter :: scriptexecutioncontext :: ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-core_lib-bit32module")]
+impl Bit32Module {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Bit32Module),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBit32ModuleMethods>::ctor(this);
+        this
+    }
+}

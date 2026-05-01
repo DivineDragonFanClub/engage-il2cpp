@@ -1,0 +1,67 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexdatatype/NexDataType.md")))]
+#[::unity2::class(namespace = "App", name = "NexDataType")]
+#[parent(crate::system::object::Object)]
+pub struct NexDataType {
+    #[static_field]
+    #[rename(name = "KillBonus")]
+    pub kill_bonus: u16,
+    #[static_field]
+    #[rename(name = "Ranking")]
+    pub ranking: u16,
+    #[static_field]
+    #[rename(name = "Relay")]
+    pub relay: u16,
+    #[static_field]
+    #[rename(name = "Versus")]
+    pub versus: u16,
+    #[static_field]
+    #[rename(name = "Profile")]
+    pub profile: u16,
+    #[static_field]
+    #[rename(name = "RelayEnd")]
+    pub relay_end: u16,
+    #[static_field]
+    #[rename(name = "RelaySecret")]
+    pub relay_secret: u16,
+    #[static_field]
+    #[rename(name = "VersusRate1")]
+    pub versus_rate1: u16,
+    #[static_field]
+    #[rename(name = "VersusRate2")]
+    pub versus_rate2: u16,
+    #[static_field]
+    #[rename(name = "VersusRate3")]
+    pub versus_rate3: u16,
+    #[static_field]
+    #[rename(name = "VersusRate4")]
+    pub versus_rate4: u16,
+    #[static_field]
+    #[rename(name = "VersusRate5")]
+    pub versus_rate5: u16,
+    #[static_field]
+    #[rename(name = "VersusRateStart")]
+    pub versus_rate_start: u16,
+    #[static_field]
+    #[rename(name = "VersusRateTop")]
+    pub versus_rate_top: u16,
+    #[static_field]
+    #[rename(name = "VersusRateBottom")]
+    pub versus_rate_bottom: u16,
+    #[static_field]
+    #[rename(name = "VersusPicture")]
+    pub versus_picture: u16,
+    #[static_field]
+    #[rename(name = "VersusReport")]
+    pub versus_report: u16,
+    #[static_field]
+    #[rename(name = "VersusReplay")]
+    pub versus_replay: u16,
+    #[static_field]
+    #[rename(name = "VersusCasual")]
+    pub versus_casual: u16,
+}

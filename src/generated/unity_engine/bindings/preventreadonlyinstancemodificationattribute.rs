@@ -1,0 +1,31 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/bindings/preventreadonlyinstancemodificationattribute/PreventReadOnlyInstanceModificationAttribute.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Bindings",
+    name = "PreventReadOnlyInstanceModificationAttribute"
+)]
+pub struct PreventReadOnlyInstanceModificationAttribute {}
+
+#[cfg(feature = "unity_engine-bindings-preventreadonlyinstancemodificationattribute")]
+#[::unity2::methods]
+impl PreventReadOnlyInstanceModificationAttribute {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-bindings-preventreadonlyinstancemodificationattribute")]
+impl PreventReadOnlyInstanceModificationAttribute {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PreventReadOnlyInstanceModificationAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPreventReadOnlyInstanceModificationAttributeMethods>::ctor(this);
+        this
+    }
+}

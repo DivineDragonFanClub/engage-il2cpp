@@ -1,0 +1,59 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/lyn_skill_arrow_01_trail/Lyn_Skill_Arrow_01_Trail.md")))]
+#[::unity2::class(namespace = "Combat", name = "Lyn_Skill_Arrow_01_Trail")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct Lyn_Skill_Arrow_01_Trail {
+    #[rename(name = "m_ParticleSystem")]
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    #[rename(name = "m_Transform")]
+    pub m_transform: crate::unity_engine::transform::Transform,
+    #[rename(name = "m_LastPosition")]
+    pub m_last_position: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_Running")]
+    pub m_running: bool,
+    #[rename(name = "m_CutChanged")]
+    pub m_cut_changed: bool,
+}
+
+#[cfg(feature = "combat-lyn_skill_arrow_01_trail")]
+#[::unity2::methods]
+impl Lyn_Skill_Arrow_01_Trail {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-lyn_skill_arrow_01_trail")]
+impl Lyn_Skill_Arrow_01_Trail {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Lyn_Skill_Arrow_01_Trail),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILyn_Skill_Arrow_01_TrailMethods>::ctor(this);
+        this
+    }
+}

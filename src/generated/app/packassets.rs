@@ -1,0 +1,38 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/packassets/PackAssets.md")))]
+#[::unity2::class(namespace = "App", name = "PackAssets")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct PackAssets {
+    #[rename(name = "m_Objects")]
+    pub m_objects: ::unity2::Array<crate::unity_engine::object_2::Object_2>,
+}
+
+#[cfg(feature = "app-packassets")]
+#[::unity2::methods]
+impl PackAssets {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-packassets")]
+impl PackAssets {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PackAssets),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPackAssetsMethods>::ctor(this);
+        this
+    }
+}

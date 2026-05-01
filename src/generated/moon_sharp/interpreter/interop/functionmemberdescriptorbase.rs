@@ -1,0 +1,165 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/functionmemberdescriptorbase/FunctionMemberDescriptorBase.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "FunctionMemberDescriptorBase"
+)]
+#[parent(crate::system::object::Object)]
+pub struct FunctionMemberDescriptorBase {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-functionmemberdescriptorbase")]
+#[::unity2::methods]
+impl FunctionMemberDescriptorBase {
+    #[method(name = "get_IsStatic", args = 0)]
+    pub fn get_is_static(self) -> bool;
+
+    #[method(name = "set_IsStatic", args = 1)]
+    pub fn set_is_static(self, value: bool) -> ();
+
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_SortDiscriminant", args = 0)]
+    pub fn get_sort_discriminant(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_SortDiscriminant", args = 1)]
+    pub fn set_sort_discriminant(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Parameters", args = 0)]
+    pub fn get_parameters (self ,) -> :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor > ;
+
+    #[method(name = "set_Parameters", args = 1)]
+    pub fn set_parameters(
+        self,
+        value : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor >,
+    ) -> ();
+
+    #[method(name = "get_ExtensionMethodType", args = 0)]
+    pub fn get_extension_method_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "set_ExtensionMethodType", args = 1)]
+    pub fn set_extension_method_type(self, value: ::unity2::SystemType) -> ();
+
+    #[method(name = "get_VarArgsArrayType", args = 0)]
+    pub fn get_var_args_array_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "set_VarArgsArrayType", args = 1)]
+    pub fn set_var_args_array_type(self, value: ::unity2::SystemType) -> ();
+
+    #[method(name = "get_VarArgsElementType", args = 0)]
+    pub fn get_var_args_element_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "set_VarArgsElementType", args = 1)]
+    pub fn set_var_args_element_type(self, value: ::unity2::SystemType) -> ();
+
+    #[method(name = "Initialize", args = 4)]
+    pub fn initialize(
+        self,
+        func_name: ::unity2::Il2CppString,
+        is_static: bool,
+        parameters : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor >,
+        is_extension_method: bool,
+    ) -> ();
+
+    #[method(name = "GetCallback", args = 2)]
+    pub fn get_callback(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: ::unity2::IlInstance,
+    ) -> crate::system::func_3::Func_3<
+        crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        crate::moon_sharp::interpreter::dynvalue::DynValue,
+    >;
+
+    #[method(name = "GetCallbackFunction", args = 2)]
+    pub fn get_callback_function(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: ::unity2::IlInstance,
+    ) -> crate::moon_sharp::interpreter::callbackfunction::CallbackFunction;
+
+    #[method(name = "GetCallbackAsDynValue", args = 2)]
+    pub fn get_callback_as_dyn_value(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: ::unity2::IlInstance,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "CreateCallbackDynValue", args = 3)]
+    pub fn create_callback_dyn_value(
+        script: crate::moon_sharp::interpreter::script::Script,
+        mi: crate::system::reflection::methodinfo::MethodInfo,
+        obj: ::unity2::IlInstance,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "BuildArgumentList", args = 5)]
+    pub fn build_argument_list(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+        out_params: crate::system::collections::generic::list_1::List_1<i32>,
+    ) -> ::unity2::Array<crate::system::object::Object>;
+
+    #[method(name = "BuildReturnValue", args = 4)]
+    pub fn build_return_value(
+        script: crate::moon_sharp::interpreter::script::Script,
+        out_params: crate::system::collections::generic::list_1::List_1<i32>,
+        pars: ::unity2::Array<crate::system::object::Object>,
+        retv: crate::system::object::Object,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Execute", args = 4)]
+    pub fn execute(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "get_MemberAccess", args = 0)]
+    pub fn get_member_access (self ,) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess ;
+
+    #[method(name = "GetValue", args = 2)]
+    pub fn get_value(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "SetValue", args = 3)]
+    pub fn set_value(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        v: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-functionmemberdescriptorbase")]
+impl FunctionMemberDescriptorBase {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FunctionMemberDescriptorBase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFunctionMemberDescriptorBaseMethods>::ctor(this);
+        this
+    }
+}

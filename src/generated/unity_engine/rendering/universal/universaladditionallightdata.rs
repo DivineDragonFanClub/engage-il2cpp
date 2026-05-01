@@ -1,0 +1,76 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/universaladditionallightdata/UniversalAdditionalLightData.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "UniversalAdditionalLightData"
+)]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct UniversalAdditionalLightData {
+    #[rename(name = "m_UsePipelineSettings")]
+    pub m_use_pipeline_settings: bool,
+    #[rename(name = "m_CustomIntensity")]
+    pub m_custom_intensity: f32,
+    #[static_field]
+    #[rename(name = "CustomMode_Default")]
+    pub custom_mode_default: i32,
+    #[static_field]
+    #[rename(name = "CustomMode_Batch")]
+    pub custom_mode_batch: i32,
+    #[rename(name = "m_CustomMode")]
+    pub m_custom_mode: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata")]
+#[::unity2::methods]
+impl UniversalAdditionalLightData {
+    #[method(name = "get_usePipelineSettings", args = 0)]
+    pub fn get_use_pipeline_settings(self) -> bool;
+
+    #[method(name = "set_usePipelineSettings", args = 1)]
+    pub fn set_use_pipeline_settings(self, value: bool) -> ();
+
+    #[method(name = "get_customIntensity", args = 0)]
+    pub fn get_custom_intensity(self) -> f32;
+
+    #[method(name = "set_customIntensity", args = 1)]
+    pub fn set_custom_intensity(self, value: f32) -> ();
+
+    #[method(name = "get_customMode", args = 0)]
+    pub fn get_custom_mode(self) -> i32;
+
+    #[method(name = "set_customMode", args = 1)]
+    pub fn set_custom_mode(self, value: i32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-universaladditionallightdata")]
+impl UniversalAdditionalLightData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UniversalAdditionalLightData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUniversalAdditionalLightDataMethods>::ctor(this);
+        this
+    }
+}

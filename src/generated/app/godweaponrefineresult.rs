@@ -1,0 +1,44 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godweaponrefineresult/GodWeaponRefineResult.md")))]
+#[::unity2::class(namespace = "App", name = "GodWeaponRefineResult")]
+#[parent(crate::system::object::Object)]
+pub struct GodWeaponRefineResult {
+    #[rename(name = "m_Enhance")]
+    pub m_enhance: crate::app::capabilitysbyte::CapabilitySbyte,
+    #[rename(name = "m_EquipSkills")]
+    pub m_equip_skills: crate::app::skillarray::SkillArray,
+    #[rename(name = "m_EnchantSkills")]
+    pub m_enchant_skills: crate::app::skillarray::SkillArray,
+}
+
+#[cfg(feature = "app-godweaponrefineresult")]
+#[::unity2::methods]
+impl GodWeaponRefineResult {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "CopyFrom", args = 1)]
+    pub fn copy_from(self, from: crate::app::godweaponrefineresult::GodWeaponRefineResult) -> ();
+}
+
+#[cfg(feature = "app-godweaponrefineresult")]
+impl GodWeaponRefineResult {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodWeaponRefineResult),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodWeaponRefineResultMethods>::ctor(this);
+        this
+    }
+}

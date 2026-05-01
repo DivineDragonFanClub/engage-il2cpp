@@ -1,0 +1,172 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/softwarekeyboard/SoftwareKeyboard.md")))]
+#[::unity2::class(namespace = "App", name = "SoftwareKeyboard")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct SoftwareKeyboard {
+    #[static_field]
+    #[rename(name = "DataCodeMaxLength")]
+    pub data_code_max_length: i32,
+    #[rename(name = "m_maxLength")]
+    pub m_max_length: i32,
+    #[rename(name = "m_headerText")]
+    pub m_header_text: ::unity2::Il2CppString,
+    #[rename(name = "m_subText")]
+    pub m_sub_text: ::unity2::Il2CppString,
+    #[rename(name = "m_initialText")]
+    pub m_initial_text: ::unity2::Il2CppString,
+    #[rename(name = "m_preset")]
+    pub m_preset: crate::app::softwarekeyboard::SoftwareKeyboard_Preset,
+    #[rename(name = "m_callback")]
+    pub m_callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "app-softwarekeyboard")]
+#[::unity2::methods]
+impl SoftwareKeyboard {
+    #[method(name = "get_ResultText", args = 0)]
+    pub fn get_result_text() -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 6)]
+    pub fn ctor(
+        self,
+        max_length: i32,
+        initial_text: ::unity2::Il2CppString,
+        header_text: ::unity2::Il2CppString,
+        sub_text: ::unity2::Il2CppString,
+        preset: crate::app::softwarekeyboard::SoftwareKeyboard_Preset,
+        callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
+    ) -> ();
+
+    #[method(name = "CreateDesc", args = 0)]
+    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "Create", args = 0)]
+    pub fn create(self) -> ();
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[method(name = "Callback", args = 0)]
+    pub fn callback(self) -> ();
+
+    #[method(name = "ShowKeyboard", args = 0)]
+    pub fn show_keyboard(self) -> ();
+
+    #[method(name = "NetKeepAliveOn", args = 0)]
+    pub fn net_keep_alive_on(self) -> ();
+
+    #[method(name = "NetKeepAliveOff", args = 0)]
+    pub fn net_keep_alive_off(self) -> ();
+
+    #[method(name = "CreateBind", args = 7)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        max_length: i32,
+        initial_text: ::unity2::Il2CppString,
+        header_text: ::unity2::Il2CppString,
+        sub_text: ::unity2::Il2CppString,
+        preset: crate::app::softwarekeyboard::SoftwareKeyboard_Preset,
+        callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
+    ) -> ();
+
+    #[method(name = "CreateBindByPlayerNameInput", args = 3)]
+    pub fn create_bind_by_player_name_input(
+        super_: crate::app::procinst::ProcInst,
+        name: ::unity2::Il2CppString,
+        callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
+    ) -> ();
+
+    #[method(name = "GetResult", args = 0)]
+    pub fn get_result() -> ::unity2::Il2CppString;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-softwarekeyboard")]
+impl SoftwareKeyboard {
+    pub fn new(
+        max_length: i32,
+        initial_text: ::unity2::Il2CppString,
+        header_text: ::unity2::Il2CppString,
+        sub_text: ::unity2::Il2CppString,
+        preset: crate::app::softwarekeyboard::SoftwareKeyboard_Preset,
+        callback: crate::system::action_1::Action_1<::unity2::Il2CppString>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoftwareKeyboard),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoftwareKeyboardMethods>::ctor(
+            this,
+            max_length,
+            initial_text,
+            header_text,
+            sub_text,
+            preset,
+            callback,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/softwarekeyboard/SoftwareKeyboard_Preset.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SoftwareKeyboard_Preset {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SoftwareKeyboard_Preset {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SoftwareKeyboard.Preset";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SoftwareKeyboard_Preset {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SoftwareKeyboard_Preset {
+    pub fn default() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn download_code() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn reported_reason() -> Self {
+        Self { value: 2 }
+    }
+}

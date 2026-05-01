@@ -1,0 +1,50 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/internal_drawtexturearguments/Internal_DrawTextureArguments.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Internal_DrawTextureArguments {
+    pub screen_rect: crate::unity_engine::rect::Rect,
+    pub source_rect: crate::unity_engine::rect::Rect,
+    pub left_border: i32,
+    pub right_border: i32,
+    pub top_border: i32,
+    pub bottom_border: i32,
+    pub left_border_color: crate::unity_engine::color::Color,
+    pub right_border_color: crate::unity_engine::color::Color,
+    pub top_border_color: crate::unity_engine::color::Color,
+    pub bottom_border_color: crate::unity_engine::color::Color,
+    pub color: crate::unity_engine::color::Color,
+    pub border_widths: crate::unity_engine::vector4::Vector4,
+    pub corner_radiuses: crate::unity_engine::vector4::Vector4,
+    pub smooth_corners: bool,
+    pub pass: i32,
+    pub texture: crate::unity_engine::texture::Texture,
+    pub mat: crate::unity_engine::material::Material,
+}
+
+impl ::unity2::ClassIdentity for Internal_DrawTextureArguments {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "Internal_DrawTextureArguments";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Internal_DrawTextureArguments {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

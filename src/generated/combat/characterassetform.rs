@@ -1,0 +1,138 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterassetform/CharacterAssetForm.md")))]
+#[::unity2::class(namespace = "Combat", name = "CharacterAssetForm")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct CharacterAssetForm {
+    #[rename(name = "Appearance")]
+    pub appearance: crate::combat::characterappearance::CharacterAppearance,
+    #[rename(name = "m_bSelfAppearance")]
+    pub m_b_self_appearance: bool,
+    #[rename(name = "ViewerPresetIndex")]
+    pub viewer_preset_index: i32,
+    #[rename(name = "ViewerPersonIndex")]
+    pub viewer_person_index: i32,
+    #[rename(name = "ViewerJobIndex")]
+    pub viewer_job_index: i32,
+    #[rename(name = "ViewerWeaponIndex")]
+    pub viewer_weapon_index: i32,
+    #[rename(name = "isBuilding_WatchFromCharacterAssetForm")]
+    pub is_building_watch_from_character_asset_form: bool,
+}
+
+#[cfg(feature = "combat-characterassetform")]
+#[::unity2::methods]
+impl CharacterAssetForm {
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, index: i32) -> crate::combat::characterasset::CharacterAsset;
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item_2(
+        self,
+        r#type: crate::combat::assettype::AssetType,
+    ) -> crate::combat::characterasset::CharacterAsset;
+
+    #[method(name = "get_InitialInvisibility", args = 0)]
+    pub fn get_initial_invisibility(self) -> bool;
+
+    #[method(name = "set_InitialInvisibility", args = 1)]
+    pub fn set_initial_invisibility(self, value: bool) -> ();
+
+    #[method(name = "get_IsDone", args = 0)]
+    pub fn get_is_done(self) -> bool;
+
+    #[method(name = "set_IsDone", args = 1)]
+    pub fn set_is_done(self, value: bool) -> ();
+
+    #[method(name = "Build", args = 2)]
+    pub fn build(
+        self,
+        appearance: crate::combat::characterappearance::CharacterAppearance,
+        invisible: bool,
+    ) -> ();
+
+    #[method(name = "BuildForTest", args = 0)]
+    pub fn build_for_test(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "BuildCoroutine", args = 0)]
+    pub fn build_coroutine(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "BuildHierarchy", args = 0)]
+    pub fn build_hierarchy(self) -> ();
+
+    #[method(name = "CoBuildHierarchy", args = 0)]
+    pub fn co_build_hierarchy(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "BeginContentsChange", args = 0)]
+    pub fn begin_contents_change(self) -> ();
+
+    #[method(name = "EndContentsChange", args = 0)]
+    pub fn end_contents_change(self) -> ();
+
+    #[method(name = "SetViaTableResult", args = 1)]
+    pub fn set_via_table_result(self, r: crate::app::assettable::AssetTable_Result) -> ();
+
+    #[method(name = "UnloadD", args = 1)]
+    pub fn unload_d(self, chr: crate::unity_engine::transform::Transform) -> ();
+
+    #[method(name = "Attach", args = 2)]
+    pub fn attach(
+        me: crate::unity_engine::gameobject::GameObject,
+        parent: crate::unity_engine::transform::Transform,
+    ) -> ();
+
+    #[method(name = "Attach", args = 2)]
+    pub fn attach_2(
+        self,
+        me: crate::unity_engine::gameobject::GameObject,
+        parent: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "FindInChildren", args = 1)]
+    pub fn find_in_children(
+        self,
+        parent: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "GetAccessories", args = 0)]
+    pub fn get_accessories(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::combat::characterasset::CharacterAsset,
+    >;
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "LoadDatabase", args = 0)]
+    pub fn load_database() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-characterassetform")]
+impl CharacterAssetForm {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterAssetForm),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharacterAssetFormMethods>::ctor(this);
+        this
+    }
+}

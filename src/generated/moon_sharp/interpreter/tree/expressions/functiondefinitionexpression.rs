@@ -1,0 +1,193 @@
+
+use crate::moon_sharp::interpreter::tree::expression::Expression;
+use crate::moon_sharp::interpreter::tree::expression::IExpression;
+use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+use crate::moon_sharp::interpreter::tree::nodebase::NodeBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/expressions/functiondefinitionexpression/FunctionDefinitionExpression.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Expressions",
+    name = "FunctionDefinitionExpression"
+)]
+#[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
+pub struct FunctionDefinitionExpression {
+    #[rename(name = "m_ParamNames")]
+    pub m_param_names: ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>,
+    #[rename(name = "m_Statement")]
+    pub m_statement: crate::moon_sharp::interpreter::tree::statement::Statement,
+    #[rename(name = "m_StackFrame")]
+    pub m_stack_frame:
+        crate::moon_sharp::interpreter::execution::runtimescopeframe::RuntimeScopeFrame,
+    #[rename(name = "m_Closure")]
+    pub m_closure: crate::system::collections::generic::list_1::List_1<
+        crate::moon_sharp::interpreter::symbolref::SymbolRef,
+    >,
+    #[rename(name = "m_HasVarArgs")]
+    pub m_has_var_args: bool,
+    #[rename(name = "m_ClosureInstruction")]
+    pub m_closure_instruction:
+        crate::moon_sharp::interpreter::execution::vm::instruction::Instruction,
+    #[rename(name = "m_UsesGlobalEnv")]
+    pub m_uses_global_env: bool,
+    #[rename(name = "m_Env")]
+    pub m_env: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+    #[rename(name = "m_Begin")]
+    pub m_begin: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+    #[rename(name = "m_End")]
+    pub m_end: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-functiondefinitionexpression")]
+#[::unity2::methods]
+impl FunctionDefinitionExpression {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        uses_global_env: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor_2(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        push_self_param: bool,
+        is_lambda: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor_3(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        push_self_param: bool,
+        uses_global_env: bool,
+        is_lambda: bool,
+    ) -> ();
+
+    #[method(name = "CreateLambdaBody", args = 1)]
+    pub fn create_lambda_body(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> crate::moon_sharp::interpreter::tree::statement::Statement;
+
+    #[method(name = "CreateBody", args = 1)]
+    pub fn create_body(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> crate::moon_sharp::interpreter::tree::statement::Statement;
+
+    #[method(name = "BuildParamList", args = 4)]
+    pub fn build_param_list(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        push_self_param: bool,
+        open_bracket_token: crate::moon_sharp::interpreter::tree::token::Token,
+        is_lambda: bool,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+
+    #[method(name = "DefineArguments", args = 2)]
+    pub fn define_arguments(
+        self,
+        paramnames: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> ::unity2::Array<crate::moon_sharp::interpreter::symbolref::SymbolRef>;
+
+    #[method(name = "CreateUpvalue", args = 2)]
+    pub fn create_upvalue(
+        self,
+        scope: crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,
+        symbol: crate::moon_sharp::interpreter::symbolref::SymbolRef,
+    ) -> crate::moon_sharp::interpreter::symbolref::SymbolRef;
+
+    #[method(name = "Eval", args = 1)]
+    pub fn eval(
+        self,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "CompileBody", args = 2)]
+    pub fn compile_body(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+        friendly_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "Compile", args = 3)]
+    pub fn compile(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+        after_decl: crate::system::func_1::Func_1<i32>,
+        friendly_name: ::unity2::Il2CppString,
+    ) -> i32;
+
+    #[method(name = "Compile", args = 1)]
+    pub fn compile_2(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-functiondefinitionexpression")]
+impl FunctionDefinitionExpression {
+    pub fn new(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        uses_global_env: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FunctionDefinitionExpression),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFunctionDefinitionExpressionMethods>::ctor(this, lcontext, uses_global_env);
+        this
+    }
+
+    pub fn new_2(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        push_self_param: bool,
+        is_lambda: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FunctionDefinitionExpression),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IFunctionDefinitionExpressionMethods>::ctor_2(
+            this,
+            lcontext,
+            push_self_param,
+            is_lambda,
+        );
+        this
+    }
+
+    pub fn new_3(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        push_self_param: bool,
+        uses_global_env: bool,
+        is_lambda: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FunctionDefinitionExpression),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as IFunctionDefinitionExpressionMethods>::ctor_3(
+            this,
+            lcontext,
+            push_self_param,
+            uses_global_env,
+            is_lambda,
+        );
+        this
+    }
+}

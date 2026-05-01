@@ -1,0 +1,26 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/setupcoroutine/SetupCoroutine.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "SetupCoroutine")]
+#[parent(crate::system::object::Object)]
+pub struct SetupCoroutine {}
+
+#[cfg(feature = "unity_engine-setupcoroutine")]
+#[::unity2::methods]
+impl SetupCoroutine {
+    #[method(name = "InvokeMoveNext", args = 2)]
+    pub fn invoke_move_next(
+        enumerator: crate::system::collections::ienumerator::IEnumerator,
+        return_value_address: ::unity2::IntPtr,
+    ) -> ();
+
+    #[method(name = "InvokeMember", args = 3)]
+    pub fn invoke_member(
+        behaviour: crate::system::object::Object,
+        name: ::unity2::Il2CppString,
+        variable: crate::system::object::Object,
+    ) -> crate::system::object::Object;
+}

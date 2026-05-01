@@ -1,0 +1,306 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringsynthesissequence/RingSynthesisSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingSynthesisSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingSynthesisSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingSynthesisSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingSynthesisSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingSynthesisSequence_Label {
+    pub fn skip() -> Self {
+        Self { value: 0 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringsynthesissequence/RingSynthesisSequence.md")))]
+#[::unity2::class(namespace = "App", name = "RingSynthesisSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringsynthesissequence :: RingSynthesisSequence >)]
+pub struct RingSynthesisSequence {
+    #[rename(name = "m_MenuResult")]
+    pub m_menu_result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
+    #[rename(name = "m_MaterialRing")]
+    pub m_material_ring: crate::app::ringdata::RingData,
+    #[rename(name = "m_NextRing")]
+    pub m_next_ring: crate::app::ringdata::RingData,
+    #[rename(name = "m_EngageZonePrefabPath")]
+    pub m_engage_zone_prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_SceneResourceHandle")]
+    pub m_scene_resource_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+    #[rename(name = "m_DisableList")]
+    pub m_disable_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "SceneName")]
+    pub scene_name: ::unity2::Il2CppString,
+    #[rename(name = "m_RingMergeScene")]
+    pub m_ring_merge_scene: crate::unity_engine::scene_management::scene::Scene,
+    #[rename(name = "m_EffectObject")]
+    pub m_effect_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_MaterialRingHandle")]
+    pub m_material_ring_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_NextRingHandle")]
+    pub m_next_ring_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_NextRingController")]
+    pub m_next_ring_controller: crate::app::commonringcontroller::CommonRingController,
+    #[rename(name = "m_NextRingObject")]
+    pub m_next_ring_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RingRoot")]
+    pub m_ring_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RingRotateRoot")]
+    pub m_ring_rotate_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_EndEventHandler")]
+    pub m_end_event_handler: crate::system::action::Action,
+    #[rename(name = "m_SkipListenerProc")]
+    pub m_skip_listener_proc:
+        crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc,
+    #[rename(name = "m_IsSkipped")]
+    pub m_is_skipped: bool,
+    #[rename(name = "InitRotate")]
+    pub init_rotate: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "CreateEffectPaths")]
+    pub create_effect_paths: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "LoopEffectPaths")]
+    pub loop_effect_paths: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "EmitEffect")]
+    pub emit_effect: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-ringsynthesissequence")]
+#[::unity2::methods]
+impl RingSynthesisSequence {
+    #[method(name = "get_ReturnSceneName", args = 0)]
+    pub fn get_return_scene_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
+        end_event_handler: crate::system::action::Action,
+    ) -> ();
+
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
+
+    #[method(name = "LoadResources", args = 0)]
+    pub fn load_resources(self) -> ();
+
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading(self) -> bool;
+
+    #[method(name = "ActiveScene", args = 0)]
+    pub fn active_scene(self) -> ();
+
+    #[method(name = "SetGameObjects", args = 0)]
+    pub fn set_game_objects(self) -> ();
+
+    #[method(name = "SetParameter", args = 2)]
+    pub fn set_parameter(
+        self,
+        controller: crate::app::commonringcontroller::CommonRingController,
+        data: crate::app::ringdata::RingData,
+    ) -> ();
+
+    #[method(name = "StartAnimation", args = 0)]
+    pub fn start_animation(self) -> ();
+
+    #[method(name = "PlaySynthesisSound", args = 0)]
+    pub fn play_synthesis_sound(self) -> ();
+
+    #[method(name = "WaitTick", args = 0)]
+    pub fn wait_tick(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "ShowNextRing", args = 0)]
+    pub fn show_next_ring(self) -> ();
+
+    #[method(name = "OpenDialog", args = 0)]
+    pub fn open_dialog(self) -> ();
+
+    #[method(name = "UnloadResources", args = 0)]
+    pub fn unload_resources(self) -> ();
+
+    #[method(name = "ReturnScene", args = 0)]
+    pub fn return_scene(self) -> ();
+
+    #[method(name = "End", args = 0)]
+    pub fn end(self) -> ();
+
+    #[method(name = "BeginSkipListener", args = 0)]
+    pub fn begin_skip_listener(self) -> ();
+
+    #[method(name = "EndSkipLisnter", args = 0)]
+    pub fn end_skip_lisnter(self) -> ();
+
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
+        end_event_handler: crate::system::action::Action,
+    ) -> ();
+
+    #[method(name = "GetCreateEffectPath", args = 1)]
+    pub fn get_create_effect_path(
+        self,
+        ring: crate::app::ringdata::RingData,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetLoopEffectPath", args = 1)]
+    pub fn get_loop_effect_path(
+        self,
+        ring: crate::app::ringdata::RingData,
+    ) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-ringsynthesissequence")]
+impl RingSynthesisSequence {
+    pub fn new(
+        result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
+        end_event_handler: crate::system::action::Action,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingSynthesisSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingSynthesisSequenceMethods>::ctor(this, result, end_event_handler);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringsynthesissequence/RingSynthesisSequence_Result1Proc.md")))]
+#[::unity2::class(namespace = "App", name = "RingSynthesisSequence.Result1Proc")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RingSynthesisSequence_Result1Proc {
+    #[rename(name = "m_RefineRingResult1Window")]
+    pub m_refine_ring_result1_window: crate::app::refineringresult1window::RefineRingResult1Window,
+    #[rename(name = "m_RingData")]
+    pub m_ring_data: crate::app::ringdata::RingData,
+}
+
+#[cfg(feature = "app-ringsynthesissequence")]
+#[::unity2::methods]
+impl RingSynthesisSequence_Result1Proc {
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::ringsynthesissequence::RingSynthesisSequence,
+        ring_data: crate::app::ringdata::RingData,
+    ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_Result1Proc;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, ring_data: crate::app::ringdata::RingData) -> ();
+
+    #[method(name = "Create", args = 0)]
+    pub fn create(self) -> ();
+
+    #[method(name = "IsOpening", args = 0)]
+    pub fn is_opening(self) -> bool;
+
+    #[method(name = "IsKeyInputted", args = 0)]
+    pub fn is_key_inputted(self) -> bool;
+
+    #[method(name = "IsClosing", args = 0)]
+    pub fn is_closing(self) -> bool;
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+}
+
+#[cfg(feature = "app-ringsynthesissequence")]
+impl RingSynthesisSequence_Result1Proc {
+    pub fn new(ring_data: crate::app::ringdata::RingData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingSynthesisSequence_Result1Proc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingSynthesisSequence_Result1ProcMethods>::ctor(this, ring_data);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringsynthesissequence/RingSynthesisSequence_SkipListenerProc.md")))]
+#[::unity2::class(namespace = "App", name = "RingSynthesisSequence.SkipListenerProc")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RingSynthesisSequence_SkipListenerProc {}
+
+#[cfg(feature = "app-ringsynthesissequence")]
+#[::unity2::methods]
+impl RingSynthesisSequence_SkipListenerProc {
+    #[method(name = "get_m_Pause", args = 0)]
+    pub fn get_m_pause(self) -> bool;
+
+    #[method(name = "set_m_Pause", args = 1)]
+    pub fn set_m_pause(self, value: bool) -> ();
+
+    #[method(name = "Create", args = 1)]
+    pub fn create(
+        super_: crate::app::ringsynthesissequence::RingSynthesisSequence,
+    ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc;
+
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ringsynthesissequence")]
+impl RingSynthesisSequence_SkipListenerProc {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingSynthesisSequence_SkipListenerProc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingSynthesisSequence_SkipListenerProcMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,410 @@
+
+use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+use crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SpriteKind.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapInfoUnit_SpriteKind {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapInfoUnit_SpriteKind {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapInfoUnit.SpriteKind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapInfoUnit_SpriteKind {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapInfoUnit_SpriteKind {
+    pub fn num0() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn num1() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn num2() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn num3() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn num4() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn num5() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn num6() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn num7() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn num8() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn num9() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn phys_atk_title() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn def_title() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn mag_atk_title() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn res_title() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn hit_title() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn avo_title() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn crit_title() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn crit_avo_title() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn skill_title() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn spd_title() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn move_title() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn phys_title() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn special_atk_title() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn value_empty() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn value_infinity() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn battle_type_none() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn battle_type_cooperation() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn battle_type_horse() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn battle_type_covert() -> Self {
+        Self { value: 28 }
+    }
+
+    pub fn battle_type_heavy() -> Self {
+        Self { value: 29 }
+    }
+
+    pub fn battle_type_fly() -> Self {
+        Self { value: 30 }
+    }
+
+    pub fn battle_type_magic() -> Self {
+        Self { value: 31 }
+    }
+
+    pub fn battle_type_prana() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn battle_type_dragon() -> Self {
+        Self { value: 33 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 34 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_InputState.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapInfoUnit_InputState {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapInfoUnit_InputState {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapInfoUnit.InputState";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapInfoUnit_InputState {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapInfoUnit_InputState {
+    pub fn neutral() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn switch() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn select() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SuppressScene.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapInfoUnit_SuppressScene {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapInfoUnit_SuppressScene {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapInfoUnit.SuppressScene";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapInfoUnit_SuppressScene {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapInfoUnit_SuppressScene {
+    pub fn combat() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit.md")))]
+#[::unity2::class(namespace = "App", name = "MapInfoUnit")]
+# [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapinfounit :: MapInfoUnit >)]
+pub struct MapInfoUnit {
+    #[static_field]
+    #[rename(name = "BeginPage")]
+    pub begin_page: i32,
+    #[static_field]
+    #[rename(name = "EndPage")]
+    pub end_page: i32,
+    #[rename(name = "m_ScaleCurve")]
+    pub m_scale_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "m_Input")]
+    pub m_input: crate::app::mapinfounit::MapInfoUnit_InputState,
+    #[rename(name = "m_IsOpenMapNavigation")]
+    pub m_is_open_map_navigation: bool,
+    #[rename(name = "m_IsVisible")]
+    pub m_is_visible: bool,
+    #[rename(name = "m_IsSuppress")]
+    pub m_is_suppress: bool,
+    #[rename(name = "m_SuppressFlag")]
+    pub m_suppress_flag: crate::app::mapinfounit::MapInfoUnit_SuppressScene,
+    #[rename(name = "m_AlphaChangeRatio")]
+    pub m_alpha_change_ratio: f32,
+    #[rename(name = "m_WaitFrame")]
+    pub m_wait_frame: i32,
+    #[rename(name = "m_Count")]
+    pub m_count: i32,
+    #[rename(name = "m_SpriteAtlas")]
+    pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+    #[rename(name = "m_Sprites")]
+    pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite>,
+    #[static_field]
+    #[rename(name = "SpriteNames")]
+    pub sprite_names: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "app-mapinfounit")]
+#[::unity2::methods]
+impl MapInfoUnit {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
+
+    #[method(name = "GetSprites", args = 0)]
+    pub fn get_sprites(self) -> ();
+
+    #[method(name = "GetSprite", args = 1)]
+    pub fn get_sprite(self, index: i32) -> crate::unity_engine::sprite::Sprite;
+
+    #[method(name = "UpdateVisible", args = 0)]
+    pub fn update_visible(self) -> ();
+
+    #[method(name = "UpdatePage", args = 0)]
+    pub fn update_page(self) -> ();
+
+    #[method(name = "ForceUpdateAllUnit", args = 0)]
+    pub fn force_update_all_unit(self) -> ();
+
+    #[method(name = "SetSuppressFlag", args = 1)]
+    pub fn set_suppress_flag(self, flag: crate::app::mapinfounit::MapInfoUnit_SuppressScene) -> ();
+
+    #[method(name = "UnsetSuppressFlag", args = 1)]
+    pub fn unset_suppress_flag(
+        self,
+        flag: crate::app::mapinfounit::MapInfoUnit_SuppressScene,
+    ) -> ();
+
+    #[method(name = "UpdateSuppress", args = 0)]
+    pub fn update_suppress(self) -> ();
+
+    #[method(name = "CanSwitchUnitInfo", args = 0)]
+    pub fn can_switch_unit_info(self) -> bool;
+
+    #[method(name = "IsSwitchUnitInfo", args = 0)]
+    pub fn is_switch_unit_info(self) -> bool;
+
+    #[method(name = "get_ScaleCurve", args = 0)]
+    pub fn get_scale_curve(self) -> crate::unity_engine::animationcurve::AnimationCurve;
+
+    #[method(name = "get_Input", args = 0)]
+    pub fn get_input(self) -> crate::app::mapinfounit::MapInfoUnit_InputState;
+
+    #[method(name = "set_Input", args = 1)]
+    pub fn set_input(self, value: crate::app::mapinfounit::MapInfoUnit_InputState) -> ();
+
+    #[method(name = "get_IsVisible", args = 0)]
+    pub fn get_is_visible(self) -> bool;
+
+    #[method(name = "set_IsVisible", args = 1)]
+    pub fn set_is_visible(self, value: bool) -> ();
+
+    #[method(name = "get_IsSuppress", args = 0)]
+    pub fn get_is_suppress(self) -> bool;
+
+    #[method(name = "get_AlphaChangeRatio", args = 0)]
+    pub fn get_alpha_change_ratio(self) -> f32;
+
+    #[method(name = "get_IsOpenMapNavigation", args = 0)]
+    pub fn get_is_open_map_navigation(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-mapinfounit")]
+impl MapInfoUnit {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapInfoUnit),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapInfoUnitMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,624 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ScriptableRenderer.Profiling"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScriptableRenderer_Profiling {
+    #[static_field]
+    #[rename(name = "k_Name")]
+    pub k_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "setPerCameraShaderVariables")]
+    pub set_per_camera_shader_variables:
+        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "sortRenderPasses")]
+    pub sort_render_passes: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "setupLights")]
+    pub setup_lights: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "setupCamera")]
+    pub setup_camera: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "addRenderPasses")]
+    pub add_render_passes: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "clearRenderingState")]
+    pub clear_rendering_state: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "internalStartRendering")]
+    pub internal_start_rendering:
+        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "internalFinishRendering")]
+    pub internal_finish_rendering:
+        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods]
+impl ScriptableRenderer_Profiling {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ScriptableRenderer.Profiling.RenderPass"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScriptableRenderer_Profiling_RenderPass {
+    #[static_field]
+    #[rename(name = "k_Name")]
+    pub k_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "configure")]
+    pub configure: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods]
+impl ScriptableRenderer_Profiling_RenderPass {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ScriptableRenderer"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScriptableRenderer {
+# [static_field] # [rename (name = "current")] pub current : crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer ,
+# [static_field] # [rename (name = "k_RenderPassBlockCount")] pub k_render_pass_block_count : i32 ,
+# [rename (name = "m_ActiveRenderPassQueue")] pub m_active_render_pass_queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass > ,
+# [rename (name = "m_RendererFeatures")] pub m_renderer_features : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature > ,
+# [rename (name = "m_CameraColorTarget")] pub m_camera_color_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
+# [rename (name = "m_CameraDepthTarget")] pub m_camera_depth_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
+# [rename (name = "m_FirstTimeCameraColorTargetIsBound")] pub m_first_time_camera_color_target_is_bound : bool ,
+# [rename (name = "m_FirstTimeCameraDepthTargetIsBound")] pub m_first_time_camera_depth_target_is_bound : bool ,
+# [rename (name = "m_IsPipelineExecuting")] pub m_is_pipeline_executing : bool ,
+# [rename (name = "isCameraColorTargetValid")] pub is_camera_color_target_valid : bool ,
+# [static_field] # [rename (name = "m_ActiveColorAttachments")] pub m_active_color_attachments : :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > ,
+# [static_field] # [rename (name = "m_ActiveDepthAttachment")] pub m_active_depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier ,
+# [static_field] # [rename (name = "m_TrimmedColorAttachmentCopies")] pub m_trimmed_color_attachment_copies : :: unity2 :: Array < :: unity2 :: Array < crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier > > ,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods]
+impl ScriptableRenderer {
+    #[method(name = "get_cameraDepth", args = 0)]
+    pub fn get_camera_depth(
+        self,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
+
+    #[method(name = "get_profilingExecute", args = 0)]
+    pub fn get_profiling_execute(
+        self,
+    ) -> crate::unity_engine::rendering::profilingsampler::ProfilingSampler;
+
+    #[method(name = "set_profilingExecute", args = 1)]
+    pub fn set_profiling_execute(
+        self,
+        value: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    ) -> ();
+
+    #[method(name = "SetCameraMatrices", args = 3)]
+    pub fn set_camera_matrices(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+        set_inverse_matrices: bool,
+    ) -> ();
+
+    #[method(name = "SetPerCameraShaderVariables", args = 2)]
+    pub fn set_per_camera_shader_variables(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> ();
+
+    #[method(name = "SetShaderTimeValues", args = 4)]
+    pub fn set_shader_time_values(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        time: f32,
+        delta_time: f32,
+        smooth_delta_time: f32,
+    ) -> ();
+
+    #[method(name = "get_cameraColorTarget", args = 0)]
+    pub fn get_camera_color_target(
+        self,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
+
+    #[method(name = "get_cameraDepthTarget", args = 0)]
+    pub fn get_camera_depth_target(
+        self,
+    ) -> crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier;
+
+    #[method(name = "get_rendererFeatures", args = 0)]
+    pub fn get_renderer_features (self ,) -> crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: universal :: scriptablerendererfeature :: ScriptableRendererFeature > ;
+
+    #[method(name = "get_activeRenderPassQueue", args = 0)]
+    pub fn get_active_render_pass_queue(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+    >;
+
+    #[method(name = "get_supportedRenderingFeatures", args = 0)]
+    pub fn get_supported_rendering_features (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderingFeatures ;
+
+    #[method(name = "set_supportedRenderingFeatures", args = 1)]
+    pub fn set_supported_rendering_features(
+        self,
+        value : crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderingFeatures,
+    ) -> ();
+
+    #[method(name = "get_unsupportedGraphicsDeviceTypes", args = 0)]
+    pub fn get_unsupported_graphics_device_types(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType>;
+
+    #[method(name = "set_unsupportedGraphicsDeviceTypes", args = 1)]
+    pub fn set_unsupported_graphics_device_types(
+        self,
+        value: ::unity2::Array<
+            crate::unity_engine::rendering::graphicsdevicetype::GraphicsDeviceType,
+        >,
+    ) -> ();
+
+    #[method(name = "ConfigureActiveTarget", args = 2)]
+    pub fn configure_active_target(
+        color_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        data : crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData,
+    ) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "Dispose", args = 1)]
+    pub fn dispose_2(self, disposing: bool) -> ();
+
+    #[method(name = "ConfigureCameraTarget", args = 2)]
+    pub fn configure_camera_target(
+        self,
+        color_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        depth_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+    ) -> ();
+
+    #[method(name = "ConfigureCameraColorTarget", args = 1)]
+    pub fn configure_camera_color_target(
+        self,
+        color_target : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+    ) -> ();
+
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "SetupLights", args = 2)]
+    pub fn setup_lights(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "SetupCullingParameters", args = 2)]
+    pub fn setup_culling_parameters(
+        self,
+        culling_parameters : crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> ();
+
+    #[method(name = "FinishRendering", args = 1)]
+    pub fn finish_rendering(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[method(name = "GetSubLightTag", args = 0)]
+    pub fn get_sub_light_tag(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "EnqueuePass", args = 1)]
+    pub fn enqueue_pass(
+        self,
+        pass: crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+    ) -> ();
+
+    #[method(name = "GetCameraClearFlag", args = 1)]
+    pub fn get_camera_clear_flag(
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> crate::unity_engine::rendering::clearflag::ClearFlag;
+
+    #[method(name = "AddRenderPasses", args = 1)]
+    pub fn add_render_passes(
+        self,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "ClearRenderingState", args = 1)]
+    pub fn clear_rendering_state(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[method(name = "Clear", args = 1)]
+    pub fn clear(
+        self,
+        camera_type: crate::unity_engine::rendering::universal::camerarendertype::CameraRenderType,
+    ) -> ();
+
+    #[method(name = "ExecuteBlock", args = 5)]
+    pub fn execute_block(
+        self,
+        block_index: i32,
+        render_blocks : crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+        submit: bool,
+    ) -> ();
+
+    #[method(name = "ExecuteRenderPass", args = 3)]
+    pub fn execute_render_pass(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        render_pass : crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "SetRenderPassAttachments", args = 3)]
+    pub fn set_render_pass_attachments(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        render_pass : crate :: unity_engine :: rendering :: universal :: scriptablerenderpass :: ScriptableRenderPass,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> ();
+
+    #[method(name = "BeginXRRendering", args = 3)]
+    pub fn begin_xr_rendering(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> ();
+
+    #[method(name = "EndXRRendering", args = 3)]
+    pub fn end_xr_rendering(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> ();
+
+    #[method(name = "SetRenderTarget", args = 5)]
+    pub fn set_render_target(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        color_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        clear_flag: crate::unity_engine::rendering::clearflag::ClearFlag,
+        clear_color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = "SetRenderTarget", args = 6)]
+    pub fn set_render_target_2(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        color_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        color_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
+        color_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        clear_flags: crate::unity_engine::rendering::clearflag::ClearFlag,
+        clear_color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = "SetRenderTarget", args = 9)]
+    pub fn set_render_target_3(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        color_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        color_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
+        color_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        depth_load_action : crate :: unity_engine :: rendering :: renderbufferloadaction :: RenderBufferLoadAction,
+        depth_store_action : crate :: unity_engine :: rendering :: renderbufferstoreaction :: RenderBufferStoreAction,
+        clear_flags: crate::unity_engine::rendering::clearflag::ClearFlag,
+        clear_color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = "SetRenderTarget", args = 5)]
+    pub fn set_render_target_4(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        color_attachments: ::unity2::Array<
+            crate::unity_engine::rendering::rendertargetidentifier::RenderTargetIdentifier,
+        >,
+        depth_attachment : crate :: unity_engine :: rendering :: rendertargetidentifier :: RenderTargetIdentifier,
+        clear_flag: crate::unity_engine::rendering::clearflag::ClearFlag,
+        clear_color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = "DrawGizmos", args = 3)]
+    pub fn draw_gizmos(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        camera: crate::unity_engine::camera::Camera,
+        gizmo_subset: crate::unity_engine::rendering::gizmosubset::GizmoSubset,
+    ) -> ();
+
+    #[method(name = "DrawWireOverlay", args = 2)]
+    pub fn draw_wire_overlay(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        camera: crate::unity_engine::camera::Camera,
+    ) -> ();
+
+    #[method(name = "InternalStartRendering", args = 2)]
+    pub fn internal_start_rendering(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "InternalFinishRendering", args = 2)]
+    pub fn internal_finish_rendering(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        resolve_final_target: bool,
+    ) -> ();
+
+    #[method(name = "SortStable", args = 1)]
+    pub fn sort_stable(
+        list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+        >,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+impl ScriptableRenderer {
+    pub fn new(
+        data : crate :: unity_engine :: rendering :: universal :: scriptablerendererdata :: ScriptableRendererData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptableRenderer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptableRendererMethods>::ctor(this, data);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderingFeatures.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ScriptableRenderer.RenderingFeatures"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScriptableRenderer_RenderingFeatures {}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods]
+impl ScriptableRenderer_RenderingFeatures {
+    #[method(name = "get_cameraStacking", args = 0)]
+    pub fn get_camera_stacking(self) -> bool;
+
+    #[method(name = "set_cameraStacking", args = 1)]
+    pub fn set_camera_stacking(self, value: bool) -> ();
+
+    #[method(name = "get_msaa", args = 0)]
+    pub fn get_msaa(self) -> bool;
+
+    #[method(name = "set_msaa", args = 1)]
+    pub fn set_msaa(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+impl ScriptableRenderer_RenderingFeatures {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptableRenderer_RenderingFeatures),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptableRenderer_RenderingFeaturesMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderBlock.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ScriptableRenderer.Profiling.RenderBlock"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScriptableRenderer_Profiling_RenderBlock {
+    #[static_field]
+    #[rename(name = "k_Name")]
+    pub k_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "beforeRendering")]
+    pub before_rendering: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "mainRenderingOpaque")]
+    pub main_rendering_opaque: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "mainRenderingTransparent")]
+    pub main_rendering_transparent:
+        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "afterRendering")]
+    pub after_rendering: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods]
+impl ScriptableRenderer_Profiling_RenderBlock {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderPassBlock.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ScriptableRenderer.RenderPassBlock"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScriptableRenderer_RenderPassBlock {
+    #[static_field]
+    #[rename(name = "BeforeRendering")]
+    pub before_rendering: i32,
+    #[static_field]
+    #[rename(name = "MainRenderingOpaque")]
+    pub main_rendering_opaque: i32,
+    #[static_field]
+    #[rename(name = "MainRenderingTransparent")]
+    pub main_rendering_transparent: i32,
+    #[static_field]
+    #[rename(name = "AfterRendering")]
+    pub after_rendering: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods]
+impl ScriptableRenderer_RenderPassBlock {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks_BlockRange.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ScriptableRenderer_RenderBlocks_BlockRange {
+    pub m_current: i32,
+    pub m_end: i32,
+}
+
+impl ::unity2::ClassIdentity for ScriptableRenderer_RenderBlocks_BlockRange {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "ScriptableRenderer.RenderBlocks.BlockRange";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ScriptableRenderer_RenderBlocks_BlockRange {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods(value)]
+impl ScriptableRenderer_RenderBlocks_BlockRange {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, begin: i32, end: i32) -> ();
+
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange ;
+
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> i32;
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ScriptableRenderer_RenderBlocks {}
+
+impl ::unity2::ClassIdentity for ScriptableRenderer_RenderBlocks {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "ScriptableRenderer.RenderBlocks";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ScriptableRenderer_RenderBlocks {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods(value)]
+impl ScriptableRenderer_RenderBlocks {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+        >,
+    ) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "FillBlockRanges", args = 1)]
+    pub fn fill_block_ranges(
+        self,
+        active_render_pass_queue: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass,
+        >,
+    ) -> ();
+
+    #[method(name = "GetLength", args = 1)]
+    pub fn get_length(self, index: i32) -> i32;
+
+    #[method(name = "GetRange", args = 1)]
+    pub fn get_range (self , index : i32) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange ;
+}

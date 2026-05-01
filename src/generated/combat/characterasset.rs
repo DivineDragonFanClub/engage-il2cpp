@@ -1,0 +1,51 @@
+
+use crate::combat::characterassett_1::CharacterAssetT_1;
+use crate::combat::characterassett_1::ICharacterAssetT_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterasset/CharacterAsset.md")))]
+#[::unity2::class(namespace = "Combat", name = "CharacterAsset")]
+# [parent (crate :: combat :: characterassett_1 :: CharacterAssetT_1 < crate :: unity_engine :: object_2 :: Object_2 >)]
+pub struct CharacterAsset {}
+
+#[cfg(feature = "combat-characterasset")]
+#[::unity2::methods]
+impl CharacterAsset {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, asset_type: crate::combat::assettype::AssetType) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, rhs: crate::combat::characterasset::CharacterAsset) -> ();
+
+    #[method(name = "ChangeNML", args = 1)]
+    pub fn change_nml(self, mode: u16) -> ();
+}
+
+#[cfg(feature = "combat-characterasset")]
+impl CharacterAsset {
+    pub fn new(asset_type: crate::combat::assettype::AssetType) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterAsset),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharacterAssetMethods>::ctor(this, asset_type);
+        this
+    }
+
+    pub fn new_2(rhs: crate::combat::characterasset::CharacterAsset) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterAsset),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ICharacterAssetMethods>::ctor_2(this, rhs);
+        this
+    }
+}

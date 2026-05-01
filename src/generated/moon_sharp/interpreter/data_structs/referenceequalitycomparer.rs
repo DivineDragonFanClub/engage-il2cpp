@@ -1,0 +1,34 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/data_structs/referenceequalitycomparer/ReferenceEqualityComparer.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.DataStructs",
+    name = "ReferenceEqualityComparer"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ReferenceEqualityComparer {}
+
+#[cfg(feature = "moon_sharp-interpreter-data_structs-referenceequalitycomparer")]
+#[::unity2::methods]
+impl ReferenceEqualityComparer {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-data_structs-referenceequalitycomparer")]
+impl ReferenceEqualityComparer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ReferenceEqualityComparer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IReferenceEqualityComparerMethods>::ctor(this);
+        this
+    }
+}

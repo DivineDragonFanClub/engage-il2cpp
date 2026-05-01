@@ -1,0 +1,96 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/datatype/DataType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct DataType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for DataType {
+    const NAMESPACE: &'static str = "MoonSharp.Interpreter";
+
+    const NAME: &'static str = "DataType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DataType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl DataType {
+    pub fn nil() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn void() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn boolean() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn number() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn string() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn function() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn table() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn tuple() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn user_data() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn thread() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn clr_function() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn tail_call_request() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn yield_request() -> Self {
+        Self { value: 12 }
+    }
+}

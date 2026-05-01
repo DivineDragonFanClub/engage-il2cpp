@@ -1,0 +1,88 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationoutputweightprocessor/AnimationOutputWeightProcessor.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Timeline",
+    name = "AnimationOutputWeightProcessor"
+)]
+#[parent(crate::system::object::Object)]
+pub struct AnimationOutputWeightProcessor {
+# [rename (name = "m_Output")] pub m_output : crate :: unity_engine :: animations :: animationplayableoutput :: AnimationPlayableOutput ,
+# [rename (name = "m_Mixers")] pub m_mixers : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: timeline :: animationoutputweightprocessor :: AnimationOutputWeightProcessor_WeightInfo > ,
+}
+
+#[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor")]
+#[::unity2::methods]
+impl AnimationOutputWeightProcessor {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        output: crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput,
+    ) -> ();
+
+    #[method(name = "FindMixers", args = 0)]
+    pub fn find_mixers(self) -> ();
+
+    #[method(name = "FindMixers", args = 3)]
+    pub fn find_mixers_2(
+        self,
+        parent: crate::unity_engine::playables::playable::Playable,
+        port: i32,
+        node: crate::unity_engine::playables::playable::Playable,
+    ) -> ();
+
+    #[method(name = "Evaluate", args = 0)]
+    pub fn evaluate(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor")]
+impl AnimationOutputWeightProcessor {
+    pub fn new(
+        output: crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimationOutputWeightProcessor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimationOutputWeightProcessorMethods>::ctor(this, output);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationoutputweightprocessor/AnimationOutputWeightProcessor_WeightInfo.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AnimationOutputWeightProcessor_WeightInfo {
+    pub mixer: crate::unity_engine::playables::playable::Playable,
+    pub parent_mixer: crate::unity_engine::playables::playable::Playable,
+    pub port: i32,
+}
+
+impl ::unity2::ClassIdentity for AnimationOutputWeightProcessor_WeightInfo {
+    const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+    const NAME: &'static str = "AnimationOutputWeightProcessor.WeightInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AnimationOutputWeightProcessor_WeightInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

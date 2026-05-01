@@ -1,0 +1,71 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/tiledepthrangepass/TileDepthRangePass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "TileDepthRangePass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct TileDepthRangePass {
+    #[rename(name = "m_DeferredLights")]
+    pub m_deferred_lights:
+        crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights,
+    #[rename(name = "m_PassIndex")]
+    pub m_pass_index: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-tiledepthrangepass")]
+#[::unity2::methods]
+impl TileDepthRangePass {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        deferred_lights : crate :: unity_engine :: rendering :: universal :: internal :: deferredlights :: DeferredLights,
+        pass_index: i32,
+    ) -> ();
+
+    #[method(name = "Configure", args = 2)]
+    pub fn configure(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        camera_texture_descriptor : crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "OnCameraCleanup", args = 1)]
+    pub fn on_camera_cleanup(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-tiledepthrangepass")]
+impl TileDepthRangePass {
+    pub fn new(
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        deferred_lights : crate :: unity_engine :: rendering :: universal :: internal :: deferredlights :: DeferredLights,
+        pass_index: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TileDepthRangePass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITileDepthRangePassMethods>::ctor(this, evt, deferred_lights, pass_index);
+        this
+    }
+}

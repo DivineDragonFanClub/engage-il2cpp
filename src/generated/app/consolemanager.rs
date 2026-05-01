@@ -1,0 +1,108 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/consolemanager/ConsoleManager.md")))]
+#[::unity2::class(namespace = "App", name = "ConsoleManager")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: consolemanager :: ConsoleManager >)]
+pub struct ConsoleManager {
+    #[rename(name = "m_GameObject")]
+    pub m_game_object: crate::unity_engine::gameobject::GameObject,
+    #[static_field]
+    #[rename(name = "s_ScaleX")]
+    pub s_scale_x: f32,
+    #[static_field]
+    #[rename(name = "s_ScaleY")]
+    pub s_scale_y: f32,
+    #[static_field]
+    #[rename(name = "s_Orient")]
+    pub s_orient: f32,
+    #[static_field]
+    #[rename(name = "s_LockObject")]
+    pub s_lock_object: ::unity2::IlInstance,
+    #[static_field]
+    #[rename(name = "s_Logs")]
+    pub s_logs: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "s_ShowLog")]
+    pub s_show_log: crate::app::gameparam::GameParam_Holder,
+}
+
+#[cfg(feature = "app-consolemanager")]
+#[::unity2::methods]
+impl ConsoleManager {
+    #[method(name = "get_ScaleX", args = 0)]
+    pub fn get_scale_x() -> f32;
+
+    #[method(name = "get_ScaleY", args = 0)]
+    pub fn get_scale_y() -> f32;
+
+    #[method(name = "get_Orient", args = 0)]
+    pub fn get_orient() -> f32;
+
+    #[method(name = "get_Logs", args = 0)]
+    pub fn get_logs() -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[method(name = "Print", args = 1)]
+    pub fn print(str: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear() -> ();
+
+    #[method(name = "Open", args = 0)]
+    pub fn open() -> ();
+
+    #[method(name = "Close", args = 0)]
+    pub fn close() -> ();
+
+    #[method(name = "IsButton", args = 0)]
+    pub fn is_button() -> bool;
+
+    #[method(name = "IsTrigger", args = 0)]
+    pub fn is_trigger() -> bool;
+
+    #[method(name = "OnLogMessage", args = 3)]
+    pub fn on_log_message(
+        log_text: ::unity2::Il2CppString,
+        stack_trace: ::unity2::Il2CppString,
+        r#type: crate::unity_engine::logtype::LogType,
+    ) -> ();
+
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-consolemanager")]
+impl ConsoleManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConsoleManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConsoleManagerMethods>::ctor(this);
+        this
+    }
+}

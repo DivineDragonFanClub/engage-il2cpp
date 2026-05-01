@@ -1,0 +1,13 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/inotification/INotification.md")))]
+#[::unity2::class(namespace = "UnityEngine.Playables", name = "INotification")]
+pub struct INotification {}
+
+#[cfg(feature = "unity_engine-playables-inotification")]
+#[::unity2::methods]
+impl INotification {
+    #[method(name = "get_id", args = 0)]
+    pub fn get_id(self) -> crate::unity_engine::propertyname::PropertyName;
+}

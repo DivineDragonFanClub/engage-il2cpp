@@ -1,0 +1,72 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/water/planarreflectionv2/PlanarReflectionV2.md")))]
+#[::unity2::class(namespace = "App.Water", name = "PlanarReflectionV2")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct PlanarReflectionV2 {
+    #[rename(name = "m_ReflectionManager")]
+    pub m_reflection_manager: crate::app::water::reflectionmanager::ReflectionManager,
+    #[rename(name = "m_SharedMaterial")]
+    pub m_shared_material: crate::unity_engine::material::Material,
+    #[rename(name = "reflectionCameraNumber")]
+    pub reflection_camera_number: i16,
+    #[static_field]
+    #[rename(name = "reflectionSampler")]
+    pub reflection_sampler: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-water-planarreflectionv2")]
+#[::unity2::methods]
+impl PlanarReflectionV2 {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "WaterTileBeingRendered", args = 2)]
+    pub fn water_tile_being_rendered(
+        self,
+        tr: crate::unity_engine::transform::Transform,
+        current_cam: crate::unity_engine::camera::Camera,
+    ) -> ();
+
+    #[method(name = "GetReflectionTexture", args = 0)]
+    pub fn get_reflection_texture(self) -> crate::unity_engine::rendertexture::RenderTexture;
+
+    #[method(name = "RenderReflection", args = 2)]
+    pub fn render_reflection(
+        self,
+        tr: crate::unity_engine::transform::Transform,
+        current_cam: crate::unity_engine::camera::Camera,
+    ) -> bool;
+
+    #[method(name = "GetReflectionManager", args = 0)]
+    pub fn get_reflection_manager(self) -> crate::app::water::reflectionmanager::ReflectionManager;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-water-planarreflectionv2")]
+impl PlanarReflectionV2 {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PlanarReflectionV2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPlanarReflectionV2Methods>::ctor(this);
+        this
+    }
+}

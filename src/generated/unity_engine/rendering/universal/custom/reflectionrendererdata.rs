@@ -1,0 +1,155 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::rendering::universal::scriptablerendererdata::IScriptableRendererData;
+use crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom",
+    name = "ReflectionRendererData"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]
+pub struct ReflectionRendererData {
+# [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
+# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ShaderResources ,
+# [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [rename (name = "m_ReflectionTarget")] pub m_reflection_target : crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ReflectionTarget ,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
+#[::unity2::methods]
+impl ReflectionRendererData {
+    #[method(name = "Create", args = 0)]
+    pub fn create(
+        self,
+    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
+
+    #[method(name = "get_opaqueLayerMask", args = 0)]
+    pub fn get_opaque_layer_mask(self) -> crate::unity_engine::layermask::LayerMask;
+
+    #[method(name = "set_opaqueLayerMask", args = 1)]
+    pub fn set_opaque_layer_mask(self, value: crate::unity_engine::layermask::LayerMask) -> ();
+
+    #[method(name = "get_transparentLayerMask", args = 0)]
+    pub fn get_transparent_layer_mask(self) -> crate::unity_engine::layermask::LayerMask;
+
+    #[method(name = "set_transparentLayerMask", args = 1)]
+    pub fn set_transparent_layer_mask(self, value: crate::unity_engine::layermask::LayerMask)
+        -> ();
+
+    #[method(name = "get_reflectionTarget", args = 0)]
+    pub fn get_reflection_target (self ,) -> crate :: unity_engine :: rendering :: universal :: custom :: reflectionrendererdata :: ReflectionRendererData_ReflectionTarget ;
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
+impl ReflectionRendererData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ReflectionRendererData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IReflectionRendererDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ReflectionTarget.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ReflectionRendererData_ReflectionTarget {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ReflectionRendererData_ReflectionTarget {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Custom";
+
+    const NAME: &'static str = "ReflectionRendererData.ReflectionTarget";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ReflectionRendererData_ReflectionTarget {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ReflectionRendererData_ReflectionTarget {
+    pub fn chara() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn chara_map() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn chara_special_reflection() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/reflectionrendererdata/ReflectionRendererData_ShaderResources.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom",
+    name = "ReflectionRendererData.ShaderResources"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ReflectionRendererData_ShaderResources {
+    #[rename(name = "blitPS")]
+    pub blit_ps: crate::unity_engine::shader::Shader,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
+#[::unity2::methods]
+impl ReflectionRendererData_ShaderResources {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-reflectionrendererdata")]
+impl ReflectionRendererData_ShaderResources {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ReflectionRendererData_ShaderResources),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IReflectionRendererData_ShaderResourcesMethods>::ctor(this);
+        this
+    }
+}

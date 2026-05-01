@@ -1,0 +1,82 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/screenspaceshadowresolvepass/ScreenSpaceShadowResolvePass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "ScreenSpaceShadowResolvePass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct ScreenSpaceShadowResolvePass {
+    #[rename(name = "m_ScreenSpaceShadowsMaterial")]
+    pub m_screen_space_shadows_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_ScreenSpaceShadowmap")]
+    pub m_screen_space_shadowmap:
+        crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    #[rename(name = "m_RenderTextureDescriptor")]
+    pub m_render_texture_descriptor:
+        crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-screenspaceshadowresolvepass")]
+#[::unity2::methods]
+impl ScreenSpaceShadowResolvePass {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        screenspace_shadows_material: crate::unity_engine::material::Material,
+    ) -> ();
+
+    #[method(name = "Setup", args = 1)]
+    pub fn setup(
+        self,
+        base_descriptor: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+    ) -> ();
+
+    #[method(name = "Configure", args = 2)]
+    pub fn configure(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        camera_texture_descriptor : crate :: unity_engine :: rendertexturedescriptor :: RenderTextureDescriptor,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "OnCameraCleanup", args = 1)]
+    pub fn on_camera_cleanup(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-screenspaceshadowresolvepass")]
+impl ScreenSpaceShadowResolvePass {
+    pub fn new(
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        screenspace_shadows_material: crate::unity_engine::material::Material,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScreenSpaceShadowResolvePass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScreenSpaceShadowResolvePassMethods>::ctor(
+            this,
+            evt,
+            screenspace_shadows_material,
+        );
+        this
+    }
+}

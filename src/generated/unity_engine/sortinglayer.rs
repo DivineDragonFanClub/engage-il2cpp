@@ -1,0 +1,56 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/sortinglayer/SortingLayer.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct SortingLayer {
+    pub m_id: i32,
+}
+
+impl ::unity2::ClassIdentity for SortingLayer {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "SortingLayer";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SortingLayer {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-sortinglayer")]
+#[::unity2::methods(value)]
+impl SortingLayer {
+    #[method(name = "get_id", args = 0)]
+    pub fn get_id(self) -> i32;
+
+    #[method(name = "get_value", args = 0)]
+    pub fn get_value(self) -> i32;
+
+    #[method(name = "get_layers", args = 0)]
+    pub fn get_layers() -> ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer>;
+
+    #[method(name = "GetSortingLayerIDsInternal", args = 0)]
+    pub fn get_sorting_layer_i_ds_internal() -> ::unity2::Array<i32>;
+
+    #[method(name = "GetLayerValueFromID", args = 1)]
+    pub fn get_layer_value_from_id(id: i32) -> i32;
+
+    #[method(name = "IDToName", args = 1)]
+    pub fn id_to_name(id: i32) -> ::unity2::Il2CppString;
+}

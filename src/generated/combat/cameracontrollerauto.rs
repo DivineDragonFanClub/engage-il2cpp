@@ -1,0 +1,140 @@
+
+use crate::combat::basecameracontroller::BaseCameraController;
+use crate::combat::basecameracontroller::IBaseCameraController;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerauto/CameraControllerAuto.md")))]
+#[::unity2::class(namespace = "Combat", name = "CameraControllerAuto")]
+#[parent(crate::combat::basecameracontroller::BaseCameraController)]
+pub struct CameraControllerAuto {
+    #[rename(name = "DistanceCurve")]
+    pub distance_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "VirticalMinMax")]
+    pub virtical_min_max: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "HorizontalMinMax")]
+    pub horizontal_min_max: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_Time")]
+    pub m_time: f32,
+}
+
+#[cfg(feature = "combat-cameracontrollerauto")]
+#[::unity2::methods]
+impl CameraControllerAuto {
+    #[method(name = "get_TimeLength", args = 0)]
+    pub fn get_time_length(self) -> f32;
+
+    #[method(name = "set_TimeLength", args = 1)]
+    pub fn set_time_length(self, value: f32) -> ();
+
+    #[method(name = "get_Vertical", args = 0)]
+    pub fn get_vertical(
+        self,
+    ) -> crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate;
+
+    #[method(name = "set_Vertical", args = 1)]
+    pub fn set_vertical(
+        self,
+        value: crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate,
+    ) -> ();
+
+    #[method(name = "get_Horizontal", args = 0)]
+    pub fn get_horizontal(
+        self,
+    ) -> crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate;
+
+    #[method(name = "set_Horizontal", args = 1)]
+    pub fn set_horizontal(
+        self,
+        value: crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate,
+    ) -> ();
+
+    #[method(name = "CheckUsable", args = 1)]
+    pub fn check_usable(self, is_routine: bool) -> ();
+
+    #[method(name = "Activate", args = 0)]
+    pub fn activate(self) -> ();
+
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize(self) -> ();
+
+    #[method(name = "Deactivate", args = 0)]
+    pub fn deactivate(self) -> ();
+
+    #[method(name = "CreateRandom", args = 3)]
+    pub fn create_random(
+        self,
+        time: f32,
+        min: f32,
+        max: f32,
+    ) -> crate::combat::cameracontrollerauto::CameraControllerAuto_CamRotate;
+
+    #[method(name = "GetCameraTargets", args = 0)]
+    pub fn get_camera_targets(self) -> ::unity2::Array<i32>;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-cameracontrollerauto")]
+impl CameraControllerAuto {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CameraControllerAuto),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICameraControllerAutoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerauto/CameraControllerAuto_CamRotate.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct CameraControllerAuto_CamRotate {
+    pub start_degree: f32,
+    pub end_degree: f32,
+    pub speed: f32,
+}
+
+impl ::unity2::ClassIdentity for CameraControllerAuto_CamRotate {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CameraControllerAuto.CamRotate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CameraControllerAuto_CamRotate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "combat-cameracontrollerauto")]
+#[::unity2::methods(value)]
+impl CameraControllerAuto_CamRotate {
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, rate: f32) -> f32;
+}

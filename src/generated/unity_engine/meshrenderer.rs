@@ -1,0 +1,55 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::renderer::IRenderer;
+use crate::unity_engine::renderer::Renderer;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/meshrenderer/MeshRenderer.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "MeshRenderer")]
+#[parent(crate::unity_engine::renderer::Renderer)]
+pub struct MeshRenderer {}
+
+#[cfg(feature = "unity_engine-meshrenderer")]
+#[::unity2::methods]
+impl MeshRenderer {
+    #[method(name = "DontStripMeshRenderer", args = 0)]
+    pub fn dont_strip_mesh_renderer(self) -> ();
+
+    #[method(name = "get_additionalVertexStreams", args = 0)]
+    pub fn get_additional_vertex_streams(self) -> crate::unity_engine::mesh::Mesh;
+
+    #[method(name = "set_additionalVertexStreams", args = 1)]
+    pub fn set_additional_vertex_streams(self, value: crate::unity_engine::mesh::Mesh) -> ();
+
+    #[method(name = "get_enlightenVertexStream", args = 0)]
+    pub fn get_enlighten_vertex_stream(self) -> crate::unity_engine::mesh::Mesh;
+
+    #[method(name = "set_enlightenVertexStream", args = 1)]
+    pub fn set_enlighten_vertex_stream(self, value: crate::unity_engine::mesh::Mesh) -> ();
+
+    #[method(name = "get_subMeshStartIndex", args = 0)]
+    pub fn get_sub_mesh_start_index(self) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-meshrenderer")]
+impl MeshRenderer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MeshRenderer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMeshRendererMethods>::ctor(this);
+        this
+    }
+}

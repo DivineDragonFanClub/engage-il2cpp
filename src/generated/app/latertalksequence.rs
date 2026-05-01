@@ -1,0 +1,124 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/latertalksequence/LaterTalkSequence.md")))]
+#[::unity2::class(namespace = "App", name = "LaterTalkSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: latertalksequence :: LaterTalkSequence >)]
+pub struct LaterTalkSequence {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_BgmHeader")]
+    pub m_bgm_header: ::unity2::Il2CppString,
+    #[rename(name = "m_Locator")]
+    pub m_locator: crate::combat::basecombatlocation::BaseCombatLocation,
+    #[rename(name = "m_PrefabHandle")]
+    pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_Camera")]
+    pub m_camera: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_VolumeAlive")]
+    pub m_volume_alive: crate::unity_engine::rendering::volume::Volume,
+    #[rename(name = "m_VolumeDead")]
+    pub m_volume_dead: crate::unity_engine::rendering::volume::Volume,
+    #[rename(name = "m_GcMode")]
+    pub m_gc_mode: crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
+    #[static_field]
+    #[rename(name = "BgmBranch")]
+    pub bgm_branch: ::unity2::Il2CppString,
+    #[rename(name = "m_CurrentBg")]
+    pub m_current_bg: crate::app::resourcehandle_2::ResourceHandle_2,
+    #[rename(name = "m_NextBg")]
+    pub m_next_bg: crate::app::resourcehandle_2::ResourceHandle_2,
+    #[rename(name = "m_FadeInTime")]
+    pub m_fade_in_time: f32,
+    #[rename(name = "m_FadeOutTime")]
+    pub m_fade_out_time: f32,
+    #[rename(name = "m_CameraCtrls")]
+    pub m_camera_ctrls:
+        ::unity2::Array<crate::combat::cameracontrollerunitdetail::CameraControllerUnitDetail>,
+    #[rename(name = "m_DefaultSlipSlideScales")]
+    pub m_default_slip_slide_scales: ::unity2::Array<f32>,
+    #[rename(name = "m_SlideTime")]
+    pub m_slide_time: f32,
+    #[rename(name = "m_SlideStart")]
+    pub m_slide_start: f32,
+    #[rename(name = "m_SlideEnd")]
+    pub m_slide_end: f32,
+    #[rename(name = "m_Power")]
+    pub m_power: f32,
+}
+
+#[cfg(feature = "app-latertalksequence")]
+#[::unity2::methods]
+impl LaterTalkSequence {
+    #[method(name = "IsExist", args = 0)]
+    pub fn is_exist() -> bool;
+
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        bgm_header: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "get_Setter", args = 0)]
+    pub fn get_setter(self) -> crate::app::latertalksetter::LaterTalkSetter;
+
+    #[method(name = "set_Setter", args = 1)]
+    pub fn set_setter(self, value: crate::app::latertalksetter::LaterTalkSetter) -> ();
+
+    #[method(name = "PreSetup", args = 1)]
+    pub fn pre_setup(bgm_header: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "SetUp", args = 0)]
+    pub fn set_up(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "Unload", args = 0)]
+    pub fn unload(self) -> ();
+
+    #[method(name = "FadeIn", args = 0)]
+    pub fn fade_in(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "StartLoadNext", args = 0)]
+    pub fn start_load_next(self) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "FadeOut", args = 0)]
+    pub fn fade_out(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "StartSlideIn", args = 1)]
+    pub fn start_slide_in(self, time: f32) -> ();
+
+    #[method(name = "StartSlideOut", args = 1)]
+    pub fn start_slide_out(self, time: f32) -> ();
+
+    #[method(name = "Slide", args = 0)]
+    pub fn slide(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-latertalksequence")]
+impl LaterTalkSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LaterTalkSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILaterTalkSequenceMethods>::ctor(this);
+        this
+    }
+}

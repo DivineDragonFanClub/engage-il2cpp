@@ -1,0 +1,94 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/weaponflying/WeaponFlying.md")))]
+#[::unity2::class(namespace = "Combat", name = "WeaponFlying")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct WeaponFlying {
+    #[rename(name = "CP")]
+    pub cp: crate::combat::character::Character,
+    #[rename(name = "m_Rigidbody")]
+    pub m_rigidbody: crate::unity_engine::rigidbody::Rigidbody,
+    #[rename(name = "m_PrevPos")]
+    pub m_prev_pos: crate::unity_engine::vector3::Vector3,
+    #[static_field]
+    #[rename(name = "InitialLife")]
+    pub initial_life: f32,
+    #[rename(name = "m_TimeToHit")]
+    pub m_time_to_hit: f32,
+    #[rename(name = "m_Life")]
+    pub m_life: f32,
+    #[rename(name = "m_AngularVelocity")]
+    pub m_angular_velocity: f32,
+    #[rename(name = "m_TrailGO")]
+    pub m_trail_go: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "collided")]
+    pub collided: bool,
+    #[rename(name = "inWater")]
+    pub in_water: bool,
+}
+
+#[cfg(feature = "combat-weaponflying")]
+#[::unity2::methods]
+impl WeaponFlying {
+    #[method(name = "Initialize", args = 3)]
+    pub fn initialize(
+        self,
+        owner: crate::combat::character::Character,
+        para: crate::combat::parabola::Parabola,
+        angular_velocity: f32,
+    ) -> ();
+
+    #[method(name = "AttachTrailEffect", args = 2)]
+    pub fn attach_trail_effect(
+        self,
+        effect_prefab: crate::unity_engine::gameobject::GameObject,
+        node_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "HitAndDelete", args = 0)]
+    pub fn hit_and_delete(self) -> ();
+
+    #[method(name = "Drop", args = 0)]
+    pub fn drop(self) -> ();
+
+    #[method(name = "Knockoff", args = 1)]
+    pub fn knockoff(self, world_hit_dir: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "FadeoutTrailEffect", args = 1)]
+    pub fn fadeout_trail_effect(self, stop_and_clear: bool) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "OnCollisionEnter", args = 1)]
+    pub fn on_collision_enter(self, collision: crate::unity_engine::collision::Collision) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-weaponflying")]
+impl WeaponFlying {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponFlying),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponFlyingMethods>::ctor(this);
+        this
+    }
+}

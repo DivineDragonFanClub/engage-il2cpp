@@ -1,0 +1,73 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eatunitsselectmenureliancelistcontent/EatUnitsSelectMenuRelianceListContent.md")))]
+#[::unity2::class(namespace = "App", name = "EatUnitsSelectMenuRelianceListContent")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct EatUnitsSelectMenuRelianceListContent {
+    #[rename(name = "m_UnitIcon")]
+    pub m_unit_icon: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_RankObject")]
+    pub m_rank_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_C_Object")]
+    pub m_c_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_B_Object")]
+    pub m_b_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_A_Object")]
+    pub m_a_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_S_Object")]
+    pub m_s_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_NoneObject")]
+    pub m_none_object: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-eatunitsselectmenureliancelistcontent")]
+#[::unity2::methods]
+impl EatUnitsSelectMenuRelianceListContent {
+    #[method(name = "SetInfo", args = 2)]
+    pub fn set_info(self, unit_a: crate::app::unit::Unit, unit_b: crate::app::unit::Unit) -> ();
+
+    #[method(name = "SetRelianceInfo", args = 2)]
+    pub fn set_reliance_info(
+        self,
+        unit_a: crate::app::unit::Unit,
+        unit_b: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "SetColor", args = 2)]
+    pub fn set_color(
+        self,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-eatunitsselectmenureliancelistcontent")]
+impl EatUnitsSelectMenuRelianceListContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EatUnitsSelectMenuRelianceListContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEatUnitsSelectMenuRelianceListContentMethods>::ctor(this);
+        this
+    }
+}

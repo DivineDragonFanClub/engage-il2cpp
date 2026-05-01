@@ -1,0 +1,79 @@
+
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ranking/Ranking.md")))]
+#[::unity2::class(namespace = "App", name = "Ranking")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: ranking :: Ranking >)]
+pub struct Ranking {
+    #[static_field]
+    #[rename(name = "MaxPersonCount")]
+    pub max_person_count: i32,
+    #[static_field]
+    #[rename(name = "MaxGodCount")]
+    pub max_god_count: i32,
+    #[static_field]
+    #[rename(name = "MaxRankingCount")]
+    pub max_ranking_count: i32,
+    #[rename(name = "m_RankingData")]
+    pub m_ranking_data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+}
+
+#[cfg(feature = "app-ranking")]
+#[::unity2::methods]
+impl Ranking {
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "Download", args = 2)]
+    pub fn download(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        cid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "Upload", args = 3)]
+    pub fn upload(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        cid: ::unity2::Il2CppString,
+        pairs: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+    ) -> ();
+
+    #[method(name = "GetRankingData", args = 0)]
+    pub fn get_ranking_data(self) -> ::unity2::Array<crate::app::nexranking::NexRanking_Data>;
+
+    #[method(name = "GetPersonDataByNetRankingIndex", args = 1)]
+    pub fn get_person_data_by_net_ranking_index(
+        net_ranking_index: i32,
+    ) -> crate::app::persondata::PersonData;
+
+    #[method(name = "GetGodDataByNetRankingIndex", args = 1)]
+    pub fn get_god_data_by_net_ranking_index(
+        net_ranking_index: i32,
+    ) -> crate::app::goddata::GodData;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ranking")]
+impl Ranking {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Ranking),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingMethods>::ctor(this);
+        this
+    }
+}

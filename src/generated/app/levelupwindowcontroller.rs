@@ -1,0 +1,114 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/levelupwindowcontroller/LevelUpWindowController.md")))]
+#[::unity2::class(namespace = "App", name = "LevelUpWindowController")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct LevelUpWindowController {
+    #[rename(name = "m_CharaName")]
+    pub m_chara_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TitleLevel")]
+    pub m_title_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Level")]
+    pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Job")]
+    pub m_job: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ParameterMax")]
+    pub m_parameter_max: i32,
+    #[rename(name = "m_Hp")]
+    pub m_hp: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Str")]
+    pub m_str: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Magic")]
+    pub m_magic: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Tech")]
+    pub m_tech: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Quick")]
+    pub m_quick: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Def")]
+    pub m_def: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Mdef")]
+    pub m_mdef: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Luck")]
+    pub m_luck: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Phys")]
+    pub m_phys: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Sight")]
+    pub m_sight: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Move")]
+    pub m_move: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ArrowUp")]
+    pub m_arrow_up: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_ArrowDown")]
+    pub m_arrow_down: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_FrameUp")]
+    pub m_frame_up: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_FrameDown")]
+    pub m_frame_down: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_ParamObjectArray")]
+    pub m_param_object_array: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+}
+
+#[cfg(feature = "app-levelupwindowcontroller")]
+#[::unity2::methods]
+impl LevelUpWindowController {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "GetValueTextMesh", args = 1)]
+    pub fn get_value_text_mesh(
+        self,
+        param_root: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI;
+
+    #[method(name = "StartAnime", args = 1)]
+    pub fn start_anime(self, param_root: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "SetupParams", args = 2)]
+    pub fn setup_params(self, unit: crate::app::unit::Unit, next: crate::app::unit::Unit) -> ();
+
+    #[method(name = "ChangeParam", args = 3)]
+    pub fn change_param(
+        self,
+        r#type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
+        change: i32,
+        new_value: i32,
+    ) -> ();
+
+    #[method(name = "OutAnime", args = 0)]
+    pub fn out_anime(self) -> ();
+
+    #[method(name = "IsAnimation", args = 0)]
+    pub fn is_animation(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-levelupwindowcontroller")]
+impl LevelUpWindowController {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LevelUpWindowController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILevelUpWindowControllerMethods>::ctor(this);
+        this
+    }
+}

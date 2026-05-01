@@ -1,0 +1,93 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::timeline::runtimeclipbase::IRuntimeClipBase;
+use crate::unity_engine::timeline::runtimeclipbase::RuntimeClipBase;
+use crate::unity_engine::timeline::runtimeelement::IRuntimeElement;
+use crate::unity_engine::timeline::runtimeelement::RuntimeElement;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/runtimeclip/RuntimeClip.md")))]
+#[::unity2::class(namespace = "UnityEngine.Timeline", name = "RuntimeClip")]
+#[parent(crate::unity_engine::timeline::runtimeclipbase::RuntimeClipBase)]
+pub struct RuntimeClip {
+    #[rename(name = "m_Clip")]
+    pub m_clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
+    #[rename(name = "m_Playable")]
+    pub m_playable: crate::unity_engine::playables::playable::Playable,
+    #[rename(name = "m_ParentMixer")]
+    pub m_parent_mixer: crate::unity_engine::playables::playable::Playable,
+}
+
+#[cfg(feature = "unity_engine-timeline-runtimeclip")]
+#[::unity2::methods]
+impl RuntimeClip {
+    #[method(name = "get_start", args = 0)]
+    pub fn get_start(self) -> f64;
+
+    #[method(name = "get_duration", args = 0)]
+    pub fn get_duration(self) -> f64;
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
+        clip_playable: crate::unity_engine::playables::playable::Playable,
+        parent_mixer: crate::unity_engine::playables::playable::Playable,
+    ) -> ();
+
+    #[method(name = "Create", args = 3)]
+    pub fn create(
+        self,
+        clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
+        clip_playable: crate::unity_engine::playables::playable::Playable,
+        parent_mixer: crate::unity_engine::playables::playable::Playable,
+    ) -> ();
+
+    #[method(name = "get_clip", args = 0)]
+    pub fn get_clip(self) -> crate::unity_engine::timeline::timelineclip::TimelineClip;
+
+    #[method(name = "get_mixer", args = 0)]
+    pub fn get_mixer(self) -> crate::unity_engine::playables::playable::Playable;
+
+    #[method(name = "get_playable", args = 0)]
+    pub fn get_playable(self) -> crate::unity_engine::playables::playable::Playable;
+
+    #[method(name = "set_enable", args = 1)]
+    pub fn set_enable(self, value: bool) -> ();
+
+    #[method(name = "SetTime", args = 1)]
+    pub fn set_time(self, time: f64) -> ();
+
+    #[method(name = "SetDuration", args = 1)]
+    pub fn set_duration(self, duration: f64) -> ();
+
+    #[method(name = "EvaluateAt", args = 2)]
+    pub fn evaluate_at(
+        self,
+        local_time: f64,
+        frame_data: crate::unity_engine::playables::framedata::FrameData,
+    ) -> ();
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-timeline-runtimeclip")]
+impl RuntimeClip {
+    pub fn new(
+        clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
+        clip_playable: crate::unity_engine::playables::playable::Playable,
+        parent_mixer: crate::unity_engine::playables::playable::Playable,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RuntimeClip),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRuntimeClipMethods>::ctor(this, clip, clip_playable, parent_mixer);
+        this
+    }
+}

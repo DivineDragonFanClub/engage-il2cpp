@@ -1,0 +1,64 @@
+
+use crate::app::basicdialogcontent::BasicDialogContent;
+use crate::app::basicdialogcontent::IBasicDialogContent;
+use crate::app::basicmenucontent::BasicMenuContent;
+use crate::app::basicmenucontent::IBasicMenuContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/namecheckdialogcontent/NameCheckDialogContent.md")))]
+#[::unity2::class(namespace = "App", name = "NameCheckDialogContent")]
+#[parent(crate::app::basicdialogcontent::BasicDialogContent)]
+pub struct NameCheckDialogContent {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_InputName")]
+    pub m_input_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-namecheckdialogcontent")]
+#[::unity2::methods]
+impl NameCheckDialogContent {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "Create", args = 0)]
+    pub fn create() -> crate::app::namecheckdialogcontent::NameCheckDialogContent;
+
+    #[method(name = "CalcCursorMovedPosX", args = 1)]
+    pub fn calc_cursor_moved_pos_x(self, menu_item_index: i32) -> f32;
+
+    #[method(name = "SetInputName", args = 1)]
+    pub fn set_input_name(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-namecheckdialogcontent")]
+impl NameCheckDialogContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NameCheckDialogContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INameCheckDialogContentMethods>::ctor(this);
+        this
+    }
+}

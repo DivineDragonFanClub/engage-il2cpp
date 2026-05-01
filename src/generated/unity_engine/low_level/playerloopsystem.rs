@@ -1,0 +1,84 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem_UpdateFunction.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.LowLevel",
+    name = "PlayerLoopSystem.UpdateFunction"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct PlayerLoopSystem_UpdateFunction {}
+
+#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
+#[::unity2::methods]
+impl PlayerLoopSystem_UpdateFunction {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
+impl PlayerLoopSystem_UpdateFunction {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PlayerLoopSystem_UpdateFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPlayerLoopSystem_UpdateFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct PlayerLoopSystem {
+    pub r#type: ::unity2::SystemType,
+    pub sub_system_list:
+        ::unity2::Array<crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem>,
+    pub update_delegate:
+        crate::unity_engine::low_level::playerloopsystem::PlayerLoopSystem_UpdateFunction,
+    pub update_function: ::unity2::IntPtr,
+    pub loop_condition_function: ::unity2::IntPtr,
+}
+
+impl ::unity2::ClassIdentity for PlayerLoopSystem {
+    const NAMESPACE: &'static str = "UnityEngine.LowLevel";
+
+    const NAME: &'static str = "PlayerLoopSystem";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PlayerLoopSystem {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
+#[::unity2::methods(value)]
+impl PlayerLoopSystem {
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}

@@ -1,0 +1,57 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/corematrixutils/CoreMatrixUtils.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "CoreMatrixUtils")]
+#[parent(crate::system::object::Object)]
+pub struct CoreMatrixUtils {}
+
+#[cfg(feature = "unity_engine-rendering-corematrixutils")]
+#[::unity2::methods]
+impl CoreMatrixUtils {
+    #[method(name = "MatrixTimesTranslation", args = 2)]
+    pub fn matrix_times_translation(
+        in_out_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+        translation: crate::unity_engine::vector3::Vector3,
+    ) -> ();
+
+    #[method(name = "TranslationTimesMatrix", args = 2)]
+    pub fn translation_times_matrix(
+        in_out_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+        translation: crate::unity_engine::vector3::Vector3,
+    ) -> ();
+
+    #[method(name = "MultiplyPerspectiveMatrix", args = 2)]
+    pub fn multiply_perspective_matrix(
+        perspective: crate::unity_engine::matrix4x4::Matrix4x4,
+        rhs: crate::unity_engine::matrix4x4::Matrix4x4,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4;
+
+    #[method(name = "MultiplyOrthoMatrixCentered", args = 2)]
+    pub fn multiply_ortho_matrix_centered(
+        ortho: crate::unity_engine::matrix4x4::Matrix4x4,
+        rhs: crate::unity_engine::matrix4x4::Matrix4x4,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4;
+
+    #[method(name = "MultiplyGenericOrthoMatrix", args = 2)]
+    pub fn multiply_generic_ortho_matrix(
+        ortho: crate::unity_engine::matrix4x4::Matrix4x4,
+        rhs: crate::unity_engine::matrix4x4::Matrix4x4,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4;
+
+    #[method(name = "MultiplyOrthoMatrix", args = 3)]
+    pub fn multiply_ortho_matrix(
+        ortho: crate::unity_engine::matrix4x4::Matrix4x4,
+        rhs: crate::unity_engine::matrix4x4::Matrix4x4,
+        centered: bool,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4;
+
+    #[method(name = "MultiplyProjectionMatrix", args = 3)]
+    pub fn multiply_projection_matrix(
+        proj_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+        rhs: crate::unity_engine::matrix4x4::Matrix4x4,
+        ortho_centered: bool,
+    ) -> crate::unity_engine::matrix4x4::Matrix4x4;
+}

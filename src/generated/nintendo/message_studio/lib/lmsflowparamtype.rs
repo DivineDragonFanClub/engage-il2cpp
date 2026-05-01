@@ -1,0 +1,76 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/nintendo/message_studio/lib/lmsflowparamtype/LMSFlowParamType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct LMSFlowParamType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for LMSFlowParamType {
+    const NAMESPACE: &'static str = "Nintendo.MessageStudio.Lib";
+
+    const NAME: &'static str = "LMSFlowParamType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for LMSFlowParamType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl LMSFlowParamType {
+    pub fn b4() -> Self {
+        Self { value: 50462976 }
+    }
+
+    pub fn b22() -> Self {
+        Self { value: 67305985 }
+    }
+
+    pub fn b211() -> Self {
+        Self { value: 84148994 }
+    }
+
+    pub fn b112() -> Self {
+        Self { value: 100992003 }
+    }
+
+    pub fn b1111() -> Self {
+        Self { value: -16382716 }
+    }
+
+    pub fn text() -> Self {
+        Self { value: 184485381 }
+    }
+
+    pub fn list() -> Self {
+        Self { value: 720646 }
+    }
+
+    pub fn unknown() -> Self {
+        Self { value: 2815 }
+    }
+}

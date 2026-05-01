@@ -1,0 +1,136 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterassett_1/CharacterAssetT_1.md")))]
+#[::unity2::class(namespace = "Combat", name = "CharacterAssetT`1")]
+pub struct CharacterAssetT_1<T0: ::unity2::ClassIdentity> {
+    #[static_field]
+    #[rename(name = "TotalAllocCount")]
+    pub total_alloc_count: i32,
+    #[rename(name = "m_FileHandle")]
+    pub m_file_handle: crate::app::tresourcehandle_1::TResourceHandle_1<T0>,
+    #[rename(name = "m_Object")]
+    pub m_object: T0,
+    #[rename(name = "m_InstancedObject")]
+    pub m_instanced_object: T0,
+}
+
+#[cfg(feature = "combat-characterassett_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> CharacterAssetT_1<T0> {
+    #[method(name = "get_DebuggerDisplay", args = 0)]
+    pub fn get_debugger_display(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(a: crate::combat::characterassett_1::CharacterAssetT_1<T0>) -> bool;
+
+    #[method(name = "get_AssetType", args = 0)]
+    pub fn get_asset_type(self) -> crate::combat::assettype::AssetType;
+
+    #[method(name = "set_AssetType", args = 1)]
+    pub fn set_asset_type(self, value: crate::combat::assettype::AssetType) -> ();
+
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_m_AddrPath", args = 0)]
+    pub fn get_m_addr_path(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_m_AddrPath", args = 1)]
+    pub fn set_m_addr_path(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_AddressablesPath", args = 0)]
+    pub fn get_addressables_path(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_Asset", args = 0)]
+    pub fn get_asset(self) -> T0;
+
+    #[method(name = "get_Instanced", args = 0)]
+    pub fn get_instanced(self) -> T0;
+
+    #[method(name = "Instantiate", args = 1)]
+    pub fn instantiate(self, parent: crate::unity_engine::transform::Transform) -> T0;
+
+    #[method(name = "IsReady", args = 0)]
+    pub fn is_ready(self) -> bool;
+
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading(self) -> bool;
+
+    #[method(name = "get_InstanceAsGo", args = 0)]
+    pub fn get_instance_as_go(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, asset_type: crate::combat::assettype::AssetType) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_3(self, rhs: crate::combat::characterassett_1::CharacterAssetT_1<T0>) -> ();
+
+    #[method(name = "Finalize", args = 0)]
+    pub fn finalize(self) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "get_IsLoadable", args = 0)]
+    pub fn get_is_loadable(self) -> bool;
+
+    #[method(name = "LoadAsync", args = 1)]
+    pub fn load_async(self, callback: crate::system::action::Action) -> ();
+
+    #[method(name = "FileExists", args = 0)]
+    pub fn file_exists(self) -> bool;
+
+    #[method(name = "LoadForEditor", args = 0)]
+    pub fn load_for_editor(self) -> ();
+
+    #[method(name = "Replace", args = 2)]
+    pub fn replace(self, name: ::unity2::Il2CppString, asset: T0) -> ();
+}
+
+#[cfg(feature = "combat-characterassett_1")]
+impl<T0: ::unity2::ClassIdentity> CharacterAssetT_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterAssetT_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharacterAssetT_1Methods<T0>>::ctor(this);
+        this
+    }
+
+    pub fn new_2(asset_type: crate::combat::assettype::AssetType) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterAssetT_1),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ICharacterAssetT_1Methods<T0>>::ctor_2(this, asset_type);
+        this
+    }
+
+    pub fn new_3(rhs: crate::combat::characterassett_1::CharacterAssetT_1<T0>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterAssetT_1),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as ICharacterAssetT_1Methods<T0>>::ctor_3(this, rhs);
+        this
+    }
+}

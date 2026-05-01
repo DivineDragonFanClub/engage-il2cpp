@@ -1,0 +1,2017 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::ui::graphic::Graphic;
+use crate::unity_engine::ui::graphic::IGraphic;
+use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
+use crate::unity_engine::ui::maskablegraphic::MaskableGraphic;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextBackingContainer.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TMP_Text_TextBackingContainer {
+    pub m_array: ::unity2::Array<u32>,
+    pub m_count: i32,
+}
+
+impl ::unity2::ClassIdentity for TMP_Text_TextBackingContainer {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_Text.TextBackingContainer";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_Text_TextBackingContainer {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+#[::unity2::methods(value)]
+impl TMP_Text_TextBackingContainer {
+    #[method(name = "get_Capacity", args = 0)]
+    pub fn get_capacity(self) -> i32;
+
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[method(name = "set_Count", args = 1)]
+    pub fn set_count(self, value: i32) -> ();
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, index: i32) -> u32;
+
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(self, index: i32, value: u32) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, size: i32) -> ();
+
+    #[method(name = "Resize", args = 1)]
+    pub fn resize(self, size: i32) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextInputSources.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TMP_Text_TextInputSources {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TMP_Text_TextInputSources {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_Text.TextInputSources";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_Text_TextInputSources {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TMP_Text_TextInputSources {
+    pub fn text_input_box() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn set_text() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn set_text_array() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn text_string() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_Text")]
+#[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
+pub struct TMP_Text {
+    #[rename(name = "m_text")]
+    pub m_text: ::unity2::Il2CppString,
+    #[rename(name = "m_IsTextBackingStringDirty")]
+    pub m_is_text_backing_string_dirty: bool,
+    #[rename(name = "m_TextPreprocessor")]
+    pub m_text_preprocessor: crate::tm_pro::itextpreprocessor::ITextPreprocessor,
+    #[rename(name = "m_isRightToLeft")]
+    pub m_is_right_to_left: bool,
+    #[rename(name = "m_fontAsset")]
+    pub m_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+    #[rename(name = "m_currentFontAsset")]
+    pub m_current_font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+    #[rename(name = "m_isSDFShader")]
+    pub m_is_sdf_shader: bool,
+    #[rename(name = "m_sharedMaterial")]
+    pub m_shared_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_currentMaterial")]
+    pub m_current_material: crate::unity_engine::material::Material,
+    #[static_field]
+    #[rename(name = "m_materialReferences")]
+    pub m_material_references: ::unity2::Array<crate::tm_pro::materialreference::MaterialReference>,
+    #[static_field]
+    #[rename(name = "m_materialReferenceIndexLookup")]
+    pub m_material_reference_index_lookup:
+        crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
+    #[static_field]
+    #[rename(name = "m_materialReferenceStack")]
+    pub m_material_reference_stack:
+        crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
+            crate::tm_pro::materialreference::MaterialReference,
+        >,
+    #[rename(name = "m_currentMaterialIndex")]
+    pub m_current_material_index: i32,
+    #[rename(name = "m_fontSharedMaterials")]
+    pub m_font_shared_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+    #[rename(name = "m_fontMaterial")]
+    pub m_font_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_fontMaterials")]
+    pub m_font_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+    #[rename(name = "m_isMaterialDirty")]
+    pub m_is_material_dirty: bool,
+    #[rename(name = "m_fontColor32")]
+    pub m_font_color32: crate::unity_engine::color32::Color32,
+    #[rename(name = "m_fontColor")]
+    pub m_font_color: crate::unity_engine::color::Color,
+    #[static_field]
+    #[rename(name = "s_colorWhite")]
+    pub s_color_white: crate::unity_engine::color32::Color32,
+    #[rename(name = "m_underlineColor")]
+    pub m_underline_color: crate::unity_engine::color32::Color32,
+    #[rename(name = "m_strikethroughColor")]
+    pub m_strikethrough_color: crate::unity_engine::color32::Color32,
+    #[rename(name = "m_enableVertexGradient")]
+    pub m_enable_vertex_gradient: bool,
+    #[rename(name = "m_colorMode")]
+    pub m_color_mode: crate::tm_pro::colormode::ColorMode,
+    #[rename(name = "m_fontColorGradient")]
+    pub m_font_color_gradient: crate::tm_pro::vertexgradient::VertexGradient,
+    #[rename(name = "m_fontColorGradientPreset")]
+    pub m_font_color_gradient_preset: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+    #[rename(name = "m_spriteAsset")]
+    pub m_sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+    #[rename(name = "m_tintAllSprites")]
+    pub m_tint_all_sprites: bool,
+    #[rename(name = "m_tintSprite")]
+    pub m_tint_sprite: bool,
+    #[rename(name = "m_spriteColor")]
+    pub m_sprite_color: crate::unity_engine::color32::Color32,
+    #[rename(name = "m_StyleSheet")]
+    pub m_style_sheet: crate::tm_pro::tmp_stylesheet::TMP_StyleSheet,
+    #[rename(name = "m_TextStyle")]
+    pub m_text_style: crate::tm_pro::tmp_style::TMP_Style,
+    #[rename(name = "m_TextStyleHashCode")]
+    pub m_text_style_hash_code: i32,
+    #[rename(name = "m_overrideHtmlColors")]
+    pub m_override_html_colors: bool,
+    #[rename(name = "m_faceColor")]
+    pub m_face_color: crate::unity_engine::color32::Color32,
+    #[rename(name = "m_outlineColor")]
+    pub m_outline_color: crate::unity_engine::color32::Color32,
+    #[rename(name = "m_outlineWidth")]
+    pub m_outline_width: f32,
+    #[rename(name = "m_fontSize")]
+    pub m_font_size: f32,
+    #[rename(name = "m_currentFontSize")]
+    pub m_current_font_size: f32,
+    #[rename(name = "m_fontSizeBase")]
+    pub m_font_size_base: f32,
+    #[rename(name = "m_sizeStack")]
+    pub m_size_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32>,
+    #[rename(name = "m_fontWeight")]
+    pub m_font_weight: crate::tm_pro::fontweight::FontWeight,
+    #[rename(name = "m_FontWeightInternal")]
+    pub m_font_weight_internal: crate::tm_pro::fontweight::FontWeight,
+    #[rename(name = "m_FontWeightStack")]
+    pub m_font_weight_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
+        crate::tm_pro::fontweight::FontWeight,
+    >,
+    #[rename(name = "m_enableAutoSizing")]
+    pub m_enable_auto_sizing: bool,
+    #[rename(name = "m_maxFontSize")]
+    pub m_max_font_size: f32,
+    #[rename(name = "m_minFontSize")]
+    pub m_min_font_size: f32,
+    #[rename(name = "m_AutoSizeIterationCount")]
+    pub m_auto_size_iteration_count: i32,
+    #[rename(name = "m_AutoSizeMaxIterationCount")]
+    pub m_auto_size_max_iteration_count: i32,
+    #[rename(name = "m_IsAutoSizePointSizeSet")]
+    pub m_is_auto_size_point_size_set: bool,
+    #[rename(name = "m_fontSizeMin")]
+    pub m_font_size_min: f32,
+    #[rename(name = "m_fontSizeMax")]
+    pub m_font_size_max: f32,
+    #[rename(name = "m_fontStyle")]
+    pub m_font_style: crate::tm_pro::fontstyles::FontStyles,
+    #[rename(name = "m_FontStyleInternal")]
+    pub m_font_style_internal: crate::tm_pro::fontstyles::FontStyles,
+    #[rename(name = "m_fontStyleStack")]
+    pub m_font_style_stack: crate::tm_pro::tmp_fontstylestack::TMP_FontStyleStack,
+    #[rename(name = "m_isUsingBold")]
+    pub m_is_using_bold: bool,
+    #[rename(name = "m_HorizontalAlignment")]
+    pub m_horizontal_alignment:
+        crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
+    #[rename(name = "m_VerticalAlignment")]
+    pub m_vertical_alignment: crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions,
+    #[rename(name = "m_textAlignment")]
+    pub m_text_alignment: crate::tm_pro::textalignmentoptions::TextAlignmentOptions,
+    #[rename(name = "m_lineJustification")]
+    pub m_line_justification: crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
+    #[rename(name = "m_lineJustificationStack")]
+    pub m_line_justification_stack:
+        crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
+            crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
+        >,
+    #[rename(name = "m_textContainerLocalCorners")]
+    pub m_text_container_local_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+    #[rename(name = "m_characterSpacing")]
+    pub m_character_spacing: f32,
+    #[rename(name = "m_cSpacing")]
+    pub m_c_spacing: f32,
+    #[rename(name = "m_monoSpacing")]
+    pub m_mono_spacing: f32,
+    #[rename(name = "m_wordSpacing")]
+    pub m_word_spacing: f32,
+    #[rename(name = "m_lineSpacing")]
+    pub m_line_spacing: f32,
+    #[rename(name = "m_lineSpacingDelta")]
+    pub m_line_spacing_delta: f32,
+    #[rename(name = "m_lineHeight")]
+    pub m_line_height: f32,
+    #[rename(name = "m_IsDrivenLineSpacing")]
+    pub m_is_driven_line_spacing: bool,
+    #[rename(name = "m_lineSpacingMax")]
+    pub m_line_spacing_max: f32,
+    #[rename(name = "m_paragraphSpacing")]
+    pub m_paragraph_spacing: f32,
+    #[rename(name = "m_charWidthMaxAdj")]
+    pub m_char_width_max_adj: f32,
+    #[rename(name = "m_charWidthAdjDelta")]
+    pub m_char_width_adj_delta: f32,
+    #[rename(name = "m_enableWordWrapping")]
+    pub m_enable_word_wrapping: bool,
+    #[rename(name = "m_isCharacterWrappingEnabled")]
+    pub m_is_character_wrapping_enabled: bool,
+    #[rename(name = "m_isNonBreakingSpace")]
+    pub m_is_non_breaking_space: bool,
+    #[rename(name = "m_isIgnoringAlignment")]
+    pub m_is_ignoring_alignment: bool,
+    #[rename(name = "m_wordWrappingRatios")]
+    pub m_word_wrapping_ratios: f32,
+    #[rename(name = "m_overflowMode")]
+    pub m_overflow_mode: crate::tm_pro::textoverflowmodes::TextOverflowModes,
+    #[rename(name = "m_firstOverflowCharacterIndex")]
+    pub m_first_overflow_character_index: i32,
+    #[rename(name = "m_linkedTextComponent")]
+    pub m_linked_text_component: crate::tm_pro::tmp_text::TMP_Text,
+    #[rename(name = "parentLinkedComponent")]
+    pub parent_linked_component: crate::tm_pro::tmp_text::TMP_Text,
+    #[rename(name = "m_isTextTruncated")]
+    pub m_is_text_truncated: bool,
+    #[rename(name = "m_enableKerning")]
+    pub m_enable_kerning: bool,
+    #[rename(name = "m_GlyphHorizontalAdvanceAdjustment")]
+    pub m_glyph_horizontal_advance_adjustment: f32,
+    #[rename(name = "m_enableExtraPadding")]
+    pub m_enable_extra_padding: bool,
+    #[rename(name = "checkPaddingRequired")]
+    pub check_padding_required: bool,
+    #[rename(name = "m_isRichText")]
+    pub m_is_rich_text: bool,
+    #[rename(name = "m_parseCtrlCharacters")]
+    pub m_parse_ctrl_characters: bool,
+    #[rename(name = "m_isOverlay")]
+    pub m_is_overlay: bool,
+    #[rename(name = "m_isOrthographic")]
+    pub m_is_orthographic: bool,
+    #[rename(name = "m_isCullingEnabled")]
+    pub m_is_culling_enabled: bool,
+    #[rename(name = "m_isMaskingEnabled")]
+    pub m_is_masking_enabled: bool,
+    #[rename(name = "isMaskUpdateRequired")]
+    pub is_mask_update_required: bool,
+    #[rename(name = "m_ignoreCulling")]
+    pub m_ignore_culling: bool,
+    #[rename(name = "m_horizontalMapping")]
+    pub m_horizontal_mapping: crate::tm_pro::texturemappingoptions::TextureMappingOptions,
+    #[rename(name = "m_verticalMapping")]
+    pub m_vertical_mapping: crate::tm_pro::texturemappingoptions::TextureMappingOptions,
+    #[rename(name = "m_uvLineOffset")]
+    pub m_uv_line_offset: f32,
+    #[rename(name = "m_renderMode")]
+    pub m_render_mode: crate::tm_pro::textrenderflags::TextRenderFlags,
+    #[rename(name = "m_geometrySortingOrder")]
+    pub m_geometry_sorting_order: crate::tm_pro::vertexsortingorder::VertexSortingOrder,
+    #[rename(name = "m_IsTextObjectScaleStatic")]
+    pub m_is_text_object_scale_static: bool,
+    #[rename(name = "m_VertexBufferAutoSizeReduction")]
+    pub m_vertex_buffer_auto_size_reduction: bool,
+    #[rename(name = "m_firstVisibleCharacter")]
+    pub m_first_visible_character: i32,
+    #[rename(name = "m_maxVisibleCharacters")]
+    pub m_max_visible_characters: i32,
+    #[rename(name = "m_maxVisibleWords")]
+    pub m_max_visible_words: i32,
+    #[rename(name = "m_maxVisibleLines")]
+    pub m_max_visible_lines: i32,
+    #[rename(name = "m_useMaxVisibleDescender")]
+    pub m_use_max_visible_descender: bool,
+    #[rename(name = "m_pageToDisplay")]
+    pub m_page_to_display: i32,
+    #[rename(name = "m_isNewPage")]
+    pub m_is_new_page: bool,
+    #[rename(name = "m_margin")]
+    pub m_margin: crate::unity_engine::vector4::Vector4,
+    #[rename(name = "m_marginLeft")]
+    pub m_margin_left: f32,
+    #[rename(name = "m_marginRight")]
+    pub m_margin_right: f32,
+    #[rename(name = "m_marginWidth")]
+    pub m_margin_width: f32,
+    #[rename(name = "m_marginHeight")]
+    pub m_margin_height: f32,
+    #[rename(name = "m_width")]
+    pub m_width: f32,
+    #[rename(name = "m_textInfo")]
+    pub m_text_info: crate::tm_pro::tmp_textinfo::TMP_TextInfo,
+    #[rename(name = "m_havePropertiesChanged")]
+    pub m_have_properties_changed: bool,
+    #[rename(name = "m_isUsingLegacyAnimationComponent")]
+    pub m_is_using_legacy_animation_component: bool,
+    #[rename(name = "m_transform")]
+    pub m_transform: crate::unity_engine::transform::Transform,
+    #[rename(name = "m_rectTransform")]
+    pub m_rect_transform: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_PreviousRectTransformSize")]
+    pub m_previous_rect_transform_size: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_PreviousPivotPosition")]
+    pub m_previous_pivot_position: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_autoSizeTextContainer")]
+    pub m_auto_size_text_container: bool,
+    #[rename(name = "m_mesh")]
+    pub m_mesh: crate::unity_engine::mesh::Mesh,
+    #[rename(name = "m_isVolumetricText")]
+    pub m_is_volumetric_text: bool,
+    #[static_field]
+    #[rename(name = "OnFontAssetRequest")]
+    pub on_font_asset_request: crate::system::func_3::Func_3<
+        i32,
+        ::unity2::Il2CppString,
+        crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+    >,
+    #[static_field]
+    #[rename(name = "OnSpriteAssetRequest")]
+    pub on_sprite_asset_request: crate::system::func_3::Func_3<
+        i32,
+        ::unity2::Il2CppString,
+        crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+    >,
+    #[rename(name = "OnPreRenderText")]
+    pub on_pre_render_text:
+        crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
+    #[rename(name = "m_spriteAnimator")]
+    pub m_sprite_animator: crate::tm_pro::tmp_spriteanimator::TMP_SpriteAnimator,
+    #[rename(name = "m_flexibleHeight")]
+    pub m_flexible_height: f32,
+    #[rename(name = "m_flexibleWidth")]
+    pub m_flexible_width: f32,
+    #[rename(name = "m_minWidth")]
+    pub m_min_width: f32,
+    #[rename(name = "m_minHeight")]
+    pub m_min_height: f32,
+    #[rename(name = "m_maxWidth")]
+    pub m_max_width: f32,
+    #[rename(name = "m_maxHeight")]
+    pub m_max_height: f32,
+    #[rename(name = "m_LayoutElement")]
+    pub m_layout_element: crate::unity_engine::ui::layoutelement::LayoutElement,
+    #[rename(name = "m_preferredWidth")]
+    pub m_preferred_width: f32,
+    #[rename(name = "m_renderedWidth")]
+    pub m_rendered_width: f32,
+    #[rename(name = "m_isPreferredWidthDirty")]
+    pub m_is_preferred_width_dirty: bool,
+    #[rename(name = "m_preferredHeight")]
+    pub m_preferred_height: f32,
+    #[rename(name = "m_renderedHeight")]
+    pub m_rendered_height: f32,
+    #[rename(name = "m_isPreferredHeightDirty")]
+    pub m_is_preferred_height_dirty: bool,
+    #[rename(name = "m_isCalculatingPreferredValues")]
+    pub m_is_calculating_preferred_values: bool,
+    #[rename(name = "m_layoutPriority")]
+    pub m_layout_priority: i32,
+    #[rename(name = "m_isLayoutDirty")]
+    pub m_is_layout_dirty: bool,
+    #[rename(name = "m_isAwake")]
+    pub m_is_awake: bool,
+    #[rename(name = "m_isWaitingOnResourceLoad")]
+    pub m_is_waiting_on_resource_load: bool,
+    #[rename(name = "m_inputSource")]
+    pub m_input_source: crate::tm_pro::tmp_text::TMP_Text_TextInputSources,
+    #[rename(name = "m_fontScaleMultiplier")]
+    pub m_font_scale_multiplier: f32,
+    #[static_field]
+    #[rename(name = "m_htmlTag")]
+    pub m_html_tag: ::unity2::Array<u16>,
+    #[static_field]
+    #[rename(name = "m_xmlAttribute")]
+    pub m_xml_attribute: ::unity2::Array<crate::tm_pro::richtexttagattribute::RichTextTagAttribute>,
+    #[static_field]
+    #[rename(name = "m_attributeParameterValues")]
+    pub m_attribute_parameter_values: ::unity2::Array<f32>,
+    #[rename(name = "tag_LineIndent")]
+    pub tag_line_indent: f32,
+    #[rename(name = "tag_Indent")]
+    pub tag_indent: f32,
+    #[rename(name = "m_indentStack")]
+    pub m_indent_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32>,
+    #[rename(name = "tag_NoParsing")]
+    pub tag_no_parsing: bool,
+    #[rename(name = "m_isParsingText")]
+    pub m_is_parsing_text: bool,
+    #[rename(name = "m_FXMatrix")]
+    pub m_fx_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+    #[rename(name = "m_isFXMatrixSet")]
+    pub m_is_fx_matrix_set: bool,
+    #[rename(name = "m_TextProcessingArray")]
+    pub m_text_processing_array: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+    #[rename(name = "m_InternalTextProcessingArraySize")]
+    pub m_internal_text_processing_array_size: i32,
+    #[rename(name = "m_internalCharacterInfo")]
+    pub m_internal_character_info:
+        ::unity2::Array<crate::tm_pro::tmp_characterinfo::TMP_CharacterInfo>,
+    #[rename(name = "m_totalCharacterCount")]
+    pub m_total_character_count: i32,
+    #[static_field]
+    #[rename(name = "m_SavedWordWrapState")]
+    pub m_saved_word_wrap_state: crate::tm_pro::wordwrapstate::WordWrapState,
+    #[static_field]
+    #[rename(name = "m_SavedLineState")]
+    pub m_saved_line_state: crate::tm_pro::wordwrapstate::WordWrapState,
+    #[static_field]
+    #[rename(name = "m_SavedEllipsisState")]
+    pub m_saved_ellipsis_state: crate::tm_pro::wordwrapstate::WordWrapState,
+    #[static_field]
+    #[rename(name = "m_SavedLastValidState")]
+    pub m_saved_last_valid_state: crate::tm_pro::wordwrapstate::WordWrapState,
+    #[static_field]
+    #[rename(name = "m_SavedSoftLineBreakState")]
+    pub m_saved_soft_line_break_state: crate::tm_pro::wordwrapstate::WordWrapState,
+    #[static_field]
+    #[rename(name = "m_EllipsisInsertionCandidateStack")]
+    pub m_ellipsis_insertion_candidate_stack:
+        crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
+            crate::tm_pro::wordwrapstate::WordWrapState,
+        >,
+    #[rename(name = "m_characterCount")]
+    pub m_character_count: i32,
+    #[rename(name = "m_firstCharacterOfLine")]
+    pub m_first_character_of_line: i32,
+    #[rename(name = "m_firstVisibleCharacterOfLine")]
+    pub m_first_visible_character_of_line: i32,
+    #[rename(name = "m_lastCharacterOfLine")]
+    pub m_last_character_of_line: i32,
+    #[rename(name = "m_lastVisibleCharacterOfLine")]
+    pub m_last_visible_character_of_line: i32,
+    #[rename(name = "m_lineNumber")]
+    pub m_line_number: i32,
+    #[rename(name = "m_lineVisibleCharacterCount")]
+    pub m_line_visible_character_count: i32,
+    #[rename(name = "m_pageNumber")]
+    pub m_page_number: i32,
+    #[rename(name = "m_PageAscender")]
+    pub m_page_ascender: f32,
+    #[rename(name = "m_maxTextAscender")]
+    pub m_max_text_ascender: f32,
+    #[rename(name = "m_maxCapHeight")]
+    pub m_max_cap_height: f32,
+    #[rename(name = "m_ElementAscender")]
+    pub m_element_ascender: f32,
+    #[rename(name = "m_ElementDescender")]
+    pub m_element_descender: f32,
+    #[rename(name = "m_maxLineAscender")]
+    pub m_max_line_ascender: f32,
+    #[rename(name = "m_maxLineDescender")]
+    pub m_max_line_descender: f32,
+    #[rename(name = "m_startOfLineAscender")]
+    pub m_start_of_line_ascender: f32,
+    #[rename(name = "m_startOfLineDescender")]
+    pub m_start_of_line_descender: f32,
+    #[rename(name = "m_lineOffset")]
+    pub m_line_offset: f32,
+    #[rename(name = "m_meshExtents")]
+    pub m_mesh_extents: crate::tm_pro::extents::Extents,
+    #[rename(name = "m_htmlColor")]
+    pub m_html_color: crate::unity_engine::color32::Color32,
+    #[rename(name = "m_colorStack")]
+    pub m_color_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
+        crate::unity_engine::color32::Color32,
+    >,
+    #[rename(name = "m_underlineColorStack")]
+    pub m_underline_color_stack:
+        crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
+            crate::unity_engine::color32::Color32,
+        >,
+    #[rename(name = "m_strikethroughColorStack")]
+    pub m_strikethrough_color_stack:
+        crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
+            crate::unity_engine::color32::Color32,
+        >,
+    #[rename(name = "m_HighlightStateStack")]
+    pub m_highlight_state_stack:
+        crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
+            crate::tm_pro::highlightstate::HighlightState,
+        >,
+    #[rename(name = "m_colorGradientPreset")]
+    pub m_color_gradient_preset: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+    #[rename(name = "m_colorGradientStack")]
+    pub m_color_gradient_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<
+        crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+    >,
+    #[rename(name = "m_colorGradientPresetIsTinted")]
+    pub m_color_gradient_preset_is_tinted: bool,
+    #[rename(name = "m_tabSpacing")]
+    pub m_tab_spacing: f32,
+    #[rename(name = "m_spacing")]
+    pub m_spacing: f32,
+    #[rename(name = "m_TextStyleStacks")]
+    pub m_text_style_stacks:
+        ::unity2::Array<crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32>>,
+    #[rename(name = "m_TextStyleStackDepth")]
+    pub m_text_style_stack_depth: i32,
+    #[rename(name = "m_ItalicAngleStack")]
+    pub m_italic_angle_stack:
+        crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32>,
+    #[rename(name = "m_ItalicAngle")]
+    pub m_italic_angle: i32,
+    #[rename(name = "m_actionStack")]
+    pub m_action_stack: crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32>,
+    #[rename(name = "m_padding")]
+    pub m_padding: f32,
+    #[rename(name = "m_baselineOffset")]
+    pub m_baseline_offset: f32,
+    #[rename(name = "m_baselineOffsetStack")]
+    pub m_baseline_offset_stack:
+        crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32>,
+    #[rename(name = "m_xAdvance")]
+    pub m_x_advance: f32,
+    #[rename(name = "m_textElementType")]
+    pub m_text_element_type: crate::tm_pro::tmp_textelementtype::TMP_TextElementType,
+    #[rename(name = "m_cached_TextElement")]
+    pub m_cached_text_element: crate::tm_pro::tmp_textelement::TMP_TextElement,
+    #[rename(name = "m_Ellipsis")]
+    pub m_ellipsis: crate::tm_pro::tmp_text::TMP_Text_SpecialCharacter,
+    #[rename(name = "m_Underline")]
+    pub m_underline: crate::tm_pro::tmp_text::TMP_Text_SpecialCharacter,
+    #[rename(name = "m_defaultSpriteAsset")]
+    pub m_default_sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+    #[rename(name = "m_currentSpriteAsset")]
+    pub m_current_sprite_asset: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+    #[rename(name = "m_spriteCount")]
+    pub m_sprite_count: i32,
+    #[rename(name = "m_spriteIndex")]
+    pub m_sprite_index: i32,
+    #[rename(name = "m_spriteAnimationID")]
+    pub m_sprite_animation_id: i32,
+    #[rename(name = "m_ignoreActiveState")]
+    pub m_ignore_active_state: bool,
+    #[rename(name = "m_TextBackingArray")]
+    pub m_text_backing_array: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+    #[static_field]
+    #[rename(name = "k_LargePositiveVector2")]
+    pub k_large_positive_vector2: crate::unity_engine::vector2::Vector2,
+    #[static_field]
+    #[rename(name = "k_LargeNegativeVector2")]
+    pub k_large_negative_vector2: crate::unity_engine::vector2::Vector2,
+    #[static_field]
+    #[rename(name = "k_LargePositiveFloat")]
+    pub k_large_positive_float: f32,
+    #[static_field]
+    #[rename(name = "k_LargeNegativeFloat")]
+    pub k_large_negative_float: f32,
+    #[static_field]
+    #[rename(name = "k_LargePositiveInt")]
+    pub k_large_positive_int: i32,
+    #[static_field]
+    #[rename(name = "k_LargeNegativeInt")]
+    pub k_large_negative_int: i32,
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+#[::unity2::methods]
+impl TMP_Text {
+    #[method(name = "get_text", args = 0)]
+    pub fn get_text(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_text", args = 1)]
+    pub fn set_text(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_textPreprocessor", args = 0)]
+    pub fn get_text_preprocessor(self) -> crate::tm_pro::itextpreprocessor::ITextPreprocessor;
+
+    #[method(name = "set_textPreprocessor", args = 1)]
+    pub fn set_text_preprocessor(
+        self,
+        value: crate::tm_pro::itextpreprocessor::ITextPreprocessor,
+    ) -> ();
+
+    #[method(name = "get_isRightToLeftText", args = 0)]
+    pub fn get_is_right_to_left_text(self) -> bool;
+
+    #[method(name = "set_isRightToLeftText", args = 1)]
+    pub fn set_is_right_to_left_text(self, value: bool) -> ();
+
+    #[method(name = "get_font", args = 0)]
+    pub fn get_font(self) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset;
+
+    #[method(name = "set_font", args = 1)]
+    pub fn set_font(self, value: crate::tm_pro::tmp_fontasset::TMP_FontAsset) -> ();
+
+    #[method(name = "get_fontSharedMaterial", args = 0)]
+    pub fn get_font_shared_material(self) -> crate::unity_engine::material::Material;
+
+    #[method(name = "set_fontSharedMaterial", args = 1)]
+    pub fn set_font_shared_material(self, value: crate::unity_engine::material::Material) -> ();
+
+    #[method(name = "get_fontSharedMaterials", args = 0)]
+    pub fn get_font_shared_materials(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "set_fontSharedMaterials", args = 1)]
+    pub fn set_font_shared_materials(
+        self,
+        value: ::unity2::Array<crate::unity_engine::material::Material>,
+    ) -> ();
+
+    #[method(name = "get_fontMaterial", args = 0)]
+    pub fn get_font_material(self) -> crate::unity_engine::material::Material;
+
+    #[method(name = "set_fontMaterial", args = 1)]
+    pub fn set_font_material(self, value: crate::unity_engine::material::Material) -> ();
+
+    #[method(name = "get_fontMaterials", args = 0)]
+    pub fn get_font_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "set_fontMaterials", args = 1)]
+    pub fn set_font_materials(
+        self,
+        value: ::unity2::Array<crate::unity_engine::material::Material>,
+    ) -> ();
+
+    #[method(name = "get_color", args = 0)]
+    pub fn get_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "set_color", args = 1)]
+    pub fn set_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "get_alpha", args = 0)]
+    pub fn get_alpha(self) -> f32;
+
+    #[method(name = "set_alpha", args = 1)]
+    pub fn set_alpha(self, value: f32) -> ();
+
+    #[method(name = "get_enableVertexGradient", args = 0)]
+    pub fn get_enable_vertex_gradient(self) -> bool;
+
+    #[method(name = "set_enableVertexGradient", args = 1)]
+    pub fn set_enable_vertex_gradient(self, value: bool) -> ();
+
+    #[method(name = "get_colorGradient", args = 0)]
+    pub fn get_color_gradient(self) -> crate::tm_pro::vertexgradient::VertexGradient;
+
+    #[method(name = "set_colorGradient", args = 1)]
+    pub fn set_color_gradient(self, value: crate::tm_pro::vertexgradient::VertexGradient) -> ();
+
+    #[method(name = "get_colorGradientPreset", args = 0)]
+    pub fn get_color_gradient_preset(self) -> crate::tm_pro::tmp_colorgradient::TMP_ColorGradient;
+
+    #[method(name = "set_colorGradientPreset", args = 1)]
+    pub fn set_color_gradient_preset(
+        self,
+        value: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+    ) -> ();
+
+    #[method(name = "get_spriteAsset", args = 0)]
+    pub fn get_sprite_asset(self) -> crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset;
+
+    #[method(name = "set_spriteAsset", args = 1)]
+    pub fn set_sprite_asset(self, value: crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset) -> ();
+
+    #[method(name = "get_tintAllSprites", args = 0)]
+    pub fn get_tint_all_sprites(self) -> bool;
+
+    #[method(name = "set_tintAllSprites", args = 1)]
+    pub fn set_tint_all_sprites(self, value: bool) -> ();
+
+    #[method(name = "get_styleSheet", args = 0)]
+    pub fn get_style_sheet(self) -> crate::tm_pro::tmp_stylesheet::TMP_StyleSheet;
+
+    #[method(name = "set_styleSheet", args = 1)]
+    pub fn set_style_sheet(self, value: crate::tm_pro::tmp_stylesheet::TMP_StyleSheet) -> ();
+
+    #[method(name = "get_textStyle", args = 0)]
+    pub fn get_text_style(self) -> crate::tm_pro::tmp_style::TMP_Style;
+
+    #[method(name = "set_textStyle", args = 1)]
+    pub fn set_text_style(self, value: crate::tm_pro::tmp_style::TMP_Style) -> ();
+
+    #[method(name = "get_overrideColorTags", args = 0)]
+    pub fn get_override_color_tags(self) -> bool;
+
+    #[method(name = "set_overrideColorTags", args = 1)]
+    pub fn set_override_color_tags(self, value: bool) -> ();
+
+    #[method(name = "get_faceColor", args = 0)]
+    pub fn get_face_color(self) -> crate::unity_engine::color32::Color32;
+
+    #[method(name = "set_faceColor", args = 1)]
+    pub fn set_face_color(self, value: crate::unity_engine::color32::Color32) -> ();
+
+    #[method(name = "get_outlineColor", args = 0)]
+    pub fn get_outline_color(self) -> crate::unity_engine::color32::Color32;
+
+    #[method(name = "set_outlineColor", args = 1)]
+    pub fn set_outline_color(self, value: crate::unity_engine::color32::Color32) -> ();
+
+    #[method(name = "get_outlineWidth", args = 0)]
+    pub fn get_outline_width(self) -> f32;
+
+    #[method(name = "set_outlineWidth", args = 1)]
+    pub fn set_outline_width(self, value: f32) -> ();
+
+    #[method(name = "get_fontSize", args = 0)]
+    pub fn get_font_size(self) -> f32;
+
+    #[method(name = "set_fontSize", args = 1)]
+    pub fn set_font_size(self, value: f32) -> ();
+
+    #[method(name = "get_fontWeight", args = 0)]
+    pub fn get_font_weight(self) -> crate::tm_pro::fontweight::FontWeight;
+
+    #[method(name = "set_fontWeight", args = 1)]
+    pub fn set_font_weight(self, value: crate::tm_pro::fontweight::FontWeight) -> ();
+
+    #[method(name = "get_pixelsPerUnit", args = 0)]
+    pub fn get_pixels_per_unit(self) -> f32;
+
+    #[method(name = "get_enableAutoSizing", args = 0)]
+    pub fn get_enable_auto_sizing(self) -> bool;
+
+    #[method(name = "set_enableAutoSizing", args = 1)]
+    pub fn set_enable_auto_sizing(self, value: bool) -> ();
+
+    #[method(name = "get_fontSizeMin", args = 0)]
+    pub fn get_font_size_min(self) -> f32;
+
+    #[method(name = "set_fontSizeMin", args = 1)]
+    pub fn set_font_size_min(self, value: f32) -> ();
+
+    #[method(name = "get_fontSizeMax", args = 0)]
+    pub fn get_font_size_max(self) -> f32;
+
+    #[method(name = "set_fontSizeMax", args = 1)]
+    pub fn set_font_size_max(self, value: f32) -> ();
+
+    #[method(name = "get_fontStyle", args = 0)]
+    pub fn get_font_style(self) -> crate::tm_pro::fontstyles::FontStyles;
+
+    #[method(name = "set_fontStyle", args = 1)]
+    pub fn set_font_style(self, value: crate::tm_pro::fontstyles::FontStyles) -> ();
+
+    #[method(name = "get_isUsingBold", args = 0)]
+    pub fn get_is_using_bold(self) -> bool;
+
+    #[method(name = "get_horizontalAlignment", args = 0)]
+    pub fn get_horizontal_alignment(
+        self,
+    ) -> crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions;
+
+    #[method(name = "set_horizontalAlignment", args = 1)]
+    pub fn set_horizontal_alignment(
+        self,
+        value: crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions,
+    ) -> ();
+
+    #[method(name = "get_verticalAlignment", args = 0)]
+    pub fn get_vertical_alignment(
+        self,
+    ) -> crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions;
+
+    #[method(name = "set_verticalAlignment", args = 1)]
+    pub fn set_vertical_alignment(
+        self,
+        value: crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions,
+    ) -> ();
+
+    #[method(name = "get_alignment", args = 0)]
+    pub fn get_alignment(self) -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions;
+
+    #[method(name = "set_alignment", args = 1)]
+    pub fn set_alignment(
+        self,
+        value: crate::tm_pro::textalignmentoptions::TextAlignmentOptions,
+    ) -> ();
+
+    #[method(name = "get_characterSpacing", args = 0)]
+    pub fn get_character_spacing(self) -> f32;
+
+    #[method(name = "set_characterSpacing", args = 1)]
+    pub fn set_character_spacing(self, value: f32) -> ();
+
+    #[method(name = "get_wordSpacing", args = 0)]
+    pub fn get_word_spacing(self) -> f32;
+
+    #[method(name = "set_wordSpacing", args = 1)]
+    pub fn set_word_spacing(self, value: f32) -> ();
+
+    #[method(name = "get_lineSpacing", args = 0)]
+    pub fn get_line_spacing(self) -> f32;
+
+    #[method(name = "set_lineSpacing", args = 1)]
+    pub fn set_line_spacing(self, value: f32) -> ();
+
+    #[method(name = "get_lineSpacingAdjustment", args = 0)]
+    pub fn get_line_spacing_adjustment(self) -> f32;
+
+    #[method(name = "set_lineSpacingAdjustment", args = 1)]
+    pub fn set_line_spacing_adjustment(self, value: f32) -> ();
+
+    #[method(name = "get_paragraphSpacing", args = 0)]
+    pub fn get_paragraph_spacing(self) -> f32;
+
+    #[method(name = "set_paragraphSpacing", args = 1)]
+    pub fn set_paragraph_spacing(self, value: f32) -> ();
+
+    #[method(name = "get_characterWidthAdjustment", args = 0)]
+    pub fn get_character_width_adjustment(self) -> f32;
+
+    #[method(name = "set_characterWidthAdjustment", args = 1)]
+    pub fn set_character_width_adjustment(self, value: f32) -> ();
+
+    #[method(name = "get_enableWordWrapping", args = 0)]
+    pub fn get_enable_word_wrapping(self) -> bool;
+
+    #[method(name = "set_enableWordWrapping", args = 1)]
+    pub fn set_enable_word_wrapping(self, value: bool) -> ();
+
+    #[method(name = "get_wordWrappingRatios", args = 0)]
+    pub fn get_word_wrapping_ratios(self) -> f32;
+
+    #[method(name = "set_wordWrappingRatios", args = 1)]
+    pub fn set_word_wrapping_ratios(self, value: f32) -> ();
+
+    #[method(name = "get_overflowMode", args = 0)]
+    pub fn get_overflow_mode(self) -> crate::tm_pro::textoverflowmodes::TextOverflowModes;
+
+    #[method(name = "set_overflowMode", args = 1)]
+    pub fn set_overflow_mode(
+        self,
+        value: crate::tm_pro::textoverflowmodes::TextOverflowModes,
+    ) -> ();
+
+    #[method(name = "get_isTextOverflowing", args = 0)]
+    pub fn get_is_text_overflowing(self) -> bool;
+
+    #[method(name = "get_firstOverflowCharacterIndex", args = 0)]
+    pub fn get_first_overflow_character_index(self) -> i32;
+
+    #[method(name = "get_linkedTextComponent", args = 0)]
+    pub fn get_linked_text_component(self) -> crate::tm_pro::tmp_text::TMP_Text;
+
+    #[method(name = "set_linkedTextComponent", args = 1)]
+    pub fn set_linked_text_component(self, value: crate::tm_pro::tmp_text::TMP_Text) -> ();
+
+    #[method(name = "get_isTextTruncated", args = 0)]
+    pub fn get_is_text_truncated(self) -> bool;
+
+    #[method(name = "get_enableKerning", args = 0)]
+    pub fn get_enable_kerning(self) -> bool;
+
+    #[method(name = "set_enableKerning", args = 1)]
+    pub fn set_enable_kerning(self, value: bool) -> ();
+
+    #[method(name = "get_extraPadding", args = 0)]
+    pub fn get_extra_padding(self) -> bool;
+
+    #[method(name = "set_extraPadding", args = 1)]
+    pub fn set_extra_padding(self, value: bool) -> ();
+
+    #[method(name = "get_richText", args = 0)]
+    pub fn get_rich_text(self) -> bool;
+
+    #[method(name = "set_richText", args = 1)]
+    pub fn set_rich_text(self, value: bool) -> ();
+
+    #[method(name = "get_parseCtrlCharacters", args = 0)]
+    pub fn get_parse_ctrl_characters(self) -> bool;
+
+    #[method(name = "set_parseCtrlCharacters", args = 1)]
+    pub fn set_parse_ctrl_characters(self, value: bool) -> ();
+
+    #[method(name = "get_isOverlay", args = 0)]
+    pub fn get_is_overlay(self) -> bool;
+
+    #[method(name = "set_isOverlay", args = 1)]
+    pub fn set_is_overlay(self, value: bool) -> ();
+
+    #[method(name = "get_isOrthographic", args = 0)]
+    pub fn get_is_orthographic(self) -> bool;
+
+    #[method(name = "set_isOrthographic", args = 1)]
+    pub fn set_is_orthographic(self, value: bool) -> ();
+
+    #[method(name = "get_enableCulling", args = 0)]
+    pub fn get_enable_culling(self) -> bool;
+
+    #[method(name = "set_enableCulling", args = 1)]
+    pub fn set_enable_culling(self, value: bool) -> ();
+
+    #[method(name = "get_ignoreVisibility", args = 0)]
+    pub fn get_ignore_visibility(self) -> bool;
+
+    #[method(name = "set_ignoreVisibility", args = 1)]
+    pub fn set_ignore_visibility(self, value: bool) -> ();
+
+    #[method(name = "get_horizontalMapping", args = 0)]
+    pub fn get_horizontal_mapping(
+        self,
+    ) -> crate::tm_pro::texturemappingoptions::TextureMappingOptions;
+
+    #[method(name = "set_horizontalMapping", args = 1)]
+    pub fn set_horizontal_mapping(
+        self,
+        value: crate::tm_pro::texturemappingoptions::TextureMappingOptions,
+    ) -> ();
+
+    #[method(name = "get_verticalMapping", args = 0)]
+    pub fn get_vertical_mapping(
+        self,
+    ) -> crate::tm_pro::texturemappingoptions::TextureMappingOptions;
+
+    #[method(name = "set_verticalMapping", args = 1)]
+    pub fn set_vertical_mapping(
+        self,
+        value: crate::tm_pro::texturemappingoptions::TextureMappingOptions,
+    ) -> ();
+
+    #[method(name = "get_mappingUvLineOffset", args = 0)]
+    pub fn get_mapping_uv_line_offset(self) -> f32;
+
+    #[method(name = "set_mappingUvLineOffset", args = 1)]
+    pub fn set_mapping_uv_line_offset(self, value: f32) -> ();
+
+    #[method(name = "get_renderMode", args = 0)]
+    pub fn get_render_mode(self) -> crate::tm_pro::textrenderflags::TextRenderFlags;
+
+    #[method(name = "set_renderMode", args = 1)]
+    pub fn set_render_mode(self, value: crate::tm_pro::textrenderflags::TextRenderFlags) -> ();
+
+    #[method(name = "get_geometrySortingOrder", args = 0)]
+    pub fn get_geometry_sorting_order(
+        self,
+    ) -> crate::tm_pro::vertexsortingorder::VertexSortingOrder;
+
+    #[method(name = "set_geometrySortingOrder", args = 1)]
+    pub fn set_geometry_sorting_order(
+        self,
+        value: crate::tm_pro::vertexsortingorder::VertexSortingOrder,
+    ) -> ();
+
+    #[method(name = "get_isTextObjectScaleStatic", args = 0)]
+    pub fn get_is_text_object_scale_static(self) -> bool;
+
+    #[method(name = "set_isTextObjectScaleStatic", args = 1)]
+    pub fn set_is_text_object_scale_static(self, value: bool) -> ();
+
+    #[method(name = "get_vertexBufferAutoSizeReduction", args = 0)]
+    pub fn get_vertex_buffer_auto_size_reduction(self) -> bool;
+
+    #[method(name = "set_vertexBufferAutoSizeReduction", args = 1)]
+    pub fn set_vertex_buffer_auto_size_reduction(self, value: bool) -> ();
+
+    #[method(name = "get_firstVisibleCharacter", args = 0)]
+    pub fn get_first_visible_character(self) -> i32;
+
+    #[method(name = "set_firstVisibleCharacter", args = 1)]
+    pub fn set_first_visible_character(self, value: i32) -> ();
+
+    #[method(name = "get_maxVisibleCharacters", args = 0)]
+    pub fn get_max_visible_characters(self) -> i32;
+
+    #[method(name = "set_maxVisibleCharacters", args = 1)]
+    pub fn set_max_visible_characters(self, value: i32) -> ();
+
+    #[method(name = "get_maxVisibleWords", args = 0)]
+    pub fn get_max_visible_words(self) -> i32;
+
+    #[method(name = "set_maxVisibleWords", args = 1)]
+    pub fn set_max_visible_words(self, value: i32) -> ();
+
+    #[method(name = "get_maxVisibleLines", args = 0)]
+    pub fn get_max_visible_lines(self) -> i32;
+
+    #[method(name = "set_maxVisibleLines", args = 1)]
+    pub fn set_max_visible_lines(self, value: i32) -> ();
+
+    #[method(name = "get_useMaxVisibleDescender", args = 0)]
+    pub fn get_use_max_visible_descender(self) -> bool;
+
+    #[method(name = "set_useMaxVisibleDescender", args = 1)]
+    pub fn set_use_max_visible_descender(self, value: bool) -> ();
+
+    #[method(name = "get_pageToDisplay", args = 0)]
+    pub fn get_page_to_display(self) -> i32;
+
+    #[method(name = "set_pageToDisplay", args = 1)]
+    pub fn set_page_to_display(self, value: i32) -> ();
+
+    #[method(name = "get_margin", args = 0)]
+    pub fn get_margin(self) -> crate::unity_engine::vector4::Vector4;
+
+    #[method(name = "set_margin", args = 1)]
+    pub fn set_margin(self, value: crate::unity_engine::vector4::Vector4) -> ();
+
+    #[method(name = "get_textInfo", args = 0)]
+    pub fn get_text_info(self) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo;
+
+    #[method(name = "get_havePropertiesChanged", args = 0)]
+    pub fn get_have_properties_changed(self) -> bool;
+
+    #[method(name = "set_havePropertiesChanged", args = 1)]
+    pub fn set_have_properties_changed(self, value: bool) -> ();
+
+    #[method(name = "get_isUsingLegacyAnimationComponent", args = 0)]
+    pub fn get_is_using_legacy_animation_component(self) -> bool;
+
+    #[method(name = "set_isUsingLegacyAnimationComponent", args = 1)]
+    pub fn set_is_using_legacy_animation_component(self, value: bool) -> ();
+
+    #[method(name = "get_transform", args = 0)]
+    pub fn get_transform(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_rectTransform", args = 0)]
+    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[method(name = "get_autoSizeTextContainer", args = 0)]
+    pub fn get_auto_size_text_container(self) -> bool;
+
+    #[method(name = "set_autoSizeTextContainer", args = 1)]
+    pub fn set_auto_size_text_container(self, value: bool) -> ();
+
+    #[method(name = "get_mesh", args = 0)]
+    pub fn get_mesh(self) -> crate::unity_engine::mesh::Mesh;
+
+    #[method(name = "get_isVolumetricText", args = 0)]
+    pub fn get_is_volumetric_text(self) -> bool;
+
+    #[method(name = "set_isVolumetricText", args = 1)]
+    pub fn set_is_volumetric_text(self, value: bool) -> ();
+
+    #[method(name = "get_bounds", args = 0)]
+    pub fn get_bounds(self) -> crate::unity_engine::bounds::Bounds;
+
+    #[method(name = "get_textBounds", args = 0)]
+    pub fn get_text_bounds(self) -> crate::unity_engine::bounds::Bounds;
+
+    #[method(name = "add_OnFontAssetRequest", args = 1)]
+    pub fn add_on_font_asset_request(
+        value: crate::system::func_3::Func_3<
+            i32,
+            ::unity2::Il2CppString,
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        >,
+    ) -> ();
+
+    #[method(name = "remove_OnFontAssetRequest", args = 1)]
+    pub fn remove_on_font_asset_request(
+        value: crate::system::func_3::Func_3<
+            i32,
+            ::unity2::Il2CppString,
+            crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        >,
+    ) -> ();
+
+    #[method(name = "add_OnSpriteAssetRequest", args = 1)]
+    pub fn add_on_sprite_asset_request(
+        value: crate::system::func_3::Func_3<
+            i32,
+            ::unity2::Il2CppString,
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        >,
+    ) -> ();
+
+    #[method(name = "remove_OnSpriteAssetRequest", args = 1)]
+    pub fn remove_on_sprite_asset_request(
+        value: crate::system::func_3::Func_3<
+            i32,
+            ::unity2::Il2CppString,
+            crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset,
+        >,
+    ) -> ();
+
+    #[method(name = "add_OnPreRenderText", args = 1)]
+    pub fn add_on_pre_render_text(
+        self,
+        value: crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
+    ) -> ();
+
+    #[method(name = "remove_OnPreRenderText", args = 1)]
+    pub fn remove_on_pre_render_text(
+        self,
+        value: crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>,
+    ) -> ();
+
+    #[method(name = "get_spriteAnimator", args = 0)]
+    pub fn get_sprite_animator(self) -> crate::tm_pro::tmp_spriteanimator::TMP_SpriteAnimator;
+
+    #[method(name = "get_flexibleHeight", args = 0)]
+    pub fn get_flexible_height(self) -> f32;
+
+    #[method(name = "get_flexibleWidth", args = 0)]
+    pub fn get_flexible_width(self) -> f32;
+
+    #[method(name = "get_minWidth", args = 0)]
+    pub fn get_min_width(self) -> f32;
+
+    #[method(name = "get_minHeight", args = 0)]
+    pub fn get_min_height(self) -> f32;
+
+    #[method(name = "get_maxWidth", args = 0)]
+    pub fn get_max_width(self) -> f32;
+
+    #[method(name = "get_maxHeight", args = 0)]
+    pub fn get_max_height(self) -> f32;
+
+    #[method(name = "get_layoutElement", args = 0)]
+    pub fn get_layout_element(self) -> crate::unity_engine::ui::layoutelement::LayoutElement;
+
+    #[method(name = "get_preferredWidth", args = 0)]
+    pub fn get_preferred_width(self) -> f32;
+
+    #[method(name = "get_preferredHeight", args = 0)]
+    pub fn get_preferred_height(self) -> f32;
+
+    #[method(name = "get_renderedWidth", args = 0)]
+    pub fn get_rendered_width(self) -> f32;
+
+    #[method(name = "get_renderedHeight", args = 0)]
+    pub fn get_rendered_height(self) -> f32;
+
+    #[method(name = "get_layoutPriority", args = 0)]
+    pub fn get_layout_priority(self) -> i32;
+
+    #[method(name = "LoadFontAsset", args = 0)]
+    pub fn load_font_asset(self) -> ();
+
+    #[method(name = "SetSharedMaterial", args = 1)]
+    pub fn set_shared_material(self, mat: crate::unity_engine::material::Material) -> ();
+
+    #[method(name = "GetMaterial", args = 1)]
+    pub fn get_material(
+        self,
+        mat: crate::unity_engine::material::Material,
+    ) -> crate::unity_engine::material::Material;
+
+    #[method(name = "SetFontBaseMaterial", args = 1)]
+    pub fn set_font_base_material(self, mat: crate::unity_engine::material::Material) -> ();
+
+    #[method(name = "GetSharedMaterials", args = 0)]
+    pub fn get_shared_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "SetSharedMaterials", args = 1)]
+    pub fn set_shared_materials(
+        self,
+        materials: ::unity2::Array<crate::unity_engine::material::Material>,
+    ) -> ();
+
+    #[method(name = "GetMaterials", args = 1)]
+    pub fn get_materials(
+        self,
+        mats: ::unity2::Array<crate::unity_engine::material::Material>,
+    ) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "CreateMaterialInstance", args = 1)]
+    pub fn create_material_instance(
+        self,
+        source: crate::unity_engine::material::Material,
+    ) -> crate::unity_engine::material::Material;
+
+    #[method(name = "SetVertexColorGradient", args = 1)]
+    pub fn set_vertex_color_gradient(
+        self,
+        gradient: crate::tm_pro::tmp_colorgradient::TMP_ColorGradient,
+    ) -> ();
+
+    #[method(name = "SetTextSortingOrder", args = 1)]
+    pub fn set_text_sorting_order(
+        self,
+        order: crate::tm_pro::vertexsortingorder::VertexSortingOrder,
+    ) -> ();
+
+    #[method(name = "SetTextSortingOrder", args = 1)]
+    pub fn set_text_sorting_order_2(self, order: ::unity2::Array<i32>) -> ();
+
+    #[method(name = "SetOutlineThickness", args = 1)]
+    pub fn set_outline_thickness(self, thickness: f32) -> ();
+
+    #[method(name = "SetShaderDepth", args = 0)]
+    pub fn set_shader_depth(self) -> ();
+
+    #[method(name = "SetCulling", args = 0)]
+    pub fn set_culling(self) -> ();
+
+    #[method(name = "UpdateCulling", args = 0)]
+    pub fn update_culling(self) -> ();
+
+    #[method(name = "GetPaddingForMaterial", args = 0)]
+    pub fn get_padding_for_material(self) -> f32;
+
+    #[method(name = "GetPaddingForMaterial", args = 1)]
+    pub fn get_padding_for_material_2(self, mat: crate::unity_engine::material::Material) -> f32;
+
+    #[method(name = "GetTextContainerLocalCorners", args = 0)]
+    pub fn get_text_container_local_corners(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::vector3::Vector3>;
+
+    #[method(name = "ForceMeshUpdate", args = 2)]
+    pub fn force_mesh_update(self, ignore_active_state: bool, force_text_reparsing: bool) -> ();
+
+    #[method(name = "UpdateGeometry", args = 2)]
+    pub fn update_geometry(self, mesh: crate::unity_engine::mesh::Mesh, index: i32) -> ();
+
+    #[method(name = "UpdateVertexData", args = 1)]
+    pub fn update_vertex_data(
+        self,
+        flags: crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags,
+    ) -> ();
+
+    #[method(name = "UpdateVertexData", args = 0)]
+    pub fn update_vertex_data_2(self) -> ();
+
+    #[method(name = "SetVertices", args = 1)]
+    pub fn set_vertices(
+        self,
+        vertices: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+    ) -> ();
+
+    #[method(name = "UpdateMeshPadding", args = 0)]
+    pub fn update_mesh_padding(self) -> ();
+
+    #[method(name = "CrossFadeColor", args = 4)]
+    pub fn cross_fade_color(
+        self,
+        target_color: crate::unity_engine::color::Color,
+        duration: f32,
+        ignore_time_scale: bool,
+        use_alpha: bool,
+    ) -> ();
+
+    #[method(name = "CrossFadeAlpha", args = 3)]
+    pub fn cross_fade_alpha(self, alpha: f32, duration: f32, ignore_time_scale: bool) -> ();
+
+    #[method(name = "InternalCrossFadeColor", args = 4)]
+    pub fn internal_cross_fade_color(
+        self,
+        target_color: crate::unity_engine::color::Color,
+        duration: f32,
+        ignore_time_scale: bool,
+        use_alpha: bool,
+    ) -> ();
+
+    #[method(name = "InternalCrossFadeAlpha", args = 3)]
+    pub fn internal_cross_fade_alpha(
+        self,
+        alpha: f32,
+        duration: f32,
+        ignore_time_scale: bool,
+    ) -> ();
+
+    #[method(name = "ParseInputText", args = 0)]
+    pub fn parse_input_text(self) -> ();
+
+    #[method(name = "PopulateTextBackingArray", args = 1)]
+    pub fn populate_text_backing_array(self, source_text: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "PopulateTextBackingArray", args = 3)]
+    pub fn populate_text_backing_array_2(
+        self,
+        source_text: ::unity2::Il2CppString,
+        start: i32,
+        length: i32,
+    ) -> ();
+
+    #[method(name = "PopulateTextBackingArray", args = 3)]
+    pub fn populate_text_backing_array_3(
+        self,
+        source_text: ::unity2::Array<u16>,
+        start: i32,
+        length: i32,
+    ) -> ();
+
+    #[method(name = "PopulateTextProcessingArray", args = 0)]
+    pub fn populate_text_processing_array(self) -> ();
+
+    #[method(name = "SetTextInternal", args = 1)]
+    pub fn set_text_internal(self, source_text: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "SetText", args = 2)]
+    pub fn set_text_2(self, source_text: ::unity2::Il2CppString, sync_text_input_box: bool) -> ();
+
+    #[method(name = "SetText", args = 2)]
+    pub fn set_text_3(self, source_text: ::unity2::Il2CppString, arg0: f32) -> ();
+
+    #[method(name = "SetText", args = 3)]
+    pub fn set_text_4(self, source_text: ::unity2::Il2CppString, arg0: f32, arg1: f32) -> ();
+
+    #[method(name = "SetText", args = 4)]
+    pub fn set_text_5(
+        self,
+        source_text: ::unity2::Il2CppString,
+        arg0: f32,
+        arg1: f32,
+        arg2: f32,
+    ) -> ();
+
+    #[method(name = "SetText", args = 5)]
+    pub fn set_text_6(
+        self,
+        source_text: ::unity2::Il2CppString,
+        arg0: f32,
+        arg1: f32,
+        arg2: f32,
+        arg3: f32,
+    ) -> ();
+
+    #[method(name = "SetText", args = 6)]
+    pub fn set_text_7(
+        self,
+        source_text: ::unity2::Il2CppString,
+        arg0: f32,
+        arg1: f32,
+        arg2: f32,
+        arg3: f32,
+        arg4: f32,
+    ) -> ();
+
+    #[method(name = "SetText", args = 7)]
+    pub fn set_text_8(
+        self,
+        source_text: ::unity2::Il2CppString,
+        arg0: f32,
+        arg1: f32,
+        arg2: f32,
+        arg3: f32,
+        arg4: f32,
+        arg5: f32,
+    ) -> ();
+
+    #[method(name = "SetText", args = 8)]
+    pub fn set_text_9(
+        self,
+        source_text: ::unity2::Il2CppString,
+        arg0: f32,
+        arg1: f32,
+        arg2: f32,
+        arg3: f32,
+        arg4: f32,
+        arg5: f32,
+        arg6: f32,
+    ) -> ();
+
+    #[method(name = "SetText", args = 9)]
+    pub fn set_text_10(
+        self,
+        source_text: ::unity2::Il2CppString,
+        arg0: f32,
+        arg1: f32,
+        arg2: f32,
+        arg3: f32,
+        arg4: f32,
+        arg5: f32,
+        arg6: f32,
+        arg7: f32,
+    ) -> ();
+
+    #[method(name = "SetText", args = 1)]
+    pub fn set_text_11(self, source_text: ::unity2::Array<u16>) -> ();
+
+    #[method(name = "SetText", args = 3)]
+    pub fn set_text_12(self, source_text: ::unity2::Array<u16>, start: i32, length: i32) -> ();
+
+    #[method(name = "SetCharArray", args = 1)]
+    pub fn set_char_array(self, source_text: ::unity2::Array<u16>) -> ();
+
+    #[method(name = "SetCharArray", args = 3)]
+    pub fn set_char_array_2(self, source_text: ::unity2::Array<u16>, start: i32, length: i32)
+        -> ();
+
+    #[method(name = "GetStyle", args = 1)]
+    pub fn get_style(self, hash_code: i32) -> crate::tm_pro::tmp_style::TMP_Style;
+
+    #[method(name = "ReplaceOpeningStyleTag", args = 5)]
+    pub fn replace_opening_style_tag(
+        self,
+        source_text: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        src_index: i32,
+        src_offset: i32,
+        char_buffer: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        write_index: i32,
+    ) -> bool;
+
+    #[method(name = "ReplaceOpeningStyleTag", args = 5)]
+    pub fn replace_opening_style_tag_2(
+        self,
+        source_text: ::unity2::Array<i32>,
+        src_index: i32,
+        src_offset: i32,
+        char_buffer: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        write_index: i32,
+    ) -> bool;
+
+    #[method(name = "ReplaceClosingStyleTag", args = 4)]
+    pub fn replace_closing_style_tag(
+        self,
+        source_text: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        src_index: i32,
+        char_buffer: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        write_index: i32,
+    ) -> ();
+
+    #[method(name = "ReplaceClosingStyleTag", args = 4)]
+    pub fn replace_closing_style_tag_2(
+        self,
+        source_text: ::unity2::Array<i32>,
+        src_index: i32,
+        char_buffer: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        write_index: i32,
+    ) -> ();
+
+    #[method(name = "InsertOpeningStyleTag", args = 4)]
+    pub fn insert_opening_style_tag(
+        self,
+        style: crate::tm_pro::tmp_style::TMP_Style,
+        src_index: i32,
+        char_buffer: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        write_index: i32,
+    ) -> bool;
+
+    #[method(name = "InsertClosingStyleTag", args = 2)]
+    pub fn insert_closing_style_tag(
+        self,
+        char_buffer: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        write_index: i32,
+    ) -> ();
+
+    #[method(name = "GetMarkupTagHashCode", args = 2)]
+    pub fn get_markup_tag_hash_code(
+        self,
+        tag_definition: ::unity2::Array<i32>,
+        read_index: i32,
+    ) -> i32;
+
+    #[method(name = "GetMarkupTagHashCode", args = 2)]
+    pub fn get_markup_tag_hash_code_2(
+        self,
+        tag_definition: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        read_index: i32,
+    ) -> i32;
+
+    #[method(name = "GetStyleHashCode", args = 3)]
+    pub fn get_style_hash_code(
+        self,
+        text: ::unity2::Array<i32>,
+        index: i32,
+        close_index: i32,
+    ) -> i32;
+
+    #[method(name = "GetStyleHashCode", args = 3)]
+    pub fn get_style_hash_code_2(
+        self,
+        text: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        index: i32,
+        close_index: i32,
+    ) -> i32;
+
+    #[method(name = "AddFloatToInternalTextBackingArray", args = 4)]
+    pub fn add_float_to_internal_text_backing_array(
+        self,
+        value: f32,
+        padding: i32,
+        precision: i32,
+        write_index: i32,
+    ) -> ();
+
+    #[method(name = "AddIntegerToInternalTextBackingArray", args = 3)]
+    pub fn add_integer_to_internal_text_backing_array(
+        self,
+        number: f64,
+        padding: i32,
+        write_index: i32,
+    ) -> ();
+
+    #[method(name = "InternalTextBackingArrayToString", args = 0)]
+    pub fn internal_text_backing_array_to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "SetArraySizes", args = 1)]
+    pub fn set_array_sizes(
+        self,
+        unicode_chars: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+    ) -> i32;
+
+    #[method(name = "GetPreferredValues", args = 0)]
+    pub fn get_preferred_values(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "GetPreferredValues", args = 2)]
+    pub fn get_preferred_values_2(
+        self,
+        width: f32,
+        height: f32,
+    ) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "GetPreferredValues", args = 1)]
+    pub fn get_preferred_values_3(
+        self,
+        text: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "GetPreferredValues", args = 3)]
+    pub fn get_preferred_values_4(
+        self,
+        text: ::unity2::Il2CppString,
+        width: f32,
+        height: f32,
+    ) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "GetPreferredWidth", args = 1)]
+    pub fn get_preferred_width_2(self, margin: crate::unity_engine::vector2::Vector2) -> f32;
+
+    #[method(name = "GetPreferredHeight", args = 1)]
+    pub fn get_preferred_height_2(self, margin: crate::unity_engine::vector2::Vector2) -> f32;
+
+    #[method(name = "GetRenderedValues", args = 0)]
+    pub fn get_rendered_values(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "GetRenderedValues", args = 1)]
+    pub fn get_rendered_values_2(
+        self,
+        only_visible_characters: bool,
+    ) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "GetRenderedWidth", args = 1)]
+    pub fn get_rendered_width_2(self, only_visible_characters: bool) -> f32;
+
+    #[method(name = "GetRenderedHeight", args = 1)]
+    pub fn get_rendered_height_2(self, only_visible_characters: bool) -> f32;
+
+    #[method(name = "CalculatePreferredValues", args = 4)]
+    pub fn calculate_preferred_values(
+        self,
+        font_size: f32,
+        margin_size: crate::unity_engine::vector2::Vector2,
+        is_text_auto_sizing_enabled: bool,
+        is_word_wrapping_enabled: bool,
+    ) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "GetCompoundBounds", args = 0)]
+    pub fn get_compound_bounds(self) -> crate::unity_engine::bounds::Bounds;
+
+    #[method(name = "GetCanvasSpaceClippingRect", args = 0)]
+    pub fn get_canvas_space_clipping_rect(self) -> crate::unity_engine::rect::Rect;
+
+    #[method(name = "GetTextBounds", args = 1)]
+    pub fn get_text_bounds_2(
+        self,
+        only_visible_characters: bool,
+    ) -> crate::unity_engine::bounds::Bounds;
+
+    #[method(name = "AdjustLineOffset", args = 3)]
+    pub fn adjust_line_offset(self, start_index: i32, end_index: i32, offset: f32) -> ();
+
+    #[method(name = "ResizeLineExtents", args = 1)]
+    pub fn resize_line_extents(self, size: i32) -> ();
+
+    #[method(name = "GetTextInfo", args = 1)]
+    pub fn get_text_info_2(
+        self,
+        text: ::unity2::Il2CppString,
+    ) -> crate::tm_pro::tmp_textinfo::TMP_TextInfo;
+
+    #[method(name = "ComputeMarginSize", args = 0)]
+    pub fn compute_margin_size(self) -> ();
+
+    #[method(name = "InsertNewLine", args = 11)]
+    pub fn insert_new_line(
+        self,
+        i: i32,
+        base_scale: f32,
+        current_element_scale: f32,
+        current_em_scale: f32,
+        glyph_adjustment: f32,
+        bold_spacing_adjustment: f32,
+        character_spacing_adjustment: f32,
+        width: f32,
+        line_gap: f32,
+        is_max_visible_descender_set: bool,
+        max_visible_descender: f32,
+    ) -> ();
+
+    #[method(name = "SaveWordWrappingState", args = 3)]
+    pub fn save_word_wrapping_state(
+        self,
+        state: crate::tm_pro::wordwrapstate::WordWrapState,
+        index: i32,
+        count: i32,
+    ) -> ();
+
+    #[method(name = "RestoreWordWrappingState", args = 1)]
+    pub fn restore_word_wrapping_state(
+        self,
+        state: crate::tm_pro::wordwrapstate::WordWrapState,
+    ) -> i32;
+
+    #[method(name = "SaveGlyphVertexInfo", args = 3)]
+    pub fn save_glyph_vertex_info(
+        self,
+        padding: f32,
+        style_padding: f32,
+        vertex_color: crate::unity_engine::color32::Color32,
+    ) -> ();
+
+    #[method(name = "SaveSpriteVertexInfo", args = 1)]
+    pub fn save_sprite_vertex_info(self, vertex_color: crate::unity_engine::color32::Color32)
+        -> ();
+
+    #[method(name = "FillCharacterVertexBuffers", args = 2)]
+    pub fn fill_character_vertex_buffers(self, i: i32, index_x4: i32) -> ();
+
+    #[method(name = "FillCharacterVertexBuffers", args = 3)]
+    pub fn fill_character_vertex_buffers_2(self, i: i32, index_x4: i32, is_volumetric: bool) -> ();
+
+    #[method(name = "FillSpriteVertexBuffers", args = 2)]
+    pub fn fill_sprite_vertex_buffers(self, i: i32, index_x4: i32) -> ();
+
+    #[method(name = "DrawUnderlineMesh", args = 8)]
+    pub fn draw_underline_mesh(
+        self,
+        start: crate::unity_engine::vector3::Vector3,
+        end: crate::unity_engine::vector3::Vector3,
+        index: i32,
+        start_scale: f32,
+        end_scale: f32,
+        max_scale: f32,
+        sdf_scale: f32,
+        underline_color: crate::unity_engine::color32::Color32,
+    ) -> ();
+
+    #[method(name = "DrawTextHighlight", args = 4)]
+    pub fn draw_text_highlight(
+        self,
+        start: crate::unity_engine::vector3::Vector3,
+        end: crate::unity_engine::vector3::Vector3,
+        index: i32,
+        highlight_color: crate::unity_engine::color32::Color32,
+    ) -> ();
+
+    #[method(name = "LoadDefaultSettings", args = 0)]
+    pub fn load_default_settings(self) -> ();
+
+    #[method(name = "GetSpecialCharacters", args = 1)]
+    pub fn get_special_characters(
+        self,
+        font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+    ) -> ();
+
+    #[method(name = "GetEllipsisSpecialCharacter", args = 1)]
+    pub fn get_ellipsis_special_character(
+        self,
+        font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+    ) -> ();
+
+    #[method(name = "GetUnderlineSpecialCharacter", args = 1)]
+    pub fn get_underline_special_character(
+        self,
+        font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+    ) -> ();
+
+    #[method(name = "ReplaceTagWithCharacter", args = 4)]
+    pub fn replace_tag_with_character(
+        self,
+        chars: ::unity2::Array<i32>,
+        insertion_index: i32,
+        tag_length: i32,
+        c: u16,
+    ) -> ();
+
+    #[method(name = "GetFontAssetForWeight", args = 1)]
+    pub fn get_font_asset_for_weight(
+        self,
+        font_weight: i32,
+    ) -> crate::tm_pro::tmp_fontasset::TMP_FontAsset;
+
+    #[method(name = "GetTextElement", args = 5)]
+    pub fn get_text_element(
+        self,
+        unicode: u32,
+        font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+        font_style: crate::tm_pro::fontstyles::FontStyles,
+        font_weight: crate::tm_pro::fontweight::FontWeight,
+        is_using_alternative_typeface: bool,
+    ) -> crate::tm_pro::tmp_textelement::TMP_TextElement;
+
+    #[method(name = "SetActiveSubMeshes", args = 1)]
+    pub fn set_active_sub_meshes(self, state: bool) -> ();
+
+    #[method(name = "DestroySubMeshObjects", args = 0)]
+    pub fn destroy_sub_mesh_objects(self) -> ();
+
+    #[method(name = "ClearMesh", args = 0)]
+    pub fn clear_mesh(self) -> ();
+
+    #[method(name = "ClearMesh", args = 1)]
+    pub fn clear_mesh_2(self, upload_geometry: bool) -> ();
+
+    #[method(name = "GetParsedText", args = 0)]
+    pub fn get_parsed_text(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsSelfOrLinkedAncestor", args = 1)]
+    pub fn is_self_or_linked_ancestor(
+        self,
+        target_text_component: crate::tm_pro::tmp_text::TMP_Text,
+    ) -> bool;
+
+    #[method(name = "ReleaseLinkedTextComponent", args = 1)]
+    pub fn release_linked_text_component(
+        self,
+        target_text_component: crate::tm_pro::tmp_text::TMP_Text,
+    ) -> ();
+
+    #[method(name = "PackUV", args = 3)]
+    pub fn pack_uv(self, x: f32, y: f32, scale: f32) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "PackUV", args = 2)]
+    pub fn pack_uv_2(self, x: f32, y: f32) -> f32;
+
+    #[method(name = "InternalUpdate", args = 0)]
+    pub fn internal_update(self) -> ();
+
+    #[method(name = "HexToInt", args = 1)]
+    pub fn hex_to_int(self, hex: u16) -> i32;
+
+    #[method(name = "GetUTF16", args = 2)]
+    pub fn get_utf16(self, text: ::unity2::Il2CppString, i: i32) -> i32;
+
+    #[method(name = "GetUTF16", args = 2)]
+    pub fn get_utf16_2(self, text: ::unity2::Array<i32>, i: i32) -> i32;
+
+    #[method(name = "GetUTF16", args = 2)]
+    pub fn get_utf16_3(self, text: ::unity2::Array<u32>, i: i32) -> i32;
+
+    #[method(name = "GetUTF16", args = 2)]
+    pub fn get_utf16_4(
+        self,
+        text: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        i: i32,
+    ) -> i32;
+
+    #[method(name = "GetUTF32", args = 2)]
+    pub fn get_utf32(self, text: ::unity2::Il2CppString, i: i32) -> i32;
+
+    #[method(name = "GetUTF32", args = 2)]
+    pub fn get_utf32_2(self, text: ::unity2::Array<i32>, i: i32) -> i32;
+
+    #[method(name = "GetUTF32", args = 2)]
+    pub fn get_utf32_3(self, text: ::unity2::Array<u32>, i: i32) -> i32;
+
+    #[method(name = "GetUTF32", args = 2)]
+    pub fn get_utf32_4(
+        self,
+        text: crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer,
+        i: i32,
+    ) -> i32;
+
+    #[method(name = "HexCharsToColor", args = 2)]
+    pub fn hex_chars_to_color(
+        self,
+        hex_chars: ::unity2::Array<u16>,
+        tag_count: i32,
+    ) -> crate::unity_engine::color32::Color32;
+
+    #[method(name = "HexCharsToColor", args = 3)]
+    pub fn hex_chars_to_color_2(
+        self,
+        hex_chars: ::unity2::Array<u16>,
+        start_index: i32,
+        length: i32,
+    ) -> crate::unity_engine::color32::Color32;
+
+    #[method(name = "GetAttributeParameters", args = 4)]
+    pub fn get_attribute_parameters(
+        self,
+        chars: ::unity2::Array<u16>,
+        start_index: i32,
+        length: i32,
+        parameters: ::unity2::Array<f32>,
+    ) -> i32;
+
+    #[method(name = "ConvertToFloat", args = 3)]
+    pub fn convert_to_float(
+        self,
+        chars: ::unity2::Array<u16>,
+        start_index: i32,
+        length: i32,
+    ) -> f32;
+
+    #[method(name = "ConvertToFloat", args = 4)]
+    pub fn convert_to_float_2(
+        self,
+        chars: ::unity2::Array<u16>,
+        start_index: i32,
+        length: i32,
+        last_index: i32,
+    ) -> f32;
+
+    #[method(name = "ValidateHtmlTag", args = 3)]
+    pub fn validate_html_tag(
+        self,
+        chars: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>,
+        start_index: i32,
+        end_index: i32,
+    ) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+impl TMP_Text {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_Text),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_TextMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_SpecialCharacter.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TMP_Text_SpecialCharacter {
+    pub character: crate::tm_pro::tmp_character::TMP_Character,
+    pub font_asset: crate::tm_pro::tmp_fontasset::TMP_FontAsset,
+    pub material: crate::unity_engine::material::Material,
+    pub material_index: i32,
+}
+
+impl ::unity2::ClassIdentity for TMP_Text_SpecialCharacter {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_Text.SpecialCharacter";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_Text_SpecialCharacter {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+#[::unity2::methods(value)]
+impl TMP_Text_SpecialCharacter {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        character: crate::tm_pro::tmp_character::TMP_Character,
+        material_index: i32,
+    ) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_UnicodeChar.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TMP_Text_UnicodeChar {
+    pub unicode: i32,
+    pub string_index: i32,
+    pub length: i32,
+}
+
+impl ::unity2::ClassIdentity for TMP_Text_UnicodeChar {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_Text.UnicodeChar";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_Text_UnicodeChar {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_CharacterSubstitution.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TMP_Text_CharacterSubstitution {
+    pub index: i32,
+    pub unicode: u32,
+}
+
+impl ::unity2::ClassIdentity for TMP_Text_CharacterSubstitution {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_Text.CharacterSubstitution";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_Text_CharacterSubstitution {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+#[::unity2::methods(value)]
+impl TMP_Text_CharacterSubstitution {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, index: i32, unicode: u32) -> ();
+}

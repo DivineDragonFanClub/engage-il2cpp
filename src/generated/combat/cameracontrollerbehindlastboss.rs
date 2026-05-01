@@ -1,0 +1,81 @@
+
+use crate::combat::basecameracontroller::BaseCameraController;
+use crate::combat::basecameracontroller::IBaseCameraController;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerbehindlastboss/CameraControllerBehindLastBoss.md")))]
+#[::unity2::class(namespace = "Combat", name = "CameraControllerBehindLastBoss")]
+#[parent(crate::combat::basecameracontroller::BaseCameraController)]
+pub struct CameraControllerBehindLastBoss {
+    #[rename(name = "FollowVectorH")]
+    pub follow_vector_h: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "LookAtVectorH")]
+    pub look_at_vector_h: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "FOVH")]
+    pub fovh: f32,
+    #[rename(name = "FollowVectorL")]
+    pub follow_vector_l: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "LookAtVectorL")]
+    pub look_at_vector_l: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "FOVL")]
+    pub fovl: f32,
+    #[rename(name = "FollowVectorD")]
+    pub follow_vector_d: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "SpeedThresholdUp")]
+    pub speed_threshold_up: f32,
+    #[rename(name = "SpeedThresholdDown")]
+    pub speed_threshold_down: f32,
+    #[rename(name = "FollowVectorMulti")]
+    pub follow_vector_multi: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "LookAtVectorMulti")]
+    pub look_at_vector_multi: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_IsHeadHigh")]
+    pub m_is_head_high: bool,
+    #[rename(name = "m_HeadHight")]
+    pub m_head_hight: ::unity2::Array<f32>,
+    #[rename(name = "m_WorldTime")]
+    pub m_world_time: ::unity2::Array<f32>,
+    #[rename(name = "m_IsCharacterLoaded")]
+    pub m_is_character_loaded: bool,
+}
+
+#[cfg(feature = "combat-cameracontrollerbehindlastboss")]
+#[::unity2::methods]
+impl CameraControllerBehindLastBoss {
+    #[method(name = "GetCombatVector", args = 1)]
+    pub fn get_combat_vector(
+        self,
+        vec: crate::unity_engine::vector3::Vector3,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "GetCameraTargets", args = 0)]
+    pub fn get_camera_targets(self) -> ::unity2::Array<i32>;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-cameracontrollerbehindlastboss")]
+impl CameraControllerBehindLastBoss {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CameraControllerBehindLastBoss),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICameraControllerBehindLastBossMethods>::ctor(this);
+        this
+    }
+}

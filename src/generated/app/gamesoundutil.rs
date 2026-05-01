@@ -1,0 +1,57 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesoundutil/GameSoundUtil.md")))]
+#[::unity2::class(namespace = "App", name = "GameSoundUtil")]
+#[parent(crate::system::object::Object)]
+pub struct GameSoundUtil {}
+
+#[cfg(feature = "app-gamesoundutil")]
+#[::unity2::methods]
+impl GameSoundUtil {
+    #[method(name = "GetGroundMaterialName", args = 1)]
+    pub fn get_ground_material_name(
+        pos: crate::unity_engine::vector3::Vector3,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetAttackTypeName", args = 1)]
+    pub fn get_attack_type_name(
+        attack_type: crate::app::attacktype::AttackType,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetDamageLevelName", args = 1)]
+    pub fn get_damage_level_name(
+        damage_level: crate::app::damagelevel::DamageLevel,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetWeaponName", args = 2)]
+    pub fn get_weapon_name(
+        asset_weapon_name: ::unity2::Il2CppString,
+        item_kind: crate::app::itemdata::ItemData_Kinds,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetDefaultWeaponNameByItemKind", args = 1)]
+    pub fn get_default_weapon_name_by_item_kind(
+        item_kind: crate::app::itemdata::ItemData_Kinds,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gamesoundutil")]
+impl GameSoundUtil {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSoundUtil),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSoundUtilMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,462 @@
+
+use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+use crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle.md")))]
+#[::unity2::class(namespace = "App", name = "MapInfoCircle")]
+# [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapinfocircle :: MapInfoCircle >)]
+pub struct MapInfoCircle {
+    #[rename(name = "m_WarpUnitList")]
+    pub m_warp_unit_list:
+        crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    #[rename(name = "m_NormalCircle")]
+    pub m_normal_circle: crate::unity_engine::material::Material,
+    #[rename(name = "m_BossCircle")]
+    pub m_boss_circle: crate::unity_engine::material::Material,
+    #[rename(name = "m_LastBossCircle")]
+    pub m_last_boss_circle: crate::unity_engine::material::Material,
+    #[rename(name = "m_PlayerColor")]
+    pub m_player_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_PlayerFixedColor")]
+    pub m_player_fixed_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_EnemyColor")]
+    pub m_enemy_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_EnemyFixedColor")]
+    pub m_enemy_fixed_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_AllyColor")]
+    pub m_ally_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_AllyFixedColor")]
+    pub m_ally_fixed_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_ThirdColor")]
+    pub m_third_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_ThirdFixedColor")]
+    pub m_third_fixed_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_TimesSpeed")]
+    pub m_times_speed: f32,
+    #[rename(name = "m_RotateSpeed")]
+    pub m_rotate_speed: f32,
+    #[rename(name = "m_Anime")]
+    pub m_anime: crate::app::mapinfocircle::MapInfoCircle_Animes,
+    #[rename(name = "m_SubMeshCount")]
+    pub m_sub_mesh_count: i32,
+    #[rename(name = "m_Colors")]
+    pub m_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+    #[rename(name = "m_FixedColors")]
+    pub m_fixed_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+    #[rename(name = "m_ActiveUnit")]
+    pub m_active_unit: crate::app::unit::Unit,
+    #[rename(name = "m_Cells")]
+    pub m_cells: ::unity2::Array<crate::app::mappos::MapPos>,
+    #[rename(name = "m_Materials")]
+    pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+    #[rename(name = "m_State")]
+    pub m_state: crate::app::mapinfocircle::MapInfoCircle_CircleState,
+    #[rename(name = "m_PropertyID")]
+    pub m_property_id: i32,
+    #[rename(name = "m_Time")]
+    pub m_time: f32,
+    #[rename(name = "m_UvRotate")]
+    pub m_uv_rotate: f32,
+    #[rename(name = "m_IsActive")]
+    pub m_is_active: bool,
+    #[rename(name = "m_AttackImage")]
+    pub m_attack_image: crate::app::mapdeployattackimage::MapDeployAttackImage,
+    #[rename(name = "m_RodImage")]
+    pub m_rod_image: crate::app::mapdeployrodimage::MapDeployRodImage,
+    #[rename(name = "m_HealImage")]
+    pub m_heal_image: crate::app::mapdeployhealimage::MapDeployHealImage,
+    #[rename(name = "m_SupportImage")]
+    pub m_support_image: crate::app::mapdeploysupportimage::MapDeploySupportImage,
+    #[rename(name = "m_SupportForUnitImage")]
+    pub m_support_for_unit_image:
+        crate::app::mapdeploysupportforunitimage::MapDeploySupportForUnitImage,
+    #[rename(name = "m_InterferenceImage")]
+    pub m_interference_image: crate::app::mapdeployinterferenceimage::MapDeployInterferenceImage,
+    #[rename(name = "m_ActionImage")]
+    pub m_action_image: crate::app::mapdeployactionimage::MapDeployActionImage,
+    #[rename(name = "m_RangeImage")]
+    pub m_range_image: crate::app::mapdeployrangeimage::MapDeployRangeImage,
+    #[rename(name = "m_OverlapImage")]
+    pub m_overlap_image: crate::app::mapdeployoverlapimage::MapDeployOverlapImage,
+    #[rename(name = "m_DanceImage")]
+    pub m_dance_image: crate::app::mapdeploydanceimage::MapDeployDanceImage,
+    #[rename(name = "m_CannonImage")]
+    pub m_cannon_image: crate::app::mapdeploycannonimage::MapDeployCannonImage,
+    #[rename(name = "m_Mesh")]
+    pub m_mesh: crate::app::map::Map_CellMesh,
+    #[rename(name = "m_Renderer")]
+    pub m_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
+    #[rename(name = "m_DrawNormalCircle")]
+    pub m_draw_normal_circle: crate::app::mapfor::MapFor_UnitFunction,
+    #[rename(name = "m_DrawBossCircle")]
+    pub m_draw_boss_circle: crate::app::mapfor::MapFor_UnitFunction,
+    #[rename(name = "m_DrawLastBossCircle")]
+    pub m_draw_last_boss_circle: crate::app::mapfor::MapFor_UnitFunction,
+    #[rename(name = "m_ResistWarpUnit")]
+    pub m_resist_warp_unit: crate::app::mapfor::MapFor_UnitFunction,
+    #[rename(name = "m_ResistRewarpUnit")]
+    pub m_resist_rewarp_unit: crate::app::mapfor::MapFor_UnitFunction,
+}
+
+#[cfg(feature = "app-mapinfocircle")]
+#[::unity2::methods]
+impl MapInfoCircle {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "GetMaterials", args = 0)]
+    pub fn get_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "GetColor", args = 2)]
+    pub fn get_color(
+        self,
+        unit: crate::app::unit::Unit,
+        is_check_fixed: bool,
+    ) -> crate::unity_engine::color::Color;
+
+    #[method(name = "CanTarget", args = 2)]
+    pub fn can_target(self, unit: crate::app::unit::Unit, target: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "CanAttack", args = 2)]
+    pub fn can_attack(self, unit: crate::app::unit::Unit, target: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "CanDance", args = 2)]
+    pub fn can_dance(self, dancer: crate::app::unit::Unit, target: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "CanContract", args = 2)]
+    pub fn can_contract(
+        self,
+        contractor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "CanUseHealRod", args = 2)]
+    pub fn can_use_heal_rod(
+        self,
+        user: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "CanUseHealRod", args = 3)]
+    pub fn can_use_heal_rod_2(
+        self,
+        user: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        item_data: crate::app::itemdata::ItemData,
+    ) -> bool;
+
+    #[method(name = "CanUseSupportRod", args = 2)]
+    pub fn can_use_support_rod(
+        self,
+        user: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "CanUseSupportRod", args = 4)]
+    pub fn can_use_support_rod_2(
+        self,
+        user: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        item_data: crate::app::itemdata::ItemData,
+        is_item_selected: bool,
+    ) -> bool;
+
+    #[method(name = "CanUseInterferenceRod", args = 2)]
+    pub fn can_use_interference_rod(
+        self,
+        user: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "CanUseEngageRod", args = 2)]
+    pub fn can_use_engage_rod(
+        self,
+        unit: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "CanEnchantItem", args = 2)]
+    pub fn can_enchant_item(
+        self,
+        unit: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "DrawCircle", args = 2)]
+    pub fn draw_circle(self, unit: crate::app::unit::Unit, index: i32) -> ();
+
+    #[method(name = "DrawNormalCircle", args = 1)]
+    pub fn draw_normal_circle(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "DrawBossCircle", args = 1)]
+    pub fn draw_boss_circle(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "DrawLastBossCircle", args = 1)]
+    pub fn draw_last_boss_circle(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "IsDrawLowRotateCircle", args = 1)]
+    pub fn is_draw_low_rotate_circle(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "IsDrawHighRotateCircle", args = 1)]
+    pub fn is_draw_high_rotate_circle(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = "SetActive", args = 1)]
+    pub fn set_active(self, active: bool) -> ();
+
+    #[method(name = "SetUnit", args = 1)]
+    pub fn set_unit(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "SetAnime", args = 1)]
+    pub fn set_anime(self, anime: crate::app::mapinfocircle::MapInfoCircle_Animes) -> ();
+
+    #[method(name = "SetWarpUnit", args = 0)]
+    pub fn set_warp_unit(self) -> ();
+
+    #[method(name = "SetRewarpUnit", args = 0)]
+    pub fn set_rewarp_unit(self) -> ();
+
+    #[method(name = "ResistWarpUnit", args = 1)]
+    pub fn resist_warp_unit(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "ResistRewarpUnit", args = 1)]
+    pub fn resist_rewarp_unit(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "ClearWarpUnit", args = 0)]
+    pub fn clear_warp_unit(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapinfocircle")]
+impl MapInfoCircle {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapInfoCircle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapInfoCircleMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_MeshIndex.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapInfoCircle_MeshIndex {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapInfoCircle_MeshIndex {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapInfoCircle.MeshIndex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapInfoCircle_MeshIndex {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapInfoCircle_MeshIndex {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn boss() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn last_boss() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_Animes.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapInfoCircle_Animes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapInfoCircle_Animes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapInfoCircle.Animes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapInfoCircle_Animes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapInfoCircle_Animes {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn low_rotate() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn high_rotate() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_CircleColor.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapInfoCircle_CircleColor {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapInfoCircle_CircleColor {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapInfoCircle.CircleColor";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapInfoCircle_CircleColor {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapInfoCircle_CircleColor {
+    pub fn blue() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn red() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn green() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn yellow() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfocircle/MapInfoCircle_CircleState.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapInfoCircle_CircleState {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapInfoCircle_CircleState {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapInfoCircle.CircleState";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapInfoCircle_CircleState {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapInfoCircle_CircleState {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn rotate() -> Self {
+        Self { value: 1 }
+    }
+}

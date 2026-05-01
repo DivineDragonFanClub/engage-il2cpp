@@ -1,0 +1,105 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspotadjuster/GmapSpotAdjuster.md")))]
+#[::unity2::class(namespace = "App", name = "GmapSpotAdjuster")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct GmapSpotAdjuster {
+    #[rename(name = "移動時に地面に吸着させる")]
+    pub _unnamed: bool,
+    #[rename(name = "m_TargetColliders")]
+    pub m_target_colliders: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::collider::Collider,
+    >,
+    #[rename(name = "m_OldCheck")]
+    pub m_old_check: bool,
+    #[rename(name = "m_Transform")]
+    pub m_transform: crate::unity_engine::transform::Transform,
+    #[rename(name = "m_LastPosition")]
+    pub m_last_position: crate::unity_engine::vector3::Vector3,
+}
+
+#[cfg(feature = "app-gmapspotadjuster")]
+#[::unity2::methods]
+impl GmapSpotAdjuster {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "OnValidate", args = 0)]
+    pub fn on_validate(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "SetupColliders", args = 0)]
+    pub fn setup_colliders(self) -> ();
+
+    #[method(name = "AdjustGround", args = 1)]
+    pub fn adjust_ground(self, diff: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "RaycastToTargets", args = 4)]
+    pub fn raycast_to_targets(
+        origin: crate::unity_engine::vector3::Vector3,
+        direction: crate::unity_engine::vector3::Vector3,
+        out_raycast_hit: crate::unity_engine::raycasthit::RaycastHit,
+        targets: ::unity2::Array<crate::unity_engine::collider::Collider>,
+    ) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapspotadjuster")]
+impl GmapSpotAdjuster {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapSpotAdjuster),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapSpotAdjusterMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspotadjuster/GmapSpotAdjuster_TargetModel.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct GmapSpotAdjuster_TargetModel {
+    pub _unnamed: ::unity2::Il2CppString,
+}
+
+impl ::unity2::ClassIdentity for GmapSpotAdjuster_TargetModel {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GmapSpotAdjuster.TargetModel";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GmapSpotAdjuster_TargetModel {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

@@ -1,0 +1,102 @@
+
+use crate::app::basicmenucontent::BasicMenuContent;
+use crate::app::basicmenucontent::IBasicMenuContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortietopmenucontent/SortieTopMenuContent.md")))]
+#[::unity2::class(namespace = "App", name = "SortieTopMenuContent")]
+#[parent(crate::app::basicmenucontent::BasicMenuContent)]
+pub struct SortieTopMenuContent {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_MenuListAnimator")]
+    pub m_menu_list_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_GridSize")]
+    pub m_grid_size: i32,
+    #[rename(name = "m_ColorPlayer")]
+    pub m_color_player: crate::unity_engine::color::Color,
+    #[rename(name = "m_ColorEnemy")]
+    pub m_color_enemy: crate::unity_engine::color::Color,
+    #[rename(name = "m_ColorAlly")]
+    pub m_color_ally: crate::unity_engine::color::Color,
+    #[rename(name = "m_CostTypeColors")]
+    pub m_cost_type_colors: ::unity2::Array<crate::unity_engine::color::Color>,
+    #[rename(name = "m_DifficultyFrameColorNormal")]
+    pub m_difficulty_frame_color_normal: crate::unity_engine::color::Color,
+    #[rename(name = "m_DifficultyFrameColorHard")]
+    pub m_difficulty_frame_color_hard: crate::unity_engine::color::Color,
+    #[rename(name = "m_DifficultyFrameColorLunatic")]
+    pub m_difficulty_frame_color_lunatic: crate::unity_engine::color::Color,
+}
+
+#[cfg(feature = "app-sortietopmenucontent")]
+#[::unity2::methods]
+impl SortieTopMenuContent {
+    #[method(name = "UpdateInfo", args = 1)]
+    pub fn update_info(self, is_sortie_top: bool) -> ();
+
+    #[method(name = "GetSubItemMenuRect", args = 0)]
+    pub fn get_sub_item_menu_rect(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[method(name = "SetColor", args = 1)]
+    pub fn set_color(self, color: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "GetMenuItemContentMax", args = 0)]
+    pub fn get_menu_item_content_max(self) -> i32;
+
+    #[method(name = "CalcW", args = 0)]
+    pub fn calc_w(self) -> f32;
+
+    #[method(name = "CalcH", args = 0)]
+    pub fn calc_h(self) -> f32;
+
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "Create", args = 0)]
+    pub fn create() -> crate::app::sortietopmenucontent::SortieTopMenuContent;
+
+    #[method(name = "BuildMenuItemContent", args = 0)]
+    pub fn build_menu_item_content(self) -> ();
+
+    #[method(name = "OpenAnime", args = 0)]
+    pub fn open_anime(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-sortietopmenucontent")]
+impl SortieTopMenuContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenuContentMethods>::ctor(this);
+        this
+    }
+}

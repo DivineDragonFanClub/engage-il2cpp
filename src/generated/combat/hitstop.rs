@@ -1,0 +1,78 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/hitstop/HitStop.md")))]
+#[::unity2::class(namespace = "Combat", name = "HitStop")]
+#[parent(crate::system::object::Object)]
+pub struct HitStop {
+    #[rename(name = "m_HitStopSpeedCurve")]
+    pub m_hit_stop_speed_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "m_NormalizedScale")]
+    pub m_normalized_scale: f32,
+    #[rename(name = "m_LastSpeed")]
+    pub m_last_speed: f32,
+    #[rename(name = "m_bHitStopEndCalled")]
+    pub m_b_hit_stop_end_called: bool,
+    #[rename(name = "m_HitStopStart")]
+    pub m_hit_stop_start: f32,
+}
+
+#[cfg(feature = "combat-hitstop")]
+#[::unity2::methods]
+impl HitStop {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        hit_stop_speed_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    ) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "get_RemainingTime", args = 0)]
+    pub fn get_remaining_time(self) -> f32;
+
+    #[method(name = "set_RemainingTime", args = 1)]
+    pub fn set_remaining_time(self, value: f32) -> ();
+
+    #[method(name = "get_IsRunning", args = 0)]
+    pub fn get_is_running(self) -> bool;
+
+    #[method(name = "get_Speed", args = 0)]
+    pub fn get_speed(self) -> f32;
+
+    #[method(name = "set_Speed", args = 1)]
+    pub fn set_speed(self, value: f32) -> ();
+
+    #[method(name = "get_NormalizedTime", args = 0)]
+    pub fn get_normalized_time(self) -> f32;
+
+    #[method(name = "Start", args = 1)]
+    pub fn start(self, time: f32) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "Resume", args = 0)]
+    pub fn resume(self) -> ();
+}
+
+#[cfg(feature = "combat-hitstop")]
+impl HitStop {
+    pub fn new(hit_stop_speed_curve: crate::unity_engine::animationcurve::AnimationCurve) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HitStop),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHitStopMethods>::ctor(this, hit_stop_speed_curve);
+        this
+    }
+}

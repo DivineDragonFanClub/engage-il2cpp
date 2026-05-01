@@ -1,0 +1,98 @@
+
+use crate::moon_sharp::interpreter::tree::expression::Expression;
+use crate::moon_sharp::interpreter::tree::expression::IExpression;
+use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+use crate::moon_sharp::interpreter::tree::nodebase::NodeBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/expressions/indexexpression/IndexExpression.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Expressions",
+    name = "IndexExpression"
+)]
+#[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
+pub struct IndexExpression {
+    #[rename(name = "m_BaseExp")]
+    pub m_base_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+    #[rename(name = "m_IndexExp")]
+    pub m_index_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-indexexpression")]
+#[::unity2::methods]
+impl IndexExpression {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        base_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+        index_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor_2(
+        self,
+        base_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+        name: ::unity2::Il2CppString,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> ();
+
+    #[method(name = "Compile", args = 1)]
+    pub fn compile(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> ();
+
+    #[method(name = "CompileAssignment", args = 3)]
+    pub fn compile_assignment(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+        stackofs: i32,
+        tupleidx: i32,
+    ) -> ();
+
+    #[method(name = "Eval", args = 1)]
+    pub fn eval(
+        self,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-indexexpression")]
+impl IndexExpression {
+    pub fn new(
+        base_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+        index_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(IndexExpression),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IIndexExpressionMethods>::ctor(this, base_exp, index_exp, lcontext);
+        this
+    }
+
+    pub fn new_2(
+        base_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+        name: ::unity2::Il2CppString,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(IndexExpression),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IIndexExpressionMethods>::ctor_2(this, base_exp, name, lcontext);
+        this
+    }
+}

@@ -1,0 +1,277 @@
+
+use crate::moon_sharp::interpreter::refidobject::IRefIdObject;
+use crate::moon_sharp::interpreter::refidobject::RefIdObject;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/table/Table.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter", name = "Table")]
+#[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
+pub struct Table {
+    #[rename(name = "m_Values")]
+    pub m_values: crate::system::collections::generic::linkedlist_1::LinkedList_1<
+        crate::moon_sharp::interpreter::tablepair::TablePair,
+    >,
+    #[rename(name = "m_ValueMap")]
+    pub m_value_map:
+        crate::moon_sharp::interpreter::data_structs::linkedlistindex_2::LinkedListIndex_2<
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            crate::moon_sharp::interpreter::tablepair::TablePair,
+        >,
+    #[rename(name = "m_StringMap")]
+    pub m_string_map:
+        crate::moon_sharp::interpreter::data_structs::linkedlistindex_2::LinkedListIndex_2<
+            ::unity2::Il2CppString,
+            crate::moon_sharp::interpreter::tablepair::TablePair,
+        >,
+    #[rename(name = "m_ArrayMap")]
+    pub m_array_map:
+        crate::moon_sharp::interpreter::data_structs::linkedlistindex_2::LinkedListIndex_2<
+            i32,
+            crate::moon_sharp::interpreter::tablepair::TablePair,
+        >,
+    #[rename(name = "m_Owner")]
+    pub m_owner: crate::moon_sharp::interpreter::script::Script,
+    #[rename(name = "m_InitArray")]
+    pub m_init_array: i32,
+    #[rename(name = "m_CachedLength")]
+    pub m_cached_length: i32,
+    #[rename(name = "m_ContainsNilEntries")]
+    pub m_contains_nil_entries: bool,
+    #[rename(name = "m_MetaTable")]
+    pub m_meta_table: crate::moon_sharp::interpreter::table::Table,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-table")]
+#[::unity2::methods]
+impl Table {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, owner: crate::moon_sharp::interpreter::script::Script) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        owner: crate::moon_sharp::interpreter::script::Script,
+        array_values: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[method(name = "get_OwnerScript", args = 0)]
+    pub fn get_owner_script(self) -> crate::moon_sharp::interpreter::script::Script;
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "GetIntegralKey", args = 1)]
+    pub fn get_integral_key(self, d: f64) -> i32;
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(
+        self,
+        keys: ::unity2::Array<crate::system::object::Object>,
+    ) -> crate::system::object::Object;
+
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(
+        self,
+        keys: ::unity2::Array<crate::system::object::Object>,
+        value: crate::system::object::Object,
+    ) -> ();
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item_2(self, key: crate::system::object::Object) -> crate::system::object::Object;
+
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item_2(
+        self,
+        key: crate::system::object::Object,
+        value: crate::system::object::Object,
+    ) -> ();
+
+    #[method(name = "ResolveMultipleKeys", args = 2)]
+    pub fn resolve_multiple_keys(
+        self,
+        keys: ::unity2::Array<crate::system::object::Object>,
+        key: ::unity2::IlInstance,
+    ) -> crate::moon_sharp::interpreter::table::Table;
+
+    #[method(name = "Append", args = 1)]
+    pub fn append(self, value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = "Set", args = 2)]
+    pub fn set(
+        self,
+        key: ::unity2::Il2CppString,
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> ();
+
+    #[method(name = "Set", args = 2)]
+    pub fn set_2(self, key: i32, value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = "Set", args = 2)]
+    pub fn set_3(
+        self,
+        key: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> ();
+
+    #[method(name = "Set", args = 2)]
+    pub fn set_4(
+        self,
+        key: crate::system::object::Object,
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> ();
+
+    #[method(name = "Set", args = 2)]
+    pub fn set_5(
+        self,
+        keys: ::unity2::Array<crate::system::object::Object>,
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> ();
+
+    #[method(name = "Get", args = 1)]
+    pub fn get(
+        self,
+        key: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Get", args = 1)]
+    pub fn get_2(self, key: i32) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Get", args = 1)]
+    pub fn get_3(
+        self,
+        key: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Get", args = 1)]
+    pub fn get_4(
+        self,
+        key: crate::system::object::Object,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Get", args = 1)]
+    pub fn get_5(
+        self,
+        keys: ::unity2::Array<crate::system::object::Object>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "RawGetValue", args = 1)]
+    pub fn raw_get_value(
+        linked_list_node: crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
+            crate::moon_sharp::interpreter::tablepair::TablePair,
+        >,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "RawGet", args = 1)]
+    pub fn raw_get(
+        self,
+        key: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "RawGet", args = 1)]
+    pub fn raw_get_2(self, key: i32) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "RawGet", args = 1)]
+    pub fn raw_get_3(
+        self,
+        key: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "RawGet", args = 1)]
+    pub fn raw_get_4(
+        self,
+        key: crate::system::object::Object,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "RawGet", args = 1)]
+    pub fn raw_get_5(
+        self,
+        keys: ::unity2::Array<crate::system::object::Object>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Remove", args = 1)]
+    pub fn remove(self, key: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "Remove", args = 1)]
+    pub fn remove_2(self, key: i32) -> bool;
+
+    #[method(name = "Remove", args = 1)]
+    pub fn remove_3(self, key: crate::moon_sharp::interpreter::dynvalue::DynValue) -> bool;
+
+    #[method(name = "Remove", args = 1)]
+    pub fn remove_4(self, key: crate::system::object::Object) -> bool;
+
+    #[method(name = "Remove", args = 1)]
+    pub fn remove_5(self, keys: ::unity2::Array<crate::system::object::Object>) -> bool;
+
+    #[method(name = "CollectDeadKeys", args = 0)]
+    pub fn collect_dead_keys(self) -> ();
+
+    #[method(name = "get_Length", args = 0)]
+    pub fn get_length(self) -> i32;
+
+    #[method(name = "InitNextArrayKeys", args = 2)]
+    pub fn init_next_array_keys(
+        self,
+        val: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        lastpos: bool,
+    ) -> ();
+
+    #[method(name = "get_MetaTable", args = 0)]
+    pub fn get_meta_table(self) -> crate::moon_sharp::interpreter::table::Table;
+
+    #[method(name = "set_MetaTable", args = 1)]
+    pub fn set_meta_table(self, value: crate::moon_sharp::interpreter::table::Table) -> ();
+
+    #[method(name = "get_Pairs", args = 0)]
+    pub fn get_pairs(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::moon_sharp::interpreter::tablepair::TablePair,
+    >;
+
+    #[method(name = "get_Keys", args = 0)]
+    pub fn get_keys(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::moon_sharp::interpreter::dynvalue::DynValue,
+    >;
+
+    #[method(name = "get_Values", args = 0)]
+    pub fn get_values(
+        self,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<
+        crate::moon_sharp::interpreter::dynvalue::DynValue,
+    >;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-table")]
+impl Table {
+    pub fn new(owner: crate::moon_sharp::interpreter::script::Script) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Table),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITableMethods>::ctor(this, owner);
+        this
+    }
+
+    pub fn new_2(
+        owner: crate::moon_sharp::interpreter::script::Script,
+        array_values: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Table),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ITableMethods>::ctor_2(this, owner, array_values);
+        this
+    }
+}

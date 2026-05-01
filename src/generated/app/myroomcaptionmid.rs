@@ -1,0 +1,36 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
+use crate::unity_engine::playables::playablebehaviour::PlayableBehaviour;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomcaptionmid/MyRoomCaptionMID.md")))]
+#[::unity2::class(namespace = "App", name = "MyRoomCaptionMID")]
+#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
+pub struct MyRoomCaptionMID {
+    #[rename(name = "MID")]
+    pub mid: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-myroomcaptionmid")]
+#[::unity2::methods]
+impl MyRoomCaptionMID {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-myroomcaptionmid")]
+impl MyRoomCaptionMID {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomCaptionMID),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomCaptionMIDMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,180 @@
+
+use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+use crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameui/GameUI_Priority.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GameUI_Priority {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GameUI_Priority {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameUI.Priority";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GameUI_Priority {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GameUI_Priority {
+    pub fn map_unit() -> Self {
+        Self { value: -200 }
+    }
+
+    pub fn map_ui() -> Self {
+        Self { value: -100 }
+    }
+
+    pub fn unit_info() -> Self {
+        Self { value: -50 }
+    }
+
+    pub fn default() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn level_up() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn terrain_info() -> Self {
+        Self { value: 50 }
+    }
+
+    pub fn basic_menu() -> Self {
+        Self { value: 500 }
+    }
+
+    pub fn title_bar() -> Self {
+        Self { value: 600 }
+    }
+
+    pub fn tutorial() -> Self {
+        Self { value: 700 }
+    }
+
+    pub fn help() -> Self {
+        Self { value: 800 }
+    }
+
+    pub fn telop() -> Self {
+        Self { value: 1000 }
+    }
+
+    pub fn movie() -> Self {
+        Self { value: 1050 }
+    }
+
+    pub fn achieve() -> Self {
+        Self { value: 1100 }
+    }
+
+    pub fn talk_ui() -> Self {
+        Self { value: 1100 }
+    }
+
+    pub fn fade() -> Self {
+        Self { value: 1200 }
+    }
+
+    pub fn dialog() -> Self {
+        Self { value: 1500 }
+    }
+
+    pub fn debug() -> Self {
+        Self { value: 2000 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameui/GameUI.md")))]
+#[::unity2::class(namespace = "App", name = "GameUI")]
+# [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: gameui :: GameUI >)]
+pub struct GameUI {
+    #[static_field]
+    #[rename(name = "UnknownName")]
+    pub unknown_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-gameui")]
+#[::unity2::methods]
+impl GameUI {
+    #[method(name = "GetRoot", args = 0)]
+    pub fn get_root() -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "GetCanvas", args = 1)]
+    pub fn get_canvas(
+        priority: crate::app::gameui::GameUI_Priority,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "GetCanvas", args = 2)]
+    pub fn get_canvas_2(
+        name: ::unity2::Il2CppString,
+        priority: crate::app::gameui::GameUI_Priority,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "TryCreateCanvas", args = 3)]
+    pub fn try_create_canvas(
+        parent: crate::unity_engine::gameobject::GameObject,
+        name: ::unity2::Il2CppString,
+        priority: crate::app::gameui::GameUI_Priority,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "TrySetSortOrder", args = 2)]
+    pub fn try_set_sort_order(
+        go: crate::unity_engine::gameobject::GameObject,
+        priority: crate::app::gameui::GameUI_Priority,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gameui")]
+impl GameUI {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUI),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUIMethods>::ctor(this);
+        this
+    }
+}

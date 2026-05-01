@@ -1,0 +1,131 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fixedvalue/FixedValue.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FixedValue {
+    pub v: i32,
+}
+
+impl ::unity2::ClassIdentity for FixedValue {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FixedValue";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FixedValue {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-fixedvalue")]
+#[::unity2::methods(value)]
+impl FixedValue {
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> i32;
+
+    #[method(name = "set_Value", args = 1)]
+    pub fn set_value(self, value: i32) -> ();
+
+    #[method(name = "get_Float", args = 0)]
+    pub fn get_float(self) -> f32;
+
+    #[method(name = "set_Float", args = 1)]
+    pub fn set_float(self, value: f32) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, value: i32) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, value: f32) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_3(self, value: i32, shift: i32) -> ();
+
+    #[method(name = "op_Addition", args = 2)]
+    pub fn op_addition(
+        a: crate::app::fixedvalue::FixedValue,
+        b: crate::app::fixedvalue::FixedValue,
+    ) -> crate::app::fixedvalue::FixedValue;
+
+    #[method(name = "op_Subtraction", args = 2)]
+    pub fn op_subtraction(
+        a: crate::app::fixedvalue::FixedValue,
+        b: crate::app::fixedvalue::FixedValue,
+    ) -> crate::app::fixedvalue::FixedValue;
+
+    #[method(name = "op_Multiply", args = 2)]
+    pub fn op_multiply(
+        a: crate::app::fixedvalue::FixedValue,
+        b: crate::app::fixedvalue::FixedValue,
+    ) -> crate::app::fixedvalue::FixedValue;
+
+    #[method(name = "op_Division", args = 2)]
+    pub fn op_division(
+        a: crate::app::fixedvalue::FixedValue,
+        b: crate::app::fixedvalue::FixedValue,
+    ) -> crate::app::fixedvalue::FixedValue;
+
+    #[method(name = "op_Addition", args = 2)]
+    pub fn op_addition_2(
+        a: crate::app::fixedvalue::FixedValue,
+        b: i32,
+    ) -> crate::app::fixedvalue::FixedValue;
+
+    #[method(name = "op_Subtraction", args = 2)]
+    pub fn op_subtraction_2(
+        a: crate::app::fixedvalue::FixedValue,
+        b: i32,
+    ) -> crate::app::fixedvalue::FixedValue;
+
+    #[method(name = "op_Multiply", args = 2)]
+    pub fn op_multiply_2(
+        a: crate::app::fixedvalue::FixedValue,
+        b: i32,
+    ) -> crate::app::fixedvalue::FixedValue;
+
+    #[method(name = "op_Division", args = 2)]
+    pub fn op_division_2(
+        a: crate::app::fixedvalue::FixedValue,
+        b: i32,
+    ) -> crate::app::fixedvalue::FixedValue;
+
+    #[method(name = "op_Addition", args = 2)]
+    pub fn op_addition_3(
+        a: crate::app::fixedvalue::FixedValue,
+        b: f32,
+    ) -> crate::app::fixedvalue::FixedValue;
+
+    #[method(name = "op_Subtraction", args = 2)]
+    pub fn op_subtraction_3(
+        a: crate::app::fixedvalue::FixedValue,
+        b: f32,
+    ) -> crate::app::fixedvalue::FixedValue;
+
+    #[method(name = "op_Multiply", args = 2)]
+    pub fn op_multiply_3(
+        a: crate::app::fixedvalue::FixedValue,
+        b: f32,
+    ) -> crate::app::fixedvalue::FixedValue;
+
+    #[method(name = "op_Division", args = 2)]
+    pub fn op_division_3(
+        a: crate::app::fixedvalue::FixedValue,
+        b: f32,
+    ) -> crate::app::fixedvalue::FixedValue;
+}

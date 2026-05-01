@@ -1,0 +1,74 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/keyframe/Keyframe.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Keyframe {
+    pub m_time: f32,
+    pub m_value: f32,
+    pub m_in_tangent: f32,
+    pub m_out_tangent: f32,
+    pub m_weighted_mode: i32,
+    pub m_in_weight: f32,
+    pub m_out_weight: f32,
+}
+
+impl ::unity2::ClassIdentity for Keyframe {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "Keyframe";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Keyframe {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-keyframe")]
+#[::unity2::methods(value)]
+impl Keyframe {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, time: f32, value: f32) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor_2(self, time: f32, value: f32, in_tangent: f32, out_tangent: f32) -> ();
+
+    #[method(name = "get_time", args = 0)]
+    pub fn get_time(self) -> f32;
+
+    #[method(name = "set_time", args = 1)]
+    pub fn set_time(self, value: f32) -> ();
+
+    #[method(name = "get_value", args = 0)]
+    pub fn get_value(self) -> f32;
+
+    #[method(name = "set_value", args = 1)]
+    pub fn set_value(self, value: f32) -> ();
+
+    #[method(name = "get_inTangent", args = 0)]
+    pub fn get_in_tangent(self) -> f32;
+
+    #[method(name = "set_inTangent", args = 1)]
+    pub fn set_in_tangent(self, value: f32) -> ();
+
+    #[method(name = "get_outTangent", args = 0)]
+    pub fn get_out_tangent(self) -> f32;
+
+    #[method(name = "set_outTangent", args = 1)]
+    pub fn set_out_tangent(self, value: f32) -> ();
+}

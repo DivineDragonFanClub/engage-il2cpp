@@ -1,0 +1,125 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/depthnormalonlypass/DepthNormalOnlyPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "DepthNormalOnlyPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct DepthNormalOnlyPass {
+    #[rename(name = "m_ShaderTagId")]
+    pub m_shader_tag_id: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[rename(name = "m_FilteringSettings")]
+    pub m_filtering_settings: crate::unity_engine::rendering::filteringsettings::FilteringSettings,
+    #[static_field]
+    #[rename(name = "k_DepthBufferBits")]
+    pub k_depth_buffer_bits: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-depthnormalonlypass")]
+#[::unity2::methods]
+impl DepthNormalOnlyPass {
+    #[method(name = "get_normalDescriptor", args = 0)]
+    pub fn get_normal_descriptor(
+        self,
+    ) -> crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor;
+
+    #[method(name = "set_normalDescriptor", args = 1)]
+    pub fn set_normal_descriptor(
+        self,
+        value: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+    ) -> ();
+
+    #[method(name = "get_depthDescriptor", args = 0)]
+    pub fn get_depth_descriptor(
+        self,
+    ) -> crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor;
+
+    #[method(name = "set_depthDescriptor", args = 1)]
+    pub fn set_depth_descriptor(
+        self,
+        value: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+    ) -> ();
+
+    #[method(name = "get_depthHandle", args = 0)]
+    pub fn get_depth_handle(
+        self,
+    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle;
+
+    #[method(name = "set_depthHandle", args = 1)]
+    pub fn set_depth_handle(
+        self,
+        value: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    ) -> ();
+
+    #[method(name = "get_normalHandle", args = 0)]
+    pub fn get_normal_handle(
+        self,
+    ) -> crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle;
+
+    #[method(name = "set_normalHandle", args = 1)]
+    pub fn set_normal_handle(
+        self,
+        value: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+    ) -> ();
+
+    #[method(name = "Setup", args = 3)]
+    pub fn setup(
+        self,
+        base_descriptor: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+        depth_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle,
+        normal_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle,
+    ) -> ();
+
+    #[method(name = "OnCameraSetup", args = 2)]
+    pub fn on_camera_setup(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "OnCameraCleanup", args = 1)]
+    pub fn on_camera_cleanup(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-depthnormalonlypass")]
+impl DepthNormalOnlyPass {
+    pub fn new(
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        render_queue_range: crate::unity_engine::rendering::renderqueuerange::RenderQueueRange,
+        layer_mask: crate::unity_engine::layermask::LayerMask,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DepthNormalOnlyPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDepthNormalOnlyPassMethods>::ctor(this, evt, render_queue_range, layer_mask);
+        this
+    }
+}

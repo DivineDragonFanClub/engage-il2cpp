@@ -1,0 +1,44 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/behaviour/Behaviour.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "Behaviour")]
+#[parent(crate::unity_engine::component::Component)]
+pub struct Behaviour {}
+
+#[cfg(feature = "unity_engine-behaviour")]
+#[::unity2::methods]
+impl Behaviour {
+    #[method(name = "get_enabled", args = 0)]
+    pub fn get_enabled(self) -> bool;
+
+    #[method(name = "set_enabled", args = 1)]
+    pub fn set_enabled(self, value: bool) -> ();
+
+    #[method(name = "get_isActiveAndEnabled", args = 0)]
+    pub fn get_is_active_and_enabled(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-behaviour")]
+impl Behaviour {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Behaviour),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBehaviourMethods>::ctor(this);
+        this
+    }
+}

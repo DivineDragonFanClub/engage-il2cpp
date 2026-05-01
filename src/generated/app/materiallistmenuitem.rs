@@ -1,0 +1,45 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/materiallistmenuitem/MaterialListMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "MaterialListMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct MaterialListMenuItem {}
+
+#[cfg(feature = "app-materiallistmenuitem")]
+#[::unity2::methods]
+impl MaterialListMenuItem {
+    #[method(name = "get_Item", args = 0)]
+    pub fn get_item(self) -> crate::app::itemdata::ItemData;
+
+    #[method(name = "set_Item", args = 1)]
+    pub fn set_item(self, value: crate::app::itemdata::ItemData) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, item_data: crate::app::itemdata::ItemData) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+}
+
+#[cfg(feature = "app-materiallistmenuitem")]
+impl MaterialListMenuItem {
+    pub fn new(item_data: crate::app::itemdata::ItemData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MaterialListMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMaterialListMenuItemMethods>::ctor(this, item_data);
+        this
+    }
+}

@@ -1,0 +1,53 @@
+
+use crate::moon_sharp::interpreter::interop::anonwrapper::AnonWrapper;
+use crate::moon_sharp::interpreter::interop::anonwrapper::IAnonWrapper;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/anonwrapper_1/AnonWrapper_1.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "AnonWrapper`1")]
+pub struct AnonWrapper_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> AnonWrapper_1<T0> {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, o: T0) -> ();
+
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> T0;
+
+    #[method(name = "set_Value", args = 1)]
+    pub fn set_value(self, value: T0) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-anonwrapper_1")]
+impl<T0: ::unity2::ClassIdentity> AnonWrapper_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnonWrapper_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnonWrapper_1Methods<T0>>::ctor(this);
+        this
+    }
+
+    pub fn new_2(o: T0) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnonWrapper_1),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IAnonWrapper_1Methods<T0>>::ctor_2(this, o);
+        this
+    }
+}

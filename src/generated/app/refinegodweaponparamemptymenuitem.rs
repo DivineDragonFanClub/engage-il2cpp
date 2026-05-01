@@ -1,0 +1,64 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::refinegodweaponparammenuitem::IRefineGodWeaponParamMenuItem;
+use crate::app::refinegodweaponparammenuitem::RefineGodWeaponParamMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponparamemptymenuitem/RefineGodWeaponParamEmptyMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "RefineGodWeaponParamEmptyMenuItem")]
+#[parent(crate::app::refinegodweaponparammenuitem::RefineGodWeaponParamMenuItem)]
+pub struct RefineGodWeaponParamEmptyMenuItem {}
+
+#[cfg(feature = "app-refinegodweaponparamemptymenuitem")]
+#[::unity2::methods]
+impl RefineGodWeaponParamEmptyMenuItem {
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        god_unit: crate::app::godunit::GodUnit,
+        god_weapon: crate::app::itemdata::ItemData,
+        select_event_handler : crate :: app :: refinegodweaponparammenu :: RefineGodWeaponParamMenu_SelectEventHandler,
+        request_close_event_handler : crate :: app :: refinegodweaponparammenu :: RefineGodWeaponParamMenu_RequestCloseEventHandler,
+    ) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-refinegodweaponparamemptymenuitem")]
+impl RefineGodWeaponParamEmptyMenuItem {
+    pub fn new(
+        god_unit: crate::app::godunit::GodUnit,
+        god_weapon: crate::app::itemdata::ItemData,
+        select_event_handler : crate :: app :: refinegodweaponparammenu :: RefineGodWeaponParamMenu_SelectEventHandler,
+        request_close_event_handler : crate :: app :: refinegodweaponparammenu :: RefineGodWeaponParamMenu_RequestCloseEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponParamEmptyMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponParamEmptyMenuItemMethods>::ctor(
+            this,
+            god_unit,
+            god_weapon,
+            select_event_handler,
+            request_close_event_handler,
+        );
+        this
+    }
+}

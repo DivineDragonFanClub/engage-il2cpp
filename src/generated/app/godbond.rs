@@ -1,0 +1,248 @@
+
+use crate::app::pool::IPool_Node;
+use crate::app::pool::Pool_Node;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godbond/GodBond.md")))]
+#[::unity2::class(namespace = "App", name = "GodBond")]
+#[parent(crate::app::pool::Pool_Node)]
+pub struct GodBond {
+    #[static_field]
+    #[rename(name = "NormalEnemyLevelForGainAbility")]
+    pub normal_enemy_level_for_gain_ability: i32,
+    #[static_field]
+    #[rename(name = "RampageEnemyLevelForGainAbility")]
+    pub rampage_enemy_level_for_gain_ability: i32,
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: i32,
+    #[rename(name = "m_GodData")]
+    pub m_god_data: crate::app::goddata::GodData,
+    #[rename(name = "m_RelianceS")]
+    pub m_reliance_s: crate::app::godreliances::GodRelianceS,
+    #[rename(name = "m_Pid")]
+    pub m_pid: ::unity2::Il2CppString,
+    #[rename(name = "m_Level")]
+    pub m_level: u8,
+    #[rename(name = "m_Exp")]
+    pub m_exp: u16,
+    #[rename(name = "m_InheritedSkills")]
+    pub m_inherited_skills: crate::app::godinheritedskills::GodInheritedSkills,
+    #[rename(name = "m_NotifiedLevelCapTalk")]
+    pub m_notified_level_cap_talk: u8,
+    #[rename(name = "m_LevelData")]
+    pub m_level_data: crate::app::godgrowthdata::GodGrowthData_LevelData,
+    #[static_field]
+    #[rename(name = "NullLevelData")]
+    pub null_level_data: crate::app::godgrowthdata::GodGrowthData_LevelData,
+}
+
+#[cfg(feature = "app-godbond")]
+#[::unity2::methods]
+impl GodBond {
+    #[method(name = "Build", args = 3)]
+    pub fn build(
+        self,
+        god_data: crate::app::goddata::GodData,
+        reliance_s: crate::app::godreliances::GodRelianceS,
+        pid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "OnEnter", args = 0)]
+    pub fn on_enter(self) -> ();
+
+    #[method(name = "OnExit", args = 0)]
+    pub fn on_exit(self) -> ();
+
+    #[method(name = "DbgSetExp", args = 1)]
+    pub fn dbg_set_exp(self, exp: i32) -> ();
+
+    #[method(name = "SetExpForRewind", args = 1)]
+    pub fn set_exp_for_rewind(self, exp: i32) -> ();
+
+    #[method(name = "CanAddExp", args = 0)]
+    pub fn can_add_exp(self) -> bool;
+
+    #[method(name = "TryAddExp", args = 1)]
+    pub fn try_add_exp(self, exp: i32) -> bool;
+
+    #[method(name = "GetLevelExp", args = 1)]
+    pub fn get_level_exp(self, level: i32) -> i32;
+
+    #[method(name = "GetCurrentLevelExp", args = 0)]
+    pub fn get_current_level_exp(self) -> i32;
+
+    #[method(name = "GetNextLevelExp", args = 0)]
+    pub fn get_next_level_exp(self) -> i32;
+
+    #[method(name = "GetNextLevelExpInternal", args = 1)]
+    pub fn get_next_level_exp_internal(self, is_limit: bool) -> i32;
+
+    #[method(name = "GetNextLevelExpInternal", args = 2)]
+    pub fn get_next_level_exp_internal_2(self, level: i32, is_limit: bool) -> i32;
+
+    #[method(name = "GetNextLevelCap", args = 0)]
+    pub fn get_next_level_cap(self) -> i32;
+
+    #[method(name = "LevelUp", args = 0)]
+    pub fn level_up(self) -> ();
+
+    #[method(name = "SetLevel", args = 1)]
+    pub fn set_level(self, level: i32) -> ();
+
+    #[method(name = "SetLevelFromUnitReliance", args = 1)]
+    pub fn set_level_from_unit_reliance(
+        self,
+        unit_reliance_level: crate::app::reliancedata::RelianceData_Level,
+    ) -> ();
+
+    #[method(name = "DbgSetLevel", args = 1)]
+    pub fn dbg_set_level(self, level: i32) -> ();
+
+    #[method(name = "IsLevelCapNormal", args = 0)]
+    pub fn is_level_cap_normal(self) -> bool;
+
+    #[method(name = "IsLevelCapNormalInternal", args = 1)]
+    pub fn is_level_cap_normal_internal(self, level: i32) -> bool;
+
+    #[method(name = "IsLevelCapTalk", args = 0)]
+    pub fn is_level_cap_talk(self) -> bool;
+
+    #[method(name = "IsLevelCapTalkInternal", args = 1)]
+    pub fn is_level_cap_talk_internal(self, level: i32) -> bool;
+
+    #[method(name = "IsNotifiedLevelCapTalk", args = 0)]
+    pub fn is_notified_level_cap_talk(self) -> bool;
+
+    #[method(name = "SetNotifiedLevelCapTalk", args = 1)]
+    pub fn set_notified_level_cap_talk(self, flag: bool) -> ();
+
+    #[method(name = "SetNotifiedLevelCapTalk", args = 2)]
+    pub fn set_notified_level_cap_talk_2(
+        self,
+        reliance_level: crate::app::goddata::GodData_RelianceLevel,
+        flag: bool,
+    ) -> ();
+
+    #[method(name = "GetLevelFromExp", args = 0)]
+    pub fn get_level_from_exp(self) -> i32;
+
+    #[method(name = "GetMaxLevel", args = 0)]
+    pub fn get_max_level(self) -> i32;
+
+    #[method(name = "GetMaxLevelExp", args = 0)]
+    pub fn get_max_level_exp(self) -> i32;
+
+    #[method(name = "GetRelianceLevel", args = 0)]
+    pub fn get_reliance_level(self) -> crate::app::goddata::GodData_RelianceLevel;
+
+    #[method(name = "GetMaxRelianceLevel", args = 0)]
+    pub fn get_max_reliance_level(self) -> crate::app::goddata::GodData_RelianceLevel;
+
+    #[method(name = "CanBeRelianceLevelS", args = 0)]
+    pub fn can_be_reliance_level_s(self) -> bool;
+
+    #[method(name = "SetRelianceLevelS", args = 0)]
+    pub fn set_reliance_level_s(self) -> ();
+
+    #[method(name = "DbgSetRelianceLevelS", args = 0)]
+    pub fn dbg_set_reliance_level_s(self) -> ();
+
+    #[method(name = "IsRelianceLevelS", args = 0)]
+    pub fn is_reliance_level_s(self) -> bool;
+
+    #[method(name = "IsOtherRelianceLevelS", args = 0)]
+    pub fn is_other_reliance_level_s(self) -> bool;
+
+    #[method(name = "CanTalk", args = 0)]
+    pub fn can_talk(self) -> bool;
+
+    #[method(name = "UpdateForGodState", args = 1)]
+    pub fn update_for_god_state(self, god_state: crate::app::godstate::GodState) -> ();
+
+    #[method(name = "GetLevelData", args = 1)]
+    pub fn get_level_data(self, level: i32) -> crate::app::godleveldata::GodLevelData;
+
+    #[method(name = "GainAbility", args = 1)]
+    pub fn gain_ability(self, level: i32) -> ();
+
+    #[method(name = "GainCurrentAbility", args = 0)]
+    pub fn gain_current_ability(self) -> ();
+
+    #[method(name = "GainAbilityImpl", args = 2)]
+    pub fn gain_ability_impl(self, god_data: crate::app::goddata::GodData, level: i32) -> ();
+
+    #[method(name = "IsLinkSelf", args = 0)]
+    pub fn is_link_self(self) -> bool;
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "ChangeOpponent", args = 1)]
+    pub fn change_opponent(self, data: crate::app::goddata::GodData) -> ();
+
+    #[method(name = "ToGodRelianceLevel", args = 1)]
+    pub fn to_god_reliance_level(
+        self,
+        unit_reliance_level: crate::app::reliancedata::RelianceData_Level,
+    ) -> crate::app::goddata::GodData_RelianceLevel;
+
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "get_Level", args = 0)]
+    pub fn get_level(self) -> i32;
+
+    #[method(name = "get_Exp", args = 0)]
+    pub fn get_exp(self) -> i32;
+
+    #[method(name = "get_EngageSkills", args = 0)]
+    pub fn get_engage_skills(self) -> crate::app::skillarray::SkillArray;
+
+    #[method(name = "get_SynchroSkills", args = 0)]
+    pub fn get_synchro_skills(self) -> crate::app::skillarray::SkillArray;
+
+    #[method(name = "get_EngagedSkills", args = 0)]
+    pub fn get_engaged_skills(self) -> crate::app::skillarray::SkillArray;
+
+    #[method(name = "get_Aptitude", args = 0)]
+    pub fn get_aptitude(self) -> crate::app::weaponmask::WeaponMask;
+
+    #[method(name = "get_InheritedSkills", args = 0)]
+    pub fn get_inherited_skills(self) -> crate::app::godinheritedskills::GodInheritedSkills;
+
+    #[method(name = "get_Flags", args = 0)]
+    pub fn get_flags(self) -> crate::app::godgrowthdata::GodGrowthData_FlagField;
+
+    #[method(name = "GetEngageItems", args = 1)]
+    pub fn get_engage_items(
+        self,
+        style: crate::app::battlestyle::BattleStyle_Types,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-godbond")]
+impl GodBond {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodBond),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodBondMethods>::ctor(this);
+        this
+    }
+}

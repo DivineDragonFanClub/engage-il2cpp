@@ -1,0 +1,38 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/skeletonbone/SkeletonBone.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct SkeletonBone {
+    pub name: ::unity2::Il2CppString,
+    pub parent_name: ::unity2::Il2CppString,
+    pub position: crate::unity_engine::vector3::Vector3,
+    pub rotation: crate::unity_engine::quaternion::Quaternion,
+    pub scale: crate::unity_engine::vector3::Vector3,
+}
+
+impl ::unity2::ClassIdentity for SkeletonBone {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "SkeletonBone";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SkeletonBone {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

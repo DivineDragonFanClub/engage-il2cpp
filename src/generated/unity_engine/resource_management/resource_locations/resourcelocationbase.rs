@@ -1,0 +1,96 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_locations/resourcelocationbase/ResourceLocationBase.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceLocations",
+    name = "ResourceLocationBase"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ResourceLocationBase {
+# [rename (name = "m_Name")] pub m_name : :: unity2 :: Il2CppString ,
+# [rename (name = "m_Id")] pub m_id : :: unity2 :: Il2CppString ,
+# [rename (name = "m_ProviderId")] pub m_provider_id : :: unity2 :: Il2CppString ,
+# [rename (name = "m_Data")] pub m_data : :: unity2 :: IlInstance ,
+# [rename (name = "m_DependencyHashCode")] pub m_dependency_hash_code : i32 ,
+# [rename (name = "m_HashCode")] pub m_hash_code : i32 ,
+# [rename (name = "m_Type")] pub m_type : :: unity2 :: SystemType ,
+# [rename (name = "m_Dependencies")] pub m_dependencies : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > ,
+# [rename (name = "m_PrimaryKey")] pub m_primary_key : :: unity2 :: Il2CppString ,
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_locations-resourcelocationbase")]
+#[::unity2::methods]
+impl ResourceLocationBase {
+    #[method(name = "get_InternalId", args = 0)]
+    pub fn get_internal_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_ProviderId", args = 0)]
+    pub fn get_provider_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_Dependencies", args = 0)]
+    pub fn get_dependencies (self ,) -> crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > ;
+
+    #[method(name = "get_HasDependencies", args = 0)]
+    pub fn get_has_dependencies(self) -> bool;
+
+    #[method(name = "get_Data", args = 0)]
+    pub fn get_data(self) -> crate::system::object::Object;
+
+    #[method(name = "set_Data", args = 1)]
+    pub fn set_data(self, value: crate::system::object::Object) -> ();
+
+    #[method(name = "get_PrimaryKey", args = 0)]
+    pub fn get_primary_key(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_PrimaryKey", args = 1)]
+    pub fn set_primary_key(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_DependencyHashCode", args = 0)]
+    pub fn get_dependency_hash_code(self) -> i32;
+
+    #[method(name = "get_ResourceType", args = 0)]
+    pub fn get_resource_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "Hash", args = 1)]
+    pub fn hash(self, t: ::unity2::SystemType) -> i32;
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        name: ::unity2::Il2CppString,
+        id: ::unity2::Il2CppString,
+        provider_id: ::unity2::Il2CppString,
+        t: ::unity2::SystemType,
+        dependencies : :: unity2 :: Array < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+    ) -> ();
+
+    #[method(name = "ComputeDependencyHash", args = 0)]
+    pub fn compute_dependency_hash(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_locations-resourcelocationbase")]
+impl ResourceLocationBase {
+    pub fn new(
+        name: ::unity2::Il2CppString,
+        id: ::unity2::Il2CppString,
+        provider_id: ::unity2::Il2CppString,
+        t: ::unity2::SystemType,
+        dependencies : :: unity2 :: Array < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceLocationBase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceLocationBaseMethods>::ctor(this, name, id, provider_id, t, dependencies);
+        this
+    }
+}

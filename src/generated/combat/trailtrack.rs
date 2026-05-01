@@ -1,0 +1,87 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/trailtrack/TrailTrack.md")))]
+#[::unity2::class(namespace = "Combat", name = "TrailTrack")]
+#[parent(crate::system::object::Object)]
+pub struct TrailTrack {
+    #[rename(name = "RootX")]
+    pub root_x: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "RootY")]
+    pub root_y: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "RootZ")]
+    pub root_z: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "TipX")]
+    pub tip_x: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "TipY")]
+    pub tip_y: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "TipZ")]
+    pub tip_z: crate::unity_engine::animationcurve::AnimationCurve,
+}
+
+#[cfg(feature = "combat-trailtrack")]
+#[::unity2::methods]
+impl TrailTrack {
+    #[method(name = "Add", args = 3)]
+    pub fn add(
+        self,
+        time: f32,
+        root: crate::unity_engine::vector3::Vector3,
+        tip: crate::unity_engine::vector3::Vector3,
+    ) -> ();
+
+    #[method(name = "Evaluate", args = 3)]
+    pub fn evaluate(
+        self,
+        time: f32,
+        root: crate::unity_engine::vector3::Vector3,
+        tip: crate::unity_engine::vector3::Vector3,
+    ) -> ();
+
+    #[method(name = "Optimize", args = 1)]
+    pub fn optimize(self, eps: f32) -> ();
+
+    #[method(name = "Remap", args = 2)]
+    pub fn remap(
+        oc: crate::combat::flattenedvec3curve::FlattenedVec3Curve,
+        nc: crate::combat::flattenedvec3curve::FlattenedVec3Curve,
+    ) -> ();
+
+    #[method(name = "Smoothing", args = 1)]
+    pub fn smoothing(
+        src: crate::unity_engine::animationcurve::AnimationCurve,
+    ) -> crate::unity_engine::animationcurve::AnimationCurve;
+
+    #[method(name = "Equals", args = 2)]
+    pub fn equals(
+        a: crate::combat::trailtrack::TrailTrack,
+        b: crate::combat::trailtrack::TrailTrack,
+    ) -> bool;
+
+    #[method(name = "Equals", args = 3)]
+    pub fn equals_2(
+        a: crate::unity_engine::animationcurve::AnimationCurve,
+        b: crate::unity_engine::animationcurve::AnimationCurve,
+        eps: f32,
+    ) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-trailtrack")]
+impl TrailTrack {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TrailTrack),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITrailTrackMethods>::ctor(this);
+        this
+    }
+}

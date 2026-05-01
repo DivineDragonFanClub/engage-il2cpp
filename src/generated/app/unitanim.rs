@@ -1,0 +1,287 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitanim/UnitAnim_Types.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitAnim_Types {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitAnim_Types {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitAnim.Types";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitAnim_Types {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitAnim_Types {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn stand_by() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn idle_relax() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn idle_normal() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn run_loop() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn start() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn shoot() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn special() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn dance() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn magic_weapon() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn event1() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn event2() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn event3() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn event4() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 16 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitanim/UnitAnim_Times.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitAnim_Times {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitAnim_Times {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitAnim.Times";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitAnim_Times {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitAnim_Times {
+    pub fn zero() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn slow() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn normal() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn fast() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn very_fast() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn very_slow() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitanim/UnitAnim.md")))]
+#[::unity2::class(namespace = "App", name = "UnitAnim")]
+#[parent(crate::system::object::Object)]
+pub struct UnitAnim {
+    #[static_field]
+    #[rename(name = "s_NullClip")]
+    pub s_null_clip: crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
+    #[static_field]
+    #[rename(name = "s_NullState")]
+    pub s_null_state: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+}
+
+#[cfg(feature = "app-unitanim")]
+#[::unity2::methods]
+impl UnitAnim {
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ();
+
+    #[method(name = "GetTime", args = 1)]
+    pub fn get_time(time: crate::app::unitanim::UnitAnim_Times) -> f32;
+
+    #[method(name = "GetTime", args = 2)]
+    pub fn get_time_2(
+        time: crate::app::unitanim::UnitAnim_Times,
+        animator: crate::unity_engine::animator::Animator,
+    ) -> f32;
+
+    #[method(name = "IsLoop", args = 1)]
+    pub fn is_loop(r#type: crate::app::unitanim::UnitAnim_Types) -> bool;
+
+    #[method(name = "IsExitToIdle", args = 1)]
+    pub fn is_exit_to_idle(r#type: crate::app::unitanim::UnitAnim_Types) -> bool;
+
+    #[method(name = "GetPriority", args = 1)]
+    pub fn get_priority(r#type: crate::app::unitanim::UnitAnim_Types) -> i32;
+
+    #[method(name = "HasState", args = 2)]
+    pub fn has_state(
+        animator: crate::unity_engine::animator::Animator,
+        name: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[method(name = "Play", args = 3)]
+    pub fn play(
+        animator: crate::unity_engine::animator::Animator,
+        name: ::unity2::Il2CppString,
+        transition_duration: crate::app::unitanim::UnitAnim_Times,
+    ) -> ();
+
+    #[method(name = "Play", args = 4)]
+    pub fn play_2(
+        animator: crate::unity_engine::animator::Animator,
+        r#type: crate::app::unitanim::UnitAnim_Types,
+        kind: crate::app::itemdata::ItemData_Kinds,
+        transition_duration: crate::app::unitanim::UnitAnim_Times,
+    ) -> ();
+
+    #[method(name = "Play", args = 4)]
+    pub fn play_3(
+        animators: ::unity2::Array<crate::unity_engine::animator::Animator>,
+        r#type: crate::app::unitanim::UnitAnim_Types,
+        kind: crate::app::itemdata::ItemData_Kinds,
+        transition_duration: crate::app::unitanim::UnitAnim_Times,
+    ) -> ();
+
+    #[method(name = "GetCurrentClipInfo", args = 1)]
+    pub fn get_current_clip_info(
+        animator: crate::unity_engine::animator::Animator,
+    ) -> crate::unity_engine::animatorclipinfo::AnimatorClipInfo;
+
+    #[method(name = "GetCurrentStateInfo", args = 1)]
+    pub fn get_current_state_info(
+        animator: crate::unity_engine::animator::Animator,
+    ) -> crate::unity_engine::animatorstateinfo::AnimatorStateInfo;
+
+    #[method(name = "IsFinished", args = 2)]
+    pub fn is_finished(
+        animator: crate::unity_engine::animator::Animator,
+        rest_time: crate::app::unitanim::UnitAnim_Times,
+    ) -> bool;
+
+    #[method(name = "IsFinished", args = 2)]
+    pub fn is_finished_2(
+        animators: ::unity2::Array<crate::unity_engine::animator::Animator>,
+        rest_time: crate::app::unitanim::UnitAnim_Times,
+    ) -> bool;
+
+    #[method(name = "SetSpeed", args = 2)]
+    pub fn set_speed(
+        animators: ::unity2::Array<crate::unity_engine::animator::Animator>,
+        speed: f32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-unitanim")]
+impl UnitAnim {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitAnim),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitAnimMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,75 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/structdictionary_1/StructDictionary_1.md")))]
+#[::unity2::class(namespace = "App", name = "StructDictionary`1")]
+pub struct StructDictionary_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "m_keyList")]
+    pub m_key_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    #[rename(name = "m_indexKey")]
+    pub m_index_key: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        i32,
+    >,
+    #[rename(name = "m_hashKey")]
+    pub m_hash_key: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, i32>,
+}
+
+#[cfg(feature = "app-structdictionary_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> StructDictionary_1<T0> {
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "get_PublicNames", args = 0)]
+    pub fn get_public_names(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "GetKey", args = 1)]
+    pub fn get_key(self, index: i32) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetIndex", args = 1)]
+    pub fn get_index(self, key: ::unity2::Il2CppString) -> i32;
+
+    #[method(name = "GetIndexFromHash", args = 1)]
+    pub fn get_index_from_hash(self, hash: i32) -> i32;
+
+    #[method(name = "IsExist", args = 0)]
+    pub fn is_exist(self) -> bool;
+
+    #[method(name = "IsExist", args = 1)]
+    pub fn is_exist_2(self, key: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "Prefixless", args = 1)]
+    pub fn prefixless(key: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[method(name = "Add", args = 2)]
+    pub fn add(self, key: ::unity2::Il2CppString, index: i32) -> ();
+
+    #[method(name = "Add", args = 3)]
+    pub fn add_2(self, key: ::unity2::Il2CppString, index: i32, hash: i32) -> ();
+
+    #[method(name = "GetList", args = 0)]
+    pub fn get_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-structdictionary_1")]
+impl<T0: ::unity2::ClassIdentity> StructDictionary_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StructDictionary_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStructDictionary_1Methods<T0>>::ctor(this);
+        this
+    }
+}

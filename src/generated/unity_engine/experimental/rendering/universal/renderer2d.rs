@@ -1,0 +1,106 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderer::IScriptableRenderer;
+use crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/renderer2d/Renderer2D.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal",
+    name = "Renderer2D"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer)]
+pub struct Renderer2D {
+# [rename (name = "m_ColorGradingLutPass")] pub m_color_grading_lut_pass : crate :: unity_engine :: rendering :: universal :: internal :: colorgradinglutpass :: ColorGradingLutPass ,
+# [rename (name = "m_Render2DLightingPass")] pub m_render2_d_lighting_pass : crate :: unity_engine :: experimental :: rendering :: universal :: render2dlightingpass :: Render2DLightingPass ,
+# [rename (name = "m_PostProcessPass")] pub m_post_process_pass : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass ,
+# [rename (name = "m_FinalBlitPass")] pub m_final_blit_pass : crate :: unity_engine :: rendering :: universal :: internal :: finalblitpass :: FinalBlitPass ,
+# [rename (name = "m_FinalPostProcessPass")] pub m_final_post_process_pass : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass ,
+# [rename (name = "m_LightCullResult")] pub m_light_cull_result : crate :: unity_engine :: experimental :: rendering :: universal :: light2dcullresult :: Light2DCullResult ,
+# [static_field] # [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [rename (name = "m_UseDepthStencilBuffer")] pub m_use_depth_stencil_buffer : bool ,
+# [rename (name = "m_CreateColorTexture")] pub m_create_color_texture : bool ,
+# [rename (name = "m_CreateDepthTexture")] pub m_create_depth_texture : bool ,
+# [rename (name = "k_ColorTextureHandle")] pub k_color_texture_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "k_DepthTextureHandle")] pub k_depth_texture_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "k_AfterPostProcessColorHandle")] pub k_after_post_process_color_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "k_ColorGradingLutHandle")] pub k_color_grading_lut_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_BlitMaterial")] pub m_blit_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_Renderer2DData")] pub m_renderer2_d_data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData ,
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d")]
+#[::unity2::methods]
+impl Renderer2D {
+    #[method(name = "get_createColorTexture", args = 0)]
+    pub fn get_create_color_texture(self) -> bool;
+
+    #[method(name = "get_createDepthTexture", args = 0)]
+    pub fn get_create_depth_texture(self) -> bool;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData,
+    ) -> ();
+
+    #[method(name = "Dispose", args = 1)]
+    pub fn dispose(self, disposing: bool) -> ();
+
+    #[method(name = "GetRenderer2DData", args = 0)]
+    pub fn get_renderer2_d_data(
+        self,
+    ) -> crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData;
+
+    #[method(name = "CreateRenderTextures", args = 6)]
+    pub fn create_render_textures(
+        self,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+        force_create_color_texture: bool,
+        color_texture_filter_mode: crate::unity_engine::filtermode::FilterMode,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        color_target_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle,
+        depth_target_handle : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle,
+    ) -> ();
+
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "SetupCullingParameters", args = 2)]
+    pub fn setup_culling_parameters(
+        self,
+        culling_parameters : crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> ();
+
+    #[method(name = "FinishRendering", args = 1)]
+    pub fn finish_rendering(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2d")]
+impl Renderer2D {
+    pub fn new(
+        data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Renderer2D),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRenderer2DMethods>::ctor(this, data);
+        this
+    }
+}

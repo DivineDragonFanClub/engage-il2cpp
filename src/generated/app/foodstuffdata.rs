@@ -1,0 +1,206 @@
+
+use crate::app::bitfield32::BitField32;
+use crate::app::bitfield32::IBitField32;
+use crate::app::bitfieldcommon::BitFieldCommon;
+use crate::app::bitfieldcommon::IBitFieldCommon;
+use crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1;
+use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/foodstuffdata/FoodstuffData.md")))]
+#[::unity2::class(namespace = "App", name = "FoodstuffData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: foodstuffdata :: FoodstuffData >)]
+pub struct FoodstuffData {}
+
+#[cfg(feature = "app-foodstuffdata")]
+#[::unity2::methods]
+impl FoodstuffData {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_Iid", args = 0)]
+    pub fn get_iid(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Iid", args = 1)]
+    pub fn set_iid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Flag", args = 0)]
+    pub fn get_flag(self) -> crate::app::foodstuffdata::FoodstuffData_FlagField;
+
+    #[method(name = "set_Flag", args = 1)]
+    pub fn set_flag(self, value: crate::app::foodstuffdata::FoodstuffData_FlagField) -> ();
+
+    #[method(name = "get_Category", args = 0)]
+    pub fn get_category(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Category", args = 1)]
+    pub fn set_category(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsCategory", args = 0)]
+    pub fn is_category(self) -> bool;
+
+    #[method(name = "CanAddToAnything", args = 0)]
+    pub fn can_add_to_anything(self) -> bool;
+
+    #[method(name = "IsNotAffect", args = 0)]
+    pub fn is_not_affect(self) -> bool;
+
+    #[method(name = "IsRaiseReliance", args = 0)]
+    pub fn is_raise_reliance(self) -> bool;
+
+    #[method(name = "IsRare", args = 0)]
+    pub fn is_rare(self) -> bool;
+
+    #[method(name = "GetIconName", args = 0)]
+    pub fn get_icon_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "AddInventory", args = 0)]
+    pub fn add_inventory(self) -> ();
+
+    #[method(name = "SubInventory", args = 0)]
+    pub fn sub_inventory(self) -> ();
+
+    #[method(name = "GetCountInventory", args = 0)]
+    pub fn get_count_inventory(self) -> i32;
+
+    #[method(name = "GetCategoryFoodstuffs", args = 1)]
+    pub fn get_category_foodstuffs(
+        iid: ::unity2::Il2CppString,
+    ) -> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-foodstuffdata")]
+impl FoodstuffData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FoodstuffData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFoodstuffDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/foodstuffdata/FoodstuffData_Flags.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FoodstuffData_Flags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FoodstuffData_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FoodstuffData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FoodstuffData_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FoodstuffData_Flags {
+    pub fn is_category() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn add_to_anything() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn not_affect() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn raise_reliance() -> Self {
+        Self { value: 8 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/foodstuffdata/FoodstuffData_FlagField.md")))]
+#[::unity2::class(namespace = "App", name = "FoodstuffData.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: foodstuffdata :: FoodstuffData_Flags >)]
+pub struct FoodstuffData_FlagField {}
+
+#[cfg(feature = "app-foodstuffdata")]
+#[::unity2::methods]
+impl FoodstuffData_FlagField {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::foodstuffdata::FoodstuffData_Flags) -> ();
+
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::foodstuffdata::FoodstuffData_Flags) -> i32;
+}
+
+#[cfg(feature = "app-foodstuffdata")]
+impl FoodstuffData_FlagField {
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FoodstuffData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFoodstuffData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    pub fn new_2(f: crate::app::foodstuffdata::FoodstuffData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FoodstuffData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IFoodstuffData_FlagFieldMethods>::ctor_2(this, f);
+        this
+    }
+}

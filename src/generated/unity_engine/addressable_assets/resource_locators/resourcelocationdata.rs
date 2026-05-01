@@ -1,0 +1,82 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/resource_locators/resourcelocationdata/ResourceLocationData.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets.ResourceLocators",
+    name = "ResourceLocationData"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ResourceLocationData {
+    #[rename(name = "m_Keys")]
+    pub m_keys: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "m_InternalId")]
+    pub m_internal_id: ::unity2::Il2CppString,
+    #[rename(name = "m_Provider")]
+    pub m_provider: ::unity2::Il2CppString,
+    #[rename(name = "m_Dependencies")]
+    pub m_dependencies: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "m_ResourceType")]
+    pub m_resource_type:
+        crate::unity_engine::resource_management::util::serializedtype::SerializedType,
+    #[rename(name = "SerializedData")]
+    pub serialized_data: ::unity2::Array<u8>,
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata")]
+#[::unity2::methods]
+impl ResourceLocationData {
+    #[method(name = "get_Keys", args = 0)]
+    pub fn get_keys(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "get_InternalId", args = 0)]
+    pub fn get_internal_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_Provider", args = 0)]
+    pub fn get_provider(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_Dependencies", args = 0)]
+    pub fn get_dependencies(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "get_ResourceType", args = 0)]
+    pub fn get_resource_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "get_Data", args = 0)]
+    pub fn get_data(self) -> crate::system::object::Object;
+
+    #[method(name = "set_Data", args = 1)]
+    pub fn set_data(self, value: crate::system::object::Object) -> ();
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        keys: ::unity2::Array<::unity2::Il2CppString>,
+        id: ::unity2::Il2CppString,
+        provider: ::unity2::SystemType,
+        t: ::unity2::SystemType,
+        dependencies: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata")]
+impl ResourceLocationData {
+    pub fn new(
+        keys: ::unity2::Array<::unity2::Il2CppString>,
+        id: ::unity2::Il2CppString,
+        provider: ::unity2::SystemType,
+        t: ::unity2::SystemType,
+        dependencies: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ResourceLocationData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IResourceLocationDataMethods>::ctor(this, keys, id, provider, t, dependencies);
+        this
+    }
+}

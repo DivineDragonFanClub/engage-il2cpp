@@ -1,0 +1,98 @@
+
+use crate::app::basicmenuitemcontent::BasicMenuItemContent;
+use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicitemmenuitemcontent/BasicItemMenuItemContent.md")))]
+#[::unity2::class(namespace = "App", name = "BasicItemMenuItemContent")]
+#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
+pub struct BasicItemMenuItemContent {
+    #[rename(name = "m_ItemFrame")]
+    pub m_item_frame: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Text")]
+    pub m_text: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Count")]
+    pub m_count: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Efficacy")]
+    pub m_efficacy: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+    #[rename(name = "m_UnitIcon")]
+    pub m_unit_icon: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_FixedCursor")]
+    pub m_fixed_cursor: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_FixedCursorFrame")]
+    pub m_fixed_cursor_frame: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-basicitemmenuitemcontent")]
+#[::unity2::methods]
+impl BasicItemMenuItemContent {
+    #[method(name = "FindGameObject", args = 1)]
+    pub fn find_game_object(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "SetupObjects", args = 0)]
+    pub fn setup_objects(self) -> ();
+
+    #[method(name = "Blank", args = 0)]
+    pub fn blank(self) -> ();
+
+    #[method(name = "Build", args = 1)]
+    pub fn build(self, menu_item: crate::app::basicmenuitem::BasicMenuItem) -> ();
+
+    #[method(name = "BuildText", args = 0)]
+    pub fn build_text(self) -> ();
+
+    #[method(name = "BuildText", args = 1)]
+    pub fn build_text_2(self, unit_item: crate::app::unititem::UnitItem) -> ();
+
+    #[method(name = "SetColorEngageItem", args = 0)]
+    pub fn set_color_engage_item(self) -> ();
+
+    #[method(name = "UpdateTextColor", args = 0)]
+    pub fn update_text_color(self) -> ();
+
+    #[method(name = "GetTextComponent", args = 0)]
+    pub fn get_text_component(self) -> crate::unity_engine::ui::text::Text;
+
+    #[method(name = "GetTextMeshProComponent", args = 0)]
+    pub fn get_text_mesh_pro_component(self) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI;
+
+    #[method(name = "SetIconColor", args = 1)]
+    pub fn set_icon_color(self, color: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "ShowFixedCursor", args = 0)]
+    pub fn show_fixed_cursor(self) -> ();
+
+    #[method(name = "HideFixedCursor", args = 0)]
+    pub fn hide_fixed_cursor(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-basicitemmenuitemcontent")]
+impl BasicItemMenuItemContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BasicItemMenuItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBasicItemMenuItemContentMethods>::ctor(this);
+        this
+    }
+}

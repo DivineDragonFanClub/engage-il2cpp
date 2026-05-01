@@ -1,0 +1,77 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
+use crate::unity_engine::rendering::volumeparameter::VolumeParameter;
+use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
+use crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/nointerpcolorparameter/NoInterpColorParameter.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "NoInterpColorParameter")]
+# [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: color :: Color >)]
+pub struct NoInterpColorParameter {
+    #[rename(name = "hdr")]
+    pub hdr: bool,
+    #[rename(name = "showAlpha")]
+    pub show_alpha: bool,
+    #[rename(name = "showEyeDropper")]
+    pub show_eye_dropper: bool,
+}
+
+#[cfg(feature = "unity_engine-rendering-nointerpcolorparameter")]
+#[::unity2::methods]
+impl NoInterpColorParameter {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, value: crate::unity_engine::color::Color, override_state: bool) -> ();
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor_2(
+        self,
+        value: crate::unity_engine::color::Color,
+        hdr: bool,
+        show_alpha: bool,
+        show_eye_dropper: bool,
+        override_state: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-nointerpcolorparameter")]
+impl NoInterpColorParameter {
+    pub fn new(value: crate::unity_engine::color::Color, override_state: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NoInterpColorParameter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INoInterpColorParameterMethods>::ctor(this, value, override_state);
+        this
+    }
+
+    pub fn new_2(
+        value: crate::unity_engine::color::Color,
+        hdr: bool,
+        show_alpha: bool,
+        show_eye_dropper: bool,
+        override_state: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NoInterpColorParameter),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as INoInterpColorParameterMethods>::ctor_2(
+            this,
+            value,
+            hdr,
+            show_alpha,
+            show_eye_dropper,
+            override_state,
+        );
+        this
+    }
+}

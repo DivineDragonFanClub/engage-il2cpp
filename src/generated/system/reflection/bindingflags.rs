@@ -1,0 +1,124 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/bindingflags/BindingFlags.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct BindingFlags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for BindingFlags {
+    const NAMESPACE: &'static str = "System.Reflection";
+
+    const NAME: &'static str = "BindingFlags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BindingFlags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl BindingFlags {
+    pub fn default() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ignore_case() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn declared_only() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn instance() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn r#static() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn public() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn non_public() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn flatten_hierarchy() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn invoke_method() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn create_instance() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn get_field() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn set_field() -> Self {
+        Self { value: 2048 }
+    }
+
+    pub fn get_property() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn set_property() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn put_disp_property() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn put_ref_disp_property() -> Self {
+        Self { value: 32768 }
+    }
+
+    pub fn exact_binding() -> Self {
+        Self { value: 65536 }
+    }
+
+    pub fn suppress_change_type() -> Self {
+        Self { value: 131072 }
+    }
+
+    pub fn optional_param_binding() -> Self {
+        Self { value: 262144 }
+    }
+
+    pub fn ignore_return() -> Self {
+        Self { value: 16777216 }
+    }
+}

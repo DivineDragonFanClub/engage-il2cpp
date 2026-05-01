@@ -1,0 +1,96 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_colorgradient/TMP_ColorGradient.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_ColorGradient")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct TMP_ColorGradient {
+    #[rename(name = "colorMode")]
+    pub color_mode: crate::tm_pro::colormode::ColorMode,
+    #[rename(name = "topLeft")]
+    pub top_left: crate::unity_engine::color::Color,
+    #[rename(name = "topRight")]
+    pub top_right: crate::unity_engine::color::Color,
+    #[rename(name = "bottomLeft")]
+    pub bottom_left: crate::unity_engine::color::Color,
+    #[rename(name = "bottomRight")]
+    pub bottom_right: crate::unity_engine::color::Color,
+    #[static_field]
+    #[rename(name = "k_DefaultColorMode")]
+    pub k_default_color_mode: crate::tm_pro::colormode::ColorMode,
+    #[static_field]
+    #[rename(name = "k_DefaultColor")]
+    pub k_default_color: crate::unity_engine::color::Color,
+}
+
+#[cfg(feature = "tm_pro-tmp_colorgradient")]
+#[::unity2::methods]
+impl TMP_ColorGradient {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, color: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor_3(
+        self,
+        color0: crate::unity_engine::color::Color,
+        color1: crate::unity_engine::color::Color,
+        color2: crate::unity_engine::color::Color,
+        color3: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_colorgradient")]
+impl TMP_ColorGradient {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_ColorGradient),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_ColorGradientMethods>::ctor(this);
+        this
+    }
+
+    pub fn new_2(color: crate::unity_engine::color::Color) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_ColorGradient),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ITMP_ColorGradientMethods>::ctor_2(this, color);
+        this
+    }
+
+    pub fn new_3(
+        color0: crate::unity_engine::color::Color,
+        color1: crate::unity_engine::color::Color,
+        color2: crate::unity_engine::color::Color,
+        color3: crate::unity_engine::color::Color,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_ColorGradient),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as ITMP_ColorGradientMethods>::ctor_3(this, color0, color1, color2, color3);
+        this
+    }
+}

@@ -1,0 +1,53 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpitemlist/HelpItemList.md")))]
+#[::unity2::class(namespace = "App", name = "HelpItemList")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct HelpItemList {
+    #[rename(name = "m_SituationType")]
+    pub m_situation_type: crate::app::helpmanager::HelpManager_SituationType,
+    #[rename(name = "m_List")]
+    pub m_list: ::unity2::Array<crate::app::helpitembase::HelpItemBase>,
+}
+
+#[cfg(feature = "app-helpitemlist")]
+#[::unity2::methods]
+impl HelpItemList {
+    #[method(name = "get_SituationType", args = 0)]
+    pub fn get_situation_type(self) -> crate::app::helpmanager::HelpManager_SituationType;
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-helpitemlist")]
+impl HelpItemList {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HelpItemList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHelpItemListMethods>::ctor(this);
+        this
+    }
+}

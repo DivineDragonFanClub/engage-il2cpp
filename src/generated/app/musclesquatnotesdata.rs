@@ -1,0 +1,43 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/musclesquatnotesdata/MuscleSquatNotesData.md")))]
+#[::unity2::class(namespace = "App", name = "MuscleSquatNotesData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: musclesquatnotesdata :: MuscleSquatNotesData >)]
+pub struct MuscleSquatNotesData {}
+
+#[cfg(feature = "app-musclesquatnotesdata")]
+#[::unity2::methods]
+impl MuscleSquatNotesData {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+}
+
+#[cfg(feature = "app-musclesquatnotesdata")]
+impl MuscleSquatNotesData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleSquatNotesData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMuscleSquatNotesDataMethods>::ctor(this);
+        this
+    }
+}

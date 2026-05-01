@@ -1,0 +1,149 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposmanager/PhotographDisposManager.md")))]
+#[::unity2::class(namespace = "App", name = "PhotographDisposManager")]
+#[parent(crate::system::object::Object)]
+pub struct PhotographDisposManager {
+    #[static_field]
+    #[rename(name = "s_ActiveEffectPath")]
+    pub s_active_effect_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "s_InactiveEffectPath")]
+    pub s_inactive_effect_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "s_AnimeControllerPathList")]
+    pub s_anime_controller_path_list: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "m_DisposInfoList")]
+    pub m_dispos_info_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::photographdisposinfo::PhotographDisposInfo,
+    >,
+    #[rename(name = "m_CurrentDisposInfo")]
+    pub m_current_dispos_info: crate::app::photographdisposinfo::PhotographDisposInfo,
+    #[rename(name = "m_IsRecordDispos")]
+    pub m_is_record_dispos: bool,
+    #[rename(name = "m_CharacteIdOld")]
+    pub m_characte_id_old: ::unity2::Il2CppString,
+    #[rename(name = "m_PauseDataOld")]
+    pub m_pause_data_old: crate::app::photographpausedata::PhotographPauseData,
+    #[rename(name = "m_DisposEffectList")]
+    pub m_dispos_effect_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_BodyAccDataOld")]
+    pub m_body_acc_data_old: crate::app::accessorydata::AccessoryData,
+    #[rename(name = "m_FaceAccDataOld")]
+    pub m_face_acc_data_old: crate::app::accessorydata::AccessoryData,
+    #[rename(name = "m_WeaponDataOld")]
+    pub m_weapon_data_old: crate::app::itemdata::ItemData,
+}
+
+#[cfg(feature = "app-photographdisposmanager")]
+#[::unity2::methods]
+impl PhotographDisposManager {
+    #[method(name = "get_DisposInfoList", args = 0)]
+    pub fn get_dispos_info_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::photographdisposinfo::PhotographDisposInfo,
+    >;
+
+    #[method(name = "get_CurrentDisposInfo", args = 0)]
+    pub fn get_current_dispos_info(self) -> crate::app::photographdisposinfo::PhotographDisposInfo;
+
+    #[method(name = "get_CurrentDisposIdx", args = 0)]
+    pub fn get_current_dispos_idx(self) -> i32;
+
+    #[method(name = "get_CurrentDisposEffect", args = 0)]
+    pub fn get_current_dispos_effect(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "SetUp", args = 2)]
+    pub fn set_up(
+        self,
+        select_spot: crate::app::photographspotdata::PhotographSpotData,
+        current_spot: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[method(name = "IsLoadingCharacter", args = 0)]
+    pub fn is_loading_character(self) -> bool;
+
+    #[method(name = "RandomDispos", args = 0)]
+    pub fn random_dispos(self) -> ();
+
+    #[method(name = "ChangeAcc", args = 2)]
+    pub fn change_acc(self, is_body: bool, is_next: bool) -> ();
+
+    #[method(name = "ChangeAcc", args = 2)]
+    pub fn change_acc_2(
+        self,
+        body_acc: crate::app::accessorydata::AccessoryData,
+        face_acc: crate::app::accessorydata::AccessoryData,
+    ) -> ();
+
+    #[method(name = "EditDispos", args = 6)]
+    pub fn edit_dispos(
+        self,
+        character_id: ::unity2::Il2CppString,
+        pause_data: crate::app::photographpausedata::PhotographPauseData,
+        weapon_data: crate::app::itemdata::ItemData,
+        body_acc: crate::app::accessorydata::AccessoryData,
+        face_acc: crate::app::accessorydata::AccessoryData,
+        is_random: bool,
+    ) -> ();
+
+    #[method(name = "DecisionDispos", args = 0)]
+    pub fn decision_dispos(self) -> ();
+
+    #[method(name = "CancelDispos", args = 0)]
+    pub fn cancel_dispos(self) -> ();
+
+    #[method(name = "DisposEffectFadeIn", args = 1)]
+    pub fn dispos_effect_fade_in(self, is_only_current_dispos: bool) -> ();
+
+    #[method(name = "DisposEffectFadeOut", args = 0)]
+    pub fn dispos_effect_fade_out(self) -> ();
+
+    #[method(name = "ChangeDispos", args = 2)]
+    pub fn change_dispos(self, is_trigger: bool, is_next: bool) -> ();
+
+    #[method(name = "ChangeIsLookAtCamera", args = 0)]
+    pub fn change_is_look_at_camera(self) -> ();
+
+    #[method(name = "ResetLookAtRate", args = 0)]
+    pub fn reset_look_at_rate(self) -> ();
+
+    #[method(name = "End", args = 0)]
+    pub fn end(self) -> ();
+
+    #[method(name = "LoadResource", args = 0)]
+    pub fn load_resource() -> ();
+
+    #[method(name = "IsLoadingResource", args = 0)]
+    pub fn is_loading_resource() -> bool;
+
+    #[method(name = "UnloadResource", args = 0)]
+    pub fn unload_resource() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-photographdisposmanager")]
+impl PhotographDisposManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographDisposManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographDisposManagerMethods>::ctor(this);
+        this
+    }
+}

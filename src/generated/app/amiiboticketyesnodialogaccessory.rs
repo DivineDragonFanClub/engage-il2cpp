@@ -1,0 +1,83 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
+use crate::app::exchangeyesnodialog::IExchangeYesNoDialog;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiiboticketyesnodialogaccessory/AmiiboTicketYesNoDialogAccessory.md")))]
+#[::unity2::class(namespace = "App", name = "AmiiboTicketYesNoDialogAccessory")]
+#[parent(crate::app::exchangeyesnodialog::ExchangeYesNoDialog)]
+pub struct AmiiboTicketYesNoDialogAccessory {}
+
+#[cfg(feature = "app-amiiboticketyesnodialogaccessory")]
+#[::unity2::methods]
+impl AmiiboTicketYesNoDialogAccessory {
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        get_item_data: crate::app::accessorydata::AccessoryData,
+        yes_event_handler: crate::system::action::Action,
+    ) -> crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
+
+    #[method(name = ".ctor", args = 8)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::exchangedialogcontent::ExchangeDialogContent,
+        top_message: ::unity2::Il2CppString,
+        get_item_title: ::unity2::Il2CppString,
+        get_item_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        cost_item_title: ::unity2::Il2CppString,
+        cost_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+    ) -> ();
+}
+
+#[cfg(feature = "app-amiiboticketyesnodialogaccessory")]
+impl AmiiboTicketYesNoDialogAccessory {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::exchangedialogcontent::ExchangeDialogContent,
+        top_message: ::unity2::Il2CppString,
+        get_item_title: ::unity2::Il2CppString,
+        get_item_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        cost_item_title: ::unity2::Il2CppString,
+        cost_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AmiiboTicketYesNoDialogAccessory),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAmiiboTicketYesNoDialogAccessoryMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            top_message,
+            get_item_title,
+            get_item_param,
+            cost_item_title,
+            cost_item_param_list,
+            cost_money_param,
+        );
+        this
+    }
+}

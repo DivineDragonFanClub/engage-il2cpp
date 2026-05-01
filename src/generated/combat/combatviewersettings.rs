@@ -1,0 +1,125 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/combatviewersettings/CombatViewerSettings_ViewerPhase.md")))]
+#[::unity2::class(namespace = "Combat", name = "CombatViewerSettings.ViewerPhase")]
+#[parent(crate::system::object::Object)]
+pub struct CombatViewerSettings_ViewerPhase {
+    #[rename(name = "s")]
+    pub s: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "combat-combatviewersettings")]
+#[::unity2::methods]
+impl CombatViewerSettings_ViewerPhase {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_IsEnd", args = 0)]
+    pub fn get_is_end(self) -> bool;
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, i: i32) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(self, i: i32, value: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "combat-combatviewersettings")]
+impl CombatViewerSettings_ViewerPhase {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CombatViewerSettings_ViewerPhase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICombatViewerSettings_ViewerPhaseMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/combatviewersettings/CombatViewerSettings.md")))]
+#[::unity2::class(namespace = "Combat", name = "CombatViewerSettings")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct CombatViewerSettings {
+    #[rename(name = "ViewerPhaseArray")]
+    pub viewer_phase_array: crate::system::collections::generic::list_1::List_1<
+        crate::combat::combatviewersettings::CombatViewerSettings_ViewerPhase,
+    >,
+    #[rename(name = "EternalCombat")]
+    pub eternal_combat: bool,
+    #[rename(name = "ForceCrosscut")]
+    pub force_crosscut: bool,
+    #[rename(name = "ForceBulletCamera")]
+    pub force_bullet_camera: bool,
+    #[rename(name = "EnemyIsBoss")]
+    pub enemy_is_boss: bool,
+    #[rename(name = "StartCamera")]
+    pub start_camera: crate::combat::cameraposition::CameraPosition,
+    #[rename(name = "CameraStyle")]
+    pub camera_style:
+        crate::combat::camerasituationconverter::CameraSituationConverter_CameraLocateStyle,
+    #[rename(name = "AttendanceEnemy")]
+    pub attendance_enemy: bool,
+    #[rename(name = "AttendancePEmblem")]
+    pub attendance_p_emblem: bool,
+    #[rename(name = "AttendanceEEmblem")]
+    pub attendance_e_emblem: bool,
+    #[rename(name = "AttendancePChain")]
+    pub attendance_p_chain: i32,
+    #[rename(name = "AttendanceEChain")]
+    pub attendance_e_chain: i32,
+    #[rename(name = "MapDistance")]
+    pub map_distance: i32,
+    #[rename(name = "RepeatDemo")]
+    pub repeat_demo: bool,
+    #[rename(name = "FakeDead")]
+    pub fake_dead: bool,
+    #[rename(name = "SpeedUp")]
+    pub speed_up: bool,
+}
+
+#[cfg(feature = "combat-combatviewersettings")]
+#[::unity2::methods]
+impl CombatViewerSettings {
+    #[method(name = "ClearPhaseArray", args = 0)]
+    pub fn clear_phase_array(self) -> ();
+
+    #[method(name = "Random", args = 1)]
+    pub fn random(self, maxside: i32) -> ();
+
+    #[method(name = "Swap", args = 0)]
+    pub fn swap(self) -> ();
+
+    #[method(name = "Duplicate", args = 0)]
+    pub fn duplicate(self) -> ();
+
+    #[method(name = "ReplaceDamageSide", args = 1)]
+    pub fn replace_damage_side(self, alter: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-combatviewersettings")]
+impl CombatViewerSettings {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CombatViewerSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICombatViewerSettingsMethods>::ctor(this);
+        this
+    }
+}

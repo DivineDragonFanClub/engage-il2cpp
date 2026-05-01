@@ -1,0 +1,109 @@
+
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/foodstuffpool/FoodstuffPool.md")))]
+#[::unity2::class(namespace = "App", name = "FoodstuffPool")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: foodstuffpool :: FoodstuffPool >)]
+pub struct FoodstuffPool {
+    #[rename(name = "m_Food")]
+    pub m_food: crate::app::fooddata::FoodData,
+    #[rename(name = "m_FoodstuffList")]
+    pub m_foodstuff_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::foodstuffdata::FoodstuffData,
+    >,
+    #[rename(name = "AddableFoodstuffNum")]
+    pub addable_foodstuff_num: i32,
+}
+
+#[cfg(feature = "app-foodstuffpool")]
+#[::unity2::methods]
+impl FoodstuffPool {
+    #[method(name = "GetFoodstuffs", args = 0)]
+    pub fn get_foodstuffs(self) -> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>;
+
+    #[method(name = "GetNormalFoodstuffs", args = 0)]
+    pub fn get_normal_foodstuffs(self)
+        -> ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>;
+
+    #[method(name = "GetNormalFoodstuffCount", args = 0)]
+    pub fn get_normal_foodstuff_count(self) -> i32;
+
+    #[method(name = "GetRareFoodstuff", args = 0)]
+    pub fn get_rare_foodstuff(self) -> crate::app::foodstuffdata::FoodstuffData;
+
+    #[method(name = "Reset", args = 1)]
+    pub fn reset(self, food: crate::app::fooddata::FoodData) -> ();
+
+    #[method(name = "get_TypeCount", args = 0)]
+    pub fn get_type_count(self) -> i32;
+
+    #[method(name = "IsIncludeRaiseReliance", args = 0)]
+    pub fn is_include_raise_reliance(self) -> bool;
+
+    #[method(name = "Count", args = 1)]
+    pub fn count(self, data: crate::app::foodstuffdata::FoodstuffData) -> i32;
+
+    #[method(name = "CountExceptForRaiseReliance", args = 0)]
+    pub fn count_except_for_raise_reliance(self) -> i32;
+
+    #[method(name = "CanAddItem", args = 1)]
+    pub fn can_add_item(self, data: crate::app::foodstuffdata::FoodstuffData) -> bool;
+
+    #[method(name = "TryAddItem", args = 1)]
+    pub fn try_add_item(self, data: crate::app::foodstuffdata::FoodstuffData) -> bool;
+
+    #[method(name = "TryRemoveItem", args = 1)]
+    pub fn try_remove_item(self, data: crate::app::foodstuffdata::FoodstuffData) -> bool;
+
+    #[method(name = "TryRemoveLastNormalItem", args = 1)]
+    pub fn try_remove_last_normal_item(
+        self,
+        removed_data: crate::app::foodstuffdata::FoodstuffData,
+    ) -> bool;
+
+    #[method(name = "TryRemoveRareItem", args = 1)]
+    pub fn try_remove_rare_item(
+        self,
+        removed_data: crate::app::foodstuffdata::FoodstuffData,
+    ) -> bool;
+
+    #[method(name = "GetNormalFoodstuffAndCount", args = 0)]
+    pub fn get_normal_foodstuff_and_count(
+        self,
+    ) -> crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::app::foodstuffdata::FoodstuffData,
+        i32,
+    >;
+
+    #[method(name = "GetNormalFoodstuffMostCount", args = 0)]
+    pub fn get_normal_foodstuff_most_count(self) -> i32;
+
+    #[method(name = "IsAccept", args = 2)]
+    pub fn is_accept(
+        self,
+        data: crate::app::foodstuffdata::FoodstuffData,
+        accept_data: crate::app::foodstuffdata::FoodstuffData,
+    ) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-foodstuffpool")]
+impl FoodstuffPool {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FoodstuffPool),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFoodstuffPoolMethods>::ctor(this);
+        this
+    }
+}

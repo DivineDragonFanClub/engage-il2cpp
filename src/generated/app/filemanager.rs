@@ -1,0 +1,61 @@
+
+use crate::app::filecommon::FileCommon;
+use crate::app::filecommon::IFileCommon;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/filemanager/FileManager.md")))]
+#[::unity2::class(namespace = "App", name = "FileManager")]
+#[parent(crate::app::filecommon::FileCommon)]
+pub struct FileManager {
+    #[static_field]
+    #[rename(name = "s_CrcTable")]
+    pub s_crc_table: ::unity2::Array<u32>,
+}
+
+#[cfg(feature = "app-filemanager")]
+#[::unity2::methods]
+impl FileManager {
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ();
+
+    #[method(name = "BuildCRC32Table", args = 0)]
+    pub fn build_crc32_table() -> ();
+
+    #[method(name = "CalcCrc32", args = 1)]
+    pub fn calc_crc32(buf: ::unity2::Array<u8>) -> u32;
+
+    #[method(name = "Dump", args = 0)]
+    pub fn dump() -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update() -> ();
+
+    #[method(name = "DirectLoad", args = 1)]
+    pub fn direct_load(path: ::unity2::Il2CppString) -> crate::app::filedata::FileData;
+
+    #[method(name = "ThreadFunc", args = 0)]
+    pub fn thread_func() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-filemanager")]
+impl FileManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FileManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFileManagerMethods>::ctor(this);
+        this
+    }
+}

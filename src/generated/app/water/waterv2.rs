@@ -1,0 +1,172 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/water/waterv2/WaterV2.md")))]
+#[::unity2::class(namespace = "App.Water", name = "WaterV2")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct WaterV2 {
+    #[rename(name = "waterMode")]
+    pub water_mode: crate::app::water::waterv2::WaterV2_WaterMode,
+    #[rename(name = "disablePixelLights")]
+    pub disable_pixel_lights: bool,
+    #[rename(name = "textureSize")]
+    pub texture_size: i32,
+    #[rename(name = "clipPlaneOffset")]
+    pub clip_plane_offset: f32,
+    #[rename(name = "reflectLayers")]
+    pub reflect_layers: crate::unity_engine::layermask::LayerMask,
+    #[rename(name = "refractLayers")]
+    pub refract_layers: crate::unity_engine::layermask::LayerMask,
+    #[rename(name = "m_ReflectionCameras")]
+    pub m_reflection_cameras: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::unity_engine::camera::Camera,
+        crate::unity_engine::camera::Camera,
+    >,
+    #[rename(name = "m_RefractionCameras")]
+    pub m_refraction_cameras: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::unity_engine::camera::Camera,
+        crate::unity_engine::camera::Camera,
+    >,
+    #[rename(name = "m_ReflectionTexture")]
+    pub m_reflection_texture: crate::unity_engine::rendertexture::RenderTexture,
+    #[rename(name = "m_RefractionTexture")]
+    pub m_refraction_texture: crate::unity_engine::rendertexture::RenderTexture,
+    #[rename(name = "m_HardwareWaterSupport")]
+    pub m_hardware_water_support: crate::app::water::waterv2::WaterV2_WaterMode,
+    #[rename(name = "m_OldReflectionTextureSize")]
+    pub m_old_reflection_texture_size: i32,
+    #[rename(name = "m_OldRefractionTextureSize")]
+    pub m_old_refraction_texture_size: i32,
+    #[static_field]
+    #[rename(name = "s_InsideWater")]
+    pub s_inside_water: bool,
+}
+
+#[cfg(feature = "app-water-waterv2")]
+#[::unity2::methods]
+impl WaterV2 {
+    #[method(name = "OnWillRenderObject", args = 0)]
+    pub fn on_will_render_object(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "UpdateCameraModes", args = 2)]
+    pub fn update_camera_modes(
+        self,
+        src: crate::unity_engine::camera::Camera,
+        dest: crate::unity_engine::camera::Camera,
+    ) -> ();
+
+    #[method(name = "CreateWaterObjects", args = 3)]
+    pub fn create_water_objects(
+        self,
+        current_camera: crate::unity_engine::camera::Camera,
+        reflection_camera: crate::unity_engine::camera::Camera,
+        refraction_camera: crate::unity_engine::camera::Camera,
+    ) -> ();
+
+    #[method(name = "GetWaterMode", args = 0)]
+    pub fn get_water_mode(self) -> crate::app::water::waterv2::WaterV2_WaterMode;
+
+    #[method(name = "FindHardwareWaterSupport", args = 0)]
+    pub fn find_hardware_water_support(self) -> crate::app::water::waterv2::WaterV2_WaterMode;
+
+    #[method(name = "CameraSpacePlane", args = 4)]
+    pub fn camera_space_plane(
+        self,
+        cam: crate::unity_engine::camera::Camera,
+        pos: crate::unity_engine::vector3::Vector3,
+        normal: crate::unity_engine::vector3::Vector3,
+        side_sign: f32,
+    ) -> crate::unity_engine::vector4::Vector4;
+
+    #[method(name = "CalculateReflectionMatrix", args = 2)]
+    pub fn calculate_reflection_matrix(
+        reflection_mat: crate::unity_engine::matrix4x4::Matrix4x4,
+        plane: crate::unity_engine::vector4::Vector4,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-water-waterv2")]
+impl WaterV2 {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WaterV2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWaterV2Methods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/water/waterv2/WaterV2_WaterMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct WaterV2_WaterMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for WaterV2_WaterMode {
+    const NAMESPACE: &'static str = "App.Water";
+
+    const NAME: &'static str = "WaterV2.WaterMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for WaterV2_WaterMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl WaterV2_WaterMode {
+    pub fn simple() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn reflective() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn refractive() -> Self {
+        Self { value: 2 }
+    }
+}

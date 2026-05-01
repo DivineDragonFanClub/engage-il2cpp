@@ -1,0 +1,172 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::events::unityevent_1::IUnityEvent_1;
+use crate::unity_engine::events::unityevent_1::UnityEvent_1;
+use crate::unity_engine::events::unityeventbase::IUnityEventBase;
+use crate::unity_engine::events::unityeventbase::UnityEventBase;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::ui::graphic::Graphic;
+use crate::unity_engine::ui::graphic::IGraphic;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/maskablegraphic/MaskableGraphic.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "MaskableGraphic")]
+#[parent(crate::unity_engine::ui::graphic::Graphic)]
+pub struct MaskableGraphic {
+    #[rename(name = "m_ShouldRecalculateStencil")]
+    pub m_should_recalculate_stencil: bool,
+    #[rename(name = "m_MaskMaterial")]
+    pub m_mask_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_ParentMask")]
+    pub m_parent_mask: crate::unity_engine::ui::rectmask2d::RectMask2D,
+    #[rename(name = "m_Maskable")]
+    pub m_maskable: bool,
+    #[rename(name = "m_IsMaskingGraphic")]
+    pub m_is_masking_graphic: bool,
+    #[rename(name = "m_IncludeForMasking")]
+    pub m_include_for_masking: bool,
+    #[rename(name = "m_OnCullStateChanged")]
+    pub m_on_cull_state_changed:
+        crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent,
+    #[rename(name = "m_ShouldRecalculate")]
+    pub m_should_recalculate: bool,
+    #[rename(name = "m_StencilValue")]
+    pub m_stencil_value: i32,
+    #[rename(name = "m_Corners")]
+    pub m_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+}
+
+#[cfg(feature = "unity_engine-ui-maskablegraphic")]
+#[::unity2::methods]
+impl MaskableGraphic {
+    #[method(name = "get_onCullStateChanged", args = 0)]
+    pub fn get_on_cull_state_changed(
+        self,
+    ) -> crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent;
+
+    #[method(name = "set_onCullStateChanged", args = 1)]
+    pub fn set_on_cull_state_changed(
+        self,
+        value: crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent,
+    ) -> ();
+
+    #[method(name = "get_maskable", args = 0)]
+    pub fn get_maskable(self) -> bool;
+
+    #[method(name = "set_maskable", args = 1)]
+    pub fn set_maskable(self, value: bool) -> ();
+
+    #[method(name = "get_isMaskingGraphic", args = 0)]
+    pub fn get_is_masking_graphic(self) -> bool;
+
+    #[method(name = "set_isMaskingGraphic", args = 1)]
+    pub fn set_is_masking_graphic(self, value: bool) -> ();
+
+    #[method(name = "GetModifiedMaterial", args = 1)]
+    pub fn get_modified_material(
+        self,
+        base_material: crate::unity_engine::material::Material,
+    ) -> crate::unity_engine::material::Material;
+
+    #[method(name = "Cull", args = 2)]
+    pub fn cull(self, clip_rect: crate::unity_engine::rect::Rect, valid_rect: bool) -> ();
+
+    #[method(name = "UpdateCull", args = 1)]
+    pub fn update_cull(self, cull: bool) -> ();
+
+    #[method(name = "SetClipRect", args = 2)]
+    pub fn set_clip_rect(self, clip_rect: crate::unity_engine::rect::Rect, valid_rect: bool) -> ();
+
+    #[method(name = "SetClipSoftness", args = 1)]
+    pub fn set_clip_softness(self, clip_softness: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "OnTransformParentChanged", args = 0)]
+    pub fn on_transform_parent_changed(self) -> ();
+
+    #[method(name = "ParentMaskStateChanged", args = 0)]
+    pub fn parent_mask_state_changed(self) -> ();
+
+    #[method(name = "OnCanvasHierarchyChanged", args = 0)]
+    pub fn on_canvas_hierarchy_changed(self) -> ();
+
+    #[method(name = "get_rootCanvasRect", args = 0)]
+    pub fn get_root_canvas_rect(self) -> crate::unity_engine::rect::Rect;
+
+    #[method(name = "UpdateClipParent", args = 0)]
+    pub fn update_clip_parent(self) -> ();
+
+    #[method(name = "RecalculateClipping", args = 0)]
+    pub fn recalculate_clipping(self) -> ();
+
+    #[method(name = "RecalculateMasking", args = 0)]
+    pub fn recalculate_masking(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "UnityEngine.UI.IClippable.get_gameObject", args = 0)]
+    pub fn unity_engine_ui_i_clippable_get_game_object(
+        self,
+    ) -> crate::unity_engine::gameobject::GameObject;
+}
+
+#[cfg(feature = "unity_engine-ui-maskablegraphic")]
+impl MaskableGraphic {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MaskableGraphic),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMaskableGraphicMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/maskablegraphic/MaskableGraphic_CullStateChangedEvent.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.UI",
+    name = "MaskableGraphic.CullStateChangedEvent"
+)]
+# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < bool >)]
+pub struct MaskableGraphic_CullStateChangedEvent {}
+
+#[cfg(feature = "unity_engine-ui-maskablegraphic")]
+#[::unity2::methods]
+impl MaskableGraphic_CullStateChangedEvent {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-maskablegraphic")]
+impl MaskableGraphic_CullStateChangedEvent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MaskableGraphic_CullStateChangedEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMaskableGraphic_CullStateChangedEventMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,42 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayteamawarddatadialog/RelayTeamAwardDataDialog.md")))]
+#[::unity2::class(namespace = "App", name = "RelayTeamAwardDataDialog")]
+#[parent(crate::system::object::Object)]
+pub struct RelayTeamAwardDataDialog {}
+
+#[cfg(feature = "app-relayteamawarddatadialog")]
+#[::unity2::methods]
+impl RelayTeamAwardDataDialog {
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        main_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+        >,
+        sub_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+        >,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relayteamawarddatadialog")]
+impl RelayTeamAwardDataDialog {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayTeamAwardDataDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayTeamAwardDataDialogMethods>::ctor(this);
+        this
+    }
+}

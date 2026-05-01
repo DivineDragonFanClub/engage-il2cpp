@@ -1,0 +1,44 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::tm_pro::tmp_textelement_legacy::ITMP_TextElement_Legacy;
+use crate::tm_pro::tmp_textelement_legacy::TMP_TextElement_Legacy;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_sprite/TMP_Sprite.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_Sprite")]
+#[parent(crate::tm_pro::tmp_textelement_legacy::TMP_TextElement_Legacy)]
+pub struct TMP_Sprite {
+    #[rename(name = "name")]
+    pub name: ::unity2::Il2CppString,
+    #[rename(name = "hashCode")]
+    pub hash_code: i32,
+    #[rename(name = "unicode")]
+    pub unicode: i32,
+    #[rename(name = "pivot")]
+    pub pivot: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "sprite")]
+    pub sprite: crate::unity_engine::sprite::Sprite,
+}
+
+#[cfg(feature = "tm_pro-tmp_sprite")]
+#[::unity2::methods]
+impl TMP_Sprite {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_sprite")]
+impl TMP_Sprite {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_Sprite),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_SpriteMethods>::ctor(this);
+        this
+    }
+}

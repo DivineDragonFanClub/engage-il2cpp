@@ -1,0 +1,58 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/audiosettings/AudioSettings_AudioConfigurationChangeHandler.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine",
+    name = "AudioSettings.AudioConfigurationChangeHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AudioSettings_AudioConfigurationChangeHandler {}
+
+#[cfg(feature = "unity_engine-audiosettings")]
+#[::unity2::methods]
+impl AudioSettings_AudioConfigurationChangeHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, device_was_changed: bool) -> ();
+}
+
+#[cfg(feature = "unity_engine-audiosettings")]
+impl AudioSettings_AudioConfigurationChangeHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AudioSettings_AudioConfigurationChangeHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAudioSettings_AudioConfigurationChangeHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/audiosettings/AudioSettings.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "AudioSettings")]
+#[parent(crate::system::object::Object)]
+pub struct AudioSettings {
+    #[static_field]
+    #[rename(name = "OnAudioConfigurationChanged")]
+    pub on_audio_configuration_changed:
+        crate::unity_engine::audiosettings::AudioSettings_AudioConfigurationChangeHandler,
+}
+
+#[cfg(feature = "unity_engine-audiosettings")]
+#[::unity2::methods]
+impl AudioSettings {
+    #[method(name = "InvokeOnAudioConfigurationChanged", args = 1)]
+    pub fn invoke_on_audio_configuration_changed(device_was_changed: bool) -> ();
+}

@@ -1,0 +1,58 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procbattlecallback/ProcBattleCallback.md")))]
+#[::unity2::class(namespace = "App", name = "ProcBattleCallback")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct ProcBattleCallback {
+    #[rename(name = "m_Calculator")]
+    pub m_calculator: crate::app::battlecalculator::BattleCalculator,
+    #[rename(name = "m_Completed")]
+    pub m_completed: crate::system::action::Action,
+    #[rename(name = "m_Skipable")]
+    pub m_skipable: bool,
+}
+
+#[cfg(feature = "app-procbattlecallback")]
+#[::unity2::methods]
+impl ProcBattleCallback {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        calculator: crate::app::battlecalculator::BattleCalculator,
+        completed: crate::system::action::Action,
+        skipable: bool,
+    ) -> ();
+
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "GetCurrent", args = 1)]
+    pub fn get_current(super_: crate::app::procinst::ProcInst) -> crate::app::procinst::ProcInst;
+}
+
+#[cfg(feature = "app-procbattlecallback")]
+impl ProcBattleCallback {
+    pub fn new(
+        calculator: crate::app::battlecalculator::BattleCalculator,
+        completed: crate::system::action::Action,
+        skipable: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProcBattleCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProcBattleCallbackMethods>::ctor(this, calculator, completed, skipable);
+        this
+    }
+}

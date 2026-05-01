@@ -1,0 +1,44 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::integratedsubsystem::IIntegratedSubsystem;
+use crate::unity_engine::integratedsubsystem::IntegratedSubsystem;
+use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1;
+use crate::unity_engine::integratedsubsystem_1::IntegratedSubsystem_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrmeshsubsystem/XRMeshSubsystem.md")))]
+#[::unity2::class(namespace = "UnityEngine.XR", name = "XRMeshSubsystem")]
+# [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrmeshsubsystemdescriptor :: XRMeshSubsystemDescriptor >)]
+pub struct XRMeshSubsystem {}
+
+#[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
+#[::unity2::methods]
+impl XRMeshSubsystem {
+    #[method(name = "InvokeMeshReadyDelegate", args = 2)]
+    pub fn invoke_mesh_ready_delegate(
+        self,
+        result: crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
+        on_mesh_generation_complete: crate::system::action_1::Action_1<
+            crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
+        >,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-xr-xrmeshsubsystem")]
+impl XRMeshSubsystem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(XRMeshSubsystem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IXRMeshSubsystemMethods>::ctor(this);
+        this
+    }
+}

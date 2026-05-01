@@ -1,0 +1,43 @@
+
+use crate::app::mapimagecore_1::IMapImageCore_1;
+use crate::app::mapimagecore_1::MapImageCore_1;
+use crate::app::mapimagecorebyte::IMapImageCoreByte;
+use crate::app::mapimagecorebyte::MapImageCoreByte;
+use crate::app::mapimageindex::IMapImageIndex;
+use crate::app::mapimageindex::MapImageIndex;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimagecost/MapImageCost.md")))]
+#[::unity2::class(namespace = "App", name = "MapImageCost")]
+#[parent(crate::app::mapimagecorebyte::MapImageCoreByte)]
+pub struct MapImageCost {}
+
+#[cfg(feature = "app-mapimagecost")]
+#[::unity2::methods]
+impl MapImageCost {
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "Update", args = 2)]
+    pub fn update_2(self, x: i32, z: i32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapimagecost")]
+impl MapImageCost {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapImageCost),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapImageCostMethods>::ctor(this);
+        this
+    }
+}

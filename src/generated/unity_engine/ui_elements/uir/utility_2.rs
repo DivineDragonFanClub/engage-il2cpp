@@ -1,0 +1,68 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui_elements/uir/utility_2/Utility_2.md")))]
+#[::unity2::class(namespace = "UnityEngine.UIElements.UIR", name = "Utility")]
+#[parent(crate::system::object::Object)]
+pub struct Utility_2 {
+    #[static_field]
+    #[rename(name = "GraphicsResourcesRecreate")]
+    pub graphics_resources_recreate: crate::system::action_1::Action_1<bool>,
+    #[static_field]
+    #[rename(name = "EngineUpdate")]
+    pub engine_update: crate::system::action::Action,
+    #[static_field]
+    #[rename(name = "FlushPendingResources")]
+    pub flush_pending_resources: crate::system::action::Action,
+    #[static_field]
+    #[rename(name = "RegisterIntermediateRenderers")]
+    pub register_intermediate_renderers:
+        crate::system::action_1::Action_1<crate::unity_engine::camera::Camera>,
+    #[static_field]
+    #[rename(name = "RenderNodeAdd")]
+    pub render_node_add: crate::system::action_1::Action_1<::unity2::IntPtr>,
+    #[static_field]
+    #[rename(name = "RenderNodeExecute")]
+    pub render_node_execute: crate::system::action_1::Action_1<::unity2::IntPtr>,
+    #[static_field]
+    #[rename(name = "RenderNodeCleanup")]
+    pub render_node_cleanup: crate::system::action_1::Action_1<::unity2::IntPtr>,
+}
+
+#[cfg(feature = "unity_engine-ui_elements-uir-utility_2")]
+#[::unity2::methods]
+impl Utility_2 {
+    #[method(name = "RaiseGraphicsResourcesRecreate", args = 1)]
+    pub fn raise_graphics_resources_recreate(recreate: bool) -> ();
+
+    #[method(name = "RaiseEngineUpdate", args = 0)]
+    pub fn raise_engine_update() -> ();
+
+    #[method(name = "RaiseFlushPendingResources", args = 0)]
+    pub fn raise_flush_pending_resources() -> ();
+
+    #[method(name = "RaiseRegisterIntermediateRenderers", args = 1)]
+    pub fn raise_register_intermediate_renderers(camera: crate::unity_engine::camera::Camera)
+        -> ();
+
+    #[method(name = "RaiseRenderNodeAdd", args = 1)]
+    pub fn raise_render_node_add(user_data: ::unity2::IntPtr) -> ();
+
+    #[method(name = "RaiseRenderNodeExecute", args = 1)]
+    pub fn raise_render_node_execute(user_data: ::unity2::IntPtr) -> ();
+
+    #[method(name = "RaiseRenderNodeCleanup", args = 1)]
+    pub fn raise_render_node_cleanup(user_data: ::unity2::IntPtr) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui_elements/uir/utility_2/Utility_GPUBuffer_1.md")))]
+#[::unity2::class(namespace = "UnityEngine.UIElements.UIR", name = "Utility.GPUBuffer`1")]
+pub struct Utility_GPUBuffer_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "buffer")]
+    pub buffer: ::unity2::IntPtr,
+}

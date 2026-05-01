@@ -1,0 +1,94 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/surfacedataattributes/SurfaceDataAttributes.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "SurfaceDataAttributes")]
+pub struct SurfaceDataAttributes {
+    #[rename(name = "displayNames")]
+    pub display_names: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "isDirection")]
+    pub is_direction: bool,
+    #[rename(name = "sRGBDisplay")]
+    pub s_rgb_display: bool,
+    #[rename(name = "precision")]
+    pub precision: crate::unity_engine::rendering::fieldprecision::FieldPrecision,
+    #[rename(name = "checkIsNormalized")]
+    pub check_is_normalized: bool,
+}
+
+#[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
+#[::unity2::methods]
+impl SurfaceDataAttributes {
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        display_name: ::unity2::Il2CppString,
+        is_direction: bool,
+        s_rgb_display: bool,
+        precision: crate::unity_engine::rendering::fieldprecision::FieldPrecision,
+        check_is_normalized: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor_2(
+        self,
+        display_names: ::unity2::Array<::unity2::Il2CppString>,
+        is_direction: bool,
+        s_rgb_display: bool,
+        check_is_normalized: bool,
+        precision: crate::unity_engine::rendering::fieldprecision::FieldPrecision,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-surfacedataattributes")]
+impl SurfaceDataAttributes {
+    pub fn new(
+        display_name: ::unity2::Il2CppString,
+        is_direction: bool,
+        s_rgb_display: bool,
+        precision: crate::unity_engine::rendering::fieldprecision::FieldPrecision,
+        check_is_normalized: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SurfaceDataAttributes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISurfaceDataAttributesMethods>::ctor(
+            this,
+            display_name,
+            is_direction,
+            s_rgb_display,
+            precision,
+            check_is_normalized,
+        );
+        this
+    }
+
+    pub fn new_2(
+        display_names: ::unity2::Array<::unity2::Il2CppString>,
+        is_direction: bool,
+        s_rgb_display: bool,
+        check_is_normalized: bool,
+        precision: crate::unity_engine::rendering::fieldprecision::FieldPrecision,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SurfaceDataAttributes),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ISurfaceDataAttributesMethods>::ctor_2(
+            this,
+            display_names,
+            is_direction,
+            s_rgb_display,
+            check_is_normalized,
+            precision,
+        );
+        this
+    }
+}

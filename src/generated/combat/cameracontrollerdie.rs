@@ -1,0 +1,88 @@
+
+use crate::combat::basecameracontroller::BaseCameraController;
+use crate::combat::basecameracontroller::IBaseCameraController;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerdie/CameraControllerDie.md")))]
+#[::unity2::class(namespace = "Combat", name = "CameraControllerDie")]
+#[parent(crate::combat::basecameracontroller::BaseCameraController)]
+pub struct CameraControllerDie {
+    #[rename(name = "HeightFixer")]
+    pub height_fixer: f32,
+    #[rename(name = "LookDownMax")]
+    pub look_down_max: f32,
+    #[rename(name = "Distance")]
+    pub distance: f32,
+    #[rename(name = "BaseDegree")]
+    pub base_degree: f32,
+    #[rename(name = "StartCameraDownTime")]
+    pub start_camera_down_time: f32,
+    #[rename(name = "StartRotateTime")]
+    pub start_rotate_time: f32,
+    #[rename(name = "m_IsBeforeDead")]
+    pub m_is_before_dead: bool,
+    #[rename(name = "m_Degree")]
+    pub m_degree: f32,
+    #[rename(name = "m_DeadTime")]
+    pub m_dead_time: f32,
+    #[rename(name = "m_DeadHeight")]
+    pub m_dead_height: f32,
+    #[rename(name = "m_IsEnemy")]
+    pub m_is_enemy: bool,
+    #[rename(name = "m_IsInverse")]
+    pub m_is_inverse: bool,
+    #[rename(name = "m_IsStandingDie")]
+    pub m_is_standing_die: bool,
+    #[rename(name = "m_LookDown")]
+    pub m_look_down: f32,
+    #[rename(name = "m_IsEngageAtk")]
+    pub m_is_engage_atk: bool,
+    #[rename(name = "LookDownTime")]
+    pub look_down_time: f32,
+    #[rename(name = "m_ForwardVec")]
+    pub m_forward_vec: crate::unity_engine::vector3::Vector3,
+}
+
+#[cfg(feature = "combat-cameracontrollerdie")]
+#[::unity2::methods]
+impl CameraControllerDie {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "SetInverse", args = 2)]
+    pub fn set_inverse(self, inv_side: bool, inv_camera: bool) -> ();
+
+    #[method(name = "Activate", args = 0)]
+    pub fn activate(self) -> ();
+
+    #[method(name = "GetCameraTargets", args = 0)]
+    pub fn get_camera_targets(self) -> ::unity2::Array<i32>;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-cameracontrollerdie")]
+impl CameraControllerDie {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CameraControllerDie),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICameraControllerDieMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,280 @@
+
+use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+use crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadinglogo/LoadingLogo_Sequences.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct LoadingLogo_Sequences {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for LoadingLogo_Sequences {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "LoadingLogo.Sequences";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for LoadingLogo_Sequences {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl LoadingLogo_Sequences {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn show() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn idle() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn change() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn hide() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadinglogo/LoadingLogo_UnitDotObject.md")))]
+#[::unity2::class(namespace = "App", name = "LoadingLogo.UnitDotObject")]
+#[parent(crate::system::object::Object)]
+pub struct LoadingLogo_UnitDotObject {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Image")]
+    pub m_image: crate::unity_engine::ui::rawimage::RawImage,
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_Material")]
+    pub m_material: crate::unity_engine::material::Material,
+}
+
+#[cfg(feature = "app-loadinglogo")]
+#[::unity2::methods]
+impl LoadingLogo_UnitDotObject {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(self, person: crate::app::persondata::PersonData, is_female: bool) -> bool;
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "GetUnitDotTexturePath", args = 2)]
+    pub fn get_unit_dot_texture_path(
+        person: crate::app::persondata::PersonData,
+        is_female: bool,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "LoadUnitDotTextureAll", args = 0)]
+    pub fn load_unit_dot_texture_all() -> ();
+}
+
+#[cfg(feature = "app-loadinglogo")]
+impl LoadingLogo_UnitDotObject {
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LoadingLogo_UnitDotObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILoadingLogo_UnitDotObjectMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadinglogo/LoadingLogo.md")))]
+#[::unity2::class(namespace = "App", name = "LoadingLogo")]
+# [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: loadinglogo :: LoadingLogo >)]
+pub struct LoadingLogo {
+    #[static_field]
+    #[rename(name = "GroundImageMax")]
+    pub ground_image_max: i32,
+    #[static_field]
+    #[rename(name = "UnitDotMax")]
+    pub unit_dot_max: i32,
+    #[rename(name = "m_Tips")]
+    pub m_tips: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Icon")]
+    pub m_icon: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_IconCanvasGroup")]
+    pub m_icon_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+    #[rename(name = "m_TipsCanvasGroup")]
+    pub m_tips_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+    #[rename(name = "m_TipsUnitIcon")]
+    pub m_tips_unit_icon: crate::app::uniticon::UnitIcon,
+    #[rename(name = "m_ItemIconRootObject")]
+    pub m_item_icon_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ItemIconFrameImage")]
+    pub m_item_icon_frame_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_ItemIconImage")]
+    pub m_item_icon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_SkillIconImage")]
+    pub m_skill_icon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_TitleFrameImage")]
+    pub m_title_frame_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_TitleText")]
+    pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TipsText")]
+    pub m_tips_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_UnitIconAndGroundRootObject")]
+    pub m_unit_icon_and_ground_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_GroundImageObjects")]
+    pub m_ground_image_objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+    #[rename(name = "m_UnitDotObjects")]
+    pub m_unit_dot_objects: ::unity2::Array<crate::app::loadinglogo::LoadingLogo_UnitDotObject>,
+    #[rename(name = "m_TipsData")]
+    pub m_tips_data: crate::app::tipsdata::TipsData,
+    #[rename(name = "m_TipsAlpha")]
+    pub m_tips_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_IconAlpha")]
+    pub m_icon_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_LoadingMode")]
+    pub m_loading_mode: crate::app::loadingmanager::LoadingManager_Modes,
+    #[rename(name = "m_Sequence")]
+    pub m_sequence: crate::app::loadinglogo::LoadingLogo_Sequences,
+}
+
+#[cfg(feature = "app-loadinglogo")]
+#[::unity2::methods]
+impl LoadingLogo {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = "GetNextTipsData", args = 2)]
+    pub fn get_next_tips_data(
+        now: crate::app::tipsdata::TipsData,
+        mode: crate::app::loadingmanager::LoadingManager_Modes,
+    ) -> crate::app::tipsdata::TipsData;
+
+    #[method(name = "SetText", args = 2)]
+    pub fn set_text(
+        self,
+        text_mesh: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        text: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "SetTipsData", args = 1)]
+    pub fn set_tips_data(self, tips_data: crate::app::tipsdata::TipsData) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "ShowImpl", args = 1)]
+    pub fn show_impl(self, mode: crate::app::loadingmanager::LoadingManager_Modes) -> ();
+
+    #[method(name = "ShowImpl", args = 3)]
+    pub fn show_impl_2(
+        self,
+        hero_unit: crate::app::unit::Unit,
+        eat_unit0: crate::app::unit::Unit,
+        eat_unit1: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "ShowImpl", args = 4)]
+    pub fn show_impl_3(
+        self,
+        tips_data: crate::app::tipsdata::TipsData,
+        hero_unit: crate::app::unit::Unit,
+        eat_unit0: crate::app::unit::Unit,
+        eat_unit1: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "SetupUnitDot", args = 2)]
+    pub fn setup_unit_dot(self, icon_index: i32, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "SetupUnitDot", args = 3)]
+    pub fn setup_unit_dot_2(
+        self,
+        icon_index: i32,
+        person: crate::app::persondata::PersonData,
+        is_female: bool,
+    ) -> bool;
+
+    #[method(name = "HideImpl", args = 0)]
+    pub fn hide_impl(self) -> ();
+
+    #[method(name = "Commit", args = 0)]
+    pub fn commit(self) -> ();
+
+    #[method(name = "Show", args = 1)]
+    pub fn show(mode: crate::app::loadingmanager::LoadingManager_Modes) -> ();
+
+    #[method(name = "Show", args = 1)]
+    pub fn show_2(tips_data: crate::app::tipsdata::TipsData) -> ();
+
+    #[method(name = "Show", args = 3)]
+    pub fn show_3(
+        hero_unit: crate::app::unit::Unit,
+        eat_unit0: crate::app::unit::Unit,
+        eat_unit1: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "Hide", args = 0)]
+    pub fn hide() -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-loadinglogo")]
+impl LoadingLogo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LoadingLogo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILoadingLogoMethods>::ctor(this);
+        this
+    }
+}

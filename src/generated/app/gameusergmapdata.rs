@@ -1,0 +1,217 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameusergmapdata/GameUserGmapData.md")))]
+#[::unity2::class(namespace = "App", name = "GameUserGmapData")]
+#[parent(crate::system::object::Object)]
+pub struct GameUserGmapData {
+    #[rename(name = "m_GmapCameraDistance")]
+    pub m_gmap_camera_distance: f32,
+    #[rename(name = "m_Mobs")]
+    pub m_mobs: crate::system::collections::specialized::ordereddictionary::OrderedDictionary,
+    #[rename(name = "m_LastUpdateDateTime")]
+    pub m_last_update_date_time: i64,
+    #[rename(name = "m_EncountCounters")]
+    pub m_encount_counters: ::unity2::Array<u8>,
+    #[rename(name = "EncountTimeHoursSpan")]
+    pub encount_time_hours_span: f32,
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::app::gmapmode::GmapMode_Mode,
+    #[rename(name = "m_NowSpotGod")]
+    pub m_now_spot_god: ::unity2::Il2CppString,
+    #[rename(name = "m_NowSpotEvil")]
+    pub m_now_spot_evil: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: i32,
+}
+
+#[cfg(feature = "app-gameusergmapdata")]
+#[::unity2::methods]
+impl GameUserGmapData {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "get_Mode", args = 0)]
+    pub fn get_mode(self) -> crate::app::gmapmode::GmapMode_Mode;
+
+    #[method(name = "set_Mode", args = 1)]
+    pub fn set_mode(self, value: crate::app::gmapmode::GmapMode_Mode) -> ();
+
+    #[method(name = "get_NowSpotGod", args = 0)]
+    pub fn get_now_spot_god(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_NowSpotGod", args = 1)]
+    pub fn set_now_spot_god(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_NowSpotEvil", args = 0)]
+    pub fn get_now_spot_evil(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_NowSpotEvil", args = 1)]
+    pub fn set_now_spot_evil(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_GmapCameraDistance", args = 0)]
+    pub fn get_gmap_camera_distance(self) -> f32;
+
+    #[method(name = "set_GmapCameraDistance", args = 1)]
+    pub fn set_gmap_camera_distance(self, value: f32) -> ();
+
+    #[method(name = "AddMob", args = 2)]
+    pub fn add_mob(
+        self,
+        spot_id: ::unity2::Il2CppString,
+        mob: crate::app::encountmob::EncountMob,
+    ) -> ();
+
+    #[method(name = "GetMob", args = 1)]
+    pub fn get_mob(self, spot_id: ::unity2::Il2CppString) -> crate::app::encountmob::EncountMob;
+
+    #[method(name = "ClearMob", args = 1)]
+    pub fn clear_mob(self, spot_id: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "PopMobList", args = 1)]
+    pub fn pop_mob_list(self, num: i32) -> ::unity2::Array<crate::app::gmapspot::GmapSpot>;
+
+    #[method(name = "ExistsMob", args = 1)]
+    pub fn exists_mob(self, spot_id: ::unity2::Il2CppString) -> bool;
+
+    #[method(name = "CountMob", args = 0)]
+    pub fn count_mob(self) -> i32;
+
+    #[method(name = "IsCheckDispos", args = 0)]
+    pub fn is_check_dispos(self) -> bool;
+
+    #[method(name = "GetDisposCountFromDeltaHours", args = 1)]
+    pub fn get_dispos_count_from_delta_hours(self, print_log: bool) -> i32;
+
+    #[method(name = "IsCheckDisposTime", args = 0)]
+    pub fn is_check_dispos_time(self) -> bool;
+
+    #[method(name = "InitializeDisposTime", args = 0)]
+    pub fn initialize_dispos_time(self) -> ();
+
+    #[method(name = "AddEncountCounter", args = 1)]
+    pub fn add_encount_counter(
+        self,
+        r#type: crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
+    ) -> ();
+
+    #[method(name = "GetDisposEncountCount", args = 0)]
+    pub fn get_dispos_encount_count(self) -> i32;
+
+    #[method(name = "ResetEncountCounter", args = 0)]
+    pub fn reset_encount_counter(self) -> i32;
+
+    #[method(name = "GetEncountCountMapClear", args = 1)]
+    pub fn get_encount_count_map_clear(self, is_update: bool) -> i32;
+
+    #[method(name = "GetEncountCountNetwork", args = 1)]
+    pub fn get_encount_count_network(self, is_update: bool) -> i32;
+
+    #[method(name = "GetEncountCountMinigame", args = 1)]
+    pub fn get_encount_count_minigame(self, is_update: bool) -> i32;
+
+    #[method(name = "IsValidRealTime", args = 0)]
+    pub fn is_valid_real_time(self) -> bool;
+
+    #[method(name = "IsValidCounter", args = 1)]
+    pub fn is_valid_counter(
+        self,
+        r#type: crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
+    ) -> bool;
+
+    #[method(name = "GetEncountCounter", args = 1)]
+    pub fn get_encount_counter(
+        self,
+        r#type: crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
+    ) -> i32;
+
+    #[method(name = "SetEncountCounter", args = 2)]
+    pub fn set_encount_counter(
+        self,
+        r#type: crate::app::gameusergmapdata::GameUserGmapData_EncountCounterType,
+        value: i32,
+    ) -> ();
+
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+}
+
+#[cfg(feature = "app-gameusergmapdata")]
+impl GameUserGmapData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserGmapData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserGmapDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameusergmapdata/GameUserGmapData_EncountCounterType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GameUserGmapData_EncountCounterType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GameUserGmapData_EncountCounterType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameUserGmapData.EncountCounterType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GameUserGmapData_EncountCounterType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GameUserGmapData_EncountCounterType {
+    pub fn map_clear() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn network() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn minigame() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+    }
+}

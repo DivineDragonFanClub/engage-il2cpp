@@ -1,0 +1,103 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animationevent/AnimationEvent.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "AnimationEvent")]
+#[parent(crate::system::object::Object)]
+pub struct AnimationEvent {
+    #[rename(name = "m_Time")]
+    pub m_time: f32,
+    #[rename(name = "m_FunctionName")]
+    pub m_function_name: ::unity2::Il2CppString,
+    #[rename(name = "m_StringParameter")]
+    pub m_string_parameter: ::unity2::Il2CppString,
+    #[rename(name = "m_ObjectReferenceParameter")]
+    pub m_object_reference_parameter: crate::unity_engine::object_2::Object_2,
+    #[rename(name = "m_FloatParameter")]
+    pub m_float_parameter: f32,
+    #[rename(name = "m_IntParameter")]
+    pub m_int_parameter: i32,
+    #[rename(name = "m_MessageOptions")]
+    pub m_message_options: i32,
+    #[rename(name = "m_Source")]
+    pub m_source: crate::unity_engine::animationeventsource::AnimationEventSource,
+    #[rename(name = "m_StateSender")]
+    pub m_state_sender: crate::unity_engine::animationstate::AnimationState,
+    #[rename(name = "m_AnimatorStateInfo")]
+    pub m_animator_state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+    #[rename(name = "m_AnimatorClipInfo")]
+    pub m_animator_clip_info: crate::unity_engine::animatorclipinfo::AnimatorClipInfo,
+}
+
+#[cfg(feature = "unity_engine-animationevent")]
+#[::unity2::methods]
+impl AnimationEvent {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_stringParameter", args = 0)]
+    pub fn get_string_parameter(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_stringParameter", args = 1)]
+    pub fn set_string_parameter(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_floatParameter", args = 0)]
+    pub fn get_float_parameter(self) -> f32;
+
+    #[method(name = "set_floatParameter", args = 1)]
+    pub fn set_float_parameter(self, value: f32) -> ();
+
+    #[method(name = "get_intParameter", args = 0)]
+    pub fn get_int_parameter(self) -> i32;
+
+    #[method(name = "set_intParameter", args = 1)]
+    pub fn set_int_parameter(self, value: i32) -> ();
+
+    #[method(name = "get_objectReferenceParameter", args = 0)]
+    pub fn get_object_reference_parameter(self) -> crate::unity_engine::object_2::Object_2;
+
+    #[method(name = "set_objectReferenceParameter", args = 1)]
+    pub fn set_object_reference_parameter(
+        self,
+        value: crate::unity_engine::object_2::Object_2,
+    ) -> ();
+
+    #[method(name = "get_functionName", args = 0)]
+    pub fn get_function_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_functionName", args = 1)]
+    pub fn set_function_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_time", args = 0)]
+    pub fn get_time(self) -> f32;
+
+    #[method(name = "set_time", args = 1)]
+    pub fn set_time(self, value: f32) -> ();
+
+    #[method(name = "get_messageOptions", args = 0)]
+    pub fn get_message_options(self)
+        -> crate::unity_engine::sendmessageoptions::SendMessageOptions;
+
+    #[method(name = "set_messageOptions", args = 1)]
+    pub fn set_message_options(
+        self,
+        value: crate::unity_engine::sendmessageoptions::SendMessageOptions,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-animationevent")]
+impl AnimationEvent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimationEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimationEventMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,100 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/customlightocclusionpass/CustomLightOcclusionPass_ShaderConstants.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+    name = "CustomLightOcclusionPass.ShaderConstants"
+)]
+#[parent(crate::system::object::Object)]
+pub struct CustomLightOcclusionPass_ShaderConstants {
+    #[static_field]
+    #[rename(name = "_MatrixVP")]
+    pub matrix_vp: i32,
+    #[static_field]
+    #[rename(name = "_CameraPositionWS")]
+    pub camera_position_ws: i32,
+    #[static_field]
+    #[rename(name = "_LightAxisX")]
+    pub light_axis_x: i32,
+    #[static_field]
+    #[rename(name = "_LightAxisY")]
+    pub light_axis_y: i32,
+    #[static_field]
+    #[rename(name = "_LightAxisZ")]
+    pub light_axis_z: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customlightocclusionpass")]
+#[::unity2::methods]
+impl CustomLightOcclusionPass_ShaderConstants {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/internal/customlightocclusionpass/CustomLightOcclusionPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+    name = "CustomLightOcclusionPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct CustomLightOcclusionPass {
+    #[static_field]
+    #[rename(name = "k_ProfilerTag")]
+    pub k_profiler_tag: ::unity2::Il2CppString,
+    #[rename(name = "m_Material")]
+    pub m_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_Result")]
+    pub m_result: crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    #[rename(name = "m_DepthTextureEnabled")]
+    pub m_depth_texture_enabled: bool,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customlightocclusionpass")]
+#[::unity2::methods]
+impl CustomLightOcclusionPass {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        material: crate::unity_engine::material::Material,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "OnCameraCleanup", args = 1)]
+    pub fn on_camera_cleanup(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[method(name = "SetDepthTextureEnabled", args = 1)]
+    pub fn set_depth_texture_enabled(self, flag: bool) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customlightocclusionpass")]
+impl CustomLightOcclusionPass {
+    pub fn new(
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        material: crate::unity_engine::material::Material,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomLightOcclusionPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomLightOcclusionPassMethods>::ctor(this, evt, material);
+        this
+    }
+}

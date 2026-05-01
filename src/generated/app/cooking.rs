@@ -1,0 +1,284 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Probability.md")))]
+#[::unity2::class(namespace = "App", name = "Cooking.Probability")]
+#[parent(crate::system::object::Object)]
+pub struct Cooking_Probability {
+    #[static_field]
+    #[rename(name = "BaseProbability")]
+    pub base_probability: ::unity2::Array<f32>,
+    #[static_field]
+    #[rename(name = "ProbabilityCorrections")]
+    pub probability_corrections: ::unity2::Array<::unity2::Array<f32>>,
+    #[static_field]
+    #[rename(name = "ProbabilityFromFoodstuff")]
+    pub probability_from_foodstuff: ::unity2::Array<::unity2::Array<f32>>,
+}
+
+#[cfg(feature = "app-cooking")]
+#[::unity2::methods]
+impl Cooking_Probability {
+    #[method(name = "GetProbabilities", args = 2)]
+    pub fn get_probabilities(
+        difficulty: crate::app::cookdata::CookData_Difficulty,
+        foodstuffs: ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
+    ) -> crate::system::collections::generic::list_1::List_1<f32>;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-cooking")]
+impl Cooking_Probability {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Cooking_Probability),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICooking_ProbabilityMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_ConversationType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Cooking_ConversationType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Cooking_ConversationType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Cooking.ConversationType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Cooking_ConversationType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Cooking_ConversationType {
+    pub fn about_delicious() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn monologue() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn dialogue() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Quality.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Cooking_Quality {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Cooking_Quality {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Cooking.Quality";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Cooking_Quality {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Cooking_Quality {
+    pub fn special1() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn special2() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn special3() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn common() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn bad() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn none() -> Self {
+        Self { value: 6 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking.md")))]
+#[::unity2::class(namespace = "App", name = "Cooking")]
+#[parent(crate::system::object::Object)]
+pub struct Cooking {}
+
+#[cfg(feature = "app-cooking")]
+#[::unity2::methods]
+impl Cooking {
+    #[method(name = "Cook", args = 3)]
+    pub fn cook(
+        unit: crate::app::unit::Unit,
+        food_data: crate::app::fooddata::FoodData,
+        foodstuffs: ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
+    ) -> crate::app::dish::Dish;
+
+    #[method(name = "GetDifficulty", args = 2)]
+    pub fn get_difficulty(
+        unit: crate::app::unit::Unit,
+        food_data: crate::app::fooddata::FoodData,
+    ) -> crate::app::cookdata::CookData_Difficulty;
+
+    #[method(name = "DetermineQuality", args = 2)]
+    pub fn determine_quality(
+        difficulty: crate::app::cookdata::CookData_Difficulty,
+        foodstuffs: ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
+    ) -> crate::app::cooking::Cooking_Quality;
+
+    #[method(name = "DetermineTaste", args = 2)]
+    pub fn determine_taste(
+        unit: crate::app::unit::Unit,
+        quality: crate::app::cooking::Cooking_Quality,
+    ) -> crate::app::tastedata::TasteData;
+
+    #[method(name = "TryGetDialogueMid", args = 3)]
+    pub fn try_get_dialogue_mid(
+        unit: crate::app::unit::Unit,
+        to_unit: crate::app::unit::Unit,
+        order: crate::app::cooking::Cooking_Order,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "TryGetNameType", args = 4)]
+    pub fn try_get_name_type(
+        from: crate::app::unit::Unit,
+        to: crate::app::unit::Unit,
+        r#type: crate::app::nametypedata::NameTypeData_Type,
+        suffix: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[method(name = "ThrowAwayBento", args = 1)]
+    pub fn throw_away_bento(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-cooking")]
+impl Cooking {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Cooking),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICookingMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Order.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Cooking_Order {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Cooking_Order {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Cooking.Order";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Cooking_Order {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Cooking_Order {
+    pub fn before() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn after() -> Self {
+        Self { value: 1 }
+    }
+}

@@ -1,0 +1,139 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/canvasupdateregistry/CanvasUpdateRegistry.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "CanvasUpdateRegistry")]
+#[parent(crate::system::object::Object)]
+pub struct CanvasUpdateRegistry {
+    #[static_field]
+    #[rename(name = "s_Instance")]
+    pub s_instance: crate::unity_engine::ui::canvasupdateregistry::CanvasUpdateRegistry,
+    #[rename(name = "m_PerformingLayoutUpdate")]
+    pub m_performing_layout_update: bool,
+    #[rename(name = "m_PerformingGraphicUpdate")]
+    pub m_performing_graphic_update: bool,
+    #[rename(name = "m_CanvasUpdateProfilerStrings")]
+    pub m_canvas_update_profiler_strings: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "m_CullingUpdateProfilerString")]
+    pub m_culling_update_profiler_string: ::unity2::Il2CppString,
+    #[rename(name = "m_LayoutRebuildQueue")]
+    pub m_layout_rebuild_queue: crate::unity_engine::ui::collections::indexedset_1::IndexedSet_1<
+        crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    >,
+    #[rename(name = "m_GraphicRebuildQueue")]
+    pub m_graphic_rebuild_queue: crate::unity_engine::ui::collections::indexedset_1::IndexedSet_1<
+        crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    >,
+    #[static_field]
+    #[rename(name = "s_SortLayoutFunction")]
+    pub s_sort_layout_function: crate::system::comparison_1::Comparison_1<
+        crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    >,
+}
+
+#[cfg(feature = "unity_engine-ui-canvasupdateregistry")]
+#[::unity2::methods]
+impl CanvasUpdateRegistry {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_instance", args = 0)]
+    pub fn get_instance() -> crate::unity_engine::ui::canvasupdateregistry::CanvasUpdateRegistry;
+
+    #[method(name = "ObjectValidForUpdate", args = 1)]
+    pub fn object_valid_for_update(
+        self,
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    ) -> bool;
+
+    #[method(name = "CleanInvalidItems", args = 0)]
+    pub fn clean_invalid_items(self) -> ();
+
+    #[method(name = "PerformUpdate", args = 0)]
+    pub fn perform_update(self) -> ();
+
+    #[method(name = "ParentCount", args = 1)]
+    pub fn parent_count(child: crate::unity_engine::transform::Transform) -> i32;
+
+    #[method(name = "SortLayoutList", args = 2)]
+    pub fn sort_layout_list(
+        x: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+        y: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    ) -> i32;
+
+    #[method(name = "RegisterCanvasElementForLayoutRebuild", args = 1)]
+    pub fn register_canvas_element_for_layout_rebuild(
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    ) -> ();
+
+    #[method(name = "TryRegisterCanvasElementForLayoutRebuild", args = 1)]
+    pub fn try_register_canvas_element_for_layout_rebuild(
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    ) -> bool;
+
+    #[method(name = "InternalRegisterCanvasElementForLayoutRebuild", args = 1)]
+    pub fn internal_register_canvas_element_for_layout_rebuild(
+        self,
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    ) -> bool;
+
+    #[method(name = "RegisterCanvasElementForGraphicRebuild", args = 1)]
+    pub fn register_canvas_element_for_graphic_rebuild(
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    ) -> ();
+
+    #[method(name = "TryRegisterCanvasElementForGraphicRebuild", args = 1)]
+    pub fn try_register_canvas_element_for_graphic_rebuild(
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    ) -> bool;
+
+    #[method(name = "InternalRegisterCanvasElementForGraphicRebuild", args = 1)]
+    pub fn internal_register_canvas_element_for_graphic_rebuild(
+        self,
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    ) -> bool;
+
+    #[method(name = "UnRegisterCanvasElementForRebuild", args = 1)]
+    pub fn un_register_canvas_element_for_rebuild(
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    ) -> ();
+
+    #[method(name = "InternalUnRegisterCanvasElementForLayoutRebuild", args = 1)]
+    pub fn internal_un_register_canvas_element_for_layout_rebuild(
+        self,
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    ) -> ();
+
+    #[method(name = "InternalUnRegisterCanvasElementForGraphicRebuild", args = 1)]
+    pub fn internal_un_register_canvas_element_for_graphic_rebuild(
+        self,
+        element: crate::unity_engine::ui::icanvaselement::ICanvasElement,
+    ) -> ();
+
+    #[method(name = "IsRebuildingLayout", args = 0)]
+    pub fn is_rebuilding_layout() -> bool;
+
+    #[method(name = "IsRebuildingGraphics", args = 0)]
+    pub fn is_rebuilding_graphics() -> bool;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-canvasupdateregistry")]
+impl CanvasUpdateRegistry {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CanvasUpdateRegistry),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICanvasUpdateRegistryMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,64 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/effecthandle/EffectHandle.md")))]
+#[::unity2::class(namespace = "Combat", name = "EffectHandle")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct EffectHandle {
+    #[rename(name = "m_ParticleSystem")]
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+#[cfg(feature = "combat-effecthandle")]
+#[::unity2::methods]
+impl EffectHandle {
+    #[method(name = "Create", args = 3)]
+    pub fn create(
+        prefab: crate::unity_engine::gameobject::GameObject,
+        parent: crate::unity_engine::transform::Transform,
+        uncached: bool,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "IsAlive", args = 0)]
+    pub fn is_alive(self) -> bool;
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = "Stop", args = 0)]
+    pub fn stop(self) -> ();
+
+    #[method(name = "StopAndClear", args = 0)]
+    pub fn stop_and_clear(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-effecthandle")]
+impl EffectHandle {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EffectHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEffectHandleMethods>::ctor(this);
+        this
+    }
+}

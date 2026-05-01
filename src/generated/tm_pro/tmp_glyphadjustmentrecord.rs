@@ -1,0 +1,69 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_glyphadjustmentrecord/TMP_GlyphAdjustmentRecord.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TMP_GlyphAdjustmentRecord {
+    pub m_glyph_index: u32,
+    pub m_glyph_value_record: crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord,
+}
+
+impl ::unity2::ClassIdentity for TMP_GlyphAdjustmentRecord {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_GlyphAdjustmentRecord";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_GlyphAdjustmentRecord {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_glyphadjustmentrecord")]
+#[::unity2::methods(value)]
+impl TMP_GlyphAdjustmentRecord {
+    #[method(name = "get_glyphIndex", args = 0)]
+    pub fn get_glyph_index(self) -> u32;
+
+    #[method(name = "set_glyphIndex", args = 1)]
+    pub fn set_glyph_index(self, value: u32) -> ();
+
+    #[method(name = "get_glyphValueRecord", args = 0)]
+    pub fn get_glyph_value_record(
+        self,
+    ) -> crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord;
+
+    #[method(name = "set_glyphValueRecord", args = 1)]
+    pub fn set_glyph_value_record(
+        self,
+        value: crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        glyph_index: u32,
+        glyph_value_record: crate::tm_pro::tmp_glyphvaluerecord::TMP_GlyphValueRecord,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(
+        self,
+        adjustment_record : crate :: unity_engine :: text_core :: low_level :: glyphadjustmentrecord :: GlyphAdjustmentRecord,
+    ) -> ();
+}

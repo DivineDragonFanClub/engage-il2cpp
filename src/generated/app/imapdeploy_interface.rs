@@ -1,0 +1,16 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/imapdeploy_interface/IMapDeploy_Interface.md")))]
+#[::unity2::class(namespace = "App", name = "IMapDeploy")]
+pub struct IMapDeploy_Interface {}
+
+#[cfg(feature = "app-imapdeploy_interface")]
+#[::unity2::methods]
+impl IMapDeploy_Interface {
+    #[method(name = "SetBufferA", args = 0)]
+    pub fn set_buffer_a(self) -> ();
+
+    #[method(name = "SetBufferB", args = 0)]
+    pub fn set_buffer_b(self) -> ();
+}

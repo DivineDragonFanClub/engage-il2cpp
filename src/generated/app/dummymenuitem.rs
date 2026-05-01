@@ -1,0 +1,42 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dummymenuitem/DummyMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "DummyMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct DummyMenuItem {}
+
+#[cfg(feature = "app-dummymenuitem")]
+#[::unity2::methods]
+impl DummyMenuItem {
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "PlusCall", args = 0)]
+    pub fn plus_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-dummymenuitem")]
+impl DummyMenuItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DummyMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDummyMenuItemMethods>::ctor(this);
+        this
+    }
+}

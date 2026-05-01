@@ -1,0 +1,48 @@
+
+use crate::combat::actionbase::ActionBase;
+use crate::combat::actionbase::IActionBase;
+use crate::combat::state::IState;
+use crate::combat::state::State;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiondisposerholder/ActionDisposerHolder.md")))]
+#[::unity2::class(namespace = "Combat", name = "ActionDisposerHolder")]
+#[parent(crate::combat::actionbase::ActionBase)]
+pub struct ActionDisposerHolder {}
+
+#[cfg(feature = "combat-actiondisposerholder")]
+#[::unity2::methods]
+impl ActionDisposerHolder {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        chr: crate::combat::character::Character,
+        phase: crate::combat::phase::Phase,
+    ) -> ();
+
+    #[method(name = "OnExit", args = 0)]
+    pub fn on_exit(self) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "combat-actiondisposerholder")]
+impl ActionDisposerHolder {
+    pub fn new(
+        chr: crate::combat::character::Character,
+        phase: crate::combat::phase::Phase,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ActionDisposerHolder),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IActionDisposerHolderMethods>::ctor(this, chr, phase);
+        this
+    }
+}

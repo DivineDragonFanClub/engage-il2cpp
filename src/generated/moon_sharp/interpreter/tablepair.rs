@@ -1,0 +1,64 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tablepair/TablePair.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TablePair {
+    pub key: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    pub value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+}
+
+impl ::unity2::ClassIdentity for TablePair {
+    const NAMESPACE: &'static str = "MoonSharp.Interpreter";
+
+    const NAME: &'static str = "TablePair";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TablePair {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tablepair")]
+#[::unity2::methods(value)]
+impl TablePair {
+    #[method(name = "get_Key", args = 0)]
+    pub fn get_key(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "set_Key", args = 1)]
+    pub fn set_key(self, value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "set_Value", args = 1)]
+    pub fn set_value(self, value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        key: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        val: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> ();
+
+    #[method(name = "get_Nil", args = 0)]
+    pub fn get_nil() -> crate::moon_sharp::interpreter::tablepair::TablePair;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

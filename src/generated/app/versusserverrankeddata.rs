@@ -1,0 +1,48 @@
+
+use crate::app::versusserverdata::IVersusServerData;
+use crate::app::versusserverdata::VersusServerData;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusserverrankeddata/VersusServerRankedData.md")))]
+#[::unity2::class(namespace = "App", name = "VersusServerRankedData")]
+#[parent(crate::app::versusserverdata::VersusServerData)]
+pub struct VersusServerRankedData {
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: u16,
+    #[rename(name = "m_EditData")]
+    pub m_edit_data: crate::app::mapeditdata::MapEditData,
+}
+
+#[cfg(feature = "app-versusserverrankeddata")]
+#[::unity2::methods]
+impl VersusServerRankedData {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Serialize", args = 0)]
+    pub fn serialize(self) -> ();
+
+    #[method(name = "Deserialize", args = 0)]
+    pub fn deserialize(self) -> bool;
+
+    #[method(name = "get_EditData", args = 0)]
+    pub fn get_edit_data(self) -> crate::app::mapeditdata::MapEditData;
+}
+
+#[cfg(feature = "app-versusserverrankeddata")]
+impl VersusServerRankedData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusServerRankedData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusServerRankedDataMethods>::ctor(this);
+        this
+    }
+}

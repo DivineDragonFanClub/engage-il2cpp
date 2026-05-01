@@ -1,0 +1,45 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aisimulatorbase/AISimulatorBase.md")))]
+#[::unity2::class(namespace = "App", name = "AISimulatorBase")]
+#[parent(crate::system::object::Object)]
+pub struct AISimulatorBase {
+    #[rename(name = "m_Offense")]
+    pub m_offense: crate::app::unit::Unit,
+    #[rename(name = "m_OffenseIndex")]
+    pub m_offense_index: i32,
+    #[rename(name = "m_Defense")]
+    pub m_defense: crate::app::unit::Unit,
+    #[rename(name = "m_BattleInfo")]
+    pub m_battle_info: crate::app::battleinfo::BattleInfo,
+    #[rename(name = "m_Score")]
+    pub m_score: u32,
+}
+
+#[cfg(feature = "app-aisimulatorbase")]
+#[::unity2::methods]
+impl AISimulatorBase {
+    #[method(name = "get_Score", args = 0)]
+    pub fn get_score(self) -> u32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-aisimulatorbase")]
+impl AISimulatorBase {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AISimulatorBase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAISimulatorBaseMethods>::ctor(this);
+        this
+    }
+}

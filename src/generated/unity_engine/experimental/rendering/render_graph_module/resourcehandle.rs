@@ -1,0 +1,74 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/resourcehandle/ResourceHandle.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ResourceHandle {
+    pub m_value: u32,
+}
+
+impl ::unity2::ClassIdentity for ResourceHandle {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
+
+    const NAME: &'static str = "ResourceHandle";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ResourceHandle {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-resourcehandle")]
+#[::unity2::methods(value)]
+impl ResourceHandle {
+    #[method(name = "get_index", args = 0)]
+    pub fn get_index(self) -> i32;
+
+    #[method(name = "get_type", args = 0)]
+    pub fn get_type (self ,) -> crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType ;
+
+    #[method(name = "set_type", args = 1)]
+    pub fn set_type(
+        self,
+        value : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType,
+    ) -> ();
+
+    #[method(name = "get_iType", args = 0)]
+    pub fn get_i_type(self) -> i32;
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        value: i32,
+        r#type : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraphresourcetype :: RenderGraphResourceType,
+    ) -> ();
+
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(
+        handle : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: resourcehandle :: ResourceHandle,
+    ) -> i32;
+
+    #[method(name = "IsValid", args = 0)]
+    pub fn is_valid(self) -> bool;
+
+    #[method(name = "NewFrame", args = 1)]
+    pub fn new_frame(execution_index: i32) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

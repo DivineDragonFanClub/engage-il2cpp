@@ -1,0 +1,273 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/grassmanager/GrassManager_MixType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GrassManager_MixType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GrassManager_MixType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GrassManager.MixType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GrassManager_MixType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GrassManager_MixType {
+    pub fn hard() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn soft() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn lerp_ps() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/grassmanager/GrassManager.md")))]
+#[::unity2::class(namespace = "App", name = "GrassManager")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct GrassManager {
+    #[rename(name = "m_grassData")]
+    pub m_grass_data: crate::app::grassdata::GrassData,
+    #[rename(name = "m_referenceTransform")]
+    pub m_reference_transform: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::transform::Transform,
+    >,
+    #[rename(name = "m_grassMaterials")]
+    pub m_grass_materials: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::material::Material,
+    >,
+    #[rename(name = "m_grassTexture")]
+    pub m_grass_texture: crate::unity_engine::texture::Texture,
+    #[rename(name = "m_enableCustomGroundTexture")]
+    pub m_enable_custom_ground_texture: bool,
+    #[rename(name = "m_groundTextures")]
+    pub m_ground_textures: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::texture2d::Texture2D,
+    >,
+    #[rename(name = "m_cutoff")]
+    pub m_cutoff: f32,
+    #[rename(name = "m_drawDistance")]
+    pub m_draw_distance: f32,
+    #[rename(name = "m_isDistanceClipScaleFading")]
+    pub m_is_distance_clip_scale_fading: bool,
+    #[rename(name = "m_distanceClipScale")]
+    pub m_distance_clip_scale: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_isOverrideDownParams")]
+    pub m_is_override_down_params: bool,
+    #[rename(name = "m_nearClipDistance")]
+    pub m_near_clip_distance: f32,
+    #[rename(name = "m_nearDownDistance")]
+    pub m_near_down_distance: f32,
+    #[rename(name = "m_nearDownOffset")]
+    pub m_near_down_offset: f32,
+    #[rename(name = "m_groundColorWindRatio")]
+    pub m_ground_color_wind_ratio: f32,
+    #[rename(name = "m_waveTintColor")]
+    pub m_wave_tint_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_waveSpeed")]
+    pub m_wave_speed: f32,
+    #[rename(name = "m_waveSize")]
+    pub m_wave_size: f32,
+    #[rename(name = "m_waveBlending")]
+    pub m_wave_blending: f32,
+    #[rename(name = "m_grassBrightness")]
+    pub m_grass_brightness: f32,
+    #[rename(name = "m_grassTintColor")]
+    pub m_grass_tint_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_groundColorCoefficient")]
+    pub m_ground_color_coefficient: f32,
+    #[rename(name = "m_groundColorGradationScale")]
+    pub m_ground_color_gradation_scale: f32,
+    #[rename(name = "m_groundColorMixType")]
+    pub m_ground_color_mix_type: crate::app::grassmanager::GrassManager_MixType,
+    #[rename(name = "m_lightingMin")]
+    pub m_lighting_min: f32,
+    #[rename(name = "m_interactionRadius")]
+    pub m_interaction_radius: f32,
+    #[rename(name = "m_interactionAngle")]
+    pub m_interaction_angle: i32,
+    #[rename(name = "m_interactionHeightCorrection")]
+    pub m_interaction_height_correction: f32,
+    #[rename(name = "m_interactionCenterPropertyId")]
+    pub m_interaction_center_property_id: i32,
+    #[static_field]
+    #[rename(name = "kGroundUVFromMeshKeyword")]
+    pub k_ground_uv_from_mesh_keyword: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "kLightmapKeyword")]
+    pub k_lightmap_keyword: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-grassmanager")]
+#[::unity2::methods]
+impl GrassManager {
+    #[method(name = "get_ReferenceTransformNum", args = 0)]
+    pub fn get_reference_transform_num(self) -> i32;
+
+    #[method(name = "set_GrassData", args = 1)]
+    pub fn set_grass_data(self, value: crate::app::grassdata::GrassData) -> ();
+
+    #[method(name = "get_GrassData", args = 0)]
+    pub fn get_grass_data(self) -> crate::app::grassdata::GrassData;
+
+    #[method(name = "get_HasTerrain", args = 0)]
+    pub fn get_has_terrain(self) -> bool;
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "GetMaterial", args = 1)]
+    pub fn get_material(self, index: i32) -> crate::unity_engine::material::Material;
+
+    #[method(name = "GetTexture", args = 1)]
+    pub fn get_texture(self, index: i32) -> crate::unity_engine::texture2d::Texture2D;
+
+    #[method(name = "SetInteractionCenter", args = 1)]
+    pub fn set_interaction_center(self, position: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "Setup", args = 0)]
+    pub fn setup(self) -> ();
+
+    #[method(name = "GetAtlasTexture", args = 1)]
+    pub fn get_atlas_texture(
+        atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+    ) -> crate::unity_engine::texture2d::Texture2D;
+
+    #[method(name = "SetupMaterial", args = 0)]
+    pub fn setup_material(self) -> ();
+
+    #[method(name = "UpdateMaterialParameter", args = 0)]
+    pub fn update_material_parameter(self) -> ();
+
+    #[method(name = "UpdateMaterialParameter", args = 1)]
+    pub fn update_material_parameter_2(self, mesh_index: i32) -> ();
+
+    #[method(name = "UpdateLightmap", args = 0)]
+    pub fn update_lightmap(self) -> ();
+
+    #[method(name = "UpdateLightmap", args = 1)]
+    pub fn update_lightmap_2(self, mesh_index: i32) -> ();
+
+    #[method(name = "SetMaterialToChildrenAll", args = 0)]
+    pub fn set_material_to_children_all(self) -> ();
+
+    #[method(name = "SetMaterialToChildren", args = 2)]
+    pub fn set_material_to_children(
+        self,
+        parent: crate::unity_engine::transform::Transform,
+        mesh_index: i32,
+    ) -> ();
+
+    #[method(name = "SetNotEditableToChildren", args = 0)]
+    pub fn set_not_editable_to_children(self) -> ();
+
+    #[method(name = "SetEditableToChildren", args = 0)]
+    pub fn set_editable_to_children(self) -> ();
+
+    #[method(name = "SetGrassMaterialKeyword", args = 3)]
+    pub fn set_grass_material_keyword(
+        self,
+        material_index: i32,
+        keyword: ::unity2::Il2CppString,
+        enabled: bool,
+    ) -> ();
+
+    #[method(name = "FindGrassMeshParentTransform", args = 2)]
+    pub fn find_grass_mesh_parent_transform(
+        self,
+        parent: crate::unity_engine::transform::Transform,
+        mesh_index: i32,
+    ) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "InitRefrenceTransform", args = 0)]
+    pub fn init_refrence_transform(self) -> ();
+
+    #[method(name = "CalcReferenceTransformNum", args = 0)]
+    pub fn calc_reference_transform_num(self) -> i32;
+
+    #[method(name = "FindGroundTransformIndex", args = 1)]
+    pub fn find_ground_transform_index(
+        self,
+        search_target_transform: crate::unity_engine::transform::Transform,
+    ) -> i32;
+
+    #[method(name = "GetFieldSizeOffset", args = 2)]
+    pub fn get_field_size_offset(
+        self,
+        size: crate::unity_engine::vector3::Vector3,
+        offset: crate::unity_engine::vector3::Vector3,
+    ) -> bool;
+
+    #[method(name = "GetLightmapData", args = 3)]
+    pub fn get_lightmap_data(
+        self,
+        mesh_index: i32,
+        index: i32,
+        scale_offset: crate::unity_engine::vector4::Vector4,
+    ) -> bool;
+
+    #[method(name = "FindGroundTexture", args = 1)]
+    pub fn find_ground_texture(self, mesh_index: i32) -> crate::unity_engine::texture2d::Texture2D;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-grassmanager")]
+impl GrassManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GrassManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGrassManagerMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,166 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideconfig/DragonRideConfig_ShotConfig.md")))]
+#[::unity2::class(namespace = "App", name = "DragonRideConfig.ShotConfig")]
+#[parent(crate::system::object::Object)]
+pub struct DragonRideConfig_ShotConfig {
+    #[rename(name = "ShotRepeatIntervalSec")]
+    pub shot_repeat_interval_sec: f32,
+    #[rename(name = "ShotTriggerIntervalSec")]
+    pub shot_trigger_interval_sec: f32,
+    #[rename(name = "SpecialTimeSec")]
+    pub special_time_sec: f32,
+    #[rename(name = "SpecialIntervalSec")]
+    pub special_interval_sec: f32,
+    #[rename(name = "IsShotPenetrate")]
+    pub is_shot_penetrate: bool,
+    #[rename(name = "IsShowRaySquare")]
+    pub is_show_ray_square: bool,
+    #[rename(name = "IsNeedRouletteStop")]
+    pub is_need_roulette_stop: bool,
+}
+
+#[cfg(feature = "app-dragonrideconfig")]
+#[::unity2::methods]
+impl DragonRideConfig_ShotConfig {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-dragonrideconfig")]
+impl DragonRideConfig_ShotConfig {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideConfig_ShotConfig),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideConfig_ShotConfigMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideconfig/DragonRideConfig_ResultConfig.md")))]
+#[::unity2::class(namespace = "App", name = "DragonRideConfig.ResultConfig")]
+#[parent(crate::system::object::Object)]
+pub struct DragonRideConfig_ResultConfig {
+    #[rename(name = "TitleWaitSec")]
+    pub title_wait_sec: f64,
+    #[rename(name = "ShowTargetWaitSec")]
+    pub show_target_wait_sec: f64,
+    #[rename(name = "ShowAssistWaitSec")]
+    pub show_assist_wait_sec: f64,
+    #[rename(name = "ShowScoreWaitSec")]
+    pub show_score_wait_sec: f64,
+    #[rename(name = "ShowBestScoreWaitSec")]
+    pub show_best_score_wait_sec: f64,
+    #[rename(name = "ShowRankWaitSec")]
+    pub show_rank_wait_sec: f64,
+    #[rename(name = "ShowNewRecordWaitSec")]
+    pub show_new_record_wait_sec: f64,
+    #[rename(name = "CloseAnimeWaitSec")]
+    pub close_anime_wait_sec: f32,
+}
+
+#[cfg(feature = "app-dragonrideconfig")]
+#[::unity2::methods]
+impl DragonRideConfig_ResultConfig {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-dragonrideconfig")]
+impl DragonRideConfig_ResultConfig {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideConfig_ResultConfig),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideConfig_ResultConfigMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideconfig/DragonRideConfig.md")))]
+#[::unity2::class(namespace = "App", name = "DragonRideConfig")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct DragonRideConfig {
+    #[rename(name = "TargetChainIntervalSecond")]
+    pub target_chain_interval_second: f32,
+    #[rename(name = "TargetAppearSecond")]
+    pub target_appear_second: f32,
+    #[rename(name = "ScoreBorderList_Normal")]
+    pub score_border_list_normal: ::unity2::Array<i32>,
+    #[rename(name = "ScoreBorderList_Hard")]
+    pub score_border_list_hard: ::unity2::Array<i32>,
+    #[rename(name = "ScoreBorderList_Expert")]
+    pub score_border_list_expert: ::unity2::Array<i32>,
+    #[rename(name = "DragonModelOffset")]
+    pub dragon_model_offset: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "AssistModelOffset")]
+    pub assist_model_offset: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "AssistBindOffsetPos")]
+    pub assist_bind_offset_pos: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "AssistBindOffsetRotate")]
+    pub assist_bind_offset_rotate: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "CutinKeepSec")]
+    pub cutin_keep_sec: f32,
+    #[rename(name = "CutinCloseSec")]
+    pub cutin_close_sec: f32,
+    #[rename(name = "PopUpIsEnableScaleCulc")]
+    pub pop_up_is_enable_scale_culc: bool,
+    #[rename(name = "IsShowScreenDustAtEventMode")]
+    pub is_show_screen_dust_at_event_mode: bool,
+    #[rename(name = "CameraAccelFrame")]
+    pub camera_accel_frame: f32,
+    #[rename(name = "CameraDecelFrame")]
+    pub camera_decel_frame: f32,
+    #[rename(name = "PopUpDistanceMax")]
+    pub pop_up_distance_max: f32,
+    #[rename(name = "PopUpDistanceMin")]
+    pub pop_up_distance_min: f32,
+    #[rename(name = "PopUpScaleMax")]
+    pub pop_up_scale_max: f32,
+    #[rename(name = "shotConfig")]
+    pub shot_config: crate::app::dragonrideconfig::DragonRideConfig_ShotConfig,
+    #[rename(name = "resultConfig")]
+    pub result_config: crate::app::dragonrideconfig::DragonRideConfig_ResultConfig,
+}
+
+#[cfg(feature = "app-dragonrideconfig")]
+#[::unity2::methods]
+impl DragonRideConfig {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-dragonrideconfig")]
+impl DragonRideConfig {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideConfig),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideConfigMethods>::ctor(this);
+        this
+    }
+}

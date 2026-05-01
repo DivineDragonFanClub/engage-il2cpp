@@ -1,0 +1,162 @@
+
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieskilleditmanager/SortieSkillEditManager.md")))]
+#[::unity2::class(namespace = "App", name = "SortieSkillEditManager")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieskilleditmanager :: SortieSkillEditManager >)]
+pub struct SortieSkillEditManager {
+    #[rename(name = "m_EquipSkillMenu")]
+    pub m_equip_skill_menu: crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu,
+    #[rename(name = "m_PoolSkillMenu")]
+    pub m_pool_skill_menu: crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu,
+    #[rename(name = "m_SkillInfo")]
+    pub m_skill_info: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_SkillInfoRoot")]
+    pub m_skill_info_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes,
+}
+
+#[cfg(feature = "app-sortieskilleditmanager")]
+#[::unity2::methods]
+impl SortieSkillEditManager {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "UpdateMenu", args = 0)]
+    pub fn update_menu(self) -> ();
+
+    #[method(name = "SetSkillInfo", args = 2)]
+    pub fn set_skill_info(
+        self,
+        skill: crate::app::skilldata::SkillData,
+        is_inheritance: bool,
+    ) -> ();
+
+    #[method(name = "get_EquipSkillMenu", args = 0)]
+    pub fn get_equip_skill_menu(
+        self,
+    ) -> crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu;
+
+    #[method(name = "set_EquipSkillMenu", args = 1)]
+    pub fn set_equip_skill_menu(
+        self,
+        value: crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu,
+    ) -> ();
+
+    #[method(name = "get_PoolSkillMenu", args = 0)]
+    pub fn get_pool_skill_menu(self) -> crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu;
+
+    #[method(name = "set_PoolSkillMenu", args = 1)]
+    pub fn set_pool_skill_menu(
+        self,
+        value: crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu,
+    ) -> ();
+
+    #[method(name = "get_SkillInfo", args = 0)]
+    pub fn get_skill_info(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "set_SkillInfo", args = 1)]
+    pub fn set_skill_info_2(self, value: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "get_SkillInfoRoot", args = 0)]
+    pub fn get_skill_info_root(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "set_SkillInfoRoot", args = 1)]
+    pub fn set_skill_info_root(self, value: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "get_Mode", args = 0)]
+    pub fn get_mode(self) -> crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes;
+
+    #[method(name = "set_Mode", args = 1)]
+    pub fn set_mode(
+        self,
+        value: crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes,
+    ) -> ();
+
+    #[method(name = "IsTrade", args = 0)]
+    pub fn is_trade(self) -> bool;
+
+    #[method(name = "SetTrade", args = 0)]
+    pub fn set_trade(self) -> ();
+
+    #[method(name = "ResetMode", args = 0)]
+    pub fn reset_mode(self) -> ();
+
+    #[method(name = "IsInheritanceSkillDouble", args = 2)]
+    pub fn is_inheritance_skill_double(
+        self,
+        unit: crate::app::unit::Unit,
+        skill: crate::app::skilldata::SkillData,
+    ) -> bool;
+}
+
+#[cfg(feature = "app-sortieskilleditmanager")]
+impl SortieSkillEditManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieSkillEditManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieSkillEditManagerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieskilleditmanager/SortieSkillEditManager_Modes.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SortieSkillEditManager_Modes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SortieSkillEditManager_Modes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieSkillEditManager.Modes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SortieSkillEditManager_Modes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SortieSkillEditManager_Modes {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn trade() -> Self {
+        Self { value: 1 }
+    }
+}

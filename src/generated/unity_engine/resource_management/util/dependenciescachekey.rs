@@ -1,0 +1,62 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/util/dependenciescachekey/DependenciesCacheKey.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.Util",
+    name = "DependenciesCacheKey"
+)]
+#[parent(crate::system::object::Object)]
+pub struct DependenciesCacheKey {
+# [rename (name = "m_Dependencies")] pub m_dependencies : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > ,
+# [rename (name = "m_DependenciesHash")] pub m_dependencies_hash : i32 ,
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-dependenciescachekey")]
+#[::unity2::methods]
+impl DependenciesCacheKey {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        dependencies : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        dependencies_hash: i32,
+    ) -> ();
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, obj: crate::system::object::Object) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_2(
+        self,
+        other : crate :: unity_engine :: resource_management :: util :: ioperationcachekey :: IOperationCacheKey,
+    ) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_3(
+        self,
+        other : crate :: unity_engine :: resource_management :: util :: dependenciescachekey :: DependenciesCacheKey,
+    ) -> bool;
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-dependenciescachekey")]
+impl DependenciesCacheKey {
+    pub fn new(
+        dependencies : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        dependencies_hash: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DependenciesCacheKey),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDependenciesCacheKeyMethods>::ctor(this, dependencies, dependencies_hash);
+        this
+    }
+}

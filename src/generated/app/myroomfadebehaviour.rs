@@ -1,0 +1,41 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
+use crate::unity_engine::playables::playablebehaviour::PlayableBehaviour;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomfadebehaviour/MyRoomFadeBehaviour.md")))]
+#[::unity2::class(namespace = "App", name = "MyRoomFadeBehaviour")]
+#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
+pub struct MyRoomFadeBehaviour {}
+
+#[cfg(feature = "app-myroomfadebehaviour")]
+#[::unity2::methods]
+impl MyRoomFadeBehaviour {
+    #[method(name = "ProcessFrame", args = 3)]
+    pub fn process_frame(
+        self,
+        playable: crate::unity_engine::playables::playable::Playable,
+        info: crate::unity_engine::playables::framedata::FrameData,
+        player_data: crate::system::object::Object,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-myroomfadebehaviour")]
+impl MyRoomFadeBehaviour {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomFadeBehaviour),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomFadeBehaviourMethods>::ctor(this);
+        this
+    }
+}

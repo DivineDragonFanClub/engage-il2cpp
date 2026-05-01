@@ -1,0 +1,81 @@
+
+use crate::app::gamemessagecontent::GameMessageContent;
+use crate::app::gamemessagecontent::IGameMessageContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/commonrewarddialogcontent/CommonRewardDialogContent.md")))]
+#[::unity2::class(namespace = "App", name = "CommonRewardDialogContent")]
+#[parent(crate::app::gamemessagecontent::GameMessageContent)]
+pub struct CommonRewardDialogContent {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-commonrewarddialogcontent")]
+#[::unity2::methods]
+impl CommonRewardDialogContent {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "CreateRelay", args = 2)]
+    pub fn create_relay(
+        main_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+        >,
+        sub_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult_Item,
+        >,
+    ) -> crate::app::commonrewarddialogcontent::CommonRewardDialogContent;
+
+    #[method(name = "CreateSubOnly", args = 3)]
+    pub fn create_sub_only(
+        title_text: ::unity2::Il2CppString,
+        sub_item_param_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
+            crate::app::itemdata::ItemData,
+            i32,
+        >,
+        money: i32,
+    ) -> crate::app::commonrewarddialogcontent::CommonRewardDialogContent;
+
+    #[method(name = "SetItem", args = 3)]
+    pub fn set_item(
+        root: crate::unity_engine::gameobject::GameObject,
+        item: crate::app::itemdata::ItemData,
+        count: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-commonrewarddialogcontent")]
+impl CommonRewardDialogContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CommonRewardDialogContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICommonRewardDialogContentMethods>::ctor(this);
+        this
+    }
+}

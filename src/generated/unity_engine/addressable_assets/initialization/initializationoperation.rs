@@ -1,0 +1,92 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1;
+use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/initialization/initializationoperation/InitializationOperation.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets.Initialization",
+    name = "InitializationOperation"
+)]
+# [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >)]
+pub struct InitializationOperation {
+# [rename (name = "m_rtdOp")] pub m_rtd_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: initialization :: resourcemanagerruntimedata :: ResourceManagerRuntimeData > ,
+# [rename (name = "m_loadCatalogOp")] pub m_load_catalog_op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ,
+# [rename (name = "m_ProviderSuffix")] pub m_provider_suffix : :: unity2 :: Il2CppString ,
+# [rename (name = "m_Addressables")] pub m_addressables : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl ,
+# [rename (name = "m_Diagnostics")] pub m_diagnostics : crate :: unity_engine :: addressable_assets :: utility :: resourcemanagerdiagnostics :: ResourceManagerDiagnostics ,
+# [rename (name = "m_InitGroupOps")] pub m_init_group_ops : crate :: unity_engine :: resource_management :: async_operations :: initalizationobjectsoperation :: InitalizationObjectsOperation ,
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-initialization-initializationoperation")]
+#[::unity2::methods]
+impl InitializationOperation {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        aa: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+    ) -> ();
+
+    #[method(name = "get_Progress", args = 0)]
+    pub fn get_progress(self) -> f32;
+
+    #[method(name = "get_DebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "CreateInitializationOperation", args = 3)]
+    pub fn create_initialization_operation (aa : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl , player_settings_location : :: unity2 :: Il2CppString , provider_suffix : :: unity2 :: Il2CppString) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ;
+
+    #[method(name = "InvokeWaitForCompletion", args = 0)]
+    pub fn invoke_wait_for_completion(self) -> bool;
+
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+
+    #[method(name = "LoadProvider", args = 3)]
+    pub fn load_provider(
+        addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+        provider_data : crate :: unity_engine :: resource_management :: util :: objectinitializationdata :: ObjectInitializationData,
+        provider_suffix: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "OnCatalogDataLoaded", args = 4)]
+    pub fn on_catalog_data_loaded (addressables : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl , op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > , provider_suffix : :: unity2 :: Il2CppString , remote_hash_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ;
+
+    #[method(name = "LoadContentCatalog", args = 4)]
+    pub fn load_content_catalog (addressables : crate :: unity_engine :: addressable_assets :: addressablesimpl :: AddressablesImpl , loc : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , provider_suffix : :: unity2 :: Il2CppString , remote_hash_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ;
+
+    #[method(name = "LoadContentCatalog", args = 3)]
+    pub fn load_content_catalog_2 (self , loc : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , provider_suffix : :: unity2 :: Il2CppString , remote_hash_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ;
+
+    #[method(name = "LoadContentCatalogInternal", args = 4)]
+    pub fn load_content_catalog_internal (self , catalogs : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation > , index : i32 , loc_map : crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap , remote_hash_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator > ;
+
+    #[method(name = "LoadOpComplete", args = 5)]
+    pub fn load_op_complete(
+        self,
+        op : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator >,
+        catalogs : crate :: system :: collections :: generic :: ilist_1_interface :: IList_1_Interface < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation >,
+        loc_map : crate :: unity_engine :: addressable_assets :: resource_locators :: resourcelocationmap :: ResourceLocationMap,
+        index: i32,
+        remote_hash_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-initialization-initializationoperation")]
+impl InitializationOperation {
+    pub fn new(
+        aa: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InitializationOperation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInitializationOperationMethods>::ctor(this, aa);
+        this
+    }
+}

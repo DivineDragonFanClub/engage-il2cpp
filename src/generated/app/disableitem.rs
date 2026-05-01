@@ -1,0 +1,38 @@
+
+use crate::app::menuitem::IMenuItem;
+use crate::app::menuitem::MenuItem;
+use crate::app::stringitem::IStringItem;
+use crate::app::stringitem::StringItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disableitem/DisableItem.md")))]
+#[::unity2::class(namespace = "App", name = "DisableItem")]
+#[parent(crate::app::stringitem::StringItem)]
+pub struct DisableItem {}
+
+#[cfg(feature = "app-disableitem")]
+#[::unity2::methods]
+impl DisableItem {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
+}
+
+#[cfg(feature = "app-disableitem")]
+impl DisableItem {
+    pub fn new(name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DisableItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDisableItemMethods>::ctor(this, name);
+        this
+    }
+}

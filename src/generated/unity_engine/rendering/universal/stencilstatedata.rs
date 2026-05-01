@@ -1,0 +1,47 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/stencilstatedata/StencilStateData.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "StencilStateData"
+)]
+#[parent(crate::system::object::Object)]
+pub struct StencilStateData {
+    #[rename(name = "overrideStencilState")]
+    pub override_stencil_state: bool,
+    #[rename(name = "stencilReference")]
+    pub stencil_reference: i32,
+    #[rename(name = "stencilCompareFunction")]
+    pub stencil_compare_function: crate::unity_engine::rendering::comparefunction::CompareFunction,
+    #[rename(name = "passOperation")]
+    pub pass_operation: crate::unity_engine::rendering::stencilop::StencilOp,
+    #[rename(name = "failOperation")]
+    pub fail_operation: crate::unity_engine::rendering::stencilop::StencilOp,
+    #[rename(name = "zFailOperation")]
+    pub z_fail_operation: crate::unity_engine::rendering::stencilop::StencilOp,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-stencilstatedata")]
+#[::unity2::methods]
+impl StencilStateData {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-stencilstatedata")]
+impl StencilStateData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StencilStateData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStencilStateDataMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,98 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/graphicregistry/GraphicRegistry.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "GraphicRegistry")]
+#[parent(crate::system::object::Object)]
+pub struct GraphicRegistry {
+    #[static_field]
+    #[rename(name = "s_Instance")]
+    pub s_instance: crate::unity_engine::ui::graphicregistry::GraphicRegistry,
+    #[rename(name = "m_Graphics")]
+    pub m_graphics: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::unity_engine::canvas::Canvas,
+        crate::unity_engine::ui::collections::indexedset_1::IndexedSet_1<
+            crate::unity_engine::ui::graphic::Graphic,
+        >,
+    >,
+    #[rename(name = "m_RaycastableGraphics")]
+    pub m_raycastable_graphics: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::unity_engine::canvas::Canvas,
+        crate::unity_engine::ui::collections::indexedset_1::IndexedSet_1<
+            crate::unity_engine::ui::graphic::Graphic,
+        >,
+    >,
+    #[static_field]
+    #[rename(name = "s_EmptyList")]
+    pub s_empty_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::ui::graphic::Graphic,
+    >,
+}
+
+#[cfg(feature = "unity_engine-ui-graphicregistry")]
+#[::unity2::methods]
+impl GraphicRegistry {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_instance", args = 0)]
+    pub fn get_instance() -> crate::unity_engine::ui::graphicregistry::GraphicRegistry;
+
+    #[method(name = "RegisterGraphicForCanvas", args = 2)]
+    pub fn register_graphic_for_canvas(
+        c: crate::unity_engine::canvas::Canvas,
+        graphic: crate::unity_engine::ui::graphic::Graphic,
+    ) -> ();
+
+    #[method(name = "RegisterRaycastGraphicForCanvas", args = 2)]
+    pub fn register_raycast_graphic_for_canvas(
+        c: crate::unity_engine::canvas::Canvas,
+        graphic: crate::unity_engine::ui::graphic::Graphic,
+    ) -> ();
+
+    #[method(name = "UnregisterGraphicForCanvas", args = 2)]
+    pub fn unregister_graphic_for_canvas(
+        c: crate::unity_engine::canvas::Canvas,
+        graphic: crate::unity_engine::ui::graphic::Graphic,
+    ) -> ();
+
+    #[method(name = "UnregisterRaycastGraphicForCanvas", args = 2)]
+    pub fn unregister_raycast_graphic_for_canvas(
+        c: crate::unity_engine::canvas::Canvas,
+        graphic: crate::unity_engine::ui::graphic::Graphic,
+    ) -> ();
+
+    #[method(name = "GetGraphicsForCanvas", args = 1)]
+    pub fn get_graphics_for_canvas(
+        canvas: crate::unity_engine::canvas::Canvas,
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+        crate::unity_engine::ui::graphic::Graphic,
+    >;
+
+    #[method(name = "GetRaycastableGraphicsForCanvas", args = 1)]
+    pub fn get_raycastable_graphics_for_canvas(
+        canvas: crate::unity_engine::canvas::Canvas,
+    ) -> crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+        crate::unity_engine::ui::graphic::Graphic,
+    >;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-graphicregistry")]
+impl GraphicRegistry {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GraphicRegistry),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGraphicRegistryMethods>::ctor(this);
+        this
+    }
+}

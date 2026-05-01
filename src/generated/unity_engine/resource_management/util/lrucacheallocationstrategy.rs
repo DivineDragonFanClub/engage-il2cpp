@@ -1,0 +1,59 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/util/lrucacheallocationstrategy/LRUCacheAllocationStrategy.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.Util",
+    name = "LRUCacheAllocationStrategy"
+)]
+#[parent(crate::system::object::Object)]
+pub struct LRUCacheAllocationStrategy {
+    #[rename(name = "m_poolMaxSize")]
+    pub m_pool_max_size: i32,
+    #[rename(name = "m_poolInitialCapacity")]
+    pub m_pool_initial_capacity: i32,
+    #[rename(name = "m_poolCacheMaxSize")]
+    pub m_pool_cache_max_size: i32,
+    #[rename(name = "m_poolCache")]
+    pub m_pool_cache: crate::system::collections::generic::list_1::List_1<
+        crate::system::collections::generic::list_1::List_1<crate::system::object::Object>,
+    >,
+    #[rename(name = "m_cache")]
+    pub m_cache: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        i32,
+        crate::system::collections::generic::list_1::List_1<crate::system::object::Object>,
+    >,
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-lrucacheallocationstrategy")]
+#[::unity2::methods]
+impl LRUCacheAllocationStrategy {
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        pool_max_size: i32,
+        pool_capacity: i32,
+        pool_cache_max_size: i32,
+        initial_pool_cache_capacity: i32,
+    ) -> ();
+
+    #[method(name = "GetPool", args = 0)]
+    pub fn get_pool(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::system::object::Object>;
+
+    #[method(name = "ReleasePool", args = 1)]
+    pub fn release_pool(
+        self,
+        pool: crate::system::collections::generic::list_1::List_1<crate::system::object::Object>,
+    ) -> ();
+
+    #[method(name = "New", args = 2)]
+    pub fn new(self, r#type: ::unity2::SystemType, type_hash: i32)
+        -> crate::system::object::Object;
+
+    #[method(name = "Release", args = 2)]
+    pub fn release(self, type_hash: i32, obj: crate::system::object::Object) -> ();
+}

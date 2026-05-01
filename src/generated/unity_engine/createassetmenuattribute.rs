@@ -1,0 +1,37 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/createassetmenuattribute/CreateAssetMenuAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "CreateAssetMenuAttribute")]
+pub struct CreateAssetMenuAttribute {}
+
+#[cfg(feature = "unity_engine-createassetmenuattribute")]
+#[::unity2::methods]
+impl CreateAssetMenuAttribute {
+    #[method(name = "set_menuName", args = 1)]
+    pub fn set_menu_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "set_fileName", args = 1)]
+    pub fn set_file_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "set_order", args = 1)]
+    pub fn set_order(self, value: i32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-createassetmenuattribute")]
+impl CreateAssetMenuAttribute {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CreateAssetMenuAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICreateAssetMenuAttributeMethods>::ctor(this);
+        this
+    }
+}

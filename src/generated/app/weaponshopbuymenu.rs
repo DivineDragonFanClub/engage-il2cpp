@@ -1,0 +1,369 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_ChangeUnitToPrevEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "WeaponShopBuyMenu.ChangeUnitToPrevEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct WeaponShopBuyMenu_ChangeUnitToPrevEventHandler {}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+#[::unity2::methods]
+impl WeaponShopBuyMenu_ChangeUnitToPrevEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit_item: crate::app::unititem::UnitItem) -> ();
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+impl WeaponShopBuyMenu_ChangeUnitToPrevEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToPrevEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyMenu_ChangeUnitToPrevEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_RequestCloseEventHandler.md")))]
+#[::unity2::class(namespace = "App", name = "WeaponShopBuyMenu.RequestCloseEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct WeaponShopBuyMenu_RequestCloseEventHandler {}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+#[::unity2::methods]
+impl WeaponShopBuyMenu_RequestCloseEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+impl WeaponShopBuyMenu_RequestCloseEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyMenu_RequestCloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_SelectEventHandler.md")))]
+#[::unity2::class(namespace = "App", name = "WeaponShopBuyMenu.SelectEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct WeaponShopBuyMenu_SelectEventHandler {}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+#[::unity2::methods]
+impl WeaponShopBuyMenu_SelectEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unititem::UnitItem) -> ();
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+impl WeaponShopBuyMenu_SelectEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyMenu_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "WeaponShopBuyMenu.SwitchDetailDisplaywayEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler {}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+#[::unity2::methods]
+impl WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+impl WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_DecideEventHandler.md")))]
+#[::unity2::class(namespace = "App", name = "WeaponShopBuyMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct WeaponShopBuyMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+#[::unity2::methods]
+impl WeaponShopBuyMenu_DecideEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, item_data: crate::app::itemdata::ItemData) -> bool;
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+impl WeaponShopBuyMenu_DecideEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponshopbuymenu/WeaponShopBuyMenu.md")))]
+#[::unity2::class(namespace = "App", name = "WeaponShopBuyMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct WeaponShopBuyMenu {
+    #[rename(name = "m_ShopContentArray")]
+    pub m_shop_content_array: ::unity2::Array<crate::app::shopcontent::ShopContent>,
+    #[rename(name = "m_Kind")]
+    pub m_kind: crate::app::itemdata::ItemData_Kinds,
+    #[rename(name = "m_Selects")]
+    pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect>,
+    #[rename(name = "m_RequestCloseEventHandler")]
+    pub m_request_close_event_handler:
+        crate::app::weaponshopbuymenu::WeaponShopBuyMenu_RequestCloseEventHandler,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_SelectEventHandler")]
+    pub m_select_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler,
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_DecideEventHandler,
+    #[rename(name = "m_ChangeUnitToPrevEventHandler")]
+    pub m_change_unit_to_prev_event_handler:
+        crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
+    #[rename(name = "m_ChangeUnitToNextEventHandler")]
+    pub m_change_unit_to_next_event_handler:
+        crate::app::weaponshopbuymenu::WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
+    #[rename(name = "m_SwitchDetailDisplaywayEventHandler")]
+    pub m_switch_detail_displayway_event_handler:
+        crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler,
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+#[::unity2::methods]
+impl WeaponShopBuyMenu {
+    #[method(name = "CreateBind", args = 9)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_object: crate::unity_engine::gameobject::GameObject,
+        unit: crate::app::unit::Unit,
+        select_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler,
+        decide_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_DecideEventHandler,
+        request_close_menu_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_RequestCloseEventHandler,
+        change_unit_to_prev_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
+        change_unit_to_next_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
+        switch_detail_display_way_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler,
+    ) -> crate::app::weaponshopbuymenu::WeaponShopBuyMenu;
+
+    #[method(name = ".ctor", args = 10)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::weaponshopbuymenucontent::WeaponShopBuyMenuContent,
+        shop_content_array: ::unity2::Array<crate::app::shopcontent::ShopContent>,
+        unit: crate::app::unit::Unit,
+        select_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler,
+        decide_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_DecideEventHandler,
+        request_close_menu_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_RequestCloseEventHandler,
+        change_unit_to_prev_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
+        change_unit_to_next_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
+        switch_detail_displayway_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler,
+    ) -> ();
+
+    #[method(name = "RebuildMenu", args = 3)]
+    pub fn rebuild_menu(
+        self,
+        unit: crate::app::unit::Unit,
+        keep_select: bool,
+        setup_shopdata: bool,
+    ) -> ();
+
+    #[method(name = "RebuildMenu", args = 2)]
+    pub fn rebuild_menu_2(self, keep_select: bool, setup_shopdata: bool) -> ();
+
+    #[method(name = "CreateMenuItem", args = 7)]
+    pub fn create_menu_item(
+        shop_content_array: ::unity2::Array<crate::app::shopcontent::ShopContent>,
+        kind: crate::app::itemdata::ItemData_Kinds,
+        unit: crate::app::unit::Unit,
+        select_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler,
+        decide_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_DecideEventHandler,
+        change_unit_to_prev_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
+        change_unit_to_next_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[method(name = "Filter", args = 2)]
+    pub fn filter(
+        shop_content_array: ::unity2::Array<crate::app::shopcontent::ShopContent>,
+        kind: crate::app::itemdata::ItemData_Kinds,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::shopcontent::ShopContent>;
+
+    #[method(name = "AfterBuild", args = 0)]
+    pub fn after_build(self) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetSelect", args = 0)]
+    pub fn get_select(self) -> crate::app::basicmenuselect::BasicMenuSelect;
+
+    #[method(name = "KeyLeft", args = 1)]
+    pub fn key_left(self, is_trigger: bool) -> ();
+
+    #[method(name = "KeyRight", args = 1)]
+    pub fn key_right(self, is_trigger: bool) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "CustomCall", args = 0)]
+    pub fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "OnDoneToBuy", args = 0)]
+    pub fn on_done_to_buy(self) -> ();
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+impl WeaponShopBuyMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::weaponshopbuymenucontent::WeaponShopBuyMenuContent,
+        shop_content_array: ::unity2::Array<crate::app::shopcontent::ShopContent>,
+        unit: crate::app::unit::Unit,
+        select_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_SelectEventHandler,
+        decide_event_handler: crate::app::weaponshopbuymenu::WeaponShopBuyMenu_DecideEventHandler,
+        request_close_menu_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_RequestCloseEventHandler,
+        change_unit_to_prev_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_ChangeUnitToPrevEventHandler,
+        change_unit_to_next_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_ChangeUnitToNextEventHandler,
+        switch_detail_displayway_event_handler : crate :: app :: weaponshopbuymenu :: WeaponShopBuyMenu_SwitchDetailDisplaywayEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            shop_content_array,
+            unit,
+            select_event_handler,
+            decide_event_handler,
+            request_close_menu_event_handler,
+            change_unit_to_prev_event_handler,
+            change_unit_to_next_event_handler,
+            switch_detail_displayway_event_handler,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponshopbuymenu/WeaponShopBuyMenu_ChangeUnitToNextEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "WeaponShopBuyMenu.ChangeUnitToNextEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct WeaponShopBuyMenu_ChangeUnitToNextEventHandler {}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+#[::unity2::methods]
+impl WeaponShopBuyMenu_ChangeUnitToNextEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit_item: crate::app::unititem::UnitItem) -> ();
+}
+
+#[cfg(feature = "app-weaponshopbuymenu")]
+impl WeaponShopBuyMenu_ChangeUnitToNextEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyMenu_ChangeUnitToNextEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyMenu_ChangeUnitToNextEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}

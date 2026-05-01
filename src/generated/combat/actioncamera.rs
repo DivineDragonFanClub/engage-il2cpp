@@ -1,0 +1,44 @@
+
+use crate::combat::state::IState;
+use crate::combat::state::State;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actioncamera/ActionCamera.md")))]
+#[::unity2::class(namespace = "Combat", name = "ActionCamera")]
+#[parent(crate::combat::state::State)]
+pub struct ActionCamera {
+    #[rename(name = "m_Style")]
+    pub m_style: crate::combat::camerasituation::CameraSituation,
+    #[rename(name = "m_Force")]
+    pub m_force: bool,
+}
+
+#[cfg(feature = "combat-actioncamera")]
+#[::unity2::methods]
+impl ActionCamera {
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, style: crate::combat::camerasituation::CameraSituation, force: bool) -> ();
+
+    #[method(name = "OnEnter", args = 0)]
+    pub fn on_enter(self) -> ();
+}
+
+#[cfg(feature = "combat-actioncamera")]
+impl ActionCamera {
+    pub fn new(style: crate::combat::camerasituation::CameraSituation, force: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ActionCamera),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IActionCameraMethods>::ctor(this, style, force);
+        this
+    }
+}

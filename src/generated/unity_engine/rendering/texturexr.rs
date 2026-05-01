@@ -1,0 +1,142 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/texturexr/TextureXR.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "TextureXR")]
+#[parent(crate::system::object::Object)]
+pub struct TextureXR {
+    #[static_field]
+    #[rename(name = "m_MaxViews")]
+    pub m_max_views: i32,
+    #[static_field]
+    #[rename(name = "m_BlackUIntTexture2DArray")]
+    pub m_black_u_int_texture2_d_array: crate::unity_engine::texture::Texture,
+    #[static_field]
+    #[rename(name = "m_BlackUIntTexture")]
+    pub m_black_u_int_texture: crate::unity_engine::texture::Texture,
+    #[static_field]
+    #[rename(name = "m_BlackUIntTexture2DArrayRTH")]
+    pub m_black_u_int_texture2_d_array_rth: crate::unity_engine::rendering::rthandle::RTHandle,
+    #[static_field]
+    #[rename(name = "m_BlackUIntTextureRTH")]
+    pub m_black_u_int_texture_rth: crate::unity_engine::rendering::rthandle::RTHandle,
+    #[static_field]
+    #[rename(name = "m_ClearTexture2DArray")]
+    pub m_clear_texture2_d_array: crate::unity_engine::texture2darray::Texture2DArray,
+    #[static_field]
+    #[rename(name = "m_ClearTexture")]
+    pub m_clear_texture: crate::unity_engine::texture2d::Texture2D,
+    #[static_field]
+    #[rename(name = "m_ClearTexture2DArrayRTH")]
+    pub m_clear_texture2_d_array_rth: crate::unity_engine::rendering::rthandle::RTHandle,
+    #[static_field]
+    #[rename(name = "m_ClearTextureRTH")]
+    pub m_clear_texture_rth: crate::unity_engine::rendering::rthandle::RTHandle,
+    #[static_field]
+    #[rename(name = "m_MagentaTexture2DArray")]
+    pub m_magenta_texture2_d_array: crate::unity_engine::texture2darray::Texture2DArray,
+    #[static_field]
+    #[rename(name = "m_MagentaTexture")]
+    pub m_magenta_texture: crate::unity_engine::texture2d::Texture2D,
+    #[static_field]
+    #[rename(name = "m_MagentaTexture2DArrayRTH")]
+    pub m_magenta_texture2_d_array_rth: crate::unity_engine::rendering::rthandle::RTHandle,
+    #[static_field]
+    #[rename(name = "m_MagentaTextureRTH")]
+    pub m_magenta_texture_rth: crate::unity_engine::rendering::rthandle::RTHandle,
+    #[static_field]
+    #[rename(name = "m_BlackTexture3D")]
+    pub m_black_texture3_d: crate::unity_engine::texture3d::Texture3D,
+    #[static_field]
+    #[rename(name = "m_BlackTexture2DArray")]
+    pub m_black_texture2_d_array: crate::unity_engine::texture2darray::Texture2DArray,
+    #[static_field]
+    #[rename(name = "m_BlackTexture2DArrayRTH")]
+    pub m_black_texture2_d_array_rth: crate::unity_engine::rendering::rthandle::RTHandle,
+    #[static_field]
+    #[rename(name = "m_BlackTextureRTH")]
+    pub m_black_texture_rth: crate::unity_engine::rendering::rthandle::RTHandle,
+    #[static_field]
+    #[rename(name = "m_BlackTexture3DRTH")]
+    pub m_black_texture3_drth: crate::unity_engine::rendering::rthandle::RTHandle,
+    #[static_field]
+    #[rename(name = "m_WhiteTexture2DArray")]
+    pub m_white_texture2_d_array: crate::unity_engine::texture2darray::Texture2DArray,
+    #[static_field]
+    #[rename(name = "m_WhiteTexture2DArrayRTH")]
+    pub m_white_texture2_d_array_rth: crate::unity_engine::rendering::rthandle::RTHandle,
+    #[static_field]
+    #[rename(name = "m_WhiteTextureRTH")]
+    pub m_white_texture_rth: crate::unity_engine::rendering::rthandle::RTHandle,
+}
+
+#[cfg(feature = "unity_engine-rendering-texturexr")]
+#[::unity2::methods]
+impl TextureXR {
+    #[method(name = "set_maxViews", args = 1)]
+    pub fn set_max_views(value: i32) -> ();
+
+    #[method(name = "get_slices", args = 0)]
+    pub fn get_slices() -> i32;
+
+    #[method(name = "get_useTexArray", args = 0)]
+    pub fn get_use_tex_array() -> bool;
+
+    #[method(name = "get_dimension", args = 0)]
+    pub fn get_dimension() -> crate::unity_engine::rendering::texturedimension::TextureDimension;
+
+    #[method(name = "GetBlackUIntTexture", args = 0)]
+    pub fn get_black_u_int_texture() -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "GetClearTexture", args = 0)]
+    pub fn get_clear_texture() -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "GetMagentaTexture", args = 0)]
+    pub fn get_magenta_texture() -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "GetBlackTexture", args = 0)]
+    pub fn get_black_texture() -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "GetBlackTextureArray", args = 0)]
+    pub fn get_black_texture_array() -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "GetBlackTexture3D", args = 0)]
+    pub fn get_black_texture3_d() -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "GetWhiteTexture", args = 0)]
+    pub fn get_white_texture() -> crate::unity_engine::rendering::rthandle::RTHandle;
+
+    #[method(name = "Initialize", args = 2)]
+    pub fn initialize(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        clear_r32_u_int_shader: crate::unity_engine::computeshader::ComputeShader,
+    ) -> ();
+
+    #[method(name = "CreateTexture2DArrayFromTexture2D", args = 2)]
+    pub fn create_texture2_d_array_from_texture2_d(
+        source: crate::unity_engine::texture2d::Texture2D,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::texture2darray::Texture2DArray;
+
+    #[method(name = "CreateBlackUIntTextureArray", args = 2)]
+    pub fn create_black_u_int_texture_array(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        clear_r32_u_int_shader: crate::unity_engine::computeshader::ComputeShader,
+    ) -> crate::unity_engine::texture::Texture;
+
+    #[method(name = "CreateBlackUintTexture", args = 2)]
+    pub fn create_black_uint_texture(
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+        clear_r32_u_int_shader: crate::unity_engine::computeshader::ComputeShader,
+    ) -> crate::unity_engine::texture::Texture;
+
+    #[method(name = "CreateBlackTexture3D", args = 1)]
+    pub fn create_black_texture3_d(
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::texture3d::Texture3D;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

@@ -1,0 +1,46 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/assettableitem/AssetTableItem.md")))]
+#[::unity2::class(namespace = "Combat", name = "AssetTableItem")]
+#[parent(crate::system::object::Object)]
+pub struct AssetTableItem {
+    #[rename(name = "PresetName")]
+    pub preset_name: ::unity2::Il2CppString,
+    #[rename(name = "Mode")]
+    pub mode: u8,
+    #[rename(name = "Conditions")]
+    pub conditions: ::unity2::Il2CppString,
+    #[rename(name = "BodyModel")]
+    pub body_model: ::unity2::Il2CppString,
+    #[rename(name = "BodyTexture")]
+    pub body_texture: ::unity2::Il2CppString,
+    #[rename(name = "DressModel")]
+    pub dress_model: ::unity2::Il2CppString,
+    #[rename(name = "DressTexture")]
+    pub dress_texture: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "combat-assettableitem")]
+#[::unity2::methods]
+impl AssetTableItem {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-assettableitem")]
+impl AssetTableItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssetTableItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetTableItemMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,138 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/debugactionstate/DebugActionState_DebugActionKeyType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct DebugActionState_DebugActionKeyType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for DebugActionState_DebugActionKeyType {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "DebugActionState.DebugActionKeyType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DebugActionState_DebugActionKeyType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl DebugActionState_DebugActionKeyType {
+    pub fn button() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn axis() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn key() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/debugactionstate/DebugActionState.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugActionState")]
+#[parent(crate::system::object::Object)]
+pub struct DebugActionState {
+    #[rename(name = "m_Type")]
+    pub m_type:
+        crate::unity_engine::rendering::debugactionstate::DebugActionState_DebugActionKeyType,
+    #[rename(name = "m_PressedButtons")]
+    pub m_pressed_buttons: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "m_PressedAxis")]
+    pub m_pressed_axis: ::unity2::Il2CppString,
+    #[rename(name = "m_PressedKeys")]
+    pub m_pressed_keys: ::unity2::Array<crate::unity_engine::keycode::KeyCode>,
+    #[rename(name = "m_TriggerPressedUp")]
+    pub m_trigger_pressed_up: ::unity2::Array<bool>,
+    #[rename(name = "m_Timer")]
+    pub m_timer: f32,
+}
+
+#[cfg(feature = "unity_engine-rendering-debugactionstate")]
+#[::unity2::methods]
+impl DebugActionState {
+    #[method(name = "get_runningAction", args = 0)]
+    pub fn get_running_action(self) -> bool;
+
+    #[method(name = "set_runningAction", args = 1)]
+    pub fn set_running_action(self, value: bool) -> ();
+
+    #[method(name = "get_actionState", args = 0)]
+    pub fn get_action_state(self) -> f32;
+
+    #[method(name = "set_actionState", args = 1)]
+    pub fn set_action_state(self, value: f32) -> ();
+
+    #[method(name = "Trigger", args = 2)]
+    pub fn trigger(self, trigger_count: i32, state: f32) -> ();
+
+    #[method(name = "TriggerWithButton", args = 2)]
+    pub fn trigger_with_button(
+        self,
+        buttons: ::unity2::Array<::unity2::Il2CppString>,
+        state: f32,
+    ) -> ();
+
+    #[method(name = "TriggerWithAxis", args = 2)]
+    pub fn trigger_with_axis(self, axis: ::unity2::Il2CppString, state: f32) -> ();
+
+    #[method(name = "TriggerWithKey", args = 2)]
+    pub fn trigger_with_key(
+        self,
+        keys: ::unity2::Array<crate::unity_engine::keycode::KeyCode>,
+        state: f32,
+    ) -> ();
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "Update", args = 1)]
+    pub fn update(
+        self,
+        desc: crate::unity_engine::rendering::debugactiondesc::DebugActionDesc,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugactionstate")]
+impl DebugActionState {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugActionState),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugActionStateMethods>::ctor(this);
+        this
+    }
+}

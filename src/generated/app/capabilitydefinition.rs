@@ -1,0 +1,156 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capabilitydefinition/CapabilityDefinition_Type.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CapabilityDefinition_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CapabilityDefinition_Type {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "CapabilityDefinition.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CapabilityDefinition_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CapabilityDefinition_Type {
+    pub fn none() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn hp() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn str() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn tech() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn quick() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn luck() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn def() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn magic() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn mdef() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn phys() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn sight() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn cc_num() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn grow_num() -> Self {
+        Self { value: 9 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capabilitydefinition/CapabilityDefinition.md")))]
+#[::unity2::class(namespace = "App", name = "CapabilityDefinition")]
+#[parent(crate::system::object::Object)]
+pub struct CapabilityDefinition {
+    #[static_field]
+    #[rename(name = "Num")]
+    pub num: i32,
+    #[static_field]
+    #[rename(name = "CcNum")]
+    pub cc_num: i32,
+    #[static_field]
+    #[rename(name = "GrowNum")]
+    pub grow_num: i32,
+    #[static_field]
+    #[rename(name = "Names")]
+    pub names: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "Helps")]
+    pub helps: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "app-capabilitydefinition")]
+#[::unity2::methods]
+impl CapabilityDefinition {
+    #[method(name = "GetName", args = 1)]
+    pub fn get_name(index: i32) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetHelp", args = 1)]
+    pub fn get_help(index: i32) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-capabilitydefinition")]
+impl CapabilityDefinition {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CapabilityDefinition),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICapabilityDefinitionMethods>::ctor(this);
+        this
+    }
+}

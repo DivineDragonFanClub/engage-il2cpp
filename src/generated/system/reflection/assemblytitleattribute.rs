@@ -1,0 +1,31 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/assemblytitleattribute/AssemblyTitleAttribute.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "AssemblyTitleAttribute")]
+pub struct AssemblyTitleAttribute {
+    #[rename(name = "m_title")]
+    pub m_title: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "system-reflection-assemblytitleattribute")]
+#[::unity2::methods]
+impl AssemblyTitleAttribute {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, title: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "system-reflection-assemblytitleattribute")]
+impl AssemblyTitleAttribute {
+    pub fn new(title: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssemblyTitleAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssemblyTitleAttributeMethods>::ctor(this, title);
+        this
+    }
+}

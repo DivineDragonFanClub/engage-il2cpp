@@ -1,0 +1,46 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/shadowdata/ShadowData.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ShadowData {
+    pub supports_main_light_shadows: bool,
+    pub requires_screen_space_shadow_resolve: bool,
+    pub main_light_shadowmap_width: i32,
+    pub main_light_shadowmap_height: i32,
+    pub main_light_shadow_cascades_count: i32,
+    pub main_light_shadow_cascades_split: crate::unity_engine::vector3::Vector3,
+    pub supports_additional_light_shadows: bool,
+    pub additional_lights_shadowmap_width: i32,
+    pub additional_lights_shadowmap_height: i32,
+    pub supports_soft_shadows: bool,
+    pub shadowmap_depth_buffer_bits: i32,
+    pub bias:
+        crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
+}
+
+impl ::unity2::ClassIdentity for ShadowData {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "ShadowData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ShadowData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

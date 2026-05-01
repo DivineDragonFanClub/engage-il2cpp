@@ -1,0 +1,62 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/basemesheffect/BaseMeshEffect.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "BaseMeshEffect")]
+#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
+pub struct BaseMeshEffect {
+    #[rename(name = "m_Graphic")]
+    pub m_graphic: crate::unity_engine::ui::graphic::Graphic,
+}
+
+#[cfg(feature = "unity_engine-ui-basemesheffect")]
+#[::unity2::methods]
+impl BaseMeshEffect {
+    #[method(name = "get_graphic", args = 0)]
+    pub fn get_graphic(self) -> crate::unity_engine::ui::graphic::Graphic;
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "OnDidApplyAnimationProperties", args = 0)]
+    pub fn on_did_apply_animation_properties(self) -> ();
+
+    #[method(name = "ModifyMesh", args = 1)]
+    pub fn modify_mesh(self, mesh: crate::unity_engine::mesh::Mesh) -> ();
+
+    #[method(name = "ModifyMesh", args = 1)]
+    pub fn modify_mesh_2(self, vh: crate::unity_engine::ui::vertexhelper::VertexHelper) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-basemesheffect")]
+impl BaseMeshEffect {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BaseMeshEffect),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBaseMeshEffectMethods>::ctor(this);
+        this
+    }
+}

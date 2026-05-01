@@ -1,0 +1,16 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/basic_descriptors/ioptimizabledescriptor/IOptimizableDescriptor.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors",
+    name = "IOptimizableDescriptor"
+)]
+pub struct IOptimizableDescriptor {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-ioptimizabledescriptor")]
+#[::unity2::methods]
+impl IOptimizableDescriptor {
+    #[method(name = "Optimize", args = 0)]
+    pub fn optimize(self) -> ();
+}

@@ -1,0 +1,28 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animations/animationplayablebinding/AnimationPlayableBinding.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Animations",
+    name = "AnimationPlayableBinding"
+)]
+#[parent(crate::system::object::Object)]
+pub struct AnimationPlayableBinding {}
+
+#[cfg(feature = "unity_engine-animations-animationplayablebinding")]
+#[::unity2::methods]
+impl AnimationPlayableBinding {
+    #[method(name = "Create", args = 2)]
+    pub fn create(
+        name: ::unity2::Il2CppString,
+        key: crate::unity_engine::object_2::Object_2,
+    ) -> crate::unity_engine::playables::playablebinding::PlayableBinding;
+
+    #[method(name = "CreateAnimationOutput", args = 2)]
+    pub fn create_animation_output(
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::playables::playableoutput::PlayableOutput;
+}

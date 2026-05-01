@@ -1,0 +1,137 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitparamdetail/UnitParamDetail_ValueDetail.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitParamDetail_ValueDetail {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitParamDetail_ValueDetail {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitParamDetail.ValueDetail";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitParamDetail_ValueDetail {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitParamDetail_ValueDetail {
+    pub fn base() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn god() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn terrain() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn support() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn effect() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn hub() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn weight() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 7 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitparamdetail/UnitParamDetail.md")))]
+#[::unity2::class(namespace = "App", name = "UnitParamDetail")]
+#[parent(crate::system::object::Object)]
+pub struct UnitParamDetail {
+    #[rename(name = "m_value")]
+    pub m_value: ::unity2::Array<i32>,
+}
+
+#[cfg(feature = "app-unitparamdetail")]
+#[::unity2::methods]
+impl UnitParamDetail {
+    #[method(name = "SetParam", args = 6)]
+    pub fn set_param(
+        self,
+        total: i32,
+        no_god: i32,
+        no_effect: i32,
+        no_hub: i32,
+        terrain: i32,
+        support: i32,
+    ) -> ();
+
+    #[method(name = "AddParam", args = 2)]
+    pub fn add_param(
+        self,
+        r#type: crate::app::unitparamdetail::UnitParamDetail_ValueDetail,
+        val: i32,
+    ) -> ();
+
+    #[method(name = "SetParamForContinuous", args = 3)]
+    pub fn set_param_for_continuous(self, god_delta: i32, skill_delta: i32, weight: i32) -> ();
+
+    #[method(name = "GetValue", args = 1)]
+    pub fn get_value(self, detail: crate::app::unitparamdetail::UnitParamDetail_ValueDetail)
+        -> i32;
+
+    #[method(name = "GetTotal", args = 0)]
+    pub fn get_total(self) -> i32;
+
+    #[method(name = "GetEnhanceDir", args = 1)]
+    pub fn get_enhance_dir(self, is_god_change: bool) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitparamdetail")]
+impl UnitParamDetail {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitParamDetail),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitParamDetailMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,51 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versuseditmodebackupdata/VersusEditModeBackupData.md")))]
+#[::unity2::class(namespace = "App", name = "VersusEditModeBackupData")]
+#[parent(crate::system::object::Object)]
+pub struct VersusEditModeBackupData {
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: u8,
+    #[static_field]
+    #[rename(name = "BufferSize")]
+    pub buffer_size: i32,
+    #[rename(name = "m_Buffer")]
+    pub m_buffer: ::unity2::Array<u8>,
+    #[rename(name = "m_Stream")]
+    pub m_stream: crate::app::stream_2::Stream_2,
+}
+
+#[cfg(feature = "app-versuseditmodebackupdata")]
+#[::unity2::methods]
+impl VersusEditModeBackupData {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Serialize", args = 0)]
+    pub fn serialize(self) -> ();
+
+    #[method(name = "Deserialize", args = 0)]
+    pub fn deserialize(self) -> ();
+
+    #[method(name = "FindUnit", args = 1)]
+    pub fn find_unit(self, pid: ::unity2::Il2CppString) -> crate::app::unit::Unit;
+}
+
+#[cfg(feature = "app-versuseditmodebackupdata")]
+impl VersusEditModeBackupData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusEditModeBackupData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusEditModeBackupDataMethods>::ctor(this);
+        this
+    }
+}

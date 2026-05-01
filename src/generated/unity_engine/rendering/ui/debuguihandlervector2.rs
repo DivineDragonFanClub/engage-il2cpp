@@ -1,0 +1,84 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
+use crate::unity_engine::rendering::ui::debuguihandlerwidget::IDebugUIHandlerWidget;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/ui/debuguihandlervector2/DebugUIHandlerVector2.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "DebugUIHandlerVector2")]
+#[parent(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)]
+pub struct DebugUIHandlerVector2 {
+# [rename (name = "nameLabel")] pub name_label : crate :: unity_engine :: ui :: text :: Text ,
+# [rename (name = "valueToggle")] pub value_toggle : crate :: unity_engine :: rendering :: ui :: uifoldout :: UIFoldout ,
+# [rename (name = "fieldX")] pub field_x : crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField ,
+# [rename (name = "fieldY")] pub field_y : crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField ,
+# [rename (name = "m_Field")] pub m_field : crate :: unity_engine :: rendering :: debugui :: DebugUI_Vector2Field ,
+# [rename (name = "m_Container")] pub m_container : crate :: unity_engine :: rendering :: ui :: debuguihandlercontainer :: DebugUIHandlerContainer ,
+}
+
+#[cfg(feature = "unity_engine-rendering-ui-debuguihandlervector2")]
+#[::unity2::methods]
+impl DebugUIHandlerVector2 {
+    #[method(name = "SetWidget", args = 1)]
+    pub fn set_widget(self, widget: crate::unity_engine::rendering::debugui::DebugUI_Widget) -> ();
+
+    #[method(name = "SetValue", args = 3)]
+    pub fn set_value(self, v: f32, x: bool, y: bool) -> ();
+
+    #[method(name = "SetupSettings", args = 1)]
+    pub fn setup_settings(
+        self,
+        field : crate :: unity_engine :: rendering :: ui :: debuguihandlerindirectfloatfield :: DebugUIHandlerIndirectFloatField,
+    ) -> ();
+
+    #[method(name = "OnSelection", args = 2)]
+    pub fn on_selection(
+        self,
+        from_next: bool,
+        previous: crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,
+    ) -> bool;
+
+    #[method(name = "OnDeselection", args = 0)]
+    pub fn on_deselection(self) -> ();
+
+    #[method(name = "OnIncrement", args = 1)]
+    pub fn on_increment(self, fast: bool) -> ();
+
+    #[method(name = "OnDecrement", args = 1)]
+    pub fn on_decrement(self, fast: bool) -> ();
+
+    #[method(name = "OnAction", args = 0)]
+    pub fn on_action(self) -> ();
+
+    #[method(name = "Next", args = 0)]
+    pub fn next(
+        self,
+    ) -> crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-ui-debuguihandlervector2")]
+impl DebugUIHandlerVector2 {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUIHandlerVector2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUIHandlerVector2Methods>::ctor(this);
+        this
+    }
+}

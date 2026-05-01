@@ -1,0 +1,126 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::rendering::universal::scriptablerendererdata::IScriptableRendererData;
+use crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom",
+    name = "StatusModelRendererData"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerendererdata::ScriptableRendererData)]
+pub struct StatusModelRendererData {
+# [rename (name = "postProcessData")] pub post_process_data : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData ,
+# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: custom :: statusmodelrendererdata :: StatusModelRendererData_ShaderResources ,
+# [rename (name = "m_OpaqueLayerMask")] pub m_opaque_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [rename (name = "m_TransparentLayerMask")] pub m_transparent_layer_mask : crate :: unity_engine :: layermask :: LayerMask ,
+# [rename (name = "m_DefaultStencilState")] pub m_default_stencil_state : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
+# [rename (name = "m_ShadowTransparentReceive")] pub m_shadow_transparent_receive : bool ,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+#[::unity2::methods]
+impl StatusModelRendererData {
+    #[method(name = "Create", args = 0)]
+    pub fn create(
+        self,
+    ) -> crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
+
+    #[method(name = "get_opaqueLayerMask", args = 0)]
+    pub fn get_opaque_layer_mask(self) -> crate::unity_engine::layermask::LayerMask;
+
+    #[method(name = "set_opaqueLayerMask", args = 1)]
+    pub fn set_opaque_layer_mask(self, value: crate::unity_engine::layermask::LayerMask) -> ();
+
+    #[method(name = "get_transparentLayerMask", args = 0)]
+    pub fn get_transparent_layer_mask(self) -> crate::unity_engine::layermask::LayerMask;
+
+    #[method(name = "set_transparentLayerMask", args = 1)]
+    pub fn set_transparent_layer_mask(self, value: crate::unity_engine::layermask::LayerMask)
+        -> ();
+
+    #[method(name = "get_defaultStencilState", args = 0)]
+    pub fn get_default_stencil_state(
+        self,
+    ) -> crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData;
+
+    #[method(name = "set_defaultStencilState", args = 1)]
+    pub fn set_default_stencil_state(
+        self,
+        value: crate::unity_engine::rendering::universal::stencilstatedata::StencilStateData,
+    ) -> ();
+
+    #[method(name = "get_shadowTransparentReceive", args = 0)]
+    pub fn get_shadow_transparent_receive(self) -> bool;
+
+    #[method(name = "set_shadowTransparentReceive", args = 1)]
+    pub fn set_shadow_transparent_receive(self, value: bool) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+impl StatusModelRendererData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StatusModelRendererData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStatusModelRendererDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData_ShaderResources.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom",
+    name = "StatusModelRendererData.ShaderResources"
+)]
+#[parent(crate::system::object::Object)]
+pub struct StatusModelRendererData_ShaderResources {
+    #[rename(name = "blitPS")]
+    pub blit_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "downsampleDepth")]
+    pub downsample_depth: crate::unity_engine::shader::Shader,
+    #[rename(name = "halfResoComposite")]
+    pub half_reso_composite: crate::unity_engine::shader::Shader,
+    #[rename(name = "copyDepthPS")]
+    pub copy_depth_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "samplingPS")]
+    pub sampling_ps: crate::unity_engine::shader::Shader,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+#[::unity2::methods]
+impl StatusModelRendererData_ShaderResources {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+impl StatusModelRendererData_ShaderResources {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StatusModelRendererData_ShaderResources),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStatusModelRendererData_ShaderResourcesMethods>::ctor(this);
+        this
+    }
+}

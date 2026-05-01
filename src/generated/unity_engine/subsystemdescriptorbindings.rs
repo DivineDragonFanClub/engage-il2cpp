@@ -1,0 +1,16 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/subsystemdescriptorbindings/SubsystemDescriptorBindings.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "SubsystemDescriptorBindings")]
+#[parent(crate::system::object::Object)]
+pub struct SubsystemDescriptorBindings {}
+
+#[cfg(feature = "unity_engine-subsystemdescriptorbindings")]
+#[::unity2::methods]
+impl SubsystemDescriptorBindings {
+    #[method(name = "GetId", args = 1)]
+    pub fn get_id(descriptor_ptr: ::unity2::IntPtr) -> ::unity2::Il2CppString;
+}

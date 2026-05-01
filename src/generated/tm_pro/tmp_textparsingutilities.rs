@@ -1,0 +1,74 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_textparsingutilities/TMP_TextParsingUtilities.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_TextParsingUtilities")]
+#[parent(crate::system::object::Object)]
+pub struct TMP_TextParsingUtilities {
+    #[static_field]
+    #[rename(name = "s_Instance")]
+    pub s_instance: crate::tm_pro::tmp_textparsingutilities::TMP_TextParsingUtilities,
+    #[static_field]
+    #[rename(name = "k_LookupStringL")]
+    pub k_lookup_string_l: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "k_LookupStringU")]
+    pub k_lookup_string_u: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "tm_pro-tmp_textparsingutilities")]
+#[::unity2::methods]
+impl TMP_TextParsingUtilities {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+
+    #[method(name = "get_instance", args = 0)]
+    pub fn get_instance() -> crate::tm_pro::tmp_textparsingutilities::TMP_TextParsingUtilities;
+
+    #[method(name = "GetHashCode", args = 1)]
+    pub fn get_hash_code(s: ::unity2::Il2CppString) -> i32;
+
+    #[method(name = "GetHashCodeCaseSensitive", args = 1)]
+    pub fn get_hash_code_case_sensitive(s: ::unity2::Il2CppString) -> i32;
+
+    #[method(name = "ToLowerASCIIFast", args = 1)]
+    pub fn to_lower_ascii_fast(c: u16) -> u16;
+
+    #[method(name = "ToUpperASCIIFast", args = 1)]
+    pub fn to_upper_ascii_fast(c: u16) -> u16;
+
+    #[method(name = "ToUpperASCIIFast", args = 1)]
+    pub fn to_upper_ascii_fast_2(c: u32) -> u32;
+
+    #[method(name = "ToLowerASCIIFast", args = 1)]
+    pub fn to_lower_ascii_fast_2(c: u32) -> u32;
+
+    #[method(name = "IsHighSurrogate", args = 1)]
+    pub fn is_high_surrogate(c: u32) -> bool;
+
+    #[method(name = "IsLowSurrogate", args = 1)]
+    pub fn is_low_surrogate(c: u32) -> bool;
+
+    #[method(name = "ConvertToUTF32", args = 2)]
+    pub fn convert_to_utf32(high_surrogate: u32, low_surrogate: u32) -> u32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_textparsingutilities")]
+impl TMP_TextParsingUtilities {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_TextParsingUtilities),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_TextParsingUtilitiesMethods>::ctor(this);
+        this
+    }
+}

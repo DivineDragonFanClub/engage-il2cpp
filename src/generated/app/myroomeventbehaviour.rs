@@ -1,0 +1,77 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
+use crate::unity_engine::playables::playablebehaviour::PlayableBehaviour;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomeventbehaviour/MyRoomEventBehaviour.md")))]
+#[::unity2::class(namespace = "App", name = "MyRoomEventBehaviour")]
+#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
+pub struct MyRoomEventBehaviour {
+    #[rename(name = "eventType")]
+    pub event_type: crate::app::myroomeventclip::MyRoomEventClip_EventClipType,
+    #[rename(name = "eventName")]
+    pub event_name: ::unity2::Il2CppString,
+    #[rename(name = "eventLayer")]
+    pub event_layer: crate::app::myroomeventclip::MyRoomEventClip_EventClipLayer,
+    #[rename(name = "isOut")]
+    pub is_out: bool,
+    #[rename(name = "effectObject")]
+    pub effect_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "soundHandle")]
+    pub sound_handle: crate::app::gamesound::GameSound_Handle,
+}
+
+#[cfg(feature = "app-myroomeventbehaviour")]
+#[::unity2::methods]
+impl MyRoomEventBehaviour {
+    #[method(name = "OnBehaviourPlay", args = 2)]
+    pub fn on_behaviour_play(
+        self,
+        playable: crate::unity_engine::playables::playable::Playable,
+        info: crate::unity_engine::playables::framedata::FrameData,
+    ) -> ();
+
+    #[method(name = "OnBehaviourPause", args = 2)]
+    pub fn on_behaviour_pause(
+        self,
+        playable: crate::unity_engine::playables::playable::Playable,
+        info: crate::unity_engine::playables::framedata::FrameData,
+    ) -> ();
+
+    #[method(name = "ProcessFrame", args = 3)]
+    pub fn process_frame(
+        self,
+        playable: crate::unity_engine::playables::playable::Playable,
+        info: crate::unity_engine::playables::framedata::FrameData,
+        player_data: crate::system::object::Object,
+    ) -> ();
+
+    #[method(name = "CreateEffect", args = 1)]
+    pub fn create_effect(
+        self,
+        name: ::unity2::Il2CppString,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "GetLayerParent", args = 0)]
+    pub fn get_layer_parent(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-myroomeventbehaviour")]
+impl MyRoomEventBehaviour {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomEventBehaviour),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomEventBehaviourMethods>::ctor(this);
+        this
+    }
+}

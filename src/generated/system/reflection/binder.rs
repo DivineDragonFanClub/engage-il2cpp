@@ -1,0 +1,57 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/binder/Binder.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "Binder")]
+#[parent(crate::system::object::Object)]
+pub struct Binder {}
+
+#[cfg(feature = "system-reflection-binder")]
+#[::unity2::methods]
+impl Binder {
+    #[method(name = "SelectMethod", args = 4)]
+    pub fn select_method(
+        self,
+        binding_attr: crate::system::reflection::bindingflags::BindingFlags,
+        r#match: ::unity2::Array<crate::system::reflection::methodbase::MethodBase>,
+        types: ::unity2::Array<::unity2::SystemType>,
+        modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>,
+    ) -> crate::system::reflection::methodbase::MethodBase;
+
+    #[method(name = "SelectProperty", args = 5)]
+    pub fn select_property(
+        self,
+        binding_attr: crate::system::reflection::bindingflags::BindingFlags,
+        r#match: ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>,
+        return_type: ::unity2::SystemType,
+        indexes: ::unity2::Array<::unity2::SystemType>,
+        modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>,
+    ) -> crate::system::reflection::propertyinfo::PropertyInfo;
+
+    #[method(name = "ReorderArgumentArray", args = 2)]
+    pub fn reorder_argument_array(
+        self,
+        args: ::unity2::Array<crate::system::object::Object>,
+        state: crate::system::object::Object,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "system-reflection-binder")]
+impl Binder {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Binder),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBinderMethods>::ctor(this);
+        this
+    }
+}

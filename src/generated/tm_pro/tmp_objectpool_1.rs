@@ -1,0 +1,62 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_objectpool_1/TMP_ObjectPool_1.md")))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_ObjectPool`1")]
+pub struct TMP_ObjectPool_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "m_Stack")]
+    pub m_stack: crate::system::collections::generic::stack_1::Stack_1<T0>,
+    #[rename(name = "m_ActionOnGet")]
+    pub m_action_on_get: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+    #[rename(name = "m_ActionOnRelease")]
+    pub m_action_on_release: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+}
+
+#[cfg(feature = "tm_pro-tmp_objectpool_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> TMP_ObjectPool_1<T0> {
+    #[method(name = "get_countAll", args = 0)]
+    pub fn get_count_all(self) -> i32;
+
+    #[method(name = "set_countAll", args = 1)]
+    pub fn set_count_all(self, value: i32) -> ();
+
+    #[method(name = "get_countActive", args = 0)]
+    pub fn get_count_active(self) -> i32;
+
+    #[method(name = "get_countInactive", args = 0)]
+    pub fn get_count_inactive(self) -> i32;
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        action_on_get: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+        action_on_release: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+    ) -> ();
+
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> T0;
+
+    #[method(name = "Release", args = 1)]
+    pub fn release(self, element: T0) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_objectpool_1")]
+impl<T0: ::unity2::ClassIdentity> TMP_ObjectPool_1<T0> {
+    pub fn new(
+        action_on_get: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+        action_on_release: crate::unity_engine::events::unityaction_1::UnityAction_1<T0>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_ObjectPool_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_ObjectPool_1Methods<T0>>::ctor(this, action_on_get, action_on_release);
+        this
+    }
+}

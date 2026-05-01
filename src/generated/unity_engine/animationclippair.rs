@@ -1,0 +1,36 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/animationclippair/AnimationClipPair.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "AnimationClipPair")]
+#[parent(crate::system::object::Object)]
+pub struct AnimationClipPair {
+    #[rename(name = "originalClip")]
+    pub original_clip: crate::unity_engine::animationclip::AnimationClip,
+    #[rename(name = "overrideClip")]
+    pub override_clip: crate::unity_engine::animationclip::AnimationClip,
+}
+
+#[cfg(feature = "unity_engine-animationclippair")]
+#[::unity2::methods]
+impl AnimationClipPair {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-animationclippair")]
+impl AnimationClipPair {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimationClipPair),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimationClipPairMethods>::ctor(this);
+        this
+    }
+}

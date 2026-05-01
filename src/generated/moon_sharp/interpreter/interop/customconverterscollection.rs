@@ -1,0 +1,109 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/customconverterscollection/CustomConvertersCollection.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "CustomConvertersCollection"
+)]
+#[parent(crate::system::object::Object)]
+pub struct CustomConvertersCollection {
+    #[rename(name = "m_Script2Clr")]
+    pub m_script2_clr: ::unity2::Array<
+        crate::system::collections::generic::dictionary_2::Dictionary_2<
+            ::unity2::SystemType,
+            crate::system::func_2::Func_2<
+                crate::moon_sharp::interpreter::dynvalue::DynValue,
+                crate::system::object::Object,
+            >,
+        >,
+    >,
+    #[rename(name = "m_Clr2Script")]
+    pub m_clr2_script: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::SystemType,
+        crate::system::func_3::Func_3<
+            crate::moon_sharp::interpreter::script::Script,
+            crate::system::object::Object,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+        >,
+    >,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-customconverterscollection")]
+#[::unity2::methods]
+impl CustomConvertersCollection {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "SetScriptToClrCustomConversion", args = 3)]
+    pub fn set_script_to_clr_custom_conversion(
+        self,
+        script_data_type: crate::moon_sharp::interpreter::datatype::DataType,
+        clr_data_type: ::unity2::SystemType,
+        converter: crate::system::func_2::Func_2<
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+            crate::system::object::Object,
+        >,
+    ) -> ();
+
+    #[method(name = "GetScriptToClrCustomConversion", args = 2)]
+    pub fn get_script_to_clr_custom_conversion(
+        self,
+        script_data_type: crate::moon_sharp::interpreter::datatype::DataType,
+        clr_data_type: ::unity2::SystemType,
+    ) -> crate::system::func_2::Func_2<
+        crate::moon_sharp::interpreter::dynvalue::DynValue,
+        crate::system::object::Object,
+    >;
+
+    #[method(name = "SetClrToScriptCustomConversion", args = 2)]
+    pub fn set_clr_to_script_custom_conversion(
+        self,
+        clr_data_type: ::unity2::SystemType,
+        converter: crate::system::func_3::Func_3<
+            crate::moon_sharp::interpreter::script::Script,
+            crate::system::object::Object,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+        >,
+    ) -> ();
+
+    #[method(name = "GetClrToScriptCustomConversion", args = 1)]
+    pub fn get_clr_to_script_custom_conversion(
+        self,
+        clr_data_type: ::unity2::SystemType,
+    ) -> crate::system::func_3::Func_3<
+        crate::moon_sharp::interpreter::script::Script,
+        crate::system::object::Object,
+        crate::moon_sharp::interpreter::dynvalue::DynValue,
+    >;
+
+    #[method(name = "SetClrToScriptCustomConversion", args = 2)]
+    pub fn set_clr_to_script_custom_conversion_2(
+        self,
+        clr_data_type: ::unity2::SystemType,
+        converter: crate::system::func_2::Func_2<
+            crate::system::object::Object,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+        >,
+    ) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-customconverterscollection")]
+impl CustomConvertersCollection {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CustomConvertersCollection),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomConvertersCollectionMethods>::ctor(this);
+        this
+    }
+}

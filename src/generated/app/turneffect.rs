@@ -1,0 +1,109 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/turneffect/TurnEffect.md")))]
+#[::unity2::class(namespace = "App", name = "TurnEffect")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct TurnEffect {
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+}
+
+#[cfg(feature = "app-turneffect")]
+#[::unity2::methods]
+impl TurnEffect {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_CanWaitSkip", args = 0)]
+    pub fn get_can_wait_skip(self) -> bool;
+
+    #[method(name = "Search", args = 0)]
+    pub fn search(self) -> ();
+
+    #[method(name = "NextUnit", args = 0)]
+    pub fn next_unit(self) -> ();
+
+    #[method(name = "Damage", args = 1)]
+    pub fn damage(self, damage: i32) -> ();
+
+    #[method(name = "Heal", args = 1)]
+    pub fn heal(self, heal: i32) -> ();
+
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "TryWaitTime", args = 1)]
+    pub fn try_wait_time(self, time: f32) -> ();
+}
+
+#[cfg(feature = "app-turneffect")]
+impl TurnEffect {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TurnEffect),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITurnEffectMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/turneffect/TurnEffect_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TurnEffect_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TurnEffect_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TurnEffect.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TurnEffect_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TurnEffect_Label {
+    pub fn search() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn next() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+}

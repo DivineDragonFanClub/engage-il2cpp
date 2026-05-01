@@ -1,0 +1,52 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/scriptableruntimereflectionsystemwrapper/ScriptableRuntimeReflectionSystemWrapper.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering",
+    name = "ScriptableRuntimeReflectionSystemWrapper"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScriptableRuntimeReflectionSystemWrapper {}
+
+#[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemwrapper")]
+#[::unity2::methods]
+impl ScriptableRuntimeReflectionSystemWrapper {
+    #[method(name = "get_implementation", args = 0)]
+    pub fn get_implementation (self ,) -> crate :: unity_engine :: experimental :: rendering :: iscriptableruntimereflectionsystem :: IScriptableRuntimeReflectionSystem ;
+
+    #[method(name = "set_implementation", args = 1)]
+    pub fn set_implementation(
+        self,
+        value : crate :: unity_engine :: experimental :: rendering :: iscriptableruntimereflectionsystem :: IScriptableRuntimeReflectionSystem,
+    ) -> ();
+
+    #[method(
+        name = "Internal_ScriptableRuntimeReflectionSystemWrapper_TickRealtimeProbes",
+        args = 1
+    )]
+    pub fn internal_scriptable_runtime_reflection_system_wrapper_tick_realtime_probes(
+        self,
+        result: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-scriptableruntimereflectionsystemwrapper")]
+impl ScriptableRuntimeReflectionSystemWrapper {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptableRuntimeReflectionSystemWrapper),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptableRuntimeReflectionSystemWrapperMethods>::ctor(this);
+        this
+    }
+}

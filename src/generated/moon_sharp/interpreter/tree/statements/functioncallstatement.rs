@@ -1,0 +1,59 @@
+
+use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
+use crate::moon_sharp::interpreter::tree::nodebase::NodeBase;
+use crate::moon_sharp::interpreter::tree::statement::IStatement;
+use crate::moon_sharp::interpreter::tree::statement::Statement;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/statements/functioncallstatement/FunctionCallStatement.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Statements",
+    name = "FunctionCallStatement"
+)]
+#[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]
+pub struct FunctionCallStatement {
+# [rename (name = "m_FunctionCallExpression")] pub m_function_call_expression : crate :: moon_sharp :: interpreter :: tree :: expressions :: functioncallexpression :: FunctionCallExpression ,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-functioncallstatement")]
+#[::unity2::methods]
+impl FunctionCallStatement {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        function_call_expression : crate :: moon_sharp :: interpreter :: tree :: expressions :: functioncallexpression :: FunctionCallExpression,
+    ) -> ();
+
+    #[method(name = "Compile", args = 1)]
+    pub fn compile(
+        self,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> ();
+
+    #[method(name = "RemoveBreakpointStop", args = 1)]
+    pub fn remove_breakpoint_stop(
+        self,
+        instruction: crate::moon_sharp::interpreter::execution::vm::instruction::Instruction,
+    ) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-functioncallstatement")]
+impl FunctionCallStatement {
+    pub fn new(
+        lcontext : crate :: moon_sharp :: interpreter :: execution :: scriptloadingcontext :: ScriptLoadingContext,
+        function_call_expression : crate :: moon_sharp :: interpreter :: tree :: expressions :: functioncallexpression :: FunctionCallExpression,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FunctionCallStatement),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFunctionCallStatementMethods>::ctor(this, lcontext, function_call_expression);
+        this
+    }
+}

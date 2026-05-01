@@ -1,0 +1,850 @@
+
+use crate::app::bitfield32::BitField32;
+use crate::app::bitfield32::IBitField32;
+use crate::app::bitfieldcommon::BitFieldCommon;
+use crate::app::bitfieldcommon::IBitFieldCommon;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI.md")))]
+#[::unity2::class(namespace = "App", name = "UnitAI")]
+#[parent(crate::system::object::Object)]
+pub struct UnitAI {
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: i32,
+    #[rename(name = "m_Flag")]
+    pub m_flag: crate::app::unitai::UnitAI_FlagField,
+    #[rename(name = "m_Band")]
+    pub m_band: u8,
+    #[rename(name = "m_Active")]
+    pub m_active: u8,
+    #[rename(name = "m_Priority")]
+    pub m_priority: u8,
+    #[rename(name = "m_HealRateA")]
+    pub m_heal_rate_a: u8,
+    #[rename(name = "m_HealRateB")]
+    pub m_heal_rate_b: u8,
+    #[rename(name = "m_BattleRateType")]
+    pub m_battle_rate_type: u8,
+    #[rename(name = "m_ProhibitEngageAttack")]
+    pub m_prohibit_engage_attack: u8,
+    #[rename(name = "m_ProhibitRod")]
+    pub m_prohibit_rod: u8,
+    #[rename(name = "m_ProhibitOverlap")]
+    pub m_prohibit_overlap: u8,
+    #[rename(name = "m_RerewarpCount")]
+    pub m_rerewarp_count: u8,
+    #[rename(name = "m_RerewarpCountMax")]
+    pub m_rerewarp_count_max: u8,
+    #[rename(name = "m_RerewarpLastX")]
+    pub m_rerewarp_last_x: u8,
+    #[rename(name = "m_RerewarpLastZ")]
+    pub m_rerewarp_last_z: u8,
+    #[rename(name = "m_RerewarpEventFlag")]
+    pub m_rerewarp_event_flag: ::unity2::Il2CppString,
+    #[rename(name = "m_RandomFlag")]
+    pub m_random_flag: crate::app::unitai::UnitAI_RandomFlagField,
+    #[rename(name = "m_MoveLimit")]
+    pub m_move_limit: crate::app::unitai::UnitAI_MoveLimitRange,
+    #[rename(name = "m_VersusType")]
+    pub m_versus_type: u8,
+    #[rename(name = "m_BulletPattern")]
+    pub m_bullet_pattern: u8,
+    #[rename(name = "m_aSequence")]
+    pub m_a_sequence: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "m_aValue")]
+    pub m_a_value: ::unity2::Array<crate::app::aivalue::AIValue>,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_VsThink")]
+    pub m_vs_think: crate::app::aithink::AIThink_Think,
+}
+
+#[cfg(feature = "app-unitai")]
+#[::unity2::methods]
+impl UnitAI {
+    #[method(name = "get_Band", args = 0)]
+    pub fn get_band(self) -> i32;
+
+    #[method(name = "set_Band", args = 1)]
+    pub fn set_band(self, value: i32) -> ();
+
+    #[method(name = "get_Active", args = 0)]
+    pub fn get_active(self) -> i32;
+
+    #[method(name = "set_Active", args = 1)]
+    pub fn set_active(self, value: i32) -> ();
+
+    #[method(name = "get_Priority", args = 0)]
+    pub fn get_priority(self) -> i32;
+
+    #[method(name = "set_Priority", args = 1)]
+    pub fn set_priority(self, value: i32) -> ();
+
+    #[method(name = "get_HealRateA", args = 0)]
+    pub fn get_heal_rate_a(self) -> i32;
+
+    #[method(name = "set_HealRateA", args = 1)]
+    pub fn set_heal_rate_a(self, value: i32) -> ();
+
+    #[method(name = "get_HealRateB", args = 0)]
+    pub fn get_heal_rate_b(self) -> i32;
+
+    #[method(name = "set_HealRateB", args = 1)]
+    pub fn set_heal_rate_b(self, value: i32) -> ();
+
+    #[method(name = "get_BattleRateType", args = 0)]
+    pub fn get_battle_rate_type(self) -> crate::app::unitai::UnitAI_BattleRate;
+
+    #[method(name = "set_BattleRateType", args = 1)]
+    pub fn set_battle_rate_type(self, value: crate::app::unitai::UnitAI_BattleRate) -> ();
+
+    #[method(name = "get_ProhibitEngageAttack", args = 0)]
+    pub fn get_prohibit_engage_attack(self) -> i32;
+
+    #[method(name = "set_ProhibitEngageAttack", args = 1)]
+    pub fn set_prohibit_engage_attack(self, value: i32) -> ();
+
+    #[method(name = "get_ProhibitRod", args = 0)]
+    pub fn get_prohibit_rod(self) -> i32;
+
+    #[method(name = "set_ProhibitRod", args = 1)]
+    pub fn set_prohibit_rod(self, value: i32) -> ();
+
+    #[method(name = "get_ProhibitOverlap", args = 0)]
+    pub fn get_prohibit_overlap(self) -> i32;
+
+    #[method(name = "set_ProhibitOverlap", args = 1)]
+    pub fn set_prohibit_overlap(self, value: i32) -> ();
+
+    #[method(name = "get_RerewarpCount", args = 0)]
+    pub fn get_rerewarp_count(self) -> i32;
+
+    #[method(name = "set_RerewarpCount", args = 1)]
+    pub fn set_rerewarp_count(self, value: i32) -> ();
+
+    #[method(name = "get_RerewarpCountMax", args = 0)]
+    pub fn get_rerewarp_count_max(self) -> i32;
+
+    #[method(name = "get_RerewarpLastX", args = 0)]
+    pub fn get_rerewarp_last_x(self) -> i32;
+
+    #[method(name = "get_RerewarpLastZ", args = 0)]
+    pub fn get_rerewarp_last_z(self) -> i32;
+
+    #[method(name = "get_RerewarpEventFlag", args = 0)]
+    pub fn get_rerewarp_event_flag(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_MoveLimit", args = 0)]
+    pub fn get_move_limit(self) -> crate::app::unitai::UnitAI_MoveLimitRange;
+
+    #[method(name = "set_MoveLimit", args = 1)]
+    pub fn set_move_limit(self, value: crate::app::unitai::UnitAI_MoveLimitRange) -> ();
+
+    #[method(name = "get_VersusType", args = 0)]
+    pub fn get_versus_type(self) -> crate::app::unitai::UnitAI_VersusTypes;
+
+    #[method(name = "set_VersusType", args = 1)]
+    pub fn set_versus_type(self, value: crate::app::unitai::UnitAI_VersusTypes) -> ();
+
+    #[method(name = "get_BulletPattern", args = 0)]
+    pub fn get_bullet_pattern(self) -> i32;
+
+    #[method(name = "set_BulletPattern", args = 1)]
+    pub fn set_bullet_pattern(self, value: i32) -> ();
+
+    #[method(name = "get_VsThink", args = 0)]
+    pub fn get_vs_think(self) -> crate::app::aithink::AIThink_Think;
+
+    #[method(name = "set_VsThink", args = 1)]
+    pub fn set_vs_think(self, value: crate::app::aithink::AIThink_Think) -> ();
+
+    #[method(name = "IsActive", args = 0)]
+    pub fn is_active(self) -> bool;
+
+    #[method(name = "CheckFlag", args = 1)]
+    pub fn check_flag(self, flag: crate::app::unitai::UnitAI_Flag) -> bool;
+
+    #[method(name = "NotFlag", args = 1)]
+    pub fn not_flag(self, flag: crate::app::unitai::UnitAI_Flag) -> bool;
+
+    #[method(name = "SetFlag", args = 1)]
+    pub fn set_flag(self, flag: crate::app::unitai::UnitAI_Flag) -> ();
+
+    #[method(name = "ClearFlag", args = 1)]
+    pub fn clear_flag(self, flag: crate::app::unitai::UnitAI_Flag) -> ();
+
+    #[method(name = "MaskFlag", args = 1)]
+    pub fn mask_flag(self, flag: crate::app::unitai::UnitAI_Flag) -> i32;
+
+    #[method(name = "GetSequence", args = 1)]
+    pub fn get_sequence(self, order: crate::app::aivalue::AIValue_Order) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetSequenceByIndex", args = 1)]
+    pub fn get_sequence_by_index(self, order: crate::app::aivalue::AIValue_Order) -> i32;
+
+    #[method(name = "SetSequence", args = 2)]
+    pub fn set_sequence(
+        self,
+        order: crate::app::aivalue::AIValue_Order,
+        name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "SetSequence", args = 2)]
+    pub fn set_sequence_2(self, order: crate::app::aivalue::AIValue_Order, v: i32) -> ();
+
+    #[method(name = "GetValue", args = 2)]
+    pub fn get_value(
+        self,
+        order: crate::app::aivalue::AIValue_Order,
+        index: i32,
+    ) -> crate::app::aivalue::AIValue;
+
+    #[method(name = "SetValue", args = 3)]
+    pub fn set_value(self, order: crate::app::aivalue::AIValue_Order, index: i32, value: i32)
+        -> ();
+
+    #[method(name = "SetValue", args = 4)]
+    pub fn set_value_2(
+        self,
+        order: crate::app::aivalue::AIValue_Order,
+        index: i32,
+        x: i32,
+        z: i32,
+    ) -> ();
+
+    #[method(name = "SetValue", args = 3)]
+    pub fn set_value_3(
+        self,
+        order: crate::app::aivalue::AIValue_Order,
+        index: i32,
+        str: ::unity2::Il2CppString,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "SetValue", args = 3)]
+    pub fn set_value_4(
+        self,
+        order: crate::app::aivalue::AIValue_Order,
+        index: i32,
+        value: crate::app::aivalue::AIValue,
+    ) -> ();
+
+    #[method(name = "SetValues", args = 2)]
+    pub fn set_values(
+        self,
+        order: crate::app::aivalue::AIValue_Order,
+        str: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "ResetRandomFlag", args = 1)]
+    pub fn reset_random_flag(self, value: u8) -> ();
+
+    #[method(name = "GetRandomFlag", args = 0)]
+    pub fn get_random_flag(self) -> crate::app::unitai::UnitAI_RandomFlagField;
+
+    #[method(name = "SetRerewarp", args = 4)]
+    pub fn set_rerewarp(
+        self,
+        count_max: i32,
+        last_x: i32,
+        last_z: i32,
+        event_flag: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "Copy", args = 1)]
+    pub fn copy(self, from: crate::app::unitai::UnitAI) -> ();
+
+    #[method(name = "CanUseEngageAttack", args = 0)]
+    pub fn can_use_engage_attack(self) -> bool;
+
+    #[method(name = "SetupSummon", args = 0)]
+    pub fn setup_summon(self) -> ();
+
+    #[method(name = "SetupVersus", args = 0)]
+    pub fn setup_versus(self) -> ();
+
+    #[method(name = "SetUnitForVersus", args = 1)]
+    pub fn set_unit_for_versus(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "GetValueIndex", args = 2)]
+    pub fn get_value_index(self, order: crate::app::aivalue::AIValue_Order, index: i32) -> i32;
+}
+
+#[cfg(feature = "app-unitai")]
+impl UnitAI {
+    pub fn new(unit: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitAI),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitAIMethods>::ctor(this, unit);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_VersusTypes.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitAI_VersusTypes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitAI_VersusTypes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitAI.VersusTypes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitAI_VersusTypes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitAI_VersusTypes {
+    pub fn not_move() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn defense() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn rush() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn response_a() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn response_b() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn response_c() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 6 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_Flag.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitAI_Flag {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitAI_Flag {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitAI.Flag";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitAI_Flag {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitAI_Flag {
+    pub fn ec_attack() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn ec_attack_long_range() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn hc_vulnerary() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn hc_terrain() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn rc_deactivate() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn enchant_weapon_done() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn allow_crossfire() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn think_no_move() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn reject_power0_attack() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn move_break() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn move_through() -> Self {
+        Self { value: 2048 }
+    }
+
+    pub fn move_slow() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn move_with_attack() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn think_break() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn think_chain() -> Self {
+        Self { value: 32768 }
+    }
+
+    pub fn equip_short_after_long_range() -> Self {
+        Self { value: 65536 }
+    }
+
+    pub fn band_activation() -> Self {
+        Self { value: 131072 }
+    }
+
+    pub fn band_activation_move() -> Self {
+        Self { value: 262144 }
+    }
+
+    pub fn band_activation_attacked() -> Self {
+        Self { value: 524288 }
+    }
+
+    pub fn ask_heal_a() -> Self {
+        Self { value: 1048576 }
+    }
+
+    pub fn ask_heal_b() -> Self {
+        Self { value: 2097152 }
+    }
+
+    pub fn idle() -> Self {
+        Self { value: 4194304 }
+    }
+
+    pub fn moveover_failed() -> Self {
+        Self { value: 8388608 }
+    }
+
+    pub fn target_to_attack() -> Self {
+        Self { value: 16777216 }
+    }
+
+    pub fn target_to_heal() -> Self {
+        Self { value: 33554432 }
+    }
+
+    pub fn target_to_interference() -> Self {
+        Self { value: 67108864 }
+    }
+
+    pub fn target_to_cannon() -> Self {
+        Self { value: 134217728 }
+    }
+
+    pub fn done_ask_heal_b() -> Self {
+        Self { value: 268435456 }
+    }
+
+    pub fn engage_attack_once() -> Self {
+        Self { value: 536870912 }
+    }
+
+    pub fn engage_attack_once_done() -> Self {
+        Self { value: 1073741824 }
+    }
+
+    pub fn magic_shield_once_done() -> Self {
+        Self { value: -2147483648 }
+    }
+
+    pub fn mask_target() -> Self {
+        Self { value: 251658240 }
+    }
+
+    pub fn mask_think() -> Self {
+        Self { value: 535822336 }
+    }
+
+    pub fn mask_band_activation() -> Self {
+        Self { value: 917504 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_RandomFlagField.md")))]
+#[::unity2::class(namespace = "App", name = "UnitAI.RandomFlagField")]
+#[parent(crate::app::bitfield32::BitField32)]
+pub struct UnitAI_RandomFlagField {}
+
+#[cfg(feature = "app-unitai")]
+#[::unity2::methods]
+impl UnitAI_RandomFlagField {
+    #[method(name = "Set", args = 1)]
+    pub fn set(self, f: crate::app::unitai::UnitAI_RandomFlag) -> ();
+
+    #[method(name = "Test", args = 1)]
+    pub fn test(self, f: crate::app::unitai::UnitAI_RandomFlag) -> bool;
+
+    #[method(name = "Not", args = 1)]
+    pub fn not(self, f: crate::app::unitai::UnitAI_RandomFlag) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitai")]
+impl UnitAI_RandomFlagField {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitAI_RandomFlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitAI_RandomFlagFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_BattleRate.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitAI_BattleRate {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitAI_BattleRate {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitAI.BattleRate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitAI_BattleRate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitAI_BattleRate {
+    pub fn rush() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn chariness() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_FlagField.md")))]
+#[::unity2::class(namespace = "App", name = "UnitAI.FlagField")]
+#[parent(crate::app::bitfield32::BitField32)]
+pub struct UnitAI_FlagField {}
+
+#[cfg(feature = "app-unitai")]
+#[::unity2::methods]
+impl UnitAI_FlagField {
+    #[method(name = "Set", args = 1)]
+    pub fn set(self, f: crate::app::unitai::UnitAI_Flag) -> ();
+
+    #[method(name = "Test", args = 1)]
+    pub fn test(self, f: crate::app::unitai::UnitAI_Flag) -> bool;
+
+    #[method(name = "Not", args = 1)]
+    pub fn not(self, f: crate::app::unitai::UnitAI_Flag) -> bool;
+
+    #[method(name = "Clear", args = 1)]
+    pub fn clear(self, f: crate::app::unitai::UnitAI_Flag) -> ();
+
+    #[method(name = "Mask", args = 1)]
+    pub fn mask(self, f: crate::app::unitai::UnitAI_Flag) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitai")]
+impl UnitAI_FlagField {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitAI_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitAI_FlagFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_RandomFlag.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitAI_RandomFlag {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitAI_RandomFlag {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitAI.RandomFlag";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitAI_RandomFlag {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitAI_RandomFlag {
+    pub fn clear_ask_heal_b() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_MoveLimitRange_LimitType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitAI_MoveLimitRange_LimitType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitAI_MoveLimitRange_LimitType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitAI.MoveLimitRange.LimitType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitAI_MoveLimitRange_LimitType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitAI_MoveLimitRange_LimitType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn distance() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn rect() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn interference_rod_rect() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitai/UnitAI_MoveLimitRange.md")))]
+#[::unity2::class(namespace = "App", name = "UnitAI.MoveLimitRange")]
+#[parent(crate::system::object::Object)]
+pub struct UnitAI_MoveLimitRange {
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: i32,
+    #[rename(name = "m_Type")]
+    pub m_type: u8,
+    #[rename(name = "m_X")]
+    pub m_x: i8,
+    #[rename(name = "m_Z")]
+    pub m_z: i8,
+    #[rename(name = "m_W")]
+    pub m_w: i8,
+    #[rename(name = "m_H")]
+    pub m_h: i8,
+}
+
+#[cfg(feature = "app-unitai")]
+#[::unity2::methods]
+impl UnitAI_MoveLimitRange {
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> crate::app::unitai::UnitAI_MoveLimitRange_LimitType;
+
+    #[method(name = "set_Type", args = 1)]
+    pub fn set_type(self, value: crate::app::unitai::UnitAI_MoveLimitRange_LimitType) -> ();
+
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[method(name = "set_X", args = 1)]
+    pub fn set_x(self, value: i32) -> ();
+
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[method(name = "set_Z", args = 1)]
+    pub fn set_z(self, value: i32) -> ();
+
+    #[method(name = "get_W", args = 0)]
+    pub fn get_w(self) -> i32;
+
+    #[method(name = "set_W", args = 1)]
+    pub fn set_w(self, value: i32) -> ();
+
+    #[method(name = "get_H", args = 0)]
+    pub fn get_h(self) -> i32;
+
+    #[method(name = "set_H", args = 1)]
+    pub fn set_h(self, value: i32) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitai")]
+impl UnitAI_MoveLimitRange {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitAI_MoveLimitRange),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitAI_MoveLimitRangeMethods>::ctor(this);
+        this
+    }
+}

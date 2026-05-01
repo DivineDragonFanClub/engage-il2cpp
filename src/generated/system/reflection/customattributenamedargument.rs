@@ -1,0 +1,56 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/customattributenamedargument/CustomAttributeNamedArgument.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct CustomAttributeNamedArgument {
+    pub typed_argument:
+        crate::system::reflection::customattributetypedargument::CustomAttributeTypedArgument,
+    pub member_info: crate::system::reflection::memberinfo::MemberInfo,
+}
+
+impl ::unity2::ClassIdentity for CustomAttributeNamedArgument {
+    const NAMESPACE: &'static str = "System.Reflection";
+
+    const NAME: &'static str = "CustomAttributeNamedArgument";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CustomAttributeNamedArgument {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "system-reflection-customattributenamedargument")]
+#[::unity2::methods(value)]
+impl CustomAttributeNamedArgument {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        member_info: crate::system::reflection::memberinfo::MemberInfo,
+        value: crate::system::object::Object,
+    ) -> ();
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, obj: crate::system::object::Object) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+}

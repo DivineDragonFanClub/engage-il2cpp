@@ -1,0 +1,33 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talkbind/TalkBind.md")))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkBind")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct TalkBind {}
+
+#[cfg(feature = "app-talk3_d-talkbind")]
+#[::unity2::methods]
+impl TalkBind {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talkbind")]
+impl TalkBind {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkBind),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkBindMethods>::ctor(this);
+        this
+    }
+}

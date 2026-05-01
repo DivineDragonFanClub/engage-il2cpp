@@ -1,0 +1,158 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryshopsequence/HubAccessoryShopSequence.md")))]
+#[::unity2::class(namespace = "App", name = "HubAccessoryShopSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct HubAccessoryShopSequence {
+    #[rename(name = "m_ShopMenuResult")]
+    pub m_shop_menu_result: crate::app::accessoryshoptopmenu::AccessoryShopTopMenu_Result2,
+    #[rename(name = "m_ShopUnitSelectMenuResult")]
+    pub m_shop_unit_select_menu_result: crate::app::basicmenu::BasicMenu_Result,
+    #[rename(name = "m_AccessoryShopUnitSelectRoot")]
+    pub m_accessory_shop_unit_select_root:
+        crate::app::accessoryshopunitselectroot::AccessoryShopUnitSelectRoot,
+    #[rename(name = "m_AccessoryShopBuyRoot")]
+    pub m_accessory_shop_buy_root: crate::app::accessoryshopbuyroot::AccessoryShopBuyRoot,
+    #[rename(name = "m_AccessoryShopChangeRoot")]
+    pub m_accessory_shop_change_root: crate::app::accessoryshopchangeroot::AccessoryShopChangeRoot,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_UnitSelectMenuScrollIndex")]
+    pub m_unit_select_menu_scroll_index: i32,
+    #[rename(name = "m_Changed")]
+    pub m_changed: bool,
+}
+
+#[cfg(feature = "app-hubaccessoryshopsequence")]
+#[::unity2::methods]
+impl HubAccessoryShopSequence {
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "CreateDesc", args = 0)]
+    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "LoadResources", args = 0)]
+    pub fn load_resources(self) -> ();
+
+    #[method(name = "IsLoadingResources", args = 0)]
+    pub fn is_loading_resources(self) -> bool;
+
+    #[method(name = "StartSequence", args = 0)]
+    pub fn start_sequence(self) -> ();
+
+    #[method(name = "CreateAccessoryShopTopMenu", args = 0)]
+    pub fn create_accessory_shop_top_menu(self) -> ();
+
+    #[method(name = "CreateShopUnitSelectMenu", args = 0)]
+    pub fn create_shop_unit_select_menu(self) -> ();
+
+    #[method(name = "DestroyShopUnitSelectMenu", args = 0)]
+    pub fn destroy_shop_unit_select_menu(self) -> ();
+
+    #[method(name = "CreateAccessoryShopBuyMenu", args = 0)]
+    pub fn create_accessory_shop_buy_menu(self) -> ();
+
+    #[method(name = "DestroyAccessoryShopBuyMenu", args = 0)]
+    pub fn destroy_accessory_shop_buy_menu(self) -> ();
+
+    #[method(name = "CreateAccessoryShopChangeMenu", args = 0)]
+    pub fn create_accessory_shop_change_menu(self) -> ();
+
+    #[method(name = "DestroyAccessoryShopChangeMenu", args = 0)]
+    pub fn destroy_accessory_shop_change_menu(self) -> ();
+
+    #[method(name = "EndSequence", args = 0)]
+    pub fn end_sequence(self) -> ();
+}
+
+#[cfg(feature = "app-hubaccessoryshopsequence")]
+impl HubAccessoryShopSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubAccessoryShopSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubAccessoryShopSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryshopsequence/HubAccessoryShopSequence_Label2.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubAccessoryShopSequence_Label2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubAccessoryShopSequence_Label2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubAccessoryShopSequence.Label2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubAccessoryShopSequence_Label2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubAccessoryShopSequence_Label2 {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn top() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn unit_select_to_buy() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn buy() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn unit_select_to_change() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn change() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 6 }
+    }
+}

@@ -1,0 +1,69 @@
+
+use crate::app::helpitembase::HelpItemBase;
+use crate::app::helpitembase::IHelpItemBase;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpitemunititem/HelpItemUnitItem.md")))]
+#[::unity2::class(namespace = "App", name = "HelpItemUnitItem")]
+#[parent(crate::app::helpitembase::HelpItemBase)]
+pub struct HelpItemUnitItem {
+    #[rename(name = "m_IsOutsideSetup")]
+    pub m_is_outside_setup: bool,
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_UnitItem")]
+    pub m_unit_item: crate::app::unititem::UnitItem,
+    #[rename(name = "m_IsUseEnchant")]
+    pub m_is_use_enchant: bool,
+}
+
+#[cfg(feature = "app-helpitemunititem")]
+#[::unity2::methods]
+impl HelpItemUnitItem {
+    #[method(name = "get_StartItemConstPriority", args = 0)]
+    pub fn get_start_item_const_priority(self) -> i32;
+
+    #[method(name = "SetData", args = 3)]
+    pub fn set_data(
+        self,
+        unit: crate::app::unit::Unit,
+        item: crate::app::unititem::UnitItem,
+        is_use_enchant: bool,
+    ) -> ();
+
+    #[method(name = "IsValid", args = 0)]
+    pub fn is_valid(self) -> bool;
+
+    #[method(name = "SetContents", args = 1)]
+    pub fn set_contents(self, setter: crate::app::helpparamsetter::HelpParamSetter) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-helpitemunititem")]
+impl HelpItemUnitItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HelpItemUnitItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHelpItemUnitItemMethods>::ctor(this);
+        this
+    }
+}

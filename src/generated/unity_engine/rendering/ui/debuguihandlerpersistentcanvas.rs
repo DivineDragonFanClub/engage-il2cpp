@@ -1,0 +1,57 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/ui/debuguihandlerpersistentcanvas/DebugUIHandlerPersistentCanvas.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.UI",
+    name = "DebugUIHandlerPersistentCanvas"
+)]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct DebugUIHandlerPersistentCanvas {
+    #[rename(name = "panel")]
+    pub panel: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "valuePrefab")]
+    pub value_prefab: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_Items")]
+    pub m_items: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::ui::debuguihandlervalue::DebugUIHandlerValue,
+    >,
+}
+
+#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpersistentcanvas")]
+#[::unity2::methods]
+impl DebugUIHandlerPersistentCanvas {
+    #[method(name = "Toggle", args = 1)]
+    pub fn toggle(self, widget: crate::unity_engine::rendering::debugui::DebugUI_Value) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-ui-debuguihandlerpersistentcanvas")]
+impl DebugUIHandlerPersistentCanvas {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUIHandlerPersistentCanvas),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUIHandlerPersistentCanvasMethods>::ctor(this);
+        this
+    }
+}

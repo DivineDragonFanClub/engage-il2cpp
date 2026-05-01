@@ -1,0 +1,71 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographselectscarfcolormenuitem/PhotographSelectScarfColorMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "PhotographSelectScarfColorMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct PhotographSelectScarfColorMenuItem {
+    #[rename(name = "m_IsCurrent")]
+    pub m_is_current: bool,
+    #[rename(name = "m_DisposManager")]
+    pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+    #[rename(name = "m_ColorIdx")]
+    pub m_color_idx: i32,
+    #[rename(name = "m_ColorIdxOld")]
+    pub m_color_idx_old: i32,
+}
+
+#[cfg(feature = "app-photographselectscarfcolormenuitem")]
+#[::unity2::methods]
+impl PhotographSelectScarfColorMenuItem {
+    #[method(name = "get_IsCurrent", args = 0)]
+    pub fn get_is_current(self) -> bool;
+
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        color_idx: i32,
+        color_idx_old: i32,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        is_current: bool,
+    ) -> ();
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-photographselectscarfcolormenuitem")]
+impl PhotographSelectScarfColorMenuItem {
+    pub fn new(
+        color_idx: i32,
+        color_idx_old: i32,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+        is_current: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographSelectScarfColorMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographSelectScarfColorMenuItemMethods>::ctor(
+            this,
+            color_idx,
+            color_idx_old,
+            dispos_manager,
+            is_current,
+        );
+        this
+    }
+}

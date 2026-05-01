@@ -1,0 +1,72 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/instantiationparameters/InstantiationParameters.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct InstantiationParameters {
+    pub m_position: crate::unity_engine::vector3::Vector3,
+    pub m_rotation: crate::unity_engine::quaternion::Quaternion,
+    pub m_parent: crate::unity_engine::transform::Transform,
+    pub m_instantiate_in_world_position: bool,
+    pub m_set_position_rotation: bool,
+}
+
+impl ::unity2::ClassIdentity for InstantiationParameters {
+    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.ResourceProviders";
+
+    const NAME: &'static str = "InstantiationParameters";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for InstantiationParameters {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-instantiationparameters")]
+#[::unity2::methods(value)]
+impl InstantiationParameters {
+    #[method(name = "get_Position", args = 0)]
+    pub fn get_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "get_Rotation", args = 0)]
+    pub fn get_rotation(self) -> crate::unity_engine::quaternion::Quaternion;
+
+    #[method(name = "get_Parent", args = 0)]
+    pub fn get_parent(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "get_InstantiateInWorldPosition", args = 0)]
+    pub fn get_instantiate_in_world_position(self) -> bool;
+
+    #[method(name = "get_SetPositionRotation", args = 0)]
+    pub fn get_set_position_rotation(self) -> bool;
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        parent: crate::unity_engine::transform::Transform,
+        instantiate_in_world_space: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor_2(
+        self,
+        position: crate::unity_engine::vector3::Vector3,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+        parent: crate::unity_engine::transform::Transform,
+    ) -> ();
+}

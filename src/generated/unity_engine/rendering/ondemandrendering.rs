@@ -1,0 +1,26 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/ondemandrendering/OnDemandRendering.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "OnDemandRendering")]
+#[parent(crate::system::object::Object)]
+pub struct OnDemandRendering {
+    #[static_field]
+    #[rename(name = "m_RenderFrameInterval")]
+    pub m_render_frame_interval: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-ondemandrendering")]
+#[::unity2::methods]
+impl OnDemandRendering {
+    #[method(name = "get_renderFrameInterval", args = 0)]
+    pub fn get_render_frame_interval() -> i32;
+
+    #[method(name = "GetRenderFrameInterval", args = 1)]
+    pub fn get_render_frame_interval_2(frame_interval: i32) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

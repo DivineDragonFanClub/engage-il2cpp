@@ -1,0 +1,114 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::ui::graphic::Graphic;
+use crate::unity_engine::ui::graphic::IGraphic;
+use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
+use crate::unity_engine::ui::maskablegraphic::MaskableGraphic;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimappanelbase/MiniMapPanelBase.md")))]
+#[::unity2::class(namespace = "App", name = "MiniMapPanelBase")]
+#[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
+pub struct MiniMapPanelBase {
+    #[rename(name = "m_Texture")]
+    pub m_texture: crate::unity_engine::texture2d::Texture2D,
+    #[rename(name = "m_CanvasRenderer")]
+    pub m_canvas_renderer: crate::unity_engine::canvasrenderer::CanvasRenderer,
+    #[rename(name = "m_Mesh")]
+    pub m_mesh: crate::unity_engine::mesh::Mesh,
+    #[rename(name = "m_Materials")]
+    pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+    #[rename(name = "m_IsAwaked")]
+    pub m_is_awaked: bool,
+    #[rename(name = "m_CustomOffsetZ")]
+    pub m_custom_offset_z: i32,
+}
+
+#[cfg(feature = "app-minimappanelbase")]
+#[::unity2::methods]
+impl MiniMapPanelBase {
+    #[method(name = "get_Texture", args = 0)]
+    pub fn get_texture(self) -> crate::unity_engine::texture2d::Texture2D;
+
+    #[method(name = "set_Texture", args = 1)]
+    pub fn set_texture(self, value: crate::unity_engine::texture2d::Texture2D) -> ();
+
+    #[method(name = "get_CanvasRenderer", args = 0)]
+    pub fn get_canvas_renderer(self) -> crate::unity_engine::canvasrenderer::CanvasRenderer;
+
+    #[method(name = "set_GridSize", args = 1)]
+    pub fn set_grid_size(self, value: f32) -> ();
+
+    #[method(name = "get_GridSize", args = 0)]
+    pub fn get_grid_size(self) -> f32;
+
+    #[method(name = "set_OffsetZ", args = 1)]
+    pub fn set_offset_z(self, value: f32) -> ();
+
+    #[method(name = "get_OffsetZ", args = 0)]
+    pub fn get_offset_z(self) -> f32;
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "GetMaterials", args = 0)]
+    pub fn get_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "GetSourceMaterials", args = 0)]
+    pub fn get_source_materials(self) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "GetMapPanelMaterials", args = 0)]
+    pub fn get_map_panel_materials(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::material::Material>;
+
+    #[method(name = "GetMapImage", args = 0)]
+    pub fn get_map_image(self) -> crate::app::mapimage::MapImage;
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = "UpdateGeometry", args = 0)]
+    pub fn update_geometry(self) -> ();
+
+    #[method(name = "CreatePanelMesh", args = 0)]
+    pub fn create_panel_mesh(self) -> ();
+
+    #[method(name = "SetMeshToRenderer", args = 0)]
+    pub fn set_mesh_to_renderer(self) -> ();
+
+    #[method(name = "UpdateMapSize", args = 0)]
+    pub fn update_map_size(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-minimappanelbase")]
+impl MiniMapPanelBase {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MiniMapPanelBase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMiniMapPanelBaseMethods>::ctor(this);
+        this
+    }
+}

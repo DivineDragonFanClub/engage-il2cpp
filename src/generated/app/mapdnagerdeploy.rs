@@ -1,0 +1,35 @@
+
+use crate::app::mapdeploytemplate_1::IMapDeployTemplate_1;
+use crate::app::mapdeploytemplate_1::MapDeployTemplate_1;
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdnagerdeploy/MapDnagerDeploy.md")))]
+#[::unity2::class(namespace = "App", name = "MapDnagerDeploy")]
+# [parent (crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1 < crate :: app :: mapdnagerdeploy :: MapDnagerDeploy >)]
+pub struct MapDnagerDeploy {}
+
+#[cfg(feature = "app-mapdnagerdeploy")]
+#[::unity2::methods]
+impl MapDnagerDeploy {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapdnagerdeploy")]
+impl MapDnagerDeploy {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDnagerDeploy),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDnagerDeployMethods>::ctor(this);
+        this
+    }
+}

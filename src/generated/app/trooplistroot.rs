@@ -1,0 +1,59 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/trooplistroot/TroopListRoot.md")))]
+#[::unity2::class(namespace = "App", name = "TroopListRoot")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct TroopListRoot {
+    #[rename(name = "m_UnitListRoot")]
+    pub m_unit_list_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_SortRoot")]
+    pub m_sort_root: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-trooplistroot")]
+#[::unity2::methods]
+impl TroopListRoot {
+    #[method(name = "GetUnitListRoot", args = 0)]
+    pub fn get_unit_list_root(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "GetSortRoot", args = 0)]
+    pub fn get_sort_root(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-trooplistroot")]
+impl TroopListRoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TroopListRoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITroopListRootMethods>::ctor(this);
+        this
+    }
+}

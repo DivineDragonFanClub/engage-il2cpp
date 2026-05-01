@@ -1,0 +1,73 @@
+
+use crate::app::basicmenucontent::BasicMenuContent;
+use crate::app::basicmenucontent::IBasicMenuContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponparammenucontent/RefineGodWeaponParamMenuContent.md")))]
+#[::unity2::class(namespace = "App", name = "RefineGodWeaponParamMenuContent")]
+#[parent(crate::app::basicmenucontent::BasicMenuContent)]
+pub struct RefineGodWeaponParamMenuContent {
+    #[rename(name = "m_CaptionText")]
+    pub m_caption_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_KindFrameObject")]
+    pub m_kind_frame_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_GodWeaponNameText")]
+    pub m_god_weapon_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_GodIcon")]
+    pub m_god_icon: crate::app::uniticon::UnitIcon,
+    #[rename(name = "m_PageIconImage")]
+    pub m_page_icon_image: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+}
+
+#[cfg(feature = "app-refinegodweaponparammenucontent")]
+#[::unity2::methods]
+impl RefineGodWeaponParamMenuContent {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Build", args = 0)]
+    pub fn build(self) -> ();
+
+    #[method(name = "BuildMenuItemContent", args = 0)]
+    pub fn build_menu_item_content(self) -> ();
+
+    #[method(name = "GetMenuItemContentMax", args = 0)]
+    pub fn get_menu_item_content_max(self) -> i32;
+
+    #[method(name = "CalcW", args = 0)]
+    pub fn calc_w(self) -> f32;
+
+    #[method(name = "CalcH", args = 0)]
+    pub fn calc_h(self) -> f32;
+
+    #[method(name = "CalcCursorMovedPosY", args = 1)]
+    pub fn calc_cursor_moved_pos_y(self, menu_item_index: i32) -> f32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refinegodweaponparammenucontent")]
+impl RefineGodWeaponParamMenuContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponParamMenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponParamMenuContentMethods>::ctor(this);
+        this
+    }
+}

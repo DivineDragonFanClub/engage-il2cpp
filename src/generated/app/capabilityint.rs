@@ -1,0 +1,54 @@
+
+use crate::app::capabilitybase_1::CapabilityBase_1;
+use crate::app::capabilitybase_1::ICapabilityBase_1;
+use crate::app::capabilitydefinition::CapabilityDefinition;
+use crate::app::capabilitydefinition::ICapabilityDefinition;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capabilityint/CapabilityInt.md")))]
+#[::unity2::class(namespace = "App", name = "CapabilityInt")]
+# [parent (crate :: app :: capabilitybase_1 :: CapabilityBase_1 < i32 >)]
+pub struct CapabilityInt {
+    #[static_field]
+    #[rename(name = "Min")]
+    pub min: i32,
+    #[static_field]
+    #[rename(name = "Max")]
+    pub max: i32,
+}
+
+#[cfg(feature = "app-capabilityint")]
+#[::unity2::methods]
+impl CapabilityInt {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, value: i32) -> ();
+
+    #[method(name = "Add", args = 2)]
+    pub fn add(self, i: i32, v: i32) -> ();
+
+    #[method(name = "IsZero", args = 0)]
+    pub fn is_zero(self) -> bool;
+
+    #[method(name = "WriteToStream", args = 2)]
+    pub fn write_to_stream(self, stream: crate::app::stream_2::Stream_2, v: i32) -> ();
+
+    #[method(name = "ReadFromStream", args = 1)]
+    pub fn read_from_stream(self, stream: crate::app::stream_2::Stream_2) -> i32;
+}
+
+#[cfg(feature = "app-capabilityint")]
+impl CapabilityInt {
+    pub fn new(value: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CapabilityInt),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICapabilityIntMethods>::ctor(this, value);
+        this
+    }
+}

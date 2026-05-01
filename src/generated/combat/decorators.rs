@@ -1,0 +1,39 @@
+
+use crate::system::collections::generic::list_1::IList_1;
+use crate::system::collections::generic::list_1::List_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/decorators/Decorators.md")))]
+#[::unity2::class(namespace = "Combat", name = "Decorators")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: combat :: decorator :: Decorator >)]
+pub struct Decorators {}
+
+#[cfg(feature = "combat-decorators")]
+#[::unity2::methods]
+impl Decorators {
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(a: crate::combat::decorators::Decorators) -> bool;
+
+    #[method(name = "get_DebuggerDisplay", args = 0)]
+    pub fn get_debugger_display(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-decorators")]
+impl Decorators {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Decorators),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDecoratorsMethods>::ctor(this);
+        this
+    }
+}

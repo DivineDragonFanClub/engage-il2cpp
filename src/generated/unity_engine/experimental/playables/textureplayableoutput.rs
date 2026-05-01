@@ -1,0 +1,43 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/playables/textureplayableoutput/TexturePlayableOutput.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TexturePlayableOutput {
+    pub m_handle: crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle,
+}
+
+impl ::unity2::ClassIdentity for TexturePlayableOutput {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Playables";
+
+    const NAME: &'static str = "TexturePlayableOutput";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TexturePlayableOutput {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-playables-textureplayableoutput")]
+#[::unity2::methods(value)]
+impl TexturePlayableOutput {
+    #[method(name = "GetHandle", args = 0)]
+    pub fn get_handle(
+        self,
+    ) -> crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle;
+}

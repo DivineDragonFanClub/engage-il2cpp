@@ -1,0 +1,80 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use crate::unity_engine::statemachinebehaviour::IStateMachineBehaviour;
+use crate::unity_engine::statemachinebehaviour::StateMachineBehaviour;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characteridlesmb/CharacterIdleSMB.md")))]
+#[::unity2::class(namespace = "Combat", name = "CharacterIdleSMB")]
+#[parent(crate::unity_engine::statemachinebehaviour::StateMachineBehaviour)]
+pub struct CharacterIdleSMB {
+    #[rename(name = "initialized")]
+    pub initialized: bool,
+    #[rename(name = "available")]
+    pub available: bool,
+    #[rename(name = "CP")]
+    pub cp: crate::combat::character::Character,
+    #[rename(name = "GS")]
+    pub gs: crate::combat::charactergamestatus::CharacterGameStatus,
+    #[rename(name = "TransitionCurve")]
+    pub transition_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "m_Elapsed")]
+    pub m_elapsed: f32,
+}
+
+#[cfg(feature = "combat-characteridlesmb")]
+#[::unity2::methods]
+impl CharacterIdleSMB {
+    #[method(name = "OnStateEnter", args = 3)]
+    pub fn on_state_enter(
+        self,
+        animator: crate::unity_engine::animator::Animator,
+        state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        layer_index: i32,
+    ) -> ();
+
+    #[method(name = "OnStateUpdate", args = 3)]
+    pub fn on_state_update(
+        self,
+        animator: crate::unity_engine::animator::Animator,
+        state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        layer_index: i32,
+    ) -> ();
+
+    #[method(name = "OnStateExit", args = 3)]
+    pub fn on_state_exit(
+        self,
+        animator: crate::unity_engine::animator::Animator,
+        state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        layer_index: i32,
+    ) -> ();
+
+    #[method(name = "SetDying", args = 1)]
+    pub fn set_dying(self, overwrite: f32) -> ();
+
+    #[method(name = "ForceDying", args = 0)]
+    pub fn force_dying(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-characteridlesmb")]
+impl CharacterIdleSMB {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterIdleSMB),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharacterIdleSMBMethods>::ctor(this);
+        this
+    }
+}

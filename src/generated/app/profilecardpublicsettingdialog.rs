@@ -1,0 +1,125 @@
+
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardpublicsettingdialog/ProfileCardPublicSettingDialog_DecideEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ProfileCardPublicSettingDialog.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ProfileCardPublicSettingDialog_DecideEventHandler {}
+
+#[cfg(feature = "app-profilecardpublicsettingdialog")]
+#[::unity2::methods]
+impl ProfileCardPublicSettingDialog_DecideEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-profilecardpublicsettingdialog")]
+impl ProfileCardPublicSettingDialog_DecideEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardPublicSettingDialog_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardPublicSettingDialog_DecideEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardpublicsettingdialog/ProfileCardPublicSettingDialog_DialogMenuItem.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ProfileCardPublicSettingDialog.DialogMenuItem"
+)]
+#[parent(crate::app::basicdialogitem::BasicDialogItem)]
+pub struct ProfileCardPublicSettingDialog_DialogMenuItem {
+# [rename (name = "m_DecideEventHandler")] pub m_decide_event_handler : crate :: app :: profilecardpublicsettingdialog :: ProfileCardPublicSettingDialog_DecideEventHandler ,
+}
+
+#[cfg(feature = "app-profilecardpublicsettingdialog")]
+#[::unity2::methods]
+impl ProfileCardPublicSettingDialog_DialogMenuItem {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        message: ::unity2::Il2CppString,
+        decide_event_handler : crate :: app :: profilecardpublicsettingdialog :: ProfileCardPublicSettingDialog_DecideEventHandler,
+    ) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-profilecardpublicsettingdialog")]
+impl ProfileCardPublicSettingDialog_DialogMenuItem {
+    pub fn new(
+        message: ::unity2::Il2CppString,
+        decide_event_handler : crate :: app :: profilecardpublicsettingdialog :: ProfileCardPublicSettingDialog_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardPublicSettingDialog_DialogMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardPublicSettingDialog_DialogMenuItemMethods>::ctor(
+            this,
+            message,
+            decide_event_handler,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardpublicsettingdialog/ProfileCardPublicSettingDialog.md")))]
+#[::unity2::class(namespace = "App", name = "ProfileCardPublicSettingDialog")]
+#[parent(crate::system::object::Object)]
+pub struct ProfileCardPublicSettingDialog {}
+
+#[cfg(feature = "app-profilecardpublicsettingdialog")]
+#[::unity2::methods]
+impl ProfileCardPublicSettingDialog {
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+    ) -> crate::app::basicdialog::BasicDialog;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-profilecardpublicsettingdialog")]
+impl ProfileCardPublicSettingDialog {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardPublicSettingDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardPublicSettingDialogMethods>::ctor(this);
+        this
+    }
+}

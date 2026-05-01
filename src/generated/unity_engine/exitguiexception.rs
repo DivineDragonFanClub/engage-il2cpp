@@ -1,0 +1,28 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/exitguiexception/ExitGUIException.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "ExitGUIException")]
+pub struct ExitGUIException {}
+
+#[cfg(feature = "unity_engine-exitguiexception")]
+#[::unity2::methods]
+impl ExitGUIException {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, message: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "unity_engine-exitguiexception")]
+impl ExitGUIException {
+    pub fn new(message: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ExitGUIException),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExitGUIExceptionMethods>::ctor(this, message);
+        this
+    }
+}

@@ -1,0 +1,85 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineringresult10window/RefineRingResult10Window.md")))]
+#[::unity2::class(namespace = "App", name = "RefineRingResult10Window")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct RefineRingResult10Window {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_RingInfoContent")]
+    pub m_ring_info_content: ::unity2::Array<
+        crate::app::refineringresult10ringinfocontent::RefineRingResult10RingInfoContent,
+    >,
+}
+
+#[cfg(feature = "app-refineringresult10window")]
+#[::unity2::methods]
+impl RefineRingResult10Window {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "Create", args = 0)]
+    pub fn create() -> crate::app::refineringresult10window::RefineRingResult10Window;
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "IsOpening", args = 0)]
+    pub fn is_opening(self) -> bool;
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[method(name = "IsClosing", args = 0)]
+    pub fn is_closing(self) -> bool;
+
+    #[method(name = "SetData", args = 2)]
+    pub fn set_data(
+        self,
+        ring_data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::ringdata::RingData,
+        >,
+        is_new_list: crate::system::collections::generic::list_1::List_1<bool>,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-refineringresult10window")]
+impl RefineRingResult10Window {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineRingResult10Window),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineRingResult10WindowMethods>::ctor(this);
+        this
+    }
+}

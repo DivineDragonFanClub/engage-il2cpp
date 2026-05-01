@@ -1,0 +1,29 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui_elements/uielementsruntimeutilitynative/UIElementsRuntimeUtilityNative.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.UIElements",
+    name = "UIElementsRuntimeUtilityNative"
+)]
+#[parent(crate::system::object::Object)]
+pub struct UIElementsRuntimeUtilityNative {
+    #[static_field]
+    #[rename(name = "RepaintOverlayPanelsCallback")]
+    pub repaint_overlay_panels_callback: crate::system::action::Action,
+    #[static_field]
+    #[rename(name = "UpdateRuntimePanelsCallback")]
+    pub update_runtime_panels_callback: crate::system::action::Action,
+}
+
+#[cfg(feature = "unity_engine-ui_elements-uielementsruntimeutilitynative")]
+#[::unity2::methods]
+impl UIElementsRuntimeUtilityNative {
+    #[method(name = "RepaintOverlayPanels", args = 0)]
+    pub fn repaint_overlay_panels() -> ();
+
+    #[method(name = "UpdateRuntimePanels", args = 0)]
+    pub fn update_runtime_panels() -> ();
+}

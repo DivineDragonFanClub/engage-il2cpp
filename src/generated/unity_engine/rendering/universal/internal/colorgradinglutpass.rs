@@ -1,0 +1,169 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass_ShaderConstants.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "ColorGradingLutPass.ShaderConstants"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ColorGradingLutPass_ShaderConstants {
+    #[static_field]
+    #[rename(name = "_Lut_Params")]
+    pub lut_params: i32,
+    #[static_field]
+    #[rename(name = "_ColorBalance")]
+    pub color_balance: i32,
+    #[static_field]
+    #[rename(name = "_ColorFilter")]
+    pub color_filter: i32,
+    #[static_field]
+    #[rename(name = "_ChannelMixerRed")]
+    pub channel_mixer_red: i32,
+    #[static_field]
+    #[rename(name = "_ChannelMixerGreen")]
+    pub channel_mixer_green: i32,
+    #[static_field]
+    #[rename(name = "_ChannelMixerBlue")]
+    pub channel_mixer_blue: i32,
+    #[static_field]
+    #[rename(name = "_HueSatCon")]
+    pub hue_sat_con: i32,
+    #[static_field]
+    #[rename(name = "_Lift")]
+    pub lift: i32,
+    #[static_field]
+    #[rename(name = "_Gamma")]
+    pub gamma: i32,
+    #[static_field]
+    #[rename(name = "_Gain")]
+    pub gain: i32,
+    #[static_field]
+    #[rename(name = "_Shadows")]
+    pub shadows: i32,
+    #[static_field]
+    #[rename(name = "_Midtones")]
+    pub midtones: i32,
+    #[static_field]
+    #[rename(name = "_Highlights")]
+    pub highlights: i32,
+    #[static_field]
+    #[rename(name = "_ShaHiLimits")]
+    pub sha_hi_limits: i32,
+    #[static_field]
+    #[rename(name = "_SplitShadows")]
+    pub split_shadows: i32,
+    #[static_field]
+    #[rename(name = "_SplitHighlights")]
+    pub split_highlights: i32,
+    #[static_field]
+    #[rename(name = "_CurveMaster")]
+    pub curve_master: i32,
+    #[static_field]
+    #[rename(name = "_CurveRed")]
+    pub curve_red: i32,
+    #[static_field]
+    #[rename(name = "_CurveGreen")]
+    pub curve_green: i32,
+    #[static_field]
+    #[rename(name = "_CurveBlue")]
+    pub curve_blue: i32,
+    #[static_field]
+    #[rename(name = "_CurveHueVsHue")]
+    pub curve_hue_vs_hue: i32,
+    #[static_field]
+    #[rename(name = "_CurveHueVsSat")]
+    pub curve_hue_vs_sat: i32,
+    #[static_field]
+    #[rename(name = "_CurveLumVsSat")]
+    pub curve_lum_vs_sat: i32,
+    #[static_field]
+    #[rename(name = "_CurveSatVsSat")]
+    pub curve_sat_vs_sat: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
+#[::unity2::methods]
+impl ColorGradingLutPass_ShaderConstants {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "ColorGradingLutPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct ColorGradingLutPass {
+    #[rename(name = "m_LutBuilderLdr")]
+    pub m_lut_builder_ldr: crate::unity_engine::material::Material,
+    #[rename(name = "m_LutBuilderHdr")]
+    pub m_lut_builder_hdr: crate::unity_engine::material::Material,
+    #[rename(name = "m_HdrLutFormat")]
+    pub m_hdr_lut_format:
+        crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+    #[rename(name = "m_LdrLutFormat")]
+    pub m_ldr_lut_format:
+        crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+    #[rename(name = "m_InternalLut")]
+    pub m_internal_lut:
+        crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    #[rename(name = "m_HableCurve")]
+    pub m_hable_curve: crate::unity_engine::rendering::hablecurve::HableCurve,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
+#[::unity2::methods]
+impl ColorGradingLutPass {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
+    ) -> ();
+
+    #[method(name = "Setup", args = 1)]
+    pub fn setup(
+        self,
+        internal_lut : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "OnFinishCameraStackRendering", args = 1)]
+    pub fn on_finish_camera_stack_rendering(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[method(name = "Cleanup", args = 0)]
+    pub fn cleanup(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
+impl ColorGradingLutPass {
+    pub fn new(
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ColorGradingLutPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IColorGradingLutPassMethods>::ctor(this, evt, data);
+        this
+    }
+}

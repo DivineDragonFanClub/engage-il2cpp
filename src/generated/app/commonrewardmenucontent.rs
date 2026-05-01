@@ -1,0 +1,85 @@
+
+use crate::app::basicmenucontent::BasicMenuContent;
+use crate::app::basicmenucontent::IBasicMenuContent;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/commonrewardmenucontent/CommonRewardMenuContent.md")))]
+#[::unity2::class(namespace = "App", name = "CommonRewardMenuContent")]
+#[parent(crate::app::basicmenucontent::BasicMenuContent)]
+pub struct CommonRewardMenuContent {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_GaugeSpeedDefault")]
+    pub m_gauge_speed_default: i32,
+    #[rename(name = "m_GaugeSpeedSkip")]
+    pub m_gauge_speed_skip: i32,
+    #[rename(name = "m_ScrollStart")]
+    pub m_scroll_start: i32,
+    #[rename(name = "m_WaitTimeStart")]
+    pub m_wait_time_start: f32,
+    #[rename(name = "m_WaitTimeEnd")]
+    pub m_wait_time_end: f32,
+}
+
+#[cfg(feature = "app-commonrewardmenucontent")]
+#[::unity2::methods]
+impl CommonRewardMenuContent {
+    #[method(name = "get_GaugeSpeedDefault", args = 0)]
+    pub fn get_gauge_speed_default(self) -> i32;
+
+    #[method(name = "get_GaugeSpeedSkip", args = 0)]
+    pub fn get_gauge_speed_skip(self) -> i32;
+
+    #[method(name = "get_ScrollStart", args = 0)]
+    pub fn get_scroll_start(self) -> i32;
+
+    #[method(name = "get_WaitTimeStart", args = 0)]
+    pub fn get_wait_time_start(self) -> f32;
+
+    #[method(name = "get_WaitTimeEnd", args = 0)]
+    pub fn get_wait_time_end(self) -> f32;
+
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "Create", args = 0)]
+    pub fn create() -> crate::app::commonrewardmenucontent::CommonRewardMenuContent;
+
+    #[method(name = "AfterBuild", args = 0)]
+    pub fn after_build(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-commonrewardmenucontent")]
+impl CommonRewardMenuContent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CommonRewardMenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICommonRewardMenuContentMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,84 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshopgodsymbol/RefineShopGodSymbol.md")))]
+#[::unity2::class(namespace = "App", name = "RefineShopGodSymbol")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct RefineShopGodSymbol {
+    #[rename(name = "m_GodSymbol0Object")]
+    pub m_god_symbol0_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_GodSymbol0Image")]
+    pub m_god_symbol0_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_GodSymbol0EffectObject")]
+    pub m_god_symbol0_effect_object: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+    #[rename(name = "m_GodSymbol1Object")]
+    pub m_god_symbol1_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_GodSymbol1Image")]
+    pub m_god_symbol1_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_GodSymbol1EffectObject")]
+    pub m_god_symbol1_effect_object: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+    #[rename(name = "m_CurrentGodSymbolObject")]
+    pub m_current_god_symbol_object: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-refineshopgodsymbol")]
+#[::unity2::methods]
+impl RefineShopGodSymbol {
+    #[method(name = "Create", args = 1)]
+    pub fn create(
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::app::refineshopgodsymbol::RefineShopGodSymbol;
+
+    #[method(name = "Open", args = 1)]
+    pub fn open(self, god_data: crate::app::goddata::GodData) -> ();
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[method(name = "SetData", args = 1)]
+    pub fn set_data(self, god_data: crate::app::goddata::GodData) -> ();
+
+    #[method(name = "Open", args = 2)]
+    pub fn open_2(
+        self,
+        god_symbol_object: crate::unity_engine::gameobject::GameObject,
+        god_data: crate::app::goddata::GodData,
+    ) -> ();
+
+    #[method(name = "Close", args = 1)]
+    pub fn close_2(self, god_symbol_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "SetClose", args = 1)]
+    pub fn set_close(self, god_symbol_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "GetHiddenObject", args = 0)]
+    pub fn get_hidden_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refineshopgodsymbol")]
+impl RefineShopGodSymbol {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopGodSymbol),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopGodSymbolMethods>::ctor(this);
+        this
+    }
+}

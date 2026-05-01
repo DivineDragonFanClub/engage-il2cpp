@@ -1,0 +1,20 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/expansionoffset2d/ExpansionOffset2D.md")))]
+#[::unity2::class(namespace = "Combat", name = "ExpansionOffset2D")]
+#[parent(crate::system::object::Object)]
+pub struct ExpansionOffset2D {
+    #[static_field]
+    #[rename(name = "XY")]
+    pub xy: ::unity2::Array<f32>,
+}
+
+#[cfg(feature = "combat-expansionoffset2d")]
+#[::unity2::methods]
+impl ExpansionOffset2D {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

@@ -1,0 +1,80 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/hideflags/HideFlags.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HideFlags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HideFlags {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "HideFlags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HideFlags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HideFlags {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn hide_in_hierarchy() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn hide_in_inspector() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn dont_save_in_editor() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn not_editable() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn dont_save_in_build() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn dont_unload_unused_asset() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn dont_save() -> Self {
+        Self { value: 52 }
+    }
+
+    pub fn hide_and_dont_save() -> Self {
+        Self { value: 61 }
+    }
+}

@@ -1,0 +1,100 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/valuetypedefaultctormemberdescriptor/ValueTypeDefaultCtorMemberDescriptor.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "ValueTypeDefaultCtorMemberDescriptor"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ValueTypeDefaultCtorMemberDescriptor {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-valuetypedefaultctormemberdescriptor")]
+#[::unity2::methods]
+impl ValueTypeDefaultCtorMemberDescriptor {
+    #[method(name = "get_IsStatic", args = 0)]
+    pub fn get_is_static(self) -> bool;
+
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_ValueTypeDefaultCtor", args = 0)]
+    pub fn get_value_type_default_ctor(self) -> ::unity2::SystemType;
+
+    #[method(name = "set_ValueTypeDefaultCtor", args = 1)]
+    pub fn set_value_type_default_ctor(self, value: ::unity2::SystemType) -> ();
+
+    #[method(name = "get_Parameters", args = 0)]
+    pub fn get_parameters (self ,) -> :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor > ;
+
+    #[method(name = "set_Parameters", args = 1)]
+    pub fn set_parameters(
+        self,
+        value : :: unity2 :: Array < crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: parameterdescriptor :: ParameterDescriptor >,
+    ) -> ();
+
+    #[method(name = "get_ExtensionMethodType", args = 0)]
+    pub fn get_extension_method_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "get_VarArgsArrayType", args = 0)]
+    pub fn get_var_args_array_type(self) -> ::unity2::SystemType;
+
+    #[method(name = "get_VarArgsElementType", args = 0)]
+    pub fn get_var_args_element_type(self) -> ::unity2::SystemType;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, value_type: ::unity2::SystemType) -> ();
+
+    #[method(name = "Execute", args = 4)]
+    pub fn execute(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+        args: crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "get_SortDiscriminant", args = 0)]
+    pub fn get_sort_discriminant(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_MemberAccess", args = 0)]
+    pub fn get_member_access (self ,) -> crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: memberdescriptoraccess :: MemberDescriptorAccess ;
+
+    #[method(name = "GetValue", args = 2)]
+    pub fn get_value(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "SetValue", args = 3)]
+    pub fn set_value(
+        self,
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+        value: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    ) -> ();
+
+    #[method(name = "PrepareForWiring", args = 1)]
+    pub fn prepare_for_wiring(self, t: crate::moon_sharp::interpreter::table::Table) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-valuetypedefaultctormemberdescriptor")]
+impl ValueTypeDefaultCtorMemberDescriptor {
+    pub fn new(value_type: ::unity2::SystemType) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ValueTypeDefaultCtorMemberDescriptor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IValueTypeDefaultCtorMemberDescriptorMethods>::ctor(this, value_type);
+        this
+    }
+}

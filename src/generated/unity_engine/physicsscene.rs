@@ -1,0 +1,430 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/physicsscene/PhysicsScene.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct PhysicsScene {
+    pub m_handle: i32,
+}
+
+impl ::unity2::ClassIdentity for PhysicsScene {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "PhysicsScene";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PhysicsScene {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-physicsscene")]
+#[::unity2::methods(value)]
+impl PhysicsScene {
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, other: crate::system::object::Object) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_2(self, other: crate::unity_engine::physicsscene::PhysicsScene) -> bool;
+
+    #[method(name = "Raycast", args = 5)]
+    pub fn raycast(
+        self,
+        origin: crate::unity_engine::vector3::Vector3,
+        direction: crate::unity_engine::vector3::Vector3,
+        max_distance: f32,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "Internal_RaycastTest", args = 5)]
+    pub fn internal_raycast_test(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        ray: crate::unity_engine::ray::Ray,
+        max_distance: f32,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "Raycast", args = 6)]
+    pub fn raycast_2(
+        self,
+        origin: crate::unity_engine::vector3::Vector3,
+        direction: crate::unity_engine::vector3::Vector3,
+        hit_info: crate::unity_engine::raycasthit::RaycastHit,
+        max_distance: f32,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "Internal_Raycast", args = 6)]
+    pub fn internal_raycast(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        ray: crate::unity_engine::ray::Ray,
+        max_distance: f32,
+        hit: crate::unity_engine::raycasthit::RaycastHit,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "Raycast", args = 6)]
+    pub fn raycast_3(
+        self,
+        origin: crate::unity_engine::vector3::Vector3,
+        direction: crate::unity_engine::vector3::Vector3,
+        raycast_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+        max_distance: f32,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "Internal_RaycastNonAlloc", args = 6)]
+    pub fn internal_raycast_non_alloc(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        ray: crate::unity_engine::ray::Ray,
+        raycast_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+        max_distance: f32,
+        mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "Query_CapsuleCast", args = 9)]
+    pub fn query_capsule_cast(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        point1: crate::unity_engine::vector3::Vector3,
+        point2: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        direction: crate::unity_engine::vector3::Vector3,
+        max_distance: f32,
+        hit_info: crate::unity_engine::raycasthit::RaycastHit,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "Internal_CapsuleCast", args = 9)]
+    pub fn internal_capsule_cast(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        point1: crate::unity_engine::vector3::Vector3,
+        point2: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        direction: crate::unity_engine::vector3::Vector3,
+        hit_info: crate::unity_engine::raycasthit::RaycastHit,
+        max_distance: f32,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "CapsuleCast", args = 8)]
+    pub fn capsule_cast(
+        self,
+        point1: crate::unity_engine::vector3::Vector3,
+        point2: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        direction: crate::unity_engine::vector3::Vector3,
+        hit_info: crate::unity_engine::raycasthit::RaycastHit,
+        max_distance: f32,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "Query_SphereCast", args = 8)]
+    pub fn query_sphere_cast(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        origin: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        direction: crate::unity_engine::vector3::Vector3,
+        max_distance: f32,
+        hit_info: crate::unity_engine::raycasthit::RaycastHit,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "Internal_SphereCast", args = 8)]
+    pub fn internal_sphere_cast(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        origin: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        direction: crate::unity_engine::vector3::Vector3,
+        hit_info: crate::unity_engine::raycasthit::RaycastHit,
+        max_distance: f32,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "SphereCast", args = 7)]
+    pub fn sphere_cast(
+        self,
+        origin: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        direction: crate::unity_engine::vector3::Vector3,
+        hit_info: crate::unity_engine::raycasthit::RaycastHit,
+        max_distance: f32,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "Internal_SphereCastNonAlloc", args = 8)]
+    pub fn internal_sphere_cast_non_alloc(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        origin: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        direction: crate::unity_engine::vector3::Vector3,
+        raycast_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+        max_distance: f32,
+        mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "SphereCast", args = 7)]
+    pub fn sphere_cast_2(
+        self,
+        origin: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        direction: crate::unity_engine::vector3::Vector3,
+        results: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+        max_distance: f32,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "OverlapSphereNonAlloc_Internal", args = 6)]
+    pub fn overlap_sphere_non_alloc_internal(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        position: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        results: ::unity2::Array<crate::unity_engine::collider::Collider>,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "OverlapSphere", args = 5)]
+    pub fn overlap_sphere(
+        self,
+        position: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        results: ::unity2::Array<crate::unity_engine::collider::Collider>,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "Query_BoxCast", args = 9)]
+    pub fn query_box_cast(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        center: crate::unity_engine::vector3::Vector3,
+        half_extents: crate::unity_engine::vector3::Vector3,
+        direction: crate::unity_engine::vector3::Vector3,
+        orientation: crate::unity_engine::quaternion::Quaternion,
+        max_distance: f32,
+        out_hit: crate::unity_engine::raycasthit::RaycastHit,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "Internal_BoxCast", args = 9)]
+    pub fn internal_box_cast(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        center: crate::unity_engine::vector3::Vector3,
+        half_extents: crate::unity_engine::vector3::Vector3,
+        orientation: crate::unity_engine::quaternion::Quaternion,
+        direction: crate::unity_engine::vector3::Vector3,
+        hit_info: crate::unity_engine::raycasthit::RaycastHit,
+        max_distance: f32,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "BoxCast", args = 8)]
+    pub fn box_cast(
+        self,
+        center: crate::unity_engine::vector3::Vector3,
+        half_extents: crate::unity_engine::vector3::Vector3,
+        direction: crate::unity_engine::vector3::Vector3,
+        hit_info: crate::unity_engine::raycasthit::RaycastHit,
+        orientation: crate::unity_engine::quaternion::Quaternion,
+        max_distance: f32,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "OverlapBoxNonAlloc_Internal", args = 7)]
+    pub fn overlap_box_non_alloc_internal(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        center: crate::unity_engine::vector3::Vector3,
+        half_extents: crate::unity_engine::vector3::Vector3,
+        results: ::unity2::Array<crate::unity_engine::collider::Collider>,
+        orientation: crate::unity_engine::quaternion::Quaternion,
+        mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "OverlapBox", args = 6)]
+    pub fn overlap_box(
+        self,
+        center: crate::unity_engine::vector3::Vector3,
+        half_extents: crate::unity_engine::vector3::Vector3,
+        results: ::unity2::Array<crate::unity_engine::collider::Collider>,
+        orientation: crate::unity_engine::quaternion::Quaternion,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "Internal_BoxCastNonAlloc", args = 9)]
+    pub fn internal_box_cast_non_alloc(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        center: crate::unity_engine::vector3::Vector3,
+        half_extents: crate::unity_engine::vector3::Vector3,
+        direction: crate::unity_engine::vector3::Vector3,
+        raycast_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+        orientation: crate::unity_engine::quaternion::Quaternion,
+        max_distance: f32,
+        mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "BoxCast", args = 8)]
+    pub fn box_cast_2(
+        self,
+        center: crate::unity_engine::vector3::Vector3,
+        half_extents: crate::unity_engine::vector3::Vector3,
+        direction: crate::unity_engine::vector3::Vector3,
+        results: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+        orientation: crate::unity_engine::quaternion::Quaternion,
+        max_distance: f32,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "Internal_RaycastTest_Injected", args = 5)]
+    pub fn internal_raycast_test_injected(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        ray: crate::unity_engine::ray::Ray,
+        max_distance: f32,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "Internal_Raycast_Injected", args = 6)]
+    pub fn internal_raycast_injected(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        ray: crate::unity_engine::ray::Ray,
+        max_distance: f32,
+        hit: crate::unity_engine::raycasthit::RaycastHit,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "Internal_RaycastNonAlloc_Injected", args = 6)]
+    pub fn internal_raycast_non_alloc_injected(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        ray: crate::unity_engine::ray::Ray,
+        raycast_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+        max_distance: f32,
+        mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "Query_CapsuleCast_Injected", args = 9)]
+    pub fn query_capsule_cast_injected(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        point1: crate::unity_engine::vector3::Vector3,
+        point2: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        direction: crate::unity_engine::vector3::Vector3,
+        max_distance: f32,
+        hit_info: crate::unity_engine::raycasthit::RaycastHit,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "Query_SphereCast_Injected", args = 8)]
+    pub fn query_sphere_cast_injected(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        origin: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        direction: crate::unity_engine::vector3::Vector3,
+        max_distance: f32,
+        hit_info: crate::unity_engine::raycasthit::RaycastHit,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "Internal_SphereCastNonAlloc_Injected", args = 8)]
+    pub fn internal_sphere_cast_non_alloc_injected(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        origin: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        direction: crate::unity_engine::vector3::Vector3,
+        raycast_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+        max_distance: f32,
+        mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "OverlapSphereNonAlloc_Internal_Injected", args = 6)]
+    pub fn overlap_sphere_non_alloc_internal_injected(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        position: crate::unity_engine::vector3::Vector3,
+        radius: f32,
+        results: ::unity2::Array<crate::unity_engine::collider::Collider>,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "Query_BoxCast_Injected", args = 9)]
+    pub fn query_box_cast_injected(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        center: crate::unity_engine::vector3::Vector3,
+        half_extents: crate::unity_engine::vector3::Vector3,
+        direction: crate::unity_engine::vector3::Vector3,
+        orientation: crate::unity_engine::quaternion::Quaternion,
+        max_distance: f32,
+        out_hit: crate::unity_engine::raycasthit::RaycastHit,
+        layer_mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> bool;
+
+    #[method(name = "OverlapBoxNonAlloc_Internal_Injected", args = 7)]
+    pub fn overlap_box_non_alloc_internal_injected(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        center: crate::unity_engine::vector3::Vector3,
+        half_extents: crate::unity_engine::vector3::Vector3,
+        results: ::unity2::Array<crate::unity_engine::collider::Collider>,
+        orientation: crate::unity_engine::quaternion::Quaternion,
+        mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+
+    #[method(name = "Internal_BoxCastNonAlloc_Injected", args = 9)]
+    pub fn internal_box_cast_non_alloc_injected(
+        physics_scene: crate::unity_engine::physicsscene::PhysicsScene,
+        center: crate::unity_engine::vector3::Vector3,
+        half_extents: crate::unity_engine::vector3::Vector3,
+        direction: crate::unity_engine::vector3::Vector3,
+        raycast_hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+        orientation: crate::unity_engine::quaternion::Quaternion,
+        max_distance: f32,
+        mask: i32,
+        query_trigger_interaction : crate :: unity_engine :: querytriggerinteraction :: QueryTriggerInteraction,
+    ) -> i32;
+}

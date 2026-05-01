@@ -1,0 +1,97 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/randomseed/RandomSeed_CastType_I2F.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RandomSeed_CastType_I2F {
+    pub ivalue: u32,
+    pub fvalue: f32,
+}
+
+impl ::unity2::ClassIdentity for RandomSeed_CastType_I2F {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RandomSeed.CastType_I2F";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RandomSeed_CastType_I2F {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/randomseed/RandomSeed.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RandomSeed {
+    pub seed1: u32,
+    pub seed2: u32,
+    pub seed3: u32,
+    pub seed4: u32,
+}
+
+impl ::unity2::ClassIdentity for RandomSeed {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RandomSeed";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RandomSeed {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-randomseed")]
+#[::unity2::methods(value)]
+impl RandomSeed {
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize(self) -> ();
+
+    #[method(name = "Initialize", args = 1)]
+    pub fn initialize_2(self, v: u32) -> ();
+
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[method(name = "Peek", args = 0)]
+    pub fn peek(self) -> i32;
+
+    #[method(name = "GetValue", args = 0)]
+    pub fn get_value(self) -> i32;
+
+    #[method(name = "GetFloat", args = 0)]
+    pub fn get_float(self) -> f32;
+
+    #[method(name = "Dump", args = 0)]
+    pub fn dump(self) -> ();
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}

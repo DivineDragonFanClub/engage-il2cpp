@@ -1,0 +1,60 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talkkeywait/TalkKeyWait.md")))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkKeyWait")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct TalkKeyWait {
+    #[rename(name = "m_Mid")]
+    pub m_mid: ::unity2::Il2CppString,
+    #[rename(name = "m_VoiceEventName")]
+    pub m_voice_event_name: ::unity2::Il2CppString,
+    #[rename(name = "m_WaitSecForAutoPlay")]
+    pub m_wait_sec_for_auto_play: f32,
+    #[rename(name = "m_waitCounter")]
+    pub m_wait_counter: f32,
+}
+
+#[cfg(feature = "app-talk3_d-talkkeywait")]
+#[::unity2::methods]
+impl TalkKeyWait {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, mid: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[method(name = "OnShutdown", args = 0)]
+    pub fn on_shutdown(self) -> ();
+
+    #[method(name = "CreateInstBind", args = 2)]
+    pub fn create_inst_bind(
+        parent: crate::app::procinst::ProcInst,
+        mid: ::unity2::Il2CppString,
+    ) -> crate::app::talk3_d::talkkeywait::TalkKeyWait;
+}
+
+#[cfg(feature = "app-talk3_d-talkkeywait")]
+impl TalkKeyWait {
+    pub fn new(mid: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkKeyWait),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkKeyWaitMethods>::ctor(this, mid);
+        this
+    }
+}

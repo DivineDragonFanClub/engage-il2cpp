@@ -1,0 +1,118 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusviolationtypemenu/VersusViolationTypeMenu_DecideCallback.md")))]
+#[::unity2::class(namespace = "App", name = "VersusViolationTypeMenu.DecideCallback")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct VersusViolationTypeMenu_DecideCallback {}
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+#[::unity2::methods]
+impl VersusViolationTypeMenu_DecideCallback {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+}
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+impl VersusViolationTypeMenu_DecideCallback {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusViolationTypeMenu_DecideCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusViolationTypeMenu_DecideCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusviolationtypemenu/VersusViolationTypeMenu_VersusViolationTypeMenuItem.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusViolationTypeMenu.VersusViolationTypeMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct VersusViolationTypeMenu_VersusViolationTypeMenuItem {}
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+#[::unity2::methods]
+impl VersusViolationTypeMenu_VersusViolationTypeMenuItem {
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versusviolationtypemenu/VersusViolationTypeMenu.md")))]
+#[::unity2::class(namespace = "App", name = "VersusViolationTypeMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct VersusViolationTypeMenu {
+    #[rename(name = "m_DecideCallback")]
+    pub m_decide_callback:
+        crate::app::versusviolationtypemenu::VersusViolationTypeMenu_DecideCallback,
+}
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+#[::unity2::methods]
+impl VersusViolationTypeMenu {
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_content: crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
+        decide_callback : crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
+        decide_callback : crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback,
+    ) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+impl VersusViolationTypeMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent,
+        decide_callback : crate :: app :: versusviolationtypemenu :: VersusViolationTypeMenu_DecideCallback,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusViolationTypeMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusViolationTypeMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            decide_callback,
+        );
+        this
+    }
+}

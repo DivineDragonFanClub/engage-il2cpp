@@ -1,0 +1,61 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/util/serializedtype/SerializedType.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct SerializedType {
+    pub m_assembly_name: ::unity2::Il2CppString,
+    pub m_class_name: ::unity2::Il2CppString,
+    pub m_cached_type: ::unity2::SystemType,
+}
+
+impl ::unity2::ClassIdentity for SerializedType {
+    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.Util";
+
+    const NAME: &'static str = "SerializedType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SerializedType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-serializedtype")]
+#[::unity2::methods(value)]
+impl SerializedType {
+    #[method(name = "get_AssemblyName", args = 0)]
+    pub fn get_assembly_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_ClassName", args = 0)]
+    pub fn get_class_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> ::unity2::SystemType;
+
+    #[method(name = "set_Value", args = 1)]
+    pub fn set_value(self, value: ::unity2::SystemType) -> ();
+
+    #[method(name = "get_ValueChanged", args = 0)]
+    pub fn get_value_changed(self) -> bool;
+
+    #[method(name = "set_ValueChanged", args = 1)]
+    pub fn set_value_changed(self, value: bool) -> ();
+}

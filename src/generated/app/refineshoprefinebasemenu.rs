@@ -1,0 +1,261 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshoprefinebasemenu/RefineShopRefineBaseMenu_RequestCloseEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineShopRefineBaseMenu.RequestCloseEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineShopRefineBaseMenu_RequestCloseEventHandler {}
+
+#[cfg(feature = "app-refineshoprefinebasemenu")]
+#[::unity2::methods]
+impl RefineShopRefineBaseMenu_RequestCloseEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-refineshoprefinebasemenu")]
+impl RefineShopRefineBaseMenu_RequestCloseEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopRefineBaseMenu_RequestCloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopRefineBaseMenu_RequestCloseEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshoprefinebasemenu/RefineShopRefineBaseMenu_SelectEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineShopRefineBaseMenu.SelectEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineShopRefineBaseMenu_SelectEventHandler {}
+
+#[cfg(feature = "app-refineshoprefinebasemenu")]
+#[::unity2::methods]
+impl RefineShopRefineBaseMenu_SelectEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        unit: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> ();
+}
+
+#[cfg(feature = "app-refineshoprefinebasemenu")]
+impl RefineShopRefineBaseMenu_SelectEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopRefineBaseMenu_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopRefineBaseMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshoprefinebasemenu/RefineShopRefineBaseMenu.md")))]
+#[::unity2::class(namespace = "App", name = "RefineShopRefineBaseMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct RefineShopRefineBaseMenu {
+    #[static_field]
+    #[rename(name = "s_MenuScrollIndex")]
+    pub s_menu_scroll_index: i32,
+    #[rename(name = "m_SelectEventHandler")]
+    pub m_select_event_handler:
+        crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler,
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler,
+    #[rename(name = "m_RequestCloseEventHandler")]
+    pub m_request_close_event_handler:
+        crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler,
+    #[rename(name = "m_MenuSelectList")]
+    pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::basicmenuselect::BasicMenuSelect,
+    >,
+}
+
+#[cfg(feature = "app-refineshoprefinebasemenu")]
+#[::unity2::methods]
+impl RefineShopRefineBaseMenu {
+    #[method(name = "get_m_Kind", args = 0)]
+    pub fn get_m_kind(self) -> crate::app::itemdata::ItemData_Kinds;
+
+    #[method(name = "set_m_Kind", args = 1)]
+    pub fn set_m_kind(self, value: crate::app::itemdata::ItemData_Kinds) -> ();
+
+    #[method(name = "CreateBind", args = 8)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_object: crate::unity_engine::gameobject::GameObject,
+        default_unit: crate::app::unit::Unit,
+        default_item_index: i32,
+        default_item_kind: crate::app::itemdata::ItemData_Kinds,
+        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
+        decide_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler,
+        request_close_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_RequestCloseEventHandler,
+    ) -> crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu;
+
+    #[method(name = "CreateMenuItemList", args = 4)]
+    pub fn create_menu_item_list(
+        show_row_num: i32,
+        kind: crate::app::itemdata::ItemData_Kinds,
+        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
+        decide_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[method(name = "IsValidUnitItemToMenuItem", args = 2)]
+    pub fn is_valid_unit_item_to_menu_item(
+        unit_item: crate::app::unititem::UnitItem,
+        kind: crate::app::itemdata::ItemData_Kinds,
+    ) -> bool;
+
+    #[method(name = "ExistTarget", args = 1)]
+    pub fn exist_target(unit_item: crate::app::unititem::UnitItem) -> bool;
+
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(
+        lhs: crate::app::basicmenuitem::BasicMenuItem,
+        rhs: crate::app::basicmenuitem::BasicMenuItem,
+    ) -> i32;
+
+    #[method(name = ".ctor", args = 8)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent,
+        default_unit: crate::app::unit::Unit,
+        default_item_index: i32,
+        kind: crate::app::itemdata::ItemData_Kinds,
+        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
+        decide_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler,
+        request_close_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_RequestCloseEventHandler,
+    ) -> ();
+
+    #[method(name = "RebuildMenu", args = 0)]
+    pub fn rebuild_menu(self) -> ();
+
+    #[method(name = "RebuildMenuItem", args = 0)]
+    pub fn rebuild_menu_item(self) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "KeyLeft", args = 1)]
+    pub fn key_left(self, is_trigger: bool) -> ();
+
+    #[method(name = "KeyRight", args = 1)]
+    pub fn key_right(self, is_trigger: bool) -> ();
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-refineshoprefinebasemenu")]
+impl RefineShopRefineBaseMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent,
+        default_unit: crate::app::unit::Unit,
+        default_item_index: i32,
+        kind: crate::app::itemdata::ItemData_Kinds,
+        select_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_SelectEventHandler,
+        decide_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_DecideEventHandler,
+        request_close_event_handler : crate :: app :: refineshoprefinebasemenu :: RefineShopRefineBaseMenu_RequestCloseEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopRefineBaseMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopRefineBaseMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            default_unit,
+            default_item_index,
+            kind,
+            select_event_handler,
+            decide_event_handler,
+            request_close_event_handler,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshoprefinebasemenu/RefineShopRefineBaseMenu_DecideEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineShopRefineBaseMenu.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineShopRefineBaseMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-refineshoprefinebasemenu")]
+#[::unity2::methods]
+impl RefineShopRefineBaseMenu_DecideEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(
+        self,
+        unit: crate::app::unit::Unit,
+        owner_item_index: i32,
+        kind: crate::app::itemdata::ItemData_Kinds,
+    ) -> ();
+}
+
+#[cfg(feature = "app-refineshoprefinebasemenu")]
+impl RefineShopRefineBaseMenu_DecideEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopRefineBaseMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopRefineBaseMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}

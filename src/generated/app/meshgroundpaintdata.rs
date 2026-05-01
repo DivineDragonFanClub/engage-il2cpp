@@ -1,0 +1,74 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::scriptableobject::IScriptableObject;
+use crate::unity_engine::scriptableobject::ScriptableObject;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/meshgroundpaintdata/MeshGroundPaintData.md")))]
+#[::unity2::class(namespace = "App", name = "MeshGroundPaintData")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct MeshGroundPaintData {}
+
+#[cfg(feature = "app-meshgroundpaintdata")]
+#[::unity2::methods]
+impl MeshGroundPaintData {
+    #[method(name = "get_IsCustomSize", args = 0)]
+    pub fn get_is_custom_size(self) -> bool;
+
+    #[method(name = "set_IsCustomSize", args = 1)]
+    pub fn set_is_custom_size(self, value: bool) -> ();
+
+    #[method(name = "get_Names", args = 0)]
+    pub fn get_names(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[method(name = "set_Names", args = 1)]
+    pub fn set_names(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[method(name = "get_SplitCount", args = 0)]
+    pub fn get_split_count(self) -> crate::unity_engine::vector2int::Vector2Int;
+
+    #[method(name = "set_SplitCount", args = 1)]
+    pub fn set_split_count(self, value: crate::unity_engine::vector2int::Vector2Int) -> ();
+
+    #[method(name = "get_Size", args = 0)]
+    pub fn get_size(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_Size", args = 1)]
+    pub fn set_size(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_Offset", args = 0)]
+    pub fn get_offset(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "set_Offset", args = 1)]
+    pub fn set_offset(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "get_IndexList", args = 0)]
+    pub fn get_index_list(self) -> ::unity2::Array<i32>;
+
+    #[method(name = "set_IndexList", args = 1)]
+    pub fn set_index_list(self, value: ::unity2::Array<i32>) -> ();
+
+    #[method(name = "GetName", args = 2)]
+    pub fn get_name(self, x: f32, y: f32) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-meshgroundpaintdata")]
+impl MeshGroundPaintData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MeshGroundPaintData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMeshGroundPaintDataMethods>::ctor(this);
+        this
+    }
+}

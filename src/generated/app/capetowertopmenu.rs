@@ -1,0 +1,317 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowertopmenu/CapeTowerTopMenu_ChallengeMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.ChallengeMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct CapeTowerTopMenu_ChallengeMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-capetowertopmenu")]
+#[::unity2::methods]
+impl CapeTowerTopMenu_ChallengeMenuItem {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-capetowertopmenu")]
+impl CapeTowerTopMenu_ChallengeMenuItem {
+    pub fn new(
+        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CapeTowerTopMenu_ChallengeMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICapeTowerTopMenu_ChallengeMenuItemMethods>::ctor(this, decide_event_handler);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowertopmenu/CapeTowerTopMenu_RelayMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.RelayMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct CapeTowerTopMenu_RelayMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-capetowertopmenu")]
+#[::unity2::methods]
+impl CapeTowerTopMenu_RelayMenuItem {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-capetowertopmenu")]
+impl CapeTowerTopMenu_RelayMenuItem {
+    pub fn new(
+        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CapeTowerTopMenu_RelayMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICapeTowerTopMenu_RelayMenuItemMethods>::ctor(this, decide_event_handler);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowertopmenu/CapeTowerTopMenu_DecideEventHandler.md")))]
+#[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct CapeTowerTopMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-capetowertopmenu")]
+#[::unity2::methods]
+impl CapeTowerTopMenu_DecideEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, result: crate::app::capetowertopmenu::CapeTowerTopMenu_Result2) -> ();
+}
+
+#[cfg(feature = "app-capetowertopmenu")]
+impl CapeTowerTopMenu_DecideEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CapeTowerTopMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICapeTowerTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowertopmenu/CapeTowerTopMenu_VersusMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.VersusMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct CapeTowerTopMenu_VersusMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-capetowertopmenu")]
+#[::unity2::methods]
+impl CapeTowerTopMenu_VersusMenuItem {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-capetowertopmenu")]
+impl CapeTowerTopMenu_VersusMenuItem {
+    pub fn new(
+        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CapeTowerTopMenu_VersusMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICapeTowerTopMenu_VersusMenuItemMethods>::ctor(this, decide_event_handler);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowertopmenu/CapeTowerTopMenu_Result2.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CapeTowerTopMenu_Result2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CapeTowerTopMenu_Result2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "CapeTowerTopMenu.Result2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CapeTowerTopMenu_Result2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CapeTowerTopMenu_Result2 {
+    pub fn challenge() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn relay() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn versus() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowertopmenu/CapeTowerTopMenu.md")))]
+#[::unity2::class(namespace = "App", name = "CapeTowerTopMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct CapeTowerTopMenu {
+    #[rename(name = "m_Root")]
+    pub m_root: crate::app::capetowertopmenuroot::CapeTowerTopMenuRoot,
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-capetowertopmenu")]
+#[::unity2::methods]
+impl CapeTowerTopMenu {
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        initial_selected: crate::app::capetowertopmenu::CapeTowerTopMenu_Result2,
+        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::capetowertopmenucontent::CapeTowerTopMenuContent,
+        root: crate::app::capetowertopmenuroot::CapeTowerTopMenuRoot,
+        initial_selected: crate::app::capetowertopmenu::CapeTowerTopMenu_Result2,
+        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "UpdateMenu", args = 2)]
+    pub fn update_menu(
+        self,
+        caption_mid: ::unity2::Il2CppString,
+        description_mid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "OnClose", args = 0)]
+    pub fn on_close(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+}
+
+#[cfg(feature = "app-capetowertopmenu")]
+impl CapeTowerTopMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::capetowertopmenucontent::CapeTowerTopMenuContent,
+        root: crate::app::capetowertopmenuroot::CapeTowerTopMenuRoot,
+        initial_selected: crate::app::capetowertopmenu::CapeTowerTopMenu_Result2,
+        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CapeTowerTopMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICapeTowerTopMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            root,
+            initial_selected,
+            decide_event_handler,
+        );
+        this
+    }
+}

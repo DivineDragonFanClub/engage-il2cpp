@@ -1,0 +1,359 @@
+
+use crate::app::calculatorcommand::CalculatorCommand;
+use crate::app::calculatorcommand::ICalculatorCommand;
+use crate::app::calculatortable2d_1::CalculatorTable2D_1;
+use crate::app::calculatortable2d_1::ICalculatorTable2D_1;
+use crate::app::gamecalculatorcommand::GameCalculatorCommand;
+use crate::app::gamecalculatorcommand::IGameCalculatorCommand;
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdataarray_1::IStructDataArray_1;
+use crate::app::structdataarray_1::StructDataArray_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatortablesub2d/CalculatorTableSub2D_TableCommand.md")))]
+#[::unity2::class(namespace = "App", name = "CalculatorTableSub2D.TableCommand")]
+#[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
+pub struct CalculatorTableSub2D_TableCommand {
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-calculatortablesub2d")]
+#[::unity2::methods]
+impl CalculatorTableSub2D_TableCommand {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "FuncImpl", args = 2)]
+    pub fn func_impl(
+        self,
+        unit: crate::app::unit::Unit,
+        args: crate::system::collections::generic::list_1::List_1<f32>,
+    ) -> f32;
+}
+
+#[cfg(feature = "app-calculatortablesub2d")]
+impl CalculatorTableSub2D_TableCommand {
+    pub fn new(name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CalculatorTableSub2D_TableCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICalculatorTableSub2D_TableCommandMethods>::ctor(this, name);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatortablesub2d/CalculatorTableSub2D.md")))]
+#[::unity2::class(namespace = "App", name = "CalculatorTableSub2D")]
+# [parent (crate :: app :: calculatortable2d_1 :: CalculatorTable2D_1 < crate :: app :: calculatortablesub2d :: CalculatorTableSub2D >)]
+pub struct CalculatorTableSub2D {
+    #[static_field]
+    #[rename(name = "Min")]
+    pub min: i32,
+    #[static_field]
+    #[rename(name = "Max")]
+    pub max: i32,
+    #[static_field]
+    #[rename(name = "Num")]
+    pub num: i32,
+    #[rename(name = "m_Table")]
+    pub m_table: crate::app::calculatortable::CalculatorTable,
+}
+
+#[cfg(feature = "app-calculatortablesub2d")]
+#[::unity2::methods]
+impl CalculatorTableSub2D {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_M20", args = 0)]
+    pub fn get_m20(self) -> i32;
+
+    #[method(name = "set_M20", args = 1)]
+    pub fn set_m20(self, value: i32) -> ();
+
+    #[method(name = "get_M19", args = 0)]
+    pub fn get_m19(self) -> i32;
+
+    #[method(name = "set_M19", args = 1)]
+    pub fn set_m19(self, value: i32) -> ();
+
+    #[method(name = "get_M18", args = 0)]
+    pub fn get_m18(self) -> i32;
+
+    #[method(name = "set_M18", args = 1)]
+    pub fn set_m18(self, value: i32) -> ();
+
+    #[method(name = "get_M17", args = 0)]
+    pub fn get_m17(self) -> i32;
+
+    #[method(name = "set_M17", args = 1)]
+    pub fn set_m17(self, value: i32) -> ();
+
+    #[method(name = "get_M16", args = 0)]
+    pub fn get_m16(self) -> i32;
+
+    #[method(name = "set_M16", args = 1)]
+    pub fn set_m16(self, value: i32) -> ();
+
+    #[method(name = "get_M15", args = 0)]
+    pub fn get_m15(self) -> i32;
+
+    #[method(name = "set_M15", args = 1)]
+    pub fn set_m15(self, value: i32) -> ();
+
+    #[method(name = "get_M14", args = 0)]
+    pub fn get_m14(self) -> i32;
+
+    #[method(name = "set_M14", args = 1)]
+    pub fn set_m14(self, value: i32) -> ();
+
+    #[method(name = "get_M13", args = 0)]
+    pub fn get_m13(self) -> i32;
+
+    #[method(name = "set_M13", args = 1)]
+    pub fn set_m13(self, value: i32) -> ();
+
+    #[method(name = "get_M12", args = 0)]
+    pub fn get_m12(self) -> i32;
+
+    #[method(name = "set_M12", args = 1)]
+    pub fn set_m12(self, value: i32) -> ();
+
+    #[method(name = "get_M11", args = 0)]
+    pub fn get_m11(self) -> i32;
+
+    #[method(name = "set_M11", args = 1)]
+    pub fn set_m11(self, value: i32) -> ();
+
+    #[method(name = "get_M10", args = 0)]
+    pub fn get_m10(self) -> i32;
+
+    #[method(name = "set_M10", args = 1)]
+    pub fn set_m10(self, value: i32) -> ();
+
+    #[method(name = "get_M09", args = 0)]
+    pub fn get_m09(self) -> i32;
+
+    #[method(name = "set_M09", args = 1)]
+    pub fn set_m09(self, value: i32) -> ();
+
+    #[method(name = "get_M08", args = 0)]
+    pub fn get_m08(self) -> i32;
+
+    #[method(name = "set_M08", args = 1)]
+    pub fn set_m08(self, value: i32) -> ();
+
+    #[method(name = "get_M07", args = 0)]
+    pub fn get_m07(self) -> i32;
+
+    #[method(name = "set_M07", args = 1)]
+    pub fn set_m07(self, value: i32) -> ();
+
+    #[method(name = "get_M06", args = 0)]
+    pub fn get_m06(self) -> i32;
+
+    #[method(name = "set_M06", args = 1)]
+    pub fn set_m06(self, value: i32) -> ();
+
+    #[method(name = "get_M05", args = 0)]
+    pub fn get_m05(self) -> i32;
+
+    #[method(name = "set_M05", args = 1)]
+    pub fn set_m05(self, value: i32) -> ();
+
+    #[method(name = "get_M04", args = 0)]
+    pub fn get_m04(self) -> i32;
+
+    #[method(name = "set_M04", args = 1)]
+    pub fn set_m04(self, value: i32) -> ();
+
+    #[method(name = "get_M03", args = 0)]
+    pub fn get_m03(self) -> i32;
+
+    #[method(name = "set_M03", args = 1)]
+    pub fn set_m03(self, value: i32) -> ();
+
+    #[method(name = "get_M02", args = 0)]
+    pub fn get_m02(self) -> i32;
+
+    #[method(name = "set_M02", args = 1)]
+    pub fn set_m02(self, value: i32) -> ();
+
+    #[method(name = "get_M01", args = 0)]
+    pub fn get_m01(self) -> i32;
+
+    #[method(name = "set_M01", args = 1)]
+    pub fn set_m01(self, value: i32) -> ();
+
+    #[method(name = "get_N00", args = 0)]
+    pub fn get_n00(self) -> i32;
+
+    #[method(name = "set_N00", args = 1)]
+    pub fn set_n00(self, value: i32) -> ();
+
+    #[method(name = "get_P00", args = 0)]
+    pub fn get_p00(self) -> i32;
+
+    #[method(name = "set_P00", args = 1)]
+    pub fn set_p00(self, value: i32) -> ();
+
+    #[method(name = "get_P01", args = 0)]
+    pub fn get_p01(self) -> i32;
+
+    #[method(name = "set_P01", args = 1)]
+    pub fn set_p01(self, value: i32) -> ();
+
+    #[method(name = "get_P02", args = 0)]
+    pub fn get_p02(self) -> i32;
+
+    #[method(name = "set_P02", args = 1)]
+    pub fn set_p02(self, value: i32) -> ();
+
+    #[method(name = "get_P03", args = 0)]
+    pub fn get_p03(self) -> i32;
+
+    #[method(name = "set_P03", args = 1)]
+    pub fn set_p03(self, value: i32) -> ();
+
+    #[method(name = "get_P04", args = 0)]
+    pub fn get_p04(self) -> i32;
+
+    #[method(name = "set_P04", args = 1)]
+    pub fn set_p04(self, value: i32) -> ();
+
+    #[method(name = "get_P05", args = 0)]
+    pub fn get_p05(self) -> i32;
+
+    #[method(name = "set_P05", args = 1)]
+    pub fn set_p05(self, value: i32) -> ();
+
+    #[method(name = "get_P06", args = 0)]
+    pub fn get_p06(self) -> i32;
+
+    #[method(name = "set_P06", args = 1)]
+    pub fn set_p06(self, value: i32) -> ();
+
+    #[method(name = "get_P07", args = 0)]
+    pub fn get_p07(self) -> i32;
+
+    #[method(name = "set_P07", args = 1)]
+    pub fn set_p07(self, value: i32) -> ();
+
+    #[method(name = "get_P08", args = 0)]
+    pub fn get_p08(self) -> i32;
+
+    #[method(name = "set_P08", args = 1)]
+    pub fn set_p08(self, value: i32) -> ();
+
+    #[method(name = "get_P09", args = 0)]
+    pub fn get_p09(self) -> i32;
+
+    #[method(name = "set_P09", args = 1)]
+    pub fn set_p09(self, value: i32) -> ();
+
+    #[method(name = "get_P10", args = 0)]
+    pub fn get_p10(self) -> i32;
+
+    #[method(name = "set_P10", args = 1)]
+    pub fn set_p10(self, value: i32) -> ();
+
+    #[method(name = "get_P11", args = 0)]
+    pub fn get_p11(self) -> i32;
+
+    #[method(name = "set_P11", args = 1)]
+    pub fn set_p11(self, value: i32) -> ();
+
+    #[method(name = "get_P12", args = 0)]
+    pub fn get_p12(self) -> i32;
+
+    #[method(name = "set_P12", args = 1)]
+    pub fn set_p12(self, value: i32) -> ();
+
+    #[method(name = "get_P13", args = 0)]
+    pub fn get_p13(self) -> i32;
+
+    #[method(name = "set_P13", args = 1)]
+    pub fn set_p13(self, value: i32) -> ();
+
+    #[method(name = "get_P14", args = 0)]
+    pub fn get_p14(self) -> i32;
+
+    #[method(name = "set_P14", args = 1)]
+    pub fn set_p14(self, value: i32) -> ();
+
+    #[method(name = "get_P15", args = 0)]
+    pub fn get_p15(self) -> i32;
+
+    #[method(name = "set_P15", args = 1)]
+    pub fn set_p15(self, value: i32) -> ();
+
+    #[method(name = "get_P16", args = 0)]
+    pub fn get_p16(self) -> i32;
+
+    #[method(name = "set_P16", args = 1)]
+    pub fn set_p16(self, value: i32) -> ();
+
+    #[method(name = "get_P17", args = 0)]
+    pub fn get_p17(self) -> i32;
+
+    #[method(name = "set_P17", args = 1)]
+    pub fn set_p17(self, value: i32) -> ();
+
+    #[method(name = "get_P18", args = 0)]
+    pub fn get_p18(self) -> i32;
+
+    #[method(name = "set_P18", args = 1)]
+    pub fn set_p18(self, value: i32) -> ();
+
+    #[method(name = "get_P19", args = 0)]
+    pub fn get_p19(self) -> i32;
+
+    #[method(name = "set_P19", args = 1)]
+    pub fn set_p19(self, value: i32) -> ();
+
+    #[method(name = "get_P20", args = 0)]
+    pub fn get_p20(self) -> i32;
+
+    #[method(name = "set_P20", args = 1)]
+    pub fn set_p20(self, value: i32) -> ();
+
+    #[method(name = "GetResult", args = 3)]
+    pub fn get_result(name: ::unity2::Il2CppString, index: i32, value: i32) -> i32;
+
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[method(name = "OnRelease", args = 0)]
+    pub fn on_release(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-calculatortablesub2d")]
+impl CalculatorTableSub2D {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CalculatorTableSub2D),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICalculatorTableSub2DMethods>::ctor(this);
+        this
+    }
+}

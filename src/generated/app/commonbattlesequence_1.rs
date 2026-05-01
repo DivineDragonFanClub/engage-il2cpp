@@ -1,0 +1,186 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::collections::generic::list_1::IList_1;
+use crate::system::collections::generic::list_1::List_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/commonbattlesequence_1/CommonBattleSequence_1.md")))]
+#[::unity2::class(namespace = "App", name = "CommonBattleSequence`1")]
+pub struct CommonBattleSequence_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "m_Info")]
+    pub m_info: crate::app::battleinfo::BattleInfo,
+    #[rename(name = "m_SimInfo")]
+    pub m_sim_info: crate::app::battleinfo::BattleInfo,
+    #[rename(name = "m_Calculator")]
+    pub m_calculator: crate::app::battlecalculator::BattleCalculator,
+    #[rename(name = "m_SimCalculator")]
+    pub m_sim_calculator: crate::app::battlecalculator::BattleCalculator,
+    #[rename(name = "m_Reliances")]
+    pub m_reliances: crate::app::commonbattlesequence_1::CommonBattleSequence_1_RelianceList<T0>,
+}
+
+#[cfg(feature = "app-commonbattlesequence_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1<T0> {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_CanWaitSkip", args = 0)]
+    pub fn get_can_wait_skip(self) -> bool;
+
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "GetSide", args = 1)]
+    pub fn get_side(
+        self,
+        side: crate::app::battleside::BattleSide_Type,
+    ) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "GetOffenseSide", args = 0)]
+    pub fn get_offense_side(self) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "GetDefenseSide", args = 0)]
+    pub fn get_defense_side(self) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "GetUnit", args = 1)]
+    pub fn get_unit(self, side: crate::app::battleside::BattleSide_Type) -> crate::app::unit::Unit;
+
+    #[method(name = "GetOffenseUnit", args = 0)]
+    pub fn get_offense_unit(self) -> crate::app::unit::Unit;
+
+    #[method(name = "GetDefenseUnit", args = 0)]
+    pub fn get_defense_unit(self) -> crate::app::unit::Unit;
+
+    #[method(name = "GetWinSide", args = 0)]
+    pub fn get_win_side(self) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "GetDeadSide", args = 0)]
+    pub fn get_dead_side(self) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "IsEvent", args = 0)]
+    pub fn is_event(self) -> bool;
+
+    #[method(name = "IsSkip", args = 0)]
+    pub fn is_skip(self) -> bool;
+
+    #[method(name = "IsDead", args = 1)]
+    pub fn is_dead(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "CanGainReliance", args = 1)]
+    pub fn can_gain_reliance(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[method(name = "GainReliance", args = 0)]
+    pub fn gain_reliance(self) -> ();
+
+    #[method(name = "AddBattleReliance", args = 1)]
+    pub fn add_battle_reliance(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "AddRodReliance", args = 2)]
+    pub fn add_rod_reliance(
+        self,
+        unit: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "AddDanceReliance", args = 2)]
+    pub fn add_dance_reliance(
+        self,
+        unit: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "CanGainSituation", args = 0)]
+    pub fn can_gain_situation(self) -> bool;
+}
+
+#[cfg(feature = "app-commonbattlesequence_1")]
+impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CommonBattleSequence_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICommonBattleSequence_1Methods<T0>>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/commonbattlesequence_1/CommonBattleSequence_1_RelianceList.md")))]
+#[::unity2::class(namespace = "App", name = "CommonBattleSequence`1.RelianceList")]
+pub struct CommonBattleSequence_1_RelianceList<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-commonbattlesequence_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1_RelianceList<T0> {
+    #[method(name = "TryAdd", args = 3)]
+    pub fn try_add(
+        self,
+        unit: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        exp: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-commonbattlesequence_1")]
+impl<T0: ::unity2::ClassIdentity> CommonBattleSequence_1_RelianceList<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CommonBattleSequence_1_RelianceList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICommonBattleSequence_1_RelianceListMethods<T0>>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/commonbattlesequence_1/CommonBattleSequence_1_Reliance.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct CommonBattleSequence_1_Reliance<T0> {
+    pub _phantom: ::core::marker::PhantomData<(T0,)>,
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for CommonBattleSequence_1_Reliance<T0> {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "CommonBattleSequence`1.Reliance";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                .expect("generic instantiation")
+        })
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for CommonBattleSequence_1_Reliance<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

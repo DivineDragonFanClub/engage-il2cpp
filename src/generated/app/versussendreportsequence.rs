@@ -1,0 +1,220 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussendreportsequence/VersusSendReportSequence_EndCallback.md")))]
+#[::unity2::class(namespace = "App", name = "VersusSendReportSequence.EndCallback")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct VersusSendReportSequence_EndCallback {}
+
+#[cfg(feature = "app-versussendreportsequence")]
+#[::unity2::methods]
+impl VersusSendReportSequence_EndCallback {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, is_succeed: bool) -> ();
+}
+
+#[cfg(feature = "app-versussendreportsequence")]
+impl VersusSendReportSequence_EndCallback {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSendReportSequence_EndCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSendReportSequence_EndCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussendreportsequence/VersusSendReportSequence_UploadInfo.md")))]
+#[::unity2::class(namespace = "App", name = "VersusSendReportSequence.UploadInfo")]
+#[parent(crate::system::object::Object)]
+pub struct VersusSendReportSequence_UploadInfo {}
+
+#[cfg(feature = "app-versussendreportsequence")]
+#[::unity2::methods]
+impl VersusSendReportSequence_UploadInfo {
+    #[method(name = "set_DataId", args = 1)]
+    pub fn set_data_id(self, value: u64) -> ();
+
+    #[method(name = "get_DataId", args = 0)]
+    pub fn get_data_id(self) -> u64;
+
+    #[method(name = "set_ScreenShotId", args = 1)]
+    pub fn set_screen_shot_id(self, value: u64) -> ();
+
+    #[method(name = "get_ScreenShotId", args = 0)]
+    pub fn get_screen_shot_id(self) -> u64;
+
+    #[method(name = "set_Reason", args = 1)]
+    pub fn set_reason(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Reason", args = 0)]
+    pub fn get_reason(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_PrincipalId", args = 1)]
+    pub fn set_principal_id(self, value: u64) -> ();
+
+    #[method(name = "get_PrincipalId", args = 0)]
+    pub fn get_principal_id(self) -> u64;
+
+    #[method(name = "set_Language", args = 1)]
+    pub fn set_language(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Language", args = 0)]
+    pub fn get_language(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-versussendreportsequence")]
+impl VersusSendReportSequence_UploadInfo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSendReportSequence_UploadInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSendReportSequence_UploadInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussendreportsequence/VersusSendReportSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct VersusSendReportSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for VersusSendReportSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "VersusSendReportSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for VersusSendReportSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl VersusSendReportSequence_Label {
+    pub fn error() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussendreportsequence/VersusSendReportSequence.md")))]
+#[::unity2::class(namespace = "App", name = "VersusSendReportSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct VersusSendReportSequence {
+    #[rename(name = "m_Info")]
+    pub m_info: crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
+    #[rename(name = "m_EndCallback")]
+    pub m_end_callback: crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
+    #[rename(name = "m_IsSucceed")]
+    pub m_is_succeed: bool,
+    #[static_field]
+    #[rename(name = "s_SendCount")]
+    pub s_send_count: i32,
+    #[static_field]
+    #[rename(name = "MAX_SEND_COUNT")]
+    pub max_send_count: i32,
+}
+
+#[cfg(feature = "app-versussendreportsequence")]
+#[::unity2::methods]
+impl VersusSendReportSequence {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        info: crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
+        end_callback: crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
+    ) -> ();
+
+    #[method(name = "SendReport", args = 0)]
+    pub fn send_report(self) -> ();
+
+    #[method(name = "AddList", args = 0)]
+    pub fn add_list(self) -> ();
+
+    #[method(name = "GetResult", args = 1)]
+    pub fn get_result(
+        self,
+        message: ::unity2::Il2CppString,
+    ) -> crate::app::nexversus::NexVersus_Results;
+
+    #[method(name = "Branch", args = 0)]
+    pub fn branch(self) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        info: crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
+        end_callback: crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-versussendreportsequence")]
+impl VersusSendReportSequence {
+    pub fn new(
+        info: crate::app::versussendreportsequence::VersusSendReportSequence_UploadInfo,
+        end_callback: crate::app::versussendreportsequence::VersusSendReportSequence_EndCallback,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSendReportSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSendReportSequenceMethods>::ctor(this, info, end_callback);
+        this
+    }
+}

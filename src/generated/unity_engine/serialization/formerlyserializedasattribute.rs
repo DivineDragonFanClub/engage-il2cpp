@@ -1,0 +1,34 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/serialization/formerlyserializedasattribute/FormerlySerializedAsAttribute.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Serialization",
+    name = "FormerlySerializedAsAttribute"
+)]
+pub struct FormerlySerializedAsAttribute {
+    #[rename(name = "m_oldName")]
+    pub m_old_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "unity_engine-serialization-formerlyserializedasattribute")]
+#[::unity2::methods]
+impl FormerlySerializedAsAttribute {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, old_name: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "unity_engine-serialization-formerlyserializedasattribute")]
+impl FormerlySerializedAsAttribute {
+    pub fn new(old_name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FormerlySerializedAsAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFormerlySerializedAsAttributeMethods>::ctor(this, old_name);
+        this
+    }
+}

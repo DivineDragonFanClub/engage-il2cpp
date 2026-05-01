@@ -1,0 +1,96 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scripting/garbagecollector/GarbageCollector_Mode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GarbageCollector_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GarbageCollector_Mode {
+    const NAMESPACE: &'static str = "UnityEngine.Scripting";
+
+    const NAME: &'static str = "GarbageCollector.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GarbageCollector_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GarbageCollector_Mode {
+    pub fn disabled() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn enabled() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn manual() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scripting/garbagecollector/GarbageCollector.md")))]
+#[::unity2::class(namespace = "UnityEngine.Scripting", name = "GarbageCollector")]
+#[parent(crate::system::object::Object)]
+pub struct GarbageCollector {
+    #[static_field]
+    #[rename(name = "GCModeChanged")]
+    pub gc_mode_changed: crate::system::action_1::Action_1<
+        crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
+    >,
+}
+
+#[cfg(feature = "unity_engine-scripting-garbagecollector")]
+#[::unity2::methods]
+impl GarbageCollector {
+    #[method(name = "get_GCMode", args = 0)]
+    pub fn get_gc_mode() -> crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode;
+
+    #[method(name = "set_GCMode", args = 1)]
+    pub fn set_gc_mode(
+        value: crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
+    ) -> ();
+
+    #[method(name = "SetMode", args = 1)]
+    pub fn set_mode(
+        mode: crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
+    ) -> ();
+
+    #[method(name = "GetMode", args = 0)]
+    pub fn get_mode() -> crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode;
+
+    #[method(name = "get_isIncremental", args = 0)]
+    pub fn get_is_incremental() -> bool;
+
+    #[method(name = "get_incrementalTimeSliceNanoseconds", args = 0)]
+    pub fn get_incremental_time_slice_nanoseconds() -> u64;
+
+    #[method(name = "set_incrementalTimeSliceNanoseconds", args = 1)]
+    pub fn set_incremental_time_slice_nanoseconds(value: u64) -> ();
+}

@@ -1,0 +1,262 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/stick/Stick.md")))]
+#[::unity2::class(namespace = "App.Squat", name = "Stick")]
+#[parent(crate::system::object::Object)]
+pub struct Stick {
+    #[static_field]
+    #[rename(name = "cStickEnablePower")]
+    pub c_stick_enable_power: f32,
+    #[static_field]
+    #[rename(name = "cStickNeutralPower")]
+    pub c_stick_neutral_power: f32,
+    #[static_field]
+    #[rename(name = "cStickRotatePower")]
+    pub c_stick_rotate_power: f32,
+    #[static_field]
+    #[rename(name = "cRotateCountMaxSec")]
+    pub c_rotate_count_max_sec: f32,
+    #[static_field]
+    #[rename(name = "cRotationOKDir")]
+    pub c_rotation_ok_dir: f32,
+    #[rename(name = "m_StickX")]
+    pub m_stick_x: f32,
+    #[rename(name = "m_StickY")]
+    pub m_stick_y: f32,
+    #[rename(name = "m_Power")]
+    pub m_power: f32,
+    #[rename(name = "m_DirNow")]
+    pub m_dir_now: f32,
+    #[rename(name = "m_DirPast")]
+    pub m_dir_past: f32,
+    #[rename(name = "m_TotalRotateDir")]
+    pub m_total_rotate_dir: f32,
+    #[rename(name = "m_RotCount")]
+    pub m_rot_count: i32,
+    #[rename(name = "m_KeepRotCount")]
+    pub m_keep_rot_count: i32,
+    #[rename(name = "m_Rot")]
+    pub m_rot: crate::app::squat::stick::Stick_RotateDir,
+    #[rename(name = "m_DirLogger")]
+    pub m_dir_logger: crate::system::collections::generic::list_1::List_1<i32>,
+    #[rename(name = "m_LoggerTimer")]
+    pub m_logger_timer: f32,
+}
+
+#[cfg(feature = "app-squat-stick")]
+#[::unity2::methods]
+impl Stick {
+    #[method(name = "get_IsRight", args = 0)]
+    pub fn get_is_right(self) -> bool;
+
+    #[method(name = "set_IsRight", args = 1)]
+    pub fn set_is_right(self, value: bool) -> ();
+
+    #[method(name = "get_IsNeutral", args = 0)]
+    pub fn get_is_neutral(self) -> bool;
+
+    #[method(name = "set_IsNeutral", args = 1)]
+    pub fn set_is_neutral(self, value: bool) -> ();
+
+    #[method(name = "get_IsEclypse", args = 0)]
+    pub fn get_is_eclypse(self) -> bool;
+
+    #[method(name = "set_IsEclypse", args = 1)]
+    pub fn set_is_eclypse(self, value: bool) -> ();
+
+    #[method(name = "get_IsWatchClockwise", args = 0)]
+    pub fn get_is_watch_clockwise(self) -> bool;
+
+    #[method(name = "set_IsWatchClockwise", args = 1)]
+    pub fn set_is_watch_clockwise(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, set_right: bool) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[method(name = "ResetClockwise", args = 0)]
+    pub fn reset_clockwise(self) -> ();
+
+    #[method(name = "TriggerRight", args = 1)]
+    pub fn trigger_right(self, check_call: bool) -> bool;
+
+    #[method(name = "TriggerLeft", args = 1)]
+    pub fn trigger_left(self, check_call: bool) -> bool;
+
+    #[method(name = "TriggerUp", args = 1)]
+    pub fn trigger_up(self, check_call: bool) -> bool;
+
+    #[method(name = "TriggerDown", args = 1)]
+    pub fn trigger_down(self, check_call: bool) -> bool;
+
+    #[method(name = "CheckAnyTrigger", args = 0)]
+    pub fn check_any_trigger(self) -> bool;
+
+    #[method(name = "IsClockwise", args = 0)]
+    pub fn is_clockwise(self) -> bool;
+
+    #[method(name = "IsUnClockwise", args = 0)]
+    pub fn is_un_clockwise(self) -> bool;
+
+    #[method(name = "IsEclypseStart", args = 0)]
+    pub fn is_eclypse_start(self) -> bool;
+}
+
+#[cfg(feature = "app-squat-stick")]
+impl Stick {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Stick),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStickMethods>::ctor(this);
+        this
+    }
+
+    pub fn new_2(set_right: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Stick),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IStickMethods>::ctor_2(this, set_right);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/stick/Stick_RotateDir.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Stick_RotateDir {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Stick_RotateDir {
+    const NAMESPACE: &'static str = "App.Squat";
+
+    const NAME: &'static str = "Stick.RotateDir";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Stick_RotateDir {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Stick_RotateDir {
+    pub fn stop() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn clock_wise() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn un_clock_wise() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/stick/Stick_KeyDirection.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Stick_KeyDirection {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Stick_KeyDirection {
+    const NAMESPACE: &'static str = "App.Squat";
+
+    const NAME: &'static str = "Stick.KeyDirection";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Stick_KeyDirection {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Stick_KeyDirection {
+    pub fn dir_up() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn dir_up_right() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn dir_right() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn dir_down_right() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn dir_down() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn dir_down_left() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn dir_left() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn dir_up_left() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn dir_count() -> Self {
+        Self { value: 8 }
+    }
+}

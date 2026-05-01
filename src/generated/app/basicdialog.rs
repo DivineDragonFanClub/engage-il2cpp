@@ -1,0 +1,88 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicdialog/BasicDialog.md")))]
+#[::unity2::class(namespace = "App", name = "BasicDialog")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct BasicDialog {
+    #[rename(name = "m_dialogContent")]
+    pub m_dialog_content: crate::app::basicdialogcontent::BasicDialogContent,
+    #[rename(name = "m_bBindBg")]
+    pub m_b_bind_bg: bool,
+    #[rename(name = "m_IsNotBindBg")]
+    pub m_is_not_bind_bg: bool,
+}
+
+#[cfg(feature = "app-basicdialog")]
+#[::unity2::methods]
+impl BasicDialog {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> ();
+
+    #[method(name = "CreateDefaultDesc", args = 0)]
+    pub fn create_default_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "BindBg", args = 0)]
+    pub fn bind_bg(self) -> ();
+
+    #[method(name = "AfterBuild", args = 0)]
+    pub fn after_build(self) -> ();
+
+    #[method(name = "GetOpenSoundEvent", args = 0)]
+    pub fn get_open_sound_event(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "OnClose", args = 0)]
+    pub fn on_close(self) -> ();
+
+    #[method(name = "SetText", args = 1)]
+    pub fn set_text(self, text: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "SetShadowOff", args = 0)]
+    pub fn set_shadow_off(self) -> ();
+
+    #[method(name = "SetPos", args = 2)]
+    pub fn set_pos(self, x: f32, y: f32) -> ();
+
+    #[method(name = "SetBackgroundBlurOff", args = 0)]
+    pub fn set_background_blur_off(self) -> ();
+
+    #[method(name = "CreateBasicDialogBind", args = 2)]
+    pub fn create_basic_dialog_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> crate::app::basicdialog::BasicDialog;
+}
+
+#[cfg(feature = "app-basicdialog")]
+impl BasicDialog {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BasicDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBasicDialogMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}

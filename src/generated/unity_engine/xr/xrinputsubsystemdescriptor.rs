@@ -1,0 +1,35 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::integratedsubsystemdescriptor::IIntegratedSubsystemDescriptor;
+use crate::unity_engine::integratedsubsystemdescriptor::IntegratedSubsystemDescriptor;
+use crate::unity_engine::integratedsubsystemdescriptor_1::IIntegratedSubsystemDescriptor_1;
+use crate::unity_engine::integratedsubsystemdescriptor_1::IntegratedSubsystemDescriptor_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/xrinputsubsystemdescriptor/XRInputSubsystemDescriptor.md")))]
+#[::unity2::class(namespace = "UnityEngine.XR", name = "XRInputSubsystemDescriptor")]
+# [parent (crate :: unity_engine :: integratedsubsystemdescriptor_1 :: IntegratedSubsystemDescriptor_1 < crate :: unity_engine :: xr :: xrinputsubsystem :: XRInputSubsystem >)]
+pub struct XRInputSubsystemDescriptor {}
+
+#[cfg(feature = "unity_engine-xr-xrinputsubsystemdescriptor")]
+#[::unity2::methods]
+impl XRInputSubsystemDescriptor {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-xr-xrinputsubsystemdescriptor")]
+impl XRInputSubsystemDescriptor {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(XRInputSubsystemDescriptor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IXRInputSubsystemDescriptorMethods>::ctor(this);
+        this
+    }
+}

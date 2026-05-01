@@ -1,0 +1,37 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/moonsharpvisibleattribute/MoonSharpVisibleAttribute.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "MoonSharpVisibleAttribute"
+)]
+pub struct MoonSharpVisibleAttribute {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-moonsharpvisibleattribute")]
+#[::unity2::methods]
+impl MoonSharpVisibleAttribute {
+    #[method(name = "get_Visible", args = 0)]
+    pub fn get_visible(self) -> bool;
+
+    #[method(name = "set_Visible", args = 1)]
+    pub fn set_visible(self, value: bool) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, visible: bool) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-moonsharpvisibleattribute")]
+impl MoonSharpVisibleAttribute {
+    pub fn new(visible: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MoonSharpVisibleAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMoonSharpVisibleAttributeMethods>::ctor(this, visible);
+        this
+    }
+}

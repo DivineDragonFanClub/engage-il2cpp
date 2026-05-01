@@ -1,0 +1,30 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/listpool_1/ListPool_1.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "ListPool`1")]
+pub struct ListPool_1<T0: ::unity2::ClassIdentity> {
+    #[static_field]
+    #[rename(name = "s_ListPool")]
+    pub s_list_pool: crate::unity_engine::ui::objectpool_1::ObjectPool_1<
+        crate::system::collections::generic::list_1::List_1<T0>,
+    >,
+}
+
+#[cfg(feature = "unity_engine-ui-listpool_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> ListPool_1<T0> {
+    #[method(name = "Clear", args = 1)]
+    pub fn clear(l: crate::system::collections::generic::list_1::List_1<T0>) -> ();
+
+    #[method(name = "Get", args = 0)]
+    pub fn get() -> crate::system::collections::generic::list_1::List_1<T0>;
+
+    #[method(name = "Release", args = 1)]
+    pub fn release(to_release: crate::system::collections::generic::list_1::List_1<T0>) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

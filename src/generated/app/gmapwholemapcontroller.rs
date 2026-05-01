@@ -1,0 +1,93 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapwholemapcontroller/GmapWholeMapController.md")))]
+#[::unity2::class(namespace = "App", name = "GmapWholeMapController")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct GmapWholeMapController {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "GmapGodPath")]
+    pub gmap_god_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "GmapEvilPath")]
+    pub gmap_evil_path: ::unity2::Il2CppString,
+    #[rename(name = "m_MapImageBefore")]
+    pub m_map_image_before: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_MapImageAfter")]
+    pub m_map_image_after: crate::unity_engine::sprite::Sprite,
+    #[static_field]
+    #[rename(name = "s_LoadedPath")]
+    pub s_loaded_path: ::unity2::Il2CppString,
+    #[rename(name = "m_CanvasGroup")]
+    pub m_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+    #[rename(name = "m_Alpha")]
+    pub m_alpha: crate::app::interpolatorfloat::InterpolatorFloat,
+}
+
+#[cfg(feature = "app-gmapwholemapcontroller")]
+#[::unity2::methods]
+impl GmapWholeMapController {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "Create", args = 0)]
+    pub fn create() -> crate::app::gmapwholemapcontroller::GmapWholeMapController;
+
+    #[method(name = "Destroy", args = 1)]
+    pub fn destroy(content: crate::app::gmapwholemapcontroller::GmapWholeMapController) -> ();
+
+    #[method(name = "GetDlcPath", args = 0)]
+    pub fn get_dlc_path() -> ::unity2::Il2CppString;
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "SetSprite", args = 0)]
+    pub fn set_sprite(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "SetAlpha", args = 2)]
+    pub fn set_alpha(self, alpha: f32, time: f32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-gmapwholemapcontroller")]
+impl GmapWholeMapController {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapWholeMapController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapWholeMapControllerMethods>::ctor(this);
+        this
+    }
+}

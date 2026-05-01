@@ -1,0 +1,181 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::baseraycaster::BaseRaycaster;
+use crate::unity_engine::event_systems::baseraycaster::IBaseRaycaster;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/graphicraycaster/GraphicRaycaster.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "GraphicRaycaster")]
+#[parent(crate::unity_engine::event_systems::baseraycaster::BaseRaycaster)]
+pub struct GraphicRaycaster {
+    #[static_field]
+    #[rename(name = "kNoEventMaskSet")]
+    pub k_no_event_mask_set: i32,
+    #[rename(name = "m_IgnoreReversedGraphics")]
+    pub m_ignore_reversed_graphics: bool,
+    #[rename(name = "m_BlockingObjects")]
+    pub m_blocking_objects:
+        crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects,
+    #[rename(name = "m_BlockingMask")]
+    pub m_blocking_mask: crate::unity_engine::layermask::LayerMask,
+    #[rename(name = "m_Canvas")]
+    pub m_canvas: crate::unity_engine::canvas::Canvas,
+    #[rename(name = "m_RaycastResults")]
+    pub m_raycast_results: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::ui::graphic::Graphic,
+    >,
+    #[static_field]
+    #[rename(name = "s_SortedGraphics")]
+    pub s_sorted_graphics: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::ui::graphic::Graphic,
+    >,
+}
+
+#[cfg(feature = "unity_engine-ui-graphicraycaster")]
+#[::unity2::methods]
+impl GraphicRaycaster {
+    #[method(name = "get_sortOrderPriority", args = 0)]
+    pub fn get_sort_order_priority(self) -> i32;
+
+    #[method(name = "get_renderOrderPriority", args = 0)]
+    pub fn get_render_order_priority(self) -> i32;
+
+    #[method(name = "get_ignoreReversedGraphics", args = 0)]
+    pub fn get_ignore_reversed_graphics(self) -> bool;
+
+    #[method(name = "set_ignoreReversedGraphics", args = 1)]
+    pub fn set_ignore_reversed_graphics(self, value: bool) -> ();
+
+    #[method(name = "get_blockingObjects", args = 0)]
+    pub fn get_blocking_objects(
+        self,
+    ) -> crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects;
+
+    #[method(name = "set_blockingObjects", args = 1)]
+    pub fn set_blocking_objects(
+        self,
+        value: crate::unity_engine::ui::graphicraycaster::GraphicRaycaster_BlockingObjects,
+    ) -> ();
+
+    #[method(name = "get_blockingMask", args = 0)]
+    pub fn get_blocking_mask(self) -> crate::unity_engine::layermask::LayerMask;
+
+    #[method(name = "set_blockingMask", args = 1)]
+    pub fn set_blocking_mask(self, value: crate::unity_engine::layermask::LayerMask) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_canvas", args = 0)]
+    pub fn get_canvas(self) -> crate::unity_engine::canvas::Canvas;
+
+    #[method(name = "Raycast", args = 2)]
+    pub fn raycast(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        result_append_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::event_systems::raycastresult::RaycastResult,
+        >,
+    ) -> ();
+
+    #[method(name = "get_eventCamera", args = 0)]
+    pub fn get_event_camera(self) -> crate::unity_engine::camera::Camera;
+
+    #[method(name = "Raycast", args = 5)]
+    pub fn raycast_2(
+        canvas: crate::unity_engine::canvas::Canvas,
+        event_camera: crate::unity_engine::camera::Camera,
+        pointer_position: crate::unity_engine::vector2::Vector2,
+        found_graphics: crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+            crate::unity_engine::ui::graphic::Graphic,
+        >,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::ui::graphic::Graphic,
+        >,
+    ) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-graphicraycaster")]
+impl GraphicRaycaster {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GraphicRaycaster),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGraphicRaycasterMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/graphicraycaster/GraphicRaycaster_BlockingObjects.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GraphicRaycaster_BlockingObjects {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GraphicRaycaster_BlockingObjects {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "GraphicRaycaster.BlockingObjects";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GraphicRaycaster_BlockingObjects {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GraphicRaycaster_BlockingObjects {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn two_d() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn three_d() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn all() -> Self {
+        Self { value: 3 }
+    }
+}

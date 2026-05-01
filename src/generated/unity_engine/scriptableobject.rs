@@ -1,0 +1,49 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scriptableobject/ScriptableObject.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "ScriptableObject")]
+#[parent(crate::unity_engine::object_2::Object_2)]
+pub struct ScriptableObject {}
+
+#[cfg(feature = "unity_engine-scriptableobject")]
+#[::unity2::methods]
+impl ScriptableObject {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "CreateInstance", args = 1)]
+    pub fn create_instance(
+        r#type: ::unity2::SystemType,
+    ) -> crate::unity_engine::scriptableobject::ScriptableObject;
+
+    #[method(name = "CreateScriptableObject", args = 1)]
+    pub fn create_scriptable_object(
+        self_: crate::unity_engine::scriptableobject::ScriptableObject,
+    ) -> ();
+
+    #[method(name = "CreateScriptableObjectInstanceFromType", args = 2)]
+    pub fn create_scriptable_object_instance_from_type(
+        r#type: ::unity2::SystemType,
+        apply_defaults_and_reset: bool,
+    ) -> crate::unity_engine::scriptableobject::ScriptableObject;
+}
+
+#[cfg(feature = "unity_engine-scriptableobject")]
+impl ScriptableObject {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptableObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptableObjectMethods>::ctor(this);
+        this
+    }
+}

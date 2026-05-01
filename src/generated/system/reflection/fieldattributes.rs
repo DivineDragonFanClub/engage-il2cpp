@@ -1,0 +1,120 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/fieldattributes/FieldAttributes.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FieldAttributes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FieldAttributes {
+    const NAMESPACE: &'static str = "System.Reflection";
+
+    const NAME: &'static str = "FieldAttributes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FieldAttributes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FieldAttributes {
+    pub fn field_access_mask() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn private_scope() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn private() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn fam_and_assem() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn assembly() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn family() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn fam_or_assem() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn public() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn r#static() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn init_only() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn literal() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn not_serialized() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn special_name() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn pinvoke_impl() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn reserved_mask() -> Self {
+        Self { value: 38144 }
+    }
+
+    pub fn rt_special_name() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn has_field_marshal() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn has_default() -> Self {
+        Self { value: 32768 }
+    }
+
+    pub fn has_field_rva() -> Self {
+        Self { value: 256 }
+    }
+}

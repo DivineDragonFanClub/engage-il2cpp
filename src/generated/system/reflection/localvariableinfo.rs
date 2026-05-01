@@ -1,0 +1,41 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/localvariableinfo/LocalVariableInfo.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "LocalVariableInfo")]
+#[parent(crate::system::object::Object)]
+pub struct LocalVariableInfo {
+    #[rename(name = "type")]
+    pub r#type: ::unity2::SystemType,
+    #[rename(name = "is_pinned")]
+    pub is_pinned: bool,
+    #[rename(name = "position")]
+    pub position: u16,
+}
+
+#[cfg(feature = "system-reflection-localvariableinfo")]
+#[::unity2::methods]
+impl LocalVariableInfo {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "system-reflection-localvariableinfo")]
+impl LocalVariableInfo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LocalVariableInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILocalVariableInfoMethods>::ctor(this);
+        this
+    }
+}

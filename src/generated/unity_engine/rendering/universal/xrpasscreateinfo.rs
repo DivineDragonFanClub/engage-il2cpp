@@ -1,0 +1,42 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/xrpasscreateinfo/XRPassCreateInfo.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct XRPassCreateInfo {
+    pub multipass_id: i32,
+    pub culling_pass_id: i32,
+    pub render_target: crate::unity_engine::rendertexture::RenderTexture,
+    pub render_target_desc: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+    pub render_target_is_render_texture: bool,
+    pub culling_parameters:
+        crate::unity_engine::rendering::scriptablecullingparameters::ScriptableCullingParameters,
+    pub custom_mirror_view:
+        crate::unity_engine::rendering::universal::xrpass::XRPass_CustomMirrorView,
+}
+
+impl ::unity2::ClassIdentity for XRPassCreateInfo {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "XRPassCreateInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for XRPassCreateInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

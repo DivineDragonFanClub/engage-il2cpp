@@ -1,0 +1,280 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::procscenesequence_1::IProcSceneSequence_1;
+use crate::app::procscenesequence_1::ProcSceneSequence_1;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Shop.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubAccessoryRoom_Shop {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubAccessoryRoom_Shop {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubAccessoryRoom.Shop";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubAccessoryRoom_Shop {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubAccessoryRoom_Shop {
+    pub fn hub() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn amiibo() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_ViewMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubAccessoryRoom_ViewMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubAccessoryRoom_ViewMode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubAccessoryRoom.ViewMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubAccessoryRoom_ViewMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubAccessoryRoom_ViewMode {
+    pub fn unit_select() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn accessory_select() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn preview() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom.md")))]
+#[::unity2::class(namespace = "App", name = "HubAccessoryRoom")]
+# [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubaccessoryroom :: HubAccessoryRoom >)]
+pub struct HubAccessoryRoom {
+    #[rename(name = "_DisableList")]
+    pub disable_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_Shop")]
+    pub m_shop: crate::app::hubaccessoryroom::HubAccessoryRoom_Shop,
+    #[rename(name = "m_LastResultHash")]
+    pub m_last_result_hash: i32,
+    #[rename(name = "m_Character")]
+    pub m_character: crate::combat::character::Character,
+    #[rename(name = "m_LoadingAppearance")]
+    pub m_loading_appearance: crate::combat::characterappearance::CharacterAppearance,
+    #[rename(name = "m_LoadingChara")]
+    pub m_loading_chara: crate::combat::character::Character,
+    #[rename(name = "m_LastPID")]
+    pub m_last_pid: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-hubaccessoryroom")]
+#[::unity2::methods]
+impl HubAccessoryRoom {
+    #[method(name = "get_SceneName", args = 0)]
+    pub fn get_scene_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_ReturnSceneName", args = 0)]
+    pub fn get_return_scene_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "SetUnit", args = 4)]
+    pub fn set_unit(
+        base_unit: crate::app::unit::Unit,
+        accessory_data: crate::app::accessorydata::AccessoryData,
+        is_delay_load: bool,
+        is_amiibo: bool,
+    ) -> ();
+
+    #[method(name = "SetViewMode", args = 1)]
+    pub fn set_view_mode(position: crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, shop: crate::app::hubaccessoryroom::HubAccessoryRoom_Shop) -> ();
+
+    #[method(name = "AdditiveScene", args = 0)]
+    pub fn additive_scene(self) -> ();
+
+    #[method(name = "OpenTitle", args = 0)]
+    pub fn open_title(self) -> ();
+
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
+
+    #[method(name = "UnAdditiveScene", args = 0)]
+    pub fn un_additive_scene(self) -> ();
+
+    #[method(name = "Exit", args = 0)]
+    pub fn exit(self) -> ();
+
+    #[method(name = "ExitOther", args = 0)]
+    pub fn exit_other(self) -> ();
+
+    #[method(name = "ExitAfter", args = 0)]
+    pub fn exit_after(self) -> ();
+
+    #[method(name = "IsCharacterLoading", args = 0)]
+    pub fn is_character_loading(self) -> bool;
+
+    #[method(name = "Main", args = 0)]
+    pub fn main(self) -> ();
+
+    #[method(name = "get_CameraPos", args = 0)]
+    pub fn get_camera_pos(self) -> crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera;
+
+    #[method(name = "set_CameraPos", args = 1)]
+    pub fn set_camera_pos(
+        self,
+        value: crate::app::hubaccessoryroomcamera::HubAccessoryRoomCamera,
+    ) -> ();
+
+    #[method(name = "LoadCharacter", args = 2)]
+    pub fn load_character(
+        self,
+        appearance: crate::combat::characterappearance::CharacterAppearance,
+        pid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "DestroyCurrentChar", args = 0)]
+    pub fn destroy_current_char(self) -> ();
+
+    #[method(name = "SetViewModeCore", args = 1)]
+    pub fn set_view_mode_core(
+        self,
+        mode: crate::app::hubaccessoryroom::HubAccessoryRoom_ViewMode,
+    ) -> ();
+
+    #[method(name = "OnShutdown", args = 0)]
+    pub fn on_shutdown(self) -> ();
+
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        shop: crate::app::hubaccessoryroom::HubAccessoryRoom_Shop,
+    ) -> ();
+}
+
+#[cfg(feature = "app-hubaccessoryroom")]
+impl HubAccessoryRoom {
+    pub fn new(shop: crate::app::hubaccessoryroom::HubAccessoryRoom_Shop) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubAccessoryRoom),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubAccessoryRoomMethods>::ctor(this, shop);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessoryroom/HubAccessoryRoom_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubAccessoryRoom_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubAccessoryRoom_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubAccessoryRoom.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubAccessoryRoom_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubAccessoryRoom_Label {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn init() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn main() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 3 }
+    }
+}

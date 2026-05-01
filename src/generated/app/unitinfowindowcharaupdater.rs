@@ -1,0 +1,167 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater.md")))]
+#[::unity2::class(namespace = "App", name = "UnitInfoWindowCharaUpdater")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct UnitInfoWindowCharaUpdater {
+    #[rename(name = "m_IsRequestToPlayBody")]
+    pub m_is_request_to_play_body: bool,
+    #[rename(name = "m_IsRequestToPlayFace")]
+    pub m_is_request_to_play_face: bool,
+    #[rename(name = "m_BodyAnimHash")]
+    pub m_body_anim_hash: i32,
+    #[rename(name = "m_BodyAnimTransitionDuration")]
+    pub m_body_anim_transition_duration: f32,
+    #[rename(name = "m_FaceAnimHash")]
+    pub m_face_anim_hash: i32,
+    #[rename(name = "m_IsRequestToSetParam")]
+    pub m_is_request_to_set_param: bool,
+    #[rename(name = "m_BodyParamHash")]
+    pub m_body_param_hash: i32,
+    #[rename(name = "m_BodyParamValue")]
+    pub m_body_param_value: bool,
+    #[rename(name = "m_IsRequestToWeapon")]
+    pub m_is_request_to_weapon: bool,
+    #[rename(name = "m_RequestWeapon")]
+    pub m_request_weapon: crate::app::itemdata::ItemData,
+    #[rename(name = "m_AnimeChangeWaitCount")]
+    pub m_anime_change_wait_count: i32,
+    #[rename(name = "m_CameraObject")]
+    pub m_camera_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_CharaImageSimple")]
+    pub m_chara_image_simple: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_DefaultZoomCameraLocalHeight")]
+    pub m_default_zoom_camera_local_height: f32,
+    #[rename(name = "m_HeadLookAtObj")]
+    pub m_head_look_at_obj: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_IsRequestToOffset")]
+    pub m_is_request_to_offset: bool,
+}
+
+#[cfg(feature = "app-unitinfowindowcharaupdater")]
+#[::unity2::methods]
+impl UnitInfoWindowCharaUpdater {
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "TryUpdateOffset", args = 1)]
+    pub fn try_update_offset(self, chara: crate::combat::character::Character) -> bool;
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = "IsBodyAnimEnd", args = 0)]
+    pub fn is_body_anim_end(self) -> bool;
+
+    #[method(name = "TrySameBodyAnimHash", args = 1)]
+    pub fn try_same_body_anim_hash(self, anim_hash: i32) -> bool;
+
+    #[method(name = "RequestToPlayBody", args = 2)]
+    pub fn request_to_play_body(self, body_anim_hash: i32, transition_duration: f32) -> bool;
+
+    #[method(name = "PlayBodyForced", args = 0)]
+    pub fn play_body_forced(self) -> ();
+
+    #[method(name = "RequestToPlayFace", args = 2)]
+    pub fn request_to_play_face(self, face_anim_hash: i32, is_forced: bool) -> ();
+
+    #[method(name = "RequestToShowWeapon", args = 1)]
+    pub fn request_to_show_weapon(self, item: crate::app::itemdata::ItemData) -> ();
+
+    #[method(name = "RequestToSetParam", args = 2)]
+    pub fn request_to_set_param(self, body_param_hash: i32, value: bool) -> ();
+
+    #[method(name = "SetCameraObject", args = 1)]
+    pub fn set_camera_object(
+        self,
+        camera_object: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[method(name = "SetCharaImage", args = 1)]
+    pub fn set_chara_image(self, image_simple: crate::unity_engine::ui::image::Image) -> ();
+
+    #[method(name = "TrySetCameraAdjustY", args = 0)]
+    pub fn try_set_camera_adjust_y(self) -> ();
+
+    #[method(name = "ResetAnimeRequest", args = 0)]
+    pub fn reset_anime_request(self) -> ();
+
+    #[method(name = "ShowImages", args = 0)]
+    pub fn show_images(self) -> ();
+
+    #[method(name = "HideImages", args = 0)]
+    pub fn hide_images(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitinfowindowcharaupdater")]
+impl UnitInfoWindowCharaUpdater {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitInfoWindowCharaUpdater),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitInfoWindowCharaUpdaterMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater_StatusScope.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct UnitInfoWindowCharaUpdater_StatusScope {
+    pub m_character: crate::combat::character::Character,
+    pub m_play_hash: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitInfoWindowCharaUpdater_StatusScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitInfoWindowCharaUpdater.StatusScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitInfoWindowCharaUpdater_StatusScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-unitinfowindowcharaupdater")]
+#[::unity2::methods(value)]
+impl UnitInfoWindowCharaUpdater_StatusScope {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, chara: crate::combat::character::Character) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}

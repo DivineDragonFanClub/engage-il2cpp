@@ -1,0 +1,138 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/verticallayoutui/VerticalLayoutUI.md")))]
+#[::unity2::class(namespace = "Combat", name = "VerticalLayoutUI")]
+#[parent(crate::system::object::Object)]
+pub struct VerticalLayoutUI {
+    #[rename(name = "DefaultHighlightedColor")]
+    pub default_highlighted_color: crate::unity_engine::color::Color,
+    #[rename(name = "DefaultPressedColor")]
+    pub default_pressed_color: crate::unity_engine::color::Color,
+    #[rename(name = "DefaultSelectedColor")]
+    pub default_selected_color: crate::unity_engine::color::Color,
+    #[rename(name = "DefaultTextAnchor")]
+    pub default_text_anchor: crate::unity_engine::textanchor::TextAnchor,
+    #[rename(name = "DefaultWidgetWidth")]
+    pub default_widget_width: f32,
+    #[rename(name = "DefaultWidgetHeight")]
+    pub default_widget_height: f32,
+    #[rename(name = "DefaultItemMargin")]
+    pub default_item_margin: f32,
+    #[rename(name = "DefaultFontSize")]
+    pub default_font_size: i32,
+    #[rename(name = "DefaultFontColor")]
+    pub default_font_color: crate::unity_engine::color::Color,
+    #[rename(name = "UseTextOutline")]
+    pub use_text_outline: bool,
+    #[rename(name = "m_InitialPosition")]
+    pub m_initial_position: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_CurrentPosition")]
+    pub m_current_position: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_Canvas")]
+    pub m_canvas: crate::unity_engine::canvas::Canvas,
+    #[rename(name = "m_bInitialSelected")]
+    pub m_b_initial_selected: bool,
+    #[rename(name = "m_Widgets")]
+    pub m_widgets: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+}
+
+#[cfg(feature = "combat-verticallayoutui")]
+#[::unity2::methods]
+impl VerticalLayoutUI {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        canvas: crate::unity_engine::canvas::Canvas,
+        anchor: crate::unity_engine::vector3::Vector3,
+    ) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "Text", args = 1)]
+    pub fn text(self, text: ::unity2::Il2CppString) -> crate::unity_engine::ui::text::Text;
+
+    #[method(name = "Button", args = 2)]
+    pub fn button(
+        self,
+        text: ::unity2::Il2CppString,
+        on_pressed: crate::system::action::Action,
+    ) -> crate::unity_engine::ui::button::Button;
+
+    #[method(name = "MinimizeLeft", args = 1)]
+    pub fn minimize_left(
+        button: crate::unity_engine::ui::button::Button,
+    ) -> crate::unity_engine::ui::button::Button;
+
+    #[method(name = "MakeStr", args = 2)]
+    pub fn make_str(label: ::unity2::Il2CppString, value: f32) -> ::unity2::Il2CppString;
+
+    #[method(name = "Dropdown", args = 3)]
+    pub fn dropdown(
+        self,
+        headline: ::unity2::Il2CppString,
+        items: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        on_value_changed: crate::system::action_1::Action_1<::unity2::Il2CppString>,
+    ) -> crate::unity_engine::ui::dropdown::Dropdown;
+
+    #[method(name = "Toggle", args = 1)]
+    pub fn toggle(self, text: ::unity2::Il2CppString) -> crate::unity_engine::ui::toggle::Toggle;
+
+    #[method(name = "Space", args = 1)]
+    pub fn space(self, space: f32) -> ();
+
+    #[method(name = "SetRectTransformXW", args = 3)]
+    pub fn set_rect_transform_xw(
+        com: crate::unity_engine::component::Component,
+        w: f32,
+        x: f32,
+    ) -> ();
+
+    #[method(name = "SetColors", args = 1)]
+    pub fn set_colors(self, widget: crate::unity_engine::ui::selectable::Selectable) -> ();
+
+    #[method(name = "SetColors", args = 1)]
+    pub fn set_colors_2(self, widget: crate::unity_engine::ui::slider::Slider) -> ();
+
+    #[method(name = "SetTextColorAndOutline", args = 3)]
+    pub fn set_text_color_and_outline(
+        text: crate::unity_engine::ui::text::Text,
+        color: crate::unity_engine::color::Color,
+        outline: bool,
+    ) -> ();
+
+    #[method(name = "SetPosition", args = 2)]
+    pub fn set_position(
+        c: crate::unity_engine::component::Component,
+        v: crate::unity_engine::vector2::Vector2,
+    ) -> ();
+
+    #[method(name = "SetSize", args = 3)]
+    pub fn set_size(c: crate::unity_engine::component::Component, width: f32, height: f32) -> ();
+
+    #[method(name = "SetFontSize", args = 2)]
+    pub fn set_font_size(widget: crate::unity_engine::ui::text::Text, size: i32) -> ();
+}
+
+#[cfg(feature = "combat-verticallayoutui")]
+impl VerticalLayoutUI {
+    pub fn new(
+        canvas: crate::unity_engine::canvas::Canvas,
+        anchor: crate::unity_engine::vector3::Vector3,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VerticalLayoutUI),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVerticalLayoutUIMethods>::ctor(this, canvas, anchor);
+        this
+    }
+}

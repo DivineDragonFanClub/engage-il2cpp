@@ -1,0 +1,16 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/isubmithandler/ISubmitHandler.md")))]
+#[::unity2::class(namespace = "UnityEngine.EventSystems", name = "ISubmitHandler")]
+pub struct ISubmitHandler {}
+
+#[cfg(feature = "unity_engine-event_systems-isubmithandler")]
+#[::unity2::methods]
+impl ISubmitHandler {
+    #[method(name = "OnSubmit", args = 1)]
+    pub fn on_submit(
+        self,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+}

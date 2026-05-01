@@ -1,0 +1,43 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishing/config/fixcameraconfig/FixCameraConfig.md")))]
+#[::unity2::class(namespace = "App.Fishing.Config", name = "FixCameraConfig")]
+#[parent(crate::system::object::Object)]
+pub struct FixCameraConfig {
+    #[rename(name = "Pos")]
+    pub pos: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "Rot")]
+    pub rot: crate::unity_engine::vector3::Vector3,
+}
+
+#[cfg(feature = "app-fishing-config-fixcameraconfig")]
+#[::unity2::methods]
+impl FixCameraConfig {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        set_pos: crate::unity_engine::vector3::Vector3,
+        set_rot: crate::unity_engine::vector3::Vector3,
+    ) -> ();
+}
+
+#[cfg(feature = "app-fishing-config-fixcameraconfig")]
+impl FixCameraConfig {
+    pub fn new(
+        set_pos: crate::unity_engine::vector3::Vector3,
+        set_rot: crate::unity_engine::vector3::Vector3,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FixCameraConfig),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFixCameraConfigMethods>::ctor(this, set_pos, set_rot);
+        this
+    }
+}

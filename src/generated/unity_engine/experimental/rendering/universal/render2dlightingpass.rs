@@ -1,0 +1,134 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/render2dlightingpass/Render2DLightingPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal",
+    name = "Render2DLightingPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct Render2DLightingPass {
+    #[static_field]
+    #[rename(name = "k_HDREmulationScaleID")]
+    pub k_hdr_emulation_scale_id: i32,
+    #[static_field]
+    #[rename(name = "k_InverseHDREmulationScaleID")]
+    pub k_inverse_hdr_emulation_scale_id: i32,
+    #[static_field]
+    #[rename(name = "k_UseSceneLightingID")]
+    pub k_use_scene_lighting_id: i32,
+    #[static_field]
+    #[rename(name = "k_RendererColorID")]
+    pub k_renderer_color_id: i32,
+    #[static_field]
+    #[rename(name = "k_ShapeLightTexture0ID")]
+    pub k_shape_light_texture0_id: i32,
+    #[static_field]
+    #[rename(name = "k_ShapeLightTexture1ID")]
+    pub k_shape_light_texture1_id: i32,
+    #[static_field]
+    #[rename(name = "k_ShapeLightTexture2ID")]
+    pub k_shape_light_texture2_id: i32,
+    #[static_field]
+    #[rename(name = "k_ShapeLightTexture3ID")]
+    pub k_shape_light_texture3_id: i32,
+    #[static_field]
+    #[rename(name = "k_CombinedRenderingPassNameOld")]
+    pub k_combined_rendering_pass_name_old:
+        crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[static_field]
+    #[rename(name = "k_CombinedRenderingPassName")]
+    pub k_combined_rendering_pass_name: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[static_field]
+    #[rename(name = "k_NormalsRenderingPassName")]
+    pub k_normals_rendering_pass_name: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[static_field]
+    #[rename(name = "k_LegacyPassName")]
+    pub k_legacy_pass_name: crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    #[static_field]
+    #[rename(name = "k_ShaderTags")]
+    pub k_shader_tags: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::shadertagid::ShaderTagId,
+    >,
+    #[static_field]
+    #[rename(name = "m_ProfilingSampler")]
+    pub m_profiling_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "m_ProfilingSamplerUnlit")]
+    pub m_profiling_sampler_unlit:
+        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[rename(name = "m_Renderer2DData")]
+    pub m_renderer2_d_data:
+        crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData,
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-render2dlightingpass")]
+#[::unity2::methods]
+impl Render2DLightingPass {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        renderer_data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData,
+    ) -> ();
+
+    #[method(name = "GetTransparencySortingMode", args = 2)]
+    pub fn get_transparency_sorting_mode(
+        self,
+        camera: crate::unity_engine::camera::Camera,
+        sorting_settings: crate::unity_engine::rendering::sortingsettings::SortingSettings,
+    ) -> ();
+
+    #[method(name = "CompareLightsInLayer", args = 3)]
+    pub fn compare_lights_in_layer(
+        self,
+        layer_index1: i32,
+        layer_index2: i32,
+        sorting_layers: ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer>,
+    ) -> bool;
+
+    #[method(name = "FindUpperBoundInBatch", args = 2)]
+    pub fn find_upper_bound_in_batch(
+        self,
+        start_layer_index: i32,
+        sorting_layers: ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer>,
+    ) -> i32;
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(
+        name = "UnityEngine.Experimental.Rendering.Universal.IRenderPass2D.get_rendererData",
+        args = 0
+    )]
+    pub fn unity_engine_experimental_rendering_universal_i_render_pass2_d_get_renderer_data(
+        self,
+    ) -> crate::unity_engine::experimental::rendering::universal::renderer2ddata::Renderer2DData;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-render2dlightingpass")]
+impl Render2DLightingPass {
+    pub fn new(
+        renderer_data : crate :: unity_engine :: experimental :: rendering :: universal :: renderer2ddata :: Renderer2DData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Render2DLightingPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRender2DLightingPassMethods>::ctor(this, renderer_data);
+        this
+    }
+}

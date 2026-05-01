@@ -1,0 +1,102 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scene_management/scene/Scene.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Scene {
+    pub m_handle: i32,
+}
+
+impl ::unity2::ClassIdentity for Scene {
+    const NAMESPACE: &'static str = "UnityEngine.SceneManagement";
+
+    const NAME: &'static str = "Scene";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Scene {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-scene_management-scene")]
+#[::unity2::methods(value)]
+impl Scene {
+    #[method(name = "IsValidInternal", args = 1)]
+    pub fn is_valid_internal(scene_handle: i32) -> bool;
+
+    #[method(name = "GetPathInternal", args = 1)]
+    pub fn get_path_internal(scene_handle: i32) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetNameInternal", args = 1)]
+    pub fn get_name_internal(scene_handle: i32) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetIsLoadedInternal", args = 1)]
+    pub fn get_is_loaded_internal(scene_handle: i32) -> bool;
+
+    #[method(name = "GetRootCountInternal", args = 1)]
+    pub fn get_root_count_internal(scene_handle: i32) -> i32;
+
+    #[method(name = "GetRootGameObjectsInternal", args = 2)]
+    pub fn get_root_game_objects_internal(
+        scene_handle: i32,
+        result_root_list: crate::system::object::Object,
+    ) -> ();
+
+    #[method(name = "get_handle", args = 0)]
+    pub fn get_handle(self) -> i32;
+
+    #[method(name = "IsValid", args = 0)]
+    pub fn is_valid(self) -> bool;
+
+    #[method(name = "get_path", args = 0)]
+    pub fn get_path(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_isLoaded", args = 0)]
+    pub fn get_is_loaded(self) -> bool;
+
+    #[method(name = "get_rootCount", args = 0)]
+    pub fn get_root_count(self) -> i32;
+
+    #[method(name = "GetRootGameObjects", args = 0)]
+    pub fn get_root_game_objects(
+        self,
+    ) -> ::unity2::Array<crate::unity_engine::gameobject::GameObject>;
+
+    #[method(name = "GetRootGameObjects", args = 1)]
+    pub fn get_root_game_objects_2(
+        self,
+        root_game_objects: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+    ) -> ();
+
+    #[method(name = "op_Equality", args = 2)]
+    pub fn op_equality(
+        lhs: crate::unity_engine::scene_management::scene::Scene,
+        rhs: crate::unity_engine::scene_management::scene::Scene,
+    ) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, other: crate::system::object::Object) -> bool;
+}

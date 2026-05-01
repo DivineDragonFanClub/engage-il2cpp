@@ -1,0 +1,56 @@
+
+use crate::combat::situation_converter::baseconverter::BaseConverter;
+use crate::combat::situation_converter::baseconverter::IBaseConverter;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/situation_converter/convertengageattack/ConvertEngageAttack.md")))]
+#[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertEngageAttack")]
+#[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
+pub struct ConvertEngageAttack {
+    #[rename(name = "m_IsFirstEnterApproach")]
+    pub m_is_first_enter_approach: bool,
+    #[rename(name = "m_BeforeSpace")]
+    pub m_before_space: bool,
+    #[rename(name = "m_IsStartGTSP")]
+    pub m_is_start_gtsp: bool,
+}
+
+#[cfg(feature = "combat-situation_converter-convertengageattack")]
+#[::unity2::methods]
+impl ConvertEngageAttack {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, data: crate::combat::situation_converter::cameradataset::CameraDataSet)
+        -> ();
+
+    #[method(name = "Convert", args = 2)]
+    pub fn convert(
+        self,
+        situation: crate::combat::camerasituation::CameraSituation,
+        arg: ::unity2::Il2CppString,
+    ) -> crate::combat::cameraposition::CameraPosition;
+
+    #[method(name = "CheckEnemy", args = 3)]
+    pub fn check_enemy(
+        self,
+        cam_pos: crate::combat::cameraposition::CameraPosition,
+        inv_side: bool,
+        inv_cam: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "combat-situation_converter-convertengageattack")]
+impl ConvertEngageAttack {
+    pub fn new(data: crate::combat::situation_converter::cameradataset::CameraDataSet) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConvertEngageAttack),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConvertEngageAttackMethods>::ctor(this, data);
+        this
+    }
+}

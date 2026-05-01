@@ -1,0 +1,42 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::profilingsampler::IProfilingSampler;
+use crate::unity_engine::rendering::profilingsampler::ProfilingSampler;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/tprofilingsampler_1/TProfilingSampler_1.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "TProfilingSampler`1")]
+pub struct TProfilingSampler_1<T0: ::unity2::ClassIdentity> {
+    #[static_field]
+    #[rename(name = "samples")]
+    pub samples: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        T0,
+        crate::unity_engine::rendering::tprofilingsampler_1::TProfilingSampler_1<T0>,
+    >,
+}
+
+#[cfg(feature = "unity_engine-rendering-tprofilingsampler_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> TProfilingSampler_1<T0> {
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-tprofilingsampler_1")]
+impl<T0: ::unity2::ClassIdentity> TProfilingSampler_1<T0> {
+    pub fn new(name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TProfilingSampler_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITProfilingSampler_1Methods<T0>>::ctor(this, name);
+        this
+    }
+}

@@ -1,0 +1,331 @@
+
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemno::BasicDialogItemNo;
+use crate::app::basicdialogitemno::IBasicDialogItemNo;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitselectringmenu/UnitSelectRingMenu_CloseEventHandler.md")))]
+#[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.CloseEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct UnitSelectRingMenu_CloseEventHandler {}
+
+#[cfg(feature = "app-unitselectringmenu")]
+#[::unity2::methods]
+impl UnitSelectRingMenu_CloseEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+impl UnitSelectRingMenu_CloseEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectRingMenu_CloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectRingMenu_CloseEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitselectringmenu/UnitSelectRingMenu_TakeOffAllRingsMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.TakeOffAllRingsMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct UnitSelectRingMenu_TakeOffAllRingsMenuItem {}
+
+#[cfg(feature = "app-unitselectringmenu")]
+#[::unity2::methods]
+impl UnitSelectRingMenu_TakeOffAllRingsMenuItem {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+impl UnitSelectRingMenu_TakeOffAllRingsMenuItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectRingMenu_TakeOffAllRingsMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectRingMenu_TakeOffAllRingsMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitselectringmenu/UnitSelectRingMenu_DialogNoMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.DialogNoMenuItem")]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct UnitSelectRingMenu_DialogNoMenuItem {}
+
+#[cfg(feature = "app-unitselectringmenu")]
+#[::unity2::methods]
+impl UnitSelectRingMenu_DialogNoMenuItem {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, message: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+impl UnitSelectRingMenu_DialogNoMenuItem {
+    pub fn new(message: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectRingMenu_DialogNoMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectRingMenu_DialogNoMenuItemMethods>::ctor(this, message);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitselectringmenu/UnitSelectRingMenu_EntrustRingMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.EntrustRingMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct UnitSelectRingMenu_EntrustRingMenuItem {}
+
+#[cfg(feature = "app-unitselectringmenu")]
+#[::unity2::methods]
+impl UnitSelectRingMenu_EntrustRingMenuItem {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+impl UnitSelectRingMenu_EntrustRingMenuItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectRingMenu_EntrustRingMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectRingMenu_EntrustRingMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitselectringmenu/UnitSelectRingMenu_ConfirmDialog_DecideEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "UnitSelectRingMenu.ConfirmDialog.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct UnitSelectRingMenu_ConfirmDialog_DecideEventHandler {}
+
+#[cfg(feature = "app-unitselectringmenu")]
+#[::unity2::methods]
+impl UnitSelectRingMenu_ConfirmDialog_DecideEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+impl UnitSelectRingMenu_ConfirmDialog_DecideEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectRingMenu_ConfirmDialog_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectRingMenu_ConfirmDialog_DecideEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitselectringmenu/UnitSelectRingMenu.md")))]
+#[::unity2::class(namespace = "App", name = "UnitSelectRingMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct UnitSelectRingMenu {
+    #[rename(name = "m_CloseEventHandler")]
+    pub m_close_event_handler: crate::app::unitselectringmenu::UnitSelectRingMenu_CloseEventHandler,
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+#[::unity2::methods]
+impl UnitSelectRingMenu {
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        close_event_handler: crate::app::unitselectringmenu::UnitSelectRingMenu_CloseEventHandler,
+    ) -> crate::app::unitselectringmenu::UnitSelectRingMenu;
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        close_event_handler: crate::app::unitselectringmenu::UnitSelectRingMenu_CloseEventHandler,
+    ) -> ();
+
+    #[method(name = "OnClose", args = 0)]
+    pub fn on_close(self) -> ();
+
+    #[method(name = "EntrustRing", args = 0)]
+    pub fn entrust_ring(self) -> ();
+
+    #[method(name = "TakeOffAllRings", args = 0)]
+    pub fn take_off_all_rings(self) -> ();
+
+    #[method(name = "TakeOffRing", args = 1)]
+    pub fn take_off_ring(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "IsExistToBeAnabledToTakeOffRings", args = 0)]
+    pub fn is_exist_to_be_anabled_to_take_off_rings(self) -> bool;
+
+    #[method(name = "IsEquippedRing", args = 1)]
+    pub fn is_equipped_ring(self, unit: crate::app::unit::Unit) -> bool;
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+impl UnitSelectRingMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        close_event_handler: crate::app::unitselectringmenu::UnitSelectRingMenu_CloseEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectRingMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectRingMenuMethods>::ctor(this, menu_item_list, close_event_handler);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitselectringmenu/UnitSelectRingMenu_ConfirmDialog.md")))]
+#[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.ConfirmDialog")]
+#[parent(crate::system::object::Object)]
+pub struct UnitSelectRingMenu_ConfirmDialog {}
+
+#[cfg(feature = "app-unitselectringmenu")]
+#[::unity2::methods]
+impl UnitSelectRingMenu_ConfirmDialog {
+    #[method(name = "CreateBind", args = 5)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        confirm_message: ::unity2::Il2CppString,
+        yes_message: ::unity2::Il2CppString,
+        no_messag: ::unity2::Il2CppString,
+        yes_event_handler : crate :: app :: unitselectringmenu :: UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
+    ) -> crate::app::basicdialog::BasicDialog;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+impl UnitSelectRingMenu_ConfirmDialog {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectRingMenu_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectRingMenu_ConfirmDialogMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitselectringmenu/UnitSelectRingMenu_DialogYesMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "UnitSelectRingMenu.DialogYesMenuItem")]
+#[parent(crate::app::basicdialogitem::BasicDialogItem)]
+pub struct UnitSelectRingMenu_DialogYesMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::unitselectringmenu::UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+#[::unity2::methods]
+impl UnitSelectRingMenu_DialogYesMenuItem {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        message: ::unity2::Il2CppString,
+        decide_event_handler : crate :: app :: unitselectringmenu :: UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
+    ) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-unitselectringmenu")]
+impl UnitSelectRingMenu_DialogYesMenuItem {
+    pub fn new(
+        message: ::unity2::Il2CppString,
+        decide_event_handler : crate :: app :: unitselectringmenu :: UnitSelectRingMenu_ConfirmDialog_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectRingMenu_DialogYesMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectRingMenu_DialogYesMenuItemMethods>::ctor(
+            this,
+            message,
+            decide_event_handler,
+        );
+        this
+    }
+}

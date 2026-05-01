@@ -1,0 +1,321 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_DataType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct LocationParams_DataType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for LocationParams_DataType {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "LocationParams.DataType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for LocationParams_DataType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl LocationParams_DataType {
+    pub fn distance() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn degree1() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn degree2() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn height() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_LocateStyle.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct LocationParams_LocateStyle {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for LocationParams_LocateStyle {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "LocationParams.LocateStyle";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for LocationParams_LocateStyle {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl LocationParams_LocateStyle {
+    pub fn combat() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn combat_win() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn cannon() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn engage_atk() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn detail() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn later_talk() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn none() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn engage() -> Self {
+        Self { value: -2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_UnitType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct LocationParams_UnitType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for LocationParams_UnitType {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "LocationParams.UnitType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for LocationParams_UnitType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl LocationParams_UnitType {
+    pub fn walk() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn horce() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn pegasus() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn dragon() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams_EmblemType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct LocationParams_EmblemType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for LocationParams_EmblemType {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "LocationParams.EmblemType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for LocationParams_EmblemType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl LocationParams_EmblemType {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn sigurd() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn flying() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/locationparams/LocationParams.md")))]
+#[::unity2::class(namespace = "Combat", name = "LocationParams")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct LocationParams {
+    #[static_field]
+    #[rename(name = "Instance")]
+    pub instance: crate::combat::locationparams::LocationParams,
+    #[rename(name = "EmblemPos")]
+    pub emblem_pos: ::unity2::Array<f32>,
+    #[rename(name = "FlyWinThreshold")]
+    pub fly_win_threshold: f32,
+    #[rename(name = "LookCenter")]
+    pub look_center: bool,
+    #[static_field]
+    #[rename(name = "s_RefletDegree")]
+    pub s_reflet_degree: crate::app::gameparam::GameParam_Holder,
+}
+
+#[cfg(feature = "combat-locationparams")]
+#[::unity2::methods]
+impl LocationParams {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "GetIndex", args = 4)]
+    pub fn get_index(
+        l: crate::combat::locationparams::LocationParams_LocateStyle,
+        u: crate::combat::locationparams::LocationParams_UnitType,
+        e: crate::combat::locationparams::LocationParams_EmblemType,
+        d: crate::combat::locationparams::LocationParams_DataType,
+    ) -> i32;
+
+    #[method(name = "GetEmblemGroundLevel", args = 2)]
+    pub fn get_emblem_ground_level(
+        master: crate::combat::character::Character,
+        emblem: crate::combat::character::Character,
+    ) -> f32;
+
+    #[method(name = "LocateEmblem", args = 5)]
+    pub fn locate_emblem(
+        master: crate::combat::character::Character,
+        emblem: crate::combat::character::Character,
+        master_pos: crate::unity_engine::vector3::Vector3,
+        master_dir: crate::unity_engine::vector3::Vector3,
+        style: crate::combat::locationparams::LocationParams_LocateStyle,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "combat-locationparams")]
+impl LocationParams {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LocationParams),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILocationParamsMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,17 @@
+
+#[cfg(any(feature = "moon_sharp-interpreter-interop-registration_policies-automaticregistrationpolicy-types"))]
+pub mod automaticregistrationpolicy;
+#[cfg(any(feature = "moon_sharp-interpreter-interop-registration_policies-automaticregistrationpolicy-types"))]
+pub use automaticregistrationpolicy::*;
+#[cfg(any(feature = "moon_sharp-interpreter-interop-registration_policies-defaultregistrationpolicy-types"))]
+pub mod defaultregistrationpolicy;
+#[cfg(any(feature = "moon_sharp-interpreter-interop-registration_policies-defaultregistrationpolicy-types"))]
+pub use defaultregistrationpolicy::*;
+#[cfg(any(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy-types"))]
+pub mod iregistrationpolicy;
+#[cfg(any(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy-types"))]
+pub use iregistrationpolicy::*;
+#[cfg(any(feature = "moon_sharp-interpreter-interop-registration_policies-permanentregistrationpolicy-types"))]
+pub mod permanentregistrationpolicy;
+#[cfg(any(feature = "moon_sharp-interpreter-interop-registration_policies-permanentregistrationpolicy-types"))]
+pub use permanentregistrationpolicy::*;

@@ -1,0 +1,46 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skilltutorialsequence/SkillTutorialSequence.md")))]
+#[::unity2::class(namespace = "App", name = "SkillTutorialSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct SkillTutorialSequence {
+    #[static_field]
+    #[rename(name = "TUTID_SKILL")]
+    pub tutid_skill: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-skilltutorialsequence")]
+#[::unity2::methods]
+impl SkillTutorialSequence {
+    #[method(name = "TryCreateBind", args = 1)]
+    pub fn try_create_bind(parent: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "Dialog", args = 0)]
+    pub fn dialog(self) -> ();
+
+    #[method(name = "Tutorial", args = 0)]
+    pub fn tutorial(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-skilltutorialsequence")]
+impl SkillTutorialSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SkillTutorialSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISkillTutorialSequenceMethods>::ctor(this);
+        this
+    }
+}

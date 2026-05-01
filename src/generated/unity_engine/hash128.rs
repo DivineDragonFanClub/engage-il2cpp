@@ -1,0 +1,117 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/hash128/Hash128.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Hash128 {
+    pub m_u32_0: u32,
+    pub m_u32_1: u32,
+    pub m_u32_2: u32,
+    pub m_u32_3: u32,
+}
+
+impl ::unity2::ClassIdentity for Hash128 {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "Hash128";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Hash128 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-hash128")]
+#[::unity2::methods(value)]
+impl Hash128 {
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(self, u32_0: u32, u32_1: u32, u32_2: u32, u32_3: u32) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(self, u64_0: u64, u64_1: u64) -> ();
+
+    #[method(name = "get_u64_0", args = 0)]
+    pub fn get_u64_0(self) -> u64;
+
+    #[method(name = "get_u64_1", args = 0)]
+    pub fn get_u64_1(self) -> u64;
+
+    #[method(name = "CompareTo", args = 1)]
+    pub fn compare_to(self, rhs: crate::unity_engine::hash128::Hash128) -> i32;
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "Parse", args = 1)]
+    pub fn parse(hash_string: ::unity2::Il2CppString) -> crate::unity_engine::hash128::Hash128;
+
+    #[method(name = "Hash128ToStringImpl", args = 1)]
+    pub fn hash128_to_string_impl(
+        hash: crate::unity_engine::hash128::Hash128,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "ComputeFromString", args = 2)]
+    pub fn compute_from_string(
+        data: ::unity2::Il2CppString,
+        hash: crate::unity_engine::hash128::Hash128,
+    ) -> ();
+
+    #[method(name = "Compute", args = 1)]
+    pub fn compute(data: ::unity2::Il2CppString) -> crate::unity_engine::hash128::Hash128;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, obj: crate::system::object::Object) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_2(self, obj: crate::unity_engine::hash128::Hash128) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "CompareTo", args = 1)]
+    pub fn compare_to_2(self, obj: crate::system::object::Object) -> i32;
+
+    #[method(name = "op_Equality", args = 2)]
+    pub fn op_equality(
+        hash1: crate::unity_engine::hash128::Hash128,
+        hash2: crate::unity_engine::hash128::Hash128,
+    ) -> bool;
+
+    #[method(name = "op_LessThan", args = 2)]
+    pub fn op_less_than(
+        x: crate::unity_engine::hash128::Hash128,
+        y: crate::unity_engine::hash128::Hash128,
+    ) -> bool;
+
+    #[method(name = "op_GreaterThan", args = 2)]
+    pub fn op_greater_than(
+        x: crate::unity_engine::hash128::Hash128,
+        y: crate::unity_engine::hash128::Hash128,
+    ) -> bool;
+
+    #[method(name = "Parse_Injected", args = 2)]
+    pub fn parse_injected(
+        hash_string: ::unity2::Il2CppString,
+        ret: crate::unity_engine::hash128::Hash128,
+    ) -> ();
+
+    #[method(name = "Hash128ToStringImpl_Injected", args = 1)]
+    pub fn hash128_to_string_impl_injected(
+        hash: crate::unity_engine::hash128::Hash128,
+    ) -> ::unity2::Il2CppString;
+}

@@ -1,0 +1,55 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/raycasthit2d/RaycastHit2D.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RaycastHit2D {
+    pub m_centroid: crate::unity_engine::vector2::Vector2,
+    pub m_point: crate::unity_engine::vector2::Vector2,
+    pub m_normal: crate::unity_engine::vector2::Vector2,
+    pub m_distance: f32,
+    pub m_fraction: f32,
+    pub m_collider: i32,
+}
+
+impl ::unity2::ClassIdentity for RaycastHit2D {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "RaycastHit2D";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RaycastHit2D {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-raycasthit2d")]
+#[::unity2::methods(value)]
+impl RaycastHit2D {
+    #[method(name = "get_point", args = 0)]
+    pub fn get_point(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "get_normal", args = 0)]
+    pub fn get_normal(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "get_distance", args = 0)]
+    pub fn get_distance(self) -> f32;
+
+    #[method(name = "get_collider", args = 0)]
+    pub fn get_collider(self) -> crate::unity_engine::collider2d::Collider2D;
+}

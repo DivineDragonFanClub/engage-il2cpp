@@ -1,0 +1,237 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/defaultcontrols/DefaultControls_DefaultRuntimeFactory.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.UI",
+    name = "DefaultControls.DefaultRuntimeFactory"
+)]
+#[parent(crate::system::object::Object)]
+pub struct DefaultControls_DefaultRuntimeFactory {
+    #[static_field]
+    #[rename(name = "Default")]
+    pub default: crate::unity_engine::ui::defaultcontrols::DefaultControls_IFactoryControls,
+}
+
+#[cfg(feature = "unity_engine-ui-defaultcontrols")]
+#[::unity2::methods]
+impl DefaultControls_DefaultRuntimeFactory {
+    #[method(name = "CreateGameObject", args = 2)]
+    pub fn create_game_object(
+        self,
+        name: ::unity2::Il2CppString,
+        components: ::unity2::Array<::unity2::SystemType>,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-defaultcontrols")]
+impl DefaultControls_DefaultRuntimeFactory {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DefaultControls_DefaultRuntimeFactory),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDefaultControls_DefaultRuntimeFactoryMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/defaultcontrols/DefaultControls.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "DefaultControls")]
+#[parent(crate::system::object::Object)]
+pub struct DefaultControls {
+    #[static_field]
+    #[rename(name = "m_CurrentFactory")]
+    pub m_current_factory:
+        crate::unity_engine::ui::defaultcontrols::DefaultControls_IFactoryControls,
+    #[static_field]
+    #[rename(name = "kWidth")]
+    pub k_width: f32,
+    #[static_field]
+    #[rename(name = "kThickHeight")]
+    pub k_thick_height: f32,
+    #[static_field]
+    #[rename(name = "kThinHeight")]
+    pub k_thin_height: f32,
+    #[static_field]
+    #[rename(name = "s_ThickElementSize")]
+    pub s_thick_element_size: crate::unity_engine::vector2::Vector2,
+    #[static_field]
+    #[rename(name = "s_ThinElementSize")]
+    pub s_thin_element_size: crate::unity_engine::vector2::Vector2,
+    #[static_field]
+    #[rename(name = "s_ImageElementSize")]
+    pub s_image_element_size: crate::unity_engine::vector2::Vector2,
+    #[static_field]
+    #[rename(name = "s_DefaultSelectableColor")]
+    pub s_default_selectable_color: crate::unity_engine::color::Color,
+    #[static_field]
+    #[rename(name = "s_PanelColor")]
+    pub s_panel_color: crate::unity_engine::color::Color,
+    #[static_field]
+    #[rename(name = "s_TextColor")]
+    pub s_text_color: crate::unity_engine::color::Color,
+}
+
+#[cfg(feature = "unity_engine-ui-defaultcontrols")]
+#[::unity2::methods]
+impl DefaultControls {
+    #[method(name = "get_factory", args = 0)]
+    pub fn get_factory(
+    ) -> crate::unity_engine::ui::defaultcontrols::DefaultControls_IFactoryControls;
+
+    #[method(name = "CreateUIElementRoot", args = 3)]
+    pub fn create_ui_element_root(
+        name: ::unity2::Il2CppString,
+        size: crate::unity_engine::vector2::Vector2,
+        components: ::unity2::Array<::unity2::SystemType>,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "CreateUIObject", args = 3)]
+    pub fn create_ui_object(
+        name: ::unity2::Il2CppString,
+        parent: crate::unity_engine::gameobject::GameObject,
+        components: ::unity2::Array<::unity2::SystemType>,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "SetDefaultTextValues", args = 1)]
+    pub fn set_default_text_values(lbl: crate::unity_engine::ui::text::Text) -> ();
+
+    #[method(name = "SetDefaultColorTransitionValues", args = 1)]
+    pub fn set_default_color_transition_values(
+        slider: crate::unity_engine::ui::selectable::Selectable,
+    ) -> ();
+
+    #[method(name = "SetParentAndAlign", args = 2)]
+    pub fn set_parent_and_align(
+        child: crate::unity_engine::gameobject::GameObject,
+        parent: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[method(name = "SetLayerRecursively", args = 2)]
+    pub fn set_layer_recursively(go: crate::unity_engine::gameobject::GameObject, layer: i32)
+        -> ();
+
+    #[method(name = "CreatePanel", args = 1)]
+    pub fn create_panel(
+        resources: crate::unity_engine::ui::defaultcontrols::DefaultControls_Resources,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "CreateButton", args = 1)]
+    pub fn create_button(
+        resources: crate::unity_engine::ui::defaultcontrols::DefaultControls_Resources,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "CreateText", args = 1)]
+    pub fn create_text(
+        resources: crate::unity_engine::ui::defaultcontrols::DefaultControls_Resources,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "CreateImage", args = 1)]
+    pub fn create_image(
+        resources: crate::unity_engine::ui::defaultcontrols::DefaultControls_Resources,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "CreateRawImage", args = 1)]
+    pub fn create_raw_image(
+        resources: crate::unity_engine::ui::defaultcontrols::DefaultControls_Resources,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "CreateSlider", args = 1)]
+    pub fn create_slider(
+        resources: crate::unity_engine::ui::defaultcontrols::DefaultControls_Resources,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "CreateScrollbar", args = 1)]
+    pub fn create_scrollbar(
+        resources: crate::unity_engine::ui::defaultcontrols::DefaultControls_Resources,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "CreateToggle", args = 1)]
+    pub fn create_toggle(
+        resources: crate::unity_engine::ui::defaultcontrols::DefaultControls_Resources,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "CreateInputField", args = 1)]
+    pub fn create_input_field(
+        resources: crate::unity_engine::ui::defaultcontrols::DefaultControls_Resources,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "CreateDropdown", args = 1)]
+    pub fn create_dropdown(
+        resources: crate::unity_engine::ui::defaultcontrols::DefaultControls_Resources,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "CreateScrollView", args = 1)]
+    pub fn create_scroll_view(
+        resources: crate::unity_engine::ui::defaultcontrols::DefaultControls_Resources,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/defaultcontrols/DefaultControls_Resources.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DefaultControls_Resources {
+    pub standard: crate::unity_engine::sprite::Sprite,
+    pub background: crate::unity_engine::sprite::Sprite,
+    pub input_field: crate::unity_engine::sprite::Sprite,
+    pub knob: crate::unity_engine::sprite::Sprite,
+    pub checkmark: crate::unity_engine::sprite::Sprite,
+    pub dropdown: crate::unity_engine::sprite::Sprite,
+    pub mask: crate::unity_engine::sprite::Sprite,
+}
+
+impl ::unity2::ClassIdentity for DefaultControls_Resources {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "DefaultControls.Resources";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DefaultControls_Resources {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/defaultcontrols/DefaultControls_IFactoryControls.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.UI",
+    name = "DefaultControls.IFactoryControls"
+)]
+pub struct DefaultControls_IFactoryControls {}
+
+#[cfg(feature = "unity_engine-ui-defaultcontrols")]
+#[::unity2::methods]
+impl DefaultControls_IFactoryControls {
+    #[method(name = "CreateGameObject", args = 2)]
+    pub fn create_game_object(
+        self,
+        name: ::unity2::Il2CppString,
+        components: ::unity2::Array<::unity2::SystemType>,
+    ) -> crate::unity_engine::gameobject::GameObject;
+}

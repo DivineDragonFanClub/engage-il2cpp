@@ -1,0 +1,52 @@
+
+use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+use crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapresources/MapResources.md")))]
+#[::unity2::class(namespace = "App", name = "MapResources")]
+# [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapresources :: MapResources >)]
+pub struct MapResources {
+    #[rename(name = "m_DangerImageIterator")]
+    pub m_danger_image_iterator: crate::system::collections::ienumerator::IEnumerator,
+    #[rename(name = "m_HpForecastIterator")]
+    pub m_hp_forecast_iterator: crate::system::collections::ienumerator::IEnumerator,
+}
+
+#[cfg(feature = "app-mapresources")]
+#[::unity2::methods]
+impl MapResources {
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapresources")]
+impl MapResources {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapResources),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapResourcesMethods>::ctor(this);
+        this
+    }
+}

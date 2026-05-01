@@ -1,0 +1,189 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemno::BasicDialogItemNo;
+use crate::app::basicdialogitemno::IBasicDialogItemNo;
+use crate::app::basicdialogitemyes::BasicDialogItemYes;
+use crate::app::basicdialogitemyes::IBasicDialogItemYes;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialogNo.md")))]
+#[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem.ConfirmDialogNo")]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct MascotFoodSelectMenuItem_ConfirmDialogNo {}
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+#[::unity2::methods]
+impl MascotFoodSelectMenuItem_ConfirmDialogNo {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+impl MascotFoodSelectMenuItem_ConfirmDialogNo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MascotFoodSelectMenuItem_ConfirmDialogNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMascotFoodSelectMenuItem_ConfirmDialogNoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialog.md")))]
+#[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem.ConfirmDialog")]
+#[parent(crate::app::basicdialog::BasicDialog)]
+pub struct MascotFoodSelectMenuItem_ConfirmDialog {}
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+#[::unity2::methods]
+impl MascotFoodSelectMenuItem_ConfirmDialog {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        foodstuff_data: crate::app::foodstuffdata::FoodstuffData,
+    ) -> crate::app::mascotfoodselectmenuitem::MascotFoodSelectMenuItem_ConfirmDialog;
+}
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+impl MascotFoodSelectMenuItem_ConfirmDialog {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MascotFoodSelectMenuItem_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMascotFoodSelectMenuItem_ConfirmDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem_ConfirmDialogYes.md")))]
+#[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem.ConfirmDialogYes")]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct MascotFoodSelectMenuItem_ConfirmDialogYes {
+    #[rename(name = "m_foodStuffData")]
+    pub m_food_stuff_data: crate::app::foodstuffdata::FoodstuffData,
+}
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+#[::unity2::methods]
+impl MascotFoodSelectMenuItem_ConfirmDialogYes {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, foodstuff_data: crate::app::foodstuffdata::FoodstuffData) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+impl MascotFoodSelectMenuItem_ConfirmDialogYes {
+    pub fn new(foodstuff_data: crate::app::foodstuffdata::FoodstuffData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MascotFoodSelectMenuItem_ConfirmDialogYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMascotFoodSelectMenuItem_ConfirmDialogYesMethods>::ctor(this, foodstuff_data);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotfoodselectmenuitem/MascotFoodSelectMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "MascotFoodSelectMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct MascotFoodSelectMenuItem {
+    #[rename(name = "m_foodStuffData")]
+    pub m_food_stuff_data: crate::app::foodstuffdata::FoodstuffData,
+}
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+#[::unity2::methods]
+impl MascotFoodSelectMenuItem {
+    #[method(name = "get_IsActive", args = 0)]
+    pub fn get_is_active(self) -> bool;
+
+    #[method(name = "set_IsActive", args = 1)]
+    pub fn set_is_active(self, value: bool) -> ();
+
+    #[method(name = "get_IsActiveSelect", args = 0)]
+    pub fn get_is_active_select(self) -> bool;
+
+    #[method(name = "set_IsActiveSelect", args = 1)]
+    pub fn set_is_active_select(self, value: bool) -> ();
+
+    #[method(name = "get_Data", args = 0)]
+    pub fn get_data(self) -> crate::app::foodstuffdata::FoodstuffData;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, food_stuff_data: crate::app::foodstuffdata::FoodstuffData) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetCountText", args = 0)]
+    pub fn get_count_text(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mascotfoodselectmenuitem")]
+impl MascotFoodSelectMenuItem {
+    pub fn new(food_stuff_data: crate::app::foodstuffdata::FoodstuffData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MascotFoodSelectMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMascotFoodSelectMenuItemMethods>::ctor(this, food_stuff_data);
+        this
+    }
+}

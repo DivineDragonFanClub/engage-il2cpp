@@ -1,0 +1,416 @@
+
+use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
+use crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_Item.md")))]
+#[::unity2::class(namespace = "App", name = "HelpManager.Item")]
+#[parent(crate::system::object::Object)]
+pub struct HelpManager_Item {
+    #[rename(name = "self")]
+    pub self_: crate::app::helpitembase::HelpItemBase,
+    #[rename(name = "pos")]
+    pub pos: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "dirLine")]
+    pub dir_line: ::unity2::Array<::unity2::Array<crate::unity_engine::vector2::Vector2>>,
+    #[rename(name = "isMoveToNoTouchItem")]
+    pub is_move_to_no_touch_item: ::unity2::Array<bool>,
+}
+
+#[cfg(feature = "app-helpmanager")]
+#[::unity2::methods]
+impl HelpManager_Item {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, item: crate::app::helpitembase::HelpItemBase) -> ();
+
+    #[method(name = "get_Up", args = 0)]
+    pub fn get_up(self) -> f32;
+
+    #[method(name = "get_Down", args = 0)]
+    pub fn get_down(self) -> f32;
+
+    #[method(name = "get_Left", args = 0)]
+    pub fn get_left(self) -> f32;
+
+    #[method(name = "get_Right", args = 0)]
+    pub fn get_right(self) -> f32;
+}
+
+#[cfg(feature = "app-helpmanager")]
+impl HelpManager_Item {
+    pub fn new(item: crate::app::helpitembase::HelpItemBase) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HelpManager_Item),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHelpManager_ItemMethods>::ctor(this, item);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager.md")))]
+#[::unity2::class(namespace = "App", name = "HelpManager")]
+# [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: helpmanager :: HelpManager >)]
+pub struct HelpManager {
+    #[rename(name = "m_HelpParamSetter")]
+    pub m_help_param_setter: crate::app::helpparamsetter::HelpParamSetter,
+    #[rename(name = "m_HelpList")]
+    pub m_help_list:
+        crate::system::collections::generic::list_1::List_1<crate::app::helpitemlist::HelpItemList>,
+    #[rename(name = "m_ItemList")]
+    pub m_item_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::helpmanager::HelpManager_Item,
+    >,
+    #[rename(name = "m_CurrentIndex")]
+    pub m_current_index: i32,
+    #[rename(name = "m_SituationType")]
+    pub m_situation_type: crate::app::helpmanager::HelpManager_SituationType,
+    #[rename(name = "m_PreviousDir")]
+    pub m_previous_dir: crate::app::helpmanager::HelpManager_Item_Dir,
+    #[rename(name = "m_AxisPos")]
+    pub m_axis_pos: crate::unity_engine::vector2::Vector2,
+}
+
+#[cfg(feature = "app-helpmanager")]
+#[::unity2::methods]
+impl HelpManager {
+    #[method(name = "Add", args = 1)]
+    pub fn add(list: crate::app::helpitemlist::HelpItemList) -> ();
+
+    #[method(name = "Remove", args = 1)]
+    pub fn remove(list: crate::app::helpitemlist::HelpItemList) -> ();
+
+    #[method(name = "Setup", args = 6)]
+    pub fn setup(
+        self,
+        is_temp_god: bool,
+        temp_god: crate::app::godunit::GodUnit,
+        is_temp_ring: bool,
+        temp_ring: crate::app::unitring::UnitRing,
+        is_temp_unit: bool,
+        temp_unit: crate::app::unit::Unit,
+    ) -> bool;
+
+    #[method(name = "SetContents", args = 1)]
+    pub fn set_contents(self, immediate: bool) -> ();
+
+    #[method(name = "Up", args = 1)]
+    pub fn up(self, is_trigger: bool) -> bool;
+
+    #[method(name = "Down", args = 1)]
+    pub fn down(self, is_trigger: bool) -> bool;
+
+    #[method(name = "Left", args = 1)]
+    pub fn left(self, is_trigger: bool) -> bool;
+
+    #[method(name = "Right", args = 1)]
+    pub fn right(self, is_trigger: bool) -> bool;
+
+    #[method(name = "Dot", args = 2)]
+    pub fn dot(
+        self,
+        ab: crate::unity_engine::vector2::Vector2,
+        p: crate::unity_engine::vector2::Vector2,
+    ) -> f32;
+
+    #[method(name = "SearchDestItem", args = 9)]
+    pub fn search_dest_item(
+        self,
+        dir_idx: i32,
+        pair_dir_idx: i32,
+        cur_pos: crate::unity_engine::vector2::Vector2,
+        cur_a: crate::unity_engine::vector2::Vector2,
+        cur_b: crate::unity_engine::vector2::Vector2,
+        cur_ab: crate::unity_engine::vector2::Vector2,
+        is_move_to_no_touch_item: bool,
+        is_loop: bool,
+        loop_limit: crate::unity_engine::vector2::Vector2,
+    ) -> bool;
+
+    #[method(name = "MoveImpl", args = 2)]
+    pub fn move_impl(
+        self,
+        dir: crate::app::helpmanager::HelpManager_Item_Dir,
+        is_trigger: bool,
+    ) -> bool;
+
+    #[method(name = "IsHelpValid", args = 1)]
+    pub fn is_help_valid(self, hib: crate::app::helpitembase::HelpItemBase) -> bool;
+
+    #[method(name = "StartItemPriority", args = 1)]
+    pub fn start_item_priority(self, hib: crate::app::helpitembase::HelpItemBase) -> i32;
+
+    #[method(name = "StartItemConstPriority", args = 1)]
+    pub fn start_item_const_priority(self, hib: crate::app::helpitembase::HelpItemBase) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-helpmanager")]
+impl HelpManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HelpManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHelpManagerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_HelpItemType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HelpManager_HelpItemType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HelpManager_HelpItemType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HelpManager.HelpItemType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HelpManager_HelpItemType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HelpManager_HelpItemType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn unit_name() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn god_name() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn bond_lv() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn job_title() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn efficacy() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn battle_type() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn unit_lv() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn weapon_lv() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn parameter() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn hp() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn hp_stock() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn weapon_item() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn god_weapon_item() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn skill() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn god_skill() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn terrain_info_skill() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn enchantment() -> Self {
+        Self { value: 18 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_SituationType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HelpManager_SituationType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HelpManager_SituationType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HelpManager.SituationType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HelpManager_SituationType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HelpManager_SituationType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn unit_status() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn ring_select() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn unit_info() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn battle_info() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn battle_engage_info() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn battle_alternate_info() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn only_map_terrain_info() -> Self {
+        Self { value: 7 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/helpmanager/HelpManager_Item_Dir.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HelpManager_Item_Dir {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HelpManager_Item_Dir {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HelpManager.Item.Dir";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HelpManager_Item_Dir {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HelpManager_Item_Dir {
+    pub fn up() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn down() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn left() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 4 }
+    }
+}

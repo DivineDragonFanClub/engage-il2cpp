@@ -1,0 +1,54 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/lodparameters/LODParameters.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct LODParameters {
+    pub m_is_orthographic: i32,
+    pub m_camera_position: crate::unity_engine::vector3::Vector3,
+    pub m_field_of_view: f32,
+    pub m_ortho_size: f32,
+    pub m_camera_pixel_height: i32,
+}
+
+impl ::unity2::ClassIdentity for LODParameters {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "LODParameters";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for LODParameters {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-lodparameters")]
+#[::unity2::methods(value)]
+impl LODParameters {
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(
+        self,
+        other: crate::unity_engine::rendering::lodparameters::LODParameters,
+    ) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_2(self, obj: crate::system::object::Object) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+}

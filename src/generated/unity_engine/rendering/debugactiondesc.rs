@@ -1,0 +1,46 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/debugactiondesc/DebugActionDesc.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "DebugActionDesc")]
+#[parent(crate::system::object::Object)]
+pub struct DebugActionDesc {
+    #[rename(name = "axisTrigger")]
+    pub axis_trigger: ::unity2::Il2CppString,
+    #[rename(name = "buttonTriggerList")]
+    pub button_trigger_list: crate::system::collections::generic::list_1::List_1<
+        ::unity2::Array<::unity2::Il2CppString>,
+    >,
+    #[rename(name = "keyTriggerList")]
+    pub key_trigger_list: crate::system::collections::generic::list_1::List_1<
+        ::unity2::Array<crate::unity_engine::keycode::KeyCode>,
+    >,
+    #[rename(name = "repeatMode")]
+    pub repeat_mode: crate::unity_engine::rendering::debugactionrepeatmode::DebugActionRepeatMode,
+    #[rename(name = "repeatDelay")]
+    pub repeat_delay: f32,
+}
+
+#[cfg(feature = "unity_engine-rendering-debugactiondesc")]
+#[::unity2::methods]
+impl DebugActionDesc {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-debugactiondesc")]
+impl DebugActionDesc {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugActionDesc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugActionDescMethods>::ctor(this);
+        this
+    }
+}

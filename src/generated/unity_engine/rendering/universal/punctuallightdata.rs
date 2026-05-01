@@ -1,0 +1,40 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/punctuallightdata/PunctualLightData.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct PunctualLightData {
+    pub ws_pos: crate::unity_engine::vector3::Vector3,
+    pub radius: f32,
+    pub color: crate::unity_engine::vector4::Vector4,
+    pub attenuation: crate::unity_engine::vector4::Vector4,
+    pub spot_direction: crate::unity_engine::vector3::Vector3,
+    pub light_index: i32,
+    pub occlusion_probe_info: crate::unity_engine::vector4::Vector4,
+}
+
+impl ::unity2::ClassIdentity for PunctualLightData {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "PunctualLightData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PunctualLightData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

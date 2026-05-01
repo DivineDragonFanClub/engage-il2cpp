@@ -1,0 +1,216 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingbattlerader/FishingBattleRader.md")))]
+#[::unity2::class(namespace = "App", name = "FishingBattleRader")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct FishingBattleRader {
+    #[static_field]
+    #[rename(name = "cEffectRootPath")]
+    pub c_effect_root_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cEffectRaderBubble")]
+    pub c_effect_rader_bubble: ::unity2::Il2CppString,
+    #[rename(name = "m_FishShadowObj")]
+    pub m_fish_shadow_obj: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_FishBubbleEffect")]
+    pub m_fish_bubble_effect: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_FishShadowTrans")]
+    pub m_fish_shadow_trans: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_FishAnime")]
+    pub m_fish_anime: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_IsCounterShadow")]
+    pub m_is_counter_shadow: bool,
+    #[rename(name = "m_Area")]
+    pub m_area: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_HPGauge")]
+    pub m_hp_gauge: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_DangerLine")]
+    pub m_danger_line: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ShadowScale")]
+    pub m_shadow_scale: f32,
+    #[rename(name = "m_HPGaugeHpMove")]
+    pub m_hp_gauge_hp_move: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_HPGaugeHpNow")]
+    pub m_hp_gauge_hp_now: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_DamageColor")]
+    pub m_damage_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_HealColor")]
+    pub m_heal_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_StickObj")]
+    pub m_stick_obj: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ButtonObj")]
+    pub m_button_obj: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RepeatGauge")]
+    pub m_repeat_gauge: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_Config")]
+    pub m_config: crate::app::fishingconfig_battle::FishingConfig_Battle,
+    #[rename(name = "m_PositionInterp")]
+    pub m_position_interp: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_ShakeCount")]
+    pub m_shake_count: i32,
+    #[rename(name = "cShakeDiffArray")]
+    pub c_shake_diff_array: ::unity2::Array<f32>,
+    #[rename(name = "m_MaxHPWidth")]
+    pub m_max_hp_width: f32,
+    #[rename(name = "m_NowHPWidth")]
+    pub m_now_hp_width: f32,
+    #[rename(name = "m_MovingHPWidth")]
+    pub m_moving_hp_width: f32,
+    #[rename(name = "m_HPMoveWaitTimer")]
+    pub m_hp_move_wait_timer: f32,
+    #[rename(name = "m_IsForceCounter")]
+    pub m_is_force_counter: bool,
+    #[rename(name = "m_IsLethal")]
+    pub m_is_lethal: bool,
+    #[rename(name = "m_LethalTimer")]
+    pub m_lethal_timer: f32,
+    #[rename(name = "m_IsLethalButtonAppear")]
+    pub m_is_lethal_button_appear: bool,
+    #[rename(name = "m_IsFirstAttack")]
+    pub m_is_first_attack: bool,
+}
+
+#[cfg(feature = "app-fishingbattlerader")]
+#[::unity2::methods]
+impl FishingBattleRader {
+    #[method(name = "get_IsEscape", args = 0)]
+    pub fn get_is_escape(self) -> bool;
+
+    #[method(name = "set_IsEscape", args = 1)]
+    pub fn set_is_escape(self, value: bool) -> ();
+
+    #[method(name = "get_IsDefeat", args = 0)]
+    pub fn get_is_defeat(self) -> bool;
+
+    #[method(name = "set_IsDefeat", args = 1)]
+    pub fn set_is_defeat(self, value: bool) -> ();
+
+    #[method(name = "get_ShadowDistance", args = 0)]
+    pub fn get_shadow_distance(self) -> f32;
+
+    #[method(name = "set_ShadowDistance", args = 1)]
+    pub fn set_shadow_distance(self, value: f32) -> ();
+
+    #[method(name = "get_ShadowDir", args = 0)]
+    pub fn get_shadow_dir(self) -> f32;
+
+    #[method(name = "set_ShadowDir", args = 1)]
+    pub fn set_shadow_dir(self, value: f32) -> ();
+
+    #[method(name = "get_IsShake", args = 0)]
+    pub fn get_is_shake(self) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Init", args = 3)]
+    pub fn init(
+        self,
+        size_id: i32,
+        shadow_scale: f32,
+        config: crate::app::fishingconfig_battle::FishingConfig_Battle,
+    ) -> ();
+
+    #[method(name = "Finalize", args = 0)]
+    pub fn finalize(self) -> ();
+
+    #[method(name = "ResetRadar", args = 0)]
+    pub fn reset_radar(self) -> ();
+
+    #[method(name = "Tick", args = 1)]
+    pub fn tick(self, fish: crate::app::fishingfish::FishingFish) -> ();
+
+    #[method(name = "SetActiveDangerLine", args = 1)]
+    pub fn set_active_danger_line(self, set: bool) -> ();
+
+    #[method(name = "UpdateFishShadow", args = 1)]
+    pub fn update_fish_shadow(self, fish: crate::app::fishingfish::FishingFish) -> ();
+
+    #[method(name = "RecoveryLethal", args = 0)]
+    pub fn recovery_lethal(self) -> ();
+
+    #[method(name = "DamageShake", args = 0)]
+    pub fn damage_shake(self) -> ();
+
+    #[method(name = "DamageRed", args = 0)]
+    pub fn damage_red(self) -> ();
+
+    #[method(name = "GetCounterVec", args = 0)]
+    pub fn get_counter_vec(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "UpdateStickDir", args = 0)]
+    pub fn update_stick_dir(self) -> ();
+
+    #[method(name = "SetHPGaugeWidth", args = 2)]
+    pub fn set_hp_gauge_width(
+        self,
+        gauge_obj: crate::unity_engine::gameobject::GameObject,
+        width: f32,
+    ) -> ();
+
+    #[method(name = "SetHPGaugeColor", args = 2)]
+    pub fn set_hp_gauge_color(
+        self,
+        gauge_obj: crate::unity_engine::gameobject::GameObject,
+        set_color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = "FirstAttack", args = 1)]
+    pub fn first_attack(self, hp_rate: f32) -> ();
+
+    #[method(name = "UpdateHP", args = 1)]
+    pub fn update_hp(self, percent: f32) -> ();
+
+    #[method(name = "UpdateLethalHP", args = 1)]
+    pub fn update_lethal_hp(self, percent: f32) -> ();
+
+    #[method(name = "SetLethal", args = 1)]
+    pub fn set_lethal(self, set: bool) -> ();
+
+    #[method(name = "SetActiveArea", args = 1)]
+    pub fn set_active_area(self, set: bool) -> ();
+
+    #[method(name = "SetStickObj", args = 1)]
+    pub fn set_stick_obj(self, obj: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "SetActiveStick", args = 1)]
+    pub fn set_active_stick(self, set: bool) -> ();
+
+    #[method(name = "IsActiveStick", args = 0)]
+    pub fn is_active_stick(self) -> bool;
+
+    #[method(name = "SetButtonObj", args = 1)]
+    pub fn set_button_obj(self, obj: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "SetActiveButton", args = 1)]
+    pub fn set_active_button(self, set: bool) -> ();
+
+    #[method(name = "IsActiveButton", args = 0)]
+    pub fn is_active_button(self) -> bool;
+}
+
+#[cfg(feature = "app-fishingbattlerader")]
+impl FishingBattleRader {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingBattleRader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingBattleRaderMethods>::ctor(this);
+        this
+    }
+}

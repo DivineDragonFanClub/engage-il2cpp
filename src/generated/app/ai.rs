@@ -1,0 +1,220 @@
+
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ai/AI.md")))]
+#[::unity2::class(namespace = "App", name = "AI")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: ai :: AI >)]
+pub struct AI {
+    #[rename(name = "m_Order")]
+    pub m_order: crate::app::aiorder::AIOrder,
+    #[rename(name = "m_Think")]
+    pub m_think: crate::app::aithink::AIThink,
+    #[rename(name = "m_Cannon")]
+    pub m_cannon: crate::app::aicannon::AICannon,
+    #[rename(name = "m_InterruptAttack")]
+    pub m_interrupt_attack: crate::app::aiinterruptattack::AIInterruptAttack,
+    #[rename(name = "m_Seq")]
+    pub m_seq: crate::app::ai::AI_Seq,
+    #[rename(name = "m_Crossfire")]
+    pub m_crossfire: bool,
+    #[rename(name = "m_IsTargetUpdate")]
+    pub m_is_target_update: bool,
+    #[rename(name = "m_IsVersus")]
+    pub m_is_versus: bool,
+    #[rename(name = "m_IsVersusCasual")]
+    pub m_is_versus_casual: bool,
+    #[rename(name = "m_IsVersusRankedOrMock")]
+    pub m_is_versus_ranked_or_mock: bool,
+}
+
+#[cfg(feature = "app-ai")]
+#[::unity2::methods]
+impl AI {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_Order", args = 0)]
+    pub fn get_order(self) -> crate::app::aiorder::AIOrder;
+
+    #[method(name = "get_Think", args = 0)]
+    pub fn get_think(self) -> crate::app::aithink::AIThink;
+
+    #[method(name = "get_Cannon", args = 0)]
+    pub fn get_cannon(self) -> crate::app::aicannon::AICannon;
+
+    #[method(name = "get_InterruptAttack", args = 0)]
+    pub fn get_interrupt_attack(self) -> crate::app::aiinterruptattack::AIInterruptAttack;
+
+    #[method(name = "SetSeq", args = 1)]
+    pub fn set_seq(self, seq: crate::app::ai::AI_Seq) -> ();
+
+    #[method(name = "SetCrossfire", args = 1)]
+    pub fn set_crossfire(self, enable: bool) -> ();
+
+    #[method(name = "IsVersus", args = 0)]
+    pub fn is_versus(self) -> bool;
+
+    #[method(name = "IsVersusCasual", args = 0)]
+    pub fn is_versus_casual(self) -> bool;
+
+    #[method(name = "IsVersusRankedOrMock", args = 0)]
+    pub fn is_versus_ranked_or_mock(self) -> bool;
+
+    #[method(name = "IsEntrust", args = 0)]
+    pub fn is_entrust() -> bool;
+
+    #[method(name = "Rand", args = 0)]
+    pub fn rand() -> crate::app::random_2::Random_2;
+
+    #[method(name = "IsRandom", args = 0)]
+    pub fn is_random() -> bool;
+
+    #[method(name = "Processing", args = 0)]
+    pub fn processing(self) -> ();
+
+    #[method(name = "SetupForEngageOrGodChange", args = 1)]
+    pub fn setup_for_engage_or_god_change(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "IsOrderUnitEngageOrGodChange", args = 0)]
+    pub fn is_order_unit_engage_or_god_change(self) -> bool;
+
+    #[method(name = "SetupForRemove", args = 1)]
+    pub fn setup_for_remove(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "IsOrderUnitRemove", args = 0)]
+    pub fn is_order_unit_remove(self) -> bool;
+
+    #[method(name = "SetupForRemagic", args = 1)]
+    pub fn setup_for_remagic(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "IsOrderUnitRemagic", args = 0)]
+    pub fn is_order_unit_remagic(self) -> bool;
+
+    #[method(name = "SetupForRerewarp", args = 1)]
+    pub fn setup_for_rerewarp(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "IsOrderUnitRerewarp", args = 0)]
+    pub fn is_order_unit_rerewarp(self) -> bool;
+
+    #[method(name = "iInitialize", args = 0)]
+    pub fn i_initialize(self) -> ();
+
+    #[method(name = "iProcessing", args = 0)]
+    pub fn i_processing(self) -> bool;
+
+    #[method(name = "iProcessingRemove", args = 0)]
+    pub fn i_processing_remove(self) -> bool;
+
+    #[method(name = "iProcessingRemagic", args = 0)]
+    pub fn i_processing_remagic(self) -> bool;
+
+    #[method(name = "iProcessingRerewarp", args = 0)]
+    pub fn i_processing_rerewarp(self) -> bool;
+
+    #[method(name = "iCrossfire", args = 0)]
+    pub fn i_crossfire(self) -> bool;
+
+    #[method(name = "iInterruptAttack", args = 0)]
+    pub fn i_interrupt_attack(self) -> bool;
+
+    #[method(name = "Completion", args = 1)]
+    pub fn completion(self, unit: crate::app::unit::Unit) -> ();
+
+    #[method(name = "iFinalize", args = 0)]
+    pub fn i_finalize(self) -> ();
+
+    #[method(name = "DbgPLCPrepare", args = 0)]
+    pub fn dbg_plc_prepare(self) -> ();
+
+    #[method(name = "DbgPLCAddLog", args = 0)]
+    pub fn dbg_plc_add_log(self) -> ();
+
+    #[method(name = "DbgPLCUnknownSeq", args = 0)]
+    pub fn dbg_plc_unknown_seq(self) -> ();
+
+    #[method(name = "DbgPLCCheckLoopCount", args = 0)]
+    pub fn dbg_plc_check_loop_count(self) -> ();
+}
+
+#[cfg(feature = "app-ai")]
+impl AI {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AI),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ai/AI_Seq.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AI_Seq {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AI_Seq {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AI.Seq";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AI_Seq {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AI_Seq {
+    pub fn initialize() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn order() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn processing() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn crossfire() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn interrupt_attack() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn finalize() -> Self {
+        Self { value: 5 }
+    }
+}

@@ -1,0 +1,37 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/subsystems_implementation/subsystemdescriptorwithprovider/SubsystemDescriptorWithProvider.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.SubsystemsImplementation",
+    name = "SubsystemDescriptorWithProvider"
+)]
+#[parent(crate::system::object::Object)]
+pub struct SubsystemDescriptorWithProvider {}
+
+#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
+#[::unity2::methods]
+impl SubsystemDescriptorWithProvider {
+    #[method(name = "get_id", args = 0)]
+    pub fn get_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
+impl SubsystemDescriptorWithProvider {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SubsystemDescriptorWithProvider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISubsystemDescriptorWithProviderMethods>::ctor(this);
+        this
+    }
+}

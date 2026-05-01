@@ -1,0 +1,188 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmascotcontroller/HubMascotController.md")))]
+#[::unity2::class(namespace = "App", name = "HubMascotController")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct HubMascotController {
+    #[rename(name = "FollowSpeed1")]
+    pub follow_speed1: f32,
+    #[rename(name = "FollowSpeed2")]
+    pub follow_speed2: f32,
+    #[rename(name = "SpeedRate")]
+    pub speed_rate: f32,
+    #[rename(name = "overlapColliders")]
+    pub overlap_colliders: ::unity2::Array<crate::unity_engine::collider::Collider>,
+    #[rename(name = "results")]
+    pub results: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+    #[rename(name = "m_animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_speed")]
+    pub m_speed: f32,
+    #[rename(name = "m_angle")]
+    pub m_angle: f32,
+    #[rename(name = "m_lastAngle")]
+    pub m_last_angle: f32,
+    #[rename(name = "m_reactionCounter")]
+    pub m_reaction_counter: f32,
+    #[rename(name = "m_moveDelay")]
+    pub m_move_delay: f32,
+    #[rename(name = "m_distanceTime")]
+    pub m_distance_time: f32,
+    #[rename(name = "m_keepAway")]
+    pub m_keep_away: bool,
+    #[rename(name = "m_reactionFirst")]
+    pub m_reaction_first: bool,
+    #[rename(name = "m_findLast")]
+    pub m_find_last: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_agent")]
+    pub m_agent: crate::unity_engine::ai::navmeshagent::NavMeshAgent,
+    #[rename(name = "m_path")]
+    pub m_path: crate::unity_engine::ai::navmeshpath::NavMeshPath,
+    #[rename(name = "ObjectCollisionLayerMask")]
+    pub object_collision_layer_mask: i32,
+    #[rename(name = "GroundCollisionLayerMask")]
+    pub ground_collision_layer_mask: i32,
+}
+
+#[cfg(feature = "app-hubmascotcontroller")]
+#[::unity2::methods]
+impl HubMascotController {
+    #[method(name = "get_CurrentMode", args = 0)]
+    pub fn get_current_mode(self) -> crate::app::hubmascotcontroller::HubMascotController_Mode;
+
+    #[method(name = "set_CurrentMode", args = 1)]
+    pub fn set_current_mode(
+        self,
+        value: crate::app::hubmascotcontroller::HubMascotController_Mode,
+    ) -> ();
+
+    #[method(name = "get_Agent", args = 0)]
+    pub fn get_agent(self) -> crate::unity_engine::ai::navmeshagent::NavMeshAgent;
+
+    #[method(name = "get_Follow", args = 0)]
+    pub fn get_follow(self) -> crate::unity_engine::transform::Transform;
+
+    #[method(name = "set_Follow", args = 1)]
+    pub fn set_follow(self, value: crate::unity_engine::transform::Transform) -> ();
+
+    #[method(name = "get_IsStop", args = 0)]
+    pub fn get_is_stop(self) -> bool;
+
+    #[method(name = "set_IsStop", args = 1)]
+    pub fn set_is_stop(self, value: bool) -> ();
+
+    #[method(name = "get_DefaultLookAtTarget", args = 0)]
+    pub fn get_default_look_at_target(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "set_DefaultLookAtTarget", args = 1)]
+    pub fn set_default_look_at_target(
+        self,
+        value: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "SetBool", args = 2)]
+    pub fn set_bool(self, param_name: ::unity2::Il2CppString, value: bool) -> ();
+
+    #[method(name = "Play", args = 2)]
+    pub fn play(self, anim_name: ::unity2::Il2CppString, forced: bool) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "UpdateAgent", args = 0)]
+    pub fn update_agent(self) -> ();
+
+    #[method(name = "UpdateTrace", args = 0)]
+    pub fn update_trace(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubmascotcontroller")]
+impl HubMascotController {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMascotController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMascotControllerMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmascotcontroller/HubMascotController_Mode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubMascotController_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubMascotController_Mode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubMascotController.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubMascotController_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubMascotController_Mode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn pedestal() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn follow() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn lost() -> Self {
+        Self { value: 3 }
+    }
+}

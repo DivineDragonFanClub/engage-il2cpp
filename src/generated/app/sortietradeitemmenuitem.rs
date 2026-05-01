@@ -1,0 +1,118 @@
+
+use crate::app::basicitemmenuitem::BasicItemMenuItem;
+use crate::app::basicitemmenuitem::IBasicItemMenuItem;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortietradeitemmenuitem/SortieTradeItemMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "SortieTradeItemMenuItem")]
+#[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
+pub struct SortieTradeItemMenuItem {
+    #[rename(name = "m_unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_recieverUnit")]
+    pub m_reciever_unit: crate::app::unit::Unit,
+    #[rename(name = "m_itemIndex")]
+    pub m_item_index: i32,
+    #[rename(name = "m_bDefaultSelect")]
+    pub m_b_default_select: bool,
+    #[rename(name = "m_SelectableBlank")]
+    pub m_selectable_blank: bool,
+    #[rename(name = "m_EnabledToSelectBlank")]
+    pub m_enabled_to_select_blank: bool,
+    #[rename(name = "m_Disabled")]
+    pub m_disabled: bool,
+}
+
+#[cfg(feature = "app-sortietradeitemmenuitem")]
+#[::unity2::methods]
+impl SortieTradeItemMenuItem {
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        reciever_unit: crate::app::unit::Unit,
+        index: i32,
+        default_select: bool,
+        selectable_blank: bool,
+    ) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "SetInitialColor", args = 0)]
+    pub fn set_initial_color(self) -> ();
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "OnDeselect", args = 0)]
+    pub fn on_deselect(self) -> ();
+
+    #[method(name = "OnCursorMoveEnd", args = 0)]
+    pub fn on_cursor_move_end(self) -> ();
+
+    #[method(name = "SetSelect", args = 0)]
+    pub fn set_select(self) -> ();
+
+    #[method(name = "ClearSelect", args = 0)]
+    pub fn clear_select(self) -> ();
+
+    #[method(name = "GetUnitItem", args = 0)]
+    pub fn get_unit_item(self) -> crate::app::unititem::UnitItem;
+
+    #[method(name = "GetRecieverUnit", args = 0)]
+    pub fn get_reciever_unit(self) -> crate::app::unit::Unit;
+
+    #[method(name = "IsSelectable", args = 0)]
+    pub fn is_selectable(self) -> bool;
+
+    #[method(name = "IsSelectableBlank", args = 0)]
+    pub fn is_selectable_blank(self) -> bool;
+
+    #[method(name = "EnableToSelectBlank", args = 1)]
+    pub fn enable_to_select_blank(self, enabled: bool) -> ();
+
+    #[method(name = "SetAttributeDisable", args = 1)]
+    pub fn set_attribute_disable(self, value: bool) -> ();
+
+    #[method(name = "IsNullOrEmpty", args = 0)]
+    pub fn is_null_or_empty(self) -> bool;
+}
+
+#[cfg(feature = "app-sortietradeitemmenuitem")]
+impl SortieTradeItemMenuItem {
+    pub fn new(
+        unit: crate::app::unit::Unit,
+        reciever_unit: crate::app::unit::Unit,
+        index: i32,
+        default_select: bool,
+        selectable_blank: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTradeItemMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTradeItemMenuItemMethods>::ctor(
+            this,
+            unit,
+            reciever_unit,
+            index,
+            default_select,
+            selectable_blank,
+        );
+        this
+    }
+}

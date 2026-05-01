@@ -1,0 +1,120 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringselectroot/RingSelectRoot_CharaPhoto.md")))]
+#[::unity2::class(namespace = "App", name = "RingSelectRoot.CharaPhoto")]
+#[parent(crate::system::object::Object)]
+pub struct RingSelectRoot_CharaPhoto {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RootAnimator")]
+    pub m_root_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_CharaImage")]
+    pub m_chara_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_FrameImage")]
+    pub m_frame_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_IsSetup")]
+    pub m_is_setup: bool,
+}
+
+#[cfg(feature = "app-ringselectroot")]
+#[::unity2::methods]
+impl RingSelectRoot_CharaPhoto {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "FadeIn", args = 0)]
+    pub fn fade_in(self) -> ();
+
+    #[method(name = "FadeOut", args = 0)]
+    pub fn fade_out(self) -> ();
+
+    #[method(name = "SetRingChara", args = 1)]
+    pub fn set_ring_chara(self, ring_data: crate::app::ringdata::RingData) -> ();
+}
+
+#[cfg(feature = "app-ringselectroot")]
+impl RingSelectRoot_CharaPhoto {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingSelectRoot_CharaPhoto),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingSelectRoot_CharaPhotoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringselectroot/RingSelectRoot.md")))]
+#[::unity2::class(namespace = "App", name = "RingSelectRoot")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct RingSelectRoot {
+    #[rename(name = "m_RingMenu")]
+    pub m_ring_menu: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_GodImageRoot")]
+    pub m_god_image_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RingModelRoot")]
+    pub m_ring_model_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_UnitStatusRoot")]
+    pub m_unit_status_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Photos")]
+    pub m_photos: ::unity2::Array<crate::app::ringselectroot::RingSelectRoot_CharaPhoto>,
+    #[rename(name = "m_PhotoIdx")]
+    pub m_photo_idx: i32,
+}
+
+#[cfg(feature = "app-ringselectroot")]
+#[::unity2::methods]
+impl RingSelectRoot {
+    #[method(name = "GetRingMenu", args = 0)]
+    pub fn get_ring_menu(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "GetUnitStatusRoot", args = 0)]
+    pub fn get_unit_status_root(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "SetupRingImage", args = 0)]
+    pub fn setup_ring_image(self) -> ();
+
+    #[method(name = "SetRingModelVisible", args = 1)]
+    pub fn set_ring_model_visible(self, is_ring: bool) -> ();
+
+    #[method(name = "SetGodImageVisible", args = 1)]
+    pub fn set_god_image_visible(self, is_visible: bool) -> ();
+
+    #[method(name = "GodRespondVoice", args = 0)]
+    pub fn god_respond_voice(self) -> ();
+
+    #[method(name = "SetupCommonImage", args = 1)]
+    pub fn setup_common_image(self, data: crate::app::ringdata::RingData) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ringselectroot")]
+impl RingSelectRoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingSelectRoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingSelectRootMethods>::ctor(this);
+        this
+    }
+}

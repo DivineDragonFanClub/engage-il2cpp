@@ -1,0 +1,31 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/loaders/iscriptloader/IScriptLoader.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter.Loaders", name = "IScriptLoader")]
+pub struct IScriptLoader {}
+
+#[cfg(feature = "moon_sharp-interpreter-loaders-iscriptloader")]
+#[::unity2::methods]
+impl IScriptLoader {
+    #[method(name = "LoadFile", args = 2)]
+    pub fn load_file(
+        self,
+        file: ::unity2::Il2CppString,
+        global_context: crate::moon_sharp::interpreter::table::Table,
+    ) -> crate::system::object::Object;
+
+    #[method(name = "ResolveFileName", args = 2)]
+    pub fn resolve_file_name(
+        self,
+        filename: ::unity2::Il2CppString,
+        global_context: crate::moon_sharp::interpreter::table::Table,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "ResolveModuleName", args = 2)]
+    pub fn resolve_module_name(
+        self,
+        modname: ::unity2::Il2CppString,
+        global_context: crate::moon_sharp::interpreter::table::Table,
+    ) -> ::unity2::Il2CppString;
+}

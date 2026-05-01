@@ -1,0 +1,31 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/assemblytrademarkattribute/AssemblyTrademarkAttribute.md")))]
+#[::unity2::class(namespace = "System.Reflection", name = "AssemblyTrademarkAttribute")]
+pub struct AssemblyTrademarkAttribute {
+    #[rename(name = "m_trademark")]
+    pub m_trademark: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "system-reflection-assemblytrademarkattribute")]
+#[::unity2::methods]
+impl AssemblyTrademarkAttribute {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, trademark: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "system-reflection-assemblytrademarkattribute")]
+impl AssemblyTrademarkAttribute {
+    pub fn new(trademark: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssemblyTrademarkAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssemblyTrademarkAttributeMethods>::ctor(this, trademark);
+        this
+    }
+}

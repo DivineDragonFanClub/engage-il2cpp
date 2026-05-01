@@ -1,0 +1,113 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/interactdata/InteractData_Interacts.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct InteractData_Interacts {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for InteractData_Interacts {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "InteractData.Interacts";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for InteractData_Interacts {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl InteractData_Interacts {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn good() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn bad() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/interactdata/InteractData.md")))]
+#[::unity2::class(namespace = "App", name = "InteractData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: interactdata :: InteractData >)]
+pub struct InteractData {}
+
+#[cfg(feature = "app-interactdata")]
+#[::unity2::methods]
+impl InteractData {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_Kind", args = 0)]
+    pub fn get_kind(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Kind", args = 1)]
+    pub fn set_kind(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Flag", args = 0)]
+    pub fn get_flag(self) -> crate::app::bitfield32::BitField32;
+
+    #[method(name = "set_Flag", args = 1)]
+    pub fn set_flag(self, value: crate::app::bitfield32::BitField32) -> ();
+
+    #[method(name = "GetInteract", args = 2)]
+    pub fn get_interact(
+        current: crate::app::unititem::UnitItem,
+        reverse: crate::app::unititem::UnitItem,
+    ) -> crate::app::interactdata::InteractData_Interacts;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-interactdata")]
+impl InteractData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InteractData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInteractDataMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,124 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/packingattribute/PackingAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "PackingAttribute")]
+pub struct PackingAttribute {
+    #[rename(name = "displayNames")]
+    pub display_names: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "range")]
+    pub range: ::unity2::Array<f32>,
+    #[rename(name = "packingScheme")]
+    pub packing_scheme: crate::unity_engine::rendering::fieldpacking::FieldPacking,
+    #[rename(name = "offsetInSource")]
+    pub offset_in_source: i32,
+    #[rename(name = "sizeInBits")]
+    pub size_in_bits: i32,
+    #[rename(name = "isDirection")]
+    pub is_direction: bool,
+    #[rename(name = "sRGBDisplay")]
+    pub s_rgb_display: bool,
+    #[rename(name = "checkIsNormalized")]
+    pub check_is_normalized: bool,
+}
+
+#[cfg(feature = "unity_engine-rendering-packingattribute")]
+#[::unity2::methods]
+impl PackingAttribute {
+    #[method(name = ".ctor", args = 9)]
+    pub fn ctor(
+        self,
+        display_names: ::unity2::Array<::unity2::Il2CppString>,
+        packing_scheme: crate::unity_engine::rendering::fieldpacking::FieldPacking,
+        bit_size: i32,
+        offset_in_source: i32,
+        min_value: f32,
+        max_value: f32,
+        is_direction: bool,
+        s_rgb_display: bool,
+        check_is_normalized: bool,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 9)]
+    pub fn ctor_2(
+        self,
+        display_name: ::unity2::Il2CppString,
+        packing_scheme: crate::unity_engine::rendering::fieldpacking::FieldPacking,
+        bit_size: i32,
+        offset_in_source: i32,
+        min_value: f32,
+        max_value: f32,
+        is_direction: bool,
+        s_rgb_display: bool,
+        check_is_normalized: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-packingattribute")]
+impl PackingAttribute {
+    pub fn new(
+        display_names: ::unity2::Array<::unity2::Il2CppString>,
+        packing_scheme: crate::unity_engine::rendering::fieldpacking::FieldPacking,
+        bit_size: i32,
+        offset_in_source: i32,
+        min_value: f32,
+        max_value: f32,
+        is_direction: bool,
+        s_rgb_display: bool,
+        check_is_normalized: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PackingAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPackingAttributeMethods>::ctor(
+            this,
+            display_names,
+            packing_scheme,
+            bit_size,
+            offset_in_source,
+            min_value,
+            max_value,
+            is_direction,
+            s_rgb_display,
+            check_is_normalized,
+        );
+        this
+    }
+
+    pub fn new_2(
+        display_name: ::unity2::Il2CppString,
+        packing_scheme: crate::unity_engine::rendering::fieldpacking::FieldPacking,
+        bit_size: i32,
+        offset_in_source: i32,
+        min_value: f32,
+        max_value: f32,
+        is_direction: bool,
+        s_rgb_display: bool,
+        check_is_normalized: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PackingAttribute),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IPackingAttributeMethods>::ctor_2(
+            this,
+            display_name,
+            packing_scheme,
+            bit_size,
+            offset_in_source,
+            min_value,
+            max_value,
+            is_direction,
+            s_rgb_display,
+            check_is_normalized,
+        );
+        this
+    }
+}

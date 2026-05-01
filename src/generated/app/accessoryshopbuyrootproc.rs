@@ -1,0 +1,311 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_StartWatchingEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "AccessoryShopBuyRootProc.StartWatchingEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AccessoryShopBuyRootProc_StartWatchingEventHandler {}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+#[::unity2::methods]
+impl AccessoryShopBuyRootProc_StartWatchingEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> bool;
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl AccessoryShopBuyRootProc_StartWatchingEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopBuyRootProc_StartWatchingEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopBuyRootProc_StartWatchingEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_EndWatchingEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "AccessoryShopBuyRootProc.EndWatchingEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AccessoryShopBuyRootProc_EndWatchingEventHandler {}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+#[::unity2::methods]
+impl AccessoryShopBuyRootProc_EndWatchingEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl AccessoryShopBuyRootProc_EndWatchingEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopBuyRootProc_EndWatchingEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopBuyRootProc_EndWatchingEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc.md")))]
+#[::unity2::class(namespace = "App", name = "AccessoryShopBuyRootProc")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct AccessoryShopBuyRootProc {
+    #[rename(name = "m_KeyHelpAllObject")]
+    pub m_key_help_all_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_KeyHelpAllAnimator")]
+    pub m_key_help_all_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_ChangeUnitToPrevEventHandler")]
+    pub m_change_unit_to_prev_event_handler:
+        crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler,
+    #[rename(name = "m_ChangeUnitToNextEventHandler")]
+    pub m_change_unit_to_next_event_handler:
+        crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler,
+    #[rename(name = "m_StartWatchingEventHandler")]
+    pub m_start_watching_event_handler:
+        crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_StartWatchingEventHandler,
+    #[rename(name = "m_EndWatchingEventHandler")]
+    pub m_end_watching_event_handler:
+        crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_EndWatchingEventHandler,
+    #[rename(name = "m_ShowUIEventHandler")]
+    pub m_show_ui_event_handler:
+        crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_ShowUIEventHandler,
+    #[rename(name = "m_HideUIEventHandler")]
+    pub m_hide_ui_event_handler:
+        crate::app::accessoryshopbuyrootproc::AccessoryShopBuyRootProc_HideUIEventHandler,
+    #[rename(name = "watching")]
+    pub watching: bool,
+    #[rename(name = "visibleUI")]
+    pub visible_ui: bool,
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+#[::unity2::methods]
+impl AccessoryShopBuyRootProc {
+    #[method(name = ".ctor", args = 9)]
+    pub fn ctor(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        key_help_all_object: crate::unity_engine::gameobject::GameObject,
+        key_help_all_animator: crate::unity_engine::animator::Animator,
+        change_unit_to_prev_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler,
+        change_unit_to_next_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler,
+        start_watching_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_StartWatchingEventHandler,
+        end_watching_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_EndWatchingEventHandler,
+        show_ui_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ShowUIEventHandler,
+        hide_ui_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_HideUIEventHandler,
+    ) -> ();
+
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[method(name = "KeyHelpAllOpen", args = 0)]
+    pub fn key_help_all_open(self) -> ();
+
+    #[method(name = "KeyHelpAllClose", args = 0)]
+    pub fn key_help_all_close(self) -> ();
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl AccessoryShopBuyRootProc {
+    pub fn new(
+        super_: crate::app::procinst::ProcInst,
+        key_help_all_object: crate::unity_engine::gameobject::GameObject,
+        key_help_all_animator: crate::unity_engine::animator::Animator,
+        change_unit_to_prev_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler,
+        change_unit_to_next_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler,
+        start_watching_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_StartWatchingEventHandler,
+        end_watching_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_EndWatchingEventHandler,
+        show_ui_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_ShowUIEventHandler,
+        hide_ui_event_handler : crate :: app :: accessoryshopbuyrootproc :: AccessoryShopBuyRootProc_HideUIEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopBuyRootProc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopBuyRootProcMethods>::ctor(
+            this,
+            super_,
+            key_help_all_object,
+            key_help_all_animator,
+            change_unit_to_prev_event_handler,
+            change_unit_to_next_event_handler,
+            start_watching_event_handler,
+            end_watching_event_handler,
+            show_ui_event_handler,
+            hide_ui_event_handler,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "AccessoryShopBuyRootProc.ChangeUnitToNextEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler {}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+#[::unity2::methods]
+impl AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopBuyRootProc_ChangeUnitToNextEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopBuyRootProc_ChangeUnitToNextEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_ShowUIEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "AccessoryShopBuyRootProc.ShowUIEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AccessoryShopBuyRootProc_ShowUIEventHandler {}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+#[::unity2::methods]
+impl AccessoryShopBuyRootProc_ShowUIEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl AccessoryShopBuyRootProc_ShowUIEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopBuyRootProc_ShowUIEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopBuyRootProc_ShowUIEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "AccessoryShopBuyRootProc.ChangeUnitToPrevEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler {}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+#[::unity2::methods]
+impl AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopBuyRootProc_ChangeUnitToPrevEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopBuyRootProc_ChangeUnitToPrevEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessoryshopbuyrootproc/AccessoryShopBuyRootProc_HideUIEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "AccessoryShopBuyRootProc.HideUIEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AccessoryShopBuyRootProc_HideUIEventHandler {}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+#[::unity2::methods]
+impl AccessoryShopBuyRootProc_HideUIEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-accessoryshopbuyrootproc")]
+impl AccessoryShopBuyRootProc_HideUIEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopBuyRootProc_HideUIEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopBuyRootProc_HideUIEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}

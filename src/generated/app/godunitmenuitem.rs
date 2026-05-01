@@ -1,0 +1,97 @@
+
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godunitmenuitem/GodUnitMenuItem.md")))]
+#[::unity2::class(namespace = "App", name = "GodUnitMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct GodUnitMenuItem {
+    #[rename(name = "m_SelectEventHandler")]
+    pub m_select_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler,
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,
+    #[rename(name = "m_IsSelected")]
+    pub m_is_selected: bool,
+    #[rename(name = "m_IsShowRingDirtyIcon")]
+    pub m_is_show_ring_dirty_icon: bool,
+    #[rename(name = "m_GodType")]
+    pub m_god_type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+}
+
+#[cfg(feature = "app-godunitmenuitem")]
+#[::unity2::methods]
+impl GodUnitMenuItem {
+    #[method(name = "get_God", args = 0)]
+    pub fn get_god(self) -> crate::app::godunit::GodUnit;
+
+    #[method(name = "set_God", args = 1)]
+    pub fn set_god(self, value: crate::app::godunit::GodUnit) -> ();
+
+    #[method(name = ".ctor", args = 6)]
+    pub fn ctor(
+        self,
+        god: crate::app::godunit::GodUnit,
+        select_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler,
+        decide_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,
+        is_selected: bool,
+        is_show_ring_dirty_icon: bool,
+        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+    ) -> ();
+
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[method(name = "GetGodName", args = 0)]
+    pub fn get_god_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetOptionalGodData", args = 0)]
+    pub fn get_optional_god_data(self) -> crate::app::goddata::GodData;
+
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> crate::app::ringcleaningsequence::RingCleaningSequence_GodType;
+
+    #[method(name = "get_IsShowRingIcon", args = 0)]
+    pub fn get_is_show_ring_icon(self) -> bool;
+}
+
+#[cfg(feature = "app-godunitmenuitem")]
+impl GodUnitMenuItem {
+    pub fn new(
+        god: crate::app::godunit::GodUnit,
+        select_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_SelectEventHandler,
+        decide_event_handler: crate::app::godunitselectmenu::GodUnitSelectMenu_DecideEventHandler,
+        is_selected: bool,
+        is_show_ring_dirty_icon: bool,
+        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodUnitMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodUnitMenuItemMethods>::ctor(
+            this,
+            god,
+            select_event_handler,
+            decide_event_handler,
+            is_selected,
+            is_show_ring_dirty_icon,
+            r#type,
+        );
+        this
+    }
+}

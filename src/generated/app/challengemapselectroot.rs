@@ -1,0 +1,203 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/challengemapselectroot/ChallengeMapSelectRoot_RewardInfoItem.md")))]
+#[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot.RewardInfoItem")]
+#[parent(crate::system::object::Object)]
+pub struct ChallengeMapSelectRoot_RewardInfoItem {
+    #[rename(name = "m_Root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_IconImage")]
+    pub m_icon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_NameText")]
+    pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_MinText")]
+    pub m_min_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Tilde")]
+    pub m_tilde: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_MaxText")]
+    pub m_max_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_FrmImage")]
+    pub m_frm_image: crate::unity_engine::ui::image::Image,
+}
+
+#[cfg(feature = "app-challengemapselectroot")]
+#[::unity2::methods]
+impl ChallengeMapSelectRoot_RewardInfoItem {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-challengemapselectroot")]
+impl ChallengeMapSelectRoot_RewardInfoItem {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeMapSelectRoot_RewardInfoItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeMapSelectRoot_RewardInfoItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/challengemapselectroot/ChallengeMapSelectRoot_ItemDropNum.md")))]
+#[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot.ItemDropNum")]
+#[parent(crate::system::object::Object)]
+pub struct ChallengeMapSelectRoot_ItemDropNum {}
+
+#[cfg(feature = "app-challengemapselectroot")]
+#[::unity2::methods]
+impl ChallengeMapSelectRoot_ItemDropNum {
+    #[method(name = "get_Min", args = 0)]
+    pub fn get_min(self) -> i32;
+
+    #[method(name = "set_Min", args = 1)]
+    pub fn set_min(self, value: i32) -> ();
+
+    #[method(name = "get_Max", args = 0)]
+    pub fn get_max(self) -> i32;
+
+    #[method(name = "set_Max", args = 1)]
+    pub fn set_max(self, value: i32) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-challengemapselectroot")]
+impl ChallengeMapSelectRoot_ItemDropNum {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeMapSelectRoot_ItemDropNum),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeMapSelectRoot_ItemDropNumMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/challengemapselectroot/ChallengeMapSelectRoot.md")))]
+#[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct ChallengeMapSelectRoot {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "SpriteAtlasPath")]
+    pub sprite_atlas_path: ::unity2::Il2CppString,
+    #[rename(name = "m_SpriteAtlas")]
+    pub m_sprite_atlas: crate::unity_engine::u2d::spriteatlas::SpriteAtlas,
+    #[rename(name = "m_MapSelectMenuContent")]
+    pub m_map_select_menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    #[rename(name = "m_DifficultySelectMenu")]
+    pub m_difficulty_select_menu: crate::app::basicmenucontent::BasicMenuContent,
+    #[rename(name = "m_MapHelpObj")]
+    pub m_map_help_obj: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_MapTitleText")]
+    pub m_map_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_BattleCountText")]
+    pub m_battle_count_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_MapImage")]
+    pub m_map_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_DifficultyValueText")]
+    pub m_difficulty_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TurnCountValueText")]
+    pub m_turn_count_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_RewardInfoItem")]
+    pub m_reward_info_item:
+        ::unity2::Array<crate::app::challengemapselectroot::ChallengeMapSelectRoot_RewardInfoItem>,
+    #[rename(name = "m_ExpTextList")]
+    pub m_exp_text_list: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+    #[rename(name = "m_SpRoot")]
+    pub m_sp_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_SpTextList")]
+    pub m_sp_text_list: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+    #[rename(name = "m_SelectChallengeData")]
+    pub m_select_challenge_data: crate::app::challengedata::ChallengeData,
+    #[rename(name = "m_MapImageSprite")]
+    pub m_map_image_sprite: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_RootAnim")]
+    pub m_root_anim: crate::unity_engine::animator::Animator,
+}
+
+#[cfg(feature = "app-challengemapselectroot")]
+#[::unity2::methods]
+impl ChallengeMapSelectRoot {
+    #[method(name = "LoadPrefabAsync", args = 0)]
+    pub fn load_prefab_async() -> ();
+
+    #[method(name = "IsLoadingPrefab", args = 0)]
+    pub fn is_loading_prefab() -> bool;
+
+    #[method(name = "UnloadPrefab", args = 0)]
+    pub fn unload_prefab() -> ();
+
+    #[method(name = "CreateRoot", args = 0)]
+    pub fn create_root() -> crate::app::challengemapselectroot::ChallengeMapSelectRoot;
+
+    #[method(name = "Create", args = 0)]
+    pub fn create(self) -> ();
+
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "GetChallengeMapSelectMenuContent", args = 0)]
+    pub fn get_challenge_map_select_menu_content(
+        self,
+    ) -> crate::app::basicmenucontent::BasicMenuContent;
+
+    #[method(name = "GetChallengeDifficultyMenuContent", args = 0)]
+    pub fn get_challenge_difficulty_menu_content(
+        self,
+    ) -> crate::app::basicmenucontent::BasicMenuContent;
+
+    #[method(name = "SetMapHelpActive", args = 0)]
+    pub fn set_map_help_active(self) -> ();
+
+    #[method(name = "OnSelect", args = 1)]
+    pub fn on_select(self, challenge_data: crate::app::challengedata::ChallengeData) -> ();
+
+    #[method(name = "SetReward", args = 2)]
+    pub fn set_reward(self, level: i32, is_item_drop_unknow: bool) -> ();
+
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[method(name = "IsClosed", args = 0)]
+    pub fn is_closed(self) -> bool;
+}
+
+#[cfg(feature = "app-challengemapselectroot")]
+impl ChallengeMapSelectRoot {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeMapSelectRoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeMapSelectRootMethods>::ctor(this);
+        this
+    }
+}

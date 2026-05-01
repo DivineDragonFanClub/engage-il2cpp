@@ -1,0 +1,223 @@
+
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_DecideEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ProfileCardCommentIndexMenu.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ProfileCardCommentIndexMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-profilecardcommentindexmenu")]
+#[::unity2::methods]
+impl ProfileCardCommentIndexMenu_DecideEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        result: crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2,
+        index: i32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-profilecardcommentindexmenu")]
+impl ProfileCardCommentIndexMenu_DecideEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardCommentIndexMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardCommentIndexMenu_DecideEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_Result2.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ProfileCardCommentIndexMenu_Result2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ProfileCardCommentIndexMenu_Result2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ProfileCardCommentIndexMenu.Result2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ProfileCardCommentIndexMenu_Result2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ProfileCardCommentIndexMenu_Result2 {
+    pub fn decide() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn cancel() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_DisposeEventHandler.md")))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ProfileCardCommentIndexMenu.DisposeEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ProfileCardCommentIndexMenu_DisposeEventHandler {}
+
+#[cfg(feature = "app-profilecardcommentindexmenu")]
+#[::unity2::methods]
+impl ProfileCardCommentIndexMenu_DisposeEventHandler {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-profilecardcommentindexmenu")]
+impl ProfileCardCommentIndexMenu_DisposeEventHandler {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardCommentIndexMenu_DisposeEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardCommentIndexMenu_DisposeEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu.md")))]
+#[::unity2::class(namespace = "App", name = "ProfileCardCommentIndexMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct ProfileCardCommentIndexMenu {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DecideEventHandler,
+    #[rename(name = "m_DisposeEventHandler")]
+    pub m_dispose_event_handler:
+        crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_DisposeEventHandler,
+}
+
+#[cfg(feature = "app-profilecardcommentindexmenu")]
+#[::unity2::methods]
+impl ProfileCardCommentIndexMenu {
+    #[method(name = "CreateBind", args = 6)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_content : crate :: app :: profilecardmessageselectmenucontent :: ProfileCardMessageSelectMenuContent,
+        my_profile_card_temp: crate::app::profilecard::ProfileCard,
+        initial_index: i32,
+        decide_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler,
+        dispose_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DisposeEventHandler,
+    ) -> crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu;
+
+    #[method(name = "CreateMenuItem", args = 2)]
+    pub fn create_menu_item(
+        profile_card: crate::app::profilecard::ProfileCard,
+        decide_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        initial_index: i32,
+        decide_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler,
+        dispose_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DisposeEventHandler,
+    ) -> ();
+
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "SetMenuItemMid", args = 2)]
+    pub fn set_menu_item_mid(self, menu_item_index: i32, mid: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "UpdateContent", args = 0)]
+    pub fn update_content(self) -> ();
+
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+}
+
+#[cfg(feature = "app-profilecardcommentindexmenu")]
+impl ProfileCardCommentIndexMenu {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        initial_index: i32,
+        decide_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DecideEventHandler,
+        dispose_event_handler : crate :: app :: profilecardcommentindexmenu :: ProfileCardCommentIndexMenu_DisposeEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardCommentIndexMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardCommentIndexMenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            initial_index,
+            decide_event_handler,
+            dispose_event_handler,
+        );
+        this
+    }
+}

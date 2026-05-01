@@ -1,0 +1,21 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/damagesound/DamageSound.md")))]
+#[::unity2::class(namespace = "Combat", name = "DamageSound")]
+#[parent(crate::system::object::Object)]
+pub struct DamageSound {}
+
+#[cfg(feature = "combat-damagesound")]
+#[::unity2::methods]
+impl DamageSound {
+    #[method(name = "Play", args = 4)]
+    pub fn play(
+        attacker: crate::combat::character::Character,
+        damager: crate::combat::character::Character,
+        phase: crate::combat::phase::Phase,
+        ev: crate::unity_engine::animationevent::AnimationEvent,
+    ) -> ();
+}

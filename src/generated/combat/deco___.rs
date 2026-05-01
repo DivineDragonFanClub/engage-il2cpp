@@ -1,0 +1,39 @@
+
+use crate::combat::decorator::Decorator;
+use crate::combat::decorator::IDecorator;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/deco___/Deco___.md")))]
+#[::unity2::class(namespace = "Combat", name = "Deco_自爆")]
+#[parent(crate::combat::decorator::Decorator)]
+pub struct Deco___ {}
+
+#[cfg(feature = "combat-deco___")]
+#[::unity2::methods]
+impl Deco___ {
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "IsAvailable", args = 1)]
+    pub fn is_available(that: crate::combat::decoratorargs::DecoratorArgs) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-deco___")]
+impl Deco___ {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Deco___),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDeco___Methods>::ctor(this);
+        this
+    }
+}

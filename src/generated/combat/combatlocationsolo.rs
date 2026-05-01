@@ -1,0 +1,76 @@
+
+use crate::combat::basecombatlocation::BaseCombatLocation;
+use crate::combat::basecombatlocation::IBaseCombatLocation;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/combatlocationsolo/CombatLocationSolo.md")))]
+#[::unity2::class(namespace = "Combat", name = "CombatLocationSolo")]
+#[parent(crate::combat::basecombatlocation::BaseCombatLocation)]
+pub struct CombatLocationSolo {
+    #[rename(name = "m_TargetSide")]
+    pub m_target_side: i32,
+    #[rename(name = "m_IsBigDragon")]
+    pub m_is_big_dragon: bool,
+    #[rename(name = "m_IsLastBoss")]
+    pub m_is_last_boss: bool,
+    #[rename(name = "m_IsEnemy")]
+    pub m_is_enemy: bool,
+    #[rename(name = "m_IsReCalc")]
+    pub m_is_re_calc: bool,
+    #[rename(name = "m_IsDLCLastBoss")]
+    pub m_is_dlc_last_boss: bool,
+}
+
+#[cfg(feature = "combat-combatlocationsolo")]
+#[::unity2::methods]
+impl CombatLocationSolo {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, rec: crate::combat::combatrecord::CombatRecord) -> ();
+
+    #[method(name = "Setup", args = 1)]
+    pub fn setup(
+        self,
+        gs: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>,
+    ) -> ();
+
+    #[method(name = "get_RoughPosCount", args = 0)]
+    pub fn get_rough_pos_count(self) -> i32;
+
+    #[method(name = "SetRoughPos", args = 1)]
+    pub fn set_rough_pos(self, try_count: i32) -> ();
+
+    #[method(name = "get_PatternCount", args = 0)]
+    pub fn get_pattern_count(self) -> i32;
+
+    #[method(name = "SetBattlePatern", args = 1)]
+    pub fn set_battle_patern(self, pattern: i32) -> ();
+
+    #[method(name = "CalcLocation", args = 0)]
+    pub fn calc_location(self) -> ();
+
+    #[method(name = "LocateEmblem", args = 4)]
+    pub fn locate_emblem(
+        self,
+        master_side: i32,
+        master: crate::combat::character::Character,
+        emblem: crate::combat::character::Character,
+        locate_style: crate::combat::locationparams::LocationParams_LocateStyle,
+    ) -> ();
+}
+
+#[cfg(feature = "combat-combatlocationsolo")]
+impl CombatLocationSolo {
+    pub fn new(rec: crate::combat::combatrecord::CombatRecord) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CombatLocationSolo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICombatLocationSoloMethods>::ctor(this, rec);
+        this
+    }
+}

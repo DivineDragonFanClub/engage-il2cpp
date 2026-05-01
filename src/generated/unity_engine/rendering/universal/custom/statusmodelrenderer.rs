@@ -1,0 +1,122 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderer::IScriptableRenderer;
+use crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/custom/statusmodelrenderer/StatusModelRenderer.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom",
+    name = "StatusModelRenderer"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer)]
+pub struct StatusModelRenderer {
+# [static_field] # [rename (name = "k_DepthStencilBufferBits")] pub k_depth_stencil_buffer_bits : i32 ,
+# [static_field] # [rename (name = "k_CreateCameraTextures")] pub k_create_camera_textures : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_SubLightTag")] pub k_sub_light_tag : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "k_SetupCustomRPConstants")] pub k_setup_custom_rp_constants : :: unity2 :: Il2CppString ,
+# [static_field] # [rename (name = "s_CustomExposurePropID")] pub s_custom_exposure_prop_id : i32 ,
+# [static_field] # [rename (name = "s_CustomLodFadeBiasPropID")] pub s_custom_lod_fade_bias_prop_id : i32 ,
+# [rename (name = "m_CopyDepthPass")] pub m_copy_depth_pass : crate :: unity_engine :: rendering :: universal :: internal :: copydepthpass :: CopyDepthPass ,
+# [rename (name = "m_CopyColorPass")] pub m_copy_color_pass : crate :: unity_engine :: rendering :: universal :: internal :: copycolorpass :: CopyColorPass ,
+# [rename (name = "m_CustomBaseOpaquePass")] pub m_custom_base_opaque_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: custombaseopaquepass :: CustomBaseOpaquePass ,
+# [rename (name = "m_CustomCharaOpaquePass")] pub m_custom_chara_opaque_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: customcharaopaquepass :: CustomCharaOpaquePass ,
+# [rename (name = "m_RenderTransparentForwardPass")] pub m_render_transparent_forward_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: custombasetransparentpass :: CustomBaseTransparentPass ,
+# [rename (name = "m_CustomTransCharaMaskPass")] pub m_custom_trans_chara_mask_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: customtranscharamaskpass :: CustomTransCharaMaskPass ,
+# [rename (name = "m_PostProcessPass")] pub m_post_process_pass : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass ,
+# [rename (name = "m_FinalPostProcessPass")] pub m_final_post_process_pass : crate :: unity_engine :: rendering :: universal :: internal :: postprocesspass :: PostProcessPass ,
+# [rename (name = "m_FinalBlitPass")] pub m_final_blit_pass : crate :: unity_engine :: rendering :: universal :: internal :: finalblitpass :: FinalBlitPass ,
+# [rename (name = "m_CustomMixedResolutionPass")] pub m_custom_mixed_resolution_pass : crate :: unity_engine :: rendering :: universal :: custom :: internal :: custommixedresolutionpass :: CustomMixedResolutionPass ,
+# [rename (name = "m_ActiveCameraColorAttachment")] pub m_active_camera_color_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_ActiveCameraDepthAttachment")] pub m_active_camera_depth_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_CameraColorAttachment")] pub m_camera_color_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_CameraDepthAttachment")] pub m_camera_depth_attachment : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_DepthTexture")] pub m_depth_texture : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_OpaqueColor")] pub m_opaque_color : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_AfterPostProcessColor")] pub m_after_post_process_color : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_ColorGradingLut")] pub m_color_grading_lut : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle ,
+# [rename (name = "m_ForwardLights")] pub m_forward_lights : crate :: unity_engine :: rendering :: universal :: internal :: forwardlights :: ForwardLights ,
+# [rename (name = "m_BlitMaterial")] pub m_blit_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_CopyDepthMaterial")] pub m_copy_depth_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_SamplingMaterial")] pub m_sampling_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_DownsampleDepthMaterial")] pub m_downsample_depth_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "m_HalfResoCompositeMaterial")] pub m_half_reso_composite_material : crate :: unity_engine :: material :: Material ,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrenderer")]
+#[::unity2::methods]
+impl StatusModelRenderer {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        data : crate :: unity_engine :: rendering :: universal :: custom :: statusmodelrendererdata :: StatusModelRendererData,
+    ) -> ();
+
+    #[method(name = "GetSubLightTag", args = 0)]
+    pub fn get_sub_light_tag(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "Dispose", args = 1)]
+    pub fn dispose(self, disposing: bool) -> ();
+
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "SetupLights", args = 2)]
+    pub fn setup_lights(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[method(name = "SetupCullingParameters", args = 2)]
+    pub fn setup_culling_parameters(
+        self,
+        culling_parameters : crate :: unity_engine :: rendering :: scriptablecullingparameters :: ScriptableCullingParameters,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> ();
+
+    #[method(name = "FinishRendering", args = 1)]
+    pub fn finish_rendering(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[method(name = "CreateCameraRenderTarget", args = 2)]
+    pub fn create_camera_render_target(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        camera_data: crate::unity_engine::rendering::universal::cameradata::CameraData,
+    ) -> ();
+
+    #[method(name = "RequiresIntermediateColorTexture", args = 2)]
+    pub fn requires_intermediate_color_texture(
+        self,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+        base_descriptor: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
+    ) -> bool;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrenderer")]
+impl StatusModelRenderer {
+    pub fn new(
+        data : crate :: unity_engine :: rendering :: universal :: custom :: statusmodelrendererdata :: StatusModelRendererData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StatusModelRenderer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStatusModelRendererMethods>::ctor(this, data);
+        this
+    }
+}

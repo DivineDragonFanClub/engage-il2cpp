@@ -1,0 +1,85 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/baseraycaster/BaseRaycaster.md")))]
+#[::unity2::class(namespace = "UnityEngine.EventSystems", name = "BaseRaycaster")]
+#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
+pub struct BaseRaycaster {
+    #[rename(name = "m_RootRaycaster")]
+    pub m_root_raycaster: crate::unity_engine::event_systems::baseraycaster::BaseRaycaster,
+}
+
+#[cfg(feature = "unity_engine-event_systems-baseraycaster")]
+#[::unity2::methods]
+impl BaseRaycaster {
+    #[method(name = "Raycast", args = 2)]
+    pub fn raycast(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+        result_append_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::event_systems::raycastresult::RaycastResult,
+        >,
+    ) -> ();
+
+    #[method(name = "get_eventCamera", args = 0)]
+    pub fn get_event_camera(self) -> crate::unity_engine::camera::Camera;
+
+    #[method(name = "get_priority", args = 0)]
+    pub fn get_priority(self) -> i32;
+
+    #[method(name = "get_sortOrderPriority", args = 0)]
+    pub fn get_sort_order_priority(self) -> i32;
+
+    #[method(name = "get_renderOrderPriority", args = 0)]
+    pub fn get_render_order_priority(self) -> i32;
+
+    #[method(name = "get_rootRaycaster", args = 0)]
+    pub fn get_root_raycaster(
+        self,
+    ) -> crate::unity_engine::event_systems::baseraycaster::BaseRaycaster;
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "OnCanvasHierarchyChanged", args = 0)]
+    pub fn on_canvas_hierarchy_changed(self) -> ();
+
+    #[method(name = "OnTransformParentChanged", args = 0)]
+    pub fn on_transform_parent_changed(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-event_systems-baseraycaster")]
+impl BaseRaycaster {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BaseRaycaster),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBaseRaycasterMethods>::ctor(this);
+        this
+    }
+}

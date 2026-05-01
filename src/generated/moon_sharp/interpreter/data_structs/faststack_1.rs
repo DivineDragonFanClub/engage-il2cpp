@@ -1,0 +1,79 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/data_structs/faststack_1/FastStack_1.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter.DataStructs", name = "FastStack`1")]
+pub struct FastStack_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "m_Storage")]
+    pub m_storage: ::unity2::Array<T0>,
+    #[rename(name = "m_HeadIdx")]
+    pub m_head_idx: i32,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-data_structs-faststack_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> FastStack_1<T0> {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, max_capacity: i32) -> ();
+
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, index: i32) -> T0;
+
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(self, index: i32, value: T0) -> ();
+
+    #[method(name = "Push", args = 1)]
+    pub fn push(self, item: T0) -> T0;
+
+    #[method(name = "Expand", args = 1)]
+    pub fn expand(self, size: i32) -> ();
+
+    #[method(name = "Zero", args = 2)]
+    pub fn zero(self, from: i32, to: i32) -> ();
+
+    #[method(name = "Zero", args = 1)]
+    pub fn zero_2(self, index: i32) -> ();
+
+    #[method(name = "Peek", args = 1)]
+    pub fn peek(self, idxofs: i32) -> T0;
+
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, idxofs: i32, item: T0) -> ();
+
+    #[method(name = "CropAtCount", args = 1)]
+    pub fn crop_at_count(self, p: i32) -> ();
+
+    #[method(name = "RemoveLast", args = 1)]
+    pub fn remove_last(self, cnt: i32) -> ();
+
+    #[method(name = "Pop", args = 0)]
+    pub fn pop(self) -> T0;
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+}
+
+#[cfg(feature = "moon_sharp-interpreter-data_structs-faststack_1")]
+impl<T0: ::unity2::ClassIdentity> FastStack_1<T0> {
+    pub fn new(max_capacity: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FastStack_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFastStack_1Methods<T0>>::ctor(this, max_capacity);
+        this
+    }
+}

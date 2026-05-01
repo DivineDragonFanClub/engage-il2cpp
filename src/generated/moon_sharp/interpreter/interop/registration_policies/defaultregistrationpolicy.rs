@@ -1,0 +1,44 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/interop/registration_policies/defaultregistrationpolicy/DefaultRegistrationPolicy.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop.RegistrationPolicies",
+    name = "DefaultRegistrationPolicy"
+)]
+#[parent(crate::system::object::Object)]
+pub struct DefaultRegistrationPolicy {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-defaultregistrationpolicy")]
+#[::unity2::methods]
+impl DefaultRegistrationPolicy {
+    #[method(name = "HandleRegistration", args = 2)]
+    pub fn handle_registration(
+        self,
+        new_descriptor : crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor,
+        old_descriptor : crate :: moon_sharp :: interpreter :: interop :: iuserdatadescriptor :: IUserDataDescriptor,
+    ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor;
+
+    #[method(name = "AllowTypeAutoRegistration", args = 1)]
+    pub fn allow_type_auto_registration(self, r#type: ::unity2::SystemType) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-defaultregistrationpolicy")]
+impl DefaultRegistrationPolicy {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DefaultRegistrationPolicy),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDefaultRegistrationPolicyMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,341 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubminimap/HubMiniMap_MapMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubMiniMap_MapMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubMiniMap_MapMode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubMiniMap.MapMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubMiniMap_MapMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubMiniMap_MapMode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn small() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn large() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubminimap/HubMiniMap.md")))]
+#[::unity2::class(namespace = "App", name = "HubMiniMap")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct HubMiniMap {
+    #[rename(name = "m_initialized")]
+    pub m_initialized: bool,
+    #[rename(name = "m_res")]
+    pub m_res: crate::app::resourcehandle_2::ResourceHandle_2,
+    #[rename(name = "m_image")]
+    pub m_image: crate::app::resourcehandle_2::ResourceHandle_2,
+    #[rename(name = "m_prevMapMode")]
+    pub m_prev_map_mode: crate::app::hubminimap::HubMiniMap_MapMode,
+    #[rename(name = "m_icon")]
+    pub m_icon: crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,
+    #[rename(name = "m_gameRoot")]
+    pub m_game_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_iconPoint")]
+    pub m_icon_point: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_iconLueur")]
+    pub m_icon_lueur: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_iconItem")]
+    pub m_icon_item: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_iconUnit")]
+    pub m_icon_unit: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_cameraArea")]
+    pub m_camera_area: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_mapS")]
+    pub m_map_s: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_rotate")]
+    pub m_rotate: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_imageS")]
+    pub m_image_s: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_playerMarkerS")]
+    pub m_player_marker_s: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_playerCameraS")]
+    pub m_player_camera_s: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_mascotMarkerS")]
+    pub m_mascot_marker_s: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_mapL")]
+    pub m_map_l: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_imageL")]
+    pub m_image_l: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_playerMarkerL")]
+    pub m_player_marker_l: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_playerCameraL")]
+    pub m_player_camera_l: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_mascotMarkerL")]
+    pub m_mascot_marker_l: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_cafeS")]
+    pub m_cafe_s: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_cafeL")]
+    pub m_cafe_l: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_caveS")]
+    pub m_cave_s: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_caveL")]
+    pub m_cave_l: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_talkReliance")]
+    pub m_talk_reliance: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_talkStory")]
+    pub m_talk_story: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_center")]
+    pub m_center: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_size")]
+    pub m_size: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_reverse")]
+    pub m_reverse: bool,
+    #[rename(name = "m_rt")]
+    pub m_rt: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_uv")]
+    pub m_uv: crate::unity_engine::rect::Rect,
+    #[rename(name = "m_offsetX")]
+    pub m_offset_x: f32,
+    #[rename(name = "m_offsetY")]
+    pub m_offset_y: f32,
+    #[rename(name = "m_systemShow")]
+    pub m_system_show: bool,
+    #[rename(name = "m_Layer")]
+    pub m_layer: crate::system::collections::generic::list_1::List_1<i32>,
+    #[rename(name = "m_iconList")]
+    pub m_icon_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::hubminimap::HubMiniMap_IconData,
+    >,
+}
+
+#[cfg(feature = "app-hubminimap")]
+#[::unity2::methods]
+impl HubMiniMap {
+    #[method(name = "NextChangeMode", args = 0)]
+    pub fn next_change_mode(self) -> ();
+
+    #[method(name = "ShowSystemMenu", args = 0)]
+    pub fn show_system_menu(self) -> ();
+
+    #[method(name = "HideSystemMenu", args = 0)]
+    pub fn hide_system_menu(self) -> ();
+
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[method(name = "PushLayer", args = 1)]
+    pub fn push_layer(self, layer: i32) -> ();
+
+    #[method(name = "PopLayer", args = 1)]
+    pub fn pop_layer(self, layer: i32) -> ();
+
+    #[method(name = "PushEnvSoundID", args = 1)]
+    pub fn push_env_sound_id(self, id: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "PopEnvSoundID", args = 1)]
+    pub fn pop_env_sound_id(self, id: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "IsCave", args = 0)]
+    pub fn is_cave(self) -> bool;
+
+    #[method(name = "get_EnvSoundColliderCount", args = 0)]
+    pub fn get_env_sound_collider_count(self) -> i32;
+
+    #[method(name = "set_EnvSoundColliderCount", args = 1)]
+    pub fn set_env_sound_collider_count(self, value: i32) -> ();
+
+    #[method(name = "get_EnvSoundID", args = 0)]
+    pub fn get_env_sound_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_EnvSoundID", args = 1)]
+    pub fn set_env_sound_id(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_CurrentMapMode", args = 0)]
+    pub fn get_current_map_mode(self) -> crate::app::hubminimap::HubMiniMap_MapMode;
+
+    #[method(name = "set_CurrentMapMode", args = 1)]
+    pub fn set_current_map_mode(self, value: crate::app::hubminimap::HubMiniMap_MapMode) -> ();
+
+    #[method(name = "get_IsMinimapRotate", args = 0)]
+    pub fn get_is_minimap_rotate(self) -> bool;
+
+    #[method(name = "get_IsMascotEnable", args = 0)]
+    pub fn get_is_mascot_enable(self) -> bool;
+
+    #[method(name = "GetCaptureParam", args = 1)]
+    pub fn get_capture_param(
+        self,
+        map_name: ::unity2::Il2CppString,
+    ) -> crate::app::hubminimapcaptureparam::HubMiniMapCaptureParam_CaptureParam1;
+
+    #[method(name = "Load", args = 0)]
+    pub fn load(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "ClearIcon", args = 0)]
+    pub fn clear_icon(self) -> ();
+
+    #[method(name = "GetBasePoint", args = 1)]
+    pub fn get_base_point(
+        self,
+        access: crate::app::hubaccess::HubAccess,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "GetDisposName", args = 1)]
+    pub fn get_dispos_name(
+        self,
+        access: crate::app::hubaccess::HubAccess,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(
+        self,
+        root: crate::unity_engine::gameobject::GameObject,
+        prefixless_cid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[method(name = "Restore", args = 0)]
+    pub fn restore(self) -> ();
+
+    #[method(name = "ArrangeIconPosition", args = 0)]
+    pub fn arrange_icon_position(self) -> ();
+
+    #[method(name = "IsShow", args = 0)]
+    pub fn is_show(self) -> bool;
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "Scroll", args = 0)]
+    pub fn scroll(self) -> ();
+
+    #[method(name = "SetMode", args = 1)]
+    pub fn set_mode(self, mode: crate::app::hubminimap::HubMiniMap_MapMode) -> ();
+
+    #[method(name = "TransformPosition", args = 1)]
+    pub fn transform_position(
+        self,
+        position: crate::unity_engine::vector3::Vector3,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "WorldToScreenPosition", args = 1)]
+    pub fn world_to_screen_position(
+        self,
+        position: crate::unity_engine::vector3::Vector3,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubminimap")]
+impl HubMiniMap {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMiniMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMiniMapMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubminimap/HubMiniMap_IconData.md")))]
+#[::unity2::class(namespace = "App", name = "HubMiniMap.IconData")]
+#[parent(crate::system::object::Object)]
+pub struct HubMiniMap_IconData {
+    #[rename(name = "access")]
+    pub access: crate::app::hubaccess::HubAccess,
+    #[rename(name = "iconS")]
+    pub icon_s: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "iconL")]
+    pub icon_l: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "iconSRect")]
+    pub icon_s_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "iconLRect")]
+    pub icon_l_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "imageS")]
+    pub image_s: crate::unity_engine::ui::image::Image,
+    #[rename(name = "imageL")]
+    pub image_l: crate::unity_engine::ui::image::Image,
+    #[rename(name = "talkS")]
+    pub talk_s: crate::unity_engine::ui::image::Image,
+    #[rename(name = "talkL")]
+    pub talk_l: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_active")]
+    pub m_active: bool,
+}
+
+#[cfg(feature = "app-hubminimap")]
+#[::unity2::methods]
+impl HubMiniMap_IconData {
+    #[method(name = "SetActive", args = 1)]
+    pub fn set_active(self, active: bool) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubminimap")]
+impl HubMiniMap_IconData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMiniMap_IconData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMiniMap_IconDataMethods>::ctor(this);
+        this
+    }
+}

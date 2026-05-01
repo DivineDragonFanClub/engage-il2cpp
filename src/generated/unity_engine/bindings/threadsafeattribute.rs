@@ -1,0 +1,33 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::bindings::nativemethodattribute::INativeMethodAttribute;
+use crate::unity_engine::bindings::nativemethodattribute::NativeMethodAttribute;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/bindings/threadsafeattribute/ThreadSafeAttribute.md")))]
+#[::unity2::class(namespace = "UnityEngine.Bindings", name = "ThreadSafeAttribute")]
+#[parent(crate::unity_engine::bindings::nativemethodattribute::NativeMethodAttribute)]
+pub struct ThreadSafeAttribute {}
+
+#[cfg(feature = "unity_engine-bindings-threadsafeattribute")]
+#[::unity2::methods]
+impl ThreadSafeAttribute {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-bindings-threadsafeattribute")]
+impl ThreadSafeAttribute {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ThreadSafeAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IThreadSafeAttributeMethods>::ctor(this);
+        this
+    }
+}

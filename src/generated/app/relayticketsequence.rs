@@ -1,0 +1,140 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily.md")))]
+#[::unity2::class(namespace = "App", name = "RelayTicketSequence.ProcDaily")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RelayTicketSequence_ProcDaily {}
+
+#[cfg(feature = "app-relayticketsequence")]
+#[::unity2::methods]
+impl RelayTicketSequence_ProcDaily {
+    #[method(name = "Check", args = 0)]
+    pub fn check(self) -> ();
+
+    #[method(name = "Message", args = 0)]
+    pub fn message(self) -> ();
+
+    #[method(name = "AddTicketCount", args = 0)]
+    pub fn add_ticket_count(self) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relayticketsequence")]
+impl RelayTicketSequence_ProcDaily {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayTicketSequence_ProcDaily),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayTicketSequence_ProcDailyMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayticketsequence/RelayTicketSequence.md")))]
+#[::unity2::class(namespace = "App", name = "RelayTicketSequence")]
+#[parent(crate::system::object::Object)]
+pub struct RelayTicketSequence {}
+
+#[cfg(feature = "app-relayticketsequence")]
+#[::unity2::methods]
+impl RelayTicketSequence {
+    #[method(name = "CreateBindUse", args = 1)]
+    pub fn create_bind_use(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "CreateBindDaily", args = 1)]
+    pub fn create_bind_daily(super_: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayticketsequence/RelayTicketSequence_ProcUse.md")))]
+#[::unity2::class(namespace = "App", name = "RelayTicketSequence.ProcUse")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RelayTicketSequence_ProcUse {}
+
+#[cfg(feature = "app-relayticketsequence")]
+#[::unity2::methods]
+impl RelayTicketSequence_ProcUse {
+    #[method(name = "SubTicketCount", args = 0)]
+    pub fn sub_ticket_count(self) -> ();
+
+    #[method(name = "SaveGlobal", args = 0)]
+    pub fn save_global(self) -> ();
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relayticketsequence")]
+impl RelayTicketSequence_ProcUse {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayTicketSequence_ProcUse),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayTicketSequence_ProcUseMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayTicketSequence_ProcDaily_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayTicketSequence_ProcDaily_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayTicketSequence.ProcDaily.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayTicketSequence_ProcDaily_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayTicketSequence_ProcDaily_Label {
+    pub fn end() -> Self {
+        Self { value: 0 }
+    }
+}

@@ -1,0 +1,39 @@
+
+use crate::app::singletonclass_1::ISingletonClass_1;
+use crate::app::singletonclass_1::SingletonClass_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortietopmenumanager/SortieTopMenuManager.md")))]
+#[::unity2::class(namespace = "App", name = "SortieTopMenuManager")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortietopmenumanager :: SortieTopMenuManager >)]
+pub struct SortieTopMenuManager {
+    #[rename(name = "m_MenuSelect")]
+    pub m_menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+}
+
+#[cfg(feature = "app-sortietopmenumanager")]
+#[::unity2::methods]
+impl SortieTopMenuManager {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_MenuSelect", args = 0)]
+    pub fn get_menu_select(self) -> crate::app::basicmenuselect::BasicMenuSelect;
+}
+
+#[cfg(feature = "app-sortietopmenumanager")]
+impl SortieTopMenuManager {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTopMenuManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTopMenuManagerMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,115 @@
+
+use crate::system::delegate::Delegate;
+use crate::system::delegate::IDelegate;
+use crate::system::multicastdelegate::IMulticastDelegate;
+use crate::system::multicastdelegate::MulticastDelegate;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/terrain_api/terraincallbacks/TerrainCallbacks.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.TerrainAPI",
+    name = "TerrainCallbacks"
+)]
+#[parent(crate::system::object::Object)]
+pub struct TerrainCallbacks {
+# [static_field] # [rename (name = "heightmapChanged")] pub heightmap_changed : crate :: unity_engine :: experimental :: terrain_api :: terraincallbacks :: TerrainCallbacks_HeightmapChangedCallback ,
+# [static_field] # [rename (name = "textureChanged")] pub texture_changed : crate :: unity_engine :: experimental :: terrain_api :: terraincallbacks :: TerrainCallbacks_TextureChangedCallback ,
+}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+#[::unity2::methods]
+impl TerrainCallbacks {
+    #[method(name = "InvokeHeightmapChangedCallback", args = 3)]
+    pub fn invoke_heightmap_changed_callback(
+        terrain_data: crate::unity_engine::terraindata::TerrainData,
+        height_region: crate::unity_engine::rectint::RectInt,
+        synched: bool,
+    ) -> ();
+
+    #[method(name = "InvokeTextureChangedCallback", args = 4)]
+    pub fn invoke_texture_changed_callback(
+        terrain_data: crate::unity_engine::terraindata::TerrainData,
+        texture_name: ::unity2::Il2CppString,
+        texel_region: crate::unity_engine::rectint::RectInt,
+        synched: bool,
+    ) -> ();
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/terrain_api/terraincallbacks/TerrainCallbacks_TextureChangedCallback.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.TerrainAPI",
+    name = "TerrainCallbacks.TextureChangedCallback"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct TerrainCallbacks_TextureChangedCallback {}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+#[::unity2::methods]
+impl TerrainCallbacks_TextureChangedCallback {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 4)]
+    pub fn invoke(
+        self,
+        terrain: crate::unity_engine::terrain::Terrain,
+        texture_name: ::unity2::Il2CppString,
+        texel_region: crate::unity_engine::rectint::RectInt,
+        synched: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+impl TerrainCallbacks_TextureChangedCallback {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TerrainCallbacks_TextureChangedCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITerrainCallbacks_TextureChangedCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/terrain_api/terraincallbacks/TerrainCallbacks_HeightmapChangedCallback.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.TerrainAPI",
+    name = "TerrainCallbacks.HeightmapChangedCallback"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct TerrainCallbacks_HeightmapChangedCallback {}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+#[::unity2::methods]
+impl TerrainCallbacks_HeightmapChangedCallback {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(
+        self,
+        terrain: crate::unity_engine::terrain::Terrain,
+        height_region: crate::unity_engine::rectint::RectInt,
+        synched: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+impl TerrainCallbacks_HeightmapChangedCallback {
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TerrainCallbacks_HeightmapChangedCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITerrainCallbacks_HeightmapChangedCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}

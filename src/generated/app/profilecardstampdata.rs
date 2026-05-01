@@ -1,0 +1,161 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdata_1::IStructData_1;
+use crate::app::structdata_1::StructData_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardstampdata/ProfileCardStampData.md")))]
+#[::unity2::class(namespace = "App", name = "ProfileCardStampData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: profilecardstampdata :: ProfileCardStampData >)]
+pub struct ProfileCardStampData {
+    #[static_field]
+    #[rename(name = "CategoryMid")]
+    pub category_mid: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "app-profilecardstampdata")]
+#[::unity2::methods]
+impl ProfileCardStampData {
+    #[method(name = "get_Id", args = 0)]
+    pub fn get_id(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Id", args = 1)]
+    pub fn set_id(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Image", args = 0)]
+    pub fn get_image(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Image", args = 1)]
+    pub fn set_image(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Category", args = 0)]
+    pub fn get_category(self) -> crate::app::profilecardstampdata::ProfileCardStampData_Categories;
+
+    #[method(name = "set_Category", args = 1)]
+    pub fn set_category(
+        self,
+        value: crate::app::profilecardstampdata::ProfileCardStampData_Categories,
+    ) -> ();
+
+    #[method(name = "get_Condition", args = 0)]
+    pub fn get_condition(self) -> crate::app::profilecardcondition::ProfileCardCondition;
+
+    #[method(name = "set_Condition", args = 1)]
+    pub fn set_condition(self, value: crate::app::profilecardcondition::ProfileCardCondition)
+        -> ();
+
+    #[method(name = "get_Arg", args = 0)]
+    pub fn get_arg(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Arg", args = 1)]
+    pub fn set_arg(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetCategoryMid", args = 1)]
+    pub fn get_category_mid(
+        category: crate::app::profilecardstampdata::ProfileCardStampData_Categories,
+    ) -> ::unity2::Il2CppString;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-profilecardstampdata")]
+impl ProfileCardStampData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardStampData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardStampDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardstampdata/ProfileCardStampData_Categories.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ProfileCardStampData_Categories {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ProfileCardStampData_Categories {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ProfileCardStampData.Categories";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ProfileCardStampData_Categories {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ProfileCardStampData_Categories {
+    pub fn unit() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn god_unit() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn weapon() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn god_weapon() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn rod_and_item() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn system() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn others() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 7 }
+    }
+}

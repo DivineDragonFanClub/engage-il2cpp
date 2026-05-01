@@ -1,0 +1,104 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::events::unityevent::IUnityEvent;
+use crate::unity_engine::events::unityevent::UnityEvent;
+use crate::unity_engine::events::unityeventbase::IUnityEventBase;
+use crate::unity_engine::events::unityeventbase::UnityEventBase;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use crate::unity_engine::ui::selectable::ISelectable;
+use crate::unity_engine::ui::selectable::Selectable;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/button/Button_ButtonClickedEvent.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "Button.ButtonClickedEvent")]
+#[parent(crate::unity_engine::events::unityevent::UnityEvent)]
+pub struct Button_ButtonClickedEvent {}
+
+#[cfg(feature = "unity_engine-ui-button")]
+#[::unity2::methods]
+impl Button_ButtonClickedEvent {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-button")]
+impl Button_ButtonClickedEvent {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Button_ButtonClickedEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IButton_ButtonClickedEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/button/Button.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "Button")]
+#[parent(crate::unity_engine::ui::selectable::Selectable)]
+pub struct Button {
+    #[rename(name = "m_OnClick")]
+    pub m_on_click: crate::unity_engine::ui::button::Button_ButtonClickedEvent,
+}
+
+#[cfg(feature = "unity_engine-ui-button")]
+#[::unity2::methods]
+impl Button {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "get_onClick", args = 0)]
+    pub fn get_on_click(self) -> crate::unity_engine::ui::button::Button_ButtonClickedEvent;
+
+    #[method(name = "set_onClick", args = 1)]
+    pub fn set_on_click(
+        self,
+        value: crate::unity_engine::ui::button::Button_ButtonClickedEvent,
+    ) -> ();
+
+    #[method(name = "Press", args = 0)]
+    pub fn press(self) -> ();
+
+    #[method(name = "OnPointerClick", args = 1)]
+    pub fn on_pointer_click(
+        self,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[method(name = "OnSubmit", args = 1)]
+    pub fn on_submit(
+        self,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+
+    #[method(name = "OnFinishSubmit", args = 0)]
+    pub fn on_finish_submit(self) -> crate::system::collections::ienumerator::IEnumerator;
+}
+
+#[cfg(feature = "unity_engine-ui-button")]
+impl Button {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Button),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IButtonMethods>::ctor(this);
+        this
+    }
+}

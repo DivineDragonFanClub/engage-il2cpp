@@ -1,0 +1,141 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
+use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/renderobjectspass/RenderObjectsPass.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal",
+    name = "RenderObjectsPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct RenderObjectsPass {
+# [rename (name = "renderQueueType")] pub render_queue_type : crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType ,
+# [rename (name = "m_FilteringSettings")] pub m_filtering_settings : crate :: unity_engine :: rendering :: filteringsettings :: FilteringSettings ,
+# [rename (name = "m_CameraSettings")] pub m_camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings ,
+# [rename (name = "m_ProfilerTag")] pub m_profiler_tag : :: unity2 :: Il2CppString ,
+# [rename (name = "m_ProfilingSampler")] pub m_profiling_sampler : crate :: unity_engine :: rendering :: profilingsampler :: ProfilingSampler ,
+# [rename (name = "m_ShaderTagIdList")] pub m_shader_tag_id_list : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: rendering :: shadertagid :: ShaderTagId > ,
+# [rename (name = "m_RenderStateBlock")] pub m_render_state_block : crate :: unity_engine :: rendering :: renderstateblock :: RenderStateBlock ,
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjectspass")]
+#[::unity2::methods]
+impl RenderObjectsPass {
+    #[method(name = "get_overrideMaterial", args = 0)]
+    pub fn get_override_material(self) -> crate::unity_engine::material::Material;
+
+    #[method(name = "set_overrideMaterial", args = 1)]
+    pub fn set_override_material(self, value: crate::unity_engine::material::Material) -> ();
+
+    #[method(name = "get_overrideMaterialPassIndex", args = 0)]
+    pub fn get_override_material_pass_index(self) -> i32;
+
+    #[method(name = "set_overrideMaterialPassIndex", args = 1)]
+    pub fn set_override_material_pass_index(self, value: i32) -> ();
+
+    #[method(name = "SetDetphState", args = 2)]
+    pub fn set_detph_state(
+        self,
+        write_enabled: bool,
+        function: crate::unity_engine::rendering::comparefunction::CompareFunction,
+    ) -> ();
+
+    #[method(name = "SetStencilState", args = 5)]
+    pub fn set_stencil_state(
+        self,
+        reference: i32,
+        compare_function: crate::unity_engine::rendering::comparefunction::CompareFunction,
+        pass_op: crate::unity_engine::rendering::stencilop::StencilOp,
+        fail_op: crate::unity_engine::rendering::stencilop::StencilOp,
+        z_fail_op: crate::unity_engine::rendering::stencilop::StencilOp,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 6)]
+    pub fn ctor(
+        self,
+        profiler_tag: ::unity2::Il2CppString,
+        render_pass_event : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent,
+        shader_tags: ::unity2::Array<::unity2::Il2CppString>,
+        render_queue_type : crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType,
+        layer_mask: i32,
+        camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 6)]
+    pub fn ctor_2(
+        self,
+        profile_id: crate::unity_engine::rendering::universal::urpprofileid::URPProfileId,
+        render_pass_event : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent,
+        shader_tags: ::unity2::Array<::unity2::Il2CppString>,
+        render_queue_type : crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType,
+        layer_mask: i32,
+        camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings,
+    ) -> ();
+
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjectspass")]
+impl RenderObjectsPass {
+    pub fn new(
+        profiler_tag: ::unity2::Il2CppString,
+        render_pass_event : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent,
+        shader_tags: ::unity2::Array<::unity2::Il2CppString>,
+        render_queue_type : crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType,
+        layer_mask: i32,
+        camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RenderObjectsPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRenderObjectsPassMethods>::ctor(
+            this,
+            profiler_tag,
+            render_pass_event,
+            shader_tags,
+            render_queue_type,
+            layer_mask,
+            camera_settings,
+        );
+        this
+    }
+
+    pub fn new_2(
+        profile_id: crate::unity_engine::rendering::universal::urpprofileid::URPProfileId,
+        render_pass_event : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent,
+        shader_tags: ::unity2::Array<::unity2::Il2CppString>,
+        render_queue_type : crate :: unity_engine :: experimental :: rendering :: universal :: renderqueuetype :: RenderQueueType,
+        layer_mask: i32,
+        camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RenderObjectsPass),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IRenderObjectsPassMethods>::ctor_2(
+            this,
+            profile_id,
+            render_pass_event,
+            shader_tags,
+            render_queue_type,
+            layer_mask,
+            camera_settings,
+        );
+        this
+    }
+}

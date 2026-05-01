@@ -1,0 +1,492 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingfish/FishingFish_FishState.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FishingFish_FishState {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FishingFish_FishState {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FishingFish.FishState";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FishingFish_FishState {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FishingFish_FishState {
+    pub fn wait_entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn wait_catch() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn catching() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn wait_assist() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn battle() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn weak() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn lethal() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn escape() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn defeat() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn state_num() -> Self {
+        Self { value: 9 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingfish/FishingFish.md")))]
+#[::unity2::class(namespace = "App", name = "FishingFish")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct FishingFish {
+    #[static_field]
+    #[rename(name = "DefaultPerfectTime")]
+    pub default_perfect_time: f32,
+    #[rename(name = "m_state")]
+    pub m_state: crate::app::fishingfish::FishingFish_FishState,
+    #[rename(name = "m_LurePos")]
+    pub m_lure_pos: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_ForecastList")]
+    pub m_forecast_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::fishing::forecastfishdata::ForecastFishData,
+    >,
+    #[rename(name = "m_SelectedForecastNum")]
+    pub m_selected_forecast_num: i32,
+    #[rename(name = "m_SizeMult")]
+    pub m_size_mult: f32,
+    #[rename(name = "m_Data")]
+    pub m_data: crate::app::fishingfishdata::FishingFishData,
+    #[rename(name = "m_ConfigBase")]
+    pub m_config_base: crate::app::fishingconfig_base::FishingConfig_Base,
+    #[rename(name = "m_ConfigWait")]
+    pub m_config_wait: crate::app::fishingconfig_waitcatch::FishingConfig_WaitCatch,
+    #[rename(name = "m_ConfigBattle")]
+    pub m_config_battle: crate::app::fishingconfig_battle::FishingConfig_Battle,
+    #[rename(name = "m_HP")]
+    pub m_hp: f32,
+    #[rename(name = "m_LethalHP")]
+    pub m_lethal_hp: f32,
+    #[rename(name = "m_RecoveryHP")]
+    pub m_recovery_hp: f32,
+    #[rename(name = "m_EscapeSpeed")]
+    pub m_escape_speed: f32,
+    #[rename(name = "m_Timer")]
+    pub m_timer: f32,
+    #[rename(name = "m_PerfectTime")]
+    pub m_perfect_time: f32,
+    #[rename(name = "m_CatchTime")]
+    pub m_catch_time: f32,
+    #[rename(name = "m_EffectTimer")]
+    pub m_effect_timer: f32,
+    #[rename(name = "m_ModelFadeTimer")]
+    pub m_model_fade_timer: f32,
+    #[rename(name = "m_CounterTimer")]
+    pub m_counter_timer: f32,
+    #[rename(name = "m_ForceTimer")]
+    pub m_force_timer: f32,
+    #[rename(name = "m_EscapeTimer")]
+    pub m_escape_timer: f32,
+    #[rename(name = "m_ShadowDir")]
+    pub m_shadow_dir: f32,
+    #[rename(name = "m_TargetDir")]
+    pub m_target_dir: f32,
+    #[rename(name = "m_IsChanceDraw")]
+    pub m_is_chance_draw: bool,
+    #[rename(name = "m_DirInterp")]
+    pub m_dir_interp: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_Power")]
+    pub m_power: f32,
+    #[rename(name = "m_AngleDiff")]
+    pub m_angle_diff: f32,
+    #[rename(name = "m_LureObj")]
+    pub m_lure_obj: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RadarObj")]
+    pub m_radar_obj: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_FakeCount")]
+    pub m_fake_count: i32,
+    #[rename(name = "m_RadarScript")]
+    pub m_radar_script: crate::app::fishingbattlerader::FishingBattleRader,
+    #[rename(name = "m_RadicalPower")]
+    pub m_radical_power: f32,
+    #[rename(name = "m_RadicalRegene")]
+    pub m_radical_regene: f32,
+}
+
+#[cfg(feature = "app-fishingfish")]
+#[::unity2::methods]
+impl FishingFish {
+    #[method(name = "get_FishRank", args = 0)]
+    pub fn get_fish_rank(self) -> crate::app::fishing::sizerank::SizeRank;
+
+    #[method(name = "set_FishRank", args = 1)]
+    pub fn set_fish_rank(self, value: crate::app::fishing::sizerank::SizeRank) -> ();
+
+    #[method(name = "get_IsPerfectStart", args = 0)]
+    pub fn get_is_perfect_start(self) -> bool;
+
+    #[method(name = "set_IsPerfectStart", args = 1)]
+    pub fn set_is_perfect_start(self, value: bool) -> ();
+
+    #[method(name = "get_IsCounter", args = 0)]
+    pub fn get_is_counter(self) -> bool;
+
+    #[method(name = "get_IsForceCounter", args = 0)]
+    pub fn get_is_force_counter(self) -> bool;
+
+    #[method(name = "set_IsForceCounter", args = 1)]
+    pub fn set_is_force_counter(self, value: bool) -> ();
+
+    #[method(name = "get_IsDanger", args = 0)]
+    pub fn get_is_danger(self) -> bool;
+
+    #[method(name = "get_IsLethal", args = 0)]
+    pub fn get_is_lethal(self) -> bool;
+
+    #[method(name = "set_IsLethal", args = 1)]
+    pub fn set_is_lethal(self, value: bool) -> ();
+
+    #[method(name = "get_IsDrawFrame", args = 0)]
+    pub fn get_is_draw_frame(self) -> bool;
+
+    #[method(name = "set_IsDrawFrame", args = 1)]
+    pub fn set_is_draw_frame(self, value: bool) -> ();
+
+    #[method(name = "get_IsDamageFrame", args = 0)]
+    pub fn get_is_damage_frame(self) -> bool;
+
+    #[method(name = "set_IsDamageFrame", args = 1)]
+    pub fn set_is_damage_frame(self, value: bool) -> ();
+
+    #[method(name = "get_ShadowDistanceRate", args = 0)]
+    pub fn get_shadow_distance_rate(self) -> f32;
+
+    #[method(name = "set_ShadowDistanceRate", args = 1)]
+    pub fn set_shadow_distance_rate(self, value: f32) -> ();
+
+    #[method(name = "get_FakeFlag", args = 0)]
+    pub fn get_fake_flag(self) -> bool;
+
+    #[method(name = "set_FakeFlag", args = 1)]
+    pub fn set_fake_flag(self, value: bool) -> ();
+
+    #[method(name = "get_RippleSize", args = 0)]
+    pub fn get_ripple_size(self) -> i32;
+
+    #[method(name = "get_WaitAssistFlag", args = 0)]
+    pub fn get_wait_assist_flag(self) -> bool;
+
+    #[method(name = "set_WaitAssistFlag", args = 1)]
+    pub fn set_wait_assist_flag(self, value: bool) -> ();
+
+    #[method(name = "get_IsCatching", args = 0)]
+    pub fn get_is_catching(self) -> bool;
+
+    #[method(name = "get_IsEscape", args = 0)]
+    pub fn get_is_escape(self) -> bool;
+
+    #[method(name = "get_IsDefeat", args = 0)]
+    pub fn get_is_defeat(self) -> bool;
+
+    #[method(name = "get_Data", args = 0)]
+    pub fn get_data(self) -> crate::app::fishingfishdata::FishingFishData;
+
+    #[method(name = "get_SizeMult", args = 0)]
+    pub fn get_size_mult(self) -> f32;
+
+    #[method(name = "get_HPRate", args = 0)]
+    pub fn get_hp_rate(self) -> f32;
+
+    #[method(name = "get_LethalRate", args = 0)]
+    pub fn get_lethal_rate(self) -> f32;
+
+    #[method(name = "get_IsPlayCounterSplashSE", args = 0)]
+    pub fn get_is_play_counter_splash_se(self) -> bool;
+
+    #[method(name = "set_IsPlayCounterSplashSE", args = 1)]
+    pub fn set_is_play_counter_splash_se(self, value: bool) -> ();
+
+    #[method(name = "get_IsPlayOrdinalSplashSE", args = 0)]
+    pub fn get_is_play_ordinal_splash_se(self) -> bool;
+
+    #[method(name = "set_IsPlayOrdinalSplashSE", args = 1)]
+    pub fn set_is_play_ordinal_splash_se(self, value: bool) -> ();
+
+    #[method(name = "get_IsPlayLethalSplashSE", args = 0)]
+    pub fn get_is_play_lethal_splash_se(self) -> bool;
+
+    #[method(name = "set_IsPlayLethalSplashSE", args = 1)]
+    pub fn set_is_play_lethal_splash_se(self, value: bool) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = "InitFish", args = 0)]
+    pub fn init_fish(self) -> ();
+
+    #[method(name = "SetForecastData", args = 1)]
+    pub fn set_forecast_data(
+        self,
+        set: crate::system::collections::generic::list_1::List_1<
+            crate::app::fishing::forecastfishdata::ForecastFishData,
+        >,
+    ) -> ();
+
+    #[method(name = "SelectFish", args = 0)]
+    pub fn select_fish(self) -> ();
+
+    #[method(name = "ResetFishData", args = 0)]
+    pub fn reset_fish_data(self) -> ();
+
+    #[method(name = "SetConfigs", args = 3)]
+    pub fn set_configs(
+        self,
+        base_config: crate::app::fishingconfig_base::FishingConfig_Base,
+        wait_catch: crate::app::fishingconfig_waitcatch::FishingConfig_WaitCatch,
+        battle: crate::app::fishingconfig_battle::FishingConfig_Battle,
+    ) -> ();
+
+    #[method(name = "TickWaitCatch", args = 0)]
+    pub fn tick_wait_catch(self) -> ();
+
+    #[method(name = "TickCatching", args = 0)]
+    pub fn tick_catching(self) -> ();
+
+    #[method(name = "TickWaitAssist", args = 0)]
+    pub fn tick_wait_assist(self) -> ();
+
+    #[method(name = "UpdateBattleEffect", args = 0)]
+    pub fn update_battle_effect(self) -> ();
+
+    #[method(name = "UpdateLethalEffect", args = 0)]
+    pub fn update_lethal_effect(self) -> ();
+
+    #[method(name = "UpdateBattleCommon", args = 0)]
+    pub fn update_battle_common(self) -> ();
+
+    #[method(name = "TickBattle", args = 0)]
+    pub fn tick_battle(self) -> ();
+
+    #[method(name = "TickWeak", args = 0)]
+    pub fn tick_weak(self) -> ();
+
+    #[method(name = "TickLethal", args = 0)]
+    pub fn tick_lethal(self) -> ();
+
+    #[method(name = "SetPerfectTimeAdd", args = 1)]
+    pub fn set_perfect_time_add(self, add: f32) -> ();
+
+    #[method(name = "TryBattle", args = 1)]
+    pub fn try_battle(self, is_assist: bool) -> bool;
+
+    #[method(name = "UpdateLurePos", args = 1)]
+    pub fn update_lure_pos(self, pos: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "SetFirstPos", args = 0)]
+    pub fn set_first_pos(self) -> ();
+
+    #[method(name = "OverriteRadicalParam", args = 2)]
+    pub fn overrite_radical_param(self, set_power: f32, set_regene: f32) -> ();
+
+    #[method(name = "DrawFish", args = 1)]
+    pub fn draw_fish(self, stick_vec: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[method(name = "Damage", args = 1)]
+    pub fn damage(self, damage: f32) -> ();
+
+    #[method(name = "FirstDamage", args = 1)]
+    pub fn first_damage(self, damage_rate: f32) -> ();
+
+    #[method(name = "LethalDamage", args = 0)]
+    pub fn lethal_damage(self) -> ();
+
+    #[method(name = "Recovery", args = 0)]
+    pub fn recovery(self) -> ();
+
+    #[method(name = "AddDamegeEffect", args = 0)]
+    pub fn add_damege_effect(self) -> ();
+
+    #[method(name = "RecoveryLethal", args = 0)]
+    pub fn recovery_lethal(self) -> ();
+
+    #[method(name = "AddEscapeTimer", args = 0)]
+    pub fn add_escape_timer(self) -> ();
+
+    #[method(name = "ResetEscapeTimer", args = 0)]
+    pub fn reset_escape_timer(self) -> ();
+
+    #[method(name = "StartForceCounter", args = 0)]
+    pub fn start_force_counter(self) -> ();
+
+    #[method(name = "SetRadar", args = 1)]
+    pub fn set_radar(self, radar: crate::app::fishingbattlerader::FishingBattleRader) -> ();
+
+    #[method(name = "EnableRadar_NoArea", args = 0)]
+    pub fn enable_radar_no_area(self) -> ();
+
+    #[method(name = "EnableArea_Radar", args = 0)]
+    pub fn enable_area_radar(self) -> ();
+
+    #[method(name = "IsEnableRadar", args = 0)]
+    pub fn is_enable_radar(self) -> bool;
+
+    #[method(name = "DisableRadar", args = 0)]
+    pub fn disable_radar(self) -> ();
+
+    #[method(name = "CheckActiveUI", args = 0)]
+    pub fn check_active_ui(self) -> bool;
+
+    #[method(name = "SetLureObj", args = 1)]
+    pub fn set_lure_obj(self, set: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[method(name = "GetCounterVec", args = 0)]
+    pub fn get_counter_vec(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[method(name = "AddCatchRipple", args = 1)]
+    pub fn add_catch_ripple(self, add_pos: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "PlayCounterSE", args = 0)]
+    pub fn play_counter_se(self) -> ();
+
+    #[method(name = "StopCounterSE", args = 0)]
+    pub fn stop_counter_se(self) -> ();
+
+    #[method(name = "PlayOrdinalSE", args = 0)]
+    pub fn play_ordinal_se(self) -> ();
+
+    #[method(name = "StopOrdinalSE", args = 0)]
+    pub fn stop_ordinal_se(self) -> ();
+
+    #[method(name = "PlayLethalSE", args = 0)]
+    pub fn play_lethal_se(self) -> ();
+
+    #[method(name = "StopLethalSE", args = 0)]
+    pub fn stop_lethal_se(self) -> ();
+
+    #[method(name = "StopStunSE", args = 0)]
+    pub fn stop_stun_se(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-fishingfish")]
+impl FishingFish {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingFish),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingFishMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingfish/FishingFish_CounterVoiceFlag.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FishingFish_CounterVoiceFlag {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FishingFish_CounterVoiceFlag {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FishingFish.CounterVoiceFlag";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FishingFish_CounterVoiceFlag {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FishingFish_CounterVoiceFlag {
+    pub fn wait() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn left() -> Self {
+        Self { value: 2 }
+    }
+}

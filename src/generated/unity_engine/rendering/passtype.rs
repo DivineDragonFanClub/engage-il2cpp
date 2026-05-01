@@ -1,0 +1,100 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/passtype/PassType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct PassType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for PassType {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "PassType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PassType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl PassType {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn vertex() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn vertex_lm() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn vertex_lmrgbm() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn forward_base() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn forward_add() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn light_pre_pass_base() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn light_pre_pass_final() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn shadow_caster() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn deferred() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn meta() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn motion_vectors() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn scriptable_render_pipeline() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn scriptable_render_pipeline_default_unlit() -> Self {
+        Self { value: 14 }
+    }
+}

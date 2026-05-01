@@ -1,0 +1,16 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/colorutility/ColorUtility.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "ColorUtility")]
+#[parent(crate::system::object::Object)]
+pub struct ColorUtility {}
+
+#[cfg(feature = "unity_engine-colorutility")]
+#[::unity2::methods]
+impl ColorUtility {
+    #[method(name = "ToHtmlStringRGB", args = 1)]
+    pub fn to_html_string_rgb(color: crate::unity_engine::color::Color) -> ::unity2::Il2CppString;
+}

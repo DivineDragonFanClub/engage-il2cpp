@@ -1,0 +1,47 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/bithelper/BitHelper.md")))]
+#[::unity2::class(namespace = "System.Collections.Generic", name = "BitHelper")]
+#[parent(crate::system::object::Object)]
+pub struct BitHelper {
+    #[rename(name = "_length")]
+    pub length: i32,
+    #[rename(name = "_array")]
+    pub array: ::unity2::Array<i32>,
+    #[rename(name = "_useStackAlloc")]
+    pub use_stack_alloc: bool,
+}
+
+#[cfg(feature = "system-collections-generic-bithelper")]
+#[::unity2::methods]
+impl BitHelper {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, bit_array: ::unity2::Array<i32>, length: i32) -> ();
+
+    #[method(name = "MarkBit", args = 1)]
+    pub fn mark_bit(self, bit_position: i32) -> ();
+
+    #[method(name = "IsMarked", args = 1)]
+    pub fn is_marked(self, bit_position: i32) -> bool;
+
+    #[method(name = "ToIntArrayLength", args = 1)]
+    pub fn to_int_array_length(n: i32) -> i32;
+}
+
+#[cfg(feature = "system-collections-generic-bithelper")]
+impl BitHelper {
+    pub fn new(bit_array: ::unity2::Array<i32>, length: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BitHelper),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBitHelperMethods>::ctor(this, bit_array, length);
+        this
+    }
+}

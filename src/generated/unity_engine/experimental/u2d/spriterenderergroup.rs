@@ -1,0 +1,12 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/u2d/spriterenderergroup/SpriteRendererGroup.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.U2D",
+    name = "SpriteRendererGroup"
+)]
+#[parent(crate::system::object::Object)]
+pub struct SpriteRendererGroup {}

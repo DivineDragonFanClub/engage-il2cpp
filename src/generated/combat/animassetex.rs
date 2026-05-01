@@ -1,0 +1,16 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/animassetex/AnimAssetEx.md")))]
+#[::unity2::class(namespace = "Combat", name = "AnimAssetEx")]
+#[parent(crate::system::object::Object)]
+pub struct AnimAssetEx {}
+
+#[cfg(feature = "combat-animassetex")]
+#[::unity2::methods]
+impl AnimAssetEx {
+    #[method(name = "Exists", args = 1)]
+    pub fn exists(aa: crate::combat::animasset::AnimAsset) -> bool;
+}

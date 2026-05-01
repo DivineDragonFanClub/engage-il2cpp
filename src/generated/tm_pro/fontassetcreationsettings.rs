@@ -1,0 +1,68 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/fontassetcreationsettings/FontAssetCreationSettings.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FontAssetCreationSettings {
+    pub source_font_file_name: ::unity2::Il2CppString,
+    pub source_font_file_guid: ::unity2::Il2CppString,
+    pub point_size_sampling_mode: i32,
+    pub point_size: i32,
+    pub padding: i32,
+    pub packing_mode: i32,
+    pub atlas_width: i32,
+    pub atlas_height: i32,
+    pub character_set_selection_mode: i32,
+    pub character_sequence: ::unity2::Il2CppString,
+    pub referenced_font_asset_guid: ::unity2::Il2CppString,
+    pub referenced_text_asset_guid: ::unity2::Il2CppString,
+    pub font_style: i32,
+    pub font_style_modifier: f32,
+    pub render_mode: i32,
+    pub include_font_features: bool,
+}
+
+impl ::unity2::ClassIdentity for FontAssetCreationSettings {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "FontAssetCreationSettings";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FontAssetCreationSettings {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "tm_pro-fontassetcreationsettings")]
+#[::unity2::methods(value)]
+impl FontAssetCreationSettings {
+    #[method(name = ".ctor", args = 10)]
+    pub fn ctor(
+        self,
+        source_font_file_guid: ::unity2::Il2CppString,
+        point_size: i32,
+        point_size_sampling_mode: i32,
+        padding: i32,
+        packing_mode: i32,
+        atlas_width: i32,
+        atlas_height: i32,
+        character_selection_mode: i32,
+        character_set: ::unity2::Il2CppString,
+        render_mode: i32,
+    ) -> ();
+}

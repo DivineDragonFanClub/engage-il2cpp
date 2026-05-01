@@ -1,0 +1,44 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/global_illumination/disclight/DiscLight.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DiscLight {
+    pub instance_id: i32,
+    pub shadow: bool,
+    pub mode: crate::unity_engine::experimental::global_illumination::lightmode::LightMode,
+    pub position: crate::unity_engine::vector3::Vector3,
+    pub orientation: crate::unity_engine::quaternion::Quaternion,
+    pub color: crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,
+    pub indirect_color:
+        crate::unity_engine::experimental::global_illumination::linearcolor::LinearColor,
+    pub range: f32,
+    pub radius: f32,
+    pub falloff: crate::unity_engine::experimental::global_illumination::fallofftype::FalloffType,
+}
+
+impl ::unity2::ClassIdentity for DiscLight {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.GlobalIllumination";
+
+    const NAME: &'static str = "DiscLight";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DiscLight {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}

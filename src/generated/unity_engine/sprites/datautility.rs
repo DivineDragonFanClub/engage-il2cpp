@@ -1,0 +1,33 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/sprites/datautility/DataUtility.md")))]
+#[::unity2::class(namespace = "UnityEngine.Sprites", name = "DataUtility")]
+#[parent(crate::system::object::Object)]
+pub struct DataUtility {}
+
+#[cfg(feature = "unity_engine-sprites-datautility")]
+#[::unity2::methods]
+impl DataUtility {
+    #[method(name = "GetInnerUV", args = 1)]
+    pub fn get_inner_uv(
+        sprite: crate::unity_engine::sprite::Sprite,
+    ) -> crate::unity_engine::vector4::Vector4;
+
+    #[method(name = "GetOuterUV", args = 1)]
+    pub fn get_outer_uv(
+        sprite: crate::unity_engine::sprite::Sprite,
+    ) -> crate::unity_engine::vector4::Vector4;
+
+    #[method(name = "GetPadding", args = 1)]
+    pub fn get_padding(
+        sprite: crate::unity_engine::sprite::Sprite,
+    ) -> crate::unity_engine::vector4::Vector4;
+
+    #[method(name = "GetMinSize", args = 1)]
+    pub fn get_min_size(
+        sprite: crate::unity_engine::sprite::Sprite,
+    ) -> crate::unity_engine::vector2::Vector2;
+}

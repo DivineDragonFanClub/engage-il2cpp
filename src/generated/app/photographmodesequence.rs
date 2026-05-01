@@ -1,0 +1,131 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographmodesequence/PhotographModeSequence.md")))]
+#[::unity2::class(namespace = "App", name = "PhotographModeSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct PhotographModeSequence {
+    #[rename(name = "m_AllMenuContent")]
+    pub m_all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
+    #[rename(name = "m_CameraController")]
+    pub m_camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
+    #[rename(name = "m_DisposManager")]
+    pub m_dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+    #[rename(name = "m_IsHelpVisible")]
+    pub m_is_help_visible: bool,
+    #[rename(name = "m_ReservedLabel")]
+    pub m_reserved_label: crate::app::photographmodesequence::PhotographModeSequence_Label,
+}
+
+#[cfg(feature = "app-photographmodesequence")]
+#[::unity2::methods]
+impl PhotographModeSequence {
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
+        camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+    ) -> ();
+
+    #[method(name = "JumpReservedLabel", args = 0)]
+    pub fn jump_reserved_label(self) -> ();
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
+        camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+    ) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[method(name = "PhotographCoroutine", args = 0)]
+    pub fn photograph_coroutine(self) -> crate::system::collections::ienumerator::IEnumerator;
+}
+
+#[cfg(feature = "app-photographmodesequence")]
+impl PhotographModeSequence {
+    pub fn new(
+        all_menu_content: crate::app::photographallmenucontent::PhotographAllMenuContent,
+        camera_controller: crate::app::photographcameracontroller::PhotographCameraController,
+        dispos_manager: crate::app::photographdisposmanager::PhotographDisposManager,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographModeSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographModeSequenceMethods>::ctor(
+            this,
+            all_menu_content,
+            camera_controller,
+            dispos_manager,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographmodesequence/PhotographModeSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct PhotographModeSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for PhotographModeSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "PhotographModeSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PhotographModeSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl PhotographModeSequence_Label {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn tick() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn photograph() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 3 }
+    }
+}

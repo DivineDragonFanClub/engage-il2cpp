@@ -1,0 +1,51 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/resource_providers/instanceprovider/InstanceProvider.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "InstanceProvider"
+)]
+#[parent(crate::system::object::Object)]
+pub struct InstanceProvider {
+# [rename (name = "m_InstanceObjectToPrefabHandle")] pub m_instance_object_to_prefab_handle : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: gameobject :: GameObject , crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject > > ,
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-instanceprovider")]
+#[::unity2::methods]
+impl InstanceProvider {
+    #[method(name = "ProvideInstance", args = 3)]
+    pub fn provide_instance(
+        self,
+        resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
+        prefab_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: gameobject :: GameObject >,
+        instantiate_parameters : crate :: unity_engine :: resource_management :: resource_providers :: instantiationparameters :: InstantiationParameters,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[method(name = "ReleaseInstance", args = 2)]
+    pub fn release_instance(
+        self,
+        resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
+        instance: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-instanceprovider")]
+impl InstanceProvider {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InstanceProvider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInstanceProviderMethods>::ctor(this);
+        this
+    }
+}

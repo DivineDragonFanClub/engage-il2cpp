@@ -1,0 +1,43 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/tilemaps/itilemap_interface/ITilemap_Interface.md")))]
+#[::unity2::class(namespace = "UnityEngine.Tilemaps", name = "ITilemap")]
+#[parent(crate::system::object::Object)]
+pub struct ITilemap_Interface {
+    #[static_field]
+    #[rename(name = "s_Instance")]
+    pub s_instance: crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface,
+    #[rename(name = "m_Tilemap")]
+    pub m_tilemap: crate::unity_engine::tilemaps::tilemap::Tilemap,
+}
+
+#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
+#[::unity2::methods]
+impl ITilemap_Interface {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "RefreshTile", args = 1)]
+    pub fn refresh_tile(self, position: crate::unity_engine::vector3int::Vector3Int) -> ();
+
+    #[method(name = "CreateInstance", args = 0)]
+    pub fn create_instance() -> crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface;
+}
+
+#[cfg(feature = "unity_engine-tilemaps-itilemap_interface")]
+impl ITilemap_Interface {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ITilemap_Interface),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IITilemap_InterfaceMethods>::ctor(this);
+        this
+    }
+}

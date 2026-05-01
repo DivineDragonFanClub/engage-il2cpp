@@ -1,0 +1,34 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terrainutility_2/TerrainUtility_2.md")))]
+#[::unity2::class(namespace = "App", name = "TerrainUtility")]
+#[parent(crate::system::object::Object)]
+pub struct TerrainUtility_2 {}
+
+#[cfg(feature = "app-terrainutility_2")]
+#[::unity2::methods]
+impl TerrainUtility_2 {
+    #[method(name = "RegistUndo", args = 1)]
+    pub fn regist_undo(terrain: crate::unity_engine::terrain::Terrain) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-terrainutility_2")]
+impl TerrainUtility_2 {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TerrainUtility_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITerrainUtility_2Methods>::ctor(this);
+        this
+    }
+}

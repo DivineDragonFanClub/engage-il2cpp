@@ -1,0 +1,47 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::networking::downloadhandler::DownloadHandler;
+use crate::unity_engine::networking::downloadhandler::IDownloadHandler;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/downloadhandlerbuffer/DownloadHandlerBuffer.md")))]
+#[::unity2::class(namespace = "UnityEngine.Networking", name = "DownloadHandlerBuffer")]
+#[parent(crate::unity_engine::networking::downloadhandler::DownloadHandler)]
+pub struct DownloadHandlerBuffer {}
+
+#[cfg(feature = "unity_engine-networking-downloadhandlerbuffer")]
+#[::unity2::methods]
+impl DownloadHandlerBuffer {
+    #[method(name = "Create", args = 1)]
+    pub fn create(
+        obj: crate::unity_engine::networking::downloadhandlerbuffer::DownloadHandlerBuffer,
+    ) -> ::unity2::IntPtr;
+
+    #[method(name = "InternalCreateBuffer", args = 0)]
+    pub fn internal_create_buffer(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "GetData", args = 0)]
+    pub fn get_data(self) -> ::unity2::Array<u8>;
+
+    #[method(name = "InternalGetData", args = 0)]
+    pub fn internal_get_data(self) -> ::unity2::Array<u8>;
+}
+
+#[cfg(feature = "unity_engine-networking-downloadhandlerbuffer")]
+impl DownloadHandlerBuffer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DownloadHandlerBuffer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDownloadHandlerBufferMethods>::ctor(this);
+        this
+    }
+}

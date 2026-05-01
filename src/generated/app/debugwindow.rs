@@ -1,0 +1,185 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugwindow/DebugWindow.md")))]
+#[::unity2::class(namespace = "App", name = "DebugWindow")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct DebugWindow {
+    #[static_field]
+    #[rename(name = "DrawSize")]
+    pub draw_size: i32,
+    #[static_field]
+    #[rename(name = "DigitSize")]
+    pub digit_size: i32,
+    #[rename(name = "m_Font")]
+    pub m_font: crate::unity_engine::font::Font,
+    #[rename(name = "m_Material")]
+    pub m_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_Menu")]
+    pub m_menu: crate::app::debugmenu::DebugMenu,
+    #[rename(name = "m_FontMaterial")]
+    pub m_font_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_HelpMaterial")]
+    pub m_help_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_Renderer")]
+    pub m_renderer: crate::unity_engine::canvasrenderer::CanvasRenderer,
+    #[rename(name = "m_MaskUV")]
+    pub m_mask_uv: crate::unity_engine::vector2::Vector2,
+    #[rename(name = "m_FontSize")]
+    pub m_font_size: i32,
+    #[rename(name = "m_FontScale")]
+    pub m_font_scale: f32,
+    #[rename(name = "m_FontStyle")]
+    pub m_font_style: crate::unity_engine::fontstyle::FontStyle,
+    #[static_field]
+    #[rename(name = "ScreenX")]
+    pub screen_x: f32,
+    #[static_field]
+    #[rename(name = "ScreenY")]
+    pub screen_y: f32,
+}
+
+#[cfg(feature = "app-debugwindow")]
+#[::unity2::methods]
+impl DebugWindow {
+    #[method(name = "SetMenu", args = 1)]
+    pub fn set_menu(self, menu: crate::app::debugmenu::DebugMenu) -> ();
+
+    #[method(name = "GetTextWidth", args = 1)]
+    pub fn get_text_width(self, text: ::unity2::Il2CppString) -> f32;
+
+    #[method(name = "GetTextHeight", args = 1)]
+    pub fn get_text_height(self, text: ::unity2::Il2CppString) -> f32;
+
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[method(name = "TryGetInfo", args = 2)]
+    pub fn try_get_info(
+        self,
+        ch: u16,
+        info: crate::unity_engine::characterinfo::CharacterInfo,
+    ) -> bool;
+
+    #[method(name = "ToScreenX", args = 1)]
+    pub fn to_screen_x(x: f32) -> f32;
+
+    #[method(name = "ToScreenY", args = 1)]
+    pub fn to_screen_y(y: f32) -> f32;
+
+    #[method(name = "DrawFont", args = 7)]
+    pub fn draw_font(
+        self,
+        x: f32,
+        y: f32,
+        h: f32,
+        color: crate::unity_engine::color::Color,
+        ch: u16,
+        scale: f32,
+        outline: bool,
+    ) -> f32;
+
+    #[method(name = "DrawText", args = 7)]
+    pub fn draw_text(
+        self,
+        x: f32,
+        y: f32,
+        h: f32,
+        color: crate::unity_engine::color::Color,
+        text: ::unity2::Il2CppString,
+        scale: f32,
+        outline: bool,
+    ) -> ();
+
+    #[method(name = "DrawRect", args = 5)]
+    pub fn draw_rect(
+        self,
+        x: f32,
+        y: f32,
+        w: f32,
+        h: f32,
+        color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = "DrawRect", args = 2)]
+    pub fn draw_rect_2(
+        self,
+        rect: crate::unity_engine::rect::Rect,
+        color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = "DrawScrollBar", args = 6)]
+    pub fn draw_scroll_bar(
+        self,
+        x: f32,
+        y: f32,
+        color: crate::unity_engine::color::Color,
+        height: f32,
+        pos: f32,
+        max: f32,
+    ) -> ();
+
+    #[method(name = "OnDraw", args = 0)]
+    pub fn on_draw(self) -> ();
+
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[method(name = "SetClip", args = 2)]
+    pub fn set_clip(
+        self,
+        material: crate::unity_engine::material::Material,
+        rect: crate::unity_engine::rect::Rect,
+    ) -> ();
+
+    #[method(name = "SetClip", args = 5)]
+    pub fn set_clip_2(
+        self,
+        material: crate::unity_engine::material::Material,
+        x: f32,
+        y: f32,
+        w: f32,
+        h: f32,
+    ) -> ();
+
+    #[method(name = "GetAnchorRect", args = 2)]
+    pub fn get_anchor_rect(
+        self,
+        rect: crate::unity_engine::rect::Rect,
+        anchor: crate::app::gx::GX_Anchor,
+    ) -> crate::unity_engine::rect::Rect;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugwindow")]
+impl DebugWindow {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugWindow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugWindowMethods>::ctor(this);
+        this
+    }
+}

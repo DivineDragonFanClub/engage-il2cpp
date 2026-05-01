@@ -1,0 +1,53 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skyscroller/SkyScroller.md")))]
+#[::unity2::class(namespace = "App", name = "SkyScroller")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct SkyScroller {
+    #[rename(name = "ScrollSpeed")]
+    pub scroll_speed: f32,
+    #[rename(name = "m_Material")]
+    pub m_material: crate::unity_engine::material::Material,
+}
+
+#[cfg(feature = "app-skyscroller")]
+#[::unity2::methods]
+impl SkyScroller {
+    #[method(name = "ResetSkybox", args = 0)]
+    pub fn reset_skybox(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-skyscroller")]
+impl SkyScroller {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SkyScroller),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISkyScrollerMethods>::ctor(this);
+        this
+    }
+}

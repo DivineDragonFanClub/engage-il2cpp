@@ -1,0 +1,116 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardcondition/ProfileCardCondition.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ProfileCardCondition {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ProfileCardCondition {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ProfileCardCondition";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ProfileCardCondition {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ProfileCardCondition {
+    pub fn uncondition() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn completed_chapter() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn completed_game() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn unit_joined() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn god_joined() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn achievement() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn class_change_first_access() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn sortie5_times_with_all_unit() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn reliance_c_all() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn reliance_a() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn reliance_s() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn god_level10() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn god_level_max() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn animal_first_capture() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn hub_facility_first_access() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn mascot_joined() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn mascot_point_max() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn e004_winning_count_satisfied() -> Self {
+        Self { value: 17 }
+    }
+}

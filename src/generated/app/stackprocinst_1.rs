@@ -1,0 +1,54 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stackprocinst_1/StackProcInst_1.md")))]
+#[::unity2::class(namespace = "App", name = "StackProcInst`1")]
+pub struct StackProcInst_1<T0: ::unity2::ClassIdentity> {
+    #[static_field]
+    #[rename(name = "s_Instances")]
+    pub s_instances: crate::system::collections::generic::stack_1::Stack_1<T0>,
+    #[static_field]
+    #[rename(name = "s_Instance")]
+    pub s_instance: T0,
+}
+
+#[cfg(feature = "app-stackprocinst_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> StackProcInst_1<T0> {
+    #[method(name = "get_Instance", args = 0)]
+    pub fn get_instance() -> T0;
+
+    #[method(name = "OnSingletonCreate", args = 0)]
+    pub fn on_singleton_create(self) -> ();
+
+    #[method(name = "OnSingletonDispose", args = 0)]
+    pub fn on_singleton_dispose(self) -> ();
+
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(exists: crate::app::stackprocinst_1::StackProcInst_1<T0>) -> bool;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-stackprocinst_1")]
+impl<T0: ::unity2::ClassIdentity> StackProcInst_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StackProcInst_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStackProcInst_1Methods<T0>>::ctor(this);
+        this
+    }
+}

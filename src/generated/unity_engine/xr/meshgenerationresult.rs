@@ -1,0 +1,65 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/xr/meshgenerationresult/MeshGenerationResult.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MeshGenerationResult {}
+
+impl ::unity2::ClassIdentity for MeshGenerationResult {
+    const NAMESPACE: &'static str = "UnityEngine.XR";
+
+    const NAME: &'static str = "MeshGenerationResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MeshGenerationResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-xr-meshgenerationresult")]
+#[::unity2::methods(value)]
+impl MeshGenerationResult {
+    #[method(name = "get_MeshId", args = 0)]
+    pub fn get_mesh_id(self) -> crate::unity_engine::xr::meshid::MeshId;
+
+    #[method(name = "get_Mesh", args = 0)]
+    pub fn get_mesh(self) -> crate::unity_engine::mesh::Mesh;
+
+    #[method(name = "get_MeshCollider", args = 0)]
+    pub fn get_mesh_collider(self) -> crate::unity_engine::meshcollider::MeshCollider;
+
+    #[method(name = "get_Status", args = 0)]
+    pub fn get_status(self) -> crate::unity_engine::xr::meshgenerationstatus::MeshGenerationStatus;
+
+    #[method(name = "get_Attributes", args = 0)]
+    pub fn get_attributes(
+        self,
+    ) -> crate::unity_engine::xr::meshvertexattributes::MeshVertexAttributes;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, obj: crate::system::object::Object) -> bool;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals_2(
+        self,
+        other: crate::unity_engine::xr::meshgenerationresult::MeshGenerationResult,
+    ) -> bool;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+}

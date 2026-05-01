@@ -1,0 +1,301 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/dynvalue/DynValue.md")))]
+#[::unity2::class(namespace = "MoonSharp.Interpreter", name = "DynValue")]
+#[parent(crate::system::object::Object)]
+pub struct DynValue {
+    #[static_field]
+    #[rename(name = "s_RefIDCounter")]
+    pub s_ref_id_counter: i32,
+    #[rename(name = "m_RefID")]
+    pub m_ref_id: i32,
+    #[rename(name = "m_HashCode")]
+    pub m_hash_code: i32,
+    #[rename(name = "m_ReadOnly")]
+    pub m_read_only: bool,
+    #[rename(name = "m_Number")]
+    pub m_number: f64,
+    #[rename(name = "m_Object")]
+    pub m_object: ::unity2::IlInstance,
+    #[rename(name = "m_Type")]
+    pub m_type: crate::moon_sharp::interpreter::datatype::DataType,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-dynvalue")]
+#[::unity2::methods]
+impl DynValue {
+    #[method(name = "get_ReferenceID", args = 0)]
+    pub fn get_reference_id(self) -> i32;
+
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> crate::moon_sharp::interpreter::datatype::DataType;
+
+    #[method(name = "get_Function", args = 0)]
+    pub fn get_function(self) -> crate::moon_sharp::interpreter::closure::Closure;
+
+    #[method(name = "get_Number", args = 0)]
+    pub fn get_number(self) -> f64;
+
+    #[method(name = "get_Tuple", args = 0)]
+    pub fn get_tuple(self) -> ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>;
+
+    #[method(name = "get_Coroutine", args = 0)]
+    pub fn get_coroutine(self) -> crate::moon_sharp::interpreter::coroutine_2::Coroutine_2;
+
+    #[method(name = "get_Table", args = 0)]
+    pub fn get_table(self) -> crate::moon_sharp::interpreter::table::Table;
+
+    #[method(name = "get_Boolean", args = 0)]
+    pub fn get_boolean(self) -> bool;
+
+    #[method(name = "get_String", args = 0)]
+    pub fn get_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "get_Callback", args = 0)]
+    pub fn get_callback(self)
+        -> crate::moon_sharp::interpreter::callbackfunction::CallbackFunction;
+
+    #[method(name = "get_TailCallData", args = 0)]
+    pub fn get_tail_call_data(self) -> crate::moon_sharp::interpreter::tailcalldata::TailCallData;
+
+    #[method(name = "get_YieldRequest", args = 0)]
+    pub fn get_yield_request(self) -> crate::moon_sharp::interpreter::yieldrequest::YieldRequest;
+
+    #[method(name = "get_UserData", args = 0)]
+    pub fn get_user_data(self) -> crate::moon_sharp::interpreter::userdata::UserData;
+
+    #[method(name = "get_ReadOnly", args = 0)]
+    pub fn get_read_only(self) -> bool;
+
+    #[method(name = "NewNil", args = 0)]
+    pub fn new_nil() -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewBoolean", args = 1)]
+    pub fn new_boolean(v: bool) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewNumber", args = 1)]
+    pub fn new_number(num: f64) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewString", args = 1)]
+    pub fn new_string(
+        str: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewString", args = 2)]
+    pub fn new_string_2(
+        format: ::unity2::Il2CppString,
+        args: ::unity2::Array<crate::system::object::Object>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewCoroutine", args = 1)]
+    pub fn new_coroutine(
+        coroutine: crate::moon_sharp::interpreter::coroutine_2::Coroutine_2,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewClosure", args = 1)]
+    pub fn new_closure(
+        function: crate::moon_sharp::interpreter::closure::Closure,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewCallback", args = 2)]
+    pub fn new_callback(
+        call_back: crate::system::func_3::Func_3<
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,
+            crate::moon_sharp::interpreter::dynvalue::DynValue,
+        >,
+        name: ::unity2::Il2CppString,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewCallback", args = 1)]
+    pub fn new_callback_2(
+        function: crate::moon_sharp::interpreter::callbackfunction::CallbackFunction,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewTable", args = 1)]
+    pub fn new_table(
+        table: crate::moon_sharp::interpreter::table::Table,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewPrimeTable", args = 0)]
+    pub fn new_prime_table() -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewTable", args = 1)]
+    pub fn new_table_2(
+        script: crate::moon_sharp::interpreter::script::Script,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewTable", args = 2)]
+    pub fn new_table_3(
+        script: crate::moon_sharp::interpreter::script::Script,
+        array_values: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewTailCallReq", args = 2)]
+    pub fn new_tail_call_req(
+        tail_fn: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewTailCallReq", args = 1)]
+    pub fn new_tail_call_req_2(
+        tail_call_data: crate::moon_sharp::interpreter::tailcalldata::TailCallData,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewYieldReq", args = 1)]
+    pub fn new_yield_req(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewForcedYieldReq", args = 0)]
+    pub fn new_forced_yield_req() -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewTuple", args = 1)]
+    pub fn new_tuple(
+        values: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewTupleNested", args = 1)]
+    pub fn new_tuple_nested(
+        values: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "NewUserData", args = 1)]
+    pub fn new_user_data(
+        user_data: crate::moon_sharp::interpreter::userdata::UserData,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "AsReadOnly", args = 0)]
+    pub fn as_read_only(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Clone", args = 0)]
+    pub fn clone(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Clone", args = 1)]
+    pub fn clone_2(self, read_only: bool) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "CloneAsWritable", args = 0)]
+    pub fn clone_as_writable(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "get_Void", args = 0)]
+    pub fn get_void() -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "set_Void", args = 1)]
+    pub fn set_void(value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = "get_Nil", args = 0)]
+    pub fn get_nil() -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "set_Nil", args = 1)]
+    pub fn set_nil(value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = "get_True", args = 0)]
+    pub fn get_true() -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "set_True", args = 1)]
+    pub fn set_true(value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = "get_False", args = 0)]
+    pub fn get_false() -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "set_False", args = 1)]
+    pub fn set_false(value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+
+    #[method(name = "ToPrintString", args = 0)]
+    pub fn to_print_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "ToDebugPrintString", args = 0)]
+    pub fn to_debug_print_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "GetHashCode", args = 0)]
+    pub fn get_hash_code(self) -> i32;
+
+    #[method(name = "Equals", args = 1)]
+    pub fn equals(self, obj: crate::system::object::Object) -> bool;
+
+    #[method(name = "CastToString", args = 0)]
+    pub fn cast_to_string(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "CastToBool", args = 0)]
+    pub fn cast_to_bool(self) -> bool;
+
+    #[method(name = "GetAsPrivateResource", args = 0)]
+    pub fn get_as_private_resource(
+        self,
+    ) -> crate::moon_sharp::interpreter::iscriptprivateresource::IScriptPrivateResource;
+
+    #[method(name = "ToScalar", args = 0)]
+    pub fn to_scalar(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "Assign", args = 1)]
+    pub fn assign(self, value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[method(name = "GetLength", args = 0)]
+    pub fn get_length(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "IsNil", args = 0)]
+    pub fn is_nil(self) -> bool;
+
+    #[method(name = "IsNotNil", args = 0)]
+    pub fn is_not_nil(self) -> bool;
+
+    #[method(name = "IsVoid", args = 0)]
+    pub fn is_void(self) -> bool;
+
+    #[method(name = "IsNotVoid", args = 0)]
+    pub fn is_not_void(self) -> bool;
+
+    #[method(name = "IsNilOrNan", args = 0)]
+    pub fn is_nil_or_nan(self) -> bool;
+
+    #[method(name = "AssignNumber", args = 1)]
+    pub fn assign_number(self, num: f64) -> ();
+
+    #[method(name = "FromObject", args = 2)]
+    pub fn from_object(
+        script: crate::moon_sharp::interpreter::script::Script,
+        obj: crate::system::object::Object,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = "ToObject", args = 0)]
+    pub fn to_object(self) -> crate::system::object::Object;
+
+    #[method(name = "ToObject", args = 1)]
+    pub fn to_object_2(self, desired_type: ::unity2::SystemType) -> crate::system::object::Object;
+
+    #[method(name = "CheckType", args = 4)]
+    pub fn check_type(
+        self,
+        func_name: ::unity2::Il2CppString,
+        desired_type: crate::moon_sharp::interpreter::datatype::DataType,
+        arg_num: i32,
+        flags: crate::moon_sharp::interpreter::typevalidationflags::TypeValidationFlags,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-dynvalue")]
+impl DynValue {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DynValue),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDynValueMethods>::ctor(this);
+        this
+    }
+}

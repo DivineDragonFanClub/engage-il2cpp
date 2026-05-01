@@ -1,0 +1,275 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemmenudetailsetter/ItemMenuDetailSetter_Kind.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ItemMenuDetailSetter_Kind {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ItemMenuDetailSetter_Kind {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ItemMenuDetailSetter.Kind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ItemMenuDetailSetter_Kind {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ItemMenuDetailSetter_Kind {
+    pub fn power() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn weight() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn hit() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn critical() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn avoid() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn secure() -> Self {
+        Self { value: 5 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemmenudetailsetter/ItemMenuDetailSetter.md")))]
+#[::unity2::class(namespace = "App", name = "ItemMenuDetailSetter")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct ItemMenuDetailSetter {
+    #[rename(name = "m_MenuTitle")]
+    pub m_menu_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ContentsTitle")]
+    pub m_contents_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TitleAtk")]
+    pub m_title_atk: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ValueAtk")]
+    pub m_value_atk: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_IconAtk")]
+    pub m_icon_atk: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_TitleHit")]
+    pub m_title_hit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ValueHit")]
+    pub m_value_hit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_IconHit")]
+    pub m_icon_hit: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_TitleCrit")]
+    pub m_title_crit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ValueCrit")]
+    pub m_value_crit: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_IconCrit")]
+    pub m_icon_crit: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_TitleAvo")]
+    pub m_title_avo: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ValueAvo")]
+    pub m_value_avo: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_IconAvo")]
+    pub m_icon_avo: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_ObjectSpd")]
+    pub m_object_spd: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_TitleSpd")]
+    pub m_title_spd: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ValueSpd")]
+    pub m_value_spd: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_IconSpd")]
+    pub m_icon_spd: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_ObjectWeight")]
+    pub m_object_weight: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_TitleWeight")]
+    pub m_title_weight: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ValueWeight")]
+    pub m_value_weight: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_IconWeight")]
+    pub m_icon_weight: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_TitleRange")]
+    pub m_title_range: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ValueRange")]
+    pub m_value_range: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TitleSecure")]
+    pub m_title_secure: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ValueSecure")]
+    pub m_value_secure: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_IconSecure")]
+    pub m_icon_secure: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_TitleWeaponLevel")]
+    pub m_title_weapon_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ValueWeaponLevel")]
+    pub m_value_weapon_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_IconWeaponLevel")]
+    pub m_icon_weapon_level: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_WeaponLevelNothing")]
+    pub m_weapon_level_nothing: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TitleEfficacy")]
+    pub m_title_efficacy: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_EfficacyIcons")]
+    pub m_efficacy_icons: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+    #[rename(name = "m_EfficacyNothing")]
+    pub m_efficacy_nothing: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ContentsText")]
+    pub m_contents_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ContentsEngWep")]
+    pub m_contents_eng_wep: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ContentsEnchant")]
+    pub m_contents_enchant: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ContentsSubText")]
+    pub m_contents_sub_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ContentsTitleMID")]
+    pub m_contents_title_mid: ::unity2::Il2CppString,
+    #[rename(name = "m_AtkTitleMID")]
+    pub m_atk_title_mid: ::unity2::Il2CppString,
+    #[rename(name = "m_ColorValueAtk")]
+    pub m_color_value_atk: crate::unity_engine::color::Color,
+    #[rename(name = "m_ColorValueHit")]
+    pub m_color_value_hit: crate::unity_engine::color::Color,
+    #[rename(name = "m_ColorValueCrit")]
+    pub m_color_value_crit: crate::unity_engine::color::Color,
+    #[rename(name = "m_ColorValueAvo")]
+    pub m_color_value_avo: crate::unity_engine::color::Color,
+    #[rename(name = "m_ColorValueSpd")]
+    pub m_color_value_spd: crate::unity_engine::color::Color,
+    #[rename(name = "m_ColorValueWeight")]
+    pub m_color_value_weight: crate::unity_engine::color::Color,
+    #[rename(name = "m_ColorValueSecure")]
+    pub m_color_value_secure: crate::unity_engine::color::Color,
+    #[rename(name = "m_TmpUnit")]
+    pub m_tmp_unit: crate::app::unit::Unit,
+    #[rename(name = "m_BattleInfo")]
+    pub m_battle_info: crate::app::battleinfo::BattleInfo,
+    #[rename(name = "m_TmpBattleInfo")]
+    pub m_tmp_battle_info: crate::app::battleinfo::BattleInfo,
+}
+
+#[cfg(feature = "app-itemmenudetailsetter")]
+#[::unity2::methods]
+impl ItemMenuDetailSetter {
+    #[method(name = "get_IsEnchantMode", args = 0)]
+    pub fn get_is_enchant_mode(self) -> bool;
+
+    #[method(name = "set_IsEnchantMode", args = 1)]
+    pub fn set_is_enchant_mode(self, value: bool) -> ();
+
+    #[method(name = "SetEnchantMode", args = 1)]
+    pub fn set_enchant_mode(self, is_enchant: bool) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "SetData", args = 1)]
+    pub fn set_data(self, selected_item: crate::app::unititem::UnitItem) -> ();
+
+    #[method(name = "SetData", args = 2)]
+    pub fn set_data_2(
+        self,
+        unit: crate::app::unit::Unit,
+        selected_item: crate::app::unititem::UnitItem,
+    ) -> ();
+
+    #[method(name = "SetData", args = 3)]
+    pub fn set_data_3(
+        self,
+        unit_item_base: crate::app::unititem::UnitItem,
+        unit_item_target: crate::app::unititem::UnitItem,
+        unit: crate::app::unit::Unit,
+    ) -> ();
+
+    #[method(name = "SetData", args = 3)]
+    pub fn set_data_4(
+        self,
+        unit_item: crate::app::unititem::UnitItem,
+        kind: crate::app::itemmenudetailsetter::ItemMenuDetailSetter_Kind,
+        value: i32,
+    ) -> ();
+
+    #[method(name = "SetMenuTitle", args = 1)]
+    pub fn set_menu_title(self, title: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "SetContentsText", args = 1)]
+    pub fn set_contents_text(self, message: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "SetRangeText", args = 2)]
+    pub fn set_range_text(self, r_i: i32, r_o: i32) -> ();
+
+    #[method(name = "SetContentsText", args = 1)]
+    pub fn set_contents_text_2(self, item: crate::app::unititem::UnitItem) -> ();
+
+    #[method(name = "TrySetUpDownIcon", args = 4)]
+    pub fn try_set_up_down_icon(
+        self,
+        icon: crate::unity_engine::ui::image::Image,
+        color: crate::unity_engine::color::Color,
+        before: i32,
+        now: i32,
+    ) -> ();
+
+    #[method(name = "TrySetUpDownIconForWeight", args = 4)]
+    pub fn try_set_up_down_icon_for_weight(
+        self,
+        icon: crate::unity_engine::ui::image::Image,
+        color: crate::unity_engine::color::Color,
+        before: i32,
+        now: i32,
+    ) -> ();
+
+    #[method(name = "PlayAnim", args = 1)]
+    pub fn play_anim(self, is_open: bool) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-itemmenudetailsetter")]
+impl ItemMenuDetailSetter {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemMenuDetailSetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemMenuDetailSetterMethods>::ctor(this);
+        this
+    }
+}

@@ -1,0 +1,171 @@
+
+use crate::app::basicdialog::BasicDialog;
+use crate::app::basicdialog::IBasicDialog;
+use crate::app::basicdialogitem::BasicDialogItem;
+use crate::app::basicdialogitem::IBasicDialogItem;
+use crate::app::basicdialogitemno::BasicDialogItemNo;
+use crate::app::basicdialogitemno::IBasicDialogItemNo;
+use crate::app::basicmenu::BasicMenu;
+use crate::app::basicmenu::IBasicMenu;
+use crate::app::basicmenuitem::BasicMenuItem;
+use crate::app::basicmenuitem::IBasicMenuItem;
+use crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
+use crate::app::exchangeyesnodialog::IExchangeYesNoDialog;
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog_ConfirmDialogNo.md")))]
+#[::unity2::class(namespace = "App", name = "AmiiboAutoExchangeDialog.ConfirmDialogNo")]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct AmiiboAutoExchangeDialog_ConfirmDialogNo {}
+
+#[cfg(feature = "app-amiiboautoexchangedialog")]
+#[::unity2::methods]
+impl AmiiboAutoExchangeDialog_ConfirmDialogNo {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-amiiboautoexchangedialog")]
+impl AmiiboAutoExchangeDialog_ConfirmDialogNo {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AmiiboAutoExchangeDialog_ConfirmDialogNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog.md")))]
+#[::unity2::class(namespace = "App", name = "AmiiboAutoExchangeDialog")]
+#[parent(crate::app::exchangeyesnodialog::ExchangeYesNoDialog)]
+pub struct AmiiboAutoExchangeDialog {}
+
+#[cfg(feature = "app-amiiboautoexchangedialog")]
+#[::unity2::methods]
+impl AmiiboAutoExchangeDialog {
+    #[method(name = ".ctor", args = 9)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::exchangedialogcontent::ExchangeDialogContent,
+        top_message: ::unity2::Il2CppString,
+        get_item_title: ::unity2::Il2CppString,
+        get_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        get_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        cost_item_title: ::unity2::Il2CppString,
+        cost_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+    ) -> ();
+
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        ticket_num: i32,
+        r#type: crate::app::amiiboautoexchangedialog::AmiiboAutoExchangeDialog_Type,
+    ) -> ();
+}
+
+#[cfg(feature = "app-amiiboautoexchangedialog")]
+impl AmiiboAutoExchangeDialog {
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::exchangedialogcontent::ExchangeDialogContent,
+        top_message: ::unity2::Il2CppString,
+        get_item_title: ::unity2::Il2CppString,
+        get_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        get_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+        cost_item_title: ::unity2::Il2CppString,
+        cost_item_param_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam,
+        >,
+        cost_money_param: crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AmiiboAutoExchangeDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAmiiboAutoExchangeDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+            top_message,
+            get_item_title,
+            get_item_param_list,
+            get_money_param,
+            cost_item_title,
+            cost_item_param_list,
+            cost_money_param,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog_Type.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AmiiboAutoExchangeDialog_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AmiiboAutoExchangeDialog_Type {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AmiiboAutoExchangeDialog.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AmiiboAutoExchangeDialog_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AmiiboAutoExchangeDialog_Type {
+    pub fn sound() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn accessory() -> Self {
+        Self { value: 1 }
+    }
+}

@@ -1,0 +1,58 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/xrview/XRView.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct XRView {
+    pub proj_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+    pub view_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+    pub viewport: crate::unity_engine::rect::Rect,
+    pub occlusion_mesh: crate::unity_engine::mesh::Mesh,
+    pub texture_array_slice: i32,
+}
+
+impl ::unity2::ClassIdentity for XRView {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "XRView";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for XRView {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrview")]
+#[::unity2::methods(value)]
+impl XRView {
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        proj: crate::unity_engine::matrix4x4::Matrix4x4,
+        view: crate::unity_engine::matrix4x4::Matrix4x4,
+        vp: crate::unity_engine::rect::Rect,
+        dst_slice: i32,
+    ) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        render_pass: crate::unity_engine::xr::xrdisplaysubsystem::XRDisplaySubsystem_XRRenderPass,
+        render_parameter : crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem_XRRenderParameter,
+    ) -> ();
+}

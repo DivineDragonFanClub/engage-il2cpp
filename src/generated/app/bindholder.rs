@@ -1,0 +1,55 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/bindholder/BindHolder.md")))]
+#[::unity2::class(namespace = "App", name = "BindHolder")]
+#[parent(crate::system::object::Object)]
+pub struct BindHolder {
+    #[static_field]
+    #[rename(name = "BindMax")]
+    pub bind_max: i32,
+    #[rename(name = "m_Bind")]
+    pub m_bind: i32,
+}
+
+#[cfg(feature = "app-bindholder")]
+#[::unity2::methods]
+impl BindHolder {
+    #[method(name = "Bind", args = 0)]
+    pub fn bind(self) -> bool;
+
+    #[method(name = "Unbind", args = 0)]
+    pub fn unbind(self) -> bool;
+
+    #[method(name = "IsBind", args = 0)]
+    pub fn is_bind(self) -> bool;
+
+    #[method(name = "NonBind", args = 0)]
+    pub fn non_bind(self) -> bool;
+
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-bindholder")]
+impl BindHolder {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BindHolder),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBindHolderMethods>::ctor(this);
+        this
+    }
+}

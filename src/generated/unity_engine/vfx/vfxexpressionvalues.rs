@@ -1,0 +1,39 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/vfx/vfxexpressionvalues/VFXExpressionValues.md")))]
+#[::unity2::class(namespace = "UnityEngine.VFX", name = "VFXExpressionValues")]
+#[parent(crate::system::object::Object)]
+pub struct VFXExpressionValues {
+    #[rename(name = "m_Ptr")]
+    pub m_ptr: ::unity2::IntPtr,
+}
+
+#[cfg(feature = "unity_engine-vfx-vfxexpressionvalues")]
+#[::unity2::methods]
+impl VFXExpressionValues {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "CreateExpressionValuesWrapper", args = 1)]
+    pub fn create_expression_values_wrapper(
+        ptr: ::unity2::IntPtr,
+    ) -> crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues;
+}
+
+#[cfg(feature = "unity_engine-vfx-vfxexpressionvalues")]
+impl VFXExpressionValues {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VFXExpressionValues),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVFXExpressionValuesMethods>::ctor(this);
+        this
+    }
+}

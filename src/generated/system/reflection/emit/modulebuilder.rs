@@ -1,0 +1,11 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::reflection::module::IModule;
+use crate::system::reflection::module::Module;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/reflection/emit/modulebuilder/ModuleBuilder.md")))]
+#[::unity2::class(namespace = "System.Reflection.Emit", name = "ModuleBuilder")]
+#[parent(crate::system::reflection::module::Module)]
+pub struct ModuleBuilder {}

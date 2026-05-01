@@ -1,0 +1,67 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/data_structs/linkedlistindex_2/LinkedListIndex_2.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.DataStructs",
+    name = "LinkedListIndex`2"
+)]
+pub struct LinkedListIndex_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
+    #[rename(name = "m_LinkedList")]
+    pub m_linked_list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T1>,
+    #[rename(name = "m_Map")]
+    pub m_map: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        T0,
+        crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T1>,
+    >,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-data_structs-linkedlistindex_2")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> LinkedListIndex_2<T0, T1> {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        linked_list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T1>,
+    ) -> ();
+
+    #[method(name = "Find", args = 1)]
+    pub fn find(
+        self,
+        key: T0,
+    ) -> crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<T1>;
+
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, key: T0, value: T1) -> T1;
+
+    #[method(name = "Add", args = 2)]
+    pub fn add(self, key: T0, value: T1) -> ();
+
+    #[method(name = "Remove", args = 1)]
+    pub fn remove(self, key: T0) -> bool;
+
+    #[method(name = "ContainsKey", args = 1)]
+    pub fn contains_key(self, key: T0) -> bool;
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-data_structs-linkedlistindex_2")]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> LinkedListIndex_2<T0, T1> {
+    pub fn new(
+        linked_list: crate::system::collections::generic::linkedlist_1::LinkedList_1<T1>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LinkedListIndex_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILinkedListIndex_2Methods<T0, T1>>::ctor(this, linked_list);
+        this
+    }
+}

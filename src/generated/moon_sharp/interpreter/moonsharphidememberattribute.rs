@@ -1,0 +1,37 @@
+
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/moonsharphidememberattribute/MoonSharpHideMemberAttribute.md")))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter",
+    name = "MoonSharpHideMemberAttribute"
+)]
+pub struct MoonSharpHideMemberAttribute {}
+
+#[cfg(feature = "moon_sharp-interpreter-moonsharphidememberattribute")]
+#[::unity2::methods]
+impl MoonSharpHideMemberAttribute {
+    #[method(name = "get_MemberName", args = 0)]
+    pub fn get_member_name(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_MemberName", args = 1)]
+    pub fn set_member_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, member_name: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-moonsharphidememberattribute")]
+impl MoonSharpHideMemberAttribute {
+    pub fn new(member_name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MoonSharpHideMemberAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMoonSharpHideMemberAttributeMethods>::ctor(this, member_name);
+        this
+    }
+}

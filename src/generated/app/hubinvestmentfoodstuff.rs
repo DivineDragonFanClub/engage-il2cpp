@@ -1,0 +1,79 @@
+
+use crate::app::structbase::IStructBase;
+use crate::app::structbase::StructBase;
+use crate::app::structdataarray_1::IStructDataArray_1;
+use crate::app::structdataarray_1::StructDataArray_1;
+use crate::app::structtemplate_1::IStructTemplate_1;
+use crate::app::structtemplate_1::StructTemplate_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubinvestmentfoodstuff/HubInvestmentFoodstuff.md")))]
+#[::unity2::class(namespace = "App", name = "HubInvestmentFoodstuff")]
+# [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: hubinvestmentfoodstuff :: HubInvestmentFoodstuff >)]
+pub struct HubInvestmentFoodstuff {}
+
+#[cfg(feature = "app-hubinvestmentfoodstuff")]
+#[::unity2::methods]
+impl HubInvestmentFoodstuff {
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[method(name = "get_Foodstuff", args = 0)]
+    pub fn get_foodstuff(self) -> ::unity2::Il2CppString;
+
+    #[method(name = "set_Foodstuff", args = 1)]
+    pub fn set_foodstuff(self, value: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "get_Lv1", args = 0)]
+    pub fn get_lv1(self) -> u8;
+
+    #[method(name = "set_Lv1", args = 1)]
+    pub fn set_lv1(self, value: u8) -> ();
+
+    #[method(name = "get_Lv2", args = 0)]
+    pub fn get_lv2(self) -> u8;
+
+    #[method(name = "set_Lv2", args = 1)]
+    pub fn set_lv2(self, value: u8) -> ();
+
+    #[method(name = "get_Lv3", args = 0)]
+    pub fn get_lv3(self) -> u8;
+
+    #[method(name = "set_Lv3", args = 1)]
+    pub fn set_lv3(self, value: u8) -> ();
+
+    #[method(name = "get_Lv4", args = 0)]
+    pub fn get_lv4(self) -> u8;
+
+    #[method(name = "set_Lv4", args = 1)]
+    pub fn set_lv4(self, value: u8) -> ();
+
+    #[method(name = "get_Lv5", args = 0)]
+    pub fn get_lv5(self) -> u8;
+
+    #[method(name = "set_Lv5", args = 1)]
+    pub fn set_lv5(self, value: u8) -> ();
+
+    #[method(name = "GetNum", args = 1)]
+    pub fn get_num(self, level: i32) -> u8;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubinvestmentfoodstuff")]
+impl HubInvestmentFoodstuff {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubInvestmentFoodstuff),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubInvestmentFoodstuffMethods>::ctor(this);
+        this
+    }
+}

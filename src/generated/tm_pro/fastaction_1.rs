@@ -1,0 +1,51 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/fastaction_1/FastAction_1.md")))]
+#[::unity2::class(namespace = "TMPro", name = "FastAction`1")]
+pub struct FastAction_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "delegates")]
+    pub delegates: crate::system::collections::generic::linkedlist_1::LinkedList_1<
+        crate::system::action_1::Action_1<T0>,
+    >,
+    #[rename(name = "lookup")]
+    pub lookup: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::system::action_1::Action_1<T0>,
+        crate::system::collections::generic::linkedlistnode_1::LinkedListNode_1<
+            crate::system::action_1::Action_1<T0>,
+        >,
+    >,
+}
+
+#[cfg(feature = "tm_pro-fastaction_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> FastAction_1<T0> {
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, rhs: crate::system::action_1::Action_1<T0>) -> ();
+
+    #[method(name = "Remove", args = 1)]
+    pub fn remove(self, rhs: crate::system::action_1::Action_1<T0>) -> ();
+
+    #[method(name = "Call", args = 1)]
+    pub fn call(self, a: T0) -> ();
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-fastaction_1")]
+impl<T0: ::unity2::ClassIdentity> FastAction_1<T0> {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FastAction_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFastAction_1Methods<T0>>::ctor(this);
+        this
+    }
+}

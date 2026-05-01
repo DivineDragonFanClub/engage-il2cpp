@@ -1,0 +1,121 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "UnitySynchronizationContext")]
+pub struct UnitySynchronizationContext {
+    #[rename(name = "m_AsyncWorkQueue")]
+    pub m_async_work_queue: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest,
+    >,
+    #[rename(name = "m_CurrentFrameWork")]
+    pub m_current_frame_work: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::unitysynchronizationcontext::UnitySynchronizationContext_WorkRequest,
+    >,
+    #[rename(name = "m_MainThreadID")]
+    pub m_main_thread_id: i32,
+    #[rename(name = "m_TrackedCount")]
+    pub m_tracked_count: i32,
+}
+
+#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
+#[::unity2::methods]
+impl UnitySynchronizationContext {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, main_thread_id: i32) -> ();
+
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: unitysynchronizationcontext :: UnitySynchronizationContext_WorkRequest >,
+        main_thread_id: i32,
+    ) -> ();
+
+    #[method(name = "OperationStarted", args = 0)]
+    pub fn operation_started(self) -> ();
+
+    #[method(name = "OperationCompleted", args = 0)]
+    pub fn operation_completed(self) -> ();
+
+    #[method(name = "Exec", args = 0)]
+    pub fn exec(self) -> ();
+
+    #[method(name = "HasPendingTasks", args = 0)]
+    pub fn has_pending_tasks(self) -> bool;
+
+    #[method(name = "InitializeSynchronizationContext", args = 0)]
+    pub fn initialize_synchronization_context() -> ();
+
+    #[method(name = "ExecuteTasks", args = 0)]
+    pub fn execute_tasks() -> ();
+
+    #[method(name = "ExecutePendingTasks", args = 1)]
+    pub fn execute_pending_tasks(milliseconds_timeout: i64) -> bool;
+}
+
+#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
+impl UnitySynchronizationContext {
+    pub fn new(main_thread_id: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitySynchronizationContext),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitySynchronizationContextMethods>::ctor(this, main_thread_id);
+        this
+    }
+
+    pub fn new_2(
+        queue : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: unitysynchronizationcontext :: UnitySynchronizationContext_WorkRequest >,
+        main_thread_id: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitySynchronizationContext),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IUnitySynchronizationContextMethods>::ctor_2(this, queue, main_thread_id);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext_WorkRequest.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct UnitySynchronizationContext_WorkRequest {}
+
+impl ::unity2::ClassIdentity for UnitySynchronizationContext_WorkRequest {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "UnitySynchronizationContext.WorkRequest";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitySynchronizationContext_WorkRequest {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
+#[::unity2::methods(value)]
+impl UnitySynchronizationContext_WorkRequest {
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}

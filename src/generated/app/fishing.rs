@@ -1,0 +1,23 @@
+
+#[cfg(any(feature = "app-fishing-config-fixcameraconfig-types"))]
+pub mod config;
+#[cfg(any(feature = "app-fishing-fadetype-types"))]
+pub mod fadetype;
+#[cfg(any(feature = "app-fishing-fadetype-types"))]
+pub use fadetype::*;
+#[cfg(any(feature = "app-fishing-forecastfishdata-types"))]
+pub mod forecastfishdata;
+#[cfg(any(feature = "app-fishing-forecastfishdata-types"))]
+pub use forecastfishdata::*;
+#[cfg(any(feature = "app-fishing-shadowsize-types"))]
+pub mod shadowsize;
+#[cfg(any(feature = "app-fishing-shadowsize-types"))]
+pub use shadowsize::*;
+#[cfg(any(feature = "app-fishing-sizerank-types"))]
+pub mod sizerank;
+#[cfg(any(feature = "app-fishing-sizerank-types"))]
+pub use sizerank::*;
+#[cfg(any(feature = "app-fishing-sticktype-types"))]
+pub mod sticktype;
+#[cfg(any(feature = "app-fishing-sticktype-types"))]
+pub use sticktype::*;

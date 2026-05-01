@@ -1,0 +1,256 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmaplinerenderer/GmapLineRenderer.md")))]
+#[::unity2::class(namespace = "App", name = "GmapLineRenderer")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct GmapLineRenderer {
+    #[rename(name = "m_DrawType")]
+    pub m_draw_type: crate::app::gmaplinerenderer::GmapLineRenderer_DrawType,
+    #[rename(name = "m_Material")]
+    pub m_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_Step")]
+    pub m_step: f32,
+    #[rename(name = "m_Size")]
+    pub m_size: f32,
+    #[rename(name = "m_AppearSpeed")]
+    pub m_appear_speed: f32,
+    #[rename(name = "m_MeshRenderer")]
+    pub m_mesh_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
+    #[rename(name = "m_LinePoints")]
+    pub m_line_points: crate::system::collections::generic::list_1::List_1<
+        crate::app::gmaplinerenderer::GmapLineRenderer_LinePoint,
+    >,
+    #[rename(name = "m_IsAppearing")]
+    pub m_is_appearing: bool,
+    #[rename(name = "m_PathLength")]
+    pub m_path_length: f32,
+    #[rename(name = "m_AppeardPathLength")]
+    pub m_appeard_path_length: f32,
+    #[rename(name = "m_LineRenderer")]
+    pub m_line_renderer: crate::unity_engine::linerenderer::LineRenderer,
+    #[rename(name = "m_LineStep")]
+    pub m_line_step: f32,
+    #[rename(name = "m_LinePositionList")]
+    pub m_line_position_list:
+        crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector3::Vector3>,
+    #[rename(name = "m_LineAppearCountOld")]
+    pub m_line_appear_count_old: i32,
+    #[rename(name = "m_LineAppearCount")]
+    pub m_line_appear_count: i32,
+    #[rename(name = "m_LineAppearSpeed")]
+    pub m_line_appear_speed: i32,
+}
+
+#[cfg(feature = "app-gmaplinerenderer")]
+#[::unity2::methods]
+impl GmapLineRenderer {
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[method(name = "TryInitialize", args = 0)]
+    pub fn try_initialize(self) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "GetLineAppearSpeed", args = 0)]
+    pub fn get_line_appear_speed(self) -> i32;
+
+    #[method(name = "DrawLineTick", args = 1)]
+    pub fn draw_line_tick(self, end_pos: crate::unity_engine::vector3::Vector3) -> bool;
+
+    #[method(name = "SetVisible", args = 1)]
+    pub fn set_visible(self, value: bool) -> ();
+
+    #[method(name = "IsVisible", args = 0)]
+    pub fn is_visible(self) -> bool;
+
+    #[method(name = "IsActiveEndpoints", args = 0)]
+    pub fn is_active_endpoints(self) -> bool;
+
+    #[method(name = "BuildPoinsts", args = 0)]
+    pub fn build_poinsts(self) -> ();
+
+    #[method(name = "BuildLine", args = 0)]
+    pub fn build_line(self) -> ();
+
+    #[method(name = "SetLineRendererLength", args = 1)]
+    pub fn set_line_renderer_length(self, length: i32) -> ();
+
+    #[method(name = "StartAppear", args = 0)]
+    pub fn start_appear(self) -> ();
+
+    #[method(name = "ClearDrawLine", args = 0)]
+    pub fn clear_draw_line(self) -> ();
+
+    #[method(name = "GetGmapSpots", args = 0)]
+    pub fn get_gmap_spots(self) -> ::unity2::Array<crate::app::gmapspot::GmapSpot>;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmaplinerenderer")]
+impl GmapLineRenderer {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapLineRenderer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapLineRendererMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmaplinerenderer/GmapLineRenderer_DrawType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GmapLineRenderer_DrawType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GmapLineRenderer_DrawType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GmapLineRenderer.DrawType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GmapLineRenderer_DrawType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GmapLineRenderer_DrawType {
+    pub fn _unnamed() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmaplinerenderer/GmapLineRenderer_LinePoint.md")))]
+#[::unity2::class(namespace = "App", name = "GmapLineRenderer.LinePoint")]
+#[parent(crate::system::object::Object)]
+pub struct GmapLineRenderer_LinePoint {
+    #[rename(name = "vtxOffsets")]
+    pub vtx_offsets: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+    #[rename(name = "uv_table")]
+    pub uv_table: ::unity2::Array<crate::unity_engine::vector2::Vector2>,
+    #[rename(name = "m_Color")]
+    pub m_color: crate::unity_engine::color::Color,
+}
+
+#[cfg(feature = "app-gmaplinerenderer")]
+#[::unity2::methods]
+impl GmapLineRenderer_LinePoint {
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        index: i32,
+        pos: crate::unity_engine::vector3::Vector3,
+        color: crate::unity_engine::color::Color,
+    ) -> ();
+
+    #[method(name = "get_index", args = 0)]
+    pub fn get_index(self) -> i32;
+
+    #[method(name = "get_position", args = 0)]
+    pub fn get_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "get_color", args = 0)]
+    pub fn get_color(self) -> crate::unity_engine::color::Color;
+
+    #[method(name = "set_color", args = 1)]
+    pub fn set_color(self, value: crate::unity_engine::color::Color) -> ();
+
+    #[method(name = "get_alpha", args = 0)]
+    pub fn get_alpha(self) -> f32;
+
+    #[method(name = "set_alpha", args = 1)]
+    pub fn set_alpha(self, value: f32) -> ();
+
+    #[method(name = "get_isApperd", args = 0)]
+    pub fn get_is_apperd(self) -> bool;
+
+    #[method(name = "set_isApperd", args = 1)]
+    pub fn set_is_apperd(self, value: bool) -> ();
+
+    #[method(name = "Add", args = 6)]
+    pub fn add(
+        self,
+        vertices: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::vector3::Vector3,
+        >,
+        colors: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::color::Color,
+        >,
+        uvs: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::vector2::Vector2,
+        >,
+        indices: crate::system::collections::generic::list_1::List_1<i32>,
+        size: f32,
+        rotate: f32,
+    ) -> ();
+
+    #[method(name = "UpdateColor", args = 1)]
+    pub fn update_color(
+        self,
+        colors: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::color::Color,
+        >,
+    ) -> ();
+
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+}
+
+#[cfg(feature = "app-gmaplinerenderer")]
+impl GmapLineRenderer_LinePoint {
+    pub fn new(
+        index: i32,
+        pos: crate::unity_engine::vector3::Vector3,
+        color: crate::unity_engine::color::Color,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapLineRenderer_LinePoint),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapLineRenderer_LinePointMethods>::ctor(this, index, pos, color);
+        this
+    }
+}

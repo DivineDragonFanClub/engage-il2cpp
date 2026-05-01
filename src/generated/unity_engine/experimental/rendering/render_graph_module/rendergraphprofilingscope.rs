@@ -1,0 +1,54 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphprofilingscope/RenderGraphProfilingScope.md")))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RenderGraphProfilingScope {
+    pub m_disposed: bool,
+    pub m_sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    pub m_render_graph:
+        crate::unity_engine::experimental::rendering::render_graph_module::rendergraph::RenderGraph,
+}
+
+impl ::unity2::ClassIdentity for RenderGraphProfilingScope {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
+
+    const NAME: &'static str = "RenderGraphProfilingScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RenderGraphProfilingScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-rendergraphprofilingscope")]
+#[::unity2::methods(value)]
+impl RenderGraphProfilingScope {
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        render_graph : crate :: unity_engine :: experimental :: rendering :: render_graph_module :: rendergraph :: RenderGraph,
+        sampler: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    ) -> ();
+
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[method(name = "Dispose", args = 1)]
+    pub fn dispose_2(self, disposing: bool) -> ();
+}

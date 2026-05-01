@@ -1,0 +1,148 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
+use crate::unity_engine::event_systems::uibehaviour::UIBehaviour;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/contentsizefitter/ContentSizeFitter_FitMode.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ContentSizeFitter_FitMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ContentSizeFitter_FitMode {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "ContentSizeFitter.FitMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ContentSizeFitter_FitMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ContentSizeFitter_FitMode {
+    pub fn unconstrained() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn min_size() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn preferred_size() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/contentsizefitter/ContentSizeFitter.md")))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "ContentSizeFitter")]
+#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
+pub struct ContentSizeFitter {
+    #[rename(name = "m_HorizontalFit")]
+    pub m_horizontal_fit: crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
+    #[rename(name = "m_VerticalFit")]
+    pub m_vertical_fit: crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
+    #[rename(name = "m_Rect")]
+    pub m_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_Tracker")]
+    pub m_tracker: crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,
+}
+
+#[cfg(feature = "unity_engine-ui-contentsizefitter")]
+#[::unity2::methods]
+impl ContentSizeFitter {
+    #[method(name = "get_horizontalFit", args = 0)]
+    pub fn get_horizontal_fit(
+        self,
+    ) -> crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode;
+
+    #[method(name = "set_horizontalFit", args = 1)]
+    pub fn set_horizontal_fit(
+        self,
+        value: crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
+    ) -> ();
+
+    #[method(name = "get_verticalFit", args = 0)]
+    pub fn get_vertical_fit(
+        self,
+    ) -> crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode;
+
+    #[method(name = "set_verticalFit", args = 1)]
+    pub fn set_vertical_fit(
+        self,
+        value: crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode,
+    ) -> ();
+
+    #[method(name = "get_rectTransform", args = 0)]
+    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "OnEnable", args = 0)]
+    pub fn on_enable(self) -> ();
+
+    #[method(name = "OnDisable", args = 0)]
+    pub fn on_disable(self) -> ();
+
+    #[method(name = "OnRectTransformDimensionsChange", args = 0)]
+    pub fn on_rect_transform_dimensions_change(self) -> ();
+
+    #[method(name = "HandleSelfFittingAlongAxis", args = 1)]
+    pub fn handle_self_fitting_along_axis(self, axis: i32) -> ();
+
+    #[method(name = "SetLayoutHorizontal", args = 0)]
+    pub fn set_layout_horizontal(self) -> ();
+
+    #[method(name = "SetLayoutVertical", args = 0)]
+    pub fn set_layout_vertical(self) -> ();
+
+    #[method(name = "SetDirty", args = 0)]
+    pub fn set_dirty(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-contentsizefitter")]
+impl ContentSizeFitter {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ContentSizeFitter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IContentSizeFitterMethods>::ctor(this);
+        this
+    }
+}

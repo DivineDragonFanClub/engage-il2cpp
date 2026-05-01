@@ -1,0 +1,198 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/terraindata/TerrainData_BoundaryValueType.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TerrainData_BoundaryValueType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TerrainData_BoundaryValueType {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "TerrainData.BoundaryValueType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TerrainData_BoundaryValueType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TerrainData_BoundaryValueType {
+    pub fn max_heightmap_res() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn min_detail_res_per_patch() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn max_detail_res_per_patch() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn max_detail_patch_count() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn max_details_per_res() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn min_alphamap_res() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn max_alphamap_res() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn min_base_map_res() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn max_base_map_res() -> Self {
+        Self { value: 8 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/terraindata/TerrainData.md")))]
+#[::unity2::class(namespace = "UnityEngine", name = "TerrainData")]
+#[parent(crate::unity_engine::object_2::Object_2)]
+pub struct TerrainData {
+    #[static_field]
+    #[rename(name = "k_MaximumResolution")]
+    pub k_maximum_resolution: i32,
+    #[static_field]
+    #[rename(name = "k_MinimumDetailResolutionPerPatch")]
+    pub k_minimum_detail_resolution_per_patch: i32,
+    #[static_field]
+    #[rename(name = "k_MaximumDetailResolutionPerPatch")]
+    pub k_maximum_detail_resolution_per_patch: i32,
+    #[static_field]
+    #[rename(name = "k_MaximumDetailPatchCount")]
+    pub k_maximum_detail_patch_count: i32,
+    #[static_field]
+    #[rename(name = "k_MaximumDetailsPerRes")]
+    pub k_maximum_details_per_res: i32,
+    #[static_field]
+    #[rename(name = "k_MinimumAlphamapResolution")]
+    pub k_minimum_alphamap_resolution: i32,
+    #[static_field]
+    #[rename(name = "k_MaximumAlphamapResolution")]
+    pub k_maximum_alphamap_resolution: i32,
+    #[static_field]
+    #[rename(name = "k_MinimumBaseMapResolution")]
+    pub k_minimum_base_map_resolution: i32,
+    #[static_field]
+    #[rename(name = "k_MaximumBaseMapResolution")]
+    pub k_maximum_base_map_resolution: i32,
+}
+
+#[cfg(feature = "unity_engine-terraindata")]
+#[::unity2::methods]
+impl TerrainData {
+    #[method(name = "GetBoundaryValue", args = 1)]
+    pub fn get_boundary_value(
+        r#type: crate::unity_engine::terraindata::TerrainData_BoundaryValueType,
+    ) -> i32;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "Internal_Create", args = 1)]
+    pub fn internal_create(terrain_data: crate::unity_engine::terraindata::TerrainData) -> ();
+
+    #[method(name = "get_heightmapResolution", args = 0)]
+    pub fn get_heightmap_resolution(self) -> i32;
+
+    #[method(name = "get_internalHeightmapResolution", args = 0)]
+    pub fn get_internal_heightmap_resolution(self) -> i32;
+
+    #[method(name = "get_heightmapScale", args = 0)]
+    pub fn get_heightmap_scale(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "get_size", args = 0)]
+    pub fn get_size(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "GetInterpolatedNormal", args = 2)]
+    pub fn get_interpolated_normal(self, x: f32, y: f32) -> crate::unity_engine::vector3::Vector3;
+
+    #[method(name = "get_alphamapLayers", args = 0)]
+    pub fn get_alphamap_layers(self) -> i32;
+
+    #[method(name = "get_alphamapResolution", args = 0)]
+    pub fn get_alphamap_resolution(self) -> i32;
+
+    #[method(name = "GetAlphamapResolutionInternal", args = 0)]
+    pub fn get_alphamap_resolution_internal(self) -> f32;
+
+    #[method(name = "get_Internal_alphamapResolution", args = 0)]
+    pub fn get_internal_alphamap_resolution(self) -> i32;
+
+    #[method(name = "get_alphamapWidth", args = 0)]
+    pub fn get_alphamap_width(self) -> i32;
+
+    #[method(name = "get_alphamapHeight", args = 0)]
+    pub fn get_alphamap_height(self) -> i32;
+
+    #[method(name = "get_users", args = 0)]
+    pub fn get_users(self) -> ::unity2::Array<crate::unity_engine::terrain::Terrain>;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+
+    #[method(name = "get_heightmapScale_Injected", args = 1)]
+    pub fn get_heightmap_scale_injected(self, ret: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "get_size_Injected", args = 1)]
+    pub fn get_size_injected(self, ret: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[method(name = "GetInterpolatedNormal_Injected", args = 3)]
+    pub fn get_interpolated_normal_injected(
+        self,
+        x: f32,
+        y: f32,
+        ret: crate::unity_engine::vector3::Vector3,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-terraindata")]
+impl TerrainData {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TerrainData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITerrainDataMethods>::ctor(this);
+        this
+    }
+}

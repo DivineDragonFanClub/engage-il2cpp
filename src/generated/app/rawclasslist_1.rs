@@ -1,0 +1,50 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rawclasslist_1/RawClassList_1.md")))]
+#[::unity2::class(namespace = "App", name = "RawClassList`1")]
+pub struct RawClassList_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "Count")]
+    pub count: i32,
+    #[rename(name = "Values")]
+    pub values: ::unity2::Array<T0>,
+}
+
+#[cfg(feature = "app-rawclasslist_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> RawClassList_1<T0> {
+    #[method(name = "get_Capacity", args = 0)]
+    pub fn get_capacity(self) -> i32;
+
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, capacity: i32) -> ();
+
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, index: i32) -> T0;
+
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, index: i32, value: T0) -> ();
+
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, value: T0) -> ();
+
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[cfg(feature = "app-rawclasslist_1")]
+impl<T0: ::unity2::ClassIdentity> RawClassList_1<T0> {
+    pub fn new(capacity: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RawClassList_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRawClassList_1Methods<T0>>::ctor(this, capacity);
+        this
+    }
+}

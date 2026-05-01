@@ -1,0 +1,426 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattleaction/MapSequenceBattleAction.md")))]
+#[::unity2::class(namespace = "App", name = "MapSequenceBattleAction")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencebattleaction :: MapSequenceBattleAction >)]
+pub struct MapSequenceBattleAction {
+    #[rename(name = "m_Calculator")]
+    pub m_calculator: crate::app::battlecalculator::BattleCalculator,
+    #[rename(name = "m_SimCalculator")]
+    pub m_sim_calculator: crate::app::battlecalculator::BattleCalculator,
+    #[rename(name = "m_Signal")]
+    pub m_signal: crate::app::unitsignal::UnitSignal,
+    #[rename(name = "m_SceneIndex")]
+    pub m_scene_index: i32,
+    #[rename(name = "m_BattleCount")]
+    pub m_battle_count: i32,
+    #[rename(name = "m_AttackCount")]
+    pub m_attack_count: i32,
+    #[rename(name = "m_InfoWait")]
+    pub m_info_wait: f32,
+    #[rename(name = "m_AttackSide")]
+    pub m_attack_side: crate::app::battleside::BattleSide_Type,
+    #[static_field]
+    #[rename(name = "WaitFrame")]
+    pub wait_frame: i32,
+}
+
+#[cfg(feature = "app-mapsequencebattleaction")]
+#[::unity2::methods]
+impl MapSequenceBattleAction {
+    #[method(name = "get_CanWaitSkip", args = 0)]
+    pub fn get_can_wait_skip(self) -> bool;
+
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        calculator: crate::app::battlecalculator::BattleCalculator,
+        sim_calculator: crate::app::battlecalculator::BattleCalculator,
+        battle_count: i32,
+    ) -> ();
+
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[method(name = "get_BattleCount", args = 0)]
+    pub fn get_battle_count(self) -> i32;
+
+    #[method(name = "get_SceneIndex", args = 0)]
+    pub fn get_scene_index(self) -> i32;
+
+    #[method(name = "get_SceneList", args = 0)]
+    pub fn get_scene_list(self) -> crate::app::battlescenelist::BattleSceneList;
+
+    #[method(name = "get_CurrentScene", args = 0)]
+    pub fn get_current_scene(self) -> crate::app::battlescene::BattleScene;
+
+    #[method(name = "NextScene", args = 0)]
+    pub fn next_scene(self) -> ();
+
+    #[method(name = "IsShowInfo", args = 0)]
+    pub fn is_show_info(self) -> bool;
+
+    #[method(name = "ShowInfo", args = 0)]
+    pub fn show_info(self) -> ();
+
+    #[method(name = "OutInfo", args = 0)]
+    pub fn out_info(self) -> ();
+
+    #[method(name = "HideInfo", args = 0)]
+    pub fn hide_info(self) -> ();
+
+    #[method(name = "WaitInfo", args = 0)]
+    pub fn wait_info(self) -> ();
+
+    #[method(name = "IsMultiBattle", args = 0)]
+    pub fn is_multi_battle(self) -> bool;
+
+    #[method(name = "IsCannonBattle", args = 0)]
+    pub fn is_cannon_battle(self) -> bool;
+
+    #[method(name = "IsFullBullet", args = 0)]
+    pub fn is_full_bullet(self) -> bool;
+
+    #[method(name = "IsRodBattle", args = 0)]
+    pub fn is_rod_battle(self) -> bool;
+
+    #[method(name = "IsTalk", args = 0)]
+    pub fn is_talk(self) -> bool;
+
+    #[method(name = "BattleTalk", args = 0)]
+    pub fn battle_talk(self) -> ();
+
+    #[method(name = "PlayAction", args = 2)]
+    pub fn play_action(
+        self,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        action: crate::app::unitsequence::UnitSequence_Action,
+    ) -> ();
+
+    #[method(name = "PlayAnimation", args = 2)]
+    pub fn play_animation(
+        self,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        r#type: crate::app::unitanim::UnitAnim_Types,
+    ) -> ();
+
+    #[method(name = "PlayRotation", args = 2)]
+    pub fn play_rotation(
+        self,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        target: crate::app::battleinfoside::BattleInfoSide,
+    ) -> ();
+
+    #[method(name = "PlayRotationAndAction", args = 3)]
+    pub fn play_rotation_and_action(
+        self,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        target: crate::app::battleinfoside::BattleInfoSide,
+        action: crate::app::unitsequence::UnitSequence_Action,
+    ) -> ();
+
+    #[method(name = "PlayCannonRotation", args = 2)]
+    pub fn play_cannon_rotation(
+        self,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        target: crate::app::battleinfoside::BattleInfoSide,
+    ) -> ();
+
+    #[method(name = "PlayCannonShoot", args = 1)]
+    pub fn play_cannon_shoot(self, current: crate::app::battleinfoside::BattleInfoSide) -> ();
+
+    #[method(name = "StopCannonShoot", args = 1)]
+    pub fn stop_cannon_shoot(self, current: crate::app::battleinfoside::BattleInfoSide) -> ();
+
+    #[method(name = "PlayEngageAttackSkill", args = 0)]
+    pub fn play_engage_attack_skill(self) -> ();
+
+    #[method(name = "PlayEngageShootSkill", args = 1)]
+    pub fn play_engage_shoot_skill(self, current: crate::app::battleinfoside::BattleInfoSide)
+        -> ();
+
+    #[method(name = "GetSide", args = 1)]
+    pub fn get_side(
+        self,
+        r#type: crate::app::battleside::BattleSide_Type,
+    ) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "GetUnit", args = 1)]
+    pub fn get_unit(
+        self,
+        r#type: crate::app::battleside::BattleSide_Type,
+    ) -> crate::app::unit::Unit;
+
+    #[method(name = "UpdateScene", args = 1)]
+    pub fn update_scene(self, index: i32) -> ();
+
+    #[method(name = "SkipScene", args = 0)]
+    pub fn skip_scene(self) -> ();
+
+    #[method(name = "GetAttackMotion", args = 1)]
+    pub fn get_attack_motion(
+        self,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> crate::app::unitanim::UnitAnim_Types;
+
+    #[method(name = "IsEngageAttackAction", args = 1)]
+    pub fn is_engage_attack_action(self, scene: crate::app::battlescene::BattleScene) -> bool;
+
+    #[method(name = "GetAttackMotion", args = 1)]
+    pub fn get_attack_motion_2(
+        self,
+        scene: crate::app::battlescene::BattleScene,
+    ) -> crate::app::unitanim::UnitAnim_Types;
+
+    #[method(name = "WaitSkipSignal", args = 1)]
+    pub fn wait_skip_signal(self, signal: crate::app::unitsignal::UnitSignal) -> ();
+
+    #[method(name = "ShootSignal", args = 1)]
+    pub fn shoot_signal(self, signal: crate::app::unitsignal::UnitSignal) -> ();
+
+    #[method(name = "ClearSignal", args = 0)]
+    pub fn clear_signal(self) -> ();
+
+    #[method(name = "TryFocusAttack", args = 0)]
+    pub fn try_focus_attack(self) -> ();
+
+    #[method(name = "TryFocusTarget", args = 0)]
+    pub fn try_focus_target(self) -> ();
+
+    #[method(name = "Landing", args = 0)]
+    pub fn landing(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "GetRotation", args = 2)]
+    pub fn get_rotation(
+        current: crate::app::battleinfoside::BattleInfoSide,
+        target: crate::app::battleinfoside::BattleInfoSide,
+    ) -> crate::unity_engine::quaternion::Quaternion;
+
+    #[method(name = "GetHitEffect", args = 1)]
+    pub fn get_hit_effect(
+        self,
+        scene: crate::app::battlescene::BattleScene,
+    ) -> crate::app::effectdata::EffectData;
+
+    #[method(name = "GetRodEffect", args = 1)]
+    pub fn get_rod_effect(
+        self,
+        scene: crate::app::battlescene::BattleScene,
+    ) -> crate::app::effectdata::EffectData;
+
+    #[method(name = "GetOffense", args = 1)]
+    pub fn get_offense(
+        self,
+        scene: crate::app::battlescene::BattleScene,
+    ) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "GetDefense", args = 1)]
+    pub fn get_defense(
+        self,
+        scene: crate::app::battlescene::BattleScene,
+    ) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[method(name = "PlayHitEffect", args = 1)]
+    pub fn play_hit_effect(self, scene: crate::app::battlescene::BattleScene) -> ();
+
+    #[method(name = "PlayHitSound", args = 1)]
+    pub fn play_hit_sound(self, scene: crate::app::battlescene::BattleScene) -> ();
+
+    #[method(name = "PlayPopup", args = 1)]
+    pub fn play_popup(self, scene: crate::app::battlescene::BattleScene) -> ();
+
+    #[method(name = "PlayDamage", args = 1)]
+    pub fn play_damage(self, scene: crate::app::battlescene::BattleScene) -> ();
+
+    #[method(name = "WaitLoading", args = 0)]
+    pub fn wait_loading(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "OnPersistent", args = 0)]
+    pub fn on_persistent(self) -> ();
+
+    #[method(name = "SetModelItem", args = 2)]
+    pub fn set_model_item(
+        self,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> ();
+
+    #[method(name = "Begin", args = 0)]
+    pub fn begin(self) -> ();
+
+    #[method(name = "End", args = 0)]
+    pub fn end(self) -> ();
+
+    #[method(name = "ToPreBgm", args = 0)]
+    pub fn to_pre_bgm(self) -> ();
+
+    #[method(name = "ToMainBgm", args = 0)]
+    pub fn to_main_bgm(self) -> ();
+
+    #[method(name = "ReturnBgm", args = 0)]
+    pub fn return_bgm(self) -> ();
+
+    #[method(name = "PlaySkill", args = 0)]
+    pub fn play_skill(self) -> ();
+
+    #[method(name = "FocusAttack", args = 0)]
+    pub fn focus_attack(self) -> ();
+
+    #[method(name = "PlayAttack", args = 0)]
+    pub fn play_attack(self) -> ();
+
+    #[method(name = "StopAttack", args = 0)]
+    pub fn stop_attack(self) -> ();
+
+    #[method(name = "StartSignal", args = 0)]
+    pub fn start_signal(self) -> ();
+
+    #[method(name = "Impact", args = 0)]
+    pub fn impact(self) -> ();
+
+    #[method(name = "Commit", args = 0)]
+    pub fn commit(self) -> ();
+
+    #[method(name = "Branch", args = 0)]
+    pub fn branch(self) -> ();
+
+    #[method(name = "NextWait", args = 0)]
+    pub fn next_wait(self) -> ();
+
+    #[method(name = "Wait", args = 0)]
+    pub fn wait(self) -> ();
+
+    #[method(name = "WaitCamera", args = 0)]
+    pub fn wait_camera(self) -> ();
+
+    #[method(name = "TryWhiteOut", args = 0)]
+    pub fn try_white_out(self) -> ();
+
+    #[method(name = "HasActor", args = 1)]
+    pub fn has_actor(side: crate::app::battleinfoside::BattleInfoSide) -> bool;
+
+    #[method(name = "TryTransOn", args = 0)]
+    pub fn try_trans_on(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "TryTransOff", args = 0)]
+    pub fn try_trans_off(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[method(name = "CreateBind", args = 5)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        calculator: crate::app::battlecalculator::BattleCalculator,
+        sim_calculator: crate::app::battlecalculator::BattleCalculator,
+        callback: crate::app::procvoidmethod::ProcVoidMethod,
+        battle_count: i32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-mapsequencebattleaction")]
+impl MapSequenceBattleAction {
+    pub fn new(
+        calculator: crate::app::battlecalculator::BattleCalculator,
+        sim_calculator: crate::app::battlecalculator::BattleCalculator,
+        battle_count: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceBattleAction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceBattleActionMethods>::ctor(
+            this,
+            calculator,
+            sim_calculator,
+            battle_count,
+        );
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattleaction/MapSequenceBattleAction_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceBattleAction_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceBattleAction_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceBattleAction.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceBattleAction_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceBattleAction_Label {
+    pub fn branch() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn impact() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn skill() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn next() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn wait() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn skip() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn white_out() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 8 }
+    }
+}

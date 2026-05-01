@@ -1,0 +1,91 @@
+
+use crate::combat::basecameracontroller::BaseCameraController;
+use crate::combat::basecameracontroller::IBaseCameraController;
+use crate::combat::basetransitioncameracontroller::BaseTransitionCameraController;
+use crate::combat::basetransitioncameracontroller::IBaseTransitionCameraController;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::behaviour::Behaviour;
+use crate::unity_engine::behaviour::IBehaviour;
+use crate::unity_engine::component::Component;
+use crate::unity_engine::component::IComponent;
+use crate::unity_engine::monobehaviour::IMonoBehaviour;
+use crate::unity_engine::monobehaviour::MonoBehaviour;
+use crate::unity_engine::object_2::IObject_2;
+use crate::unity_engine::object_2::Object_2;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerconfrontation/CameraControllerConfrontation.md")))]
+#[::unity2::class(namespace = "Combat", name = "CameraControllerConfrontation")]
+#[parent(crate::combat::basetransitioncameracontroller::BaseTransitionCameraController)]
+pub struct CameraControllerConfrontation {
+    #[rename(name = "FollowCurve")]
+    pub follow_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "LookatCurve")]
+    pub lookat_curve: crate::unity_engine::animationcurve::AnimationCurve,
+    #[rename(name = "FollowPosition")]
+    pub follow_position: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "LookatPosition")]
+    pub lookat_position: crate::unity_engine::vector3::Vector3,
+}
+
+#[cfg(feature = "combat-cameracontrollerconfrontation")]
+#[::unity2::methods]
+impl CameraControllerConfrontation {
+    #[method(name = "get_CurveLength", args = 0)]
+    pub fn get_curve_length(self) -> f32;
+
+    #[method(name = "get_TransitionTimeStart", args = 0)]
+    pub fn get_transition_time_start(self) -> f32;
+
+    #[method(name = "get_TransitionTimeReturn", args = 0)]
+    pub fn get_transition_time_return(self) -> f32;
+
+    #[method(name = "get_IsActiveVCam", args = 0)]
+    pub fn get_is_active_v_cam(self) -> bool;
+
+    #[method(name = "CheckUsable", args = 1)]
+    pub fn check_usable(self, is_routine: bool) -> ();
+
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[method(name = "StartTransition", args = 1)]
+    pub fn start_transition(
+        self,
+        next_cam: crate::combat::basecameracontroller::BaseCameraController,
+    ) -> ();
+
+    #[method(name = "ChangeTaget", args = 1)]
+    pub fn change_taget(
+        self,
+        next_cam: crate::combat::basecameracontroller::BaseCameraController,
+    ) -> ();
+
+    #[method(name = "ReturnTransition", args = 1)]
+    pub fn return_transition(
+        self,
+        current_cam: crate::combat::basecameracontroller::BaseCameraController,
+    ) -> ();
+
+    #[method(name = "GetCameraTargets", args = 0)]
+    pub fn get_camera_targets(self) -> ::unity2::Array<i32>;
+
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-cameracontrollerconfrontation")]
+impl CameraControllerConfrontation {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CameraControllerConfrontation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICameraControllerConfrontationMethods>::ctor(this);
+        this
+    }
+}

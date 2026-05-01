@@ -1,0 +1,234 @@
+
+use crate::app::procinst::IProcInst;
+use crate::app::procinst::ProcInst;
+use crate::app::procscenesequence_1::IProcSceneSequence_1;
+use crate::app::procscenesequence_1::ProcSceneSequence_1;
+use crate::app::singletonprocinst_1::ISingletonProcInst_1;
+use crate::app::singletonprocinst_1::SingletonProcInst_1;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::system::r#enum::Enum;
+use crate::system::r#enum::IEnum;
+use crate::system::valuetype::IValueType;
+use crate::system::valuetype::ValueType;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titleloopsequence/TitleLoopSequence.md")))]
+#[::unity2::class(namespace = "App", name = "TitleLoopSequence")]
+# [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: titleloopsequence :: TitleLoopSequence >)]
+pub struct TitleLoopSequence {
+    #[static_field]
+    #[rename(name = "s_isGOPFirst")]
+    pub s_is_gop_first: bool,
+    #[static_field]
+    #[rename(name = "s_IsGOPMovieHeroFemale")]
+    pub s_is_gop_movie_hero_female: bool,
+    #[static_field]
+    #[rename(name = "s_LoopSequenceFromTitle")]
+    pub s_loop_sequence_from_title:
+        crate::app::titleloopsequence::TitleLoopSequence_LoopSequenceFromTitle,
+    #[static_field]
+    #[rename(name = "s_IsFromMainMenu")]
+    pub s_is_from_main_menu: bool,
+    #[rename(name = "m_IsEndFromTitle")]
+    pub m_is_end_from_title: bool,
+}
+
+#[cfg(feature = "app-titleloopsequence")]
+#[::unity2::methods]
+impl TitleLoopSequence {
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[method(name = "EnableMovieCanvas", args = 0)]
+    pub fn enable_movie_canvas(self) -> ();
+
+    #[method(name = "DisableMovieCanvas", args = 0)]
+    pub fn disable_movie_canvas(self) -> ();
+
+    #[method(name = "LoadJobIntroData", args = 0)]
+    pub fn load_job_intro_data(self) -> ();
+
+    #[method(name = "UnloadJobIntroData", args = 0)]
+    pub fn unload_job_intro_data(self) -> ();
+
+    #[method(name = "IncJobIntroGroupIndex", args = 0)]
+    pub fn inc_job_intro_group_index(self) -> ();
+
+    #[method(name = "LoadMoviePrefab", args = 0)]
+    pub fn load_movie_prefab(self) -> ();
+
+    #[method(name = "PrepareGOPMovie", args = 0)]
+    pub fn prepare_gop_movie(self) -> ();
+
+    #[method(name = "UnloadEmptyScene", args = 0)]
+    pub fn unload_empty_scene(self) -> ();
+
+    #[method(name = "BranchFirst", args = 0)]
+    pub fn branch_first(self) -> ();
+
+    #[method(name = "BranchFromTitle", args = 0)]
+    pub fn branch_from_title(self) -> ();
+
+    #[method(name = "EnableGOPMovieFromTitle", args = 0)]
+    pub fn enable_gop_movie_from_title(self) -> ();
+
+    #[method(name = "DisableGOPMovieFromTitle", args = 0)]
+    pub fn disable_gop_movie_from_title(self) -> ();
+
+    #[method(name = "PlayGOPMovie", args = 0)]
+    pub fn play_gop_movie(self) -> ();
+
+    #[method(name = "StartTitleCall", args = 0)]
+    pub fn start_title_call(self) -> ();
+
+    #[method(name = "GetDesc", args = 0)]
+    pub fn get_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[method(name = "SetFromMainMenuOn", args = 0)]
+    pub fn set_from_main_menu_on() -> ();
+
+    #[method(name = "IsGOPMovieHeroFemale", args = 0)]
+    pub fn is_gop_movie_hero_female() -> bool;
+
+    #[method(name = "SwitchGOPMovieByHeroGender", args = 0)]
+    pub fn switch_gop_movie_by_hero_gender() -> ();
+
+    #[method(name = "SetNextSequenceFromTitleToEnd", args = 0)]
+    pub fn set_next_sequence_from_title_to_end() -> ();
+
+    #[method(name = "IsNextSequenceGrandOpeningFromTitle", args = 0)]
+    pub fn is_next_sequence_grand_opening_from_title() -> bool;
+
+    #[method(name = "IsNextSequenceJobIntroFromTitle", args = 0)]
+    pub fn is_next_sequence_job_intro_from_title() -> bool;
+
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-titleloopsequence")]
+impl TitleLoopSequence {
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TitleLoopSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITitleLoopSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titleloopsequence/TitleLoopSequence_Label.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TitleLoopSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TitleLoopSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TitleLoopSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TitleLoopSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TitleLoopSequence_Label {
+    pub fn start() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn start_from_main_menu() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn grand_opening() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn title() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn title_from_main_menu() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn job_intro() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 6 }
+    }
+}
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titleloopsequence/TitleLoopSequence_LoopSequenceFromTitle.md")))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TitleLoopSequence_LoopSequenceFromTitle {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TitleLoopSequence_LoopSequenceFromTitle {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TitleLoopSequence.LoopSequenceFromTitle";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TitleLoopSequence_LoopSequenceFromTitle {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TitleLoopSequence_LoopSequenceFromTitle {
+    pub fn grand_opening() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn job_intro() -> Self {
+        Self { value: 1 }
+    }
+}

@@ -1,0 +1,50 @@
+
+use crate::app::capabilitybase_1::CapabilityBase_1;
+use crate::app::capabilitybase_1::ICapabilityBase_1;
+use crate::app::capabilitydefinition::CapabilityDefinition;
+use crate::app::capabilitydefinition::ICapabilityDefinition;
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capabilityfloat/CapabilityFloat.md")))]
+#[::unity2::class(namespace = "App", name = "CapabilityFloat")]
+# [parent (crate :: app :: capabilitybase_1 :: CapabilityBase_1 < f32 >)]
+pub struct CapabilityFloat {}
+
+#[cfg(feature = "app-capabilityfloat")]
+#[::unity2::methods]
+impl CapabilityFloat {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, value: f32) -> ();
+
+    #[method(name = "Add", args = 2)]
+    pub fn add(self, i: i32, v: f32) -> ();
+
+    #[method(name = "IsZero", args = 0)]
+    pub fn is_zero(self) -> bool;
+
+    #[method(name = "IsOne", args = 0)]
+    pub fn is_one(self) -> bool;
+
+    #[method(name = "WriteToStream", args = 2)]
+    pub fn write_to_stream(self, stream: crate::app::stream_2::Stream_2, v: f32) -> ();
+
+    #[method(name = "ReadFromStream", args = 1)]
+    pub fn read_from_stream(self, stream: crate::app::stream_2::Stream_2) -> f32;
+}
+
+#[cfg(feature = "app-capabilityfloat")]
+impl CapabilityFloat {
+    pub fn new(value: f32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CapabilityFloat),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICapabilityFloatMethods>::ctor(this, value);
+        this
+    }
+}

@@ -1,0 +1,44 @@
+
+use crate::system::object::IObject;
+use crate::system::object::Object;
+use crate::unity_engine::addressable_assets::assetreference::AssetReference;
+use crate::unity_engine::addressable_assets::assetreference::IAssetReference;
+use crate::unity_engine::addressable_assets::assetreferencet_1::AssetReferenceT_1;
+use crate::unity_engine::addressable_assets::assetreferencet_1::IAssetReferenceT_1;
+use ::unity2::prelude::*;
+
+#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/assetreferenceatlasedsprite/AssetReferenceAtlasedSprite.md")))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets",
+    name = "AssetReferenceAtlasedSprite"
+)]
+# [parent (crate :: unity_engine :: addressable_assets :: assetreferencet_1 :: AssetReferenceT_1 < crate :: unity_engine :: sprite :: Sprite >)]
+pub struct AssetReferenceAtlasedSprite {}
+
+#[cfg(feature = "unity_engine-addressable_assets-assetreferenceatlasedsprite")]
+#[::unity2::methods]
+impl AssetReferenceAtlasedSprite {
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, guid: ::unity2::Il2CppString) -> ();
+
+    #[method(name = "ValidateAsset", args = 1)]
+    pub fn validate_asset(self, obj: crate::unity_engine::object_2::Object_2) -> bool;
+
+    #[method(name = "ValidateAsset", args = 1)]
+    pub fn validate_asset_2(self, path: ::unity2::Il2CppString) -> bool;
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-assetreferenceatlasedsprite")]
+impl AssetReferenceAtlasedSprite {
+    pub fn new(guid: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssetReferenceAtlasedSprite),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetReferenceAtlasedSpriteMethods>::ctor(this, guid);
+        this
+    }
+}
