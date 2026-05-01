@@ -33,12 +33,54 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Clean docs folder
         run: cargo clean --doc
+      - name: Write target spec
+        run: |
+          cat > $HOME/.cargo/skyline/aarch64-skyline-switch.json <<EOF
+          {
+              "arch": "aarch64",
+              "crt-static-default": false,
+              "crt-static-respected": false,
+              "data-layout": "e-m:e-p270:32:32-p271:32:32-p272:64:64-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128-Fn32",
+              "dynamic-linking": true,
+              "executables": true,
+              "has-rpath": false,
+              "linker": "rust-lld",
+              "linker-flavor": "ld.lld",
+              "llvm-target": "aarch64-unknown-none",
+              "max-atomic-width": 128,
+              "os": "switch",
+              "target-family": null,
+              "env": "",
+              "disable-redzone": true,
+              "panic-strategy": "abort",
+              "position-independent-executables": true,
+              "pre-link-args": {
+                "ld.lld": [
+                  "-T$HOME/.cargo/skyline/link.T",
+                  "-init=__custom_init",
+                  "-fini=__custom_fini",
+                  "--export-dynamic"
+                ]
+              },
+              "post-link-args": {
+                "ld.lld": [
+                  "--no-gc-sections",
+                  "--eh-frame-hdr"
+                ]
+              },
+              "relro-level": "off",
+              "target-c-int-width": 32,
+              "target-endian": "little",
+              "target-pointer-width": 64,
+              "features": "+v8a,+neon,+crypto,+crc",
+              "vendor": "jam1garner"
+          }
+          EOF
       - name: Build docs
         env:
           RUSTFLAGS: "--cfg skyline_std_v3 -g"
           SKYLINE_ADD_NRO_HEADER: "1"
         run: |
-          cargo-skyline skyline check || true
           rustup run skyline-v3 cargo doc \
             --target $HOME/.cargo/skyline/aarch64-skyline-switch.json \
             -Z json-target-spec \
