@@ -25,6 +25,14 @@ jobs:
           haskell: true
           large-packages: true
           swap-storage: false
+      - name: Add 24G swapfile
+        run: |
+          sudo swapoff -a
+          sudo fallocate -l 24G /mnt/swapfile
+          sudo chmod 600 /mnt/swapfile
+          sudo mkswap /mnt/swapfile
+          sudo swapon /mnt/swapfile
+          free -h
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@nightly
         with:
