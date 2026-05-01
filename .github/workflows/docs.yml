@@ -38,6 +38,7 @@ jobs:
           RUSTFLAGS: "--cfg skyline_std_v3 -g"
           SKYLINE_ADD_NRO_HEADER: "1"
         run: |
+          cargo-skyline skyline check || true
           rustup run skyline-v3 cargo doc \
             --target $HOME/.cargo/skyline/aarch64-skyline-switch.json \
             -Z json-target-spec \
