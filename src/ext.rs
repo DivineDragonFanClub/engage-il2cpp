@@ -1,4 +1,3 @@
-
 use crate::app::gameuserdata::{GameUserData, IGameUserDataMethods};
 use crate::app::gamevariable::{GameVariable, IGameVariableMethods};
 use crate::app::proc::Proc;
@@ -7,9 +6,7 @@ use crate::app::procdesc::ProcDesc;
 use crate::app::procvoidfunction::ProcVoidFunction;
 use crate::app::procvoidmethod::ProcVoidMethod;
 use crate::app::singletonclass_1::ISingletonClass_1Methods;
-use crate::system::collections::generic::dictionary_2::{
-    Dictionary_2, IDictionary_2Methods,
-};
+use crate::system::collections::generic::dictionary_2::{Dictionary_2, IDictionary_2Methods};
 use crate::system::collections::generic::list_1::{IList_1Methods, List_1};
 use crate::system::object::Object;
 use unity2::{Array, FromIlInstance, Il2CppString, IlInstance, IntPtr, MethodInfo, OptionalMethod};
@@ -34,7 +31,11 @@ impl<T: Copy + ::unity2::ClassIdentity> List_1Ext<T> for List_1<T> {
 
     fn iter(self) -> List_1Iter<T> {
         let len = self.get_count();
-        List_1Iter { list: self, index: 0, len }
+        List_1Iter {
+            list: self,
+            index: 0,
+            len,
+        }
     }
 
     fn count(self) -> i32 {
@@ -76,7 +77,11 @@ impl<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity> Dicti
 {
     fn iter(self) -> Dictionary_2Iter<K, V> {
         let len = self.get_count();
-        Dictionary_2Iter { dict: self, index: 0, len }
+        Dictionary_2Iter {
+            dict: self,
+            index: 0,
+            len,
+        }
     }
 }
 
@@ -229,7 +234,14 @@ pub fn vibrate(
 ) {
     use crate::app::pad::Pad;
     use crate::app::vibrationmanager::IVibrationManagerMethods;
-    Pad::vibration().one_shot_2(time, amplitude_magnitude, amp_low, amp_high, freq_low, freq_high);
+    Pad::vibration().one_shot_2(
+        time,
+        amplitude_magnitude,
+        amp_low,
+        amp_high,
+        freq_low,
+        freq_high,
+    );
 }
 
 fn method_info_intptr(callback_ptr: *mut u8, args: u8) -> IntPtr {
@@ -243,12 +255,18 @@ fn target_as_object(target: IlInstance) -> Object {
 }
 
 pub trait ProcVoidMethodExt: Sized {
-    fn from_fn(target: IlInstance, callback: extern "C" fn(IlInstance, OptionalMethod)) -> Option<Self>;
+    fn from_fn(
+        target: IlInstance,
+        callback: extern "C" fn(IlInstance, OptionalMethod),
+    ) -> Option<Self>;
     fn from_raw_parts(target: IlInstance, method_info: &'static MethodInfo) -> Option<Self>;
 }
 
 impl ProcVoidMethodExt for ProcVoidMethod {
-    fn from_fn(target: IlInstance, callback: extern "C" fn(IlInstance, OptionalMethod)) -> Option<Self> {
+    fn from_fn(
+        target: IlInstance,
+        callback: extern "C" fn(IlInstance, OptionalMethod),
+    ) -> Option<Self> {
         let intptr = method_info_intptr(callback as *mut u8, 0);
         Some(ProcVoidMethod::new(target_as_object(target), intptr))
     }
@@ -346,7 +364,9 @@ use unity2::Cast;
 pub struct BasicMenuResult(pub BasicMenu_Result);
 
 impl Default for BasicMenuResult {
-    fn default() -> Self { Self::new() }
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 impl BasicMenuResult {
@@ -374,44 +394,102 @@ impl BasicMenuResult {
     }
 
     fn set(mut self, mask: i32, v: bool) -> Self {
-        if v { self.0.value |= mask; } else { self.0.value &= !mask; }
+        if v {
+            self.0.value |= mask;
+        } else {
+            self.0.value &= !mask;
+        }
         self
     }
 
-    pub const fn close_this(self) -> bool { self.0.value & Self::CLOSE_THIS != 0 }
-    pub const fn close_parent(self) -> bool { self.0.value & Self::CLOSE_PARENT != 0 }
-    pub const fn close_all(self) -> bool { self.0.value & Self::CLOSE_ALL != 0 }
-    pub const fn delete_this(self) -> bool { self.0.value & Self::DELETE_THIS != 0 }
-    pub const fn delete_parent(self) -> bool { self.0.value & Self::DELETE_PARENT != 0 }
-    pub const fn delete_all(self) -> bool { self.0.value & Self::DELETE_ALL != 0 }
-    pub const fn do_nothing(self) -> bool { self.0.value & Self::DO_NOTHING != 0 }
+    pub const fn close_this(self) -> bool {
+        self.0.value & Self::CLOSE_THIS != 0
+    }
+    pub const fn close_parent(self) -> bool {
+        self.0.value & Self::CLOSE_PARENT != 0
+    }
+    pub const fn close_all(self) -> bool {
+        self.0.value & Self::CLOSE_ALL != 0
+    }
+    pub const fn delete_this(self) -> bool {
+        self.0.value & Self::DELETE_THIS != 0
+    }
+    pub const fn delete_parent(self) -> bool {
+        self.0.value & Self::DELETE_PARENT != 0
+    }
+    pub const fn delete_all(self) -> bool {
+        self.0.value & Self::DELETE_ALL != 0
+    }
+    pub const fn do_nothing(self) -> bool {
+        self.0.value & Self::DO_NOTHING != 0
+    }
 
-    pub fn with_close_this(self, v: bool) -> Self { self.set(Self::CLOSE_THIS, v) }
-    pub fn with_close_parent(self, v: bool) -> Self { self.set(Self::CLOSE_PARENT, v) }
-    pub fn with_close_all(self, v: bool) -> Self { self.set(Self::CLOSE_ALL, v) }
-    pub fn with_delete_this(self, v: bool) -> Self { self.set(Self::DELETE_THIS, v) }
-    pub fn with_delete_parent(self, v: bool) -> Self { self.set(Self::DELETE_PARENT, v) }
-    pub fn with_delete_all(self, v: bool) -> Self { self.set(Self::DELETE_ALL, v) }
-    pub fn with_se_decide(self, v: bool) -> Self { self.set(Self::SE_DECIDE, v) }
-    pub fn with_se_decide2(self, v: bool) -> Self { self.set(Self::SE_DECIDE2, v) }
-    pub fn with_se_cancel(self, v: bool) -> Self { self.set(Self::SE_CANCEL, v) }
-    pub fn with_se_miss(self, v: bool) -> Self { self.set(Self::SE_MISS, v) }
-    pub fn with_se_cursor(self, v: bool) -> Self { self.set(Self::SE_CURSOR, v) }
-    pub fn with_do_nothing(self, v: bool) -> Self { self.set(Self::DO_NOTHING, v) }
+    pub fn with_close_this(self, v: bool) -> Self {
+        self.set(Self::CLOSE_THIS, v)
+    }
+    pub fn with_close_parent(self, v: bool) -> Self {
+        self.set(Self::CLOSE_PARENT, v)
+    }
+    pub fn with_close_all(self, v: bool) -> Self {
+        self.set(Self::CLOSE_ALL, v)
+    }
+    pub fn with_delete_this(self, v: bool) -> Self {
+        self.set(Self::DELETE_THIS, v)
+    }
+    pub fn with_delete_parent(self, v: bool) -> Self {
+        self.set(Self::DELETE_PARENT, v)
+    }
+    pub fn with_delete_all(self, v: bool) -> Self {
+        self.set(Self::DELETE_ALL, v)
+    }
+    pub fn with_se_decide(self, v: bool) -> Self {
+        self.set(Self::SE_DECIDE, v)
+    }
+    pub fn with_se_decide2(self, v: bool) -> Self {
+        self.set(Self::SE_DECIDE2, v)
+    }
+    pub fn with_se_cancel(self, v: bool) -> Self {
+        self.set(Self::SE_CANCEL, v)
+    }
+    pub fn with_se_miss(self, v: bool) -> Self {
+        self.set(Self::SE_MISS, v)
+    }
+    pub fn with_se_cursor(self, v: bool) -> Self {
+        self.set(Self::SE_CURSOR, v)
+    }
+    pub fn with_do_nothing(self, v: bool) -> Self {
+        self.set(Self::DO_NOTHING, v)
+    }
 
-    pub fn se_cursor() -> Self { Self::new().with_se_cursor(true) }
-    pub fn se_decide() -> Self { Self::new().with_se_decide(true) }
-    pub fn close_decide() -> Self { Self::new().with_close_this(true).with_se_decide(true) }
-    pub fn se_miss() -> Self { Self::new().with_se_miss(true) }
-    pub fn close_parent_decide() -> Self { Self::new().with_close_parent(true).with_se_decide(true) }
-    pub fn delete_decide() -> Self { Self::new().with_delete_this(true).with_se_decide(true) }
-    pub fn close_cancel() -> Self { Self::new().with_se_cancel(true).with_close_this(true) }
+    pub fn se_cursor() -> Self {
+        Self::new().with_se_cursor(true)
+    }
+    pub fn se_decide() -> Self {
+        Self::new().with_se_decide(true)
+    }
+    pub fn close_decide() -> Self {
+        Self::new().with_close_this(true).with_se_decide(true)
+    }
+    pub fn se_miss() -> Self {
+        Self::new().with_se_miss(true)
+    }
+    pub fn close_parent_decide() -> Self {
+        Self::new().with_close_parent(true).with_se_decide(true)
+    }
+    pub fn delete_decide() -> Self {
+        Self::new().with_delete_this(true).with_se_decide(true)
+    }
+    pub fn close_cancel() -> Self {
+        Self::new().with_se_cancel(true).with_close_this(true)
+    }
 }
 
 impl ::unity2::ClassIdentity for BasicMenuResult {
     const NAMESPACE: &'static str = <BasicMenu_Result as ::unity2::ClassIdentity>::NAMESPACE;
     const NAME: &'static str = <BasicMenu_Result as ::unity2::ClassIdentity>::NAME;
-    fn class() -> ::unity2::Class { <BasicMenu_Result as ::unity2::ClassIdentity>::class() }
+    fn class() -> ::unity2::Class {
+        <BasicMenu_Result as ::unity2::ClassIdentity>::class()
+    }
 }
 
 impl ::unity2::IlType for BasicMenuResult {
@@ -426,7 +504,9 @@ pub trait BasicMenuItemMethods {
         BasicMenuResult::new()
     }
     extern "C" fn b_call(_this: BasicMenuItem, _method_info: OptionalMethod) -> BasicMenuResult {
-        BasicMenuResult::new().with_close_this(true).with_se_cancel(true)
+        BasicMenuResult::new()
+            .with_close_this(true)
+            .with_se_cancel(true)
     }
     extern "C" fn build_attribute(
         _this: BasicMenuItem,
@@ -458,7 +538,10 @@ impl BasicMenuItemExt for BasicMenuItem {
         class.override_virtual_method("GetName", ::unity2::method_info!(M::get_name, 0));
         class.override_virtual_method("ACall", ::unity2::method_info!(M::a_call, 0));
         class.override_virtual_method("BCall", ::unity2::method_info!(M::b_call, 0));
-        class.override_virtual_method("BuildAttribute", ::unity2::method_info!(M::build_attribute, 0));
+        class.override_virtual_method(
+            "BuildAttribute",
+            ::unity2::method_info!(M::build_attribute, 0),
+        );
         item
     }
 
@@ -471,7 +554,10 @@ impl BasicMenuItemExt for BasicMenuItem {
         cloned_class.override_virtual_method("GetName", ::unity2::method_info!(M::get_name, 0));
         cloned_class.override_virtual_method("ACall", ::unity2::method_info!(M::a_call, 0));
         cloned_class.override_virtual_method("BCall", ::unity2::method_info!(M::b_call, 0));
-        cloned_class.override_virtual_method("BuildAttribute", ::unity2::method_info!(M::build_attribute, 0));
+        cloned_class.override_virtual_method(
+            "BuildAttribute",
+            ::unity2::method_info!(M::build_attribute, 0),
+        );
         item
     }
 }
@@ -500,10 +586,18 @@ impl BasicMenuExt for BasicMenu {
     fn add_item(self, item: impl Into<BasicMenuItem>) {
         self.m_full_menu_item_list().add(item.into());
     }
-    fn close_anime_all(self) { basic_menu_virtual_call_0(self, "CloseAnimeAll"); }
-    fn close_anime(self) { basic_menu_virtual_call_0(self, "CloseAnime"); }
-    fn open_anime_all(self) { basic_menu_virtual_call_0(self, "OpenAnimeAll"); }
-    fn open_anime(self) { basic_menu_virtual_call_0(self, "OpenAnime"); }
+    fn close_anime_all(self) {
+        basic_menu_virtual_call_0(self, "CloseAnimeAll");
+    }
+    fn close_anime(self) {
+        basic_menu_virtual_call_0(self, "CloseAnime");
+    }
+    fn open_anime_all(self) {
+        basic_menu_virtual_call_0(self, "OpenAnimeAll");
+    }
+    fn open_anime(self) {
+        basic_menu_virtual_call_0(self, "OpenAnime");
+    }
     fn create_default_desc(self) -> Array<ProcDesc> {
         let class = ::unity2::object_get_class(self);
         let entry = class
@@ -545,7 +639,10 @@ impl SoundManagerExt for SoundManager {
         let count = list.get_count();
         (0..count).any(|i| {
             let handle = list.get_item(i);
-            !handle.is_null() && sound_handle_event_name(handle).to_string().starts_with(prefix)
+            !handle.is_null()
+                && sound_handle_event_name(handle)
+                    .to_string()
+                    .starts_with(prefix)
         })
     }
 }
@@ -559,7 +656,9 @@ pub trait ForceExt: Sized {
 
 impl ForceExt for Force {
     fn iter(self) -> ForceIter {
-        ForceIter { current: self.get_first() }
+        ForceIter {
+            current: self.get_first(),
+        }
     }
 }
 
@@ -586,20 +685,32 @@ use crate::root::configbasicmenuitem::{
 
 pub trait ConfigBasicMenuItemSwitchMethods {
     fn init_content(_this: ConfigBasicMenuItem) {}
-    extern "C" fn custom_call(this: ConfigBasicMenuItem, method_info: OptionalMethod) -> BasicMenuResult;
+    extern "C" fn custom_call(
+        this: ConfigBasicMenuItem,
+        method_info: OptionalMethod,
+    ) -> BasicMenuResult;
     extern "C" fn set_command_text(this: ConfigBasicMenuItem, method_info: OptionalMethod);
     extern "C" fn set_help_text(this: ConfigBasicMenuItem, method_info: OptionalMethod);
-    extern "C" fn a_call(_this: ConfigBasicMenuItem, _method_info: OptionalMethod) -> BasicMenuResult {
+    extern "C" fn a_call(
+        _this: ConfigBasicMenuItem,
+        _method_info: OptionalMethod,
+    ) -> BasicMenuResult {
         BasicMenuResult::new()
     }
-    extern "C" fn build_attribute(_this: ConfigBasicMenuItem, _method_info: OptionalMethod) -> BasicMenuItemAttribute {
+    extern "C" fn build_attribute(
+        _this: ConfigBasicMenuItem,
+        _method_info: OptionalMethod,
+    ) -> BasicMenuItemAttribute {
         BasicMenuItemAttribute::enable()
     }
 }
 
 pub trait ConfigBasicMenuItemCommandMethods {
     fn init_content(_this: ConfigBasicMenuItem) {}
-    extern "C" fn custom_call(this: ConfigBasicMenuItem, method_info: OptionalMethod) -> BasicMenuResult;
+    extern "C" fn custom_call(
+        this: ConfigBasicMenuItem,
+        method_info: OptionalMethod,
+    ) -> BasicMenuResult;
     extern "C" fn set_command_text(this: ConfigBasicMenuItem, method_info: OptionalMethod);
     extern "C" fn set_help_text(this: ConfigBasicMenuItem, method_info: OptionalMethod);
     extern "C" fn on_select(this: ConfigBasicMenuItem, _method_info: OptionalMethod) {
@@ -612,22 +723,37 @@ pub trait ConfigBasicMenuItemCommandMethods {
         this.set_m_is_arrow(false);
         <ConfigBasicMenuItem as IConfigBasicMenuItemMethods>::on_deselect(this);
     }
-    extern "C" fn a_call(_this: ConfigBasicMenuItem, _method_info: OptionalMethod) -> BasicMenuResult {
+    extern "C" fn a_call(
+        _this: ConfigBasicMenuItem,
+        _method_info: OptionalMethod,
+    ) -> BasicMenuResult {
         BasicMenuResult::new()
     }
-    extern "C" fn build_attribute(_this: ConfigBasicMenuItem, _method_info: OptionalMethod) -> BasicMenuItemAttribute {
+    extern "C" fn build_attribute(
+        _this: ConfigBasicMenuItem,
+        _method_info: OptionalMethod,
+    ) -> BasicMenuItemAttribute {
         BasicMenuItemAttribute::enable()
     }
 }
 
 pub trait ConfigBasicMenuItemGaugeMethods {
     fn init_content(_this: ConfigBasicMenuItem) {}
-    extern "C" fn custom_call(this: ConfigBasicMenuItem, method_info: OptionalMethod) -> BasicMenuResult;
+    extern "C" fn custom_call(
+        this: ConfigBasicMenuItem,
+        method_info: OptionalMethod,
+    ) -> BasicMenuResult;
     extern "C" fn set_help_text(this: ConfigBasicMenuItem, method_info: OptionalMethod);
-    extern "C" fn a_call(_this: ConfigBasicMenuItem, _method_info: OptionalMethod) -> BasicMenuResult {
+    extern "C" fn a_call(
+        _this: ConfigBasicMenuItem,
+        _method_info: OptionalMethod,
+    ) -> BasicMenuResult {
         BasicMenuResult::new()
     }
-    extern "C" fn build_attribute(_this: ConfigBasicMenuItem, _method_info: OptionalMethod) -> BasicMenuItemAttribute {
+    extern "C" fn build_attribute(
+        _this: ConfigBasicMenuItem,
+        _method_info: OptionalMethod,
+    ) -> BasicMenuItemAttribute {
         BasicMenuItemAttribute::enable()
     }
 }
@@ -648,7 +774,10 @@ impl ConfigBasicMenuItemExt for ConfigBasicMenuItem {
         let class = item.override_class();
         class.override_virtual_method("CustomCall", ::unity2::method_info!(M::custom_call, 0));
         class.override_virtual_method("ACall", ::unity2::method_info!(M::a_call, 0));
-        class.override_virtual_method("BuildAttribute", ::unity2::method_info!(M::build_attribute, 0));
+        class.override_virtual_method(
+            "BuildAttribute",
+            ::unity2::method_info!(M::build_attribute, 0),
+        );
 
         item.set_title_text(title.into());
         M::set_command_text(item, None);
@@ -665,7 +794,10 @@ impl ConfigBasicMenuItemExt for ConfigBasicMenuItem {
         let class = item.override_class();
         class.override_virtual_method("CustomCall", ::unity2::method_info!(M::custom_call, 0));
         class.override_virtual_method("ACall", ::unity2::method_info!(M::a_call, 0));
-        class.override_virtual_method("BuildAttribute", ::unity2::method_info!(M::build_attribute, 0));
+        class.override_virtual_method(
+            "BuildAttribute",
+            ::unity2::method_info!(M::build_attribute, 0),
+        );
 
         item.set_title_text(title.into());
         M::set_help_text(item, None);
@@ -685,7 +817,10 @@ impl ConfigBasicMenuItemExt for ConfigBasicMenuItem {
         class.override_virtual_method("OnSelect", ::unity2::method_info!(M::on_select, 0));
         class.override_virtual_method("OnDeselect", ::unity2::method_info!(M::on_deselect, 0));
         class.override_virtual_method("ACall", ::unity2::method_info!(M::a_call, 0));
-        class.override_virtual_method("BuildAttribute", ::unity2::method_info!(M::build_attribute, 0));
+        class.override_virtual_method(
+            "BuildAttribute",
+            ::unity2::method_info!(M::build_attribute, 0),
+        );
 
         item.set_title_text(title.into());
         M::set_command_text(item, None);
@@ -699,7 +834,10 @@ impl ConfigBasicMenuItemExt for ConfigBasicMenuItem {
     }
 }
 
-pub extern "C" fn restore_parent_on_dispose(this: crate::app::procinst::ProcInst, _method_info: OptionalMethod) {
+pub extern "C" fn restore_parent_on_dispose(
+    this: crate::app::procinst::ProcInst,
+    _method_info: OptionalMethod,
+) {
     use crate::app::procinst::IProcInstMethods;
     let parent = this.get_super();
     if parent.is_null() {
@@ -763,13 +901,17 @@ pub trait TwoChoiceDialogMethods {
         _this: BasicDialogItemYes,
         _method_info: OptionalMethod,
     ) -> BasicMenuResult {
-        BasicMenuResult::new().with_close_this(true).with_se_cancel(true)
+        BasicMenuResult::new()
+            .with_close_this(true)
+            .with_se_cancel(true)
     }
     extern "C" fn bcall_second(
         _this: BasicDialogItemNo,
         _method_info: OptionalMethod,
     ) -> BasicMenuResult {
-        BasicMenuResult::new().with_close_this(true).with_se_cancel(true)
+        BasicMenuResult::new()
+            .with_close_this(true)
+            .with_se_cancel(true)
     }
 }
 
@@ -825,13 +967,14 @@ impl FileHandle {
         let method = class
             .get_method_from_name("Unload", 0)
             .expect("FileHandle::Unload missing from runtime class");
-        let unload: extern "C" fn(Self, &MethodInfo) = unsafe { ::core::mem::transmute(method.method_ptr) };
+        let unload: extern "C" fn(Self, &MethodInfo) =
+            unsafe { ::core::mem::transmute(method.method_ptr) };
         unload(self, method);
     }
 }
 
-use crate::app::scriptutil::ScriptUtil;
 use crate::app::itemdata::ItemData;
+use crate::app::scriptutil::ScriptUtil;
 use crate::moon_sharp::interpreter::dynvalue::DynValue;
 
 pub trait DynValueArgs {
@@ -846,7 +989,11 @@ impl DynValueArgs for Array<DynValue> {
         ScriptUtil::try_get_int(self, index, i32::MAX)
     }
     fn try_get_string(self, index: i32) -> Il2CppString {
-        ScriptUtil::try_get_string(self, index, Il2CppString::from_il_instance(IlInstance::null()))
+        ScriptUtil::try_get_string(
+            self,
+            index,
+            Il2CppString::from_il_instance(IlInstance::null()),
+        )
     }
     fn try_get_unit(self, index: i32) -> Unit {
         ScriptUtil::try_get_unit(self, index, true)
@@ -973,9 +1120,7 @@ impl AssetBundleExt for AssetBundle {
                 "LoadFromMemoryAsync_Internal",
                 2,
             )
-            .expect(
-                "UnityEngine.AssetBundle.LoadFromMemoryAsync_Internal not found in metadata",
-            );
+            .expect("UnityEngine.AssetBundle.LoadFromMemoryAsync_Internal not found in metadata");
             mi.method_ptr as usize
         });
 
