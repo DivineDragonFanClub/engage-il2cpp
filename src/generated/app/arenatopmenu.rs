@@ -14,40 +14,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenatopmenu/ArenaTopMenu_DecideEventHandler.md")))]
-#[::unity2::class(namespace = "App", name = "ArenaTopMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ArenaTopMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-arenatopmenu")]
-#[::unity2::methods]
-impl ArenaTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(bool, i32)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(self, go_next: bool, index: i32) -> ();
-}
-
-#[cfg(feature = "app-arenatopmenu")]
-impl ArenaTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaTopMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenatopmenu/ArenaTopMenu_TrainingMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenatopmenu/ArenaTopMenu_TrainingMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "ArenaTopMenu.TrainingMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct ArenaTopMenu_TrainingMenuItem {
@@ -109,7 +76,40 @@ impl ArenaTopMenu_TrainingMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenatopmenu/ArenaTopMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenatopmenu/ArenaTopMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "ArenaTopMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ArenaTopMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-arenatopmenu")]
+#[::unity2::methods]
+impl ArenaTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(bool, i32)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, go_next: bool, index: i32) -> ();
+}
+
+#[cfg(feature = "app-arenatopmenu")]
+impl ArenaTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaTopMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenatopmenu/ArenaTopMenu.md"))]
 #[::unity2::class(namespace = "App", name = "ArenaTopMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct ArenaTopMenu {

@@ -8,48 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoutoption/GUILayoutOption.md")))]
-#[::unity2::class(namespace = "UnityEngine", name = "GUILayoutOption")]
-#[parent(crate::system::object::Object)]
-pub struct GUILayoutOption {
-    #[rename(name = "type")]
-    pub r#type: crate::unity_engine::guilayoutoption::GUILayoutOption_Type,
-    #[rename(name = "value")]
-    pub value: ::unity2::IlInstance,
-}
-
-#[cfg(feature = "unity_engine-guilayoutoption")]
-#[::unity2::methods]
-impl GUILayoutOption {
-    #[doc = "`.ctor(crate::unity_engine::guilayoutoption::GUILayoutOption_Type, crate::system::object::Object)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        r#type: crate::unity_engine::guilayoutoption::GUILayoutOption_Type,
-        value: crate::system::object::Object,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-guilayoutoption")]
-impl GUILayoutOption {
-    #[doc = "`.ctor(crate::unity_engine::guilayoutoption::GUILayoutOption_Type, crate::system::object::Object)` — overload selector"]
-    pub fn new(
-        r#type: crate::unity_engine::guilayoutoption::GUILayoutOption_Type,
-        value: crate::system::object::Object,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUILayoutOption),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGUILayoutOptionMethods>::ctor(this, r#type, value);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/guilayoutoption/GUILayoutOption_Type.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/guilayoutoption/GUILayoutOption_Type.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -138,5 +97,46 @@ impl GUILayoutOption_Type {
 
     pub fn spacing() -> Self {
         Self { value: 13 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoutoption/GUILayoutOption.md"))]
+#[::unity2::class(namespace = "UnityEngine", name = "GUILayoutOption")]
+#[parent(crate::system::object::Object)]
+pub struct GUILayoutOption {
+    #[rename(name = "type")]
+    pub r#type: crate::unity_engine::guilayoutoption::GUILayoutOption_Type,
+    #[rename(name = "value")]
+    pub value: ::unity2::IlInstance,
+}
+
+#[cfg(feature = "unity_engine-guilayoutoption")]
+#[::unity2::methods]
+impl GUILayoutOption {
+    #[doc = "`.ctor(crate::unity_engine::guilayoutoption::GUILayoutOption_Type, crate::system::object::Object)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        r#type: crate::unity_engine::guilayoutoption::GUILayoutOption_Type,
+        value: crate::system::object::Object,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-guilayoutoption")]
+impl GUILayoutOption {
+    #[doc = "`.ctor(crate::unity_engine::guilayoutoption::GUILayoutOption_Type, crate::system::object::Object)` — overload selector"]
+    pub fn new(
+        r#type: crate::unity_engine::guilayoutoption::GUILayoutOption_Type,
+        value: crate::system::object::Object,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUILayoutOption),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUILayoutOptionMethods>::ctor(this, r#type, value);
+        this
     }
 }

@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptableassetbundle_1/ScriptableAssetBundle_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptableassetbundle_1/ScriptableAssetBundle_1.md"))]
 #[::unity2::class(namespace = "App", name = "ScriptableAssetBundle`1")]
 # [parent (crate :: app :: irawassetbundle_1 :: IRawAssetBundle_1 < T0 >)]
 #[parent(crate::system::object::Object)]

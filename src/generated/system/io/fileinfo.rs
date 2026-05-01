@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/fileinfo/FileInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/fileinfo/FileInfo.md"))]
 #[::unity2::class(namespace = "System.IO", name = "FileInfo")]
 #[parent(crate::system::io::filesysteminfo::FileSystemInfo)]
 pub struct FileInfo {

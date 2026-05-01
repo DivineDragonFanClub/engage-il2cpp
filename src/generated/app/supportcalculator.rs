@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/supportcalculator/SupportCalculator.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/supportcalculator/SupportCalculator.md"))]
 #[::unity2::class(namespace = "App", name = "SupportCalculator")]
 #[parent(crate::system::object::Object)]
 pub struct SupportCalculator {

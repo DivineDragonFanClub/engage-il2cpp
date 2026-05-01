@@ -8,79 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdesc/ProcDesc_Result.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ProcDesc_Result {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for ProcDesc_Result {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProcDesc.Result";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ProcDesc_Result {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ProcDesc_Result {
-    pub fn end() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn keep() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn next() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn next_imm() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn called_next() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn called_next_imm() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn jump() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn push() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn pop() -> Self {
-        Self { value: 8 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdesc/ProcDesc_Type.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdesc/ProcDesc_Type.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -184,7 +112,7 @@ impl ProcDesc_Type {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdesc/ProcDesc.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdesc/ProcDesc.md"))]
 #[::unity2::class(namespace = "App", name = "ProcDesc")]
 #[parent(crate::system::object::Object)]
 pub struct ProcDesc {
@@ -232,5 +160,77 @@ impl ProcDesc {
         });
         <Self as IProcDescMethods>::ctor(this, r#type);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdesc/ProcDesc_Result.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ProcDesc_Result {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ProcDesc_Result {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ProcDesc.Result";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ProcDesc_Result {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ProcDesc_Result {
+    pub fn end() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn keep() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn next() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn next_imm() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn called_next() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn called_next_imm() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn jump() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn push() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn pop() -> Self {
+        Self { value: 8 }
     }
 }

@@ -20,7 +20,121 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_WeaponValues.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData_FlagField.md"))]
+#[::unity2::class(namespace = "App", name = "JobData.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: jobdata :: JobData_Flags >)]
+pub struct JobData_FlagField {}
+
+#[cfg(feature = "app-jobdata")]
+#[::unity2::methods]
+impl JobData_FlagField {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[doc = "`.ctor(crate::app::jobdata::JobData_Flags)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::jobdata::JobData_Flags) -> ();
+
+    #[doc = "`ToInt(crate::app::jobdata::JobData_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::jobdata::JobData_Flags) -> i32;
+}
+
+#[cfg(feature = "app-jobdata")]
+impl JobData_FlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(JobData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IJobData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::jobdata::JobData_Flags)` — overload selector"]
+    pub fn new_2(f: crate::app::jobdata::JobData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(JobData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IJobData_FlagFieldMethods>::ctor_2(this, f);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_MoveTypes.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct JobData_MoveTypes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for JobData_MoveTypes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "JobData.MoveTypes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for JobData_MoveTypes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl JobData_MoveTypes {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn foot() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn horse() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn fly() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn dragon() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn pad() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 6 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_WeaponValues.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -72,7 +186,7 @@ impl JobData_WeaponValues {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Ranks.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Ranks.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -116,57 +230,7 @@ impl JobData_Ranks {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData_FlagField.md")))]
-#[::unity2::class(namespace = "App", name = "JobData.FlagField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: jobdata :: JobData_Flags >)]
-pub struct JobData_FlagField {}
-
-#[cfg(feature = "app-jobdata")]
-#[::unity2::methods]
-impl JobData_FlagField {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, f: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::jobdata::JobData_Flags)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, f: crate::app::jobdata::JobData_Flags) -> ();
-
-    #[doc = "`ToInt(crate::app::jobdata::JobData_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::jobdata::JobData_Flags) -> i32;
-}
-
-#[cfg(feature = "app-jobdata")]
-impl JobData_FlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(JobData_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IJobData_FlagFieldMethods>::ctor(this, f);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::jobdata::JobData_Flags)` — overload selector"]
-    pub fn new_2(f: crate::app::jobdata::JobData_Flags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(JobData_FlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IJobData_FlagFieldMethods>::ctor_2(this, f);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobdata/JobData.md"))]
 #[::unity2::class(namespace = "App", name = "JobData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: jobdata :: JobData >)]
 pub struct JobData {
@@ -820,7 +884,7 @@ impl JobData {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Flags.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_Flags.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -869,69 +933,5 @@ impl JobData_Flags {
 
     pub fn encount_map() -> Self {
         Self { value: 8 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobdata/JobData_MoveTypes.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct JobData_MoveTypes {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for JobData_MoveTypes {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "JobData.MoveTypes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for JobData_MoveTypes {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl JobData_MoveTypes {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn foot() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn horse() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn fly() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn dragon() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn pad() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 6 }
     }
 }

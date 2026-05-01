@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ipointerexithandler/IPointerExitHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ipointerexithandler/IPointerExitHandler.md"))]
 #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IPointerExitHandler")]
 pub struct IPointerExitHandler {}
 

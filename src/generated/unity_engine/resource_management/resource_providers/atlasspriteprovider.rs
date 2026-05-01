@@ -6,7 +6,7 @@ use crate::unity_engine::resource_management::resource_providers::resourceprovid
 use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/atlasspriteprovider/AtlasSpriteProvider.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/atlasspriteprovider/AtlasSpriteProvider.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.ResourceProviders",
     name = "AtlasSpriteProvider"

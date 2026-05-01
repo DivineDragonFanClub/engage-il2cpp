@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/ikeyevaluator/IKeyEvaluator.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/ikeyevaluator/IKeyEvaluator.md"))]
 #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "IKeyEvaluator")]
 pub struct IKeyEvaluator {}
 

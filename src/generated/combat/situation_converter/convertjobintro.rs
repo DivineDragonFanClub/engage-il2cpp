@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/situation_converter/convertjobintro/ConvertJobIntro_State.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/situation_converter/convertjobintro/ConvertJobIntro_State.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -62,7 +62,7 @@ impl ConvertJobIntro_State {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertjobintro/ConvertJobIntro.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertjobintro/ConvertJobIntro.md"))]
 #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertJobIntro")]
 #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
 pub struct ConvertJobIntro {

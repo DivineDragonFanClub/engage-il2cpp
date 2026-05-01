@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/volumeparameter/VolumeParameter.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/volumeparameter/VolumeParameter.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering", name = "VolumeParameter")]
 #[parent(crate::system::object::Object)]
 pub struct VolumeParameter {

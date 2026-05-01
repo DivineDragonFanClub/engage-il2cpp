@@ -8,7 +8,7 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/playableasset/PlayableAsset.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/playableasset/PlayableAsset.md"))]
 #[::unity2::class(namespace = "UnityEngine.Playables", name = "PlayableAsset")]
 #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
 pub struct PlayableAsset {}

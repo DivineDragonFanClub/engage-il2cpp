@@ -18,17 +18,17 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_RelayMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.RelayMenuItem")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_VersusMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.VersusMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct CapeTowerTopMenu_RelayMenuItem {
+pub struct CapeTowerTopMenu_VersusMenuItem {
     #[rename(name = "m_DecideEventHandler")]
     pub m_decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
 }
 
 #[cfg(feature = "app-capetowertopmenu")]
 #[::unity2::methods]
-impl CapeTowerTopMenu_RelayMenuItem {
+impl CapeTowerTopMenu_VersusMenuItem {
     #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(
@@ -50,7 +50,7 @@ impl CapeTowerTopMenu_RelayMenuItem {
 }
 
 #[cfg(feature = "app-capetowertopmenu")]
-impl CapeTowerTopMenu_RelayMenuItem {
+impl CapeTowerTopMenu_VersusMenuItem {
     #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` — overload selector"]
     pub fn new(
         decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
@@ -58,16 +58,16 @@ impl CapeTowerTopMenu_RelayMenuItem {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(CapeTowerTopMenu_RelayMenuItem),
+                ::core::stringify!(CapeTowerTopMenu_VersusMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as ICapeTowerTopMenu_RelayMenuItemMethods>::ctor(this, decide_event_handler);
+        <Self as ICapeTowerTopMenu_VersusMenuItemMethods>::ctor(this, decide_event_handler);
         this
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowertopmenu/CapeTowerTopMenu_Result2.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowertopmenu/CapeTowerTopMenu_Result2.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -119,56 +119,40 @@ impl CapeTowerTopMenu_Result2 {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_VersusMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.VersusMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct CapeTowerTopMenu_VersusMenuItem {
-    #[rename(name = "m_DecideEventHandler")]
-    pub m_decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct CapeTowerTopMenu_DecideEventHandler {}
 
 #[cfg(feature = "app-capetowertopmenu")]
 #[::unity2::methods]
-impl CapeTowerTopMenu_VersusMenuItem {
-    #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
-    ) -> ();
+impl CapeTowerTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`OnBuild()` overload"]
-    #[method(name = "OnBuild", args = 0)]
-    pub fn on_build(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    #[doc = "`Invoke(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, result: crate::app::capetowertopmenu::CapeTowerTopMenu_Result2) -> ();
 }
 
 #[cfg(feature = "app-capetowertopmenu")]
-impl CapeTowerTopMenu_VersusMenuItem {
-    #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
-    ) -> Self {
+impl CapeTowerTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(CapeTowerTopMenu_VersusMenuItem),
+                ::core::stringify!(CapeTowerTopMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as ICapeTowerTopMenu_VersusMenuItemMethods>::ctor(this, decide_event_handler);
+        <Self as ICapeTowerTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu.md"))]
 #[::unity2::class(namespace = "App", name = "CapeTowerTopMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct CapeTowerTopMenu {
@@ -258,7 +242,7 @@ impl CapeTowerTopMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_ChallengeMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_ChallengeMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.ChallengeMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct CapeTowerTopMenu_ChallengeMenuItem {
@@ -311,35 +295,51 @@ impl CapeTowerTopMenu_ChallengeMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_DecideEventHandler.md")))]
-#[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct CapeTowerTopMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-capetowertopmenu")]
-#[::unity2::methods]
-impl CapeTowerTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::capetowertopmenu::CapeTowerTopMenu_Result2)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, result: crate::app::capetowertopmenu::CapeTowerTopMenu_Result2) -> ();
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowertopmenu/CapeTowerTopMenu_RelayMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "CapeTowerTopMenu.RelayMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct CapeTowerTopMenu_RelayMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
 }
 
 #[cfg(feature = "app-capetowertopmenu")]
-impl CapeTowerTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+#[::unity2::methods]
+impl CapeTowerTopMenu_RelayMenuItem {
+    #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`OnBuild()` overload"]
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-capetowertopmenu")]
+impl CapeTowerTopMenu_RelayMenuItem {
+    #[doc = "`.ctor(crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        decide_event_handler: crate::app::capetowertopmenu::CapeTowerTopMenu_DecideEventHandler,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(CapeTowerTopMenu_DecideEventHandler),
+                ::core::stringify!(CapeTowerTopMenu_RelayMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as ICapeTowerTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as ICapeTowerTopMenu_RelayMenuItemMethods>::ctor(this, decide_event_handler);
         this
     }
 }

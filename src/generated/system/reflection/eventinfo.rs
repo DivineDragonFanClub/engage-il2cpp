@@ -10,44 +10,7 @@ use crate::system::reflection::memberinfo::IMemberInfo;
 use crate::system::reflection::memberinfo::MemberInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/eventinfo/EventInfo_AddEventAdapter.md")))]
-#[::unity2::class(namespace = "System.Reflection", name = "EventInfo.AddEventAdapter")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventInfo_AddEventAdapter {}
-
-#[cfg(feature = "system-reflection-eventinfo")]
-#[::unity2::methods]
-impl EventInfo_AddEventAdapter {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::delegate::Delegate)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        target_0: crate::system::object::Object,
-        dele: crate::system::delegate::Delegate,
-    ) -> ();
-}
-
-#[cfg(feature = "system-reflection-eventinfo")]
-impl EventInfo_AddEventAdapter {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventInfo_AddEventAdapter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventInfo_AddEventAdapterMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/eventinfo/EventInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/eventinfo/EventInfo.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "EventInfo")]
 #[parent(crate::system::reflection::memberinfo::MemberInfo)]
 pub struct EventInfo {
@@ -141,6 +104,43 @@ impl EventInfo {
             )
         });
         <Self as IEventInfoMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/eventinfo/EventInfo_AddEventAdapter.md"))]
+#[::unity2::class(namespace = "System.Reflection", name = "EventInfo.AddEventAdapter")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct EventInfo_AddEventAdapter {}
+
+#[cfg(feature = "system-reflection-eventinfo")]
+#[::unity2::methods]
+impl EventInfo_AddEventAdapter {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::delegate::Delegate)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        target_0: crate::system::object::Object,
+        dele: crate::system::delegate::Delegate,
+    ) -> ();
+}
+
+#[cfg(feature = "system-reflection-eventinfo")]
+impl EventInfo_AddEventAdapter {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventInfo_AddEventAdapter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventInfo_AddEventAdapterMethods>::ctor(this, object, method);
         this
     }
 }

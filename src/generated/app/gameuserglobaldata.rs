@@ -16,95 +16,40 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserglobaldata/GameUserGlobalData_Flags.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct GameUserGlobalData_Flags {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))]
+#[::unity2::class(namespace = "App", name = "GameUserGlobalData.FlagsField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >)]
+pub struct GameUserGlobalData_FlagsField {}
+
+#[cfg(feature = "app-gameuserglobaldata")]
+#[::unity2::methods]
+impl GameUserGlobalData_FlagsField {
+    #[doc = "`ToInt(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::gameuserglobaldata::GameUserGlobalData_Flags) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
-impl ::unity2::ClassIdentity for GameUserGlobalData_Flags {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameUserGlobalData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for GameUserGlobalData_Flags {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl GameUserGlobalData_Flags {
-    pub fn cleared_difficulty_normal() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn cleared_difficulty_hard() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn cleared_difficulty_lunatic() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn cleared_difficulty_mask() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn cleared_mode_classic() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn cleared_mode_casual() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn cleared_mode_phoenix() -> Self {
-        Self { value: 32 }
-    }
-
-    pub fn cleared_mode_mask() -> Self {
-        Self { value: 56 }
-    }
-
-    pub fn cleared_mask() -> Self {
-        Self { value: 63 }
-    }
-
-    pub fn dlc_news_patch0() -> Self {
-        Self { value: 64 }
-    }
-
-    pub fn dlc_news_patch1() -> Self {
-        Self { value: 128 }
-    }
-
-    pub fn dlc_news_patch2() -> Self {
-        Self { value: 256 }
-    }
-
-    pub fn dlc_news_patch3() -> Self {
-        Self { value: 512 }
+#[cfg(feature = "app-gameuserglobaldata")]
+impl GameUserGlobalData_FlagsField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserGlobalData_FlagsField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserGlobalData_FlagsFieldMethods>::ctor(this);
+        this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData.md"))]
 #[::unity2::class(namespace = "App", name = "GameUserGlobalData")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData >)]
 pub struct GameUserGlobalData {
@@ -236,35 +181,90 @@ impl GameUserGlobalData {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md")))]
-#[::unity2::class(namespace = "App", name = "GameUserGlobalData.FlagsField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserglobaldata :: GameUserGlobalData_Flags >)]
-pub struct GameUserGlobalData_FlagsField {}
-
-#[cfg(feature = "app-gameuserglobaldata")]
-#[::unity2::methods]
-impl GameUserGlobalData_FlagsField {
-    #[doc = "`ToInt(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::gameuserglobaldata::GameUserGlobalData_Flags) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserglobaldata/GameUserGlobalData_Flags.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GameUserGlobalData_Flags {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-gameuserglobaldata")]
-impl GameUserGlobalData_FlagsField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserGlobalData_FlagsField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserGlobalData_FlagsFieldMethods>::ctor(this);
-        this
+impl ::unity2::ClassIdentity for GameUserGlobalData_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameUserGlobalData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GameUserGlobalData_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GameUserGlobalData_Flags {
+    pub fn cleared_difficulty_normal() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn cleared_difficulty_hard() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn cleared_difficulty_lunatic() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn cleared_difficulty_mask() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn cleared_mode_classic() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn cleared_mode_casual() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn cleared_mode_phoenix() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn cleared_mode_mask() -> Self {
+        Self { value: 56 }
+    }
+
+    pub fn cleared_mask() -> Self {
+        Self { value: 63 }
+    }
+
+    pub fn dlc_news_patch0() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn dlc_news_patch1() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn dlc_news_patch2() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn dlc_news_patch3() -> Self {
+        Self { value: 512 }
     }
 }

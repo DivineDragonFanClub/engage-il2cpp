@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/idictionary_2_interface/IDictionary_2_Interface.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/idictionary_2_interface/IDictionary_2_Interface.md"))]
 #[::unity2::class(namespace = "System.Collections.Generic", name = "IDictionary`2")]
 pub struct IDictionary_2_Interface<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {}
 

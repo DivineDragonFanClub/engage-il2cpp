@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/igamecolorvalidate/IGameColorValidate.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/igamecolorvalidate/IGameColorValidate.md"))]
 #[::unity2::class(namespace = "App", name = "IGameColorValidate")]
 pub struct IGameColorValidate {}
 

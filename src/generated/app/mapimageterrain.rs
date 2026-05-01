@@ -4,43 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimageterrain/MapImageTerrain_MinimapInfo.md")))]
-#[::unity2::class(namespace = "App", name = "MapImageTerrain.MinimapInfo")]
-#[parent(crate::system::object::Object)]
-pub struct MapImageTerrain_MinimapInfo {
-    #[rename(name = "X")]
-    pub x: i32,
-    #[rename(name = "Z")]
-    pub z: i32,
-    #[rename(name = "Terrain")]
-    pub terrain: crate::app::terraindata_2::TerrainData_2,
-}
-
-#[cfg(feature = "app-mapimageterrain")]
-#[::unity2::methods]
-impl MapImageTerrain_MinimapInfo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapimageterrain")]
-impl MapImageTerrain_MinimapInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapImageTerrain_MinimapInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapImageTerrain_MinimapInfoMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimageterrain/MapImageTerrain.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimageterrain/MapImageTerrain.md"))]
 #[::unity2::class(namespace = "App", name = "MapImageTerrain")]
 #[parent(crate::system::object::Object)]
 pub struct MapImageTerrain {
@@ -124,6 +88,42 @@ impl MapImageTerrain {
             )
         });
         <Self as IMapImageTerrainMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimageterrain/MapImageTerrain_MinimapInfo.md"))]
+#[::unity2::class(namespace = "App", name = "MapImageTerrain.MinimapInfo")]
+#[parent(crate::system::object::Object)]
+pub struct MapImageTerrain_MinimapInfo {
+    #[rename(name = "X")]
+    pub x: i32,
+    #[rename(name = "Z")]
+    pub z: i32,
+    #[rename(name = "Terrain")]
+    pub terrain: crate::app::terraindata_2::TerrainData_2,
+}
+
+#[cfg(feature = "app-mapimageterrain")]
+#[::unity2::methods]
+impl MapImageTerrain_MinimapInfo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapimageterrain")]
+impl MapImageTerrain_MinimapInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapImageTerrain_MinimapInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapImageTerrain_MinimapInfoMethods>::ctor(this);
         this
     }
 }

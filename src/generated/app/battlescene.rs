@@ -16,7 +16,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Kind.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Result.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -25,14 +25,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct BattleScene_Kind {
+pub struct BattleScene_Result {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for BattleScene_Kind {
+impl ::unity2::ClassIdentity for BattleScene_Result {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "BattleScene.Kind";
+    const NAME: &'static str = "BattleScene.Result";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,7 +41,7 @@ impl ::unity2::ClassIdentity for BattleScene_Kind {
     }
 }
 
-impl ::unity2::IlType for BattleScene_Kind {
+impl ::unity2::IlType for BattleScene_Result {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -50,101 +50,73 @@ impl ::unity2::IlType for BattleScene_Kind {
     }
 }
 
-impl BattleScene_Kind {
+impl BattleScene_Result {
     pub fn none() -> Self {
         Self { value: 0 }
     }
 
-    pub fn attack() -> Self {
+    pub fn hit() -> Self {
         Self { value: 1 }
     }
 
-    pub fn rod() -> Self {
+    pub fn critical() -> Self {
         Self { value: 2 }
     }
 
-    pub fn dance() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn skill() -> Self {
+    pub fn guard() -> Self {
         Self { value: 4 }
     }
 
-    pub fn give_direct() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn give_delay() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn strip() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn equip() -> Self {
+    pub fn suicide() -> Self {
         Self { value: 8 }
     }
 
-    pub fn god() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn dead() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn engage_attack() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn separator() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn push_battle() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn push_order() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn push_action() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn push_attack() -> Self {
+    pub fn efficacy() -> Self {
         Self { value: 16 }
     }
 
-    pub fn pop_attack() -> Self {
-        Self { value: 17 }
+    pub fn r#break() -> Self {
+        Self { value: 32 }
     }
 
-    pub fn pop_action() -> Self {
-        Self { value: 18 }
+    pub fn blow() -> Self {
+        Self { value: 64 }
     }
 
-    pub fn pop_order() -> Self {
-        Self { value: 19 }
+    pub fn bounce() -> Self {
+        Self { value: 128 }
     }
 
-    pub fn pop_battle() -> Self {
-        Self { value: 20 }
+    pub fn chain_attack() -> Self {
+        Self { value: 256 }
     }
 
-    pub fn heal() -> Self {
-        Self { value: 21 }
+    pub fn chain_guard() -> Self {
+        Self { value: 512 }
     }
 
-    pub fn num() -> Self {
-        Self { value: 22 }
+    pub fn dual_guard() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn engage_attack() -> Self {
+        Self { value: 2048 }
+    }
+
+    pub fn physical() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn magic() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn ignore() -> Self {
+        Self { value: 16384 }
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene.md"))]
 #[::unity2::class(namespace = "App", name = "BattleScene")]
 #[parent(crate::app::pool::Pool_Node)]
 pub struct BattleScene {
@@ -377,7 +349,7 @@ impl BattleScene {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene_FieldResult.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescene/BattleScene_FieldResult.md"))]
 #[::unity2::class(namespace = "App", name = "BattleScene.FieldResult")]
 # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battlescene :: BattleScene_Result >)]
 pub struct BattleScene_FieldResult {}
@@ -416,7 +388,7 @@ impl BattleScene_FieldResult {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Result.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlescene/BattleScene_Kind.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -425,14 +397,14 @@ impl BattleScene_FieldResult {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct BattleScene_Result {
+pub struct BattleScene_Kind {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for BattleScene_Result {
+impl ::unity2::ClassIdentity for BattleScene_Kind {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "BattleScene.Result";
+    const NAME: &'static str = "BattleScene.Kind";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -441,7 +413,7 @@ impl ::unity2::ClassIdentity for BattleScene_Result {
     }
 }
 
-impl ::unity2::IlType for BattleScene_Result {
+impl ::unity2::IlType for BattleScene_Kind {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -450,68 +422,96 @@ impl ::unity2::IlType for BattleScene_Result {
     }
 }
 
-impl BattleScene_Result {
+impl BattleScene_Kind {
     pub fn none() -> Self {
         Self { value: 0 }
     }
 
-    pub fn hit() -> Self {
+    pub fn attack() -> Self {
         Self { value: 1 }
     }
 
-    pub fn critical() -> Self {
+    pub fn rod() -> Self {
         Self { value: 2 }
     }
 
-    pub fn guard() -> Self {
+    pub fn dance() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn skill() -> Self {
         Self { value: 4 }
     }
 
-    pub fn suicide() -> Self {
+    pub fn give_direct() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn give_delay() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn strip() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn equip() -> Self {
         Self { value: 8 }
     }
 
-    pub fn efficacy() -> Self {
-        Self { value: 16 }
+    pub fn god() -> Self {
+        Self { value: 9 }
     }
 
-    pub fn r#break() -> Self {
-        Self { value: 32 }
-    }
-
-    pub fn blow() -> Self {
-        Self { value: 64 }
-    }
-
-    pub fn bounce() -> Self {
-        Self { value: 128 }
-    }
-
-    pub fn chain_attack() -> Self {
-        Self { value: 256 }
-    }
-
-    pub fn chain_guard() -> Self {
-        Self { value: 512 }
-    }
-
-    pub fn dual_guard() -> Self {
-        Self { value: 1024 }
+    pub fn dead() -> Self {
+        Self { value: 10 }
     }
 
     pub fn engage_attack() -> Self {
-        Self { value: 2048 }
+        Self { value: 11 }
     }
 
-    pub fn physical() -> Self {
-        Self { value: 4096 }
+    pub fn separator() -> Self {
+        Self { value: 12 }
     }
 
-    pub fn magic() -> Self {
-        Self { value: 8192 }
+    pub fn push_battle() -> Self {
+        Self { value: 13 }
     }
 
-    pub fn ignore() -> Self {
-        Self { value: 16384 }
+    pub fn push_order() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn push_action() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn push_attack() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn pop_attack() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn pop_action() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn pop_order() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn pop_battle() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn heal() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 22 }
     }
 }

@@ -18,40 +18,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu_DecideEventHandler.md")))]
-#[::unity2::class(namespace = "App", name = "ItemShopTopMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ItemShopTopMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-itemshoptopmenu")]
-#[::unity2::methods]
-impl ItemShopTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::itemshoptopmenu::ItemShopTopMenu_Result2)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, result: crate::app::itemshoptopmenu::ItemShopTopMenu_Result2) -> ();
-}
-
-#[cfg(feature = "app-itemshoptopmenu")]
-impl ItemShopTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemShopTopMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemShopTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu_BuyMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu_BuyMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "ItemShopTopMenu.BuyMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct ItemShopTopMenu_BuyMenuItem {
@@ -96,7 +63,7 @@ impl ItemShopTopMenu_BuyMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu_SellMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu_SellMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "ItemShopTopMenu.SellMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct ItemShopTopMenu_SellMenuItem {
@@ -141,7 +108,88 @@ impl ItemShopTopMenu_SellMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "ItemShopTopMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ItemShopTopMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-itemshoptopmenu")]
+#[::unity2::methods]
+impl ItemShopTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::itemshoptopmenu::ItemShopTopMenu_Result2)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, result: crate::app::itemshoptopmenu::ItemShopTopMenu_Result2) -> ();
+}
+
+#[cfg(feature = "app-itemshoptopmenu")]
+impl ItemShopTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemShopTopMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemShopTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemshoptopmenu/ItemShopTopMenu_Result2.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ItemShopTopMenu_Result2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ItemShopTopMenu_Result2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ItemShopTopMenu.Result2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ItemShopTopMenu_Result2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ItemShopTopMenu_Result2 {
+    pub fn buy() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn sell() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshoptopmenu/ItemShopTopMenu.md"))]
 #[::unity2::class(namespace = "App", name = "ItemShopTopMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct ItemShopTopMenu {}
@@ -217,53 +265,5 @@ impl ItemShopTopMenu {
             decide_event_handler,
         );
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemshoptopmenu/ItemShopTopMenu_Result2.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ItemShopTopMenu_Result2 {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for ItemShopTopMenu_Result2 {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ItemShopTopMenu.Result2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ItemShopTopMenu_Result2 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ItemShopTopMenu_Result2 {
-    pub fn buy() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn sell() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 2 }
     }
 }

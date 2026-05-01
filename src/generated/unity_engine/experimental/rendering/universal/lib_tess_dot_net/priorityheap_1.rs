@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1_HandleElem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1_HandleElem.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
     name = "PriorityHeap`1.HandleElem"
@@ -45,7 +45,7 @@ impl<T0: ::unity2::ClassIdentity> PriorityHeap_1_HandleElem<T0> {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
     name = "PriorityHeap`1"
@@ -130,7 +130,7 @@ impl<T0: ::unity2::ClassIdentity> PriorityHeap_1<T0> {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1_LessOrEqual.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1_LessOrEqual.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
     name = "PriorityHeap`1.LessOrEqual"

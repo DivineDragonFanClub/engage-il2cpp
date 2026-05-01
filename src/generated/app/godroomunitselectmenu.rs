@@ -14,33 +14,20 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "GodRoomUnitSelectMenu.GodRoomUnitSelectMenuItem"
+    name = "GodRoomUnitSelectMenu.GodRoomUnitSelectEmptyMenuItem"
 )]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem {
-    #[rename(name = "m_Index")]
-    pub m_index: i32,
-    #[rename(name = "m_Unit")]
-    pub m_unit: crate::app::unit::Unit,
-    #[rename(name = "m_DecideEventHandler")]
-    pub m_decide_event_handler:
-        crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler,
-}
+#[parent(crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)]
+pub struct GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem {}
 
 #[cfg(feature = "app-godroomunitselectmenu")]
 #[::unity2::methods]
-impl GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem {
-    #[doc = "`.ctor(i32, crate::app::unit::Unit, crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        index: i32,
-        unit: crate::app::unit::Unit,
-        decide_event_handler : crate :: app :: godroomunitselectmenu :: GodRoomUnitSelectMenu_DecideEventHandler,
-    ) -> ();
+impl GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 
     #[doc = "`GetName()` overload"]
     #[method(name = "GetName", args = 0)]
@@ -57,42 +44,25 @@ impl GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem {
     #[doc = "`ACall()` overload"]
     #[method(name = "ACall", args = 0)]
     pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`GetUnit()` overload"]
-    #[method(name = "GetUnit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
 }
 
 #[cfg(feature = "app-godroomunitselectmenu")]
-impl GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem {
-    #[doc = "`.ctor(i32, crate::app::unit::Unit, crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        index: i32,
-        unit: crate::app::unit::Unit,
-        decide_event_handler : crate :: app :: godroomunitselectmenu :: GodRoomUnitSelectMenu_DecideEventHandler,
-    ) -> Self {
+impl GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem),
+                ::core::stringify!(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItemMethods>::ctor(
-            this,
-            index,
-            unit,
-            decide_event_handler,
-        );
+        <Self as IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItemMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu.md"))]
 #[::unity2::class(namespace = "App", name = "GodRoomUnitSelectMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct GodRoomUnitSelectMenu {
@@ -184,20 +154,33 @@ impl GodRoomUnitSelectMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "GodRoomUnitSelectMenu.GodRoomUnitSelectEmptyMenuItem"
+    name = "GodRoomUnitSelectMenu.GodRoomUnitSelectMenuItem"
 )]
-#[parent(crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem)]
-pub struct GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem {}
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem {
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler,
+}
 
 #[cfg(feature = "app-godroomunitselectmenu")]
 #[::unity2::methods]
-impl GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+impl GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem {
+    #[doc = "`.ctor(i32, crate::app::unit::Unit, crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        index: i32,
+        unit: crate::app::unit::Unit,
+        decide_event_handler : crate :: app :: godroomunitselectmenu :: GodRoomUnitSelectMenu_DecideEventHandler,
+    ) -> ();
 
     #[doc = "`GetName()` overload"]
     #[method(name = "GetName", args = 0)]
@@ -214,25 +197,42 @@ impl GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem {
     #[doc = "`ACall()` overload"]
     #[method(name = "ACall", args = 0)]
     pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`GetUnit()` overload"]
+    #[method(name = "GetUnit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
 }
 
 #[cfg(feature = "app-godroomunitselectmenu")]
-impl GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem {
+    #[doc = "`.ctor(i32, crate::app::unit::Unit, crate::app::godroomunitselectmenu::GodRoomUnitSelectMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        index: i32,
+        unit: crate::app::unit::Unit,
+        decide_event_handler : crate :: app :: godroomunitselectmenu :: GodRoomUnitSelectMenu_DecideEventHandler,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItem),
+                ::core::stringify!(GodRoomUnitSelectMenu_GodRoomUnitSelectMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGodRoomUnitSelectMenu_GodRoomUnitSelectEmptyMenuItemMethods>::ctor(this);
+        <Self as IGodRoomUnitSelectMenu_GodRoomUnitSelectMenuItemMethods>::ctor(
+            this,
+            index,
+            unit,
+            decide_event_handler,
+        );
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu_DecideEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroomunitselectmenu/GodRoomUnitSelectMenu_DecideEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "GodRoomUnitSelectMenu.DecideEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct GodRoomUnitSelectMenu_DecideEventHandler {}

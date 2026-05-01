@@ -10,7 +10,94 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectmenu/RingSelectMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectmenu/RingSelectMenu_RingMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "RingSelectMenu.RingMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct RingSelectMenu_RingMenuItem {
+    #[rename(name = "m_isGod")]
+    pub m_is_god: bool,
+    #[rename(name = "m_god")]
+    pub m_god: crate::app::godunit::GodUnit,
+    #[rename(name = "m_ring")]
+    pub m_ring: crate::app::unitring::UnitRing,
+}
+
+#[cfg(feature = "app-ringselectmenu")]
+#[::unity2::methods]
+impl RingSelectMenu_RingMenuItem {
+    #[doc = "`get_RingSortId()` overload"]
+    #[method(name = "get_RingSortId", args = 0)]
+    pub fn get_ring_sort_id(self) -> i32;
+
+    #[doc = "`set_RingSortId(i32)` overload"]
+    #[method(name = "set_RingSortId", args = 1)]
+    pub fn set_ring_sort_id(self, value: i32) -> ();
+
+    #[doc = "`.ctor(bool, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, i32)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        is_god: bool,
+        god: crate::app::godunit::GodUnit,
+        ring: crate::app::unitring::UnitRing,
+        ring_sort_id: i32,
+    ) -> ();
+
+    #[doc = "`IsGod()` overload"]
+    #[method(name = "IsGod", args = 0)]
+    pub fn is_god(self) -> bool;
+
+    #[doc = "`GetGod()` overload"]
+    #[method(name = "GetGod", args = 0)]
+    pub fn get_god(self) -> crate::app::godunit::GodUnit;
+
+    #[doc = "`GetCommon()` overload"]
+    #[method(name = "GetCommon", args = 0)]
+    pub fn get_common(self) -> crate::app::unitring::UnitRing;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`CalcAttribute(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing)` overload"]
+    #[method(name = "CalcAttribute", args = 3)]
+    pub fn calc_attribute(
+        unit: crate::app::unit::Unit,
+        god: crate::app::godunit::GodUnit,
+        ring: crate::app::unitring::UnitRing,
+    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+}
+
+#[cfg(feature = "app-ringselectmenu")]
+impl RingSelectMenu_RingMenuItem {
+    #[doc = "`.ctor(bool, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, i32)` — overload selector"]
+    pub fn new(
+        is_god: bool,
+        god: crate::app::godunit::GodUnit,
+        ring: crate::app::unitring::UnitRing,
+        ring_sort_id: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingSelectMenu_RingMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingSelectMenu_RingMenuItemMethods>::ctor(this, is_god, god, ring, ring_sort_id);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectmenu/RingSelectMenu.md"))]
 #[::unity2::class(namespace = "App", name = "RingSelectMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct RingSelectMenu {
@@ -204,93 +291,6 @@ impl RingSelectMenu {
             ring_select_root,
             page,
         );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringselectmenu/RingSelectMenu_RingMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "RingSelectMenu.RingMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct RingSelectMenu_RingMenuItem {
-    #[rename(name = "m_isGod")]
-    pub m_is_god: bool,
-    #[rename(name = "m_god")]
-    pub m_god: crate::app::godunit::GodUnit,
-    #[rename(name = "m_ring")]
-    pub m_ring: crate::app::unitring::UnitRing,
-}
-
-#[cfg(feature = "app-ringselectmenu")]
-#[::unity2::methods]
-impl RingSelectMenu_RingMenuItem {
-    #[doc = "`get_RingSortId()` overload"]
-    #[method(name = "get_RingSortId", args = 0)]
-    pub fn get_ring_sort_id(self) -> i32;
-
-    #[doc = "`set_RingSortId(i32)` overload"]
-    #[method(name = "set_RingSortId", args = 1)]
-    pub fn set_ring_sort_id(self, value: i32) -> ();
-
-    #[doc = "`.ctor(bool, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, i32)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        is_god: bool,
-        god: crate::app::godunit::GodUnit,
-        ring: crate::app::unitring::UnitRing,
-        ring_sort_id: i32,
-    ) -> ();
-
-    #[doc = "`IsGod()` overload"]
-    #[method(name = "IsGod", args = 0)]
-    pub fn is_god(self) -> bool;
-
-    #[doc = "`GetGod()` overload"]
-    #[method(name = "GetGod", args = 0)]
-    pub fn get_god(self) -> crate::app::godunit::GodUnit;
-
-    #[doc = "`GetCommon()` overload"]
-    #[method(name = "GetCommon", args = 0)]
-    pub fn get_common(self) -> crate::app::unitring::UnitRing;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`CalcAttribute(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing)` overload"]
-    #[method(name = "CalcAttribute", args = 3)]
-    pub fn calc_attribute(
-        unit: crate::app::unit::Unit,
-        god: crate::app::godunit::GodUnit,
-        ring: crate::app::unitring::UnitRing,
-    ) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-}
-
-#[cfg(feature = "app-ringselectmenu")]
-impl RingSelectMenu_RingMenuItem {
-    #[doc = "`.ctor(bool, crate::app::godunit::GodUnit, crate::app::unitring::UnitRing, i32)` — overload selector"]
-    pub fn new(
-        is_god: bool,
-        god: crate::app::godunit::GodUnit,
-        ring: crate::app::unitring::UnitRing,
-        ring_sort_id: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingSelectMenu_RingMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingSelectMenu_RingMenuItemMethods>::ctor(this, is_god, god, ring, ring_sort_id);
         this
     }
 }

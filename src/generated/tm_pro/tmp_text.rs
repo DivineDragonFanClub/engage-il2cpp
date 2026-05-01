@@ -22,7 +22,37 @@ use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
 use crate::unity_engine::ui::maskablegraphic::MaskableGraphic;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_text/TMP_Text.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_UnicodeChar.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TMP_Text_UnicodeChar {
+    pub unicode: i32,
+    pub string_index: i32,
+    pub length: i32,
+}
+
+impl ::unity2::ClassIdentity for TMP_Text_UnicodeChar {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_Text.UnicodeChar";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_Text_UnicodeChar {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_text/TMP_Text.md"))]
 #[::unity2::class(namespace = "TMPro", name = "TMP_Text")]
 #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
 pub struct TMP_Text {
@@ -2090,7 +2120,7 @@ impl TMP_Text {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_SpecialCharacter.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_SpecialCharacter.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct TMP_Text_SpecialCharacter {
@@ -2133,126 +2163,7 @@ impl TMP_Text_SpecialCharacter {
     ) -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_UnicodeChar.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TMP_Text_UnicodeChar {
-    pub unicode: i32,
-    pub string_index: i32,
-    pub length: i32,
-}
-
-impl ::unity2::ClassIdentity for TMP_Text_UnicodeChar {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "TMP_Text.UnicodeChar";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TMP_Text_UnicodeChar {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_CharacterSubstitution.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TMP_Text_CharacterSubstitution {
-    pub index: i32,
-    pub unicode: u32,
-}
-
-impl ::unity2::ClassIdentity for TMP_Text_CharacterSubstitution {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "TMP_Text.CharacterSubstitution";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TMP_Text_CharacterSubstitution {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_text")]
-#[::unity2::methods(value)]
-impl TMP_Text_CharacterSubstitution {
-    #[doc = "`.ctor(i32, u32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, index: i32, unicode: u32) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextInputSources.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TMP_Text_TextInputSources {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TMP_Text_TextInputSources {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "TMP_Text.TextInputSources";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TMP_Text_TextInputSources {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TMP_Text_TextInputSources {
-    pub fn text_input_box() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn set_text() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn set_text_array() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn text_string() -> Self {
-        Self { value: 3 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextBackingContainer.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextBackingContainer.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct TMP_Text_TextBackingContainer {
@@ -2311,4 +2222,93 @@ impl TMP_Text_TextBackingContainer {
     #[doc = "`Resize(i32)` overload"]
     #[method(name = "Resize", args = 1)]
     pub fn resize(self, size: i32) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_TextInputSources.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TMP_Text_TextInputSources {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TMP_Text_TextInputSources {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_Text.TextInputSources";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_Text_TextInputSources {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TMP_Text_TextInputSources {
+    pub fn text_input_box() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn set_text() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn set_text_array() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn text_string() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_text/TMP_Text_CharacterSubstitution.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TMP_Text_CharacterSubstitution {
+    pub index: i32,
+    pub unicode: u32,
+}
+
+impl ::unity2::ClassIdentity for TMP_Text_CharacterSubstitution {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_Text.CharacterSubstitution";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_Text_CharacterSubstitution {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_text")]
+#[::unity2::methods(value)]
+impl TMP_Text_CharacterSubstitution {
+    #[doc = "`.ctor(i32, u32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, index: i32, unicode: u32) -> ();
 }

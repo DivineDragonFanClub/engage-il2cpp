@@ -8,7 +8,7 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/meshgroundpaintdata/MeshGroundPaintData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/meshgroundpaintdata/MeshGroundPaintData.md"))]
 #[::unity2::class(namespace = "App", name = "MeshGroundPaintData")]
 #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
 pub struct MeshGroundPaintData {}

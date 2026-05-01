@@ -6,7 +6,7 @@ use crate::unity_engine::resource_management::resource_providers::resourceprovid
 use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/bundledassetprovider/BundledAssetProvider_InternalOp.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/bundledassetprovider/BundledAssetProvider_InternalOp.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.ResourceProviders",
     name = "BundledAssetProvider.InternalOp"
@@ -100,7 +100,7 @@ impl BundledAssetProvider_InternalOp {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/bundledassetprovider/BundledAssetProvider.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/bundledassetprovider/BundledAssetProvider.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.ResourceProviders",
     name = "BundledAssetProvider"

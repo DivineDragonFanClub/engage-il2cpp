@@ -6,7 +6,7 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/checkcatalogsoperation/CheckCatalogsOperation.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/checkcatalogsoperation/CheckCatalogsOperation.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.AddressableAssets",
     name = "CheckCatalogsOperation"

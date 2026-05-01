@@ -16,7 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuyroot/ItemShopBuyRoot_ReturnEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuyroot/ItemShopBuyRoot_ReturnEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "ItemShopBuyRoot.ReturnEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct ItemShopBuyRoot_ReturnEventHandler {}
@@ -49,7 +49,7 @@ impl ItemShopBuyRoot_ReturnEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuyroot/ItemShopBuyRoot.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuyroot/ItemShopBuyRoot.md"))]
 #[::unity2::class(namespace = "App", name = "ItemShopBuyRoot")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct ItemShopBuyRoot {

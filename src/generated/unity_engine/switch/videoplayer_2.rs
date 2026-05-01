@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/videoplayer_2/VideoPlayer_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/videoplayer_2/VideoPlayer_2.md"))]
 #[::unity2::class(namespace = "UnityEngine.Switch", name = "VideoPlayer")]
 #[parent(crate::system::object::Object)]
 pub struct VideoPlayer_2 {}

@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil.md"))]
 #[::unity2::class(namespace = "App", name = "InfoUtil")]
 #[parent(crate::system::object::Object)]
 pub struct InfoUtil {
@@ -389,7 +389,55 @@ impl InfoUtil {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil_StatusSkill.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/infoutil/InfoUtil_HpStockSpriteType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct InfoUtil_HpStockSpriteType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for InfoUtil_HpStockSpriteType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "InfoUtil.HpStockSpriteType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for InfoUtil_HpStockSpriteType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl InfoUtil_HpStockSpriteType {
+    pub fn enemy() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn rampage() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn player() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil_StatusSkill.md"))]
 #[::unity2::class(namespace = "App", name = "InfoUtil.StatusSkill")]
 #[parent(crate::system::object::Object)]
 pub struct InfoUtil_StatusSkill {}
@@ -439,53 +487,5 @@ impl InfoUtil_StatusSkill {
         });
         <Self as IInfoUtil_StatusSkillMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/infoutil/InfoUtil_HpStockSpriteType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct InfoUtil_HpStockSpriteType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for InfoUtil_HpStockSpriteType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "InfoUtil.HpStockSpriteType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for InfoUtil_HpStockSpriteType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl InfoUtil_HpStockSpriteType {
-    pub fn enemy() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn rampage() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn player() -> Self {
-        Self { value: 2 }
     }
 }

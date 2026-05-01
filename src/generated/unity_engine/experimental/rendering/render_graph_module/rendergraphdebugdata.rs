@@ -6,7 +6,74 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData_PassDebugData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RenderGraphDebugData_PassDebugData {
+    pub name: ::unity2::Il2CppString,
+    pub resource_read_lists:
+        ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32>>,
+    pub resource_write_lists:
+        ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32>>,
+    pub culled: bool,
+    pub generate_debug_data: bool,
+}
+
+impl ::unity2::ClassIdentity for RenderGraphDebugData_PassDebugData {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
+
+    const NAME: &'static str = "RenderGraphDebugData.PassDebugData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RenderGraphDebugData_PassDebugData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData_ResourceDebugData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RenderGraphDebugData_ResourceDebugData {
+    pub name: ::unity2::Il2CppString,
+    pub imported: bool,
+    pub creation_pass_index: i32,
+    pub release_pass_index: i32,
+    pub consumer_list: crate::system::collections::generic::list_1::List_1<i32>,
+    pub producer_list: crate::system::collections::generic::list_1::List_1<i32>,
+}
+
+impl ::unity2::ClassIdentity for RenderGraphDebugData_ResourceDebugData {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
+
+    const NAME: &'static str = "RenderGraphDebugData.ResourceDebugData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RenderGraphDebugData_ResourceDebugData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
     name = "RenderGraphDebugData"
@@ -42,72 +109,5 @@ impl RenderGraphDebugData {
         });
         <Self as IRenderGraphDebugDataMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData_PassDebugData.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RenderGraphDebugData_PassDebugData {
-    pub name: ::unity2::Il2CppString,
-    pub resource_read_lists:
-        ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32>>,
-    pub resource_write_lists:
-        ::unity2::Array<crate::system::collections::generic::list_1::List_1<i32>>,
-    pub culled: bool,
-    pub generate_debug_data: bool,
-}
-
-impl ::unity2::ClassIdentity for RenderGraphDebugData_PassDebugData {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
-
-    const NAME: &'static str = "RenderGraphDebugData.PassDebugData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RenderGraphDebugData_PassDebugData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphdebugdata/RenderGraphDebugData_ResourceDebugData.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RenderGraphDebugData_ResourceDebugData {
-    pub name: ::unity2::Il2CppString,
-    pub imported: bool,
-    pub creation_pass_index: i32,
-    pub release_pass_index: i32,
-    pub consumer_list: crate::system::collections::generic::list_1::List_1<i32>,
-    pub producer_list: crate::system::collections::generic::list_1::List_1<i32>,
-}
-
-impl ::unity2::ClassIdentity for RenderGraphDebugData_ResourceDebugData {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.RenderGraphModule";
-
-    const NAME: &'static str = "RenderGraphDebugData.ResourceDebugData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RenderGraphDebugData_ResourceDebugData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
     }
 }

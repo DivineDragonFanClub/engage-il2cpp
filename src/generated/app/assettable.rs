@@ -16,7 +16,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/assettable/AssetTable_Modes.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/assettable/AssetTable_Modes.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -72,7 +72,311 @@ impl AssetTable_Modes {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_Accessory.md"))]
+#[::unity2::class(namespace = "App", name = "AssetTable.Accessory")]
+#[parent(crate::system::object::Object)]
+pub struct AssetTable_Accessory {}
+
+#[cfg(feature = "app-assettable")]
+#[::unity2::methods]
+impl AssetTable_Accessory {
+    #[doc = "`get_Locator()` overload"]
+    #[method(name = "get_Locator", args = 0)]
+    pub fn get_locator(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Locator(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Locator", args = 1)]
+    pub fn set_locator(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Model()` overload"]
+    #[method(name = "get_Model", args = 0)]
+    pub fn get_model(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Model(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Model", args = 1)]
+    pub fn set_model(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`get_Exist()` overload"]
+    #[method(name = "get_Exist", args = 0)]
+    pub fn get_exist(self) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-assettable")]
+impl AssetTable_Accessory {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssetTable_Accessory),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetTable_AccessoryMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_ConditionIndexes.md"))]
+#[::unity2::class(namespace = "App", name = "AssetTable.ConditionIndexes")]
+#[parent(crate::system::object::Object)]
+pub struct AssetTable_ConditionIndexes {
+    #[rename(name = "m_List")]
+    pub m_list: crate::system::collections::generic::list_1::List_1<
+        crate::system::collections::generic::list_1::List_1<i32>,
+    >,
+}
+
+#[cfg(feature = "app-assettable")]
+#[::unity2::methods]
+impl AssetTable_ConditionIndexes {
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Add(crate::system::collections::generic::list_1::List_1<i32>)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, indexes: crate::system::collections::generic::list_1::List_1<i32>) -> ();
+
+    #[doc = "`Commit()` overload"]
+    #[method(name = "Commit", args = 0)]
+    pub fn commit(self) -> ();
+
+    #[doc = "`Test(crate::app::assettable::AssetTable_ConditionFlags)` overload"]
+    #[method(name = "Test", args = 1)]
+    pub fn test(self, flags: crate::app::assettable::AssetTable_ConditionFlags) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-assettable")]
+impl AssetTable_ConditionIndexes {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssetTable_ConditionIndexes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetTable_ConditionIndexesMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_ConditionFlags.md"))]
+#[::unity2::class(namespace = "App", name = "AssetTable.ConditionFlags")]
+#[parent(crate::system::object::Object)]
+pub struct AssetTable_ConditionFlags {
+    #[rename(name = "m_Bits")]
+    pub m_bits: crate::app::bitstruct::BitStruct,
+    #[rename(name = "m_Keys")]
+    pub m_keys: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    #[rename(name = "m_Hits")]
+    pub m_hits: crate::system::collections::generic::list_1::List_1<i32>,
+    #[rename(name = "m_Dics")]
+    pub m_dics: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        i32,
+    >,
+}
+
+#[cfg(feature = "app-assettable")]
+#[::unity2::methods]
+impl AssetTable_ConditionFlags {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`get_Names()` overload"]
+    #[method(name = "get_Names", args = 0)]
+    pub fn get_names(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+
+    #[doc = "`get_Hits()` overload"]
+    #[method(name = "get_Hits", args = 0)]
+    pub fn get_hits(self) -> crate::system::collections::generic::list_1::List_1<i32>;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Test(i32)` overload"]
+    #[method(name = "Test", args = 1)]
+    pub fn test(self, index: i32) -> bool;
+
+    #[doc = "`Test(::unity2::Il2CppString)` overload"]
+    #[method(name = "Test", args = 1)]
+    pub fn test_2(self, key: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`Add(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, keys: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[doc = "`Add(::unity2::Il2CppString)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add_2(self, key: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Add(crate::app::itemdata::ItemData)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add_3(self, item: crate::app::itemdata::ItemData) -> ();
+
+    #[doc = "`Add(crate::app::force::Force_Type)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add_4(self, force: crate::app::force::Force_Type) -> ();
+
+    #[doc = "`GetState(crate::app::unit::Unit)` overload"]
+    #[method(name = "GetState", args = 1)]
+    pub fn get_state(unit: crate::app::unit::Unit) -> crate::app::assettable::AssetTable_States;
+
+    #[doc = "`Add(crate::app::unit::Unit)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add_5(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`IsSimpleMode()` overload"]
+    #[method(name = "IsSimpleMode", args = 0)]
+    pub fn is_simple_mode(self) -> bool;
+
+    #[doc = "`AddGender(crate::app::gender::Gender, crate::app::gender::Gender)` overload"]
+    #[method(name = "AddGender", args = 2)]
+    pub fn add_gender(
+        self,
+        gender: crate::app::gender::Gender,
+        dress_gender: crate::app::gender::Gender,
+    ) -> ();
+
+    #[doc = "`AddGender(crate::app::persondata::PersonData)` overload"]
+    #[method(name = "AddGender", args = 1)]
+    pub fn add_gender_2(self, person: crate::app::persondata::PersonData) -> ();
+
+    #[doc = "`AddGender(crate::app::unit::Unit)` overload"]
+    #[method(name = "AddGender", args = 1)]
+    pub fn add_gender_3(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`AddGender(crate::app::goddata::GodData)` overload"]
+    #[method(name = "AddGender", args = 1)]
+    pub fn add_gender_4(self, goid_data: crate::app::goddata::GodData) -> ();
+
+    #[doc = "`Add(crate::app::persondata::PersonData, crate::app::jobdata::JobData)` overload"]
+    #[method(name = "Add", args = 2)]
+    pub fn add_6(
+        self,
+        person: crate::app::persondata::PersonData,
+        job: crate::app::jobdata::JobData,
+    ) -> ();
+
+    #[doc = "`Add(crate::app::persondata::PersonData, crate::app::jobdata::JobData, crate::app::force::Force_Type)` overload"]
+    #[method(name = "Add", args = 3)]
+    pub fn add_7(
+        self,
+        person: crate::app::persondata::PersonData,
+        job: crate::app::jobdata::JobData,
+        force: crate::app::force::Force_Type,
+    ) -> ();
+
+    #[doc = "`Add(crate::app::skillarray::SkillArray)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add_8(self, skills: crate::app::skillarray::SkillArray) -> ();
+
+    #[doc = "`Add(crate::app::assettable::AssetTable_States, crate::app::goddata::GodData, bool)` overload"]
+    #[method(name = "Add", args = 3)]
+    pub fn add_9(
+        self,
+        state: crate::app::assettable::AssetTable_States,
+        god_data: crate::app::goddata::GodData,
+        is_darkness: bool,
+    ) -> ();
+
+    #[doc = "`ReplaceGid2Eid(::unity2::Il2CppString)` overload"]
+    #[method(name = "ReplaceGid2Eid", args = 1)]
+    pub fn replace_gid2_eid(self, gid: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-assettable")]
+impl AssetTable_ConditionFlags {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AssetTable_ConditionFlags),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetTable_ConditionFlagsMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/assettable/AssetTable_States.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AssetTable_States {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AssetTable_States {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AssetTable.States";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AssetTable_States {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AssetTable_States {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn engaging() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn engage_attack() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn engage_link_attack_main() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn engage_link_attack_sub() -> Self {
+        Self { value: 4 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable.md"))]
 #[::unity2::class(namespace = "App", name = "AssetTable")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: assettable :: AssetTable >)]
 pub struct AssetTable {
@@ -794,57 +1098,45 @@ impl AssetTable {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_ConditionIndexes.md")))]
-#[::unity2::class(namespace = "App", name = "AssetTable.ConditionIndexes")]
-#[parent(crate::system::object::Object)]
-pub struct AssetTable_ConditionIndexes {
-    #[rename(name = "m_List")]
-    pub m_list: crate::system::collections::generic::list_1::List_1<
-        crate::system::collections::generic::list_1::List_1<i32>,
-    >,
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/assettable/AssetTable_Sound.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AssetTable_Sound {
+    pub voice_id: ::unity2::Il2CppString,
+    pub footstep_id: ::unity2::Il2CppString,
+    pub material_id: ::unity2::Il2CppString,
 }
 
-#[cfg(feature = "app-assettable")]
-#[::unity2::methods]
-impl AssetTable_ConditionIndexes {
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
+impl ::unity2::ClassIdentity for AssetTable_Sound {
+    const NAMESPACE: &'static str = "App";
 
-    #[doc = "`Add(crate::system::collections::generic::list_1::List_1<i32>)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, indexes: crate::system::collections::generic::list_1::List_1<i32>) -> ();
+    const NAME: &'static str = "AssetTable.Sound";
 
-    #[doc = "`Commit()` overload"]
-    #[method(name = "Commit", args = 0)]
-    pub fn commit(self) -> ();
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-    #[doc = "`Test(crate::app::assettable::AssetTable_ConditionFlags)` overload"]
-    #[method(name = "Test", args = 1)]
-    pub fn test(self, flags: crate::app::assettable::AssetTable_ConditionFlags) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-assettable")]
-impl AssetTable_ConditionIndexes {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AssetTable_ConditionIndexes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAssetTable_ConditionIndexesMethods>::ctor(this);
-        this
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_AccessoryList.md")))]
+impl ::unity2::IlType for AssetTable_Sound {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-assettable")]
+#[::unity2::methods(value)]
+impl AssetTable_Sound {
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_AccessoryList.md"))]
 #[::unity2::class(namespace = "App", name = "AssetTable.AccessoryList")]
 # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: assettable :: AssetTable_Accessory >)]
 pub struct AssetTable_AccessoryList {}
@@ -881,261 +1173,7 @@ impl AssetTable_AccessoryList {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_ConditionFlags.md")))]
-#[::unity2::class(namespace = "App", name = "AssetTable.ConditionFlags")]
-#[parent(crate::system::object::Object)]
-pub struct AssetTable_ConditionFlags {
-    #[rename(name = "m_Bits")]
-    pub m_bits: crate::app::bitstruct::BitStruct,
-    #[rename(name = "m_Keys")]
-    pub m_keys: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    #[rename(name = "m_Hits")]
-    pub m_hits: crate::system::collections::generic::list_1::List_1<i32>,
-    #[rename(name = "m_Dics")]
-    pub m_dics: crate::system::collections::generic::dictionary_2::Dictionary_2<
-        ::unity2::Il2CppString,
-        i32,
-    >,
-}
-
-#[cfg(feature = "app-assettable")]
-#[::unity2::methods]
-impl AssetTable_ConditionFlags {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_Names()` overload"]
-    #[method(name = "get_Names", args = 0)]
-    pub fn get_names(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
-
-    #[doc = "`get_Hits()` overload"]
-    #[method(name = "get_Hits", args = 0)]
-    pub fn get_hits(self) -> crate::system::collections::generic::list_1::List_1<i32>;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Test(i32)` overload"]
-    #[method(name = "Test", args = 1)]
-    pub fn test(self, index: i32) -> bool;
-
-    #[doc = "`Test(::unity2::Il2CppString)` overload"]
-    #[method(name = "Test", args = 1)]
-    pub fn test_2(self, key: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`Add(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, keys: ::unity2::Array<::unity2::Il2CppString>) -> ();
-
-    #[doc = "`Add(::unity2::Il2CppString)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add_2(self, key: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Add(crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add_3(self, item: crate::app::itemdata::ItemData) -> ();
-
-    #[doc = "`Add(crate::app::force::Force_Type)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add_4(self, force: crate::app::force::Force_Type) -> ();
-
-    #[doc = "`GetState(crate::app::unit::Unit)` overload"]
-    #[method(name = "GetState", args = 1)]
-    pub fn get_state(unit: crate::app::unit::Unit) -> crate::app::assettable::AssetTable_States;
-
-    #[doc = "`Add(crate::app::unit::Unit)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add_5(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`IsSimpleMode()` overload"]
-    #[method(name = "IsSimpleMode", args = 0)]
-    pub fn is_simple_mode(self) -> bool;
-
-    #[doc = "`AddGender(crate::app::gender::Gender, crate::app::gender::Gender)` overload"]
-    #[method(name = "AddGender", args = 2)]
-    pub fn add_gender(
-        self,
-        gender: crate::app::gender::Gender,
-        dress_gender: crate::app::gender::Gender,
-    ) -> ();
-
-    #[doc = "`AddGender(crate::app::persondata::PersonData)` overload"]
-    #[method(name = "AddGender", args = 1)]
-    pub fn add_gender_2(self, person: crate::app::persondata::PersonData) -> ();
-
-    #[doc = "`AddGender(crate::app::unit::Unit)` overload"]
-    #[method(name = "AddGender", args = 1)]
-    pub fn add_gender_3(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`AddGender(crate::app::goddata::GodData)` overload"]
-    #[method(name = "AddGender", args = 1)]
-    pub fn add_gender_4(self, goid_data: crate::app::goddata::GodData) -> ();
-
-    #[doc = "`Add(crate::app::persondata::PersonData, crate::app::jobdata::JobData)` overload"]
-    #[method(name = "Add", args = 2)]
-    pub fn add_6(
-        self,
-        person: crate::app::persondata::PersonData,
-        job: crate::app::jobdata::JobData,
-    ) -> ();
-
-    #[doc = "`Add(crate::app::persondata::PersonData, crate::app::jobdata::JobData, crate::app::force::Force_Type)` overload"]
-    #[method(name = "Add", args = 3)]
-    pub fn add_7(
-        self,
-        person: crate::app::persondata::PersonData,
-        job: crate::app::jobdata::JobData,
-        force: crate::app::force::Force_Type,
-    ) -> ();
-
-    #[doc = "`Add(crate::app::skillarray::SkillArray)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add_8(self, skills: crate::app::skillarray::SkillArray) -> ();
-
-    #[doc = "`Add(crate::app::assettable::AssetTable_States, crate::app::goddata::GodData, bool)` overload"]
-    #[method(name = "Add", args = 3)]
-    pub fn add_9(
-        self,
-        state: crate::app::assettable::AssetTable_States,
-        god_data: crate::app::goddata::GodData,
-        is_darkness: bool,
-    ) -> ();
-
-    #[doc = "`ReplaceGid2Eid(::unity2::Il2CppString)` overload"]
-    #[method(name = "ReplaceGid2Eid", args = 1)]
-    pub fn replace_gid2_eid(self, gid: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-assettable")]
-impl AssetTable_ConditionFlags {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AssetTable_ConditionFlags),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAssetTable_ConditionFlagsMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/assettable/AssetTable_States.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AssetTable_States {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AssetTable_States {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AssetTable.States";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AssetTable_States {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AssetTable_States {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn engaging() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn engage_attack() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn engage_link_attack_main() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn engage_link_attack_sub() -> Self {
-        Self { value: 4 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_Accessory.md")))]
-#[::unity2::class(namespace = "App", name = "AssetTable.Accessory")]
-#[parent(crate::system::object::Object)]
-pub struct AssetTable_Accessory {}
-
-#[cfg(feature = "app-assettable")]
-#[::unity2::methods]
-impl AssetTable_Accessory {
-    #[doc = "`get_Locator()` overload"]
-    #[method(name = "get_Locator", args = 0)]
-    pub fn get_locator(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Locator(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Locator", args = 1)]
-    pub fn set_locator(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Model()` overload"]
-    #[method(name = "get_Model", args = 0)]
-    pub fn get_model(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Model(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Model", args = 1)]
-    pub fn set_model(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_Exist()` overload"]
-    #[method(name = "get_Exist", args = 0)]
-    pub fn get_exist(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-assettable")]
-impl AssetTable_Accessory {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AssetTable_Accessory),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAssetTable_AccessoryMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_Result.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/assettable/AssetTable_Result.md"))]
 #[::unity2::class(namespace = "App", name = "AssetTable.Result")]
 #[parent(crate::system::object::Object)]
 pub struct AssetTable_Result {
@@ -1908,42 +1946,4 @@ impl AssetTable_Result {
         <Self as IAssetTable_ResultMethods>::ctor(this);
         this
     }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/assettable/AssetTable_Sound.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AssetTable_Sound {
-    pub voice_id: ::unity2::Il2CppString,
-    pub footstep_id: ::unity2::Il2CppString,
-    pub material_id: ::unity2::Il2CppString,
-}
-
-impl ::unity2::ClassIdentity for AssetTable_Sound {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AssetTable.Sound";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AssetTable_Sound {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-assettable")]
-#[::unity2::methods(value)]
-impl AssetTable_Sound {
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
 }

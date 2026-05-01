@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/coroutine_2/Coroutine_CoroutineType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/coroutine_2/Coroutine_CoroutineType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -58,7 +58,7 @@ impl Coroutine_CoroutineType {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/coroutine_2/Coroutine_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/coroutine_2/Coroutine_2.md"))]
 #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "Coroutine")]
 #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
 pub struct Coroutine_2 {

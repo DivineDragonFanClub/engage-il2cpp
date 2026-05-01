@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animaloutsidesubmenu/AnimalOutsideSubMenu_RemoveMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animaloutsidesubmenu/AnimalOutsideSubMenu_RemoveMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "AnimalOutsideSubMenu.RemoveMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct AnimalOutsideSubMenu_RemoveMenuItem {}
@@ -65,7 +65,7 @@ impl AnimalOutsideSubMenu_RemoveMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animaloutsidesubmenu/AnimalOutsideSubMenu_ExchangeMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animaloutsidesubmenu/AnimalOutsideSubMenu_ExchangeMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "AnimalOutsideSubMenu.ExchangeMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct AnimalOutsideSubMenu_ExchangeMenuItem {}
@@ -116,7 +116,7 @@ impl AnimalOutsideSubMenu_ExchangeMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animaloutsidesubmenu/AnimalOutsideSubMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animaloutsidesubmenu/AnimalOutsideSubMenu.md"))]
 #[::unity2::class(namespace = "App", name = "AnimalOutsideSubMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct AnimalOutsideSubMenu {}

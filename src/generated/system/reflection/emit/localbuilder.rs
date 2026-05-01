@@ -6,7 +6,7 @@ use crate::system::reflection::localvariableinfo::ILocalVariableInfo;
 use crate::system::reflection::localvariableinfo::LocalVariableInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/localbuilder/LocalBuilder.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/localbuilder/LocalBuilder.md"))]
 #[::unity2::class(namespace = "System.Reflection.Emit", name = "LocalBuilder")]
 #[parent(crate::system::reflection::localvariableinfo::LocalVariableInfo)]
 pub struct LocalBuilder {

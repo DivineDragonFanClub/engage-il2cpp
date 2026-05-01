@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aideploy/AIDeploy.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aideploy/AIDeploy.md"))]
 #[::unity2::class(namespace = "App", name = "AIDeploy")]
 # [parent (crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1 < crate :: app :: aideploy :: AIDeploy >)]
 pub struct AIDeploy {}

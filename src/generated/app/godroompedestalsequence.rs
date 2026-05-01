@@ -10,7 +10,103 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestalsequence/GodRoomPedestalSequence.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godroompedestalsequence/GodRoomPedestalSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GodRoomPedestalSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GodRoomPedestalSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GodRoomPedestalSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GodRoomPedestalSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GodRoomPedestalSequence_Label {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn top() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn skill_inheritance() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn ring_gacha() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn ring_gacha_select_god() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn ring_gacha_select_times() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn ring_gacha_execute() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn ring_gacha_end() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn ring_merge() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn ring_merge_menu() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn ring_merge_execute() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn ring_merge_end() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn ring_cleaning() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn refine_god_weapon() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 14 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godroompedestalsequence/GodRoomPedestalSequence.md"))]
 #[::unity2::class(namespace = "App", name = "GodRoomPedestalSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct GodRoomPedestalSequence {
@@ -186,101 +282,5 @@ impl GodRoomPedestalSequence {
         });
         <Self as IGodRoomPedestalSequenceMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godroompedestalsequence/GodRoomPedestalSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct GodRoomPedestalSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for GodRoomPedestalSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GodRoomPedestalSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for GodRoomPedestalSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl GodRoomPedestalSequence_Label {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn top() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn skill_inheritance() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn ring_gacha() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn ring_gacha_select_god() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn ring_gacha_select_times() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn ring_gacha_execute() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn ring_gacha_end() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn ring_merge() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn ring_merge_menu() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn ring_merge_execute() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn ring_merge_end() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn ring_cleaning() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn refine_god_weapon() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 14 }
     }
 }

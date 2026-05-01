@@ -26,7 +26,282 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SoundEnv.md"))]
+#[::unity2::class(namespace = "App", name = "EventDemoSequence.SoundEnv")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct EventDemoSequence_SoundEnv {
+    #[rename(name = "m_EventNameDataList")]
+    pub m_event_name_data_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::eventdemosequence::EventDemoSequence_SoundEnv_EventNameData,
+    >,
+    #[rename(name = "m_EventNameDictionary")]
+    pub m_event_name_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        ::unity2::Il2CppString,
+    >,
+    #[rename(name = "m_SoundEventName")]
+    pub m_sound_event_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[::unity2::methods]
+impl EventDemoSequence_SoundEnv {
+    #[doc = "`Awake()` overload"]
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[doc = "`OnDestroy()` overload"]
+    #[method(name = "OnDestroy", args = 0)]
+    pub fn on_destroy(self) -> ();
+
+    #[doc = "`GetEventName(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetEventName", args = 1)]
+    pub fn get_event_name(self, material_name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[doc = "`PlayEnv(::unity2::Il2CppString)` overload"]
+    #[method(name = "PlayEnv", args = 1)]
+    pub fn play_env(self, material_name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`StopCurrentEnv()` overload"]
+    #[method(name = "StopCurrentEnv", args = 0)]
+    pub fn stop_current_env(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_SoundEnv {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_SoundEnv),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_SoundEnvMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CmdInfo.md"))]
+#[::unity2::class(namespace = "App", name = "EventDemoSequence.CmdInfo")]
+#[parent(crate::system::object::Object)]
+pub struct EventDemoSequence_CmdInfo {}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[::unity2::methods]
+impl EventDemoSequence_CmdInfo {
+    #[doc = "`get_Func()` overload"]
+    #[method(name = "get_Func", args = 0)]
+    pub fn get_func(self) -> crate::app::eventdemosequence::EventDemoSequence_CmdFunc;
+
+    #[doc = "`set_Func(crate::app::eventdemosequence::EventDemoSequence_CmdFunc)` overload"]
+    #[method(name = "set_Func", args = 1)]
+    pub fn set_func(self, value: crate::app::eventdemosequence::EventDemoSequence_CmdFunc) -> ();
+
+    #[doc = "`get_CmdName()` overload"]
+    #[method(name = "get_CmdName", args = 0)]
+    pub fn get_cmd_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_CmdName(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_CmdName", args = 1)]
+    pub fn set_cmd_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Args()` overload"]
+    #[method(name = "get_Args", args = 0)]
+    pub fn get_args(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[doc = "`set_Args(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "set_Args", args = 1)]
+    pub fn set_args(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[doc = "`get_RepeatCounter()` overload"]
+    #[method(name = "get_RepeatCounter", args = 0)]
+    pub fn get_repeat_counter(self) -> i32;
+
+    #[doc = "`set_RepeatCounter(i32)` overload"]
+    #[method(name = "set_RepeatCounter", args = 1)]
+    pub fn set_repeat_counter(self, value: i32) -> ();
+
+    #[doc = "`.ctor(crate::app::eventdemosequence::EventDemoSequence_CmdFunc, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        func: crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
+        cmd_name: ::unity2::Il2CppString,
+        args: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> ();
+
+    #[doc = "`IncRepetCounter()` overload"]
+    #[method(name = "IncRepetCounter", args = 0)]
+    pub fn inc_repet_counter(self) -> ();
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_CmdInfo {
+    #[doc = "`.ctor(crate::app::eventdemosequence::EventDemoSequence_CmdFunc, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
+    pub fn new(
+        func: crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
+        cmd_name: ::unity2::Il2CppString,
+        args: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_CmdInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_CmdInfoMethods>::ctor(this, func, cmd_name, args);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_EventCmdResult.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EventDemoSequence_EventCmdResult {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EventDemoSequence_EventCmdResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "EventDemoSequence.EventCmdResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EventDemoSequence_EventCmdResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EventDemoSequence_EventCmdResult {
+    pub fn r#continue() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn continue_next_frame() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn retry() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn retry_next_frame() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn cmd_not_found() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_ClothType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EventDemoSequence_ClothType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EventDemoSequence_ClothType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "EventDemoSequence.ClothType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EventDemoSequence_ClothType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EventDemoSequence_ClothType {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn default_job() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn plain() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CmdFunc.md"))]
+#[::unity2::class(namespace = "App", name = "EventDemoSequence.CmdFunc")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct EventDemoSequence_CmdFunc {}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[::unity2::methods]
+impl EventDemoSequence_CmdFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        cmd_func_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
+    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_CmdFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_CmdFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_CmdFuncMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence.md"))]
 #[::unity2::class(namespace = "App", name = "EventDemoSequence")]
 # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: eventdemosequence :: EventDemoSequence >)]
 pub struct EventDemoSequence {
@@ -838,119 +1113,41 @@ impl EventDemoSequence {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_EventCmdResult.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct EventDemoSequence_EventCmdResult {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for EventDemoSequence_EventCmdResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EventDemoSequence.EventCmdResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for EventDemoSequence_EventCmdResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl EventDemoSequence_EventCmdResult {
-    pub fn r#continue() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn continue_next_frame() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn retry() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn retry_next_frame() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn cmd_not_found() -> Self {
-        Self { value: 4 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_ColorFader.md")))]
-#[::unity2::class(namespace = "App", name = "EventDemoSequence.ColorFader")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SoundEnv_EventNameData.md"))]
+#[::unity2::class(namespace = "App", name = "EventDemoSequence.SoundEnv.EventNameData")]
 #[parent(crate::system::object::Object)]
-pub struct EventDemoSequence_ColorFader {
-    #[rename(name = "m_color")]
-    pub m_color: crate::unity_engine::color::Color,
-    #[rename(name = "m_colorFrom")]
-    pub m_color_from: crate::unity_engine::color::Color,
-    #[rename(name = "m_colorTo")]
-    pub m_color_to: crate::unity_engine::color::Color,
-    #[rename(name = "m_time")]
-    pub m_time: f32,
-    #[rename(name = "m_duration")]
-    pub m_duration: f32,
+pub struct EventDemoSequence_SoundEnv_EventNameData {
+    #[rename(name = "m_MaterialName")]
+    pub m_material_name: ::unity2::Il2CppString,
+    #[rename(name = "m_EventName")]
+    pub m_event_name: ::unity2::Il2CppString,
 }
 
 #[cfg(feature = "app-eventdemosequence")]
 #[::unity2::methods]
-impl EventDemoSequence_ColorFader {
+impl EventDemoSequence_SoundEnv_EventNameData {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> crate::unity_engine::color::Color;
-
-    #[doc = "`Set(crate::unity_engine::color::Color, f32)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, color: crate::unity_engine::color::Color, msec: f32) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> crate::unity_engine::color::Color;
 }
 
 #[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_ColorFader {
+impl EventDemoSequence_SoundEnv_EventNameData {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_ColorFader),
+                ::core::stringify!(EventDemoSequence_SoundEnv_EventNameData),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventDemoSequence_ColorFaderMethods>::ctor(this);
+        <Self as IEventDemoSequence_SoundEnv_EventNameDataMethods>::ctor(this);
         this
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_EventCmdSeq.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_EventCmdSeq.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -998,125 +1195,7 @@ impl EventDemoSequence_EventCmdSeq {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SoundEnv_EventNameData.md")))]
-#[::unity2::class(namespace = "App", name = "EventDemoSequence.SoundEnv.EventNameData")]
-#[parent(crate::system::object::Object)]
-pub struct EventDemoSequence_SoundEnv_EventNameData {
-    #[rename(name = "m_MaterialName")]
-    pub m_material_name: ::unity2::Il2CppString,
-    #[rename(name = "m_EventName")]
-    pub m_event_name: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_SoundEnv_EventNameData {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_SoundEnv_EventNameData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_SoundEnv_EventNameData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDemoSequence_SoundEnv_EventNameDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdemosequence/EventDemoSequence_ClothType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct EventDemoSequence_ClothType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for EventDemoSequence_ClothType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EventDemoSequence.ClothType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for EventDemoSequence_ClothType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl EventDemoSequence_ClothType {
-    pub fn normal() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn default_job() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn plain() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CmdFunc.md")))]
-#[::unity2::class(namespace = "App", name = "EventDemoSequence.CmdFunc")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventDemoSequence_CmdFunc {}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_CmdFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::eventdemosequence::EventDemoSequence_CmdInfo)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        cmd_func_info: crate::app::eventdemosequence::EventDemoSequence_CmdInfo,
-    ) -> crate::app::eventdemosequence::EventDemoSequence_EventCmdResult;
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_CmdFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_CmdFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDemoSequence_CmdFuncMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SplitViewWork.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SplitViewWork.md"))]
 #[::unity2::class(namespace = "App", name = "EventDemoSequence.SplitViewWork")]
 #[parent(crate::system::object::Object)]
 pub struct EventDemoSequence_SplitViewWork {
@@ -1255,137 +1334,61 @@ impl EventDemoSequence_SplitViewWork {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_WeightFader.md")))]
-#[::unity2::class(namespace = "App", name = "EventDemoSequence.WeightFader")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_LightSetupInfo.md"))]
+#[::unity2::class(namespace = "App", name = "EventDemoSequence.LightSetupInfo")]
 #[parent(crate::system::object::Object)]
-pub struct EventDemoSequence_WeightFader {
-    #[rename(name = "m_wgt")]
-    pub m_wgt: f32,
-    #[rename(name = "m_wgtFrom")]
-    pub m_wgt_from: f32,
-    #[rename(name = "m_wgtTo")]
-    pub m_wgt_to: f32,
-    #[rename(name = "m_time")]
-    pub m_time: f32,
-    #[rename(name = "m_duration")]
-    pub m_duration: f32,
-}
+pub struct EventDemoSequence_LightSetupInfo {}
 
 #[cfg(feature = "app-eventdemosequence")]
 #[::unity2::methods]
-impl EventDemoSequence_WeightFader {
+impl EventDemoSequence_LightSetupInfo {
+    #[doc = "`get_LightName()` overload"]
+    #[method(name = "get_LightName", args = 0)]
+    pub fn get_light_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_LightName(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_LightName", args = 1)]
+    pub fn set_light_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_RotOffset()` overload"]
+    #[method(name = "get_RotOffset", args = 0)]
+    pub fn get_rot_offset(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`set_RotOffset(crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "set_RotOffset", args = 1)]
+    pub fn set_rot_offset(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[doc = "`get_ParentCameraObject()` overload"]
+    #[method(name = "get_ParentCameraObject", args = 0)]
+    pub fn get_parent_camera_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`set_ParentCameraObject(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "set_ParentCameraObject", args = 1)]
+    pub fn set_parent_camera_object(self, value: crate::unity_engine::gameobject::GameObject)
+        -> ();
+
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`Set(f32, f32)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, wgt: f32, msec: f32) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> f32;
 }
 
 #[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_WeightFader {
+impl EventDemoSequence_LightSetupInfo {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_WeightFader),
+                ::core::stringify!(EventDemoSequence_LightSetupInfo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventDemoSequence_WeightFaderMethods>::ctor(this);
+        <Self as IEventDemoSequence_LightSetupInfoMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CmdInfo.md")))]
-#[::unity2::class(namespace = "App", name = "EventDemoSequence.CmdInfo")]
-#[parent(crate::system::object::Object)]
-pub struct EventDemoSequence_CmdInfo {}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_CmdInfo {
-    #[doc = "`get_Func()` overload"]
-    #[method(name = "get_Func", args = 0)]
-    pub fn get_func(self) -> crate::app::eventdemosequence::EventDemoSequence_CmdFunc;
-
-    #[doc = "`set_Func(crate::app::eventdemosequence::EventDemoSequence_CmdFunc)` overload"]
-    #[method(name = "set_Func", args = 1)]
-    pub fn set_func(self, value: crate::app::eventdemosequence::EventDemoSequence_CmdFunc) -> ();
-
-    #[doc = "`get_CmdName()` overload"]
-    #[method(name = "get_CmdName", args = 0)]
-    pub fn get_cmd_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_CmdName(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_CmdName", args = 1)]
-    pub fn set_cmd_name(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Args()` overload"]
-    #[method(name = "get_Args", args = 0)]
-    pub fn get_args(self) -> ::unity2::Array<::unity2::Il2CppString>;
-
-    #[doc = "`set_Args(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "set_Args", args = 1)]
-    pub fn set_args(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
-
-    #[doc = "`get_RepeatCounter()` overload"]
-    #[method(name = "get_RepeatCounter", args = 0)]
-    pub fn get_repeat_counter(self) -> i32;
-
-    #[doc = "`set_RepeatCounter(i32)` overload"]
-    #[method(name = "set_RepeatCounter", args = 1)]
-    pub fn set_repeat_counter(self, value: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::eventdemosequence::EventDemoSequence_CmdFunc, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        func: crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
-        cmd_name: ::unity2::Il2CppString,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> ();
-
-    #[doc = "`IncRepetCounter()` overload"]
-    #[method(name = "IncRepetCounter", args = 0)]
-    pub fn inc_repet_counter(self) -> ();
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_CmdInfo {
-    #[doc = "`.ctor(crate::app::eventdemosequence::EventDemoSequence_CmdFunc, ::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
-    pub fn new(
-        func: crate::app::eventdemosequence::EventDemoSequence_CmdFunc,
-        cmd_name: ::unity2::Il2CppString,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_CmdInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDemoSequence_CmdInfoMethods>::ctor(this, func, cmd_name, args);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_RotateFader.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_RotateFader.md"))]
 #[::unity2::class(namespace = "App", name = "EventDemoSequence.RotateFader")]
 #[parent(crate::system::object::Object)]
 pub struct EventDemoSequence_RotateFader {
@@ -1441,7 +1444,120 @@ impl EventDemoSequence_RotateFader {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CharacterWork.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_ColorFader.md"))]
+#[::unity2::class(namespace = "App", name = "EventDemoSequence.ColorFader")]
+#[parent(crate::system::object::Object)]
+pub struct EventDemoSequence_ColorFader {
+    #[rename(name = "m_color")]
+    pub m_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_colorFrom")]
+    pub m_color_from: crate::unity_engine::color::Color,
+    #[rename(name = "m_colorTo")]
+    pub m_color_to: crate::unity_engine::color::Color,
+    #[rename(name = "m_time")]
+    pub m_time: f32,
+    #[rename(name = "m_duration")]
+    pub m_duration: f32,
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[::unity2::methods]
+impl EventDemoSequence_ColorFader {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> crate::unity_engine::color::Color;
+
+    #[doc = "`Set(crate::unity_engine::color::Color, f32)` overload"]
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, color: crate::unity_engine::color::Color, msec: f32) -> ();
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> crate::unity_engine::color::Color;
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_ColorFader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_ColorFader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_ColorFaderMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_EffectWork.md"))]
+#[::unity2::class(namespace = "App", name = "EventDemoSequence.EffectWork")]
+#[parent(crate::system::object::Object)]
+pub struct EventDemoSequence_EffectWork {
+    #[rename(name = "m_effectResourceObject")]
+    pub m_effect_resource_object: crate::app::resourceobject::ResourceObject,
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+#[::unity2::methods]
+impl EventDemoSequence_EffectWork {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        effect_path: ::unity2::Il2CppString,
+        parent_trans: crate::unity_engine::transform::Transform,
+    ) -> ();
+
+    #[doc = "`LoadEffect(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]
+    #[method(name = "LoadEffect", args = 2)]
+    pub fn load_effect(
+        self,
+        effect_path: ::unity2::Il2CppString,
+        parent_trans: crate::unity_engine::transform::Transform,
+    ) -> ();
+
+    #[doc = "`SetupAfterLoad(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "SetupAfterLoad", args = 1)]
+    pub fn setup_after_load(
+        effect_prefab_object: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[doc = "`DeleteEffect()` overload"]
+    #[method(name = "DeleteEffect", args = 0)]
+    pub fn delete_effect(self) -> ();
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_EffectWork {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` — overload selector"]
+    pub fn new(
+        effect_path: ::unity2::Il2CppString,
+        parent_trans: crate::unity_engine::transform::Transform,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventDemoSequence_EffectWork),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDemoSequence_EffectWorkMethods>::ctor(this, effect_path, parent_trans);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_CharacterWork.md"))]
 #[::unity2::class(namespace = "App", name = "EventDemoSequence.CharacterWork")]
 #[parent(crate::system::object::Object)]
 pub struct EventDemoSequence_CharacterWork {}
@@ -1597,174 +1713,58 @@ impl EventDemoSequence_CharacterWork {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_LightSetupInfo.md")))]
-#[::unity2::class(namespace = "App", name = "EventDemoSequence.LightSetupInfo")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_WeightFader.md"))]
+#[::unity2::class(namespace = "App", name = "EventDemoSequence.WeightFader")]
 #[parent(crate::system::object::Object)]
-pub struct EventDemoSequence_LightSetupInfo {}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_LightSetupInfo {
-    #[doc = "`get_LightName()` overload"]
-    #[method(name = "get_LightName", args = 0)]
-    pub fn get_light_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_LightName(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_LightName", args = 1)]
-    pub fn set_light_name(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_RotOffset()` overload"]
-    #[method(name = "get_RotOffset", args = 0)]
-    pub fn get_rot_offset(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_RotOffset(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_RotOffset", args = 1)]
-    pub fn set_rot_offset(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_ParentCameraObject()` overload"]
-    #[method(name = "get_ParentCameraObject", args = 0)]
-    pub fn get_parent_camera_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`set_ParentCameraObject(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "set_ParentCameraObject", args = 1)]
-    pub fn set_parent_camera_object(self, value: crate::unity_engine::gameobject::GameObject)
-        -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+pub struct EventDemoSequence_WeightFader {
+    #[rename(name = "m_wgt")]
+    pub m_wgt: f32,
+    #[rename(name = "m_wgtFrom")]
+    pub m_wgt_from: f32,
+    #[rename(name = "m_wgtTo")]
+    pub m_wgt_to: f32,
+    #[rename(name = "m_time")]
+    pub m_time: f32,
+    #[rename(name = "m_duration")]
+    pub m_duration: f32,
 }
 
 #[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_LightSetupInfo {
+#[::unity2::methods]
+impl EventDemoSequence_WeightFader {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`Set(f32, f32)` overload"]
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, wgt: f32, msec: f32) -> ();
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> f32;
+}
+
+#[cfg(feature = "app-eventdemosequence")]
+impl EventDemoSequence_WeightFader {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_LightSetupInfo),
+                ::core::stringify!(EventDemoSequence_WeightFader),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventDemoSequence_LightSetupInfoMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_EffectWork.md")))]
-#[::unity2::class(namespace = "App", name = "EventDemoSequence.EffectWork")]
-#[parent(crate::system::object::Object)]
-pub struct EventDemoSequence_EffectWork {
-    #[rename(name = "m_effectResourceObject")]
-    pub m_effect_resource_object: crate::app::resourceobject::ResourceObject,
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_EffectWork {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        effect_path: ::unity2::Il2CppString,
-        parent_trans: crate::unity_engine::transform::Transform,
-    ) -> ();
-
-    #[doc = "`LoadEffect(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "LoadEffect", args = 2)]
-    pub fn load_effect(
-        self,
-        effect_path: ::unity2::Il2CppString,
-        parent_trans: crate::unity_engine::transform::Transform,
-    ) -> ();
-
-    #[doc = "`SetupAfterLoad(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "SetupAfterLoad", args = 1)]
-    pub fn setup_after_load(
-        effect_prefab_object: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`DeleteEffect()` overload"]
-    #[method(name = "DeleteEffect", args = 0)]
-    pub fn delete_effect(self) -> ();
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_EffectWork {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::unity_engine::transform::Transform)` — overload selector"]
-    pub fn new(
-        effect_path: ::unity2::Il2CppString,
-        parent_trans: crate::unity_engine::transform::Transform,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_EffectWork),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDemoSequence_EffectWorkMethods>::ctor(this, effect_path, parent_trans);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdemosequence/EventDemoSequence_SoundEnv.md")))]
-#[::unity2::class(namespace = "App", name = "EventDemoSequence.SoundEnv")]
-#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-pub struct EventDemoSequence_SoundEnv {
-    #[rename(name = "m_EventNameDataList")]
-    pub m_event_name_data_list: crate::system::collections::generic::list_1::List_1<
-        crate::app::eventdemosequence::EventDemoSequence_SoundEnv_EventNameData,
-    >,
-    #[rename(name = "m_EventNameDictionary")]
-    pub m_event_name_dictionary: crate::system::collections::generic::dictionary_2::Dictionary_2<
-        ::unity2::Il2CppString,
-        ::unity2::Il2CppString,
-    >,
-    #[rename(name = "m_SoundEventName")]
-    pub m_sound_event_name: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-#[::unity2::methods]
-impl EventDemoSequence_SoundEnv {
-    #[doc = "`Awake()` overload"]
-    #[method(name = "Awake", args = 0)]
-    pub fn awake(self) -> ();
-
-    #[doc = "`OnDestroy()` overload"]
-    #[method(name = "OnDestroy", args = 0)]
-    pub fn on_destroy(self) -> ();
-
-    #[doc = "`GetEventName(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetEventName", args = 1)]
-    pub fn get_event_name(self, material_name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`PlayEnv(::unity2::Il2CppString)` overload"]
-    #[method(name = "PlayEnv", args = 1)]
-    pub fn play_env(self, material_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`StopCurrentEnv()` overload"]
-    #[method(name = "StopCurrentEnv", args = 0)]
-    pub fn stop_current_env(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-eventdemosequence")]
-impl EventDemoSequence_SoundEnv {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventDemoSequence_SoundEnv),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDemoSequence_SoundEnvMethods>::ctor(this);
+        <Self as IEventDemoSequence_WeightFaderMethods>::ctor(this);
         this
     }
 }

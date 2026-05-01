@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imeshmodifier/IMeshModifier.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/imeshmodifier/IMeshModifier.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI", name = "IMeshModifier")]
 pub struct IMeshModifier {}
 

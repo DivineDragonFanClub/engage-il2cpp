@@ -4,128 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubvariable/HubVariable_Mascot.md")))]
-#[::unity2::class(namespace = "App", name = "HubVariable.Mascot")]
-#[parent(crate::system::object::Object)]
-pub struct HubVariable_Mascot {}
-
-#[cfg(feature = "app-hubvariable")]
-#[::unity2::methods]
-impl HubVariable_Mascot {
-    #[doc = "`get_CanFollow()` overload"]
-    #[method(name = "get_CanFollow", args = 0)]
-    pub fn get_can_follow() -> bool;
-
-    #[doc = "`IsFound()` overload"]
-    #[method(name = "IsFound", args = 0)]
-    pub fn is_found() -> bool;
-
-    #[doc = "`Found()` overload"]
-    #[method(name = "Found", args = 0)]
-    pub fn found() -> ();
-
-    #[doc = "`GetPoint()` overload"]
-    #[method(name = "GetPoint", args = 0)]
-    pub fn get_point() -> i32;
-
-    #[doc = "`SetPoint(i32)` overload"]
-    #[method(name = "SetPoint", args = 1)]
-    pub fn set_point(point: i32) -> ();
-
-    #[doc = "`get_IgnorePoint()` overload"]
-    #[method(name = "get_IgnorePoint", args = 0)]
-    pub fn get_ignore_point() -> i32;
-
-    #[doc = "`get_TurnLimitPoint()` overload"]
-    #[method(name = "get_TurnLimitPoint", args = 0)]
-    pub fn get_turn_limit_point() -> i32;
-
-    #[doc = "`GetLimitPoint()` overload"]
-    #[method(name = "GetLimitPoint", args = 0)]
-    pub fn get_limit_point() -> i32;
-
-    #[doc = "`SetLimitPoint(i32)` overload"]
-    #[method(name = "SetLimitPoint", args = 1)]
-    pub fn set_limit_point(point: i32) -> ();
-
-    #[doc = "`AddPoint(i32)` overload"]
-    #[method(name = "AddPoint", args = 1)]
-    pub fn add_point(point: i32) -> ();
-
-    #[doc = "`DecPoint(i32)` overload"]
-    #[method(name = "DecPoint", args = 1)]
-    pub fn dec_point(point: i32) -> ();
-
-    #[doc = "`SetHeadAccName(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetHeadAccName", args = 1)]
-    pub fn set_head_acc_name(acc_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`GetHeadAccName()` overload"]
-    #[method(name = "GetHeadAccName", args = 0)]
-    pub fn get_head_acc_name() -> ::unity2::Il2CppString;
-
-    #[doc = "`SetTailAccName(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetTailAccName", args = 1)]
-    pub fn set_tail_acc_name(acc_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`GetTailAccName()` overload"]
-    #[method(name = "GetTailAccName", args = 0)]
-    pub fn get_tail_acc_name() -> ::unity2::Il2CppString;
-
-    #[doc = "`SetColorIndex(i32)` overload"]
-    #[method(name = "SetColorIndex", args = 1)]
-    pub fn set_color_index(color_index: i32) -> ();
-
-    #[doc = "`GetColorIndex()` overload"]
-    #[method(name = "GetColorIndex", args = 0)]
-    pub fn get_color_index() -> i32;
-
-    #[doc = "`DoneStrok()` overload"]
-    #[method(name = "DoneStrok", args = 0)]
-    pub fn done_strok() -> ();
-
-    #[doc = "`IsDoneStrok()` overload"]
-    #[method(name = "IsDoneStrok", args = 0)]
-    pub fn is_done_strok() -> bool;
-
-    #[doc = "`DoneEatFood()` overload"]
-    #[method(name = "DoneEatFood", args = 0)]
-    pub fn done_eat_food() -> ();
-
-    #[doc = "`IsDoneEatFood()` overload"]
-    #[method(name = "IsDoneEatFood", args = 0)]
-    pub fn is_done_eat_food() -> bool;
-
-    #[doc = "`DoneChangeEquip()` overload"]
-    #[method(name = "DoneChangeEquip", args = 0)]
-    pub fn done_change_equip() -> ();
-
-    #[doc = "`IsDoneChangeEquip()` overload"]
-    #[method(name = "IsDoneChangeEquip", args = 0)]
-    pub fn is_done_change_equip() -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubvariable")]
-impl HubVariable_Mascot {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubVariable_Mascot),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubVariable_MascotMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubvariable/HubVariable.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubvariable/HubVariable.md"))]
 #[::unity2::class(namespace = "App", name = "HubVariable")]
 #[parent(crate::system::object::Object)]
 pub struct HubVariable {
@@ -357,6 +236,127 @@ impl HubVariable {
             )
         });
         <Self as IHubVariableMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubvariable/HubVariable_Mascot.md"))]
+#[::unity2::class(namespace = "App", name = "HubVariable.Mascot")]
+#[parent(crate::system::object::Object)]
+pub struct HubVariable_Mascot {}
+
+#[cfg(feature = "app-hubvariable")]
+#[::unity2::methods]
+impl HubVariable_Mascot {
+    #[doc = "`get_CanFollow()` overload"]
+    #[method(name = "get_CanFollow", args = 0)]
+    pub fn get_can_follow() -> bool;
+
+    #[doc = "`IsFound()` overload"]
+    #[method(name = "IsFound", args = 0)]
+    pub fn is_found() -> bool;
+
+    #[doc = "`Found()` overload"]
+    #[method(name = "Found", args = 0)]
+    pub fn found() -> ();
+
+    #[doc = "`GetPoint()` overload"]
+    #[method(name = "GetPoint", args = 0)]
+    pub fn get_point() -> i32;
+
+    #[doc = "`SetPoint(i32)` overload"]
+    #[method(name = "SetPoint", args = 1)]
+    pub fn set_point(point: i32) -> ();
+
+    #[doc = "`get_IgnorePoint()` overload"]
+    #[method(name = "get_IgnorePoint", args = 0)]
+    pub fn get_ignore_point() -> i32;
+
+    #[doc = "`get_TurnLimitPoint()` overload"]
+    #[method(name = "get_TurnLimitPoint", args = 0)]
+    pub fn get_turn_limit_point() -> i32;
+
+    #[doc = "`GetLimitPoint()` overload"]
+    #[method(name = "GetLimitPoint", args = 0)]
+    pub fn get_limit_point() -> i32;
+
+    #[doc = "`SetLimitPoint(i32)` overload"]
+    #[method(name = "SetLimitPoint", args = 1)]
+    pub fn set_limit_point(point: i32) -> ();
+
+    #[doc = "`AddPoint(i32)` overload"]
+    #[method(name = "AddPoint", args = 1)]
+    pub fn add_point(point: i32) -> ();
+
+    #[doc = "`DecPoint(i32)` overload"]
+    #[method(name = "DecPoint", args = 1)]
+    pub fn dec_point(point: i32) -> ();
+
+    #[doc = "`SetHeadAccName(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetHeadAccName", args = 1)]
+    pub fn set_head_acc_name(acc_name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`GetHeadAccName()` overload"]
+    #[method(name = "GetHeadAccName", args = 0)]
+    pub fn get_head_acc_name() -> ::unity2::Il2CppString;
+
+    #[doc = "`SetTailAccName(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetTailAccName", args = 1)]
+    pub fn set_tail_acc_name(acc_name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`GetTailAccName()` overload"]
+    #[method(name = "GetTailAccName", args = 0)]
+    pub fn get_tail_acc_name() -> ::unity2::Il2CppString;
+
+    #[doc = "`SetColorIndex(i32)` overload"]
+    #[method(name = "SetColorIndex", args = 1)]
+    pub fn set_color_index(color_index: i32) -> ();
+
+    #[doc = "`GetColorIndex()` overload"]
+    #[method(name = "GetColorIndex", args = 0)]
+    pub fn get_color_index() -> i32;
+
+    #[doc = "`DoneStrok()` overload"]
+    #[method(name = "DoneStrok", args = 0)]
+    pub fn done_strok() -> ();
+
+    #[doc = "`IsDoneStrok()` overload"]
+    #[method(name = "IsDoneStrok", args = 0)]
+    pub fn is_done_strok() -> bool;
+
+    #[doc = "`DoneEatFood()` overload"]
+    #[method(name = "DoneEatFood", args = 0)]
+    pub fn done_eat_food() -> ();
+
+    #[doc = "`IsDoneEatFood()` overload"]
+    #[method(name = "IsDoneEatFood", args = 0)]
+    pub fn is_done_eat_food() -> bool;
+
+    #[doc = "`DoneChangeEquip()` overload"]
+    #[method(name = "DoneChangeEquip", args = 0)]
+    pub fn done_change_equip() -> ();
+
+    #[doc = "`IsDoneChangeEquip()` overload"]
+    #[method(name = "IsDoneChangeEquip", args = 0)]
+    pub fn is_done_change_equip() -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubvariable")]
+impl HubVariable_Mascot {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubVariable_Mascot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubVariable_MascotMethods>::ctor(this);
         this
     }
 }

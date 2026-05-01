@@ -12,7 +12,146 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventsequence/EventSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EventSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EventSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "EventSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EventSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EventSequence_Label {
+    pub fn end() -> Self {
+        Self { value: 0 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_Coroutine.md"))]
+#[::unity2::class(namespace = "App", name = "EventSequence.Coroutine")]
+#[parent(crate::system::object::Object)]
+pub struct EventSequence_Coroutine {
+    #[rename(name = "m_Func")]
+    pub m_func: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    #[rename(name = "m_Args")]
+    pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    #[rename(name = "m_First")]
+    pub m_first: bool,
+}
+
+#[cfg(feature = "app-eventsequence")]
+#[::unity2::methods]
+impl EventSequence_Coroutine {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        func: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor_2(
+        self,
+        func: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        callback: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[doc = "`GetCallbackArgs(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
+    #[method(name = "GetCallbackArgs", args = 2)]
+    pub fn get_callback_args(
+        self,
+        callback: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>;
+
+    #[doc = "`GetCoroutine()` overload"]
+    #[method(name = "GetCoroutine", args = 0)]
+    pub fn get_coroutine(self) -> crate::moon_sharp::interpreter::coroutine_2::Coroutine_2;
+
+    #[doc = "`GetStackTrace()` overload"]
+    #[method(name = "GetStackTrace", args = 0)]
+    pub fn get_stack_trace(
+        self,
+    ) -> ::unity2::Array<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>;
+
+    #[doc = "`Yield()` overload"]
+    #[method(name = "Yield", args = 0)]
+    pub fn r#yield(self) -> ();
+
+    #[doc = "`DoCoroutine()` overload"]
+    #[method(name = "DoCoroutine", args = 0)]
+    pub fn do_coroutine(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+
+    #[doc = "`IsDead()` overload"]
+    #[method(name = "IsDead", args = 0)]
+    pub fn is_dead(self) -> bool;
+}
+
+#[cfg(feature = "app-eventsequence")]
+impl EventSequence_Coroutine {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
+    pub fn new(
+        func: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventSequence_Coroutine),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventSequence_CoroutineMethods>::ctor(this, func, args);
+        this
+    }
+
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
+    pub fn new_2(
+        func: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        callback: crate::moon_sharp::interpreter::dynvalue::DynValue,
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventSequence_Coroutine),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IEventSequence_CoroutineMethods>::ctor_2(this, func, callback, args);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence.md"))]
 #[::unity2::class(namespace = "App", name = "EventSequence")]
 # [parent (crate :: app :: stackprocinst_1 :: StackProcInst_1 < crate :: app :: eventsequence :: EventSequence >)]
 pub struct EventSequence {
@@ -342,146 +481,7 @@ impl EventSequence {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_Coroutine.md")))]
-#[::unity2::class(namespace = "App", name = "EventSequence.Coroutine")]
-#[parent(crate::system::object::Object)]
-pub struct EventSequence_Coroutine {
-    #[rename(name = "m_Func")]
-    pub m_func: crate::moon_sharp::interpreter::dynvalue::DynValue,
-    #[rename(name = "m_Args")]
-    pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    #[rename(name = "m_First")]
-    pub m_first: bool,
-}
-
-#[cfg(feature = "app-eventsequence")]
-#[::unity2::methods]
-impl EventSequence_Coroutine {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        func: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor_2(
-        self,
-        func: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        callback: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> ();
-
-    #[doc = "`GetCallbackArgs(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    #[method(name = "GetCallbackArgs", args = 2)]
-    pub fn get_callback_args(
-        self,
-        callback: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>;
-
-    #[doc = "`GetCoroutine()` overload"]
-    #[method(name = "GetCoroutine", args = 0)]
-    pub fn get_coroutine(self) -> crate::moon_sharp::interpreter::coroutine_2::Coroutine_2;
-
-    #[doc = "`GetStackTrace()` overload"]
-    #[method(name = "GetStackTrace", args = 0)]
-    pub fn get_stack_trace(
-        self,
-    ) -> ::unity2::Array<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem>;
-
-    #[doc = "`Yield()` overload"]
-    #[method(name = "Yield", args = 0)]
-    pub fn r#yield(self) -> ();
-
-    #[doc = "`DoCoroutine()` overload"]
-    #[method(name = "DoCoroutine", args = 0)]
-    pub fn do_coroutine(self) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-
-    #[doc = "`IsDead()` overload"]
-    #[method(name = "IsDead", args = 0)]
-    pub fn is_dead(self) -> bool;
-}
-
-#[cfg(feature = "app-eventsequence")]
-impl EventSequence_Coroutine {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
-    pub fn new(
-        func: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventSequence_Coroutine),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventSequence_CoroutineMethods>::ctor(this, func, args);
-        this
-    }
-
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
-    pub fn new_2(
-        func: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        callback: crate::moon_sharp::interpreter::dynvalue::DynValue,
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventSequence_Coroutine),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IEventSequence_CoroutineMethods>::ctor_2(this, func, callback, args);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventsequence/EventSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct EventSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for EventSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EventSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for EventSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl EventSequence_Label {
-    pub fn end() -> Self {
-        Self { value: 0 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_MapEventStatck.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventsequence/EventSequence_MapEventStatck.md"))]
 #[::unity2::class(namespace = "App", name = "EventSequence.MapEventStatck")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct EventSequence_MapEventStatck {

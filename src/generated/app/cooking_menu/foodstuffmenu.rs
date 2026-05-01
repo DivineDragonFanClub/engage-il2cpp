@@ -20,7 +20,190 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected.md"))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "FoodstuffMenu.FoodstuffMenuItem.OnChangeSelected"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected {}
+
+#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
+#[::unity2::methods]
+impl FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(bool)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, is_selected: bool) -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
+impl FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_CancelEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "FoodstuffMenu.CancelEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct FoodstuffMenu_CancelEventHandler {}
+
+#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
+#[::unity2::methods]
+impl FoodstuffMenu_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
+impl FoodstuffMenu_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FoodstuffMenu_CancelEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFoodstuffMenu_CancelEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "FoodstuffMenu.FoodstuffMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct FoodstuffMenu_FoodstuffMenuItem {
+    #[rename(name = "m_Type")]
+    pub m_type: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type,
+    #[rename(name = "m_Foodstuff")]
+    pub m_foodstuff: crate::app::foodstuffdata::FoodstuffData,
+    #[static_field]
+    #[rename(name = "s_SelectedRare")]
+    pub s_selected_rare: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem,
+}
+
+#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
+#[::unity2::methods]
+impl FoodstuffMenu_FoodstuffMenuItem {
+    #[doc = "`get_IsSelected()` overload"]
+    #[method(name = "get_IsSelected", args = 0)]
+    pub fn get_is_selected(self) -> bool;
+
+    #[doc = "`set_IsSelected(bool)` overload"]
+    #[method(name = "set_IsSelected", args = 1)]
+    pub fn set_is_selected(self, value: bool) -> ();
+
+    #[doc = "`get_OnChangeSelectedEventHander()` overload"]
+    #[method(name = "get_OnChangeSelectedEventHander", args = 0)]
+    pub fn get_on_change_selected_event_hander(
+        self,
+    ) -> crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected;
+
+    #[doc = "`set_OnChangeSelectedEventHander(crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected)` overload"]
+    #[method(name = "set_OnChangeSelectedEventHander", args = 1)]
+    pub fn set_on_change_selected_event_hander(
+        self,
+        value : crate :: app :: cooking_menu :: foodstuffmenu :: FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type, crate::app::foodstuffdata::FoodstuffData, bool)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        r#type: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type,
+        foodstuff: crate::app::foodstuffdata::FoodstuffData,
+        is_selected: bool,
+    ) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`OnCursorMoveEnd()` overload"]
+    #[method(name = "OnCursorMoveEnd", args = 0)]
+    pub fn on_cursor_move_end(self) -> ();
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`PushA()` overload"]
+    #[method(name = "PushA", args = 0)]
+    pub fn push_a(self) -> ();
+
+    #[doc = "`Toggle()` overload"]
+    #[method(name = "Toggle", args = 0)]
+    pub fn toggle(self) -> ();
+
+    #[doc = "`GetMenuType()` overload"]
+    #[method(name = "GetMenuType", args = 0)]
+    pub fn get_menu_type(
+        self,
+    ) -> crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type;
+
+    #[doc = "`GetFoodstuff()` overload"]
+    #[method(name = "GetFoodstuff", args = 0)]
+    pub fn get_foodstuff(self) -> crate::app::foodstuffdata::FoodstuffData;
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
+impl FoodstuffMenu_FoodstuffMenuItem {
+    #[doc = "`.ctor(crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type, crate::app::foodstuffdata::FoodstuffData, bool)` — overload selector"]
+    pub fn new(
+        r#type: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type,
+        foodstuff: crate::app::foodstuffdata::FoodstuffData,
+        is_selected: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FoodstuffMenu_FoodstuffMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFoodstuffMenu_FoodstuffMenuItemMethods>::ctor(
+            this,
+            r#type,
+            foodstuff,
+            is_selected,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu.md"))]
 #[::unity2::class(namespace = "App.CookingMenu", name = "FoodstuffMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct FoodstuffMenu {
@@ -131,81 +314,48 @@ impl FoodstuffMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_DecideEventHandler.md"))]
 #[::unity2::class(
     namespace = "App.CookingMenu",
-    name = "FoodstuffMenu.FoodstuffMenuItem.OnChangeSelected"
+    name = "FoodstuffMenu.DecideEventHandler"
 )]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected {}
+pub struct FoodstuffMenu_DecideEventHandler {}
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenu")]
 #[::unity2::methods]
-impl FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected {
+impl FoodstuffMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke(bool)` overload"]
+    #[doc = "`Invoke(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]
     #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, is_selected: bool) -> ();
+    pub fn invoke(
+        self,
+        foodstuffs: crate::system::collections::generic::list_1::List_1<
+            crate::app::foodstuffdata::FoodstuffData,
+        >,
+    ) -> ();
 }
 
 #[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-impl FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected {
+impl FoodstuffMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected),
+                ::core::stringify!(FoodstuffMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFoodstuffMenu_FoodstuffMenuItem_OnChangeSelectedMethods>::ctor(
-            this, object, method,
-        );
+        <Self as IFoodstuffMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_CancelEventHandler.md")))]
-#[::unity2::class(
-    namespace = "App.CookingMenu",
-    name = "FoodstuffMenu.CancelEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct FoodstuffMenu_CancelEventHandler {}
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-#[::unity2::methods]
-impl FoodstuffMenu_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-impl FoodstuffMenu_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FoodstuffMenu_CancelEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFoodstuffMenu_CancelEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffMenuItem_Type.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffMenuItem_Type.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -253,7 +403,7 @@ impl FoodstuffMenu_FoodstuffMenuItem_Type {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffSelectMenuManager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffSelectMenuManager.md"))]
 #[::unity2::class(
     namespace = "App.CookingMenu",
     name = "FoodstuffMenu.FoodstuffSelectMenuManager"
@@ -296,156 +446,6 @@ impl FoodstuffMenu_FoodstuffSelectMenuManager {
             )
         });
         <Self as IFoodstuffMenu_FoodstuffSelectMenuManagerMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_FoodstuffMenuItem.md")))]
-#[::unity2::class(
-    namespace = "App.CookingMenu",
-    name = "FoodstuffMenu.FoodstuffMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct FoodstuffMenu_FoodstuffMenuItem {
-    #[rename(name = "m_Type")]
-    pub m_type: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type,
-    #[rename(name = "m_Foodstuff")]
-    pub m_foodstuff: crate::app::foodstuffdata::FoodstuffData,
-    #[static_field]
-    #[rename(name = "s_SelectedRare")]
-    pub s_selected_rare: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem,
-}
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-#[::unity2::methods]
-impl FoodstuffMenu_FoodstuffMenuItem {
-    #[doc = "`get_IsSelected()` overload"]
-    #[method(name = "get_IsSelected", args = 0)]
-    pub fn get_is_selected(self) -> bool;
-
-    #[doc = "`set_IsSelected(bool)` overload"]
-    #[method(name = "set_IsSelected", args = 1)]
-    pub fn set_is_selected(self, value: bool) -> ();
-
-    #[doc = "`get_OnChangeSelectedEventHander()` overload"]
-    #[method(name = "get_OnChangeSelectedEventHander", args = 0)]
-    pub fn get_on_change_selected_event_hander(
-        self,
-    ) -> crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected;
-
-    #[doc = "`set_OnChangeSelectedEventHander(crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected)` overload"]
-    #[method(name = "set_OnChangeSelectedEventHander", args = 1)]
-    pub fn set_on_change_selected_event_hander(
-        self,
-        value : crate :: app :: cooking_menu :: foodstuffmenu :: FoodstuffMenu_FoodstuffMenuItem_OnChangeSelected,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type, crate::app::foodstuffdata::FoodstuffData, bool)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        r#type: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type,
-        foodstuff: crate::app::foodstuffdata::FoodstuffData,
-        is_selected: bool,
-    ) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`OnCursorMoveEnd()` overload"]
-    #[method(name = "OnCursorMoveEnd", args = 0)]
-    pub fn on_cursor_move_end(self) -> ();
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`PushA()` overload"]
-    #[method(name = "PushA", args = 0)]
-    pub fn push_a(self) -> ();
-
-    #[doc = "`Toggle()` overload"]
-    #[method(name = "Toggle", args = 0)]
-    pub fn toggle(self) -> ();
-
-    #[doc = "`GetMenuType()` overload"]
-    #[method(name = "GetMenuType", args = 0)]
-    pub fn get_menu_type(
-        self,
-    ) -> crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type;
-
-    #[doc = "`GetFoodstuff()` overload"]
-    #[method(name = "GetFoodstuff", args = 0)]
-    pub fn get_foodstuff(self) -> crate::app::foodstuffdata::FoodstuffData;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-impl FoodstuffMenu_FoodstuffMenuItem {
-    #[doc = "`.ctor(crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type, crate::app::foodstuffdata::FoodstuffData, bool)` — overload selector"]
-    pub fn new(
-        r#type: crate::app::cooking_menu::foodstuffmenu::FoodstuffMenu_FoodstuffMenuItem_Type,
-        foodstuff: crate::app::foodstuffdata::FoodstuffData,
-        is_selected: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FoodstuffMenu_FoodstuffMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFoodstuffMenu_FoodstuffMenuItemMethods>::ctor(
-            this,
-            r#type,
-            foodstuff,
-            is_selected,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenu/FoodstuffMenu_DecideEventHandler.md")))]
-#[::unity2::class(
-    namespace = "App.CookingMenu",
-    name = "FoodstuffMenu.DecideEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct FoodstuffMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-#[::unity2::methods]
-impl FoodstuffMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        foodstuffs: crate::system::collections::generic::list_1::List_1<
-            crate::app::foodstuffdata::FoodstuffData,
-        >,
-    ) -> ();
-}
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenu")]
-impl FoodstuffMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FoodstuffMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFoodstuffMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

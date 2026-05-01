@@ -14,7 +14,52 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater_StatusScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct UnitInfoWindowCharaUpdater_StatusScope {
+    pub m_character: crate::combat::character::Character,
+    pub m_play_hash: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitInfoWindowCharaUpdater_StatusScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitInfoWindowCharaUpdater.StatusScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitInfoWindowCharaUpdater_StatusScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-unitinfowindowcharaupdater")]
+#[::unity2::methods(value)]
+impl UnitInfoWindowCharaUpdater_StatusScope {
+    #[doc = "`.ctor(crate::combat::character::Character)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, chara: crate::combat::character::Character) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater.md"))]
 #[::unity2::class(namespace = "App", name = "UnitInfoWindowCharaUpdater")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct UnitInfoWindowCharaUpdater {
@@ -141,49 +186,4 @@ impl UnitInfoWindowCharaUpdater {
         <Self as IUnitInfoWindowCharaUpdaterMethods>::ctor(this);
         this
     }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfowindowcharaupdater/UnitInfoWindowCharaUpdater_StatusScope.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct UnitInfoWindowCharaUpdater_StatusScope {
-    pub m_character: crate::combat::character::Character,
-    pub m_play_hash: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitInfoWindowCharaUpdater_StatusScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfoWindowCharaUpdater.StatusScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitInfoWindowCharaUpdater_StatusScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-unitinfowindowcharaupdater")]
-#[::unity2::methods(value)]
-impl UnitInfoWindowCharaUpdater_StatusScope {
-    #[doc = "`.ctor(crate::combat::character::Character)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, chara: crate::combat::character::Character) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
 }

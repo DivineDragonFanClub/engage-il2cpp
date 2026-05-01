@@ -10,92 +10,51 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData_Manager_Task.md")))]
-#[::unity2::class(namespace = "App", name = "SaveData.Manager.Task")]
-#[parent(crate::system::object::Object)]
-pub struct SaveData_Manager_Task {}
-
-#[cfg(feature = "app-savedata")]
-#[::unity2::methods]
-impl SaveData_Manager_Task {
-    #[doc = "`get_Kind()` overload"]
-    #[method(name = "get_Kind", args = 0)]
-    pub fn get_kind(self) -> crate::app::savedata::SaveData_Manager_TaskKind;
-
-    #[doc = "`set_Kind(crate::app::savedata::SaveData_Manager_TaskKind)` overload"]
-    #[method(name = "set_Kind", args = 1)]
-    pub fn set_kind(self, value: crate::app::savedata::SaveData_Manager_TaskKind) -> ();
-
-    #[doc = "`get_Path()` overload"]
-    #[method(name = "get_Path", args = 0)]
-    pub fn get_path(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Path(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Path", args = 1)]
-    pub fn set_path(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Data()` overload"]
-    #[method(name = "get_Data", args = 0)]
-    pub fn get_data(self) -> ::unity2::Array<u8>;
-
-    #[doc = "`set_Data(::unity2::Array<u8>)` overload"]
-    #[method(name = "set_Data", args = 1)]
-    pub fn set_data(self, value: ::unity2::Array<u8>) -> ();
-
-    #[doc = "`get_Size()` overload"]
-    #[method(name = "get_Size", args = 0)]
-    pub fn get_size(self) -> i64;
-
-    #[doc = "`set_Size(i64)` overload"]
-    #[method(name = "set_Size", args = 1)]
-    pub fn set_size(self, value: i64) -> ();
-
-    #[doc = "`get_Offset()` overload"]
-    #[method(name = "get_Offset", args = 0)]
-    pub fn get_offset(self) -> i64;
-
-    #[doc = "`set_Offset(i64)` overload"]
-    #[method(name = "set_Offset", args = 1)]
-    pub fn set_offset(self, value: i64) -> ();
-
-    #[doc = "`get_IsEnableResize()` overload"]
-    #[method(name = "get_IsEnableResize", args = 0)]
-    pub fn get_is_enable_resize(self) -> bool;
-
-    #[doc = "`set_IsEnableResize(bool)` overload"]
-    #[method(name = "set_IsEnableResize", args = 1)]
-    pub fn set_is_enable_resize(self, value: bool) -> ();
-
-    #[doc = "`get_Handle()` overload"]
-    #[method(name = "get_Handle", args = 0)]
-    pub fn get_handle(self) -> crate::app::savedatahandle::SaveDataHandle;
-
-    #[doc = "`set_Handle(crate::app::savedatahandle::SaveDataHandle)` overload"]
-    #[method(name = "set_Handle", args = 1)]
-    pub fn set_handle(self, value: crate::app::savedatahandle::SaveDataHandle) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedata/SaveData_Manager_EventKind.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SaveData_Manager_EventKind {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-savedata")]
-impl SaveData_Manager_Task {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SaveData_Manager_Task),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISaveData_Manager_TaskMethods>::ctor(this);
-        this
+impl ::unity2::ClassIdentity for SaveData_Manager_EventKind {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SaveData.Manager.EventKind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedata/SaveData_Manager_TaskKind.md")))]
+impl ::unity2::IlType for SaveData_Manager_EventKind {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SaveData_Manager_EventKind {
+    pub fn cleanup() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn task() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedata/SaveData_Manager_TaskKind.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -147,7 +106,7 @@ impl SaveData_Manager_TaskKind {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData.md"))]
 #[::unity2::class(namespace = "App", name = "SaveData")]
 #[parent(crate::system::object::Object)]
 pub struct SaveData {
@@ -256,7 +215,7 @@ impl SaveData {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData_Manager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData_Manager.md"))]
 #[::unity2::class(namespace = "App", name = "SaveData.Manager")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: savedata :: SaveData_Manager >)]
 pub struct SaveData_Manager {
@@ -362,46 +321,87 @@ impl SaveData_Manager {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/savedata/SaveData_Manager_EventKind.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct SaveData_Manager_EventKind {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/savedata/SaveData_Manager_Task.md"))]
+#[::unity2::class(namespace = "App", name = "SaveData.Manager.Task")]
+#[parent(crate::system::object::Object)]
+pub struct SaveData_Manager_Task {}
+
+#[cfg(feature = "app-savedata")]
+#[::unity2::methods]
+impl SaveData_Manager_Task {
+    #[doc = "`get_Kind()` overload"]
+    #[method(name = "get_Kind", args = 0)]
+    pub fn get_kind(self) -> crate::app::savedata::SaveData_Manager_TaskKind;
+
+    #[doc = "`set_Kind(crate::app::savedata::SaveData_Manager_TaskKind)` overload"]
+    #[method(name = "set_Kind", args = 1)]
+    pub fn set_kind(self, value: crate::app::savedata::SaveData_Manager_TaskKind) -> ();
+
+    #[doc = "`get_Path()` overload"]
+    #[method(name = "get_Path", args = 0)]
+    pub fn get_path(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Path(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Path", args = 1)]
+    pub fn set_path(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Data()` overload"]
+    #[method(name = "get_Data", args = 0)]
+    pub fn get_data(self) -> ::unity2::Array<u8>;
+
+    #[doc = "`set_Data(::unity2::Array<u8>)` overload"]
+    #[method(name = "set_Data", args = 1)]
+    pub fn set_data(self, value: ::unity2::Array<u8>) -> ();
+
+    #[doc = "`get_Size()` overload"]
+    #[method(name = "get_Size", args = 0)]
+    pub fn get_size(self) -> i64;
+
+    #[doc = "`set_Size(i64)` overload"]
+    #[method(name = "set_Size", args = 1)]
+    pub fn set_size(self, value: i64) -> ();
+
+    #[doc = "`get_Offset()` overload"]
+    #[method(name = "get_Offset", args = 0)]
+    pub fn get_offset(self) -> i64;
+
+    #[doc = "`set_Offset(i64)` overload"]
+    #[method(name = "set_Offset", args = 1)]
+    pub fn set_offset(self, value: i64) -> ();
+
+    #[doc = "`get_IsEnableResize()` overload"]
+    #[method(name = "get_IsEnableResize", args = 0)]
+    pub fn get_is_enable_resize(self) -> bool;
+
+    #[doc = "`set_IsEnableResize(bool)` overload"]
+    #[method(name = "set_IsEnableResize", args = 1)]
+    pub fn set_is_enable_resize(self, value: bool) -> ();
+
+    #[doc = "`get_Handle()` overload"]
+    #[method(name = "get_Handle", args = 0)]
+    pub fn get_handle(self) -> crate::app::savedatahandle::SaveDataHandle;
+
+    #[doc = "`set_Handle(crate::app::savedatahandle::SaveDataHandle)` overload"]
+    #[method(name = "set_Handle", args = 1)]
+    pub fn set_handle(self, value: crate::app::savedatahandle::SaveDataHandle) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
-impl ::unity2::ClassIdentity for SaveData_Manager_EventKind {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SaveData.Manager.EventKind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for SaveData_Manager_EventKind {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl SaveData_Manager_EventKind {
-    pub fn cleanup() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn task() -> Self {
-        Self { value: 1 }
+#[cfg(feature = "app-savedata")]
+impl SaveData_Manager_Task {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SaveData_Manager_Task),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISaveData_Manager_TaskMethods>::ctor(this);
+        this
     }
 }

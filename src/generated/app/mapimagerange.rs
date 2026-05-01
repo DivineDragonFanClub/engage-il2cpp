@@ -6,7 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimagerange/MapImageRange_Pos.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimagerange/MapImageRange_Pos.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct MapImageRange_Pos {
@@ -43,7 +43,7 @@ impl MapImageRange_Pos {
     pub fn ctor(self, x: i32, z: i32) -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagerange/MapImageRange.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagerange/MapImageRange.md"))]
 #[::unity2::class(namespace = "App", name = "MapImageRange")]
 #[parent(crate::system::object::Object)]
 pub struct MapImageRange {

@@ -6,7 +6,48 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_textutilities/TMP_TextUtilities.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_textutilities/TMP_TextUtilities_LineSegment.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TMP_TextUtilities_LineSegment {
+    pub point1: crate::unity_engine::vector3::Vector3,
+    pub point2: crate::unity_engine::vector3::Vector3,
+}
+
+impl ::unity2::ClassIdentity for TMP_TextUtilities_LineSegment {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "TMP_TextUtilities.LineSegment";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TMP_TextUtilities_LineSegment {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "tm_pro-tmp_textutilities")]
+#[::unity2::methods(value)]
+impl TMP_TextUtilities_LineSegment {
+    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        p1: crate::unity_engine::vector3::Vector3,
+        p2: crate::unity_engine::vector3::Vector3,
+    ) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_textutilities/TMP_TextUtilities.md"))]
 #[::unity2::class(namespace = "TMPro", name = "TMP_TextUtilities")]
 #[parent(crate::system::object::Object)]
 pub struct TMP_TextUtilities {
@@ -196,45 +237,4 @@ impl TMP_TextUtilities {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_textutilities/TMP_TextUtilities_LineSegment.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TMP_TextUtilities_LineSegment {
-    pub point1: crate::unity_engine::vector3::Vector3,
-    pub point2: crate::unity_engine::vector3::Vector3,
-}
-
-impl ::unity2::ClassIdentity for TMP_TextUtilities_LineSegment {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "TMP_TextUtilities.LineSegment";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TMP_TextUtilities_LineSegment {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "tm_pro-tmp_textutilities")]
-#[::unity2::methods(value)]
-impl TMP_TextUtilities_LineSegment {
-    #[doc = "`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        p1: crate::unity_engine::vector3::Vector3,
-        p2: crate::unity_engine::vector3::Vector3,
-    ) -> ();
 }

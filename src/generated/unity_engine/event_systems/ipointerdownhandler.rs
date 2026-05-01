@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ipointerdownhandler/IPointerDownHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ipointerdownhandler/IPointerDownHandler.md"))]
 #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IPointerDownHandler")]
 pub struct IPointerDownHandler {}
 

@@ -22,7 +22,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitactor/UnitActor.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitactor/UnitActor.md"))]
 #[::unity2::class(namespace = "App", name = "UnitActor")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct UnitActor {
@@ -602,7 +602,7 @@ impl UnitActor {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitactor/UnitActor_Status.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitactor/UnitActor_Status.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -670,7 +670,7 @@ impl UnitActor_Status {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitactor/UnitActor_ViewMode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitactor/UnitActor_ViewMode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -718,7 +718,7 @@ impl UnitActor_ViewMode {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitactor/UnitActor_StatusField.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitactor/UnitActor_StatusField.md"))]
 #[::unity2::class(namespace = "App", name = "UnitActor.StatusField")]
 # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: unitactor :: UnitActor_Status >)]
 pub struct UnitActor_StatusField {}

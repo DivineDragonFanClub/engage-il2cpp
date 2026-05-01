@@ -8,44 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer_List.md")))]
-#[::unity2::class(namespace = "App", name = "MapLayer.List")]
-# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: maplayer :: MapLayer_Data >)]
-pub struct MapLayer_List {}
-
-#[cfg(feature = "app-maplayer")]
-#[::unity2::methods]
-impl MapLayer_List {
-    #[doc = "`Exists(crate::app::maplayer::MapLayer_Data)` overload"]
-    #[method(name = "Exists", args = 1)]
-    pub fn exists(self, data: crate::app::maplayer::MapLayer_Data) -> bool;
-
-    #[doc = "`IsConnect(crate::app::maplayer::MapLayer_Data)` overload"]
-    #[method(name = "IsConnect", args = 1)]
-    pub fn is_connect(self, data: crate::app::maplayer::MapLayer_Data) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maplayer")]
-impl MapLayer_List {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapLayer_List),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapLayer_ListMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer.md"))]
 #[::unity2::class(namespace = "App", name = "MapLayer")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maplayer :: MapLayer >)]
 pub struct MapLayer {
@@ -130,7 +93,7 @@ impl MapLayer {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer_Data.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer_Data.md"))]
 #[::unity2::class(namespace = "App", name = "MapLayer.Data")]
 #[parent(crate::system::object::Object)]
 pub struct MapLayer_Data {}
@@ -239,6 +202,43 @@ impl MapLayer_Data {
             )
         });
         <Self as IMapLayer_DataMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maplayer/MapLayer_List.md"))]
+#[::unity2::class(namespace = "App", name = "MapLayer.List")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: maplayer :: MapLayer_Data >)]
+pub struct MapLayer_List {}
+
+#[cfg(feature = "app-maplayer")]
+#[::unity2::methods]
+impl MapLayer_List {
+    #[doc = "`Exists(crate::app::maplayer::MapLayer_Data)` overload"]
+    #[method(name = "Exists", args = 1)]
+    pub fn exists(self, data: crate::app::maplayer::MapLayer_Data) -> bool;
+
+    #[doc = "`IsConnect(crate::app::maplayer::MapLayer_Data)` overload"]
+    #[method(name = "IsConnect", args = 1)]
+    pub fn is_connect(self, data: crate::app::maplayer::MapLayer_Data) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maplayer")]
+impl MapLayer_List {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapLayer_List),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapLayer_ListMethods>::ctor(this);
         this
     }
 }

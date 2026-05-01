@@ -8,55 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/encountunitdata/EncountUnitData_RareType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct EncountUnitData_RareType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for EncountUnitData_RareType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EncountUnitData.RareType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for EncountUnitData_RareType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl EncountUnitData_RareType {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn exp() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn gold() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountunitdata/EncountUnitData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/encountunitdata/EncountUnitData.md"))]
 #[::unity2::class(namespace = "App", name = "EncountUnitData")]
 #[parent(crate::system::object::Object)]
 pub struct EncountUnitData {
@@ -162,5 +114,53 @@ impl EncountUnitData {
         });
         <Self as IEncountUnitDataMethods>::ctor(this, data);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/encountunitdata/EncountUnitData_RareType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EncountUnitData_RareType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EncountUnitData_RareType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "EncountUnitData.RareType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EncountUnitData_RareType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EncountUnitData_RareType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn exp() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn gold() -> Self {
+        Self { value: 2 }
     }
 }

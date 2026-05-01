@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/phasearray/PhaseArray.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/phasearray/PhaseArray.md"))]
 #[::unity2::class(namespace = "Combat", name = "PhaseArray")]
 # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: combat :: phase :: Phase >)]
 pub struct PhaseArray {

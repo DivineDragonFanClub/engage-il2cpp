@@ -8,47 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcTerrainHeal.md")))]
-#[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect.ProcTerrainHeal")]
-#[parent(crate::app::turneffect::TurnEffect)]
-pub struct MapSequenceTurnBeginEffect_ProcTerrainHeal {}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-#[::unity2::methods]
-impl MapSequenceTurnBeginEffect_ProcTerrainHeal {
-    #[doc = "`GetHeal(crate::app::unit::Unit, crate::app::terraindata_2::TerrainData_2)` overload"]
-    #[method(name = "GetHeal", args = 2)]
-    pub fn get_heal(
-        unit: crate::app::unit::Unit,
-        terrain: crate::app::terraindata_2::TerrainData_2,
-    ) -> i32;
-
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl MapSequenceTurnBeginEffect_ProcTerrainHeal {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceTurnBeginEffect_ProcTerrainHeal),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceTurnBeginEffect_ProcTerrainHealMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcTerrainDamage.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcTerrainDamage.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "MapSequenceTurnBeginEffect.ProcTerrainDamage"
@@ -91,7 +51,7 @@ impl MapSequenceTurnBeginEffect_ProcTerrainDamage {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcSkillHeal.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcSkillHeal.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect.ProcSkillHeal")]
 #[parent(crate::app::turneffect::TurnEffect)]
 pub struct MapSequenceTurnBeginEffect_ProcSkillHeal {}
@@ -124,7 +84,116 @@ impl MapSequenceTurnBeginEffect_ProcSkillHeal {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcSkillTurn.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcTerrainHeal.md"))]
+#[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect.ProcTerrainHeal")]
+#[parent(crate::app::turneffect::TurnEffect)]
+pub struct MapSequenceTurnBeginEffect_ProcTerrainHeal {}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+#[::unity2::methods]
+impl MapSequenceTurnBeginEffect_ProcTerrainHeal {
+    #[doc = "`GetHeal(crate::app::unit::Unit, crate::app::terraindata_2::TerrainData_2)` overload"]
+    #[method(name = "GetHeal", args = 2)]
+    pub fn get_heal(
+        unit: crate::app::unit::Unit,
+        terrain: crate::app::terraindata_2::TerrainData_2,
+    ) -> i32;
+
+    #[doc = "`Execute()` overload"]
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+impl MapSequenceTurnBeginEffect_ProcTerrainHeal {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceTurnBeginEffect_ProcTerrainHeal),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceTurnBeginEffect_ProcTerrainHealMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcFullBulletAttack.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "MapSequenceTurnBeginEffect.ProcFullBulletAttack"
+)]
+#[parent(crate::app::turneffect::TurnEffect)]
+pub struct MapSequenceTurnBeginEffect_ProcFullBulletAttack {}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+#[::unity2::methods]
+impl MapSequenceTurnBeginEffect_ProcFullBulletAttack {
+    #[doc = "`Execute()` overload"]
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+impl MapSequenceTurnBeginEffect_ProcFullBulletAttack {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceTurnBeginEffect_ProcFullBulletAttack),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcEngageSkill.md"))]
+#[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect.ProcEngageSkill")]
+#[parent(crate::app::turneffect::TurnEffect)]
+pub struct MapSequenceTurnBeginEffect_ProcEngageSkill {}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+#[::unity2::methods]
+impl MapSequenceTurnBeginEffect_ProcEngageSkill {
+    #[doc = "`Execute()` overload"]
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequenceturnbegineffect")]
+impl MapSequenceTurnBeginEffect_ProcEngageSkill {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceTurnBeginEffect_ProcEngageSkill),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceTurnBeginEffect_ProcEngageSkillMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcSkillTurn.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect.ProcSkillTurn")]
 #[parent(crate::app::turneffect::TurnEffect)]
 pub struct MapSequenceTurnBeginEffect_ProcSkillTurn {}
@@ -157,7 +226,7 @@ impl MapSequenceTurnBeginEffect_ProcSkillTurn {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct MapSequenceTurnBeginEffect {}
@@ -202,75 +271,6 @@ impl MapSequenceTurnBeginEffect {
             )
         });
         <Self as IMapSequenceTurnBeginEffectMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcFullBulletAttack.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "MapSequenceTurnBeginEffect.ProcFullBulletAttack"
-)]
-#[parent(crate::app::turneffect::TurnEffect)]
-pub struct MapSequenceTurnBeginEffect_ProcFullBulletAttack {}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-#[::unity2::methods]
-impl MapSequenceTurnBeginEffect_ProcFullBulletAttack {
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl MapSequenceTurnBeginEffect_ProcFullBulletAttack {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceTurnBeginEffect_ProcFullBulletAttack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcEngageSkill.md")))]
-#[::unity2::class(namespace = "App", name = "MapSequenceTurnBeginEffect.ProcEngageSkill")]
-#[parent(crate::app::turneffect::TurnEffect)]
-pub struct MapSequenceTurnBeginEffect_ProcEngageSkill {}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-#[::unity2::methods]
-impl MapSequenceTurnBeginEffect_ProcEngageSkill {
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsequenceturnbegineffect")]
-impl MapSequenceTurnBeginEffect_ProcEngageSkill {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceTurnBeginEffect_ProcEngageSkill),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceTurnBeginEffect_ProcEngageSkillMethods>::ctor(this);
         this
     }
 }

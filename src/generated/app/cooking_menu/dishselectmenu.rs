@@ -16,43 +16,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_SelectEventHandler.md")))]
-#[::unity2::class(
-    namespace = "App.CookingMenu",
-    name = "DishSelectMenu.SelectEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct DishSelectMenu_SelectEventHandler {}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-#[::unity2::methods]
-impl DishSelectMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::fooddata::FoodData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, food: crate::app::fooddata::FoodData) -> ();
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectMenu_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu.md"))]
 #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct DishSelectMenu {
@@ -171,143 +135,7 @@ impl DishSelectMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DecideEventHandler.md")))]
-#[::unity2::class(
-    namespace = "App.CookingMenu",
-    name = "DishSelectMenu.DecideEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct DishSelectMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-#[::unity2::methods]
-impl DishSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::fooddata::FoodData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, food: crate::app::fooddata::FoodData) -> ();
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_CancelEventHandler.md")))]
-#[::unity2::class(
-    namespace = "App.CookingMenu",
-    name = "DishSelectMenu.CancelEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct DishSelectMenu_CancelEventHandler {}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-#[::unity2::methods]
-impl DishSelectMenu_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectMenu_CancelEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishSelectMenu_CancelEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishMenuCompare.md")))]
-#[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenu.DishMenuCompare")]
-#[parent(crate::system::object::Object)]
-pub struct DishSelectMenu_DishMenuCompare {
-    #[rename(name = "m_IsRecommended")]
-    pub m_is_recommended: bool,
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-#[::unity2::methods]
-impl DishSelectMenu_DishMenuCompare {
-    #[doc = "`.ctor(bool)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, is_recommended: bool) -> ();
-
-    #[doc = "`CompareBothLike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
-    #[method(name = "CompareBothLike", args = 2)]
-    pub fn compare_both_like(
-        self,
-        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-    ) -> i32;
-
-    #[doc = "`CompareDifficulty(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
-    #[method(name = "CompareDifficulty", args = 2)]
-    pub fn compare_difficulty(
-        self,
-        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-    ) -> i32;
-
-    #[doc = "`CompareDislike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
-    #[method(name = "CompareDislike", args = 2)]
-    pub fn compare_dislike(
-        self,
-        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-    ) -> i32;
-
-    #[doc = "`CompareIndex(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
-    #[method(name = "CompareIndex", args = 2)]
-    pub fn compare_index(
-        self,
-        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
-    ) -> i32;
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenu")]
-impl DishSelectMenu_DishMenuCompare {
-    #[doc = "`.ctor(bool)` — overload selector"]
-    pub fn new(is_recommended: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectMenu_DishMenuCompare),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishSelectMenu_DishMenuCompareMethods>::ctor(this, is_recommended);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishSelectMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishSelectMenuItem.md"))]
 #[::unity2::class(
     namespace = "App.CookingMenu",
     name = "DishSelectMenu.DishSelectMenuItem"
@@ -378,7 +206,79 @@ impl DishSelectMenu_DishSelectMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishSelectMenuManager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_SelectEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "DishSelectMenu.SelectEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct DishSelectMenu_SelectEventHandler {}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+#[::unity2::methods]
+impl DishSelectMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::fooddata::FoodData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, food: crate::app::fooddata::FoodData) -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+impl DishSelectMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishSelectMenu_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_CancelEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "DishSelectMenu.CancelEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct DishSelectMenu_CancelEventHandler {}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+#[::unity2::methods]
+impl DishSelectMenu_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+impl DishSelectMenu_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishSelectMenu_CancelEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishSelectMenu_CancelEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishSelectMenuManager.md"))]
 #[::unity2::class(
     namespace = "App.CookingMenu",
     name = "DishSelectMenu.DishSelectMenuManager"
@@ -421,6 +321,106 @@ impl DishSelectMenu_DishSelectMenuManager {
             )
         });
         <Self as IDishSelectMenu_DishSelectMenuManagerMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DecideEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "DishSelectMenu.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct DishSelectMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+#[::unity2::methods]
+impl DishSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::fooddata::FoodData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, food: crate::app::fooddata::FoodData) -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+impl DishSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishSelectMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenu/DishSelectMenu_DishMenuCompare.md"))]
+#[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenu.DishMenuCompare")]
+#[parent(crate::system::object::Object)]
+pub struct DishSelectMenu_DishMenuCompare {
+    #[rename(name = "m_IsRecommended")]
+    pub m_is_recommended: bool,
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+#[::unity2::methods]
+impl DishSelectMenu_DishMenuCompare {
+    #[doc = "`.ctor(bool)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, is_recommended: bool) -> ();
+
+    #[doc = "`CompareBothLike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
+    #[method(name = "CompareBothLike", args = 2)]
+    pub fn compare_both_like(
+        self,
+        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+    ) -> i32;
+
+    #[doc = "`CompareDifficulty(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
+    #[method(name = "CompareDifficulty", args = 2)]
+    pub fn compare_difficulty(
+        self,
+        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+    ) -> i32;
+
+    #[doc = "`CompareDislike(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
+    #[method(name = "CompareDislike", args = 2)]
+    pub fn compare_dislike(
+        self,
+        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+    ) -> i32;
+
+    #[doc = "`CompareIndex(crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem, crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem)` overload"]
+    #[method(name = "CompareIndex", args = 2)]
+    pub fn compare_index(
+        self,
+        x: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+        y: crate::app::cooking_menu::dishselectmenu::DishSelectMenu_DishSelectMenuItem,
+    ) -> i32;
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenu")]
+impl DishSelectMenu_DishMenuCompare {
+    #[doc = "`.ctor(bool)` — overload selector"]
+    pub fn new(is_recommended: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishSelectMenu_DishMenuCompare),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishSelectMenu_DishMenuCompareMethods>::ctor(this, is_recommended);
         this
     }
 }

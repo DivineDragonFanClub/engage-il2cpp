@@ -12,7 +12,7 @@ use crate::system::reflection::runtimefieldinfo::IRuntimeFieldInfo;
 use crate::system::reflection::runtimefieldinfo::RuntimeFieldInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monofield/MonoField.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monofield/MonoField.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "MonoField")]
 #[parent(crate::system::reflection::rtfieldinfo::RtFieldInfo)]
 pub struct MonoField {

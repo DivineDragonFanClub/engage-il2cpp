@@ -12,7 +12,67 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencetargetselect/MapSequenceTargetSelect.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencetargetselect/MapSequenceTargetSelect_InfoType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceTargetSelect_InfoType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceTargetSelect_InfoType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceTargetSelect.InfoType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceTargetSelect_InfoType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceTargetSelect_InfoType {
+    pub fn common() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn battle() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn rod_only() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn item() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 5 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencetargetselect/MapSequenceTargetSelect.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceTargetSelect")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencetargetselect :: MapSequenceTargetSelect >)]
 pub struct MapSequenceTargetSelect {
@@ -339,67 +399,7 @@ impl MapSequenceTargetSelect {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencetargetselect/MapSequenceTargetSelect_InfoType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapSequenceTargetSelect_InfoType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSequenceTargetSelect_InfoType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceTargetSelect.InfoType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSequenceTargetSelect_InfoType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapSequenceTargetSelect_InfoType {
-    pub fn common() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn battle() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn rod() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn rod_only() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn item() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn destroy() -> Self {
-        Self { value: 5 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencetargetselect/MapSequenceTargetSelect_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencetargetselect/MapSequenceTargetSelect_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

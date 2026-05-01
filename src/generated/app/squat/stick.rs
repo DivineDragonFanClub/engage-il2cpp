@@ -8,7 +8,55 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/stick/Stick_KeyDirection.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/stick/Stick_RotateDir.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Stick_RotateDir {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Stick_RotateDir {
+    const NAMESPACE: &'static str = "App.Squat";
+
+    const NAME: &'static str = "Stick.RotateDir";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Stick_RotateDir {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Stick_RotateDir {
+    pub fn stop() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn clock_wise() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn un_clock_wise() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/stick/Stick_KeyDirection.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -80,7 +128,7 @@ impl Stick_KeyDirection {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/stick/Stick.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/stick/Stick.md"))]
 #[::unity2::class(namespace = "App.Squat", name = "Stick")]
 #[parent(crate::system::object::Object)]
 pub struct Stick {
@@ -233,53 +281,5 @@ impl Stick {
         });
         <Self as IStickMethods>::ctor_2(this, set_right);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/stick/Stick_RotateDir.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct Stick_RotateDir {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for Stick_RotateDir {
-    const NAMESPACE: &'static str = "App.Squat";
-
-    const NAME: &'static str = "Stick.RotateDir";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Stick_RotateDir {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl Stick_RotateDir {
-    pub fn stop() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn clock_wise() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn un_clock_wise() -> Self {
-        Self { value: 2 }
     }
 }

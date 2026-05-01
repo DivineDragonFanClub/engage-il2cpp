@@ -10,7 +10,7 @@ use crate::unity_engine::timeline::marker::IMarker;
 use crate::unity_engine::timeline::marker::Marker;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideoneshotsemarker/DragonRideOneShotSEMarker.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideoneshotsemarker/DragonRideOneShotSEMarker.md"))]
 #[::unity2::class(namespace = "App", name = "DragonRideOneShotSEMarker")]
 #[parent(crate::unity_engine::timeline::marker::Marker)]
 pub struct DragonRideOneShotSEMarker {

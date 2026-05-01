@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/imapdeploy_interface/IMapDeploy_Interface.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/imapdeploy_interface/IMapDeploy_Interface.md"))]
 #[::unity2::class(namespace = "App", name = "IMapDeploy")]
 pub struct IMapDeploy_Interface {}
 

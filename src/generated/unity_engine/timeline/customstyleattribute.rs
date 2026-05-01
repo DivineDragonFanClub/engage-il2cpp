@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/customstyleattribute/CustomStyleAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/customstyleattribute/CustomStyleAttribute.md"))]
 #[::unity2::class(namespace = "UnityEngine.Timeline", name = "CustomStyleAttribute")]
 pub struct CustomStyleAttribute {
     #[rename(name = "ussStyle")]

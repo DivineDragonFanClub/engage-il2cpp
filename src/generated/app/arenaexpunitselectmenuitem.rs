@@ -20,7 +20,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNo.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "ArenaExpUnitSelectMenuItem.ConfirmDialog.ConfirmDialogItemNo"
@@ -52,7 +52,49 @@ impl ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemNo {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem_ConfirmDialog.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ArenaExpUnitSelectMenuItem.ConfirmDialog.ConfirmDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes {
+    #[rename(name = "m_DecideAction")]
+    pub m_decide_action: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-arenaexpunitselectmenuitem")]
+#[::unity2::methods]
+impl ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor(crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, decide_action: crate::system::action::Action) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-arenaexpunitselectmenuitem")]
+impl ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
+    pub fn new(decide_action: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
+            this,
+            decide_action,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem_ConfirmDialog.md"))]
 #[::unity2::class(namespace = "App", name = "ArenaExpUnitSelectMenuItem.ConfirmDialog")]
 #[parent(crate::app::yesnodialog::YesNoDialog)]
 pub struct ArenaExpUnitSelectMenuItem_ConfirmDialog {
@@ -107,49 +149,7 @@ impl ArenaExpUnitSelectMenuItem_ConfirmDialog {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ArenaExpUnitSelectMenuItem.ConfirmDialog.ConfirmDialogItemYes"
-)]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes {
-    #[rename(name = "m_DecideAction")]
-    pub m_decide_action: crate::system::action::Action,
-}
-
-#[cfg(feature = "app-arenaexpunitselectmenuitem")]
-#[::unity2::methods]
-impl ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, decide_action: crate::system::action::Action) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-arenaexpunitselectmenuitem")]
-impl ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(decide_action: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaExpUnitSelectMenuItem_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
-            this,
-            decide_action,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenaexpunitselectmenuitem/ArenaExpUnitSelectMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "ArenaExpUnitSelectMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct ArenaExpUnitSelectMenuItem {

@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sort/Sort.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sort/Sort.md"))]
 #[::unity2::class(namespace = "App", name = "Sort")]
 #[parent(crate::app::sortconstant::SortConstant)]
 pub struct Sort {}
@@ -87,7 +87,7 @@ impl Sort {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sort/Sort_ElementComparer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sort/Sort_ElementComparer.md"))]
 #[::unity2::class(namespace = "App", name = "Sort.ElementComparer")]
 #[parent(crate::system::object::Object)]
 pub struct Sort_ElementComparer {}

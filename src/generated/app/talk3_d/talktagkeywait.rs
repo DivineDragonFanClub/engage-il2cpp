@@ -10,7 +10,55 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagkeywait/TalkTagKeyWait_TagID.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagkeywait/TalkTagKeyWait.md"))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkTagKeyWait")]
+#[parent(crate::app::talk3_d::talktag::TalkTag)]
+pub struct TalkTagKeyWait {
+    #[rename(name = "m_TagID")]
+    pub m_tag_id: crate::app::talk3_d::talktagkeywait::TalkTagKeyWait_TagID,
+    #[rename(name = "m_Sec")]
+    pub m_sec: f32,
+    #[rename(name = "m_Result")]
+    pub m_result: crate::app::talk3_d::talktag::TalkTag_Result,
+}
+
+#[cfg(feature = "app-talk3_d-talktagkeywait")]
+#[::unity2::methods]
+impl TalkTagKeyWait {
+    #[doc = "`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]
+    #[method(name = "Initialize", args = 1)]
+    pub fn initialize(self, talk_ptr: crate::app::talk3_d::talkptr::TalkPtr) -> ();
+
+    #[doc = "`Execute()` overload"]
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+
+    #[doc = "`GetResult()` overload"]
+    #[method(name = "GetResult", args = 0)]
+    pub fn get_result(self) -> crate::app::talk3_d::talktag::TalkTag_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talktagkeywait")]
+impl TalkTagKeyWait {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkTagKeyWait),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkTagKeyWaitMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagkeywait/TalkTagKeyWait_TagID.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -59,53 +107,5 @@ impl TalkTagKeyWait_TagID {
 
     pub fn time_wait() -> Self {
         Self { value: 3 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagkeywait/TalkTagKeyWait.md")))]
-#[::unity2::class(namespace = "App.Talk3D", name = "TalkTagKeyWait")]
-#[parent(crate::app::talk3_d::talktag::TalkTag)]
-pub struct TalkTagKeyWait {
-    #[rename(name = "m_TagID")]
-    pub m_tag_id: crate::app::talk3_d::talktagkeywait::TalkTagKeyWait_TagID,
-    #[rename(name = "m_Sec")]
-    pub m_sec: f32,
-    #[rename(name = "m_Result")]
-    pub m_result: crate::app::talk3_d::talktag::TalkTag_Result,
-}
-
-#[cfg(feature = "app-talk3_d-talktagkeywait")]
-#[::unity2::methods]
-impl TalkTagKeyWait {
-    #[doc = "`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]
-    #[method(name = "Initialize", args = 1)]
-    pub fn initialize(self, talk_ptr: crate::app::talk3_d::talkptr::TalkPtr) -> ();
-
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> ();
-
-    #[doc = "`GetResult()` overload"]
-    #[method(name = "GetResult", args = 0)]
-    pub fn get_result(self) -> crate::app::talk3_d::talktag::TalkTag_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-talk3_d-talktagkeywait")]
-impl TalkTagKeyWait {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkTagKeyWait),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkTagKeyWaitMethods>::ctor(this);
-        this
     }
 }

@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencecontract/MapSequenceContract.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencecontract/MapSequenceContract.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceContract")]
 # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencecontract :: MapSequenceContract >)]
 pub struct MapSequenceContract {}
@@ -71,7 +71,7 @@ impl MapSequenceContract {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecontract/MapSequenceContract_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecontract/MapSequenceContract_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

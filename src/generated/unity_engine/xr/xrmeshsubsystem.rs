@@ -8,7 +8,7 @@ use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1;
 use crate::unity_engine::integratedsubsystem_1::IntegratedSubsystem_1;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrmeshsubsystem/XRMeshSubsystem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrmeshsubsystem/XRMeshSubsystem.md"))]
 #[::unity2::class(namespace = "UnityEngine.XR", name = "XRMeshSubsystem")]
 # [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrmeshsubsystemdescriptor :: XRMeshSubsystemDescriptor >)]
 pub struct XRMeshSubsystem {}

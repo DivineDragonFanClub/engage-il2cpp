@@ -8,7 +8,125 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_ClipExtrapolation.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TimelineClip_ClipExtrapolation {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TimelineClip_ClipExtrapolation {
+    const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+    const NAME: &'static str = "TimelineClip.ClipExtrapolation";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TimelineClip_ClipExtrapolation {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TimelineClip_ClipExtrapolation {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn hold() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn r#loop() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn ping_pong() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn r#continue() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_BlendCurveMode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TimelineClip_BlendCurveMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TimelineClip_BlendCurveMode {
+    const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+    const NAME: &'static str = "TimelineClip.BlendCurveMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TimelineClip_BlendCurveMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TimelineClip_BlendCurveMode {
+    pub fn auto() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn manual() -> Self {
+        Self { value: 1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Timeline",
+    name = "TimelineClip.TimelineClipUpgrade"
+)]
+#[parent(crate::system::object::Object)]
+pub struct TimelineClip_TimelineClipUpgrade {}
+
+#[cfg(feature = "unity_engine-timeline-timelineclip")]
+#[::unity2::methods]
+impl TimelineClip_TimelineClipUpgrade {
+    #[doc = "`UpgradeClipInFromGlobalToLocal(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]
+    #[method(name = "UpgradeClipInFromGlobalToLocal", args = 1)]
+    pub fn upgrade_clip_in_from_global_to_local(
+        clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
+    ) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip.md"))]
 #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineClip")]
 #[parent(crate::system::object::Object)]
 pub struct TimelineClip {
@@ -378,123 +496,5 @@ impl TimelineClip {
         });
         <Self as ITimelineClipMethods>::ctor(this, parent);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_BlendCurveMode.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TimelineClip_BlendCurveMode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TimelineClip_BlendCurveMode {
-    const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-    const NAME: &'static str = "TimelineClip.BlendCurveMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TimelineClip_BlendCurveMode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TimelineClip_BlendCurveMode {
-    pub fn auto() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn manual() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineclip/TimelineClip_TimelineClipUpgrade.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Timeline",
-    name = "TimelineClip.TimelineClipUpgrade"
-)]
-#[parent(crate::system::object::Object)]
-pub struct TimelineClip_TimelineClipUpgrade {}
-
-#[cfg(feature = "unity_engine-timeline-timelineclip")]
-#[::unity2::methods]
-impl TimelineClip_TimelineClipUpgrade {
-    #[doc = "`UpgradeClipInFromGlobalToLocal(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]
-    #[method(name = "UpgradeClipInFromGlobalToLocal", args = 1)]
-    pub fn upgrade_clip_in_from_global_to_local(
-        clip: crate::unity_engine::timeline::timelineclip::TimelineClip,
-    ) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineclip/TimelineClip_ClipExtrapolation.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TimelineClip_ClipExtrapolation {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TimelineClip_ClipExtrapolation {
-    const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-    const NAME: &'static str = "TimelineClip.ClipExtrapolation";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TimelineClip_ClipExtrapolation {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TimelineClip_ClipExtrapolation {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn hold() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn r#loop() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn ping_pong() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn r#continue() -> Self {
-        Self { value: 4 }
     }
 }

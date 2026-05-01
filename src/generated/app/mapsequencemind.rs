@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencemind/MapSequenceMind_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencemind/MapSequenceMind_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -166,40 +166,7 @@ impl MapSequenceMind_Label {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind_ProcMindBase.md")))]
-#[::unity2::class(namespace = "App", name = "MapSequenceMind.ProcMindBase")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct MapSequenceMind_ProcMindBase {}
-
-#[cfg(feature = "app-mapsequencemind")]
-#[::unity2::methods]
-impl MapSequenceMind_ProcMindBase {
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsequencemind")]
-impl MapSequenceMind_ProcMindBase {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceMind_ProcMindBase),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceMind_ProcMindBaseMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceMind")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct MapSequenceMind {
@@ -500,7 +467,7 @@ impl MapSequenceMind {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind_ProcEscape.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind_ProcEscape.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceMind.ProcEscape")]
 #[parent(crate::app::mapsequencemind::MapSequenceMind_ProcMindBase)]
 pub struct MapSequenceMind_ProcEscape {
@@ -540,6 +507,39 @@ impl MapSequenceMind_ProcEscape {
             )
         });
         <Self as IMapSequenceMind_ProcEscapeMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind_ProcMindBase.md"))]
+#[::unity2::class(namespace = "App", name = "MapSequenceMind.ProcMindBase")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct MapSequenceMind_ProcMindBase {}
+
+#[cfg(feature = "app-mapsequencemind")]
+#[::unity2::methods]
+impl MapSequenceMind_ProcMindBase {
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencemind")]
+impl MapSequenceMind_ProcMindBase {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceMind_ProcMindBase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceMind_ProcMindBaseMethods>::ctor(this);
         this
     }
 }

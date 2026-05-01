@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/doorinspector/DoorInspector.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/doorinspector/DoorInspector.md"))]
 #[::unity2::class(namespace = "App", name = "DoorInspector")]
 #[parent(crate::app::pokeinspector::PokeInspector)]
 pub struct DoorInspector {}

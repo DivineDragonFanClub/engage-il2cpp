@@ -16,7 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinforoot/MapBattleInfoRoot.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinforoot/MapBattleInfoRoot.md"))]
 #[::unity2::class(namespace = "App", name = "MapBattleInfoRoot")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct MapBattleInfoRoot {
@@ -200,7 +200,7 @@ impl MapBattleInfoRoot {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapbattleinforoot/MapBattleInfoRoot_StatusShowType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapbattleinforoot/MapBattleInfoRoot_StatusShowType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

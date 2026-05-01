@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/binlibmsfilebase/BinLibmsFileBase.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/binlibmsfilebase/BinLibmsFileBase.md"))]
 #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "BinLibmsFileBase")]
 #[parent(crate::system::object::Object)]
 pub struct BinLibmsFileBase {

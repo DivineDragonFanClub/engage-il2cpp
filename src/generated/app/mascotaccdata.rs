@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotaccdata/MascotAccData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotaccdata/MascotAccData.md"))]
 #[::unity2::class(namespace = "App", name = "MascotAccData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: mascotaccdata :: MascotAccData >)]
 pub struct MascotAccData {}
@@ -67,7 +67,7 @@ impl MascotAccData {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotaccdata/MascotAccData_PartsType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotaccdata/MascotAccData_PartsType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

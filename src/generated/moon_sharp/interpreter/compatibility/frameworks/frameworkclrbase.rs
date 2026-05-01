@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/compatibility/frameworks/frameworkclrbase/FrameworkClrBase.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/compatibility/frameworks/frameworkclrbase/FrameworkClrBase.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Compatibility.Frameworks",
     name = "FrameworkClrBase"

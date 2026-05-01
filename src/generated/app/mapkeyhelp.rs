@@ -12,198 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapKeyHelp_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapKeyHelp_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapKeyHelp.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapKeyHelp_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapKeyHelp_Label {
-    pub fn stay() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn measure() -> Self {
-        Self { value: 1 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Mode.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapKeyHelp_Mode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapKeyHelp_Mode {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapKeyHelp.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapKeyHelp_Mode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapKeyHelp_Mode {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn stay_show() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn stay_hide() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn measure() -> Self {
-        Self { value: 3 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkeyhelp/MapKeyHelp.md")))]
-#[::unity2::class(namespace = "App", name = "MapKeyHelp")]
-# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapkeyhelp :: MapKeyHelp >)]
-pub struct MapKeyHelp {
-    #[static_field]
-    #[rename(name = "ShowTime")]
-    pub show_time: f32,
-    #[rename(name = "m_Mode")]
-    pub m_mode: crate::app::mapkeyhelp::MapKeyHelp_Mode,
-    #[rename(name = "m_TemporaryHidingCount")]
-    pub m_temporary_hiding_count: i32,
-    #[rename(name = "m_LastType")]
-    pub m_last_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
-    #[rename(name = "m_RequestType")]
-    pub m_request_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
-    #[rename(name = "m_Progress")]
-    pub m_progress: f32,
-}
-
-#[cfg(feature = "app-mapkeyhelp")]
-#[::unity2::methods]
-impl MapKeyHelp {
-    #[doc = "`CreateAsync(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateAsync", args = 1)]
-    pub fn create_async(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`IsCreating()` overload"]
-    #[method(name = "IsCreating", args = 0)]
-    pub fn is_creating() -> bool;
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy() -> ();
-
-    #[doc = "`GetRequestType()` overload"]
-    #[method(name = "GetRequestType", args = 0)]
-    pub fn get_request_type(self) -> crate::app::mapkeyhelp::MapKeyHelp_Types;
-
-    #[doc = "`RequestToChange(crate::app::mapkeyhelp::MapKeyHelp_Types)` overload"]
-    #[method(name = "RequestToChange", args = 1)]
-    pub fn request_to_change(self, r#type: crate::app::mapkeyhelp::MapKeyHelp_Types) -> ();
-
-    #[doc = "`ShowImmediate()` overload"]
-    #[method(name = "ShowImmediate", args = 0)]
-    pub fn show_immediate(self) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`BeginTemporaryHiding()` overload"]
-    #[method(name = "BeginTemporaryHiding", args = 0)]
-    pub fn begin_temporary_hiding(self) -> ();
-
-    #[doc = "`EndTemporaryHiding(bool)` overload"]
-    #[method(name = "EndTemporaryHiding", args = 1)]
-    pub fn end_temporary_hiding(self, is_reset_measuring: bool) -> ();
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`Measure()` overload"]
-    #[method(name = "Measure", args = 0)]
-    pub fn measure(self) -> ();
-
-    #[doc = "`Setup(crate::app::mapkeyhelp::MapKeyHelp_Types)` overload"]
-    #[method(name = "Setup", args = 1)]
-    pub fn setup(self, r#type: crate::app::mapkeyhelp::MapKeyHelp_Types) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapkeyhelp")]
-impl MapKeyHelp {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapKeyHelp),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapKeyHelpMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Types.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Types.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -336,5 +145,196 @@ impl MapKeyHelp_Types {
 
     pub fn map_edit_free_on_unit() -> Self {
         Self { value: 24 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapKeyHelp_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapKeyHelp_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapKeyHelp.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapKeyHelp_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapKeyHelp_Label {
+    pub fn stay() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn measure() -> Self {
+        Self { value: 1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkeyhelp/MapKeyHelp.md"))]
+#[::unity2::class(namespace = "App", name = "MapKeyHelp")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapkeyhelp :: MapKeyHelp >)]
+pub struct MapKeyHelp {
+    #[static_field]
+    #[rename(name = "ShowTime")]
+    pub show_time: f32,
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::app::mapkeyhelp::MapKeyHelp_Mode,
+    #[rename(name = "m_TemporaryHidingCount")]
+    pub m_temporary_hiding_count: i32,
+    #[rename(name = "m_LastType")]
+    pub m_last_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
+    #[rename(name = "m_RequestType")]
+    pub m_request_type: crate::app::mapkeyhelp::MapKeyHelp_Types,
+    #[rename(name = "m_Progress")]
+    pub m_progress: f32,
+}
+
+#[cfg(feature = "app-mapkeyhelp")]
+#[::unity2::methods]
+impl MapKeyHelp {
+    #[doc = "`CreateAsync(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateAsync", args = 1)]
+    pub fn create_async(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`IsCreating()` overload"]
+    #[method(name = "IsCreating", args = 0)]
+    pub fn is_creating() -> bool;
+
+    #[doc = "`Destroy()` overload"]
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy() -> ();
+
+    #[doc = "`GetRequestType()` overload"]
+    #[method(name = "GetRequestType", args = 0)]
+    pub fn get_request_type(self) -> crate::app::mapkeyhelp::MapKeyHelp_Types;
+
+    #[doc = "`RequestToChange(crate::app::mapkeyhelp::MapKeyHelp_Types)` overload"]
+    #[method(name = "RequestToChange", args = 1)]
+    pub fn request_to_change(self, r#type: crate::app::mapkeyhelp::MapKeyHelp_Types) -> ();
+
+    #[doc = "`ShowImmediate()` overload"]
+    #[method(name = "ShowImmediate", args = 0)]
+    pub fn show_immediate(self) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[doc = "`BeginTemporaryHiding()` overload"]
+    #[method(name = "BeginTemporaryHiding", args = 0)]
+    pub fn begin_temporary_hiding(self) -> ();
+
+    #[doc = "`EndTemporaryHiding(bool)` overload"]
+    #[method(name = "EndTemporaryHiding", args = 1)]
+    pub fn end_temporary_hiding(self, is_reset_measuring: bool) -> ();
+
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`Measure()` overload"]
+    #[method(name = "Measure", args = 0)]
+    pub fn measure(self) -> ();
+
+    #[doc = "`Setup(crate::app::mapkeyhelp::MapKeyHelp_Types)` overload"]
+    #[method(name = "Setup", args = 1)]
+    pub fn setup(self, r#type: crate::app::mapkeyhelp::MapKeyHelp_Types) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapkeyhelp")]
+impl MapKeyHelp {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapKeyHelp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapKeyHelpMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkeyhelp/MapKeyHelp_Mode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapKeyHelp_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapKeyHelp_Mode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapKeyHelp.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapKeyHelp_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapKeyHelp_Mode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn stay_show() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn stay_hide() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn measure() -> Self {
+        Self { value: 3 }
     }
 }

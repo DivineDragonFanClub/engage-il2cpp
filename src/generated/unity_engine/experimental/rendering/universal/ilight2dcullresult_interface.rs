@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/ilight2dcullresult_interface/ILight2DCullResult_Interface.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/ilight2dcullresult_interface/ILight2DCullResult_Interface.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal",
     name = "ILight2DCullResult"

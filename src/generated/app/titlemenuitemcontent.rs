@@ -16,7 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlemenuitemcontent/TitleMenuItemContent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlemenuitemcontent/TitleMenuItemContent.md"))]
 #[::unity2::class(namespace = "App", name = "TitleMenuItemContent")]
 #[parent(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItemContent)]
 pub struct TitleMenuItemContent {}

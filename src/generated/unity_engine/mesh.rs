@@ -8,7 +8,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/mesh/Mesh_MeshData.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/mesh/Mesh_MeshData.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct Mesh_MeshData {
@@ -36,7 +36,86 @@ impl ::unity2::IlType for Mesh_MeshData {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/mesh/Mesh.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/mesh/Mesh_MeshDataArray.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Mesh_MeshDataArray {}
+
+impl ::unity2::ClassIdentity for Mesh_MeshDataArray {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "Mesh.MeshDataArray";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Mesh_MeshDataArray {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-mesh")]
+#[::unity2::methods(value)]
+impl Mesh_MeshDataArray {
+    #[doc = "`ApplyToMeshImpl(crate::unity_engine::mesh::Mesh, ::unity2::IntPtr, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    #[method(name = "ApplyToMeshImpl", args = 3)]
+    pub fn apply_to_mesh_impl(
+        mesh: crate::unity_engine::mesh::Mesh,
+        data: ::unity2::IntPtr,
+        flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+    ) -> ();
+
+    #[doc = "`get_Length()` overload"]
+    #[method(name = "get_Length", args = 0)]
+    pub fn get_length(self) -> i32;
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`ApplyToMeshAndDispose(crate::unity_engine::mesh::Mesh, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    #[method(name = "ApplyToMeshAndDispose", args = 2)]
+    pub fn apply_to_mesh_and_dispose(
+        self,
+        mesh: crate::unity_engine::mesh::Mesh,
+        flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+    ) -> ();
+
+    #[doc = "`ApplyToMeshesAndDispose(::unity2::Array<crate::unity_engine::mesh::Mesh>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
+    #[method(name = "ApplyToMeshesAndDispose", args = 2)]
+    pub fn apply_to_meshes_and_dispose(
+        self,
+        meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh>,
+        flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::unity_engine::mesh::Mesh, bool)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, mesh: crate::unity_engine::mesh::Mesh, check_read_write: bool) -> ();
+
+    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::mesh::Mesh>, i32, bool)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor_2(
+        self,
+        meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh>,
+        meshes_count: i32,
+        check_read_write: bool,
+    ) -> ();
+
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_3(self, meshes_count: i32) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/mesh/Mesh.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "Mesh")]
 #[parent(crate::unity_engine::object_2::Object_2)]
 pub struct Mesh {}
@@ -1975,83 +2054,4 @@ impl Mesh {
         <Self as IMeshMethods>::ctor(this);
         this
     }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/mesh/Mesh_MeshDataArray.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Mesh_MeshDataArray {}
-
-impl ::unity2::ClassIdentity for Mesh_MeshDataArray {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "Mesh.MeshDataArray";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Mesh_MeshDataArray {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-mesh")]
-#[::unity2::methods(value)]
-impl Mesh_MeshDataArray {
-    #[doc = "`ApplyToMeshImpl(crate::unity_engine::mesh::Mesh, ::unity2::IntPtr, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "ApplyToMeshImpl", args = 3)]
-    pub fn apply_to_mesh_impl(
-        mesh: crate::unity_engine::mesh::Mesh,
-        data: ::unity2::IntPtr,
-        flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`get_Length()` overload"]
-    #[method(name = "get_Length", args = 0)]
-    pub fn get_length(self) -> i32;
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`ApplyToMeshAndDispose(crate::unity_engine::mesh::Mesh, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "ApplyToMeshAndDispose", args = 2)]
-    pub fn apply_to_mesh_and_dispose(
-        self,
-        mesh: crate::unity_engine::mesh::Mesh,
-        flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`ApplyToMeshesAndDispose(::unity2::Array<crate::unity_engine::mesh::Mesh>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]
-    #[method(name = "ApplyToMeshesAndDispose", args = 2)]
-    pub fn apply_to_meshes_and_dispose(
-        self,
-        meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh>,
-        flags: crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::mesh::Mesh, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, mesh: crate::unity_engine::mesh::Mesh, check_read_write: bool) -> ();
-
-    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::mesh::Mesh>, i32, bool)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor_2(
-        self,
-        meshes: ::unity2::Array<crate::unity_engine::mesh::Mesh>,
-        meshes_count: i32,
-        check_read_write: bool,
-    ) -> ();
-
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_3(self, meshes_count: i32) -> ();
 }

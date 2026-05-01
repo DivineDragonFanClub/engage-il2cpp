@@ -14,14 +14,14 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu_UploadMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu.UploadMenuItem")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu_RankingMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu.RankingMenuItem")]
 #[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
-pub struct RankingSequence_TopMenu_UploadMenuItem {}
+pub struct RankingSequence_TopMenu_RankingMenuItem {}
 
 #[cfg(feature = "app-rankingsequence")]
 #[::unity2::methods]
-impl RankingSequence_TopMenu_UploadMenuItem {
+impl RankingSequence_TopMenu_RankingMenuItem {
     #[doc = "`get_Label()` overload"]
     #[method(name = "get_Label", args = 0)]
     pub fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label;
@@ -36,96 +36,22 @@ impl RankingSequence_TopMenu_UploadMenuItem {
 }
 
 #[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_TopMenu_UploadMenuItem {
+impl RankingSequence_TopMenu_RankingMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_TopMenu_UploadMenuItem),
+                ::core::stringify!(RankingSequence_TopMenu_RankingMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRankingSequence_TopMenu_UploadMenuItemMethods>::ctor(this);
+        <Self as IRankingSequence_TopMenu_RankingMenuItemMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu_BaseMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu.BaseMenuItem")]
-#[parent(crate::app::menuitem::MenuItem)]
-pub struct RankingSequence_TopMenu_BaseMenuItem {}
-
-#[cfg(feature = "app-rankingsequence")]
-#[::unity2::methods]
-impl RankingSequence_TopMenu_BaseMenuItem {
-    #[doc = "`get_Label()` overload"]
-    #[method(name = "get_Label", args = 0)]
-    pub fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_TopMenu_BaseMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_TopMenu_BaseMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_TopMenu_BaseMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu.md")))]
-#[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu")]
-#[parent(crate::system::object::Object)]
-pub struct RankingSequence_TopMenu {}
-
-#[cfg(feature = "app-rankingsequence")]
-#[::unity2::methods]
-impl RankingSequence_TopMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_TopMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_TopMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_TopMenuMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "RankingSequence.UploadPairsMenu.RandomAddUploadPairsMenuItem"
@@ -173,7 +99,321 @@ impl RankingSequence_UploadPairsMenu_RandomAddUploadPairsMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_PairMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "RankingSequence.PairMenuItem")]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct RankingSequence_PairMenuItem {
+    #[rename(name = "m_Data")]
+    pub m_data: crate::app::nexranking::NexRanking_Data,
+    #[static_field]
+    #[rename(name = "MaxRatingSlot")]
+    pub max_rating_slot: u32,
+}
+
+#[cfg(feature = "app-rankingsequence")]
+#[::unity2::methods]
+impl RankingSequence_PairMenuItem {
+    #[doc = "`.ctor(crate::app::nexranking::NexRanking_Data)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, data: crate::app::nexranking::NexRanking_Data) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelp()` overload"]
+    #[method(name = "GetHelp", args = 0)]
+    pub fn get_help(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_PairMenuItem {
+    #[doc = "`.ctor(crate::app::nexranking::NexRanking_Data)` — overload selector"]
+    pub fn new(data: crate::app::nexranking::NexRanking_Data) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_PairMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_PairMenuItemMethods>::ctor(this, data);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu.md"))]
+#[::unity2::class(namespace = "App", name = "RankingSequence.UploadPairsMenu")]
+#[parent(crate::app::rankingsequence::RankingSequence_TopMenu)]
+pub struct RankingSequence_UploadPairsMenu {}
+
+#[cfg(feature = "app-rankingsequence")]
+#[::unity2::methods]
+impl RankingSequence_UploadPairsMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_UploadPairsMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_UploadPairsMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_UploadPairsMenuMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu.md"))]
+#[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu")]
+#[parent(crate::system::object::Object)]
+pub struct RankingSequence_TopMenu {}
+
+#[cfg(feature = "app-rankingsequence")]
+#[::unity2::methods]
+impl RankingSequence_TopMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_TopMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_TopMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_TopMenuMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu_ChapterSelect.md"))]
+#[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu.ChapterSelect")]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct RankingSequence_TopMenu_ChapterSelect {}
+
+#[cfg(feature = "app-rankingsequence")]
+#[::unity2::methods]
+impl RankingSequence_TopMenu_ChapterSelect {
+    #[doc = "`IsEnable()` overload"]
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`OnLeftRight(i32, bool)` overload"]
+    #[method(name = "OnLeftRight", args = 2)]
+    pub fn on_left_right(self, step: i32, is_trigger: bool) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_TopMenu_ChapterSelect {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_TopMenu_ChapterSelect),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_TopMenu_ChapterSelectMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rankingsequence/RankingSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RankingSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RankingSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RankingSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RankingSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RankingSequence_Label {
+    pub fn menu() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ranking() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn upload_menu() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn upload_data() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn upload_pairs_list() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn add_upload_pairs() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn random_add_upload_pairs() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn clear_upload_pairs() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 8 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadGodMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RankingSequence.UploadPairsMenu.UploadGodMenuItem"
+)]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct RankingSequence_UploadPairsMenu_UploadGodMenuItem {
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-rankingsequence")]
+#[::unity2::methods]
+impl RankingSequence_UploadPairsMenu_UploadGodMenuItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`IsEnable()` overload"]
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`OnLeftRight(i32, bool)` overload"]
+    #[method(name = "OnLeftRight", args = 2)]
+    pub fn on_left_right(self, step: i32, is_trigger: bool) -> ();
+
+    #[doc = "`GetHelp()` overload"]
+    #[method(name = "GetHelp", args = 0)]
+    pub fn get_help(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_UploadPairsMenu_UploadGodMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_UploadPairsMenu_UploadGodMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_UploadPairsMenu_UploadGodMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu_BaseMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu.BaseMenuItem")]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct RankingSequence_TopMenu_BaseMenuItem {}
+
+#[cfg(feature = "app-rankingsequence")]
+#[::unity2::methods]
+impl RankingSequence_TopMenu_BaseMenuItem {
+    #[doc = "`get_Label()` overload"]
+    #[method(name = "get_Label", args = 0)]
+    pub fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_TopMenu_BaseMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_TopMenu_BaseMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_TopMenu_BaseMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence.md"))]
 #[::unity2::class(namespace = "App", name = "RankingSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: rankingsequence :: RankingSequence >)]
 pub struct RankingSequence {
@@ -320,116 +560,7 @@ impl RankingSequence {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rankingsequence/RankingSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RankingSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RankingSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RankingSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RankingSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RankingSequence_Label {
-    pub fn menu() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ranking() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn upload_menu() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn upload_data() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn upload_pairs_list() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn add_upload_pairs() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn random_add_upload_pairs() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn clear_upload_pairs() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 8 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu_RankingMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu.RankingMenuItem")]
-#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
-pub struct RankingSequence_TopMenu_RankingMenuItem {}
-
-#[cfg(feature = "app-rankingsequence")]
-#[::unity2::methods]
-impl RankingSequence_TopMenu_RankingMenuItem {
-    #[doc = "`get_Label()` overload"]
-    #[method(name = "get_Label", args = 0)]
-    pub fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label;
-
-    #[doc = "`IsEnable()` overload"]
-    #[method(name = "IsEnable", args = 0)]
-    pub fn is_enable(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_TopMenu_RankingMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_TopMenu_RankingMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_TopMenu_RankingMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadPairMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadPairMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "RankingSequence.UploadPairsMenu.UploadPairMenuItem"
@@ -473,7 +604,7 @@ impl RankingSequence_UploadPairsMenu_UploadPairMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadPersonMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadPersonMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "RankingSequence.UploadPairsMenu.UploadPersonMenuItem"
@@ -524,58 +655,28 @@ impl RankingSequence_UploadPairsMenu_UploadPersonMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu.md")))]
-#[::unity2::class(namespace = "App", name = "RankingSequence.UploadPairsMenu")]
-#[parent(crate::app::rankingsequence::RankingSequence_TopMenu)]
-pub struct RankingSequence_UploadPairsMenu {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadDataMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RankingSequence.UploadPairsMenu.UploadDataMenuItem"
+)]
+#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
+pub struct RankingSequence_UploadPairsMenu_UploadDataMenuItem {}
 
 #[cfg(feature = "app-rankingsequence")]
 #[::unity2::methods]
-impl RankingSequence_UploadPairsMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_UploadPairsMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_UploadPairsMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_UploadPairsMenuMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu_ChapterSelect.md")))]
-#[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu.ChapterSelect")]
-#[parent(crate::app::menuitem::MenuItem)]
-pub struct RankingSequence_TopMenu_ChapterSelect {}
-
-#[cfg(feature = "app-rankingsequence")]
-#[::unity2::methods]
-impl RankingSequence_TopMenu_ChapterSelect {
-    #[doc = "`IsEnable()` overload"]
-    #[method(name = "IsEnable", args = 0)]
-    pub fn is_enable(self) -> bool;
+impl RankingSequence_UploadPairsMenu_UploadDataMenuItem {
+    #[doc = "`get_Label()` overload"]
+    #[method(name = "get_Label", args = 0)]
+    pub fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label;
 
     #[doc = "`GetName()` overload"]
     #[method(name = "GetName", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`OnLeftRight(i32, bool)` overload"]
-    #[method(name = "OnLeftRight", args = 2)]
-    pub fn on_left_right(self, step: i32, is_trigger: bool) -> ();
+    #[doc = "`IsEnable()` overload"]
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -583,22 +684,99 @@ impl RankingSequence_TopMenu_ChapterSelect {
 }
 
 #[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_TopMenu_ChapterSelect {
+impl RankingSequence_UploadPairsMenu_UploadDataMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_TopMenu_ChapterSelect),
+                ::core::stringify!(RankingSequence_UploadPairsMenu_UploadDataMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRankingSequence_TopMenu_ChapterSelectMethods>::ctor(this);
+        <Self as IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RankingSequence.UploadPairsMenu.ClearUploadPairsMenuItem"
+)]
+#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
+pub struct RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem {}
+
+#[cfg(feature = "app-rankingsequence")]
+#[::unity2::methods]
+impl RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem {
+    #[doc = "`get_Label()` overload"]
+    #[method(name = "get_Label", args = 0)]
+    pub fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label;
+
+    #[doc = "`IsEnable()` overload"]
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_TopMenu_UploadMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "RankingSequence.TopMenu.UploadMenuItem")]
+#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
+pub struct RankingSequence_TopMenu_UploadMenuItem {}
+
+#[cfg(feature = "app-rankingsequence")]
+#[::unity2::methods]
+impl RankingSequence_TopMenu_UploadMenuItem {
+    #[doc = "`get_Label()` overload"]
+    #[method(name = "get_Label", args = 0)]
+    pub fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label;
+
+    #[doc = "`IsEnable()` overload"]
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-rankingsequence")]
+impl RankingSequence_TopMenu_UploadMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingSequence_TopMenu_UploadMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingSequence_TopMenu_UploadMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "RankingSequence.UploadPairsMenu.AddUploadPairsMenuItem"
@@ -652,184 +830,6 @@ impl RankingSequence_UploadPairsMenu_AddUploadPairsMenuItem {
             person_item,
             god_item,
         );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadGodMenuItem.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RankingSequence.UploadPairsMenu.UploadGodMenuItem"
-)]
-#[parent(crate::app::menuitem::MenuItem)]
-pub struct RankingSequence_UploadPairsMenu_UploadGodMenuItem {
-    #[rename(name = "m_Name")]
-    pub m_name: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-rankingsequence")]
-#[::unity2::methods]
-impl RankingSequence_UploadPairsMenu_UploadGodMenuItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`IsEnable()` overload"]
-    #[method(name = "IsEnable", args = 0)]
-    pub fn is_enable(self) -> bool;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`OnLeftRight(i32, bool)` overload"]
-    #[method(name = "OnLeftRight", args = 2)]
-    pub fn on_left_right(self, step: i32, is_trigger: bool) -> ();
-
-    #[doc = "`GetHelp()` overload"]
-    #[method(name = "GetHelp", args = 0)]
-    pub fn get_help(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_UploadPairsMenu_UploadGodMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_UploadPairsMenu_UploadGodMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_UploadPairsMenu_UploadGodMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_PairMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "RankingSequence.PairMenuItem")]
-#[parent(crate::app::menuitem::MenuItem)]
-pub struct RankingSequence_PairMenuItem {
-    #[rename(name = "m_Data")]
-    pub m_data: crate::app::nexranking::NexRanking_Data,
-    #[static_field]
-    #[rename(name = "MaxRatingSlot")]
-    pub max_rating_slot: u32,
-}
-
-#[cfg(feature = "app-rankingsequence")]
-#[::unity2::methods]
-impl RankingSequence_PairMenuItem {
-    #[doc = "`.ctor(crate::app::nexranking::NexRanking_Data)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, data: crate::app::nexranking::NexRanking_Data) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelp()` overload"]
-    #[method(name = "GetHelp", args = 0)]
-    pub fn get_help(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_PairMenuItem {
-    #[doc = "`.ctor(crate::app::nexranking::NexRanking_Data)` — overload selector"]
-    pub fn new(data: crate::app::nexranking::NexRanking_Data) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_PairMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_PairMenuItemMethods>::ctor(this, data);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_UploadDataMenuItem.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RankingSequence.UploadPairsMenu.UploadDataMenuItem"
-)]
-#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
-pub struct RankingSequence_UploadPairsMenu_UploadDataMenuItem {}
-
-#[cfg(feature = "app-rankingsequence")]
-#[::unity2::methods]
-impl RankingSequence_UploadPairsMenu_UploadDataMenuItem {
-    #[doc = "`get_Label()` overload"]
-    #[method(name = "get_Label", args = 0)]
-    pub fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`IsEnable()` overload"]
-    #[method(name = "IsEnable", args = 0)]
-    pub fn is_enable(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_UploadPairsMenu_UploadDataMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_UploadPairsMenu_UploadDataMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_UploadPairsMenu_UploadDataMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingsequence/RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RankingSequence.UploadPairsMenu.ClearUploadPairsMenuItem"
-)]
-#[parent(crate::app::rankingsequence::RankingSequence_TopMenu_BaseMenuItem)]
-pub struct RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem {}
-
-#[cfg(feature = "app-rankingsequence")]
-#[::unity2::methods]
-impl RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem {
-    #[doc = "`get_Label()` overload"]
-    #[method(name = "get_Label", args = 0)]
-    pub fn get_label(self) -> crate::app::rankingsequence::RankingSequence_Label;
-
-    #[doc = "`IsEnable()` overload"]
-    #[method(name = "IsEnable", args = 0)]
-    pub fn is_enable(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-rankingsequence")]
-impl RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingSequence_UploadPairsMenu_ClearUploadPairsMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingSequence_UploadPairsMenu_ClearUploadPairsMenuItemMethods>::ctor(this);
         this
     }
 }

@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningselectsequence/RingCleaningSelectSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningselectsequence/RingCleaningSelectSequence.md"))]
 #[::unity2::class(namespace = "App", name = "RingCleaningSelectSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct RingCleaningSelectSequence {
@@ -98,7 +98,7 @@ impl RingCleaningSelectSequence {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningselectsequence/RingCleaningSelectSequence_Label2.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningselectsequence/RingCleaningSelectSequence_Label2.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

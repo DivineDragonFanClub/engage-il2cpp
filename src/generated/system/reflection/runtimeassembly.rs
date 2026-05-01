@@ -6,7 +6,7 @@ use crate::system::reflection::assembly::Assembly;
 use crate::system::reflection::assembly::IAssembly;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimeassembly/RuntimeAssembly.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimeassembly/RuntimeAssembly.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "RuntimeAssembly")]
 #[parent(crate::system::reflection::assembly::Assembly)]
 pub struct RuntimeAssembly {}

@@ -6,7 +6,7 @@ use crate::unity_engine::integratedsubsystemdescriptor::IIntegratedSubsystemDesc
 use crate::unity_engine::integratedsubsystemdescriptor::IntegratedSubsystemDescriptor;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/integratedsubsystemdescriptor_1/IntegratedSubsystemDescriptor_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/integratedsubsystemdescriptor_1/IntegratedSubsystemDescriptor_1.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "IntegratedSubsystemDescriptor`1")]
 #[parent(crate::unity_engine::integratedsubsystemdescriptor::IntegratedSubsystemDescriptor)]
 #[parent(crate::system::object::Object)]

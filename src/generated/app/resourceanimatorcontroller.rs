@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceanimatorcontroller/ResourceAnimatorController.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourceanimatorcontroller/ResourceAnimatorController.md"))]
 #[::unity2::class(namespace = "App", name = "ResourceAnimatorController")]
 # [parent (crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController >)]
 pub struct ResourceAnimatorController {}

@@ -12,7 +12,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/waypointsync/WaypointSync.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/waypointsync/WaypointSync.md"))]
 #[::unity2::class(namespace = "App", name = "WaypointSync")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct WaypointSync {
@@ -75,7 +75,7 @@ impl WaypointSync {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/waypointsync/WaypointSync_Relative.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/waypointsync/WaypointSync_Relative.md"))]
 #[::unity2::class(namespace = "App", name = "WaypointSync.Relative")]
 #[parent(crate::system::object::Object)]
 pub struct WaypointSync_Relative {

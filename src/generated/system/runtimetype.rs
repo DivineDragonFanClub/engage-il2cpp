@@ -8,7 +8,7 @@ use crate::system::reflection::typeinfo::ITypeInfo;
 use crate::system::reflection::typeinfo::TypeInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/runtimetype/RuntimeType.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/runtimetype/RuntimeType.md"))]
 #[::unity2::class(namespace = "System", name = "RuntimeType")]
 #[parent(crate::system::reflection::typeinfo::TypeInfo)]
 pub struct RuntimeType {

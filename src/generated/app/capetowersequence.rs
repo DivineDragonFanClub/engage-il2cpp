@@ -18,7 +18,131 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "CapeTowerSequence.ConfirmEnableOnlineDialog.NoMenuItem"
+)]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem {}
+
+#[cfg(feature = "app-capetowersequence")]
+#[::unity2::methods]
+impl CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-capetowersequence")]
+impl CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "CapeTowerSequence.ConfirmEnableOnlineDialog"
+)]
+#[parent(crate::system::object::Object)]
+pub struct CapeTowerSequence_ConfirmEnableOnlineDialog {}
+
+#[cfg(feature = "app-capetowersequence")]
+#[::unity2::methods]
+impl CapeTowerSequence_ConfirmEnableOnlineDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowersequence/CapeTowerSequence_Label2.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CapeTowerSequence_Label2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CapeTowerSequence_Label2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "CapeTowerSequence.Label2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CapeTowerSequence_Label2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CapeTowerSequence_Label2 {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn top() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn confirm_enable_online() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn challenge() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn relay() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn versus() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 6 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence.md"))]
 #[::unity2::class(namespace = "App", name = "CapeTowerSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct CapeTowerSequence {
@@ -128,131 +252,7 @@ impl CapeTowerSequence {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "CapeTowerSequence.ConfirmEnableOnlineDialog"
-)]
-#[parent(crate::system::object::Object)]
-pub struct CapeTowerSequence_ConfirmEnableOnlineDialog {}
-
-#[cfg(feature = "app-capetowersequence")]
-#[::unity2::methods]
-impl CapeTowerSequence_ConfirmEnableOnlineDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "CapeTowerSequence.ConfirmEnableOnlineDialog.NoMenuItem"
-)]
-#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-pub struct CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem {}
-
-#[cfg(feature = "app-capetowersequence")]
-#[::unity2::methods]
-impl CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-capetowersequence")]
-impl CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICapeTowerSequence_ConfirmEnableOnlineDialog_NoMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capetowersequence/CapeTowerSequence_Label2.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct CapeTowerSequence_Label2 {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for CapeTowerSequence_Label2 {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "CapeTowerSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for CapeTowerSequence_Label2 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl CapeTowerSequence_Label2 {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn top() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn confirm_enable_online() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn challenge() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn relay() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn versus() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 6 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capetowersequence/CapeTowerSequence_ConfirmEnableOnlineDialog_YesMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "CapeTowerSequence.ConfirmEnableOnlineDialog.YesMenuItem"

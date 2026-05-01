@@ -18,7 +18,40 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopExchangeMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "RefineShopTopMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineShopTopMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-refineshoptopmenu")]
+#[::unity2::methods]
+impl RefineShopTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::refineshoptopmenu::RefineShopTopMenu_Result2)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, result: crate::app::refineshoptopmenu::RefineShopTopMenu_Result2) -> ();
+}
+
+#[cfg(feature = "app-refineshoptopmenu")]
+impl RefineShopTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopTopMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopExchangeMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "RefineShopTopMenu.RefineShopTopExchangeMenuItem"
@@ -69,20 +102,20 @@ impl RefineShopTopMenu_RefineShopTopExchangeMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopRefineMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopEngraveMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "RefineShopTopMenu.RefineShopTopRefineMenuItem"
+    name = "RefineShopTopMenu.RefineShopTopEngraveMenuItem"
 )]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct RefineShopTopMenu_RefineShopTopRefineMenuItem {
+pub struct RefineShopTopMenu_RefineShopTopEngraveMenuItem {
     #[rename(name = "m_DecideEventHandler")]
     pub m_decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
 }
 
 #[cfg(feature = "app-refineshoptopmenu")]
 #[::unity2::methods]
-impl RefineShopTopMenu_RefineShopTopRefineMenuItem {
+impl RefineShopTopMenu_RefineShopTopEngraveMenuItem {
     #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(
@@ -100,7 +133,7 @@ impl RefineShopTopMenu_RefineShopTopRefineMenuItem {
 }
 
 #[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_RefineShopTopRefineMenuItem {
+impl RefineShopTopMenu_RefineShopTopEngraveMenuItem {
     #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"]
     pub fn new(
         decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
@@ -108,11 +141,11 @@ impl RefineShopTopMenu_RefineShopTopRefineMenuItem {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopTopMenu_RefineShopTopRefineMenuItem),
+                ::core::stringify!(RefineShopTopMenu_RefineShopTopEngraveMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods>::ctor(
+        <Self as IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods>::ctor(
             this,
             decide_event_handler,
         );
@@ -120,40 +153,7 @@ impl RefineShopTopMenu_RefineShopTopRefineMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_DecideEventHandler.md")))]
-#[::unity2::class(namespace = "App", name = "RefineShopTopMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RefineShopTopMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-refineshoptopmenu")]
-#[::unity2::methods]
-impl RefineShopTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::refineshoptopmenu::RefineShopTopMenu_Result2)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, result: crate::app::refineshoptopmenu::RefineShopTopMenu_Result2) -> ();
-}
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopTopMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu.md"))]
 #[::unity2::class(namespace = "App", name = "RefineShopTopMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct RefineShopTopMenu {}
@@ -232,7 +232,58 @@ impl RefineShopTopMenu {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshoptopmenu/RefineShopTopMenu_Result2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopRefineMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineShopTopMenu.RefineShopTopRefineMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct RefineShopTopMenu_RefineShopTopRefineMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-refineshoptopmenu")]
+#[::unity2::methods]
+impl RefineShopTopMenu_RefineShopTopRefineMenuItem {
+    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-refineshoptopmenu")]
+impl RefineShopTopMenu_RefineShopTopRefineMenuItem {
+    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopTopMenu_RefineShopTopRefineMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopTopMenu_RefineShopTopRefineMenuItemMethods>::ctor(
+            this,
+            decide_event_handler,
+        );
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refineshoptopmenu/RefineShopTopMenu_Result2.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -281,56 +332,5 @@ impl RefineShopTopMenu_Result2 {
 
     pub fn end() -> Self {
         Self { value: 3 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoptopmenu/RefineShopTopMenu_RefineShopTopEngraveMenuItem.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RefineShopTopMenu.RefineShopTopEngraveMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct RefineShopTopMenu_RefineShopTopEngraveMenuItem {
-    #[rename(name = "m_DecideEventHandler")]
-    pub m_decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
-}
-
-#[cfg(feature = "app-refineshoptopmenu")]
-#[::unity2::methods]
-impl RefineShopTopMenu_RefineShopTopEngraveMenuItem {
-    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-refineshoptopmenu")]
-impl RefineShopTopMenu_RefineShopTopEngraveMenuItem {
-    #[doc = "`.ctor(crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        decide_event_handler: crate::app::refineshoptopmenu::RefineShopTopMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopTopMenu_RefineShopTopEngraveMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopTopMenu_RefineShopTopEngraveMenuItemMethods>::ctor(
-            this,
-            decide_event_handler,
-        );
-        this
     }
 }

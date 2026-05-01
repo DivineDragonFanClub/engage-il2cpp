@@ -4,7 +4,108 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/textreader/TextReader.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/textreader/TextReader_SyncTextReader.md"))]
+#[::unity2::class(namespace = "System.IO", name = "TextReader.SyncTextReader")]
+#[parent(crate::system::io::textreader::TextReader)]
+pub struct TextReader_SyncTextReader {
+    #[rename(name = "_in")]
+    pub r#in: crate::system::io::textreader::TextReader,
+}
+
+#[cfg(feature = "system-io-textreader")]
+#[::unity2::methods]
+impl TextReader_SyncTextReader {
+    #[doc = "`.ctor(crate::system::io::textreader::TextReader)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, t: crate::system::io::textreader::TextReader) -> ();
+
+    #[doc = "`Close()` overload"]
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[doc = "`Dispose(bool)` overload"]
+    #[method(name = "Dispose", args = 1)]
+    pub fn dispose(self, disposing: bool) -> ();
+
+    #[doc = "`Peek()` overload"]
+    #[method(name = "Peek", args = 0)]
+    pub fn peek(self) -> i32;
+
+    #[doc = "`Read()` overload"]
+    #[method(name = "Read", args = 0)]
+    pub fn read(self) -> i32;
+
+    #[doc = "`Read(::unity2::Array<u16>, i32, i32)` overload"]
+    #[method(name = "Read", args = 3)]
+    pub fn read_2(self, buffer: ::unity2::Array<u16>, index: i32, count: i32) -> i32;
+
+    #[doc = "`ReadBlock(::unity2::Array<u16>, i32, i32)` overload"]
+    #[method(name = "ReadBlock", args = 3)]
+    pub fn read_block(self, buffer: ::unity2::Array<u16>, index: i32, count: i32) -> i32;
+
+    #[doc = "`ReadLine()` overload"]
+    #[method(name = "ReadLine", args = 0)]
+    pub fn read_line(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadToEnd()` overload"]
+    #[method(name = "ReadToEnd", args = 0)]
+    pub fn read_to_end(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "system-io-textreader")]
+impl TextReader_SyncTextReader {
+    #[doc = "`.ctor(crate::system::io::textreader::TextReader)` — overload selector"]
+    pub fn new(t: crate::system::io::textreader::TextReader) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TextReader_SyncTextReader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITextReader_SyncTextReaderMethods>::ctor(this, t);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/textreader/TextReader_NullTextReader.md"))]
+#[::unity2::class(namespace = "System.IO", name = "TextReader.NullTextReader")]
+#[parent(crate::system::io::textreader::TextReader)]
+pub struct TextReader_NullTextReader {}
+
+#[cfg(feature = "system-io-textreader")]
+#[::unity2::methods]
+impl TextReader_NullTextReader {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Read(::unity2::Array<u16>, i32, i32)` overload"]
+    #[method(name = "Read", args = 3)]
+    pub fn read(self, buffer: ::unity2::Array<u16>, index: i32, count: i32) -> i32;
+
+    #[doc = "`ReadLine()` overload"]
+    #[method(name = "ReadLine", args = 0)]
+    pub fn read_line(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "system-io-textreader")]
+impl TextReader_NullTextReader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TextReader_NullTextReader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITextReader_NullTextReaderMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/textreader/TextReader.md"))]
 #[::unity2::class(namespace = "System.IO", name = "TextReader")]
 pub struct TextReader {
     #[static_field]
@@ -85,107 +186,6 @@ impl TextReader {
             )
         });
         <Self as ITextReaderMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/textreader/TextReader_SyncTextReader.md")))]
-#[::unity2::class(namespace = "System.IO", name = "TextReader.SyncTextReader")]
-#[parent(crate::system::io::textreader::TextReader)]
-pub struct TextReader_SyncTextReader {
-    #[rename(name = "_in")]
-    pub r#in: crate::system::io::textreader::TextReader,
-}
-
-#[cfg(feature = "system-io-textreader")]
-#[::unity2::methods]
-impl TextReader_SyncTextReader {
-    #[doc = "`.ctor(crate::system::io::textreader::TextReader)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, t: crate::system::io::textreader::TextReader) -> ();
-
-    #[doc = "`Close()` overload"]
-    #[method(name = "Close", args = 0)]
-    pub fn close(self) -> ();
-
-    #[doc = "`Dispose(bool)` overload"]
-    #[method(name = "Dispose", args = 1)]
-    pub fn dispose(self, disposing: bool) -> ();
-
-    #[doc = "`Peek()` overload"]
-    #[method(name = "Peek", args = 0)]
-    pub fn peek(self) -> i32;
-
-    #[doc = "`Read()` overload"]
-    #[method(name = "Read", args = 0)]
-    pub fn read(self) -> i32;
-
-    #[doc = "`Read(::unity2::Array<u16>, i32, i32)` overload"]
-    #[method(name = "Read", args = 3)]
-    pub fn read_2(self, buffer: ::unity2::Array<u16>, index: i32, count: i32) -> i32;
-
-    #[doc = "`ReadBlock(::unity2::Array<u16>, i32, i32)` overload"]
-    #[method(name = "ReadBlock", args = 3)]
-    pub fn read_block(self, buffer: ::unity2::Array<u16>, index: i32, count: i32) -> i32;
-
-    #[doc = "`ReadLine()` overload"]
-    #[method(name = "ReadLine", args = 0)]
-    pub fn read_line(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadToEnd()` overload"]
-    #[method(name = "ReadToEnd", args = 0)]
-    pub fn read_to_end(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "system-io-textreader")]
-impl TextReader_SyncTextReader {
-    #[doc = "`.ctor(crate::system::io::textreader::TextReader)` — overload selector"]
-    pub fn new(t: crate::system::io::textreader::TextReader) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TextReader_SyncTextReader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITextReader_SyncTextReaderMethods>::ctor(this, t);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/textreader/TextReader_NullTextReader.md")))]
-#[::unity2::class(namespace = "System.IO", name = "TextReader.NullTextReader")]
-#[parent(crate::system::io::textreader::TextReader)]
-pub struct TextReader_NullTextReader {}
-
-#[cfg(feature = "system-io-textreader")]
-#[::unity2::methods]
-impl TextReader_NullTextReader {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Read(::unity2::Array<u16>, i32, i32)` overload"]
-    #[method(name = "Read", args = 3)]
-    pub fn read(self, buffer: ::unity2::Array<u16>, index: i32, count: i32) -> i32;
-
-    #[doc = "`ReadLine()` overload"]
-    #[method(name = "ReadLine", args = 0)]
-    pub fn read_line(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "system-io-textreader")]
-impl TextReader_NullTextReader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TextReader_NullTextReader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITextReader_NullTextReaderMethods>::ctor(this);
         this
     }
 }

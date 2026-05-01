@@ -18,51 +18,114 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus_DownloadSequence.md")))]
-#[::unity2::class(namespace = "App", name = "MapKillBonus.DownloadSequence")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct MapKillBonus_DownloadSequence {
-    #[rename(name = "m_Cid")]
-    pub m_cid: ::unity2::Il2CppString,
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus_CountImage.md"))]
+#[::unity2::class(namespace = "App", name = "MapKillBonus.CountImage")]
+# [parent (crate :: app :: mapimagecore_1 :: MapImageCore_1 < i16 >)]
+pub struct MapKillBonus_CountImage {}
 
 #[cfg(feature = "app-mapkillbonus")]
 #[::unity2::methods]
-impl MapKillBonus_DownloadSequence {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, cid: ::unity2::Il2CppString) -> ();
+impl MapKillBonus_CountImage {
+    #[doc = "`Add(i32, i16)` overload"]
+    #[method(name = "Add", args = 2)]
+    pub fn add(self, index: i32, v: i16) -> ();
 
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> ();
-
-    #[doc = "`Setup()` overload"]
-    #[method(name = "Setup", args = 0)]
-    pub fn setup(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst, cid: ::unity2::Il2CppString) -> ();
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_DownloadSequence {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(cid: ::unity2::Il2CppString) -> Self {
+impl MapKillBonus_CountImage {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapKillBonus_DownloadSequence),
+                ::core::stringify!(MapKillBonus_CountImage),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapKillBonus_DownloadSequenceMethods>::ctor(this, cid);
+        <Self as IMapKillBonus_CountImageMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus_GainSequence.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_Work_Pos.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapKillBonus_Work_Pos {
+    pub x: u16,
+    pub z: u16,
+}
+
+impl ::unity2::ClassIdentity for MapKillBonus_Work_Pos {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapKillBonus.Work.Pos";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapKillBonus_Work_Pos {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_KilledBonus.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapKillBonus_KilledBonus {
+    pub kind: crate::app::killedbonusdata::KilledBonusData_Kinds,
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapKillBonus_KilledBonus {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapKillBonus.KilledBonus";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapKillBonus_KilledBonus {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapkillbonus")]
+#[::unity2::methods(value)]
+impl MapKillBonus_KilledBonus {
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = "Deserialize", args = 2)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus_GainSequence.md"))]
 #[::unity2::class(namespace = "App", name = "MapKillBonus.GainSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct MapKillBonus_GainSequence {
@@ -123,7 +186,133 @@ impl MapKillBonus_GainSequence {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus_DownloadSequence.md"))]
+#[::unity2::class(namespace = "App", name = "MapKillBonus.DownloadSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct MapKillBonus_DownloadSequence {
+    #[rename(name = "m_Cid")]
+    pub m_cid: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-mapkillbonus")]
+#[::unity2::methods]
+impl MapKillBonus_DownloadSequence {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, cid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> ();
+
+    #[doc = "`Setup()` overload"]
+    #[method(name = "Setup", args = 0)]
+    pub fn setup(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst, cid: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "app-mapkillbonus")]
+impl MapKillBonus_DownloadSequence {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(cid: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapKillBonus_DownloadSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapKillBonus_DownloadSequenceMethods>::ctor(this, cid);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_Work.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapKillBonus_Work {
+    pub positions: ::unity2::Array<crate::app::mapkillbonus::MapKillBonus_Work_Pos>,
+    pub rates0: crate::system::collections::generic::list_1::List_1<i32>,
+    pub rates1: crate::system::collections::generic::list_1::List_1<i32>,
+}
+
+impl ::unity2::ClassIdentity for MapKillBonus_Work {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapKillBonus.Work";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapKillBonus_Work {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_Kinds.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapKillBonus_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapKillBonus_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapKillBonus.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapKillBonus_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapKillBonus_Kinds {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn kill() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn killed() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 3 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus.md"))]
 #[::unity2::class(namespace = "App", name = "MapKillBonus")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapkillbonus :: MapKillBonus >)]
 pub struct MapKillBonus {
@@ -363,118 +552,7 @@ impl MapKillBonus {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_Work.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapKillBonus_Work {
-    pub positions: ::unity2::Array<crate::app::mapkillbonus::MapKillBonus_Work_Pos>,
-    pub rates0: crate::system::collections::generic::list_1::List_1<i32>,
-    pub rates1: crate::system::collections::generic::list_1::List_1<i32>,
-}
-
-impl ::unity2::ClassIdentity for MapKillBonus_Work {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapKillBonus.Work";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapKillBonus_Work {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_Kinds.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapKillBonus_Kinds {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapKillBonus_Kinds {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapKillBonus.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapKillBonus_Kinds {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapKillBonus_Kinds {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn kill() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn killed() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn max() -> Self {
-        Self { value: 3 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_Work_Pos.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapKillBonus_Work_Pos {
-    pub x: u16,
-    pub z: u16,
-}
-
-impl ::unity2::ClassIdentity for MapKillBonus_Work_Pos {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapKillBonus.Work.Pos";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapKillBonus_Work_Pos {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus_KindImage.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus_KindImage.md"))]
 #[::unity2::class(namespace = "App", name = "MapKillBonus.KindImage")]
 #[parent(crate::app::mapimagecorebyte::MapImageCoreByte)]
 pub struct MapKillBonus_KindImage {}
@@ -524,7 +602,7 @@ impl MapKillBonus_KindImage {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_KillBonus.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_KillBonus.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct MapKillBonus_KillBonus {
@@ -566,82 +644,4 @@ impl MapKillBonus_KillBonus {
     #[doc = "`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]
     #[method(name = "Deserialize", args = 2)]
     pub fn deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapkillbonus/MapKillBonus_KilledBonus.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapKillBonus_KilledBonus {
-    pub kind: crate::app::killedbonusdata::KilledBonusData_Kinds,
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapKillBonus_KilledBonus {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapKillBonus.KilledBonus";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapKillBonus_KilledBonus {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-mapkillbonus")]
-#[::unity2::methods(value)]
-impl MapKillBonus_KilledBonus {
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Serialize", args = 1)]
-    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = "Deserialize", args = 2)]
-    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapkillbonus/MapKillBonus_CountImage.md")))]
-#[::unity2::class(namespace = "App", name = "MapKillBonus.CountImage")]
-# [parent (crate :: app :: mapimagecore_1 :: MapImageCore_1 < i16 >)]
-pub struct MapKillBonus_CountImage {}
-
-#[cfg(feature = "app-mapkillbonus")]
-#[::unity2::methods]
-impl MapKillBonus_CountImage {
-    #[doc = "`Add(i32, i16)` overload"]
-    #[method(name = "Add", args = 2)]
-    pub fn add(self, index: i32, v: i16) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapkillbonus")]
-impl MapKillBonus_CountImage {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapKillBonus_CountImage),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapKillBonus_CountImageMethods>::ctor(this);
-        this
-    }
 }

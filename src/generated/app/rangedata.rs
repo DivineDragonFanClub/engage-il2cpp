@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Offset.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Offset.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct RangeData_Offset {
@@ -56,63 +56,7 @@ impl RangeData_Offset {
     pub fn to_string(self) -> ::unity2::Il2CppString;
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Targets.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RangeData_Targets {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RangeData_Targets {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RangeData.Targets";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RangeData_Targets {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RangeData_Targets {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn self_() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn enemy() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn friend() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn both() -> Self {
-        Self { value: 4 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData.md"))]
 #[::unity2::class(namespace = "App", name = "RangeData")]
 # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: rangedata :: RangeData >)]
 pub struct RangeData {
@@ -247,7 +191,63 @@ impl RangeData {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData_DirOffsets.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Targets.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RangeData_Targets {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RangeData_Targets {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RangeData.Targets";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RangeData_Targets {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RangeData_Targets {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn self_() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn enemy() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn friend() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn both() -> Self {
+        Self { value: 4 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData_DirOffsets.md"))]
 #[::unity2::class(namespace = "App", name = "RangeData.DirOffsets")]
 #[parent(crate::system::object::Object)]
 pub struct RangeData_DirOffsets {

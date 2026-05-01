@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusservercasualdata/VersusServerCasualData_GodBondBackup.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusservercasualdata/VersusServerCasualData_GodBondBackup.md"))]
 #[::unity2::class(namespace = "App", name = "VersusServerCasualData.GodBondBackup")]
 #[parent(crate::system::object::Object)]
 pub struct VersusServerCasualData_GodBondBackup {
@@ -60,7 +60,7 @@ impl VersusServerCasualData_GodBondBackup {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusservercasualdata/VersusServerCasualData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusservercasualdata/VersusServerCasualData.md"))]
 #[::unity2::class(namespace = "App", name = "VersusServerCasualData")]
 #[parent(crate::app::versusserverdata::VersusServerData)]
 pub struct VersusServerCasualData {

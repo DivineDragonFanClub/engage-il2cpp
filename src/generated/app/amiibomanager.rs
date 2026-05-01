@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibomanager/AmiiboManager_Sequence.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibomanager/AmiiboManager_Sequence.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -70,64 +70,7 @@ impl AmiiboManager_Sequence {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager_AmiiboInfo.md")))]
-#[::unity2::class(namespace = "App", name = "AmiiboManager.AmiiboInfo")]
-#[parent(crate::system::object::Object)]
-pub struct AmiiboManager_AmiiboInfo {}
-
-#[cfg(feature = "app-amiibomanager")]
-#[::unity2::methods]
-impl AmiiboManager_AmiiboInfo {
-    #[doc = "`GetCharacterId()` overload"]
-    #[method(name = "GetCharacterId", args = 0)]
-    pub fn get_character_id(self) -> i32;
-
-    #[doc = "`GetCharacterBaseId()` overload"]
-    #[method(name = "GetCharacterBaseId", args = 0)]
-    pub fn get_character_base_id(self) -> i32;
-
-    #[doc = "`GetCharacterBaseUpperId()` overload"]
-    #[method(name = "GetCharacterBaseUpperId", args = 0)]
-    pub fn get_character_base_upper_id(self) -> u8;
-
-    #[doc = "`GetCharacterBaseLowerId()` overload"]
-    #[method(name = "GetCharacterBaseLowerId", args = 0)]
-    pub fn get_character_base_lower_id(self) -> u8;
-
-    #[doc = "`GetCharacterDetailId()` overload"]
-    #[method(name = "GetCharacterDetailId", args = 0)]
-    pub fn get_character_detail_id(self) -> i32;
-
-    #[doc = "`GetSeriesId()` overload"]
-    #[method(name = "GetSeriesId", args = 0)]
-    pub fn get_series_id(self) -> i32;
-
-    #[doc = "`GetNumberingId()` overload"]
-    #[method(name = "GetNumberingId", args = 0)]
-    pub fn get_numbering_id(self) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-amiibomanager")]
-impl AmiiboManager_AmiiboInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AmiiboManager_AmiiboInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAmiiboManager_AmiiboInfoMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager.md"))]
 #[::unity2::class(namespace = "App", name = "AmiiboManager")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: amiibomanager :: AmiiboManager >)]
 pub struct AmiiboManager {
@@ -234,6 +177,63 @@ impl AmiiboManager {
             )
         });
         <Self as IAmiiboManagerMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager_AmiiboInfo.md"))]
+#[::unity2::class(namespace = "App", name = "AmiiboManager.AmiiboInfo")]
+#[parent(crate::system::object::Object)]
+pub struct AmiiboManager_AmiiboInfo {}
+
+#[cfg(feature = "app-amiibomanager")]
+#[::unity2::methods]
+impl AmiiboManager_AmiiboInfo {
+    #[doc = "`GetCharacterId()` overload"]
+    #[method(name = "GetCharacterId", args = 0)]
+    pub fn get_character_id(self) -> i32;
+
+    #[doc = "`GetCharacterBaseId()` overload"]
+    #[method(name = "GetCharacterBaseId", args = 0)]
+    pub fn get_character_base_id(self) -> i32;
+
+    #[doc = "`GetCharacterBaseUpperId()` overload"]
+    #[method(name = "GetCharacterBaseUpperId", args = 0)]
+    pub fn get_character_base_upper_id(self) -> u8;
+
+    #[doc = "`GetCharacterBaseLowerId()` overload"]
+    #[method(name = "GetCharacterBaseLowerId", args = 0)]
+    pub fn get_character_base_lower_id(self) -> u8;
+
+    #[doc = "`GetCharacterDetailId()` overload"]
+    #[method(name = "GetCharacterDetailId", args = 0)]
+    pub fn get_character_detail_id(self) -> i32;
+
+    #[doc = "`GetSeriesId()` overload"]
+    #[method(name = "GetSeriesId", args = 0)]
+    pub fn get_series_id(self) -> i32;
+
+    #[doc = "`GetNumberingId()` overload"]
+    #[method(name = "GetNumberingId", args = 0)]
+    pub fn get_numbering_id(self) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-amiibomanager")]
+impl AmiiboManager_AmiiboInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AmiiboManager_AmiiboInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAmiiboManager_AmiiboInfoMethods>::ctor(this);
         this
     }
 }

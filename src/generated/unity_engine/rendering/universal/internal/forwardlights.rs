@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights_LightConstantBuffer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights_LightConstantBuffer.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Internal",
     name = "ForwardLights.LightConstantBuffer"
@@ -67,7 +67,7 @@ pub struct ForwardLights_LightConstantBuffer {
     pub spec_cube_tex: ::unity2::Array<i32>,
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/forwardlights/ForwardLights.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Internal",
     name = "ForwardLights"

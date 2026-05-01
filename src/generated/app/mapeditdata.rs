@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditdata/MapEditData_UnitInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditdata/MapEditData_UnitInfo.md"))]
 #[::unity2::class(namespace = "App", name = "MapEditData.UnitInfo")]
 #[parent(crate::system::object::Object)]
 pub struct MapEditData_UnitInfo {
@@ -51,7 +51,7 @@ impl MapEditData_UnitInfo {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditdata/MapEditData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditdata/MapEditData.md"))]
 #[::unity2::class(namespace = "App", name = "MapEditData")]
 #[parent(crate::system::object::Object)]
 pub struct MapEditData {

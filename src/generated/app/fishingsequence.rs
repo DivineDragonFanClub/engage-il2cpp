@@ -14,7 +14,63 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingsequence/FishingSequence.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingsequence/FishingSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FishingSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FishingSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FishingSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FishingSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FishingSequence_Label {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ready_menu() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn execute_game() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn check_continue() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 4 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingsequence/FishingSequence.md"))]
 #[::unity2::class(namespace = "App", name = "FishingSequence")]
 # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)]
 pub struct FishingSequence {}
@@ -84,61 +140,5 @@ impl FishingSequence {
         });
         <Self as IFishingSequenceMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingsequence/FishingSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct FishingSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for FishingSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FishingSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for FishingSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl FishingSequence_Label {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ready_menu() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn execute_game() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn check_continue() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn exit() -> Self {
-        Self { value: 4 }
     }
 }

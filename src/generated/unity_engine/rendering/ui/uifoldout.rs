@@ -18,7 +18,7 @@ use crate::unity_engine::ui::toggle::IToggle;
 use crate::unity_engine::ui::toggle::Toggle;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/uifoldout/UIFoldout.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/uifoldout/UIFoldout.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering.UI", name = "UIFoldout")]
 #[parent(crate::unity_engine::ui::toggle::Toggle)]
 pub struct UIFoldout {

@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/playerprefs_string/PlayerPrefs_String.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/playerprefs_string/PlayerPrefs_String.md"))]
 #[::unity2::class(namespace = "Combat", name = "PlayerPrefs_String")]
 #[parent(crate::system::object::Object)]
 pub struct PlayerPrefs_String {

@@ -6,7 +6,39 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_Enumerator.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_Slot.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct HashSet_1_Slot<T0> {
+    pub _phantom: ::core::marker::PhantomData<(T0,)>,
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_Slot<T0> {
+    const NAMESPACE: &'static str = "System.Collections.Generic";
+
+    const NAME: &'static str = "HashSet`1.Slot";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                .expect("generic instantiation")
+        })
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_Slot<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_Enumerator.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct HashSet_1_Enumerator<T0> {
@@ -66,17 +98,17 @@ impl<T0: ::unity2::ClassIdentity> HashSet_1_Enumerator<T0> {
     pub fn system_collections_i_enumerator_reset(self) -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_Slot.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_ElementCount.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HashSet_1_Slot<T0> {
+pub struct HashSet_1_ElementCount<T0> {
     pub _phantom: ::core::marker::PhantomData<(T0,)>,
 }
 
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_Slot<T0> {
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_ElementCount<T0> {
     const NAMESPACE: &'static str = "System.Collections.Generic";
 
-    const NAME: &'static str = "HashSet`1.Slot";
+    const NAME: &'static str = "HashSet`1.ElementCount";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -89,7 +121,7 @@ impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_Slot<T0>
     }
 }
 
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_Slot<T0> {
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_ElementCount<T0> {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -98,7 +130,7 @@ impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_Slot<T0> {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/hashset_1/HashSet_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/hashset_1/HashSet_1.md"))]
 #[::unity2::class(namespace = "System.Collections.Generic", name = "HashSet`1")]
 #[parent(crate::system::object::Object)]
 pub struct HashSet_1 < T0 : :: unity2 :: ClassIdentity > {
@@ -355,37 +387,5 @@ impl<T0: ::unity2::ClassIdentity> HashSet_1<T0> {
         });
         <Self as IHashSet_1Methods<T0>>::ctor_4(this, collection, comparer);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/hashset_1/HashSet_1_ElementCount.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HashSet_1_ElementCount<T0> {
-    pub _phantom: ::core::marker::PhantomData<(T0,)>,
-}
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for HashSet_1_ElementCount<T0> {
-    const NAMESPACE: &'static str = "System.Collections.Generic";
-
-    const NAME: &'static str = "HashSet`1.ElementCount";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
-                .expect("generic instantiation")
-        })
-    }
-}
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for HashSet_1_ElementCount<T0> {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
     }
 }

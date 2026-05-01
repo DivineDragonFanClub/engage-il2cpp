@@ -16,57 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelptitlebarcontroller/KeyHelpTitleBarController.md")))]
-#[::unity2::class(namespace = "App", name = "KeyHelpTitleBarController")]
-#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-pub struct KeyHelpTitleBarController {
-    #[rename(name = "m_HelpObject")]
-    pub m_help_object: crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::gameobject::GameObject,
-    >,
-}
-
-#[cfg(feature = "app-keyhelptitlebarcontroller")]
-#[::unity2::methods]
-impl KeyHelpTitleBarController {
-    #[doc = "`SetKeyHelpMessage(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetKeyHelpMessage", args = 1)]
-    pub fn set_key_help_message(self, key_help_id: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`SetText(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
-    #[method(name = "SetText", args = 2)]
-    pub fn set_text(
-        self,
-        game_object: crate::unity_engine::gameobject::GameObject,
-        text: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-keyhelptitlebarcontroller")]
-impl KeyHelpTitleBarController {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(KeyHelpTitleBarController),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IKeyHelpTitleBarControllerMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/keyhelptitlebarcontroller/KeyHelpTitleBarController_Type.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/keyhelptitlebarcontroller/KeyHelpTitleBarController_Type.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -183,5 +133,55 @@ impl KeyHelpTitleBarController_Type {
 
     pub fn num() -> Self {
         Self { value: 20 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelptitlebarcontroller/KeyHelpTitleBarController.md"))]
+#[::unity2::class(namespace = "App", name = "KeyHelpTitleBarController")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct KeyHelpTitleBarController {
+    #[rename(name = "m_HelpObject")]
+    pub m_help_object: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+}
+
+#[cfg(feature = "app-keyhelptitlebarcontroller")]
+#[::unity2::methods]
+impl KeyHelpTitleBarController {
+    #[doc = "`SetKeyHelpMessage(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetKeyHelpMessage", args = 1)]
+    pub fn set_key_help_message(self, key_help_id: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[doc = "`SetText(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
+    #[method(name = "SetText", args = 2)]
+    pub fn set_text(
+        self,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        text: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-keyhelptitlebarcontroller")]
+impl KeyHelpTitleBarController {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(KeyHelpTitleBarController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IKeyHelpTitleBarControllerMethods>::ctor(this);
+        this
     }
 }

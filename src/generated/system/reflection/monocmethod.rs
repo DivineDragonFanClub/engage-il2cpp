@@ -12,7 +12,7 @@ use crate::system::reflection::runtimeconstructorinfo::IRuntimeConstructorInfo;
 use crate::system::reflection::runtimeconstructorinfo::RuntimeConstructorInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monocmethod/MonoCMethod.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monocmethod/MonoCMethod.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "MonoCMethod")]
 #[parent(crate::system::reflection::runtimeconstructorinfo::RuntimeConstructorInfo)]
 pub struct MonoCMethod {

@@ -14,7 +14,7 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Timeline",
     name = "AnimationPlayableAsset.AnimationPlayableAssetUpgrade"
@@ -32,7 +32,7 @@ impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade {
     ) -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset.md"))]
 #[::unity2::class(namespace = "UnityEngine.Timeline", name = "AnimationPlayableAsset")]
 #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
 pub struct AnimationPlayableAsset {
@@ -273,7 +273,7 @@ impl AnimationPlayableAsset {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_LoopMode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_LoopMode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

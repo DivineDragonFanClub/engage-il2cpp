@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/streamreader/StreamReader_NullStreamReader.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/streamreader/StreamReader_NullStreamReader.md"))]
 #[::unity2::class(namespace = "System.IO", name = "StreamReader.NullStreamReader")]
 #[parent(crate::system::io::streamreader::StreamReader)]
 pub struct StreamReader_NullStreamReader {}
@@ -67,7 +67,7 @@ impl StreamReader_NullStreamReader {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/streamreader/StreamReader.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/streamreader/StreamReader.md"))]
 #[::unity2::class(namespace = "System.IO", name = "StreamReader")]
 #[parent(crate::system::io::textreader::TextReader)]
 pub struct StreamReader {

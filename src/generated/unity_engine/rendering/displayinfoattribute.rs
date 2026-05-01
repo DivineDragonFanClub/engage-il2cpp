@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/displayinfoattribute/DisplayInfoAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/displayinfoattribute/DisplayInfoAttribute.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering", name = "DisplayInfoAttribute")]
 pub struct DisplayInfoAttribute {
     #[rename(name = "name")]

@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenu/TroopListMenu_ConfirmBattleSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenu/TroopListMenu_ConfirmBattleSequence.md"))]
 #[::unity2::class(namespace = "App", name = "TroopListMenu.ConfirmBattleSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct TroopListMenu_ConfirmBattleSequence {
@@ -54,7 +54,7 @@ impl TroopListMenu_ConfirmBattleSequence {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenu/TroopListMenu_TroopListMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenu/TroopListMenu_TroopListMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "TroopListMenu.TroopListMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct TroopListMenu_TroopListMenuItem {
@@ -139,7 +139,7 @@ impl TroopListMenu_TroopListMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenu/TroopListMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenu/TroopListMenu.md"))]
 #[::unity2::class(namespace = "App", name = "TroopListMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct TroopListMenu {

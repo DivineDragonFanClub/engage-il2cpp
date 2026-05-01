@@ -8,7 +8,7 @@ use crate::system::reflection::runtimeparameterinfo::IRuntimeParameterInfo;
 use crate::system::reflection::runtimeparameterinfo::RuntimeParameterInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoparameterinfo/MonoParameterInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoparameterinfo/MonoParameterInfo.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "MonoParameterInfo")]
 #[parent(crate::system::reflection::runtimeparameterinfo::RuntimeParameterInfo)]
 pub struct MonoParameterInfo {}

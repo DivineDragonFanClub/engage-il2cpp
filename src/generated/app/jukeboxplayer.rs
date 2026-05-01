@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jukeboxplayer/JukeboxPlayer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jukeboxplayer/JukeboxPlayer.md"))]
 #[::unity2::class(namespace = "App", name = "JukeboxPlayer")]
 #[parent(crate::app::bgmplayer::BgmPlayer)]
 pub struct JukeboxPlayer {}

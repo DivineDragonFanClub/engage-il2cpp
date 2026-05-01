@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structdataarraylist_1/StructDataArrayList_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structdataarraylist_1/StructDataArrayList_1.md"))]
 #[::unity2::class(namespace = "App", name = "StructDataArrayList`1")]
 # [parent (crate :: app :: structlist_1 :: StructList_1 < T0 >)]
 # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < T0 >)]

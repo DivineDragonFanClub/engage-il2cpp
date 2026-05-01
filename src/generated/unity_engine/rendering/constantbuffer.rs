@@ -4,43 +4,56 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer_ConstantBufferBase.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering",
-    name = "ConstantBuffer.ConstantBufferBase"
-)]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer.md"))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "ConstantBuffer")]
 #[parent(crate::system::object::Object)]
-pub struct ConstantBuffer_ConstantBufferBase {}
+pub struct ConstantBuffer {
+    #[static_field]
+    #[rename(name = "m_RegisteredConstantBuffers")]
+    pub m_registered_constant_buffers: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase,
+    >,
+}
 
 #[cfg(feature = "unity_engine-rendering-constantbuffer")]
 #[::unity2::methods]
-impl ConstantBuffer_ConstantBufferBase {
-    #[doc = "`Release()` overload"]
-    #[method(name = "Release", args = 0)]
-    pub fn release(self) -> ();
+impl ConstantBuffer {
+    #[doc = "`ReleaseAll()` overload"]
+    #[method(name = "ReleaseAll", args = 0)]
+    pub fn release_all() -> ();
+
+    #[doc = "`Register(crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase)` overload"]
+    #[method(name = "Register", args = 1)]
+    pub fn register(
+        cb: crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase,
+    ) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }
 
 #[cfg(feature = "unity_engine-rendering-constantbuffer")]
-impl ConstantBuffer_ConstantBufferBase {
+impl ConstantBuffer {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ConstantBuffer_ConstantBufferBase),
+                ::core::stringify!(ConstantBuffer),
                 ::core::stringify!(new),
             )
         });
-        <Self as IConstantBuffer_ConstantBufferBaseMethods>::ctor(this);
+        <Self as IConstantBufferMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer_TypedConstantBuffer_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer_TypedConstantBuffer_1.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering",
     name = "ConstantBuffer.TypedConstantBuffer`1"
@@ -134,51 +147,38 @@ impl<T0: ::unity2::ClassIdentity> ConstantBuffer_TypedConstantBuffer_1<T0> {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer.md")))]
-#[::unity2::class(namespace = "UnityEngine.Rendering", name = "ConstantBuffer")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/constantbuffer/ConstantBuffer_ConstantBufferBase.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering",
+    name = "ConstantBuffer.ConstantBufferBase"
+)]
 #[parent(crate::system::object::Object)]
-pub struct ConstantBuffer {
-    #[static_field]
-    #[rename(name = "m_RegisteredConstantBuffers")]
-    pub m_registered_constant_buffers: crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase,
-    >,
-}
+pub struct ConstantBuffer_ConstantBufferBase {}
 
 #[cfg(feature = "unity_engine-rendering-constantbuffer")]
 #[::unity2::methods]
-impl ConstantBuffer {
-    #[doc = "`ReleaseAll()` overload"]
-    #[method(name = "ReleaseAll", args = 0)]
-    pub fn release_all() -> ();
-
-    #[doc = "`Register(crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase)` overload"]
-    #[method(name = "Register", args = 1)]
-    pub fn register(
-        cb: crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase,
-    ) -> ();
+impl ConstantBuffer_ConstantBufferBase {
+    #[doc = "`Release()` overload"]
+    #[method(name = "Release", args = 0)]
+    pub fn release(self) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
 }
 
 #[cfg(feature = "unity_engine-rendering-constantbuffer")]
-impl ConstantBuffer {
+impl ConstantBuffer_ConstantBufferBase {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ConstantBuffer),
+                ::core::stringify!(ConstantBuffer_ConstantBufferBase),
                 ::core::stringify!(new),
             )
         });
-        <Self as IConstantBufferMethods>::ctor(this);
+        <Self as IConstantBuffer_ConstantBufferBaseMethods>::ctor(this);
         this
     }
 }

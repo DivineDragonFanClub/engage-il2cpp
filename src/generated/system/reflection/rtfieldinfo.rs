@@ -10,7 +10,7 @@ use crate::system::reflection::runtimefieldinfo::IRuntimeFieldInfo;
 use crate::system::reflection::runtimefieldinfo::RuntimeFieldInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/rtfieldinfo/RtFieldInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/rtfieldinfo/RtFieldInfo.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "RtFieldInfo")]
 #[parent(crate::system::reflection::runtimefieldinfo::RuntimeFieldInfo)]
 pub struct RtFieldInfo {}

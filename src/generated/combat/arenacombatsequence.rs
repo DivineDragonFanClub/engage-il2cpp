@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/arenacombatsequence/ArenaCombatSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/arenacombatsequence/ArenaCombatSequence.md"))]
 #[::unity2::class(namespace = "Combat", name = "ArenaCombatSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: combat :: arenacombatsequence :: ArenaCombatSequence >)]
 pub struct ArenaCombatSequence {

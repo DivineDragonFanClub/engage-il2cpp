@@ -16,45 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectroot/ArenaBondGodSelectRoot_DecideEventHandler.md")))]
-#[::unity2::class(namespace = "App", name = "ArenaBondGodSelectRoot.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ArenaBondGodSelectRoot_DecideEventHandler {}
-
-#[cfg(feature = "app-arenabondgodselectroot")]
-#[::unity2::methods]
-impl ArenaBondGodSelectRoot_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
-    #[method(name = "Invoke", args = 3)]
-    pub fn invoke(
-        self,
-        unit: crate::app::unit::Unit,
-        god: crate::app::godunit::GodUnit,
-        select_type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-    ) -> ();
-}
-
-#[cfg(feature = "app-arenabondgodselectroot")]
-impl ArenaBondGodSelectRoot_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectRoot_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaBondGodSelectRoot_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectroot/ArenaBondGodSelectRoot.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectroot/ArenaBondGodSelectRoot.md"))]
 #[::unity2::class(namespace = "App", name = "ArenaBondGodSelectRoot")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct ArenaBondGodSelectRoot {
@@ -174,6 +136,44 @@ impl ArenaBondGodSelectRoot {
             )
         });
         <Self as IArenaBondGodSelectRootMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectroot/ArenaBondGodSelectRoot_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "ArenaBondGodSelectRoot.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ArenaBondGodSelectRoot_DecideEventHandler {}
+
+#[cfg(feature = "app-arenabondgodselectroot")]
+#[::unity2::methods]
+impl ArenaBondGodSelectRoot_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(
+        self,
+        unit: crate::app::unit::Unit,
+        god: crate::app::godunit::GodUnit,
+        select_type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+    ) -> ();
+}
+
+#[cfg(feature = "app-arenabondgodselectroot")]
+impl ArenaBondGodSelectRoot_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondGodSelectRoot_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondGodSelectRoot_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

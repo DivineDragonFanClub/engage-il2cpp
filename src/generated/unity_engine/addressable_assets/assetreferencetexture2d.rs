@@ -8,7 +8,7 @@ use crate::unity_engine::addressable_assets::assetreferencet_1::AssetReferenceT_
 use crate::unity_engine::addressable_assets::assetreferencet_1::IAssetReferenceT_1;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/assetreferencetexture2d/AssetReferenceTexture2D.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/assetreferencetexture2d/AssetReferenceTexture2D.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.AddressableAssets",
     name = "AssetReferenceTexture2D"

@@ -12,7 +12,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongranenemyhittimepredicted/ActionGranEnemyHitTimePredicted.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongranenemyhittimepredicted/ActionGranEnemyHitTimePredicted.md"))]
 #[::unity2::class(namespace = "Combat", name = "ActionGranEnemyHitTimePredicted")]
 #[parent(crate::combat::actiongranbase::ActionGranBase)]
 pub struct ActionGranEnemyHitTimePredicted {

@@ -8,7 +8,7 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_colorgradient/TMP_ColorGradient.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_colorgradient/TMP_ColorGradient.md"))]
 #[::unity2::class(namespace = "TMPro", name = "TMP_ColorGradient")]
 #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
 pub struct TMP_ColorGradient {

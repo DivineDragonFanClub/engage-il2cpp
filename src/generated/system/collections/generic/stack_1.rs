@@ -6,7 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/stack_1/Stack_1_Enumerator.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/stack_1/Stack_1_Enumerator.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct Stack_1_Enumerator<T0> {
@@ -70,7 +70,7 @@ impl<T0: ::unity2::ClassIdentity> Stack_1_Enumerator<T0> {
     pub fn system_collections_i_enumerator_reset(self) -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/stack_1/Stack_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/stack_1/Stack_1.md"))]
 #[::unity2::class(namespace = "System.Collections.Generic", name = "Stack`1")]
 #[parent(crate::system::object::Object)]
 pub struct Stack_1<T0: ::unity2::ClassIdentity> {

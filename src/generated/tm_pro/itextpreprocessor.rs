@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/itextpreprocessor/ITextPreprocessor.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/itextpreprocessor/ITextPreprocessor.md"))]
 #[::unity2::class(namespace = "TMPro", name = "ITextPreprocessor")]
 pub struct ITextPreprocessor {}
 

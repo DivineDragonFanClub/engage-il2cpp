@@ -16,66 +16,7 @@ use crate::unity_engine::resource_management::util::componentsingleton_1_2::Comp
 use crate::unity_engine::resource_management::util::componentsingleton_1_2::IComponentSingleton_1_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager_DelegateInfo.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DelayedActionManager_DelegateInfo {
-    pub m_id: i32,
-    pub m_delegate: crate::system::delegate::Delegate,
-    pub m_target: ::unity2::Array<crate::system::object::Object>,
-}
-
-impl ::unity2::ClassIdentity for DelayedActionManager_DelegateInfo {
-    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.Util";
-
-    const NAME: &'static str = "DelayedActionManager.DelegateInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for DelayedActionManager_DelegateInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
-#[::unity2::methods(value)]
-impl DelayedActionManager_DelegateInfo {
-    #[doc = "`.ctor(crate::system::delegate::Delegate, f32, ::unity2::Array<crate::system::object::Object>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        d: crate::system::delegate::Delegate,
-        invocation_time: f32,
-        p: ::unity2::Array<crate::system::object::Object>,
-    ) -> ();
-
-    #[doc = "`get_InvocationTime()` overload"]
-    #[method(name = "get_InvocationTime", args = 0)]
-    pub fn get_invocation_time(self) -> f32;
-
-    #[doc = "`set_InvocationTime(f32)` overload"]
-    #[method(name = "set_InvocationTime", args = 1)]
-    pub fn set_invocation_time(self, value: f32) -> ();
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.Util",
     name = "DelayedActionManager"
@@ -160,4 +101,63 @@ impl DelayedActionManager {
         <Self as IDelayedActionManagerMethods>::ctor(this);
         this
     }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/util/delayedactionmanager/DelayedActionManager_DelegateInfo.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DelayedActionManager_DelegateInfo {
+    pub m_id: i32,
+    pub m_delegate: crate::system::delegate::Delegate,
+    pub m_target: ::unity2::Array<crate::system::object::Object>,
+}
+
+impl ::unity2::ClassIdentity for DelayedActionManager_DelegateInfo {
+    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.Util";
+
+    const NAME: &'static str = "DelayedActionManager.DelegateInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DelayedActionManager_DelegateInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-resource_management-util-delayedactionmanager")]
+#[::unity2::methods(value)]
+impl DelayedActionManager_DelegateInfo {
+    #[doc = "`.ctor(crate::system::delegate::Delegate, f32, ::unity2::Array<crate::system::object::Object>)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        d: crate::system::delegate::Delegate,
+        invocation_time: f32,
+        p: ::unity2::Array<crate::system::object::Object>,
+    ) -> ();
+
+    #[doc = "`get_InvocationTime()` overload"]
+    #[method(name = "get_InvocationTime", args = 0)]
+    pub fn get_invocation_time(self) -> f32;
+
+    #[doc = "`set_InvocationTime(f32)` overload"]
+    #[method(name = "set_InvocationTime", args = 1)]
+    pub fn set_invocation_time(self, value: f32) -> ();
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
 }

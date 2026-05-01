@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertviewer/ConvertViewer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertviewer/ConvertViewer.md"))]
 #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertViewer")]
 #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
 pub struct ConvertViewer {}

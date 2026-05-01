@@ -8,84 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinspectors/MapInspectors_MapInspectorSearch.md")))]
-#[::unity2::class(namespace = "App", name = "MapInspectors.MapInspectorSearch")]
-#[parent(crate::system::object::Object)]
-pub struct MapInspectors_MapInspectorSearch {
-    #[rename(name = "m_List")]
-    pub m_list: crate::app::rawclasslist_1::RawClassList_1<crate::app::mapinspector::MapInspector>,
-}
-
-#[cfg(feature = "app-mapinspectors")]
-#[::unity2::methods]
-impl MapInspectors_MapInspectorSearch {
-    #[doc = "`TryUpdateEnable(crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
-    #[method(name = "TryUpdateEnable", args = 6)]
-    pub fn try_update_enable(
-        self,
-        kind: crate::app::mapinspector::MapInspector_Kind,
-        unit: crate::app::unit::Unit,
-        value1: i32,
-        value2: i32,
-        value3: i32,
-        value4: i32,
-    ) -> bool;
-
-    #[doc = "`GetEnableStack(crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
-    #[method(name = "GetEnableStack", args = 6)]
-    pub fn get_enable_stack(
-        self,
-        kind: crate::app::mapinspector::MapInspector_Kind,
-        unit: crate::app::unit::Unit,
-        value1: i32,
-        value2: i32,
-        value3: i32,
-        value4: i32,
-    ) -> crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>;
-
-    #[doc = "`GetEnableInspector(crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
-    #[method(name = "GetEnableInspector", args = 6)]
-    pub fn get_enable_inspector(
-        self,
-        kind: crate::app::mapinspector::MapInspector_Kind,
-        unit: crate::app::unit::Unit,
-        value1: i32,
-        value2: i32,
-        value3: i32,
-        value4: i32,
-    ) -> crate::app::mapinspector::MapInspector;
-
-    #[doc = "`GetPokeInspector(crate::app::mapinspector::MapInspector_Kind, i32, i32)` overload"]
-    #[method(name = "GetPokeInspector", args = 3)]
-    pub fn get_poke_inspector(
-        self,
-        kind: crate::app::mapinspector::MapInspector_Kind,
-        x: i32,
-        z: i32,
-    ) -> crate::app::pokeinspector::PokeInspector;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapinspectors")]
-impl MapInspectors_MapInspectorSearch {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapInspectors_MapInspectorSearch),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapInspectors_MapInspectorSearchMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinspectors/MapInspectors.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinspectors/MapInspectors.md"))]
 #[::unity2::class(namespace = "App", name = "MapInspectors")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapinspectors :: MapInspectors >)]
 pub struct MapInspectors {
@@ -260,7 +183,84 @@ impl MapInspectors {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinspectors/MapInspectors_EventUnitScope.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinspectors/MapInspectors_MapInspectorSearch.md"))]
+#[::unity2::class(namespace = "App", name = "MapInspectors.MapInspectorSearch")]
+#[parent(crate::system::object::Object)]
+pub struct MapInspectors_MapInspectorSearch {
+    #[rename(name = "m_List")]
+    pub m_list: crate::app::rawclasslist_1::RawClassList_1<crate::app::mapinspector::MapInspector>,
+}
+
+#[cfg(feature = "app-mapinspectors")]
+#[::unity2::methods]
+impl MapInspectors_MapInspectorSearch {
+    #[doc = "`TryUpdateEnable(crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
+    #[method(name = "TryUpdateEnable", args = 6)]
+    pub fn try_update_enable(
+        self,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        unit: crate::app::unit::Unit,
+        value1: i32,
+        value2: i32,
+        value3: i32,
+        value4: i32,
+    ) -> bool;
+
+    #[doc = "`GetEnableStack(crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
+    #[method(name = "GetEnableStack", args = 6)]
+    pub fn get_enable_stack(
+        self,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        unit: crate::app::unit::Unit,
+        value1: i32,
+        value2: i32,
+        value3: i32,
+        value4: i32,
+    ) -> crate::system::collections::generic::stack_1::Stack_1<crate::app::mapinspector::MapInspector>;
+
+    #[doc = "`GetEnableInspector(crate::app::mapinspector::MapInspector_Kind, crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
+    #[method(name = "GetEnableInspector", args = 6)]
+    pub fn get_enable_inspector(
+        self,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        unit: crate::app::unit::Unit,
+        value1: i32,
+        value2: i32,
+        value3: i32,
+        value4: i32,
+    ) -> crate::app::mapinspector::MapInspector;
+
+    #[doc = "`GetPokeInspector(crate::app::mapinspector::MapInspector_Kind, i32, i32)` overload"]
+    #[method(name = "GetPokeInspector", args = 3)]
+    pub fn get_poke_inspector(
+        self,
+        kind: crate::app::mapinspector::MapInspector_Kind,
+        x: i32,
+        z: i32,
+    ) -> crate::app::pokeinspector::PokeInspector;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapinspectors")]
+impl MapInspectors_MapInspectorSearch {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapInspectors_MapInspectorSearch),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapInspectors_MapInspectorSearchMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinspectors/MapInspectors_EventUnitScope.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct MapInspectors_EventUnitScope {}

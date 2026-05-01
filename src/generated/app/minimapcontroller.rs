@@ -16,7 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_FadeMode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_FadeMode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -64,7 +64,7 @@ impl MiniMapController_FadeMode {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_DisplayPosSize.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Alignment.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -73,14 +73,14 @@ impl MiniMapController_FadeMode {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MiniMapController_DisplayPosSize {
+pub struct MiniMapController_Alignment {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MiniMapController_DisplayPosSize {
+impl ::unity2::ClassIdentity for MiniMapController_Alignment {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MiniMapController.DisplayPosSize";
+    const NAME: &'static str = "MiniMapController.Alignment";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -89,7 +89,7 @@ impl ::unity2::ClassIdentity for MiniMapController_DisplayPosSize {
     }
 }
 
-impl ::unity2::IlType for MiniMapController_DisplayPosSize {
+impl ::unity2::IlType for MiniMapController_Alignment {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -98,25 +98,45 @@ impl ::unity2::IlType for MiniMapController_DisplayPosSize {
     }
 }
 
-impl MiniMapController_DisplayPosSize {
-    pub fn small() -> Self {
+impl MiniMapController_Alignment {
+    pub fn left_up() -> Self {
         Self { value: 0 }
     }
 
-    pub fn large() -> Self {
+    pub fn left_center() -> Self {
         Self { value: 1 }
     }
 
-    pub fn menu() -> Self {
+    pub fn left_bottom() -> Self {
         Self { value: 2 }
     }
 
-    pub fn none() -> Self {
+    pub fn center_up() -> Self {
         Self { value: 3 }
+    }
+
+    pub fn center() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn center_bottom() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn right_up() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn right_center() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn right_bottom() -> Self {
+        Self { value: 8 }
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController_TImage_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController_TImage_1.md"))]
 #[::unity2::class(namespace = "App", name = "MiniMapController.TImage`1")]
 #[parent(crate::system::object::Object)]
 pub struct MiniMapController_TImage_1<T0: ::unity2::ClassIdentity> {
@@ -152,7 +172,107 @@ impl<T0: ::unity2::ClassIdentity> MiniMapController_TImage_1<T0> {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Mode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_IconIndex.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MiniMapController_IconIndex {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MiniMapController_IconIndex {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MiniMapController.IconIndex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MiniMapController_IconIndex {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MiniMapController_IconIndex {
+    pub fn normal_unit() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn boss_unit() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn tbox() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn door() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn torch() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn torch_off() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn visit() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn escape() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn breakdown_enemy() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn cannon() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn crystal() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn dragon_stone() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn ring() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn invalid() -> Self {
+        Self { value: 15 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Mode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -200,7 +320,7 @@ impl MiniMapController_Mode {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapcontroller/MiniMapController.md"))]
 #[::unity2::class(namespace = "App", name = "MiniMapController")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct MiniMapController {
@@ -490,7 +610,7 @@ impl MiniMapController {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_IconIndex.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_DisplayPosSize.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -499,14 +619,14 @@ impl MiniMapController {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MiniMapController_IconIndex {
+pub struct MiniMapController_DisplayPosSize {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MiniMapController_IconIndex {
+impl ::unity2::ClassIdentity for MiniMapController_DisplayPosSize {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MiniMapController.IconIndex";
+    const NAME: &'static str = "MiniMapController.DisplayPosSize";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -515,7 +635,7 @@ impl ::unity2::ClassIdentity for MiniMapController_IconIndex {
     }
 }
 
-impl ::unity2::IlType for MiniMapController_IconIndex {
+impl ::unity2::IlType for MiniMapController_DisplayPosSize {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -524,140 +644,20 @@ impl ::unity2::IlType for MiniMapController_IconIndex {
     }
 }
 
-impl MiniMapController_IconIndex {
-    pub fn normal_unit() -> Self {
+impl MiniMapController_DisplayPosSize {
+    pub fn small() -> Self {
         Self { value: 0 }
     }
 
-    pub fn boss_unit() -> Self {
+    pub fn large() -> Self {
         Self { value: 1 }
     }
 
-    pub fn tbox() -> Self {
+    pub fn menu() -> Self {
         Self { value: 2 }
     }
 
-    pub fn door() -> Self {
+    pub fn none() -> Self {
         Self { value: 3 }
-    }
-
-    pub fn torch() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn torch_off() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn visit() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn escape() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn destroy() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn breakdown_enemy() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn cannon() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn crystal() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn dragon_stone() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn ring() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn invalid() -> Self {
-        Self { value: 15 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/minimapcontroller/MiniMapController_Alignment.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MiniMapController_Alignment {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MiniMapController_Alignment {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MiniMapController.Alignment";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MiniMapController_Alignment {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MiniMapController_Alignment {
-    pub fn left_up() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn left_center() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn left_bottom() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn center_up() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn center() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn center_bottom() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn right_up() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn right_center() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn right_bottom() -> Self {
-        Self { value: 8 }
     }
 }

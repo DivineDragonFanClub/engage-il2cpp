@@ -12,7 +12,459 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfo/UnitInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfo/UnitInfo_Window.md"))]
+#[::unity2::class(namespace = "App", name = "UnitInfo.Window")]
+#[parent(crate::system::object::Object)]
+pub struct UnitInfo_Window {
+    #[rename(name = "m_ModeStack")]
+    pub m_mode_stack:
+        crate::system::collections::generic::stack_1::Stack_1<crate::app::unitinfo::UnitInfo_Mode>,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_God")]
+    pub m_god: crate::app::godunit::GodUnit,
+    #[rename(name = "m_UnitX")]
+    pub m_unit_x: i32,
+    #[rename(name = "m_UnitZ")]
+    pub m_unit_z: i32,
+    #[rename(name = "m_UnitInfoWindowSimple")]
+    pub m_unit_info_window_simple: crate::app::unitinfowindow::UnitInfoWindow,
+    #[rename(name = "m_UnitInfoWindowCharaModel")]
+    pub m_unit_info_window_chara_model:
+        crate::app::unitinfowindowcharamodel::UnitInfoWindowCharaModel,
+    #[rename(name = "m_IsVisible")]
+    pub m_is_visible: bool,
+    #[rename(name = "m_IsDuplicateRenderTexture")]
+    pub m_is_duplicate_render_texture: bool,
+    #[rename(name = "m_IsReverse")]
+    pub m_is_reverse: bool,
+    #[rename(name = "m_IsHideStatus")]
+    pub m_is_hide_status: bool,
+}
+
+#[cfg(feature = "app-unitinfo")]
+#[::unity2::methods]
+impl UnitInfo_Window {
+    #[doc = "`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::unitinfo::UnitInfo_Mode>, crate::app::unit::Unit, bool, bool, bool)` overload"]
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        mode_stack: crate::system::collections::generic::stack_1::Stack_1<
+            crate::app::unitinfo::UnitInfo_Mode,
+        >,
+        unit: crate::app::unit::Unit,
+        is_duplicate_render_texture: bool,
+        is_reverse: bool,
+        is_hide_status: bool,
+    ) -> ();
+
+    #[doc = "`Destroy()` overload"]
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[doc = "`PrepareCharaModel()` overload"]
+    #[method(name = "PrepareCharaModel", args = 0)]
+    pub fn prepare_chara_model(self) -> ();
+
+    #[doc = "`IsPreparingCharaModel()` overload"]
+    #[method(name = "IsPreparingCharaModel", args = 0)]
+    pub fn is_preparing_chara_model(self) -> bool;
+
+    #[doc = "`PrepareWindow()` overload"]
+    #[method(name = "PrepareWindow", args = 0)]
+    pub fn prepare_window(self) -> ();
+
+    #[doc = "`IsPreparingWindow()` overload"]
+    #[method(name = "IsPreparingWindow", args = 0)]
+    pub fn is_preparing_window(self) -> bool;
+
+    #[doc = "`Postprepare()` overload"]
+    #[method(name = "Postprepare", args = 0)]
+    pub fn postprepare(self) -> ();
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[doc = "`SetUnit(crate::app::unit::Unit, bool, bool, bool, bool, crate::system::action::Action)` overload"]
+    #[method(name = "SetUnit", args = 6)]
+    pub fn set_unit(
+        self,
+        unit: crate::app::unit::Unit,
+        b_update_status: bool,
+        b_relax: bool,
+        b_reverse_rotation: bool,
+        is_delay_load: bool,
+        on_setup_done_callback: crate::system::action::Action,
+    ) -> ();
+
+    #[doc = "`ResetUnit(bool, bool, bool)` overload"]
+    #[method(name = "ResetUnit", args = 3)]
+    pub fn reset_unit(self, b_relax: bool, b_reverse_rotation: bool, is_delay_load: bool) -> ();
+
+    #[doc = "`SetUnitHub(crate::app::unit::Unit, bool, bool, bool)` overload"]
+    #[method(name = "SetUnitHub", args = 4)]
+    pub fn set_unit_hub(
+        self,
+        unit: crate::app::unit::Unit,
+        b_relax: bool,
+        b_reverse_rotation: bool,
+        is_delay_load: bool,
+    ) -> ();
+
+    #[doc = "`SetUnitRelay(crate::app::persondata::PersonData, crate::app::jobdata::JobData, crate::app::unitedit::UnitEdit)` overload"]
+    #[method(name = "SetUnitRelay", args = 3)]
+    pub fn set_unit_relay(
+        self,
+        person: crate::app::persondata::PersonData,
+        job: crate::app::jobdata::JobData,
+        edit: crate::app::unitedit::UnitEdit,
+    ) -> ();
+
+    #[doc = "`PlayCharaVoice(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "PlayCharaVoice", args = 3)]
+    pub fn play_chara_voice(
+        self,
+        person_switch_name: ::unity2::Il2CppString,
+        engage_switch_name: ::unity2::Il2CppString,
+        event_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`ReserveCharaVoice(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "ReserveCharaVoice", args = 3)]
+    pub fn reserve_chara_voice(
+        self,
+        person_switch_name: ::unity2::Il2CppString,
+        engage_switch_name: ::unity2::Il2CppString,
+        event_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`PlayReservedCharaVoice()` overload"]
+    #[method(name = "PlayReservedCharaVoice", args = 0)]
+    pub fn play_reserved_chara_voice(self) -> ();
+
+    #[doc = "`AddCharaRot(crate::unity_engine::quaternion::Quaternion)` overload"]
+    #[method(name = "AddCharaRot", args = 1)]
+    pub fn add_chara_rot(self, quaternion: crate::unity_engine::quaternion::Quaternion) -> ();
+
+    #[doc = "`SetLeftCameraAdjustY()` overload"]
+    #[method(name = "SetLeftCameraAdjustY", args = 0)]
+    pub fn set_left_camera_adjust_y(self) -> ();
+
+    #[doc = "`SetWeaponShopChara()` overload"]
+    #[method(name = "SetWeaponShopChara", args = 0)]
+    pub fn set_weapon_shop_chara(self) -> ();
+
+    #[doc = "`SetSummonChara()` overload"]
+    #[method(name = "SetSummonChara", args = 0)]
+    pub fn set_summon_chara(self) -> ();
+
+    #[doc = "`SetGod(crate::app::godunit::GodUnit, bool, bool, crate::system::action::Action)` overload"]
+    #[method(name = "SetGod", args = 4)]
+    pub fn set_god(
+        self,
+        god: crate::app::godunit::GodUnit,
+        b_relax: bool,
+        b_reverse_rotation: bool,
+        on_setup_done_callback: crate::system::action::Action,
+    ) -> ();
+
+    #[doc = "`SetEfficacyAttack(bool)` overload"]
+    #[method(name = "SetEfficacyAttack", args = 1)]
+    pub fn set_efficacy_attack(self, is_efficacy: bool) -> ();
+
+    #[doc = "`SetRelaxAnime(f32)` overload"]
+    #[method(name = "SetRelaxAnime", args = 1)]
+    pub fn set_relax_anime(self, transition_duration: f32) -> ();
+
+    #[doc = "`SetStatusAnime(f32)` overload"]
+    #[method(name = "SetStatusAnime", args = 1)]
+    pub fn set_status_anime(self, transition_duration: f32) -> ();
+
+    #[doc = "`SetFortuneTellingGoodAnime(bool)` overload"]
+    #[method(name = "SetFortuneTellingGoodAnime", args = 1)]
+    pub fn set_fortune_telling_good_anime(self, is_allow_unit_null: bool) -> ();
+
+    #[doc = "`SetFortuneTellingBadAnime(bool)` overload"]
+    #[method(name = "SetFortuneTellingBadAnime", args = 1)]
+    pub fn set_fortune_telling_bad_anime(self, is_allow_unit_null: bool) -> ();
+
+    #[doc = "`SetSelectGodNormalFace()` overload"]
+    #[method(name = "SetSelectGodNormalFace", args = 0)]
+    pub fn set_select_god_normal_face(self) -> ();
+
+    #[doc = "`UpdateCurrentUnit()` overload"]
+    #[method(name = "UpdateCurrentUnit", args = 0)]
+    pub fn update_current_unit(self) -> ();
+
+    #[doc = "`GetUnit()` overload"]
+    #[method(name = "GetUnit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`GetGod()` overload"]
+    #[method(name = "GetGod", args = 0)]
+    pub fn get_god(self) -> crate::app::godunit::GodUnit;
+
+    #[doc = "`GetRenderTexture()` overload"]
+    #[method(name = "GetRenderTexture", args = 0)]
+    pub fn get_render_texture(self) -> crate::unity_engine::rendertexture::RenderTexture;
+
+    #[doc = "`GetFaceCameraComponent()` overload"]
+    #[method(name = "GetFaceCameraComponent", args = 0)]
+    pub fn get_face_camera_component(self) -> crate::unity_engine::camera::Camera;
+
+    #[doc = "`GetCharaImageMask()` overload"]
+    #[method(name = "GetCharaImageMask", args = 0)]
+    pub fn get_chara_image_mask(
+        self,
+    ) -> crate::app::unitinfocharaimagemaskoffset::UnitInfoCharaImageMaskOffset;
+
+    #[doc = "`SetVisible(bool)` overload"]
+    #[method(name = "SetVisible", args = 1)]
+    pub fn set_visible(self, is_visible: bool) -> ();
+
+    #[doc = "`ToggleVisible()` overload"]
+    #[method(name = "ToggleVisible", args = 0)]
+    pub fn toggle_visible(self) -> ();
+
+    #[doc = "`IsVisible()` overload"]
+    #[method(name = "IsVisible", args = 0)]
+    pub fn is_visible(self) -> bool;
+
+    #[doc = "`SetVisibleOfStatus(crate::app::unitinfo::UnitInfo_Mode, bool)` overload"]
+    #[method(name = "SetVisibleOfStatus", args = 2)]
+    pub fn set_visible_of_status(
+        self,
+        mode: crate::app::unitinfo::UnitInfo_Mode,
+        is_visible: bool,
+    ) -> ();
+
+    #[doc = "`IsVisibleStatus(crate::app::unitinfo::UnitInfo_Mode)` overload"]
+    #[method(name = "IsVisibleStatus", args = 1)]
+    pub fn is_visible_status(self, mode: crate::app::unitinfo::UnitInfo_Mode) -> bool;
+
+    #[doc = "`CharaOnlyOn(bool)` overload"]
+    #[method(name = "CharaOnlyOn", args = 1)]
+    pub fn chara_only_on(self, is_change_chara_model_anim: bool) -> ();
+
+    #[doc = "`CharaOnlyOff()` overload"]
+    #[method(name = "CharaOnlyOff", args = 0)]
+    pub fn chara_only_off(self) -> ();
+
+    #[doc = "`IsCharaOnlyTransition()` overload"]
+    #[method(name = "IsCharaOnlyTransition", args = 0)]
+    pub fn is_chara_only_transition(self) -> bool;
+
+    #[doc = "`UpdateStandByAnime(crate::app::unititem::UnitItem, bool)` overload"]
+    #[method(name = "UpdateStandByAnime", args = 2)]
+    pub fn update_stand_by_anime(
+        self,
+        unit_item: crate::app::unititem::UnitItem,
+        is_weapon_shop: bool,
+    ) -> ();
+
+    #[doc = "`SetCreateReserveUnitItem(crate::app::unititem::UnitItem, bool)` overload"]
+    #[method(name = "SetCreateReserveUnitItem", args = 2)]
+    pub fn set_create_reserve_unit_item(
+        self,
+        unit_item: crate::app::unititem::UnitItem,
+        is_override: bool,
+    ) -> ();
+
+    #[doc = "`HideWeapon()` overload"]
+    #[method(name = "HideWeapon", args = 0)]
+    pub fn hide_weapon(self) -> ();
+
+    #[doc = "`IsLoadingCharaModel()` overload"]
+    #[method(name = "IsLoadingCharaModel", args = 0)]
+    pub fn is_loading_chara_model(self) -> bool;
+
+    #[doc = "`TransparentOn()` overload"]
+    #[method(name = "TransparentOn", args = 0)]
+    pub fn transparent_on(self) -> ();
+
+    #[doc = "`TransparentOff()` overload"]
+    #[method(name = "TransparentOff", args = 0)]
+    pub fn transparent_off(self) -> ();
+
+    #[doc = "`UpdateVisible()` overload"]
+    #[method(name = "UpdateVisible", args = 0)]
+    pub fn update_visible(self) -> ();
+
+    #[doc = "`GetCurrentWindowObject()` overload"]
+    #[method(name = "GetCurrentWindowObject", args = 0)]
+    pub fn get_current_window_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`GetHeadLocator()` overload"]
+    #[method(name = "GetHeadLocator", args = 0)]
+    pub fn get_head_locator(self) -> crate::unity_engine::transform::Transform;
+
+    #[doc = "`SetHeadLocator(crate::unity_engine::transform::Transform, f32, bool)` overload"]
+    #[method(name = "SetHeadLocator", args = 3)]
+    pub fn set_head_locator(
+        self,
+        loc: crate::unity_engine::transform::Transform,
+        weight: f32,
+        is_weight_interpolated: bool,
+    ) -> ();
+
+    #[doc = "`SetHeadLocator(crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "SetHeadLocator", args = 1)]
+    pub fn set_head_locator_2(self, pos: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[doc = "`SetLookAt(crate::unity_engine::transform::Transform)` overload"]
+    #[method(name = "SetLookAt", args = 1)]
+    pub fn set_look_at(self, transform: crate::unity_engine::transform::Transform) -> ();
+
+    #[doc = "`SetLookAtCamera()` overload"]
+    #[method(name = "SetLookAtCamera", args = 0)]
+    pub fn set_look_at_camera(self) -> ();
+
+    #[doc = "`SetEyesWeight(f32)` overload"]
+    #[method(name = "SetEyesWeight", args = 1)]
+    pub fn set_eyes_weight(self, eyes_weight: f32) -> ();
+
+    #[doc = "`IsCharaVisible()` overload"]
+    #[method(name = "IsCharaVisible", args = 0)]
+    pub fn is_chara_visible(self) -> bool;
+
+    #[doc = "`SetUnitStatusWindow()` overload"]
+    #[method(name = "SetUnitStatusWindow", args = 0)]
+    pub fn set_unit_status_window(self) -> ();
+}
+
+#[cfg(feature = "app-unitinfo")]
+impl UnitInfo_Window {
+    #[doc = "`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::unitinfo::UnitInfo_Mode>, crate::app::unit::Unit, bool, bool, bool)` — overload selector"]
+    pub fn new(
+        mode_stack: crate::system::collections::generic::stack_1::Stack_1<
+            crate::app::unitinfo::UnitInfo_Mode,
+        >,
+        unit: crate::app::unit::Unit,
+        is_duplicate_render_texture: bool,
+        is_reverse: bool,
+        is_hide_status: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitInfo_Window),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitInfo_WindowMethods>::ctor(
+            this,
+            mode_stack,
+            unit,
+            is_duplicate_render_texture,
+            is_reverse,
+            is_hide_status,
+        );
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfo/UnitInfo_Side.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitInfo_Side {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitInfo_Side {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitInfo.Side";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitInfo_Side {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitInfo_Side {
+    pub fn left() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfo/UnitInfo_Mode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitInfo_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitInfo_Mode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitInfo.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitInfo_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitInfo_Mode {
+    pub fn simple() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn hide() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn model_only() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfo/UnitInfo.md"))]
 #[::unity2::class(namespace = "App", name = "UnitInfo")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: unitinfo :: UnitInfo >)]
 pub struct UnitInfo {
@@ -497,457 +949,5 @@ impl UnitInfo {
         });
         <Self as IUnitInfoMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfo/UnitInfo_Side.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitInfo_Side {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitInfo_Side {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfo.Side";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitInfo_Side {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitInfo_Side {
-    pub fn left() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn right() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfo/UnitInfo_Window.md")))]
-#[::unity2::class(namespace = "App", name = "UnitInfo.Window")]
-#[parent(crate::system::object::Object)]
-pub struct UnitInfo_Window {
-    #[rename(name = "m_ModeStack")]
-    pub m_mode_stack:
-        crate::system::collections::generic::stack_1::Stack_1<crate::app::unitinfo::UnitInfo_Mode>,
-    #[rename(name = "m_Unit")]
-    pub m_unit: crate::app::unit::Unit,
-    #[rename(name = "m_God")]
-    pub m_god: crate::app::godunit::GodUnit,
-    #[rename(name = "m_UnitX")]
-    pub m_unit_x: i32,
-    #[rename(name = "m_UnitZ")]
-    pub m_unit_z: i32,
-    #[rename(name = "m_UnitInfoWindowSimple")]
-    pub m_unit_info_window_simple: crate::app::unitinfowindow::UnitInfoWindow,
-    #[rename(name = "m_UnitInfoWindowCharaModel")]
-    pub m_unit_info_window_chara_model:
-        crate::app::unitinfowindowcharamodel::UnitInfoWindowCharaModel,
-    #[rename(name = "m_IsVisible")]
-    pub m_is_visible: bool,
-    #[rename(name = "m_IsDuplicateRenderTexture")]
-    pub m_is_duplicate_render_texture: bool,
-    #[rename(name = "m_IsReverse")]
-    pub m_is_reverse: bool,
-    #[rename(name = "m_IsHideStatus")]
-    pub m_is_hide_status: bool,
-}
-
-#[cfg(feature = "app-unitinfo")]
-#[::unity2::methods]
-impl UnitInfo_Window {
-    #[doc = "`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::unitinfo::UnitInfo_Mode>, crate::app::unit::Unit, bool, bool, bool)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
-        mode_stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::app::unitinfo::UnitInfo_Mode,
-        >,
-        unit: crate::app::unit::Unit,
-        is_duplicate_render_texture: bool,
-        is_reverse: bool,
-        is_hide_status: bool,
-    ) -> ();
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy(self) -> ();
-
-    #[doc = "`PrepareCharaModel()` overload"]
-    #[method(name = "PrepareCharaModel", args = 0)]
-    pub fn prepare_chara_model(self) -> ();
-
-    #[doc = "`IsPreparingCharaModel()` overload"]
-    #[method(name = "IsPreparingCharaModel", args = 0)]
-    pub fn is_preparing_chara_model(self) -> bool;
-
-    #[doc = "`PrepareWindow()` overload"]
-    #[method(name = "PrepareWindow", args = 0)]
-    pub fn prepare_window(self) -> ();
-
-    #[doc = "`IsPreparingWindow()` overload"]
-    #[method(name = "IsPreparingWindow", args = 0)]
-    pub fn is_preparing_window(self) -> bool;
-
-    #[doc = "`Postprepare()` overload"]
-    #[method(name = "Postprepare", args = 0)]
-    pub fn postprepare(self) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
-
-    #[doc = "`SetUnit(crate::app::unit::Unit, bool, bool, bool, bool, crate::system::action::Action)` overload"]
-    #[method(name = "SetUnit", args = 6)]
-    pub fn set_unit(
-        self,
-        unit: crate::app::unit::Unit,
-        b_update_status: bool,
-        b_relax: bool,
-        b_reverse_rotation: bool,
-        is_delay_load: bool,
-        on_setup_done_callback: crate::system::action::Action,
-    ) -> ();
-
-    #[doc = "`ResetUnit(bool, bool, bool)` overload"]
-    #[method(name = "ResetUnit", args = 3)]
-    pub fn reset_unit(self, b_relax: bool, b_reverse_rotation: bool, is_delay_load: bool) -> ();
-
-    #[doc = "`SetUnitHub(crate::app::unit::Unit, bool, bool, bool)` overload"]
-    #[method(name = "SetUnitHub", args = 4)]
-    pub fn set_unit_hub(
-        self,
-        unit: crate::app::unit::Unit,
-        b_relax: bool,
-        b_reverse_rotation: bool,
-        is_delay_load: bool,
-    ) -> ();
-
-    #[doc = "`SetUnitRelay(crate::app::persondata::PersonData, crate::app::jobdata::JobData, crate::app::unitedit::UnitEdit)` overload"]
-    #[method(name = "SetUnitRelay", args = 3)]
-    pub fn set_unit_relay(
-        self,
-        person: crate::app::persondata::PersonData,
-        job: crate::app::jobdata::JobData,
-        edit: crate::app::unitedit::UnitEdit,
-    ) -> ();
-
-    #[doc = "`PlayCharaVoice(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "PlayCharaVoice", args = 3)]
-    pub fn play_chara_voice(
-        self,
-        person_switch_name: ::unity2::Il2CppString,
-        engage_switch_name: ::unity2::Il2CppString,
-        event_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`ReserveCharaVoice(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "ReserveCharaVoice", args = 3)]
-    pub fn reserve_chara_voice(
-        self,
-        person_switch_name: ::unity2::Il2CppString,
-        engage_switch_name: ::unity2::Il2CppString,
-        event_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`PlayReservedCharaVoice()` overload"]
-    #[method(name = "PlayReservedCharaVoice", args = 0)]
-    pub fn play_reserved_chara_voice(self) -> ();
-
-    #[doc = "`AddCharaRot(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "AddCharaRot", args = 1)]
-    pub fn add_chara_rot(self, quaternion: crate::unity_engine::quaternion::Quaternion) -> ();
-
-    #[doc = "`SetLeftCameraAdjustY()` overload"]
-    #[method(name = "SetLeftCameraAdjustY", args = 0)]
-    pub fn set_left_camera_adjust_y(self) -> ();
-
-    #[doc = "`SetWeaponShopChara()` overload"]
-    #[method(name = "SetWeaponShopChara", args = 0)]
-    pub fn set_weapon_shop_chara(self) -> ();
-
-    #[doc = "`SetSummonChara()` overload"]
-    #[method(name = "SetSummonChara", args = 0)]
-    pub fn set_summon_chara(self) -> ();
-
-    #[doc = "`SetGod(crate::app::godunit::GodUnit, bool, bool, crate::system::action::Action)` overload"]
-    #[method(name = "SetGod", args = 4)]
-    pub fn set_god(
-        self,
-        god: crate::app::godunit::GodUnit,
-        b_relax: bool,
-        b_reverse_rotation: bool,
-        on_setup_done_callback: crate::system::action::Action,
-    ) -> ();
-
-    #[doc = "`SetEfficacyAttack(bool)` overload"]
-    #[method(name = "SetEfficacyAttack", args = 1)]
-    pub fn set_efficacy_attack(self, is_efficacy: bool) -> ();
-
-    #[doc = "`SetRelaxAnime(f32)` overload"]
-    #[method(name = "SetRelaxAnime", args = 1)]
-    pub fn set_relax_anime(self, transition_duration: f32) -> ();
-
-    #[doc = "`SetStatusAnime(f32)` overload"]
-    #[method(name = "SetStatusAnime", args = 1)]
-    pub fn set_status_anime(self, transition_duration: f32) -> ();
-
-    #[doc = "`SetFortuneTellingGoodAnime(bool)` overload"]
-    #[method(name = "SetFortuneTellingGoodAnime", args = 1)]
-    pub fn set_fortune_telling_good_anime(self, is_allow_unit_null: bool) -> ();
-
-    #[doc = "`SetFortuneTellingBadAnime(bool)` overload"]
-    #[method(name = "SetFortuneTellingBadAnime", args = 1)]
-    pub fn set_fortune_telling_bad_anime(self, is_allow_unit_null: bool) -> ();
-
-    #[doc = "`SetSelectGodNormalFace()` overload"]
-    #[method(name = "SetSelectGodNormalFace", args = 0)]
-    pub fn set_select_god_normal_face(self) -> ();
-
-    #[doc = "`UpdateCurrentUnit()` overload"]
-    #[method(name = "UpdateCurrentUnit", args = 0)]
-    pub fn update_current_unit(self) -> ();
-
-    #[doc = "`GetUnit()` overload"]
-    #[method(name = "GetUnit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`GetGod()` overload"]
-    #[method(name = "GetGod", args = 0)]
-    pub fn get_god(self) -> crate::app::godunit::GodUnit;
-
-    #[doc = "`GetRenderTexture()` overload"]
-    #[method(name = "GetRenderTexture", args = 0)]
-    pub fn get_render_texture(self) -> crate::unity_engine::rendertexture::RenderTexture;
-
-    #[doc = "`GetFaceCameraComponent()` overload"]
-    #[method(name = "GetFaceCameraComponent", args = 0)]
-    pub fn get_face_camera_component(self) -> crate::unity_engine::camera::Camera;
-
-    #[doc = "`GetCharaImageMask()` overload"]
-    #[method(name = "GetCharaImageMask", args = 0)]
-    pub fn get_chara_image_mask(
-        self,
-    ) -> crate::app::unitinfocharaimagemaskoffset::UnitInfoCharaImageMaskOffset;
-
-    #[doc = "`SetVisible(bool)` overload"]
-    #[method(name = "SetVisible", args = 1)]
-    pub fn set_visible(self, is_visible: bool) -> ();
-
-    #[doc = "`ToggleVisible()` overload"]
-    #[method(name = "ToggleVisible", args = 0)]
-    pub fn toggle_visible(self) -> ();
-
-    #[doc = "`IsVisible()` overload"]
-    #[method(name = "IsVisible", args = 0)]
-    pub fn is_visible(self) -> bool;
-
-    #[doc = "`SetVisibleOfStatus(crate::app::unitinfo::UnitInfo_Mode, bool)` overload"]
-    #[method(name = "SetVisibleOfStatus", args = 2)]
-    pub fn set_visible_of_status(
-        self,
-        mode: crate::app::unitinfo::UnitInfo_Mode,
-        is_visible: bool,
-    ) -> ();
-
-    #[doc = "`IsVisibleStatus(crate::app::unitinfo::UnitInfo_Mode)` overload"]
-    #[method(name = "IsVisibleStatus", args = 1)]
-    pub fn is_visible_status(self, mode: crate::app::unitinfo::UnitInfo_Mode) -> bool;
-
-    #[doc = "`CharaOnlyOn(bool)` overload"]
-    #[method(name = "CharaOnlyOn", args = 1)]
-    pub fn chara_only_on(self, is_change_chara_model_anim: bool) -> ();
-
-    #[doc = "`CharaOnlyOff()` overload"]
-    #[method(name = "CharaOnlyOff", args = 0)]
-    pub fn chara_only_off(self) -> ();
-
-    #[doc = "`IsCharaOnlyTransition()` overload"]
-    #[method(name = "IsCharaOnlyTransition", args = 0)]
-    pub fn is_chara_only_transition(self) -> bool;
-
-    #[doc = "`UpdateStandByAnime(crate::app::unititem::UnitItem, bool)` overload"]
-    #[method(name = "UpdateStandByAnime", args = 2)]
-    pub fn update_stand_by_anime(
-        self,
-        unit_item: crate::app::unititem::UnitItem,
-        is_weapon_shop: bool,
-    ) -> ();
-
-    #[doc = "`SetCreateReserveUnitItem(crate::app::unititem::UnitItem, bool)` overload"]
-    #[method(name = "SetCreateReserveUnitItem", args = 2)]
-    pub fn set_create_reserve_unit_item(
-        self,
-        unit_item: crate::app::unititem::UnitItem,
-        is_override: bool,
-    ) -> ();
-
-    #[doc = "`HideWeapon()` overload"]
-    #[method(name = "HideWeapon", args = 0)]
-    pub fn hide_weapon(self) -> ();
-
-    #[doc = "`IsLoadingCharaModel()` overload"]
-    #[method(name = "IsLoadingCharaModel", args = 0)]
-    pub fn is_loading_chara_model(self) -> bool;
-
-    #[doc = "`TransparentOn()` overload"]
-    #[method(name = "TransparentOn", args = 0)]
-    pub fn transparent_on(self) -> ();
-
-    #[doc = "`TransparentOff()` overload"]
-    #[method(name = "TransparentOff", args = 0)]
-    pub fn transparent_off(self) -> ();
-
-    #[doc = "`UpdateVisible()` overload"]
-    #[method(name = "UpdateVisible", args = 0)]
-    pub fn update_visible(self) -> ();
-
-    #[doc = "`GetCurrentWindowObject()` overload"]
-    #[method(name = "GetCurrentWindowObject", args = 0)]
-    pub fn get_current_window_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`GetHeadLocator()` overload"]
-    #[method(name = "GetHeadLocator", args = 0)]
-    pub fn get_head_locator(self) -> crate::unity_engine::transform::Transform;
-
-    #[doc = "`SetHeadLocator(crate::unity_engine::transform::Transform, f32, bool)` overload"]
-    #[method(name = "SetHeadLocator", args = 3)]
-    pub fn set_head_locator(
-        self,
-        loc: crate::unity_engine::transform::Transform,
-        weight: f32,
-        is_weight_interpolated: bool,
-    ) -> ();
-
-    #[doc = "`SetHeadLocator(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetHeadLocator", args = 1)]
-    pub fn set_head_locator_2(self, pos: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`SetLookAt(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "SetLookAt", args = 1)]
-    pub fn set_look_at(self, transform: crate::unity_engine::transform::Transform) -> ();
-
-    #[doc = "`SetLookAtCamera()` overload"]
-    #[method(name = "SetLookAtCamera", args = 0)]
-    pub fn set_look_at_camera(self) -> ();
-
-    #[doc = "`SetEyesWeight(f32)` overload"]
-    #[method(name = "SetEyesWeight", args = 1)]
-    pub fn set_eyes_weight(self, eyes_weight: f32) -> ();
-
-    #[doc = "`IsCharaVisible()` overload"]
-    #[method(name = "IsCharaVisible", args = 0)]
-    pub fn is_chara_visible(self) -> bool;
-
-    #[doc = "`SetUnitStatusWindow()` overload"]
-    #[method(name = "SetUnitStatusWindow", args = 0)]
-    pub fn set_unit_status_window(self) -> ();
-}
-
-#[cfg(feature = "app-unitinfo")]
-impl UnitInfo_Window {
-    #[doc = "`.ctor(crate::system::collections::generic::stack_1::Stack_1<crate::app::unitinfo::UnitInfo_Mode>, crate::app::unit::Unit, bool, bool, bool)` — overload selector"]
-    pub fn new(
-        mode_stack: crate::system::collections::generic::stack_1::Stack_1<
-            crate::app::unitinfo::UnitInfo_Mode,
-        >,
-        unit: crate::app::unit::Unit,
-        is_duplicate_render_texture: bool,
-        is_reverse: bool,
-        is_hide_status: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitInfo_Window),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitInfo_WindowMethods>::ctor(
-            this,
-            mode_stack,
-            unit,
-            is_duplicate_render_texture,
-            is_reverse,
-            is_hide_status,
-        );
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfo/UnitInfo_Mode.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitInfo_Mode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitInfo_Mode {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfo.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitInfo_Mode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitInfo_Mode {
-    pub fn simple() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn hide() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn model_only() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 3 }
     }
 }

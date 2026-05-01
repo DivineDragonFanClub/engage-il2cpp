@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/directory/Directory_SearchData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/directory/Directory_SearchData.md"))]
 #[::unity2::class(namespace = "System.IO", name = "Directory.SearchData")]
 #[parent(crate::system::object::Object)]
 pub struct Directory_SearchData {
@@ -49,7 +49,7 @@ impl Directory_SearchData {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/directory/Directory.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/directory/Directory.md"))]
 #[::unity2::class(namespace = "System.IO", name = "Directory")]
 #[parent(crate::system::object::Object)]
 pub struct Directory {}

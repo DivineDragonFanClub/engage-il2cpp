@@ -12,55 +12,36 @@ use crate::unity_engine::events::unityeventbase::IUnityEventBase;
 use crate::unity_engine::events::unityeventbase::UnityEventBase;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/colortween_2/ColorTween_ColorTweenMode_2.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ColorTween_ColorTweenMode_2 {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/colortween_2/ColorTween_ColorTweenCallback_2.md"))]
+#[::unity2::class(namespace = "TMPro", name = "ColorTween.ColorTweenCallback")]
+# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: color :: Color >)]
+pub struct ColorTween_ColorTweenCallback_2 {}
+
+#[cfg(feature = "tm_pro-colortween_2")]
+#[::unity2::methods]
+impl ColorTween_ColorTweenCallback_2 {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
-impl ::unity2::ClassIdentity for ColorTween_ColorTweenMode_2 {
-    const NAMESPACE: &'static str = "TMPro";
-
-    const NAME: &'static str = "ColorTween.ColorTweenMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ColorTween_ColorTweenMode_2 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
+#[cfg(feature = "tm_pro-colortween_2")]
+impl ColorTween_ColorTweenCallback_2 {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ColorTween_ColorTweenCallback_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IColorTween_ColorTweenCallback_2Methods>::ctor(this);
+        this
     }
 }
 
-impl ColorTween_ColorTweenMode_2 {
-    pub fn all() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn rgb() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn alpha() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/colortween_2/ColorTween_2.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/colortween_2/ColorTween_2.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct ColorTween_2 {
@@ -161,31 +142,50 @@ impl ColorTween_2 {
     pub fn valid_target(self) -> bool;
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/colortween_2/ColorTween_ColorTweenCallback_2.md")))]
-#[::unity2::class(namespace = "TMPro", name = "ColorTween.ColorTweenCallback")]
-# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: color :: Color >)]
-pub struct ColorTween_ColorTweenCallback_2 {}
-
-#[cfg(feature = "tm_pro-colortween_2")]
-#[::unity2::methods]
-impl ColorTween_ColorTweenCallback_2 {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/colortween_2/ColorTween_ColorTweenMode_2.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ColorTween_ColorTweenMode_2 {
+    pub value: i32,
 }
 
-#[cfg(feature = "tm_pro-colortween_2")]
-impl ColorTween_ColorTweenCallback_2 {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ColorTween_ColorTweenCallback_2),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IColorTween_ColorTweenCallback_2Methods>::ctor(this);
-        this
+impl ::unity2::ClassIdentity for ColorTween_ColorTweenMode_2 {
+    const NAMESPACE: &'static str = "TMPro";
+
+    const NAME: &'static str = "ColorTween.ColorTweenMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ColorTween_ColorTweenMode_2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ColorTween_ColorTweenMode_2 {
+    pub fn all() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn rgb() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn alpha() -> Self {
+        Self { value: 2 }
     }
 }

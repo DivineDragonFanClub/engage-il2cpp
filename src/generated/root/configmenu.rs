@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configmenu/ConfigMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/root/configmenu/ConfigMenu.md"))]
 #[::unity2::class(namespace = "", name = "ConfigMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct ConfigMenu {}

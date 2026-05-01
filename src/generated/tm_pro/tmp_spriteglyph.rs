@@ -6,7 +6,7 @@ use crate::unity_engine::text_core::glyph::Glyph;
 use crate::unity_engine::text_core::glyph::IGlyph;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_spriteglyph/TMP_SpriteGlyph.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_spriteglyph/TMP_SpriteGlyph.md"))]
 #[::unity2::class(namespace = "TMPro", name = "TMP_SpriteGlyph")]
 #[parent(crate::unity_engine::text_core::glyph::Glyph)]
 pub struct TMP_SpriteGlyph {

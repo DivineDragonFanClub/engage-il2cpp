@@ -6,7 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData_Array3.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData_Array3.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct NativeParticleData_Array3 {}
@@ -32,7 +32,7 @@ impl ::unity2::IlType for NativeParticleData_Array3 {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct NativeParticleData {}
@@ -58,7 +58,7 @@ impl ::unity2::IlType for NativeParticleData {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData_Array4.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData_Array4.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct NativeParticleData_Array4 {}

@@ -8,39 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/global_illumination/lightmapping/Lightmapping_RequestLightsDelegate.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Experimental.GlobalIllumination",
-    name = "Lightmapping.RequestLightsDelegate"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct Lightmapping_RequestLightsDelegate {}
-
-#[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
-#[::unity2::methods]
-impl Lightmapping_RequestLightsDelegate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-}
-
-#[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
-impl Lightmapping_RequestLightsDelegate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Lightmapping_RequestLightsDelegate),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ILightmapping_RequestLightsDelegateMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/global_illumination/lightmapping/Lightmapping.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/global_illumination/lightmapping/Lightmapping.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.GlobalIllumination",
     name = "Lightmapping"
@@ -79,4 +47,36 @@ impl Lightmapping {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/global_illumination/lightmapping/Lightmapping_RequestLightsDelegate.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.GlobalIllumination",
+    name = "Lightmapping.RequestLightsDelegate"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct Lightmapping_RequestLightsDelegate {}
+
+#[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
+#[::unity2::methods]
+impl Lightmapping_RequestLightsDelegate {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-global_illumination-lightmapping")]
+impl Lightmapping_RequestLightsDelegate {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Lightmapping_RequestLightsDelegate),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILightmapping_RequestLightsDelegateMethods>::ctor(this, object, method);
+        this
+    }
 }

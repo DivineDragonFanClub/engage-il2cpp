@@ -14,7 +14,51 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exptable/ExpTable.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exptable/ExpTable_TableCommand.md"))]
+#[::unity2::class(namespace = "App", name = "ExpTable.TableCommand")]
+#[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
+pub struct ExpTable_TableCommand {
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-exptable")]
+#[::unity2::methods]
+impl ExpTable_TableCommand {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`FuncImpl(crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
+    #[method(name = "FuncImpl", args = 2)]
+    pub fn func_impl(
+        self,
+        unit: crate::app::unit::Unit,
+        args: crate::system::collections::generic::list_1::List_1<f32>,
+    ) -> f32;
+}
+
+#[cfg(feature = "app-exptable")]
+impl ExpTable_TableCommand {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ExpTable_TableCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExpTable_TableCommandMethods>::ctor(this, name);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exptable/ExpTable.md"))]
 #[::unity2::class(namespace = "App", name = "ExpTable")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: exptable :: ExpTable >)]
 pub struct ExpTable {
@@ -727,50 +771,6 @@ impl ExpTable {
             )
         });
         <Self as IExpTableMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exptable/ExpTable_TableCommand.md")))]
-#[::unity2::class(namespace = "App", name = "ExpTable.TableCommand")]
-#[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
-pub struct ExpTable_TableCommand {
-    #[rename(name = "m_Name")]
-    pub m_name: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-exptable")]
-#[::unity2::methods]
-impl ExpTable_TableCommand {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`FuncImpl(crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<f32>)` overload"]
-    #[method(name = "FuncImpl", args = 2)]
-    pub fn func_impl(
-        self,
-        unit: crate::app::unit::Unit,
-        args: crate::system::collections::generic::list_1::List_1<f32>,
-    ) -> f32;
-}
-
-#[cfg(feature = "app-exptable")]
-impl ExpTable_TableCommand {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ExpTable_TableCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IExpTable_TableCommandMethods>::ctor(this, name);
         this
     }
 }

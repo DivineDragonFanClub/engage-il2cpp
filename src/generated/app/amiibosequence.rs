@@ -12,7 +12,37 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibosequence/AmiiboSequence_TagData.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibosequence/AmiiboSequence_GainItemData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AmiiboSequence_GainItemData {
+    pub name: ::unity2::Il2CppString,
+    pub num: i32,
+    pub r#type: crate::app::amiibosequence::AmiiboSequence_ItemType,
+}
+
+impl ::unity2::ClassIdentity for AmiiboSequence_GainItemData {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AmiiboSequence.GainItemData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AmiiboSequence_GainItemData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibosequence/AmiiboSequence_TagData.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct AmiiboSequence_TagData {
@@ -63,93 +93,7 @@ impl AmiiboSequence_TagData {
     ) -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibosequence/AmiiboSequence_GainItemData.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AmiiboSequence_GainItemData {
-    pub name: ::unity2::Il2CppString,
-    pub num: i32,
-    pub r#type: crate::app::amiibosequence::AmiiboSequence_ItemType,
-}
-
-impl ::unity2::ClassIdentity for AmiiboSequence_GainItemData {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AmiiboSequence.GainItemData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AmiiboSequence_GainItemData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibosequence/AmiiboSequence_ItemType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AmiiboSequence_ItemType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AmiiboSequence_ItemType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AmiiboSequence.ItemType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AmiiboSequence_ItemType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AmiiboSequence_ItemType {
-    pub fn item() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn bgm() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn dress_ticket() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn relay_ticket() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn kizuna() -> Self {
-        Self { value: 4 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibosequence/AmiiboSequence_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibosequence/AmiiboSequence_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -221,7 +165,7 @@ impl AmiiboSequence_Label {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibosequence/AmiiboSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibosequence/AmiiboSequence.md"))]
 #[::unity2::class(namespace = "App", name = "AmiiboSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: amiibosequence :: AmiiboSequence >)]
 pub struct AmiiboSequence {
@@ -377,5 +321,61 @@ impl AmiiboSequence {
         });
         <Self as IAmiiboSequenceMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibosequence/AmiiboSequence_ItemType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AmiiboSequence_ItemType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AmiiboSequence_ItemType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AmiiboSequence.ItemType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AmiiboSequence_ItemType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AmiiboSequence_ItemType {
+    pub fn item() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn bgm() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn dress_ticket() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn relay_ticket() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn kizuna() -> Self {
+        Self { value: 4 }
     }
 }

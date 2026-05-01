@@ -6,44 +6,44 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage.md")))]
-#[::unity2::class(namespace = "App", name = "NetWaitMessage")]
-#[parent(crate::system::object::Object)]
-pub struct NetWaitMessage {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage_ProcOpen.md"))]
+#[::unity2::class(namespace = "App", name = "NetWaitMessage.ProcOpen")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct NetWaitMessage_ProcOpen {}
 
 #[cfg(feature = "app-netwaitmessage")]
 #[::unity2::methods]
-impl NetWaitMessage {
-    #[doc = "`Open(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "Open", args = 1)]
-    pub fn open(super_: crate::app::procinst::ProcInst) -> ();
+impl NetWaitMessage_ProcOpen {
+    #[doc = "`Open()` overload"]
+    #[method(name = "Open", args = 0)]
+    pub fn open(self) -> ();
 
-    #[doc = "`Close(bool)` overload"]
-    #[method(name = "Close", args = 1)]
-    pub fn close(is_success: bool) -> ();
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
 
-    #[doc = "`CloseSuccess()` overload"]
-    #[method(name = "CloseSuccess", args = 0)]
-    pub fn close_success() -> ();
-
-    #[doc = "`CloseFailure()` overload"]
-    #[method(name = "CloseFailure", args = 0)]
-    pub fn close_failure() -> ();
-
-    #[doc = "`CloseWait(crate::app::procinst::ProcInst, bool)` overload"]
-    #[method(name = "CloseWait", args = 2)]
-    pub fn close_wait(super_: crate::app::procinst::ProcInst, is_success: bool) -> ();
-
-    #[doc = "`CloseWaitSuccess(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CloseWaitSuccess", args = 1)]
-    pub fn close_wait_success(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`CloseWaitFailure(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CloseWaitFailure", args = 1)]
-    pub fn close_wait_failure(super_: crate::app::procinst::ProcInst) -> ();
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage_ProcCloseWait.md")))]
+#[cfg(feature = "app-netwaitmessage")]
+impl NetWaitMessage_ProcOpen {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NetWaitMessage_ProcOpen),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INetWaitMessage_ProcOpenMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage_ProcCloseWait.md"))]
 #[::unity2::class(namespace = "App", name = "NetWaitMessage.ProcCloseWait")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct NetWaitMessage_ProcCloseWait {
@@ -83,39 +83,39 @@ impl NetWaitMessage_ProcCloseWait {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage_ProcOpen.md")))]
-#[::unity2::class(namespace = "App", name = "NetWaitMessage.ProcOpen")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct NetWaitMessage_ProcOpen {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage.md"))]
+#[::unity2::class(namespace = "App", name = "NetWaitMessage")]
+#[parent(crate::system::object::Object)]
+pub struct NetWaitMessage {}
 
 #[cfg(feature = "app-netwaitmessage")]
 #[::unity2::methods]
-impl NetWaitMessage_ProcOpen {
-    #[doc = "`Open()` overload"]
-    #[method(name = "Open", args = 0)]
-    pub fn open(self) -> ();
+impl NetWaitMessage {
+    #[doc = "`Open(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "Open", args = 1)]
+    pub fn open(super_: crate::app::procinst::ProcInst) -> ();
 
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+    #[doc = "`Close(bool)` overload"]
+    #[method(name = "Close", args = 1)]
+    pub fn close(is_success: bool) -> ();
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
+    #[doc = "`CloseSuccess()` overload"]
+    #[method(name = "CloseSuccess", args = 0)]
+    pub fn close_success() -> ();
 
-#[cfg(feature = "app-netwaitmessage")]
-impl NetWaitMessage_ProcOpen {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NetWaitMessage_ProcOpen),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INetWaitMessage_ProcOpenMethods>::ctor(this);
-        this
-    }
+    #[doc = "`CloseFailure()` overload"]
+    #[method(name = "CloseFailure", args = 0)]
+    pub fn close_failure() -> ();
+
+    #[doc = "`CloseWait(crate::app::procinst::ProcInst, bool)` overload"]
+    #[method(name = "CloseWait", args = 2)]
+    pub fn close_wait(super_: crate::app::procinst::ProcInst, is_success: bool) -> ();
+
+    #[doc = "`CloseWaitSuccess(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CloseWaitSuccess", args = 1)]
+    pub fn close_wait_success(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`CloseWaitFailure(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CloseWaitFailure", args = 1)]
+    pub fn close_wait_failure(super_: crate::app::procinst::ProcInst) -> ();
 }

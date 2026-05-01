@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/serializeddictionary_2/SerializedDictionary_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/serializeddictionary_2/SerializedDictionary_2.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering", name = "SerializedDictionary`2")]
 # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < T0 , T1 >)]
 #[parent(crate::system::object::Object)]

@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_listpool_1/TMP_ListPool_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_listpool_1/TMP_ListPool_1.md"))]
 #[::unity2::class(namespace = "TMPro", name = "TMP_ListPool`1")]
 #[parent(crate::system::object::Object)]
 pub struct TMP_ListPool_1<T0: ::unity2::ClassIdentity> {

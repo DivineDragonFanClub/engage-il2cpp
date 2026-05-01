@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/nullablecomparer_1/NullableComparer_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/nullablecomparer_1/NullableComparer_1.md"))]
 #[::unity2::class(namespace = "System.Collections.Generic", name = "NullableComparer`1")]
 pub struct NullableComparer_1<T0: ::unity2::ClassIdentity> {}
 

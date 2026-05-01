@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scripting/garbagecollector/GarbageCollector_Mode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scripting/garbagecollector/GarbageCollector_Mode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -56,7 +56,7 @@ impl GarbageCollector_Mode {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/garbagecollector/GarbageCollector.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/garbagecollector/GarbageCollector.md"))]
 #[::unity2::class(namespace = "UnityEngine.Scripting", name = "GarbageCollector")]
 #[parent(crate::system::object::Object)]
 pub struct GarbageCollector {

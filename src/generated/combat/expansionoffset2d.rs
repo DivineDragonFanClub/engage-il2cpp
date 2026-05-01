@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/expansionoffset2d/ExpansionOffset2D.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/expansionoffset2d/ExpansionOffset2D.md"))]
 #[::unity2::class(namespace = "Combat", name = "ExpansionOffset2D")]
 #[parent(crate::system::object::Object)]
 pub struct ExpansionOffset2D {

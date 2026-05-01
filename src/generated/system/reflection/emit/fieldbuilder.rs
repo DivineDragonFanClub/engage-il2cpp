@@ -8,7 +8,7 @@ use crate::system::reflection::memberinfo::IMemberInfo;
 use crate::system::reflection::memberinfo::MemberInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/fieldbuilder/FieldBuilder.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/fieldbuilder/FieldBuilder.md"))]
 #[::unity2::class(namespace = "System.Reflection.Emit", name = "FieldBuilder")]
 #[parent(crate::system::reflection::fieldinfo::FieldInfo)]
 pub struct FieldBuilder {}

@@ -6,7 +6,7 @@ use crate::unity_engine::networking::downloadhandler::DownloadHandler;
 use crate::unity_engine::networking::downloadhandler::IDownloadHandler;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/downloadhandlerassetbundle/DownloadHandlerAssetBundle.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/downloadhandlerassetbundle/DownloadHandlerAssetBundle.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Networking",
     name = "DownloadHandlerAssetBundle"

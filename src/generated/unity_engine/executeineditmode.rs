@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/executeineditmode/ExecuteInEditMode.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/executeineditmode/ExecuteInEditMode.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "ExecuteInEditMode")]
 pub struct ExecuteInEditMode {}
 

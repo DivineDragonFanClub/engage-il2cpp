@@ -4,44 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityqueue_1/PriorityQueue_1_StackItem.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
-    name = "PriorityQueue`1.StackItem"
-)]
-#[parent(crate::system::object::Object)]
-pub struct PriorityQueue_1_StackItem<T0: ::unity2::ClassIdentity> {
-    #[rename(name = "p")]
-    pub p: i32,
-    #[rename(name = "r")]
-    pub r: i32,
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> PriorityQueue_1_StackItem<T0> {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]
-impl<T0: ::unity2::ClassIdentity> PriorityQueue_1_StackItem<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PriorityQueue_1_StackItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPriorityQueue_1_StackItemMethods<T0>>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityqueue_1/PriorityQueue_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityqueue_1/PriorityQueue_1.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
     name = "PriorityQueue`1"
@@ -118,6 +81,43 @@ impl<T0: ::unity2::ClassIdentity> PriorityQueue_1<T0> {
             )
         });
         <Self as IPriorityQueue_1Methods<T0>>::ctor(this, initial_size, leq);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityqueue_1/PriorityQueue_1_StackItem.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
+    name = "PriorityQueue`1.StackItem"
+)]
+#[parent(crate::system::object::Object)]
+pub struct PriorityQueue_1_StackItem<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "p")]
+    pub p: i32,
+    #[rename(name = "r")]
+    pub r: i32,
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> PriorityQueue_1_StackItem<T0> {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1")]
+impl<T0: ::unity2::ClassIdentity> PriorityQueue_1_StackItem<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PriorityQueue_1_StackItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPriorityQueue_1_StackItemMethods<T0>>::ctor(this);
         this
     }
 }

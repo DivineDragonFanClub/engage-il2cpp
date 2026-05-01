@@ -12,79 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattleaction/MapSequenceBattleAction_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapSequenceBattleAction_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSequenceBattleAction_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceBattleAction.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSequenceBattleAction_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapSequenceBattleAction_Label {
-    pub fn branch() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn attack() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn impact() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn skill() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn next() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn wait() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn skip() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn white_out() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 8 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattleaction/MapSequenceBattleAction.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattleaction/MapSequenceBattleAction.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceBattleAction")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencebattleaction :: MapSequenceBattleAction >)]
 pub struct MapSequenceBattleAction {
@@ -499,5 +427,77 @@ impl MapSequenceBattleAction {
             battle_count,
         );
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattleaction/MapSequenceBattleAction_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceBattleAction_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceBattleAction_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceBattleAction.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceBattleAction_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceBattleAction_Label {
+    pub fn branch() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn impact() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn skill() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn next() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn wait() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn skip() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn white_out() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 8 }
     }
 }

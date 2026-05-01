@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolator_1/Interpolator_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolator_1/Interpolator_1.md"))]
 #[::unity2::class(namespace = "App", name = "Interpolator`1")]
 #[parent(crate::app::interpolatortime::InterpolatorTime)]
 #[parent(crate::system::object::Object)]

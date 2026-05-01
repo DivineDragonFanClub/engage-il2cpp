@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblykeyfileattribute/AssemblyKeyFileAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblykeyfileattribute/AssemblyKeyFileAttribute.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "AssemblyKeyFileAttribute")]
 pub struct AssemblyKeyFileAttribute {
     #[rename(name = "m_keyFile")]

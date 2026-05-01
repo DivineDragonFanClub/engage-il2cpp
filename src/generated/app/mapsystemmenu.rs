@@ -20,798 +20,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubFriendMenu")]
-#[parent(crate::app::basicmenu::BasicMenu)]
-pub struct MapSystemMenu_SubFriendMenu {
-    #[static_field]
-    #[rename(name = "m_parentMenu")]
-    pub m_parent_menu: crate::app::mapsystemmenu::MapSystemMenu,
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_SubFriendMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::basicmenu::BasicMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-    ) -> ();
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_SubFriendMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_SubFriendMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_MapSystemMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.MapSystemMenuItem")]
-#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
-pub struct MapSystemMenu_MapSystemMenuItem {}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_MapSystemMenuItem {
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`OnDeselect()` overload"]
-    #[method(name = "OnDeselect", args = 0)]
-    pub fn on_deselect(self) -> ();
-
-    #[doc = "`HelpOn()` overload"]
-    #[method(name = "HelpOn", args = 0)]
-    pub fn help_on(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_MapSystemMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_MapSystemMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_MapSystemMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_RelianceItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubFriendMenu.RelianceItem")]
-#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
-pub struct MapSystemMenu_SubFriendMenu_RelianceItem {}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_SubFriendMenu_RelianceItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu_RelianceItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_SubFriendMenu_RelianceItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_SubFriendMenu_RelianceItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubSystemMenu")]
-#[parent(crate::app::basicmenu::BasicMenu)]
-pub struct MapSystemMenu_SubSystemMenu {
-    #[static_field]
-    #[rename(name = "m_parentMenu")]
-    pub m_parent_menu: crate::app::mapsystemmenu::MapSystemMenu,
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_SubSystemMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::basicmenu::BasicMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-    ) -> ();
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_SubSystemMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_SubSystemMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "MapSystemMenu.SubSystemMenu.SurrenderItem.ConfirmDialogItemYes"
-)]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes {}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, text: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYesMethods>::ctor(
-            this, text,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_KizunaItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubFriendMenu.KizunaItem")]
-#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
-pub struct MapSystemMenu_SubFriendMenu_KizunaItem {}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_SubFriendMenu_KizunaItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu_KizunaItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_SubFriendMenu_KizunaItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_SubFriendMenu_KizunaItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_UnitListItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.UnitListItem")]
-#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
-pub struct MapSystemMenu_UnitListItem {}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_UnitListItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_UnitListItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_UnitListItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_UnitListItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "MapSystemMenu.SubSystemMenu.RestartItem.ConfirmDialogItemYes"
-)]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes {
-    #[rename(name = "m_Target")]
-    pub m_target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes,
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` — overload selector"]
-    pub fn new(target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYesMethods>::ctor(
-            this, target,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_TurnItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.TurnItem")]
-#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
-pub struct MapSystemMenu_TurnItem {}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_TurnItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_TurnItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_TurnItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_TurnItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_NotebookItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubFriendMenu.NotebookItem")]
-#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
-pub struct MapSystemMenu_SubFriendMenu_NotebookItem {}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_SubFriendMenu_NotebookItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu_NotebookItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_SubFriendMenu_NotebookItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_SubFriendMenu_NotebookItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_RestartItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubSystemMenu.RestartItem")]
-#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
-pub struct MapSystemMenu_SubSystemMenu_RestartItem {
-    #[rename(name = "m_Target")]
-    pub m_target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes,
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_SubSystemMenu_RestartItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_RestartItem {
-    #[doc = "`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` — overload selector"]
-    pub fn new(target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_SubSystemMenu_RestartItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_SubSystemMenu_RestartItemMethods>::ctor(this, target);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_TutorialItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubSystemMenu.TutorialItem")]
-#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
-pub struct MapSystemMenu_SubSystemMenu_TutorialItem {}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_SubSystemMenu_TutorialItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_TutorialItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_SubSystemMenu_TutorialItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_SubSystemMenu_TutorialItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_RewindMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.RewindMenuItem")]
-#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
-pub struct MapSystemMenu_RewindMenuItem {}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_RewindMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_RewindMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_RewindMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_RewindMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_OrderItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.OrderItem")]
-#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
-pub struct MapSystemMenu_OrderItem {
-    #[rename(name = "m_SortieTopMenuContent")]
-    pub m_sortie_top_menu_content: crate::app::sortietopmenucontent::SortieTopMenuContent,
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_OrderItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor(crate::app::sortietopmenucontent::SortieTopMenuContent)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        sortie_top_menu_content: crate::app::sortietopmenucontent::SortieTopMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_OrderItem {
-    #[doc = "`.ctor(crate::app::sortietopmenucontent::SortieTopMenuContent)` — overload selector"]
-    pub fn new(
-        sortie_top_menu_content: crate::app::sortietopmenucontent::SortieTopMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_OrderItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_OrderItemMethods>::ctor(this, sortie_top_menu_content);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_RingListItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubFriendMenu.RingListItem")]
-#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
-pub struct MapSystemMenu_SubFriendMenu_RingListItem {}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_SubFriendMenu_RingListItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubFriendMenu_RingListItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_SubFriendMenu_RingListItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_SubFriendMenu_RingListItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu.md"))]
 #[::unity2::class(namespace = "App", name = "MapSystemMenu")]
 #[parent(crate::app::minimapbasicmenu::MiniMapBasicMenu)]
 pub struct MapSystemMenu {
@@ -887,7 +96,294 @@ impl MapSystemMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_ConfigItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_UnitListItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.UnitListItem")]
+#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
+pub struct MapSystemMenu_UnitListItem {}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_UnitListItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_UnitListItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_UnitListItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_UnitListItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_MapSystemMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.MapSystemMenuItem")]
+#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
+pub struct MapSystemMenu_MapSystemMenuItem {}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_MapSystemMenuItem {
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`OnDeselect()` overload"]
+    #[method(name = "OnDeselect", args = 0)]
+    pub fn on_deselect(self) -> ();
+
+    #[doc = "`HelpOn()` overload"]
+    #[method(name = "HelpOn", args = 0)]
+    pub fn help_on(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_MapSystemMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_MapSystemMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_MapSystemMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "MapSystemMenu.SubSystemMenu.SurrenderItem.ConfirmDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes {}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, text: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_SubSystemMenu_SurrenderItem_ConfirmDialogItemYesMethods>::ctor(
+            this, text,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_TurnItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.TurnItem")]
+#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
+pub struct MapSystemMenu_TurnItem {}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_TurnItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_TurnItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_TurnItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_TurnItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_SurrenderItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubSystemMenu.SurrenderItem")]
+#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
+pub struct MapSystemMenu_SubSystemMenu_SurrenderItem {}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_SubSystemMenu_SurrenderItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_SubSystemMenu_SurrenderItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_SubSystemMenu_SurrenderItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_SubSystemMenu_SurrenderItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_RewindMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.RewindMenuItem")]
+#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
+pub struct MapSystemMenu_RewindMenuItem {}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_RewindMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_RewindMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_RewindMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_RewindMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_ConfigItem.md"))]
 #[::unity2::class(namespace = "App", name = "MapSystemMenu.SubSystemMenu.ConfigItem")]
 #[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
 pub struct MapSystemMenu_SubSystemMenu_ConfigItem {}
@@ -944,7 +440,337 @@ impl MapSystemMenu_SubSystemMenu_ConfigItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_ResetItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_KizunaItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubFriendMenu.KizunaItem")]
+#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
+pub struct MapSystemMenu_SubFriendMenu_KizunaItem {}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_SubFriendMenu_KizunaItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_SubFriendMenu_KizunaItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_SubFriendMenu_KizunaItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_SubFriendMenu_KizunaItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubFriendMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct MapSystemMenu_SubFriendMenu {
+    #[static_field]
+    #[rename(name = "m_parentMenu")]
+    pub m_parent_menu: crate::app::mapsystemmenu::MapSystemMenu,
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_SubFriendMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::basicmenu::BasicMenu,
+        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+    ) -> ();
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_SubFriendMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_SubFriendMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_SubFriendMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_FriendMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.FriendMenuItem")]
+#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
+pub struct MapSystemMenu_FriendMenuItem {}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_FriendMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_FriendMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_FriendMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_FriendMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SystemMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.SystemMenuItem")]
+#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
+pub struct MapSystemMenu_SystemMenuItem {}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_SystemMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_SystemMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_SystemMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_SystemMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubSystemMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct MapSystemMenu_SubSystemMenu {
+    #[static_field]
+    #[rename(name = "m_parentMenu")]
+    pub m_parent_menu: crate::app::mapsystemmenu::MapSystemMenu,
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_SubSystemMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::basicmenu::BasicMenu,
+        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+    ) -> ();
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_SubSystemMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_SubSystemMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_SubSystemMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_NotebookItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubFriendMenu.NotebookItem")]
+#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
+pub struct MapSystemMenu_SubFriendMenu_NotebookItem {}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_SubFriendMenu_NotebookItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_SubFriendMenu_NotebookItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_SubFriendMenu_NotebookItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_SubFriendMenu_NotebookItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_ResetItem.md"))]
 #[::unity2::class(namespace = "App", name = "MapSystemMenu.SubSystemMenu.ResetItem")]
 #[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
 pub struct MapSystemMenu_SubSystemMenu_ResetItem {}
@@ -1001,14 +827,55 @@ impl MapSystemMenu_SubSystemMenu_ResetItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SystemMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.SystemMenuItem")]
-#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
-pub struct MapSystemMenu_SystemMenuItem {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "MapSystemMenu.SubSystemMenu.RestartItem.ConfirmDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes {
+    #[rename(name = "m_Target")]
+    pub m_target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes,
+}
 
 #[cfg(feature = "app-mapsystemmenu")]
 #[::unity2::methods]
-impl MapSystemMenu_SystemMenuItem {
+impl MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes {
+    #[doc = "`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes {
+    #[doc = "`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` — overload selector"]
+    pub fn new(target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_SubSystemMenu_RestartItem_ConfirmDialogItemYesMethods>::ctor(
+            this, target,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_RingListItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubFriendMenu.RingListItem")]
+#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
+pub struct MapSystemMenu_SubFriendMenu_RingListItem {}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_SubFriendMenu_RingListItem {
     #[doc = "`get_FlagID()` overload"]
     #[method(name = "get_FlagID", args = 0)]
     pub fn get_flag_id(self) -> ::unity2::Il2CppString;
@@ -1025,9 +892,17 @@ impl MapSystemMenu_SystemMenuItem {
     #[method(name = "GetMapAttribute", args = 0)]
     pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
 
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
     #[doc = "`ACall()` overload"]
     #[method(name = "ACall", args = 0)]
     pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -1035,71 +910,22 @@ impl MapSystemMenu_SystemMenuItem {
 }
 
 #[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SystemMenuItem {
+impl MapSystemMenu_SubFriendMenu_RingListItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_SystemMenuItem),
+                ::core::stringify!(MapSystemMenu_SubFriendMenu_RingListItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapSystemMenu_SystemMenuItemMethods>::ctor(this);
+        <Self as IMapSystemMenu_SubFriendMenu_RingListItemMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_FriendMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.FriendMenuItem")]
-#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
-pub struct MapSystemMenu_FriendMenuItem {}
-
-#[cfg(feature = "app-mapsystemmenu")]
-#[::unity2::methods]
-impl MapSystemMenu_FriendMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelpText()` overload"]
-    #[method(name = "GetHelpText", args = 0)]
-    pub fn get_help_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_FriendMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_FriendMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSystemMenu_FriendMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_TemporarySaveItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_TemporarySaveItem.md"))]
 #[::unity2::class(namespace = "App", name = "MapSystemMenu.TemporarySaveItem")]
 #[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
 pub struct MapSystemMenu_TemporarySaveItem {}
@@ -1148,14 +974,74 @@ impl MapSystemMenu_TemporarySaveItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_SurrenderItem.md")))]
-#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubSystemMenu.SurrenderItem")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_RestartItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubSystemMenu.RestartItem")]
 #[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
-pub struct MapSystemMenu_SubSystemMenu_SurrenderItem {}
+pub struct MapSystemMenu_SubSystemMenu_RestartItem {
+    #[rename(name = "m_Target")]
+    pub m_target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes,
+}
 
 #[cfg(feature = "app-mapsystemmenu")]
 #[::unity2::methods]
-impl MapSystemMenu_SubSystemMenu_SurrenderItem {
+impl MapSystemMenu_SubSystemMenu_RestartItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_SubSystemMenu_RestartItem {
+    #[doc = "`.ctor(crate::app::gameuserrestartdata::GameUserRestartData_Targtes)` — overload selector"]
+    pub fn new(target: crate::app::gameuserrestartdata::GameUserRestartData_Targtes) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_SubSystemMenu_RestartItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_SubSystemMenu_RestartItemMethods>::ctor(this, target);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubFriendMenu_RelianceItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubFriendMenu.RelianceItem")]
+#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
+pub struct MapSystemMenu_SubFriendMenu_RelianceItem {}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_SubFriendMenu_RelianceItem {
     #[doc = "`get_FlagID()` overload"]
     #[method(name = "get_FlagID", args = 0)]
     pub fn get_flag_id(self) -> ::unity2::Il2CppString;
@@ -1190,17 +1076,131 @@ impl MapSystemMenu_SubSystemMenu_SurrenderItem {
 }
 
 #[cfg(feature = "app-mapsystemmenu")]
-impl MapSystemMenu_SubSystemMenu_SurrenderItem {
+impl MapSystemMenu_SubFriendMenu_RelianceItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapSystemMenu_SubSystemMenu_SurrenderItem),
+                ::core::stringify!(MapSystemMenu_SubFriendMenu_RelianceItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapSystemMenu_SubSystemMenu_SurrenderItemMethods>::ctor(this);
+        <Self as IMapSystemMenu_SubFriendMenu_RelianceItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_OrderItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.OrderItem")]
+#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
+pub struct MapSystemMenu_OrderItem {
+    #[rename(name = "m_SortieTopMenuContent")]
+    pub m_sortie_top_menu_content: crate::app::sortietopmenucontent::SortieTopMenuContent,
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_OrderItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor(crate::app::sortietopmenucontent::SortieTopMenuContent)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        sortie_top_menu_content: crate::app::sortietopmenucontent::SortieTopMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_OrderItem {
+    #[doc = "`.ctor(crate::app::sortietopmenucontent::SortieTopMenuContent)` — overload selector"]
+    pub fn new(
+        sortie_top_menu_content: crate::app::sortietopmenucontent::SortieTopMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_OrderItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_OrderItemMethods>::ctor(this, sortie_top_menu_content);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsystemmenu/MapSystemMenu_SubSystemMenu_TutorialItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSystemMenu.SubSystemMenu.TutorialItem")]
+#[parent(crate::app::mapsystemmenu::MapSystemMenu_MapSystemMenuItem)]
+pub struct MapSystemMenu_SubSystemMenu_TutorialItem {}
+
+#[cfg(feature = "app-mapsystemmenu")]
+#[::unity2::methods]
+impl MapSystemMenu_SubSystemMenu_TutorialItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelpText()` overload"]
+    #[method(name = "GetHelpText", args = 0)]
+    pub fn get_help_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsystemmenu")]
+impl MapSystemMenu_SubSystemMenu_TutorialItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSystemMenu_SubSystemMenu_TutorialItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSystemMenu_SubSystemMenu_TutorialItemMethods>::ctor(this);
         this
     }
 }

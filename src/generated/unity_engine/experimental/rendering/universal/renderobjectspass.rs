@@ -6,7 +6,7 @@ use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptable
 use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjectspass/RenderObjectsPass.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjectspass/RenderObjectsPass.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal",
     name = "RenderObjectsPass"

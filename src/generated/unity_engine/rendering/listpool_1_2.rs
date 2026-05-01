@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/listpool_1_2/ListPool_1_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/listpool_1_2/ListPool_1_2.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ListPool`1")]
 #[parent(crate::system::object::Object)]
 pub struct ListPool_1_2<T0: ::unity2::ClassIdentity> {

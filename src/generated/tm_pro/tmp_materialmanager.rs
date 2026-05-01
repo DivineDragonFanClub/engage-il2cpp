@@ -4,7 +4,45 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_MaskingMaterial.md"))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_MaterialManager.MaskingMaterial")]
+#[parent(crate::system::object::Object)]
+pub struct TMP_MaterialManager_MaskingMaterial {
+    #[rename(name = "baseMaterial")]
+    pub base_material: crate::unity_engine::material::Material,
+    #[rename(name = "stencilMaterial")]
+    pub stencil_material: crate::unity_engine::material::Material,
+    #[rename(name = "count")]
+    pub count: i32,
+    #[rename(name = "stencilID")]
+    pub stencil_id: i32,
+}
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+#[::unity2::methods]
+impl TMP_MaterialManager_MaskingMaterial {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_materialmanager")]
+impl TMP_MaterialManager_MaskingMaterial {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_MaterialManager_MaskingMaterial),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_MaterialManager_MaskingMaterialMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager.md"))]
 #[::unity2::class(namespace = "TMPro", name = "TMP_MaterialManager")]
 #[parent(crate::system::object::Object)]
 pub struct TMP_MaterialManager {
@@ -153,45 +191,7 @@ impl TMP_MaterialManager {
     ) -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_MaskingMaterial.md")))]
-#[::unity2::class(namespace = "TMPro", name = "TMP_MaterialManager.MaskingMaterial")]
-#[parent(crate::system::object::Object)]
-pub struct TMP_MaterialManager_MaskingMaterial {
-    #[rename(name = "baseMaterial")]
-    pub base_material: crate::unity_engine::material::Material,
-    #[rename(name = "stencilMaterial")]
-    pub stencil_material: crate::unity_engine::material::Material,
-    #[rename(name = "count")]
-    pub count: i32,
-    #[rename(name = "stencilID")]
-    pub stencil_id: i32,
-}
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-#[::unity2::methods]
-impl TMP_MaterialManager_MaskingMaterial {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "tm_pro-tmp_materialmanager")]
-impl TMP_MaterialManager_MaskingMaterial {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_MaterialManager_MaskingMaterial),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_MaterialManager_MaskingMaterialMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_FallbackMaterial.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_materialmanager/TMP_MaterialManager_FallbackMaterial.md"))]
 #[::unity2::class(namespace = "TMPro", name = "TMP_MaterialManager.FallbackMaterial")]
 #[parent(crate::system::object::Object)]
 pub struct TMP_MaterialManager_FallbackMaterial {

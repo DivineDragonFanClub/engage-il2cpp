@@ -8,24 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/operation/Operation.md")))]
-#[::unity2::class(namespace = "UnityEngine.Switch", name = "Operation")]
-#[parent(crate::system::object::Object)]
-pub struct Operation {}
-
-#[cfg(feature = "unity_engine-switch-operation")]
-#[::unity2::methods]
-impl Operation {
-    #[doc = "`get_mode()` overload"]
-    #[method(name = "get_mode", args = 0)]
-    pub fn get_mode() -> crate::unity_engine::switch::operation::Operation_OperationMode;
-
-    #[doc = "`GetMode_Internal()` overload"]
-    #[method(name = "GetMode_Internal", args = 0)]
-    pub fn get_mode_internal() -> crate::unity_engine::switch::operation::Operation_OperationMode;
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/operation/Operation_OperationMode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/operation/Operation_OperationMode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -67,4 +50,21 @@ impl Operation_OperationMode {
     pub fn console() -> Self {
         Self { value: 1 }
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/operation/Operation.md"))]
+#[::unity2::class(namespace = "UnityEngine.Switch", name = "Operation")]
+#[parent(crate::system::object::Object)]
+pub struct Operation {}
+
+#[cfg(feature = "unity_engine-switch-operation")]
+#[::unity2::methods]
+impl Operation {
+    #[doc = "`get_mode()` overload"]
+    #[method(name = "get_mode", args = 0)]
+    pub fn get_mode() -> crate::unity_engine::switch::operation::Operation_OperationMode;
+
+    #[doc = "`GetMode_Internal()` overload"]
+    #[method(name = "GetMode_Internal", args = 0)]
+    pub fn get_mode_internal() -> crate::unity_engine::switch::operation::Operation_OperationMode;
 }

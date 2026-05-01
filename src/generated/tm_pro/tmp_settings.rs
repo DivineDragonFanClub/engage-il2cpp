@@ -8,43 +8,7 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_settings/TMP_Settings_LineBreakingTable.md")))]
-#[::unity2::class(namespace = "TMPro", name = "TMP_Settings.LineBreakingTable")]
-#[parent(crate::system::object::Object)]
-pub struct TMP_Settings_LineBreakingTable {
-    #[rename(name = "leadingCharacters")]
-    pub leading_characters:
-        crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u16>,
-    #[rename(name = "followingCharacters")]
-    pub following_characters:
-        crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u16>,
-}
-
-#[cfg(feature = "tm_pro-tmp_settings")]
-#[::unity2::methods]
-impl TMP_Settings_LineBreakingTable {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "tm_pro-tmp_settings")]
-impl TMP_Settings_LineBreakingTable {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TMP_Settings_LineBreakingTable),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITMP_Settings_LineBreakingTableMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_settings/TMP_Settings.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_settings/TMP_Settings.md"))]
 #[::unity2::class(namespace = "TMPro", name = "TMP_Settings")]
 #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
 pub struct TMP_Settings {
@@ -322,6 +286,42 @@ impl TMP_Settings {
             )
         });
         <Self as ITMP_SettingsMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_settings/TMP_Settings_LineBreakingTable.md"))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_Settings.LineBreakingTable")]
+#[parent(crate::system::object::Object)]
+pub struct TMP_Settings_LineBreakingTable {
+    #[rename(name = "leadingCharacters")]
+    pub leading_characters:
+        crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u16>,
+    #[rename(name = "followingCharacters")]
+    pub following_characters:
+        crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u16>,
+}
+
+#[cfg(feature = "tm_pro-tmp_settings")]
+#[::unity2::methods]
+impl TMP_Settings_LineBreakingTable {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "tm_pro-tmp_settings")]
+impl TMP_Settings_LineBreakingTable {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TMP_Settings_LineBreakingTable),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_Settings_LineBreakingTableMethods>::ctor(this);
         this
     }
 }

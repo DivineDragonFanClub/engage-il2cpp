@@ -6,62 +6,7 @@ use crate::unity_engine::resource_management::resource_providers::resourceprovid
 use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/textdataprovider/TextDataProvider.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
-    name = "TextDataProvider"
-)]
-# [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
-pub struct TextDataProvider {}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
-#[::unity2::methods]
-impl TextDataProvider {
-    #[doc = "`get_IgnoreFailures()` overload"]
-    #[method(name = "get_IgnoreFailures", args = 0)]
-    pub fn get_ignore_failures(self) -> bool;
-
-    #[doc = "`set_IgnoreFailures(bool)` overload"]
-    #[method(name = "set_IgnoreFailures", args = 1)]
-    pub fn set_ignore_failures(self, value: bool) -> ();
-
-    #[doc = "`Convert(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Convert", args = 2)]
-    pub fn convert(
-        self,
-        r#type: ::unity2::SystemType,
-        text: ::unity2::Il2CppString,
-    ) -> crate::system::object::Object;
-
-    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
-    #[method(name = "Provide", args = 1)]
-    pub fn provide(
-        self,
-        provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
-impl TextDataProvider {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TextDataProvider),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITextDataProviderMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/textdataprovider/TextDataProvider_InternalOp.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/textdataprovider/TextDataProvider_InternalOp.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.ResourceProviders",
     name = "TextDataProvider.InternalOp"
@@ -128,6 +73,61 @@ impl TextDataProvider_InternalOp {
             )
         });
         <Self as ITextDataProvider_InternalOpMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/textdataprovider/TextDataProvider.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "TextDataProvider"
+)]
+# [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
+pub struct TextDataProvider {}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
+#[::unity2::methods]
+impl TextDataProvider {
+    #[doc = "`get_IgnoreFailures()` overload"]
+    #[method(name = "get_IgnoreFailures", args = 0)]
+    pub fn get_ignore_failures(self) -> bool;
+
+    #[doc = "`set_IgnoreFailures(bool)` overload"]
+    #[method(name = "set_IgnoreFailures", args = 1)]
+    pub fn set_ignore_failures(self, value: bool) -> ();
+
+    #[doc = "`Convert(::unity2::SystemType, ::unity2::Il2CppString)` overload"]
+    #[method(name = "Convert", args = 2)]
+    pub fn convert(
+        self,
+        r#type: ::unity2::SystemType,
+        text: ::unity2::Il2CppString,
+    ) -> crate::system::object::Object;
+
+    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
+    #[method(name = "Provide", args = 1)]
+    pub fn provide(
+        self,
+        provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
+impl TextDataProvider {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TextDataProvider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITextDataProviderMethods>::ctor(this);
         this
     }
 }

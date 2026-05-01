@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/table/Table.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/table/Table.md"))]
 #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "Table")]
 #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
 pub struct Table {

@@ -22,43 +22,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog_ConfirmYesDialogItem.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "SortieConfirmBattleDialog.ConfirmYesDialogItem"
-)]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct SortieConfirmBattleDialog_ConfirmYesDialogItem {}
-
-#[cfg(feature = "app-sortieconfirmbattledialog")]
-#[::unity2::methods]
-impl SortieConfirmBattleDialog_ConfirmYesDialogItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, text: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-sortieconfirmbattledialog")]
-impl SortieConfirmBattleDialog_ConfirmYesDialogItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieConfirmBattleDialog_ConfirmYesDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieConfirmBattleDialog_ConfirmYesDialogItemMethods>::ctor(this, text);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog_From.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog_From.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -110,7 +74,43 @@ impl SortieConfirmBattleDialog_From {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog_ConfirmYesDialogItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "SortieConfirmBattleDialog.ConfirmYesDialogItem"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct SortieConfirmBattleDialog_ConfirmYesDialogItem {}
+
+#[cfg(feature = "app-sortieconfirmbattledialog")]
+#[::unity2::methods]
+impl SortieConfirmBattleDialog_ConfirmYesDialogItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, text: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-sortieconfirmbattledialog")]
+impl SortieConfirmBattleDialog_ConfirmYesDialogItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieConfirmBattleDialog_ConfirmYesDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieConfirmBattleDialog_ConfirmYesDialogItemMethods>::ctor(this, text);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog.md"))]
 #[::unity2::class(namespace = "App", name = "SortieConfirmBattleDialog")]
 #[parent(crate::app::yesnodialog::YesNoDialog)]
 pub struct SortieConfirmBattleDialog {

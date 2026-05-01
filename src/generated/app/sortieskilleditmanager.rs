@@ -10,51 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieskilleditmanager/SortieSkillEditManager_Modes.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct SortieSkillEditManager_Modes {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for SortieSkillEditManager_Modes {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieSkillEditManager.Modes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for SortieSkillEditManager_Modes {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl SortieSkillEditManager_Modes {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn trade() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieskilleditmanager/SortieSkillEditManager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieskilleditmanager/SortieSkillEditManager.md"))]
 #[::unity2::class(namespace = "App", name = "SortieSkillEditManager")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieskilleditmanager :: SortieSkillEditManager >)]
 pub struct SortieSkillEditManager {
@@ -178,5 +134,49 @@ impl SortieSkillEditManager {
         });
         <Self as ISortieSkillEditManagerMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieskilleditmanager/SortieSkillEditManager_Modes.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SortieSkillEditManager_Modes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SortieSkillEditManager_Modes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieSkillEditManager.Modes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SortieSkillEditManager_Modes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SortieSkillEditManager_Modes {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn trade() -> Self {
+        Self { value: 1 }
     }
 }

@@ -14,7 +14,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/reflectionprobe/ReflectionProbe_ReflectionProbeEvent.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/reflectionprobe/ReflectionProbe_ReflectionProbeEvent.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -58,7 +58,7 @@ impl ReflectionProbe_ReflectionProbeEvent {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/reflectionprobe/ReflectionProbe.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/reflectionprobe/ReflectionProbe.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "ReflectionProbe")]
 #[parent(crate::unity_engine::behaviour::Behaviour)]
 pub struct ReflectionProbe {

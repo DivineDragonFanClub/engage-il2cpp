@@ -16,7 +16,125 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))]
+#[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.ForceList")]
+#[parent(crate::system::object::Object)]
+pub struct UnitInfoViewerSetting_ForceList {
+    #[static_field]
+    #[rename(name = "Types")]
+    pub types: ::unity2::Array<crate::app::force::Force_Type>,
+    #[static_field]
+    #[rename(name = "Names")]
+    pub names: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+#[::unity2::methods]
+impl UnitInfoViewerSetting_ForceList {
+    #[doc = "`GetIndex(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetIndex", args = 1)]
+    pub fn get_index(name: ::unity2::Il2CppString) -> i32;
+
+    #[doc = "`GetForceType(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetForceType", args = 1)]
+    pub fn get_force_type(name: ::unity2::Il2CppString) -> crate::app::force::Force_Type;
+
+    #[doc = "`GetName(crate::app::force::Force_Type)` overload"]
+    #[method(name = "GetName", args = 1)]
+    pub fn get_name(force_type: crate::app::force::Force_Type) -> ::unity2::Il2CppString;
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_Seq.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitInfoViewerSetting_Seq {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitInfoViewerSetting_Seq {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitInfoViewerSetting.Seq";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitInfoViewerSetting_Seq {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitInfoViewerSetting_Seq {
+    pub fn wait_hiding_canvas() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn wait_reshowing_canvas() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn normal() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md"))]
+#[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.UnitData")]
+#[parent(crate::system::object::Object)]
+pub struct UnitInfoViewerSetting_UnitData {
+    #[rename(name = "person")]
+    pub person: ::unity2::Il2CppString,
+    #[rename(name = "job")]
+    pub job: ::unity2::Il2CppString,
+    #[rename(name = "weapon")]
+    pub weapon: ::unity2::Il2CppString,
+    #[rename(name = "force")]
+    pub force: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+#[::unity2::methods]
+impl UnitInfoViewerSetting_UnitData {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+impl UnitInfoViewerSetting_UnitData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitInfoViewerSetting_UnitData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitInfoViewerSetting_UnitDataMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting.md"))]
 #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct UnitInfoViewerSetting {
@@ -113,122 +231,4 @@ impl UnitInfoViewerSetting {
         <Self as IUnitInfoViewerSettingMethods>::ctor(this);
         this
     }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md")))]
-#[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.UnitData")]
-#[parent(crate::system::object::Object)]
-pub struct UnitInfoViewerSetting_UnitData {
-    #[rename(name = "person")]
-    pub person: ::unity2::Il2CppString,
-    #[rename(name = "job")]
-    pub job: ::unity2::Il2CppString,
-    #[rename(name = "weapon")]
-    pub weapon: ::unity2::Il2CppString,
-    #[rename(name = "force")]
-    pub force: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-#[::unity2::methods]
-impl UnitInfoViewerSetting_UnitData {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl UnitInfoViewerSetting_UnitData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitInfoViewerSetting_UnitData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitInfoViewerSetting_UnitDataMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_Seq.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitInfoViewerSetting_Seq {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitInfoViewerSetting_Seq {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfoViewerSetting.Seq";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitInfoViewerSetting_Seq {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitInfoViewerSetting_Seq {
-    pub fn wait_hiding_canvas() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn wait_reshowing_canvas() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn normal() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md")))]
-#[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.ForceList")]
-#[parent(crate::system::object::Object)]
-pub struct UnitInfoViewerSetting_ForceList {
-    #[static_field]
-    #[rename(name = "Types")]
-    pub types: ::unity2::Array<crate::app::force::Force_Type>,
-    #[static_field]
-    #[rename(name = "Names")]
-    pub names: ::unity2::Array<::unity2::Il2CppString>,
-}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-#[::unity2::methods]
-impl UnitInfoViewerSetting_ForceList {
-    #[doc = "`GetIndex(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetIndex", args = 1)]
-    pub fn get_index(name: ::unity2::Il2CppString) -> i32;
-
-    #[doc = "`GetForceType(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetForceType", args = 1)]
-    pub fn get_force_type(name: ::unity2::Il2CppString) -> crate::app::force::Force_Type;
-
-    #[doc = "`GetName(crate::app::force::Force_Type)` overload"]
-    #[method(name = "GetName", args = 1)]
-    pub fn get_name(force_type: crate::app::force::Force_Type) -> ::unity2::Il2CppString;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
 }

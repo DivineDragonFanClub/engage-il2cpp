@@ -22,14 +22,14 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_CookingMenu.md")))]
-#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.CookingMenu")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingPictureBookMenu.md"))]
+#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.FishingPictureBookMenu")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct HubPlayTalkAfter_CookingMenu {}
+pub struct HubPlayTalkAfter_FishingPictureBookMenu {}
 
 #[cfg(feature = "app-hubplaytalkafter")]
 #[::unity2::methods]
-impl HubPlayTalkAfter_CookingMenu {
+impl HubPlayTalkAfter_FishingPictureBookMenu {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
@@ -48,92 +48,22 @@ impl HubPlayTalkAfter_CookingMenu {
 }
 
 #[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_CookingMenu {
+impl HubPlayTalkAfter_FishingPictureBookMenu {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayTalkAfter_CookingMenu),
+                ::core::stringify!(HubPlayTalkAfter_FishingPictureBookMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubPlayTalkAfter_CookingMenuMethods>::ctor(this);
+        <Self as IHubPlayTalkAfter_FishingPictureBookMenuMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_FleaMarketMenu.md")))]
-#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.FleaMarketMenu")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct HubPlayTalkAfter_FleaMarketMenu {}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-#[::unity2::methods]
-impl HubPlayTalkAfter_FleaMarketMenu {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_FleaMarketMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayTalkAfter_FleaMarketMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubPlayTalkAfter_FleaMarketMenuMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_NoItem.md")))]
-#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.RingMenu.NoItem")]
-#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-pub struct HubPlayTalkAfter_RingMenu_NoItem {}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-#[::unity2::methods]
-impl HubPlayTalkAfter_RingMenu_NoItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_RingMenu_NoItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayTalkAfter_RingMenu_NoItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubPlayTalkAfter_RingMenu_NoItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_ReplacePerson.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_ReplacePerson.md"))]
 #[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.ReplacePerson")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct HubPlayTalkAfter_ReplacePerson {
@@ -221,246 +151,7 @@ impl HubPlayTalkAfter_ReplacePerson {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_MuscleMenu.md")))]
-#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.MuscleMenu")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct HubPlayTalkAfter_MuscleMenu {}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-#[::unity2::methods]
-impl HubPlayTalkAfter_MuscleMenu {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_MuscleMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayTalkAfter_MuscleMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubPlayTalkAfter_MuscleMenuMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_TalkGiftMenu.md")))]
-#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.TalkGiftMenu")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct HubPlayTalkAfter_TalkGiftMenu {}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-#[::unity2::methods]
-impl HubPlayTalkAfter_TalkGiftMenu {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_TalkGiftMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayTalkAfter_TalkGiftMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubPlayTalkAfter_TalkGiftMenuMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_SelectListMenu.md")))]
-#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.SelectListMenu")]
-#[parent(crate::app::basicmenu::BasicMenu)]
-pub struct HubPlayTalkAfter_SelectListMenu {}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-#[::unity2::methods]
-impl HubPlayTalkAfter_SelectListMenu {
-    #[doc = "`get_CurrentMenuSelect()` overload"]
-    #[method(name = "get_CurrentMenuSelect", args = 0)]
-    pub fn get_current_menu_select() -> crate::app::basicmenuselect::BasicMenuSelect;
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        super_: crate::app::procinst::ProcInst,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        access: crate::app::hubaccess::HubAccess,
-    ) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_SelectListMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        super_: crate::app::procinst::ProcInst,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayTalkAfter_SelectListMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubPlayTalkAfter_SelectListMenuMethods>::ctor(this, menu_item_list, super_);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_RelianceMenu.md")))]
-#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.RelianceMenu")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct HubPlayTalkAfter_RelianceMenu {
-    #[rename(name = "m_access")]
-    pub m_access: crate::app::hubaccess::HubAccess,
-    #[rename(name = "m_relianceLevelUp")]
-    pub m_reliance_level_up: bool,
-}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-#[::unity2::methods]
-impl HubPlayTalkAfter_RelianceMenu {
-    #[doc = "`.ctor(crate::app::hubaccess::HubAccess, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, access: crate::app::hubaccess::HubAccess, reliance_level_up: bool) -> ();
-
-    #[doc = "`OnBuild()` overload"]
-    #[method(name = "OnBuild", args = 0)]
-    pub fn on_build(self) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_RelianceMenu {
-    #[doc = "`.ctor(crate::app::hubaccess::HubAccess, bool)` — overload selector"]
-    pub fn new(access: crate::app::hubaccess::HubAccess, reliance_level_up: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayTalkAfter_RelianceMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubPlayTalkAfter_RelianceMenuMethods>::ctor(this, access, reliance_level_up);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_GodRelianceMenu.md")))]
-#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.GodRelianceMenu")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct HubPlayTalkAfter_GodRelianceMenu {
-    #[rename(name = "m_access")]
-    pub m_access: crate::app::hubaccess::HubAccess,
-}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-#[::unity2::methods]
-impl HubPlayTalkAfter_GodRelianceMenu {
-    #[doc = "`.ctor(crate::app::hubaccess::HubAccess)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, access: crate::app::hubaccess::HubAccess) -> ();
-
-    #[doc = "`OnBuild()` overload"]
-    #[method(name = "OnBuild", args = 0)]
-    pub fn on_build(self) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_GodRelianceMenu {
-    #[doc = "`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"]
-    pub fn new(access: crate::app::hubaccess::HubAccess) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayTalkAfter_GodRelianceMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubPlayTalkAfter_GodRelianceMenuMethods>::ctor(this, access);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingMenu.md"))]
 #[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.FishingMenu")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct HubPlayTalkAfter_FishingMenu {
@@ -530,17 +221,84 @@ impl HubPlayTalkAfter_FishingMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_YesItem.md")))]
-#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.RingMenu.YesItem")]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct HubPlayTalkAfter_RingMenu_YesItem {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_SelectListMenu.md"))]
+#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.SelectListMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct HubPlayTalkAfter_SelectListMenu {}
 
 #[cfg(feature = "app-hubplaytalkafter")]
 #[::unity2::methods]
-impl HubPlayTalkAfter_RingMenu_YesItem {
+impl HubPlayTalkAfter_SelectListMenu {
+    #[doc = "`get_CurrentMenuSelect()` overload"]
+    #[method(name = "get_CurrentMenuSelect", args = 0)]
+    pub fn get_current_menu_select() -> crate::app::basicmenuselect::BasicMenuSelect;
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        super_: crate::app::procinst::ProcInst,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubaccess::HubAccess)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        access: crate::app::hubaccess::HubAccess,
+    ) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+impl HubPlayTalkAfter_SelectListMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        super_: crate::app::procinst::ProcInst,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubPlayTalkAfter_SelectListMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubPlayTalkAfter_SelectListMenuMethods>::ctor(this, menu_item_list, super_);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_CookingMenu.md"))]
+#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.CookingMenu")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct HubPlayTalkAfter_CookingMenu {}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+#[::unity2::methods]
+impl HubPlayTalkAfter_CookingMenu {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
 
     #[doc = "`ACall()` overload"]
     #[method(name = "ACall", args = 0)]
@@ -548,22 +306,110 @@ impl HubPlayTalkAfter_RingMenu_YesItem {
 }
 
 #[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_RingMenu_YesItem {
+impl HubPlayTalkAfter_CookingMenu {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayTalkAfter_RingMenu_YesItem),
+                ::core::stringify!(HubPlayTalkAfter_CookingMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubPlayTalkAfter_RingMenu_YesItemMethods>::ctor(this);
+        <Self as IHubPlayTalkAfter_CookingMenuMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplaytalkafter/HubPlayTalkAfter_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubPlayTalkAfter_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubPlayTalkAfter_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubPlayTalkAfter.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubPlayTalkAfter_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubPlayTalkAfter_Label {
+    pub fn init() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn select_menu() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn select_gift() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn reaction_gift() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn reliance() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn cooking() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn fishing() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn fishing_picture_book() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn dragon_ride() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn muscle() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn flea_market() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn fortune_telling() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 12 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu.md"))]
 #[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.RingMenu")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct HubPlayTalkAfter_RingMenu {}
@@ -608,7 +454,131 @@ impl HubPlayTalkAfter_RingMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_TalkGiftMenu.md"))]
+#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.TalkGiftMenu")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct HubPlayTalkAfter_TalkGiftMenu {}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+#[::unity2::methods]
+impl HubPlayTalkAfter_TalkGiftMenu {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+impl HubPlayTalkAfter_TalkGiftMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubPlayTalkAfter_TalkGiftMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubPlayTalkAfter_TalkGiftMenuMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_YesItem.md"))]
+#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.RingMenu.YesItem")]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct HubPlayTalkAfter_RingMenu_YesItem {}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+#[::unity2::methods]
+impl HubPlayTalkAfter_RingMenu_YesItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+impl HubPlayTalkAfter_RingMenu_YesItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubPlayTalkAfter_RingMenu_YesItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubPlayTalkAfter_RingMenu_YesItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_RelianceMenu.md"))]
+#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.RelianceMenu")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct HubPlayTalkAfter_RelianceMenu {
+    #[rename(name = "m_access")]
+    pub m_access: crate::app::hubaccess::HubAccess,
+    #[rename(name = "m_relianceLevelUp")]
+    pub m_reliance_level_up: bool,
+}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+#[::unity2::methods]
+impl HubPlayTalkAfter_RelianceMenu {
+    #[doc = "`.ctor(crate::app::hubaccess::HubAccess, bool)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, access: crate::app::hubaccess::HubAccess, reliance_level_up: bool) -> ();
+
+    #[doc = "`OnBuild()` overload"]
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+impl HubPlayTalkAfter_RelianceMenu {
+    #[doc = "`.ctor(crate::app::hubaccess::HubAccess, bool)` — overload selector"]
+    pub fn new(access: crate::app::hubaccess::HubAccess, reliance_level_up: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubPlayTalkAfter_RelianceMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubPlayTalkAfter_RelianceMenuMethods>::ctor(this, access, reliance_level_up);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter.md"))]
 #[::unity2::class(namespace = "App", name = "HubPlayTalkAfter")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: hubplaytalkafter :: HubPlayTalkAfter >)]
 pub struct HubPlayTalkAfter {
@@ -857,102 +827,14 @@ impl HubPlayTalkAfter {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplaytalkafter/HubPlayTalkAfter_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct HubPlayTalkAfter_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for HubPlayTalkAfter_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubPlayTalkAfter.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for HubPlayTalkAfter_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl HubPlayTalkAfter_Label {
-    pub fn init() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn select_menu() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn select_gift() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn reaction_gift() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn reliance() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn cooking() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn fishing() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn fishing_picture_book() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn dragon_ride() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn muscle() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn flea_market() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn fortune_telling() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 12 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_FortuneTellingMenu.md")))]
-#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.FortuneTellingMenu")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_FleaMarketMenu.md"))]
+#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.FleaMarketMenu")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct HubPlayTalkAfter_FortuneTellingMenu {}
+pub struct HubPlayTalkAfter_FleaMarketMenu {}
 
 #[cfg(feature = "app-hubplaytalkafter")]
 #[::unity2::methods]
-impl HubPlayTalkAfter_FortuneTellingMenu {
+impl HubPlayTalkAfter_FleaMarketMenu {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
@@ -971,29 +853,29 @@ impl HubPlayTalkAfter_FortuneTellingMenu {
 }
 
 #[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_FortuneTellingMenu {
+impl HubPlayTalkAfter_FleaMarketMenu {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayTalkAfter_FortuneTellingMenu),
+                ::core::stringify!(HubPlayTalkAfter_FleaMarketMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubPlayTalkAfter_FortuneTellingMenuMethods>::ctor(this);
+        <Self as IHubPlayTalkAfter_FleaMarketMenuMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_FishingPictureBookMenu.md")))]
-#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.FishingPictureBookMenu")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_MuscleMenu.md"))]
+#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.MuscleMenu")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct HubPlayTalkAfter_FishingPictureBookMenu {}
+pub struct HubPlayTalkAfter_MuscleMenu {}
 
 #[cfg(feature = "app-hubplaytalkafter")]
 #[::unity2::methods]
-impl HubPlayTalkAfter_FishingPictureBookMenu {
+impl HubPlayTalkAfter_MuscleMenu {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
@@ -1012,22 +894,70 @@ impl HubPlayTalkAfter_FishingPictureBookMenu {
 }
 
 #[cfg(feature = "app-hubplaytalkafter")]
-impl HubPlayTalkAfter_FishingPictureBookMenu {
+impl HubPlayTalkAfter_MuscleMenu {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayTalkAfter_FishingPictureBookMenu),
+                ::core::stringify!(HubPlayTalkAfter_MuscleMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubPlayTalkAfter_FishingPictureBookMenuMethods>::ctor(this);
+        <Self as IHubPlayTalkAfter_MuscleMenuMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_DragonRideMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_GodRelianceMenu.md"))]
+#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.GodRelianceMenu")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct HubPlayTalkAfter_GodRelianceMenu {
+    #[rename(name = "m_access")]
+    pub m_access: crate::app::hubaccess::HubAccess,
+}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+#[::unity2::methods]
+impl HubPlayTalkAfter_GodRelianceMenu {
+    #[doc = "`.ctor(crate::app::hubaccess::HubAccess)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, access: crate::app::hubaccess::HubAccess) -> ();
+
+    #[doc = "`OnBuild()` overload"]
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+impl HubPlayTalkAfter_GodRelianceMenu {
+    #[doc = "`.ctor(crate::app::hubaccess::HubAccess)` — overload selector"]
+    pub fn new(access: crate::app::hubaccess::HubAccess) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubPlayTalkAfter_GodRelianceMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubPlayTalkAfter_GodRelianceMenuMethods>::ctor(this, access);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_DragonRideMenu.md"))]
 #[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.DragonRideMenu")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct HubPlayTalkAfter_DragonRideMenu {}
@@ -1064,6 +994,76 @@ impl HubPlayTalkAfter_DragonRideMenu {
             )
         });
         <Self as IHubPlayTalkAfter_DragonRideMenuMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_RingMenu_NoItem.md"))]
+#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.RingMenu.NoItem")]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct HubPlayTalkAfter_RingMenu_NoItem {}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+#[::unity2::methods]
+impl HubPlayTalkAfter_RingMenu_NoItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+impl HubPlayTalkAfter_RingMenu_NoItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubPlayTalkAfter_RingMenu_NoItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubPlayTalkAfter_RingMenu_NoItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalkafter/HubPlayTalkAfter_FortuneTellingMenu.md"))]
+#[::unity2::class(namespace = "App", name = "HubPlayTalkAfter.FortuneTellingMenu")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct HubPlayTalkAfter_FortuneTellingMenu {}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+#[::unity2::methods]
+impl HubPlayTalkAfter_FortuneTellingMenu {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-hubplaytalkafter")]
+impl HubPlayTalkAfter_FortuneTellingMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubPlayTalkAfter_FortuneTellingMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubPlayTalkAfter_FortuneTellingMenuMethods>::ctor(this);
         this
     }
 }

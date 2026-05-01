@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkpagescroll/TalkPageScroll.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkpagescroll/TalkPageScroll.md"))]
 #[::unity2::class(namespace = "App.Talk3D", name = "TalkPageScroll")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct TalkPageScroll {}

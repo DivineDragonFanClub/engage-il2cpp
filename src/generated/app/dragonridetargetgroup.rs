@@ -14,125 +14,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetargetgroup/DragonRideTargetGroup_ChainParam.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DragonRideTargetGroup_ChainParam {
-    pub script: crate::app::dragonridetarget::DragonRideTarget,
-    pub is_link: bool,
-    pub is_double_ex: bool,
-}
-
-impl ::unity2::ClassIdentity for DragonRideTargetGroup_ChainParam {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DragonRideTargetGroup.ChainParam";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for DragonRideTargetGroup_ChainParam {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetgroup/DragonRideTargetGroup_ChainSEManager.md")))]
-#[::unity2::class(namespace = "App", name = "DragonRideTargetGroup.ChainSEManager")]
-#[parent(crate::system::object::Object)]
-pub struct DragonRideTargetGroup_ChainSEManager {
-    #[static_field]
-    #[rename(name = "cBigChainSE_Normal")]
-    pub c_big_chain_se_normal: ::unity2::Il2CppString,
-    #[static_field]
-    #[rename(name = "cBigChainSE_Special")]
-    pub c_big_chain_se_special: ::unity2::Il2CppString,
-    #[static_field]
-    #[rename(name = "cBigChainSE_Double")]
-    pub c_big_chain_se_double: ::unity2::Il2CppString,
-    #[rename(name = "cLinkChainSE")]
-    pub c_link_chain_se: ::unity2::Array<::unity2::Il2CppString>,
-    #[rename(name = "cLinkSETable")]
-    pub c_link_se_table: ::unity2::Array<i32>,
-    #[rename(name = "m_RootID")]
-    pub m_root_id: ::unity2::Il2CppString,
-    #[rename(name = "m_ChainCount")]
-    pub m_chain_count: i32,
-    #[rename(name = "m_IsLink")]
-    pub m_is_link: bool,
-    #[rename(name = "m_IsSpecial")]
-    pub m_is_special: bool,
-    #[rename(name = "m_IsDoubleEx")]
-    pub m_is_double_ex: bool,
-    #[rename(name = "m_AliveLimitCounter")]
-    pub m_alive_limit_counter: f32,
-}
-
-#[cfg(feature = "app-dragonridetargetgroup")]
-#[::unity2::methods]
-impl DragonRideTargetGroup_ChainSEManager {
-    #[doc = "`get_IsAlive()` overload"]
-    #[method(name = "get_IsAlive", args = 0)]
-    pub fn get_is_alive(self) -> bool;
-
-    #[doc = "`set_IsAlive(bool)` overload"]
-    #[method(name = "set_IsAlive", args = 1)]
-    pub fn set_is_alive(self, value: bool) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`ResetChain()` overload"]
-    #[method(name = "ResetChain", args = 0)]
-    pub fn reset_chain(self) -> ();
-
-    #[doc = "`StartChain(::unity2::Il2CppString, bool, bool, bool)` overload"]
-    #[method(name = "StartChain", args = 4)]
-    pub fn start_chain(
-        self,
-        root_id: ::unity2::Il2CppString,
-        is_link: bool,
-        is_special: bool,
-        is_double_ex: bool,
-    ) -> ();
-
-    #[doc = "`TryPlayChainSE(crate::app::dragonridetarget::DragonRideTarget)` overload"]
-    #[method(name = "TryPlayChainSE", args = 1)]
-    pub fn try_play_chain_se(
-        self,
-        target_script: crate::app::dragonridetarget::DragonRideTarget,
-    ) -> ();
-
-    #[doc = "`TickLimit()` overload"]
-    #[method(name = "TickLimit", args = 0)]
-    pub fn tick_limit(self) -> ();
-}
-
-#[cfg(feature = "app-dragonridetargetgroup")]
-impl DragonRideTargetGroup_ChainSEManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideTargetGroup_ChainSEManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideTargetGroup_ChainSEManagerMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetgroup/DragonRideTargetGroup.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetgroup/DragonRideTargetGroup.md"))]
 #[::unity2::class(namespace = "App", name = "DragonRideTargetGroup")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct DragonRideTargetGroup {
@@ -345,6 +227,124 @@ impl DragonRideTargetGroup {
             )
         });
         <Self as IDragonRideTargetGroupMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetargetgroup/DragonRideTargetGroup_ChainParam.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DragonRideTargetGroup_ChainParam {
+    pub script: crate::app::dragonridetarget::DragonRideTarget,
+    pub is_link: bool,
+    pub is_double_ex: bool,
+}
+
+impl ::unity2::ClassIdentity for DragonRideTargetGroup_ChainParam {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DragonRideTargetGroup.ChainParam";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DragonRideTargetGroup_ChainParam {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetargetgroup/DragonRideTargetGroup_ChainSEManager.md"))]
+#[::unity2::class(namespace = "App", name = "DragonRideTargetGroup.ChainSEManager")]
+#[parent(crate::system::object::Object)]
+pub struct DragonRideTargetGroup_ChainSEManager {
+    #[static_field]
+    #[rename(name = "cBigChainSE_Normal")]
+    pub c_big_chain_se_normal: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cBigChainSE_Special")]
+    pub c_big_chain_se_special: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cBigChainSE_Double")]
+    pub c_big_chain_se_double: ::unity2::Il2CppString,
+    #[rename(name = "cLinkChainSE")]
+    pub c_link_chain_se: ::unity2::Array<::unity2::Il2CppString>,
+    #[rename(name = "cLinkSETable")]
+    pub c_link_se_table: ::unity2::Array<i32>,
+    #[rename(name = "m_RootID")]
+    pub m_root_id: ::unity2::Il2CppString,
+    #[rename(name = "m_ChainCount")]
+    pub m_chain_count: i32,
+    #[rename(name = "m_IsLink")]
+    pub m_is_link: bool,
+    #[rename(name = "m_IsSpecial")]
+    pub m_is_special: bool,
+    #[rename(name = "m_IsDoubleEx")]
+    pub m_is_double_ex: bool,
+    #[rename(name = "m_AliveLimitCounter")]
+    pub m_alive_limit_counter: f32,
+}
+
+#[cfg(feature = "app-dragonridetargetgroup")]
+#[::unity2::methods]
+impl DragonRideTargetGroup_ChainSEManager {
+    #[doc = "`get_IsAlive()` overload"]
+    #[method(name = "get_IsAlive", args = 0)]
+    pub fn get_is_alive(self) -> bool;
+
+    #[doc = "`set_IsAlive(bool)` overload"]
+    #[method(name = "set_IsAlive", args = 1)]
+    pub fn set_is_alive(self, value: bool) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`ResetChain()` overload"]
+    #[method(name = "ResetChain", args = 0)]
+    pub fn reset_chain(self) -> ();
+
+    #[doc = "`StartChain(::unity2::Il2CppString, bool, bool, bool)` overload"]
+    #[method(name = "StartChain", args = 4)]
+    pub fn start_chain(
+        self,
+        root_id: ::unity2::Il2CppString,
+        is_link: bool,
+        is_special: bool,
+        is_double_ex: bool,
+    ) -> ();
+
+    #[doc = "`TryPlayChainSE(crate::app::dragonridetarget::DragonRideTarget)` overload"]
+    #[method(name = "TryPlayChainSE", args = 1)]
+    pub fn try_play_chain_se(
+        self,
+        target_script: crate::app::dragonridetarget::DragonRideTarget,
+    ) -> ();
+
+    #[doc = "`TickLimit()` overload"]
+    #[method(name = "TickLimit", args = 0)]
+    pub fn tick_limit(self) -> ();
+}
+
+#[cfg(feature = "app-dragonridetargetgroup")]
+impl DragonRideTargetGroup_ChainSEManager {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideTargetGroup_ChainSEManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideTargetGroup_ChainSEManagerMethods>::ctor(this);
         this
     }
 }

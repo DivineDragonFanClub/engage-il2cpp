@@ -12,7 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/friendlistsequence/FriendListSequence_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/friendlistsequence/FriendListSequence_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -84,7 +84,84 @@ impl FriendListSequence_Label {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistsequence/FriendListSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistsequence/FriendListSequence_ProcZoom.md"))]
+#[::unity2::class(namespace = "App", name = "FriendListSequence.ProcZoom")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct FriendListSequence_ProcZoom {
+    #[rename(name = "m_ZoomObject")]
+    pub m_zoom_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_FriendListContent")]
+    pub m_friend_list_content: crate::app::friendlistcontent::FriendListContent,
+    #[rename(name = "m_Picture")]
+    pub m_picture: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "m_IsPictureS")]
+    pub m_is_picture_s: bool,
+}
+
+#[cfg(feature = "app-friendlistsequence")]
+#[::unity2::methods]
+impl FriendListSequence_ProcZoom {
+    #[doc = "`Open()` overload"]
+    #[method(name = "Open", args = 0)]
+    pub fn open(self) -> ();
+
+    #[doc = "`WaitOpen()` overload"]
+    #[method(name = "WaitOpen", args = 0)]
+    pub fn wait_open(self) -> ();
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[doc = "`WaitClose()` overload"]
+    #[method(name = "WaitClose", args = 0)]
+    pub fn wait_close(self) -> ();
+
+    #[doc = "`End()` overload"]
+    #[method(name = "End", args = 0)]
+    pub fn end(self) -> ();
+
+    #[doc = "`CreateBindS(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::unity_engine::texture2d::Texture2D, crate::app::friendlistcontent::FriendListContent)` overload"]
+    #[method(name = "CreateBindS", args = 4)]
+    pub fn create_bind_s(
+        parent: crate::app::procinst::ProcInst,
+        zoom_object: crate::unity_engine::gameobject::GameObject,
+        texture: crate::unity_engine::texture2d::Texture2D,
+        friend_list_content: crate::app::friendlistcontent::FriendListContent,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::unity_engine::sprite::Sprite, bool, crate::app::friendlistcontent::FriendListContent)` overload"]
+    #[method(name = "CreateBind", args = 5)]
+    pub fn create_bind(
+        parent: crate::app::procinst::ProcInst,
+        zoom_object: crate::unity_engine::gameobject::GameObject,
+        picture: crate::unity_engine::sprite::Sprite,
+        is_picture_s: bool,
+        friend_list_content: crate::app::friendlistcontent::FriendListContent,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-friendlistsequence")]
+impl FriendListSequence_ProcZoom {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FriendListSequence_ProcZoom),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFriendListSequence_ProcZoomMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistsequence/FriendListSequence.md"))]
 #[::unity2::class(namespace = "App", name = "FriendListSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: friendlistsequence :: FriendListSequence >)]
 pub struct FriendListSequence {
@@ -223,83 +300,6 @@ impl FriendListSequence {
             )
         });
         <Self as IFriendListSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistsequence/FriendListSequence_ProcZoom.md")))]
-#[::unity2::class(namespace = "App", name = "FriendListSequence.ProcZoom")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct FriendListSequence_ProcZoom {
-    #[rename(name = "m_ZoomObject")]
-    pub m_zoom_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_FriendListContent")]
-    pub m_friend_list_content: crate::app::friendlistcontent::FriendListContent,
-    #[rename(name = "m_Picture")]
-    pub m_picture: crate::unity_engine::sprite::Sprite,
-    #[rename(name = "m_IsPictureS")]
-    pub m_is_picture_s: bool,
-}
-
-#[cfg(feature = "app-friendlistsequence")]
-#[::unity2::methods]
-impl FriendListSequence_ProcZoom {
-    #[doc = "`Open()` overload"]
-    #[method(name = "Open", args = 0)]
-    pub fn open(self) -> ();
-
-    #[doc = "`WaitOpen()` overload"]
-    #[method(name = "WaitOpen", args = 0)]
-    pub fn wait_open(self) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
-
-    #[doc = "`WaitClose()` overload"]
-    #[method(name = "WaitClose", args = 0)]
-    pub fn wait_close(self) -> ();
-
-    #[doc = "`End()` overload"]
-    #[method(name = "End", args = 0)]
-    pub fn end(self) -> ();
-
-    #[doc = "`CreateBindS(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::unity_engine::texture2d::Texture2D, crate::app::friendlistcontent::FriendListContent)` overload"]
-    #[method(name = "CreateBindS", args = 4)]
-    pub fn create_bind_s(
-        parent: crate::app::procinst::ProcInst,
-        zoom_object: crate::unity_engine::gameobject::GameObject,
-        texture: crate::unity_engine::texture2d::Texture2D,
-        friend_list_content: crate::app::friendlistcontent::FriendListContent,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::unity_engine::sprite::Sprite, bool, crate::app::friendlistcontent::FriendListContent)` overload"]
-    #[method(name = "CreateBind", args = 5)]
-    pub fn create_bind(
-        parent: crate::app::procinst::ProcInst,
-        zoom_object: crate::unity_engine::gameobject::GameObject,
-        picture: crate::unity_engine::sprite::Sprite,
-        is_picture_s: bool,
-        friend_list_content: crate::app::friendlistcontent::FriendListContent,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-friendlistsequence")]
-impl FriendListSequence_ProcZoom {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FriendListSequence_ProcZoom),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFriendListSequence_ProcZoomMethods>::ctor(this);
         this
     }
 }

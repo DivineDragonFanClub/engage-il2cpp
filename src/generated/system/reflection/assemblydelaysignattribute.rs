@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblydelaysignattribute/AssemblyDelaySignAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblydelaysignattribute/AssemblyDelaySignAttribute.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "AssemblyDelaySignAttribute")]
 pub struct AssemblyDelaySignAttribute {
     #[rename(name = "m_delaySign")]

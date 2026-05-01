@@ -6,7 +6,7 @@ use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptable
 use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/mainlightshadowcasterpass/MainLightShadowCasterPass_MainLightShadowConstantBuffer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/mainlightshadowcasterpass/MainLightShadowCasterPass_MainLightShadowConstantBuffer.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Internal",
     name = "MainLightShadowCasterPass.MainLightShadowConstantBuffer"
@@ -51,7 +51,7 @@ pub struct MainLightShadowCasterPass_MainLightShadowConstantBuffer {
     pub shadowmap_size: i32,
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/mainlightshadowcasterpass/MainLightShadowCasterPass.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/mainlightshadowcasterpass/MainLightShadowCasterPass.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Internal",
     name = "MainLightShadowCasterPass"

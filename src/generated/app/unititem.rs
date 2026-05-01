@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unititem/UnitItem_Flags.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unititem/UnitItem_Flags.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -56,7 +56,7 @@ impl UnitItem_Flags {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititem/UnitItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititem/UnitItem.md"))]
 #[::unity2::class(namespace = "App", name = "UnitItem")]
 #[parent(crate::system::object::Object)]
 pub struct UnitItem {

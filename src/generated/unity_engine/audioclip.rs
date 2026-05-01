@@ -10,7 +10,30 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audioclip/AudioClip_PCMReaderCallback.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audioclip/AudioClip.md"))]
+#[::unity2::class(namespace = "UnityEngine", name = "AudioClip")]
+#[parent(crate::unity_engine::object_2::Object_2)]
+pub struct AudioClip {
+    #[rename(name = "m_PCMReaderCallback")]
+    pub m_pcm_reader_callback: crate::unity_engine::audioclip::AudioClip_PCMReaderCallback,
+    #[rename(name = "m_PCMSetPositionCallback")]
+    pub m_pcm_set_position_callback:
+        crate::unity_engine::audioclip::AudioClip_PCMSetPositionCallback,
+}
+
+#[cfg(feature = "unity_engine-audioclip")]
+#[::unity2::methods]
+impl AudioClip {
+    #[doc = "`InvokePCMReaderCallback_Internal(::unity2::Array<f32>)` overload"]
+    #[method(name = "InvokePCMReaderCallback_Internal", args = 1)]
+    pub fn invoke_pcm_reader_callback_internal(self, data: ::unity2::Array<f32>) -> ();
+
+    #[doc = "`InvokePCMSetPositionCallback_Internal(i32)` overload"]
+    #[method(name = "InvokePCMSetPositionCallback_Internal", args = 1)]
+    pub fn invoke_pcm_set_position_callback_internal(self, position: i32) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audioclip/AudioClip_PCMReaderCallback.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "AudioClip.PCMReaderCallback")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct AudioClip_PCMReaderCallback {}
@@ -43,7 +66,7 @@ impl AudioClip_PCMReaderCallback {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audioclip/AudioClip_PCMSetPositionCallback.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audioclip/AudioClip_PCMSetPositionCallback.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "AudioClip.PCMSetPositionCallback")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct AudioClip_PCMSetPositionCallback {}
@@ -74,27 +97,4 @@ impl AudioClip_PCMSetPositionCallback {
         <Self as IAudioClip_PCMSetPositionCallbackMethods>::ctor(this, object, method);
         this
     }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/audioclip/AudioClip.md")))]
-#[::unity2::class(namespace = "UnityEngine", name = "AudioClip")]
-#[parent(crate::unity_engine::object_2::Object_2)]
-pub struct AudioClip {
-    #[rename(name = "m_PCMReaderCallback")]
-    pub m_pcm_reader_callback: crate::unity_engine::audioclip::AudioClip_PCMReaderCallback,
-    #[rename(name = "m_PCMSetPositionCallback")]
-    pub m_pcm_set_position_callback:
-        crate::unity_engine::audioclip::AudioClip_PCMSetPositionCallback,
-}
-
-#[cfg(feature = "unity_engine-audioclip")]
-#[::unity2::methods]
-impl AudioClip {
-    #[doc = "`InvokePCMReaderCallback_Internal(::unity2::Array<f32>)` overload"]
-    #[method(name = "InvokePCMReaderCallback_Internal", args = 1)]
-    pub fn invoke_pcm_reader_callback_internal(self, data: ::unity2::Array<f32>) -> ();
-
-    #[doc = "`InvokePCMSetPositionCallback_Internal(i32)` overload"]
-    #[method(name = "InvokePCMSetPositionCallback_Internal", args = 1)]
-    pub fn invoke_pcm_set_position_callback_internal(self, position: i32) -> ();
 }

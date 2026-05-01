@@ -6,7 +6,7 @@ use crate::system::reflection::parameterinfo::IParameterInfo;
 use crate::system::reflection::parameterinfo::ParameterInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimeparameterinfo/RuntimeParameterInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimeparameterinfo/RuntimeParameterInfo.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "RuntimeParameterInfo")]
 #[parent(crate::system::reflection::parameterinfo::ParameterInfo)]
 pub struct RuntimeParameterInfo {}

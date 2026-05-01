@@ -10,140 +10,7 @@ use crate::unity_engine::resource_management::resource_providers::resourceprovid
 use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp_BundledCatalog.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.AddressableAssets.ResourceProviders",
-    name = "ContentCatalogProvider.InternalOp.BundledCatalog"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ContentCatalogProvider_InternalOp_BundledCatalog {
-# [rename (name = "m_BundlePath")] pub m_bundle_path : :: unity2 :: Il2CppString ,
-# [rename (name = "m_OpInProgress")] pub m_op_in_progress : bool ,
-# [rename (name = "m_LoadBundleRequest")] pub m_load_bundle_request : crate :: unity_engine :: assetbundlecreaterequest :: AssetBundleCreateRequest ,
-# [rename (name = "m_CatalogAssetBundle")] pub m_catalog_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
-# [rename (name = "m_LoadTextAssetRequest")] pub m_load_text_asset_request : crate :: unity_engine :: assetbundlerequest :: AssetBundleRequest ,
-# [rename (name = "m_CatalogData")] pub m_catalog_data : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData ,
-# [rename (name = "OnLoaded")] pub on_loaded : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > ,
-}
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-#[::unity2::methods]
-impl ContentCatalogProvider_InternalOp_BundledCatalog {
-    #[doc = "`add_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
-    #[method(name = "add_OnLoaded", args = 1)]
-    pub fn add_on_loaded(
-        self,
-        value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
-    ) -> ();
-
-    #[doc = "`remove_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
-    #[method(name = "remove_OnLoaded", args = 1)]
-    pub fn remove_on_loaded(
-        self,
-        value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
-    ) -> ();
-
-    #[doc = "`get_OpInProgress()` overload"]
-    #[method(name = "get_OpInProgress", args = 0)]
-    pub fn get_op_in_progress(self) -> bool;
-
-    #[doc = "`get_OpIsSuccess()` overload"]
-    #[method(name = "get_OpIsSuccess", args = 0)]
-    pub fn get_op_is_success(self) -> bool;
-
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, bundle_path: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
-
-    #[doc = "`Unload()` overload"]
-    #[method(name = "Unload", args = 0)]
-    pub fn unload(self) -> ();
-
-    #[doc = "`LoadCatalogFromBundleAsync()` overload"]
-    #[method(name = "LoadCatalogFromBundleAsync", args = 0)]
-    pub fn load_catalog_from_bundle_async(self) -> ();
-
-    #[doc = "`LoadTextAssetRequestComplete(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
-    #[method(name = "LoadTextAssetRequestComplete", args = 1)]
-    pub fn load_text_asset_request_complete(
-        self,
-        op: crate::unity_engine::asyncoperation::AsyncOperation,
-    ) -> ();
-
-    #[doc = "`WaitForCompletion()` overload"]
-    #[method(name = "WaitForCompletion", args = 0)]
-    pub fn wait_for_completion(self) -> bool;
-}
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl ContentCatalogProvider_InternalOp_BundledCatalog {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(bundle_path: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ContentCatalogProvider_InternalOp_BundledCatalog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IContentCatalogProvider_InternalOp_BundledCatalogMethods>::ctor(this, bundle_path);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_DependencyHashIndex.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ContentCatalogProvider_DependencyHashIndex {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for ContentCatalogProvider_DependencyHashIndex {
-    const NAMESPACE: &'static str = "UnityEngine.AddressableAssets.ResourceProviders";
-
-    const NAME: &'static str = "ContentCatalogProvider.DependencyHashIndex";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ContentCatalogProvider_DependencyHashIndex {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ContentCatalogProvider_DependencyHashIndex {
-    pub fn remote() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn cache() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn count() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.AddressableAssets.ResourceProviders",
     name = "ContentCatalogProvider"
@@ -200,7 +67,7 @@ impl ContentCatalogProvider {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.AddressableAssets.ResourceProviders",
     name = "ContentCatalogProvider.InternalOp"
@@ -293,5 +160,138 @@ impl ContentCatalogProvider_InternalOp {
         });
         <Self as IContentCatalogProvider_InternalOpMethods>::ctor(this);
         this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp_BundledCatalog.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets.ResourceProviders",
+    name = "ContentCatalogProvider.InternalOp.BundledCatalog"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ContentCatalogProvider_InternalOp_BundledCatalog {
+# [rename (name = "m_BundlePath")] pub m_bundle_path : :: unity2 :: Il2CppString ,
+# [rename (name = "m_OpInProgress")] pub m_op_in_progress : bool ,
+# [rename (name = "m_LoadBundleRequest")] pub m_load_bundle_request : crate :: unity_engine :: assetbundlecreaterequest :: AssetBundleCreateRequest ,
+# [rename (name = "m_CatalogAssetBundle")] pub m_catalog_asset_bundle : crate :: unity_engine :: assetbundle :: AssetBundle ,
+# [rename (name = "m_LoadTextAssetRequest")] pub m_load_text_asset_request : crate :: unity_engine :: assetbundlerequest :: AssetBundleRequest ,
+# [rename (name = "m_CatalogData")] pub m_catalog_data : crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData ,
+# [rename (name = "OnLoaded")] pub on_loaded : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData > ,
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+#[::unity2::methods]
+impl ContentCatalogProvider_InternalOp_BundledCatalog {
+    #[doc = "`add_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
+    #[method(name = "add_OnLoaded", args = 1)]
+    pub fn add_on_loaded(
+        self,
+        value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
+    ) -> ();
+
+    #[doc = "`remove_OnLoaded(crate::system::action_1::Action_1<crate::unity_engine::addressable_assets::resource_locators::contentcatalogdata::ContentCatalogData>)` overload"]
+    #[method(name = "remove_OnLoaded", args = 1)]
+    pub fn remove_on_loaded(
+        self,
+        value : crate :: system :: action_1 :: Action_1 < crate :: unity_engine :: addressable_assets :: resource_locators :: contentcatalogdata :: ContentCatalogData >,
+    ) -> ();
+
+    #[doc = "`get_OpInProgress()` overload"]
+    #[method(name = "get_OpInProgress", args = 0)]
+    pub fn get_op_in_progress(self) -> bool;
+
+    #[doc = "`get_OpIsSuccess()` overload"]
+    #[method(name = "get_OpIsSuccess", args = 0)]
+    pub fn get_op_is_success(self) -> bool;
+
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, bundle_path: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Finalize()` overload"]
+    #[method(name = "Finalize", args = 0)]
+    pub fn finalize(self) -> ();
+
+    #[doc = "`Unload()` overload"]
+    #[method(name = "Unload", args = 0)]
+    pub fn unload(self) -> ();
+
+    #[doc = "`LoadCatalogFromBundleAsync()` overload"]
+    #[method(name = "LoadCatalogFromBundleAsync", args = 0)]
+    pub fn load_catalog_from_bundle_async(self) -> ();
+
+    #[doc = "`LoadTextAssetRequestComplete(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
+    #[method(name = "LoadTextAssetRequestComplete", args = 1)]
+    pub fn load_text_asset_request_complete(
+        self,
+        op: crate::unity_engine::asyncoperation::AsyncOperation,
+    ) -> ();
+
+    #[doc = "`WaitForCompletion()` overload"]
+    #[method(name = "WaitForCompletion", args = 0)]
+    pub fn wait_for_completion(self) -> bool;
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+impl ContentCatalogProvider_InternalOp_BundledCatalog {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(bundle_path: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ContentCatalogProvider_InternalOp_BundledCatalog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IContentCatalogProvider_InternalOp_BundledCatalogMethods>::ctor(this, bundle_path);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_DependencyHashIndex.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ContentCatalogProvider_DependencyHashIndex {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ContentCatalogProvider_DependencyHashIndex {
+    const NAMESPACE: &'static str = "UnityEngine.AddressableAssets.ResourceProviders";
+
+    const NAME: &'static str = "ContentCatalogProvider.DependencyHashIndex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ContentCatalogProvider_DependencyHashIndex {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ContentCatalogProvider_DependencyHashIndex {
+    pub fn remote() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn cache() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn count() -> Self {
+        Self { value: 2 }
     }
 }

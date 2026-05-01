@@ -10,7 +10,7 @@ use crate::unity_engine::statemachinebehaviour::IStateMachineBehaviour;
 use crate::unity_engine::statemachinebehaviour::StateMachineBehaviour;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characteridlesmb/CharacterIdleSMB.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characteridlesmb/CharacterIdleSMB.md"))]
 #[::unity2::class(namespace = "Combat", name = "CharacterIdleSMB")]
 #[parent(crate::unity_engine::statemachinebehaviour::StateMachineBehaviour)]
 pub struct CharacterIdleSMB {

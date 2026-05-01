@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/idictionaryenumerator/IDictionaryEnumerator.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/idictionaryenumerator/IDictionaryEnumerator.md"))]
 #[::unity2::class(namespace = "System.Collections", name = "IDictionaryEnumerator")]
 pub struct IDictionaryEnumerator {}
 

@@ -6,7 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/shaderinput/ShaderInput_ShadowData.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/shaderinput/ShaderInput_ShadowData.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct ShaderInput_ShadowData {
@@ -35,12 +35,7 @@ impl ::unity2::IlType for ShaderInput_ShadowData {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/shaderinput/ShaderInput.md")))]
-#[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ShaderInput")]
-#[parent(crate::system::object::Object)]
-pub struct ShaderInput {}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/shaderinput/ShaderInput_LightData.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/shaderinput/ShaderInput_LightData.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct ShaderInput_LightData {
@@ -71,3 +66,8 @@ impl ::unity2::IlType for ShaderInput_LightData {
             .byval_arg
     }
 }
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/shaderinput/ShaderInput.md"))]
+#[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "ShaderInput")]
+#[parent(crate::system::object::Object)]
+pub struct ShaderInput {}

@@ -10,7 +10,7 @@ use crate::system::reflection::runtimeeventinfo::IRuntimeEventInfo;
 use crate::system::reflection::runtimeeventinfo::RuntimeEventInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoevent/MonoEvent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoevent/MonoEvent.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "MonoEvent")]
 #[parent(crate::system::reflection::runtimeeventinfo::RuntimeEventInfo)]
 pub struct MonoEvent {

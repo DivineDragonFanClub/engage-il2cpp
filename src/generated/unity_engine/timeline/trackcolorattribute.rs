@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/trackcolorattribute/TrackColorAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/trackcolorattribute/TrackColorAttribute.md"))]
 #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TrackColorAttribute")]
 pub struct TrackColorAttribute {
     #[rename(name = "m_Color")]

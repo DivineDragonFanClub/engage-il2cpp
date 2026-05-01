@@ -8,46 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/neterror/NetError.md")))]
-#[::unity2::class(namespace = "App", name = "NetError")]
-#[parent(crate::system::object::Object)]
-pub struct NetError {
-    #[static_field]
-    #[rename(name = "s_Kind")]
-    pub s_kind: crate::app::neterror::NetError_Kind,
-    #[static_field]
-    #[rename(name = "s_App")]
-    pub s_app: crate::app::neterror::NetError_App,
-}
-
-#[cfg(feature = "app-neterror")]
-#[::unity2::methods]
-impl NetError {
-    #[doc = "`Show(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "Show", args = 1)]
-    pub fn show(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`Show(crate::app::procinst::ProcInst, crate::app::neterror::NetError_App)` overload"]
-    #[method(name = "Show", args = 2)]
-    pub fn show_2(
-        super_: crate::app::procinst::ProcInst,
-        app: crate::app::neterror::NetError_App,
-    ) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear() -> ();
-
-    #[doc = "`SetError(crate::app::neterror::NetError_App)` overload"]
-    #[method(name = "SetError", args = 1)]
-    pub fn set_error(error: crate::app::neterror::NetError_App) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/neterror/NetError_App.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/neterror/NetError_App.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -87,7 +48,7 @@ impl NetError_App {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/neterror/NetError_Kind.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/neterror/NetError_Kind.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -129,4 +90,43 @@ impl NetError_Kind {
     pub fn app() -> Self {
         Self { value: 1 }
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/neterror/NetError.md"))]
+#[::unity2::class(namespace = "App", name = "NetError")]
+#[parent(crate::system::object::Object)]
+pub struct NetError {
+    #[static_field]
+    #[rename(name = "s_Kind")]
+    pub s_kind: crate::app::neterror::NetError_Kind,
+    #[static_field]
+    #[rename(name = "s_App")]
+    pub s_app: crate::app::neterror::NetError_App,
+}
+
+#[cfg(feature = "app-neterror")]
+#[::unity2::methods]
+impl NetError {
+    #[doc = "`Show(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "Show", args = 1)]
+    pub fn show(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`Show(crate::app::procinst::ProcInst, crate::app::neterror::NetError_App)` overload"]
+    #[method(name = "Show", args = 2)]
+    pub fn show_2(
+        super_: crate::app::procinst::ProcInst,
+        app: crate::app::neterror::NetError_App,
+    ) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear() -> ();
+
+    #[doc = "`SetError(crate::app::neterror::NetError_App)` overload"]
+    #[method(name = "SetError", args = 1)]
+    pub fn set_error(error: crate::app::neterror::NetError_App) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }

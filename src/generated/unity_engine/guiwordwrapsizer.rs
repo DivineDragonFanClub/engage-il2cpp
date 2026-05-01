@@ -6,7 +6,7 @@ use crate::unity_engine::guilayoutentry::GUILayoutEntry;
 use crate::unity_engine::guilayoutentry::IGUILayoutEntry;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiwordwrapsizer/GUIWordWrapSizer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiwordwrapsizer/GUIWordWrapSizer.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "GUIWordWrapSizer")]
 #[parent(crate::unity_engine::guilayoutentry::GUILayoutEntry)]
 pub struct GUIWordWrapSizer {

@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/overloadedmethodmemberdescriptor/OverloadedMethodMemberDescriptor.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/overloadedmethodmemberdescriptor/OverloadedMethodMemberDescriptor.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Interop",
     name = "OverloadedMethodMemberDescriptor"
@@ -254,45 +254,7 @@ impl OverloadedMethodMemberDescriptor {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/overloadedmethodmemberdescriptor/OverloadedMethodMemberDescriptor_OverloadCacheItem.md")))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Interop",
-    name = "OverloadedMethodMemberDescriptor.OverloadCacheItem"
-)]
-#[parent(crate::system::object::Object)]
-pub struct OverloadedMethodMemberDescriptor_OverloadCacheItem {
-# [rename (name = "HasObject")] pub has_object : bool ,
-# [rename (name = "Method")] pub method : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: ioverloadablememberdescriptor :: IOverloadableMemberDescriptor ,
-# [rename (name = "ArgsDataType")] pub args_data_type : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: datatype :: DataType > ,
-# [rename (name = "ArgsUserDataType")] pub args_user_data_type : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: SystemType > ,
-# [rename (name = "HitIndexAtLastHit")] pub hit_index_at_last_hit : i32 ,
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]
-#[::unity2::methods]
-impl OverloadedMethodMemberDescriptor_OverloadCacheItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]
-impl OverloadedMethodMemberDescriptor_OverloadCacheItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(OverloadedMethodMemberDescriptor_OverloadCacheItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IOverloadedMethodMemberDescriptor_OverloadCacheItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/overloadedmethodmemberdescriptor/OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/overloadedmethodmemberdescriptor/OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Interop",
     name = "OverloadedMethodMemberDescriptor.OverloadableMemberDescriptorComparer"
@@ -330,6 +292,44 @@ impl OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer {
             )
         });
         < Self as IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparerMethods > :: ctor (this ,) ;
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/overloadedmethodmemberdescriptor/OverloadedMethodMemberDescriptor_OverloadCacheItem.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "OverloadedMethodMemberDescriptor.OverloadCacheItem"
+)]
+#[parent(crate::system::object::Object)]
+pub struct OverloadedMethodMemberDescriptor_OverloadCacheItem {
+# [rename (name = "HasObject")] pub has_object : bool ,
+# [rename (name = "Method")] pub method : crate :: moon_sharp :: interpreter :: interop :: basic_descriptors :: ioverloadablememberdescriptor :: IOverloadableMemberDescriptor ,
+# [rename (name = "ArgsDataType")] pub args_data_type : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: moon_sharp :: interpreter :: datatype :: DataType > ,
+# [rename (name = "ArgsUserDataType")] pub args_user_data_type : crate :: system :: collections :: generic :: list_1 :: List_1 < :: unity2 :: SystemType > ,
+# [rename (name = "HitIndexAtLastHit")] pub hit_index_at_last_hit : i32 ,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]
+#[::unity2::methods]
+impl OverloadedMethodMemberDescriptor_OverloadCacheItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]
+impl OverloadedMethodMemberDescriptor_OverloadCacheItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(OverloadedMethodMemberDescriptor_OverloadCacheItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IOverloadedMethodMemberDescriptor_OverloadCacheItemMethods>::ctor(this);
         this
     }
 }

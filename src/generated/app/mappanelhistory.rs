@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelhistory/MapPanelHistory.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelhistory/MapPanelHistory.md"))]
 #[::unity2::class(namespace = "App", name = "MapPanelHistory")]
 pub struct MapPanelHistory {
     #[rename(name = "m_Hash")]

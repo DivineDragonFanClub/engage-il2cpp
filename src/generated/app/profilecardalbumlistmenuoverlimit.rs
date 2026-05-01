@@ -14,7 +14,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "ProfileCardAlbumListMenuOverLimit.ProfileCardAlbumListMenuOverLimitItem"
@@ -78,7 +78,7 @@ impl ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit_CancelEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit_CancelEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "ProfileCardAlbumListMenuOverLimit.CancelEventHandler"
@@ -119,7 +119,7 @@ impl ProfileCardAlbumListMenuOverLimit_CancelEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardAlbumListMenuOverLimit")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct ProfileCardAlbumListMenuOverLimit {

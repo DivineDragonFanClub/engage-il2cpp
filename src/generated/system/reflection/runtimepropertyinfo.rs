@@ -8,7 +8,7 @@ use crate::system::reflection::propertyinfo::IPropertyInfo;
 use crate::system::reflection::propertyinfo::PropertyInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimepropertyinfo/RuntimePropertyInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/runtimepropertyinfo/RuntimePropertyInfo.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "RuntimePropertyInfo")]
 #[parent(crate::system::reflection::propertyinfo::PropertyInfo)]
 pub struct RuntimePropertyInfo {}

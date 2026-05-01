@@ -4,7 +4,42 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessutils/PostProcessUtils.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessutils/PostProcessUtils_ShaderConstants.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "PostProcessUtils.ShaderConstants"
+)]
+#[parent(crate::system::object::Object)]
+pub struct PostProcessUtils_ShaderConstants {
+    #[static_field]
+    #[rename(name = "_Grain_Texture")]
+    pub grain_texture: i32,
+    #[static_field]
+    #[rename(name = "_Grain_Params")]
+    pub grain_params: i32,
+    #[static_field]
+    #[rename(name = "_Grain_TilingParams")]
+    pub grain_tiling_params: i32,
+    #[static_field]
+    #[rename(name = "_BlueNoise_Texture")]
+    pub blue_noise_texture: i32,
+    #[static_field]
+    #[rename(name = "_Dithering_Params")]
+    pub dithering_params: i32,
+    #[static_field]
+    #[rename(name = "_SourceSize")]
+    pub source_size: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-postprocessutils")]
+#[::unity2::methods]
+impl PostProcessUtils_ShaderConstants {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessutils/PostProcessUtils.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
     name = "PostProcessUtils"
@@ -59,39 +94,4 @@ impl PostProcessUtils {
         cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
         desc: crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,
     ) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessutils/PostProcessUtils_ShaderConstants.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal",
-    name = "PostProcessUtils.ShaderConstants"
-)]
-#[parent(crate::system::object::Object)]
-pub struct PostProcessUtils_ShaderConstants {
-    #[static_field]
-    #[rename(name = "_Grain_Texture")]
-    pub grain_texture: i32,
-    #[static_field]
-    #[rename(name = "_Grain_Params")]
-    pub grain_params: i32,
-    #[static_field]
-    #[rename(name = "_Grain_TilingParams")]
-    pub grain_tiling_params: i32,
-    #[static_field]
-    #[rename(name = "_BlueNoise_Texture")]
-    pub blue_noise_texture: i32,
-    #[static_field]
-    #[rename(name = "_Dithering_Params")]
-    pub dithering_params: i32,
-    #[static_field]
-    #[rename(name = "_SourceSize")]
-    pub source_size: i32,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-postprocessutils")]
-#[::unity2::methods]
-impl PostProcessUtils_ShaderConstants {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
 }

@@ -12,7 +12,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpproc/HelpProc_EventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpproc/HelpProc_EventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "HelpProc.EventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct HelpProc_EventHandler {}
@@ -45,7 +45,7 @@ impl HelpProc_EventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpproc/HelpProc.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpproc/HelpProc.md"))]
 #[::unity2::class(namespace = "App", name = "HelpProc")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: helpproc :: HelpProc >)]
 pub struct HelpProc {

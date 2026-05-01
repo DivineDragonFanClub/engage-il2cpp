@@ -18,7 +18,7 @@ use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
 use crate::unity_engine::ui::maskablegraphic::MaskableGraphic;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapsightrenderer/MiniMapSightRenderer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimapsightrenderer/MiniMapSightRenderer.md"))]
 #[::unity2::class(namespace = "App", name = "MiniMapSightRenderer")]
 #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
 pub struct MiniMapSightRenderer {

@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maptarget/MapTarget_RangeType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maptarget/MapTarget_ActionMask.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -19,14 +19,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapTarget_RangeType {
+pub struct MapTarget_ActionMask {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapTarget_RangeType {
+impl ::unity2::ClassIdentity for MapTarget_ActionMask {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapTarget.RangeType";
+    const NAME: &'static str = "MapTarget.ActionMask";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -35,7 +35,7 @@ impl ::unity2::ClassIdentity for MapTarget_RangeType {
     }
 }
 
-impl ::unity2::IlType for MapTarget_RangeType {
+impl ::unity2::IlType for MapTarget_ActionMask {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -44,21 +44,33 @@ impl ::unity2::IlType for MapTarget_RangeType {
     }
 }
 
-impl MapTarget_RangeType {
+impl MapTarget_ActionMask {
     pub fn none() -> Self {
         Self { value: 0 }
     }
 
-    pub fn unit_items() -> Self {
+    pub fn attack_only() -> Self {
         Self { value: 1 }
     }
 
-    pub fn specified_item() -> Self {
+    pub fn magic_only() -> Self {
         Self { value: 2 }
+    }
+
+    pub fn rod_only() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn cursor_only() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn direct_only() -> Self {
+        Self { value: 5 }
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maptarget/MapTarget_DataSet.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maptarget/MapTarget_DataSet.md"))]
 #[::unity2::class(namespace = "App", name = "MapTarget.DataSet")]
 #[parent(crate::system::object::Object)]
 pub struct MapTarget_DataSet {
@@ -174,7 +186,7 @@ impl MapTarget_DataSet {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maptarget/MapTarget_Data.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maptarget/MapTarget_Data.md"))]
 #[::unity2::class(namespace = "App", name = "MapTarget.Data")]
 #[parent(crate::system::object::Object)]
 pub struct MapTarget_Data {
@@ -328,67 +340,7 @@ impl MapTarget_Data {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maptarget/MapTarget_ActionMask.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapTarget_ActionMask {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapTarget_ActionMask {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapTarget.ActionMask";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapTarget_ActionMask {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapTarget_ActionMask {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn attack_only() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn magic_only() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn rod_only() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn cursor_only() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn direct_only() -> Self {
-        Self { value: 5 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maptarget/MapTarget.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maptarget/MapTarget.md"))]
 #[::unity2::class(namespace = "App", name = "MapTarget")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maptarget :: MapTarget >)]
 pub struct MapTarget {
@@ -883,5 +835,53 @@ impl MapTarget {
         });
         <Self as IMapTargetMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maptarget/MapTarget_RangeType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapTarget_RangeType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapTarget_RangeType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapTarget.RangeType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapTarget_RangeType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapTarget_RangeType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn unit_items() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn specified_item() -> Self {
+        Self { value: 2 }
     }
 }

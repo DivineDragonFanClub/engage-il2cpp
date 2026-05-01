@@ -6,39 +6,7 @@ use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptable
 use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customlightocclusionpass/CustomLightOcclusionPass_ShaderConstants.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
-    name = "CustomLightOcclusionPass.ShaderConstants"
-)]
-#[parent(crate::system::object::Object)]
-pub struct CustomLightOcclusionPass_ShaderConstants {
-    #[static_field]
-    #[rename(name = "_MatrixVP")]
-    pub matrix_vp: i32,
-    #[static_field]
-    #[rename(name = "_CameraPositionWS")]
-    pub camera_position_ws: i32,
-    #[static_field]
-    #[rename(name = "_LightAxisX")]
-    pub light_axis_x: i32,
-    #[static_field]
-    #[rename(name = "_LightAxisY")]
-    pub light_axis_y: i32,
-    #[static_field]
-    #[rename(name = "_LightAxisZ")]
-    pub light_axis_z: i32,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customlightocclusionpass")]
-#[::unity2::methods]
-impl CustomLightOcclusionPass_ShaderConstants {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customlightocclusionpass/CustomLightOcclusionPass.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customlightocclusionpass/CustomLightOcclusionPass.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
     name = "CustomLightOcclusionPass"
@@ -104,4 +72,36 @@ impl CustomLightOcclusionPass {
         <Self as ICustomLightOcclusionPassMethods>::ctor(this, evt, material);
         this
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customlightocclusionpass/CustomLightOcclusionPass_ShaderConstants.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+    name = "CustomLightOcclusionPass.ShaderConstants"
+)]
+#[parent(crate::system::object::Object)]
+pub struct CustomLightOcclusionPass_ShaderConstants {
+    #[static_field]
+    #[rename(name = "_MatrixVP")]
+    pub matrix_vp: i32,
+    #[static_field]
+    #[rename(name = "_CameraPositionWS")]
+    pub camera_position_ws: i32,
+    #[static_field]
+    #[rename(name = "_LightAxisX")]
+    pub light_axis_x: i32,
+    #[static_field]
+    #[rename(name = "_LightAxisY")]
+    pub light_axis_y: i32,
+    #[static_field]
+    #[rename(name = "_LightAxisZ")]
+    pub light_axis_z: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-internal-customlightocclusionpass")]
+#[::unity2::methods]
+impl CustomLightOcclusionPass_ShaderConstants {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }

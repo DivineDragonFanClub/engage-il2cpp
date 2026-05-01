@@ -12,7 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedata/GameSaveData_ProcDelete_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedata/GameSaveData_ProcWrite_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -21,14 +21,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct GameSaveData_ProcDelete_Label {
+pub struct GameSaveData_ProcWrite_Label {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for GameSaveData_ProcDelete_Label {
+impl ::unity2::ClassIdentity for GameSaveData_ProcWrite_Label {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "GameSaveData.ProcDelete.Label";
+    const NAME: &'static str = "GameSaveData.ProcWrite.Label";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -37,7 +37,7 @@ impl ::unity2::ClassIdentity for GameSaveData_ProcDelete_Label {
     }
 }
 
-impl ::unity2::IlType for GameSaveData_ProcDelete_Label {
+impl ::unity2::IlType for GameSaveData_ProcWrite_Label {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -46,53 +46,13 @@ impl ::unity2::IlType for GameSaveData_ProcDelete_Label {
     }
 }
 
-impl GameSaveData_ProcDelete_Label {
+impl GameSaveData_ProcWrite_Label {
     pub fn end() -> Self {
         Self { value: 0 }
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_Tag_Reader.md")))]
-#[::unity2::class(namespace = "App", name = "GameSaveData.Tag.Reader")]
-#[parent(crate::system::object::Object)]
-pub struct GameSaveData_Tag_Reader {
-    #[rename(name = "m_PosList")]
-    pub m_pos_list: crate::system::collections::generic::list_1::List_1<i32>,
-}
-
-#[cfg(feature = "app-gamesavedata")]
-#[::unity2::methods]
-impl GameSaveData_Tag_Reader {
-    #[doc = "`.ctor(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Read(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = "Read", args = 2)]
-    pub fn read(self, stream: crate::app::stream_2::Stream_2, index: i32) -> i32;
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-}
-
-#[cfg(feature = "app-gamesavedata")]
-impl GameSaveData_Tag_Reader {
-    #[doc = "`.ctor(crate::app::stream_2::Stream_2)` — overload selector"]
-    pub fn new(stream: crate::app::stream_2::Stream_2) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveData_Tag_Reader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameSaveData_Tag_ReaderMethods>::ctor(this, stream);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_Tag.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_Tag.md"))]
 #[::unity2::class(namespace = "App", name = "GameSaveData.Tag")]
 #[parent(crate::system::object::Object)]
 pub struct GameSaveData_Tag {
@@ -173,7 +133,7 @@ impl GameSaveData_Tag {
     pub fn cctor() -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedata/GameSaveData_ProcCopy_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedata/GameSaveData_ProcDelete_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -182,14 +142,14 @@ impl GameSaveData_Tag {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct GameSaveData_ProcCopy_Label {
+pub struct GameSaveData_ProcDelete_Label {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for GameSaveData_ProcCopy_Label {
+impl ::unity2::ClassIdentity for GameSaveData_ProcDelete_Label {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "GameSaveData.ProcCopy.Label";
+    const NAME: &'static str = "GameSaveData.ProcDelete.Label";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -198,7 +158,7 @@ impl ::unity2::ClassIdentity for GameSaveData_ProcCopy_Label {
     }
 }
 
-impl ::unity2::IlType for GameSaveData_ProcCopy_Label {
+impl ::unity2::IlType for GameSaveData_ProcDelete_Label {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -207,13 +167,53 @@ impl ::unity2::IlType for GameSaveData_ProcCopy_Label {
     }
 }
 
-impl GameSaveData_ProcCopy_Label {
+impl GameSaveData_ProcDelete_Label {
     pub fn end() -> Self {
         Self { value: 0 }
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedata/GameSaveData_Types.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_Tag_Reader.md"))]
+#[::unity2::class(namespace = "App", name = "GameSaveData.Tag.Reader")]
+#[parent(crate::system::object::Object)]
+pub struct GameSaveData_Tag_Reader {
+    #[rename(name = "m_PosList")]
+    pub m_pos_list: crate::system::collections::generic::list_1::List_1<i32>,
+}
+
+#[cfg(feature = "app-gamesavedata")]
+#[::unity2::methods]
+impl GameSaveData_Tag_Reader {
+    #[doc = "`.ctor(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`Read(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = "Read", args = 2)]
+    pub fn read(self, stream: crate::app::stream_2::Stream_2, index: i32) -> i32;
+
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+}
+
+#[cfg(feature = "app-gamesavedata")]
+impl GameSaveData_Tag_Reader {
+    #[doc = "`.ctor(crate::app::stream_2::Stream_2)` — overload selector"]
+    pub fn new(stream: crate::app::stream_2::Stream_2) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSaveData_Tag_Reader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSaveData_Tag_ReaderMethods>::ctor(this, stream);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedata/GameSaveData_Types.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -281,268 +281,7 @@ impl GameSaveData_Types {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_ProcWrite.md")))]
-#[::unity2::class(namespace = "App", name = "GameSaveData.ProcWrite")]
-#[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]
-pub struct GameSaveData_ProcWrite {
-    #[rename(name = "m_Stream")]
-    pub m_stream: crate::app::stream_2::Stream_2,
-    #[rename(name = "m_Data")]
-    pub m_data: ::unity2::Array<u8>,
-}
-
-#[cfg(feature = "app-gamesavedata")]
-#[::unity2::methods]
-impl GameSaveData_ProcWrite {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        save_data: crate::app::gamesavedata::GameSaveData,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, save_data: crate::app::gamesavedata::GameSaveData) -> ();
-
-    #[doc = "`IsShowing()` overload"]
-    #[method(name = "IsShowing", args = 0)]
-    pub fn is_showing(self) -> bool;
-
-    #[doc = "`MessageOpen()` overload"]
-    #[method(name = "MessageOpen", args = 0)]
-    pub fn message_open(self) -> ();
-
-    #[doc = "`ModifyForParentalControl()` overload"]
-    #[method(name = "ModifyForParentalControl", args = 0)]
-    pub fn modify_for_parental_control(self) -> ();
-
-    #[doc = "`Write()` overload"]
-    #[method(name = "Write", args = 0)]
-    pub fn write(self) -> ();
-
-    #[doc = "`WriteGlobal()` overload"]
-    #[method(name = "WriteGlobal", args = 0)]
-    pub fn write_global(self) -> ();
-
-    #[doc = "`Success()` overload"]
-    #[method(name = "Success", args = 0)]
-    pub fn success(self) -> ();
-}
-
-#[cfg(feature = "app-gamesavedata")]
-impl GameSaveData_ProcWrite {
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData)` — overload selector"]
-    pub fn new(save_data: crate::app::gamesavedata::GameSaveData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveData_ProcWrite),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameSaveData_ProcWriteMethods>::ctor(this, save_data);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_ProcRead.md")))]
-#[::unity2::class(namespace = "App", name = "GameSaveData.ProcRead")]
-#[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]
-pub struct GameSaveData_ProcRead {
-    #[rename(name = "m_Data")]
-    pub m_data: ::unity2::Array<u8>,
-}
-
-#[cfg(feature = "app-gamesavedata")]
-#[::unity2::methods]
-impl GameSaveData_ProcRead {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        save_data: crate::app::gamesavedata::GameSaveData,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, save_data: crate::app::gamesavedata::GameSaveData) -> ();
-
-    #[doc = "`MessageOpen()` overload"]
-    #[method(name = "MessageOpen", args = 0)]
-    pub fn message_open(self) -> ();
-
-    #[doc = "`Read()` overload"]
-    #[method(name = "Read", args = 0)]
-    pub fn read(self) -> ();
-
-    #[doc = "`Deserialize()` overload"]
-    #[method(name = "Deserialize", args = 0)]
-    pub fn deserialize(self) -> ();
-
-    #[doc = "`CleanupRelayUserGlobalData()` overload"]
-    #[method(name = "CleanupRelayUserGlobalData", args = 0)]
-    pub fn cleanup_relay_user_global_data(self) -> ();
-
-    #[doc = "`ModifyForParentalControl()` overload"]
-    #[method(name = "ModifyForParentalControl", args = 0)]
-    pub fn modify_for_parental_control(self) -> ();
-
-    #[doc = "`IsShowing()` overload"]
-    #[method(name = "IsShowing", args = 0)]
-    pub fn is_showing(self) -> bool;
-}
-
-#[cfg(feature = "app-gamesavedata")]
-impl GameSaveData_ProcRead {
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData)` — overload selector"]
-    pub fn new(save_data: crate::app::gamesavedata::GameSaveData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveData_ProcRead),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameSaveData_ProcReadMethods>::ctor(this, save_data);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedata/GameSaveData_ProcWrite_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct GameSaveData_ProcWrite_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for GameSaveData_ProcWrite_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameSaveData.ProcWrite.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for GameSaveData_ProcWrite_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl GameSaveData_ProcWrite_Label {
-    pub fn end() -> Self {
-        Self { value: 0 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_Tag_Writer.md")))]
-#[::unity2::class(namespace = "App", name = "GameSaveData.Tag.Writer")]
-#[parent(crate::system::object::Object)]
-pub struct GameSaveData_Tag_Writer {
-    #[rename(name = "m_FirstPos")]
-    pub m_first_pos: i32,
-    #[rename(name = "m_Index")]
-    pub m_index: i32,
-}
-
-#[cfg(feature = "app-gamesavedata")]
-#[::unity2::methods]
-impl GameSaveData_Tag_Writer {
-    #[doc = "`.ctor(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Write(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = "Write", args = 2)]
-    pub fn write(self, stream: crate::app::stream_2::Stream_2, tag: i32) -> ();
-}
-
-#[cfg(feature = "app-gamesavedata")]
-impl GameSaveData_Tag_Writer {
-    #[doc = "`.ctor(crate::app::stream_2::Stream_2)` — overload selector"]
-    pub fn new(stream: crate::app::stream_2::Stream_2) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveData_Tag_Writer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameSaveData_Tag_WriterMethods>::ctor(this, stream);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_ProcCopy.md")))]
-#[::unity2::class(namespace = "App", name = "GameSaveData.ProcCopy")]
-#[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]
-pub struct GameSaveData_ProcCopy {
-    #[rename(name = "m_Data")]
-    pub m_data: ::unity2::Array<u8>,
-}
-
-#[cfg(feature = "app-gamesavedata")]
-#[::unity2::methods]
-impl GameSaveData_ProcCopy {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        save_data: crate::app::gamesavedata::GameSaveData,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, save_data: crate::app::gamesavedata::GameSaveData) -> ();
-
-    #[doc = "`MessageOpen()` overload"]
-    #[method(name = "MessageOpen", args = 0)]
-    pub fn message_open(self) -> ();
-
-    #[doc = "`Read()` overload"]
-    #[method(name = "Read", args = 0)]
-    pub fn read(self) -> ();
-
-    #[doc = "`Write()` overload"]
-    #[method(name = "Write", args = 0)]
-    pub fn write(self) -> ();
-
-    #[doc = "`Success()` overload"]
-    #[method(name = "Success", args = 0)]
-    pub fn success(self) -> ();
-}
-
-#[cfg(feature = "app-gamesavedata")]
-impl GameSaveData_ProcCopy {
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData)` — overload selector"]
-    pub fn new(save_data: crate::app::gamesavedata::GameSaveData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveData_ProcCopy),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameSaveData_ProcCopyMethods>::ctor(this, save_data);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_ProcBase.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_ProcBase.md"))]
 #[::unity2::class(namespace = "App", name = "GameSaveData.ProcBase")]
 #[parent(crate::app::procwaitmessagebase::ProcWaitMessageBase)]
 pub struct GameSaveData_ProcBase {
@@ -652,7 +391,7 @@ impl GameSaveData_ProcBase {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_ProcDelete.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_ProcDelete.md"))]
 #[::unity2::class(namespace = "App", name = "GameSaveData.ProcDelete")]
 #[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]
 pub struct GameSaveData_ProcDelete {
@@ -727,7 +466,45 @@ impl GameSaveData_ProcDelete {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_Tag_Writer.md"))]
+#[::unity2::class(namespace = "App", name = "GameSaveData.Tag.Writer")]
+#[parent(crate::system::object::Object)]
+pub struct GameSaveData_Tag_Writer {
+    #[rename(name = "m_FirstPos")]
+    pub m_first_pos: i32,
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+}
+
+#[cfg(feature = "app-gamesavedata")]
+#[::unity2::methods]
+impl GameSaveData_Tag_Writer {
+    #[doc = "`.ctor(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`Write(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = "Write", args = 2)]
+    pub fn write(self, stream: crate::app::stream_2::Stream_2, tag: i32) -> ();
+}
+
+#[cfg(feature = "app-gamesavedata")]
+impl GameSaveData_Tag_Writer {
+    #[doc = "`.ctor(crate::app::stream_2::Stream_2)` — overload selector"]
+    pub fn new(stream: crate::app::stream_2::Stream_2) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSaveData_Tag_Writer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSaveData_Tag_WriterMethods>::ctor(this, stream);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData.md"))]
 #[::unity2::class(namespace = "App", name = "GameSaveData")]
 #[parent(crate::system::object::Object)]
 pub struct GameSaveData {
@@ -990,7 +767,230 @@ impl GameSaveData {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedata/GameSaveData_ProcRead_Label.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_ProcCopy.md"))]
+#[::unity2::class(namespace = "App", name = "GameSaveData.ProcCopy")]
+#[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]
+pub struct GameSaveData_ProcCopy {
+    #[rename(name = "m_Data")]
+    pub m_data: ::unity2::Array<u8>,
+}
+
+#[cfg(feature = "app-gamesavedata")]
+#[::unity2::methods]
+impl GameSaveData_ProcCopy {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        save_data: crate::app::gamesavedata::GameSaveData,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, save_data: crate::app::gamesavedata::GameSaveData) -> ();
+
+    #[doc = "`MessageOpen()` overload"]
+    #[method(name = "MessageOpen", args = 0)]
+    pub fn message_open(self) -> ();
+
+    #[doc = "`Read()` overload"]
+    #[method(name = "Read", args = 0)]
+    pub fn read(self) -> ();
+
+    #[doc = "`Write()` overload"]
+    #[method(name = "Write", args = 0)]
+    pub fn write(self) -> ();
+
+    #[doc = "`Success()` overload"]
+    #[method(name = "Success", args = 0)]
+    pub fn success(self) -> ();
+}
+
+#[cfg(feature = "app-gamesavedata")]
+impl GameSaveData_ProcCopy {
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData)` — overload selector"]
+    pub fn new(save_data: crate::app::gamesavedata::GameSaveData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSaveData_ProcCopy),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSaveData_ProcCopyMethods>::ctor(this, save_data);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_ProcWrite.md"))]
+#[::unity2::class(namespace = "App", name = "GameSaveData.ProcWrite")]
+#[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]
+pub struct GameSaveData_ProcWrite {
+    #[rename(name = "m_Stream")]
+    pub m_stream: crate::app::stream_2::Stream_2,
+    #[rename(name = "m_Data")]
+    pub m_data: ::unity2::Array<u8>,
+}
+
+#[cfg(feature = "app-gamesavedata")]
+#[::unity2::methods]
+impl GameSaveData_ProcWrite {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        save_data: crate::app::gamesavedata::GameSaveData,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, save_data: crate::app::gamesavedata::GameSaveData) -> ();
+
+    #[doc = "`IsShowing()` overload"]
+    #[method(name = "IsShowing", args = 0)]
+    pub fn is_showing(self) -> bool;
+
+    #[doc = "`MessageOpen()` overload"]
+    #[method(name = "MessageOpen", args = 0)]
+    pub fn message_open(self) -> ();
+
+    #[doc = "`ModifyForParentalControl()` overload"]
+    #[method(name = "ModifyForParentalControl", args = 0)]
+    pub fn modify_for_parental_control(self) -> ();
+
+    #[doc = "`Write()` overload"]
+    #[method(name = "Write", args = 0)]
+    pub fn write(self) -> ();
+
+    #[doc = "`WriteGlobal()` overload"]
+    #[method(name = "WriteGlobal", args = 0)]
+    pub fn write_global(self) -> ();
+
+    #[doc = "`Success()` overload"]
+    #[method(name = "Success", args = 0)]
+    pub fn success(self) -> ();
+}
+
+#[cfg(feature = "app-gamesavedata")]
+impl GameSaveData_ProcWrite {
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData)` — overload selector"]
+    pub fn new(save_data: crate::app::gamesavedata::GameSaveData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSaveData_ProcWrite),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSaveData_ProcWriteMethods>::ctor(this, save_data);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedata/GameSaveData_ProcRead.md"))]
+#[::unity2::class(namespace = "App", name = "GameSaveData.ProcRead")]
+#[parent(crate::app::gamesavedata::GameSaveData_ProcBase)]
+pub struct GameSaveData_ProcRead {
+    #[rename(name = "m_Data")]
+    pub m_data: ::unity2::Array<u8>,
+}
+
+#[cfg(feature = "app-gamesavedata")]
+#[::unity2::methods]
+impl GameSaveData_ProcRead {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gamesavedata::GameSaveData)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        save_data: crate::app::gamesavedata::GameSaveData,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, save_data: crate::app::gamesavedata::GameSaveData) -> ();
+
+    #[doc = "`MessageOpen()` overload"]
+    #[method(name = "MessageOpen", args = 0)]
+    pub fn message_open(self) -> ();
+
+    #[doc = "`Read()` overload"]
+    #[method(name = "Read", args = 0)]
+    pub fn read(self) -> ();
+
+    #[doc = "`Deserialize()` overload"]
+    #[method(name = "Deserialize", args = 0)]
+    pub fn deserialize(self) -> ();
+
+    #[doc = "`CleanupRelayUserGlobalData()` overload"]
+    #[method(name = "CleanupRelayUserGlobalData", args = 0)]
+    pub fn cleanup_relay_user_global_data(self) -> ();
+
+    #[doc = "`ModifyForParentalControl()` overload"]
+    #[method(name = "ModifyForParentalControl", args = 0)]
+    pub fn modify_for_parental_control(self) -> ();
+
+    #[doc = "`IsShowing()` overload"]
+    #[method(name = "IsShowing", args = 0)]
+    pub fn is_showing(self) -> bool;
+}
+
+#[cfg(feature = "app-gamesavedata")]
+impl GameSaveData_ProcRead {
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData)` — overload selector"]
+    pub fn new(save_data: crate::app::gamesavedata::GameSaveData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSaveData_ProcRead),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSaveData_ProcReadMethods>::ctor(this, save_data);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedata/GameSaveData_ProcCopy_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GameSaveData_ProcCopy_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GameSaveData_ProcCopy_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameSaveData.ProcCopy.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GameSaveData_ProcCopy_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GameSaveData_ProcCopy_Label {
+    pub fn end() -> Self {
+        Self { value: 0 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamesavedata/GameSaveData_ProcRead_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

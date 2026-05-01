@@ -6,7 +6,59 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcamera/MapCamera.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcamera/MapCamera_InterpolatorShake.md"))]
+#[::unity2::class(namespace = "App", name = "MapCamera.InterpolatorShake")]
+#[parent(crate::system::object::Object)]
+pub struct MapCamera_InterpolatorShake {
+    #[rename(name = "m_Time")]
+    pub m_time: f32,
+    #[rename(name = "m_Magnitude")]
+    pub m_magnitude: f32,
+    #[rename(name = "m_Offset")]
+    pub m_offset: crate::unity_engine::vector3::Vector3,
+}
+
+#[cfg(feature = "app-mapcamera")]
+#[::unity2::methods]
+impl MapCamera_InterpolatorShake {
+    #[doc = "`Run(f32, f32)` overload"]
+    #[method(name = "Run", args = 2)]
+    pub fn run(self, time: f32, magnitude: f32) -> ();
+
+    #[doc = "`Stop()` overload"]
+    #[method(name = "Stop", args = 0)]
+    pub fn stop(self) -> ();
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[doc = "`get_Offset()` overload"]
+    #[method(name = "get_Offset", args = 0)]
+    pub fn get_offset(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapcamera")]
+impl MapCamera_InterpolatorShake {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapCamera_InterpolatorShake),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapCamera_InterpolatorShakeMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcamera/MapCamera.md"))]
 #[::unity2::class(namespace = "App", name = "MapCamera")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapcamera :: MapCamera >)]
 pub struct MapCamera {
@@ -132,58 +184,6 @@ impl MapCamera {
             )
         });
         <Self as IMapCameraMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapcamera/MapCamera_InterpolatorShake.md")))]
-#[::unity2::class(namespace = "App", name = "MapCamera.InterpolatorShake")]
-#[parent(crate::system::object::Object)]
-pub struct MapCamera_InterpolatorShake {
-    #[rename(name = "m_Time")]
-    pub m_time: f32,
-    #[rename(name = "m_Magnitude")]
-    pub m_magnitude: f32,
-    #[rename(name = "m_Offset")]
-    pub m_offset: crate::unity_engine::vector3::Vector3,
-}
-
-#[cfg(feature = "app-mapcamera")]
-#[::unity2::methods]
-impl MapCamera_InterpolatorShake {
-    #[doc = "`Run(f32, f32)` overload"]
-    #[method(name = "Run", args = 2)]
-    pub fn run(self, time: f32, magnitude: f32) -> ();
-
-    #[doc = "`Stop()` overload"]
-    #[method(name = "Stop", args = 0)]
-    pub fn stop(self) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
-
-    #[doc = "`get_Offset()` overload"]
-    #[method(name = "get_Offset", args = 0)]
-    pub fn get_offset(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapcamera")]
-impl MapCamera_InterpolatorShake {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapCamera_InterpolatorShake),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapCamera_InterpolatorShakeMethods>::ctor(this);
         this
     }
 }

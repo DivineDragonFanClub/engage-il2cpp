@@ -16,40 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuyroot/WeaponShopBuyRoot_ReturnEventHandler.md")))]
-#[::unity2::class(namespace = "App", name = "WeaponShopBuyRoot.ReturnEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct WeaponShopBuyRoot_ReturnEventHandler {}
-
-#[cfg(feature = "app-weaponshopbuyroot")]
-#[::unity2::methods]
-impl WeaponShopBuyRoot_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
-}
-
-#[cfg(feature = "app-weaponshopbuyroot")]
-impl WeaponShopBuyRoot_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WeaponShopBuyRoot_ReturnEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWeaponShopBuyRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuyroot/WeaponShopBuyRoot_EquipableWeaponInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuyroot/WeaponShopBuyRoot_EquipableWeaponInfo.md"))]
 #[::unity2::class(namespace = "App", name = "WeaponShopBuyRoot.EquipableWeaponInfo")]
 #[parent(crate::system::object::Object)]
 pub struct WeaponShopBuyRoot_EquipableWeaponInfo {
@@ -94,7 +61,40 @@ impl WeaponShopBuyRoot_EquipableWeaponInfo {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuyroot/WeaponShopBuyRoot.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuyroot/WeaponShopBuyRoot_ReturnEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "WeaponShopBuyRoot.ReturnEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct WeaponShopBuyRoot_ReturnEventHandler {}
+
+#[cfg(feature = "app-weaponshopbuyroot")]
+#[::unity2::methods]
+impl WeaponShopBuyRoot_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-weaponshopbuyroot")]
+impl WeaponShopBuyRoot_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyRoot_ReturnEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuyroot/WeaponShopBuyRoot.md"))]
 #[::unity2::class(namespace = "App", name = "WeaponShopBuyRoot")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct WeaponShopBuyRoot {

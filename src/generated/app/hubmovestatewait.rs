@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmovestatewait/HubMoveStateWait.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmovestatewait/HubMoveStateWait.md"))]
 #[::unity2::class(namespace = "App", name = "HubMoveStateWait")]
 #[parent(crate::app::hubmovestate::HubMoveState)]
 pub struct HubMoveStateWait {

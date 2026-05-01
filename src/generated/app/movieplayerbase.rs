@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayerbase/MoviePlayerBase_KeyHelp.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayerbase/MoviePlayerBase_KeyHelp.md"))]
 #[::unity2::class(namespace = "App", name = "MoviePlayerBase.KeyHelp")]
 #[parent(crate::system::object::Object)]
 pub struct MoviePlayerBase_KeyHelp {
@@ -54,7 +54,7 @@ impl MoviePlayerBase_KeyHelp {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayerbase/MoviePlayerBase_Caption.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayerbase/MoviePlayerBase_Caption.md"))]
 #[::unity2::class(namespace = "App", name = "MoviePlayerBase.Caption")]
 #[parent(crate::system::object::Object)]
 pub struct MoviePlayerBase_Caption {
@@ -130,7 +130,7 @@ impl MoviePlayerBase_Caption {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayerbase/MoviePlayerBase.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayerbase/MoviePlayerBase.md"))]
 #[::unity2::class(namespace = "App", name = "MoviePlayerBase")]
 #[parent(crate::system::object::Object)]
 pub struct MoviePlayerBase {
@@ -385,7 +385,7 @@ impl MoviePlayerBase {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayerbase/MoviePlayerBase_TitleLogo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/movieplayerbase/MoviePlayerBase_TitleLogo.md"))]
 #[::unity2::class(namespace = "App", name = "MoviePlayerBase.TitleLogo")]
 #[parent(crate::system::object::Object)]
 pub struct MoviePlayerBase_TitleLogo {

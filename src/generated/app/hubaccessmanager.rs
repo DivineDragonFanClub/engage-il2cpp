@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator.md"))]
 #[::unity2::class(namespace = "App", name = "HubAccessManager.MaterialCalculator")]
 #[parent(crate::system::object::Object)]
 pub struct HubAccessManager_MaterialCalculator {}
@@ -70,55 +70,7 @@ impl HubAccessManager_MaterialCalculator {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator_Type.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct HubAccessManager_MaterialCalculator_Type {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for HubAccessManager_MaterialCalculator_Type {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubAccessManager.MaterialCalculator.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for HubAccessManager_MaterialCalculator_Type {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl HubAccessManager_MaterialCalculator_Type {
-    pub fn iron() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn steel() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn silver() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubaccessmanager/HubAccessManager.md"))]
 #[::unity2::class(namespace = "App", name = "HubAccessManager")]
 #[parent(crate::system::object::Object)]
 pub struct HubAccessManager {}
@@ -346,5 +298,53 @@ impl HubAccessManager {
         });
         <Self as IHubAccessManagerMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator_Type.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubAccessManager_MaterialCalculator_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubAccessManager_MaterialCalculator_Type {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubAccessManager.MaterialCalculator.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubAccessManager_MaterialCalculator_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubAccessManager_MaterialCalculator_Type {
+    pub fn iron() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn steel() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn silver() -> Self {
+        Self { value: 2 }
     }
 }

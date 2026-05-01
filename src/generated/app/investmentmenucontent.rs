@@ -14,7 +14,113 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent_BattleEnemyInfo.md"))]
+#[::unity2::class(namespace = "App", name = "InvestmentMenuContent.BattleEnemyInfo")]
+#[parent(crate::system::object::Object)]
+pub struct InvestmentMenuContent_BattleEnemyInfo {
+    #[rename(name = "m_root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_title")]
+    pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_current")]
+    pub m_current: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_next")]
+    pub m_next: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_nextPercent")]
+    pub m_next_percent: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-investmentmenucontent")]
+#[::unity2::methods]
+impl InvestmentMenuContent_BattleEnemyInfo {
+    #[doc = "`SetTitle(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetTitle", args = 1)]
+    pub fn set_title(self, title: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`SetValue(i32, i32)` overload"]
+    #[method(name = "SetValue", args = 2)]
+    pub fn set_value(self, current: i32, next: i32) -> ();
+
+    #[doc = "`SetValueMax(i32)` overload"]
+    #[method(name = "SetValueMax", args = 1)]
+    pub fn set_value_max(self, current: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-investmentmenucontent")]
+impl InvestmentMenuContent_BattleEnemyInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InvestmentMenuContent_BattleEnemyInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInvestmentMenuContent_BattleEnemyInfoMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent_AnimalInfo.md"))]
+#[::unity2::class(namespace = "App", name = "InvestmentMenuContent.AnimalInfo")]
+#[parent(crate::system::object::Object)]
+pub struct InvestmentMenuContent_AnimalInfo {
+    #[rename(name = "m_root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_icon")]
+    pub m_icon: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_name")]
+    pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_text")]
+    pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-investmentmenucontent")]
+#[::unity2::methods]
+impl InvestmentMenuContent_AnimalInfo {
+    #[doc = "`SetupObj()` overload"]
+    #[method(name = "SetupObj", args = 0)]
+    pub fn setup_obj(self) -> ();
+
+    #[doc = "`Set(::unity2::Il2CppString)` overload"]
+    #[method(name = "Set", args = 1)]
+    pub fn set(self, animal_id: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`SetIcon(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetIcon", args = 1)]
+    pub fn set_icon(self, icon_name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-investmentmenucontent")]
+impl InvestmentMenuContent_AnimalInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InvestmentMenuContent_AnimalInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInvestmentMenuContent_AnimalInfoMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent.md"))]
 #[::unity2::class(namespace = "App", name = "InvestmentMenuContent")]
 #[parent(crate::app::basicmenucontent::BasicMenuContent)]
 pub struct InvestmentMenuContent {
@@ -193,7 +299,7 @@ impl InvestmentMenuContent {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent_DropItemInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent_DropItemInfo.md"))]
 #[::unity2::class(namespace = "App", name = "InvestmentMenuContent.DropItemInfo")]
 #[parent(crate::system::object::Object)]
 pub struct InvestmentMenuContent_DropItemInfo {
@@ -255,112 +361,6 @@ impl InvestmentMenuContent_DropItemInfo {
             )
         });
         <Self as IInvestmentMenuContent_DropItemInfoMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent_BattleEnemyInfo.md")))]
-#[::unity2::class(namespace = "App", name = "InvestmentMenuContent.BattleEnemyInfo")]
-#[parent(crate::system::object::Object)]
-pub struct InvestmentMenuContent_BattleEnemyInfo {
-    #[rename(name = "m_root")]
-    pub m_root: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_title")]
-    pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_current")]
-    pub m_current: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_next")]
-    pub m_next: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_nextPercent")]
-    pub m_next_percent: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-}
-
-#[cfg(feature = "app-investmentmenucontent")]
-#[::unity2::methods]
-impl InvestmentMenuContent_BattleEnemyInfo {
-    #[doc = "`SetTitle(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetTitle", args = 1)]
-    pub fn set_title(self, title: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetValue(i32, i32)` overload"]
-    #[method(name = "SetValue", args = 2)]
-    pub fn set_value(self, current: i32, next: i32) -> ();
-
-    #[doc = "`SetValueMax(i32)` overload"]
-    #[method(name = "SetValueMax", args = 1)]
-    pub fn set_value_max(self, current: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-investmentmenucontent")]
-impl InvestmentMenuContent_BattleEnemyInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InvestmentMenuContent_BattleEnemyInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInvestmentMenuContent_BattleEnemyInfoMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenucontent/InvestmentMenuContent_AnimalInfo.md")))]
-#[::unity2::class(namespace = "App", name = "InvestmentMenuContent.AnimalInfo")]
-#[parent(crate::system::object::Object)]
-pub struct InvestmentMenuContent_AnimalInfo {
-    #[rename(name = "m_root")]
-    pub m_root: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_icon")]
-    pub m_icon: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_name")]
-    pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_text")]
-    pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-}
-
-#[cfg(feature = "app-investmentmenucontent")]
-#[::unity2::methods]
-impl InvestmentMenuContent_AnimalInfo {
-    #[doc = "`SetupObj()` overload"]
-    #[method(name = "SetupObj", args = 0)]
-    pub fn setup_obj(self) -> ();
-
-    #[doc = "`Set(::unity2::Il2CppString)` overload"]
-    #[method(name = "Set", args = 1)]
-    pub fn set(self, animal_id: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetIcon(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetIcon", args = 1)]
-    pub fn set_icon(self, icon_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-investmentmenucontent")]
-impl InvestmentMenuContent_AnimalInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InvestmentMenuContent_AnimalInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInvestmentMenuContent_AnimalInfoMethods>::ctor(this);
         this
     }
 }

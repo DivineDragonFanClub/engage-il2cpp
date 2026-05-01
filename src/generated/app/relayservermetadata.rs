@@ -8,7 +8,55 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayservermetadata/RelayServerMetaData.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayservermetadata/RelayServerMetaData_States.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayServerMetaData_States {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayServerMetaData_States {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayServerMetaData.States";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayServerMetaData_States {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayServerMetaData_States {
+    pub fn progressing() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn completed() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn game_over() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayservermetadata/RelayServerMetaData.md"))]
 #[::unity2::class(namespace = "App", name = "RelayServerMetaData")]
 #[parent(crate::system::object::Object)]
 pub struct RelayServerMetaData {
@@ -292,53 +340,5 @@ impl RelayServerMetaData {
         });
         <Self as IRelayServerMetaDataMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayservermetadata/RelayServerMetaData_States.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RelayServerMetaData_States {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RelayServerMetaData_States {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayServerMetaData.States";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RelayServerMetaData_States {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RelayServerMetaData_States {
-    pub fn progressing() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn completed() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn game_over() -> Self {
-        Self { value: 2 }
     }
 }

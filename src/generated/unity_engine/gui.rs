@@ -8,55 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/gui/GUI_Scope.md")))]
-#[::unity2::class(namespace = "UnityEngine", name = "GUI.Scope")]
-#[parent(crate::system::object::Object)]
-pub struct GUI_Scope {
-    #[rename(name = "m_Disposed")]
-    pub m_disposed: bool,
-}
-
-#[cfg(feature = "unity_engine-gui")]
-#[::unity2::methods]
-impl GUI_Scope {
-    #[doc = "`Dispose(bool)` overload"]
-    #[method(name = "Dispose", args = 1)]
-    pub fn dispose(self, disposing: bool) -> ();
-
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose_2(self) -> ();
-
-    #[doc = "`CloseScope()` overload"]
-    #[method(name = "CloseScope", args = 0)]
-    pub fn close_scope(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-gui")]
-impl GUI_Scope {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUI_Scope),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGUI_ScopeMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/gui/GUI.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/gui/GUI.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "GUI")]
 #[parent(crate::system::object::Object)]
 pub struct GUI {
@@ -594,7 +546,7 @@ impl GUI {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/gui/GUI_WindowFunction.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/gui/GUI_WindowFunction.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "GUI.WindowFunction")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct GUI_WindowFunction {}
@@ -623,6 +575,54 @@ impl GUI_WindowFunction {
             )
         });
         <Self as IGUI_WindowFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/gui/GUI_Scope.md"))]
+#[::unity2::class(namespace = "UnityEngine", name = "GUI.Scope")]
+#[parent(crate::system::object::Object)]
+pub struct GUI_Scope {
+    #[rename(name = "m_Disposed")]
+    pub m_disposed: bool,
+}
+
+#[cfg(feature = "unity_engine-gui")]
+#[::unity2::methods]
+impl GUI_Scope {
+    #[doc = "`Dispose(bool)` overload"]
+    #[method(name = "Dispose", args = 1)]
+    pub fn dispose(self, disposing: bool) -> ();
+
+    #[doc = "`Finalize()` overload"]
+    #[method(name = "Finalize", args = 0)]
+    pub fn finalize(self) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose_2(self) -> ();
+
+    #[doc = "`CloseScope()` overload"]
+    #[method(name = "CloseScope", args = 0)]
+    pub fn close_scope(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-gui")]
+impl GUI_Scope {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUI_Scope),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUI_ScopeMethods>::ctor(this);
         this
     }
 }

@@ -14,119 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godweaponrefinedata/GodWeaponRefineData_Kind.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct GodWeaponRefineData_Kind {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for GodWeaponRefineData_Kind {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GodWeaponRefineData.Kind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for GodWeaponRefineData_Kind {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl GodWeaponRefineData_Kind {
-    pub fn power() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn hit() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn critical() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn avoid() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn secure() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn tech() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn quick() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn def() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn mdef() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn efficacy_horse() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn efficacy_armor() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn efficacy_fly() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn efficacy_dragon() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn efficacy_morph() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn none() -> Self {
-        Self { value: -1 }
-    }
-
-    pub fn param_num() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn skill_min() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn skill_max() -> Self {
-        Self { value: 13 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godweaponrefinedata/GodWeaponRefineData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godweaponrefinedata/GodWeaponRefineData.md"))]
 #[::unity2::class(namespace = "App", name = "GodWeaponRefineData")]
 # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: godweaponrefinedata :: GodWeaponRefineData >)]
 pub struct GodWeaponRefineData {}
@@ -597,5 +485,117 @@ impl GodWeaponRefineData {
         });
         <Self as IGodWeaponRefineDataMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godweaponrefinedata/GodWeaponRefineData_Kind.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GodWeaponRefineData_Kind {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GodWeaponRefineData_Kind {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GodWeaponRefineData.Kind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GodWeaponRefineData_Kind {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GodWeaponRefineData_Kind {
+    pub fn power() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn hit() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn critical() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn avoid() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn secure() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn tech() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn quick() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn def() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn mdef() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn efficacy_horse() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn efficacy_armor() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn efficacy_fly() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn efficacy_dragon() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn efficacy_morph() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn none() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn param_num() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn skill_min() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn skill_max() -> Self {
+        Self { value: 13 }
     }
 }

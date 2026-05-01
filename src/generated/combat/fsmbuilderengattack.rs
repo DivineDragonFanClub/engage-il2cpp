@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuilderengattack/FSMBuilderEngAttack.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fsmbuilderengattack/FSMBuilderEngAttack.md"))]
 #[::unity2::class(namespace = "Combat", name = "FSMBuilderEngAttack")]
 #[parent(crate::combat::fsmbuilderstandard::FSMBuilderStandard)]
 pub struct FSMBuilderEngAttack {}

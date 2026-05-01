@@ -20,7 +20,224 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_AIFlags.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_AIFlagField.md"))]
+#[::unity2::class(namespace = "App", name = "DisposData.AIFlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_AIFlags >)]
+pub struct DisposData_AIFlagField {}
+
+#[cfg(feature = "app-disposdata")]
+#[::unity2::methods]
+impl DisposData_AIFlagField {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[doc = "`.ctor(crate::app::disposdata::DisposData_AIFlags)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::disposdata::DisposData_AIFlags) -> ();
+
+    #[doc = "`ToInt(crate::app::disposdata::DisposData_AIFlags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::disposdata::DisposData_AIFlags) -> i32;
+}
+
+#[cfg(feature = "app-disposdata")]
+impl DisposData_AIFlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DisposData_AIFlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDisposData_AIFlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::disposdata::DisposData_AIFlags)` — overload selector"]
+    pub fn new_2(f: crate::app::disposdata::DisposData_AIFlags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DisposData_AIFlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IDisposData_AIFlagFieldMethods>::ctor_2(this, f);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_Item.md"))]
+#[::unity2::class(namespace = "App", name = "DisposData.Item")]
+#[parent(crate::system::object::Object)]
+pub struct DisposData_Item {}
+
+#[cfg(feature = "app-disposdata")]
+#[::unity2::methods]
+impl DisposData_Item {
+    #[doc = "`get_Iid()` overload"]
+    #[method(name = "get_Iid", args = 0)]
+    pub fn get_iid(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Iid(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Iid", args = 1)]
+    pub fn set_iid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Drop()` overload"]
+    #[method(name = "get_Drop", args = 0)]
+    pub fn get_drop(self) -> i32;
+
+    #[doc = "`set_Drop(i32)` overload"]
+    #[method(name = "set_Drop", args = 1)]
+    pub fn set_drop(self, value: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-disposdata")]
+impl DisposData_Item {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DisposData_Item),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDisposData_ItemMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_Directions.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct DisposData_Directions {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for DisposData_Directions {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DisposData.Directions";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DisposData_Directions {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl DisposData_Directions {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn up() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn upper_right() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn lower_right() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn down() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn lower_left() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn left() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn upper_left() -> Self {
+        Self { value: 8 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_FlagField.md"))]
+#[::unity2::class(namespace = "App", name = "DisposData.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_Flags >)]
+pub struct DisposData_FlagField {}
+
+#[cfg(feature = "app-disposdata")]
+#[::unity2::methods]
+impl DisposData_FlagField {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[doc = "`.ctor(crate::app::disposdata::DisposData_Flags)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::disposdata::DisposData_Flags) -> ();
+
+    #[doc = "`ToInt(crate::app::disposdata::DisposData_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::disposdata::DisposData_Flags) -> i32;
+}
+
+#[cfg(feature = "app-disposdata")]
+impl DisposData_FlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DisposData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDisposData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::disposdata::DisposData_Flags)` — overload selector"]
+    pub fn new_2(f: crate::app::disposdata::DisposData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DisposData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IDisposData_FlagFieldMethods>::ctor_2(this, f);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_AIFlags.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -92,57 +309,55 @@ impl DisposData_AIFlags {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_AIFlagField.md")))]
-#[::unity2::class(namespace = "App", name = "DisposData.AIFlagField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_AIFlags >)]
-pub struct DisposData_AIFlagField {}
-
-#[cfg(feature = "app-disposdata")]
-#[::unity2::methods]
-impl DisposData_AIFlagField {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, f: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::disposdata::DisposData_AIFlags)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, f: crate::app::disposdata::DisposData_AIFlags) -> ();
-
-    #[doc = "`ToInt(crate::app::disposdata::DisposData_AIFlags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::disposdata::DisposData_AIFlags) -> i32;
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_State.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct DisposData_State {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-disposdata")]
-impl DisposData_AIFlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DisposData_AIFlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDisposData_AIFlagFieldMethods>::ctor(this, f);
-        this
-    }
+impl ::unity2::ClassIdentity for DisposData_State {
+    const NAMESPACE: &'static str = "App";
 
-    #[doc = "`.ctor(crate::app::disposdata::DisposData_AIFlags)` — overload selector"]
-    pub fn new_2(f: crate::app::disposdata::DisposData_AIFlags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DisposData_AIFlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IDisposData_AIFlagFieldMethods>::ctor_2(this, f);
-        this
+    const NAME: &'static str = "DisposData.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_Flags.md")))]
+impl ::unity2::IlType for DisposData_State {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl DisposData_State {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn rampage() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn keep() -> Self {
+        Self { value: -1 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_Flags.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -230,172 +445,7 @@ impl DisposData_Flags {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_State.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct DisposData_State {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for DisposData_State {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DisposData.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for DisposData_State {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl DisposData_State {
-    pub fn normal() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn rampage() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn keep() -> Self {
-        Self { value: -1 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_Item.md")))]
-#[::unity2::class(namespace = "App", name = "DisposData.Item")]
-#[parent(crate::system::object::Object)]
-pub struct DisposData_Item {}
-
-#[cfg(feature = "app-disposdata")]
-#[::unity2::methods]
-impl DisposData_Item {
-    #[doc = "`get_Iid()` overload"]
-    #[method(name = "get_Iid", args = 0)]
-    pub fn get_iid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Iid(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Iid", args = 1)]
-    pub fn set_iid(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Drop()` overload"]
-    #[method(name = "get_Drop", args = 0)]
-    pub fn get_drop(self) -> i32;
-
-    #[doc = "`set_Drop(i32)` overload"]
-    #[method(name = "set_Drop", args = 1)]
-    pub fn set_drop(self, value: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-disposdata")]
-impl DisposData_Item {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DisposData_Item),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDisposData_ItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/disposdata/DisposData_Directions.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct DisposData_Directions {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for DisposData_Directions {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DisposData.Directions";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for DisposData_Directions {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl DisposData_Directions {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn up() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn upper_right() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn right() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn lower_right() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn down() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn lower_left() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn left() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn upper_left() -> Self {
-        Self { value: 8 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData.md"))]
 #[::unity2::class(namespace = "App", name = "DisposData")]
 # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: disposdata :: DisposData >)]
 pub struct DisposData {
@@ -896,56 +946,6 @@ impl DisposData {
             )
         });
         <Self as IDisposDataMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/disposdata/DisposData_FlagField.md")))]
-#[::unity2::class(namespace = "App", name = "DisposData.FlagField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: disposdata :: DisposData_Flags >)]
-pub struct DisposData_FlagField {}
-
-#[cfg(feature = "app-disposdata")]
-#[::unity2::methods]
-impl DisposData_FlagField {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, f: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::disposdata::DisposData_Flags)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, f: crate::app::disposdata::DisposData_Flags) -> ();
-
-    #[doc = "`ToInt(crate::app::disposdata::DisposData_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::disposdata::DisposData_Flags) -> i32;
-}
-
-#[cfg(feature = "app-disposdata")]
-impl DisposData_FlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DisposData_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDisposData_FlagFieldMethods>::ctor(this, f);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::disposdata::DisposData_Flags)` — overload selector"]
-    pub fn new_2(f: crate::app::disposdata::DisposData_Flags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DisposData_FlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IDisposData_FlagFieldMethods>::ctor_2(this, f);
         this
     }
 }

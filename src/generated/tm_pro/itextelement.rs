@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/itextelement/ITextElement.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/itextelement/ITextElement.md"))]
 #[::unity2::class(namespace = "TMPro", name = "ITextElement")]
 pub struct ITextElement {}
 

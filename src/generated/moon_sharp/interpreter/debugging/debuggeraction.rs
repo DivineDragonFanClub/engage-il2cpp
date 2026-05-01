@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/debugging/debuggeraction/DebuggerAction.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/debugging/debuggeraction/DebuggerAction.md"))]
 #[::unity2::class(namespace = "MoonSharp.Interpreter.Debugging", name = "DebuggerAction")]
 #[parent(crate::system::object::Object)]
 pub struct DebuggerAction {}
@@ -86,7 +86,7 @@ impl DebuggerAction {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/debugging/debuggeraction/DebuggerAction_ActionType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/debugging/debuggeraction/DebuggerAction_ActionType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

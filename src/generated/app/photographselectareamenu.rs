@@ -14,7 +14,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectareamenu/PhotographSelectAreaMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectareamenu/PhotographSelectAreaMenu.md"))]
 #[::unity2::class(namespace = "App", name = "PhotographSelectAreaMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct PhotographSelectAreaMenu {}
@@ -70,7 +70,40 @@ impl PhotographSelectAreaMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectareamenu/PhotographSelectAreaMenu_MenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectareamenu/PhotographSelectAreaMenu_SelectHandler.md"))]
+#[::unity2::class(namespace = "App", name = "PhotographSelectAreaMenu.SelectHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct PhotographSelectAreaMenu_SelectHandler {}
+
+#[cfg(feature = "app-photographselectareamenu")]
+#[::unity2::methods]
+impl PhotographSelectAreaMenu_SelectHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::photographspotdata::PhotographSpotData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, area_data: crate::app::photographspotdata::PhotographSpotData) -> ();
+}
+
+#[cfg(feature = "app-photographselectareamenu")]
+impl PhotographSelectAreaMenu_SelectHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographSelectAreaMenu_SelectHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographSelectAreaMenu_SelectHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectareamenu/PhotographSelectAreaMenu_MenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "PhotographSelectAreaMenu.MenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct PhotographSelectAreaMenu_MenuItem {
@@ -128,39 +161,6 @@ impl PhotographSelectAreaMenu_MenuItem {
             )
         });
         <Self as IPhotographSelectAreaMenu_MenuItemMethods>::ctor(this, area_data, select_handler);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectareamenu/PhotographSelectAreaMenu_SelectHandler.md")))]
-#[::unity2::class(namespace = "App", name = "PhotographSelectAreaMenu.SelectHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct PhotographSelectAreaMenu_SelectHandler {}
-
-#[cfg(feature = "app-photographselectareamenu")]
-#[::unity2::methods]
-impl PhotographSelectAreaMenu_SelectHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::photographspotdata::PhotographSpotData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, area_data: crate::app::photographspotdata::PhotographSpotData) -> ();
-}
-
-#[cfg(feature = "app-photographselectareamenu")]
-impl PhotographSelectAreaMenu_SelectHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographSelectAreaMenu_SelectHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographSelectAreaMenu_SelectHandlerMethods>::ctor(this, object, method);
         this
     }
 }

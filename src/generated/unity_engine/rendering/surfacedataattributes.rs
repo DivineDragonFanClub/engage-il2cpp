@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/surfacedataattributes/SurfaceDataAttributes.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/surfacedataattributes/SurfaceDataAttributes.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering", name = "SurfaceDataAttributes")]
 pub struct SurfaceDataAttributes {
     #[rename(name = "displayNames")]

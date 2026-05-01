@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/preventreadonlyinstancemodificationattribute/PreventReadOnlyInstanceModificationAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/preventreadonlyinstancemodificationattribute/PreventReadOnlyInstanceModificationAttribute.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Bindings",
     name = "PreventReadOnlyInstanceModificationAttribute"

@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfowindow/MapBattleInfoWindow.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinfowindow/MapBattleInfoWindow.md"))]
 #[::unity2::class(namespace = "App", name = "MapBattleInfoWindow")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapbattleinfowindow :: MapBattleInfoWindow >)]
 pub struct MapBattleInfoWindow {

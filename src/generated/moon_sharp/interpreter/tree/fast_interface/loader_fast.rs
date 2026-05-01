@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/fast_interface/loader_fast/Loader_Fast.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/fast_interface/loader_fast/Loader_Fast.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Tree.Fast_Interface",
     name = "Loader_Fast"

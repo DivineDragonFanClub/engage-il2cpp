@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/requirecomponent/RequireComponent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/requirecomponent/RequireComponent.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "RequireComponent")]
 pub struct RequireComponent {
     #[rename(name = "m_Type0")]

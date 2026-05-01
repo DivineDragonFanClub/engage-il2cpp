@@ -8,113 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil.md")))]
-#[::unity2::class(namespace = "App", name = "CalculatorUtil")]
-#[parent(crate::system::object::Object)]
-pub struct CalculatorUtil {
-    #[static_field]
-    #[rename(name = "NullArgs")]
-    pub null_args: crate::system::collections::generic::list_1::List_1<f32>,
-}
-
-#[cfg(feature = "app-calculatorutil")]
-#[::unity2::methods]
-impl CalculatorUtil {
-    #[doc = "`GetPriority(crate::app::calculatorutil::CalculatorUtil_Type)` overload"]
-    #[method(name = "GetPriority", args = 1)]
-    pub fn get_priority(r#type: crate::app::calculatorutil::CalculatorUtil_Type) -> i32;
-
-    #[doc = "`IsNegative(crate::app::calculatorutil::CalculatorUtil_Type, crate::app::calculatorutil::CalculatorUtil_Type)` overload"]
-    #[method(name = "IsNegative", args = 2)]
-    pub fn is_negative(
-        now: crate::app::calculatorutil::CalculatorUtil_Type,
-        old: crate::app::calculatorutil::CalculatorUtil_Type,
-    ) -> bool;
-
-    #[doc = "`IsAssign(crate::app::calculatorutil::CalculatorUtil_Type)` overload"]
-    #[method(name = "IsAssign", args = 1)]
-    pub fn is_assign(r#type: crate::app::calculatorutil::CalculatorUtil_Type) -> bool;
-
-    #[doc = "`GetSingleType(u16)` overload"]
-    #[method(name = "GetSingleType", args = 1)]
-    pub fn get_single_type(name: u16) -> crate::app::calculatorutil::CalculatorUtil_Type;
-
-    #[doc = "`GetThreeType(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "GetThreeType", args = 2)]
-    pub fn get_three_type(
-        name: ::unity2::Il2CppString,
-        index: i32,
-    ) -> crate::app::calculatorutil::CalculatorUtil_Type;
-
-    #[doc = "`GetDoubleType(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "GetDoubleType", args = 2)]
-    pub fn get_double_type(
-        name: ::unity2::Il2CppString,
-        index: i32,
-    ) -> crate::app::calculatorutil::CalculatorUtil_Type;
-
-    #[doc = "`IsCode(u16)` overload"]
-    #[method(name = "IsCode", args = 1)]
-    pub fn is_code(name: u16) -> bool;
-
-    #[doc = "`IsNumber(u16)` overload"]
-    #[method(name = "IsNumber", args = 1)]
-    pub fn is_number(name: u16) -> bool;
-
-    #[doc = "`IsString(u16)` overload"]
-    #[method(name = "IsString", args = 1)]
-    pub fn is_string(name: u16) -> bool;
-
-    #[doc = "`IsArgs(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "IsArgs", args = 2)]
-    pub fn is_args(name: ::unity2::Il2CppString, index: i32) -> bool;
-
-    #[doc = "`IsEmpty(u16)` overload"]
-    #[method(name = "IsEmpty", args = 1)]
-    pub fn is_empty(name: u16) -> bool;
-
-    #[doc = "`StringToNumber(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "StringToNumber", args = 2)]
-    pub fn string_to_number(name: ::unity2::Il2CppString, index: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`StringToString(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "StringToString", args = 2)]
-    pub fn string_to_string(name: ::unity2::Il2CppString, index: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`StringToArgs(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "StringToArgs", args = 2)]
-    pub fn string_to_args(name: ::unity2::Il2CppString, index: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`StringToName(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "StringToName", args = 2)]
-    pub fn string_to_name(name: ::unity2::Il2CppString, index: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-calculatorutil")]
-impl CalculatorUtil {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CalculatorUtil),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICalculatorUtilMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatorutil/CalculatorUtil_Type.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/calculatorutil/CalculatorUtil_Type.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -306,7 +200,7 @@ impl CalculatorUtil_Type {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil_Entity.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil_Entity.md"))]
 #[::unity2::class(namespace = "App", name = "CalculatorUtil.Entity")]
 #[parent(crate::system::object::Object)]
 pub struct CalculatorUtil_Entity {
@@ -365,6 +259,112 @@ impl CalculatorUtil_Entity {
             )
         });
         <Self as ICalculatorUtil_EntityMethods>::ctor(this, r#type, name, value);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatorutil/CalculatorUtil.md"))]
+#[::unity2::class(namespace = "App", name = "CalculatorUtil")]
+#[parent(crate::system::object::Object)]
+pub struct CalculatorUtil {
+    #[static_field]
+    #[rename(name = "NullArgs")]
+    pub null_args: crate::system::collections::generic::list_1::List_1<f32>,
+}
+
+#[cfg(feature = "app-calculatorutil")]
+#[::unity2::methods]
+impl CalculatorUtil {
+    #[doc = "`GetPriority(crate::app::calculatorutil::CalculatorUtil_Type)` overload"]
+    #[method(name = "GetPriority", args = 1)]
+    pub fn get_priority(r#type: crate::app::calculatorutil::CalculatorUtil_Type) -> i32;
+
+    #[doc = "`IsNegative(crate::app::calculatorutil::CalculatorUtil_Type, crate::app::calculatorutil::CalculatorUtil_Type)` overload"]
+    #[method(name = "IsNegative", args = 2)]
+    pub fn is_negative(
+        now: crate::app::calculatorutil::CalculatorUtil_Type,
+        old: crate::app::calculatorutil::CalculatorUtil_Type,
+    ) -> bool;
+
+    #[doc = "`IsAssign(crate::app::calculatorutil::CalculatorUtil_Type)` overload"]
+    #[method(name = "IsAssign", args = 1)]
+    pub fn is_assign(r#type: crate::app::calculatorutil::CalculatorUtil_Type) -> bool;
+
+    #[doc = "`GetSingleType(u16)` overload"]
+    #[method(name = "GetSingleType", args = 1)]
+    pub fn get_single_type(name: u16) -> crate::app::calculatorutil::CalculatorUtil_Type;
+
+    #[doc = "`GetThreeType(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "GetThreeType", args = 2)]
+    pub fn get_three_type(
+        name: ::unity2::Il2CppString,
+        index: i32,
+    ) -> crate::app::calculatorutil::CalculatorUtil_Type;
+
+    #[doc = "`GetDoubleType(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "GetDoubleType", args = 2)]
+    pub fn get_double_type(
+        name: ::unity2::Il2CppString,
+        index: i32,
+    ) -> crate::app::calculatorutil::CalculatorUtil_Type;
+
+    #[doc = "`IsCode(u16)` overload"]
+    #[method(name = "IsCode", args = 1)]
+    pub fn is_code(name: u16) -> bool;
+
+    #[doc = "`IsNumber(u16)` overload"]
+    #[method(name = "IsNumber", args = 1)]
+    pub fn is_number(name: u16) -> bool;
+
+    #[doc = "`IsString(u16)` overload"]
+    #[method(name = "IsString", args = 1)]
+    pub fn is_string(name: u16) -> bool;
+
+    #[doc = "`IsArgs(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "IsArgs", args = 2)]
+    pub fn is_args(name: ::unity2::Il2CppString, index: i32) -> bool;
+
+    #[doc = "`IsEmpty(u16)` overload"]
+    #[method(name = "IsEmpty", args = 1)]
+    pub fn is_empty(name: u16) -> bool;
+
+    #[doc = "`StringToNumber(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "StringToNumber", args = 2)]
+    pub fn string_to_number(name: ::unity2::Il2CppString, index: i32) -> ::unity2::Il2CppString;
+
+    #[doc = "`StringToString(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "StringToString", args = 2)]
+    pub fn string_to_string(name: ::unity2::Il2CppString, index: i32) -> ::unity2::Il2CppString;
+
+    #[doc = "`StringToArgs(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "StringToArgs", args = 2)]
+    pub fn string_to_args(name: ::unity2::Il2CppString, index: i32) -> ::unity2::Il2CppString;
+
+    #[doc = "`StringToName(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "StringToName", args = 2)]
+    pub fn string_to_name(name: ::unity2::Il2CppString, index: i32) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-calculatorutil")]
+impl CalculatorUtil {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CalculatorUtil),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICalculatorUtilMethods>::ctor(this);
         this
     }
 }

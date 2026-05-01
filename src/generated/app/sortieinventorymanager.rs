@@ -10,7 +10,93 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieinventorymanager/SortieInventoryManager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieinventorymanager/SortieInventoryManager_SelectionInfo.md"))]
+#[::unity2::class(namespace = "App", name = "SortieInventoryManager.SelectionInfo")]
+#[parent(crate::system::object::Object)]
+pub struct SortieInventoryManager_SelectionInfo {}
+
+#[cfg(feature = "app-sortieinventorymanager")]
+#[::unity2::methods]
+impl SortieInventoryManager_SelectionInfo {
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`IsModeNone()` overload"]
+    #[method(name = "IsModeNone", args = 0)]
+    pub fn is_mode_none(self) -> bool;
+
+    #[doc = "`IsModeTrade()` overload"]
+    #[method(name = "IsModeTrade", args = 0)]
+    pub fn is_mode_trade(self) -> bool;
+
+    #[doc = "`ResetMode()` overload"]
+    #[method(name = "ResetMode", args = 0)]
+    pub fn reset_mode(self) -> ();
+
+    #[doc = "`GetUnitItem()` overload"]
+    #[method(name = "GetUnitItem", args = 0)]
+    pub fn get_unit_item(self) -> crate::app::unititem::UnitItem;
+
+    #[doc = "`get_Mode()` overload"]
+    #[method(name = "get_Mode", args = 0)]
+    pub fn get_mode(
+        self,
+    ) -> crate::app::sortieinventorymanager::SortieInventoryManager_SelectionInfo_Modes;
+
+    #[doc = "`set_Mode(crate::app::sortieinventorymanager::SortieInventoryManager_SelectionInfo_Modes)` overload"]
+    #[method(name = "set_Mode", args = 1)]
+    pub fn set_mode(
+        self,
+        value: crate::app::sortieinventorymanager::SortieInventoryManager_SelectionInfo_Modes,
+    ) -> ();
+
+    #[doc = "`get_IsUnit()` overload"]
+    #[method(name = "get_IsUnit", args = 0)]
+    pub fn get_is_unit(self) -> bool;
+
+    #[doc = "`set_IsUnit(bool)` overload"]
+    #[method(name = "set_IsUnit", args = 1)]
+    pub fn set_is_unit(self, value: bool) -> ();
+
+    #[doc = "`get_Unit()` overload"]
+    #[method(name = "get_Unit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
+    #[method(name = "set_Unit", args = 1)]
+    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
+
+    #[doc = "`get_OwnerItemIndex()` overload"]
+    #[method(name = "get_OwnerItemIndex", args = 0)]
+    pub fn get_owner_item_index(self) -> i32;
+
+    #[doc = "`set_OwnerItemIndex(i32)` overload"]
+    #[method(name = "set_OwnerItemIndex", args = 1)]
+    pub fn set_owner_item_index(self, value: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortieinventorymanager")]
+impl SortieInventoryManager_SelectionInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieInventoryManager_SelectionInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieInventoryManager_SelectionInfoMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieinventorymanager/SortieInventoryManager.md"))]
 #[::unity2::class(namespace = "App", name = "SortieInventoryManager")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: sortieinventorymanager :: SortieInventoryManager >)]
 pub struct SortieInventoryManager {
@@ -174,7 +260,51 @@ impl SortieInventoryManager {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_Modes.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_SelectionInfo_Modes.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SortieInventoryManager_SelectionInfo_Modes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SortieInventoryManager_SelectionInfo_Modes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieInventoryManager.SelectionInfo.Modes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SortieInventoryManager_SelectionInfo_Modes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SortieInventoryManager_SelectionInfo_Modes {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn trade() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_Modes.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -218,7 +348,7 @@ impl SortieInventoryManager_Modes {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_ActiveWindow.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_ActiveWindow.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -263,135 +393,5 @@ impl SortieInventoryManager_ActiveWindow {
 
     pub fn pool_item() -> Self {
         Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieinventorymanager/SortieInventoryManager_SelectionInfo.md")))]
-#[::unity2::class(namespace = "App", name = "SortieInventoryManager.SelectionInfo")]
-#[parent(crate::system::object::Object)]
-pub struct SortieInventoryManager_SelectionInfo {}
-
-#[cfg(feature = "app-sortieinventorymanager")]
-#[::unity2::methods]
-impl SortieInventoryManager_SelectionInfo {
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`IsModeNone()` overload"]
-    #[method(name = "IsModeNone", args = 0)]
-    pub fn is_mode_none(self) -> bool;
-
-    #[doc = "`IsModeTrade()` overload"]
-    #[method(name = "IsModeTrade", args = 0)]
-    pub fn is_mode_trade(self) -> bool;
-
-    #[doc = "`ResetMode()` overload"]
-    #[method(name = "ResetMode", args = 0)]
-    pub fn reset_mode(self) -> ();
-
-    #[doc = "`GetUnitItem()` overload"]
-    #[method(name = "GetUnitItem", args = 0)]
-    pub fn get_unit_item(self) -> crate::app::unititem::UnitItem;
-
-    #[doc = "`get_Mode()` overload"]
-    #[method(name = "get_Mode", args = 0)]
-    pub fn get_mode(
-        self,
-    ) -> crate::app::sortieinventorymanager::SortieInventoryManager_SelectionInfo_Modes;
-
-    #[doc = "`set_Mode(crate::app::sortieinventorymanager::SortieInventoryManager_SelectionInfo_Modes)` overload"]
-    #[method(name = "set_Mode", args = 1)]
-    pub fn set_mode(
-        self,
-        value: crate::app::sortieinventorymanager::SortieInventoryManager_SelectionInfo_Modes,
-    ) -> ();
-
-    #[doc = "`get_IsUnit()` overload"]
-    #[method(name = "get_IsUnit", args = 0)]
-    pub fn get_is_unit(self) -> bool;
-
-    #[doc = "`set_IsUnit(bool)` overload"]
-    #[method(name = "set_IsUnit", args = 1)]
-    pub fn set_is_unit(self, value: bool) -> ();
-
-    #[doc = "`get_Unit()` overload"]
-    #[method(name = "get_Unit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
-    #[method(name = "set_Unit", args = 1)]
-    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
-
-    #[doc = "`get_OwnerItemIndex()` overload"]
-    #[method(name = "get_OwnerItemIndex", args = 0)]
-    pub fn get_owner_item_index(self) -> i32;
-
-    #[doc = "`set_OwnerItemIndex(i32)` overload"]
-    #[method(name = "set_OwnerItemIndex", args = 1)]
-    pub fn set_owner_item_index(self, value: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortieinventorymanager")]
-impl SortieInventoryManager_SelectionInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieInventoryManager_SelectionInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieInventoryManager_SelectionInfoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortieinventorymanager/SortieInventoryManager_SelectionInfo_Modes.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct SortieInventoryManager_SelectionInfo_Modes {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for SortieInventoryManager_SelectionInfo_Modes {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieInventoryManager.SelectionInfo.Modes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for SortieInventoryManager_SelectionInfo_Modes {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl SortieInventoryManager_SelectionInfo_Modes {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn trade() -> Self {
-        Self { value: 1 }
     }
 }

@@ -8,7 +8,7 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystemdata/XRSystemData_ShaderResources.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystemdata/XRSystemData_ShaderResources.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
     name = "XRSystemData.ShaderResources"
@@ -45,7 +45,7 @@ impl XRSystemData_ShaderResources {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystemdata/XRSystemData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystemdata/XRSystemData.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystemData")]
 #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
 pub struct XRSystemData {

@@ -12,45 +12,7 @@ use crate::unity_engine::runtimeanimatorcontroller::IRuntimeAnimatorController;
 use crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animatoroverridecontroller/AnimatorOverrideController_OnOverrideControllerDirtyCallback.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine",
-    name = "AnimatorOverrideController.OnOverrideControllerDirtyCallback"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AnimatorOverrideController_OnOverrideControllerDirtyCallback {}
-
-#[cfg(feature = "unity_engine-animatoroverridecontroller")]
-#[::unity2::methods]
-impl AnimatorOverrideController_OnOverrideControllerDirtyCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-animatoroverridecontroller")]
-impl AnimatorOverrideController_OnOverrideControllerDirtyCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AnimatorOverrideController_OnOverrideControllerDirtyCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animatoroverridecontroller/AnimatorOverrideController.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animatoroverridecontroller/AnimatorOverrideController.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "AnimatorOverrideController")]
 #[parent(crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController)]
 pub struct AnimatorOverrideController {
@@ -249,6 +211,44 @@ impl AnimatorOverrideController {
             )
         });
         <Self as IAnimatorOverrideControllerMethods>::ctor_2(this, controller);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animatoroverridecontroller/AnimatorOverrideController_OnOverrideControllerDirtyCallback.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine",
+    name = "AnimatorOverrideController.OnOverrideControllerDirtyCallback"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AnimatorOverrideController_OnOverrideControllerDirtyCallback {}
+
+#[cfg(feature = "unity_engine-animatoroverridecontroller")]
+#[::unity2::methods]
+impl AnimatorOverrideController_OnOverrideControllerDirtyCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-animatoroverridecontroller")]
+impl AnimatorOverrideController_OnOverrideControllerDirtyCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AnimatorOverrideController_OnOverrideControllerDirtyCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimatorOverrideController_OnOverrideControllerDirtyCallbackMethods>::ctor(
+            this, object, method,
+        );
         this
     }
 }

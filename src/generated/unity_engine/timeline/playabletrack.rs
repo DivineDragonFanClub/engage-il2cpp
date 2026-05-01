@@ -12,7 +12,7 @@ use crate::unity_engine::timeline::trackasset::ITrackAsset;
 use crate::unity_engine::timeline::trackasset::TrackAsset;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/playabletrack/PlayableTrack.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/playabletrack/PlayableTrack.md"))]
 #[::unity2::class(namespace = "UnityEngine.Timeline", name = "PlayableTrack")]
 #[parent(crate::unity_engine::timeline::trackasset::TrackAsset)]
 pub struct PlayableTrack {}

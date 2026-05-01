@@ -12,83 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TalkSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TalkSequence_Label {
-    const NAMESPACE: &'static str = "App.Talk3D";
-
-    const NAME: &'static str = "TalkSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TalkSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TalkSequence_Label {
-    pub fn load() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn fade_in() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn sound_before() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn main() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn sound_after() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn check_continue() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn skip() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn close() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn skip_wait_to_end() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 9 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_PlayMode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_PlayMode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -132,7 +56,7 @@ impl TalkSequence_PlayMode {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence.md"))]
 #[::unity2::class(namespace = "App.Talk3D", name = "TalkSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: talk3_d :: talksequence :: TalkSequence >)]
 pub struct TalkSequence {
@@ -472,7 +396,7 @@ impl TalkSequence {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence_ReplaceText.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence_ReplaceText.md"))]
 #[::unity2::class(namespace = "App.Talk3D", name = "TalkSequence.ReplaceText")]
 #[parent(crate::system::object::Object)]
 pub struct TalkSequence_ReplaceText {
@@ -523,5 +447,81 @@ impl TalkSequence_ReplaceText {
         });
         <Self as ITalkSequence_ReplaceTextMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TalkSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TalkSequence_Label {
+    const NAMESPACE: &'static str = "App.Talk3D";
+
+    const NAME: &'static str = "TalkSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TalkSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TalkSequence_Label {
+    pub fn load() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn fade_in() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn sound_before() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn main() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn sound_after() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn check_continue() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn skip() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn close() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn skip_wait_to_end() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 9 }
     }
 }

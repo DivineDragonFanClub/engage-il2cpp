@@ -6,7 +6,63 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleutil/BattleUtil.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleutil/BattleUtil_CalcScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BattleUtil_CalcScope {
+    pub info: crate::app::battleinfo::BattleInfo,
+    pub calc: crate::app::battlecalculator::BattleCalculator,
+}
+
+impl ::unity2::ClassIdentity for BattleUtil_CalcScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleUtil.CalcScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BattleUtil_CalcScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-battleutil")]
+#[::unity2::methods(value)]
+impl BattleUtil_CalcScope {
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::battleinfo::BattleInfo_Flags)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        flags: crate::app::battleinfo::BattleInfo_Flags,
+    ) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"]
+    #[method(name = "GetSide", args = 1)]
+    pub fn get_side(
+        self,
+        side: crate::app::battleside::BattleSide_Type,
+    ) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleutil/BattleUtil.md"))]
 #[::unity2::class(namespace = "App", name = "BattleUtil")]
 #[parent(crate::system::object::Object)]
 pub struct BattleUtil {}
@@ -142,60 +198,4 @@ impl BattleUtil {
         <Self as IBattleUtilMethods>::ctor(this);
         this
     }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleutil/BattleUtil_CalcScope.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BattleUtil_CalcScope {
-    pub info: crate::app::battleinfo::BattleInfo,
-    pub calc: crate::app::battlecalculator::BattleCalculator,
-}
-
-impl ::unity2::ClassIdentity for BattleUtil_CalcScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleUtil.CalcScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for BattleUtil_CalcScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-battleutil")]
-#[::unity2::methods(value)]
-impl BattleUtil_CalcScope {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::battleinfo::BattleInfo_Flags)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        unit: crate::app::unit::Unit,
-        flags: crate::app::battleinfo::BattleInfo_Flags,
-    ) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"]
-    #[method(name = "GetSide", args = 1)]
-    pub fn get_side(
-        self,
-        side: crate::app::battleside::BattleSide_Type,
-    ) -> crate::app::battleinfoside::BattleInfoSide;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
 }

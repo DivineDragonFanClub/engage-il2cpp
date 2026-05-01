@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/editorprefs_float/EditorPrefs_Float.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/editorprefs_float/EditorPrefs_Float.md"))]
 #[::unity2::class(namespace = "Combat", name = "EditorPrefs_Float")]
 #[parent(crate::system::object::Object)]
 pub struct EditorPrefs_Float {

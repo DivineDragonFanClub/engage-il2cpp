@@ -4,49 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustunitdata/SortieEntrustUnitData_WeaponKindExp.md")))]
-#[::unity2::class(namespace = "App", name = "SortieEntrustUnitData.WeaponKindExp")]
-#[parent(crate::system::object::Object)]
-pub struct SortieEntrustUnitData_WeaponKindExp {
-    #[rename(name = "m_ItemKind")]
-    pub m_item_kind: crate::app::itemdata::ItemData_Kinds,
-    #[rename(name = "m_Exp")]
-    pub m_exp: i32,
-}
-
-#[cfg(feature = "app-sortieentrustunitdata")]
-#[::unity2::methods]
-impl SortieEntrustUnitData_WeaponKindExp {
-    #[doc = "`.ctor(crate::app::itemdata::ItemData_Kinds, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, item_kind: crate::app::itemdata::ItemData_Kinds, exp: i32) -> ();
-
-    #[doc = "`get_ItemKind()` overload"]
-    #[method(name = "get_ItemKind", args = 0)]
-    pub fn get_item_kind(self) -> crate::app::itemdata::ItemData_Kinds;
-
-    #[doc = "`get_Exp()` overload"]
-    #[method(name = "get_Exp", args = 0)]
-    pub fn get_exp(self) -> i32;
-}
-
-#[cfg(feature = "app-sortieentrustunitdata")]
-impl SortieEntrustUnitData_WeaponKindExp {
-    #[doc = "`.ctor(crate::app::itemdata::ItemData_Kinds, i32)` — overload selector"]
-    pub fn new(item_kind: crate::app::itemdata::ItemData_Kinds, exp: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieEntrustUnitData_WeaponKindExp),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieEntrustUnitData_WeaponKindExpMethods>::ctor(this, item_kind, exp);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustunitdata/SortieEntrustUnitData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustunitdata/SortieEntrustUnitData.md"))]
 #[::unity2::class(namespace = "App", name = "SortieEntrustUnitData")]
 #[parent(crate::system::object::Object)]
 pub struct SortieEntrustUnitData {
@@ -116,6 +74,48 @@ impl SortieEntrustUnitData {
             )
         });
         <Self as ISortieEntrustUnitDataMethods>::ctor(this, unit);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrustunitdata/SortieEntrustUnitData_WeaponKindExp.md"))]
+#[::unity2::class(namespace = "App", name = "SortieEntrustUnitData.WeaponKindExp")]
+#[parent(crate::system::object::Object)]
+pub struct SortieEntrustUnitData_WeaponKindExp {
+    #[rename(name = "m_ItemKind")]
+    pub m_item_kind: crate::app::itemdata::ItemData_Kinds,
+    #[rename(name = "m_Exp")]
+    pub m_exp: i32,
+}
+
+#[cfg(feature = "app-sortieentrustunitdata")]
+#[::unity2::methods]
+impl SortieEntrustUnitData_WeaponKindExp {
+    #[doc = "`.ctor(crate::app::itemdata::ItemData_Kinds, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, item_kind: crate::app::itemdata::ItemData_Kinds, exp: i32) -> ();
+
+    #[doc = "`get_ItemKind()` overload"]
+    #[method(name = "get_ItemKind", args = 0)]
+    pub fn get_item_kind(self) -> crate::app::itemdata::ItemData_Kinds;
+
+    #[doc = "`get_Exp()` overload"]
+    #[method(name = "get_Exp", args = 0)]
+    pub fn get_exp(self) -> i32;
+}
+
+#[cfg(feature = "app-sortieentrustunitdata")]
+impl SortieEntrustUnitData_WeaponKindExp {
+    #[doc = "`.ctor(crate::app::itemdata::ItemData_Kinds, i32)` — overload selector"]
+    pub fn new(item_kind: crate::app::itemdata::ItemData_Kinds, exp: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieEntrustUnitData_WeaponKindExp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieEntrustUnitData_WeaponKindExpMethods>::ctor(this, item_kind, exp);
         this
     }
 }

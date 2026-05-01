@@ -10,7 +10,7 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/casualmap/CasualMap.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/casualmap/CasualMap.md"))]
 #[::unity2::class(namespace = "App", name = "CasualMap")]
 # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: casualmap :: CasualMap >)]
 pub struct CasualMap {
@@ -89,7 +89,7 @@ impl CasualMap {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/casualmap/CasualMap_ObjectData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/casualmap/CasualMap_ObjectData.md"))]
 #[::unity2::class(namespace = "App", name = "CasualMap.ObjectData")]
 #[parent(crate::system::object::Object)]
 pub struct CasualMap_ObjectData {

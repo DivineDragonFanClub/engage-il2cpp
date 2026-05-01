@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/defaultexecutionorder/DefaultExecutionOrder.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/defaultexecutionorder/DefaultExecutionOrder.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "DefaultExecutionOrder")]
 pub struct DefaultExecutionOrder {
     #[rename(name = "m_Order")]

@@ -14,7 +14,41 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hublensflare/HubLensFlare.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hublensflare/HubLensFlare_Flare.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct HubLensFlare_Flare {
+    pub game_object: crate::unity_engine::gameobject::GameObject,
+    pub ps: crate::unity_engine::particlesystem::ParticleSystem,
+    pub particles: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
+    pub material: crate::unity_engine::material::Material,
+    pub distance: f32,
+    pub scale: f32,
+    pub anglebias: f32,
+}
+
+impl ::unity2::ClassIdentity for HubLensFlare_Flare {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubLensFlare.Flare";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubLensFlare_Flare {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hublensflare/HubLensFlare.md"))]
 #[::unity2::class(namespace = "App", name = "HubLensFlare")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct HubLensFlare {
@@ -69,39 +103,5 @@ impl HubLensFlare {
         });
         <Self as IHubLensFlareMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hublensflare/HubLensFlare_Flare.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HubLensFlare_Flare {
-    pub game_object: crate::unity_engine::gameobject::GameObject,
-    pub ps: crate::unity_engine::particlesystem::ParticleSystem,
-    pub particles: ::unity2::Array<crate::unity_engine::particlesystem::ParticleSystem_Particle>,
-    pub material: crate::unity_engine::material::Material,
-    pub distance: f32,
-    pub scale: f32,
-    pub anglebias: f32,
-}
-
-impl ::unity2::ClassIdentity for HubLensFlare_Flare {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubLensFlare.Flare";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for HubLensFlare_Flare {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
     }
 }

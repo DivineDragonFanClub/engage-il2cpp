@@ -12,7 +12,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamecalculator/GameCalculator.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamecalculator/GameCalculator.md"))]
 #[::unity2::class(namespace = "App", name = "GameCalculator")]
 # [parent (crate :: app :: systemcalculatorinstance_1 :: SystemCalculatorInstance_1 < crate :: app :: gamecalculator :: GameCalculator >)]
 pub struct GameCalculator {}

@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsortieposition/MapSortiePosition_Data.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsortieposition/MapSortiePosition_Data.md"))]
 #[::unity2::class(namespace = "App", name = "MapSortiePosition.Data")]
 #[parent(crate::system::object::Object)]
 pub struct MapSortiePosition_Data {}
@@ -59,7 +59,7 @@ impl MapSortiePosition_Data {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsortieposition/MapSortiePosition.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsortieposition/MapSortiePosition.md"))]
 #[::unity2::class(namespace = "App", name = "MapSortiePosition")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapsortieposition :: MapSortiePosition >)]
 pub struct MapSortiePosition {

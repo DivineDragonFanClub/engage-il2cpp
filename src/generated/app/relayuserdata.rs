@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayuserdata/RelayUserData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayuserdata/RelayUserData.md"))]
 #[::unity2::class(namespace = "App", name = "RelayUserData")]
 #[parent(crate::system::object::Object)]
 pub struct RelayUserData {
@@ -106,7 +106,7 @@ impl RelayUserData {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayuserdata/RelayUserData_EnteredBattle.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayuserdata/RelayUserData_EnteredBattle.md"))]
 #[::unity2::class(namespace = "App", name = "RelayUserData.EnteredBattle")]
 #[parent(crate::system::object::Object)]
 pub struct RelayUserData_EnteredBattle {}

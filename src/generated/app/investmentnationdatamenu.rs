@@ -12,7 +12,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatamenu/InvestmentNationDataMenu_ItemInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatamenu/InvestmentNationDataMenu_ItemInfo.md"))]
 #[::unity2::class(namespace = "App", name = "InvestmentNationDataMenu.ItemInfo")]
 #[parent(crate::system::object::Object)]
 pub struct InvestmentNationDataMenu_ItemInfo {
@@ -74,7 +74,7 @@ impl InvestmentNationDataMenu_ItemInfo {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatamenu/InvestmentNationDataMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatamenu/InvestmentNationDataMenu.md"))]
 #[::unity2::class(namespace = "App", name = "InvestmentNationDataMenu")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct InvestmentNationDataMenu {
@@ -165,7 +165,7 @@ impl InvestmentNationDataMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatamenu/InvestmentNationDataMenu_AnimalInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatamenu/InvestmentNationDataMenu_AnimalInfo.md"))]
 #[::unity2::class(namespace = "App", name = "InvestmentNationDataMenu.AnimalInfo")]
 #[parent(crate::system::object::Object)]
 pub struct InvestmentNationDataMenu_AnimalInfo {

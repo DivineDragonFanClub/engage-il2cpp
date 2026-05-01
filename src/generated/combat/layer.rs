@@ -4,60 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer_Mask.md")))]
-#[::unity2::class(namespace = "Combat", name = "Layer.Mask")]
-#[parent(crate::system::object::Object)]
-pub struct Layer_Mask {}
-
-#[cfg(feature = "combat-layer")]
-#[::unity2::methods]
-impl Layer_Mask {
-    #[doc = "`get_Ground()` overload"]
-    #[method(name = "get_Ground", args = 0)]
-    pub fn get_ground() -> i32;
-
-    #[doc = "`set_Ground(i32)` overload"]
-    #[method(name = "set_Ground", args = 1)]
-    pub fn set_ground(value: i32) -> ();
-
-    #[doc = "`get_Objects()` overload"]
-    #[method(name = "get_Objects", args = 0)]
-    pub fn get_objects() -> i32;
-
-    #[doc = "`set_Objects(i32)` overload"]
-    #[method(name = "set_Objects", args = 1)]
-    pub fn set_objects(value: i32) -> ();
-
-    #[doc = "`get_Border()` overload"]
-    #[method(name = "get_Border", args = 0)]
-    pub fn get_border() -> i32;
-
-    #[doc = "`set_Border(i32)` overload"]
-    #[method(name = "set_Border", args = 1)]
-    pub fn set_border(value: i32) -> ();
-
-    #[doc = "`get_Camera()` overload"]
-    #[method(name = "get_Camera", args = 0)]
-    pub fn get_camera() -> i32;
-
-    #[doc = "`set_Camera(i32)` overload"]
-    #[method(name = "set_Camera", args = 1)]
-    pub fn set_camera(value: i32) -> ();
-
-    #[doc = "`get_Hideable()` overload"]
-    #[method(name = "get_Hideable", args = 0)]
-    pub fn get_hideable() -> i32;
-
-    #[doc = "`set_Hideable(i32)` overload"]
-    #[method(name = "set_Hideable", args = 1)]
-    pub fn set_hideable(value: i32) -> ();
-
-    #[doc = "`Initialize()` overload"]
-    #[method(name = "Initialize", args = 0)]
-    pub fn initialize() -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer_Shift.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer_Shift.md"))]
 #[::unity2::class(namespace = "Combat", name = "Layer.Shift")]
 #[parent(crate::system::object::Object)]
 pub struct Layer_Shift {
@@ -138,7 +85,7 @@ impl Layer_Shift {
     pub fn initialize() -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer.md"))]
 #[::unity2::class(namespace = "Combat", name = "Layer")]
 #[parent(crate::system::object::Object)]
 pub struct Layer {}
@@ -149,6 +96,59 @@ impl Layer {
     #[doc = "`CollidesTo(crate::unity_engine::collider::Collider, i32)` overload"]
     #[method(name = "CollidesTo", args = 2)]
     pub fn collides_to(c: crate::unity_engine::collider::Collider, mask: i32) -> bool;
+
+    #[doc = "`Initialize()` overload"]
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize() -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/layer/Layer_Mask.md"))]
+#[::unity2::class(namespace = "Combat", name = "Layer.Mask")]
+#[parent(crate::system::object::Object)]
+pub struct Layer_Mask {}
+
+#[cfg(feature = "combat-layer")]
+#[::unity2::methods]
+impl Layer_Mask {
+    #[doc = "`get_Ground()` overload"]
+    #[method(name = "get_Ground", args = 0)]
+    pub fn get_ground() -> i32;
+
+    #[doc = "`set_Ground(i32)` overload"]
+    #[method(name = "set_Ground", args = 1)]
+    pub fn set_ground(value: i32) -> ();
+
+    #[doc = "`get_Objects()` overload"]
+    #[method(name = "get_Objects", args = 0)]
+    pub fn get_objects() -> i32;
+
+    #[doc = "`set_Objects(i32)` overload"]
+    #[method(name = "set_Objects", args = 1)]
+    pub fn set_objects(value: i32) -> ();
+
+    #[doc = "`get_Border()` overload"]
+    #[method(name = "get_Border", args = 0)]
+    pub fn get_border() -> i32;
+
+    #[doc = "`set_Border(i32)` overload"]
+    #[method(name = "set_Border", args = 1)]
+    pub fn set_border(value: i32) -> ();
+
+    #[doc = "`get_Camera()` overload"]
+    #[method(name = "get_Camera", args = 0)]
+    pub fn get_camera() -> i32;
+
+    #[doc = "`set_Camera(i32)` overload"]
+    #[method(name = "set_Camera", args = 1)]
+    pub fn set_camera(value: i32) -> ();
+
+    #[doc = "`get_Hideable()` overload"]
+    #[method(name = "get_Hideable", args = 0)]
+    pub fn get_hideable() -> i32;
+
+    #[doc = "`set_Hideable(i32)` overload"]
+    #[method(name = "set_Hideable", args = 1)]
+    pub fn set_hideable(value: i32) -> ();
 
     #[doc = "`Initialize()` overload"]
     #[method(name = "Initialize", args = 0)]

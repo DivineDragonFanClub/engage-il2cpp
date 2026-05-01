@@ -12,40 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence_EnchantedUnitList.md")))]
-#[::unity2::class(namespace = "App", name = "ItemUseSequence.EnchantedUnitList")]
-# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
-pub struct ItemUseSequence_EnchantedUnitList {}
-
-#[cfg(feature = "app-itemusesequence")]
-#[::unity2::methods]
-impl ItemUseSequence_EnchantedUnitList {
-    #[doc = "`Search()` overload"]
-    #[method(name = "Search", args = 0)]
-    pub fn search(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-itemusesequence")]
-impl ItemUseSequence_EnchantedUnitList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemUseSequence_EnchantedUnitList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemUseSequence_EnchantedUnitListMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemusesequence/ItemUseSequence_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/itemusesequence/ItemUseSequence_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -93,7 +60,40 @@ impl ItemUseSequence_Label {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence_EnchantedUnitList.md"))]
+#[::unity2::class(namespace = "App", name = "ItemUseSequence.EnchantedUnitList")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
+pub struct ItemUseSequence_EnchantedUnitList {}
+
+#[cfg(feature = "app-itemusesequence")]
+#[::unity2::methods]
+impl ItemUseSequence_EnchantedUnitList {
+    #[doc = "`Search()` overload"]
+    #[method(name = "Search", args = 0)]
+    pub fn search(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-itemusesequence")]
+impl ItemUseSequence_EnchantedUnitList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemUseSequence_EnchantedUnitList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemUseSequence_EnchantedUnitListMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemusesequence/ItemUseSequence.md"))]
 #[::unity2::class(namespace = "App", name = "ItemUseSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct ItemUseSequence {

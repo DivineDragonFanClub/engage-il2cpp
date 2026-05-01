@@ -16,7 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_HPStockType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_ArrowType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -25,14 +25,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct UnitStatusSetter_HPStockType {
+pub struct UnitStatusSetter_ArrowType {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for UnitStatusSetter_HPStockType {
+impl ::unity2::ClassIdentity for UnitStatusSetter_ArrowType {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "UnitStatusSetter.HPStockType";
+    const NAME: &'static str = "UnitStatusSetter.ArrowType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,7 +41,7 @@ impl ::unity2::ClassIdentity for UnitStatusSetter_HPStockType {
     }
 }
 
-impl ::unity2::IlType for UnitStatusSetter_HPStockType {
+impl ::unity2::IlType for UnitStatusSetter_ArrowType {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -50,39 +50,143 @@ impl ::unity2::IlType for UnitStatusSetter_HPStockType {
     }
 }
 
-impl UnitStatusSetter_HPStockType {
-    pub fn normal() -> Self {
+impl UnitStatusSetter_ArrowType {
+    pub fn plus() -> Self {
         Self { value: 0 }
     }
 
-    pub fn rampage() -> Self {
+    pub fn minus() -> Self {
         Self { value: 1 }
     }
 
-    pub fn player() -> Self {
+    pub fn count() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_RingType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitStatusSetter_RingType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitStatusSetter_RingType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitStatusSetter.RingType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitStatusSetter_RingType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitStatusSetter_RingType {
+    pub fn god() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ring() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn dark_god() -> Self {
         Self { value: 2 }
     }
 
-    pub fn count() -> Self {
+    pub fn none() -> Self {
         Self { value: 3 }
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_CapabilityValueParam.md")))]
-#[::unity2::class(namespace = "App", name = "UnitStatusSetter.CapabilityValueParam")]
-#[parent(crate::app::unitstatussetter::UnitStatusSetter_ValueParam)]
-pub struct UnitStatusSetter_CapabilityValueParam {
-    #[rename(name = "m_capabilityType")]
-    pub m_capability_type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_ValueParam.md"))]
+#[::unity2::class(namespace = "App", name = "UnitStatusSetter.ValueParam")]
+#[parent(crate::system::object::Object)]
+pub struct UnitStatusSetter_ValueParam {
+    #[rename(name = "m_setter")]
+    pub m_setter: crate::app::unitstatussetter::UnitStatusSetter,
+    #[rename(name = "m_root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_title")]
+    pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_value")]
+    pub m_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_upArrow")]
+    pub m_up_arrow: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_godUpBalloon")]
+    pub m_god_up_balloon: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_balloonImage")]
+    pub m_balloon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_godUpValue")]
+    pub m_god_up_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_godBuffImage")]
+    pub m_god_buff_image: crate::unity_engine::ui::image::Image,
 }
 
 #[cfg(feature = "app-unitstatussetter")]
 #[::unity2::methods]
-impl UnitStatusSetter_CapabilityValueParam {
-    #[doc = "`get_CapabilityType()` overload"]
-    #[method(name = "get_CapabilityType", args = 0)]
-    pub fn get_capability_type(self)
-        -> crate::app::capabilitydefinition::CapabilityDefinition_Type;
+impl UnitStatusSetter_ValueParam {
+    #[doc = "`Init(crate::app::unitstatussetter::UnitStatusSetter)` overload"]
+    #[method(name = "Init", args = 1)]
+    pub fn init(self, setter: crate::app::unitstatussetter::UnitStatusSetter) -> ();
+
+    #[doc = "`SetOverride(crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::ui::image::Image)` overload"]
+    #[method(name = "SetOverride", args = 2)]
+    pub fn set_override(
+        self,
+        text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        arrow: crate::unity_engine::ui::image::Image,
+    ) -> ();
+
+    #[doc = "`SetOverrideTitle(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetOverrideTitle", args = 1)]
+    pub fn set_override_title(self, title: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`SetValue(crate::app::unitparamdetail::UnitParamDetail, bool, bool)` overload"]
+    #[method(name = "SetValue", args = 3)]
+    pub fn set_value(
+        self,
+        detail: crate::app::unitparamdetail::UnitParamDetail,
+        is_limit: bool,
+        is_god_change: bool,
+    ) -> ();
+
+    #[doc = "`SetValueNoEnhance(crate::app::unitparamdetail::UnitParamDetail, bool)` overload"]
+    #[method(name = "SetValueNoEnhance", args = 2)]
+    pub fn set_value_no_enhance(
+        self,
+        detail: crate::app::unitparamdetail::UnitParamDetail,
+        is_limit: bool,
+    ) -> ();
+
+    #[doc = "`SetValueDirect(::unity2::Il2CppString, i32, bool)` overload"]
+    #[method(name = "SetValueDirect", args = 3)]
+    pub fn set_value_direct(self, str: ::unity2::Il2CppString, dir: i32, is_limit: bool) -> ();
+
+    #[doc = "`SetBalloon(i32, crate::app::unitstatussetter::UnitStatusSetter_RingType)` overload"]
+    #[method(name = "SetBalloon", args = 2)]
+    pub fn set_balloon(
+        self,
+        up_value: i32,
+        ring_type: crate::app::unitstatussetter::UnitStatusSetter_RingType,
+    ) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -90,22 +194,196 @@ impl UnitStatusSetter_CapabilityValueParam {
 }
 
 #[cfg(feature = "app-unitstatussetter")]
-impl UnitStatusSetter_CapabilityValueParam {
+impl UnitStatusSetter_ValueParam {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(UnitStatusSetter_CapabilityValueParam),
+                ::core::stringify!(UnitStatusSetter_ValueParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IUnitStatusSetter_CapabilityValueParamMethods>::ctor(this);
+        <Self as IUnitStatusSetter_ValueParamMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_WeaponLevelSetter.md"))]
+#[::unity2::class(namespace = "App", name = "UnitStatusSetter.WeaponLevelSetter")]
+#[parent(crate::system::object::Object)]
+pub struct UnitStatusSetter_WeaponLevelSetter {
+    #[rename(name = "m_root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_icon")]
+    pub m_icon: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_level")]
+    pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-unitstatussetter")]
+#[::unity2::methods]
+impl UnitStatusSetter_WeaponLevelSetter {
+    #[doc = "`Init()` overload"]
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
+
+    #[doc = "`Set(crate::app::itemdata::ItemData_Kinds, crate::app::weaponlevel::WeaponLevel_Kind, i32, crate::app::jobdata::JobData)` overload"]
+    #[method(name = "Set", args = 4)]
+    pub fn set(
+        self,
+        kind: crate::app::itemdata::ItemData_Kinds,
+        level: crate::app::weaponlevel::WeaponLevel_Kind,
+        diff: i32,
+        job_data: crate::app::jobdata::JobData,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitstatussetter")]
+impl UnitStatusSetter_WeaponLevelSetter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitStatusSetter_WeaponLevelSetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitStatusSetter_WeaponLevelSetterMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_ForceType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitStatusSetter_ForceType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitStatusSetter_ForceType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitStatusSetter.ForceType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitStatusSetter_ForceType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitStatusSetter_ForceType {
+    pub fn player() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn enemy() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn ally() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn f4th() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn count() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_WdwType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitStatusSetter_WdwType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitStatusSetter_WdwType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitStatusSetter.WdwType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitStatusSetter_WdwType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitStatusSetter_WdwType {
+    pub fn default() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn synchro_blue() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn synchro_red() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn synchro_green() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn engage_blue() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn engage_red() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn synchro_yellow() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn count() -> Self {
+        Self { value: 7 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter.md"))]
 #[::unity2::class(namespace = "App", name = "UnitStatusSetter")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct UnitStatusSetter {
@@ -411,7 +689,203 @@ impl UnitStatusSetter {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_ItemSetter.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_SkillSetter.md"))]
+#[::unity2::class(namespace = "App", name = "UnitStatusSetter.SkillSetter")]
+#[parent(crate::system::object::Object)]
+pub struct UnitStatusSetter_SkillSetter {
+    #[rename(name = "m_root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_icon")]
+    pub m_icon: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_name")]
+    pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_godBuffImage")]
+    pub m_god_buff_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_styleBonus")]
+    pub m_style_bonus: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_setter")]
+    pub m_setter: crate::app::unitstatussetter::UnitStatusSetter,
+}
+
+#[cfg(feature = "app-unitstatussetter")]
+#[::unity2::methods]
+impl UnitStatusSetter_SkillSetter {
+    #[doc = "`Init(crate::app::unitstatussetter::UnitStatusSetter)` overload"]
+    #[method(name = "Init", args = 1)]
+    pub fn init(self, setter: crate::app::unitstatussetter::UnitStatusSetter) -> ();
+
+    #[doc = "`Disable()` overload"]
+    #[method(name = "Disable", args = 0)]
+    pub fn disable(self) -> ();
+
+    #[doc = "`Set(crate::app::skilldata::SkillData, bool, crate::app::unitstatussetter::UnitStatusSetter_RingType)` overload"]
+    #[method(name = "Set", args = 3)]
+    pub fn set(
+        self,
+        skill: crate::app::skilldata::SkillData,
+        is_active: bool,
+        r#type: crate::app::unitstatussetter::UnitStatusSetter_RingType,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitstatussetter")]
+impl UnitStatusSetter_SkillSetter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitStatusSetter_SkillSetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitStatusSetter_SkillSetterMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_GodBuffType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitStatusSetter_GodBuffType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitStatusSetter_GodBuffType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitStatusSetter.GodBuffType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitStatusSetter_GodBuffType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitStatusSetter_GodBuffType {
+    pub fn blue() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn red() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn count() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_CapabilityValueParam.md"))]
+#[::unity2::class(namespace = "App", name = "UnitStatusSetter.CapabilityValueParam")]
+#[parent(crate::app::unitstatussetter::UnitStatusSetter_ValueParam)]
+pub struct UnitStatusSetter_CapabilityValueParam {
+    #[rename(name = "m_capabilityType")]
+    pub m_capability_type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
+}
+
+#[cfg(feature = "app-unitstatussetter")]
+#[::unity2::methods]
+impl UnitStatusSetter_CapabilityValueParam {
+    #[doc = "`get_CapabilityType()` overload"]
+    #[method(name = "get_CapabilityType", args = 0)]
+    pub fn get_capability_type(self)
+        -> crate::app::capabilitydefinition::CapabilityDefinition_Type;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitstatussetter")]
+impl UnitStatusSetter_CapabilityValueParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitStatusSetter_CapabilityValueParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitStatusSetter_CapabilityValueParamMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_HPStockType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitStatusSetter_HPStockType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitStatusSetter_HPStockType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitStatusSetter.HPStockType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitStatusSetter_HPStockType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitStatusSetter_HPStockType {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn rampage() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn player() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn count() -> Self {
+        Self { value: 3 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_ItemSetter.md"))]
 #[::unity2::class(namespace = "App", name = "UnitStatusSetter.ItemSetter")]
 #[parent(crate::system::object::Object)]
 pub struct UnitStatusSetter_ItemSetter {
@@ -482,480 +956,6 @@ impl UnitStatusSetter_ItemSetter {
             )
         });
         <Self as IUnitStatusSetter_ItemSetterMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_ArrowType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitStatusSetter_ArrowType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitStatusSetter_ArrowType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitStatusSetter.ArrowType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitStatusSetter_ArrowType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitStatusSetter_ArrowType {
-    pub fn plus() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn minus() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn count() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_RingType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitStatusSetter_RingType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitStatusSetter_RingType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitStatusSetter.RingType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitStatusSetter_RingType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitStatusSetter_RingType {
-    pub fn god() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ring() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn dark_god() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn none() -> Self {
-        Self { value: 3 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_ValueParam.md")))]
-#[::unity2::class(namespace = "App", name = "UnitStatusSetter.ValueParam")]
-#[parent(crate::system::object::Object)]
-pub struct UnitStatusSetter_ValueParam {
-    #[rename(name = "m_setter")]
-    pub m_setter: crate::app::unitstatussetter::UnitStatusSetter,
-    #[rename(name = "m_root")]
-    pub m_root: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_title")]
-    pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_value")]
-    pub m_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_upArrow")]
-    pub m_up_arrow: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_godUpBalloon")]
-    pub m_god_up_balloon: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_balloonImage")]
-    pub m_balloon_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_godUpValue")]
-    pub m_god_up_value: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_godBuffImage")]
-    pub m_god_buff_image: crate::unity_engine::ui::image::Image,
-}
-
-#[cfg(feature = "app-unitstatussetter")]
-#[::unity2::methods]
-impl UnitStatusSetter_ValueParam {
-    #[doc = "`Init(crate::app::unitstatussetter::UnitStatusSetter)` overload"]
-    #[method(name = "Init", args = 1)]
-    pub fn init(self, setter: crate::app::unitstatussetter::UnitStatusSetter) -> ();
-
-    #[doc = "`SetOverride(crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::ui::image::Image)` overload"]
-    #[method(name = "SetOverride", args = 2)]
-    pub fn set_override(
-        self,
-        text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        arrow: crate::unity_engine::ui::image::Image,
-    ) -> ();
-
-    #[doc = "`SetOverrideTitle(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetOverrideTitle", args = 1)]
-    pub fn set_override_title(self, title: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetValue(crate::app::unitparamdetail::UnitParamDetail, bool, bool)` overload"]
-    #[method(name = "SetValue", args = 3)]
-    pub fn set_value(
-        self,
-        detail: crate::app::unitparamdetail::UnitParamDetail,
-        is_limit: bool,
-        is_god_change: bool,
-    ) -> ();
-
-    #[doc = "`SetValueNoEnhance(crate::app::unitparamdetail::UnitParamDetail, bool)` overload"]
-    #[method(name = "SetValueNoEnhance", args = 2)]
-    pub fn set_value_no_enhance(
-        self,
-        detail: crate::app::unitparamdetail::UnitParamDetail,
-        is_limit: bool,
-    ) -> ();
-
-    #[doc = "`SetValueDirect(::unity2::Il2CppString, i32, bool)` overload"]
-    #[method(name = "SetValueDirect", args = 3)]
-    pub fn set_value_direct(self, str: ::unity2::Il2CppString, dir: i32, is_limit: bool) -> ();
-
-    #[doc = "`SetBalloon(i32, crate::app::unitstatussetter::UnitStatusSetter_RingType)` overload"]
-    #[method(name = "SetBalloon", args = 2)]
-    pub fn set_balloon(
-        self,
-        up_value: i32,
-        ring_type: crate::app::unitstatussetter::UnitStatusSetter_RingType,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitstatussetter")]
-impl UnitStatusSetter_ValueParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitStatusSetter_ValueParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitStatusSetter_ValueParamMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_WeaponLevelSetter.md")))]
-#[::unity2::class(namespace = "App", name = "UnitStatusSetter.WeaponLevelSetter")]
-#[parent(crate::system::object::Object)]
-pub struct UnitStatusSetter_WeaponLevelSetter {
-    #[rename(name = "m_root")]
-    pub m_root: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_icon")]
-    pub m_icon: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_level")]
-    pub m_level: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-}
-
-#[cfg(feature = "app-unitstatussetter")]
-#[::unity2::methods]
-impl UnitStatusSetter_WeaponLevelSetter {
-    #[doc = "`Init()` overload"]
-    #[method(name = "Init", args = 0)]
-    pub fn init(self) -> ();
-
-    #[doc = "`Set(crate::app::itemdata::ItemData_Kinds, crate::app::weaponlevel::WeaponLevel_Kind, i32, crate::app::jobdata::JobData)` overload"]
-    #[method(name = "Set", args = 4)]
-    pub fn set(
-        self,
-        kind: crate::app::itemdata::ItemData_Kinds,
-        level: crate::app::weaponlevel::WeaponLevel_Kind,
-        diff: i32,
-        job_data: crate::app::jobdata::JobData,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitstatussetter")]
-impl UnitStatusSetter_WeaponLevelSetter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitStatusSetter_WeaponLevelSetter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitStatusSetter_WeaponLevelSetterMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_GodBuffType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitStatusSetter_GodBuffType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitStatusSetter_GodBuffType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitStatusSetter.GodBuffType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitStatusSetter_GodBuffType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitStatusSetter_GodBuffType {
-    pub fn blue() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn red() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn count() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_ForceType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitStatusSetter_ForceType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitStatusSetter_ForceType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitStatusSetter.ForceType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitStatusSetter_ForceType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitStatusSetter_ForceType {
-    pub fn player() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn enemy() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn ally() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn f4th() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn count() -> Self {
-        Self { value: 4 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitstatussetter/UnitStatusSetter_WdwType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitStatusSetter_WdwType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitStatusSetter_WdwType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitStatusSetter.WdwType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitStatusSetter_WdwType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitStatusSetter_WdwType {
-    pub fn default() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn synchro_blue() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn synchro_red() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn synchro_green() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn engage_blue() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn engage_red() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn synchro_yellow() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn count() -> Self {
-        Self { value: 7 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitstatussetter/UnitStatusSetter_SkillSetter.md")))]
-#[::unity2::class(namespace = "App", name = "UnitStatusSetter.SkillSetter")]
-#[parent(crate::system::object::Object)]
-pub struct UnitStatusSetter_SkillSetter {
-    #[rename(name = "m_root")]
-    pub m_root: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_icon")]
-    pub m_icon: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_name")]
-    pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_godBuffImage")]
-    pub m_god_buff_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_styleBonus")]
-    pub m_style_bonus: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_setter")]
-    pub m_setter: crate::app::unitstatussetter::UnitStatusSetter,
-}
-
-#[cfg(feature = "app-unitstatussetter")]
-#[::unity2::methods]
-impl UnitStatusSetter_SkillSetter {
-    #[doc = "`Init(crate::app::unitstatussetter::UnitStatusSetter)` overload"]
-    #[method(name = "Init", args = 1)]
-    pub fn init(self, setter: crate::app::unitstatussetter::UnitStatusSetter) -> ();
-
-    #[doc = "`Disable()` overload"]
-    #[method(name = "Disable", args = 0)]
-    pub fn disable(self) -> ();
-
-    #[doc = "`Set(crate::app::skilldata::SkillData, bool, crate::app::unitstatussetter::UnitStatusSetter_RingType)` overload"]
-    #[method(name = "Set", args = 3)]
-    pub fn set(
-        self,
-        skill: crate::app::skilldata::SkillData,
-        is_active: bool,
-        r#type: crate::app::unitstatussetter::UnitStatusSetter_RingType,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitstatussetter")]
-impl UnitStatusSetter_SkillSetter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitStatusSetter_SkillSetter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitStatusSetter_SkillSetterMethods>::ctor(this);
         this
     }
 }

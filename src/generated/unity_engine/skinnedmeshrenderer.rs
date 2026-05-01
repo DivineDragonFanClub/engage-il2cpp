@@ -10,7 +10,7 @@ use crate::unity_engine::renderer::IRenderer;
 use crate::unity_engine::renderer::Renderer;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/skinnedmeshrenderer/SkinnedMeshRenderer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/skinnedmeshrenderer/SkinnedMeshRenderer.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "SkinnedMeshRenderer")]
 #[parent(crate::unity_engine::renderer::Renderer)]
 pub struct SkinnedMeshRenderer {}

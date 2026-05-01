@@ -12,355 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_NextMode.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapSequenceHuman_NextMode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSequenceHuman_NextMode {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceHuman.NextMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSequenceHuman_NextMode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapSequenceHuman_NextMode {
-    pub fn closest() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn patrol() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn order() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapSequenceHuman_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSequenceHuman_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceHuman.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSequenceHuman_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapSequenceHuman_Label {
-    pub fn start_branch() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn free_cursor() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn pick_cursor() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn pick_cursor_resume() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn pick_cursor_tick() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn pick_cursor_wait() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn pick_free_cursor() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn pick_move_resume() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn pick_engage_start() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn pick_engage_cancel() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn system_menu() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn troop_list() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn rewind_menu() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn sortie_position_change() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn sortie_end_dialog() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn unit_move() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn unit_command() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn unit_sub_command() -> Self {
-        Self { value: 17 }
-    }
-
-    pub fn item_menu_attack() -> Self {
-        Self { value: 18 }
-    }
-
-    pub fn item_menu_engage_attack() -> Self {
-        Self { value: 19 }
-    }
-
-    pub fn item_menu_engage_charge() -> Self {
-        Self { value: 20 }
-    }
-
-    pub fn item_menu_engage_wait() -> Self {
-        Self { value: 21 }
-    }
-
-    pub fn item_menu_engage_rod() -> Self {
-        Self { value: 22 }
-    }
-
-    pub fn item_menu_cannon() -> Self {
-        Self { value: 23 }
-    }
-
-    pub fn item_menu_destroy() -> Self {
-        Self { value: 24 }
-    }
-
-    pub fn item_menu_rod() -> Self {
-        Self { value: 25 }
-    }
-
-    pub fn item_menu_item() -> Self {
-        Self { value: 26 }
-    }
-
-    pub fn item_menu_trade() -> Self {
-        Self { value: 27 }
-    }
-
-    pub fn item_menu_full_bullet() -> Self {
-        Self { value: 28 }
-    }
-
-    pub fn item_menu_enchant_item() -> Self {
-        Self { value: 29 }
-    }
-
-    pub fn item_menu_enchant_weapon() -> Self {
-        Self { value: 30 }
-    }
-
-    pub fn transporter_menu() -> Self {
-        Self { value: 31 }
-    }
-
-    pub fn target_select() -> Self {
-        Self { value: 32 }
-    }
-
-    pub fn warp_cursor() -> Self {
-        Self { value: 33 }
-    }
-
-    pub fn rewarp_cursor() -> Self {
-        Self { value: 34 }
-    }
-
-    pub fn creation_cursor() -> Self {
-        Self { value: 35 }
-    }
-
-    pub fn fire_cannon_cursor() -> Self {
-        Self { value: 36 }
-    }
-
-    pub fn full_bullet_cursor() -> Self {
-        Self { value: 37 }
-    }
-
-    pub fn talk() -> Self {
-        Self { value: 38 }
-    }
-
-    pub fn engage_start() -> Self {
-        Self { value: 39 }
-    }
-
-    pub fn engage_link() -> Self {
-        Self { value: 40 }
-    }
-
-    pub fn engage_rewarp() -> Self {
-        Self { value: 41 }
-    }
-
-    pub fn engage_rewarp_cancel() -> Self {
-        Self { value: 42 }
-    }
-
-    pub fn engage_summon_menu() -> Self {
-        Self { value: 43 }
-    }
-
-    pub fn engage_summon_back() -> Self {
-        Self { value: 44 }
-    }
-
-    pub fn god_change() -> Self {
-        Self { value: 45 }
-    }
-
-    pub fn mind() -> Self {
-        Self { value: 46 }
-    }
-
-    pub fn save_menu() -> Self {
-        Self { value: 47 }
-    }
-
-    pub fn suspend_menu() -> Self {
-        Self { value: 48 }
-    }
-
-    pub fn turn_end() -> Self {
-        Self { value: 49 }
-    }
-
-    pub fn job_intro() -> Self {
-        Self { value: 50 }
-    }
-
-    pub fn direct_attack() -> Self {
-        Self { value: 51 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 52 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_OperateMode.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapSequenceHuman_OperateMode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSequenceHuman_OperateMode {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceHuman.OperateMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSequenceHuman_OperateMode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapSequenceHuman_OperateMode {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn direct() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn indirect() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn designate() -> Self {
-        Self { value: 3 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehuman/MapSequenceHuman.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencehuman/MapSequenceHuman.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceHuman")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencehuman :: MapSequenceHuman >)]
 pub struct MapSequenceHuman {
@@ -1189,5 +841,353 @@ impl MapSequenceHuman {
         });
         <Self as IMapSequenceHumanMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_NextMode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceHuman_NextMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceHuman_NextMode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceHuman.NextMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceHuman_NextMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceHuman_NextMode {
+    pub fn closest() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn patrol() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn order() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_OperateMode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceHuman_OperateMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceHuman_OperateMode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceHuman.OperateMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceHuman_OperateMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceHuman_OperateMode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn direct() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn indirect() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn designate() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencehuman/MapSequenceHuman_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceHuman_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceHuman_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceHuman.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceHuman_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceHuman_Label {
+    pub fn start_branch() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn free_cursor() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn pick_cursor() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn pick_cursor_resume() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn pick_cursor_tick() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn pick_cursor_wait() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn pick_free_cursor() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn pick_move_resume() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn pick_engage_start() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn pick_engage_cancel() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn system_menu() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn troop_list() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn rewind_menu() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn sortie_position_change() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn sortie_end_dialog() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn unit_move() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn unit_command() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn unit_sub_command() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn item_menu_attack() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn item_menu_engage_attack() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn item_menu_engage_charge() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn item_menu_engage_wait() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn item_menu_engage_rod() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn item_menu_cannon() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn item_menu_destroy() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn item_menu_rod() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn item_menu_item() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn item_menu_trade() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn item_menu_full_bullet() -> Self {
+        Self { value: 28 }
+    }
+
+    pub fn item_menu_enchant_item() -> Self {
+        Self { value: 29 }
+    }
+
+    pub fn item_menu_enchant_weapon() -> Self {
+        Self { value: 30 }
+    }
+
+    pub fn transporter_menu() -> Self {
+        Self { value: 31 }
+    }
+
+    pub fn target_select() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn warp_cursor() -> Self {
+        Self { value: 33 }
+    }
+
+    pub fn rewarp_cursor() -> Self {
+        Self { value: 34 }
+    }
+
+    pub fn creation_cursor() -> Self {
+        Self { value: 35 }
+    }
+
+    pub fn fire_cannon_cursor() -> Self {
+        Self { value: 36 }
+    }
+
+    pub fn full_bullet_cursor() -> Self {
+        Self { value: 37 }
+    }
+
+    pub fn talk() -> Self {
+        Self { value: 38 }
+    }
+
+    pub fn engage_start() -> Self {
+        Self { value: 39 }
+    }
+
+    pub fn engage_link() -> Self {
+        Self { value: 40 }
+    }
+
+    pub fn engage_rewarp() -> Self {
+        Self { value: 41 }
+    }
+
+    pub fn engage_rewarp_cancel() -> Self {
+        Self { value: 42 }
+    }
+
+    pub fn engage_summon_menu() -> Self {
+        Self { value: 43 }
+    }
+
+    pub fn engage_summon_back() -> Self {
+        Self { value: 44 }
+    }
+
+    pub fn god_change() -> Self {
+        Self { value: 45 }
+    }
+
+    pub fn mind() -> Self {
+        Self { value: 46 }
+    }
+
+    pub fn save_menu() -> Self {
+        Self { value: 47 }
+    }
+
+    pub fn suspend_menu() -> Self {
+        Self { value: 48 }
+    }
+
+    pub fn turn_end() -> Self {
+        Self { value: 49 }
+    }
+
+    pub fn job_intro() -> Self {
+        Self { value: 50 }
+    }
+
+    pub fn direct_attack() -> Self {
+        Self { value: 51 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 52 }
     }
 }

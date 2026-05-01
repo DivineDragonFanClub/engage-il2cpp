@@ -8,54 +8,7 @@ use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
 use crate::unity_engine::playables::playablebehaviour::PlayableBehaviour;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour_NotificationEntry.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TimeNotificationBehaviour_NotificationEntry {
-    pub time: f64,
-    pub payload: crate::unity_engine::playables::inotification::INotification,
-    pub notification_fired: bool,
-    pub flags: crate::unity_engine::timeline::notificationflags::NotificationFlags,
-}
-
-impl ::unity2::ClassIdentity for TimeNotificationBehaviour_NotificationEntry {
-    const NAMESPACE: &'static str = "UnityEngine.Timeline";
-
-    const NAME: &'static str = "TimeNotificationBehaviour.NotificationEntry";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TimeNotificationBehaviour_NotificationEntry {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
-#[::unity2::methods(value)]
-impl TimeNotificationBehaviour_NotificationEntry {
-    #[doc = "`get_triggerInEditor()` overload"]
-    #[method(name = "get_triggerInEditor", args = 0)]
-    pub fn get_trigger_in_editor(self) -> bool;
-
-    #[doc = "`get_prewarm()` overload"]
-    #[method(name = "get_prewarm", args = 0)]
-    pub fn get_prewarm(self) -> bool;
-
-    #[doc = "`get_triggerOnce()` overload"]
-    #[method(name = "get_triggerOnce", args = 0)]
-    pub fn get_trigger_once(self) -> bool;
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour.md"))]
 #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimeNotificationBehaviour")]
 #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
 pub struct TimeNotificationBehaviour {
@@ -176,4 +129,51 @@ impl TimeNotificationBehaviour {
         <Self as ITimeNotificationBehaviourMethods>::ctor(this);
         this
     }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timenotificationbehaviour/TimeNotificationBehaviour_NotificationEntry.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TimeNotificationBehaviour_NotificationEntry {
+    pub time: f64,
+    pub payload: crate::unity_engine::playables::inotification::INotification,
+    pub notification_fired: bool,
+    pub flags: crate::unity_engine::timeline::notificationflags::NotificationFlags,
+}
+
+impl ::unity2::ClassIdentity for TimeNotificationBehaviour_NotificationEntry {
+    const NAMESPACE: &'static str = "UnityEngine.Timeline";
+
+    const NAME: &'static str = "TimeNotificationBehaviour.NotificationEntry";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TimeNotificationBehaviour_NotificationEntry {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-timeline-timenotificationbehaviour")]
+#[::unity2::methods(value)]
+impl TimeNotificationBehaviour_NotificationEntry {
+    #[doc = "`get_triggerInEditor()` overload"]
+    #[method(name = "get_triggerInEditor", args = 0)]
+    pub fn get_trigger_in_editor(self) -> bool;
+
+    #[doc = "`get_prewarm()` overload"]
+    #[method(name = "get_prewarm", args = 0)]
+    pub fn get_prewarm(self) -> bool;
+
+    #[doc = "`get_triggerOnce()` overload"]
+    #[method(name = "get_triggerOnce", args = 0)]
+    pub fn get_trigger_once(self) -> bool;
 }

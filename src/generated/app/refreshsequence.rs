@@ -10,7 +10,87 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshsequence/RefreshSequence.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshsequence/RefreshSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RefreshSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RefreshSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RefreshSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RefreshSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RefreshSequence_Label {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn load_resources() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn create_root() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn facility_select() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn check_visited() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn unit_set() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn unit_select() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn confirm() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn demo() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn result() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 10 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshsequence/RefreshSequence.md"))]
 #[::unity2::class(namespace = "App", name = "RefreshSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct RefreshSequence {
@@ -144,85 +224,5 @@ impl RefreshSequence {
         });
         <Self as IRefreshSequenceMethods>::ctor(this, aid);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshsequence/RefreshSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RefreshSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RefreshSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RefreshSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RefreshSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RefreshSequence_Label {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn load_resources() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn create_root() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn facility_select() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn check_visited() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn unit_set() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn unit_select() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn confirm() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn demo() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn result() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 10 }
     }
 }

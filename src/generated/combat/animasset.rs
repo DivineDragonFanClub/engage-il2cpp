@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animasset/AnimAsset.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animasset/AnimAsset.md"))]
 #[::unity2::class(namespace = "Combat", name = "AnimAsset")]
 # [parent (crate :: combat :: characterassett_1 :: CharacterAssetT_1 < crate :: unity_engine :: animationclip :: AnimationClip >)]
 pub struct AnimAsset {}

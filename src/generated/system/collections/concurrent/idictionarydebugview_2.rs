@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/idictionarydebugview_2/IDictionaryDebugView_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/concurrent/idictionarydebugview_2/IDictionaryDebugView_2.md"))]
 #[::unity2::class(
     namespace = "System.Collections.Concurrent",
     name = "IDictionaryDebugView`2"

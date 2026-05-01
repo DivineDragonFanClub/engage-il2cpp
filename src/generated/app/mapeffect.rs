@@ -10,36 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeffect/MapEffect_LocationPool.md")))]
-#[::unity2::class(namespace = "App", name = "MapEffect.LocationPool")]
-# [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: mapeffect :: MapEffect_LocationNode >)]
-pub struct MapEffect_LocationPool {}
-
-#[cfg(feature = "app-mapeffect")]
-#[::unity2::methods]
-impl MapEffect_LocationPool {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapeffect")]
-impl MapEffect_LocationPool {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapEffect_LocationPool),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapEffect_LocationPoolMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeffect/MapEffect.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeffect/MapEffect.md"))]
 #[::unity2::class(namespace = "App", name = "MapEffect")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapeffect :: MapEffect >)]
 pub struct MapEffect {
@@ -253,7 +224,36 @@ impl MapEffect {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeffect/MapEffect_LocationNode.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeffect/MapEffect_LocationPool.md"))]
+#[::unity2::class(namespace = "App", name = "MapEffect.LocationPool")]
+# [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: mapeffect :: MapEffect_LocationNode >)]
+pub struct MapEffect_LocationPool {}
+
+#[cfg(feature = "app-mapeffect")]
+#[::unity2::methods]
+impl MapEffect_LocationPool {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapeffect")]
+impl MapEffect_LocationPool {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapEffect_LocationPool),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapEffect_LocationPoolMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeffect/MapEffect_LocationNode.md"))]
 #[::unity2::class(namespace = "App", name = "MapEffect.LocationNode")]
 #[parent(crate::app::pool::Pool_Node)]
 pub struct MapEffect_LocationNode {

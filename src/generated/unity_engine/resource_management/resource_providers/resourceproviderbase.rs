@@ -6,7 +6,7 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/resourceproviderbase/ResourceProviderBase.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/resourceproviderbase/ResourceProviderBase.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.ResourceProviders",
     name = "ResourceProviderBase"
@@ -94,7 +94,7 @@ impl ResourceProviderBase {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/resourceproviderbase/ResourceProviderBase_BaseInitAsyncOp.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/resourceproviderbase/ResourceProviderBase_BaseInitAsyncOp.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.ResourceProviders",
     name = "ResourceProviderBase.BaseInitAsyncOp"

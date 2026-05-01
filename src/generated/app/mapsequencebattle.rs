@@ -22,221 +22,40 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_RangeWarpTargets.md")))]
-#[::unity2::class(namespace = "App", name = "MapSequenceBattle.RangeWarpTargets")]
-# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
-pub struct MapSequenceBattle_RangeWarpTargets {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_BitFieldStatus.md"))]
+#[::unity2::class(namespace = "App", name = "MapSequenceBattle.BitFieldStatus")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsequencebattle :: MapSequenceBattle_Status >)]
+pub struct MapSequenceBattle_BitFieldStatus {}
 
 #[cfg(feature = "app-mapsequencebattle")]
 #[::unity2::methods]
-impl MapSequenceBattle_RangeWarpTargets {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, bool)` overload"]
-    #[method(name = ".ctor", args = 6)]
-    pub fn ctor(
-        self,
-        rod_unit: crate::app::unit::Unit,
-        unit: crate::app::unit::Unit,
-        range: i32,
-        warp_x: i32,
-        warp_z: i32,
-        can_self: bool,
-    ) -> ();
+impl MapSequenceBattle_BitFieldStatus {
+    #[doc = "`ToInt(crate::app::mapsequencebattle::MapSequenceBattle_Status)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::mapsequencebattle::MapSequenceBattle_Status) -> i32;
 
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-mapsequencebattle")]
-impl MapSequenceBattle_RangeWarpTargets {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, bool)` — overload selector"]
-    pub fn new(
-        rod_unit: crate::app::unit::Unit,
-        unit: crate::app::unit::Unit,
-        range: i32,
-        warp_x: i32,
-        warp_z: i32,
-        can_self: bool,
-    ) -> Self {
+impl MapSequenceBattle_BitFieldStatus {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceBattle_RangeWarpTargets),
+                ::core::stringify!(MapSequenceBattle_BitFieldStatus),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapSequenceBattle_RangeWarpTargetsMethods>::ctor(
-            this, rod_unit, unit, range, warp_x, warp_z, can_self,
-        );
+        <Self as IMapSequenceBattle_BitFieldStatusMethods>::ctor(this);
         this
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapSequenceBattle_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSequenceBattle_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceBattle.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSequenceBattle_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapSequenceBattle_Label {
-    pub fn battle_start() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn combat_rod() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn simple_rod() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn destroy() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn combat_battle() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn simple_battle() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn multi_battle_start() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn multi_battle_loop() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn multi_battle_skip() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn multi_battle_end() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn die() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn grow() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn combat_after() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn commit() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn after() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn last_boss_die() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn engage_turn_recovery() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn hp_stock_create() -> Self {
-        Self { value: 17 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 18 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Kinds.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapSequenceBattle_Kinds {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSequenceBattle_Kinds {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceBattle.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSequenceBattle_Kinds {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapSequenceBattle_Kinds {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn battle() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn destroy() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn rod() -> Self {
-        Self { value: 3 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_UnitList.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_UnitList.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceBattle.UnitList")]
 # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
 pub struct MapSequenceBattle_UnitList {}
@@ -269,7 +88,7 @@ impl MapSequenceBattle_UnitList {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceBattle")]
 # [parent (crate :: app :: commonbattlesequence_1 :: CommonBattleSequence_1 < crate :: app :: mapsequencebattle :: MapSequenceBattle >)]
 pub struct MapSequenceBattle {
@@ -704,7 +523,169 @@ impl MapSequenceBattle {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Status.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_RangeWarpTargets.md"))]
+#[::unity2::class(namespace = "App", name = "MapSequenceBattle.RangeWarpTargets")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
+pub struct MapSequenceBattle_RangeWarpTargets {}
+
+#[cfg(feature = "app-mapsequencebattle")]
+#[::unity2::methods]
+impl MapSequenceBattle_RangeWarpTargets {
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, bool)` overload"]
+    #[method(name = ".ctor", args = 6)]
+    pub fn ctor(
+        self,
+        rod_unit: crate::app::unit::Unit,
+        unit: crate::app::unit::Unit,
+        range: i32,
+        warp_x: i32,
+        warp_z: i32,
+        can_self: bool,
+    ) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencebattle")]
+impl MapSequenceBattle_RangeWarpTargets {
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, bool)` — overload selector"]
+    pub fn new(
+        rod_unit: crate::app::unit::Unit,
+        unit: crate::app::unit::Unit,
+        range: i32,
+        warp_x: i32,
+        warp_z: i32,
+        can_self: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceBattle_RangeWarpTargets),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceBattle_RangeWarpTargetsMethods>::ctor(
+            this, rod_unit, unit, range, warp_x, warp_z, can_self,
+        );
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceBattle_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceBattle_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceBattle.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceBattle_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceBattle_Label {
+    pub fn battle_start() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn combat_rod() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn simple_rod() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn combat_battle() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn simple_battle() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn multi_battle_start() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn multi_battle_loop() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn multi_battle_skip() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn multi_battle_end() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn die() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn grow() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn combat_after() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn commit() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn after() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn last_boss_die() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn engage_turn_recovery() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn hp_stock_create() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 18 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Status.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -760,40 +741,59 @@ impl MapSequenceBattle_Status {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencebattle/MapSequenceBattle_BitFieldStatus.md")))]
-#[::unity2::class(namespace = "App", name = "MapSequenceBattle.BitFieldStatus")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsequencebattle :: MapSequenceBattle_Status >)]
-pub struct MapSequenceBattle_BitFieldStatus {}
-
-#[cfg(feature = "app-mapsequencebattle")]
-#[::unity2::methods]
-impl MapSequenceBattle_BitFieldStatus {
-    #[doc = "`ToInt(crate::app::mapsequencebattle::MapSequenceBattle_Status)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::mapsequencebattle::MapSequenceBattle_Status) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_Kinds.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceBattle_Kinds {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-mapsequencebattle")]
-impl MapSequenceBattle_BitFieldStatus {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceBattle_BitFieldStatus),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceBattle_BitFieldStatusMethods>::ctor(this);
-        this
+impl ::unity2::ClassIdentity for MapSequenceBattle_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceBattle.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_BattleUnitScope.md")))]
+impl ::unity2::IlType for MapSequenceBattle_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceBattle_Kinds {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn battle() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencebattle/MapSequenceBattle_BattleUnitScope.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct MapSequenceBattle_BattleUnitScope {

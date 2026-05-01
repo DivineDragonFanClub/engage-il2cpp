@@ -10,45 +10,83 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_ShowUIEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "AccessoryShopChangeRootProc.ShowUIEventHandler"
+    name = "AccessoryShopChangeRootProc.ChangeUnitToPrevEventHandler"
 )]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AccessoryShopChangeRootProc_ShowUIEventHandler {}
+pub struct AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler {}
 
 #[cfg(feature = "app-accessoryshopchangerootproc")]
 #[::unity2::methods]
-impl AccessoryShopChangeRootProc_ShowUIEventHandler {
+impl AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+    #[doc = "`Invoke(bool)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, watching: bool) -> ();
 }
 
 #[cfg(feature = "app-accessoryshopchangerootproc")]
-impl AccessoryShopChangeRootProc_ShowUIEventHandler {
+impl AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryShopChangeRootProc_ShowUIEventHandler),
+                ::core::stringify!(AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IAccessoryShopChangeRootProc_ShowUIEventHandlerMethods>::ctor(
+        <Self as IAccessoryShopChangeRootProc_ChangeUnitToPrevEventHandlerMethods>::ctor(
             this, object, method,
         );
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "AccessoryShopChangeRootProc.ChangeUnitToNextEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler {}
+
+#[cfg(feature = "app-accessoryshopchangerootproc")]
+#[::unity2::methods]
+impl AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(bool)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, watching: bool) -> ();
+}
+
+#[cfg(feature = "app-accessoryshopchangerootproc")]
+impl AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopChangeRootProc_ChangeUnitToNextEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc.md"))]
 #[::unity2::class(namespace = "App", name = "AccessoryShopChangeRootProc")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct AccessoryShopChangeRootProc {
@@ -132,55 +170,17 @@ impl AccessoryShopChangeRootProc {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_ShowUIEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "AccessoryShopChangeRootProc.ChangeUnitToNextEventHandler"
+    name = "AccessoryShopChangeRootProc.ShowUIEventHandler"
 )]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler {}
+pub struct AccessoryShopChangeRootProc_ShowUIEventHandler {}
 
 #[cfg(feature = "app-accessoryshopchangerootproc")]
 #[::unity2::methods]
-impl AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(bool)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, watching: bool) -> ();
-}
-
-#[cfg(feature = "app-accessoryshopchangerootproc")]
-impl AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccessoryShopChangeRootProc_ChangeUnitToNextEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_HideUIEventHandler.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "AccessoryShopChangeRootProc.HideUIEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AccessoryShopChangeRootProc_HideUIEventHandler {}
-
-#[cfg(feature = "app-accessoryshopchangerootproc")]
-#[::unity2::methods]
-impl AccessoryShopChangeRootProc_HideUIEventHandler {
+impl AccessoryShopChangeRootProc_ShowUIEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
@@ -191,62 +191,24 @@ impl AccessoryShopChangeRootProc_HideUIEventHandler {
 }
 
 #[cfg(feature = "app-accessoryshopchangerootproc")]
-impl AccessoryShopChangeRootProc_HideUIEventHandler {
+impl AccessoryShopChangeRootProc_ShowUIEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryShopChangeRootProc_HideUIEventHandler),
+                ::core::stringify!(AccessoryShopChangeRootProc_ShowUIEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IAccessoryShopChangeRootProc_HideUIEventHandlerMethods>::ctor(
+        <Self as IAccessoryShopChangeRootProc_ShowUIEventHandlerMethods>::ctor(
             this, object, method,
         );
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "AccessoryShopChangeRootProc.ChangeUnitToPrevEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler {}
-
-#[cfg(feature = "app-accessoryshopchangerootproc")]
-#[::unity2::methods]
-impl AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(bool)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, watching: bool) -> ();
-}
-
-#[cfg(feature = "app-accessoryshopchangerootproc")]
-impl AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccessoryShopChangeRootProc_ChangeUnitToPrevEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_StartWatchingEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_StartWatchingEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "AccessoryShopChangeRootProc.StartWatchingEventHandler"
@@ -284,7 +246,7 @@ impl AccessoryShopChangeRootProc_StartWatchingEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_EndWatchingEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_EndWatchingEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "AccessoryShopChangeRootProc.EndWatchingEventHandler"
@@ -316,6 +278,44 @@ impl AccessoryShopChangeRootProc_EndWatchingEventHandler {
             )
         });
         <Self as IAccessoryShopChangeRootProc_EndWatchingEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_HideUIEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "AccessoryShopChangeRootProc.HideUIEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AccessoryShopChangeRootProc_HideUIEventHandler {}
+
+#[cfg(feature = "app-accessoryshopchangerootproc")]
+#[::unity2::methods]
+impl AccessoryShopChangeRootProc_HideUIEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-accessoryshopchangerootproc")]
+impl AccessoryShopChangeRootProc_HideUIEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopChangeRootProc_HideUIEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopChangeRootProc_HideUIEventHandlerMethods>::ctor(
             this, object, method,
         );
         this

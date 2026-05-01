@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_EndCallback.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_EndCallback.md"))]
 #[::unity2::class(namespace = "App", name = "VersusSendReportSequence.EndCallback")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct VersusSendReportSequence_EndCallback {}
@@ -47,76 +47,51 @@ impl VersusSendReportSequence_EndCallback {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_UploadInfo.md")))]
-#[::unity2::class(namespace = "App", name = "VersusSendReportSequence.UploadInfo")]
-#[parent(crate::system::object::Object)]
-pub struct VersusSendReportSequence_UploadInfo {}
-
-#[cfg(feature = "app-versussendreportsequence")]
-#[::unity2::methods]
-impl VersusSendReportSequence_UploadInfo {
-    #[doc = "`set_DataId(u64)` overload"]
-    #[method(name = "set_DataId", args = 1)]
-    pub fn set_data_id(self, value: u64) -> ();
-
-    #[doc = "`get_DataId()` overload"]
-    #[method(name = "get_DataId", args = 0)]
-    pub fn get_data_id(self) -> u64;
-
-    #[doc = "`set_ScreenShotId(u64)` overload"]
-    #[method(name = "set_ScreenShotId", args = 1)]
-    pub fn set_screen_shot_id(self, value: u64) -> ();
-
-    #[doc = "`get_ScreenShotId()` overload"]
-    #[method(name = "get_ScreenShotId", args = 0)]
-    pub fn get_screen_shot_id(self) -> u64;
-
-    #[doc = "`set_Reason(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Reason", args = 1)]
-    pub fn set_reason(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Reason()` overload"]
-    #[method(name = "get_Reason", args = 0)]
-    pub fn get_reason(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_PrincipalId(u64)` overload"]
-    #[method(name = "set_PrincipalId", args = 1)]
-    pub fn set_principal_id(self, value: u64) -> ();
-
-    #[doc = "`get_PrincipalId()` overload"]
-    #[method(name = "get_PrincipalId", args = 0)]
-    pub fn get_principal_id(self) -> u64;
-
-    #[doc = "`set_Language(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Language", args = 1)]
-    pub fn set_language(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Language()` overload"]
-    #[method(name = "get_Language", args = 0)]
-    pub fn get_language(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussendreportsequence/VersusSendReportSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct VersusSendReportSequence_Label {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-versussendreportsequence")]
-impl VersusSendReportSequence_UploadInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSendReportSequence_UploadInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSendReportSequence_UploadInfoMethods>::ctor(this);
-        this
+impl ::unity2::ClassIdentity for VersusSendReportSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "VersusSendReportSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence.md")))]
+impl ::unity2::IlType for VersusSendReportSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl VersusSendReportSequence_Label {
+    pub fn error() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence.md"))]
 #[::unity2::class(namespace = "App", name = "VersusSendReportSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct VersusSendReportSequence {
@@ -200,46 +175,71 @@ impl VersusSendReportSequence {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussendreportsequence/VersusSendReportSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct VersusSendReportSequence_Label {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_UploadInfo.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSendReportSequence.UploadInfo")]
+#[parent(crate::system::object::Object)]
+pub struct VersusSendReportSequence_UploadInfo {}
+
+#[cfg(feature = "app-versussendreportsequence")]
+#[::unity2::methods]
+impl VersusSendReportSequence_UploadInfo {
+    #[doc = "`set_DataId(u64)` overload"]
+    #[method(name = "set_DataId", args = 1)]
+    pub fn set_data_id(self, value: u64) -> ();
+
+    #[doc = "`get_DataId()` overload"]
+    #[method(name = "get_DataId", args = 0)]
+    pub fn get_data_id(self) -> u64;
+
+    #[doc = "`set_ScreenShotId(u64)` overload"]
+    #[method(name = "set_ScreenShotId", args = 1)]
+    pub fn set_screen_shot_id(self, value: u64) -> ();
+
+    #[doc = "`get_ScreenShotId()` overload"]
+    #[method(name = "get_ScreenShotId", args = 0)]
+    pub fn get_screen_shot_id(self) -> u64;
+
+    #[doc = "`set_Reason(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Reason", args = 1)]
+    pub fn set_reason(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Reason()` overload"]
+    #[method(name = "get_Reason", args = 0)]
+    pub fn get_reason(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_PrincipalId(u64)` overload"]
+    #[method(name = "set_PrincipalId", args = 1)]
+    pub fn set_principal_id(self, value: u64) -> ();
+
+    #[doc = "`get_PrincipalId()` overload"]
+    #[method(name = "get_PrincipalId", args = 0)]
+    pub fn get_principal_id(self) -> u64;
+
+    #[doc = "`set_Language(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Language", args = 1)]
+    pub fn set_language(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Language()` overload"]
+    #[method(name = "get_Language", args = 0)]
+    pub fn get_language(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
-impl ::unity2::ClassIdentity for VersusSendReportSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "VersusSendReportSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for VersusSendReportSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl VersusSendReportSequence_Label {
-    pub fn error() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 1 }
+#[cfg(feature = "app-versussendreportsequence")]
+impl VersusSendReportSequence_UploadInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSendReportSequence_UploadInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSendReportSequence_UploadInfoMethods>::ctor(this);
+        this
     }
 }

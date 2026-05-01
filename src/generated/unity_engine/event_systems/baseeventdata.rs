@@ -6,7 +6,7 @@ use crate::unity_engine::event_systems::abstracteventdata::AbstractEventData;
 use crate::unity_engine::event_systems::abstracteventdata::IAbstractEventData;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/baseeventdata/BaseEventData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/baseeventdata/BaseEventData.md"))]
 #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "BaseEventData")]
 #[parent(crate::unity_engine::event_systems::abstracteventdata::AbstractEventData)]
 pub struct BaseEventData {

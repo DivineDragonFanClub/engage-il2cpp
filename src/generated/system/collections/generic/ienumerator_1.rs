@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ienumerator_1/IEnumerator_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/ienumerator_1/IEnumerator_1.md"))]
 #[::unity2::class(namespace = "System.Collections.Generic", name = "IEnumerator`1")]
 pub struct IEnumerator_1<T0: ::unity2::ClassIdentity> {}
 

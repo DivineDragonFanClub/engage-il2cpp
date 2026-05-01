@@ -6,7 +6,7 @@ use crate::unity_engine::trackedreference::ITrackedReference;
 use crate::unity_engine::trackedreference::TrackedReference;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animationstate/AnimationState.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animationstate/AnimationState.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "AnimationState")]
 #[parent(crate::unity_engine::trackedreference::TrackedReference)]
 pub struct AnimationState {}

@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestMethod.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestError.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -17,14 +17,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct UnityWebRequest_UnityWebRequestMethod {
+pub struct UnityWebRequest_UnityWebRequestError {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for UnityWebRequest_UnityWebRequestMethod {
+impl ::unity2::ClassIdentity for UnityWebRequest_UnityWebRequestError {
     const NAMESPACE: &'static str = "UnityEngine.Networking";
 
-    const NAME: &'static str = "UnityWebRequest.UnityWebRequestMethod";
+    const NAME: &'static str = "UnityWebRequest.UnityWebRequestError";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -33,7 +33,7 @@ impl ::unity2::ClassIdentity for UnityWebRequest_UnityWebRequestMethod {
     }
 }
 
-impl ::unity2::IlType for UnityWebRequest_UnityWebRequestMethod {
+impl ::unity2::IlType for UnityWebRequest_UnityWebRequestError {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -42,29 +42,125 @@ impl ::unity2::IlType for UnityWebRequest_UnityWebRequestMethod {
     }
 }
 
-impl UnityWebRequest_UnityWebRequestMethod {
-    pub fn get() -> Self {
+impl UnityWebRequest_UnityWebRequestError {
+    pub fn ok() -> Self {
         Self { value: 0 }
     }
 
-    pub fn post() -> Self {
+    pub fn unknown() -> Self {
         Self { value: 1 }
     }
 
-    pub fn put() -> Self {
+    pub fn sdk_error() -> Self {
         Self { value: 2 }
     }
 
-    pub fn head() -> Self {
+    pub fn unsupported_protocol() -> Self {
         Self { value: 3 }
     }
 
-    pub fn custom() -> Self {
+    pub fn malformatted_url() -> Self {
         Self { value: 4 }
+    }
+
+    pub fn cannot_resolve_proxy() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn cannot_resolve_host() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn cannot_connect_to_host() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn access_denied() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn generic_http_error() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn write_error() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn read_error() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn out_of_memory() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn timeout() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn http_post_error() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn ssl_cannot_connect() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn aborted() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn too_many_redirects() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn received_no_data() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn ssl_not_supported() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn failed_to_send_data() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn failed_to_receive_data() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn ssl_certificate_error() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn ssl_cipher_not_available() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn sslca_cert_error() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn unrecognized_content_encoding() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn login_failed() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn ssl_shutdown_failed() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn no_internet_connection() -> Self {
+        Self { value: 28 }
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/unitywebrequest/UnityWebRequest.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/unitywebrequest/UnityWebRequest.md"))]
 #[::unity2::class(namespace = "UnityEngine.Networking", name = "UnityWebRequest")]
 #[parent(crate::system::object::Object)]
 pub struct UnityWebRequest {
@@ -442,7 +538,7 @@ impl UnityWebRequest {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestError.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_UnityWebRequestMethod.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -451,14 +547,14 @@ impl UnityWebRequest {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct UnityWebRequest_UnityWebRequestError {
+pub struct UnityWebRequest_UnityWebRequestMethod {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for UnityWebRequest_UnityWebRequestError {
+impl ::unity2::ClassIdentity for UnityWebRequest_UnityWebRequestMethod {
     const NAMESPACE: &'static str = "UnityEngine.Networking";
 
-    const NAME: &'static str = "UnityWebRequest.UnityWebRequestError";
+    const NAME: &'static str = "UnityWebRequest.UnityWebRequestMethod";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -467,7 +563,7 @@ impl ::unity2::ClassIdentity for UnityWebRequest_UnityWebRequestError {
     }
 }
 
-impl ::unity2::IlType for UnityWebRequest_UnityWebRequestError {
+impl ::unity2::IlType for UnityWebRequest_UnityWebRequestMethod {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -476,125 +572,29 @@ impl ::unity2::IlType for UnityWebRequest_UnityWebRequestError {
     }
 }
 
-impl UnityWebRequest_UnityWebRequestError {
-    pub fn ok() -> Self {
+impl UnityWebRequest_UnityWebRequestMethod {
+    pub fn get() -> Self {
         Self { value: 0 }
     }
 
-    pub fn unknown() -> Self {
+    pub fn post() -> Self {
         Self { value: 1 }
     }
 
-    pub fn sdk_error() -> Self {
+    pub fn put() -> Self {
         Self { value: 2 }
     }
 
-    pub fn unsupported_protocol() -> Self {
+    pub fn head() -> Self {
         Self { value: 3 }
     }
 
-    pub fn malformatted_url() -> Self {
+    pub fn custom() -> Self {
         Self { value: 4 }
-    }
-
-    pub fn cannot_resolve_proxy() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn cannot_resolve_host() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn cannot_connect_to_host() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn access_denied() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn generic_http_error() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn write_error() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn read_error() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn out_of_memory() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn timeout() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn http_post_error() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn ssl_cannot_connect() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn aborted() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn too_many_redirects() -> Self {
-        Self { value: 17 }
-    }
-
-    pub fn received_no_data() -> Self {
-        Self { value: 18 }
-    }
-
-    pub fn ssl_not_supported() -> Self {
-        Self { value: 19 }
-    }
-
-    pub fn failed_to_send_data() -> Self {
-        Self { value: 20 }
-    }
-
-    pub fn failed_to_receive_data() -> Self {
-        Self { value: 21 }
-    }
-
-    pub fn ssl_certificate_error() -> Self {
-        Self { value: 22 }
-    }
-
-    pub fn ssl_cipher_not_available() -> Self {
-        Self { value: 23 }
-    }
-
-    pub fn sslca_cert_error() -> Self {
-        Self { value: 24 }
-    }
-
-    pub fn unrecognized_content_encoding() -> Self {
-        Self { value: 25 }
-    }
-
-    pub fn login_failed() -> Self {
-        Self { value: 26 }
-    }
-
-    pub fn ssl_shutdown_failed() -> Self {
-        Self { value: 27 }
-    }
-
-    pub fn no_internet_connection() -> Self {
-        Self { value: 28 }
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_Result.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/networking/unitywebrequest/UnityWebRequest_Result.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

@@ -16,7 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/water/waterv2/WaterV2_WaterMode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/water/waterv2/WaterV2_WaterMode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -64,7 +64,7 @@ impl WaterV2_WaterMode {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/waterv2/WaterV2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/water/waterv2/WaterV2.md"))]
 #[::unity2::class(namespace = "App.Water", name = "WaterV2")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct WaterV2 {

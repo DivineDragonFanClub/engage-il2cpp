@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/eventhandler/EventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/eventhandler/EventHandler.md"))]
 #[::unity2::class(namespace = "System", name = "EventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct EventHandler {}

@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystem/XRSystem_XRShaderIDs.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystem/XRSystem_XRShaderIDs.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
     name = "XRSystem.XRShaderIDs"
@@ -30,7 +30,7 @@ impl XRSystem_XRShaderIDs {
     pub fn cctor() -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystem/XRSystem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystem/XRSystem.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystem")]
 #[parent(crate::system::object::Object)]
 pub struct XRSystem {

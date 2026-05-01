@@ -6,55 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_PooledObject.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ObjectPool_1_PooledObject<T0> {
-    pub _phantom: ::core::marker::PhantomData<(T0,)>,
-}
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for ObjectPool_1_PooledObject<T0> {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "ObjectPool`1.PooledObject";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
-                .expect("generic instantiation")
-        })
-    }
-}
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for ObjectPool_1_PooledObject<T0> {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-objectpool_1_2")]
-#[::unity2::methods(value)]
-impl<T0: ::unity2::ClassIdentity> ObjectPool_1_PooledObject<T0> {
-    #[doc = "`.ctor(T0, crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        value: T0,
-        pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>,
-    ) -> ();
-
-    #[doc = "`System.IDisposable.Dispose()` overload"]
-    #[method(name = "System.IDisposable.Dispose", args = 0)]
-    pub fn system_i_disposable_dispose(self) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_2.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ObjectPool`1")]
 #[parent(crate::system::object::Object)]
 pub struct ObjectPool_1_2<T0: ::unity2::ClassIdentity> {
@@ -135,4 +87,52 @@ impl<T0: ::unity2::ClassIdentity> ObjectPool_1_2<T0> {
         );
         this
     }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/objectpool_1_2/ObjectPool_1_PooledObject.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ObjectPool_1_PooledObject<T0> {
+    pub _phantom: ::core::marker::PhantomData<(T0,)>,
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for ObjectPool_1_PooledObject<T0> {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "ObjectPool`1.PooledObject";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                .expect("generic instantiation")
+        })
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for ObjectPool_1_PooledObject<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-objectpool_1_2")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity> ObjectPool_1_PooledObject<T0> {
+    #[doc = "`.ctor(T0, crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        value: T0,
+        pool: crate::unity_engine::rendering::objectpool_1_2::ObjectPool_1_2<T0>,
+    ) -> ();
+
+    #[doc = "`System.IDisposable.Dispose()` overload"]
+    #[method(name = "System.IDisposable.Dispose", args = 0)]
+    pub fn system_i_disposable_dispose(self) -> ();
 }

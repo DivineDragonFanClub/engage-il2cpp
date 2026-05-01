@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavarunnable/AndroidJavaRunnable.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavarunnable/AndroidJavaRunnable.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "AndroidJavaRunnable")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct AndroidJavaRunnable {}

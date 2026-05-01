@@ -10,7 +10,7 @@ use crate::unity_engine::renderer::IRenderer;
 use crate::unity_engine::renderer::Renderer;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tilemaps/tilemaprenderer/TilemapRenderer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tilemaps/tilemaprenderer/TilemapRenderer.md"))]
 #[::unity2::class(namespace = "UnityEngine.Tilemaps", name = "TilemapRenderer")]
 #[parent(crate::unity_engine::renderer::Renderer)]
 pub struct TilemapRenderer {}

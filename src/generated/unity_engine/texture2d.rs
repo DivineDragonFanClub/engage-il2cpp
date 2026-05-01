@@ -8,7 +8,7 @@ use crate::unity_engine::texture::ITexture;
 use crate::unity_engine::texture::Texture;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/texture2d/Texture2D.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/texture2d/Texture2D.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "Texture2D")]
 #[parent(crate::unity_engine::texture::Texture)]
 pub struct Texture2D {}

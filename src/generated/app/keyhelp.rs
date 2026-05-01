@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp_UI_Element.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp_UI_Element.md"))]
 #[::unity2::class(namespace = "App", name = "KeyHelp.UI.Element")]
 #[parent(crate::system::object::Object)]
 pub struct KeyHelp_UI_Element {
@@ -56,7 +56,7 @@ impl KeyHelp_UI_Element {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/keyhelp/KeyHelp_Type.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/keyhelp/KeyHelp_Type.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -140,7 +140,7 @@ impl KeyHelp_Type {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp_UI.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp_UI.md"))]
 #[::unity2::class(namespace = "App", name = "KeyHelp.UI")]
 #[parent(crate::system::object::Object)]
 pub struct KeyHelp_UI {
@@ -226,7 +226,7 @@ impl KeyHelp_UI {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/keyhelp/KeyHelp.md"))]
 #[::unity2::class(namespace = "App", name = "KeyHelp")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: keyhelp :: KeyHelp >)]
 pub struct KeyHelp {

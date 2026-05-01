@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godpool/GodPool.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godpool/GodPool.md"))]
 #[::unity2::class(namespace = "App", name = "GodPool")]
 # [parent (crate :: app :: singletonpool_2 :: SingletonPool_2 < crate :: app :: godpool :: GodPool , crate :: app :: godunit :: GodUnit >)]
 pub struct GodPool {}

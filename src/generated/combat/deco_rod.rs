@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/deco_rod/Deco_Rod.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/deco_rod/Deco_Rod.md"))]
 #[::unity2::class(namespace = "Combat", name = "Deco_Rod")]
 #[parent(crate::combat::decorator::Decorator)]
 pub struct Deco_Rod {}

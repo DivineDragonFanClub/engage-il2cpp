@@ -16,288 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignMember_Type.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapTerrainInfoAlignment_AlignMember_Type {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapTerrainInfoAlignment_AlignMember_Type {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapTerrainInfoAlignment.AlignMember.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapTerrainInfoAlignment_AlignMember_Type {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapTerrainInfoAlignment_AlignMember_Type {
-    pub fn text() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn value() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn icon() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_Type.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapTerrainInfoAlignment_Type {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapTerrainInfoAlignment_Type {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapTerrainInfoAlignment.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapTerrainInfoAlignment_Type {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapTerrainInfoAlignment_Type {
-    pub fn left() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn right() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignParent.md")))]
-#[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment.AlignParent")]
-#[parent(crate::system::object::Object)]
-pub struct MapTerrainInfoAlignment_AlignParent {}
-
-#[cfg(feature = "app-mapterraininfoalignment")]
-#[::unity2::methods]
-impl MapTerrainInfoAlignment_AlignParent {
-    #[doc = "`get_rectTransform()` overload"]
-    #[method(name = "get_rectTransform", args = 0)]
-    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
-
-    #[doc = "`set_rectTransform(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "set_rectTransform", args = 1)]
-    pub fn set_rect_transform(self, value: crate::unity_engine::recttransform::RectTransform)
-        -> ();
-
-    #[doc = "`get_script()` overload"]
-    #[method(name = "get_script", args = 0)]
-    pub fn get_script(
-        self,
-    ) -> crate::app::mapterraininfoalignmentmember::MapTerrainInfoAlignmentMember;
-
-    #[doc = "`set_script(crate::app::mapterraininfoalignmentmember::MapTerrainInfoAlignmentMember)` overload"]
-    #[method(name = "set_script", args = 1)]
-    pub fn set_script(
-        self,
-        value: crate::app::mapterraininfoalignmentmember::MapTerrainInfoAlignmentMember,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`GetLeft()` overload"]
-    #[method(name = "GetLeft", args = 0)]
-    pub fn get_left(self) -> f32;
-
-    #[doc = "`GetRight()` overload"]
-    #[method(name = "GetRight", args = 0)]
-    pub fn get_right(self) -> f32;
-
-    #[doc = "`GetTop()` overload"]
-    #[method(name = "GetTop", args = 0)]
-    pub fn get_top(self) -> f32;
-
-    #[doc = "`GetBottom()` overload"]
-    #[method(name = "GetBottom", args = 0)]
-    pub fn get_bottom(self) -> f32;
-
-    #[doc = "`GetSpacing()` overload"]
-    #[method(name = "GetSpacing", args = 0)]
-    pub fn get_spacing(self) -> f32;
-
-    #[doc = "`SetPos(crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "SetPos", args = 1)]
-    pub fn set_pos(self, pos: crate::unity_engine::vector2::Vector2) -> ();
-
-    #[doc = "`SetSize(crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "SetSize", args = 1)]
-    pub fn set_size(self, size: crate::unity_engine::vector2::Vector2) -> ();
-
-    #[doc = "`GetSize()` overload"]
-    #[method(name = "GetSize", args = 0)]
-    pub fn get_size(self) -> crate::unity_engine::vector2::Vector2;
-}
-
-#[cfg(feature = "app-mapterraininfoalignment")]
-impl MapTerrainInfoAlignment_AlignParent {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapTerrainInfoAlignment_AlignParent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapTerrainInfoAlignment_AlignParentMethods>::ctor(this, root);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_InversionMember.md")))]
-#[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment.InversionMember")]
-#[parent(crate::system::object::Object)]
-pub struct MapTerrainInfoAlignment_InversionMember {}
-
-#[cfg(feature = "app-mapterraininfoalignment")]
-#[::unity2::methods]
-impl MapTerrainInfoAlignment_InversionMember {
-    #[doc = "`get_rectTransform()` overload"]
-    #[method(name = "get_rectTransform", args = 0)]
-    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
-
-    #[doc = "`set_rectTransform(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "set_rectTransform", args = 1)]
-    pub fn set_rect_transform(self, value: crate::unity_engine::recttransform::RectTransform)
-        -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Inversion()` overload"]
-    #[method(name = "Inversion", args = 0)]
-    pub fn inversion(self) -> ();
-}
-
-#[cfg(feature = "app-mapterraininfoalignment")]
-impl MapTerrainInfoAlignment_InversionMember {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapTerrainInfoAlignment_InversionMember),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapTerrainInfoAlignment_InversionMemberMethods>::ctor(this, root);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignMember.md")))]
-#[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment.AlignMember")]
-#[parent(crate::system::object::Object)]
-pub struct MapTerrainInfoAlignment_AlignMember {
-    #[rename(name = "m_Root")]
-    pub m_root: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_RootRect")]
-    pub m_root_rect: crate::unity_engine::recttransform::RectTransform,
-    #[rename(name = "m_RootText")]
-    pub m_root_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_AlingMenber")]
-    pub m_aling_menber: crate::app::mapterraininfoalignmentmember::MapTerrainInfoAlignmentMember,
-    #[rename(name = "m_TitleObj")]
-    pub m_title_obj: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_TitleRect")]
-    pub m_title_rect: crate::unity_engine::recttransform::RectTransform,
-    #[rename(name = "m_TitleText")]
-    pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_ValueObj")]
-    pub m_value_obj: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_ValueRect")]
-    pub m_value_rect: crate::unity_engine::recttransform::RectTransform,
-    #[rename(name = "m_ValueText")]
-    pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_Type")]
-    pub m_type: crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember_Type,
-}
-
-#[cfg(feature = "app-mapterraininfoalignment")]
-#[::unity2::methods]
-impl MapTerrainInfoAlignment_AlignMember {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`IsActive()` overload"]
-    #[method(name = "IsActive", args = 0)]
-    pub fn is_active(self) -> bool;
-
-    #[doc = "`SetPosX(f32)` overload"]
-    #[method(name = "SetPosX", args = 1)]
-    pub fn set_pos_x(self, pos_x: f32) -> ();
-
-    #[doc = "`Alignment(f32, f32, f32)` overload"]
-    #[method(name = "Alignment", args = 3)]
-    pub fn alignment(self, fixed_width: f32, rate: f32, default_width: f32) -> f32;
-}
-
-#[cfg(feature = "app-mapterraininfoalignment")]
-impl MapTerrainInfoAlignment_AlignMember {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapTerrainInfoAlignment_AlignMember),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapTerrainInfoAlignment_AlignMemberMethods>::ctor(this, root);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment.md"))]
 #[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct MapTerrainInfoAlignment {
@@ -460,6 +179,287 @@ impl MapTerrainInfoAlignment {
             )
         });
         <Self as IMapTerrainInfoAlignmentMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignMember_Type.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapTerrainInfoAlignment_AlignMember_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapTerrainInfoAlignment_AlignMember_Type {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapTerrainInfoAlignment.AlignMember.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapTerrainInfoAlignment_AlignMember_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapTerrainInfoAlignment_AlignMember_Type {
+    pub fn text() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn value() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn icon() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignParent.md"))]
+#[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment.AlignParent")]
+#[parent(crate::system::object::Object)]
+pub struct MapTerrainInfoAlignment_AlignParent {}
+
+#[cfg(feature = "app-mapterraininfoalignment")]
+#[::unity2::methods]
+impl MapTerrainInfoAlignment_AlignParent {
+    #[doc = "`get_rectTransform()` overload"]
+    #[method(name = "get_rectTransform", args = 0)]
+    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[doc = "`set_rectTransform(crate::unity_engine::recttransform::RectTransform)` overload"]
+    #[method(name = "set_rectTransform", args = 1)]
+    pub fn set_rect_transform(self, value: crate::unity_engine::recttransform::RectTransform)
+        -> ();
+
+    #[doc = "`get_script()` overload"]
+    #[method(name = "get_script", args = 0)]
+    pub fn get_script(
+        self,
+    ) -> crate::app::mapterraininfoalignmentmember::MapTerrainInfoAlignmentMember;
+
+    #[doc = "`set_script(crate::app::mapterraininfoalignmentmember::MapTerrainInfoAlignmentMember)` overload"]
+    #[method(name = "set_script", args = 1)]
+    pub fn set_script(
+        self,
+        value: crate::app::mapterraininfoalignmentmember::MapTerrainInfoAlignmentMember,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`GetLeft()` overload"]
+    #[method(name = "GetLeft", args = 0)]
+    pub fn get_left(self) -> f32;
+
+    #[doc = "`GetRight()` overload"]
+    #[method(name = "GetRight", args = 0)]
+    pub fn get_right(self) -> f32;
+
+    #[doc = "`GetTop()` overload"]
+    #[method(name = "GetTop", args = 0)]
+    pub fn get_top(self) -> f32;
+
+    #[doc = "`GetBottom()` overload"]
+    #[method(name = "GetBottom", args = 0)]
+    pub fn get_bottom(self) -> f32;
+
+    #[doc = "`GetSpacing()` overload"]
+    #[method(name = "GetSpacing", args = 0)]
+    pub fn get_spacing(self) -> f32;
+
+    #[doc = "`SetPos(crate::unity_engine::vector2::Vector2)` overload"]
+    #[method(name = "SetPos", args = 1)]
+    pub fn set_pos(self, pos: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[doc = "`SetSize(crate::unity_engine::vector2::Vector2)` overload"]
+    #[method(name = "SetSize", args = 1)]
+    pub fn set_size(self, size: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[doc = "`GetSize()` overload"]
+    #[method(name = "GetSize", args = 0)]
+    pub fn get_size(self) -> crate::unity_engine::vector2::Vector2;
+}
+
+#[cfg(feature = "app-mapterraininfoalignment")]
+impl MapTerrainInfoAlignment_AlignParent {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapTerrainInfoAlignment_AlignParent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapTerrainInfoAlignment_AlignParentMethods>::ctor(this, root);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_Type.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapTerrainInfoAlignment_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapTerrainInfoAlignment_Type {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapTerrainInfoAlignment.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapTerrainInfoAlignment_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapTerrainInfoAlignment_Type {
+    pub fn left() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_AlignMember.md"))]
+#[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment.AlignMember")]
+#[parent(crate::system::object::Object)]
+pub struct MapTerrainInfoAlignment_AlignMember {
+    #[rename(name = "m_Root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RootRect")]
+    pub m_root_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_RootText")]
+    pub m_root_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_AlingMenber")]
+    pub m_aling_menber: crate::app::mapterraininfoalignmentmember::MapTerrainInfoAlignmentMember,
+    #[rename(name = "m_TitleObj")]
+    pub m_title_obj: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_TitleRect")]
+    pub m_title_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_TitleText")]
+    pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ValueObj")]
+    pub m_value_obj: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ValueRect")]
+    pub m_value_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_ValueText")]
+    pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Type")]
+    pub m_type: crate::app::mapterraininfoalignment::MapTerrainInfoAlignment_AlignMember_Type,
+}
+
+#[cfg(feature = "app-mapterraininfoalignment")]
+#[::unity2::methods]
+impl MapTerrainInfoAlignment_AlignMember {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`IsActive()` overload"]
+    #[method(name = "IsActive", args = 0)]
+    pub fn is_active(self) -> bool;
+
+    #[doc = "`SetPosX(f32)` overload"]
+    #[method(name = "SetPosX", args = 1)]
+    pub fn set_pos_x(self, pos_x: f32) -> ();
+
+    #[doc = "`Alignment(f32, f32, f32)` overload"]
+    #[method(name = "Alignment", args = 3)]
+    pub fn alignment(self, fixed_width: f32, rate: f32, default_width: f32) -> f32;
+}
+
+#[cfg(feature = "app-mapterraininfoalignment")]
+impl MapTerrainInfoAlignment_AlignMember {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapTerrainInfoAlignment_AlignMember),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapTerrainInfoAlignment_AlignMemberMethods>::ctor(this, root);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfoalignment/MapTerrainInfoAlignment_InversionMember.md"))]
+#[::unity2::class(namespace = "App", name = "MapTerrainInfoAlignment.InversionMember")]
+#[parent(crate::system::object::Object)]
+pub struct MapTerrainInfoAlignment_InversionMember {}
+
+#[cfg(feature = "app-mapterraininfoalignment")]
+#[::unity2::methods]
+impl MapTerrainInfoAlignment_InversionMember {
+    #[doc = "`get_rectTransform()` overload"]
+    #[method(name = "get_rectTransform", args = 0)]
+    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[doc = "`set_rectTransform(crate::unity_engine::recttransform::RectTransform)` overload"]
+    #[method(name = "set_rectTransform", args = 1)]
+    pub fn set_rect_transform(self, value: crate::unity_engine::recttransform::RectTransform)
+        -> ();
+
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Inversion()` overload"]
+    #[method(name = "Inversion", args = 0)]
+    pub fn inversion(self) -> ();
+}
+
+#[cfg(feature = "app-mapterraininfoalignment")]
+impl MapTerrainInfoAlignment_InversionMember {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapTerrainInfoAlignment_InversionMember),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapTerrainInfoAlignment_InversionMemberMethods>::ctor(this, root);
         this
     }
 }

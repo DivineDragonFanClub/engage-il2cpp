@@ -10,7 +10,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/font/Font.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/font/Font.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "Font")]
 #[parent(crate::unity_engine::object_2::Object_2)]
 pub struct Font {
@@ -79,7 +79,7 @@ impl Font {
     ) -> bool;
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/font/Font_FontTextureRebuildCallback.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/font/Font_FontTextureRebuildCallback.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "Font.FontTextureRebuildCallback")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct Font_FontTextureRebuildCallback {}

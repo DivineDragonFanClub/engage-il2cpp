@@ -8,7 +8,7 @@ use crate::unity_engine::yieldinstruction::IYieldInstruction;
 use crate::unity_engine::yieldinstruction::YieldInstruction;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/assetbundlecreaterequest/AssetBundleCreateRequest.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/assetbundlecreaterequest/AssetBundleCreateRequest.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "AssetBundleCreateRequest")]
 #[parent(crate::unity_engine::asyncoperation::AsyncOperation)]
 pub struct AssetBundleCreateRequest {}

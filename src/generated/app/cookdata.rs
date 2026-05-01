@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cookdata/CookData_Difficulty.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cookdata/CookData_Difficulty.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -74,7 +74,7 @@ impl CookData_Difficulty {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cookdata/CookData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cookdata/CookData.md"))]
 #[::unity2::class(namespace = "App", name = "CookData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: cookdata :: CookData >)]
 pub struct CookData {

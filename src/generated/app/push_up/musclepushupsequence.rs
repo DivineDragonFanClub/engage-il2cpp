@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/push_up/musclepushupsequence/MusclePushupSequence_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/push_up/musclepushupsequence/MusclePushupSequence_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -82,7 +82,7 @@ impl MusclePushupSequence_Label {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/push_up/musclepushupsequence/MusclePushupSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/push_up/musclepushupsequence/MusclePushupSequence.md"))]
 #[::unity2::class(namespace = "App.PushUp", name = "MusclePushupSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct MusclePushupSequence {
@@ -679,7 +679,7 @@ impl MusclePushupSequence {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/push_up/musclepushupsequence/MusclePushupSequence_judgeRank.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/push_up/musclepushupsequence/MusclePushupSequence_judgeRank.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

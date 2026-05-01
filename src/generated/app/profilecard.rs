@@ -6,7 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecard/ProfileCard.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecard/ProfileCard.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCard")]
 #[parent(crate::system::object::Object)]
 pub struct ProfileCard {
@@ -526,7 +526,7 @@ impl ProfileCard {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecard/ProfileCard_Achievement.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecard/ProfileCard_Achievement.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct ProfileCard_Achievement {
@@ -571,7 +571,53 @@ impl ProfileCard_Achievement {
     pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecard/ProfileCard_FreeStamp.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecard/ProfileCard_SortieCount.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ProfileCard_SortieCount {
+    pub m_person: crate::app::persondata::PersonData,
+    pub m_job: crate::app::jobdata::JobData,
+    pub m_count: i32,
+}
+
+impl ::unity2::ClassIdentity for ProfileCard_SortieCount {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ProfileCard.SortieCount";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ProfileCard_SortieCount {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-profilecard")]
+#[::unity2::methods(value)]
+impl ProfileCard_SortieCount {
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = "Deserialize", args = 2)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecard/ProfileCard_FreeStamp.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCard.FreeStamp")]
 #[parent(crate::system::object::Object)]
 pub struct ProfileCard_FreeStamp {
@@ -663,50 +709,4 @@ impl ProfileCard_FreeStamp {
         <Self as IProfileCard_FreeStampMethods>::ctor_2(this, free_stamp);
         this
     }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecard/ProfileCard_SortieCount.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ProfileCard_SortieCount {
-    pub m_person: crate::app::persondata::PersonData,
-    pub m_job: crate::app::jobdata::JobData,
-    pub m_count: i32,
-}
-
-impl ::unity2::ClassIdentity for ProfileCard_SortieCount {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProfileCard.SortieCount";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ProfileCard_SortieCount {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-profilecard")]
-#[::unity2::methods(value)]
-impl ProfileCard_SortieCount {
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Serialize", args = 1)]
-    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = "Deserialize", args = 2)]
-    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
 }

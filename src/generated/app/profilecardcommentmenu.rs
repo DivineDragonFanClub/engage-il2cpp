@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentmenu/ProfileCardCommentMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentmenu/ProfileCardCommentMenu.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardCommentMenu")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct ProfileCardCommentMenu {
@@ -106,7 +106,7 @@ impl ProfileCardCommentMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentmenu/ProfileCardCommentMenu_DisposeEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentmenu/ProfileCardCommentMenu_DisposeEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardCommentMenu.DisposeEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct ProfileCardCommentMenu_DisposeEventHandler {}

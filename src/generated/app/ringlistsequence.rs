@@ -32,40 +32,246 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_PageDataList.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.PageDataList")]
-# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: ringlistsequence :: RingListSequence_PageData >)]
-pub struct RingListSequence_PageDataList {}
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringlistsequence/RingListSequence_CharaInfoWindow_CharaDescriptionText.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingListSequence_CharaInfoWindow_CharaDescriptionText {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingListSequence_CharaInfoWindow_CharaDescriptionText {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingListSequence.CharaInfoWindow.CharaDescriptionText";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingListSequence_CharaInfoWindow_CharaDescriptionText {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingListSequence_CharaInfoWindow_CharaDescriptionText {
+    pub fn overview() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn commentary() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn source_title_header() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn source_title_body0() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn source_title_body1() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 5 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingPageData.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.RingPageData")]
+#[parent(crate::app::ringlistsequence::RingListSequence_PageData)]
+pub struct RingListSequence_RingPageData {
+    #[static_field]
+    #[rename(name = "SpecialGroupPageDataNum")]
+    pub special_group_page_data_num: i32,
+}
 
 #[cfg(feature = "app-ringlistsequence")]
 #[::unity2::methods]
-impl RingListSequence_PageDataList {
-    #[doc = "`Build()` overload"]
-    #[method(name = "Build", args = 0)]
-    pub fn build(self) -> ();
+impl RingListSequence_RingPageData {
+    #[doc = "`get_Data()` overload"]
+    #[method(name = "get_Data", args = 0)]
+    pub fn get_data(self) -> crate::app::ringdata::RingData;
+
+    #[doc = "`set_Data(crate::app::ringdata::RingData)` overload"]
+    #[method(name = "set_Data", args = 1)]
+    pub fn set_data(self, value: crate::app::ringdata::RingData) -> ();
+
+    #[doc = "`get_DataRankC()` overload"]
+    #[method(name = "get_DataRankC", args = 0)]
+    pub fn get_data_rank_c(self) -> crate::app::ringdata::RingData;
+
+    #[doc = "`set_DataRankC(crate::app::ringdata::RingData)` overload"]
+    #[method(name = "set_DataRankC", args = 1)]
+    pub fn set_data_rank_c(self, value: crate::app::ringdata::RingData) -> ();
+
+    #[doc = "`get_DataRankB()` overload"]
+    #[method(name = "get_DataRankB", args = 0)]
+    pub fn get_data_rank_b(self) -> crate::app::ringdata::RingData;
+
+    #[doc = "`set_DataRankB(crate::app::ringdata::RingData)` overload"]
+    #[method(name = "set_DataRankB", args = 1)]
+    pub fn set_data_rank_b(self, value: crate::app::ringdata::RingData) -> ();
+
+    #[doc = "`get_DataRankA()` overload"]
+    #[method(name = "get_DataRankA", args = 0)]
+    pub fn get_data_rank_a(self) -> crate::app::ringdata::RingData;
+
+    #[doc = "`set_DataRankA(crate::app::ringdata::RingData)` overload"]
+    #[method(name = "set_DataRankA", args = 1)]
+    pub fn set_data_rank_a(self, value: crate::app::ringdata::RingData) -> ();
+
+    #[doc = "`get_DataRankS()` overload"]
+    #[method(name = "get_DataRankS", args = 0)]
+    pub fn get_data_rank_s(self) -> crate::app::ringdata::RingData;
+
+    #[doc = "`set_DataRankS(crate::app::ringdata::RingData)` overload"]
+    #[method(name = "set_DataRankS", args = 1)]
+    pub fn set_data_rank_s(self, value: crate::app::ringdata::RingData) -> ();
+
+    #[doc = "`get_RelatedGodPageData()` overload"]
+    #[method(name = "get_RelatedGodPageData", args = 0)]
+    pub fn get_related_god_page_data(
+        self,
+    ) -> crate::app::ringlistsequence::RingListSequence_GodPageData;
+
+    #[doc = "`set_RelatedGodPageData(crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
+    #[method(name = "set_RelatedGodPageData", args = 1)]
+    pub fn set_related_god_page_data(
+        self,
+        value: crate::app::ringlistsequence::RingListSequence_GodPageData,
+    ) -> ();
+
+    #[doc = "`get_RelatedGroupIndex()` overload"]
+    #[method(name = "get_RelatedGroupIndex", args = 0)]
+    pub fn get_related_group_index(self) -> i32;
+
+    #[doc = "`set_RelatedGroupIndex(i32)` overload"]
+    #[method(name = "set_RelatedGroupIndex", args = 1)]
+    pub fn set_related_group_index(self, value: i32) -> ();
+
+    #[doc = "`get_RelatedGroupPageDataNum()` overload"]
+    #[method(name = "get_RelatedGroupPageDataNum", args = 0)]
+    pub fn get_related_group_page_data_num(self) -> i32;
+
+    #[doc = "`Build(crate::app::ringdata::RingData)` overload"]
+    #[method(name = "Build", args = 1)]
+    pub fn build(self, ring_data: crate::app::ringdata::RingData) -> bool;
+
+    #[doc = "`IsGotRankC()` overload"]
+    #[method(name = "IsGotRankC", args = 0)]
+    pub fn is_got_rank_c(self) -> bool;
+
+    #[doc = "`IsGotRankB()` overload"]
+    #[method(name = "IsGotRankB", args = 0)]
+    pub fn is_got_rank_b(self) -> bool;
+
+    #[doc = "`IsGotRankA()` overload"]
+    #[method(name = "IsGotRankA", args = 0)]
+    pub fn is_got_rank_a(self) -> bool;
+
+    #[doc = "`IsGotRankS()` overload"]
+    #[method(name = "IsGotRankS", args = 0)]
+    pub fn is_got_rank_s(self) -> bool;
+
+    #[doc = "`GetGotRankNum()` overload"]
+    #[method(name = "GetGotRankNum", args = 0)]
+    pub fn get_got_rank_num(self) -> i32;
+
+    #[doc = "`GetGotMaxRank()` overload"]
+    #[method(name = "GetGotMaxRank", args = 0)]
+    pub fn get_got_max_rank(self) -> crate::app::ringdata::RingData_Ranks;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }
 
 #[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_PageDataList {
+impl RingListSequence_RingPageData {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_PageDataList),
+                ::core::stringify!(RingListSequence_RingPageData),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRingListSequence_PageDataListMethods>::ctor(this);
+        <Self as IRingListSequence_RingPageDataMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfo_Gain.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RingListSequence.RingListWindow.RingInfo.Gain"
+)]
+#[parent(crate::system::object::Object)]
+pub struct RingListSequence_RingListWindow_RingInfo_Gain {
+    #[rename(name = "m_NameText")]
+    pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ParamText")]
+    pub m_param_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_RingListWindow_RingInfo_Gain {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`SetName(crate::app::capabilitydefinition::CapabilityDefinition_Type, bool)` overload"]
+    #[method(name = "SetName", args = 2)]
+    pub fn set_name(
+        self,
+        capability_type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
+        is_opend: bool,
+    ) -> ();
+
+    #[doc = "`SetParam(i32)` overload"]
+    #[method(name = "SetParam", args = 1)]
+    pub fn set_param(self, capability_enhance: i32) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_RingListWindow_RingInfo_Gain {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_RingListWindow_RingInfo_Gain),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_RingListWindow_RingInfo_GainMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow.md"))]
 #[::unity2::class(namespace = "App", name = "RingListSequence.GodAndRingListWindow")]
 #[parent(crate::system::object::Object)]
 pub struct RingListSequence_GodAndRingListWindow {
@@ -111,7 +317,274 @@ impl RingListSequence_GodAndRingListWindow {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RelatedGroupWindow.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.RelatedGroupWindow")]
+#[parent(crate::system::object::Object)]
+pub struct RingListSequence_RelatedGroupWindow {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_GroupNameText")]
+    pub m_group_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_CurrentWorldMid")]
+    pub m_current_world_mid: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_RelatedGroupWindow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`SetText(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
+    #[method(name = "SetText", args = 1)]
+    pub fn set_text(self, page_data: crate::app::ringlistsequence::RingListSequence_PageData)
+        -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_RelatedGroupWindow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_RelatedGroupWindow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_RelatedGroupWindowMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuContent.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RingListSequence.GodAndRingListWindow.MenuContent"
+)]
+#[parent(crate::app::godunitselectmenucontent::GodUnitSelectMenuContent)]
+pub struct RingListSequence_GodAndRingListWindow_MenuContent {}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_GodAndRingListWindow_MenuContent {
+    #[doc = "`GetMenuItemContentMax()` overload"]
+    #[method(name = "GetMenuItemContentMax", args = 0)]
+    pub fn get_menu_item_content_max(self) -> i32;
+
+    #[doc = "`CreateContent()` overload"]
+    #[method(name = "CreateContent", args = 0)]
+    pub fn create_content(
+    ) -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuContent;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_GodAndRingListWindow_MenuContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_GodAndRingListWindow_MenuContentMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaNavigation.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.CharaNavigation")]
+#[parent(crate::system::object::Object)]
+pub struct RingListSequence_CharaNavigation {
+    #[static_field]
+    #[rename(name = "PointMax")]
+    pub point_max: i32,
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_PointImage")]
+    pub m_point_image: ::unity2::Array<crate::unity_engine::ui::image::Image>,
+    #[rename(name = "m_PointNum")]
+    pub m_point_num: i32,
+    #[rename(name = "m_CurrentPointIndex")]
+    pub m_current_point_index: i32,
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_CharaNavigation {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Setup(i32, i32)` overload"]
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(self, current_point_index: i32, point_num: i32) -> ();
+
+    #[doc = "`SetCurrentPointIndex(i32)` overload"]
+    #[method(name = "SetCurrentPointIndex", args = 1)]
+    pub fn set_current_point_index(self, current_point_index: i32) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_CharaNavigation {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_CharaNavigation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_CharaNavigationMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaInfoWindow.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.CharaInfoWindow")]
+#[parent(crate::system::object::Object)]
+pub struct RingListSequence_CharaInfoWindow {
+    #[rename(name = "m_CharaNameText")]
+    pub m_chara_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_RingNameText")]
+    pub m_ring_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_CharaDescriptionText")]
+    pub m_chara_description_text: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
+    #[rename(name = "m_RingImage")]
+    pub m_ring_image: crate::unity_engine::ui::image::Image,
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_CharaInfoWindow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`SetPageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
+    #[method(name = "SetPageData", args = 1)]
+    pub fn set_page_data(
+        self,
+        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
+    ) -> ();
+
+    #[doc = "`SetPageData(crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
+    #[method(name = "SetPageData", args = 1)]
+    pub fn set_page_data_2(
+        self,
+        god_page_data: crate::app::ringlistsequence::RingListSequence_GodPageData,
+    ) -> ();
+
+    #[doc = "`SetPageData(crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]
+    #[method(name = "SetPageData", args = 1)]
+    pub fn set_page_data_3(
+        self,
+        ring_page_data: crate::app::ringlistsequence::RingListSequence_RingPageData,
+    ) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_CharaInfoWindow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_CharaInfoWindow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_CharaInfoWindowMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_Menu.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.GodAndRingListWindow.Menu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct RingListSequence_GodAndRingListWindow_Menu {}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_GodAndRingListWindow_Menu {
+    #[doc = "`get_SelectedPageData()` overload"]
+    #[method(name = "get_SelectedPageData", args = 0)]
+    pub fn get_selected_page_data(self) -> crate::app::ringlistsequence::RingListSequence_PageData;
+
+    #[doc = "`set_SelectedPageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
+    #[method(name = "set_SelectedPageData", args = 1)]
+    pub fn set_selected_page_data(
+        self,
+        value: crate::app::ringlistsequence::RingListSequence_PageData,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> ();
+
+    #[doc = "`CreateMenuBind(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::ringlistsequence::RingListSequence_PageData, crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateMenuBind", args = 3)]
+    pub fn create_menu_bind(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        current_page_data: crate::app::ringlistsequence::RingListSequence_PageData,
+        super_: crate::app::procinst::ProcInst,
+    ) -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_Menu;
+
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_GodAndRingListWindow_Menu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_GodAndRingListWindow_Menu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_GodAndRingListWindow_MenuMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "RingListSequence.GodAndRingListWindow.MenuItem"
@@ -178,7 +651,215 @@ impl RingListSequence_GodAndRingListWindow_MenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodPageData.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.GodPageData")]
+#[parent(crate::app::ringlistsequence::RingListSequence_PageData)]
+pub struct RingListSequence_GodPageData {}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_GodPageData {
+    #[doc = "`get_Data()` overload"]
+    #[method(name = "get_Data", args = 0)]
+    pub fn get_data(self) -> crate::app::goddata::GodData;
+
+    #[doc = "`set_Data(crate::app::goddata::GodData)` overload"]
+    #[method(name = "set_Data", args = 1)]
+    pub fn set_data(self, value: crate::app::goddata::GodData) -> ();
+
+    #[doc = "`get_RelatedGroupIndex()` overload"]
+    #[method(name = "get_RelatedGroupIndex", args = 0)]
+    pub fn get_related_group_index(self) -> i32;
+
+    #[doc = "`set_RelatedGroupIndex(i32)` overload"]
+    #[method(name = "set_RelatedGroupIndex", args = 1)]
+    pub fn set_related_group_index(self, value: i32) -> ();
+
+    #[doc = "`set_RelatedGroupPageDataNum(i32)` overload"]
+    #[method(name = "set_RelatedGroupPageDataNum", args = 1)]
+    pub fn set_related_group_page_data_num(self, value: i32) -> ();
+
+    #[doc = "`get_RelatedGroupPageDataNum()` overload"]
+    #[method(name = "get_RelatedGroupPageDataNum", args = 0)]
+    pub fn get_related_group_page_data_num(self) -> i32;
+
+    #[doc = "`set_MenuSelect(crate::app::basicmenuselect::BasicMenuSelect)` overload"]
+    #[method(name = "set_MenuSelect", args = 1)]
+    pub fn set_menu_select(self, value: crate::app::basicmenuselect::BasicMenuSelect) -> ();
+
+    #[doc = "`get_MenuSelect()` overload"]
+    #[method(name = "get_MenuSelect", args = 0)]
+    pub fn get_menu_select(self) -> crate::app::basicmenuselect::BasicMenuSelect;
+
+    #[doc = "`Build(crate::app::goddata::GodData)` overload"]
+    #[method(name = "Build", args = 1)]
+    pub fn build(self, god_data: crate::app::goddata::GodData) -> ();
+
+    #[doc = "`GetMaxBondLevel()` overload"]
+    #[method(name = "GetMaxBondLevel", args = 0)]
+    pub fn get_max_bond_level(self) -> i32;
+
+    #[doc = "`GetToLv()` overload"]
+    #[method(name = "GetToLv", args = 0)]
+    pub fn get_to_lv(self) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_GodPageData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_GodPageData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_GodPageDataMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_PageDataList.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.PageDataList")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: ringlistsequence :: RingListSequence_PageData >)]
+pub struct RingListSequence_PageDataList {}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_PageDataList {
+    #[doc = "`Build()` overload"]
+    #[method(name = "Build", args = 0)]
+    pub fn build(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_PageDataList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_PageDataList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_PageDataListMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfoRank.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingListSequence_RingListWindow_RingInfoRank {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingListSequence_RingListWindow_RingInfoRank {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingListSequence.RingListWindow.RingInfoRank";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingListSequence_RingListWindow_RingInfoRank {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingListSequence_RingListWindow_RingInfoRank {
+    pub fn c() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn b() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn a() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn s() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 4 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow_SkillInfo.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.RingListWindow.SkillInfo")]
+#[parent(crate::system::object::Object)]
+pub struct RingListSequence_RingListWindow_SkillInfo {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_IconImage")]
+    pub m_icon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_NameText")]
+    pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_DescriptionText")]
+    pub m_description_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_RingListWindow_SkillInfo {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`SetData(crate::app::ringdata::RingData)` overload"]
+    #[method(name = "SetData", args = 1)]
+    pub fn set_data(self, ring_data: crate::app::ringdata::RingData) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_RingListWindow_SkillInfo {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_RingListWindow_SkillInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_RingListWindow_SkillInfoMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfo.md"))]
 #[::unity2::class(namespace = "App", name = "RingListSequence.RingListWindow.RingInfo")]
 #[parent(crate::system::object::Object)]
 pub struct RingListSequence_RingListWindow_RingInfo {
@@ -236,23 +917,142 @@ impl RingListSequence_RingListWindow_RingInfo {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow_SkillInfo.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.RingListWindow.SkillInfo")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_PageData.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.PageData")]
 #[parent(crate::system::object::Object)]
-pub struct RingListSequence_RingListWindow_SkillInfo {
+pub struct RingListSequence_PageData {}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_PageData {
+    #[doc = "`get_PageIndex()` overload"]
+    #[method(name = "get_PageIndex", args = 0)]
+    pub fn get_page_index(self) -> i32;
+
+    #[doc = "`set_PageIndex(i32)` overload"]
+    #[method(name = "set_PageIndex", args = 1)]
+    pub fn set_page_index(self, value: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_PageData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_PageData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_PageDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringlistsequence/RingListSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingListSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingListSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingListSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingListSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingListSequence_Label {
+    pub fn start() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_PageDataList_GodComparer.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.PageDataList.GodComparer")]
+#[parent(crate::system::object::Object)]
+pub struct RingListSequence_PageDataList_GodComparer {}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_PageDataList_GodComparer {
+    #[doc = "`Compare(crate::app::ringlistsequence::RingListSequence_GodPageData, crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(
+        self,
+        a: crate::app::ringlistsequence::RingListSequence_GodPageData,
+        b: crate::app::ringlistsequence::RingListSequence_GodPageData,
+    ) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_PageDataList_GodComparer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_PageDataList_GodComparer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_PageDataList_GodComparerMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.RingListWindow")]
+#[parent(crate::system::object::Object)]
+pub struct RingListSequence_RingListWindow {
     #[rename(name = "m_RootObject")]
     pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_IconImage")]
-    pub m_icon_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_NameText")]
-    pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_DescriptionText")]
-    pub m_description_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TitleText")]
+    pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_RingInfo")]
+    pub m_ring_info:
+        ::unity2::Array<crate::app::ringlistsequence::RingListSequence_RingListWindow_RingInfo>,
+    #[rename(name = "m_SkillInfo")]
+    pub m_skill_info: crate::app::ringlistsequence::RingListSequence_RingListWindow_SkillInfo,
 }
 
 #[cfg(feature = "app-ringlistsequence")]
 #[::unity2::methods]
-impl RingListSequence_RingListWindow_SkillInfo {
+impl RingListSequence_RingListWindow {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
@@ -261,28 +1061,272 @@ impl RingListSequence_RingListWindow_SkillInfo {
     #[method(name = "Clear", args = 0)]
     pub fn clear(self) -> ();
 
-    #[doc = "`SetData(crate::app::ringdata::RingData)` overload"]
+    #[doc = "`SetData(crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]
     #[method(name = "SetData", args = 1)]
-    pub fn set_data(self, ring_data: crate::app::ringdata::RingData) -> ();
+    pub fn set_data(
+        self,
+        ring_page_data: crate::app::ringlistsequence::RingListSequence_RingPageData,
+    ) -> ();
+
+    #[doc = "`Show()` overload"]
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
 }
 
 #[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_RingListWindow_SkillInfo {
+impl RingListSequence_RingListWindow {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
     pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_RingListWindow_SkillInfo),
+                ::core::stringify!(RingListSequence_RingListWindow),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRingListSequence_RingListWindow_SkillInfoMethods>::ctor(this, root_object);
+        <Self as IRingListSequence_RingListWindowMethods>::ctor(this, root_object);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaArrowGroup.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.CharaArrowGroup")]
+#[parent(crate::system::object::Object)]
+pub struct RingListSequence_CharaArrowGroup {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_LeftArrowImage")]
+    pub m_left_arrow_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_RightArrowImage")]
+    pub m_right_arrow_image: crate::unity_engine::ui::image::Image,
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_CharaArrowGroup {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`ShowAll()` overload"]
+    #[method(name = "ShowAll", args = 0)]
+    pub fn show_all(self) -> ();
+
+    #[doc = "`HideAll()` overload"]
+    #[method(name = "HideAll", args = 0)]
+    pub fn hide_all(self) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_CharaArrowGroup {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_CharaArrowGroup),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_CharaArrowGroupMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuItemContent.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RingListSequence.GodAndRingListWindow.MenuItemContent"
+)]
+#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
+pub struct RingListSequence_GodAndRingListWindow_MenuItemContent {
+    #[rename(name = "m_Setter")]
+    pub m_setter: crate::app::unitmenuitemsetter::UnitMenuItemSetter,
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_GodAndRingListWindow_MenuItemContent {
+    #[doc = "`GetTextMeshProComponent()` overload"]
+    #[method(name = "GetTextMeshProComponent", args = 0)]
+    pub fn get_text_mesh_pro_component(self) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI;
+
+    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    #[method(name = "Build", args = 1)]
+    pub fn build(self, menu_item: crate::app::basicmenuitem::BasicMenuItem) -> ();
+
+    #[doc = "`UpdateTextColor()` overload"]
+    #[method(name = "UpdateTextColor", args = 0)]
+    pub fn update_text_color(self) -> ();
+
+    #[doc = "`SetupByMenuItem(crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem)` overload"]
+    #[method(name = "SetupByMenuItem", args = 1)]
+    pub fn setup_by_menu_item(
+        self,
+        menu_item: crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_GodAndRingListWindow_MenuItemContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_GodAndRingListWindow_MenuItemContentMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaImageController.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.CharaImageController")]
+#[parent(crate::system::object::Object)]
+pub struct RingListSequence_CharaImageController {
+    #[static_field]
+    #[rename(name = "CharaImageMax")]
+    pub chara_image_max: i32,
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_CharaImage")]
+    pub m_chara_image: ::unity2::Array<crate::app::ringlistsequence::RingListSequence_CharaImage>,
+    #[rename(name = "m_CurrentCharaImageIndex")]
+    pub m_current_chara_image_index: i32,
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_CharaImageController {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`ChangeImage(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
+    #[method(name = "ChangeImage", args = 1)]
+    pub fn change_image(
+        self,
+        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
+    ) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_CharaImageController {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_CharaImageController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_CharaImageControllerMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaImage.md"))]
+#[::unity2::class(namespace = "App", name = "RingListSequence.CharaImage")]
+#[parent(crate::system::object::Object)]
+pub struct RingListSequence_CharaImage {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RootAnimator")]
+    pub m_root_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_CharaImage")]
+    pub m_chara_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_FrameImage")]
+    pub m_frame_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_BackImage")]
+    pub m_back_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_CharaMaterial")]
+    pub m_chara_material: crate::unity_engine::material::Material,
+    #[rename(name = "m_FrameMaterial")]
+    pub m_frame_material: crate::unity_engine::material::Material,
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+#[::unity2::methods]
+impl RingListSequence_CharaImage {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`FadeIn()` overload"]
+    #[method(name = "FadeIn", args = 0)]
+    pub fn fade_in(self) -> ();
+
+    #[doc = "`FadeOut()` overload"]
+    #[method(name = "FadeOut", args = 0)]
+    pub fn fade_out(self) -> ();
+
+    #[doc = "`ChangeImage(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
+    #[method(name = "ChangeImage", args = 1)]
+    pub fn change_image(
+        self,
+        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
+    ) -> ();
+
+    #[doc = "`ChangeGodChara(crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
+    #[method(name = "ChangeGodChara", args = 1)]
+    pub fn change_god_chara(
+        self,
+        god_page_data: crate::app::ringlistsequence::RingListSequence_GodPageData,
+    ) -> ();
+
+    #[doc = "`ChangeRingChara(crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]
+    #[method(name = "ChangeRingChara", args = 1)]
+    pub fn change_ring_chara(
+        self,
+        ring_page_data: crate::app::ringlistsequence::RingListSequence_RingPageData,
+    ) -> ();
+
+    #[doc = "`SetCharaImageSprite(crate::unity_engine::sprite::Sprite)` overload"]
+    #[method(name = "SetCharaImageSprite", args = 1)]
+    pub fn set_chara_image_sprite(self, sprite: crate::unity_engine::sprite::Sprite) -> ();
+
+    #[doc = "`SetFrameImageSprite(crate::unity_engine::sprite::Sprite)` overload"]
+    #[method(name = "SetFrameImageSprite", args = 1)]
+    pub fn set_frame_image_sprite(self, sprite: crate::unity_engine::sprite::Sprite) -> ();
+}
+
+#[cfg(feature = "app-ringlistsequence")]
+impl RingListSequence_CharaImage {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingListSequence_CharaImage),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingListSequence_CharaImageMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence.md"))]
 #[::unity2::class(namespace = "App", name = "RingListSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringlistsequence :: RingListSequence >)]
 pub struct RingListSequence {
@@ -450,1050 +1494,6 @@ impl RingListSequence {
             )
         });
         <Self as IRingListSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaInfoWindow.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.CharaInfoWindow")]
-#[parent(crate::system::object::Object)]
-pub struct RingListSequence_CharaInfoWindow {
-    #[rename(name = "m_CharaNameText")]
-    pub m_chara_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_RingNameText")]
-    pub m_ring_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_CharaDescriptionText")]
-    pub m_chara_description_text: ::unity2::Array<crate::tm_pro::textmeshprougui::TextMeshProUGUI>,
-    #[rename(name = "m_RingImage")]
-    pub m_ring_image: crate::unity_engine::ui::image::Image,
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_CharaInfoWindow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`SetPageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    #[method(name = "SetPageData", args = 1)]
-    pub fn set_page_data(
-        self,
-        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
-    ) -> ();
-
-    #[doc = "`SetPageData(crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
-    #[method(name = "SetPageData", args = 1)]
-    pub fn set_page_data_2(
-        self,
-        god_page_data: crate::app::ringlistsequence::RingListSequence_GodPageData,
-    ) -> ();
-
-    #[doc = "`SetPageData(crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]
-    #[method(name = "SetPageData", args = 1)]
-    pub fn set_page_data_3(
-        self,
-        ring_page_data: crate::app::ringlistsequence::RingListSequence_RingPageData,
-    ) -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_CharaInfoWindow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_CharaInfoWindow),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_CharaInfoWindowMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaNavigation.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.CharaNavigation")]
-#[parent(crate::system::object::Object)]
-pub struct RingListSequence_CharaNavigation {
-    #[static_field]
-    #[rename(name = "PointMax")]
-    pub point_max: i32,
-    #[rename(name = "m_RootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_PointImage")]
-    pub m_point_image: ::unity2::Array<crate::unity_engine::ui::image::Image>,
-    #[rename(name = "m_PointNum")]
-    pub m_point_num: i32,
-    #[rename(name = "m_CurrentPointIndex")]
-    pub m_current_point_index: i32,
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_CharaNavigation {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Setup(i32, i32)` overload"]
-    #[method(name = "Setup", args = 2)]
-    pub fn setup(self, current_point_index: i32, point_num: i32) -> ();
-
-    #[doc = "`SetCurrentPointIndex(i32)` overload"]
-    #[method(name = "SetCurrentPointIndex", args = 1)]
-    pub fn set_current_point_index(self, current_point_index: i32) -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_CharaNavigation {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_CharaNavigation),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_CharaNavigationMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaArrowGroup.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.CharaArrowGroup")]
-#[parent(crate::system::object::Object)]
-pub struct RingListSequence_CharaArrowGroup {
-    #[rename(name = "m_RootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_LeftArrowImage")]
-    pub m_left_arrow_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_RightArrowImage")]
-    pub m_right_arrow_image: crate::unity_engine::ui::image::Image,
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_CharaArrowGroup {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`ShowAll()` overload"]
-    #[method(name = "ShowAll", args = 0)]
-    pub fn show_all(self) -> ();
-
-    #[doc = "`HideAll()` overload"]
-    #[method(name = "HideAll", args = 0)]
-    pub fn hide_all(self) -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_CharaArrowGroup {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_CharaArrowGroup),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_CharaArrowGroupMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingPageData.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.RingPageData")]
-#[parent(crate::app::ringlistsequence::RingListSequence_PageData)]
-pub struct RingListSequence_RingPageData {
-    #[static_field]
-    #[rename(name = "SpecialGroupPageDataNum")]
-    pub special_group_page_data_num: i32,
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_RingPageData {
-    #[doc = "`get_Data()` overload"]
-    #[method(name = "get_Data", args = 0)]
-    pub fn get_data(self) -> crate::app::ringdata::RingData;
-
-    #[doc = "`set_Data(crate::app::ringdata::RingData)` overload"]
-    #[method(name = "set_Data", args = 1)]
-    pub fn set_data(self, value: crate::app::ringdata::RingData) -> ();
-
-    #[doc = "`get_DataRankC()` overload"]
-    #[method(name = "get_DataRankC", args = 0)]
-    pub fn get_data_rank_c(self) -> crate::app::ringdata::RingData;
-
-    #[doc = "`set_DataRankC(crate::app::ringdata::RingData)` overload"]
-    #[method(name = "set_DataRankC", args = 1)]
-    pub fn set_data_rank_c(self, value: crate::app::ringdata::RingData) -> ();
-
-    #[doc = "`get_DataRankB()` overload"]
-    #[method(name = "get_DataRankB", args = 0)]
-    pub fn get_data_rank_b(self) -> crate::app::ringdata::RingData;
-
-    #[doc = "`set_DataRankB(crate::app::ringdata::RingData)` overload"]
-    #[method(name = "set_DataRankB", args = 1)]
-    pub fn set_data_rank_b(self, value: crate::app::ringdata::RingData) -> ();
-
-    #[doc = "`get_DataRankA()` overload"]
-    #[method(name = "get_DataRankA", args = 0)]
-    pub fn get_data_rank_a(self) -> crate::app::ringdata::RingData;
-
-    #[doc = "`set_DataRankA(crate::app::ringdata::RingData)` overload"]
-    #[method(name = "set_DataRankA", args = 1)]
-    pub fn set_data_rank_a(self, value: crate::app::ringdata::RingData) -> ();
-
-    #[doc = "`get_DataRankS()` overload"]
-    #[method(name = "get_DataRankS", args = 0)]
-    pub fn get_data_rank_s(self) -> crate::app::ringdata::RingData;
-
-    #[doc = "`set_DataRankS(crate::app::ringdata::RingData)` overload"]
-    #[method(name = "set_DataRankS", args = 1)]
-    pub fn set_data_rank_s(self, value: crate::app::ringdata::RingData) -> ();
-
-    #[doc = "`get_RelatedGodPageData()` overload"]
-    #[method(name = "get_RelatedGodPageData", args = 0)]
-    pub fn get_related_god_page_data(
-        self,
-    ) -> crate::app::ringlistsequence::RingListSequence_GodPageData;
-
-    #[doc = "`set_RelatedGodPageData(crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
-    #[method(name = "set_RelatedGodPageData", args = 1)]
-    pub fn set_related_god_page_data(
-        self,
-        value: crate::app::ringlistsequence::RingListSequence_GodPageData,
-    ) -> ();
-
-    #[doc = "`get_RelatedGroupIndex()` overload"]
-    #[method(name = "get_RelatedGroupIndex", args = 0)]
-    pub fn get_related_group_index(self) -> i32;
-
-    #[doc = "`set_RelatedGroupIndex(i32)` overload"]
-    #[method(name = "set_RelatedGroupIndex", args = 1)]
-    pub fn set_related_group_index(self, value: i32) -> ();
-
-    #[doc = "`get_RelatedGroupPageDataNum()` overload"]
-    #[method(name = "get_RelatedGroupPageDataNum", args = 0)]
-    pub fn get_related_group_page_data_num(self) -> i32;
-
-    #[doc = "`Build(crate::app::ringdata::RingData)` overload"]
-    #[method(name = "Build", args = 1)]
-    pub fn build(self, ring_data: crate::app::ringdata::RingData) -> bool;
-
-    #[doc = "`IsGotRankC()` overload"]
-    #[method(name = "IsGotRankC", args = 0)]
-    pub fn is_got_rank_c(self) -> bool;
-
-    #[doc = "`IsGotRankB()` overload"]
-    #[method(name = "IsGotRankB", args = 0)]
-    pub fn is_got_rank_b(self) -> bool;
-
-    #[doc = "`IsGotRankA()` overload"]
-    #[method(name = "IsGotRankA", args = 0)]
-    pub fn is_got_rank_a(self) -> bool;
-
-    #[doc = "`IsGotRankS()` overload"]
-    #[method(name = "IsGotRankS", args = 0)]
-    pub fn is_got_rank_s(self) -> bool;
-
-    #[doc = "`GetGotRankNum()` overload"]
-    #[method(name = "GetGotRankNum", args = 0)]
-    pub fn get_got_rank_num(self) -> i32;
-
-    #[doc = "`GetGotMaxRank()` overload"]
-    #[method(name = "GetGotMaxRank", args = 0)]
-    pub fn get_got_max_rank(self) -> crate::app::ringdata::RingData_Ranks;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_RingPageData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_RingPageData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_RingPageDataMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_PageData.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.PageData")]
-#[parent(crate::system::object::Object)]
-pub struct RingListSequence_PageData {}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_PageData {
-    #[doc = "`get_PageIndex()` overload"]
-    #[method(name = "get_PageIndex", args = 0)]
-    pub fn get_page_index(self) -> i32;
-
-    #[doc = "`set_PageIndex(i32)` overload"]
-    #[method(name = "set_PageIndex", args = 1)]
-    pub fn set_page_index(self, value: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_PageData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_PageData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_PageDataMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RelatedGroupWindow.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.RelatedGroupWindow")]
-#[parent(crate::system::object::Object)]
-pub struct RingListSequence_RelatedGroupWindow {
-    #[rename(name = "m_RootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_GroupNameText")]
-    pub m_group_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_CurrentWorldMid")]
-    pub m_current_world_mid: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_RelatedGroupWindow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`SetText(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    #[method(name = "SetText", args = 1)]
-    pub fn set_text(self, page_data: crate::app::ringlistsequence::RingListSequence_PageData)
-        -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_RelatedGroupWindow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_RelatedGroupWindow),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_RelatedGroupWindowMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.RingListWindow")]
-#[parent(crate::system::object::Object)]
-pub struct RingListSequence_RingListWindow {
-    #[rename(name = "m_RootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_TitleText")]
-    pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_RingInfo")]
-    pub m_ring_info:
-        ::unity2::Array<crate::app::ringlistsequence::RingListSequence_RingListWindow_RingInfo>,
-    #[rename(name = "m_SkillInfo")]
-    pub m_skill_info: crate::app::ringlistsequence::RingListSequence_RingListWindow_SkillInfo,
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_RingListWindow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`SetData(crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]
-    #[method(name = "SetData", args = 1)]
-    pub fn set_data(
-        self,
-        ring_page_data: crate::app::ringlistsequence::RingListSequence_RingPageData,
-    ) -> ();
-
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_RingListWindow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_RingListWindow),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_RingListWindowMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfo_Gain.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RingListSequence.RingListWindow.RingInfo.Gain"
-)]
-#[parent(crate::system::object::Object)]
-pub struct RingListSequence_RingListWindow_RingInfo_Gain {
-    #[rename(name = "m_NameText")]
-    pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_ParamText")]
-    pub m_param_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_RingListWindow_RingInfo_Gain {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`SetName(crate::app::capabilitydefinition::CapabilityDefinition_Type, bool)` overload"]
-    #[method(name = "SetName", args = 2)]
-    pub fn set_name(
-        self,
-        capability_type: crate::app::capabilitydefinition::CapabilityDefinition_Type,
-        is_opend: bool,
-    ) -> ();
-
-    #[doc = "`SetParam(i32)` overload"]
-    #[method(name = "SetParam", args = 1)]
-    pub fn set_param(self, capability_enhance: i32) -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_RingListWindow_RingInfo_Gain {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_RingListWindow_RingInfo_Gain),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_RingListWindow_RingInfo_GainMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringlistsequence/RingListSequence_RingListWindow_RingInfoRank.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RingListSequence_RingListWindow_RingInfoRank {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RingListSequence_RingListWindow_RingInfoRank {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingListSequence.RingListWindow.RingInfoRank";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RingListSequence_RingListWindow_RingInfoRank {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RingListSequence_RingListWindow_RingInfoRank {
-    pub fn c() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn b() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn a() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn s() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn max() -> Self {
-        Self { value: 4 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringlistsequence/RingListSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RingListSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RingListSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingListSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RingListSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RingListSequence_Label {
-    pub fn start() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaImage.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.CharaImage")]
-#[parent(crate::system::object::Object)]
-pub struct RingListSequence_CharaImage {
-    #[rename(name = "m_RootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_RootAnimator")]
-    pub m_root_animator: crate::unity_engine::animator::Animator,
-    #[rename(name = "m_CharaImage")]
-    pub m_chara_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_FrameImage")]
-    pub m_frame_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_BackImage")]
-    pub m_back_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_CharaMaterial")]
-    pub m_chara_material: crate::unity_engine::material::Material,
-    #[rename(name = "m_FrameMaterial")]
-    pub m_frame_material: crate::unity_engine::material::Material,
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_CharaImage {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`FadeIn()` overload"]
-    #[method(name = "FadeIn", args = 0)]
-    pub fn fade_in(self) -> ();
-
-    #[doc = "`FadeOut()` overload"]
-    #[method(name = "FadeOut", args = 0)]
-    pub fn fade_out(self) -> ();
-
-    #[doc = "`ChangeImage(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    #[method(name = "ChangeImage", args = 1)]
-    pub fn change_image(
-        self,
-        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
-    ) -> ();
-
-    #[doc = "`ChangeGodChara(crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
-    #[method(name = "ChangeGodChara", args = 1)]
-    pub fn change_god_chara(
-        self,
-        god_page_data: crate::app::ringlistsequence::RingListSequence_GodPageData,
-    ) -> ();
-
-    #[doc = "`ChangeRingChara(crate::app::ringlistsequence::RingListSequence_RingPageData)` overload"]
-    #[method(name = "ChangeRingChara", args = 1)]
-    pub fn change_ring_chara(
-        self,
-        ring_page_data: crate::app::ringlistsequence::RingListSequence_RingPageData,
-    ) -> ();
-
-    #[doc = "`SetCharaImageSprite(crate::unity_engine::sprite::Sprite)` overload"]
-    #[method(name = "SetCharaImageSprite", args = 1)]
-    pub fn set_chara_image_sprite(self, sprite: crate::unity_engine::sprite::Sprite) -> ();
-
-    #[doc = "`SetFrameImageSprite(crate::unity_engine::sprite::Sprite)` overload"]
-    #[method(name = "SetFrameImageSprite", args = 1)]
-    pub fn set_frame_image_sprite(self, sprite: crate::unity_engine::sprite::Sprite) -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_CharaImage {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_CharaImage),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_CharaImageMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuItemContent.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RingListSequence.GodAndRingListWindow.MenuItemContent"
-)]
-#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
-pub struct RingListSequence_GodAndRingListWindow_MenuItemContent {
-    #[rename(name = "m_Setter")]
-    pub m_setter: crate::app::unitmenuitemsetter::UnitMenuItemSetter,
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_GodAndRingListWindow_MenuItemContent {
-    #[doc = "`GetTextMeshProComponent()` overload"]
-    #[method(name = "GetTextMeshProComponent", args = 0)]
-    pub fn get_text_mesh_pro_component(self) -> crate::tm_pro::textmeshprougui::TextMeshProUGUI;
-
-    #[doc = "`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    #[method(name = "Build", args = 1)]
-    pub fn build(self, menu_item: crate::app::basicmenuitem::BasicMenuItem) -> ();
-
-    #[doc = "`UpdateTextColor()` overload"]
-    #[method(name = "UpdateTextColor", args = 0)]
-    pub fn update_text_color(self) -> ();
-
-    #[doc = "`SetupByMenuItem(crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem)` overload"]
-    #[method(name = "SetupByMenuItem", args = 1)]
-    pub fn setup_by_menu_item(
-        self,
-        menu_item: crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuItem,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_GodAndRingListWindow_MenuItemContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuItemContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_GodAndRingListWindow_MenuItemContentMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringlistsequence/RingListSequence_CharaInfoWindow_CharaDescriptionText.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RingListSequence_CharaInfoWindow_CharaDescriptionText {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RingListSequence_CharaInfoWindow_CharaDescriptionText {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingListSequence.CharaInfoWindow.CharaDescriptionText";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RingListSequence_CharaInfoWindow_CharaDescriptionText {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RingListSequence_CharaInfoWindow_CharaDescriptionText {
-    pub fn overview() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn commentary() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn source_title_header() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn source_title_body0() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn source_title_body1() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn max() -> Self {
-        Self { value: 5 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_MenuContent.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RingListSequence.GodAndRingListWindow.MenuContent"
-)]
-#[parent(crate::app::godunitselectmenucontent::GodUnitSelectMenuContent)]
-pub struct RingListSequence_GodAndRingListWindow_MenuContent {}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_GodAndRingListWindow_MenuContent {
-    #[doc = "`GetMenuItemContentMax()` overload"]
-    #[method(name = "GetMenuItemContentMax", args = 0)]
-    pub fn get_menu_item_content_max(self) -> i32;
-
-    #[doc = "`CreateContent()` overload"]
-    #[method(name = "CreateContent", args = 0)]
-    pub fn create_content(
-    ) -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_MenuContent;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_GodAndRingListWindow_MenuContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_GodAndRingListWindow_MenuContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_GodAndRingListWindow_MenuContentMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_CharaImageController.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.CharaImageController")]
-#[parent(crate::system::object::Object)]
-pub struct RingListSequence_CharaImageController {
-    #[static_field]
-    #[rename(name = "CharaImageMax")]
-    pub chara_image_max: i32,
-    #[rename(name = "m_RootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_CharaImage")]
-    pub m_chara_image: ::unity2::Array<crate::app::ringlistsequence::RingListSequence_CharaImage>,
-    #[rename(name = "m_CurrentCharaImageIndex")]
-    pub m_current_chara_image_index: i32,
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_CharaImageController {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`ChangeImage(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    #[method(name = "ChangeImage", args = 1)]
-    pub fn change_image(
-        self,
-        page_data: crate::app::ringlistsequence::RingListSequence_PageData,
-    ) -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_CharaImageController {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_CharaImageController),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_CharaImageControllerMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodPageData.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.GodPageData")]
-#[parent(crate::app::ringlistsequence::RingListSequence_PageData)]
-pub struct RingListSequence_GodPageData {}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_GodPageData {
-    #[doc = "`get_Data()` overload"]
-    #[method(name = "get_Data", args = 0)]
-    pub fn get_data(self) -> crate::app::goddata::GodData;
-
-    #[doc = "`set_Data(crate::app::goddata::GodData)` overload"]
-    #[method(name = "set_Data", args = 1)]
-    pub fn set_data(self, value: crate::app::goddata::GodData) -> ();
-
-    #[doc = "`get_RelatedGroupIndex()` overload"]
-    #[method(name = "get_RelatedGroupIndex", args = 0)]
-    pub fn get_related_group_index(self) -> i32;
-
-    #[doc = "`set_RelatedGroupIndex(i32)` overload"]
-    #[method(name = "set_RelatedGroupIndex", args = 1)]
-    pub fn set_related_group_index(self, value: i32) -> ();
-
-    #[doc = "`set_RelatedGroupPageDataNum(i32)` overload"]
-    #[method(name = "set_RelatedGroupPageDataNum", args = 1)]
-    pub fn set_related_group_page_data_num(self, value: i32) -> ();
-
-    #[doc = "`get_RelatedGroupPageDataNum()` overload"]
-    #[method(name = "get_RelatedGroupPageDataNum", args = 0)]
-    pub fn get_related_group_page_data_num(self) -> i32;
-
-    #[doc = "`set_MenuSelect(crate::app::basicmenuselect::BasicMenuSelect)` overload"]
-    #[method(name = "set_MenuSelect", args = 1)]
-    pub fn set_menu_select(self, value: crate::app::basicmenuselect::BasicMenuSelect) -> ();
-
-    #[doc = "`get_MenuSelect()` overload"]
-    #[method(name = "get_MenuSelect", args = 0)]
-    pub fn get_menu_select(self) -> crate::app::basicmenuselect::BasicMenuSelect;
-
-    #[doc = "`Build(crate::app::goddata::GodData)` overload"]
-    #[method(name = "Build", args = 1)]
-    pub fn build(self, god_data: crate::app::goddata::GodData) -> ();
-
-    #[doc = "`GetMaxBondLevel()` overload"]
-    #[method(name = "GetMaxBondLevel", args = 0)]
-    pub fn get_max_bond_level(self) -> i32;
-
-    #[doc = "`GetToLv()` overload"]
-    #[method(name = "GetToLv", args = 0)]
-    pub fn get_to_lv(self) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_GodPageData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_GodPageData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_GodPageDataMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_PageDataList_GodComparer.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.PageDataList.GodComparer")]
-#[parent(crate::system::object::Object)]
-pub struct RingListSequence_PageDataList_GodComparer {}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_PageDataList_GodComparer {
-    #[doc = "`Compare(crate::app::ringlistsequence::RingListSequence_GodPageData, crate::app::ringlistsequence::RingListSequence_GodPageData)` overload"]
-    #[method(name = "Compare", args = 2)]
-    pub fn compare(
-        self,
-        a: crate::app::ringlistsequence::RingListSequence_GodPageData,
-        b: crate::app::ringlistsequence::RingListSequence_GodPageData,
-    ) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_PageDataList_GodComparer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_PageDataList_GodComparer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_PageDataList_GodComparerMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringlistsequence/RingListSequence_GodAndRingListWindow_Menu.md")))]
-#[::unity2::class(namespace = "App", name = "RingListSequence.GodAndRingListWindow.Menu")]
-#[parent(crate::app::basicmenu::BasicMenu)]
-pub struct RingListSequence_GodAndRingListWindow_Menu {}
-
-#[cfg(feature = "app-ringlistsequence")]
-#[::unity2::methods]
-impl RingListSequence_GodAndRingListWindow_Menu {
-    #[doc = "`get_SelectedPageData()` overload"]
-    #[method(name = "get_SelectedPageData", args = 0)]
-    pub fn get_selected_page_data(self) -> crate::app::ringlistsequence::RingListSequence_PageData;
-
-    #[doc = "`set_SelectedPageData(crate::app::ringlistsequence::RingListSequence_PageData)` overload"]
-    #[method(name = "set_SelectedPageData", args = 1)]
-    pub fn set_selected_page_data(
-        self,
-        value: crate::app::ringlistsequence::RingListSequence_PageData,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    ) -> ();
-
-    #[doc = "`CreateMenuBind(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::ringlistsequence::RingListSequence_PageData, crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateMenuBind", args = 3)]
-    pub fn create_menu_bind(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        current_page_data: crate::app::ringlistsequence::RingListSequence_PageData,
-        super_: crate::app::procinst::ProcInst,
-    ) -> crate::app::ringlistsequence::RingListSequence_GodAndRingListWindow_Menu;
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-}
-
-#[cfg(feature = "app-ringlistsequence")]
-impl RingListSequence_GodAndRingListWindow_Menu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingListSequence_GodAndRingListWindow_Menu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingListSequence_GodAndRingListWindow_MenuMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-        );
         this
     }
 }

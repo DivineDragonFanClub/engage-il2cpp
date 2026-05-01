@@ -6,7 +6,7 @@ use crate::unity_engine::rendering::universal::scriptablerenderer::IScriptableRe
 use crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrenderer/ReflectionRenderer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/reflectionrenderer/ReflectionRenderer.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Custom",
     name = "ReflectionRenderer"

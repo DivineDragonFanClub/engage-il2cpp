@@ -6,7 +6,7 @@ use crate::unity_engine::experimental::rendering::render_graph_module::rendergra
 use crate::unity_engine::experimental::rendering::render_graph_module::rendergraphpass::RenderGraphPass;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphpass_1/RenderGraphPass_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/render_graph_module/rendergraphpass_1/RenderGraphPass_1.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.RenderGraphModule",
     name = "RenderGraphPass`1"

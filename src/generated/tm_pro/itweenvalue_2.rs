@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/itweenvalue_2/ITweenValue_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/itweenvalue_2/ITweenValue_2.md"))]
 #[::unity2::class(namespace = "TMPro", name = "ITweenValue")]
 pub struct ITweenValue_2 {}
 

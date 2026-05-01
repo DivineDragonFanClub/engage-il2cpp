@@ -14,7 +14,124 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_FrameReadyEventHandler.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Video",
+    name = "VideoPlayer.FrameReadyEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct VideoPlayer_FrameReadyEventHandler {}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+#[::unity2::methods]
+impl VideoPlayer_FrameReadyEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer, i64)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        source: crate::unity_engine::video::videoplayer::VideoPlayer,
+        frame_idx: i64,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+impl VideoPlayer_FrameReadyEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VideoPlayer_FrameReadyEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVideoPlayer_FrameReadyEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_TimeEventHandler.md"))]
+#[::unity2::class(namespace = "UnityEngine.Video", name = "VideoPlayer.TimeEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct VideoPlayer_TimeEventHandler {}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+#[::unity2::methods]
+impl VideoPlayer_TimeEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer, f64)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        source: crate::unity_engine::video::videoplayer::VideoPlayer,
+        seconds: f64,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+impl VideoPlayer_TimeEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VideoPlayer_TimeEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVideoPlayer_TimeEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_ErrorEventHandler.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Video",
+    name = "VideoPlayer.ErrorEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct VideoPlayer_ErrorEventHandler {}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+#[::unity2::methods]
+impl VideoPlayer_ErrorEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::Il2CppString)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        source: crate::unity_engine::video::videoplayer::VideoPlayer,
+        message: ::unity2::Il2CppString,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-video-videoplayer")]
+impl VideoPlayer_ErrorEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VideoPlayer_ErrorEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVideoPlayer_ErrorEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer.md"))]
 #[::unity2::class(namespace = "UnityEngine.Video", name = "VideoPlayer")]
 #[parent(crate::unity_engine::behaviour::Behaviour)]
 pub struct VideoPlayer {
@@ -594,84 +711,7 @@ impl VideoPlayer {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_TimeEventHandler.md")))]
-#[::unity2::class(namespace = "UnityEngine.Video", name = "VideoPlayer.TimeEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct VideoPlayer_TimeEventHandler {}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-#[::unity2::methods]
-impl VideoPlayer_TimeEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer, f64)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        source: crate::unity_engine::video::videoplayer::VideoPlayer,
-        seconds: f64,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-impl VideoPlayer_TimeEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VideoPlayer_TimeEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVideoPlayer_TimeEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_ErrorEventHandler.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Video",
-    name = "VideoPlayer.ErrorEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct VideoPlayer_ErrorEventHandler {}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-#[::unity2::methods]
-impl VideoPlayer_ErrorEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        source: crate::unity_engine::video::videoplayer::VideoPlayer,
-        message: ::unity2::Il2CppString,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-impl VideoPlayer_ErrorEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VideoPlayer_ErrorEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVideoPlayer_ErrorEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_EventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_EventHandler.md"))]
 #[::unity2::class(namespace = "UnityEngine.Video", name = "VideoPlayer.EventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct VideoPlayer_EventHandler {}
@@ -700,46 +740,6 @@ impl VideoPlayer_EventHandler {
             )
         });
         <Self as IVideoPlayer_EventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/video/videoplayer/VideoPlayer_FrameReadyEventHandler.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Video",
-    name = "VideoPlayer.FrameReadyEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct VideoPlayer_FrameReadyEventHandler {}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-#[::unity2::methods]
-impl VideoPlayer_FrameReadyEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::video::videoplayer::VideoPlayer, i64)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        source: crate::unity_engine::video::videoplayer::VideoPlayer,
-        frame_idx: i64,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-video-videoplayer")]
-impl VideoPlayer_FrameReadyEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VideoPlayer_FrameReadyEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVideoPlayer_FrameReadyEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/addressables/Addressables.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/addressables/Addressables.md"))]
 #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "Addressables")]
 #[parent(crate::system::object::Object)]
 pub struct Addressables {
@@ -424,7 +424,7 @@ impl Addressables {
     pub fn cctor() -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/addressables/Addressables_MergeMode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/addressables/Addressables_MergeMode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

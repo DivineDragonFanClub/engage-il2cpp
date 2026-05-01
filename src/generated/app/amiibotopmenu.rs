@@ -18,7 +18,91 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibotopmenu/AmiiboTopMenu_MenuResult.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu_SoundMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "AmiiboTopMenu.SoundMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct AmiiboTopMenu_SoundMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-amiibotopmenu")]
+#[::unity2::methods]
+impl AmiiboTopMenu_SoundMenuItem {
+    #[doc = "`.ctor(crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-amiibotopmenu")]
+impl AmiiboTopMenu_SoundMenuItem {
+    #[doc = "`.ctor(crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AmiiboTopMenu_SoundMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAmiiboTopMenu_SoundMenuItemMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "AmiiboTopMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AmiiboTopMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-amiibotopmenu")]
+#[::unity2::methods]
+impl AmiiboTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, result: crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult) -> ();
+}
+
+#[cfg(feature = "app-amiibotopmenu")]
+impl AmiiboTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AmiiboTopMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAmiiboTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibotopmenu/AmiiboTopMenu_MenuResult.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -70,58 +154,7 @@ impl AmiiboTopMenu_MenuResult {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu_AccessoryMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "AmiiboTopMenu.AccessoryMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct AmiiboTopMenu_AccessoryMenuItem {
-    #[rename(name = "m_DecideEventHandler")]
-    pub m_decide_event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
-}
-
-#[cfg(feature = "app-amiibotopmenu")]
-#[::unity2::methods]
-impl AmiiboTopMenu_AccessoryMenuItem {
-    #[doc = "`.ctor(crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-amiibotopmenu")]
-impl AmiiboTopMenu_AccessoryMenuItem {
-    #[doc = "`.ctor(crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AmiiboTopMenu_AccessoryMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAmiiboTopMenu_AccessoryMenuItemMethods>::ctor(this, event_handler);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu.md"))]
 #[::unity2::class(namespace = "App", name = "AmiiboTopMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct AmiiboTopMenu {
@@ -208,17 +241,17 @@ impl AmiiboTopMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu_SoundMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "AmiiboTopMenu.SoundMenuItem")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu_AccessoryMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "AmiiboTopMenu.AccessoryMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct AmiiboTopMenu_SoundMenuItem {
+pub struct AmiiboTopMenu_AccessoryMenuItem {
     #[rename(name = "m_DecideEventHandler")]
     pub m_decide_event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler,
 }
 
 #[cfg(feature = "app-amiibotopmenu")]
 #[::unity2::methods]
-impl AmiiboTopMenu_SoundMenuItem {
+impl AmiiboTopMenu_AccessoryMenuItem {
     #[doc = "`.ctor(crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(
@@ -244,22 +277,22 @@ impl AmiiboTopMenu_SoundMenuItem {
 }
 
 #[cfg(feature = "app-amiibotopmenu")]
-impl AmiiboTopMenu_SoundMenuItem {
+impl AmiiboTopMenu_AccessoryMenuItem {
     #[doc = "`.ctor(crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler)` — overload selector"]
     pub fn new(event_handler: crate::app::amiibotopmenu::AmiiboTopMenu_DecideEventHandler) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(AmiiboTopMenu_SoundMenuItem),
+                ::core::stringify!(AmiiboTopMenu_AccessoryMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IAmiiboTopMenu_SoundMenuItemMethods>::ctor(this, event_handler);
+        <Self as IAmiiboTopMenu_AccessoryMenuItemMethods>::ctor(this, event_handler);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu_AmiiboMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu_AmiiboMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "AmiiboTopMenu.AmiiboMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct AmiiboTopMenu_AmiiboMenuItem {
@@ -316,39 +349,6 @@ impl AmiiboTopMenu_AmiiboMenuItem {
             )
         });
         <Self as IAmiiboTopMenu_AmiiboMenuItemMethods>::ctor(this, event_handler);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopmenu/AmiiboTopMenu_DecideEventHandler.md")))]
-#[::unity2::class(namespace = "App", name = "AmiiboTopMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AmiiboTopMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-amiibotopmenu")]
-#[::unity2::methods]
-impl AmiiboTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, result: crate::app::amiibotopmenu::AmiiboTopMenu_MenuResult) -> ();
-}
-
-#[cfg(feature = "app-amiibotopmenu")]
-impl AmiiboTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AmiiboTopMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAmiiboTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

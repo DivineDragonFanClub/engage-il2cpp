@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -62,7 +62,7 @@ impl DebugSaveDataPathMenu_Label {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugsavedatapathmenu/DebugSaveDataPathMenu.md"))]
 #[::unity2::class(namespace = "App", name = "DebugSaveDataPathMenu")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct DebugSaveDataPathMenu {}

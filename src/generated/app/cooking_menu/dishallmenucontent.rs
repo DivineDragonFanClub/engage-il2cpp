@@ -12,7 +12,180 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_EnhanceObject.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_FoodstuffsHistory.md"))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "DishAllMenuContent.FoodstuffsHistory"
+)]
+#[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
+pub struct DishAllMenuContent_FoodstuffsHistory {
+    #[rename(name = "m_FoodstuffItemList")]
+    pub m_foodstuff_item_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_FoodstuffGroup")]
+    pub m_foodstuff_group: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Nothing")]
+    pub m_nothing: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Blank")]
+    pub m_blank: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+#[::unity2::methods]
+impl DishAllMenuContent_FoodstuffsHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        foodstuff_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        foodstuff_group: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[doc = "`Show(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]
+    #[method(name = "Show", args = 1)]
+    pub fn show(
+        self,
+        foodstuffs: crate::system::collections::generic::list_1::List_1<
+            crate::app::foodstuffdata::FoodstuffData,
+        >,
+    ) -> ();
+
+    #[doc = "`SetFoodstuffs(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]
+    #[method(name = "SetFoodstuffs", args = 1)]
+    pub fn set_foodstuffs(
+        self,
+        foodstuffs: crate::system::collections::generic::list_1::List_1<
+            crate::app::foodstuffdata::FoodstuffData,
+        >,
+    ) -> ();
+
+    #[doc = "`SetFoodstuffItem(crate::unity_engine::gameobject::GameObject, crate::app::foodstuffdata::FoodstuffData)` overload"]
+    #[method(name = "SetFoodstuffItem", args = 2)]
+    pub fn set_foodstuff_item(
+        self,
+        content_item: crate::unity_engine::gameobject::GameObject,
+        data: crate::app::foodstuffdata::FoodstuffData,
+    ) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+impl DishAllMenuContent_FoodstuffsHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(
+        game_object: crate::unity_engine::gameobject::GameObject,
+        foodstuff_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::gameobject::GameObject,
+        >,
+        foodstuff_group: crate::unity_engine::gameobject::GameObject,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishAllMenuContent_FoodstuffsHistory),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishAllMenuContent_FoodstuffsHistoryMethods>::ctor(
+            this,
+            game_object,
+            foodstuff_item_list,
+            foodstuff_group,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_CookHistory.md"))]
+#[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.CookHistory")]
+#[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
+pub struct DishAllMenuContent_CookHistory {}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+#[::unity2::methods]
+impl DishAllMenuContent_CookHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, game_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`SetupCook()` overload"]
+    #[method(name = "SetupCook", args = 0)]
+    pub fn setup_cook(self) -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+impl DishAllMenuContent_CookHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(game_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishAllMenuContent_CookHistory),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishAllMenuContent_CookHistoryMethods>::ctor(this, game_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_HistoryObject.md"))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "DishAllMenuContent.HistoryObject"
+)]
+#[parent(crate::system::object::Object)]
+pub struct DishAllMenuContent_HistoryObject {
+    #[rename(name = "m_GameObject")]
+    pub m_game_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_CanvasGroup")]
+    pub m_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
+}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+#[::unity2::methods]
+impl DishAllMenuContent_HistoryObject {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, game_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Show()` overload"]
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[doc = "`get_gameObject()` overload"]
+    #[method(name = "get_gameObject", args = 0)]
+    pub fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject;
+}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+impl DishAllMenuContent_HistoryObject {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(game_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishAllMenuContent_HistoryObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishAllMenuContent_HistoryObjectMethods>::ctor(this, game_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_EnhanceObject.md"))]
 #[::unity2::class(
     namespace = "App.CookingMenu",
     name = "DishAllMenuContent.EnhanceObject"
@@ -51,174 +224,7 @@ impl DishAllMenuContent_EnhanceObject {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_DishHistory.md")))]
-#[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.DishHistory")]
-#[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
-pub struct DishAllMenuContent_DishHistory {
-    #[rename(name = "m_FoodName")]
-    pub m_food_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_DifficultyIcon")]
-    pub m_difficulty_icon: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_FoodDifficulty")]
-    pub m_food_difficulty: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_EnhanceObjectList")]
-    pub m_enhance_object_list: crate::system::collections::generic::list_1::List_1<
-        crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject,
-    >,
-    #[rename(name = "m_Dish")]
-    pub m_dish: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Params")]
-    pub m_params: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Blank0")]
-    pub m_blank0: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Blank1")]
-    pub m_blank1: crate::unity_engine::gameobject::GameObject,
-}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-#[::unity2::methods]
-impl DishAllMenuContent_DishHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::gameobject::GameObject, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject>)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
-        game_object: crate::unity_engine::gameobject::GameObject,
-        food_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        difficulty_icon: crate::unity_engine::gameobject::GameObject,
-        food_difficulty: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        enhance_object_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject,
-        >,
-    ) -> ();
-
-    #[doc = "`Show(crate::app::fooddata::FoodData)` overload"]
-    #[method(name = "Show", args = 1)]
-    pub fn show(self, food: crate::app::fooddata::FoodData) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`SetFoodInfo(crate::app::fooddata::FoodData)` overload"]
-    #[method(name = "SetFoodInfo", args = 1)]
-    pub fn set_food_info(self, food: crate::app::fooddata::FoodData) -> ();
-
-    #[doc = "`GetEnhanceType(i32)` overload"]
-    #[method(name = "GetEnhanceType", args = 1)]
-    pub fn get_enhance_type(
-        self,
-        index: i32,
-    ) -> crate::app::capabilitydefinition::CapabilityDefinition_Type;
-}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl DishAllMenuContent_DishHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::gameobject::GameObject, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject>)` — overload selector"]
-    pub fn new(
-        game_object: crate::unity_engine::gameobject::GameObject,
-        food_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        difficulty_icon: crate::unity_engine::gameobject::GameObject,
-        food_difficulty: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        enhance_object_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishAllMenuContent_DishHistory),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishAllMenuContent_DishHistoryMethods>::ctor(
-            this,
-            game_object,
-            food_name,
-            difficulty_icon,
-            food_difficulty,
-            enhance_object_list,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_UnitsHistory.md")))]
-#[::unity2::class(
-    namespace = "App.CookingMenu",
-    name = "DishAllMenuContent.UnitsHistory"
-)]
-#[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
-pub struct DishAllMenuContent_UnitsHistory {
-    #[rename(name = "m_UnitIcon0")]
-    pub m_unit_icon0: crate::app::uniticon::UnitIcon,
-    #[rename(name = "m_UnitName0")]
-    pub m_unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_UnitIcon1")]
-    pub m_unit_icon1: crate::app::uniticon::UnitIcon,
-    #[rename(name = "m_UnitName1")]
-    pub m_unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_UnitGrp")]
-    pub m_unit_grp: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Blank")]
-    pub m_blank: crate::unity_engine::gameobject::GameObject,
-}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-#[::unity2::methods]
-impl DishAllMenuContent_UnitsHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
-        game_object: crate::unity_engine::gameobject::GameObject,
-        unit_icon0: crate::app::uniticon::UnitIcon,
-        unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        unit_icon1: crate::app::uniticon::UnitIcon,
-        unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    ) -> ();
-
-    #[doc = "`Show(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]
-    #[method(name = "Show", args = 1)]
-    pub fn show(
-        self,
-        unit_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-    ) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl DishAllMenuContent_UnitsHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` — overload selector"]
-    pub fn new(
-        game_object: crate::unity_engine::gameobject::GameObject,
-        unit_icon0: crate::app::uniticon::UnitIcon,
-        unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-        unit_icon1: crate::app::uniticon::UnitIcon,
-        unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishAllMenuContent_UnitsHistory),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishAllMenuContent_UnitsHistoryMethods>::ctor(
-            this,
-            game_object,
-            unit_icon0,
-            unit_name0,
-            unit_icon1,
-            unit_name1,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent.md"))]
 #[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct DishAllMenuContent {
@@ -386,96 +392,137 @@ impl DishAllMenuContent {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_CookHistory.md")))]
-#[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.CookHistory")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_DishHistory.md"))]
+#[::unity2::class(namespace = "App.CookingMenu", name = "DishAllMenuContent.DishHistory")]
 #[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
-pub struct DishAllMenuContent_CookHistory {}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-#[::unity2::methods]
-impl DishAllMenuContent_CookHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, game_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`SetupCook()` overload"]
-    #[method(name = "SetupCook", args = 0)]
-    pub fn setup_cook(self) -> ();
+pub struct DishAllMenuContent_DishHistory {
+    #[rename(name = "m_FoodName")]
+    pub m_food_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_DifficultyIcon")]
+    pub m_difficulty_icon: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_FoodDifficulty")]
+    pub m_food_difficulty: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_EnhanceObjectList")]
+    pub m_enhance_object_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject,
+    >,
+    #[rename(name = "m_Dish")]
+    pub m_dish: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Params")]
+    pub m_params: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Blank0")]
+    pub m_blank0: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Blank1")]
+    pub m_blank1: crate::unity_engine::gameobject::GameObject,
 }
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl DishAllMenuContent_CookHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(game_object: crate::unity_engine::gameobject::GameObject) -> Self {
+#[::unity2::methods]
+impl DishAllMenuContent_DishHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::gameobject::GameObject, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject>)` overload"]
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        food_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        difficulty_icon: crate::unity_engine::gameobject::GameObject,
+        food_difficulty: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        enhance_object_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject,
+        >,
+    ) -> ();
+
+    #[doc = "`Show(crate::app::fooddata::FoodData)` overload"]
+    #[method(name = "Show", args = 1)]
+    pub fn show(self, food: crate::app::fooddata::FoodData) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[doc = "`SetFoodInfo(crate::app::fooddata::FoodData)` overload"]
+    #[method(name = "SetFoodInfo", args = 1)]
+    pub fn set_food_info(self, food: crate::app::fooddata::FoodData) -> ();
+
+    #[doc = "`GetEnhanceType(i32)` overload"]
+    #[method(name = "GetEnhanceType", args = 1)]
+    pub fn get_enhance_type(
+        self,
+        index: i32,
+    ) -> crate::app::capabilitydefinition::CapabilityDefinition_Type;
+}
+
+#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
+impl DishAllMenuContent_DishHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::unity_engine::gameobject::GameObject, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject>)` — overload selector"]
+    pub fn new(
+        game_object: crate::unity_engine::gameobject::GameObject,
+        food_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        difficulty_icon: crate::unity_engine::gameobject::GameObject,
+        food_difficulty: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        enhance_object_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_EnhanceObject,
+        >,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DishAllMenuContent_CookHistory),
+                ::core::stringify!(DishAllMenuContent_DishHistory),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDishAllMenuContent_CookHistoryMethods>::ctor(this, game_object);
+        <Self as IDishAllMenuContent_DishHistoryMethods>::ctor(
+            this,
+            game_object,
+            food_name,
+            difficulty_icon,
+            food_difficulty,
+            enhance_object_list,
+        );
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_FoodstuffsHistory.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_UnitsHistory.md"))]
 #[::unity2::class(
     namespace = "App.CookingMenu",
-    name = "DishAllMenuContent.FoodstuffsHistory"
+    name = "DishAllMenuContent.UnitsHistory"
 )]
 #[parent(crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent_HistoryObject)]
-pub struct DishAllMenuContent_FoodstuffsHistory {
-    #[rename(name = "m_FoodstuffItemList")]
-    pub m_foodstuff_item_list: crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::gameobject::GameObject,
-    >,
-    #[rename(name = "m_FoodstuffGroup")]
-    pub m_foodstuff_group: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Nothing")]
-    pub m_nothing: crate::unity_engine::gameobject::GameObject,
+pub struct DishAllMenuContent_UnitsHistory {
+    #[rename(name = "m_UnitIcon0")]
+    pub m_unit_icon0: crate::app::uniticon::UnitIcon,
+    #[rename(name = "m_UnitName0")]
+    pub m_unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_UnitIcon1")]
+    pub m_unit_icon1: crate::app::uniticon::UnitIcon,
+    #[rename(name = "m_UnitName1")]
+    pub m_unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_UnitGrp")]
+    pub m_unit_grp: crate::unity_engine::gameobject::GameObject,
     #[rename(name = "m_Blank")]
     pub m_blank: crate::unity_engine::gameobject::GameObject,
 }
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
 #[::unity2::methods]
-impl DishAllMenuContent_FoodstuffsHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 3)]
+impl DishAllMenuContent_UnitsHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` overload"]
+    #[method(name = ".ctor", args = 5)]
     pub fn ctor(
         self,
         game_object: crate::unity_engine::gameobject::GameObject,
-        foodstuff_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        foodstuff_group: crate::unity_engine::gameobject::GameObject,
+        unit_icon0: crate::app::uniticon::UnitIcon,
+        unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        unit_icon1: crate::app::uniticon::UnitIcon,
+        unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     ) -> ();
 
-    #[doc = "`Show(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]
+    #[doc = "`Show(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]
     #[method(name = "Show", args = 1)]
     pub fn show(
         self,
-        foodstuffs: crate::system::collections::generic::list_1::List_1<
-            crate::app::foodstuffdata::FoodstuffData,
-        >,
-    ) -> ();
-
-    #[doc = "`SetFoodstuffs(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)` overload"]
-    #[method(name = "SetFoodstuffs", args = 1)]
-    pub fn set_foodstuffs(
-        self,
-        foodstuffs: crate::system::collections::generic::list_1::List_1<
-            crate::app::foodstuffdata::FoodstuffData,
-        >,
-    ) -> ();
-
-    #[doc = "`SetFoodstuffItem(crate::unity_engine::gameobject::GameObject, crate::app::foodstuffdata::FoodstuffData)` overload"]
-    #[method(name = "SetFoodstuffItem", args = 2)]
-    pub fn set_foodstuff_item(
-        self,
-        content_item: crate::unity_engine::gameobject::GameObject,
-        data: crate::app::foodstuffdata::FoodstuffData,
+        unit_list: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
     ) -> ();
 
     #[doc = "`Hide()` overload"]
@@ -484,77 +531,30 @@ impl DishAllMenuContent_FoodstuffsHistory {
 }
 
 #[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl DishAllMenuContent_FoodstuffsHistory {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject>, crate::unity_engine::gameobject::GameObject)` — overload selector"]
+impl DishAllMenuContent_UnitsHistory {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::app::uniticon::UnitIcon, crate::tm_pro::textmeshprougui::TextMeshProUGUI)` — overload selector"]
     pub fn new(
         game_object: crate::unity_engine::gameobject::GameObject,
-        foodstuff_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::unity_engine::gameobject::GameObject,
-        >,
-        foodstuff_group: crate::unity_engine::gameobject::GameObject,
+        unit_icon0: crate::app::uniticon::UnitIcon,
+        unit_name0: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+        unit_icon1: crate::app::uniticon::UnitIcon,
+        unit_name1: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DishAllMenuContent_FoodstuffsHistory),
+                ::core::stringify!(DishAllMenuContent_UnitsHistory),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDishAllMenuContent_FoodstuffsHistoryMethods>::ctor(
+        <Self as IDishAllMenuContent_UnitsHistoryMethods>::ctor(
             this,
             game_object,
-            foodstuff_item_list,
-            foodstuff_group,
+            unit_icon0,
+            unit_name0,
+            unit_icon1,
+            unit_name1,
         );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishallmenucontent/DishAllMenuContent_HistoryObject.md")))]
-#[::unity2::class(
-    namespace = "App.CookingMenu",
-    name = "DishAllMenuContent.HistoryObject"
-)]
-#[parent(crate::system::object::Object)]
-pub struct DishAllMenuContent_HistoryObject {
-    #[rename(name = "m_GameObject")]
-    pub m_game_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_CanvasGroup")]
-    pub m_canvas_group: crate::unity_engine::canvasgroup::CanvasGroup,
-}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-#[::unity2::methods]
-impl DishAllMenuContent_HistoryObject {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, game_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`get_gameObject()` overload"]
-    #[method(name = "get_gameObject", args = 0)]
-    pub fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject;
-}
-
-#[cfg(feature = "app-cooking_menu-dishallmenucontent")]
-impl DishAllMenuContent_HistoryObject {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(game_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishAllMenuContent_HistoryObject),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishAllMenuContent_HistoryObjectMethods>::ctor(this, game_object);
         this
     }
 }

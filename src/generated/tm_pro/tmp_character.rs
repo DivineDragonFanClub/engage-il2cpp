@@ -6,7 +6,7 @@ use crate::tm_pro::tmp_textelement::ITMP_TextElement;
 use crate::tm_pro::tmp_textelement::TMP_TextElement;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_character/TMP_Character.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_character/TMP_Character.md"))]
 #[::unity2::class(namespace = "TMPro", name = "TMP_Character")]
 #[parent(crate::tm_pro::tmp_textelement::TMP_TextElement)]
 pub struct TMP_Character {}

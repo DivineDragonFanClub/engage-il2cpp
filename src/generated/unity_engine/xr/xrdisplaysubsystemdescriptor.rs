@@ -8,7 +8,7 @@ use crate::unity_engine::integratedsubsystemdescriptor_1::IIntegratedSubsystemDe
 use crate::unity_engine::integratedsubsystemdescriptor_1::IntegratedSubsystemDescriptor_1;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrdisplaysubsystemdescriptor/XRDisplaySubsystemDescriptor.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrdisplaysubsystemdescriptor/XRDisplaySubsystemDescriptor.md"))]
 #[::unity2::class(namespace = "UnityEngine.XR", name = "XRDisplaySubsystemDescriptor")]
 # [parent (crate :: unity_engine :: integratedsubsystemdescriptor_1 :: IntegratedSubsystemDescriptor_1 < crate :: unity_engine :: xr :: xrdisplaysubsystem :: XRDisplaySubsystem >)]
 pub struct XRDisplaySubsystemDescriptor {}

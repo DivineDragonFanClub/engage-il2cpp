@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/disallowmultiplerendererfeature/DisallowMultipleRendererFeature.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/disallowmultiplerendererfeature/DisallowMultipleRendererFeature.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
     name = "DisallowMultipleRendererFeature"

@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ibegindraghandler/IBeginDragHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/ibegindraghandler/IBeginDragHandler.md"))]
 #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IBeginDragHandler")]
 pub struct IBeginDragHandler {}
 

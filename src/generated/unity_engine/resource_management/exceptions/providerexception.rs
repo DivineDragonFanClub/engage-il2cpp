@@ -6,7 +6,7 @@ use crate::unity_engine::resource_management::exceptions::operationexception::IO
 use crate::unity_engine::resource_management::exceptions::operationexception::OperationException;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/exceptions/providerexception/ProviderException.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/exceptions/providerexception/ProviderException.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.Exceptions",
     name = "ProviderException"

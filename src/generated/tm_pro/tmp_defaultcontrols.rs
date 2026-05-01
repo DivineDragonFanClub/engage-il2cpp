@@ -6,7 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls_Resources.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls_Resources.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct TMP_DefaultControls_Resources {
@@ -40,7 +40,7 @@ impl ::unity2::IlType for TMP_DefaultControls_Resources {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_defaultcontrols/TMP_DefaultControls.md"))]
 #[::unity2::class(namespace = "TMPro", name = "TMP_DefaultControls")]
 #[parent(crate::system::object::Object)]
 pub struct TMP_DefaultControls {

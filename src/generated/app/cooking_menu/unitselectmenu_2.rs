@@ -14,7 +14,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_2.md"))]
 #[::unity2::class(namespace = "App.CookingMenu", name = "UnitSelectMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct UnitSelectMenu_2 {
@@ -161,7 +161,7 @@ impl UnitSelectMenu_2 {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_UnitSelectMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_UnitSelectMenuItem.md"))]
 #[::unity2::class(
     namespace = "App.CookingMenu",
     name = "UnitSelectMenu.UnitSelectMenuItem"
@@ -228,7 +228,7 @@ impl UnitSelectMenu_UnitSelectMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler.md"))]
 #[::unity2::class(
     namespace = "App.CookingMenu",
     name = "UnitSelectMenu.UnitSelectMenuItem.SelectEventHandler"

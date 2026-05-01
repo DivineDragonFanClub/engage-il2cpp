@@ -6,7 +6,7 @@ use crate::tm_pro::tmp_textelement_legacy::ITMP_TextElement_Legacy;
 use crate::tm_pro::tmp_textelement_legacy::TMP_TextElement_Legacy;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_glyph/TMP_Glyph.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_glyph/TMP_Glyph.md"))]
 #[::unity2::class(namespace = "TMPro", name = "TMP_Glyph")]
 #[parent(crate::tm_pro::tmp_textelement_legacy::TMP_TextElement_Legacy)]
 pub struct TMP_Glyph {}

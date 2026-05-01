@@ -8,7 +8,60 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideresultui/DragonRideResultUI.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideresultui/DragonRideResultUI_DragonRideResultUITarget.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "DragonRideResultUI.DragonRideResultUITarget"
+)]
+#[parent(crate::system::object::Object)]
+pub struct DragonRideResultUI_DragonRideResultUITarget {
+    #[rename(name = "m_Node")]
+    pub m_node: crate::unity_engine::transform::Transform,
+    #[rename(name = "m_Text")]
+    pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-dragonrideresultui")]
+#[::unity2::methods]
+impl DragonRideResultUI_DragonRideResultUITarget {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Init(crate::unity_engine::transform::Transform)` overload"]
+    #[method(name = "Init", args = 1)]
+    pub fn init(self, base_obj: crate::unity_engine::transform::Transform) -> ();
+
+    #[doc = "`SetText(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetText", args = 1)]
+    pub fn set_text(self, str: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Show()` overload"]
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+}
+
+#[cfg(feature = "app-dragonrideresultui")]
+impl DragonRideResultUI_DragonRideResultUITarget {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideResultUI_DragonRideResultUITarget),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideResultUI_DragonRideResultUITargetMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideresultui/DragonRideResultUI.md"))]
 #[::unity2::class(namespace = "App", name = "DragonRideResultUI")]
 #[parent(crate::system::object::Object)]
 pub struct DragonRideResultUI {
@@ -124,7 +177,7 @@ impl DragonRideResultUI {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideresultui/DragonRideResultUI_DataSet.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideresultui/DragonRideResultUI_DataSet.md"))]
 #[::unity2::class(namespace = "App", name = "DragonRideResultUI.DataSet")]
 #[parent(crate::system::object::Object)]
 pub struct DragonRideResultUI_DataSet {
@@ -252,7 +305,7 @@ impl DragonRideResultUI_DataSet {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideresultui/DragonRideResultUI_ResultPhase.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonrideresultui/DragonRideResultUI_ResultPhase.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -325,58 +378,5 @@ impl DragonRideResultUI_ResultPhase {
 
     pub fn phase_count() -> Self {
         Self { value: 9 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideresultui/DragonRideResultUI_DragonRideResultUITarget.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "DragonRideResultUI.DragonRideResultUITarget"
-)]
-#[parent(crate::system::object::Object)]
-pub struct DragonRideResultUI_DragonRideResultUITarget {
-    #[rename(name = "m_Node")]
-    pub m_node: crate::unity_engine::transform::Transform,
-    #[rename(name = "m_Text")]
-    pub m_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-}
-
-#[cfg(feature = "app-dragonrideresultui")]
-#[::unity2::methods]
-impl DragonRideResultUI_DragonRideResultUITarget {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Init(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = "Init", args = 1)]
-    pub fn init(self, base_obj: crate::unity_engine::transform::Transform) -> ();
-
-    #[doc = "`SetText(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetText", args = 1)]
-    pub fn set_text(self, str: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-}
-
-#[cfg(feature = "app-dragonrideresultui")]
-impl DragonRideResultUI_DragonRideResultUITarget {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideResultUI_DragonRideResultUITarget),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideResultUI_DragonRideResultUITargetMethods>::ctor(this);
-        this
     }
 }

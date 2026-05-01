@@ -12,48 +12,91 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_EnhanceObject.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_UnitObject.md"))]
 #[::unity2::class(
     namespace = "App.CookingMenu",
-    name = "DishSelectFoodInfoContent.EnhanceObject"
+    name = "DishSelectFoodInfoContent.UnitObject"
 )]
 #[parent(crate::system::object::Object)]
-pub struct DishSelectFoodInfoContent_EnhanceObject {
-    #[rename(name = "m_Value")]
-    pub m_value: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Nothing")]
-    pub m_nothing: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_ValueText")]
-    pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_TitleText")]
-    pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+pub struct DishSelectFoodInfoContent_UnitObject {
+    #[rename(name = "m_NameText")]
+    pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_LikeObject")]
+    pub m_like_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_DislikeObject")]
+    pub m_dislike_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_NormalObject")]
+    pub m_normal_object: crate::unity_engine::gameobject::GameObject,
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
 #[::unity2::methods]
-impl DishSelectFoodInfoContent_EnhanceObject {
+impl DishSelectFoodInfoContent_UnitObject {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent_EnhanceObject {
+impl DishSelectFoodInfoContent_UnitObject {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectFoodInfoContent_EnhanceObject),
+                ::core::stringify!(DishSelectFoodInfoContent_UnitObject),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDishSelectFoodInfoContent_EnhanceObjectMethods>::ctor(this);
+        <Self as IDishSelectFoodInfoContent_UnitObjectMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_FoodstuffObject.md"))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "DishSelectFoodInfoContent.FoodstuffObject"
+)]
+#[parent(crate::system::object::Object)]
+pub struct DishSelectFoodInfoContent_FoodstuffObject {
+    #[rename(name = "m_GameObject")]
+    pub m_game_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_IconImage")]
+    pub m_icon_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_NameText")]
+    pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_NumText")]
+    pub m_num_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_CountMessText")]
+    pub m_count_mess_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
+#[::unity2::methods]
+impl DishSelectFoodInfoContent_FoodstuffObject {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
+impl DishSelectFoodInfoContent_FoodstuffObject {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishSelectFoodInfoContent_FoodstuffObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishSelectFoodInfoContent_FoodstuffObjectMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent.md"))]
 #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectFoodInfoContent")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct DishSelectFoodInfoContent {
@@ -136,86 +179,43 @@ impl DishSelectFoodInfoContent {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_FoodstuffObject.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_EnhanceObject.md"))]
 #[::unity2::class(
     namespace = "App.CookingMenu",
-    name = "DishSelectFoodInfoContent.FoodstuffObject"
+    name = "DishSelectFoodInfoContent.EnhanceObject"
 )]
 #[parent(crate::system::object::Object)]
-pub struct DishSelectFoodInfoContent_FoodstuffObject {
-    #[rename(name = "m_GameObject")]
-    pub m_game_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_IconImage")]
-    pub m_icon_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_NameText")]
-    pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_NumText")]
-    pub m_num_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_CountMessText")]
-    pub m_count_mess_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+pub struct DishSelectFoodInfoContent_EnhanceObject {
+    #[rename(name = "m_Value")]
+    pub m_value: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Nothing")]
+    pub m_nothing: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ValueText")]
+    pub m_value_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TitleText")]
+    pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
 #[::unity2::methods]
-impl DishSelectFoodInfoContent_FoodstuffObject {
+impl DishSelectFoodInfoContent_EnhanceObject {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent_FoodstuffObject {
+impl DishSelectFoodInfoContent_EnhanceObject {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectFoodInfoContent_FoodstuffObject),
+                ::core::stringify!(DishSelectFoodInfoContent_EnhanceObject),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDishSelectFoodInfoContent_FoodstuffObjectMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectfoodinfocontent/DishSelectFoodInfoContent_UnitObject.md")))]
-#[::unity2::class(
-    namespace = "App.CookingMenu",
-    name = "DishSelectFoodInfoContent.UnitObject"
-)]
-#[parent(crate::system::object::Object)]
-pub struct DishSelectFoodInfoContent_UnitObject {
-    #[rename(name = "m_NameText")]
-    pub m_name_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_LikeObject")]
-    pub m_like_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_DislikeObject")]
-    pub m_dislike_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_NormalObject")]
-    pub m_normal_object: crate::unity_engine::gameobject::GameObject,
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-#[::unity2::methods]
-impl DishSelectFoodInfoContent_UnitObject {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectfoodinfocontent")]
-impl DishSelectFoodInfoContent_UnitObject {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectFoodInfoContent_UnitObject),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishSelectFoodInfoContent_UnitObjectMethods>::ctor(this);
+        <Self as IDishSelectFoodInfoContent_EnhanceObjectMethods>::ctor(this);
         this
     }
 }

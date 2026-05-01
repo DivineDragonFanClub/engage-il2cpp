@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/emptyreadonlydictionaryinternal/EmptyReadOnlyDictionaryInternal.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/emptyreadonlydictionaryinternal/EmptyReadOnlyDictionaryInternal.md"))]
 #[::unity2::class(
     namespace = "System.Collections",
     name = "EmptyReadOnlyDictionaryInternal"
@@ -108,7 +108,7 @@ impl EmptyReadOnlyDictionaryInternal {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/emptyreadonlydictionaryinternal/EmptyReadOnlyDictionaryInternal_NodeEnumerator.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/emptyreadonlydictionaryinternal/EmptyReadOnlyDictionaryInternal_NodeEnumerator.md"))]
 #[::unity2::class(
     namespace = "System.Collections",
     name = "EmptyReadOnlyDictionaryInternal.NodeEnumerator"

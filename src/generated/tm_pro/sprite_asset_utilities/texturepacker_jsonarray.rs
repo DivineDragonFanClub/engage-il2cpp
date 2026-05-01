@@ -6,23 +6,18 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_Meta.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_SpriteSize.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TexturePacker_JsonArray_Meta {
-    pub app: :: unity2 :: Il2CppString,
-    pub version: :: unity2 :: Il2CppString,
-    pub image: :: unity2 :: Il2CppString,
-    pub format: :: unity2 :: Il2CppString,
-    pub size: crate :: tm_pro :: sprite_asset_utilities :: texturepacker_jsonarray :: TexturePacker_JsonArray_SpriteSize,
-    pub scale: f32,
-    pub smartupdate: :: unity2 :: Il2CppString,
+pub struct TexturePacker_JsonArray_SpriteSize {
+    pub w: f32,
+    pub h: f32,
 }
 
-impl ::unity2::ClassIdentity for TexturePacker_JsonArray_Meta {
+impl ::unity2::ClassIdentity for TexturePacker_JsonArray_SpriteSize {
     const NAMESPACE: &'static str = "TMPro.SpriteAssetUtilities";
 
-    const NAME: &'static str = "TexturePacker_JsonArray.Meta";
+    const NAME: &'static str = "TexturePacker_JsonArray.SpriteSize";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -31,7 +26,7 @@ impl ::unity2::ClassIdentity for TexturePacker_JsonArray_Meta {
     }
 }
 
-impl ::unity2::IlType for TexturePacker_JsonArray_Meta {
+impl ::unity2::IlType for TexturePacker_JsonArray_SpriteSize {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -40,7 +35,15 @@ impl ::unity2::IlType for TexturePacker_JsonArray_Meta {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_Frame.md")))]
+#[cfg(feature = "tm_pro-sprite_asset_utilities-texturepacker_jsonarray")]
+#[::unity2::methods(value)]
+impl TexturePacker_JsonArray_SpriteSize {
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_Frame.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct TexturePacker_JsonArray_Frame {
@@ -74,7 +77,7 @@ impl ::unity2::IlType for TexturePacker_JsonArray_Frame {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_SpriteFrame.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_SpriteFrame.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct TexturePacker_JsonArray_SpriteFrame {
@@ -113,7 +116,7 @@ impl TexturePacker_JsonArray_SpriteFrame {
     pub fn to_string(self) -> ::unity2::Il2CppString;
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_SpriteDataObject.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_SpriteDataObject.md"))]
 #[::unity2::class(
     namespace = "TMPro.SpriteAssetUtilities",
     name = "TexturePacker_JsonArray.SpriteDataObject"
@@ -148,7 +151,7 @@ impl TexturePacker_JsonArray_SpriteDataObject {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray.md"))]
 #[::unity2::class(
     namespace = "TMPro.SpriteAssetUtilities",
     name = "TexturePacker_JsonArray"
@@ -180,18 +183,23 @@ impl TexturePacker_JsonArray {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_SpriteSize.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/sprite_asset_utilities/texturepacker_jsonarray/TexturePacker_JsonArray_Meta.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TexturePacker_JsonArray_SpriteSize {
-    pub w: f32,
-    pub h: f32,
+pub struct TexturePacker_JsonArray_Meta {
+    pub app: :: unity2 :: Il2CppString,
+    pub version: :: unity2 :: Il2CppString,
+    pub image: :: unity2 :: Il2CppString,
+    pub format: :: unity2 :: Il2CppString,
+    pub size: crate :: tm_pro :: sprite_asset_utilities :: texturepacker_jsonarray :: TexturePacker_JsonArray_SpriteSize,
+    pub scale: f32,
+    pub smartupdate: :: unity2 :: Il2CppString,
 }
 
-impl ::unity2::ClassIdentity for TexturePacker_JsonArray_SpriteSize {
+impl ::unity2::ClassIdentity for TexturePacker_JsonArray_Meta {
     const NAMESPACE: &'static str = "TMPro.SpriteAssetUtilities";
 
-    const NAME: &'static str = "TexturePacker_JsonArray.SpriteSize";
+    const NAME: &'static str = "TexturePacker_JsonArray.Meta";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -200,19 +208,11 @@ impl ::unity2::ClassIdentity for TexturePacker_JsonArray_SpriteSize {
     }
 }
 
-impl ::unity2::IlType for TexturePacker_JsonArray_SpriteSize {
+impl ::unity2::IlType for TexturePacker_JsonArray_Meta {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
             ._1
             .byval_arg
     }
-}
-
-#[cfg(feature = "tm_pro-sprite_asset_utilities-texturepacker_jsonarray")]
-#[::unity2::methods(value)]
-impl TexturePacker_JsonArray_SpriteSize {
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
 }

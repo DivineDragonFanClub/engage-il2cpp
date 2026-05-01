@@ -10,58 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamemessage/GameMessage_Status.md")))]
-#[::unity2::class(namespace = "App", name = "GameMessage.Status")]
-#[parent(crate::app::bitfield32::BitField32)]
-pub struct GameMessage_Status {
-    #[static_field]
-    #[rename(name = "SkipDisable")]
-    pub skip_disable: i32,
-    #[static_field]
-    #[rename(name = "KeyWait")]
-    pub key_wait: i32,
-    #[static_field]
-    #[rename(name = "SystemWait")]
-    pub system_wait: i32,
-    #[static_field]
-    #[rename(name = "SystemWaitEnd")]
-    pub system_wait_end: i32,
-    #[static_field]
-    #[rename(name = "Warning")]
-    pub warning: i32,
-    #[static_field]
-    #[rename(name = "FatalError")]
-    pub fatal_error: i32,
-    #[static_field]
-    #[rename(name = "WindowOpened")]
-    pub window_opened: i32,
-}
-
-#[cfg(feature = "app-gamemessage")]
-#[::unity2::methods]
-impl GameMessage_Status {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gamemessage")]
-impl GameMessage_Status {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameMessage_Status),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameMessage_StatusMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamemessage/GameMessage.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamemessage/GameMessage.md"))]
 #[::unity2::class(namespace = "App", name = "GameMessage")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct GameMessage {
@@ -260,6 +209,57 @@ impl GameMessage {
             )
         });
         <Self as IGameMessageMethods>::ctor(this, mess, content, status);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamemessage/GameMessage_Status.md"))]
+#[::unity2::class(namespace = "App", name = "GameMessage.Status")]
+#[parent(crate::app::bitfield32::BitField32)]
+pub struct GameMessage_Status {
+    #[static_field]
+    #[rename(name = "SkipDisable")]
+    pub skip_disable: i32,
+    #[static_field]
+    #[rename(name = "KeyWait")]
+    pub key_wait: i32,
+    #[static_field]
+    #[rename(name = "SystemWait")]
+    pub system_wait: i32,
+    #[static_field]
+    #[rename(name = "SystemWaitEnd")]
+    pub system_wait_end: i32,
+    #[static_field]
+    #[rename(name = "Warning")]
+    pub warning: i32,
+    #[static_field]
+    #[rename(name = "FatalError")]
+    pub fatal_error: i32,
+    #[static_field]
+    #[rename(name = "WindowOpened")]
+    pub window_opened: i32,
+}
+
+#[cfg(feature = "app-gamemessage")]
+#[::unity2::methods]
+impl GameMessage_Status {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gamemessage")]
+impl GameMessage_Status {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameMessage_Status),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameMessage_StatusMethods>::ctor(this);
         this
     }
 }

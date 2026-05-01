@@ -10,7 +10,7 @@ use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptable
 use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_CaptureMode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_CaptureMode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -58,7 +58,243 @@ impl PostProcessPass_CaptureMode {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_MaterialLibrary.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "PostProcessPass.MaterialLibrary"
+)]
+#[parent(crate::system::object::Object)]
+pub struct PostProcessPass_MaterialLibrary {
+    #[rename(name = "stopNaN")]
+    pub stop_na_n: crate::unity_engine::material::Material,
+    #[rename(name = "subpixelMorphologicalAntialiasing")]
+    pub subpixel_morphological_antialiasing: crate::unity_engine::material::Material,
+    #[rename(name = "gaussianDepthOfField")]
+    pub gaussian_depth_of_field: crate::unity_engine::material::Material,
+    #[rename(name = "bokehDepthOfField")]
+    pub bokeh_depth_of_field: crate::unity_engine::material::Material,
+    #[rename(name = "cameraMotionBlur")]
+    pub camera_motion_blur: crate::unity_engine::material::Material,
+    #[rename(name = "paniniProjection")]
+    pub panini_projection: crate::unity_engine::material::Material,
+    #[rename(name = "bloom")]
+    pub bloom: crate::unity_engine::material::Material,
+    #[rename(name = "uber")]
+    pub uber: crate::unity_engine::material::Material,
+    #[rename(name = "finalPass")]
+    pub final_pass: crate::unity_engine::material::Material,
+    #[rename(name = "customBlur")]
+    pub custom_blur: crate::unity_engine::material::Material,
+    #[rename(name = "customRadialBlur")]
+    pub custom_radial_blur: crate::unity_engine::material::Material,
+    #[rename(name = "customFilter")]
+    pub custom_filter: crate::unity_engine::material::Material,
+    #[rename(name = "customUber")]
+    pub custom_uber: crate::unity_engine::material::Material,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
+#[::unity2::methods]
+impl PostProcessPass_MaterialLibrary {
+    #[doc = "`.ctor(crate::unity_engine::rendering::universal::postprocessdata::PostProcessData)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
+    ) -> ();
+
+    #[doc = "`Load(crate::unity_engine::shader::Shader)` overload"]
+    #[method(name = "Load", args = 1)]
+    pub fn load(
+        self,
+        shader: crate::unity_engine::shader::Shader,
+    ) -> crate::unity_engine::material::Material;
+
+    #[doc = "`Cleanup()` overload"]
+    #[method(name = "Cleanup", args = 0)]
+    pub fn cleanup(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
+impl PostProcessPass_MaterialLibrary {
+    #[doc = "`.ctor(crate::unity_engine::rendering::universal::postprocessdata::PostProcessData)` — overload selector"]
+    pub fn new(
+        data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PostProcessPass_MaterialLibrary),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPostProcessPass_MaterialLibraryMethods>::ctor(this, data);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_ShaderConstants.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "PostProcessPass.ShaderConstants"
+)]
+#[parent(crate::system::object::Object)]
+pub struct PostProcessPass_ShaderConstants {
+    #[static_field]
+    #[rename(name = "_TempTarget")]
+    pub temp_target: i32,
+    #[static_field]
+    #[rename(name = "_TempTarget2")]
+    pub temp_target2: i32,
+    #[static_field]
+    #[rename(name = "_StencilRef")]
+    pub stencil_ref: i32,
+    #[static_field]
+    #[rename(name = "_StencilMask")]
+    pub stencil_mask: i32,
+    #[static_field]
+    #[rename(name = "_FullCoCTexture")]
+    pub full_co_c_texture: i32,
+    #[static_field]
+    #[rename(name = "_HalfCoCTexture")]
+    pub half_co_c_texture: i32,
+    #[static_field]
+    #[rename(name = "_DofTexture")]
+    pub dof_texture: i32,
+    #[static_field]
+    #[rename(name = "_CoCParams")]
+    pub co_c_params: i32,
+    #[static_field]
+    #[rename(name = "_BokehKernel")]
+    pub bokeh_kernel: i32,
+    #[static_field]
+    #[rename(name = "_PongTexture")]
+    pub pong_texture: i32,
+    #[static_field]
+    #[rename(name = "_PingTexture")]
+    pub ping_texture: i32,
+    #[static_field]
+    #[rename(name = "_Metrics")]
+    pub metrics: i32,
+    #[static_field]
+    #[rename(name = "_AreaTexture")]
+    pub area_texture: i32,
+    #[static_field]
+    #[rename(name = "_SearchTexture")]
+    pub search_texture: i32,
+    #[static_field]
+    #[rename(name = "_EdgeTexture")]
+    pub edge_texture: i32,
+    #[static_field]
+    #[rename(name = "_BlendTexture")]
+    pub blend_texture: i32,
+    #[static_field]
+    #[rename(name = "_ColorTexture")]
+    pub color_texture: i32,
+    #[static_field]
+    #[rename(name = "_Params")]
+    pub params: i32,
+    #[static_field]
+    #[rename(name = "_SourceTexLowMip")]
+    pub source_tex_low_mip: i32,
+    #[static_field]
+    #[rename(name = "_Bloom_Params")]
+    pub bloom_params: i32,
+    #[static_field]
+    #[rename(name = "_Bloom_RGBM")]
+    pub bloom_rgbm: i32,
+    #[static_field]
+    #[rename(name = "_Bloom_Texture")]
+    pub bloom_texture: i32,
+    #[static_field]
+    #[rename(name = "_LensDirt_Texture")]
+    pub lens_dirt_texture: i32,
+    #[static_field]
+    #[rename(name = "_LensDirt_Params")]
+    pub lens_dirt_params: i32,
+    #[static_field]
+    #[rename(name = "_LensDirt_Intensity")]
+    pub lens_dirt_intensity: i32,
+    #[static_field]
+    #[rename(name = "_Distortion_Params1")]
+    pub distortion_params1: i32,
+    #[static_field]
+    #[rename(name = "_Distortion_Params2")]
+    pub distortion_params2: i32,
+    #[static_field]
+    #[rename(name = "_Chroma_Params")]
+    pub chroma_params: i32,
+    #[static_field]
+    #[rename(name = "_Vignette_Params1")]
+    pub vignette_params1: i32,
+    #[static_field]
+    #[rename(name = "_Vignette_Params2")]
+    pub vignette_params2: i32,
+    #[static_field]
+    #[rename(name = "_Lut_Params")]
+    pub lut_params: i32,
+    #[static_field]
+    #[rename(name = "_UserLut_Params")]
+    pub user_lut_params: i32,
+    #[static_field]
+    #[rename(name = "_InternalLut")]
+    pub internal_lut: i32,
+    #[static_field]
+    #[rename(name = "_UserLut")]
+    pub user_lut: i32,
+    #[static_field]
+    #[rename(name = "_DownSampleScaleFactor")]
+    pub down_sample_scale_factor: i32,
+    #[static_field]
+    #[rename(name = "_FullscreenProjMat")]
+    pub fullscreen_proj_mat: i32,
+    #[static_field]
+    #[rename(name = "_BloomMipUp")]
+    pub bloom_mip_up: ::unity2::Array<i32>,
+    #[static_field]
+    #[rename(name = "_BloomMipDown")]
+    pub bloom_mip_down: ::unity2::Array<i32>,
+    #[static_field]
+    #[rename(name = "_CustomPPCharaMask")]
+    pub custom_pp_chara_mask: i32,
+    #[static_field]
+    #[rename(name = "_CustomColorGrading_Params")]
+    pub custom_color_grading_params: i32,
+    #[static_field]
+    #[rename(name = "_CustomBlurTempTexture")]
+    pub custom_blur_temp_texture: i32,
+    #[static_field]
+    #[rename(name = "_CustomBlur_Params")]
+    pub custom_blur_params: i32,
+    #[static_field]
+    #[rename(name = "_CustomBlur_Params2")]
+    pub custom_blur_params2: i32,
+    #[static_field]
+    #[rename(name = "_CustomFinalMonoColor")]
+    pub custom_final_mono_color: i32,
+    #[static_field]
+    #[rename(name = "_CustomFilterParams0")]
+    pub custom_filter_params0: i32,
+    #[static_field]
+    #[rename(name = "_CustomFilterParams1")]
+    pub custom_filter_params1: i32,
+    #[static_field]
+    #[rename(name = "_CustomGradationFilter_Params1")]
+    pub custom_gradation_filter_params1: i32,
+    #[static_field]
+    #[rename(name = "_CustomGradationFilter_Params2")]
+    pub custom_gradation_filter_params2: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
+#[::unity2::methods]
+impl PostProcessPass_ShaderConstants {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Internal",
     name = "PostProcessPass"
@@ -518,240 +754,4 @@ impl PostProcessPass {
         <Self as IPostProcessPassMethods>::ctor(this, evt, data, blit_material);
         this
     }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_MaterialLibrary.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal.Internal",
-    name = "PostProcessPass.MaterialLibrary"
-)]
-#[parent(crate::system::object::Object)]
-pub struct PostProcessPass_MaterialLibrary {
-    #[rename(name = "stopNaN")]
-    pub stop_na_n: crate::unity_engine::material::Material,
-    #[rename(name = "subpixelMorphologicalAntialiasing")]
-    pub subpixel_morphological_antialiasing: crate::unity_engine::material::Material,
-    #[rename(name = "gaussianDepthOfField")]
-    pub gaussian_depth_of_field: crate::unity_engine::material::Material,
-    #[rename(name = "bokehDepthOfField")]
-    pub bokeh_depth_of_field: crate::unity_engine::material::Material,
-    #[rename(name = "cameraMotionBlur")]
-    pub camera_motion_blur: crate::unity_engine::material::Material,
-    #[rename(name = "paniniProjection")]
-    pub panini_projection: crate::unity_engine::material::Material,
-    #[rename(name = "bloom")]
-    pub bloom: crate::unity_engine::material::Material,
-    #[rename(name = "uber")]
-    pub uber: crate::unity_engine::material::Material,
-    #[rename(name = "finalPass")]
-    pub final_pass: crate::unity_engine::material::Material,
-    #[rename(name = "customBlur")]
-    pub custom_blur: crate::unity_engine::material::Material,
-    #[rename(name = "customRadialBlur")]
-    pub custom_radial_blur: crate::unity_engine::material::Material,
-    #[rename(name = "customFilter")]
-    pub custom_filter: crate::unity_engine::material::Material,
-    #[rename(name = "customUber")]
-    pub custom_uber: crate::unity_engine::material::Material,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
-#[::unity2::methods]
-impl PostProcessPass_MaterialLibrary {
-    #[doc = "`.ctor(crate::unity_engine::rendering::universal::postprocessdata::PostProcessData)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
-    ) -> ();
-
-    #[doc = "`Load(crate::unity_engine::shader::Shader)` overload"]
-    #[method(name = "Load", args = 1)]
-    pub fn load(
-        self,
-        shader: crate::unity_engine::shader::Shader,
-    ) -> crate::unity_engine::material::Material;
-
-    #[doc = "`Cleanup()` overload"]
-    #[method(name = "Cleanup", args = 0)]
-    pub fn cleanup(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
-impl PostProcessPass_MaterialLibrary {
-    #[doc = "`.ctor(crate::unity_engine::rendering::universal::postprocessdata::PostProcessData)` — overload selector"]
-    pub fn new(
-        data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PostProcessPass_MaterialLibrary),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPostProcessPass_MaterialLibraryMethods>::ctor(this, data);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/postprocesspass/PostProcessPass_ShaderConstants.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal.Internal",
-    name = "PostProcessPass.ShaderConstants"
-)]
-#[parent(crate::system::object::Object)]
-pub struct PostProcessPass_ShaderConstants {
-    #[static_field]
-    #[rename(name = "_TempTarget")]
-    pub temp_target: i32,
-    #[static_field]
-    #[rename(name = "_TempTarget2")]
-    pub temp_target2: i32,
-    #[static_field]
-    #[rename(name = "_StencilRef")]
-    pub stencil_ref: i32,
-    #[static_field]
-    #[rename(name = "_StencilMask")]
-    pub stencil_mask: i32,
-    #[static_field]
-    #[rename(name = "_FullCoCTexture")]
-    pub full_co_c_texture: i32,
-    #[static_field]
-    #[rename(name = "_HalfCoCTexture")]
-    pub half_co_c_texture: i32,
-    #[static_field]
-    #[rename(name = "_DofTexture")]
-    pub dof_texture: i32,
-    #[static_field]
-    #[rename(name = "_CoCParams")]
-    pub co_c_params: i32,
-    #[static_field]
-    #[rename(name = "_BokehKernel")]
-    pub bokeh_kernel: i32,
-    #[static_field]
-    #[rename(name = "_PongTexture")]
-    pub pong_texture: i32,
-    #[static_field]
-    #[rename(name = "_PingTexture")]
-    pub ping_texture: i32,
-    #[static_field]
-    #[rename(name = "_Metrics")]
-    pub metrics: i32,
-    #[static_field]
-    #[rename(name = "_AreaTexture")]
-    pub area_texture: i32,
-    #[static_field]
-    #[rename(name = "_SearchTexture")]
-    pub search_texture: i32,
-    #[static_field]
-    #[rename(name = "_EdgeTexture")]
-    pub edge_texture: i32,
-    #[static_field]
-    #[rename(name = "_BlendTexture")]
-    pub blend_texture: i32,
-    #[static_field]
-    #[rename(name = "_ColorTexture")]
-    pub color_texture: i32,
-    #[static_field]
-    #[rename(name = "_Params")]
-    pub params: i32,
-    #[static_field]
-    #[rename(name = "_SourceTexLowMip")]
-    pub source_tex_low_mip: i32,
-    #[static_field]
-    #[rename(name = "_Bloom_Params")]
-    pub bloom_params: i32,
-    #[static_field]
-    #[rename(name = "_Bloom_RGBM")]
-    pub bloom_rgbm: i32,
-    #[static_field]
-    #[rename(name = "_Bloom_Texture")]
-    pub bloom_texture: i32,
-    #[static_field]
-    #[rename(name = "_LensDirt_Texture")]
-    pub lens_dirt_texture: i32,
-    #[static_field]
-    #[rename(name = "_LensDirt_Params")]
-    pub lens_dirt_params: i32,
-    #[static_field]
-    #[rename(name = "_LensDirt_Intensity")]
-    pub lens_dirt_intensity: i32,
-    #[static_field]
-    #[rename(name = "_Distortion_Params1")]
-    pub distortion_params1: i32,
-    #[static_field]
-    #[rename(name = "_Distortion_Params2")]
-    pub distortion_params2: i32,
-    #[static_field]
-    #[rename(name = "_Chroma_Params")]
-    pub chroma_params: i32,
-    #[static_field]
-    #[rename(name = "_Vignette_Params1")]
-    pub vignette_params1: i32,
-    #[static_field]
-    #[rename(name = "_Vignette_Params2")]
-    pub vignette_params2: i32,
-    #[static_field]
-    #[rename(name = "_Lut_Params")]
-    pub lut_params: i32,
-    #[static_field]
-    #[rename(name = "_UserLut_Params")]
-    pub user_lut_params: i32,
-    #[static_field]
-    #[rename(name = "_InternalLut")]
-    pub internal_lut: i32,
-    #[static_field]
-    #[rename(name = "_UserLut")]
-    pub user_lut: i32,
-    #[static_field]
-    #[rename(name = "_DownSampleScaleFactor")]
-    pub down_sample_scale_factor: i32,
-    #[static_field]
-    #[rename(name = "_FullscreenProjMat")]
-    pub fullscreen_proj_mat: i32,
-    #[static_field]
-    #[rename(name = "_BloomMipUp")]
-    pub bloom_mip_up: ::unity2::Array<i32>,
-    #[static_field]
-    #[rename(name = "_BloomMipDown")]
-    pub bloom_mip_down: ::unity2::Array<i32>,
-    #[static_field]
-    #[rename(name = "_CustomPPCharaMask")]
-    pub custom_pp_chara_mask: i32,
-    #[static_field]
-    #[rename(name = "_CustomColorGrading_Params")]
-    pub custom_color_grading_params: i32,
-    #[static_field]
-    #[rename(name = "_CustomBlurTempTexture")]
-    pub custom_blur_temp_texture: i32,
-    #[static_field]
-    #[rename(name = "_CustomBlur_Params")]
-    pub custom_blur_params: i32,
-    #[static_field]
-    #[rename(name = "_CustomBlur_Params2")]
-    pub custom_blur_params2: i32,
-    #[static_field]
-    #[rename(name = "_CustomFinalMonoColor")]
-    pub custom_final_mono_color: i32,
-    #[static_field]
-    #[rename(name = "_CustomFilterParams0")]
-    pub custom_filter_params0: i32,
-    #[static_field]
-    #[rename(name = "_CustomFilterParams1")]
-    pub custom_filter_params1: i32,
-    #[static_field]
-    #[rename(name = "_CustomGradationFilter_Params1")]
-    pub custom_gradation_filter_params1: i32,
-    #[static_field]
-    #[rename(name = "_CustomGradationFilter_Params2")]
-    pub custom_gradation_filter_params2: i32,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-postprocesspass")]
-#[::unity2::methods]
-impl PostProcessPass_ShaderConstants {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
 }

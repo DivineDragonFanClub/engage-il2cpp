@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/ioexception/IOException.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/ioexception/IOException.md"))]
 #[::unity2::class(namespace = "System.IO", name = "IOException")]
 pub struct IOException {
     #[rename(name = "_maybeFullPath")]

@@ -10,67 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagwindow/TalkTagWindow.md")))]
-#[::unity2::class(namespace = "App.Talk3D", name = "TalkTagWindow")]
-#[parent(crate::app::talk3_d::talktag::TalkTag)]
-pub struct TalkTagWindow {
-    #[rename(name = "m_TagID")]
-    pub m_tag_id: crate::app::talk3_d::talktagwindow::TalkTagWindow_TagID,
-    #[rename(name = "m_Pid")]
-    pub m_pid: ::unity2::Il2CppString,
-    #[rename(name = "m_PidForCreate")]
-    pub m_pid_for_create: ::unity2::Il2CppString,
-    #[rename(name = "m_LocationName")]
-    pub m_location_name: ::unity2::Il2CppString,
-    #[rename(name = "m_ReplaceName")]
-    pub m_replace_name: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-talk3_d-talktagwindow")]
-#[::unity2::methods]
-impl TalkTagWindow {
-    #[doc = "`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]
-    #[method(name = "Initialize", args = 1)]
-    pub fn initialize(self, talk_ptr: crate::app::talk3_d::talkptr::TalkPtr) -> ();
-
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> ();
-
-    #[doc = "`ExecuteForCharacterPreLoad()` overload"]
-    #[method(name = "ExecuteForCharacterPreLoad", args = 0)]
-    pub fn execute_for_character_pre_load(self) -> ();
-
-    #[doc = "`GetResult()` overload"]
-    #[method(name = "GetResult", args = 0)]
-    pub fn get_result(self) -> crate::app::talk3_d::talktag::TalkTag_Result;
-
-    #[doc = "`GetPID()` overload"]
-    #[method(name = "GetPID", args = 0)]
-    pub fn get_pid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-talk3_d-talktagwindow")]
-impl TalkTagWindow {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkTagWindow),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkTagWindowMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagwindow/TalkTagWindow_TagID.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagwindow/TalkTagWindow_TagID.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -143,5 +83,65 @@ impl TalkTagWindow_TagID {
 
     pub fn hide_bg() -> Self {
         Self { value: 9 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagwindow/TalkTagWindow.md"))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkTagWindow")]
+#[parent(crate::app::talk3_d::talktag::TalkTag)]
+pub struct TalkTagWindow {
+    #[rename(name = "m_TagID")]
+    pub m_tag_id: crate::app::talk3_d::talktagwindow::TalkTagWindow_TagID,
+    #[rename(name = "m_Pid")]
+    pub m_pid: ::unity2::Il2CppString,
+    #[rename(name = "m_PidForCreate")]
+    pub m_pid_for_create: ::unity2::Il2CppString,
+    #[rename(name = "m_LocationName")]
+    pub m_location_name: ::unity2::Il2CppString,
+    #[rename(name = "m_ReplaceName")]
+    pub m_replace_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-talk3_d-talktagwindow")]
+#[::unity2::methods]
+impl TalkTagWindow {
+    #[doc = "`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]
+    #[method(name = "Initialize", args = 1)]
+    pub fn initialize(self, talk_ptr: crate::app::talk3_d::talkptr::TalkPtr) -> ();
+
+    #[doc = "`Execute()` overload"]
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+
+    #[doc = "`ExecuteForCharacterPreLoad()` overload"]
+    #[method(name = "ExecuteForCharacterPreLoad", args = 0)]
+    pub fn execute_for_character_pre_load(self) -> ();
+
+    #[doc = "`GetResult()` overload"]
+    #[method(name = "GetResult", args = 0)]
+    pub fn get_result(self) -> crate::app::talk3_d::talktag::TalkTag_Result;
+
+    #[doc = "`GetPID()` overload"]
+    #[method(name = "GetPID", args = 0)]
+    pub fn get_pid(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talktagwindow")]
+impl TalkTagWindow {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkTagWindow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkTagWindowMethods>::ctor(this);
+        this
     }
 }

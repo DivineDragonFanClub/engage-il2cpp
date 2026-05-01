@@ -12,7 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomenu/AmiiboMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomenu/AmiiboMenu.md"))]
 #[::unity2::class(namespace = "App", name = "AmiiboMenu")]
 #[parent(crate::app::gamemessage::GameMessage)]
 pub struct AmiiboMenu {}
@@ -70,7 +70,7 @@ impl AmiiboMenu {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibomenu/AmiiboMenu_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibomenu/AmiiboMenu_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

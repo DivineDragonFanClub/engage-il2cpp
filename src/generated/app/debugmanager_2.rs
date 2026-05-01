@@ -8,7 +8,126 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_LogScope.md"))]
+#[::unity2::class(namespace = "App", name = "DebugManager.LogScope")]
+#[parent(crate::system::object::Object)]
+pub struct DebugManager_LogScope {
+    #[rename(name = "m_Disposed")]
+    pub m_disposed: bool,
+}
+
+#[cfg(feature = "app-debugmanager_2")]
+#[::unity2::methods]
+impl DebugManager_LogScope {
+    #[doc = "`.ctor(crate::app::debugmanager_2::DebugManager_LogFunc, ::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        func: crate::app::debugmanager_2::DebugManager_LogFunc,
+        args: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> ();
+
+    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, args: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[doc = "`Finalize()` overload"]
+    #[method(name = "Finalize", args = 0)]
+    pub fn finalize(self) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "app-debugmanager_2")]
+impl DebugManager_LogScope {
+    #[doc = "`.ctor(crate::app::debugmanager_2::DebugManager_LogFunc, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
+    pub fn new(
+        func: crate::app::debugmanager_2::DebugManager_LogFunc,
+        args: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugManager_LogScope),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugManager_LogScopeMethods>::ctor(this, func, args);
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
+    pub fn new_2(args: ::unity2::Array<::unity2::Il2CppString>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugManager_LogScope),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IDebugManager_LogScopeMethods>::ctor_2(this, args);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_LogArg.md"))]
+#[::unity2::class(namespace = "App", name = "DebugManager.LogArg")]
+#[parent(crate::system::object::Object)]
+pub struct DebugManager_LogArg {
+    #[rename(name = "m_Func")]
+    pub m_func: crate::app::debugmanager_2::DebugManager_LogFunc,
+    #[rename(name = "m_Args")]
+    pub m_args: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "app-debugmanager_2")]
+#[::unity2::methods]
+impl DebugManager_LogArg {
+    #[doc = "`Call()` overload"]
+    #[method(name = "Call", args = 0)]
+    pub fn call(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_LogFunc.md"))]
+#[::unity2::class(namespace = "App", name = "DebugManager.LogFunc")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct DebugManager_LogFunc {}
+
+#[cfg(feature = "app-debugmanager_2")]
+#[::unity2::methods]
+impl DebugManager_LogFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-debugmanager_2")]
+impl DebugManager_LogFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugManager_LogFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugManager_LogFuncMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_2.md"))]
 #[::unity2::class(namespace = "App", name = "DebugManager")]
 #[parent(crate::system::object::Object)]
 pub struct DebugManager_2 {
@@ -70,125 +189,6 @@ impl DebugManager_2 {
             )
         });
         <Self as IDebugManager_2Methods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_LogArg.md")))]
-#[::unity2::class(namespace = "App", name = "DebugManager.LogArg")]
-#[parent(crate::system::object::Object)]
-pub struct DebugManager_LogArg {
-    #[rename(name = "m_Func")]
-    pub m_func: crate::app::debugmanager_2::DebugManager_LogFunc,
-    #[rename(name = "m_Args")]
-    pub m_args: ::unity2::Array<::unity2::Il2CppString>,
-}
-
-#[cfg(feature = "app-debugmanager_2")]
-#[::unity2::methods]
-impl DebugManager_LogArg {
-    #[doc = "`Call()` overload"]
-    #[method(name = "Call", args = 0)]
-    pub fn call(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_LogFunc.md")))]
-#[::unity2::class(namespace = "App", name = "DebugManager.LogFunc")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct DebugManager_LogFunc {}
-
-#[cfg(feature = "app-debugmanager_2")]
-#[::unity2::methods]
-impl DebugManager_LogFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-debugmanager_2")]
-impl DebugManager_LogFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugManager_LogFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugManager_LogFuncMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmanager_2/DebugManager_LogScope.md")))]
-#[::unity2::class(namespace = "App", name = "DebugManager.LogScope")]
-#[parent(crate::system::object::Object)]
-pub struct DebugManager_LogScope {
-    #[rename(name = "m_Disposed")]
-    pub m_disposed: bool,
-}
-
-#[cfg(feature = "app-debugmanager_2")]
-#[::unity2::methods]
-impl DebugManager_LogScope {
-    #[doc = "`.ctor(crate::app::debugmanager_2::DebugManager_LogFunc, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        func: crate::app::debugmanager_2::DebugManager_LogFunc,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> ();
-
-    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, args: ::unity2::Array<::unity2::Il2CppString>) -> ();
-
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-#[cfg(feature = "app-debugmanager_2")]
-impl DebugManager_LogScope {
-    #[doc = "`.ctor(crate::app::debugmanager_2::DebugManager_LogFunc, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
-    pub fn new(
-        func: crate::app::debugmanager_2::DebugManager_LogFunc,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugManager_LogScope),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugManager_LogScopeMethods>::ctor(this, func, args);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Array<::unity2::Il2CppString>)` — overload selector"]
-    pub fn new_2(args: ::unity2::Array<::unity2::Il2CppString>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugManager_LogScope),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IDebugManager_LogScopeMethods>::ctor_2(this, args);
         this
     }
 }

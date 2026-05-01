@@ -6,7 +6,7 @@ use crate::unity_engine::bindings::nativemethodattribute::INativeMethodAttribute
 use crate::unity_engine::bindings::nativemethodattribute::NativeMethodAttribute;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/freefunctionattribute/FreeFunctionAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/freefunctionattribute/FreeFunctionAttribute.md"))]
 #[::unity2::class(namespace = "UnityEngine.Bindings", name = "FreeFunctionAttribute")]
 #[parent(crate::unity_engine::bindings::nativemethodattribute::NativeMethodAttribute)]
 pub struct FreeFunctionAttribute {}

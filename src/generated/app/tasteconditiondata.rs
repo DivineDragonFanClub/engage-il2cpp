@@ -14,7 +14,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tasteconditiondata/TasteConditionData_ConditionFunc.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tasteconditiondata/TasteConditionData_ConditionFunc.md"))]
 #[::unity2::class(namespace = "App", name = "TasteConditionData.ConditionFunc")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct TasteConditionData_ConditionFunc {}
@@ -47,7 +47,7 @@ impl TasteConditionData_ConditionFunc {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tasteconditiondata/TasteConditionData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tasteconditiondata/TasteConditionData.md"))]
 #[::unity2::class(namespace = "App", name = "TasteConditionData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: tasteconditiondata :: TasteConditionData >)]
 pub struct TasteConditionData {}

@@ -14,7 +14,41 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenucontent/WeaponShopBuyMenuContent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenucontent/WeaponShopBuyMenuContent_KindIcon.md"))]
+#[::unity2::class(namespace = "App", name = "WeaponShopBuyMenuContent.KindIcon")]
+#[parent(crate::system::object::Object)]
+pub struct WeaponShopBuyMenuContent_KindIcon {
+    #[rename(name = "m_Image")]
+    pub m_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_Kind")]
+    pub m_kind: crate::app::itemdata::ItemData_Kinds,
+}
+
+#[cfg(feature = "app-weaponshopbuymenucontent")]
+#[::unity2::methods]
+impl WeaponShopBuyMenuContent_KindIcon {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-weaponshopbuymenucontent")]
+impl WeaponShopBuyMenuContent_KindIcon {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopBuyMenuContent_KindIcon),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopBuyMenuContent_KindIconMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenucontent/WeaponShopBuyMenuContent.md"))]
 #[::unity2::class(namespace = "App", name = "WeaponShopBuyMenuContent")]
 #[parent(crate::app::basicmenucontent::BasicMenuContent)]
 pub struct WeaponShopBuyMenuContent {
@@ -107,40 +141,6 @@ impl WeaponShopBuyMenuContent {
             )
         });
         <Self as IWeaponShopBuyMenuContentMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshopbuymenucontent/WeaponShopBuyMenuContent_KindIcon.md")))]
-#[::unity2::class(namespace = "App", name = "WeaponShopBuyMenuContent.KindIcon")]
-#[parent(crate::system::object::Object)]
-pub struct WeaponShopBuyMenuContent_KindIcon {
-    #[rename(name = "m_Image")]
-    pub m_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_Kind")]
-    pub m_kind: crate::app::itemdata::ItemData_Kinds,
-}
-
-#[cfg(feature = "app-weaponshopbuymenucontent")]
-#[::unity2::methods]
-impl WeaponShopBuyMenuContent_KindIcon {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-weaponshopbuymenucontent")]
-impl WeaponShopBuyMenuContent_KindIcon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WeaponShopBuyMenuContent_KindIcon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWeaponShopBuyMenuContent_KindIconMethods>::ctor(this);
         this
     }
 }

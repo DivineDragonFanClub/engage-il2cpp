@@ -6,55 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/defaultcontrols/DefaultControls_DefaultRuntimeFactory.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.UI",
-    name = "DefaultControls.DefaultRuntimeFactory"
-)]
-#[parent(crate::system::object::Object)]
-pub struct DefaultControls_DefaultRuntimeFactory {
-    #[static_field]
-    #[rename(name = "Default")]
-    pub default: crate::unity_engine::ui::defaultcontrols::DefaultControls_IFactoryControls,
-}
-
-#[cfg(feature = "unity_engine-ui-defaultcontrols")]
-#[::unity2::methods]
-impl DefaultControls_DefaultRuntimeFactory {
-    #[doc = "`CreateGameObject(::unity2::Il2CppString, ::unity2::Array<::unity2::SystemType>)` overload"]
-    #[method(name = "CreateGameObject", args = 2)]
-    pub fn create_game_object(
-        self,
-        name: ::unity2::Il2CppString,
-        components: ::unity2::Array<::unity2::SystemType>,
-    ) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "unity_engine-ui-defaultcontrols")]
-impl DefaultControls_DefaultRuntimeFactory {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DefaultControls_DefaultRuntimeFactory),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDefaultControls_DefaultRuntimeFactoryMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/defaultcontrols/DefaultControls.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/defaultcontrols/DefaultControls.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI", name = "DefaultControls")]
 #[parent(crate::system::object::Object)]
 pub struct DefaultControls {
@@ -208,7 +160,7 @@ impl DefaultControls {
     pub fn cctor() -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/defaultcontrols/DefaultControls_Resources.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/defaultcontrols/DefaultControls_Resources.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct DefaultControls_Resources {
@@ -242,7 +194,7 @@ impl ::unity2::IlType for DefaultControls_Resources {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/defaultcontrols/DefaultControls_IFactoryControls.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/defaultcontrols/DefaultControls_IFactoryControls.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.UI",
     name = "DefaultControls.IFactoryControls"
@@ -259,4 +211,52 @@ impl DefaultControls_IFactoryControls {
         name: ::unity2::Il2CppString,
         components: ::unity2::Array<::unity2::SystemType>,
     ) -> crate::unity_engine::gameobject::GameObject;
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/defaultcontrols/DefaultControls_DefaultRuntimeFactory.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.UI",
+    name = "DefaultControls.DefaultRuntimeFactory"
+)]
+#[parent(crate::system::object::Object)]
+pub struct DefaultControls_DefaultRuntimeFactory {
+    #[static_field]
+    #[rename(name = "Default")]
+    pub default: crate::unity_engine::ui::defaultcontrols::DefaultControls_IFactoryControls,
+}
+
+#[cfg(feature = "unity_engine-ui-defaultcontrols")]
+#[::unity2::methods]
+impl DefaultControls_DefaultRuntimeFactory {
+    #[doc = "`CreateGameObject(::unity2::Il2CppString, ::unity2::Array<::unity2::SystemType>)` overload"]
+    #[method(name = "CreateGameObject", args = 2)]
+    pub fn create_game_object(
+        self,
+        name: ::unity2::Il2CppString,
+        components: ::unity2::Array<::unity2::SystemType>,
+    ) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-defaultcontrols")]
+impl DefaultControls_DefaultRuntimeFactory {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DefaultControls_DefaultRuntimeFactory),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDefaultControls_DefaultRuntimeFactoryMethods>::ctor(this);
+        this
+    }
 }

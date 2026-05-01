@@ -12,7 +12,63 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayappearancesequence/RelayAppearanceSequence.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayappearancesequence/RelayAppearanceSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayAppearanceSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayAppearanceSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayAppearanceSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayAppearanceSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayAppearanceSequence_Label {
+    pub fn leaving() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn leaving_loop() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn appearance() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn appearance_loop() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 4 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayappearancesequence/RelayAppearanceSequence.md"))]
 #[::unity2::class(namespace = "App", name = "RelayAppearanceSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: relayappearancesequence :: RelayAppearanceSequence >)]
 pub struct RelayAppearanceSequence {
@@ -126,61 +182,5 @@ impl RelayAppearanceSequence {
             leaving_indexes,
         );
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayappearancesequence/RelayAppearanceSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RelayAppearanceSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RelayAppearanceSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayAppearanceSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RelayAppearanceSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RelayAppearanceSequence_Label {
-    pub fn leaving() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn leaving_loop() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn appearance() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn appearance_loop() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 4 }
     }
 }

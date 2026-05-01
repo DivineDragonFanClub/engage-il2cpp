@@ -16,7 +16,7 @@ use crate::unity_engine::ui::basemesheffect::BaseMeshEffect;
 use crate::unity_engine::ui::basemesheffect::IBaseMeshEffect;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapuiunitindexasuv2/MapUIUnitIndexAsUV2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapuiunitindexasuv2/MapUIUnitIndexAsUV2.md"))]
 #[::unity2::class(namespace = "App", name = "MapUIUnitIndexAsUV2")]
 #[parent(crate::unity_engine::ui::basemesheffect::BaseMeshEffect)]
 pub struct MapUIUnitIndexAsUV2 {

@@ -6,7 +6,77 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu_AccessoryMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu_AddAllMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "DebugAccessoryMenu.AddAllMenuItem")]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct DebugAccessoryMenu_AddAllMenuItem {}
+
+#[cfg(feature = "app-debugaccessorymenu")]
+#[::unity2::methods]
+impl DebugAccessoryMenu_AddAllMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugaccessorymenu")]
+impl DebugAccessoryMenu_AddAllMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugAccessoryMenu_AddAllMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugAccessoryMenu_AddAllMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu.md"))]
+#[::unity2::class(namespace = "App", name = "DebugAccessoryMenu")]
+#[parent(crate::system::object::Object)]
+pub struct DebugAccessoryMenu {}
+
+#[cfg(feature = "app-debugaccessorymenu")]
+#[::unity2::methods]
+impl DebugAccessoryMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugaccessorymenu")]
+impl DebugAccessoryMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugAccessoryMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugAccessoryMenuMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu_AccessoryMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "DebugAccessoryMenu.AccessoryMenuItem")]
 #[parent(crate::app::menuitem::MenuItem)]
 pub struct DebugAccessoryMenu_AccessoryMenuItem {
@@ -68,77 +138,7 @@ impl DebugAccessoryMenu_AccessoryMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu_AddAllMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "DebugAccessoryMenu.AddAllMenuItem")]
-#[parent(crate::app::menuitem::MenuItem)]
-pub struct DebugAccessoryMenu_AddAllMenuItem {}
-
-#[cfg(feature = "app-debugaccessorymenu")]
-#[::unity2::methods]
-impl DebugAccessoryMenu_AddAllMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-debugaccessorymenu")]
-impl DebugAccessoryMenu_AddAllMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugAccessoryMenu_AddAllMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugAccessoryMenu_AddAllMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu.md")))]
-#[::unity2::class(namespace = "App", name = "DebugAccessoryMenu")]
-#[parent(crate::system::object::Object)]
-pub struct DebugAccessoryMenu {}
-
-#[cfg(feature = "app-debugaccessorymenu")]
-#[::unity2::methods]
-impl DebugAccessoryMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-debugaccessorymenu")]
-impl DebugAccessoryMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugAccessoryMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugAccessoryMenuMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu_DeleteAllMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu_DeleteAllMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "DebugAccessoryMenu.DeleteAllMenuItem")]
 #[parent(crate::app::menuitem::MenuItem)]
 pub struct DebugAccessoryMenu_DeleteAllMenuItem {}

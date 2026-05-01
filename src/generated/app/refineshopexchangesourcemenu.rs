@@ -12,7 +12,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangesourcemenu/RefineShopExchangeSourceMenu_CloseEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangesourcemenu/RefineShopExchangeSourceMenu_CloseEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "RefineShopExchangeSourceMenu.CloseEventHandler"
@@ -50,7 +50,7 @@ impl RefineShopExchangeSourceMenu_CloseEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangesourcemenu/RefineShopExchangeSourceMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangesourcemenu/RefineShopExchangeSourceMenu.md"))]
 #[::unity2::class(namespace = "App", name = "RefineShopExchangeSourceMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct RefineShopExchangeSourceMenu {

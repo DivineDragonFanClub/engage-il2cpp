@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/targetinvocationexception/TargetInvocationException.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/targetinvocationexception/TargetInvocationException.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "TargetInvocationException")]
 pub struct TargetInvocationException {}
 

@@ -8,7 +8,103 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_State.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Align.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MenuItem_Align {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MenuItem_Align {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MenuItem.Align";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MenuItem_Align {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MenuItem_Align {
+    pub fn left() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn center() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Kind.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MenuItem_Kind {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MenuItem_Kind {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MenuItem.Kind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MenuItem_Kind {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MenuItem_Kind {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn group_begin() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn group_end() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_State.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -56,7 +152,75 @@ impl MenuItem_State {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/menuitem/MenuItem.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Result.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MenuItem_Result {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MenuItem_Result {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MenuItem.Result";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MenuItem_Result {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MenuItem_Result {
+    pub fn pass() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn do_nothing() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn decide() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn cancel() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn close() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn close_all() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn rebuild() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn parent_rebuild() -> Self {
+        Self { value: 7 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/menuitem/MenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "MenuItem")]
 #[parent(crate::system::object::Object)]
 pub struct MenuItem {
@@ -409,169 +573,5 @@ impl MenuItem {
         });
         <Self as IMenuItemMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Kind.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MenuItem_Kind {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MenuItem_Kind {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MenuItem.Kind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MenuItem_Kind {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MenuItem_Kind {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn group_begin() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn group_end() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Align.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MenuItem_Align {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MenuItem_Align {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MenuItem.Align";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MenuItem_Align {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MenuItem_Align {
-    pub fn left() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn center() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn right() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/menuitem/MenuItem_Result.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MenuItem_Result {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MenuItem_Result {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MenuItem.Result";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MenuItem_Result {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MenuItem_Result {
-    pub fn pass() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn do_nothing() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn decide() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn cancel() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn close() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn close_all() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn rebuild() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn parent_rebuild() -> Self {
-        Self { value: 7 }
     }
 }

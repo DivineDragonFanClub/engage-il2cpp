@@ -20,57 +20,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/foodstuffdata/FoodstuffData_FlagField.md")))]
-#[::unity2::class(namespace = "App", name = "FoodstuffData.FlagField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: foodstuffdata :: FoodstuffData_Flags >)]
-pub struct FoodstuffData_FlagField {}
-
-#[cfg(feature = "app-foodstuffdata")]
-#[::unity2::methods]
-impl FoodstuffData_FlagField {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, f: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData_Flags)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, f: crate::app::foodstuffdata::FoodstuffData_Flags) -> ();
-
-    #[doc = "`ToInt(crate::app::foodstuffdata::FoodstuffData_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::foodstuffdata::FoodstuffData_Flags) -> i32;
-}
-
-#[cfg(feature = "app-foodstuffdata")]
-impl FoodstuffData_FlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FoodstuffData_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFoodstuffData_FlagFieldMethods>::ctor(this, f);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData_Flags)` — overload selector"]
-    pub fn new_2(f: crate::app::foodstuffdata::FoodstuffData_Flags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FoodstuffData_FlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IFoodstuffData_FlagFieldMethods>::ctor_2(this, f);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/foodstuffdata/FoodstuffData_Flags.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/foodstuffdata/FoodstuffData_Flags.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -122,7 +72,7 @@ impl FoodstuffData_Flags {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/foodstuffdata/FoodstuffData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/foodstuffdata/FoodstuffData.md"))]
 #[::unity2::class(namespace = "App", name = "FoodstuffData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: foodstuffdata :: FoodstuffData >)]
 pub struct FoodstuffData {}
@@ -229,6 +179,56 @@ impl FoodstuffData {
             )
         });
         <Self as IFoodstuffDataMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/foodstuffdata/FoodstuffData_FlagField.md"))]
+#[::unity2::class(namespace = "App", name = "FoodstuffData.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: foodstuffdata :: FoodstuffData_Flags >)]
+pub struct FoodstuffData_FlagField {}
+
+#[cfg(feature = "app-foodstuffdata")]
+#[::unity2::methods]
+impl FoodstuffData_FlagField {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData_Flags)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::foodstuffdata::FoodstuffData_Flags) -> ();
+
+    #[doc = "`ToInt(crate::app::foodstuffdata::FoodstuffData_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::foodstuffdata::FoodstuffData_Flags) -> i32;
+}
+
+#[cfg(feature = "app-foodstuffdata")]
+impl FoodstuffData_FlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FoodstuffData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFoodstuffData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::foodstuffdata::FoodstuffData_Flags)` — overload selector"]
+    pub fn new_2(f: crate::app::foodstuffdata::FoodstuffData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FoodstuffData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IFoodstuffData_FlagFieldMethods>::ctor_2(this, f);
         this
     }
 }

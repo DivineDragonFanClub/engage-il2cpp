@@ -8,7 +8,99 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/force/Force.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/force/Force_Type.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Force_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Force_Type {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Force.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Force_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Force_Type {
+    pub fn player() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn enemy() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn ally() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn absent() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn dead() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn lost() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn temporary() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn empty() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn f1st() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn f2nd() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn f3rd() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn map_num() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn used_num() -> Self {
+        Self { value: 7 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/force/Force.md"))]
 #[::unity2::class(namespace = "App", name = "Force")]
 #[parent(crate::system::object::Object)]
 pub struct Force {
@@ -204,97 +296,5 @@ impl Force {
         });
         <Self as IForceMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/force/Force_Type.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct Force_Type {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for Force_Type {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Force.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Force_Type {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl Force_Type {
-    pub fn player() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn enemy() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn ally() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn absent() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn dead() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn lost() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn temporary() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn empty() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn f1st() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn f2nd() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn f3rd() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn map_num() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn used_num() -> Self {
-        Self { value: 7 }
     }
 }

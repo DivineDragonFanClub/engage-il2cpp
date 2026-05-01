@@ -18,512 +18,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_DisposItemsForSelectedWeapon.md")))]
-#[::unity2::class(namespace = "App", name = "Unit.DisposItemsForSelectedWeapon")]
-#[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]
-pub struct Unit_DisposItemsForSelectedWeapon {
-    #[rename(name = "m_Data")]
-    pub m_data: crate::app::disposdata::DisposData,
-}
-
-#[cfg(feature = "app-unit")]
-#[::unity2::methods]
-impl Unit_DisposItemsForSelectedWeapon {
-    #[doc = "`.ctor(crate::app::disposdata::DisposData)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, data: crate::app::disposdata::DisposData) -> ();
-
-    #[doc = "`Prepare()` overload"]
-    #[method(name = "Prepare", args = 0)]
-    pub fn prepare(self) -> ();
-}
-
-#[cfg(feature = "app-unit")]
-impl Unit_DisposItemsForSelectedWeapon {
-    #[doc = "`.ctor(crate::app::disposdata::DisposData)` — overload selector"]
-    pub fn new(data: crate::app::disposdata::DisposData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_DisposItemsForSelectedWeapon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnit_DisposItemsForSelectedWeaponMethods>::ctor(this, data);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_ChartItemsForSelectedWeapon.md")))]
-#[::unity2::class(namespace = "App", name = "Unit.ChartItemsForSelectedWeapon")]
-#[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]
-pub struct Unit_ChartItemsForSelectedWeapon {
-    #[rename(name = "m_ChartItems")]
-    pub m_chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>,
-}
-
-#[cfg(feature = "app-unit")]
-#[::unity2::methods]
-impl Unit_ChartItemsForSelectedWeapon {
-    #[doc = "`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>) -> ();
-
-    #[doc = "`Prepare()` overload"]
-    #[method(name = "Prepare", args = 0)]
-    pub fn prepare(self) -> ();
-}
-
-#[cfg(feature = "app-unit")]
-impl Unit_ChartItemsForSelectedWeapon {
-    #[doc = "`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` — overload selector"]
-    pub fn new(chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_ChartItemsForSelectedWeapon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnit_ChartItemsForSelectedWeaponMethods>::ctor(this, chart_items);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_ItemsForSelectedWeapon.md")))]
-#[::unity2::class(namespace = "App", name = "Unit.ItemsForSelectedWeapon")]
-#[parent(crate::system::object::Object)]
-pub struct Unit_ItemsForSelectedWeapon {
-    #[rename(name = "m_Items")]
-    pub m_items: ::unity2::Array<crate::app::itemdata::ItemData>,
-}
-
-#[cfg(feature = "app-unit")]
-#[::unity2::methods]
-impl Unit_ItemsForSelectedWeapon {
-    #[doc = "`Sort()` overload"]
-    #[method(name = "Sort", args = 0)]
-    pub fn sort(self) -> ();
-
-    #[doc = "`GetCount()` overload"]
-    #[method(name = "GetCount", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`Get(i32)` overload"]
-    #[method(name = "Get", args = 1)]
-    pub fn get(self, index: i32) -> crate::app::itemdata::ItemData;
-
-    #[doc = "`Prepare()` overload"]
-    #[method(name = "Prepare", args = 0)]
-    pub fn prepare(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unit")]
-impl Unit_ItemsForSelectedWeapon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_ItemsForSelectedWeapon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnit_ItemsForSelectedWeaponMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unit/Unit_Status.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct Unit_Status {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for Unit_Status {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Unit.Status";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Unit_Status {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl Unit_Status {
-    pub fn fixed() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn move_not_allow() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn must_sortie() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn never_sortie() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn dont_pos_change() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn danger_showing() -> Self {
-        Self { value: 32 }
-    }
-
-    pub fn chain_guard() -> Self {
-        Self { value: 64 }
-    }
-
-    pub fn dual_guard() -> Self {
-        Self { value: 128 }
-    }
-
-    pub fn sortie() -> Self {
-        Self { value: 256 }
-    }
-
-    pub fn dead() -> Self {
-        Self { value: 512 }
-    }
-
-    pub fn escape_here() -> Self {
-        Self { value: 1024 }
-    }
-
-    pub fn died_here() -> Self {
-        Self { value: 2048 }
-    }
-
-    pub fn join_here() -> Self {
-        Self { value: 4096 }
-    }
-
-    pub fn pure_hide() -> Self {
-        Self { value: 8192 }
-    }
-
-    pub fn dispos_hide() -> Self {
-        Self { value: 16384 }
-    }
-
-    pub fn view_out() -> Self {
-        Self { value: 32768 }
-    }
-
-    pub fn under_roof() -> Self {
-        Self { value: 65536 }
-    }
-
-    pub fn locked_update() -> Self {
-        Self { value: 131072 }
-    }
-
-    pub fn removing() -> Self {
-        Self { value: 262144 }
-    }
-
-    pub fn remagicing() -> Self {
-        Self { value: 524288 }
-    }
-
-    pub fn rerewarping() -> Self {
-        Self { value: 1048576 }
-    }
-
-    pub fn guest() -> Self {
-        Self { value: 2097152 }
-    }
-
-    pub fn dispos_guset() -> Self {
-        Self { value: 4194304 }
-    }
-
-    pub fn engaging() -> Self {
-        Self { value: 8388608 }
-    }
-
-    pub fn engage_attack() -> Self {
-        Self { value: 16777216 }
-    }
-
-    pub fn engage_linked() -> Self {
-        Self { value: 33554432 }
-    }
-
-    pub fn engage_attacked() -> Self {
-        Self { value: 67108864 }
-    }
-
-    pub fn vision() -> Self {
-        Self { value: 134217728 }
-    }
-
-    pub fn exist_dead() -> Self {
-        Self { value: 268435456 }
-    }
-
-    pub fn continued() -> Self {
-        Self { value: 536870912 }
-    }
-
-    pub fn defect() -> Self {
-        Self { value: 1073741824 }
-    }
-
-    pub fn bow_cannon() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn magic_cannon() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn fire_cannon() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ignore_whole_skill() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ignore_equip_skill() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ignore_equip_enhance() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn relay_leave() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ignore_immortal() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ignore_god_unit() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn igonre_map_enhance() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn before_sortied() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ignore_supported_skill() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn summon() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn lockon() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn reacted() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn hold_hp() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ignore_map_history() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn change_engaged() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn locked_support() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn hide_image() -> Self {
-        Self { value: 8192 }
-    }
-
-    pub fn hide_render() -> Self {
-        Self { value: 122880 }
-    }
-
-    pub fn not_target() -> Self {
-        Self { value: 65536 }
-    }
-
-    pub fn init_map_begin() -> Self {
-        Self { value: 536871196 }
-    }
-
-    pub fn init_phase_begin() -> Self {
-        Self { value: 192 }
-    }
-
-    pub fn init_phase_end() -> Self {
-        Self { value: 52166657 }
-    }
-
-    pub fn init_map_end() -> Self {
-        Self { value: 1201660413 }
-    }
-
-    pub fn dead_mask() -> Self {
-        Self { value: 268438016 }
-    }
-
-    pub fn guard_mask() -> Self {
-        Self { value: 192 }
-    }
-
-    pub fn engage_mask() -> Self {
-        Self { value: 125829248 }
-    }
-
-    pub fn fixed_mask() -> Self {
-        Self { value: 193 }
-    }
-
-    pub fn cannon_mask() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn reaction_mask() -> Self {
-        Self { value: 1835008 }
-    }
-
-    pub fn save_mask() -> Self {
-        Self { value: -1 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_StatusField.md")))]
-#[::unity2::class(namespace = "App", name = "Unit.StatusField")]
-# [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: unit :: Unit_Status >)]
-pub struct Unit_StatusField {}
-
-#[cfg(feature = "app-unit")]
-#[::unity2::methods]
-impl Unit_StatusField {
-    #[doc = "`ToLong(crate::app::unit::Unit_Status)` overload"]
-    #[method(name = "ToLong", args = 1)]
-    pub fn to_long(self, value: crate::app::unit::Unit_Status) -> i64;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unit")]
-impl Unit_StatusField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_StatusField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnit_StatusFieldMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_CalcInfo.md")))]
-#[::unity2::class(namespace = "App", name = "Unit.CalcInfo")]
-#[parent(crate::system::object::Object)]
-pub struct Unit_CalcInfo {
-    #[rename(name = "Count")]
-    pub count: i32,
-    #[rename(name = "Attack")]
-    pub attack: i32,
-    #[rename(name = "Hit")]
-    pub hit: i32,
-    #[rename(name = "Avoid")]
-    pub avoid: i32,
-    #[rename(name = "Critical")]
-    pub critical: i32,
-    #[rename(name = "Secure")]
-    pub secure: i32,
-    #[rename(name = "Continuous")]
-    pub continuous: i32,
-    #[rename(name = "PhysicalAttack")]
-    pub physical_attack: i32,
-    #[rename(name = "MagicAttack")]
-    pub magic_attack: i32,
-    #[rename(name = "PhysicalDefense")]
-    pub physical_defense: i32,
-    #[rename(name = "MagicDefense")]
-    pub magic_defense: i32,
-}
-
-#[cfg(feature = "app-unit")]
-#[::unity2::methods]
-impl Unit_CalcInfo {
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Update(crate::app::unit::Unit)` overload"]
-    #[method(name = "Update", args = 1)]
-    pub fn update(self, unit: crate::app::unit::Unit) -> crate::app::unit::Unit_CalcInfo;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unit")]
-impl Unit_CalcInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Unit_CalcInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnit_CalcInfoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unit/Unit_ChangeValue.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unit/Unit_ChangeValue.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct Unit_ChangeValue {
@@ -588,7 +83,7 @@ impl Unit_ChangeValue {
     pub fn op_implicit(v: crate::app::unit::Unit_ChangeValue) -> u8;
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit.md"))]
 #[::unity2::class(namespace = "App", name = "Unit")]
 #[parent(crate::system::object::Object)]
 pub struct Unit {
@@ -3952,7 +3447,7 @@ impl Unit {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_FuncUnitItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_FuncUnitItem.md"))]
 #[::unity2::class(namespace = "App", name = "Unit.FuncUnitItem")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct Unit_FuncUnitItem {}
@@ -3985,7 +3480,476 @@ impl Unit_FuncUnitItem {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unit/Unit_GuardType.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_DisposItemsForSelectedWeapon.md"))]
+#[::unity2::class(namespace = "App", name = "Unit.DisposItemsForSelectedWeapon")]
+#[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]
+pub struct Unit_DisposItemsForSelectedWeapon {
+    #[rename(name = "m_Data")]
+    pub m_data: crate::app::disposdata::DisposData,
+}
+
+#[cfg(feature = "app-unit")]
+#[::unity2::methods]
+impl Unit_DisposItemsForSelectedWeapon {
+    #[doc = "`.ctor(crate::app::disposdata::DisposData)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, data: crate::app::disposdata::DisposData) -> ();
+
+    #[doc = "`Prepare()` overload"]
+    #[method(name = "Prepare", args = 0)]
+    pub fn prepare(self) -> ();
+}
+
+#[cfg(feature = "app-unit")]
+impl Unit_DisposItemsForSelectedWeapon {
+    #[doc = "`.ctor(crate::app::disposdata::DisposData)` — overload selector"]
+    pub fn new(data: crate::app::disposdata::DisposData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Unit_DisposItemsForSelectedWeapon),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnit_DisposItemsForSelectedWeaponMethods>::ctor(this, data);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_ItemsForSelectedWeapon.md"))]
+#[::unity2::class(namespace = "App", name = "Unit.ItemsForSelectedWeapon")]
+#[parent(crate::system::object::Object)]
+pub struct Unit_ItemsForSelectedWeapon {
+    #[rename(name = "m_Items")]
+    pub m_items: ::unity2::Array<crate::app::itemdata::ItemData>,
+}
+
+#[cfg(feature = "app-unit")]
+#[::unity2::methods]
+impl Unit_ItemsForSelectedWeapon {
+    #[doc = "`Sort()` overload"]
+    #[method(name = "Sort", args = 0)]
+    pub fn sort(self) -> ();
+
+    #[doc = "`GetCount()` overload"]
+    #[method(name = "GetCount", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[doc = "`Get(i32)` overload"]
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, index: i32) -> crate::app::itemdata::ItemData;
+
+    #[doc = "`Prepare()` overload"]
+    #[method(name = "Prepare", args = 0)]
+    pub fn prepare(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unit")]
+impl Unit_ItemsForSelectedWeapon {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Unit_ItemsForSelectedWeapon),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnit_ItemsForSelectedWeaponMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_StatusField.md"))]
+#[::unity2::class(namespace = "App", name = "Unit.StatusField")]
+# [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: unit :: Unit_Status >)]
+pub struct Unit_StatusField {}
+
+#[cfg(feature = "app-unit")]
+#[::unity2::methods]
+impl Unit_StatusField {
+    #[doc = "`ToLong(crate::app::unit::Unit_Status)` overload"]
+    #[method(name = "ToLong", args = 1)]
+    pub fn to_long(self, value: crate::app::unit::Unit_Status) -> i64;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unit")]
+impl Unit_StatusField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Unit_StatusField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnit_StatusFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unit/Unit_Status.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Unit_Status {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Unit_Status {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Unit.Status";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Unit_Status {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Unit_Status {
+    pub fn fixed() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn move_not_allow() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn must_sortie() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn never_sortie() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn dont_pos_change() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn danger_showing() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn chain_guard() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn dual_guard() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn sortie() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn dead() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn escape_here() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn died_here() -> Self {
+        Self { value: 2048 }
+    }
+
+    pub fn join_here() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn pure_hide() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn dispos_hide() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn view_out() -> Self {
+        Self { value: 32768 }
+    }
+
+    pub fn under_roof() -> Self {
+        Self { value: 65536 }
+    }
+
+    pub fn locked_update() -> Self {
+        Self { value: 131072 }
+    }
+
+    pub fn removing() -> Self {
+        Self { value: 262144 }
+    }
+
+    pub fn remagicing() -> Self {
+        Self { value: 524288 }
+    }
+
+    pub fn rerewarping() -> Self {
+        Self { value: 1048576 }
+    }
+
+    pub fn guest() -> Self {
+        Self { value: 2097152 }
+    }
+
+    pub fn dispos_guset() -> Self {
+        Self { value: 4194304 }
+    }
+
+    pub fn engaging() -> Self {
+        Self { value: 8388608 }
+    }
+
+    pub fn engage_attack() -> Self {
+        Self { value: 16777216 }
+    }
+
+    pub fn engage_linked() -> Self {
+        Self { value: 33554432 }
+    }
+
+    pub fn engage_attacked() -> Self {
+        Self { value: 67108864 }
+    }
+
+    pub fn vision() -> Self {
+        Self { value: 134217728 }
+    }
+
+    pub fn exist_dead() -> Self {
+        Self { value: 268435456 }
+    }
+
+    pub fn continued() -> Self {
+        Self { value: 536870912 }
+    }
+
+    pub fn defect() -> Self {
+        Self { value: 1073741824 }
+    }
+
+    pub fn bow_cannon() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn magic_cannon() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn fire_cannon() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ignore_whole_skill() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ignore_equip_skill() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ignore_equip_enhance() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn relay_leave() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ignore_immortal() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ignore_god_unit() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn igonre_map_enhance() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn before_sortied() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ignore_supported_skill() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn summon() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn lockon() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn reacted() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn hold_hp() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ignore_map_history() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn change_engaged() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn locked_support() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn hide_image() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn hide_render() -> Self {
+        Self { value: 122880 }
+    }
+
+    pub fn not_target() -> Self {
+        Self { value: 65536 }
+    }
+
+    pub fn init_map_begin() -> Self {
+        Self { value: 536871196 }
+    }
+
+    pub fn init_phase_begin() -> Self {
+        Self { value: 192 }
+    }
+
+    pub fn init_phase_end() -> Self {
+        Self { value: 52166657 }
+    }
+
+    pub fn init_map_end() -> Self {
+        Self { value: 1201660413 }
+    }
+
+    pub fn dead_mask() -> Self {
+        Self { value: 268438016 }
+    }
+
+    pub fn guard_mask() -> Self {
+        Self { value: 192 }
+    }
+
+    pub fn engage_mask() -> Self {
+        Self { value: 125829248 }
+    }
+
+    pub fn fixed_mask() -> Self {
+        Self { value: 193 }
+    }
+
+    pub fn cannon_mask() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn reaction_mask() -> Self {
+        Self { value: 1835008 }
+    }
+
+    pub fn save_mask() -> Self {
+        Self { value: -1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_CalcInfo.md"))]
+#[::unity2::class(namespace = "App", name = "Unit.CalcInfo")]
+#[parent(crate::system::object::Object)]
+pub struct Unit_CalcInfo {
+    #[rename(name = "Count")]
+    pub count: i32,
+    #[rename(name = "Attack")]
+    pub attack: i32,
+    #[rename(name = "Hit")]
+    pub hit: i32,
+    #[rename(name = "Avoid")]
+    pub avoid: i32,
+    #[rename(name = "Critical")]
+    pub critical: i32,
+    #[rename(name = "Secure")]
+    pub secure: i32,
+    #[rename(name = "Continuous")]
+    pub continuous: i32,
+    #[rename(name = "PhysicalAttack")]
+    pub physical_attack: i32,
+    #[rename(name = "MagicAttack")]
+    pub magic_attack: i32,
+    #[rename(name = "PhysicalDefense")]
+    pub physical_defense: i32,
+    #[rename(name = "MagicDefense")]
+    pub magic_defense: i32,
+}
+
+#[cfg(feature = "app-unit")]
+#[::unity2::methods]
+impl Unit_CalcInfo {
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Update(crate::app::unit::Unit)` overload"]
+    #[method(name = "Update", args = 1)]
+    pub fn update(self, unit: crate::app::unit::Unit) -> crate::app::unit::Unit_CalcInfo;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unit")]
+impl Unit_CalcInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Unit_CalcInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnit_CalcInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unit/Unit_GuardType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -4034,5 +3998,41 @@ impl Unit_GuardType {
 
     pub fn not_enough_hp() -> Self {
         Self { value: 3 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unit/Unit_ChartItemsForSelectedWeapon.md"))]
+#[::unity2::class(namespace = "App", name = "Unit.ChartItemsForSelectedWeapon")]
+#[parent(crate::app::unit::Unit_ItemsForSelectedWeapon)]
+pub struct Unit_ChartItemsForSelectedWeapon {
+    #[rename(name = "m_ChartItems")]
+    pub m_chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>,
+}
+
+#[cfg(feature = "app-unit")]
+#[::unity2::methods]
+impl Unit_ChartItemsForSelectedWeapon {
+    #[doc = "`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>) -> ();
+
+    #[doc = "`Prepare()` overload"]
+    #[method(name = "Prepare", args = 0)]
+    pub fn prepare(self) -> ();
+}
+
+#[cfg(feature = "app-unit")]
+impl Unit_ChartItemsForSelectedWeapon {
+    #[doc = "`.ctor(::unity2::Array<crate::app::chartdata::ChartData_Item>)` — overload selector"]
+    pub fn new(chart_items: ::unity2::Array<crate::app::chartdata::ChartData_Item>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Unit_ChartItemsForSelectedWeapon),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnit_ChartItemsForSelectedWeaponMethods>::ctor(this, chart_items);
+        this
     }
 }

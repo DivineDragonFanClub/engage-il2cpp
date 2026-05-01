@@ -16,7 +16,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_Label0.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_Result.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -25,14 +25,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct BasicMenu_Label0 {
+pub struct BasicMenu_Result {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for BasicMenu_Label0 {
+impl ::unity2::ClassIdentity for BasicMenu_Result {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "BasicMenu.Label0";
+    const NAME: &'static str = "BasicMenu.Result";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,7 +41,7 @@ impl ::unity2::ClassIdentity for BasicMenu_Label0 {
     }
 }
 
-impl ::unity2::IlType for BasicMenu_Label0 {
+impl ::unity2::IlType for BasicMenu_Result {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -50,29 +50,137 @@ impl ::unity2::IlType for BasicMenu_Label0 {
     }
 }
 
-impl BasicMenu_Label0 {
-    pub fn build() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn after_build() -> Self {
+impl BasicMenu_Result {
+    pub fn close_this() -> Self {
         Self { value: 1 }
     }
 
-    pub fn opening() -> Self {
+    pub fn close_parent() -> Self {
         Self { value: 2 }
     }
 
-    pub fn r#loop() -> Self {
-        Self { value: 3 }
+    pub fn close_all() -> Self {
+        Self { value: 4 }
     }
 
-    pub fn end() -> Self {
-        Self { value: 4 }
+    pub fn delete_this() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn delete_parent() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn delete_all() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn se_decide() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn se_decide2() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn se_cancel() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn se_miss() -> Self {
+        Self { value: 2048 }
+    }
+
+    pub fn se_cursor() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn do_nothing() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn pass() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn close_decide() -> Self {
+        Self { value: 129 }
+    }
+
+    pub fn close_parent_decide() -> Self {
+        Self { value: 130 }
+    }
+
+    pub fn close_all_decide() -> Self {
+        Self { value: 132 }
+    }
+
+    pub fn close_decide2() -> Self {
+        Self { value: 257 }
+    }
+
+    pub fn close_parent_decide2() -> Self {
+        Self { value: 258 }
+    }
+
+    pub fn close_all_decide2() -> Self {
+        Self { value: 260 }
+    }
+
+    pub fn close_cancel() -> Self {
+        Self { value: 513 }
+    }
+
+    pub fn close_parent_cancel() -> Self {
+        Self { value: 514 }
+    }
+
+    pub fn close_all_cancel() -> Self {
+        Self { value: 516 }
+    }
+
+    pub fn delete_decide() -> Self {
+        Self { value: 136 }
+    }
+
+    pub fn delete_parent_decide() -> Self {
+        Self { value: 144 }
+    }
+
+    pub fn delete_all_decide() -> Self {
+        Self { value: 160 }
+    }
+
+    pub fn delete_decide2() -> Self {
+        Self { value: 264 }
+    }
+
+    pub fn delete_parent_decide2() -> Self {
+        Self { value: 272 }
+    }
+
+    pub fn delete_all_decide2() -> Self {
+        Self { value: 288 }
+    }
+
+    pub fn delete_cancel() -> Self {
+        Self { value: 520 }
+    }
+
+    pub fn delete_parent_cancel() -> Self {
+        Self { value: 528 }
+    }
+
+    pub fn delete_all_cancel() -> Self {
+        Self { value: 544 }
+    }
+
+    pub fn failure() -> Self {
+        Self { value: 2048 }
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_Status.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_Status.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -148,7 +256,187 @@ impl BasicMenu_Status {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenu/BasicMenu.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_AnchorType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct BasicMenu_AnchorType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for BasicMenu_AnchorType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BasicMenu.AnchorType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BasicMenu_AnchorType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl BasicMenu_AnchorType {
+    pub fn unity_editor() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn left_top() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn center_top() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn right_top() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn left() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn center() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn left_bottom() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn center_bottom() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn right_bottom() -> Self {
+        Self { value: 9 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_Label0.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct BasicMenu_Label0 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for BasicMenu_Label0 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BasicMenu.Label0";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BasicMenu_Label0 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl BasicMenu_Label0 {
+    pub fn build() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn after_build() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn opening() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn r#loop() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_BindTypes.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct BasicMenu_BindTypes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for BasicMenu_BindTypes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BasicMenu.BindTypes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BasicMenu_BindTypes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl BasicMenu_BindTypes {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn dark() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn hide() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenu/BasicMenu.md"))]
 #[::unity2::class(namespace = "App", name = "BasicMenu")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct BasicMenu {
@@ -785,55 +1073,7 @@ impl BasicMenu {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_BindTypes.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct BasicMenu_BindTypes {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for BasicMenu_BindTypes {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BasicMenu.BindTypes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for BasicMenu_BindTypes {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl BasicMenu_BindTypes {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn dark() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn hide() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenu/BasicMenu_StatusField.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenu/BasicMenu_StatusField.md"))]
 #[::unity2::class(namespace = "App", name = "BasicMenu.StatusField")]
 # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: basicmenu :: BasicMenu_Status >)]
 pub struct BasicMenu_StatusField {}
@@ -863,245 +1103,5 @@ impl BasicMenu_StatusField {
         });
         <Self as IBasicMenu_StatusFieldMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_Result.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct BasicMenu_Result {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for BasicMenu_Result {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BasicMenu.Result";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for BasicMenu_Result {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl BasicMenu_Result {
-    pub fn close_this() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn close_parent() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn close_all() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn delete_this() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn delete_parent() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn delete_all() -> Self {
-        Self { value: 32 }
-    }
-
-    pub fn se_decide() -> Self {
-        Self { value: 128 }
-    }
-
-    pub fn se_decide2() -> Self {
-        Self { value: 256 }
-    }
-
-    pub fn se_cancel() -> Self {
-        Self { value: 512 }
-    }
-
-    pub fn se_miss() -> Self {
-        Self { value: 2048 }
-    }
-
-    pub fn se_cursor() -> Self {
-        Self { value: 4096 }
-    }
-
-    pub fn do_nothing() -> Self {
-        Self { value: 8192 }
-    }
-
-    pub fn pass() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn close_decide() -> Self {
-        Self { value: 129 }
-    }
-
-    pub fn close_parent_decide() -> Self {
-        Self { value: 130 }
-    }
-
-    pub fn close_all_decide() -> Self {
-        Self { value: 132 }
-    }
-
-    pub fn close_decide2() -> Self {
-        Self { value: 257 }
-    }
-
-    pub fn close_parent_decide2() -> Self {
-        Self { value: 258 }
-    }
-
-    pub fn close_all_decide2() -> Self {
-        Self { value: 260 }
-    }
-
-    pub fn close_cancel() -> Self {
-        Self { value: 513 }
-    }
-
-    pub fn close_parent_cancel() -> Self {
-        Self { value: 514 }
-    }
-
-    pub fn close_all_cancel() -> Self {
-        Self { value: 516 }
-    }
-
-    pub fn delete_decide() -> Self {
-        Self { value: 136 }
-    }
-
-    pub fn delete_parent_decide() -> Self {
-        Self { value: 144 }
-    }
-
-    pub fn delete_all_decide() -> Self {
-        Self { value: 160 }
-    }
-
-    pub fn delete_decide2() -> Self {
-        Self { value: 264 }
-    }
-
-    pub fn delete_parent_decide2() -> Self {
-        Self { value: 272 }
-    }
-
-    pub fn delete_all_decide2() -> Self {
-        Self { value: 288 }
-    }
-
-    pub fn delete_cancel() -> Self {
-        Self { value: 520 }
-    }
-
-    pub fn delete_parent_cancel() -> Self {
-        Self { value: 528 }
-    }
-
-    pub fn delete_all_cancel() -> Self {
-        Self { value: 544 }
-    }
-
-    pub fn failure() -> Self {
-        Self { value: 2048 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/basicmenu/BasicMenu_AnchorType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct BasicMenu_AnchorType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for BasicMenu_AnchorType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BasicMenu.AnchorType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for BasicMenu_AnchorType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl BasicMenu_AnchorType {
-    pub fn unity_editor() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn left_top() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn center_top() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn right_top() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn left() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn center() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn right() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn left_bottom() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn center_bottom() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn right_bottom() -> Self {
-        Self { value: 9 }
     }
 }

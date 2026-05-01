@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/vibrationmanager/VibrationManager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/vibrationmanager/VibrationManager.md"))]
 #[::unity2::class(namespace = "App", name = "VibrationManager")]
 #[parent(crate::system::object::Object)]
 pub struct VibrationManager {
@@ -109,7 +109,7 @@ impl VibrationManager {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/vibrationmanager/VibrationManager_VibHandle.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/vibrationmanager/VibrationManager_VibHandle.md"))]
 #[::unity2::class(namespace = "App", name = "VibrationManager.VibHandle")]
 #[parent(crate::system::object::Object)]
 pub struct VibrationManager_VibHandle {

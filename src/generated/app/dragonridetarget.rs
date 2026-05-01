@@ -16,7 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_TargetType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_TargetType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -76,7 +76,7 @@ impl DragonRideTarget_TargetType {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetarget/DragonRideTarget.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridetarget/DragonRideTarget.md"))]
 #[::unity2::class(namespace = "App", name = "DragonRideTarget")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct DragonRideTarget {
@@ -249,7 +249,59 @@ impl DragonRideTarget {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_TargetState.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_ExecuteReason.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct DragonRideTarget_ExecuteReason {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for DragonRideTarget_ExecuteReason {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DragonRideTarget.ExecuteReason";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DragonRideTarget_ExecuteReason {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl DragonRideTarget_ExecuteReason {
+    pub fn normal() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn bomb() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn chain() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn reason_count() -> Self {
+        Self { value: 8 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_TargetState.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -306,57 +358,5 @@ impl DragonRideTarget_TargetState {
 
     pub fn destroyed() -> Self {
         Self { value: 5 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_ExecuteReason.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct DragonRideTarget_ExecuteReason {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for DragonRideTarget_ExecuteReason {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DragonRideTarget.ExecuteReason";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for DragonRideTarget_ExecuteReason {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl DragonRideTarget_ExecuteReason {
-    pub fn normal() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn bomb() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn chain() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn reason_count() -> Self {
-        Self { value: 8 }
     }
 }

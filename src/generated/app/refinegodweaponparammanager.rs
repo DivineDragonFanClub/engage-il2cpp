@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponparammanager/RefineGodWeaponParamManager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponparammanager/RefineGodWeaponParamManager.md"))]
 #[::unity2::class(namespace = "App", name = "RefineGodWeaponParamManager")]
 #[parent(crate::system::object::Object)]
 pub struct RefineGodWeaponParamManager {
@@ -173,7 +173,7 @@ impl RefineGodWeaponParamManager {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponparammanager/RefineGodWeaponParamManager_ReturnEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponparammanager/RefineGodWeaponParamManager_ReturnEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "RefineGodWeaponParamManager.ReturnEventHandler"

@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/componentsinchildrenenumerator_1/ComponentsInChildrenEnumerator_1_Func.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/componentsinchildrenenumerator_1/ComponentsInChildrenEnumerator_1_Func.md"))]
 #[::unity2::class(namespace = "App", name = "ComponentsInChildrenEnumerator`1.Func")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 #[parent(crate::system::delegate::Delegate)]
@@ -43,7 +43,7 @@ impl<T0: ::unity2::ClassIdentity> ComponentsInChildrenEnumerator_1_Func<T0> {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/componentsinchildrenenumerator_1/ComponentsInChildrenEnumerator_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/componentsinchildrenenumerator_1/ComponentsInChildrenEnumerator_1.md"))]
 #[::unity2::class(namespace = "App", name = "ComponentsInChildrenEnumerator`1")]
 #[parent(crate::system::object::Object)]
 pub struct ComponentsInChildrenEnumerator_1<T0: ::unity2::ClassIdentity> {}

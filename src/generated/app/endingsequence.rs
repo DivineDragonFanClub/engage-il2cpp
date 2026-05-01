@@ -10,55 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/endingsequence/EndingSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct EndingSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for EndingSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EndingSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for EndingSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl EndingSequence_Label {
-    pub fn battle_record() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn later_talk() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn end_roll() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/endingsequence/EndingSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/endingsequence/EndingSequence.md"))]
 #[::unity2::class(namespace = "App", name = "EndingSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct EndingSequence {}
@@ -136,5 +88,53 @@ impl EndingSequence {
         });
         <Self as IEndingSequenceMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/endingsequence/EndingSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EndingSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EndingSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "EndingSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EndingSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EndingSequence_Label {
+    pub fn battle_record() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn later_talk() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end_roll() -> Self {
+        Self { value: 2 }
     }
 }

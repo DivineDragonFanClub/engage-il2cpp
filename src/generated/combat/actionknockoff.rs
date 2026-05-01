@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionknockoff/ActionKnockoff.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionknockoff/ActionKnockoff.md"))]
 #[::unity2::class(namespace = "Combat", name = "ActionKnockoff")]
 #[parent(crate::combat::actiondisposerholder::ActionDisposerHolder)]
 pub struct ActionKnockoff {

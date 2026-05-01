@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoututility/GUILayoutUtility_LayoutCache.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoututility/GUILayoutUtility_LayoutCache.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "GUILayoutUtility.LayoutCache")]
 #[parent(crate::system::object::Object)]
 pub struct GUILayoutUtility_LayoutCache {
@@ -42,7 +42,7 @@ impl GUILayoutUtility_LayoutCache {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoututility/GUILayoutUtility.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoututility/GUILayoutUtility.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "GUILayoutUtility")]
 #[parent(crate::system::object::Object)]
 pub struct GUILayoutUtility {

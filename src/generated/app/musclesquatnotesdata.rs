@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclesquatnotesdata/MuscleSquatNotesData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclesquatnotesdata/MuscleSquatNotesData.md"))]
 #[::unity2::class(namespace = "App", name = "MuscleSquatNotesData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: musclesquatnotesdata :: MuscleSquatNotesData >)]
 pub struct MuscleSquatNotesData {}

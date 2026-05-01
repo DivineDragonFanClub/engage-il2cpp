@@ -6,7 +6,7 @@ use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptable
 use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass_ShaderConstants.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass_ShaderConstants.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Internal",
     name = "ColorGradingLutPass.ShaderConstants"
@@ -95,7 +95,7 @@ impl ColorGradingLutPass_ShaderConstants {
     pub fn cctor() -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Internal",
     name = "ColorGradingLutPass"

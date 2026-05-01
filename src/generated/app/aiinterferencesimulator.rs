@@ -10,43 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterferencesimulator/AIInterferenceSimulator_Flag.md")))]
-#[::unity2::class(namespace = "App", name = "AIInterferenceSimulator.Flag")]
-#[parent(crate::app::bitfield32::BitField32)]
-pub struct AIInterferenceSimulator_Flag {
-    #[static_field]
-    #[rename(name = "HighMagic")]
-    pub high_magic: i32,
-    #[static_field]
-    #[rename(name = "LowMagic")]
-    pub low_magic: i32,
-}
-
-#[cfg(feature = "app-aiinterferencesimulator")]
-#[::unity2::methods]
-impl AIInterferenceSimulator_Flag {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-aiinterferencesimulator")]
-impl AIInterferenceSimulator_Flag {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIInterferenceSimulator_Flag),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIInterferenceSimulator_FlagMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterferencesimulator/AIInterferenceSimulator.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterferencesimulator/AIInterferenceSimulator.md"))]
 #[::unity2::class(namespace = "App", name = "AIInterferenceSimulator")]
 #[parent(crate::app::aisimulatorbase::AISimulatorBase)]
 pub struct AIInterferenceSimulator {
@@ -120,6 +84,42 @@ impl AIInterferenceSimulator {
             )
         });
         <Self as IAIInterferenceSimulatorMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterferencesimulator/AIInterferenceSimulator_Flag.md"))]
+#[::unity2::class(namespace = "App", name = "AIInterferenceSimulator.Flag")]
+#[parent(crate::app::bitfield32::BitField32)]
+pub struct AIInterferenceSimulator_Flag {
+    #[static_field]
+    #[rename(name = "HighMagic")]
+    pub high_magic: i32,
+    #[static_field]
+    #[rename(name = "LowMagic")]
+    pub low_magic: i32,
+}
+
+#[cfg(feature = "app-aiinterferencesimulator")]
+#[::unity2::methods]
+impl AIInterferenceSimulator_Flag {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-aiinterferencesimulator")]
+impl AIInterferenceSimulator_Flag {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIInterferenceSimulator_Flag),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIInterferenceSimulator_FlagMethods>::ctor(this);
         this
     }
 }

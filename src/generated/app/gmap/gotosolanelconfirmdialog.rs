@@ -12,7 +12,52 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo.md"))]
+#[::unity2::class(
+    namespace = "App.Gmap",
+    name = "GoToSolanelConfirmDialog.GoToSolanelConfirmDialogItemNo"
+)]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo {
+    #[rename(name = "m_Callback")]
+    pub m_callback: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
+#[::unity2::methods]
+impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo {
+    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, callback: crate::system::action::Action, text: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
+impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo {
+    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(callback: crate::system::action::Action, text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods>::ctor(
+            this, callback, text,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes.md"))]
 #[::unity2::class(
     namespace = "App.Gmap",
     name = "GoToSolanelConfirmDialog.GoToSolanelConfirmDialogItemYes"
@@ -71,52 +116,7 @@ impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemYes {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo.md")))]
-#[::unity2::class(
-    namespace = "App.Gmap",
-    name = "GoToSolanelConfirmDialog.GoToSolanelConfirmDialogItemNo"
-)]
-#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-pub struct GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo {
-    #[rename(name = "m_Callback")]
-    pub m_callback: crate::system::action::Action,
-}
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-#[::unity2::methods]
-impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo {
-    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, callback: crate::system::action::Action, text: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-gmap-gotosolanelconfirmdialog")]
-impl GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo {
-    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(callback: crate::system::action::Action, text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGoToSolanelConfirmDialog_GoToSolanelConfirmDialogItemNoMethods>::ctor(
-            this, callback, text,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/gotosolanelconfirmdialog/GoToSolanelConfirmDialog.md"))]
 #[::unity2::class(namespace = "App.Gmap", name = "GoToSolanelConfirmDialog")]
 #[parent(crate::system::object::Object)]
 pub struct GoToSolanelConfirmDialog {}

@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dieevent/DieEvent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dieevent/DieEvent.md"))]
 #[::unity2::class(namespace = "App", name = "DieEvent")]
 #[parent(crate::app::procbattlecallback::ProcBattleCallback)]
 pub struct DieEvent {

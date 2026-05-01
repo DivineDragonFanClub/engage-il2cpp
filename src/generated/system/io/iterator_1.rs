@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/iterator_1/Iterator_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/iterator_1/Iterator_1.md"))]
 #[::unity2::class(namespace = "System.IO", name = "Iterator`1")]
 #[parent(crate::system::object::Object)]
 pub struct Iterator_1<T0: ::unity2::ClassIdentity> {

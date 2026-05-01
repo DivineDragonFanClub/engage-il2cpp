@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerasituationconverter/CameraSituationConverter.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerasituationconverter/CameraSituationConverter.md"))]
 #[::unity2::class(namespace = "Combat", name = "CameraSituationConverter")]
 #[parent(crate::system::object::Object)]
 pub struct CameraSituationConverter {}
@@ -74,7 +74,7 @@ impl CameraSituationConverter {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/camerasituationconverter/CameraSituationConverter_CameraLocateStyle.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/camerasituationconverter/CameraSituationConverter_CameraLocateStyle.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

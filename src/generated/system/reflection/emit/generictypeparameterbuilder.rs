@@ -8,7 +8,7 @@ use crate::system::reflection::typeinfo::ITypeInfo;
 use crate::system::reflection::typeinfo::TypeInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/generictypeparameterbuilder/GenericTypeParameterBuilder.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/generictypeparameterbuilder/GenericTypeParameterBuilder.md"))]
 #[::unity2::class(
     namespace = "System.Reflection.Emit",
     name = "GenericTypeParameterBuilder"

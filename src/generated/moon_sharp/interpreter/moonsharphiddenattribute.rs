@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/moonsharphiddenattribute/MoonSharpHiddenAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/moonsharphiddenattribute/MoonSharpHiddenAttribute.md"))]
 #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "MoonSharpHiddenAttribute")]
 pub struct MoonSharpHiddenAttribute {}
 

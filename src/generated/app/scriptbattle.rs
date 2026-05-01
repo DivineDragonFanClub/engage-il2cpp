@@ -8,7 +8,46 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptbattle/ScriptBattle_ScriptCombatSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptbattle/ScriptBattle.md"))]
+#[::unity2::class(namespace = "App", name = "ScriptBattle")]
+#[parent(crate::app::scriptutil::ScriptUtil)]
+pub struct ScriptBattle {}
+
+#[cfg(feature = "app-scriptbattle")]
+#[::unity2::methods]
+impl ScriptBattle {
+    #[doc = "`CombatStart(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
+    #[method(name = "CombatStart", args = 1)]
+    pub fn combat_start(
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> ();
+
+    #[doc = "`Regist(crate::app::eventscript::EventScript)` overload"]
+    #[method(name = "Regist", args = 1)]
+    pub fn regist(script: crate::app::eventscript::EventScript) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-scriptbattle")]
+impl ScriptBattle {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptBattle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptBattleMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptbattle/ScriptBattle_ScriptCombatSequence.md"))]
 #[::unity2::class(namespace = "App", name = "ScriptBattle.ScriptCombatSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct ScriptBattle_ScriptCombatSequence {
@@ -86,45 +125,6 @@ impl ScriptBattle_ScriptCombatSequence {
             )
         });
         <Self as IScriptBattle_ScriptCombatSequenceMethods>::ctor(this, person_a, person_b);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptbattle/ScriptBattle.md")))]
-#[::unity2::class(namespace = "App", name = "ScriptBattle")]
-#[parent(crate::app::scriptutil::ScriptUtil)]
-pub struct ScriptBattle {}
-
-#[cfg(feature = "app-scriptbattle")]
-#[::unity2::methods]
-impl ScriptBattle {
-    #[doc = "`CombatStart(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    #[method(name = "CombatStart", args = 1)]
-    pub fn combat_start(
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> ();
-
-    #[doc = "`Regist(crate::app::eventscript::EventScript)` overload"]
-    #[method(name = "Regist", args = 1)]
-    pub fn regist(script: crate::app::eventscript::EventScript) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-scriptbattle")]
-impl ScriptBattle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScriptBattle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScriptBattleMethods>::ctor(this);
         this
     }
 }

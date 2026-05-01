@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardtextcolordata/ProfileCardTextColorData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardtextcolordata/ProfileCardTextColorData.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardTextColorData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: profilecardtextcolordata :: ProfileCardTextColorData >)]
 pub struct ProfileCardTextColorData {}

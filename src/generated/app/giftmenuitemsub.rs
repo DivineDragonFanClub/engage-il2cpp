@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/giftmenuitemsub/GiftMenuItemSub.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/giftmenuitemsub/GiftMenuItemSub.md"))]
 #[::unity2::class(namespace = "App", name = "GiftMenuItemSub")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct GiftMenuItemSub {

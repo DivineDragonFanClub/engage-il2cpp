@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbummenu/ProfileCardAlbumMenu_DecideEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbummenu/ProfileCardAlbumMenu_DecideEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardAlbumMenu.DecideEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct ProfileCardAlbumMenu_DecideEventHandler {}
@@ -50,7 +50,7 @@ impl ProfileCardAlbumMenu_DecideEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbummenu/ProfileCardAlbumMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbummenu/ProfileCardAlbumMenu.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardAlbumMenu")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct ProfileCardAlbumMenu {
@@ -195,7 +195,45 @@ impl ProfileCardAlbumMenu {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardalbummenu/ProfileCardAlbumMenu_Result2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbummenu/ProfileCardAlbumMenu_ChangeProfileEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ProfileCardAlbumMenu.ChangeProfileEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ProfileCardAlbumMenu_ChangeProfileEventHandler {}
+
+#[cfg(feature = "app-profilecardalbummenu")]
+#[::unity2::methods]
+impl ProfileCardAlbumMenu_ChangeProfileEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, index: i32) -> ();
+}
+
+#[cfg(feature = "app-profilecardalbummenu")]
+impl ProfileCardAlbumMenu_ChangeProfileEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardAlbumMenu_ChangeProfileEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardalbummenu/ProfileCardAlbumMenu_Result2.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -236,43 +274,5 @@ impl ProfileCardAlbumMenu_Result2 {
 
     pub fn cancel() -> Self {
         Self { value: 1 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbummenu/ProfileCardAlbumMenu_ChangeProfileEventHandler.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ProfileCardAlbumMenu.ChangeProfileEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ProfileCardAlbumMenu_ChangeProfileEventHandler {}
-
-#[cfg(feature = "app-profilecardalbummenu")]
-#[::unity2::methods]
-impl ProfileCardAlbumMenu_ChangeProfileEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, index: i32) -> ();
-}
-
-#[cfg(feature = "app-profilecardalbummenu")]
-impl ProfileCardAlbumMenu_ChangeProfileEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardAlbumMenu_ChangeProfileEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardAlbumMenu_ChangeProfileEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
     }
 }

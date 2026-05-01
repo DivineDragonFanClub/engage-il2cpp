@@ -22,61 +22,148 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_RewindUnitMap_Data.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapHistory_RewindUnitMap_Data {
-    pub force_type: crate::app::force::Force_Type,
-    pub stream: crate::app::stream_2::Stream_2,
-    pub buffer: ::unity2::Array<u8>,
-    pub is_restored_in_preview: bool,
-    pub is_created_in_preview: bool,
-    pub is_used_in_preview: bool,
-    pub is_before_dispos_in_preview: bool,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_RewindUnitMap_Data {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.RewindUnitMap.Data";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_RewindUnitMap_Data {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_UnitMapBase_2.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.UnitMapBase`2")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < T0 >)]
+#[parent(crate::system::object::Object)]
+pub struct MapHistory_UnitMapBase_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
+    #[static_field]
+    #[rename(name = "MaxDataCount")]
+    pub max_data_count: i32,
+    #[rename(name = "m_Data")]
+    pub m_data: ::unity2::Array<T1>,
+    #[rename(name = "m_NoEmptyFunction")]
+    pub m_no_empty_function:
+        crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0, T1>,
 }
 
 #[cfg(feature = "app-maphistory")]
-#[::unity2::methods(value)]
-impl MapHistory_RewindUnitMap_Data {
-    #[doc = "`get_unit()` overload"]
-    #[method(name = "get_unit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> MapHistory_UnitMapBase_2<T0, T1> {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 
-    #[doc = "`set_unit(crate::app::unit::Unit)` overload"]
-    #[method(name = "set_unit", args = 1)]
-    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
+    #[doc = "`EntryAll()` overload"]
+    #[method(name = "EntryAll", args = 0)]
+    pub fn entry_all(self) -> ();
 
-    #[doc = "`IsUsed()` overload"]
-    #[method(name = "IsUsed", args = 0)]
-    pub fn is_used(self) -> bool;
+    #[doc = "`EntryAllImpl()` overload"]
+    #[method(name = "EntryAllImpl", args = 0)]
+    pub fn entry_all_impl(self) -> ();
+
+    #[doc = "`Entry(crate::app::unit::Unit)` overload"]
+    #[method(name = "Entry", args = 1)]
+    pub fn entry(self, unit: crate::app::unit::Unit) -> i32;
+
+    #[doc = "`Delete(crate::app::unit::Unit)` overload"]
+    #[method(name = "Delete", args = 1)]
+    pub fn delete(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Delete(i32)` overload"]
+    #[method(name = "Delete", args = 1)]
+    pub fn delete_2(self, index: i32) -> ();
 
     #[doc = "`Clear()` overload"]
     #[method(name = "Clear", args = 0)]
     pub fn clear(self) -> ();
+
+    #[doc = "`TryGet(i32, bool)` overload"]
+    #[method(name = "TryGet", args = 2)]
+    pub fn try_get(self, index: i32, with_error: bool) -> crate::app::unit::Unit;
+
+    #[doc = "`get_NoEmpty()` overload"]
+    #[method(name = "get_NoEmpty", args = 0)]
+    pub fn get_no_empty(
+        self,
+    ) -> crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0, T1>;
+
+    #[doc = "`set_NoEmpty(crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0,T1>)` overload"]
+    #[method(name = "set_NoEmpty", args = 1)]
+    pub fn set_no_empty(
+        self,
+        value: crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0, T1>,
+    ) -> ();
+
+    #[doc = "`FindUnusedIndex()` overload"]
+    #[method(name = "FindUnusedIndex", args = 0)]
+    pub fn find_unused_index(self) -> i32;
+
+    #[doc = "`DbgError(::unity2::Il2CppString)` overload"]
+    #[method(name = "DbgError", args = 1)]
+    pub fn dbg_error(self, message: ::unity2::Il2CppString) -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_IsEngagings.md")))]
+#[cfg(feature = "app-maphistory")]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> MapHistory_UnitMapBase_2<T0, T1> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_UnitMapBase_2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_UnitMapBase_2Methods<T0, T1>>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_ReplayCommandReader.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.ReplayCommandReader")]
+#[parent(crate::app::maphistory::MapHistory_CommandReader)]
+pub struct MapHistory_ReplayCommandReader {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_ReplayCommandReader {
+    #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, command_stream_buffer: ::unity2::Array<u8>) -> ();
+
+    #[doc = "`ReadUnit()` overload"]
+    #[method(name = "ReadUnit", args = 0)]
+    pub fn read_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`ReadUnitByIndex()` overload"]
+    #[method(name = "ReadUnitByIndex", args = 0)]
+    pub fn read_unit_by_index(self) -> i32;
+
+    #[doc = "`ReadUnitItem(crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "ReadUnitItem", args = 1)]
+    pub fn read_unit_item(self, item: crate::app::unititem::UnitItem) -> ();
+
+    #[doc = "`ReadUnitItemList(crate::app::unititemlist::UnitItemList)` overload"]
+    #[method(name = "ReadUnitItemList", args = 1)]
+    pub fn read_unit_item_list(self, item_list: crate::app::unititemlist::UnitItemList) -> ();
+
+    #[doc = "`ReadMultiTargets(crate::app::mapmind::MapMind_MultiTargets)` overload"]
+    #[method(name = "ReadMultiTargets", args = 1)]
+    pub fn read_multi_targets(self, targets: crate::app::mapmind::MapMind_MultiTargets) -> ();
+
+    #[doc = "`ReadForce()` overload"]
+    #[method(name = "ReadForce", args = 0)]
+    pub fn read_force(self) -> crate::app::force::Force_Type;
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_ReplayCommandReader {
+    #[doc = "`.ctor(::unity2::Array<u8>)` — overload selector"]
+    pub fn new(command_stream_buffer: ::unity2::Array<u8>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_ReplayCommandReader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_ReplayCommandReaderMethods>::ctor(this, command_stream_buffer);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_InspectorType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -85,14 +172,14 @@ impl MapHistory_RewindUnitMap_Data {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapHistory_Rewind_IsEngagings {
+pub struct MapHistory_Rewind_InspectorType {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapHistory_Rewind_IsEngagings {
+impl ::unity2::ClassIdentity for MapHistory_Rewind_InspectorType {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapHistory.Rewind.IsEngagings";
+    const NAME: &'static str = "MapHistory.Rewind.InspectorType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -101,7 +188,7 @@ impl ::unity2::ClassIdentity for MapHistory_Rewind_IsEngagings {
     }
 }
 
-impl ::unity2::IlType for MapHistory_Rewind_IsEngagings {
+impl ::unity2::IlType for MapHistory_Rewind_InspectorType {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -110,321 +197,68 @@ impl ::unity2::IlType for MapHistory_Rewind_IsEngagings {
     }
 }
 
-impl MapHistory_Rewind_IsEngagings {
-    pub fn from_unit() -> Self {
+impl MapHistory_Rewind_InspectorType {
+    pub fn cannon() -> Self {
         Self { value: 0 }
     }
 
-    pub fn r#true() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn r#false() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindCommandWriter.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.RewindCommandWriter")]
-#[parent(crate::app::maphistory::MapHistory_CommandWriter)]
-pub struct MapHistory_RewindCommandWriter {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_RewindCommandWriter {
-    #[doc = "`Prepare(crate::app::maphistory::MapHistory_RewindType)` overload"]
-    #[method(name = "Prepare", args = 1)]
-    pub fn prepare(self, r#type: crate::app::maphistory::MapHistory_RewindType) -> ();
-
-    #[doc = "`WriteUnitAndName(crate::app::unit::Unit)` overload"]
-    #[method(name = "WriteUnitAndName", args = 1)]
-    pub fn write_unit_and_name(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`WriteUnit(crate::app::unit::Unit)` overload"]
-    #[method(name = "WriteUnit", args = 1)]
-    pub fn write_unit(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`WriteName(crate::app::unit::Unit)` overload"]
-    #[method(name = "WriteName", args = 1)]
-    pub fn write_name(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`WritePosition(crate::app::unit::Unit)` overload"]
-    #[method(name = "WritePosition", args = 1)]
-    pub fn write_position(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`WriteStatus(crate::app::unit::Unit)` overload"]
-    #[method(name = "WriteStatus", args = 1)]
-    pub fn write_status(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`WriteStatus(i64)` overload"]
-    #[method(name = "WriteStatus", args = 1)]
-    pub fn write_status_2(self, status: i64) -> ();
-
-    #[doc = "`WriteHp(crate::app::unit::Unit)` overload"]
-    #[method(name = "WriteHp", args = 1)]
-    pub fn write_hp(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`WriteHp(i32)` overload"]
-    #[method(name = "WriteHp", args = 1)]
-    pub fn write_hp_2(self, hp: i32) -> ();
-
-    #[doc = "`WriteBaseCapability(crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "WriteBaseCapability", args = 2)]
-    pub fn write_base_capability(self, unit: crate::app::unit::Unit, index: i32) -> ();
-
-    #[doc = "`WriteBaseCapabilityAll(crate::app::unit::Unit)` overload"]
-    #[method(name = "WriteBaseCapabilityAll", args = 1)]
-    pub fn write_base_capability_all(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`WriteGrowCapabilityAll(crate::app::unit::Unit)` overload"]
-    #[method(name = "WriteGrowCapabilityAll", args = 1)]
-    pub fn write_grow_capability_all(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`WriteLevelCapabilityAll(crate::app::unit::Unit)` overload"]
-    #[method(name = "WriteLevelCapabilityAll", args = 1)]
-    pub fn write_level_capability_all(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`WriteUnitBaseCapabilityAll(crate::app::unitbasecapability::UnitBaseCapability)` overload"]
-    #[method(name = "WriteUnitBaseCapabilityAll", args = 1)]
-    pub fn write_unit_base_capability_all(
-        self,
-        capability: crate::app::unitbasecapability::UnitBaseCapability,
-    ) -> ();
-
-    #[doc = "`WriteEngageCount(crate::app::unit::Unit)` overload"]
-    #[method(name = "WriteEngageCount", args = 1)]
-    pub fn write_engage_count(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`WriteEngageCount(i32)` overload"]
-    #[method(name = "WriteEngageCount", args = 1)]
-    pub fn write_engage_count_2(self, engage_count: i32) -> ();
-
-    #[doc = "`WriteEngageTurn(crate::app::unit::Unit)` overload"]
-    #[method(name = "WriteEngageTurn", args = 1)]
-    pub fn write_engage_turn(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`WriteShowInSearchMap(crate::app::unit::Unit, i32, i32)` overload"]
-    #[method(name = "WriteShowInSearchMap", args = 3)]
-    pub fn write_show_in_search_map(
-        self,
-        unit: crate::app::unit::Unit,
-        move_x: i32,
-        move_z: i32,
-    ) -> ();
-
-    #[doc = "`WriteTurn(i32)` overload"]
-    #[method(name = "WriteTurn", args = 1)]
-    pub fn write_turn(self, turn: i32) -> ();
-
-    #[doc = "`WriteForce(crate::app::force::Force_Type)` overload"]
-    #[method(name = "WriteForce", args = 1)]
-    pub fn write_force(self, force_type: crate::app::force::Force_Type) -> ();
-
-    #[doc = "`WriteSkills(crate::app::skillarray::SkillArray)` overload"]
-    #[method(name = "WriteSkills", args = 1)]
-    pub fn write_skills(self, skills: crate::app::skillarray::SkillArray) -> ();
-
-    #[doc = "`WriteUnitPhaseBeginKinds(crate::app::maphistory::MapHistory_RewindUnitPhaseBeginKinds)` overload"]
-    #[method(name = "WriteUnitPhaseBeginKinds", args = 1)]
-    pub fn write_unit_phase_begin_kinds(
-        self,
-        kind: crate::app::maphistory::MapHistory_RewindUnitPhaseBeginKinds,
-    ) -> ();
-
-    #[doc = "`WriteUnitItem(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "WriteUnitItem", args = 1)]
-    pub fn write_unit_item(self, item: crate::app::unititem::UnitItem) -> ();
-
-    #[doc = "`WriteUnitItemList(crate::app::unititemlist::UnitItemList)` overload"]
-    #[method(name = "WriteUnitItemList", args = 1)]
-    pub fn write_unit_item_list(self, item_list: crate::app::unititemlist::UnitItemList) -> ();
-
-    #[doc = "`WriteGodUnit(crate::app::godunit::GodUnit)` overload"]
-    #[method(name = "WriteGodUnit", args = 1)]
-    pub fn write_god_unit(self, god_unit: crate::app::godunit::GodUnit) -> ();
-
-    #[doc = "`WriteTransporterData(crate::app::transporter::Transporter_Data)` overload"]
-    #[method(name = "WriteTransporterData", args = 1)]
-    pub fn write_transporter_data(self, data: crate::app::transporter::Transporter_Data) -> ();
-
-    #[doc = "`WriteOverlap(i32, i32)` overload"]
-    #[method(name = "WriteOverlap", args = 2)]
-    pub fn write_overlap(self, x: i32, z: i32) -> ();
-
-    #[doc = "`WriteOverlap(crate::app::stream_2::Stream_2, i32, i32)` overload"]
-    #[method(name = "WriteOverlap", args = 3)]
-    pub fn write_overlap_2(stream: crate::app::stream_2::Stream_2, x: i32, z: i32) -> ();
-
-    #[doc = "`WriteUnitIconInfo(crate::app::unit::Unit)` overload"]
-    #[method(name = "WriteUnitIconInfo", args = 1)]
-    pub fn write_unit_icon_info(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`WriteLockTarget(crate::app::unit::Unit)` overload"]
-    #[method(name = "WriteLockTarget", args = 1)]
-    pub fn write_lock_target(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`OverwriteByte(i32, u8)` overload"]
-    #[method(name = "OverwriteByte", args = 2)]
-    pub fn overwrite_byte(self, pos: i32, val: u8) -> ();
-
-    #[doc = "`OverwriteUshort(i32, u16)` overload"]
-    #[method(name = "OverwriteUshort", args = 2)]
-    pub fn overwrite_ushort(self, pos: i32, val: u16) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_RewindCommandWriter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_RewindCommandWriter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_RewindCommandWriterMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_TidMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.TidMap")]
-# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_TidMap >)]
-pub struct MapHistory_TidMap {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_TidMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_TidMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_TidMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_TidMapMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RnidMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.RnidMap")]
-# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_RnidMap >)]
-pub struct MapHistory_RnidMap {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_RnidMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_RnidMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_RnidMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_RnidMapMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Replay_ReadResult.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapHistory_Replay_ReadResult {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_Replay_ReadResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.Replay.ReadResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_Replay_ReadResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapHistory_Replay_ReadResult {
-    pub fn next() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn mind() -> Self {
+    pub fn breakable() -> Self {
         Self { value: 1 }
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_ReplayAppearanceMap_Appearance.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapHistory_ReplayAppearanceMap_Appearance {
-    pub turn: u8,
-    pub buffer: ::unity2::Array<u8>,
-    pub stream: crate::app::stream_2::Stream_2,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_IdMap_1.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.IdMap`1")]
+# [parent (crate :: app :: maphistory :: MapHistory_IdMapBase_1 < T0 >)]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < T0 >)]
+#[parent(crate::system::object::Object)]
+pub struct MapHistory_IdMap_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> MapHistory_IdMap_1<T0> {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, capacity: i32) -> ();
+
+    #[doc = "`Entry(::unity2::Il2CppString)` overload"]
+    #[method(name = "Entry", args = 1)]
+    pub fn entry(self, id: ::unity2::Il2CppString) -> i32;
+
+    #[doc = "`TryGet(i32)` overload"]
+    #[method(name = "TryGet", args = 1)]
+    pub fn try_get(self, index: i32) -> ::unity2::Il2CppString;
+
+    #[doc = "`get_Version()` overload"]
+    #[method(name = "get_Version", args = 0)]
+    pub fn get_version(self) -> i32;
+
+    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "OnSerialize", args = 1)]
+    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = "OnDeserialize", args = 2)]
+    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
 }
 
-impl ::unity2::ClassIdentity for MapHistory_ReplayAppearanceMap_Appearance {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.ReplayAppearanceMap.Appearance";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[cfg(feature = "app-maphistory")]
+impl<T0: ::unity2::ClassIdentity> MapHistory_IdMap_1<T0> {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(capacity: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_IdMap_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_IdMap_1Methods<T0>>::ctor(this, capacity);
+        this
     }
 }
 
-impl ::unity2::IlType for MapHistory_ReplayAppearanceMap_Appearance {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Rewind.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Rewind.md"))]
 #[::unity2::class(namespace = "App", name = "MapHistory.Rewind")]
 # [parent (crate :: app :: maphistory :: MapHistory_Base_1 < crate :: app :: maphistory :: MapHistory_Rewind >)]
 pub struct MapHistory_Rewind {
@@ -2596,7 +2430,4239 @@ impl MapHistory_Rewind {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_GidMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.GidMap")]
+# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_GidMap >)]
+pub struct MapHistory_GidMap {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_GidMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_GidMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_GidMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_GidMapMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_SplitArgs.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapHistory_Rewind_SplitArgs {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_Rewind_SplitArgs {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.Rewind.SplitArgs";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_Rewind_SplitArgs {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapHistory_Rewind_SplitArgs {
+    pub fn default() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn pick_up() -> Self {
+        Self { value: 1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindCommandReader.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.RewindCommandReader")]
+#[parent(crate::app::maphistory::MapHistory_CommandReader)]
+pub struct MapHistory_RewindCommandReader {
+    #[rename(name = "m_DummySkills")]
+    pub m_dummy_skills: crate::app::skillarray::SkillArray,
+    #[rename(name = "m_DummyUnitItem")]
+    pub m_dummy_unit_item: crate::app::unititem::UnitItem,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_RewindCommandReader {
+    #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, command_stream_buffer: ::unity2::Array<u8>) -> ();
+
+    #[doc = "`ReadUnit()` overload"]
+    #[method(name = "ReadUnit", args = 0)]
+    pub fn read_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`ReadUnitByIndex()` overload"]
+    #[method(name = "ReadUnitByIndex", args = 0)]
+    pub fn read_unit_by_index(self) -> i32;
+
+    #[doc = "`SkipUnit()` overload"]
+    #[method(name = "SkipUnit", args = 0)]
+    pub fn skip_unit(self) -> ();
+
+    #[doc = "`ReadName()` overload"]
+    #[method(name = "ReadName", args = 0)]
+    pub fn read_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadNameByIndex()` overload"]
+    #[method(name = "ReadNameByIndex", args = 0)]
+    pub fn read_name_by_index(self) -> i32;
+
+    #[doc = "`SkipName()` overload"]
+    #[method(name = "SkipName", args = 0)]
+    pub fn skip_name(self) -> ();
+
+    #[doc = "`ReadPosition(i32, i32)` overload"]
+    #[method(name = "ReadPosition", args = 2)]
+    pub fn read_position(self, x: i32, z: i32) -> ();
+
+    #[doc = "`ReadStatus()` overload"]
+    #[method(name = "ReadStatus", args = 0)]
+    pub fn read_status(self) -> i64;
+
+    #[doc = "`ReadHp()` overload"]
+    #[method(name = "ReadHp", args = 0)]
+    pub fn read_hp(self) -> i32;
+
+    #[doc = "`ReadBaseCapability()` overload"]
+    #[method(name = "ReadBaseCapability", args = 0)]
+    pub fn read_base_capability(self) -> i8;
+
+    #[doc = "`ReadBaseCapabilityAll(crate::app::unitbasecapability::UnitBaseCapability)` overload"]
+    #[method(name = "ReadBaseCapabilityAll", args = 1)]
+    pub fn read_base_capability_all(
+        self,
+        capability: crate::app::unitbasecapability::UnitBaseCapability,
+    ) -> ();
+
+    #[doc = "`ReadGrowCapabilityAll(crate::app::capability::Capability)` overload"]
+    #[method(name = "ReadGrowCapabilityAll", args = 1)]
+    pub fn read_grow_capability_all(self, capability: crate::app::capability::Capability) -> ();
+
+    #[doc = "`ReadLevelCapabilityAll(crate::app::unitbasecapability::UnitBaseCapability)` overload"]
+    #[method(name = "ReadLevelCapabilityAll", args = 1)]
+    pub fn read_level_capability_all(
+        self,
+        capability: crate::app::unitbasecapability::UnitBaseCapability,
+    ) -> ();
+
+    #[doc = "`ReadUnitBaseCapabilityAll(crate::app::unitbasecapability::UnitBaseCapability)` overload"]
+    #[method(name = "ReadUnitBaseCapabilityAll", args = 1)]
+    pub fn read_unit_base_capability_all(
+        self,
+        capability: crate::app::unitbasecapability::UnitBaseCapability,
+    ) -> ();
+
+    #[doc = "`ReadEngageCount()` overload"]
+    #[method(name = "ReadEngageCount", args = 0)]
+    pub fn read_engage_count(self) -> i32;
+
+    #[doc = "`ReadEngageTurn()` overload"]
+    #[method(name = "ReadEngageTurn", args = 0)]
+    pub fn read_engage_turn(self) -> i32;
+
+    #[doc = "`ReadShowInSearchMap()` overload"]
+    #[method(name = "ReadShowInSearchMap", args = 0)]
+    pub fn read_show_in_search_map(self) -> bool;
+
+    #[doc = "`ReadTurn()` overload"]
+    #[method(name = "ReadTurn", args = 0)]
+    pub fn read_turn(self) -> i32;
+
+    #[doc = "`ReadForce()` overload"]
+    #[method(name = "ReadForce", args = 0)]
+    pub fn read_force(self) -> crate::app::force::Force_Type;
+
+    #[doc = "`ReadSkills(crate::app::skillarray::SkillArray)` overload"]
+    #[method(name = "ReadSkills", args = 1)]
+    pub fn read_skills(self, skills: crate::app::skillarray::SkillArray) -> ();
+
+    #[doc = "`ReadUnitPhaseBeginKinds()` overload"]
+    #[method(name = "ReadUnitPhaseBeginKinds", args = 0)]
+    pub fn read_unit_phase_begin_kinds(
+        self,
+    ) -> crate::app::maphistory::MapHistory_RewindUnitPhaseBeginKinds;
+
+    #[doc = "`ReadUnitItem(crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "ReadUnitItem", args = 1)]
+    pub fn read_unit_item(self, item: crate::app::unititem::UnitItem) -> ();
+
+    #[doc = "`ReadUnitItemList(crate::app::unititemlist::UnitItemList)` overload"]
+    #[method(name = "ReadUnitItemList", args = 1)]
+    pub fn read_unit_item_list(self, item_list: crate::app::unititemlist::UnitItemList) -> ();
+
+    #[doc = "`ReadGodUnit(bool)` overload"]
+    #[method(name = "ReadGodUnit", args = 1)]
+    pub fn read_god_unit(self, include_reserved: bool) -> crate::app::godunit::GodUnit;
+
+    #[doc = "`ReadTransporterData(crate::app::transporter::Transporter_Data)` overload"]
+    #[method(name = "ReadTransporterData", args = 1)]
+    pub fn read_transporter_data(self, data: crate::app::transporter::Transporter_Data) -> ();
+
+    #[doc = "`ReadOverlap(crate::app::maphistory::MapHistory_Rewind_OverlapData)` overload"]
+    #[method(name = "ReadOverlap", args = 1)]
+    pub fn read_overlap(
+        self,
+        overlap_data: crate::app::maphistory::MapHistory_Rewind_OverlapData,
+    ) -> ();
+
+    #[doc = "`ReadOverlap(crate::app::stream_2::Stream_2, bool, i32, i32, i32, i32, i32, crate::app::force::Force_Type, ::unity2::Il2CppString)` overload"]
+    #[method(name = "ReadOverlap", args = 9)]
+    pub fn read_overlap_2(
+        stream: crate::app::stream_2::Stream_2,
+        has_data: bool,
+        x: i32,
+        z: i32,
+        hp: i32,
+        life: i32,
+        turn: i32,
+        phase: crate::app::force::Force_Type,
+        tid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`ReadOverlap(crate::app::stream_2::Stream_2, crate::app::maphistory::MapHistory_Rewind_OverlapData)` overload"]
+    #[method(name = "ReadOverlap", args = 2)]
+    pub fn read_overlap_3(
+        stream: crate::app::stream_2::Stream_2,
+        overlap_data: crate::app::maphistory::MapHistory_Rewind_OverlapData,
+    ) -> ();
+
+    #[doc = "`ReadUnitIconInfo(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds, bool, bool, ::unity2::Il2CppString)` overload"]
+    #[method(name = "ReadUnitIconInfo", args = 6)]
+    pub fn read_unit_icon_info(
+        self,
+        pid: ::unity2::Il2CppString,
+        jid: ::unity2::Il2CppString,
+        item_kind: crate::app::itemdata::ItemData_Kinds,
+        is_female: bool,
+        is_engage: bool,
+        gid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`SkipUnitIconInfo()` overload"]
+    #[method(name = "SkipUnitIconInfo", args = 0)]
+    pub fn skip_unit_icon_info(self) -> ();
+
+    #[doc = "`ReadLockTarget(i32, i32)` overload"]
+    #[method(name = "ReadLockTarget", args = 2)]
+    pub fn read_lock_target(self, target_x: i32, target_z: i32) -> bool;
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_RewindCommandReader {
+    #[doc = "`.ctor(::unity2::Array<u8>)` — overload selector"]
+    pub fn new(command_stream_buffer: ::unity2::Array<u8>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_RewindCommandReader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_RewindCommandReaderMethods>::ctor(this, command_stream_buffer);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_RewindUnitMap_Data.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapHistory_RewindUnitMap_Data {
+    pub force_type: crate::app::force::Force_Type,
+    pub stream: crate::app::stream_2::Stream_2,
+    pub buffer: ::unity2::Array<u8>,
+    pub is_restored_in_preview: bool,
+    pub is_created_in_preview: bool,
+    pub is_used_in_preview: bool,
+    pub is_before_dispos_in_preview: bool,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_RewindUnitMap_Data {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.RewindUnitMap.Data";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_RewindUnitMap_Data {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods(value)]
+impl MapHistory_RewindUnitMap_Data {
+    #[doc = "`get_unit()` overload"]
+    #[method(name = "get_unit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`set_unit(crate::app::unit::Unit)` overload"]
+    #[method(name = "set_unit", args = 1)]
+    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
+
+    #[doc = "`IsUsed()` overload"]
+    #[method(name = "IsUsed", args = 0)]
+    pub fn is_used(self) -> bool;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_RewindType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapHistory_RewindType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_RewindType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.RewindType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_RewindType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapHistory_RewindType {
+    pub fn phase_begin() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn phase_next() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn pick_up() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn fixed() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn talk() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn engage_charge() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn item_use() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn trade() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn visit() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn breakdown() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn escape() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn door() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn torch() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn treasure_box() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn transporter() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn dance() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn guard() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn overlap_skill() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn command_skill() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn vision_create() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn vision_delete() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn destroy_village() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn event_battle() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn battle_calc() -> Self {
+        Self { value: 28 }
+    }
+
+    pub fn mind_done() -> Self {
+        Self { value: 29 }
+    }
+
+    pub fn gain_item() -> Self {
+        Self { value: 30 }
+    }
+
+    pub fn status() -> Self {
+        Self { value: 31 }
+    }
+
+    pub fn hp() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn base_capability() -> Self {
+        Self { value: 33 }
+    }
+
+    pub fn engage_count() -> Self {
+        Self { value: 34 }
+    }
+
+    pub fn extra_sight() -> Self {
+        Self { value: 35 }
+    }
+
+    pub fn exp() -> Self {
+        Self { value: 36 }
+    }
+
+    pub fn level_up() -> Self {
+        Self { value: 37 }
+    }
+
+    pub fn class_change() -> Self {
+        Self { value: 38 }
+    }
+
+    pub fn position() -> Self {
+        Self { value: 39 }
+    }
+
+    pub fn angle() -> Self {
+        Self { value: 40 }
+    }
+
+    pub fn private_skill() -> Self {
+        Self { value: 41 }
+    }
+
+    pub fn enhance_factor_item() -> Self {
+        Self { value: 42 }
+    }
+
+    pub fn ai_active() -> Self {
+        Self { value: 43 }
+    }
+
+    pub fn ai_band() -> Self {
+        Self { value: 44 }
+    }
+
+    pub fn ai_priority() -> Self {
+        Self { value: 45 }
+    }
+
+    pub fn ai_sequence() -> Self {
+        Self { value: 46 }
+    }
+
+    pub fn ai_value() -> Self {
+        Self { value: 47 }
+    }
+
+    pub fn ai_prohibit_engage_attack() -> Self {
+        Self { value: 48 }
+    }
+
+    pub fn ai_prohibit_rod() -> Self {
+        Self { value: 49 }
+    }
+
+    pub fn ai_prohibit_overlap() -> Self {
+        Self { value: 50 }
+    }
+
+    pub fn ai_rerewarp() -> Self {
+        Self { value: 51 }
+    }
+
+    pub fn ai_rerewarp_count() -> Self {
+        Self { value: 52 }
+    }
+
+    pub fn engage() -> Self {
+        Self { value: 53 }
+    }
+
+    pub fn dead() -> Self {
+        Self { value: 54 }
+    }
+
+    pub fn transfer_v0() -> Self {
+        Self { value: 55 }
+    }
+
+    pub fn revive_v0() -> Self {
+        Self { value: 56 }
+    }
+
+    pub fn unit_phase_begin() -> Self {
+        Self { value: 57 }
+    }
+
+    pub fn unit_phase_end() -> Self {
+        Self { value: 58 }
+    }
+
+    pub fn unit_item() -> Self {
+        Self { value: 59 }
+    }
+
+    pub fn unit_item_list() -> Self {
+        Self { value: 60 }
+    }
+
+    pub fn dispos() -> Self {
+        Self { value: 61 }
+    }
+
+    pub fn god_create() -> Self {
+        Self { value: 62 }
+    }
+
+    pub fn god_delete() -> Self {
+        Self { value: 63 }
+    }
+
+    pub fn god_connect() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn god_disconnect() -> Self {
+        Self { value: 65 }
+    }
+
+    pub fn god_change() -> Self {
+        Self { value: 66 }
+    }
+
+    pub fn god_exp() -> Self {
+        Self { value: 67 }
+    }
+
+    pub fn god_level_up_v0() -> Self {
+        Self { value: 68 }
+    }
+
+    pub fn god_darkness() -> Self {
+        Self { value: 69 }
+    }
+
+    pub fn god_state() -> Self {
+        Self { value: 70 }
+    }
+
+    pub fn reliance_score() -> Self {
+        Self { value: 71 }
+    }
+
+    pub fn transporter_data() -> Self {
+        Self { value: 72 }
+    }
+
+    pub fn cannon_shells() -> Self {
+        Self { value: 73 }
+    }
+
+    pub fn terrain_open() -> Self {
+        Self { value: 74 }
+    }
+
+    pub fn terrain_broken() -> Self {
+        Self { value: 75 }
+    }
+
+    pub fn terrain_set() -> Self {
+        Self { value: 76 }
+    }
+
+    pub fn overlap() -> Self {
+        Self { value: 77 }
+    }
+
+    pub fn gold() -> Self {
+        Self { value: 78 }
+    }
+
+    pub fn material() -> Self {
+        Self { value: 79 }
+    }
+
+    pub fn piece_of_bond() -> Self {
+        Self { value: 80 }
+    }
+
+    pub fn variable() -> Self {
+        Self { value: 81 }
+    }
+
+    pub fn kizuna_record() -> Self {
+        Self { value: 82 }
+    }
+
+    pub fn win_rule() -> Self {
+        Self { value: 83 }
+    }
+
+    pub fn win_rule_enemy_num() -> Self {
+        Self { value: 84 }
+    }
+
+    pub fn win_rule_limit_turn() -> Self {
+        Self { value: 85 }
+    }
+
+    pub fn win_rule_mid() -> Self {
+        Self { value: 86 }
+    }
+
+    pub fn field_bgm_phase_bgm() -> Self {
+        Self { value: 87 }
+    }
+
+    pub fn field_bgm_war_situation() -> Self {
+        Self { value: 88 }
+    }
+
+    pub fn engage_break() -> Self {
+        Self { value: 89 }
+    }
+
+    pub fn range() -> Self {
+        Self { value: 90 }
+    }
+
+    pub fn god_escaping() -> Self {
+        Self { value: 91 }
+    }
+
+    pub fn god_notify_level_cap_talk() -> Self {
+        Self { value: 92 }
+    }
+
+    pub fn ai_engage_attack_once_done() -> Self {
+        Self { value: 93 }
+    }
+
+    pub fn terrain_action() -> Self {
+        Self { value: 94 }
+    }
+
+    pub fn danger_showing() -> Self {
+        Self { value: 95 }
+    }
+
+    pub fn map_kill_bonus() -> Self {
+        Self { value: 96 }
+    }
+
+    pub fn put_off() -> Self {
+        Self { value: 97 }
+    }
+
+    pub fn god_dirty() -> Self {
+        Self { value: 98 }
+    }
+
+    pub fn effect_create() -> Self {
+        Self { value: 99 }
+    }
+
+    pub fn effect_delete() -> Self {
+        Self { value: 100 }
+    }
+
+    pub fn material_float() -> Self {
+        Self { value: 101 }
+    }
+
+    pub fn material_color() -> Self {
+        Self { value: 102 }
+    }
+
+    pub fn field_bgm_special_turn() -> Self {
+        Self { value: 103 }
+    }
+
+    pub fn post_change_bgm_event() -> Self {
+        Self { value: 104 }
+    }
+
+    pub fn terrain_endurance() -> Self {
+        Self { value: 105 }
+    }
+
+    pub fn terrain_state() -> Self {
+        Self { value: 106 }
+    }
+
+    pub fn lose_rule_mid() -> Self {
+        Self { value: 107 }
+    }
+
+    pub fn battle_start() -> Self {
+        Self { value: 108 }
+    }
+
+    pub fn phase_begin_after() -> Self {
+        Self { value: 109 }
+    }
+
+    pub fn clear_ring() -> Self {
+        Self { value: 110 }
+    }
+
+    pub fn map_kill_bonus_count() -> Self {
+        Self { value: 111 }
+    }
+
+    pub fn unit_record() -> Self {
+        Self { value: 112 }
+    }
+
+    pub fn extra_hp_stock() -> Self {
+        Self { value: 113 }
+    }
+
+    pub fn engage_turn() -> Self {
+        Self { value: 114 }
+    }
+
+    pub fn engage_wait() -> Self {
+        Self { value: 115 }
+    }
+
+    pub fn engage_summon() -> Self {
+        Self { value: 116 }
+    }
+
+    pub fn transfer_v1() -> Self {
+        Self { value: 117 }
+    }
+
+    pub fn map_sight_usable() -> Self {
+        Self { value: 118 }
+    }
+
+    pub fn plain_hp_stock() -> Self {
+        Self { value: 119 }
+    }
+
+    pub fn contract() -> Self {
+        Self { value: 120 }
+    }
+
+    pub fn full_bullet() -> Self {
+        Self { value: 121 }
+    }
+
+    pub fn reset_lock_target() -> Self {
+        Self { value: 122 }
+    }
+
+    pub fn revive_v1() -> Self {
+        Self { value: 123 }
+    }
+
+    pub fn enchant() -> Self {
+        Self { value: 124 }
+    }
+
+    pub fn enchant_weapon() -> Self {
+        Self { value: 125 }
+    }
+
+    pub fn ai_bullet_pattern() -> Self {
+        Self { value: 126 }
+    }
+
+    pub fn god_level_up_v1() -> Self {
+        Self { value: 127 }
+    }
+
+    pub fn position_list() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn ai_move_limit() -> Self {
+        Self { value: 129 }
+    }
+
+    pub fn terrain_action_move() -> Self {
+        Self { value: 130 }
+    }
+
+    pub fn ai_magic_shield_once_done() -> Self {
+        Self { value: 131 }
+    }
+
+    pub fn random_game() -> Self {
+        Self { value: 132 }
+    }
+
+    pub fn lock_target() -> Self {
+        Self { value: 133 }
+    }
+
+    pub fn ai_enchant_weapon_done() -> Self {
+        Self { value: 134 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Rewind_OverlapData.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.Rewind.OverlapData")]
+#[parent(crate::app::pool::Pool_Node)]
+pub struct MapHistory_Rewind_OverlapData {
+    #[rename(name = "hasData")]
+    pub has_data: bool,
+    #[rename(name = "x")]
+    pub x: u8,
+    #[rename(name = "z")]
+    pub z: u8,
+    #[rename(name = "hp")]
+    pub hp: u8,
+    #[rename(name = "life")]
+    pub life: u8,
+    #[rename(name = "turn")]
+    pub turn: i16,
+    #[rename(name = "phase")]
+    pub phase: u8,
+    #[rename(name = "tidMapIndex")]
+    pub tid_map_index: u8,
+    #[rename(name = "isDone")]
+    pub is_done: bool,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_Rewind_OverlapData {
+    #[doc = "`OnEnter()` overload"]
+    #[method(name = "OnEnter", args = 0)]
+    pub fn on_enter(self) -> ();
+
+    #[doc = "`OnExit()` overload"]
+    #[method(name = "OnExit", args = 0)]
+    pub fn on_exit(self) -> ();
+
+    #[doc = "`Set(crate::app::mapoverlap::MapOverlap_Data)` overload"]
+    #[method(name = "Set", args = 1)]
+    pub fn set(self, map_overlap_data: crate::app::mapoverlap::MapOverlap_Data) -> ();
+
+    #[doc = "`Set(crate::app::maphistory::MapHistory_Rewind_OverlapData)` overload"]
+    #[method(name = "Set", args = 1)]
+    pub fn set_2(self, other: crate::app::maphistory::MapHistory_Rewind_OverlapData) -> ();
+
+    #[doc = "`IsSame(crate::app::mapoverlap::MapOverlap_Data)` overload"]
+    #[method(name = "IsSame", args = 1)]
+    pub fn is_same(self, map_overlap_data: crate::app::mapoverlap::MapOverlap_Data) -> bool;
+
+    #[doc = "`TryGetTerrain()` overload"]
+    #[method(name = "TryGetTerrain", args = 0)]
+    pub fn try_get_terrain(self) -> crate::app::terraindata_2::TerrainData_2;
+
+    #[doc = "`GetKey()` overload"]
+    #[method(name = "GetKey", args = 0)]
+    pub fn get_key(self) -> i32;
+
+    #[doc = "`GetKey(i32, i32)` overload"]
+    #[method(name = "GetKey", args = 2)]
+    pub fn get_key_2(x: i32, z: i32) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_Rewind_OverlapData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_Rewind_OverlapData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_Rewind_OverlapDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_RewindVariableType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapHistory_RewindVariableType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_RewindVariableType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.RewindVariableType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_RewindVariableType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapHistory_RewindVariableType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn string() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn number() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_ReplayCommandWriter.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.ReplayCommandWriter")]
+#[parent(crate::app::maphistory::MapHistory_CommandWriter)]
+pub struct MapHistory_ReplayCommandWriter {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_ReplayCommandWriter {
+    #[doc = "`Prepare(crate::app::maphistory::MapHistory_ReplayType)` overload"]
+    #[method(name = "Prepare", args = 1)]
+    pub fn prepare(self, r#type: crate::app::maphistory::MapHistory_ReplayType) -> ();
+
+    #[doc = "`WriteUnit(crate::app::unit::Unit)` overload"]
+    #[method(name = "WriteUnit", args = 1)]
+    pub fn write_unit(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`WriteUnitItem(crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "WriteUnitItem", args = 1)]
+    pub fn write_unit_item(self, item: crate::app::unititem::UnitItem) -> ();
+
+    #[doc = "`WriteUnitItemList(crate::app::unititemlist::UnitItemList)` overload"]
+    #[method(name = "WriteUnitItemList", args = 1)]
+    pub fn write_unit_item_list(self, item_list: crate::app::unititemlist::UnitItemList) -> ();
+
+    #[doc = "`WriteMultiTargets(crate::app::mapmind::MapMind_MultiTargets)` overload"]
+    #[method(name = "WriteMultiTargets", args = 1)]
+    pub fn write_multi_targets(self, targets: crate::app::mapmind::MapMind_MultiTargets) -> ();
+
+    #[doc = "`WriteForce(crate::app::force::Force_Type)` overload"]
+    #[method(name = "WriteForce", args = 1)]
+    pub fn write_force(self, force_type: crate::app::force::Force_Type) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_ReplayCommandWriter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_ReplayCommandWriter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_ReplayCommandWriterMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_CommonType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapHistory_CommonType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_CommonType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.CommonType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_CommonType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapHistory_CommonType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn split() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn custom() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_IdMapBase_1.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.IdMapBase`1")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < T0 >)]
+#[parent(crate::system::object::Object)]
+pub struct MapHistory_IdMapBase_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "m_Ids")]
+    pub m_ids: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    #[rename(name = "m_IdIndexDict")]
+    pub m_id_index_dict:
+        crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, u8>,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> MapHistory_IdMapBase_1<T0> {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, capacity: i32) -> ();
+
+    #[doc = "`EntryInternal(::unity2::Il2CppString)` overload"]
+    #[method(name = "EntryInternal", args = 1)]
+    pub fn entry_internal(self, id: ::unity2::Il2CppString) -> i32;
+
+    #[doc = "`EntryInternal(::unity2::Il2CppString, u8)` overload"]
+    #[method(name = "EntryInternal", args = 2)]
+    pub fn entry_internal_2(self, id: ::unity2::Il2CppString, index: u8) -> i32;
+
+    #[doc = "`GetNextIndex()` overload"]
+    #[method(name = "GetNextIndex", args = 0)]
+    pub fn get_next_index(self) -> u8;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`TryGetInternal(i32)` overload"]
+    #[method(name = "TryGetInternal", args = 1)]
+    pub fn try_get_internal(self, index: i32) -> ::unity2::Il2CppString;
+
+    #[doc = "`DbgError(::unity2::Il2CppString)` overload"]
+    #[method(name = "DbgError", args = 1)]
+    pub fn dbg_error(self, message: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl<T0: ::unity2::ClassIdentity> MapHistory_IdMapBase_1<T0> {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(capacity: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_IdMapBase_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_IdMapBase_1Methods<T0>>::ctor(this, capacity);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindUnitMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.RewindUnitMap")]
+# [parent (crate :: app :: maphistory :: MapHistory_UnitMapBase_2 < crate :: app :: maphistory :: MapHistory_RewindUnitMap , crate :: app :: maphistory :: MapHistory_RewindUnitMap_Data >)]
+pub struct MapHistory_RewindUnitMap {
+    #[static_field]
+    #[rename(name = "StreamBufferSize")]
+    pub stream_buffer_size: i32,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_RewindUnitMap {
+    #[doc = "`Preserve(crate::app::unit::Unit, crate::app::force::Force_Type)` overload"]
+    #[method(name = "Preserve", args = 2)]
+    pub fn preserve(
+        self,
+        unit: crate::app::unit::Unit,
+        next_force_type: crate::app::force::Force_Type,
+    ) -> ();
+
+    #[doc = "`Restore(i32, crate::app::unit::Unit)` overload"]
+    #[method(name = "Restore", args = 2)]
+    pub fn restore(self, index: i32, prev_unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`BeforeDispos(i32)` overload"]
+    #[method(name = "BeforeDispos", args = 1)]
+    pub fn before_dispos(self, index: i32) -> ();
+
+    #[doc = "`PreviewLatest()` overload"]
+    #[method(name = "PreviewLatest", args = 0)]
+    pub fn preview_latest(self) -> ();
+
+    #[doc = "`PreviewDecide()` overload"]
+    #[method(name = "PreviewDecide", args = 0)]
+    pub fn preview_decide(self) -> ();
+
+    #[doc = "`PreviewCancel()` overload"]
+    #[method(name = "PreviewCancel", args = 0)]
+    pub fn preview_cancel(self) -> ();
+
+    #[doc = "`PreviewDeleteRestoredUnit(i32)` overload"]
+    #[method(name = "PreviewDeleteRestoredUnit", args = 1)]
+    pub fn preview_delete_restored_unit(self, index: i32) -> ();
+
+    #[doc = "`PreviewCleanup(i32)` overload"]
+    #[method(name = "PreviewCleanup", args = 1)]
+    pub fn preview_cleanup(self, index: i32) -> ();
+
+    #[doc = "`get_Version()` overload"]
+    #[method(name = "get_Version", args = 0)]
+    pub fn get_version(self) -> i32;
+
+    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "OnSerialize", args = 1)]
+    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = "OnDeserialize", args = 2)]
+    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_RewindUnitMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_RewindUnitMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_RewindUnitMapMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_IsEngagings.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapHistory_Rewind_IsEngagings {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_Rewind_IsEngagings {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.Rewind.IsEngagings";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_Rewind_IsEngagings {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapHistory_Rewind_IsEngagings {
+    pub fn from_unit() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn r#true() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn r#false() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Mode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapHistory_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_Mode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapHistory_Mode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn write() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn read() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_WriterKind.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapHistory_Rewind_WriterKind {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_Rewind_WriterKind {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.Rewind.WriterKind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_Rewind_WriterKind {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapHistory_Rewind_WriterKind {
+    pub fn common() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn terrain_set() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn overlap() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_UnitMapBase_2_NoEmptyFunction.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.UnitMapBase`2.NoEmptyFunction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+#[parent(crate::system::delegate::Delegate)]
+#[parent(crate::system::object::Object)]
+pub struct MapHistory_UnitMapBase_2_NoEmptyFunction<
+    T0: ::unity2::ClassIdentity,
+    T1: ::unity2::ClassIdentity,
+> {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
+    MapHistory_UnitMapBase_2_NoEmptyFunction<T0, T1>
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
+    MapHistory_UnitMapBase_2_NoEmptyFunction<T0, T1>
+{
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_UnitMapBase_2_NoEmptyFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_UnitMapBase_2_NoEmptyFunctionMethods<T0, T1>>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_UnitMapBase_2_IData.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.UnitMapBase`2.IData")]
+pub struct MapHistory_UnitMapBase_2_IData<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
+{}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
+    MapHistory_UnitMapBase_2_IData<T0, T1>
+{
+    #[doc = "`get_unit()` overload"]
+    #[method(name = "get_unit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`set_unit(crate::app::unit::Unit)` overload"]
+    #[method(name = "set_unit", args = 1)]
+    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
+
+    #[doc = "`IsUsed()` overload"]
+    #[method(name = "IsUsed", args = 0)]
+    pub fn is_used(self) -> bool;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindLog_UnitIcon.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.RewindLog.UnitIcon")]
+#[parent(crate::system::object::Object)]
+pub struct MapHistory_RewindLog_UnitIcon {
+    #[rename(name = "m_Person")]
+    pub m_person: crate::app::persondata::PersonData,
+    #[rename(name = "m_Job")]
+    pub m_job: crate::app::jobdata::JobData,
+    #[rename(name = "m_ItemKind")]
+    pub m_item_kind: crate::app::itemdata::ItemData_Kinds,
+    #[rename(name = "m_IsFemale")]
+    pub m_is_female: bool,
+    #[rename(name = "m_IsEngage")]
+    pub m_is_engage: bool,
+    #[rename(name = "m_God")]
+    pub m_god: crate::app::goddata::GodData,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_RewindLog_UnitIcon {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`IsValid()` overload"]
+    #[method(name = "IsValid", args = 0)]
+    pub fn is_valid(self) -> bool;
+
+    #[doc = "`Set(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds, bool, bool, ::unity2::Il2CppString)` overload"]
+    #[method(name = "Set", args = 6)]
+    pub fn set(
+        self,
+        pid: ::unity2::Il2CppString,
+        jid: ::unity2::Il2CppString,
+        item_kind: crate::app::itemdata::ItemData_Kinds,
+        is_female: bool,
+        is_engage: bool,
+        gid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`SetEngage(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetEngage", args = 1)]
+    pub fn set_engage(self, gid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Person()` overload"]
+    #[method(name = "get_Person", args = 0)]
+    pub fn get_person(self) -> crate::app::persondata::PersonData;
+
+    #[doc = "`get_Job()` overload"]
+    #[method(name = "get_Job", args = 0)]
+    pub fn get_job(self) -> crate::app::jobdata::JobData;
+
+    #[doc = "`get_ItemKind()` overload"]
+    #[method(name = "get_ItemKind", args = 0)]
+    pub fn get_item_kind(self) -> crate::app::itemdata::ItemData_Kinds;
+
+    #[doc = "`get_IsFemale()` overload"]
+    #[method(name = "get_IsFemale", args = 0)]
+    pub fn get_is_female(self) -> bool;
+
+    #[doc = "`get_IsEngage()` overload"]
+    #[method(name = "get_IsEngage", args = 0)]
+    pub fn get_is_engage(self) -> bool;
+
+    #[doc = "`get_God()` overload"]
+    #[method(name = "get_God", args = 0)]
+    pub fn get_god(self) -> crate::app::goddata::GodData;
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_RewindLog_UnitIcon {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_RewindLog_UnitIcon),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_RewindLog_UnitIconMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_IidMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.IidMap")]
+# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_IidMap >)]
+pub struct MapHistory_IidMap {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_IidMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_IidMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_IidMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_IidMapMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Command.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapHistory_Command {
+    pub m_type: u8,
+    pub m_size: u16,
+    pub m_offset: i32,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_Command {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.Command";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_Command {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods(value)]
+impl MapHistory_Command {
+    #[doc = "`get_Type()` overload"]
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> i32;
+
+    #[doc = "`set_Type(i32)` overload"]
+    #[method(name = "set_Type", args = 1)]
+    pub fn set_type(self, value: i32) -> ();
+
+    #[doc = "`get_Size()` overload"]
+    #[method(name = "get_Size", args = 0)]
+    pub fn get_size(self) -> i32;
+
+    #[doc = "`set_Size(i32)` overload"]
+    #[method(name = "set_Size", args = 1)]
+    pub fn set_size(self, value: i32) -> ();
+
+    #[doc = "`get_Offset()` overload"]
+    #[method(name = "get_Offset", args = 0)]
+    pub fn get_offset(self) -> i32;
+
+    #[doc = "`set_Offset(i32)` overload"]
+    #[method(name = "set_Offset", args = 1)]
+    pub fn set_offset(self, value: i32) -> ();
+
+    #[doc = "`get_Tail()` overload"]
+    #[method(name = "get_Tail", args = 0)]
+    pub fn get_tail(self) -> i32;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Base_1.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.Base`1")]
+#[parent(crate::system::object::Object)]
+pub struct MapHistory_Base_1<T0: ::unity2::ClassIdentity> {
+    #[static_field]
+    #[rename(name = "StreamAdditionalSize")]
+    pub stream_additional_size: i32,
+    #[rename(name = "m_CommandStreamBuffer")]
+    pub m_command_stream_buffer: ::unity2::Array<u8>,
+    #[rename(name = "m_CommandStream")]
+    pub m_command_stream: crate::app::stream_2::Stream_2,
+    #[rename(name = "m_Commands")]
+    pub m_commands: ::unity2::Array<crate::app::maphistory::MapHistory_Command>,
+    #[rename(name = "m_NumCommand")]
+    pub m_num_command: i32,
+    #[rename(name = "m_NumSplit")]
+    pub m_num_split: i32,
+    #[static_field]
+    #[rename(name = "s_Instance")]
+    pub s_instance: T0,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> MapHistory_Base_1<T0> {
+    #[doc = "`Initialize()` overload"]
+    #[method(name = "Initialize", args = 0)]
+    pub fn initialize(self) -> ();
+
+    #[doc = "`OnInitialize()` overload"]
+    #[method(name = "OnInitialize", args = 0)]
+    pub fn on_initialize(self) -> ();
+
+    #[doc = "`Delete()` overload"]
+    #[method(name = "Delete", args = 0)]
+    pub fn delete(self) -> ();
+
+    #[doc = "`OnDelete()` overload"]
+    #[method(name = "OnDelete", args = 0)]
+    pub fn on_delete(self) -> ();
+
+    #[doc = "`Add(crate::app::maphistory::MapHistory_CommandWriter)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, writer: crate::app::maphistory::MapHistory_CommandWriter) -> bool;
+
+    #[doc = "`Preadd(crate::app::maphistory::MapHistory_CommandWriter)` overload"]
+    #[method(name = "Preadd", args = 1)]
+    pub fn preadd(self, writer: crate::app::maphistory::MapHistory_CommandWriter) -> ();
+
+    #[doc = "`AddSplit(crate::app::maphistory::MapHistory_CommandWriter, u8)` overload"]
+    #[method(name = "AddSplit", args = 2)]
+    pub fn add_split(
+        self,
+        writer: crate::app::maphistory::MapHistory_CommandWriter,
+        arg: u8,
+    ) -> bool;
+
+    #[doc = "`Overwrite(crate::app::maphistory::MapHistory_CommandWriter, i32)` overload"]
+    #[method(name = "Overwrite", args = 2)]
+    pub fn overwrite(
+        self,
+        writer: crate::app::maphistory::MapHistory_CommandWriter,
+        command_index: i32,
+    ) -> bool;
+
+    #[doc = "`CommandStackCancel(crate::app::unit::Unit, i32, i32)` overload"]
+    #[method(name = "CommandStackCancel", args = 3)]
+    pub fn command_stack_cancel(
+        self,
+        unit: crate::app::unit::Unit,
+        target_command_type: i32,
+        related_command_type: i32,
+    ) -> ();
+
+    #[doc = "`GetCommandEngage()` overload"]
+    #[method(name = "GetCommandEngage", args = 0)]
+    pub fn get_command_engage(self) -> i32;
+
+    #[doc = "`GetCommandGodChange()` overload"]
+    #[method(name = "GetCommandGodChange", args = 0)]
+    pub fn get_command_god_change(self) -> i32;
+
+    #[doc = "`GetCommandUnitItemList()` overload"]
+    #[method(name = "GetCommandUnitItemList", args = 0)]
+    pub fn get_command_unit_item_list(self) -> i32;
+
+    #[doc = "`GetUnitForCommandEngage(i32)` overload"]
+    #[method(name = "GetUnitForCommandEngage", args = 1)]
+    pub fn get_unit_for_command_engage(self, command_index: i32) -> crate::app::unit::Unit;
+
+    #[doc = "`GetUnitForCommandGodChange(i32)` overload"]
+    #[method(name = "GetUnitForCommandGodChange", args = 1)]
+    pub fn get_unit_for_command_god_change(self, command_index: i32) -> crate::app::unit::Unit;
+
+    #[doc = "`GetUnitForCommandUnitItemList(i32)` overload"]
+    #[method(name = "GetUnitForCommandUnitItemList", args = 1)]
+    pub fn get_unit_for_command_unit_item_list(self, command_index: i32) -> crate::app::unit::Unit;
+
+    #[doc = "`TryDeleteCommand(i32, crate::app::unit::Unit, i32)` overload"]
+    #[method(name = "TryDeleteCommand", args = 3)]
+    pub fn try_delete_command(
+        self,
+        command_index: i32,
+        unit: crate::app::unit::Unit,
+        target_command_type: i32,
+    ) -> bool;
+
+    #[doc = "`DeleteCommand(i32)` overload"]
+    #[method(name = "DeleteCommand", args = 1)]
+    pub fn delete_command(self, command_index: i32) -> bool;
+
+    #[doc = "`PredeleteCommand(i32)` overload"]
+    #[method(name = "PredeleteCommand", args = 1)]
+    pub fn predelete_command(self, command_index: i32) -> ();
+
+    #[doc = "`DeleteCommandError()` overload"]
+    #[method(name = "DeleteCommandError", args = 0)]
+    pub fn delete_command_error(self) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`get_CurrentIndex()` overload"]
+    #[method(name = "get_CurrentIndex", args = 0)]
+    pub fn get_current_index(self) -> i32;
+
+    #[doc = "`GetLastSplitIndex()` overload"]
+    #[method(name = "GetLastSplitIndex", args = 0)]
+    pub fn get_last_split_index(self) -> i32;
+
+    #[doc = "`GetNextSplitIndex(i32)` overload"]
+    #[method(name = "GetNextSplitIndex", args = 1)]
+    pub fn get_next_split_index(self, index: i32) -> i32;
+
+    #[doc = "`GetPrevSplitIndex(i32)` overload"]
+    #[method(name = "GetPrevSplitIndex", args = 1)]
+    pub fn get_prev_split_index(self, index: i32) -> i32;
+
+    #[doc = "`SerializeCommands(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "SerializeCommands", args = 1)]
+    pub fn serialize_commands(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`DeserializeCommands(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "DeserializeCommands", args = 1)]
+    pub fn deserialize_commands(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`SerializeCommandStream(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "SerializeCommandStream", args = 1)]
+    pub fn serialize_command_stream(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`DeserializeCommandStream(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "DeserializeCommandStream", args = 1)]
+    pub fn deserialize_command_stream(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`get_CommandStreamBufferSize()` overload"]
+    #[method(name = "get_CommandStreamBufferSize", args = 0)]
+    pub fn get_command_stream_buffer_size(self) -> u32;
+
+    #[doc = "`get_MaxCommandCount()` overload"]
+    #[method(name = "get_MaxCommandCount", args = 0)]
+    pub fn get_max_command_count(self) -> u32;
+
+    #[doc = "`TryCreateInstance()` overload"]
+    #[method(name = "TryCreateInstance", args = 0)]
+    pub fn try_create_instance() -> ();
+
+    #[doc = "`TryDeleteInstance()` overload"]
+    #[method(name = "TryDeleteInstance", args = 0)]
+    pub fn try_delete_instance() -> ();
+
+    #[doc = "`get_Instance()` overload"]
+    #[method(name = "get_Instance", args = 0)]
+    pub fn get_instance() -> T0;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl<T0: ::unity2::ClassIdentity> MapHistory_Base_1<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_Base_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_Base_1Methods<T0>>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_ReplayUnitMap_Data.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapHistory_ReplayUnitMap_Data {}
+
+impl ::unity2::ClassIdentity for MapHistory_ReplayUnitMap_Data {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.ReplayUnitMap.Data";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_ReplayUnitMap_Data {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods(value)]
+impl MapHistory_ReplayUnitMap_Data {
+    #[doc = "`get_unit()` overload"]
+    #[method(name = "get_unit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`set_unit(crate::app::unit::Unit)` overload"]
+    #[method(name = "set_unit", args = 1)]
+    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
+
+    #[doc = "`IsUsed()` overload"]
+    #[method(name = "IsUsed", args = 0)]
+    pub fn is_used(self) -> bool;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_ReplayType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapHistory_ReplayType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_ReplayType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.ReplayType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_ReplayType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapHistory_ReplayType {
+    pub fn phase_begin() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn phase_next() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn mind() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn engage() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn god_change() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn unit_item_list() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn surrender() -> Self {
+        Self { value: 8 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_CommandReader.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.CommandReader")]
+#[parent(crate::app::stream_2::Stream_2)]
+pub struct MapHistory_CommandReader {
+    #[rename(name = "m_Type")]
+    pub m_type: u8,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_CommandReader {
+    #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, command_stream_buffer: ::unity2::Array<u8>) -> ();
+
+    #[doc = "`Prepare(crate::app::maphistory::MapHistory_Command)` overload"]
+    #[method(name = "Prepare", args = 1)]
+    pub fn prepare(self, command: crate::app::maphistory::MapHistory_Command) -> ();
+
+    #[doc = "`ReadVariableKey()` overload"]
+    #[method(name = "ReadVariableKey", args = 0)]
+    pub fn read_variable_key(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadVariableKey(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "ReadVariableKey", args = 1)]
+    pub fn read_variable_key_2(stream: crate::app::stream_2::Stream_2) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadGid()` overload"]
+    #[method(name = "ReadGid", args = 0)]
+    pub fn read_gid(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadGodData()` overload"]
+    #[method(name = "ReadGodData", args = 0)]
+    pub fn read_god_data(self) -> crate::app::goddata::GodData;
+
+    #[doc = "`ReadTid()` overload"]
+    #[method(name = "ReadTid", args = 0)]
+    pub fn read_tid(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadTid(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "ReadTid", args = 1)]
+    pub fn read_tid_2(stream: crate::app::stream_2::Stream_2) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadIid()` overload"]
+    #[method(name = "ReadIid", args = 0)]
+    pub fn read_iid(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadItemData()` overload"]
+    #[method(name = "ReadItemData", args = 0)]
+    pub fn read_item_data(self) -> crate::app::itemdata::ItemData;
+
+    #[doc = "`ReadPid()` overload"]
+    #[method(name = "ReadPid", args = 0)]
+    pub fn read_pid(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`SkipPid()` overload"]
+    #[method(name = "SkipPid", args = 0)]
+    pub fn skip_pid(self) -> ();
+
+    #[doc = "`ReadJid()` overload"]
+    #[method(name = "ReadJid", args = 0)]
+    pub fn read_jid(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`SkipJid()` overload"]
+    #[method(name = "SkipJid", args = 0)]
+    pub fn skip_jid(self) -> ();
+
+    #[doc = "`ReadSid()` overload"]
+    #[method(name = "ReadSid", args = 0)]
+    pub fn read_sid(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadSkillData()` overload"]
+    #[method(name = "ReadSkillData", args = 0)]
+    pub fn read_skill_data(self) -> crate::app::skilldata::SkillData;
+
+    #[doc = "`ReadEffectName()` overload"]
+    #[method(name = "ReadEffectName", args = 0)]
+    pub fn read_effect_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadMaterialString()` overload"]
+    #[method(name = "ReadMaterialString", args = 0)]
+    pub fn read_material_string(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadRnid()` overload"]
+    #[method(name = "ReadRnid", args = 0)]
+    pub fn read_rnid(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ReadRandom(crate::app::random_2::Random_2)` overload"]
+    #[method(name = "ReadRandom", args = 1)]
+    pub fn read_random(self, random: crate::app::random_2::Random_2) -> ();
+
+    #[doc = "`get_Type()` overload"]
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> i32;
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_CommandReader {
+    #[doc = "`.ctor(::unity2::Array<u8>)` — overload selector"]
+    pub fn new(command_stream_buffer: ::unity2::Array<u8>) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_CommandReader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_CommandReaderMethods>::ctor(this, command_stream_buffer);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_EffectNameMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.EffectNameMap")]
+# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_EffectNameMap >)]
+pub struct MapHistory_EffectNameMap {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_EffectNameMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_EffectNameMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_EffectNameMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_EffectNameMapMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_PidMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.PidMap")]
+# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_PidMap >)]
+pub struct MapHistory_PidMap {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_PidMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_PidMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_PidMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_PidMapMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Replay_SaveAsyncThread.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.Replay.SaveAsyncThread")]
+#[parent(crate::system::object::Object)]
+pub struct MapHistory_Replay_SaveAsyncThread {
+    #[rename(name = "m_Lock")]
+    pub m_lock: ::unity2::IlInstance,
+    #[rename(name = "m_Status")]
+    pub m_status: crate::app::maphistory::MapHistory_Replay_SaveAsyncThread_Status,
+    #[rename(name = "m_SaveMethod")]
+    pub m_save_method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_Replay_SaveAsyncThread {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Start(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` overload"]
+    #[method(name = "Start", args = 1)]
+    pub fn start(
+        self,
+        method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,
+    ) -> ();
+
+    #[doc = "`IsRunning()` overload"]
+    #[method(name = "IsRunning", args = 0)]
+    pub fn is_running(self) -> bool;
+
+    #[doc = "`Destroy()` overload"]
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[doc = "`ThreadFunction(crate::system::object::Object)` overload"]
+    #[method(name = "ThreadFunction", args = 1)]
+    pub fn thread_function(obj: crate::system::object::Object) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_Replay_SaveAsyncThread {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_Replay_SaveAsyncThread),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_Replay_SaveAsyncThreadMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_TidMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.TidMap")]
+# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_TidMap >)]
+pub struct MapHistory_TidMap {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_TidMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_TidMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_TidMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_TidMapMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_ReplayAppearanceMap_Appearance.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapHistory_ReplayAppearanceMap_Appearance {
+    pub turn: u8,
+    pub buffer: ::unity2::Array<u8>,
+    pub stream: crate::app::stream_2::Stream_2,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_ReplayAppearanceMap_Appearance {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.ReplayAppearanceMap.Appearance";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_ReplayAppearanceMap_Appearance {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindRelianceMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.RewindRelianceMap")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maphistory :: MapHistory_RewindRelianceMap >)]
+pub struct MapHistory_RewindRelianceMap {
+    #[rename(name = "m_Ids")]
+    pub m_ids: crate::system::collections::generic::list_1::List_1<u32>,
+    #[rename(name = "m_IsUnitMapVer")]
+    pub m_is_unit_map_ver: bool,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_RewindRelianceMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Entry(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    #[method(name = "Entry", args = 2)]
+    pub fn entry(self, unit_a: crate::app::unit::Unit, unit_b: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`TryGetRelianceData(u32)` overload"]
+    #[method(name = "TryGetRelianceData", args = 1)]
+    pub fn try_get_reliance_data(self, id: u32) -> crate::app::unitreliancedata::UnitRelianceData;
+
+    #[doc = "`GetPids(u32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "GetPids", args = 3)]
+    pub fn get_pids(
+        self,
+        id: u32,
+        pid_a: ::unity2::Il2CppString,
+        pid_b: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`GetUnits(u32, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    #[method(name = "GetUnits", args = 3)]
+    pub fn get_units(
+        self,
+        id: u32,
+        unit_a: crate::app::unit::Unit,
+        unit_b: crate::app::unit::Unit,
+    ) -> ();
+
+    #[doc = "`get_Ids()` overload"]
+    #[method(name = "get_Ids", args = 0)]
+    pub fn get_ids(self) -> crate::system::collections::generic::list_1::List_1<u32>;
+
+    #[doc = "`get_Version()` overload"]
+    #[method(name = "get_Version", args = 0)]
+    pub fn get_version(self) -> i32;
+
+    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "OnSerialize", args = 1)]
+    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = "OnDeserialize", args = 2)]
+    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
+
+    #[doc = "`Index2Id(i32, i32)` overload"]
+    #[method(name = "Index2Id", args = 2)]
+    pub fn index2_id(map_history_index_a: i32, map_history_index_b: i32) -> u32;
+
+    #[doc = "`Id2Index(u32, i32, i32)` overload"]
+    #[method(name = "Id2Index", args = 3)]
+    pub fn id2_index(id: u32, map_history_index_a: i32, map_history_index_b: i32) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_RewindRelianceMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_RewindRelianceMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_RewindRelianceMapMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindCommandWriter.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.RewindCommandWriter")]
+#[parent(crate::app::maphistory::MapHistory_CommandWriter)]
+pub struct MapHistory_RewindCommandWriter {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_RewindCommandWriter {
+    #[doc = "`Prepare(crate::app::maphistory::MapHistory_RewindType)` overload"]
+    #[method(name = "Prepare", args = 1)]
+    pub fn prepare(self, r#type: crate::app::maphistory::MapHistory_RewindType) -> ();
+
+    #[doc = "`WriteUnitAndName(crate::app::unit::Unit)` overload"]
+    #[method(name = "WriteUnitAndName", args = 1)]
+    pub fn write_unit_and_name(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`WriteUnit(crate::app::unit::Unit)` overload"]
+    #[method(name = "WriteUnit", args = 1)]
+    pub fn write_unit(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`WriteName(crate::app::unit::Unit)` overload"]
+    #[method(name = "WriteName", args = 1)]
+    pub fn write_name(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`WritePosition(crate::app::unit::Unit)` overload"]
+    #[method(name = "WritePosition", args = 1)]
+    pub fn write_position(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`WriteStatus(crate::app::unit::Unit)` overload"]
+    #[method(name = "WriteStatus", args = 1)]
+    pub fn write_status(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`WriteStatus(i64)` overload"]
+    #[method(name = "WriteStatus", args = 1)]
+    pub fn write_status_2(self, status: i64) -> ();
+
+    #[doc = "`WriteHp(crate::app::unit::Unit)` overload"]
+    #[method(name = "WriteHp", args = 1)]
+    pub fn write_hp(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`WriteHp(i32)` overload"]
+    #[method(name = "WriteHp", args = 1)]
+    pub fn write_hp_2(self, hp: i32) -> ();
+
+    #[doc = "`WriteBaseCapability(crate::app::unit::Unit, i32)` overload"]
+    #[method(name = "WriteBaseCapability", args = 2)]
+    pub fn write_base_capability(self, unit: crate::app::unit::Unit, index: i32) -> ();
+
+    #[doc = "`WriteBaseCapabilityAll(crate::app::unit::Unit)` overload"]
+    #[method(name = "WriteBaseCapabilityAll", args = 1)]
+    pub fn write_base_capability_all(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`WriteGrowCapabilityAll(crate::app::unit::Unit)` overload"]
+    #[method(name = "WriteGrowCapabilityAll", args = 1)]
+    pub fn write_grow_capability_all(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`WriteLevelCapabilityAll(crate::app::unit::Unit)` overload"]
+    #[method(name = "WriteLevelCapabilityAll", args = 1)]
+    pub fn write_level_capability_all(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`WriteUnitBaseCapabilityAll(crate::app::unitbasecapability::UnitBaseCapability)` overload"]
+    #[method(name = "WriteUnitBaseCapabilityAll", args = 1)]
+    pub fn write_unit_base_capability_all(
+        self,
+        capability: crate::app::unitbasecapability::UnitBaseCapability,
+    ) -> ();
+
+    #[doc = "`WriteEngageCount(crate::app::unit::Unit)` overload"]
+    #[method(name = "WriteEngageCount", args = 1)]
+    pub fn write_engage_count(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`WriteEngageCount(i32)` overload"]
+    #[method(name = "WriteEngageCount", args = 1)]
+    pub fn write_engage_count_2(self, engage_count: i32) -> ();
+
+    #[doc = "`WriteEngageTurn(crate::app::unit::Unit)` overload"]
+    #[method(name = "WriteEngageTurn", args = 1)]
+    pub fn write_engage_turn(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`WriteShowInSearchMap(crate::app::unit::Unit, i32, i32)` overload"]
+    #[method(name = "WriteShowInSearchMap", args = 3)]
+    pub fn write_show_in_search_map(
+        self,
+        unit: crate::app::unit::Unit,
+        move_x: i32,
+        move_z: i32,
+    ) -> ();
+
+    #[doc = "`WriteTurn(i32)` overload"]
+    #[method(name = "WriteTurn", args = 1)]
+    pub fn write_turn(self, turn: i32) -> ();
+
+    #[doc = "`WriteForce(crate::app::force::Force_Type)` overload"]
+    #[method(name = "WriteForce", args = 1)]
+    pub fn write_force(self, force_type: crate::app::force::Force_Type) -> ();
+
+    #[doc = "`WriteSkills(crate::app::skillarray::SkillArray)` overload"]
+    #[method(name = "WriteSkills", args = 1)]
+    pub fn write_skills(self, skills: crate::app::skillarray::SkillArray) -> ();
+
+    #[doc = "`WriteUnitPhaseBeginKinds(crate::app::maphistory::MapHistory_RewindUnitPhaseBeginKinds)` overload"]
+    #[method(name = "WriteUnitPhaseBeginKinds", args = 1)]
+    pub fn write_unit_phase_begin_kinds(
+        self,
+        kind: crate::app::maphistory::MapHistory_RewindUnitPhaseBeginKinds,
+    ) -> ();
+
+    #[doc = "`WriteUnitItem(crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "WriteUnitItem", args = 1)]
+    pub fn write_unit_item(self, item: crate::app::unititem::UnitItem) -> ();
+
+    #[doc = "`WriteUnitItemList(crate::app::unititemlist::UnitItemList)` overload"]
+    #[method(name = "WriteUnitItemList", args = 1)]
+    pub fn write_unit_item_list(self, item_list: crate::app::unititemlist::UnitItemList) -> ();
+
+    #[doc = "`WriteGodUnit(crate::app::godunit::GodUnit)` overload"]
+    #[method(name = "WriteGodUnit", args = 1)]
+    pub fn write_god_unit(self, god_unit: crate::app::godunit::GodUnit) -> ();
+
+    #[doc = "`WriteTransporterData(crate::app::transporter::Transporter_Data)` overload"]
+    #[method(name = "WriteTransporterData", args = 1)]
+    pub fn write_transporter_data(self, data: crate::app::transporter::Transporter_Data) -> ();
+
+    #[doc = "`WriteOverlap(i32, i32)` overload"]
+    #[method(name = "WriteOverlap", args = 2)]
+    pub fn write_overlap(self, x: i32, z: i32) -> ();
+
+    #[doc = "`WriteOverlap(crate::app::stream_2::Stream_2, i32, i32)` overload"]
+    #[method(name = "WriteOverlap", args = 3)]
+    pub fn write_overlap_2(stream: crate::app::stream_2::Stream_2, x: i32, z: i32) -> ();
+
+    #[doc = "`WriteUnitIconInfo(crate::app::unit::Unit)` overload"]
+    #[method(name = "WriteUnitIconInfo", args = 1)]
+    pub fn write_unit_icon_info(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`WriteLockTarget(crate::app::unit::Unit)` overload"]
+    #[method(name = "WriteLockTarget", args = 1)]
+    pub fn write_lock_target(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`OverwriteByte(i32, u8)` overload"]
+    #[method(name = "OverwriteByte", args = 2)]
+    pub fn overwrite_byte(self, pos: i32, val: u8) -> ();
+
+    #[doc = "`OverwriteUshort(i32, u16)` overload"]
+    #[method(name = "OverwriteUshort", args = 2)]
+    pub fn overwrite_ushort(self, pos: i32, val: u16) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_RewindCommandWriter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_RewindCommandWriter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_RewindCommandWriterMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RnidMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.RnidMap")]
+# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_RnidMap >)]
+pub struct MapHistory_RnidMap {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_RnidMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_RnidMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_RnidMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_RnidMapMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Replay_OverwriteStreamScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapHistory_Replay_OverwriteStreamScope {
+    pub m_stream: crate::app::stream_2::Stream_2,
+    pub m_saved_pos: i32,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_Replay_OverwriteStreamScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.Replay.OverwriteStreamScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_Replay_OverwriteStreamScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods(value)]
+impl MapHistory_Replay_OverwriteStreamScope {
+    #[doc = "`.ctor(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, stream: crate::app::stream_2::Stream_2, overwrite_pos: i32) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Rewind_BattleCalcData.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.Rewind.BattleCalcData")]
+#[parent(crate::system::object::Object)]
+pub struct MapHistory_Rewind_BattleCalcData {
+    #[rename(name = "m_SavedUnits")]
+    pub m_saved_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    #[rename(name = "m_WorkUnits")]
+    pub m_work_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    #[rename(name = "m_SavedInspectors")]
+    pub m_saved_inspectors: crate::system::collections::generic::list_1::List_1<
+        crate::app::pokeinspector::PokeInspector,
+    >,
+    #[rename(name = "m_WorkInspectors")]
+    pub m_work_inspectors: crate::system::collections::generic::list_1::List_1<
+        crate::app::pokeinspector::PokeInspector,
+    >,
+    #[rename(name = "m_SavedOverlaps")]
+    pub m_saved_overlaps: crate::system::collections::generic::list_1::List_1<
+        crate::app::mapoverlap::MapOverlap_Data,
+    >,
+    #[rename(name = "m_WorkOverlaps")]
+    pub m_work_overlaps: crate::system::collections::generic::list_1::List_1<
+        crate::app::mapoverlap::MapOverlap_Data,
+    >,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_Rewind_BattleCalcData {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`ClearWork()` overload"]
+    #[method(name = "ClearWork", args = 0)]
+    pub fn clear_work(self) -> ();
+
+    #[doc = "`Add(crate::app::unit::Unit)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Add(crate::app::pokeinspector::PokeInspector)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add_2(self, inspector: crate::app::pokeinspector::PokeInspector) -> ();
+
+    #[doc = "`Add(crate::app::mapoverlap::MapOverlap_Data)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add_3(self, overlap: crate::app::mapoverlap::MapOverlap_Data) -> ();
+
+    #[doc = "`GetUnitCount()` overload"]
+    #[method(name = "GetUnitCount", args = 0)]
+    pub fn get_unit_count(self) -> i32;
+
+    #[doc = "`GetUnit(i32)` overload"]
+    #[method(name = "GetUnit", args = 1)]
+    pub fn get_unit(self, index: i32) -> crate::app::unit::Unit;
+
+    #[doc = "`GetInspectorCount()` overload"]
+    #[method(name = "GetInspectorCount", args = 0)]
+    pub fn get_inspector_count(self) -> i32;
+
+    #[doc = "`GetInspector(i32)` overload"]
+    #[method(name = "GetInspector", args = 1)]
+    pub fn get_inspector(self, index: i32) -> crate::app::pokeinspector::PokeInspector;
+
+    #[doc = "`GetOverlapCount()` overload"]
+    #[method(name = "GetOverlapCount", args = 0)]
+    pub fn get_overlap_count(self) -> i32;
+
+    #[doc = "`GetOverlap(i32)` overload"]
+    #[method(name = "GetOverlap", args = 1)]
+    pub fn get_overlap(self, index: i32) -> crate::app::mapoverlap::MapOverlap_Data;
+
+    #[doc = "`Save()` overload"]
+    #[method(name = "Save", args = 0)]
+    pub fn save(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_Rewind_BattleCalcData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_Rewind_BattleCalcData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_Rewind_BattleCalcDataMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Replay_SaveAsync_SaveMethod.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.Replay.SaveAsync.SaveMethod")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapHistory_Replay_SaveAsync_SaveMethod {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_Replay_SaveAsync_SaveMethod {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_Replay_SaveAsync_SaveMethod {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_Replay_SaveAsync_SaveMethod),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_Replay_SaveAsync_SaveMethodMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_VariableMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.VariableMap")]
+# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_VariableMap >)]
+pub struct MapHistory_VariableMap {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_VariableMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`get_Keys()` overload"]
+    #[method(name = "get_Keys", args = 0)]
+    pub fn get_keys(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_VariableMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_VariableMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_VariableMapMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Replay_TurnSave.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.Replay.TurnSave")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maphistory :: MapHistory_Replay_TurnSave >)]
+pub struct MapHistory_Replay_TurnSave {
+    #[static_field]
+    #[rename(name = "StreamBufferSize")]
+    pub stream_buffer_size: i32,
+    #[rename(name = "m_StreamBuffer")]
+    pub m_stream_buffer: ::unity2::Array<u8>,
+    #[rename(name = "m_Stream")]
+    pub m_stream: crate::app::stream_2::Stream_2,
+    #[rename(name = "m_SaveAsyncMethod")]
+    pub m_save_async_method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_Replay_TurnSave {
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`Write(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "Write", args = 1)]
+    pub fn write(self, super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`Read()` overload"]
+    #[method(name = "Read", args = 0)]
+    pub fn read(self) -> ();
+
+    #[doc = "`WriteToStream()` overload"]
+    #[method(name = "WriteToStream", args = 0)]
+    pub fn write_to_stream(self) -> ();
+
+    #[doc = "`ReadFromStream()` overload"]
+    #[method(name = "ReadFromStream", args = 0)]
+    pub fn read_from_stream(self) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`get_Version()` overload"]
+    #[method(name = "get_Version", args = 0)]
+    pub fn get_version(self) -> i32;
+
+    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "OnSerialize", args = 1)]
+    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = "OnDeserialize", args = 2)]
+    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_Replay_TurnSave {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_Replay_TurnSave),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_Replay_TurnSaveMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Replay.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.Replay")]
+# [parent (crate :: app :: maphistory :: MapHistory_Base_1 < crate :: app :: maphistory :: MapHistory_Replay >)]
+pub struct MapHistory_Replay {
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: i32,
+    #[static_field]
+    #[rename(name = "SnapshotVersion")]
+    pub snapshot_version: u8,
+    #[rename(name = "m_Mode")]
+    pub m_mode: crate::app::maphistory::MapHistory_Mode,
+    #[rename(name = "m_Writer")]
+    pub m_writer: crate::app::maphistory::MapHistory_ReplayCommandWriter,
+    #[rename(name = "m_Reader")]
+    pub m_reader: crate::app::maphistory::MapHistory_ReplayCommandReader,
+    #[rename(name = "m_InitialStreamBuffer")]
+    pub m_initial_stream_buffer: ::unity2::Array<u8>,
+    #[rename(name = "m_InitialStream")]
+    pub m_initial_stream: crate::app::stream_2::Stream_2,
+    #[rename(name = "m_LastEngageIndex")]
+    pub m_last_engage_index: i32,
+    #[rename(name = "m_FirstGodChangeIndex")]
+    pub m_first_god_change_index: i32,
+    #[rename(name = "m_LastGodChangeIndex")]
+    pub m_last_god_change_index: i32,
+    #[rename(name = "m_FirstUnitItemListIndex")]
+    pub m_first_unit_item_list_index: i32,
+    #[rename(name = "m_ReadIndex")]
+    pub m_read_index: i32,
+    #[rename(name = "m_IsReadPhaseBegin")]
+    pub m_is_read_phase_begin: bool,
+    #[rename(name = "m_SavedBattleType")]
+    pub m_saved_battle_type: crate::app::gameconfig::GameConfig_AnimeType,
+    #[rename(name = "m_SavedSupportType")]
+    pub m_saved_support_type: crate::app::gameconfig::GameConfig_AnimeType,
+    #[rename(name = "m_SavedEngageAnim")]
+    pub m_saved_engage_anim: crate::app::gameconfig::GameConfig_EngageAnimeType,
+    #[rename(name = "m_RelayTakeOverTurns")]
+    pub m_relay_take_over_turns: crate::system::collections::generic::list_1::List_1<u8>,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_Replay {
+    #[doc = "`OnInitialize()` overload"]
+    #[method(name = "OnInitialize", args = 0)]
+    pub fn on_initialize(self) -> ();
+
+    #[doc = "`OnDelete()` overload"]
+    #[method(name = "OnDelete", args = 0)]
+    pub fn on_delete(self) -> ();
+
+    #[doc = "`Begin(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "Begin", args = 1)]
+    pub fn begin(self, super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`End()` overload"]
+    #[method(name = "End", args = 0)]
+    pub fn end(self) -> ();
+
+    #[doc = "`Split()` overload"]
+    #[method(name = "Split", args = 0)]
+    pub fn split(self) -> ();
+
+    #[doc = "`EngageCancel(crate::app::unit::Unit)` overload"]
+    #[method(name = "EngageCancel", args = 1)]
+    pub fn engage_cancel(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`GodChangeCancel(crate::app::unit::Unit)` overload"]
+    #[method(name = "GodChangeCancel", args = 1)]
+    pub fn god_change_cancel(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`GetCommandEngage()` overload"]
+    #[method(name = "GetCommandEngage", args = 0)]
+    pub fn get_command_engage(self) -> i32;
+
+    #[doc = "`GetCommandGodChange()` overload"]
+    #[method(name = "GetCommandGodChange", args = 0)]
+    pub fn get_command_god_change(self) -> i32;
+
+    #[doc = "`GetCommandUnitItemList()` overload"]
+    #[method(name = "GetCommandUnitItemList", args = 0)]
+    pub fn get_command_unit_item_list(self) -> i32;
+
+    #[doc = "`GetUnitForCommandEngage(i32)` overload"]
+    #[method(name = "GetUnitForCommandEngage", args = 1)]
+    pub fn get_unit_for_command_engage(self, command_index: i32) -> crate::app::unit::Unit;
+
+    #[doc = "`GetUnitForCommandGodChange(i32)` overload"]
+    #[method(name = "GetUnitForCommandGodChange", args = 1)]
+    pub fn get_unit_for_command_god_change(self, command_index: i32) -> crate::app::unit::Unit;
+
+    #[doc = "`GetUnitForCommandUnitItemList(i32)` overload"]
+    #[method(name = "GetUnitForCommandUnitItemList", args = 1)]
+    pub fn get_unit_for_command_unit_item_list(self, command_index: i32) -> crate::app::unit::Unit;
+
+    #[doc = "`AfterCommandStackCancel(crate::app::unit::Unit)` overload"]
+    #[method(name = "AfterCommandStackCancel", args = 1)]
+    pub fn after_command_stack_cancel(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`SetReadMode()` overload"]
+    #[method(name = "SetReadMode", args = 0)]
+    pub fn set_read_mode(self) -> ();
+
+    #[doc = "`IsReadMode()` overload"]
+    #[method(name = "IsReadMode", args = 0)]
+    pub fn is_read_mode(self) -> bool;
+
+    #[doc = "`Read()` overload"]
+    #[method(name = "Read", args = 0)]
+    pub fn read(self) -> bool;
+
+    #[doc = "`HasReadData()` overload"]
+    #[method(name = "HasReadData", args = 0)]
+    pub fn has_read_data(self) -> bool;
+
+    #[doc = "`IsReadDataLastTurn()` overload"]
+    #[method(name = "IsReadDataLastTurn", args = 0)]
+    pub fn is_read_data_last_turn(self) -> bool;
+
+    #[doc = "`SkipReadDataToLastTurn()` overload"]
+    #[method(name = "SkipReadDataToLastTurn", args = 0)]
+    pub fn skip_read_data_to_last_turn(self) -> ();
+
+    #[doc = "`GetReadIndexAboutLastTurn(i32, i32)` overload"]
+    #[method(name = "GetReadIndexAboutLastTurn", args = 2)]
+    pub fn get_read_index_about_last_turn(self, last_turn_index: i32, threshold_index: i32) -> ();
+
+    #[doc = "`FindReadIndexOfLastTurn()` overload"]
+    #[method(name = "FindReadIndexOfLastTurn", args = 0)]
+    pub fn find_read_index_of_last_turn(self) -> i32;
+
+    #[doc = "`FindReadIndexOfPrevPhaseEnd(i32)` overload"]
+    #[method(name = "FindReadIndexOfPrevPhaseEnd", args = 1)]
+    pub fn find_read_index_of_prev_phase_end(self, phase_begin_index: i32) -> i32;
+
+    #[doc = "`FindReadIndexOfSkippedPhaseNext(i32)` overload"]
+    #[method(name = "FindReadIndexOfSkippedPhaseNext", args = 1)]
+    pub fn find_read_index_of_skipped_phase_next(self, start_index: i32) -> i32;
+
+    #[doc = "`EndReadMode()` overload"]
+    #[method(name = "EndReadMode", args = 0)]
+    pub fn end_read_mode(self) -> ();
+
+    #[doc = "`RegisterAllUnits()` overload"]
+    #[method(name = "RegisterAllUnits", args = 0)]
+    pub fn register_all_units(self) -> ();
+
+    #[doc = "`RegisterAppearanceUnit(crate::app::unit::Unit)` overload"]
+    #[method(name = "RegisterAppearanceUnit", args = 1)]
+    pub fn register_appearance_unit(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`RegisterLeavingUnit(crate::app::unit::Unit)` overload"]
+    #[method(name = "RegisterLeavingUnit", args = 1)]
+    pub fn register_leaving_unit(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Leaving(crate::app::unit::Unit)` overload"]
+    #[method(name = "Leaving", args = 1)]
+    pub fn leaving(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`GetAppearanceAndLeavingIndexes(::unity2::Array<i32>, ::unity2::Array<i32>)` overload"]
+    #[method(name = "GetAppearanceAndLeavingIndexes", args = 2)]
+    pub fn get_appearance_and_leaving_indexes(
+        self,
+        appearance_indexes: ::unity2::Array<i32>,
+        leaving_indexes: ::unity2::Array<i32>,
+    ) -> bool;
+
+    #[doc = "`CreateAppearanceUnit(i32)` overload"]
+    #[method(name = "CreateAppearanceUnit", args = 1)]
+    pub fn create_appearance_unit(self, index: i32) -> crate::app::unit::Unit;
+
+    #[doc = "`GetLeavingUnit(i32)` overload"]
+    #[method(name = "GetLeavingUnit", args = 1)]
+    pub fn get_leaving_unit(self, index: i32) -> crate::app::unit::Unit;
+
+    #[doc = "`RegisterRelayTakeOverTiming()` overload"]
+    #[method(name = "RegisterRelayTakeOverTiming", args = 0)]
+    pub fn register_relay_take_over_timing(self) -> ();
+
+    #[doc = "`IsRelayTakeOverTiming()` overload"]
+    #[method(name = "IsRelayTakeOverTiming", args = 0)]
+    pub fn is_relay_take_over_timing(self) -> bool;
+
+    #[doc = "`DoTurnSave(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "DoTurnSave", args = 1)]
+    pub fn do_turn_save(self, super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`CanWrite()` overload"]
+    #[method(name = "CanWrite", args = 0)]
+    pub fn can_write(self) -> bool;
+
+    #[doc = "`ClearSavedCommandIndex()` overload"]
+    #[method(name = "ClearSavedCommandIndex", args = 0)]
+    pub fn clear_saved_command_index(self) -> ();
+
+    #[doc = "`SetPlayersToReplay()` overload"]
+    #[method(name = "SetPlayersToReplay", args = 0)]
+    pub fn set_players_to_replay(self) -> ();
+
+    #[doc = "`SetReplayPlayerForRelay()` overload"]
+    #[method(name = "SetReplayPlayerForRelay", args = 0)]
+    pub fn set_replay_player_for_relay(self) -> ();
+
+    #[doc = "`SerializeInitial(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "SerializeInitial", args = 1)]
+    pub fn serialize_initial(self, super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`DeserializeInitial()` overload"]
+    #[method(name = "DeserializeInitial", args = 0)]
+    pub fn deserialize_initial(self) -> ();
+
+    #[doc = "`SerializeSnapshot(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "SerializeSnapshot", args = 1)]
+    pub fn serialize_snapshot(stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`DeserializeSnapshot(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "DeserializeSnapshot", args = 1)]
+    pub fn deserialize_snapshot(stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`DbgDump()` overload"]
+    #[method(name = "DbgDump", args = 0)]
+    pub fn dbg_dump(self) -> ();
+
+    #[doc = "`PhaseBegin()` overload"]
+    #[method(name = "PhaseBegin", args = 0)]
+    pub fn phase_begin(self) -> ();
+
+    #[doc = "`PhaseNext()` overload"]
+    #[method(name = "PhaseNext", args = 0)]
+    pub fn phase_next(self) -> ();
+
+    #[doc = "`CancelUnitCommand()` overload"]
+    #[method(name = "CancelUnitCommand", args = 0)]
+    pub fn cancel_unit_command(self) -> ();
+
+    #[doc = "`Mind()` overload"]
+    #[method(name = "Mind", args = 0)]
+    pub fn mind(self) -> ();
+
+    #[doc = "`Engage(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    #[method(name = "Engage", args = 2)]
+    pub fn engage(self, unit: crate::app::unit::Unit, link_unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`OverwriteEngagePos(crate::app::stream_2::Stream_2, i32, i32)` overload"]
+    #[method(name = "OverwriteEngagePos", args = 3)]
+    pub fn overwrite_engage_pos(self, stream: crate::app::stream_2::Stream_2, x: i32, z: i32)
+        -> ();
+
+    #[doc = "`GodChange(crate::app::unit::Unit)` overload"]
+    #[method(name = "GodChange", args = 1)]
+    pub fn god_change(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`OverwriteGodChangePos(crate::app::stream_2::Stream_2, i32, i32)` overload"]
+    #[method(name = "OverwriteGodChangePos", args = 3)]
+    pub fn overwrite_god_change_pos(
+        self,
+        stream: crate::app::stream_2::Stream_2,
+        x: i32,
+        z: i32,
+    ) -> ();
+
+    #[doc = "`ToggleGodChangeEnabled(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "ToggleGodChangeEnabled", args = 1)]
+    pub fn toggle_god_change_enabled(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`Trade(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    #[method(name = "Trade", args = 2)]
+    pub fn trade(self, from_unit: crate::app::unit::Unit, to_unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Trade(crate::app::unit::Unit)` overload"]
+    #[method(name = "Trade", args = 1)]
+    pub fn trade_2(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`EquipItem(crate::app::unit::Unit)` overload"]
+    #[method(name = "EquipItem", args = 1)]
+    pub fn equip_item(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`TakeOffItem(crate::app::unit::Unit)` overload"]
+    #[method(name = "TakeOffItem", args = 1)]
+    pub fn take_off_item(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`SortItem(crate::app::unit::Unit)` overload"]
+    #[method(name = "SortItem", args = 1)]
+    pub fn sort_item(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`PutOffItem(crate::app::unit::Unit, bool)` overload"]
+    #[method(name = "PutOffItem", args = 2)]
+    pub fn put_off_item(self, unit: crate::app::unit::Unit, from_menu: bool) -> ();
+
+    #[doc = "`UnitItemList(crate::app::unit::Unit)` overload"]
+    #[method(name = "UnitItemList", args = 1)]
+    pub fn unit_item_list(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Dead(crate::app::unit::Unit)` overload"]
+    #[method(name = "Dead", args = 1)]
+    pub fn dead(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Dispos(crate::app::unit::Unit)` overload"]
+    #[method(name = "Dispos", args = 1)]
+    pub fn dispos(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`VisionDelete(crate::app::unit::Unit)` overload"]
+    #[method(name = "VisionDelete", args = 1)]
+    pub fn vision_delete(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Surrender()` overload"]
+    #[method(name = "Surrender", args = 0)]
+    pub fn surrender(self) -> ();
+
+    #[doc = "`SummonDelete(crate::app::unit::Unit)` overload"]
+    #[method(name = "SummonDelete", args = 1)]
+    pub fn summon_delete(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`ReadOne(i32)` overload"]
+    #[method(name = "ReadOne", args = 1)]
+    pub fn read_one(self, index: i32) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
+
+    #[doc = "`ReadPhaseBegin()` overload"]
+    #[method(name = "ReadPhaseBegin", args = 0)]
+    pub fn read_phase_begin(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
+
+    #[doc = "`ReadPhaseBegin(crate::app::force::Force_Type, crate::app::random_2::Random_2)` overload"]
+    #[method(name = "ReadPhaseBegin", args = 2)]
+    pub fn read_phase_begin_2(
+        self,
+        force: crate::app::force::Force_Type,
+        random: crate::app::random_2::Random_2,
+    ) -> ();
+
+    #[doc = "`ReadPhaseNext()` overload"]
+    #[method(name = "ReadPhaseNext", args = 0)]
+    pub fn read_phase_next(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
+
+    #[doc = "`ReadMind()` overload"]
+    #[method(name = "ReadMind", args = 0)]
+    pub fn read_mind(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
+
+    #[doc = "`ReadEngage()` overload"]
+    #[method(name = "ReadEngage", args = 0)]
+    pub fn read_engage(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
+
+    #[doc = "`ReadEngage(crate::app::unit::Unit)` overload"]
+    #[method(name = "ReadEngage", args = 1)]
+    pub fn read_engage_2(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`ReadGodChange()` overload"]
+    #[method(name = "ReadGodChange", args = 0)]
+    pub fn read_god_change(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
+
+    #[doc = "`ReadGodChange(crate::app::unit::Unit)` overload"]
+    #[method(name = "ReadGodChange", args = 1)]
+    pub fn read_god_change_2(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`ReadUnitItemList()` overload"]
+    #[method(name = "ReadUnitItemList", args = 0)]
+    pub fn read_unit_item_list(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
+
+    #[doc = "`ReadUnitItemList(crate::app::unit::Unit)` overload"]
+    #[method(name = "ReadUnitItemList", args = 1)]
+    pub fn read_unit_item_list_2(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`ReadSurrender()` overload"]
+    #[method(name = "ReadSurrender", args = 0)]
+    pub fn read_surrender(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
+
+    #[doc = "`SetupMindRoutes(crate::app::unit::Unit)` overload"]
+    #[method(name = "SetupMindRoutes", args = 1)]
+    pub fn setup_mind_routes(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_Replay {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_Replay),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_ReplayMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_JidMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.JidMap")]
+# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_JidMap >)]
+pub struct MapHistory_JidMap {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_JidMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_JidMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_JidMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_JidMapMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindLog.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.RewindLog")]
+#[parent(crate::system::object::Object)]
+pub struct MapHistory_RewindLog {
+    #[static_field]
+    #[rename(name = "MaxItem")]
+    pub max_item: i32,
+    #[static_field]
+    #[rename(name = "MaxDeadUnitIcon")]
+    pub max_dead_unit_icon: i32,
+    #[rename(name = "m_ActorUnitIcon")]
+    pub m_actor_unit_icon: crate::app::maphistory::MapHistory_RewindLog_UnitIcon,
+    #[rename(name = "m_ActorMapHistoryIndex")]
+    pub m_actor_map_history_index: i32,
+    #[rename(name = "m_ActorName")]
+    pub m_actor_name: ::unity2::Il2CppString,
+    #[rename(name = "m_Action")]
+    pub m_action: ::unity2::Il2CppString,
+    #[rename(name = "m_Items")]
+    pub m_items: ::unity2::Array<crate::app::itemdata::ItemData>,
+    #[rename(name = "m_ItemCount")]
+    pub m_item_count: i32,
+    #[rename(name = "m_DeadUnitIcons")]
+    pub m_dead_unit_icons: ::unity2::Array<crate::app::maphistory::MapHistory_RewindLog_UnitIcon>,
+    #[rename(name = "m_DeadUnitIconCount")]
+    pub m_dead_unit_icon_count: i32,
+    #[rename(name = "m_Priority")]
+    pub m_priority: i32,
+    #[rename(name = "m_IsForCheck")]
+    pub m_is_for_check: bool,
+    #[rename(name = "m_ForceType")]
+    pub m_force_type: crate::app::force::Force_Type,
+    #[rename(name = "m_PrevForceType")]
+    pub m_prev_force_type: crate::app::force::Force_Type,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_RewindLog {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`IsValid()` overload"]
+    #[method(name = "IsValid", args = 0)]
+    pub fn is_valid(self) -> bool;
+
+    #[doc = "`SetActorUnitIcon(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds, bool, bool, ::unity2::Il2CppString)` overload"]
+    #[method(name = "SetActorUnitIcon", args = 6)]
+    pub fn set_actor_unit_icon(
+        self,
+        pid: ::unity2::Il2CppString,
+        jid: ::unity2::Il2CppString,
+        item_kind: crate::app::itemdata::ItemData_Kinds,
+        is_female: bool,
+        is_engage: bool,
+        gid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`SetActorUnitIconEngage(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetActorUnitIconEngage", args = 1)]
+    pub fn set_actor_unit_icon_engage(self, gid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`SetActorMapHistoryIndex(i32)` overload"]
+    #[method(name = "SetActorMapHistoryIndex", args = 1)]
+    pub fn set_actor_map_history_index(self, map_history_index: i32) -> ();
+
+    #[doc = "`ClearActor()` overload"]
+    #[method(name = "ClearActor", args = 0)]
+    pub fn clear_actor(self) -> ();
+
+    #[doc = "`SetAction(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetAction", args = 1)]
+    pub fn set_action(self, mhid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`SetAction(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "SetAction", args = 2)]
+    pub fn set_action_2(self, mhid: ::unity2::Il2CppString, arg: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`SetAction(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "SetAction", args = 3)]
+    pub fn set_action_3(
+        self,
+        mhid: ::unity2::Il2CppString,
+        arg0: ::unity2::Il2CppString,
+        arg1: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`SetAction(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "SetAction", args = 2)]
+    pub fn set_action_4(self, action: ::unity2::Il2CppString, priority: i32) -> ();
+
+    #[doc = "`AddItem(::unity2::Il2CppString)` overload"]
+    #[method(name = "AddItem", args = 1)]
+    pub fn add_item(self, iid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`AddDeadUnit(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds, bool, bool, ::unity2::Il2CppString)` overload"]
+    #[method(name = "AddDeadUnit", args = 6)]
+    pub fn add_dead_unit(
+        self,
+        pid: ::unity2::Il2CppString,
+        jid: ::unity2::Il2CppString,
+        item_kind: crate::app::itemdata::ItemData_Kinds,
+        is_female: bool,
+        is_engage: bool,
+        gid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`DeleteDeadUnitIcons()` overload"]
+    #[method(name = "DeleteDeadUnitIcons", args = 0)]
+    pub fn delete_dead_unit_icons(self) -> ();
+
+    #[doc = "`get_ActorUnitIcon()` overload"]
+    #[method(name = "get_ActorUnitIcon", args = 0)]
+    pub fn get_actor_unit_icon(self) -> crate::app::maphistory::MapHistory_RewindLog_UnitIcon;
+
+    #[doc = "`get_ActorMapHistoryIndex()` overload"]
+    #[method(name = "get_ActorMapHistoryIndex", args = 0)]
+    pub fn get_actor_map_history_index(self) -> i32;
+
+    #[doc = "`get_ActorName()` overload"]
+    #[method(name = "get_ActorName", args = 0)]
+    pub fn get_actor_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_ActorName(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_ActorName", args = 1)]
+    pub fn set_actor_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Action()` overload"]
+    #[method(name = "get_Action", args = 0)]
+    pub fn get_action(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`get_Items()` overload"]
+    #[method(name = "get_Items", args = 0)]
+    pub fn get_items(self) -> ::unity2::Array<crate::app::itemdata::ItemData>;
+
+    #[doc = "`get_ItemCount()` overload"]
+    #[method(name = "get_ItemCount", args = 0)]
+    pub fn get_item_count(self) -> i32;
+
+    #[doc = "`get_DeadUnitIcons()` overload"]
+    #[method(name = "get_DeadUnitIcons", args = 0)]
+    pub fn get_dead_unit_icons(
+        self,
+    ) -> ::unity2::Array<crate::app::maphistory::MapHistory_RewindLog_UnitIcon>;
+
+    #[doc = "`get_DeadUnitIconCount()` overload"]
+    #[method(name = "get_DeadUnitIconCount", args = 0)]
+    pub fn get_dead_unit_icon_count(self) -> i32;
+
+    #[doc = "`get_IsForCheck()` overload"]
+    #[method(name = "get_IsForCheck", args = 0)]
+    pub fn get_is_for_check(self) -> bool;
+
+    #[doc = "`set_IsForCheck(bool)` overload"]
+    #[method(name = "set_IsForCheck", args = 1)]
+    pub fn set_is_for_check(self, value: bool) -> ();
+
+    #[doc = "`get_IsPhaseBegin()` overload"]
+    #[method(name = "get_IsPhaseBegin", args = 0)]
+    pub fn get_is_phase_begin(self) -> bool;
+
+    #[doc = "`get_PhaseBeginForce()` overload"]
+    #[method(name = "get_PhaseBeginForce", args = 0)]
+    pub fn get_phase_begin_force(self) -> crate::app::force::Force_Type;
+
+    #[doc = "`set_PhaseBeginForce(crate::app::force::Force_Type)` overload"]
+    #[method(name = "set_PhaseBeginForce", args = 1)]
+    pub fn set_phase_begin_force(self, value: crate::app::force::Force_Type) -> ();
+
+    #[doc = "`get_HasPrevForce()` overload"]
+    #[method(name = "get_HasPrevForce", args = 0)]
+    pub fn get_has_prev_force(self) -> bool;
+
+    #[doc = "`get_PrevForce()` overload"]
+    #[method(name = "get_PrevForce", args = 0)]
+    pub fn get_prev_force(self) -> crate::app::force::Force_Type;
+
+    #[doc = "`set_PrevForce(crate::app::force::Force_Type)` overload"]
+    #[method(name = "set_PrevForce", args = 1)]
+    pub fn set_prev_force(self, value: crate::app::force::Force_Type) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_RewindLog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_RewindLog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_RewindLogMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_CommandWriter.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.CommandWriter")]
+#[parent(crate::app::stream_2::Stream_2)]
+pub struct MapHistory_CommandWriter {
+    #[static_field]
+    #[rename(name = "BufferSize")]
+    pub buffer_size: i32,
+    #[rename(name = "m_Type")]
+    pub m_type: u8,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_CommandWriter {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Prepare(u8)` overload"]
+    #[method(name = "Prepare", args = 1)]
+    pub fn prepare(self, r#type: u8) -> ();
+
+    #[doc = "`WriteVariableKey(::unity2::Il2CppString)` overload"]
+    #[method(name = "WriteVariableKey", args = 1)]
+    pub fn write_variable_key(self, key: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`WriteVariableKey(crate::app::stream_2::Stream_2, ::unity2::Il2CppString)` overload"]
+    #[method(name = "WriteVariableKey", args = 2)]
+    pub fn write_variable_key_2(
+        stream: crate::app::stream_2::Stream_2,
+        key: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`WriteGid(::unity2::Il2CppString)` overload"]
+    #[method(name = "WriteGid", args = 1)]
+    pub fn write_gid(self, gid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`WriteTid(::unity2::Il2CppString)` overload"]
+    #[method(name = "WriteTid", args = 1)]
+    pub fn write_tid(self, tid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`WriteTid(crate::app::stream_2::Stream_2, ::unity2::Il2CppString)` overload"]
+    #[method(name = "WriteTid", args = 2)]
+    pub fn write_tid_2(stream: crate::app::stream_2::Stream_2, tid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`WriteIid(::unity2::Il2CppString)` overload"]
+    #[method(name = "WriteIid", args = 1)]
+    pub fn write_iid(self, iid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`WritePid(::unity2::Il2CppString)` overload"]
+    #[method(name = "WritePid", args = 1)]
+    pub fn write_pid(self, pid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`WriteJid(::unity2::Il2CppString)` overload"]
+    #[method(name = "WriteJid", args = 1)]
+    pub fn write_jid(self, jid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`WriteSid(::unity2::Il2CppString)` overload"]
+    #[method(name = "WriteSid", args = 1)]
+    pub fn write_sid(self, sid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`WriteEffectName(::unity2::Il2CppString)` overload"]
+    #[method(name = "WriteEffectName", args = 1)]
+    pub fn write_effect_name(self, name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`WriteMaterialString(::unity2::Il2CppString)` overload"]
+    #[method(name = "WriteMaterialString", args = 1)]
+    pub fn write_material_string(self, str: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`WriteRnid(::unity2::Il2CppString)` overload"]
+    #[method(name = "WriteRnid", args = 1)]
+    pub fn write_rnid(self, rnid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`WriteRandom(crate::app::random_2::Random_2)` overload"]
+    #[method(name = "WriteRandom", args = 1)]
+    pub fn write_random(self, random: crate::app::random_2::Random_2) -> ();
+
+    #[doc = "`get_Type()` overload"]
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> i32;
+
+    #[doc = "`get_Size()` overload"]
+    #[method(name = "get_Size", args = 0)]
+    pub fn get_size(self) -> i32;
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_CommandWriter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_CommandWriter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_CommandWriterMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Replay_SaveAsync.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.Replay.SaveAsync")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct MapHistory_Replay_SaveAsync {
+    #[static_field]
+    #[rename(name = "s_Thread")]
+    pub s_thread: crate::app::maphistory::MapHistory_Replay_SaveAsyncThread,
+    #[rename(name = "m_SaveMethod")]
+    pub m_save_method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_Replay_SaveAsync {
+    #[doc = "`.ctor(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)
+        -> ();
+
+    #[doc = "`Start()` overload"]
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[doc = "`IsRunning()` overload"]
+    #[method(name = "IsRunning", args = 0)]
+    pub fn is_running(self) -> bool;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        save_method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,
+    ) -> ();
+
+    #[doc = "`CreateThread()` overload"]
+    #[method(name = "CreateThread", args = 0)]
+    pub fn create_thread() -> ();
+
+    #[doc = "`DestroyThread()` overload"]
+    #[method(name = "DestroyThread", args = 0)]
+    pub fn destroy_thread() -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_Replay_SaveAsync {
+    #[doc = "`.ctor(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` — overload selector"]
+    pub fn new(method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_Replay_SaveAsync),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_Replay_SaveAsyncMethods>::ctor(this, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_MaterialStringMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.MaterialStringMap")]
+# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_MaterialStringMap >)]
+pub struct MapHistory_MaterialStringMap {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_MaterialStringMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_MaterialStringMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_MaterialStringMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_MaterialStringMapMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_ModeScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapHistory_Rewind_ModeScope {
+    pub m_prev_mode: crate::app::maphistory::MapHistory_Mode,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_Rewind_ModeScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.Rewind.ModeScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_Rewind_ModeScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods(value)]
+impl MapHistory_Rewind_ModeScope {
+    #[doc = "`.ctor(crate::app::maphistory::MapHistory_Mode)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, mode: crate::app::maphistory::MapHistory_Mode) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_ReplayAppearanceMap_Leaving.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapHistory_ReplayAppearanceMap_Leaving {
+    pub turn: u8,
+    pub map_history_index: u8,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_ReplayAppearanceMap_Leaving {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.ReplayAppearanceMap.Leaving";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_ReplayAppearanceMap_Leaving {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_SidMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.SidMap")]
+# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_SidMap >)]
+pub struct MapHistory_SidMap {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_SidMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_SidMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_SidMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_SidMapMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Rewind_OverlapDataPool.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.Rewind.OverlapDataPool")]
+# [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: maphistory :: MapHistory_Rewind_OverlapData >)]
+pub struct MapHistory_Rewind_OverlapDataPool {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_Rewind_OverlapDataPool {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, max: i32) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_Rewind_OverlapDataPool {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(max: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_Rewind_OverlapDataPool),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_Rewind_OverlapDataPoolMethods>::ctor(this, max);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_ReplayAppearanceMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.ReplayAppearanceMap")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maphistory :: MapHistory_ReplayAppearanceMap >)]
+pub struct MapHistory_ReplayAppearanceMap {
+    #[static_field]
+    #[rename(name = "MaxTurn")]
+    pub max_turn: i32,
+    #[static_field]
+    #[rename(name = "MaxAppearancePerTurn")]
+    pub max_appearance_per_turn: i32,
+    #[static_field]
+    #[rename(name = "MaxLeavingPerTurn")]
+    pub max_leaving_per_turn: i32,
+    #[static_field]
+    #[rename(name = "MaxAppearance")]
+    pub max_appearance: i32,
+    #[static_field]
+    #[rename(name = "MaxLeaving")]
+    pub max_leaving: i32,
+    #[static_field]
+    #[rename(name = "AppearanceStreamBufferSize")]
+    pub appearance_stream_buffer_size: i32,
+    #[rename(name = "m_Appearances")]
+    pub m_appearances:
+        ::unity2::Array<crate::app::maphistory::MapHistory_ReplayAppearanceMap_Appearance>,
+    #[rename(name = "m_AppearanceCount")]
+    pub m_appearance_count: i32,
+    #[rename(name = "m_Leavings")]
+    pub m_leavings: ::unity2::Array<crate::app::maphistory::MapHistory_ReplayAppearanceMap_Leaving>,
+    #[rename(name = "m_LeavingCount")]
+    pub m_leaving_count: i32,
+    #[rename(name = "m_RetAppearanceIndexes")]
+    pub m_ret_appearance_indexes: ::unity2::Array<i32>,
+    #[rename(name = "m_RetLeavingIndexes")]
+    pub m_ret_leaving_indexes: ::unity2::Array<i32>,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_ReplayAppearanceMap {
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`RegisterAppearanceUnit(crate::app::unit::Unit)` overload"]
+    #[method(name = "RegisterAppearanceUnit", args = 1)]
+    pub fn register_appearance_unit(self, unit: crate::app::unit::Unit) -> i32;
+
+    #[doc = "`RegisterLeavingUnit(crate::app::unit::Unit)` overload"]
+    #[method(name = "RegisterLeavingUnit", args = 1)]
+    pub fn register_leaving_unit(self, unit: crate::app::unit::Unit) -> i32;
+
+    #[doc = "`GetIndexes(::unity2::Array<i32>, ::unity2::Array<i32>)` overload"]
+    #[method(name = "GetIndexes", args = 2)]
+    pub fn get_indexes(
+        self,
+        appearance_indexes: ::unity2::Array<i32>,
+        leaving_indexes: ::unity2::Array<i32>,
+    ) -> bool;
+
+    #[doc = "`CreateAppearanceUnit(i32)` overload"]
+    #[method(name = "CreateAppearanceUnit", args = 1)]
+    pub fn create_appearance_unit(self, index: i32) -> crate::app::unit::Unit;
+
+    #[doc = "`GetLeavingUnit(i32)` overload"]
+    #[method(name = "GetLeavingUnit", args = 1)]
+    pub fn get_leaving_unit(self, index: i32) -> crate::app::unit::Unit;
+
+    #[doc = "`SerializeForAppearance(crate::app::stream_2::Stream_2, crate::app::unit::Unit)` overload"]
+    #[method(name = "SerializeForAppearance", args = 2)]
+    pub fn serialize_for_appearance(
+        self,
+        stream: crate::app::stream_2::Stream_2,
+        unit: crate::app::unit::Unit,
+    ) -> ();
+
+    #[doc = "`DeserializeForAppearance(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "DeserializeForAppearance", args = 1)]
+    pub fn deserialize_for_appearance(
+        self,
+        stream: crate::app::stream_2::Stream_2,
+    ) -> crate::app::unit::Unit;
+
+    #[doc = "`get_Version()` overload"]
+    #[method(name = "get_Version", args = 0)]
+    pub fn get_version(self) -> i32;
+
+    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "OnSerialize", args = 1)]
+    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = "OnDeserialize", args = 2)]
+    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_ReplayAppearanceMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_ReplayAppearanceMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_ReplayAppearanceMapMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Replay_SaveAsyncThread_Status.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapHistory_Replay_SaveAsyncThread_Status {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_Replay_SaveAsyncThread_Status {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.Replay.SaveAsyncThread.Status";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_Replay_SaveAsyncThread_Status {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapHistory_Replay_SaveAsyncThread_Status {
+    pub fn wait() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn run() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindNameMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.RewindNameMap")]
+# [parent (crate :: app :: maphistory :: MapHistory_IdMapBase_1 < crate :: app :: maphistory :: MapHistory_RewindNameMap >)]
+pub struct MapHistory_RewindNameMap {
+    #[static_field]
+    #[rename(name = "IdMask")]
+    pub id_mask: u8,
+    #[static_field]
+    #[rename(name = "EditNameBit")]
+    pub edit_name_bit: u8,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_RewindNameMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Entry(crate::app::unit::Unit)` overload"]
+    #[method(name = "Entry", args = 1)]
+    pub fn entry(self, unit: crate::app::unit::Unit) -> i32;
+
+    #[doc = "`TryGet(i32)` overload"]
+    #[method(name = "TryGet", args = 1)]
+    pub fn try_get(self, index: i32) -> ::unity2::Il2CppString;
+
+    #[doc = "`get_Version()` overload"]
+    #[method(name = "get_Version", args = 0)]
+    pub fn get_version(self) -> i32;
+
+    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "OnSerialize", args = 1)]
+    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = "OnDeserialize", args = 2)]
+    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_RewindNameMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_RewindNameMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_RewindNameMapMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_SerializeDisabled.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapHistory_SerializeDisabled {
+    pub m_is_prev_disabled: bool,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_SerializeDisabled {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.SerializeDisabled";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_SerializeDisabled {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods(value)]
+impl MapHistory_SerializeDisabled {
+    #[doc = "`.ctor(bool)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, is_disabled: bool) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_ReplayUnitMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.ReplayUnitMap")]
+# [parent (crate :: app :: maphistory :: MapHistory_UnitMapBase_2 < crate :: app :: maphistory :: MapHistory_ReplayUnitMap , crate :: app :: maphistory :: MapHistory_ReplayUnitMap_Data >)]
+pub struct MapHistory_ReplayUnitMap {}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_ReplayUnitMap {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_ReplayUnitMap {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_ReplayUnitMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_ReplayUnitMapMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_LatestInspectorData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapHistory_Rewind_LatestInspectorData {
+    pub x: u8,
+    pub z: u8,
+    pub is_checked: bool,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_Rewind_LatestInspectorData {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.Rewind.LatestInspectorData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_Rewind_LatestInspectorData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods(value)]
+impl MapHistory_Rewind_LatestInspectorData {
+    #[doc = "`.ctor(i32, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, x: i32, z: i32) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_WorkTerrainData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapHistory_Rewind_WorkTerrainData {
+    pub x: u8,
+    pub z: u8,
+    pub index: u8,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_Rewind_WorkTerrainData {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.Rewind.WorkTerrainData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_Rewind_WorkTerrainData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods(value)]
+impl MapHistory_Rewind_WorkTerrainData {
+    #[doc = "`.ctor(i32, i32, i32)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(self, x: i32, z: i32, index: i32) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_WorkLayerData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapHistory_Rewind_WorkLayerData {
+    pub group: u8,
+    pub enable: bool,
+}
+
+impl ::unity2::ClassIdentity for MapHistory_Rewind_WorkLayerData {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHistory.Rewind.WorkLayerData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHistory_Rewind_WorkLayerData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods(value)]
+impl MapHistory_Rewind_WorkLayerData {
+    #[doc = "`.ctor(i32, bool)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, group: i32, enable: bool) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindLogBuilder.md"))]
+#[::unity2::class(namespace = "App", name = "MapHistory.RewindLogBuilder")]
+#[parent(crate::system::object::Object)]
+pub struct MapHistory_RewindLogBuilder {
+    #[rename(name = "m_Log")]
+    pub m_log: crate::app::maphistory::MapHistory_RewindLog,
+    #[rename(name = "m_IsNeedToBuild")]
+    pub m_is_need_to_build: bool,
+}
+
+#[cfg(feature = "app-maphistory")]
+#[::unity2::methods]
+impl MapHistory_RewindLogBuilder {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Prepare(crate::app::maphistory::MapHistory_RewindLog)` overload"]
+    #[method(name = "Prepare", args = 1)]
+    pub fn prepare(self, log: crate::app::maphistory::MapHistory_RewindLog) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`NeedToBuild()` overload"]
+    #[method(name = "NeedToBuild", args = 0)]
+    pub fn need_to_build(self) -> ();
+
+    #[doc = "`get_Log()` overload"]
+    #[method(name = "get_Log", args = 0)]
+    pub fn get_log(self) -> crate::app::maphistory::MapHistory_RewindLog;
+
+    #[doc = "`get_IsNeedToBuild()` overload"]
+    #[method(name = "get_IsNeedToBuild", args = 0)]
+    pub fn get_is_need_to_build(self) -> bool;
+}
+
+#[cfg(feature = "app-maphistory")]
+impl MapHistory_RewindLogBuilder {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHistory_RewindLogBuilder),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHistory_RewindLogBuilderMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory.md"))]
 #[::unity2::class(namespace = "App", name = "MapHistory")]
 #[parent(crate::system::object::Object)]
 pub struct MapHistory {
@@ -3572,45 +7638,7 @@ impl MapHistory {
     pub fn cctor() -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_WorkTerrainData.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapHistory_Rewind_WorkTerrainData {
-    pub x: u8,
-    pub z: u8,
-    pub index: u8,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_Rewind_WorkTerrainData {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.Rewind.WorkTerrainData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_Rewind_WorkTerrainData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods(value)]
-impl MapHistory_Rewind_WorkTerrainData {
-    #[doc = "`.ctor(i32, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, x: i32, z: i32, index: i32) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_RangeType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_RangeType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -3654,960 +7682,7 @@ impl MapHistory_Rewind_RangeType {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_RewindType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapHistory_RewindType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_RewindType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.RewindType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_RewindType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapHistory_RewindType {
-    pub fn phase_begin() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn phase_next() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn pick_up() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn fixed() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn talk() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn attack() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn rod() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn engage_charge() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn destroy() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn item_use() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn trade() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn visit() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn breakdown() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn escape() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn door() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn torch() -> Self {
-        Self { value: 17 }
-    }
-
-    pub fn treasure_box() -> Self {
-        Self { value: 18 }
-    }
-
-    pub fn transporter() -> Self {
-        Self { value: 19 }
-    }
-
-    pub fn dance() -> Self {
-        Self { value: 20 }
-    }
-
-    pub fn guard() -> Self {
-        Self { value: 21 }
-    }
-
-    pub fn overlap_skill() -> Self {
-        Self { value: 22 }
-    }
-
-    pub fn command_skill() -> Self {
-        Self { value: 23 }
-    }
-
-    pub fn vision_create() -> Self {
-        Self { value: 24 }
-    }
-
-    pub fn vision_delete() -> Self {
-        Self { value: 25 }
-    }
-
-    pub fn destroy_village() -> Self {
-        Self { value: 26 }
-    }
-
-    pub fn event_battle() -> Self {
-        Self { value: 27 }
-    }
-
-    pub fn battle_calc() -> Self {
-        Self { value: 28 }
-    }
-
-    pub fn mind_done() -> Self {
-        Self { value: 29 }
-    }
-
-    pub fn gain_item() -> Self {
-        Self { value: 30 }
-    }
-
-    pub fn status() -> Self {
-        Self { value: 31 }
-    }
-
-    pub fn hp() -> Self {
-        Self { value: 32 }
-    }
-
-    pub fn base_capability() -> Self {
-        Self { value: 33 }
-    }
-
-    pub fn engage_count() -> Self {
-        Self { value: 34 }
-    }
-
-    pub fn extra_sight() -> Self {
-        Self { value: 35 }
-    }
-
-    pub fn exp() -> Self {
-        Self { value: 36 }
-    }
-
-    pub fn level_up() -> Self {
-        Self { value: 37 }
-    }
-
-    pub fn class_change() -> Self {
-        Self { value: 38 }
-    }
-
-    pub fn position() -> Self {
-        Self { value: 39 }
-    }
-
-    pub fn angle() -> Self {
-        Self { value: 40 }
-    }
-
-    pub fn private_skill() -> Self {
-        Self { value: 41 }
-    }
-
-    pub fn enhance_factor_item() -> Self {
-        Self { value: 42 }
-    }
-
-    pub fn ai_active() -> Self {
-        Self { value: 43 }
-    }
-
-    pub fn ai_band() -> Self {
-        Self { value: 44 }
-    }
-
-    pub fn ai_priority() -> Self {
-        Self { value: 45 }
-    }
-
-    pub fn ai_sequence() -> Self {
-        Self { value: 46 }
-    }
-
-    pub fn ai_value() -> Self {
-        Self { value: 47 }
-    }
-
-    pub fn ai_prohibit_engage_attack() -> Self {
-        Self { value: 48 }
-    }
-
-    pub fn ai_prohibit_rod() -> Self {
-        Self { value: 49 }
-    }
-
-    pub fn ai_prohibit_overlap() -> Self {
-        Self { value: 50 }
-    }
-
-    pub fn ai_rerewarp() -> Self {
-        Self { value: 51 }
-    }
-
-    pub fn ai_rerewarp_count() -> Self {
-        Self { value: 52 }
-    }
-
-    pub fn engage() -> Self {
-        Self { value: 53 }
-    }
-
-    pub fn dead() -> Self {
-        Self { value: 54 }
-    }
-
-    pub fn transfer_v0() -> Self {
-        Self { value: 55 }
-    }
-
-    pub fn revive_v0() -> Self {
-        Self { value: 56 }
-    }
-
-    pub fn unit_phase_begin() -> Self {
-        Self { value: 57 }
-    }
-
-    pub fn unit_phase_end() -> Self {
-        Self { value: 58 }
-    }
-
-    pub fn unit_item() -> Self {
-        Self { value: 59 }
-    }
-
-    pub fn unit_item_list() -> Self {
-        Self { value: 60 }
-    }
-
-    pub fn dispos() -> Self {
-        Self { value: 61 }
-    }
-
-    pub fn god_create() -> Self {
-        Self { value: 62 }
-    }
-
-    pub fn god_delete() -> Self {
-        Self { value: 63 }
-    }
-
-    pub fn god_connect() -> Self {
-        Self { value: 64 }
-    }
-
-    pub fn god_disconnect() -> Self {
-        Self { value: 65 }
-    }
-
-    pub fn god_change() -> Self {
-        Self { value: 66 }
-    }
-
-    pub fn god_exp() -> Self {
-        Self { value: 67 }
-    }
-
-    pub fn god_level_up_v0() -> Self {
-        Self { value: 68 }
-    }
-
-    pub fn god_darkness() -> Self {
-        Self { value: 69 }
-    }
-
-    pub fn god_state() -> Self {
-        Self { value: 70 }
-    }
-
-    pub fn reliance_score() -> Self {
-        Self { value: 71 }
-    }
-
-    pub fn transporter_data() -> Self {
-        Self { value: 72 }
-    }
-
-    pub fn cannon_shells() -> Self {
-        Self { value: 73 }
-    }
-
-    pub fn terrain_open() -> Self {
-        Self { value: 74 }
-    }
-
-    pub fn terrain_broken() -> Self {
-        Self { value: 75 }
-    }
-
-    pub fn terrain_set() -> Self {
-        Self { value: 76 }
-    }
-
-    pub fn overlap() -> Self {
-        Self { value: 77 }
-    }
-
-    pub fn gold() -> Self {
-        Self { value: 78 }
-    }
-
-    pub fn material() -> Self {
-        Self { value: 79 }
-    }
-
-    pub fn piece_of_bond() -> Self {
-        Self { value: 80 }
-    }
-
-    pub fn variable() -> Self {
-        Self { value: 81 }
-    }
-
-    pub fn kizuna_record() -> Self {
-        Self { value: 82 }
-    }
-
-    pub fn win_rule() -> Self {
-        Self { value: 83 }
-    }
-
-    pub fn win_rule_enemy_num() -> Self {
-        Self { value: 84 }
-    }
-
-    pub fn win_rule_limit_turn() -> Self {
-        Self { value: 85 }
-    }
-
-    pub fn win_rule_mid() -> Self {
-        Self { value: 86 }
-    }
-
-    pub fn field_bgm_phase_bgm() -> Self {
-        Self { value: 87 }
-    }
-
-    pub fn field_bgm_war_situation() -> Self {
-        Self { value: 88 }
-    }
-
-    pub fn engage_break() -> Self {
-        Self { value: 89 }
-    }
-
-    pub fn range() -> Self {
-        Self { value: 90 }
-    }
-
-    pub fn god_escaping() -> Self {
-        Self { value: 91 }
-    }
-
-    pub fn god_notify_level_cap_talk() -> Self {
-        Self { value: 92 }
-    }
-
-    pub fn ai_engage_attack_once_done() -> Self {
-        Self { value: 93 }
-    }
-
-    pub fn terrain_action() -> Self {
-        Self { value: 94 }
-    }
-
-    pub fn danger_showing() -> Self {
-        Self { value: 95 }
-    }
-
-    pub fn map_kill_bonus() -> Self {
-        Self { value: 96 }
-    }
-
-    pub fn put_off() -> Self {
-        Self { value: 97 }
-    }
-
-    pub fn god_dirty() -> Self {
-        Self { value: 98 }
-    }
-
-    pub fn effect_create() -> Self {
-        Self { value: 99 }
-    }
-
-    pub fn effect_delete() -> Self {
-        Self { value: 100 }
-    }
-
-    pub fn material_float() -> Self {
-        Self { value: 101 }
-    }
-
-    pub fn material_color() -> Self {
-        Self { value: 102 }
-    }
-
-    pub fn field_bgm_special_turn() -> Self {
-        Self { value: 103 }
-    }
-
-    pub fn post_change_bgm_event() -> Self {
-        Self { value: 104 }
-    }
-
-    pub fn terrain_endurance() -> Self {
-        Self { value: 105 }
-    }
-
-    pub fn terrain_state() -> Self {
-        Self { value: 106 }
-    }
-
-    pub fn lose_rule_mid() -> Self {
-        Self { value: 107 }
-    }
-
-    pub fn battle_start() -> Self {
-        Self { value: 108 }
-    }
-
-    pub fn phase_begin_after() -> Self {
-        Self { value: 109 }
-    }
-
-    pub fn clear_ring() -> Self {
-        Self { value: 110 }
-    }
-
-    pub fn map_kill_bonus_count() -> Self {
-        Self { value: 111 }
-    }
-
-    pub fn unit_record() -> Self {
-        Self { value: 112 }
-    }
-
-    pub fn extra_hp_stock() -> Self {
-        Self { value: 113 }
-    }
-
-    pub fn engage_turn() -> Self {
-        Self { value: 114 }
-    }
-
-    pub fn engage_wait() -> Self {
-        Self { value: 115 }
-    }
-
-    pub fn engage_summon() -> Self {
-        Self { value: 116 }
-    }
-
-    pub fn transfer_v1() -> Self {
-        Self { value: 117 }
-    }
-
-    pub fn map_sight_usable() -> Self {
-        Self { value: 118 }
-    }
-
-    pub fn plain_hp_stock() -> Self {
-        Self { value: 119 }
-    }
-
-    pub fn contract() -> Self {
-        Self { value: 120 }
-    }
-
-    pub fn full_bullet() -> Self {
-        Self { value: 121 }
-    }
-
-    pub fn reset_lock_target() -> Self {
-        Self { value: 122 }
-    }
-
-    pub fn revive_v1() -> Self {
-        Self { value: 123 }
-    }
-
-    pub fn enchant() -> Self {
-        Self { value: 124 }
-    }
-
-    pub fn enchant_weapon() -> Self {
-        Self { value: 125 }
-    }
-
-    pub fn ai_bullet_pattern() -> Self {
-        Self { value: 126 }
-    }
-
-    pub fn god_level_up_v1() -> Self {
-        Self { value: 127 }
-    }
-
-    pub fn position_list() -> Self {
-        Self { value: 128 }
-    }
-
-    pub fn ai_move_limit() -> Self {
-        Self { value: 129 }
-    }
-
-    pub fn terrain_action_move() -> Self {
-        Self { value: 130 }
-    }
-
-    pub fn ai_magic_shield_once_done() -> Self {
-        Self { value: 131 }
-    }
-
-    pub fn random_game() -> Self {
-        Self { value: 132 }
-    }
-
-    pub fn lock_target() -> Self {
-        Self { value: 133 }
-    }
-
-    pub fn ai_enchant_weapon_done() -> Self {
-        Self { value: 134 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindLog_UnitIcon.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.RewindLog.UnitIcon")]
-#[parent(crate::system::object::Object)]
-pub struct MapHistory_RewindLog_UnitIcon {
-    #[rename(name = "m_Person")]
-    pub m_person: crate::app::persondata::PersonData,
-    #[rename(name = "m_Job")]
-    pub m_job: crate::app::jobdata::JobData,
-    #[rename(name = "m_ItemKind")]
-    pub m_item_kind: crate::app::itemdata::ItemData_Kinds,
-    #[rename(name = "m_IsFemale")]
-    pub m_is_female: bool,
-    #[rename(name = "m_IsEngage")]
-    pub m_is_engage: bool,
-    #[rename(name = "m_God")]
-    pub m_god: crate::app::goddata::GodData,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_RewindLog_UnitIcon {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`IsValid()` overload"]
-    #[method(name = "IsValid", args = 0)]
-    pub fn is_valid(self) -> bool;
-
-    #[doc = "`Set(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds, bool, bool, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Set", args = 6)]
-    pub fn set(
-        self,
-        pid: ::unity2::Il2CppString,
-        jid: ::unity2::Il2CppString,
-        item_kind: crate::app::itemdata::ItemData_Kinds,
-        is_female: bool,
-        is_engage: bool,
-        gid: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`SetEngage(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetEngage", args = 1)]
-    pub fn set_engage(self, gid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Person()` overload"]
-    #[method(name = "get_Person", args = 0)]
-    pub fn get_person(self) -> crate::app::persondata::PersonData;
-
-    #[doc = "`get_Job()` overload"]
-    #[method(name = "get_Job", args = 0)]
-    pub fn get_job(self) -> crate::app::jobdata::JobData;
-
-    #[doc = "`get_ItemKind()` overload"]
-    #[method(name = "get_ItemKind", args = 0)]
-    pub fn get_item_kind(self) -> crate::app::itemdata::ItemData_Kinds;
-
-    #[doc = "`get_IsFemale()` overload"]
-    #[method(name = "get_IsFemale", args = 0)]
-    pub fn get_is_female(self) -> bool;
-
-    #[doc = "`get_IsEngage()` overload"]
-    #[method(name = "get_IsEngage", args = 0)]
-    pub fn get_is_engage(self) -> bool;
-
-    #[doc = "`get_God()` overload"]
-    #[method(name = "get_God", args = 0)]
-    pub fn get_god(self) -> crate::app::goddata::GodData;
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_RewindLog_UnitIcon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_RewindLog_UnitIcon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_RewindLog_UnitIconMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Base_1.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.Base`1")]
-#[parent(crate::system::object::Object)]
-pub struct MapHistory_Base_1<T0: ::unity2::ClassIdentity> {
-    #[static_field]
-    #[rename(name = "StreamAdditionalSize")]
-    pub stream_additional_size: i32,
-    #[rename(name = "m_CommandStreamBuffer")]
-    pub m_command_stream_buffer: ::unity2::Array<u8>,
-    #[rename(name = "m_CommandStream")]
-    pub m_command_stream: crate::app::stream_2::Stream_2,
-    #[rename(name = "m_Commands")]
-    pub m_commands: ::unity2::Array<crate::app::maphistory::MapHistory_Command>,
-    #[rename(name = "m_NumCommand")]
-    pub m_num_command: i32,
-    #[rename(name = "m_NumSplit")]
-    pub m_num_split: i32,
-    #[static_field]
-    #[rename(name = "s_Instance")]
-    pub s_instance: T0,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> MapHistory_Base_1<T0> {
-    #[doc = "`Initialize()` overload"]
-    #[method(name = "Initialize", args = 0)]
-    pub fn initialize(self) -> ();
-
-    #[doc = "`OnInitialize()` overload"]
-    #[method(name = "OnInitialize", args = 0)]
-    pub fn on_initialize(self) -> ();
-
-    #[doc = "`Delete()` overload"]
-    #[method(name = "Delete", args = 0)]
-    pub fn delete(self) -> ();
-
-    #[doc = "`OnDelete()` overload"]
-    #[method(name = "OnDelete", args = 0)]
-    pub fn on_delete(self) -> ();
-
-    #[doc = "`Add(crate::app::maphistory::MapHistory_CommandWriter)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, writer: crate::app::maphistory::MapHistory_CommandWriter) -> bool;
-
-    #[doc = "`Preadd(crate::app::maphistory::MapHistory_CommandWriter)` overload"]
-    #[method(name = "Preadd", args = 1)]
-    pub fn preadd(self, writer: crate::app::maphistory::MapHistory_CommandWriter) -> ();
-
-    #[doc = "`AddSplit(crate::app::maphistory::MapHistory_CommandWriter, u8)` overload"]
-    #[method(name = "AddSplit", args = 2)]
-    pub fn add_split(
-        self,
-        writer: crate::app::maphistory::MapHistory_CommandWriter,
-        arg: u8,
-    ) -> bool;
-
-    #[doc = "`Overwrite(crate::app::maphistory::MapHistory_CommandWriter, i32)` overload"]
-    #[method(name = "Overwrite", args = 2)]
-    pub fn overwrite(
-        self,
-        writer: crate::app::maphistory::MapHistory_CommandWriter,
-        command_index: i32,
-    ) -> bool;
-
-    #[doc = "`CommandStackCancel(crate::app::unit::Unit, i32, i32)` overload"]
-    #[method(name = "CommandStackCancel", args = 3)]
-    pub fn command_stack_cancel(
-        self,
-        unit: crate::app::unit::Unit,
-        target_command_type: i32,
-        related_command_type: i32,
-    ) -> ();
-
-    #[doc = "`GetCommandEngage()` overload"]
-    #[method(name = "GetCommandEngage", args = 0)]
-    pub fn get_command_engage(self) -> i32;
-
-    #[doc = "`GetCommandGodChange()` overload"]
-    #[method(name = "GetCommandGodChange", args = 0)]
-    pub fn get_command_god_change(self) -> i32;
-
-    #[doc = "`GetCommandUnitItemList()` overload"]
-    #[method(name = "GetCommandUnitItemList", args = 0)]
-    pub fn get_command_unit_item_list(self) -> i32;
-
-    #[doc = "`GetUnitForCommandEngage(i32)` overload"]
-    #[method(name = "GetUnitForCommandEngage", args = 1)]
-    pub fn get_unit_for_command_engage(self, command_index: i32) -> crate::app::unit::Unit;
-
-    #[doc = "`GetUnitForCommandGodChange(i32)` overload"]
-    #[method(name = "GetUnitForCommandGodChange", args = 1)]
-    pub fn get_unit_for_command_god_change(self, command_index: i32) -> crate::app::unit::Unit;
-
-    #[doc = "`GetUnitForCommandUnitItemList(i32)` overload"]
-    #[method(name = "GetUnitForCommandUnitItemList", args = 1)]
-    pub fn get_unit_for_command_unit_item_list(self, command_index: i32) -> crate::app::unit::Unit;
-
-    #[doc = "`TryDeleteCommand(i32, crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "TryDeleteCommand", args = 3)]
-    pub fn try_delete_command(
-        self,
-        command_index: i32,
-        unit: crate::app::unit::Unit,
-        target_command_type: i32,
-    ) -> bool;
-
-    #[doc = "`DeleteCommand(i32)` overload"]
-    #[method(name = "DeleteCommand", args = 1)]
-    pub fn delete_command(self, command_index: i32) -> bool;
-
-    #[doc = "`PredeleteCommand(i32)` overload"]
-    #[method(name = "PredeleteCommand", args = 1)]
-    pub fn predelete_command(self, command_index: i32) -> ();
-
-    #[doc = "`DeleteCommandError()` overload"]
-    #[method(name = "DeleteCommandError", args = 0)]
-    pub fn delete_command_error(self) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`get_CurrentIndex()` overload"]
-    #[method(name = "get_CurrentIndex", args = 0)]
-    pub fn get_current_index(self) -> i32;
-
-    #[doc = "`GetLastSplitIndex()` overload"]
-    #[method(name = "GetLastSplitIndex", args = 0)]
-    pub fn get_last_split_index(self) -> i32;
-
-    #[doc = "`GetNextSplitIndex(i32)` overload"]
-    #[method(name = "GetNextSplitIndex", args = 1)]
-    pub fn get_next_split_index(self, index: i32) -> i32;
-
-    #[doc = "`GetPrevSplitIndex(i32)` overload"]
-    #[method(name = "GetPrevSplitIndex", args = 1)]
-    pub fn get_prev_split_index(self, index: i32) -> i32;
-
-    #[doc = "`SerializeCommands(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "SerializeCommands", args = 1)]
-    pub fn serialize_commands(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`DeserializeCommands(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "DeserializeCommands", args = 1)]
-    pub fn deserialize_commands(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`SerializeCommandStream(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "SerializeCommandStream", args = 1)]
-    pub fn serialize_command_stream(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`DeserializeCommandStream(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "DeserializeCommandStream", args = 1)]
-    pub fn deserialize_command_stream(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`get_CommandStreamBufferSize()` overload"]
-    #[method(name = "get_CommandStreamBufferSize", args = 0)]
-    pub fn get_command_stream_buffer_size(self) -> u32;
-
-    #[doc = "`get_MaxCommandCount()` overload"]
-    #[method(name = "get_MaxCommandCount", args = 0)]
-    pub fn get_max_command_count(self) -> u32;
-
-    #[doc = "`TryCreateInstance()` overload"]
-    #[method(name = "TryCreateInstance", args = 0)]
-    pub fn try_create_instance() -> ();
-
-    #[doc = "`TryDeleteInstance()` overload"]
-    #[method(name = "TryDeleteInstance", args = 0)]
-    pub fn try_delete_instance() -> ();
-
-    #[doc = "`get_Instance()` overload"]
-    #[method(name = "get_Instance", args = 0)]
-    pub fn get_instance() -> T0;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl<T0: ::unity2::ClassIdentity> MapHistory_Base_1<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_Base_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_Base_1Methods<T0>>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Mode.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapHistory_Mode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_Mode {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_Mode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapHistory_Mode {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn write() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn read() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_IdMap_1.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.IdMap`1")]
-# [parent (crate :: app :: maphistory :: MapHistory_IdMapBase_1 < T0 >)]
-# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < T0 >)]
-#[parent(crate::system::object::Object)]
-pub struct MapHistory_IdMap_1<T0: ::unity2::ClassIdentity> {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> MapHistory_IdMap_1<T0> {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, capacity: i32) -> ();
-
-    #[doc = "`Entry(::unity2::Il2CppString)` overload"]
-    #[method(name = "Entry", args = 1)]
-    pub fn entry(self, id: ::unity2::Il2CppString) -> i32;
-
-    #[doc = "`TryGet(i32)` overload"]
-    #[method(name = "TryGet", args = 1)]
-    pub fn try_get(self, index: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_Version()` overload"]
-    #[method(name = "get_Version", args = 0)]
-    pub fn get_version(self) -> i32;
-
-    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "OnSerialize", args = 1)]
-    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = "OnDeserialize", args = 2)]
-    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl<T0: ::unity2::ClassIdentity> MapHistory_IdMap_1<T0> {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_IdMap_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_IdMap_1Methods<T0>>::ctor(this, capacity);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_RewindUnitPhaseBeginKinds.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_RewindUnitPhaseBeginKinds.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -4687,289 +7762,7 @@ impl MapHistory_RewindUnitPhaseBeginKinds {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Rewind_OverlapDataPool.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.Rewind.OverlapDataPool")]
-# [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: maphistory :: MapHistory_Rewind_OverlapData >)]
-pub struct MapHistory_Rewind_OverlapDataPool {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_Rewind_OverlapDataPool {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, max: i32) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_Rewind_OverlapDataPool {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(max: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_Rewind_OverlapDataPool),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_Rewind_OverlapDataPoolMethods>::ctor(this, max);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Replay_SaveAsync.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.Replay.SaveAsync")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct MapHistory_Replay_SaveAsync {
-    #[static_field]
-    #[rename(name = "s_Thread")]
-    pub s_thread: crate::app::maphistory::MapHistory_Replay_SaveAsyncThread,
-    #[rename(name = "m_SaveMethod")]
-    pub m_save_method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_Replay_SaveAsync {
-    #[doc = "`.ctor(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)
-        -> ();
-
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
-
-    #[doc = "`IsRunning()` overload"]
-    #[method(name = "IsRunning", args = 0)]
-    pub fn is_running(self) -> bool;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        save_method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,
-    ) -> ();
-
-    #[doc = "`CreateThread()` overload"]
-    #[method(name = "CreateThread", args = 0)]
-    pub fn create_thread() -> ();
-
-    #[doc = "`DestroyThread()` overload"]
-    #[method(name = "DestroyThread", args = 0)]
-    pub fn destroy_thread() -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_Replay_SaveAsync {
-    #[doc = "`.ctor(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` — overload selector"]
-    pub fn new(method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_Replay_SaveAsync),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_Replay_SaveAsyncMethods>::ctor(this, method);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Command.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapHistory_Command {
-    pub m_type: u8,
-    pub m_size: u16,
-    pub m_offset: i32,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_Command {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.Command";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_Command {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods(value)]
-impl MapHistory_Command {
-    #[doc = "`get_Type()` overload"]
-    #[method(name = "get_Type", args = 0)]
-    pub fn get_type(self) -> i32;
-
-    #[doc = "`set_Type(i32)` overload"]
-    #[method(name = "set_Type", args = 1)]
-    pub fn set_type(self, value: i32) -> ();
-
-    #[doc = "`get_Size()` overload"]
-    #[method(name = "get_Size", args = 0)]
-    pub fn get_size(self) -> i32;
-
-    #[doc = "`set_Size(i32)` overload"]
-    #[method(name = "set_Size", args = 1)]
-    pub fn set_size(self, value: i32) -> ();
-
-    #[doc = "`get_Offset()` overload"]
-    #[method(name = "get_Offset", args = 0)]
-    pub fn get_offset(self) -> i32;
-
-    #[doc = "`set_Offset(i32)` overload"]
-    #[method(name = "set_Offset", args = 1)]
-    pub fn set_offset(self, value: i32) -> ();
-
-    #[doc = "`get_Tail()` overload"]
-    #[method(name = "get_Tail", args = 0)]
-    pub fn get_tail(self) -> i32;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Serialize", args = 1)]
-    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Deserialize", args = 1)]
-    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindNameMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.RewindNameMap")]
-# [parent (crate :: app :: maphistory :: MapHistory_IdMapBase_1 < crate :: app :: maphistory :: MapHistory_RewindNameMap >)]
-pub struct MapHistory_RewindNameMap {
-    #[static_field]
-    #[rename(name = "IdMask")]
-    pub id_mask: u8,
-    #[static_field]
-    #[rename(name = "EditNameBit")]
-    pub edit_name_bit: u8,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_RewindNameMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Entry(crate::app::unit::Unit)` overload"]
-    #[method(name = "Entry", args = 1)]
-    pub fn entry(self, unit: crate::app::unit::Unit) -> i32;
-
-    #[doc = "`TryGet(i32)` overload"]
-    #[method(name = "TryGet", args = 1)]
-    pub fn try_get(self, index: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_Version()` overload"]
-    #[method(name = "get_Version", args = 0)]
-    pub fn get_version(self) -> i32;
-
-    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "OnSerialize", args = 1)]
-    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = "OnDeserialize", args = 2)]
-    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_RewindNameMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_RewindNameMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_RewindNameMapMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_EffectNameMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.EffectNameMap")]
-# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_EffectNameMap >)]
-pub struct MapHistory_EffectNameMap {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_EffectNameMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_EffectNameMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_EffectNameMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_EffectNameMapMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_VariableMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.VariableMap")]
-# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_VariableMap >)]
-pub struct MapHistory_VariableMap {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_VariableMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_Keys()` overload"]
-    #[method(name = "get_Keys", args = 0)]
-    pub fn get_keys(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>;
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_VariableMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_VariableMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_VariableMapMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_WriterKind.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Replay_ReadResult.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -4978,14 +7771,14 @@ impl MapHistory_VariableMap {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapHistory_Rewind_WriterKind {
+pub struct MapHistory_Replay_ReadResult {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapHistory_Rewind_WriterKind {
+impl ::unity2::ClassIdentity for MapHistory_Replay_ReadResult {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapHistory.Rewind.WriterKind";
+    const NAME: &'static str = "MapHistory.Replay.ReadResult";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -4994,7 +7787,7 @@ impl ::unity2::ClassIdentity for MapHistory_Rewind_WriterKind {
     }
 }
 
-impl ::unity2::IlType for MapHistory_Rewind_WriterKind {
+impl ::unity2::IlType for MapHistory_Replay_ReadResult {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -5003,2805 +7796,12 @@ impl ::unity2::IlType for MapHistory_Rewind_WriterKind {
     }
 }
 
-impl MapHistory_Rewind_WriterKind {
-    pub fn common() -> Self {
+impl MapHistory_Replay_ReadResult {
+    pub fn next() -> Self {
         Self { value: 0 }
-    }
-
-    pub fn terrain_set() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn overlap() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 3 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_ReplayCommandWriter.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.ReplayCommandWriter")]
-#[parent(crate::app::maphistory::MapHistory_CommandWriter)]
-pub struct MapHistory_ReplayCommandWriter {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_ReplayCommandWriter {
-    #[doc = "`Prepare(crate::app::maphistory::MapHistory_ReplayType)` overload"]
-    #[method(name = "Prepare", args = 1)]
-    pub fn prepare(self, r#type: crate::app::maphistory::MapHistory_ReplayType) -> ();
-
-    #[doc = "`WriteUnit(crate::app::unit::Unit)` overload"]
-    #[method(name = "WriteUnit", args = 1)]
-    pub fn write_unit(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`WriteUnitItem(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "WriteUnitItem", args = 1)]
-    pub fn write_unit_item(self, item: crate::app::unititem::UnitItem) -> ();
-
-    #[doc = "`WriteUnitItemList(crate::app::unititemlist::UnitItemList)` overload"]
-    #[method(name = "WriteUnitItemList", args = 1)]
-    pub fn write_unit_item_list(self, item_list: crate::app::unititemlist::UnitItemList) -> ();
-
-    #[doc = "`WriteMultiTargets(crate::app::mapmind::MapMind_MultiTargets)` overload"]
-    #[method(name = "WriteMultiTargets", args = 1)]
-    pub fn write_multi_targets(self, targets: crate::app::mapmind::MapMind_MultiTargets) -> ();
-
-    #[doc = "`WriteForce(crate::app::force::Force_Type)` overload"]
-    #[method(name = "WriteForce", args = 1)]
-    pub fn write_force(self, force_type: crate::app::force::Force_Type) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_ReplayCommandWriter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_ReplayCommandWriter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_ReplayCommandWriterMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_SerializeDisabled.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapHistory_SerializeDisabled {
-    pub m_is_prev_disabled: bool,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_SerializeDisabled {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.SerializeDisabled";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_SerializeDisabled {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods(value)]
-impl MapHistory_SerializeDisabled {
-    #[doc = "`.ctor(bool)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, is_disabled: bool) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindLogBuilder.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.RewindLogBuilder")]
-#[parent(crate::system::object::Object)]
-pub struct MapHistory_RewindLogBuilder {
-    #[rename(name = "m_Log")]
-    pub m_log: crate::app::maphistory::MapHistory_RewindLog,
-    #[rename(name = "m_IsNeedToBuild")]
-    pub m_is_need_to_build: bool,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_RewindLogBuilder {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Prepare(crate::app::maphistory::MapHistory_RewindLog)` overload"]
-    #[method(name = "Prepare", args = 1)]
-    pub fn prepare(self, log: crate::app::maphistory::MapHistory_RewindLog) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`NeedToBuild()` overload"]
-    #[method(name = "NeedToBuild", args = 0)]
-    pub fn need_to_build(self) -> ();
-
-    #[doc = "`get_Log()` overload"]
-    #[method(name = "get_Log", args = 0)]
-    pub fn get_log(self) -> crate::app::maphistory::MapHistory_RewindLog;
-
-    #[doc = "`get_IsNeedToBuild()` overload"]
-    #[method(name = "get_IsNeedToBuild", args = 0)]
-    pub fn get_is_need_to_build(self) -> bool;
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_RewindLogBuilder {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_RewindLogBuilder),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_RewindLogBuilderMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_UnitMapBase_2_IData.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.UnitMapBase`2.IData")]
-pub struct MapHistory_UnitMapBase_2_IData<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
-{}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
-    MapHistory_UnitMapBase_2_IData<T0, T1>
-{
-    #[doc = "`get_unit()` overload"]
-    #[method(name = "get_unit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`set_unit(crate::app::unit::Unit)` overload"]
-    #[method(name = "set_unit", args = 1)]
-    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
-
-    #[doc = "`IsUsed()` overload"]
-    #[method(name = "IsUsed", args = 0)]
-    pub fn is_used(self) -> bool;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_InspectorType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapHistory_Rewind_InspectorType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_Rewind_InspectorType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.Rewind.InspectorType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_Rewind_InspectorType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapHistory_Rewind_InspectorType {
-    pub fn cannon() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn breakable() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindUnitMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.RewindUnitMap")]
-# [parent (crate :: app :: maphistory :: MapHistory_UnitMapBase_2 < crate :: app :: maphistory :: MapHistory_RewindUnitMap , crate :: app :: maphistory :: MapHistory_RewindUnitMap_Data >)]
-pub struct MapHistory_RewindUnitMap {
-    #[static_field]
-    #[rename(name = "StreamBufferSize")]
-    pub stream_buffer_size: i32,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_RewindUnitMap {
-    #[doc = "`Preserve(crate::app::unit::Unit, crate::app::force::Force_Type)` overload"]
-    #[method(name = "Preserve", args = 2)]
-    pub fn preserve(
-        self,
-        unit: crate::app::unit::Unit,
-        next_force_type: crate::app::force::Force_Type,
-    ) -> ();
-
-    #[doc = "`Restore(i32, crate::app::unit::Unit)` overload"]
-    #[method(name = "Restore", args = 2)]
-    pub fn restore(self, index: i32, prev_unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`BeforeDispos(i32)` overload"]
-    #[method(name = "BeforeDispos", args = 1)]
-    pub fn before_dispos(self, index: i32) -> ();
-
-    #[doc = "`PreviewLatest()` overload"]
-    #[method(name = "PreviewLatest", args = 0)]
-    pub fn preview_latest(self) -> ();
-
-    #[doc = "`PreviewDecide()` overload"]
-    #[method(name = "PreviewDecide", args = 0)]
-    pub fn preview_decide(self) -> ();
-
-    #[doc = "`PreviewCancel()` overload"]
-    #[method(name = "PreviewCancel", args = 0)]
-    pub fn preview_cancel(self) -> ();
-
-    #[doc = "`PreviewDeleteRestoredUnit(i32)` overload"]
-    #[method(name = "PreviewDeleteRestoredUnit", args = 1)]
-    pub fn preview_delete_restored_unit(self, index: i32) -> ();
-
-    #[doc = "`PreviewCleanup(i32)` overload"]
-    #[method(name = "PreviewCleanup", args = 1)]
-    pub fn preview_cleanup(self, index: i32) -> ();
-
-    #[doc = "`get_Version()` overload"]
-    #[method(name = "get_Version", args = 0)]
-    pub fn get_version(self) -> i32;
-
-    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "OnSerialize", args = 1)]
-    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = "OnDeserialize", args = 2)]
-    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_RewindUnitMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_RewindUnitMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_RewindUnitMapMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindLog.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.RewindLog")]
-#[parent(crate::system::object::Object)]
-pub struct MapHistory_RewindLog {
-    #[static_field]
-    #[rename(name = "MaxItem")]
-    pub max_item: i32,
-    #[static_field]
-    #[rename(name = "MaxDeadUnitIcon")]
-    pub max_dead_unit_icon: i32,
-    #[rename(name = "m_ActorUnitIcon")]
-    pub m_actor_unit_icon: crate::app::maphistory::MapHistory_RewindLog_UnitIcon,
-    #[rename(name = "m_ActorMapHistoryIndex")]
-    pub m_actor_map_history_index: i32,
-    #[rename(name = "m_ActorName")]
-    pub m_actor_name: ::unity2::Il2CppString,
-    #[rename(name = "m_Action")]
-    pub m_action: ::unity2::Il2CppString,
-    #[rename(name = "m_Items")]
-    pub m_items: ::unity2::Array<crate::app::itemdata::ItemData>,
-    #[rename(name = "m_ItemCount")]
-    pub m_item_count: i32,
-    #[rename(name = "m_DeadUnitIcons")]
-    pub m_dead_unit_icons: ::unity2::Array<crate::app::maphistory::MapHistory_RewindLog_UnitIcon>,
-    #[rename(name = "m_DeadUnitIconCount")]
-    pub m_dead_unit_icon_count: i32,
-    #[rename(name = "m_Priority")]
-    pub m_priority: i32,
-    #[rename(name = "m_IsForCheck")]
-    pub m_is_for_check: bool,
-    #[rename(name = "m_ForceType")]
-    pub m_force_type: crate::app::force::Force_Type,
-    #[rename(name = "m_PrevForceType")]
-    pub m_prev_force_type: crate::app::force::Force_Type,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_RewindLog {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`IsValid()` overload"]
-    #[method(name = "IsValid", args = 0)]
-    pub fn is_valid(self) -> bool;
-
-    #[doc = "`SetActorUnitIcon(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds, bool, bool, ::unity2::Il2CppString)` overload"]
-    #[method(name = "SetActorUnitIcon", args = 6)]
-    pub fn set_actor_unit_icon(
-        self,
-        pid: ::unity2::Il2CppString,
-        jid: ::unity2::Il2CppString,
-        item_kind: crate::app::itemdata::ItemData_Kinds,
-        is_female: bool,
-        is_engage: bool,
-        gid: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`SetActorUnitIconEngage(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetActorUnitIconEngage", args = 1)]
-    pub fn set_actor_unit_icon_engage(self, gid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetActorMapHistoryIndex(i32)` overload"]
-    #[method(name = "SetActorMapHistoryIndex", args = 1)]
-    pub fn set_actor_map_history_index(self, map_history_index: i32) -> ();
-
-    #[doc = "`ClearActor()` overload"]
-    #[method(name = "ClearActor", args = 0)]
-    pub fn clear_actor(self) -> ();
-
-    #[doc = "`SetAction(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetAction", args = 1)]
-    pub fn set_action(self, mhid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetAction(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "SetAction", args = 2)]
-    pub fn set_action_2(self, mhid: ::unity2::Il2CppString, arg: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetAction(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "SetAction", args = 3)]
-    pub fn set_action_3(
-        self,
-        mhid: ::unity2::Il2CppString,
-        arg0: ::unity2::Il2CppString,
-        arg1: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`SetAction(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "SetAction", args = 2)]
-    pub fn set_action_4(self, action: ::unity2::Il2CppString, priority: i32) -> ();
-
-    #[doc = "`AddItem(::unity2::Il2CppString)` overload"]
-    #[method(name = "AddItem", args = 1)]
-    pub fn add_item(self, iid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`AddDeadUnit(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds, bool, bool, ::unity2::Il2CppString)` overload"]
-    #[method(name = "AddDeadUnit", args = 6)]
-    pub fn add_dead_unit(
-        self,
-        pid: ::unity2::Il2CppString,
-        jid: ::unity2::Il2CppString,
-        item_kind: crate::app::itemdata::ItemData_Kinds,
-        is_female: bool,
-        is_engage: bool,
-        gid: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`DeleteDeadUnitIcons()` overload"]
-    #[method(name = "DeleteDeadUnitIcons", args = 0)]
-    pub fn delete_dead_unit_icons(self) -> ();
-
-    #[doc = "`get_ActorUnitIcon()` overload"]
-    #[method(name = "get_ActorUnitIcon", args = 0)]
-    pub fn get_actor_unit_icon(self) -> crate::app::maphistory::MapHistory_RewindLog_UnitIcon;
-
-    #[doc = "`get_ActorMapHistoryIndex()` overload"]
-    #[method(name = "get_ActorMapHistoryIndex", args = 0)]
-    pub fn get_actor_map_history_index(self) -> i32;
-
-    #[doc = "`get_ActorName()` overload"]
-    #[method(name = "get_ActorName", args = 0)]
-    pub fn get_actor_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_ActorName(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_ActorName", args = 1)]
-    pub fn set_actor_name(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Action()` overload"]
-    #[method(name = "get_Action", args = 0)]
-    pub fn get_action(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_Items()` overload"]
-    #[method(name = "get_Items", args = 0)]
-    pub fn get_items(self) -> ::unity2::Array<crate::app::itemdata::ItemData>;
-
-    #[doc = "`get_ItemCount()` overload"]
-    #[method(name = "get_ItemCount", args = 0)]
-    pub fn get_item_count(self) -> i32;
-
-    #[doc = "`get_DeadUnitIcons()` overload"]
-    #[method(name = "get_DeadUnitIcons", args = 0)]
-    pub fn get_dead_unit_icons(
-        self,
-    ) -> ::unity2::Array<crate::app::maphistory::MapHistory_RewindLog_UnitIcon>;
-
-    #[doc = "`get_DeadUnitIconCount()` overload"]
-    #[method(name = "get_DeadUnitIconCount", args = 0)]
-    pub fn get_dead_unit_icon_count(self) -> i32;
-
-    #[doc = "`get_IsForCheck()` overload"]
-    #[method(name = "get_IsForCheck", args = 0)]
-    pub fn get_is_for_check(self) -> bool;
-
-    #[doc = "`set_IsForCheck(bool)` overload"]
-    #[method(name = "set_IsForCheck", args = 1)]
-    pub fn set_is_for_check(self, value: bool) -> ();
-
-    #[doc = "`get_IsPhaseBegin()` overload"]
-    #[method(name = "get_IsPhaseBegin", args = 0)]
-    pub fn get_is_phase_begin(self) -> bool;
-
-    #[doc = "`get_PhaseBeginForce()` overload"]
-    #[method(name = "get_PhaseBeginForce", args = 0)]
-    pub fn get_phase_begin_force(self) -> crate::app::force::Force_Type;
-
-    #[doc = "`set_PhaseBeginForce(crate::app::force::Force_Type)` overload"]
-    #[method(name = "set_PhaseBeginForce", args = 1)]
-    pub fn set_phase_begin_force(self, value: crate::app::force::Force_Type) -> ();
-
-    #[doc = "`get_HasPrevForce()` overload"]
-    #[method(name = "get_HasPrevForce", args = 0)]
-    pub fn get_has_prev_force(self) -> bool;
-
-    #[doc = "`get_PrevForce()` overload"]
-    #[method(name = "get_PrevForce", args = 0)]
-    pub fn get_prev_force(self) -> crate::app::force::Force_Type;
-
-    #[doc = "`set_PrevForce(crate::app::force::Force_Type)` overload"]
-    #[method(name = "set_PrevForce", args = 1)]
-    pub fn set_prev_force(self, value: crate::app::force::Force_Type) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_RewindLog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_RewindLog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_RewindLogMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_ReplayType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapHistory_ReplayType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_ReplayType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.ReplayType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_ReplayType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapHistory_ReplayType {
-    pub fn phase_begin() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn phase_next() -> Self {
-        Self { value: 3 }
     }
 
     pub fn mind() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn engage() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn god_change() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn unit_item_list() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn surrender() -> Self {
-        Self { value: 8 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Rewind_BattleCalcData.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.Rewind.BattleCalcData")]
-#[parent(crate::system::object::Object)]
-pub struct MapHistory_Rewind_BattleCalcData {
-    #[rename(name = "m_SavedUnits")]
-    pub m_saved_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-    #[rename(name = "m_WorkUnits")]
-    pub m_work_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-    #[rename(name = "m_SavedInspectors")]
-    pub m_saved_inspectors: crate::system::collections::generic::list_1::List_1<
-        crate::app::pokeinspector::PokeInspector,
-    >,
-    #[rename(name = "m_WorkInspectors")]
-    pub m_work_inspectors: crate::system::collections::generic::list_1::List_1<
-        crate::app::pokeinspector::PokeInspector,
-    >,
-    #[rename(name = "m_SavedOverlaps")]
-    pub m_saved_overlaps: crate::system::collections::generic::list_1::List_1<
-        crate::app::mapoverlap::MapOverlap_Data,
-    >,
-    #[rename(name = "m_WorkOverlaps")]
-    pub m_work_overlaps: crate::system::collections::generic::list_1::List_1<
-        crate::app::mapoverlap::MapOverlap_Data,
-    >,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_Rewind_BattleCalcData {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`ClearWork()` overload"]
-    #[method(name = "ClearWork", args = 0)]
-    pub fn clear_work(self) -> ();
-
-    #[doc = "`Add(crate::app::unit::Unit)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Add(crate::app::pokeinspector::PokeInspector)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add_2(self, inspector: crate::app::pokeinspector::PokeInspector) -> ();
-
-    #[doc = "`Add(crate::app::mapoverlap::MapOverlap_Data)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add_3(self, overlap: crate::app::mapoverlap::MapOverlap_Data) -> ();
-
-    #[doc = "`GetUnitCount()` overload"]
-    #[method(name = "GetUnitCount", args = 0)]
-    pub fn get_unit_count(self) -> i32;
-
-    #[doc = "`GetUnit(i32)` overload"]
-    #[method(name = "GetUnit", args = 1)]
-    pub fn get_unit(self, index: i32) -> crate::app::unit::Unit;
-
-    #[doc = "`GetInspectorCount()` overload"]
-    #[method(name = "GetInspectorCount", args = 0)]
-    pub fn get_inspector_count(self) -> i32;
-
-    #[doc = "`GetInspector(i32)` overload"]
-    #[method(name = "GetInspector", args = 1)]
-    pub fn get_inspector(self, index: i32) -> crate::app::pokeinspector::PokeInspector;
-
-    #[doc = "`GetOverlapCount()` overload"]
-    #[method(name = "GetOverlapCount", args = 0)]
-    pub fn get_overlap_count(self) -> i32;
-
-    #[doc = "`GetOverlap(i32)` overload"]
-    #[method(name = "GetOverlap", args = 1)]
-    pub fn get_overlap(self, index: i32) -> crate::app::mapoverlap::MapOverlap_Data;
-
-    #[doc = "`Save()` overload"]
-    #[method(name = "Save", args = 0)]
-    pub fn save(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_Rewind_BattleCalcData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_Rewind_BattleCalcData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_Rewind_BattleCalcDataMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Replay_SaveAsync_SaveMethod.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.Replay.SaveAsync.SaveMethod")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct MapHistory_Replay_SaveAsync_SaveMethod {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_Replay_SaveAsync_SaveMethod {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_Replay_SaveAsync_SaveMethod {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_Replay_SaveAsync_SaveMethod),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_Replay_SaveAsync_SaveMethodMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_ReplayAppearanceMap_Leaving.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapHistory_ReplayAppearanceMap_Leaving {
-    pub turn: u8,
-    pub map_history_index: u8,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_ReplayAppearanceMap_Leaving {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.ReplayAppearanceMap.Leaving";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_ReplayAppearanceMap_Leaving {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Replay_OverwriteStreamScope.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapHistory_Replay_OverwriteStreamScope {
-    pub m_stream: crate::app::stream_2::Stream_2,
-    pub m_saved_pos: i32,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_Replay_OverwriteStreamScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.Replay.OverwriteStreamScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_Replay_OverwriteStreamScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods(value)]
-impl MapHistory_Replay_OverwriteStreamScope {
-    #[doc = "`.ctor(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, stream: crate::app::stream_2::Stream_2, overwrite_pos: i32) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_ReplayUnitMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.ReplayUnitMap")]
-# [parent (crate :: app :: maphistory :: MapHistory_UnitMapBase_2 < crate :: app :: maphistory :: MapHistory_ReplayUnitMap , crate :: app :: maphistory :: MapHistory_ReplayUnitMap_Data >)]
-pub struct MapHistory_ReplayUnitMap {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_ReplayUnitMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_ReplayUnitMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_ReplayUnitMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_ReplayUnitMapMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_MaterialStringMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.MaterialStringMap")]
-# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_MaterialStringMap >)]
-pub struct MapHistory_MaterialStringMap {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_MaterialStringMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_MaterialStringMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_MaterialStringMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_MaterialStringMapMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindCommandReader.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.RewindCommandReader")]
-#[parent(crate::app::maphistory::MapHistory_CommandReader)]
-pub struct MapHistory_RewindCommandReader {
-    #[rename(name = "m_DummySkills")]
-    pub m_dummy_skills: crate::app::skillarray::SkillArray,
-    #[rename(name = "m_DummyUnitItem")]
-    pub m_dummy_unit_item: crate::app::unititem::UnitItem,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_RewindCommandReader {
-    #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, command_stream_buffer: ::unity2::Array<u8>) -> ();
-
-    #[doc = "`ReadUnit()` overload"]
-    #[method(name = "ReadUnit", args = 0)]
-    pub fn read_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`ReadUnitByIndex()` overload"]
-    #[method(name = "ReadUnitByIndex", args = 0)]
-    pub fn read_unit_by_index(self) -> i32;
-
-    #[doc = "`SkipUnit()` overload"]
-    #[method(name = "SkipUnit", args = 0)]
-    pub fn skip_unit(self) -> ();
-
-    #[doc = "`ReadName()` overload"]
-    #[method(name = "ReadName", args = 0)]
-    pub fn read_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadNameByIndex()` overload"]
-    #[method(name = "ReadNameByIndex", args = 0)]
-    pub fn read_name_by_index(self) -> i32;
-
-    #[doc = "`SkipName()` overload"]
-    #[method(name = "SkipName", args = 0)]
-    pub fn skip_name(self) -> ();
-
-    #[doc = "`ReadPosition(i32, i32)` overload"]
-    #[method(name = "ReadPosition", args = 2)]
-    pub fn read_position(self, x: i32, z: i32) -> ();
-
-    #[doc = "`ReadStatus()` overload"]
-    #[method(name = "ReadStatus", args = 0)]
-    pub fn read_status(self) -> i64;
-
-    #[doc = "`ReadHp()` overload"]
-    #[method(name = "ReadHp", args = 0)]
-    pub fn read_hp(self) -> i32;
-
-    #[doc = "`ReadBaseCapability()` overload"]
-    #[method(name = "ReadBaseCapability", args = 0)]
-    pub fn read_base_capability(self) -> i8;
-
-    #[doc = "`ReadBaseCapabilityAll(crate::app::unitbasecapability::UnitBaseCapability)` overload"]
-    #[method(name = "ReadBaseCapabilityAll", args = 1)]
-    pub fn read_base_capability_all(
-        self,
-        capability: crate::app::unitbasecapability::UnitBaseCapability,
-    ) -> ();
-
-    #[doc = "`ReadGrowCapabilityAll(crate::app::capability::Capability)` overload"]
-    #[method(name = "ReadGrowCapabilityAll", args = 1)]
-    pub fn read_grow_capability_all(self, capability: crate::app::capability::Capability) -> ();
-
-    #[doc = "`ReadLevelCapabilityAll(crate::app::unitbasecapability::UnitBaseCapability)` overload"]
-    #[method(name = "ReadLevelCapabilityAll", args = 1)]
-    pub fn read_level_capability_all(
-        self,
-        capability: crate::app::unitbasecapability::UnitBaseCapability,
-    ) -> ();
-
-    #[doc = "`ReadUnitBaseCapabilityAll(crate::app::unitbasecapability::UnitBaseCapability)` overload"]
-    #[method(name = "ReadUnitBaseCapabilityAll", args = 1)]
-    pub fn read_unit_base_capability_all(
-        self,
-        capability: crate::app::unitbasecapability::UnitBaseCapability,
-    ) -> ();
-
-    #[doc = "`ReadEngageCount()` overload"]
-    #[method(name = "ReadEngageCount", args = 0)]
-    pub fn read_engage_count(self) -> i32;
-
-    #[doc = "`ReadEngageTurn()` overload"]
-    #[method(name = "ReadEngageTurn", args = 0)]
-    pub fn read_engage_turn(self) -> i32;
-
-    #[doc = "`ReadShowInSearchMap()` overload"]
-    #[method(name = "ReadShowInSearchMap", args = 0)]
-    pub fn read_show_in_search_map(self) -> bool;
-
-    #[doc = "`ReadTurn()` overload"]
-    #[method(name = "ReadTurn", args = 0)]
-    pub fn read_turn(self) -> i32;
-
-    #[doc = "`ReadForce()` overload"]
-    #[method(name = "ReadForce", args = 0)]
-    pub fn read_force(self) -> crate::app::force::Force_Type;
-
-    #[doc = "`ReadSkills(crate::app::skillarray::SkillArray)` overload"]
-    #[method(name = "ReadSkills", args = 1)]
-    pub fn read_skills(self, skills: crate::app::skillarray::SkillArray) -> ();
-
-    #[doc = "`ReadUnitPhaseBeginKinds()` overload"]
-    #[method(name = "ReadUnitPhaseBeginKinds", args = 0)]
-    pub fn read_unit_phase_begin_kinds(
-        self,
-    ) -> crate::app::maphistory::MapHistory_RewindUnitPhaseBeginKinds;
-
-    #[doc = "`ReadUnitItem(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "ReadUnitItem", args = 1)]
-    pub fn read_unit_item(self, item: crate::app::unititem::UnitItem) -> ();
-
-    #[doc = "`ReadUnitItemList(crate::app::unititemlist::UnitItemList)` overload"]
-    #[method(name = "ReadUnitItemList", args = 1)]
-    pub fn read_unit_item_list(self, item_list: crate::app::unititemlist::UnitItemList) -> ();
-
-    #[doc = "`ReadGodUnit(bool)` overload"]
-    #[method(name = "ReadGodUnit", args = 1)]
-    pub fn read_god_unit(self, include_reserved: bool) -> crate::app::godunit::GodUnit;
-
-    #[doc = "`ReadTransporterData(crate::app::transporter::Transporter_Data)` overload"]
-    #[method(name = "ReadTransporterData", args = 1)]
-    pub fn read_transporter_data(self, data: crate::app::transporter::Transporter_Data) -> ();
-
-    #[doc = "`ReadOverlap(crate::app::maphistory::MapHistory_Rewind_OverlapData)` overload"]
-    #[method(name = "ReadOverlap", args = 1)]
-    pub fn read_overlap(
-        self,
-        overlap_data: crate::app::maphistory::MapHistory_Rewind_OverlapData,
-    ) -> ();
-
-    #[doc = "`ReadOverlap(crate::app::stream_2::Stream_2, bool, i32, i32, i32, i32, i32, crate::app::force::Force_Type, ::unity2::Il2CppString)` overload"]
-    #[method(name = "ReadOverlap", args = 9)]
-    pub fn read_overlap_2(
-        stream: crate::app::stream_2::Stream_2,
-        has_data: bool,
-        x: i32,
-        z: i32,
-        hp: i32,
-        life: i32,
-        turn: i32,
-        phase: crate::app::force::Force_Type,
-        tid: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`ReadOverlap(crate::app::stream_2::Stream_2, crate::app::maphistory::MapHistory_Rewind_OverlapData)` overload"]
-    #[method(name = "ReadOverlap", args = 2)]
-    pub fn read_overlap_3(
-        stream: crate::app::stream_2::Stream_2,
-        overlap_data: crate::app::maphistory::MapHistory_Rewind_OverlapData,
-    ) -> ();
-
-    #[doc = "`ReadUnitIconInfo(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::itemdata::ItemData_Kinds, bool, bool, ::unity2::Il2CppString)` overload"]
-    #[method(name = "ReadUnitIconInfo", args = 6)]
-    pub fn read_unit_icon_info(
-        self,
-        pid: ::unity2::Il2CppString,
-        jid: ::unity2::Il2CppString,
-        item_kind: crate::app::itemdata::ItemData_Kinds,
-        is_female: bool,
-        is_engage: bool,
-        gid: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`SkipUnitIconInfo()` overload"]
-    #[method(name = "SkipUnitIconInfo", args = 0)]
-    pub fn skip_unit_icon_info(self) -> ();
-
-    #[doc = "`ReadLockTarget(i32, i32)` overload"]
-    #[method(name = "ReadLockTarget", args = 2)]
-    pub fn read_lock_target(self, target_x: i32, target_z: i32) -> bool;
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_RewindCommandReader {
-    #[doc = "`.ctor(::unity2::Array<u8>)` — overload selector"]
-    pub fn new(command_stream_buffer: ::unity2::Array<u8>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_RewindCommandReader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_RewindCommandReaderMethods>::ctor(this, command_stream_buffer);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Replay.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.Replay")]
-# [parent (crate :: app :: maphistory :: MapHistory_Base_1 < crate :: app :: maphistory :: MapHistory_Replay >)]
-pub struct MapHistory_Replay {
-    #[static_field]
-    #[rename(name = "Version")]
-    pub version: i32,
-    #[static_field]
-    #[rename(name = "SnapshotVersion")]
-    pub snapshot_version: u8,
-    #[rename(name = "m_Mode")]
-    pub m_mode: crate::app::maphistory::MapHistory_Mode,
-    #[rename(name = "m_Writer")]
-    pub m_writer: crate::app::maphistory::MapHistory_ReplayCommandWriter,
-    #[rename(name = "m_Reader")]
-    pub m_reader: crate::app::maphistory::MapHistory_ReplayCommandReader,
-    #[rename(name = "m_InitialStreamBuffer")]
-    pub m_initial_stream_buffer: ::unity2::Array<u8>,
-    #[rename(name = "m_InitialStream")]
-    pub m_initial_stream: crate::app::stream_2::Stream_2,
-    #[rename(name = "m_LastEngageIndex")]
-    pub m_last_engage_index: i32,
-    #[rename(name = "m_FirstGodChangeIndex")]
-    pub m_first_god_change_index: i32,
-    #[rename(name = "m_LastGodChangeIndex")]
-    pub m_last_god_change_index: i32,
-    #[rename(name = "m_FirstUnitItemListIndex")]
-    pub m_first_unit_item_list_index: i32,
-    #[rename(name = "m_ReadIndex")]
-    pub m_read_index: i32,
-    #[rename(name = "m_IsReadPhaseBegin")]
-    pub m_is_read_phase_begin: bool,
-    #[rename(name = "m_SavedBattleType")]
-    pub m_saved_battle_type: crate::app::gameconfig::GameConfig_AnimeType,
-    #[rename(name = "m_SavedSupportType")]
-    pub m_saved_support_type: crate::app::gameconfig::GameConfig_AnimeType,
-    #[rename(name = "m_SavedEngageAnim")]
-    pub m_saved_engage_anim: crate::app::gameconfig::GameConfig_EngageAnimeType,
-    #[rename(name = "m_RelayTakeOverTurns")]
-    pub m_relay_take_over_turns: crate::system::collections::generic::list_1::List_1<u8>,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_Replay {
-    #[doc = "`OnInitialize()` overload"]
-    #[method(name = "OnInitialize", args = 0)]
-    pub fn on_initialize(self) -> ();
-
-    #[doc = "`OnDelete()` overload"]
-    #[method(name = "OnDelete", args = 0)]
-    pub fn on_delete(self) -> ();
-
-    #[doc = "`Begin(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "Begin", args = 1)]
-    pub fn begin(self, super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`End()` overload"]
-    #[method(name = "End", args = 0)]
-    pub fn end(self) -> ();
-
-    #[doc = "`Split()` overload"]
-    #[method(name = "Split", args = 0)]
-    pub fn split(self) -> ();
-
-    #[doc = "`EngageCancel(crate::app::unit::Unit)` overload"]
-    #[method(name = "EngageCancel", args = 1)]
-    pub fn engage_cancel(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`GodChangeCancel(crate::app::unit::Unit)` overload"]
-    #[method(name = "GodChangeCancel", args = 1)]
-    pub fn god_change_cancel(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`GetCommandEngage()` overload"]
-    #[method(name = "GetCommandEngage", args = 0)]
-    pub fn get_command_engage(self) -> i32;
-
-    #[doc = "`GetCommandGodChange()` overload"]
-    #[method(name = "GetCommandGodChange", args = 0)]
-    pub fn get_command_god_change(self) -> i32;
-
-    #[doc = "`GetCommandUnitItemList()` overload"]
-    #[method(name = "GetCommandUnitItemList", args = 0)]
-    pub fn get_command_unit_item_list(self) -> i32;
-
-    #[doc = "`GetUnitForCommandEngage(i32)` overload"]
-    #[method(name = "GetUnitForCommandEngage", args = 1)]
-    pub fn get_unit_for_command_engage(self, command_index: i32) -> crate::app::unit::Unit;
-
-    #[doc = "`GetUnitForCommandGodChange(i32)` overload"]
-    #[method(name = "GetUnitForCommandGodChange", args = 1)]
-    pub fn get_unit_for_command_god_change(self, command_index: i32) -> crate::app::unit::Unit;
-
-    #[doc = "`GetUnitForCommandUnitItemList(i32)` overload"]
-    #[method(name = "GetUnitForCommandUnitItemList", args = 1)]
-    pub fn get_unit_for_command_unit_item_list(self, command_index: i32) -> crate::app::unit::Unit;
-
-    #[doc = "`AfterCommandStackCancel(crate::app::unit::Unit)` overload"]
-    #[method(name = "AfterCommandStackCancel", args = 1)]
-    pub fn after_command_stack_cancel(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`SetReadMode()` overload"]
-    #[method(name = "SetReadMode", args = 0)]
-    pub fn set_read_mode(self) -> ();
-
-    #[doc = "`IsReadMode()` overload"]
-    #[method(name = "IsReadMode", args = 0)]
-    pub fn is_read_mode(self) -> bool;
-
-    #[doc = "`Read()` overload"]
-    #[method(name = "Read", args = 0)]
-    pub fn read(self) -> bool;
-
-    #[doc = "`HasReadData()` overload"]
-    #[method(name = "HasReadData", args = 0)]
-    pub fn has_read_data(self) -> bool;
-
-    #[doc = "`IsReadDataLastTurn()` overload"]
-    #[method(name = "IsReadDataLastTurn", args = 0)]
-    pub fn is_read_data_last_turn(self) -> bool;
-
-    #[doc = "`SkipReadDataToLastTurn()` overload"]
-    #[method(name = "SkipReadDataToLastTurn", args = 0)]
-    pub fn skip_read_data_to_last_turn(self) -> ();
-
-    #[doc = "`GetReadIndexAboutLastTurn(i32, i32)` overload"]
-    #[method(name = "GetReadIndexAboutLastTurn", args = 2)]
-    pub fn get_read_index_about_last_turn(self, last_turn_index: i32, threshold_index: i32) -> ();
-
-    #[doc = "`FindReadIndexOfLastTurn()` overload"]
-    #[method(name = "FindReadIndexOfLastTurn", args = 0)]
-    pub fn find_read_index_of_last_turn(self) -> i32;
-
-    #[doc = "`FindReadIndexOfPrevPhaseEnd(i32)` overload"]
-    #[method(name = "FindReadIndexOfPrevPhaseEnd", args = 1)]
-    pub fn find_read_index_of_prev_phase_end(self, phase_begin_index: i32) -> i32;
-
-    #[doc = "`FindReadIndexOfSkippedPhaseNext(i32)` overload"]
-    #[method(name = "FindReadIndexOfSkippedPhaseNext", args = 1)]
-    pub fn find_read_index_of_skipped_phase_next(self, start_index: i32) -> i32;
-
-    #[doc = "`EndReadMode()` overload"]
-    #[method(name = "EndReadMode", args = 0)]
-    pub fn end_read_mode(self) -> ();
-
-    #[doc = "`RegisterAllUnits()` overload"]
-    #[method(name = "RegisterAllUnits", args = 0)]
-    pub fn register_all_units(self) -> ();
-
-    #[doc = "`RegisterAppearanceUnit(crate::app::unit::Unit)` overload"]
-    #[method(name = "RegisterAppearanceUnit", args = 1)]
-    pub fn register_appearance_unit(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`RegisterLeavingUnit(crate::app::unit::Unit)` overload"]
-    #[method(name = "RegisterLeavingUnit", args = 1)]
-    pub fn register_leaving_unit(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Leaving(crate::app::unit::Unit)` overload"]
-    #[method(name = "Leaving", args = 1)]
-    pub fn leaving(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`GetAppearanceAndLeavingIndexes(::unity2::Array<i32>, ::unity2::Array<i32>)` overload"]
-    #[method(name = "GetAppearanceAndLeavingIndexes", args = 2)]
-    pub fn get_appearance_and_leaving_indexes(
-        self,
-        appearance_indexes: ::unity2::Array<i32>,
-        leaving_indexes: ::unity2::Array<i32>,
-    ) -> bool;
-
-    #[doc = "`CreateAppearanceUnit(i32)` overload"]
-    #[method(name = "CreateAppearanceUnit", args = 1)]
-    pub fn create_appearance_unit(self, index: i32) -> crate::app::unit::Unit;
-
-    #[doc = "`GetLeavingUnit(i32)` overload"]
-    #[method(name = "GetLeavingUnit", args = 1)]
-    pub fn get_leaving_unit(self, index: i32) -> crate::app::unit::Unit;
-
-    #[doc = "`RegisterRelayTakeOverTiming()` overload"]
-    #[method(name = "RegisterRelayTakeOverTiming", args = 0)]
-    pub fn register_relay_take_over_timing(self) -> ();
-
-    #[doc = "`IsRelayTakeOverTiming()` overload"]
-    #[method(name = "IsRelayTakeOverTiming", args = 0)]
-    pub fn is_relay_take_over_timing(self) -> bool;
-
-    #[doc = "`DoTurnSave(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "DoTurnSave", args = 1)]
-    pub fn do_turn_save(self, super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Serialize", args = 1)]
-    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Deserialize", args = 1)]
-    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`CanWrite()` overload"]
-    #[method(name = "CanWrite", args = 0)]
-    pub fn can_write(self) -> bool;
-
-    #[doc = "`ClearSavedCommandIndex()` overload"]
-    #[method(name = "ClearSavedCommandIndex", args = 0)]
-    pub fn clear_saved_command_index(self) -> ();
-
-    #[doc = "`SetPlayersToReplay()` overload"]
-    #[method(name = "SetPlayersToReplay", args = 0)]
-    pub fn set_players_to_replay(self) -> ();
-
-    #[doc = "`SetReplayPlayerForRelay()` overload"]
-    #[method(name = "SetReplayPlayerForRelay", args = 0)]
-    pub fn set_replay_player_for_relay(self) -> ();
-
-    #[doc = "`SerializeInitial(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "SerializeInitial", args = 1)]
-    pub fn serialize_initial(self, super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`DeserializeInitial()` overload"]
-    #[method(name = "DeserializeInitial", args = 0)]
-    pub fn deserialize_initial(self) -> ();
-
-    #[doc = "`SerializeSnapshot(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "SerializeSnapshot", args = 1)]
-    pub fn serialize_snapshot(stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`DeserializeSnapshot(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "DeserializeSnapshot", args = 1)]
-    pub fn deserialize_snapshot(stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`DbgDump()` overload"]
-    #[method(name = "DbgDump", args = 0)]
-    pub fn dbg_dump(self) -> ();
-
-    #[doc = "`PhaseBegin()` overload"]
-    #[method(name = "PhaseBegin", args = 0)]
-    pub fn phase_begin(self) -> ();
-
-    #[doc = "`PhaseNext()` overload"]
-    #[method(name = "PhaseNext", args = 0)]
-    pub fn phase_next(self) -> ();
-
-    #[doc = "`CancelUnitCommand()` overload"]
-    #[method(name = "CancelUnitCommand", args = 0)]
-    pub fn cancel_unit_command(self) -> ();
-
-    #[doc = "`Mind()` overload"]
-    #[method(name = "Mind", args = 0)]
-    pub fn mind(self) -> ();
-
-    #[doc = "`Engage(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "Engage", args = 2)]
-    pub fn engage(self, unit: crate::app::unit::Unit, link_unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`OverwriteEngagePos(crate::app::stream_2::Stream_2, i32, i32)` overload"]
-    #[method(name = "OverwriteEngagePos", args = 3)]
-    pub fn overwrite_engage_pos(self, stream: crate::app::stream_2::Stream_2, x: i32, z: i32)
-        -> ();
-
-    #[doc = "`GodChange(crate::app::unit::Unit)` overload"]
-    #[method(name = "GodChange", args = 1)]
-    pub fn god_change(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`OverwriteGodChangePos(crate::app::stream_2::Stream_2, i32, i32)` overload"]
-    #[method(name = "OverwriteGodChangePos", args = 3)]
-    pub fn overwrite_god_change_pos(
-        self,
-        stream: crate::app::stream_2::Stream_2,
-        x: i32,
-        z: i32,
-    ) -> ();
-
-    #[doc = "`ToggleGodChangeEnabled(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "ToggleGodChangeEnabled", args = 1)]
-    pub fn toggle_god_change_enabled(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Trade(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "Trade", args = 2)]
-    pub fn trade(self, from_unit: crate::app::unit::Unit, to_unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Trade(crate::app::unit::Unit)` overload"]
-    #[method(name = "Trade", args = 1)]
-    pub fn trade_2(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`EquipItem(crate::app::unit::Unit)` overload"]
-    #[method(name = "EquipItem", args = 1)]
-    pub fn equip_item(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`TakeOffItem(crate::app::unit::Unit)` overload"]
-    #[method(name = "TakeOffItem", args = 1)]
-    pub fn take_off_item(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`SortItem(crate::app::unit::Unit)` overload"]
-    #[method(name = "SortItem", args = 1)]
-    pub fn sort_item(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`PutOffItem(crate::app::unit::Unit, bool)` overload"]
-    #[method(name = "PutOffItem", args = 2)]
-    pub fn put_off_item(self, unit: crate::app::unit::Unit, from_menu: bool) -> ();
-
-    #[doc = "`UnitItemList(crate::app::unit::Unit)` overload"]
-    #[method(name = "UnitItemList", args = 1)]
-    pub fn unit_item_list(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Dead(crate::app::unit::Unit)` overload"]
-    #[method(name = "Dead", args = 1)]
-    pub fn dead(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Dispos(crate::app::unit::Unit)` overload"]
-    #[method(name = "Dispos", args = 1)]
-    pub fn dispos(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`VisionDelete(crate::app::unit::Unit)` overload"]
-    #[method(name = "VisionDelete", args = 1)]
-    pub fn vision_delete(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Surrender()` overload"]
-    #[method(name = "Surrender", args = 0)]
-    pub fn surrender(self) -> ();
-
-    #[doc = "`SummonDelete(crate::app::unit::Unit)` overload"]
-    #[method(name = "SummonDelete", args = 1)]
-    pub fn summon_delete(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`ReadOne(i32)` overload"]
-    #[method(name = "ReadOne", args = 1)]
-    pub fn read_one(self, index: i32) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
-
-    #[doc = "`ReadPhaseBegin()` overload"]
-    #[method(name = "ReadPhaseBegin", args = 0)]
-    pub fn read_phase_begin(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
-
-    #[doc = "`ReadPhaseBegin(crate::app::force::Force_Type, crate::app::random_2::Random_2)` overload"]
-    #[method(name = "ReadPhaseBegin", args = 2)]
-    pub fn read_phase_begin_2(
-        self,
-        force: crate::app::force::Force_Type,
-        random: crate::app::random_2::Random_2,
-    ) -> ();
-
-    #[doc = "`ReadPhaseNext()` overload"]
-    #[method(name = "ReadPhaseNext", args = 0)]
-    pub fn read_phase_next(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
-
-    #[doc = "`ReadMind()` overload"]
-    #[method(name = "ReadMind", args = 0)]
-    pub fn read_mind(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
-
-    #[doc = "`ReadEngage()` overload"]
-    #[method(name = "ReadEngage", args = 0)]
-    pub fn read_engage(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
-
-    #[doc = "`ReadEngage(crate::app::unit::Unit)` overload"]
-    #[method(name = "ReadEngage", args = 1)]
-    pub fn read_engage_2(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`ReadGodChange()` overload"]
-    #[method(name = "ReadGodChange", args = 0)]
-    pub fn read_god_change(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
-
-    #[doc = "`ReadGodChange(crate::app::unit::Unit)` overload"]
-    #[method(name = "ReadGodChange", args = 1)]
-    pub fn read_god_change_2(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`ReadUnitItemList()` overload"]
-    #[method(name = "ReadUnitItemList", args = 0)]
-    pub fn read_unit_item_list(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
-
-    #[doc = "`ReadUnitItemList(crate::app::unit::Unit)` overload"]
-    #[method(name = "ReadUnitItemList", args = 1)]
-    pub fn read_unit_item_list_2(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`ReadSurrender()` overload"]
-    #[method(name = "ReadSurrender", args = 0)]
-    pub fn read_surrender(self) -> crate::app::maphistory::MapHistory_Replay_ReadResult;
-
-    #[doc = "`SetupMindRoutes(crate::app::unit::Unit)` overload"]
-    #[method(name = "SetupMindRoutes", args = 1)]
-    pub fn setup_mind_routes(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_Replay {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_Replay),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_ReplayMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_SidMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.SidMap")]
-# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_SidMap >)]
-pub struct MapHistory_SidMap {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_SidMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_SidMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_SidMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_SidMapMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_RewindRelianceMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.RewindRelianceMap")]
-# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maphistory :: MapHistory_RewindRelianceMap >)]
-pub struct MapHistory_RewindRelianceMap {
-    #[rename(name = "m_Ids")]
-    pub m_ids: crate::system::collections::generic::list_1::List_1<u32>,
-    #[rename(name = "m_IsUnitMapVer")]
-    pub m_is_unit_map_ver: bool,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_RewindRelianceMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Entry(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "Entry", args = 2)]
-    pub fn entry(self, unit_a: crate::app::unit::Unit, unit_b: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`TryGetRelianceData(u32)` overload"]
-    #[method(name = "TryGetRelianceData", args = 1)]
-    pub fn try_get_reliance_data(self, id: u32) -> crate::app::unitreliancedata::UnitRelianceData;
-
-    #[doc = "`GetPids(u32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "GetPids", args = 3)]
-    pub fn get_pids(
-        self,
-        id: u32,
-        pid_a: ::unity2::Il2CppString,
-        pid_b: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`GetUnits(u32, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "GetUnits", args = 3)]
-    pub fn get_units(
-        self,
-        id: u32,
-        unit_a: crate::app::unit::Unit,
-        unit_b: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`get_Ids()` overload"]
-    #[method(name = "get_Ids", args = 0)]
-    pub fn get_ids(self) -> crate::system::collections::generic::list_1::List_1<u32>;
-
-    #[doc = "`get_Version()` overload"]
-    #[method(name = "get_Version", args = 0)]
-    pub fn get_version(self) -> i32;
-
-    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "OnSerialize", args = 1)]
-    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = "OnDeserialize", args = 2)]
-    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
-
-    #[doc = "`Index2Id(i32, i32)` overload"]
-    #[method(name = "Index2Id", args = 2)]
-    pub fn index2_id(map_history_index_a: i32, map_history_index_b: i32) -> u32;
-
-    #[doc = "`Id2Index(u32, i32, i32)` overload"]
-    #[method(name = "Id2Index", args = 3)]
-    pub fn id2_index(id: u32, map_history_index_a: i32, map_history_index_b: i32) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_RewindRelianceMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_RewindRelianceMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_RewindRelianceMapMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Replay_SaveAsyncThread.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.Replay.SaveAsyncThread")]
-#[parent(crate::system::object::Object)]
-pub struct MapHistory_Replay_SaveAsyncThread {
-    #[rename(name = "m_Lock")]
-    pub m_lock: ::unity2::IlInstance,
-    #[rename(name = "m_Status")]
-    pub m_status: crate::app::maphistory::MapHistory_Replay_SaveAsyncThread_Status,
-    #[rename(name = "m_SaveMethod")]
-    pub m_save_method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_Replay_SaveAsyncThread {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Start(crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod)` overload"]
-    #[method(name = "Start", args = 1)]
-    pub fn start(
-        self,
-        method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,
-    ) -> ();
-
-    #[doc = "`IsRunning()` overload"]
-    #[method(name = "IsRunning", args = 0)]
-    pub fn is_running(self) -> bool;
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy(self) -> ();
-
-    #[doc = "`ThreadFunction(crate::system::object::Object)` overload"]
-    #[method(name = "ThreadFunction", args = 1)]
-    pub fn thread_function(obj: crate::system::object::Object) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_Replay_SaveAsyncThread {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_Replay_SaveAsyncThread),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_Replay_SaveAsyncThreadMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_WorkLayerData.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapHistory_Rewind_WorkLayerData {
-    pub group: u8,
-    pub enable: bool,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_Rewind_WorkLayerData {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.Rewind.WorkLayerData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_Rewind_WorkLayerData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods(value)]
-impl MapHistory_Rewind_WorkLayerData {
-    #[doc = "`.ctor(i32, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, group: i32, enable: bool) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_IidMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.IidMap")]
-# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_IidMap >)]
-pub struct MapHistory_IidMap {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_IidMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_IidMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_IidMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_IidMapMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_ModeScope.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapHistory_Rewind_ModeScope {
-    pub m_prev_mode: crate::app::maphistory::MapHistory_Mode,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_Rewind_ModeScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.Rewind.ModeScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_Rewind_ModeScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods(value)]
-impl MapHistory_Rewind_ModeScope {
-    #[doc = "`.ctor(crate::app::maphistory::MapHistory_Mode)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, mode: crate::app::maphistory::MapHistory_Mode) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_ReplayUnitMap_Data.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapHistory_ReplayUnitMap_Data {}
-
-impl ::unity2::ClassIdentity for MapHistory_ReplayUnitMap_Data {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.ReplayUnitMap.Data";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_ReplayUnitMap_Data {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods(value)]
-impl MapHistory_ReplayUnitMap_Data {
-    #[doc = "`get_unit()` overload"]
-    #[method(name = "get_unit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`set_unit(crate::app::unit::Unit)` overload"]
-    #[method(name = "set_unit", args = 1)]
-    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
-
-    #[doc = "`IsUsed()` overload"]
-    #[method(name = "IsUsed", args = 0)]
-    pub fn is_used(self) -> bool;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_CommandReader.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.CommandReader")]
-#[parent(crate::app::stream_2::Stream_2)]
-pub struct MapHistory_CommandReader {
-    #[rename(name = "m_Type")]
-    pub m_type: u8,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_CommandReader {
-    #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, command_stream_buffer: ::unity2::Array<u8>) -> ();
-
-    #[doc = "`Prepare(crate::app::maphistory::MapHistory_Command)` overload"]
-    #[method(name = "Prepare", args = 1)]
-    pub fn prepare(self, command: crate::app::maphistory::MapHistory_Command) -> ();
-
-    #[doc = "`ReadVariableKey()` overload"]
-    #[method(name = "ReadVariableKey", args = 0)]
-    pub fn read_variable_key(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadVariableKey(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "ReadVariableKey", args = 1)]
-    pub fn read_variable_key_2(stream: crate::app::stream_2::Stream_2) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadGid()` overload"]
-    #[method(name = "ReadGid", args = 0)]
-    pub fn read_gid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadGodData()` overload"]
-    #[method(name = "ReadGodData", args = 0)]
-    pub fn read_god_data(self) -> crate::app::goddata::GodData;
-
-    #[doc = "`ReadTid()` overload"]
-    #[method(name = "ReadTid", args = 0)]
-    pub fn read_tid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadTid(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "ReadTid", args = 1)]
-    pub fn read_tid_2(stream: crate::app::stream_2::Stream_2) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadIid()` overload"]
-    #[method(name = "ReadIid", args = 0)]
-    pub fn read_iid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadItemData()` overload"]
-    #[method(name = "ReadItemData", args = 0)]
-    pub fn read_item_data(self) -> crate::app::itemdata::ItemData;
-
-    #[doc = "`ReadPid()` overload"]
-    #[method(name = "ReadPid", args = 0)]
-    pub fn read_pid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`SkipPid()` overload"]
-    #[method(name = "SkipPid", args = 0)]
-    pub fn skip_pid(self) -> ();
-
-    #[doc = "`ReadJid()` overload"]
-    #[method(name = "ReadJid", args = 0)]
-    pub fn read_jid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`SkipJid()` overload"]
-    #[method(name = "SkipJid", args = 0)]
-    pub fn skip_jid(self) -> ();
-
-    #[doc = "`ReadSid()` overload"]
-    #[method(name = "ReadSid", args = 0)]
-    pub fn read_sid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadSkillData()` overload"]
-    #[method(name = "ReadSkillData", args = 0)]
-    pub fn read_skill_data(self) -> crate::app::skilldata::SkillData;
-
-    #[doc = "`ReadEffectName()` overload"]
-    #[method(name = "ReadEffectName", args = 0)]
-    pub fn read_effect_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadMaterialString()` overload"]
-    #[method(name = "ReadMaterialString", args = 0)]
-    pub fn read_material_string(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadRnid()` overload"]
-    #[method(name = "ReadRnid", args = 0)]
-    pub fn read_rnid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ReadRandom(crate::app::random_2::Random_2)` overload"]
-    #[method(name = "ReadRandom", args = 1)]
-    pub fn read_random(self, random: crate::app::random_2::Random_2) -> ();
-
-    #[doc = "`get_Type()` overload"]
-    #[method(name = "get_Type", args = 0)]
-    pub fn get_type(self) -> i32;
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_CommandReader {
-    #[doc = "`.ctor(::unity2::Array<u8>)` — overload selector"]
-    pub fn new(command_stream_buffer: ::unity2::Array<u8>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_CommandReader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_CommandReaderMethods>::ctor(this, command_stream_buffer);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Rewind_OverlapData.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.Rewind.OverlapData")]
-#[parent(crate::app::pool::Pool_Node)]
-pub struct MapHistory_Rewind_OverlapData {
-    #[rename(name = "hasData")]
-    pub has_data: bool,
-    #[rename(name = "x")]
-    pub x: u8,
-    #[rename(name = "z")]
-    pub z: u8,
-    #[rename(name = "hp")]
-    pub hp: u8,
-    #[rename(name = "life")]
-    pub life: u8,
-    #[rename(name = "turn")]
-    pub turn: i16,
-    #[rename(name = "phase")]
-    pub phase: u8,
-    #[rename(name = "tidMapIndex")]
-    pub tid_map_index: u8,
-    #[rename(name = "isDone")]
-    pub is_done: bool,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_Rewind_OverlapData {
-    #[doc = "`OnEnter()` overload"]
-    #[method(name = "OnEnter", args = 0)]
-    pub fn on_enter(self) -> ();
-
-    #[doc = "`OnExit()` overload"]
-    #[method(name = "OnExit", args = 0)]
-    pub fn on_exit(self) -> ();
-
-    #[doc = "`Set(crate::app::mapoverlap::MapOverlap_Data)` overload"]
-    #[method(name = "Set", args = 1)]
-    pub fn set(self, map_overlap_data: crate::app::mapoverlap::MapOverlap_Data) -> ();
-
-    #[doc = "`Set(crate::app::maphistory::MapHistory_Rewind_OverlapData)` overload"]
-    #[method(name = "Set", args = 1)]
-    pub fn set_2(self, other: crate::app::maphistory::MapHistory_Rewind_OverlapData) -> ();
-
-    #[doc = "`IsSame(crate::app::mapoverlap::MapOverlap_Data)` overload"]
-    #[method(name = "IsSame", args = 1)]
-    pub fn is_same(self, map_overlap_data: crate::app::mapoverlap::MapOverlap_Data) -> bool;
-
-    #[doc = "`TryGetTerrain()` overload"]
-    #[method(name = "TryGetTerrain", args = 0)]
-    pub fn try_get_terrain(self) -> crate::app::terraindata_2::TerrainData_2;
-
-    #[doc = "`GetKey()` overload"]
-    #[method(name = "GetKey", args = 0)]
-    pub fn get_key(self) -> i32;
-
-    #[doc = "`GetKey(i32, i32)` overload"]
-    #[method(name = "GetKey", args = 2)]
-    pub fn get_key_2(x: i32, z: i32) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_Rewind_OverlapData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_Rewind_OverlapData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_Rewind_OverlapDataMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_PidMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.PidMap")]
-# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_PidMap >)]
-pub struct MapHistory_PidMap {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_PidMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_PidMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_PidMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_PidMapMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_LatestInspectorData.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapHistory_Rewind_LatestInspectorData {
-    pub x: u8,
-    pub z: u8,
-    pub is_checked: bool,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_Rewind_LatestInspectorData {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.Rewind.LatestInspectorData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_Rewind_LatestInspectorData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods(value)]
-impl MapHistory_Rewind_LatestInspectorData {
-    #[doc = "`.ctor(i32, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, x: i32, z: i32) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_CommandWriter.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.CommandWriter")]
-#[parent(crate::app::stream_2::Stream_2)]
-pub struct MapHistory_CommandWriter {
-    #[static_field]
-    #[rename(name = "BufferSize")]
-    pub buffer_size: i32,
-    #[rename(name = "m_Type")]
-    pub m_type: u8,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_CommandWriter {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Prepare(u8)` overload"]
-    #[method(name = "Prepare", args = 1)]
-    pub fn prepare(self, r#type: u8) -> ();
-
-    #[doc = "`WriteVariableKey(::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteVariableKey", args = 1)]
-    pub fn write_variable_key(self, key: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`WriteVariableKey(crate::app::stream_2::Stream_2, ::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteVariableKey", args = 2)]
-    pub fn write_variable_key_2(
-        stream: crate::app::stream_2::Stream_2,
-        key: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`WriteGid(::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteGid", args = 1)]
-    pub fn write_gid(self, gid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`WriteTid(::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteTid", args = 1)]
-    pub fn write_tid(self, tid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`WriteTid(crate::app::stream_2::Stream_2, ::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteTid", args = 2)]
-    pub fn write_tid_2(stream: crate::app::stream_2::Stream_2, tid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`WriteIid(::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteIid", args = 1)]
-    pub fn write_iid(self, iid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`WritePid(::unity2::Il2CppString)` overload"]
-    #[method(name = "WritePid", args = 1)]
-    pub fn write_pid(self, pid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`WriteJid(::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteJid", args = 1)]
-    pub fn write_jid(self, jid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`WriteSid(::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteSid", args = 1)]
-    pub fn write_sid(self, sid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`WriteEffectName(::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteEffectName", args = 1)]
-    pub fn write_effect_name(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`WriteMaterialString(::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteMaterialString", args = 1)]
-    pub fn write_material_string(self, str: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`WriteRnid(::unity2::Il2CppString)` overload"]
-    #[method(name = "WriteRnid", args = 1)]
-    pub fn write_rnid(self, rnid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`WriteRandom(crate::app::random_2::Random_2)` overload"]
-    #[method(name = "WriteRandom", args = 1)]
-    pub fn write_random(self, random: crate::app::random_2::Random_2) -> ();
-
-    #[doc = "`get_Type()` overload"]
-    #[method(name = "get_Type", args = 0)]
-    pub fn get_type(self) -> i32;
-
-    #[doc = "`get_Size()` overload"]
-    #[method(name = "get_Size", args = 0)]
-    pub fn get_size(self) -> i32;
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_CommandWriter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_CommandWriter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_CommandWriterMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Replay_SaveAsyncThread_Status.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapHistory_Replay_SaveAsyncThread_Status {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_Replay_SaveAsyncThread_Status {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.Replay.SaveAsyncThread.Status";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_Replay_SaveAsyncThread_Status {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapHistory_Replay_SaveAsyncThread_Status {
-    pub fn wait() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn run() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_UnitMapBase_2_NoEmptyFunction.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.UnitMapBase`2.NoEmptyFunction")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-#[parent(crate::system::delegate::Delegate)]
-#[parent(crate::system::object::Object)]
-pub struct MapHistory_UnitMapBase_2_NoEmptyFunction<
-    T0: ::unity2::ClassIdentity,
-    T1: ::unity2::ClassIdentity,
-> {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
-    MapHistory_UnitMapBase_2_NoEmptyFunction<T0, T1>
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity>
-    MapHistory_UnitMapBase_2_NoEmptyFunction<T0, T1>
-{
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_UnitMapBase_2_NoEmptyFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_UnitMapBase_2_NoEmptyFunctionMethods<T0, T1>>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_Replay_TurnSave.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.Replay.TurnSave")]
-# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maphistory :: MapHistory_Replay_TurnSave >)]
-pub struct MapHistory_Replay_TurnSave {
-    #[static_field]
-    #[rename(name = "StreamBufferSize")]
-    pub stream_buffer_size: i32,
-    #[rename(name = "m_StreamBuffer")]
-    pub m_stream_buffer: ::unity2::Array<u8>,
-    #[rename(name = "m_Stream")]
-    pub m_stream: crate::app::stream_2::Stream_2,
-    #[rename(name = "m_SaveAsyncMethod")]
-    pub m_save_async_method: crate::app::maphistory::MapHistory_Replay_SaveAsync_SaveMethod,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_Replay_TurnSave {
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`Write(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "Write", args = 1)]
-    pub fn write(self, super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`Read()` overload"]
-    #[method(name = "Read", args = 0)]
-    pub fn read(self) -> ();
-
-    #[doc = "`WriteToStream()` overload"]
-    #[method(name = "WriteToStream", args = 0)]
-    pub fn write_to_stream(self) -> ();
-
-    #[doc = "`ReadFromStream()` overload"]
-    #[method(name = "ReadFromStream", args = 0)]
-    pub fn read_from_stream(self) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`get_Version()` overload"]
-    #[method(name = "get_Version", args = 0)]
-    pub fn get_version(self) -> i32;
-
-    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "OnSerialize", args = 1)]
-    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = "OnDeserialize", args = 2)]
-    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_Replay_TurnSave {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_Replay_TurnSave),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_Replay_TurnSaveMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_IdMapBase_1.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.IdMapBase`1")]
-# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < T0 >)]
-#[parent(crate::system::object::Object)]
-pub struct MapHistory_IdMapBase_1<T0: ::unity2::ClassIdentity> {
-    #[rename(name = "m_Ids")]
-    pub m_ids: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    #[rename(name = "m_IdIndexDict")]
-    pub m_id_index_dict:
-        crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString, u8>,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> MapHistory_IdMapBase_1<T0> {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, capacity: i32) -> ();
-
-    #[doc = "`EntryInternal(::unity2::Il2CppString)` overload"]
-    #[method(name = "EntryInternal", args = 1)]
-    pub fn entry_internal(self, id: ::unity2::Il2CppString) -> i32;
-
-    #[doc = "`EntryInternal(::unity2::Il2CppString, u8)` overload"]
-    #[method(name = "EntryInternal", args = 2)]
-    pub fn entry_internal_2(self, id: ::unity2::Il2CppString, index: u8) -> i32;
-
-    #[doc = "`GetNextIndex()` overload"]
-    #[method(name = "GetNextIndex", args = 0)]
-    pub fn get_next_index(self) -> u8;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`TryGetInternal(i32)` overload"]
-    #[method(name = "TryGetInternal", args = 1)]
-    pub fn try_get_internal(self, index: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`DbgError(::unity2::Il2CppString)` overload"]
-    #[method(name = "DbgError", args = 1)]
-    pub fn dbg_error(self, message: ::unity2::Il2CppString) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl<T0: ::unity2::ClassIdentity> MapHistory_IdMapBase_1<T0> {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_IdMapBase_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_IdMapBase_1Methods<T0>>::ctor(this, capacity);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_JidMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.JidMap")]
-# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_JidMap >)]
-pub struct MapHistory_JidMap {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_JidMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_JidMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_JidMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_JidMapMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_ReplayCommandReader.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.ReplayCommandReader")]
-#[parent(crate::app::maphistory::MapHistory_CommandReader)]
-pub struct MapHistory_ReplayCommandReader {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_ReplayCommandReader {
-    #[doc = "`.ctor(::unity2::Array<u8>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, command_stream_buffer: ::unity2::Array<u8>) -> ();
-
-    #[doc = "`ReadUnit()` overload"]
-    #[method(name = "ReadUnit", args = 0)]
-    pub fn read_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`ReadUnitByIndex()` overload"]
-    #[method(name = "ReadUnitByIndex", args = 0)]
-    pub fn read_unit_by_index(self) -> i32;
-
-    #[doc = "`ReadUnitItem(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "ReadUnitItem", args = 1)]
-    pub fn read_unit_item(self, item: crate::app::unititem::UnitItem) -> ();
-
-    #[doc = "`ReadUnitItemList(crate::app::unititemlist::UnitItemList)` overload"]
-    #[method(name = "ReadUnitItemList", args = 1)]
-    pub fn read_unit_item_list(self, item_list: crate::app::unititemlist::UnitItemList) -> ();
-
-    #[doc = "`ReadMultiTargets(crate::app::mapmind::MapMind_MultiTargets)` overload"]
-    #[method(name = "ReadMultiTargets", args = 1)]
-    pub fn read_multi_targets(self, targets: crate::app::mapmind::MapMind_MultiTargets) -> ();
-
-    #[doc = "`ReadForce()` overload"]
-    #[method(name = "ReadForce", args = 0)]
-    pub fn read_force(self) -> crate::app::force::Force_Type;
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_ReplayCommandReader {
-    #[doc = "`.ctor(::unity2::Array<u8>)` — overload selector"]
-    pub fn new(command_stream_buffer: ::unity2::Array<u8>) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_ReplayCommandReader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_ReplayCommandReaderMethods>::ctor(this, command_stream_buffer);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_GidMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.GidMap")]
-# [parent (crate :: app :: maphistory :: MapHistory_IdMap_1 < crate :: app :: maphistory :: MapHistory_GidMap >)]
-pub struct MapHistory_GidMap {}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_GidMap {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_GidMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_GidMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_GidMapMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_ReplayAppearanceMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.ReplayAppearanceMap")]
-# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maphistory :: MapHistory_ReplayAppearanceMap >)]
-pub struct MapHistory_ReplayAppearanceMap {
-    #[static_field]
-    #[rename(name = "MaxTurn")]
-    pub max_turn: i32,
-    #[static_field]
-    #[rename(name = "MaxAppearancePerTurn")]
-    pub max_appearance_per_turn: i32,
-    #[static_field]
-    #[rename(name = "MaxLeavingPerTurn")]
-    pub max_leaving_per_turn: i32,
-    #[static_field]
-    #[rename(name = "MaxAppearance")]
-    pub max_appearance: i32,
-    #[static_field]
-    #[rename(name = "MaxLeaving")]
-    pub max_leaving: i32,
-    #[static_field]
-    #[rename(name = "AppearanceStreamBufferSize")]
-    pub appearance_stream_buffer_size: i32,
-    #[rename(name = "m_Appearances")]
-    pub m_appearances:
-        ::unity2::Array<crate::app::maphistory::MapHistory_ReplayAppearanceMap_Appearance>,
-    #[rename(name = "m_AppearanceCount")]
-    pub m_appearance_count: i32,
-    #[rename(name = "m_Leavings")]
-    pub m_leavings: ::unity2::Array<crate::app::maphistory::MapHistory_ReplayAppearanceMap_Leaving>,
-    #[rename(name = "m_LeavingCount")]
-    pub m_leaving_count: i32,
-    #[rename(name = "m_RetAppearanceIndexes")]
-    pub m_ret_appearance_indexes: ::unity2::Array<i32>,
-    #[rename(name = "m_RetLeavingIndexes")]
-    pub m_ret_leaving_indexes: ::unity2::Array<i32>,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl MapHistory_ReplayAppearanceMap {
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`RegisterAppearanceUnit(crate::app::unit::Unit)` overload"]
-    #[method(name = "RegisterAppearanceUnit", args = 1)]
-    pub fn register_appearance_unit(self, unit: crate::app::unit::Unit) -> i32;
-
-    #[doc = "`RegisterLeavingUnit(crate::app::unit::Unit)` overload"]
-    #[method(name = "RegisterLeavingUnit", args = 1)]
-    pub fn register_leaving_unit(self, unit: crate::app::unit::Unit) -> i32;
-
-    #[doc = "`GetIndexes(::unity2::Array<i32>, ::unity2::Array<i32>)` overload"]
-    #[method(name = "GetIndexes", args = 2)]
-    pub fn get_indexes(
-        self,
-        appearance_indexes: ::unity2::Array<i32>,
-        leaving_indexes: ::unity2::Array<i32>,
-    ) -> bool;
-
-    #[doc = "`CreateAppearanceUnit(i32)` overload"]
-    #[method(name = "CreateAppearanceUnit", args = 1)]
-    pub fn create_appearance_unit(self, index: i32) -> crate::app::unit::Unit;
-
-    #[doc = "`GetLeavingUnit(i32)` overload"]
-    #[method(name = "GetLeavingUnit", args = 1)]
-    pub fn get_leaving_unit(self, index: i32) -> crate::app::unit::Unit;
-
-    #[doc = "`SerializeForAppearance(crate::app::stream_2::Stream_2, crate::app::unit::Unit)` overload"]
-    #[method(name = "SerializeForAppearance", args = 2)]
-    pub fn serialize_for_appearance(
-        self,
-        stream: crate::app::stream_2::Stream_2,
-        unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`DeserializeForAppearance(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "DeserializeForAppearance", args = 1)]
-    pub fn deserialize_for_appearance(
-        self,
-        stream: crate::app::stream_2::Stream_2,
-    ) -> crate::app::unit::Unit;
-
-    #[doc = "`get_Version()` overload"]
-    #[method(name = "get_Version", args = 0)]
-    pub fn get_version(self) -> i32;
-
-    #[doc = "`OnSerialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "OnSerialize", args = 1)]
-    pub fn on_serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = "OnDeserialize", args = 2)]
-    pub fn on_deserialize(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl MapHistory_ReplayAppearanceMap {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_ReplayAppearanceMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_ReplayAppearanceMapMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maphistory/MapHistory_UnitMapBase_2.md")))]
-#[::unity2::class(namespace = "App", name = "MapHistory.UnitMapBase`2")]
-# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < T0 >)]
-#[parent(crate::system::object::Object)]
-pub struct MapHistory_UnitMapBase_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {
-    #[static_field]
-    #[rename(name = "MaxDataCount")]
-    pub max_data_count: i32,
-    #[rename(name = "m_Data")]
-    pub m_data: ::unity2::Array<T1>,
-    #[rename(name = "m_NoEmptyFunction")]
-    pub m_no_empty_function:
-        crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0, T1>,
-}
-
-#[cfg(feature = "app-maphistory")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> MapHistory_UnitMapBase_2<T0, T1> {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`EntryAll()` overload"]
-    #[method(name = "EntryAll", args = 0)]
-    pub fn entry_all(self) -> ();
-
-    #[doc = "`EntryAllImpl()` overload"]
-    #[method(name = "EntryAllImpl", args = 0)]
-    pub fn entry_all_impl(self) -> ();
-
-    #[doc = "`Entry(crate::app::unit::Unit)` overload"]
-    #[method(name = "Entry", args = 1)]
-    pub fn entry(self, unit: crate::app::unit::Unit) -> i32;
-
-    #[doc = "`Delete(crate::app::unit::Unit)` overload"]
-    #[method(name = "Delete", args = 1)]
-    pub fn delete(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Delete(i32)` overload"]
-    #[method(name = "Delete", args = 1)]
-    pub fn delete_2(self, index: i32) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`TryGet(i32, bool)` overload"]
-    #[method(name = "TryGet", args = 2)]
-    pub fn try_get(self, index: i32, with_error: bool) -> crate::app::unit::Unit;
-
-    #[doc = "`get_NoEmpty()` overload"]
-    #[method(name = "get_NoEmpty", args = 0)]
-    pub fn get_no_empty(
-        self,
-    ) -> crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0, T1>;
-
-    #[doc = "`set_NoEmpty(crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0,T1>)` overload"]
-    #[method(name = "set_NoEmpty", args = 1)]
-    pub fn set_no_empty(
-        self,
-        value: crate::app::maphistory::MapHistory_UnitMapBase_2_NoEmptyFunction<T0, T1>,
-    ) -> ();
-
-    #[doc = "`FindUnusedIndex()` overload"]
-    #[method(name = "FindUnusedIndex", args = 0)]
-    pub fn find_unused_index(self) -> i32;
-
-    #[doc = "`DbgError(::unity2::Il2CppString)` overload"]
-    #[method(name = "DbgError", args = 1)]
-    pub fn dbg_error(self, message: ::unity2::Il2CppString) -> ();
-}
-
-#[cfg(feature = "app-maphistory")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> MapHistory_UnitMapBase_2<T0, T1> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHistory_UnitMapBase_2),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHistory_UnitMapBase_2Methods<T0, T1>>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_RewindVariableType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapHistory_RewindVariableType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_RewindVariableType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.RewindVariableType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_RewindVariableType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapHistory_RewindVariableType {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn string() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn number() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_CommonType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapHistory_CommonType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_CommonType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.CommonType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_CommonType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapHistory_CommonType {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn split() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn custom() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maphistory/MapHistory_Rewind_SplitArgs.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapHistory_Rewind_SplitArgs {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapHistory_Rewind_SplitArgs {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHistory.Rewind.SplitArgs";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHistory_Rewind_SplitArgs {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapHistory_Rewind_SplitArgs {
-    pub fn default() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn pick_up() -> Self {
         Self { value: 1 }
     }
 }

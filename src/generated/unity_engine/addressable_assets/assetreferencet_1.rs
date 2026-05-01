@@ -6,7 +6,7 @@ use crate::unity_engine::addressable_assets::assetreference::AssetReference;
 use crate::unity_engine::addressable_assets::assetreference::IAssetReference;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/assetreferencet_1/AssetReferenceT_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/assetreferencet_1/AssetReferenceT_1.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.AddressableAssets",
     name = "AssetReferenceT`1"

@@ -14,51 +14,65 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineasset/TimelineAsset_DurationMode.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset_EditorSettings.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Timeline",
+    name = "TimelineAsset.EditorSettings"
 )]
-pub struct TimelineAsset_DurationMode {
-    pub value: i32,
+#[parent(crate::system::object::Object)]
+pub struct TimelineAsset_EditorSettings {
+    #[static_field]
+    #[rename(name = "kMinFps")]
+    pub k_min_fps: f32,
+    #[static_field]
+    #[rename(name = "kMaxFps")]
+    pub k_max_fps: f32,
+    #[static_field]
+    #[rename(name = "kDefaultFps")]
+    pub k_default_fps: f32,
+    #[rename(name = "m_Framerate")]
+    pub m_framerate: f32,
+    #[rename(name = "m_ScenePreview")]
+    pub m_scene_preview: bool,
 }
 
-impl ::unity2::ClassIdentity for TimelineAsset_DurationMode {
-    const NAMESPACE: &'static str = "UnityEngine.Timeline";
+#[cfg(feature = "unity_engine-timeline-timelineasset")]
+#[::unity2::methods]
+impl TimelineAsset_EditorSettings {
+    #[doc = "`get_fps()` overload"]
+    #[method(name = "get_fps", args = 0)]
+    pub fn get_fps(self) -> f32;
 
-    const NAME: &'static str = "TimelineAsset.DurationMode";
+    #[doc = "`set_fps(f32)` overload"]
+    #[method(name = "set_fps", args = 1)]
+    pub fn set_fps(self, value: f32) -> ();
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-timeline-timelineasset")]
+impl TimelineAsset_EditorSettings {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TimelineAsset_EditorSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITimelineAsset_EditorSettingsMethods>::ctor(this);
+        this
     }
 }
 
-impl ::unity2::IlType for TimelineAsset_DurationMode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TimelineAsset_DurationMode {
-    pub fn based_on_clips() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn fixed_length() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset.md"))]
 #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineAsset")]
 #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
 pub struct TimelineAsset {
@@ -361,60 +375,46 @@ impl TimelineAsset {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset_EditorSettings.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Timeline",
-    name = "TimelineAsset.EditorSettings"
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/timelineasset/TimelineAsset_DurationMode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
 )]
-#[parent(crate::system::object::Object)]
-pub struct TimelineAsset_EditorSettings {
-    #[static_field]
-    #[rename(name = "kMinFps")]
-    pub k_min_fps: f32,
-    #[static_field]
-    #[rename(name = "kMaxFps")]
-    pub k_max_fps: f32,
-    #[static_field]
-    #[rename(name = "kDefaultFps")]
-    pub k_default_fps: f32,
-    #[rename(name = "m_Framerate")]
-    pub m_framerate: f32,
-    #[rename(name = "m_ScenePreview")]
-    pub m_scene_preview: bool,
+pub struct TimelineAsset_DurationMode {
+    pub value: i32,
 }
 
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-#[::unity2::methods]
-impl TimelineAsset_EditorSettings {
-    #[doc = "`get_fps()` overload"]
-    #[method(name = "get_fps", args = 0)]
-    pub fn get_fps(self) -> f32;
+impl ::unity2::ClassIdentity for TimelineAsset_DurationMode {
+    const NAMESPACE: &'static str = "UnityEngine.Timeline";
 
-    #[doc = "`set_fps(f32)` overload"]
-    #[method(name = "set_fps", args = 1)]
-    pub fn set_fps(self, value: f32) -> ();
+    const NAME: &'static str = "TimelineAsset.DurationMode";
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
 }
 
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-impl TimelineAsset_EditorSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TimelineAsset_EditorSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITimelineAsset_EditorSettingsMethods>::ctor(this);
-        this
+impl ::unity2::IlType for TimelineAsset_DurationMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TimelineAsset_DurationMode {
+    pub fn based_on_clips() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn fixed_length() -> Self {
+        Self { value: 1 }
     }
 }

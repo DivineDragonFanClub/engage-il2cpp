@@ -6,7 +6,7 @@ use crate::unity_engine::scripting::preserveattribute::IPreserveAttribute;
 use crate::unity_engine::scripting::preserveattribute::PreserveAttribute;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/runtimeinitializeonloadmethodattribute/RuntimeInitializeOnLoadMethodAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/runtimeinitializeonloadmethodattribute/RuntimeInitializeOnLoadMethodAttribute.md"))]
 #[::unity2::class(
     namespace = "UnityEngine",
     name = "RuntimeInitializeOnLoadMethodAttribute"

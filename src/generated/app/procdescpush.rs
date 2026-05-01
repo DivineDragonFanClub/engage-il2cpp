@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescpush/ProcDescPush.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescpush/ProcDescPush.md"))]
 #[::unity2::class(namespace = "App", name = "ProcDescPush")]
 #[parent(crate::app::procdesc::ProcDesc)]
 pub struct ProcDescPush {

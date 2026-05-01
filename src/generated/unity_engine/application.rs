@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/application/Application.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/application/Application.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "Application")]
 #[parent(crate::system::object::Object)]
 pub struct Application {
@@ -125,7 +125,40 @@ impl Application {
     pub fn get_is_editor() -> bool;
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/application/Application_LogCallback.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/application/Application_LowMemoryCallback.md"))]
+#[::unity2::class(namespace = "UnityEngine", name = "Application.LowMemoryCallback")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct Application_LowMemoryCallback {}
+
+#[cfg(feature = "unity_engine-application")]
+#[::unity2::methods]
+impl Application_LowMemoryCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-application")]
+impl Application_LowMemoryCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Application_LowMemoryCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IApplication_LowMemoryCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/application/Application_LogCallback.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "Application.LogCallback")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct Application_LogCallback {}
@@ -159,39 +192,6 @@ impl Application_LogCallback {
             )
         });
         <Self as IApplication_LogCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/application/Application_LowMemoryCallback.md")))]
-#[::unity2::class(namespace = "UnityEngine", name = "Application.LowMemoryCallback")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct Application_LowMemoryCallback {}
-
-#[cfg(feature = "unity_engine-application")]
-#[::unity2::methods]
-impl Application_LowMemoryCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-application")]
-impl Application_LowMemoryCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Application_LowMemoryCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IApplication_LowMemoryCallbackMethods>::ctor(this, object, method);
         this
     }
 }

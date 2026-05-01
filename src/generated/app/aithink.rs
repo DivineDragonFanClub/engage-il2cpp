@@ -20,17 +20,61 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_WarpRodTarget.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_WarpRodTarget {
-    pub wre_result: crate::app::aithink::AIThink_WarpRodEvaluationResult,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_ActionFunc.md"))]
+#[::unity2::class(namespace = "App", name = "AIThink.ActionFunc")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AIThink_ActionFunc {}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods]
+impl AIThink_ActionFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(
+        self,
+        command: i32,
+        v0: crate::app::aivalue::AIValue,
+        v1: crate::app::aivalue::AIValue,
+    ) -> crate::app::aithink::AIThink_Result;
 }
 
-impl ::unity2::ClassIdentity for AIThink_WarpRodTarget {
+#[cfg(feature = "app-aithink")]
+impl AIThink_ActionFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIThink_ActionFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIThink_ActionFuncMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_Kinds.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AIThink_EnchantThink_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AIThink_EnchantThink_Kinds {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "AIThink.WarpRodTarget";
+    const NAME: &'static str = "AIThink.EnchantThink.Kinds";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -39,7 +83,99 @@ impl ::unity2::ClassIdentity for AIThink_WarpRodTarget {
     }
 }
 
-impl ::unity2::IlType for AIThink_WarpRodTarget {
+impl ::unity2::IlType for AIThink_EnchantThink_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AIThink_EnchantThink_Kinds {
+    pub fn rest() -> Self {
+        Self { value: 50462976 }
+    }
+
+    pub fn engage_count() -> Self {
+        Self { value: 67305985 }
+    }
+
+    pub fn efficacy_morph() -> Self {
+        Self { value: 84148994 }
+    }
+
+    pub fn sight() -> Self {
+        Self { value: 100992003 }
+    }
+
+    pub fn no_chain_attack() -> Self {
+        Self { value: 117835012 }
+    }
+
+    pub fn weight_zero() -> Self {
+        Self { value: 134678021 }
+    }
+
+    pub fn no_silence() -> Self {
+        Self { value: 151521030 }
+    }
+
+    pub fn reflect_physics() -> Self {
+        Self { value: 168364039 }
+    }
+
+    pub fn reflect_magic() -> Self {
+        Self { value: 185207048 }
+    }
+
+    pub fn no_break() -> Self {
+        Self { value: 202050057 }
+    }
+
+    pub fn no_freeze() -> Self {
+        Self { value: 218893066 }
+    }
+
+    pub fn no_damage() -> Self {
+        Self { value: 235736075 }
+    }
+
+    pub fn hold_out() -> Self {
+        Self { value: 252579084 }
+    }
+
+    pub fn weapon() -> Self {
+        Self { value: 986637 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 3854 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EngageWaitRangeScore.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_EngageWaitRangeScore {
+    pub score: u32,
+    pub x: i32,
+    pub z: i32,
+}
+
+impl ::unity2::ClassIdentity for AIThink_EngageWaitRangeScore {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.EngageWaitRangeScore";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_EngageWaitRangeScore {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -50,7 +186,217 @@ impl ::unity2::IlType for AIThink_WarpRodTarget {
 
 #[cfg(feature = "app-aithink")]
 #[::unity2::methods(value)]
-impl AIThink_WarpRodTarget {
+impl AIThink_EngageWaitRangeScore {
+    #[doc = "`CompareAndSwap(u32, i32, i32)` overload"]
+    #[method(name = "CompareAndSwap", args = 3)]
+    pub fn compare_and_swap(self, temp_score: u32, temp_x: i32, temp_z: i32) -> ();
+
+    #[doc = "`New(crate::app::aithink::AIThink_EngageWaitRangeScore)` overload"]
+    #[method(name = "New", args = 1)]
+    pub fn new(inst: crate::app::aithink::AIThink_EngageWaitRangeScore) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_AttackScoreResult.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_AttackScoreResult {}
+
+impl ::unity2::ClassIdentity for AIThink_AttackScoreResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.AttackScoreResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_AttackScoreResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_AttackScoreResult {
+    #[doc = "`get_Score()` overload"]
+    #[method(name = "get_Score", args = 0)]
+    pub fn get_score(self) -> u32;
+
+    #[doc = "`set_Score(u32)` overload"]
+    #[method(name = "set_Score", args = 1)]
+    pub fn set_score(self, value: u32) -> ();
+
+    #[doc = "`get_MoveX()` overload"]
+    #[method(name = "get_MoveX", args = 0)]
+    pub fn get_move_x(self) -> i32;
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    #[method(name = "set_MoveX", args = 1)]
+    pub fn set_move_x(self, value: i32) -> ();
+
+    #[doc = "`get_MoveZ()` overload"]
+    #[method(name = "get_MoveZ", args = 0)]
+    pub fn get_move_z(self) -> i32;
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    #[method(name = "set_MoveZ", args = 1)]
+    pub fn set_move_z(self, value: i32) -> ();
+
+    #[doc = "`get_AttackX()` overload"]
+    #[method(name = "get_AttackX", args = 0)]
+    pub fn get_attack_x(self) -> i32;
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    #[method(name = "set_AttackX", args = 1)]
+    pub fn set_attack_x(self, value: i32) -> ();
+
+    #[doc = "`get_AttackZ()` overload"]
+    #[method(name = "get_AttackZ", args = 0)]
+    pub fn get_attack_z(self) -> i32;
+
+    #[doc = "`set_AttackZ(i32)` overload"]
+    #[method(name = "set_AttackZ", args = 1)]
+    pub fn set_attack_z(self, value: i32) -> ();
+
+    #[doc = "`get_ItemIndex()` overload"]
+    #[method(name = "get_ItemIndex", args = 0)]
+    pub fn get_item_index(self) -> i32;
+
+    #[doc = "`set_ItemIndex(i32)` overload"]
+    #[method(name = "set_ItemIndex", args = 1)]
+    pub fn set_item_index(self, value: i32) -> ();
+
+    #[doc = "`get_KillRate()` overload"]
+    #[method(name = "get_KillRate", args = 0)]
+    pub fn get_kill_rate(self) -> f32;
+
+    #[doc = "`set_KillRate(f32)` overload"]
+    #[method(name = "set_KillRate", args = 1)]
+    pub fn set_kill_rate(self, value: f32) -> ();
+
+    #[doc = "`get_DeadRate()` overload"]
+    #[method(name = "get_DeadRate", args = 0)]
+    pub fn get_dead_rate(self) -> f32;
+
+    #[doc = "`set_DeadRate(f32)` overload"]
+    #[method(name = "set_DeadRate", args = 1)]
+    pub fn set_dead_rate(self, value: f32) -> ();
+
+    #[doc = "`get_Expectation()` overload"]
+    #[method(name = "get_Expectation", args = 0)]
+    pub fn get_expectation(self) -> f32;
+
+    #[doc = "`set_Expectation(f32)` overload"]
+    #[method(name = "set_Expectation", args = 1)]
+    pub fn set_expectation(self, value: f32) -> ();
+
+    #[doc = "`get_BlowScore()` overload"]
+    #[method(name = "get_BlowScore", args = 0)]
+    pub fn get_blow_score(self) -> u32;
+
+    #[doc = "`set_BlowScore(u32)` overload"]
+    #[method(name = "set_BlowScore", args = 1)]
+    pub fn set_blow_score(self, value: u32) -> ();
+
+    #[doc = "`get_ChainAttackCount()` overload"]
+    #[method(name = "get_ChainAttackCount", args = 0)]
+    pub fn get_chain_attack_count(self) -> i32;
+
+    #[doc = "`set_ChainAttackCount(i32)` overload"]
+    #[method(name = "set_ChainAttackCount", args = 1)]
+    pub fn set_chain_attack_count(self, value: i32) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_Command.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AIThink_Command {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AIThink_Command {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.Command";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_Command {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AIThink_Command {
+    pub fn every_time() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn non_actiive() -> Self {
+        Self { value: -2 }
+    }
+
+    pub fn active() -> Self {
+        Self { value: 0 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EntrustAttackTarget.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_EntrustAttackTarget {
+    pub eas_result: crate::app::aithink::AIThink_EntrustAttackScoreResult,
+}
+
+impl ::unity2::ClassIdentity for AIThink_EntrustAttackTarget {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.EntrustAttackTarget";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_EntrustAttackTarget {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_EntrustAttackTarget {
     #[doc = "`get_Unit()` overload"]
     #[method(name = "get_Unit", args = 0)]
     pub fn get_unit(self) -> crate::app::unit::Unit;
@@ -59,13 +405,25 @@ impl AIThink_WarpRodTarget {
     #[method(name = "set_Unit", args = 1)]
     pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
 
+    #[doc = "`get_X()` overload"]
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[doc = "`set_X(i32)` overload"]
+    #[method(name = "set_X", args = 1)]
+    pub fn set_x(self, value: i32) -> ();
+
+    #[doc = "`get_Z()` overload"]
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[doc = "`set_Z(i32)` overload"]
+    #[method(name = "set_Z", args = 1)]
+    pub fn set_z(self, value: i32) -> ();
+
     #[doc = "`get_Score()` overload"]
     #[method(name = "get_Score", args = 0)]
     pub fn get_score(self) -> u32;
-
-    #[doc = "`set_Score(u32)` overload"]
-    #[method(name = "set_Score", args = 1)]
-    pub fn set_score(self, value: u32) -> ();
 
     #[doc = "`get_MoveX()` overload"]
     #[method(name = "get_MoveX", args = 0)]
@@ -83,73 +441,40 @@ impl AIThink_WarpRodTarget {
     #[method(name = "get_AttackZ", args = 0)]
     pub fn get_attack_z(self) -> i32;
 
-    #[doc = "`get_WarpX()` overload"]
-    #[method(name = "get_WarpX", args = 0)]
-    pub fn get_warp_x(self) -> i32;
+    #[doc = "`get_KillRate()` overload"]
+    #[method(name = "get_KillRate", args = 0)]
+    pub fn get_kill_rate(self) -> f32;
 
-    #[doc = "`get_WarpZ()` overload"]
-    #[method(name = "get_WarpZ", args = 0)]
-    pub fn get_warp_z(self) -> i32;
+    #[doc = "`get_DeadRate()` overload"]
+    #[method(name = "get_DeadRate", args = 0)]
+    pub fn get_dead_rate(self) -> f32;
 
     #[doc = "`Clear()` overload"]
     #[method(name = "Clear", args = 0)]
     pub fn clear(self) -> ();
 
-    #[doc = "`New(crate::app::aithink::AIThink_WarpRodTarget)` overload"]
+    #[doc = "`New(crate::app::aithink::AIThink_EntrustAttackTarget)` overload"]
     #[method(name = "New", args = 1)]
-    pub fn new(inst: crate::app::aithink::AIThink_WarpRodTarget) -> ();
+    pub fn new(inst: crate::app::aithink::AIThink_EntrustAttackTarget) -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_AcFunc.md")))]
-#[::unity2::class(namespace = "App", name = "AIThink.AcFunc")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AIThink_AcFunc {}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods]
-impl AIThink_AcFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]
-    #[method(name = "Invoke", args = 3)]
-    pub fn invoke(
-        self,
-        command: i32,
-        v0: crate::app::aivalue::AIValue,
-        v1: crate::app::aivalue::AIValue,
-    ) -> bool;
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_AcFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_AcFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIThink_AcFuncMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_Desc.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_CGBSResult.md"))]
 #[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_EnchantThink_Desc {
-    pub priority: i32,
-    pub calc_unit_score: crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction,
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AIThink_CGBSResult {
+    pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for AIThink_EnchantThink_Desc {
+impl ::unity2::ClassIdentity for AIThink_CGBSResult {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "AIThink.EnchantThink.Desc";
+    const NAME: &'static str = "AIThink.CGBSResult";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -158,7 +483,47 @@ impl ::unity2::ClassIdentity for AIThink_EnchantThink_Desc {
     }
 }
 
-impl ::unity2::IlType for AIThink_EnchantThink_Desc {
+impl ::unity2::IlType for AIThink_CGBSResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AIThink_CGBSResult {
+    pub fn no_give() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn cannot_give() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn can_give() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_RescueRodScoreResult.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_RescueRodScoreResult {}
+
+impl ::unity2::ClassIdentity for AIThink_RescueRodScoreResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.RescueRodScoreResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_RescueRodScoreResult {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -169,17 +534,366 @@ impl ::unity2::IlType for AIThink_EnchantThink_Desc {
 
 #[cfg(feature = "app-aithink")]
 #[::unity2::methods(value)]
-impl AIThink_EnchantThink_Desc {
-    #[doc = "`.ctor(i32, crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        priority: i32,
-        calc_unit_score: crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction,
-    ) -> ();
+impl AIThink_RescueRodScoreResult {
+    #[doc = "`get_Score()` overload"]
+    #[method(name = "get_Score", args = 0)]
+    pub fn get_score(self) -> u32;
+
+    #[doc = "`set_Score(u32)` overload"]
+    #[method(name = "set_Score", args = 1)]
+    pub fn set_score(self, value: u32) -> ();
+
+    #[doc = "`get_MoveX()` overload"]
+    #[method(name = "get_MoveX", args = 0)]
+    pub fn get_move_x(self) -> i32;
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    #[method(name = "set_MoveX", args = 1)]
+    pub fn set_move_x(self, value: i32) -> ();
+
+    #[doc = "`get_MoveZ()` overload"]
+    #[method(name = "get_MoveZ", args = 0)]
+    pub fn get_move_z(self) -> i32;
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    #[method(name = "set_MoveZ", args = 1)]
+    pub fn set_move_z(self, value: i32) -> ();
+
+    #[doc = "`get_AttackX()` overload"]
+    #[method(name = "get_AttackX", args = 0)]
+    pub fn get_attack_x(self) -> i32;
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    #[method(name = "set_AttackX", args = 1)]
+    pub fn set_attack_x(self, value: i32) -> ();
+
+    #[doc = "`get_AttackZ()` overload"]
+    #[method(name = "get_AttackZ", args = 0)]
+    pub fn get_attack_z(self) -> i32;
+
+    #[doc = "`set_AttackZ(i32)` overload"]
+    #[method(name = "set_AttackZ", args = 1)]
+    pub fn set_attack_z(self, value: i32) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EntrustAttackScoreResult.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_EnchantThink.md"))]
+#[::unity2::class(namespace = "App", name = "AIThink.EnchantThink")]
+#[parent(crate::system::object::Object)]
+pub struct AIThink_EnchantThink {
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_ItemInfos")]
+    pub m_item_infos: ::unity2::Array<crate::app::aithink::AIThink_EnchantThink_ItemInfo>,
+    #[rename(name = "m_ItemInfoCount")]
+    pub m_item_info_count: i32,
+    #[rename(name = "m_UnitScores")]
+    pub m_unit_scores: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u8>,
+    #[rename(name = "m_UnitSurroundings")]
+    pub m_unit_surroundings: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        i32,
+        crate::app::aithink::AIThink_EnchantThink_SurroundingInfo,
+    >,
+    #[static_field]
+    #[rename(name = "Descs")]
+    pub descs: ::unity2::Array<crate::app::aithink::AIThink_EnchantThink_Desc>,
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods]
+impl AIThink_EnchantThink {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Think(crate::app::unit::Unit, bool)` overload"]
+    #[method(name = "Think", args = 2)]
+    pub fn think(self, unit: crate::app::unit::Unit, is_entrust: bool) -> bool;
+
+    #[doc = "`CollectItemInfos()` overload"]
+    #[method(name = "CollectItemInfos", args = 0)]
+    pub fn collect_item_infos(self) -> bool;
+
+    #[doc = "`CanUseItem(i32)` overload"]
+    #[method(name = "CanUseItem", args = 1)]
+    pub fn can_use_item(self, item_info_index: i32) -> bool;
+
+    #[doc = "`DecideMovePosAndTarget(i32, crate::app::aithink::AIThink_EnchantThink_DMPTResult)` overload"]
+    #[method(name = "DecideMovePosAndTarget", args = 2)]
+    pub fn decide_move_pos_and_target(
+        self,
+        item_info_index: i32,
+        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
+    ) -> bool;
+
+    #[doc = "`Reset(crate::app::unit::Unit)` overload"]
+    #[method(name = "Reset", args = 1)]
+    pub fn reset(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`AddItemInfo(i32, crate::app::aithink::AIThink_EnchantThink_Kinds)` overload"]
+    #[method(name = "AddItemInfo", args = 2)]
+    pub fn add_item_info(
+        self,
+        item_index: i32,
+        kind: crate::app::aithink::AIThink_EnchantThink_Kinds,
+    ) -> ();
+
+    #[doc = "`MakeUnitScoreKey(crate::app::unit::Unit, i32)` overload"]
+    #[method(name = "MakeUnitScoreKey", args = 2)]
+    pub fn make_unit_score_key(unit: crate::app::unit::Unit, item_info_index: i32) -> i32;
+
+    #[doc = "`CalcUnitScore(u8, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScore", args = 3)]
+    pub fn calc_unit_score(
+        self,
+        kind: u8,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcPosScore(u8, i32, i32, i32, i32, crate::app::unititem::UnitItem, crate::app::aithink::AIThink_EnchantThink_DMPTResult)` overload"]
+    #[method(name = "CalcPosScore", args = 7)]
+    pub fn calc_pos_score(
+        self,
+        kind: u8,
+        move_x: i32,
+        move_z: i32,
+        r#move: i32,
+        item_info_index: i32,
+        unit_item: crate::app::unititem::UnitItem,
+        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
+    ) -> u32;
+
+    #[doc = "`CollectSurroundingInfo(crate::app::unit::Unit)` overload"]
+    #[method(name = "CollectSurroundingInfo", args = 1)]
+    pub fn collect_surrounding_info(self, target: crate::app::unit::Unit) -> ();
+
+    #[doc = "`CalcUnitScoreRest(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreRest", args = 4)]
+    pub fn calc_unit_score_rest(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreEngageCount(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreEngageCount", args = 4)]
+    pub fn calc_unit_score_engage_count(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreEfficacyMorph(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreEfficacyMorph", args = 4)]
+    pub fn calc_unit_score_efficacy_morph(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreSight(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreSight", args = 4)]
+    pub fn calc_unit_score_sight(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreNoChainAttack(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreNoChainAttack", args = 4)]
+    pub fn calc_unit_score_no_chain_attack(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreWeightZero(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreWeightZero", args = 4)]
+    pub fn calc_unit_score_weight_zero(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreNoSilence(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreNoSilence", args = 4)]
+    pub fn calc_unit_score_no_silence(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreReflectPhysics(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreReflectPhysics", args = 4)]
+    pub fn calc_unit_score_reflect_physics(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreReflectMagic(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreReflectMagic", args = 4)]
+    pub fn calc_unit_score_reflect_magic(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreNoBreak(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreNoBreak", args = 4)]
+    pub fn calc_unit_score_no_break(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreNoFreeze(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreNoFreeze", args = 4)]
+    pub fn calc_unit_score_no_freeze(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreNoDamage(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreNoDamage", args = 4)]
+    pub fn calc_unit_score_no_damage(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreHoldOut(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreHoldOut", args = 4)]
+    pub fn calc_unit_score_hold_out(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreWeapon(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreWeapon", args = 4)]
+    pub fn calc_unit_score_weapon(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcUnitScoreDummy(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "CalcUnitScoreDummy", args = 4)]
+    pub fn calc_unit_score_dummy(
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+
+    #[doc = "`CalcPosScoreWhole(crate::app::unit::Unit, i32, i32, i32, i32, crate::app::unititem::UnitItem, crate::app::aithink::AIThink_EnchantThink_DMPTResult)` overload"]
+    #[method(name = "CalcPosScoreWhole", args = 7)]
+    pub fn calc_pos_score_whole(
+        self,
+        actor: crate::app::unit::Unit,
+        move_x: i32,
+        move_z: i32,
+        r#move: i32,
+        item_info_index: i32,
+        unit_item: crate::app::unititem::UnitItem,
+        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
+    ) -> u32;
+
+    #[doc = "`CalcPosScoreRange(crate::app::unit::Unit, i32, i32, i32, i32, crate::app::unititem::UnitItem, crate::app::aithink::AIThink_EnchantThink_DMPTResult)` overload"]
+    #[method(name = "CalcPosScoreRange", args = 7)]
+    pub fn calc_pos_score_range(
+        self,
+        actor: crate::app::unit::Unit,
+        move_x: i32,
+        move_z: i32,
+        r#move: i32,
+        item_info_index: i32,
+        unit_item: crate::app::unititem::UnitItem,
+        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
+    ) -> u32;
+
+    #[doc = "`CalcPosScoreRangeImpl(crate::app::unit::Unit, i32, i32, i32, i32, crate::app::unititem::UnitItem, crate::app::aithink::AIThink_EnchantThink_DMPTResult, bool)` overload"]
+    #[method(name = "CalcPosScoreRangeImpl", args = 8)]
+    pub fn calc_pos_score_range_impl(
+        self,
+        actor: crate::app::unit::Unit,
+        move_x: i32,
+        move_z: i32,
+        r#move: i32,
+        item_info_index: i32,
+        unit_item: crate::app::unititem::UnitItem,
+        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
+        is_whole: bool,
+    ) -> u32;
+
+    #[doc = "`CalcPosScoreNeighbor(crate::app::unit::Unit, i32, i32, i32, i32, crate::app::unititem::UnitItem, crate::app::aithink::AIThink_EnchantThink_DMPTResult)` overload"]
+    #[method(name = "CalcPosScoreNeighbor", args = 7)]
+    pub fn calc_pos_score_neighbor(
+        self,
+        actor: crate::app::unit::Unit,
+        move_x: i32,
+        move_z: i32,
+        r#move: i32,
+        item_info_index: i32,
+        unit_item: crate::app::unititem::UnitItem,
+        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
+    ) -> u32;
+
+    #[doc = "`CalcPosScoreDummy(crate::app::unit::Unit, i32, i32, i32, i32, crate::app::unititem::UnitItem, crate::app::aithink::AIThink_EnchantThink_DMPTResult)` overload"]
+    #[method(name = "CalcPosScoreDummy", args = 7)]
+    pub fn calc_pos_score_dummy(
+        self,
+        actor: crate::app::unit::Unit,
+        move_x: i32,
+        move_z: i32,
+        r#move: i32,
+        item_info_index: i32,
+        unit_item: crate::app::unititem::UnitItem,
+        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
+    ) -> u32;
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_EnchantThink {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIThink_EnchantThink),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIThink_EnchantThinkMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EntrustAttackScoreResult.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct AIThink_EntrustAttackScoreResult {}
@@ -269,7 +983,1418 @@ impl AIThink_EntrustAttackScoreResult {
     pub fn clear(self) -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_UncontrollAttackScoreResult.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_UncontrollAttackScoreResult {}
+
+impl ::unity2::ClassIdentity for AIThink_UncontrollAttackScoreResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.UncontrollAttackScoreResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_UncontrollAttackScoreResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_UncontrollAttackScoreResult {
+    #[doc = "`get_Score()` overload"]
+    #[method(name = "get_Score", args = 0)]
+    pub fn get_score(self) -> u32;
+
+    #[doc = "`set_Score(u32)` overload"]
+    #[method(name = "set_Score", args = 1)]
+    pub fn set_score(self, value: u32) -> ();
+
+    #[doc = "`get_MoveX()` overload"]
+    #[method(name = "get_MoveX", args = 0)]
+    pub fn get_move_x(self) -> i32;
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    #[method(name = "set_MoveX", args = 1)]
+    pub fn set_move_x(self, value: i32) -> ();
+
+    #[doc = "`get_MoveZ()` overload"]
+    #[method(name = "get_MoveZ", args = 0)]
+    pub fn get_move_z(self) -> i32;
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    #[method(name = "set_MoveZ", args = 1)]
+    pub fn set_move_z(self, value: i32) -> ();
+
+    #[doc = "`get_AttackX()` overload"]
+    #[method(name = "get_AttackX", args = 0)]
+    pub fn get_attack_x(self) -> i32;
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    #[method(name = "set_AttackX", args = 1)]
+    pub fn set_attack_x(self, value: i32) -> ();
+
+    #[doc = "`get_AttackZ()` overload"]
+    #[method(name = "get_AttackZ", args = 0)]
+    pub fn get_attack_z(self) -> i32;
+
+    #[doc = "`set_AttackZ(i32)` overload"]
+    #[method(name = "set_AttackZ", args = 1)]
+    pub fn set_attack_z(self, value: i32) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_AcFunc.md"))]
+#[::unity2::class(namespace = "App", name = "AIThink.AcFunc")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AIThink_AcFunc {}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods]
+impl AIThink_AcFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(
+        self,
+        command: i32,
+        v0: crate::app::aivalue::AIValue,
+        v1: crate::app::aivalue::AIValue,
+    ) -> bool;
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_AcFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIThink_AcFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIThink_AcFuncMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_GodSkillTypes.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AIThink_GodSkillTypes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AIThink_GodSkillTypes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.GodSkillTypes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_GodSkillTypes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AIThink_GodSkillTypes {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn remagic() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn before_move() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn vision() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn overlap() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn support() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn engage_guard() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn pull_back() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn god_change() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn decoy() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn strategy() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn strategy_holy_shield() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn trimasteries() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn contract() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn gaze() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 15 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_HealRodScoreResult.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_HealRodScoreResult {
+    pub hrsi_result: crate::app::aithink::AIThink_HealRodScoreImplResult,
+}
+
+impl ::unity2::ClassIdentity for AIThink_HealRodScoreResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.HealRodScoreResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_HealRodScoreResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_HealRodScoreResult {
+    #[doc = "`get_Score()` overload"]
+    #[method(name = "get_Score", args = 0)]
+    pub fn get_score(self) -> u32;
+
+    #[doc = "`set_Score(u32)` overload"]
+    #[method(name = "set_Score", args = 1)]
+    pub fn set_score(self, value: u32) -> ();
+
+    #[doc = "`get_ItemIndex()` overload"]
+    #[method(name = "get_ItemIndex", args = 0)]
+    pub fn get_item_index(self) -> i32;
+
+    #[doc = "`set_ItemIndex(i32)` overload"]
+    #[method(name = "set_ItemIndex", args = 1)]
+    pub fn set_item_index(self, value: i32) -> ();
+
+    #[doc = "`get_MoveX()` overload"]
+    #[method(name = "get_MoveX", args = 0)]
+    pub fn get_move_x(self) -> i32;
+
+    #[doc = "`get_MoveZ()` overload"]
+    #[method(name = "get_MoveZ", args = 0)]
+    pub fn get_move_z(self) -> i32;
+
+    #[doc = "`get_AttackX()` overload"]
+    #[method(name = "get_AttackX", args = 0)]
+    pub fn get_attack_x(self) -> i32;
+
+    #[doc = "`get_AttackZ()` overload"]
+    #[method(name = "get_AttackZ", args = 0)]
+    pub fn get_attack_z(self) -> i32;
+
+    #[doc = "`get_Heal()` overload"]
+    #[method(name = "get_Heal", args = 0)]
+    pub fn get_heal(self) -> i32;
+
+    #[doc = "`get_Damage()` overload"]
+    #[method(name = "get_Damage", args = 0)]
+    pub fn get_damage(self) -> i32;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_TrimasteriesSkills_Kinds.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AIThink_TrimasteriesSkills_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AIThink_TrimasteriesSkills_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.TrimasteriesSkills.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_TrimasteriesSkills_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AIThink_TrimasteriesSkills_Kinds {
+    pub fn unknown() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn mad_storm() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn miserable() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn falling_stars() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_Result.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AIThink_Result {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AIThink_Result {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.Result";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_Result {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AIThink_Result {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn decide() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn reserve() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_MoveFlag.md"))]
+#[::unity2::class(namespace = "App", name = "AIThink.MoveFlag")]
+#[parent(crate::app::bitfield32::BitField32)]
+pub struct AIThink_MoveFlag {
+    #[static_field]
+    #[rename(name = "Through")]
+    pub through: i32,
+    #[static_field]
+    #[rename(name = "Break")]
+    pub r#break: i32,
+    #[static_field]
+    #[rename(name = "Back")]
+    pub back: i32,
+    #[static_field]
+    #[rename(name = "Slow")]
+    pub slow: i32,
+    #[static_field]
+    #[rename(name = "Door")]
+    pub door: i32,
+    #[static_field]
+    #[rename(name = "Ignore")]
+    pub ignore: i32,
+    #[static_field]
+    #[rename(name = "IgnoreIceTile")]
+    pub ignore_ice_tile: i32,
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods]
+impl AIThink_MoveFlag {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_MoveFlag {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIThink_MoveFlag),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIThink_MoveFlagMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_HealRodPositionResult.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_HealRodPositionResult {}
+
+impl ::unity2::ClassIdentity for AIThink_HealRodPositionResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.HealRodPositionResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_HealRodPositionResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_HealRodPositionResult {
+    #[doc = "`get_MoveX()` overload"]
+    #[method(name = "get_MoveX", args = 0)]
+    pub fn get_move_x(self) -> i32;
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    #[method(name = "set_MoveX", args = 1)]
+    pub fn set_move_x(self, value: i32) -> ();
+
+    #[doc = "`get_MoveZ()` overload"]
+    #[method(name = "get_MoveZ", args = 0)]
+    pub fn get_move_z(self) -> i32;
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    #[method(name = "set_MoveZ", args = 1)]
+    pub fn set_move_z(self, value: i32) -> ();
+
+    #[doc = "`get_AttackX()` overload"]
+    #[method(name = "get_AttackX", args = 0)]
+    pub fn get_attack_x(self) -> i32;
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    #[method(name = "set_AttackX", args = 1)]
+    pub fn set_attack_x(self, value: i32) -> ();
+
+    #[doc = "`get_AttackZ()` overload"]
+    #[method(name = "get_AttackZ", args = 0)]
+    pub fn get_attack_z(self) -> i32;
+
+    #[doc = "`set_AttackZ(i32)` overload"]
+    #[method(name = "set_AttackZ", args = 1)]
+    pub fn set_attack_z(self, value: i32) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_WarpRodTarget.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_WarpRodTarget {
+    pub wre_result: crate::app::aithink::AIThink_WarpRodEvaluationResult,
+}
+
+impl ::unity2::ClassIdentity for AIThink_WarpRodTarget {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.WarpRodTarget";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_WarpRodTarget {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_WarpRodTarget {
+    #[doc = "`get_Unit()` overload"]
+    #[method(name = "get_Unit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
+    #[method(name = "set_Unit", args = 1)]
+    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
+
+    #[doc = "`get_Score()` overload"]
+    #[method(name = "get_Score", args = 0)]
+    pub fn get_score(self) -> u32;
+
+    #[doc = "`set_Score(u32)` overload"]
+    #[method(name = "set_Score", args = 1)]
+    pub fn set_score(self, value: u32) -> ();
+
+    #[doc = "`get_MoveX()` overload"]
+    #[method(name = "get_MoveX", args = 0)]
+    pub fn get_move_x(self) -> i32;
+
+    #[doc = "`get_MoveZ()` overload"]
+    #[method(name = "get_MoveZ", args = 0)]
+    pub fn get_move_z(self) -> i32;
+
+    #[doc = "`get_AttackX()` overload"]
+    #[method(name = "get_AttackX", args = 0)]
+    pub fn get_attack_x(self) -> i32;
+
+    #[doc = "`get_AttackZ()` overload"]
+    #[method(name = "get_AttackZ", args = 0)]
+    pub fn get_attack_z(self) -> i32;
+
+    #[doc = "`get_WarpX()` overload"]
+    #[method(name = "get_WarpX", args = 0)]
+    pub fn get_warp_x(self) -> i32;
+
+    #[doc = "`get_WarpZ()` overload"]
+    #[method(name = "get_WarpZ", args = 0)]
+    pub fn get_warp_z(self) -> i32;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`New(crate::app::aithink::AIThink_WarpRodTarget)` overload"]
+    #[method(name = "New", args = 1)]
+    pub fn new(inst: crate::app::aithink::AIThink_WarpRodTarget) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_AttackPositionResult.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_AttackPositionResult {}
+
+impl ::unity2::ClassIdentity for AIThink_AttackPositionResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.AttackPositionResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_AttackPositionResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_AttackPositionResult {
+    #[doc = "`get_MoveX()` overload"]
+    #[method(name = "get_MoveX", args = 0)]
+    pub fn get_move_x(self) -> i32;
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    #[method(name = "set_MoveX", args = 1)]
+    pub fn set_move_x(self, value: i32) -> ();
+
+    #[doc = "`get_MoveZ()` overload"]
+    #[method(name = "get_MoveZ", args = 0)]
+    pub fn get_move_z(self) -> i32;
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    #[method(name = "set_MoveZ", args = 1)]
+    pub fn set_move_z(self, value: i32) -> ();
+
+    #[doc = "`get_AttackX()` overload"]
+    #[method(name = "get_AttackX", args = 0)]
+    pub fn get_attack_x(self) -> i32;
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    #[method(name = "set_AttackX", args = 1)]
+    pub fn set_attack_x(self, value: i32) -> ();
+
+    #[doc = "`get_AttackZ()` overload"]
+    #[method(name = "get_AttackZ", args = 0)]
+    pub fn get_attack_z(self) -> i32;
+
+    #[doc = "`set_AttackZ(i32)` overload"]
+    #[method(name = "set_AttackZ", args = 1)]
+    pub fn set_attack_z(self, value: i32) -> ();
+
+    #[doc = "`get_BlowScore()` overload"]
+    #[method(name = "get_BlowScore", args = 0)]
+    pub fn get_blow_score(self) -> u32;
+
+    #[doc = "`set_BlowScore(u32)` overload"]
+    #[method(name = "set_BlowScore", args = 1)]
+    pub fn set_blow_score(self, value: u32) -> ();
+
+    #[doc = "`get_ChainAttackCount()` overload"]
+    #[method(name = "get_ChainAttackCount", args = 0)]
+    pub fn get_chain_attack_count(self) -> i32;
+
+    #[doc = "`set_ChainAttackCount(i32)` overload"]
+    #[method(name = "set_ChainAttackCount", args = 1)]
+    pub fn set_chain_attack_count(self, value: i32) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_TrimasteriesSkills.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_TrimasteriesSkills {
+    pub m_skills: ::unity2::Array<crate::app::skilldata::SkillData>,
+    pub m_count: i32,
+    pub m_last_engage_turn: i32,
+}
+
+impl ::unity2::ClassIdentity for AIThink_TrimasteriesSkills {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.TrimasteriesSkills";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_TrimasteriesSkills {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_TrimasteriesSkills {
+    #[doc = "`Prepare(crate::app::unit::Unit)` overload"]
+    #[method(name = "Prepare", args = 1)]
+    pub fn prepare(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Add(crate::app::skilldata::SkillData)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, skill: crate::app::skilldata::SkillData) -> ();
+
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[doc = "`get_MadStorm()` overload"]
+    #[method(name = "get_MadStorm", args = 0)]
+    pub fn get_mad_storm(self) -> crate::app::skilldata::SkillData;
+
+    #[doc = "`get_Miserable()` overload"]
+    #[method(name = "get_Miserable", args = 0)]
+    pub fn get_miserable(self) -> crate::app::skilldata::SkillData;
+
+    #[doc = "`get_FallingStars()` overload"]
+    #[method(name = "get_FallingStars", args = 0)]
+    pub fn get_falling_stars(self) -> crate::app::skilldata::SkillData;
+
+    #[doc = "`GetKind(crate::app::skilldata::SkillData)` overload"]
+    #[method(name = "GetKind", args = 1)]
+    pub fn get_kind(
+        self,
+        skill: crate::app::skilldata::SkillData,
+    ) -> crate::app::aithink::AIThink_TrimasteriesSkills_Kinds;
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_Desc.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_EnchantThink_Desc {
+    pub priority: i32,
+    pub calc_unit_score: crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction,
+}
+
+impl ::unity2::ClassIdentity for AIThink_EnchantThink_Desc {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.EnchantThink.Desc";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_EnchantThink_Desc {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_EnchantThink_Desc {
+    #[doc = "`.ctor(i32, crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        priority: i32,
+        calc_unit_score: crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction,
+    ) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_UncontrollAttackTarget.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_UncontrollAttackTarget {
+    pub uas_result: crate::app::aithink::AIThink_UncontrollAttackScoreResult,
+}
+
+impl ::unity2::ClassIdentity for AIThink_UncontrollAttackTarget {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.UncontrollAttackTarget";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_UncontrollAttackTarget {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_UncontrollAttackTarget {
+    #[doc = "`get_Unit()` overload"]
+    #[method(name = "get_Unit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
+    #[method(name = "set_Unit", args = 1)]
+    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
+
+    #[doc = "`get_X()` overload"]
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[doc = "`set_X(i32)` overload"]
+    #[method(name = "set_X", args = 1)]
+    pub fn set_x(self, value: i32) -> ();
+
+    #[doc = "`get_Z()` overload"]
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[doc = "`set_Z(i32)` overload"]
+    #[method(name = "set_Z", args = 1)]
+    pub fn set_z(self, value: i32) -> ();
+
+    #[doc = "`get_Score()` overload"]
+    #[method(name = "get_Score", args = 0)]
+    pub fn get_score(self) -> u32;
+
+    #[doc = "`get_MoveX()` overload"]
+    #[method(name = "get_MoveX", args = 0)]
+    pub fn get_move_x(self) -> i32;
+
+    #[doc = "`get_MoveZ()` overload"]
+    #[method(name = "get_MoveZ", args = 0)]
+    pub fn get_move_z(self) -> i32;
+
+    #[doc = "`get_AttackX()` overload"]
+    #[method(name = "get_AttackX", args = 0)]
+    pub fn get_attack_x(self) -> i32;
+
+    #[doc = "`get_AttackZ()` overload"]
+    #[method(name = "get_AttackZ", args = 0)]
+    pub fn get_attack_z(self) -> i32;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`New(crate::app::aithink::AIThink_UncontrollAttackTarget)` overload"]
+    #[method(name = "New", args = 1)]
+    pub fn new(inst: crate::app::aithink::AIThink_UncontrollAttackTarget) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_HealRodScoreImplResult.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_HealRodScoreImplResult {}
+
+impl ::unity2::ClassIdentity for AIThink_HealRodScoreImplResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.HealRodScoreImplResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_HealRodScoreImplResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_HealRodScoreImplResult {
+    #[doc = "`get_MoveX()` overload"]
+    #[method(name = "get_MoveX", args = 0)]
+    pub fn get_move_x(self) -> i32;
+
+    #[doc = "`set_MoveX(i32)` overload"]
+    #[method(name = "set_MoveX", args = 1)]
+    pub fn set_move_x(self, value: i32) -> ();
+
+    #[doc = "`get_MoveZ()` overload"]
+    #[method(name = "get_MoveZ", args = 0)]
+    pub fn get_move_z(self) -> i32;
+
+    #[doc = "`set_MoveZ(i32)` overload"]
+    #[method(name = "set_MoveZ", args = 1)]
+    pub fn set_move_z(self, value: i32) -> ();
+
+    #[doc = "`get_AttackX()` overload"]
+    #[method(name = "get_AttackX", args = 0)]
+    pub fn get_attack_x(self) -> i32;
+
+    #[doc = "`set_AttackX(i32)` overload"]
+    #[method(name = "set_AttackX", args = 1)]
+    pub fn set_attack_x(self, value: i32) -> ();
+
+    #[doc = "`get_AttackZ()` overload"]
+    #[method(name = "get_AttackZ", args = 0)]
+    pub fn get_attack_z(self) -> i32;
+
+    #[doc = "`set_AttackZ(i32)` overload"]
+    #[method(name = "set_AttackZ", args = 1)]
+    pub fn set_attack_z(self, value: i32) -> ();
+
+    #[doc = "`get_Heal()` overload"]
+    #[method(name = "get_Heal", args = 0)]
+    pub fn get_heal(self) -> i32;
+
+    #[doc = "`set_Heal(i32)` overload"]
+    #[method(name = "set_Heal", args = 1)]
+    pub fn set_heal(self, value: i32) -> ();
+
+    #[doc = "`get_Damage()` overload"]
+    #[method(name = "get_Damage", args = 0)]
+    pub fn get_damage(self) -> i32;
+
+    #[doc = "`set_Damage(i32)` overload"]
+    #[method(name = "set_Damage", args = 1)]
+    pub fn set_damage(self, value: i32) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_Think.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AIThink_Think {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AIThink_Think {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.Think";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_Think {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AIThink_Think {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn cause() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn mind() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn attack_long_range() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn attack_high() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn attack_middle() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn attack_low() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn entrust_heal() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn entrust_attack() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn entrust_move() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn entrust_fixed() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn uncontroll_heal() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn uncontroll_attack() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn uncontroll_move() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn uncontroll_fixed() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_ItemInfo.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_EnchantThink_ItemInfo {
+    pub item_index: u8,
+    pub kind: u8,
+}
+
+impl ::unity2::ClassIdentity for AIThink_EnchantThink_ItemInfo {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.EnchantThink.ItemInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_EnchantThink_ItemInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_EnchantThink_ItemInfo {
+    #[doc = "`CompareTo(crate::app::aithink::AIThink_EnchantThink_ItemInfo)` overload"]
+    #[method(name = "CompareTo", args = 1)]
+    pub fn compare_to(self, other: crate::app::aithink::AIThink_EnchantThink_ItemInfo) -> i32;
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_SurroundingInfo.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_EnchantThink_SurroundingInfo {
+    pub m_value: u32,
+}
+
+impl ::unity2::ClassIdentity for AIThink_EnchantThink_SurroundingInfo {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.EnchantThink.SurroundingInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_EnchantThink_SurroundingInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_EnchantThink_SurroundingInfo {
+    #[doc = "`get_MorphCount()` overload"]
+    #[method(name = "get_MorphCount", args = 0)]
+    pub fn get_morph_count(self) -> i32;
+
+    #[doc = "`set_MorphCount(i32)` overload"]
+    #[method(name = "set_MorphCount", args = 1)]
+    pub fn set_morph_count(self, value: i32) -> ();
+
+    #[doc = "`get_PhysicalAttackCount()` overload"]
+    #[method(name = "get_PhysicalAttackCount", args = 0)]
+    pub fn get_physical_attack_count(self) -> i32;
+
+    #[doc = "`set_PhysicalAttackCount(i32)` overload"]
+    #[method(name = "set_PhysicalAttackCount", args = 1)]
+    pub fn set_physical_attack_count(self, value: i32) -> ();
+
+    #[doc = "`get_MagicAttackCount()` overload"]
+    #[method(name = "get_MagicAttackCount", args = 0)]
+    pub fn get_magic_attack_count(self) -> i32;
+
+    #[doc = "`set_MagicAttackCount(i32)` overload"]
+    #[method(name = "set_MagicAttackCount", args = 1)]
+    pub fn set_magic_attack_count(self, value: i32) -> ();
+
+    #[doc = "`get_AttackCount()` overload"]
+    #[method(name = "get_AttackCount", args = 0)]
+    pub fn get_attack_count(self) -> i32;
+
+    #[doc = "`get_ChainAttackCount()` overload"]
+    #[method(name = "get_ChainAttackCount", args = 0)]
+    pub fn get_chain_attack_count(self) -> i32;
+
+    #[doc = "`set_ChainAttackCount(i32)` overload"]
+    #[method(name = "set_ChainAttackCount", args = 1)]
+    pub fn set_chain_attack_count(self, value: i32) -> ();
+
+    #[doc = "`get_BreakCount()` overload"]
+    #[method(name = "get_BreakCount", args = 0)]
+    pub fn get_break_count(self) -> i32;
+
+    #[doc = "`set_BreakCount(i32)` overload"]
+    #[method(name = "set_BreakCount", args = 1)]
+    pub fn set_break_count(self, value: i32) -> ();
+
+    #[doc = "`get_SilenceCount()` overload"]
+    #[method(name = "get_SilenceCount", args = 0)]
+    pub fn get_silence_count(self) -> i32;
+
+    #[doc = "`set_SilenceCount(i32)` overload"]
+    #[method(name = "set_SilenceCount", args = 1)]
+    pub fn set_silence_count(self, value: i32) -> ();
+
+    #[doc = "`get_FreezeCount()` overload"]
+    #[method(name = "get_FreezeCount", args = 0)]
+    pub fn get_freeze_count(self) -> i32;
+
+    #[doc = "`set_FreezeCount(i32)` overload"]
+    #[method(name = "set_FreezeCount", args = 1)]
+    pub fn set_freeze_count(self, value: i32) -> ();
+
+    #[doc = "`Get(u32, i32)` overload"]
+    #[method(name = "Get", args = 2)]
+    pub fn get(self, mask: u32, shift: i32) -> i32;
+
+    #[doc = "`Set(u32, i32, i32)` overload"]
+    #[method(name = "Set", args = 3)]
+    pub fn set(self, mask: u32, shift: i32, v: i32) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_EnchantThink_CalcUnitScoreFunction.md"))]
+#[::unity2::class(namespace = "App", name = "AIThink.EnchantThink.CalcUnitScoreFunction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AIThink_EnchantThink_CalcUnitScoreFunction {}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods]
+impl AIThink_EnchantThink_CalcUnitScoreFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "Invoke", args = 4)]
+    pub fn invoke(
+        self,
+        think: crate::app::aithink::AIThink_EnchantThink,
+        actor: crate::app::unit::Unit,
+        target: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+    ) -> u8;
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_EnchantThink_CalcUnitScoreFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIThink_EnchantThink_CalcUnitScoreFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIThink_EnchantThink_CalcUnitScoreFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_InterferenceTarget.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_InterferenceTarget {
+    pub is_result: crate::app::aithink::AIThink_InterferenceScoreResult,
+}
+
+impl ::unity2::ClassIdentity for AIThink_InterferenceTarget {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIThink.InterferenceTarget";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIThink_InterferenceTarget {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_InterferenceTarget {
+    #[doc = "`get_Unit()` overload"]
+    #[method(name = "get_Unit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
+    #[method(name = "set_Unit", args = 1)]
+    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
+
+    #[doc = "`get_X()` overload"]
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[doc = "`set_X(i32)` overload"]
+    #[method(name = "set_X", args = 1)]
+    pub fn set_x(self, value: i32) -> ();
+
+    #[doc = "`get_Z()` overload"]
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[doc = "`set_Z(i32)` overload"]
+    #[method(name = "set_Z", args = 1)]
+    pub fn set_z(self, value: i32) -> ();
+
+    #[doc = "`get_Score()` overload"]
+    #[method(name = "get_Score", args = 0)]
+    pub fn get_score(self) -> u32;
+
+    #[doc = "`get_MoveX()` overload"]
+    #[method(name = "get_MoveX", args = 0)]
+    pub fn get_move_x(self) -> i32;
+
+    #[doc = "`get_MoveZ()` overload"]
+    #[method(name = "get_MoveZ", args = 0)]
+    pub fn get_move_z(self) -> i32;
+
+    #[doc = "`get_AttackX()` overload"]
+    #[method(name = "get_AttackX", args = 0)]
+    pub fn get_attack_x(self) -> i32;
+
+    #[doc = "`get_AttackZ()` overload"]
+    #[method(name = "get_AttackZ", args = 0)]
+    pub fn get_attack_z(self) -> i32;
+
+    #[doc = "`get_ItemIndex()` overload"]
+    #[method(name = "get_ItemIndex", args = 0)]
+    pub fn get_item_index(self) -> i32;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`New(crate::app::aithink::AIThink_InterferenceTarget)` overload"]
+    #[method(name = "New", args = 1)]
+    pub fn new(inst: crate::app::aithink::AIThink_InterferenceTarget) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_UpdateFlag.md"))]
+#[::unity2::class(namespace = "App", name = "AIThink.UpdateFlag")]
+#[parent(crate::app::bitfield32::BitField32)]
+pub struct AIThink_UpdateFlag {
+    #[static_field]
+    #[rename(name = "Active")]
+    pub active: i32,
+    #[static_field]
+    #[rename(name = "Value0")]
+    pub value0: i32,
+    #[static_field]
+    #[rename(name = "Value1")]
+    pub value1: i32,
+    #[static_field]
+    #[rename(name = "Value2")]
+    pub value2: i32,
+    #[static_field]
+    #[rename(name = "Value3")]
+    pub value3: i32,
+    #[static_field]
+    #[rename(name = "Retry")]
+    pub retry: i32,
+    #[static_field]
+    #[rename(name = "MaskUpdate")]
+    pub mask_update: i32,
+}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods]
+impl AIThink_UpdateFlag {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_UpdateFlag {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIThink_UpdateFlag),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIThink_UpdateFlagMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_EngageWaitAdditionalAttackImage.md"))]
+#[::unity2::class(namespace = "App", name = "AIThink.EngageWaitAdditionalAttackImage")]
+# [parent (crate :: app :: mapimagecore_1 :: MapImageCore_1 < u16 >)]
+pub struct AIThink_EngageWaitAdditionalAttackImage {}
+
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods]
+impl AIThink_EngageWaitAdditionalAttackImage {
+    #[doc = "`Add(i32, u16)` overload"]
+    #[method(name = "Add", args = 2)]
+    pub fn add(self, index: i32, v: u16) -> ();
+
+    #[doc = "`IncRange1(i32, i32)` overload"]
+    #[method(name = "IncRange1", args = 2)]
+    pub fn inc_range1(self, x: i32, z: i32) -> ();
+
+    #[doc = "`IncRange2(i32, i32)` overload"]
+    #[method(name = "IncRange2", args = 2)]
+    pub fn inc_range2(self, x: i32, z: i32) -> ();
+
+    #[doc = "`SetRange12(i32, i32, u8, u8)` overload"]
+    #[method(name = "SetRange12", args = 4)]
+    pub fn set_range12(self, x: i32, z: i32, range1: u8, range2: u8) -> ();
+
+    #[doc = "`GetRange12(i32, i32, u8, u8)` overload"]
+    #[method(name = "GetRange12", args = 4)]
+    pub fn get_range12(self, x: i32, z: i32, range1: u8, range2: u8) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-aithink")]
+impl AIThink_EngageWaitAdditionalAttackImage {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIThink_EngageWaitAdditionalAttackImage),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIThink_EngageWaitAdditionalAttackImageMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink.md"))]
 #[::unity2::class(namespace = "App", name = "AIThink")]
 #[parent(crate::system::object::Object)]
 pub struct AIThink {
@@ -3288,497 +5413,45 @@ impl AIThink {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_CGBSResult.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AIThink_CGBSResult {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AIThink_CGBSResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.CGBSResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_CGBSResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AIThink_CGBSResult {
-    pub fn no_give() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn cannot_give() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn can_give() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_AttackScoreResult.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_AttackScoreResult {}
-
-impl ::unity2::ClassIdentity for AIThink_AttackScoreResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.AttackScoreResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_AttackScoreResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_AttackScoreResult {
-    #[doc = "`get_Score()` overload"]
-    #[method(name = "get_Score", args = 0)]
-    pub fn get_score(self) -> u32;
-
-    #[doc = "`set_Score(u32)` overload"]
-    #[method(name = "set_Score", args = 1)]
-    pub fn set_score(self, value: u32) -> ();
-
-    #[doc = "`get_MoveX()` overload"]
-    #[method(name = "get_MoveX", args = 0)]
-    pub fn get_move_x(self) -> i32;
-
-    #[doc = "`set_MoveX(i32)` overload"]
-    #[method(name = "set_MoveX", args = 1)]
-    pub fn set_move_x(self, value: i32) -> ();
-
-    #[doc = "`get_MoveZ()` overload"]
-    #[method(name = "get_MoveZ", args = 0)]
-    pub fn get_move_z(self) -> i32;
-
-    #[doc = "`set_MoveZ(i32)` overload"]
-    #[method(name = "set_MoveZ", args = 1)]
-    pub fn set_move_z(self, value: i32) -> ();
-
-    #[doc = "`get_AttackX()` overload"]
-    #[method(name = "get_AttackX", args = 0)]
-    pub fn get_attack_x(self) -> i32;
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    #[method(name = "set_AttackX", args = 1)]
-    pub fn set_attack_x(self, value: i32) -> ();
-
-    #[doc = "`get_AttackZ()` overload"]
-    #[method(name = "get_AttackZ", args = 0)]
-    pub fn get_attack_z(self) -> i32;
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    #[method(name = "set_AttackZ", args = 1)]
-    pub fn set_attack_z(self, value: i32) -> ();
-
-    #[doc = "`get_ItemIndex()` overload"]
-    #[method(name = "get_ItemIndex", args = 0)]
-    pub fn get_item_index(self) -> i32;
-
-    #[doc = "`set_ItemIndex(i32)` overload"]
-    #[method(name = "set_ItemIndex", args = 1)]
-    pub fn set_item_index(self, value: i32) -> ();
-
-    #[doc = "`get_KillRate()` overload"]
-    #[method(name = "get_KillRate", args = 0)]
-    pub fn get_kill_rate(self) -> f32;
-
-    #[doc = "`set_KillRate(f32)` overload"]
-    #[method(name = "set_KillRate", args = 1)]
-    pub fn set_kill_rate(self, value: f32) -> ();
-
-    #[doc = "`get_DeadRate()` overload"]
-    #[method(name = "get_DeadRate", args = 0)]
-    pub fn get_dead_rate(self) -> f32;
-
-    #[doc = "`set_DeadRate(f32)` overload"]
-    #[method(name = "set_DeadRate", args = 1)]
-    pub fn set_dead_rate(self, value: f32) -> ();
-
-    #[doc = "`get_Expectation()` overload"]
-    #[method(name = "get_Expectation", args = 0)]
-    pub fn get_expectation(self) -> f32;
-
-    #[doc = "`set_Expectation(f32)` overload"]
-    #[method(name = "set_Expectation", args = 1)]
-    pub fn set_expectation(self, value: f32) -> ();
-
-    #[doc = "`get_BlowScore()` overload"]
-    #[method(name = "get_BlowScore", args = 0)]
-    pub fn get_blow_score(self) -> u32;
-
-    #[doc = "`set_BlowScore(u32)` overload"]
-    #[method(name = "set_BlowScore", args = 1)]
-    pub fn set_blow_score(self, value: u32) -> ();
-
-    #[doc = "`get_ChainAttackCount()` overload"]
-    #[method(name = "get_ChainAttackCount", args = 0)]
-    pub fn get_chain_attack_count(self) -> i32;
-
-    #[doc = "`set_ChainAttackCount(i32)` overload"]
-    #[method(name = "set_ChainAttackCount", args = 1)]
-    pub fn set_chain_attack_count(self, value: i32) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_UpdateFlag.md")))]
-#[::unity2::class(namespace = "App", name = "AIThink.UpdateFlag")]
-#[parent(crate::app::bitfield32::BitField32)]
-pub struct AIThink_UpdateFlag {
-    #[static_field]
-    #[rename(name = "Active")]
-    pub active: i32,
-    #[static_field]
-    #[rename(name = "Value0")]
-    pub value0: i32,
-    #[static_field]
-    #[rename(name = "Value1")]
-    pub value1: i32,
-    #[static_field]
-    #[rename(name = "Value2")]
-    pub value2: i32,
-    #[static_field]
-    #[rename(name = "Value3")]
-    pub value3: i32,
-    #[static_field]
-    #[rename(name = "Retry")]
-    pub retry: i32,
-    #[static_field]
-    #[rename(name = "MaskUpdate")]
-    pub mask_update: i32,
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_RcFunc.md"))]
+#[::unity2::class(namespace = "App", name = "AIThink.RcFunc")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AIThink_RcFunc {}
 
 #[cfg(feature = "app-aithink")]
 #[::unity2::methods]
-impl AIThink_UpdateFlag {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+impl AIThink_RcFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(
+        self,
+        command: i32,
+        v0: crate::app::aivalue::AIValue,
+        v1: crate::app::aivalue::AIValue,
+    ) -> bool;
 }
 
 #[cfg(feature = "app-aithink")]
-impl AIThink_UpdateFlag {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl AIThink_RcFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_UpdateFlag),
+                ::core::stringify!(AIThink_RcFunc),
                 ::core::stringify!(new),
             )
         });
-        <Self as IAIThink_UpdateFlagMethods>::ctor(this);
+        <Self as IAIThink_RcFuncMethods>::ctor(this, object, method);
         this
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_Kinds.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AIThink_EnchantThink_Kinds {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AIThink_EnchantThink_Kinds {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.EnchantThink.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_EnchantThink_Kinds {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AIThink_EnchantThink_Kinds {
-    pub fn rest() -> Self {
-        Self { value: 50462976 }
-    }
-
-    pub fn engage_count() -> Self {
-        Self { value: 67305985 }
-    }
-
-    pub fn efficacy_morph() -> Self {
-        Self { value: 84148994 }
-    }
-
-    pub fn sight() -> Self {
-        Self { value: 100992003 }
-    }
-
-    pub fn no_chain_attack() -> Self {
-        Self { value: 117835012 }
-    }
-
-    pub fn weight_zero() -> Self {
-        Self { value: 134678021 }
-    }
-
-    pub fn no_silence() -> Self {
-        Self { value: 151521030 }
-    }
-
-    pub fn reflect_physics() -> Self {
-        Self { value: 168364039 }
-    }
-
-    pub fn reflect_magic() -> Self {
-        Self { value: 185207048 }
-    }
-
-    pub fn no_break() -> Self {
-        Self { value: 202050057 }
-    }
-
-    pub fn no_freeze() -> Self {
-        Self { value: 218893066 }
-    }
-
-    pub fn no_damage() -> Self {
-        Self { value: 235736075 }
-    }
-
-    pub fn hold_out() -> Self {
-        Self { value: 252579084 }
-    }
-
-    pub fn weapon() -> Self {
-        Self { value: 986637 }
-    }
-
-    pub fn max() -> Self {
-        Self { value: 3854 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_InterferenceScoreResult.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_InterferenceScoreResult {}
-
-impl ::unity2::ClassIdentity for AIThink_InterferenceScoreResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.InterferenceScoreResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_InterferenceScoreResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_InterferenceScoreResult {
-    #[doc = "`get_Score()` overload"]
-    #[method(name = "get_Score", args = 0)]
-    pub fn get_score(self) -> u32;
-
-    #[doc = "`set_Score(u32)` overload"]
-    #[method(name = "set_Score", args = 1)]
-    pub fn set_score(self, value: u32) -> ();
-
-    #[doc = "`get_MoveX()` overload"]
-    #[method(name = "get_MoveX", args = 0)]
-    pub fn get_move_x(self) -> i32;
-
-    #[doc = "`set_MoveX(i32)` overload"]
-    #[method(name = "set_MoveX", args = 1)]
-    pub fn set_move_x(self, value: i32) -> ();
-
-    #[doc = "`get_MoveZ()` overload"]
-    #[method(name = "get_MoveZ", args = 0)]
-    pub fn get_move_z(self) -> i32;
-
-    #[doc = "`set_MoveZ(i32)` overload"]
-    #[method(name = "set_MoveZ", args = 1)]
-    pub fn set_move_z(self, value: i32) -> ();
-
-    #[doc = "`get_AttackX()` overload"]
-    #[method(name = "get_AttackX", args = 0)]
-    pub fn get_attack_x(self) -> i32;
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    #[method(name = "set_AttackX", args = 1)]
-    pub fn set_attack_x(self, value: i32) -> ();
-
-    #[doc = "`get_AttackZ()` overload"]
-    #[method(name = "get_AttackZ", args = 0)]
-    pub fn get_attack_z(self) -> i32;
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    #[method(name = "set_AttackZ", args = 1)]
-    pub fn set_attack_z(self, value: i32) -> ();
-
-    #[doc = "`get_ItemIndex()` overload"]
-    #[method(name = "get_ItemIndex", args = 0)]
-    pub fn get_item_index(self) -> i32;
-
-    #[doc = "`set_ItemIndex(i32)` overload"]
-    #[method(name = "set_ItemIndex", args = 1)]
-    pub fn set_item_index(self, value: i32) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_OverlapSkills.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_OverlapSkills {
-    pub m_skills: ::unity2::Array<crate::app::skilldata::SkillData>,
-    pub m_count: i32,
-}
-
-impl ::unity2::ClassIdentity for AIThink_OverlapSkills {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.OverlapSkills";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_OverlapSkills {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_OverlapSkills {
-    #[doc = "`Prepare()` overload"]
-    #[method(name = "Prepare", args = 0)]
-    pub fn prepare(self) -> ();
-
-    #[doc = "`Add(crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, skill: crate::app::skilldata::SkillData) -> ();
-
-    #[doc = "`GetByRandom()` overload"]
-    #[method(name = "GetByRandom", args = 0)]
-    pub fn get_by_random(self) -> crate::app::skilldata::SkillData;
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EngageWaitRangeScore.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_EngageWaitRangeScore {
-    pub score: u32,
-    pub x: i32,
-    pub z: i32,
-}
-
-impl ::unity2::ClassIdentity for AIThink_EngageWaitRangeScore {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.EngageWaitRangeScore";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_EngageWaitRangeScore {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_EngageWaitRangeScore {
-    #[doc = "`CompareAndSwap(u32, i32, i32)` overload"]
-    #[method(name = "CompareAndSwap", args = 3)]
-    pub fn compare_and_swap(self, temp_score: u32, temp_x: i32, temp_z: i32) -> ();
-
-    #[doc = "`New(crate::app::aithink::AIThink_EngageWaitRangeScore)` overload"]
-    #[method(name = "New", args = 1)]
-    pub fn new(inst: crate::app::aithink::AIThink_EngageWaitRangeScore) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_WarpRodEvaluationResult.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_WarpRodEvaluationResult.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct AIThink_WarpRodEvaluationResult {}
@@ -3876,44 +5549,7 @@ impl AIThink_WarpRodEvaluationResult {
     pub fn clear(self) -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_ItemInfo.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_EnchantThink_ItemInfo {
-    pub item_index: u8,
-    pub kind: u8,
-}
-
-impl ::unity2::ClassIdentity for AIThink_EnchantThink_ItemInfo {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.EnchantThink.ItemInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_EnchantThink_ItemInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_EnchantThink_ItemInfo {
-    #[doc = "`CompareTo(crate::app::aithink::AIThink_EnchantThink_ItemInfo)` overload"]
-    #[method(name = "CompareTo", args = 1)]
-    pub fn compare_to(self, other: crate::app::aithink::AIThink_EnchantThink_ItemInfo) -> i32;
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_DMPTResult.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_DMPTResult.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct AIThink_EnchantThink_DMPTResult {
@@ -3953,1029 +5589,7 @@ impl AIThink_EnchantThink_DMPTResult {
     pub fn clear(self) -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_RcFunc.md")))]
-#[::unity2::class(namespace = "App", name = "AIThink.RcFunc")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AIThink_RcFunc {}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods]
-impl AIThink_RcFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]
-    #[method(name = "Invoke", args = 3)]
-    pub fn invoke(
-        self,
-        command: i32,
-        v0: crate::app::aivalue::AIValue,
-        v1: crate::app::aivalue::AIValue,
-    ) -> bool;
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_RcFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_RcFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIThink_RcFuncMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_HealRodScoreResult.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_HealRodScoreResult {
-    pub hrsi_result: crate::app::aithink::AIThink_HealRodScoreImplResult,
-}
-
-impl ::unity2::ClassIdentity for AIThink_HealRodScoreResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.HealRodScoreResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_HealRodScoreResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_HealRodScoreResult {
-    #[doc = "`get_Score()` overload"]
-    #[method(name = "get_Score", args = 0)]
-    pub fn get_score(self) -> u32;
-
-    #[doc = "`set_Score(u32)` overload"]
-    #[method(name = "set_Score", args = 1)]
-    pub fn set_score(self, value: u32) -> ();
-
-    #[doc = "`get_ItemIndex()` overload"]
-    #[method(name = "get_ItemIndex", args = 0)]
-    pub fn get_item_index(self) -> i32;
-
-    #[doc = "`set_ItemIndex(i32)` overload"]
-    #[method(name = "set_ItemIndex", args = 1)]
-    pub fn set_item_index(self, value: i32) -> ();
-
-    #[doc = "`get_MoveX()` overload"]
-    #[method(name = "get_MoveX", args = 0)]
-    pub fn get_move_x(self) -> i32;
-
-    #[doc = "`get_MoveZ()` overload"]
-    #[method(name = "get_MoveZ", args = 0)]
-    pub fn get_move_z(self) -> i32;
-
-    #[doc = "`get_AttackX()` overload"]
-    #[method(name = "get_AttackX", args = 0)]
-    pub fn get_attack_x(self) -> i32;
-
-    #[doc = "`get_AttackZ()` overload"]
-    #[method(name = "get_AttackZ", args = 0)]
-    pub fn get_attack_z(self) -> i32;
-
-    #[doc = "`get_Heal()` overload"]
-    #[method(name = "get_Heal", args = 0)]
-    pub fn get_heal(self) -> i32;
-
-    #[doc = "`get_Damage()` overload"]
-    #[method(name = "get_Damage", args = 0)]
-    pub fn get_damage(self) -> i32;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_RescueRodTarget.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_RescueRodTarget {
-    pub rrs_result: crate::app::aithink::AIThink_RescueRodScoreResult,
-}
-
-impl ::unity2::ClassIdentity for AIThink_RescueRodTarget {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.RescueRodTarget";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_RescueRodTarget {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_RescueRodTarget {
-    #[doc = "`get_Unit()` overload"]
-    #[method(name = "get_Unit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
-    #[method(name = "set_Unit", args = 1)]
-    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
-
-    #[doc = "`get_X()` overload"]
-    #[method(name = "get_X", args = 0)]
-    pub fn get_x(self) -> i32;
-
-    #[doc = "`set_X(i32)` overload"]
-    #[method(name = "set_X", args = 1)]
-    pub fn set_x(self, value: i32) -> ();
-
-    #[doc = "`get_Z()` overload"]
-    #[method(name = "get_Z", args = 0)]
-    pub fn get_z(self) -> i32;
-
-    #[doc = "`set_Z(i32)` overload"]
-    #[method(name = "set_Z", args = 1)]
-    pub fn set_z(self, value: i32) -> ();
-
-    #[doc = "`get_Score()` overload"]
-    #[method(name = "get_Score", args = 0)]
-    pub fn get_score(self) -> u32;
-
-    #[doc = "`get_MoveX()` overload"]
-    #[method(name = "get_MoveX", args = 0)]
-    pub fn get_move_x(self) -> i32;
-
-    #[doc = "`get_MoveZ()` overload"]
-    #[method(name = "get_MoveZ", args = 0)]
-    pub fn get_move_z(self) -> i32;
-
-    #[doc = "`get_AttackX()` overload"]
-    #[method(name = "get_AttackX", args = 0)]
-    pub fn get_attack_x(self) -> i32;
-
-    #[doc = "`get_AttackZ()` overload"]
-    #[method(name = "get_AttackZ", args = 0)]
-    pub fn get_attack_z(self) -> i32;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`New(crate::app::aithink::AIThink_RescueRodTarget)` overload"]
-    #[method(name = "New", args = 1)]
-    pub fn new(inst: crate::app::aithink::AIThink_RescueRodTarget) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_Think.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AIThink_Think {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AIThink_Think {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.Think";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_Think {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AIThink_Think {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn cause() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn mind() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn attack() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn attack_long_range() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn attack_high() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn attack_middle() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn attack_low() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn r#move() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn entrust_heal() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn entrust_attack() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn entrust_move() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn entrust_fixed() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn uncontroll_heal() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn uncontroll_attack() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn uncontroll_move() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn uncontroll_fixed() -> Self {
-        Self { value: 4 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_HealRodScoreImplResult.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_HealRodScoreImplResult {}
-
-impl ::unity2::ClassIdentity for AIThink_HealRodScoreImplResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.HealRodScoreImplResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_HealRodScoreImplResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_HealRodScoreImplResult {
-    #[doc = "`get_MoveX()` overload"]
-    #[method(name = "get_MoveX", args = 0)]
-    pub fn get_move_x(self) -> i32;
-
-    #[doc = "`set_MoveX(i32)` overload"]
-    #[method(name = "set_MoveX", args = 1)]
-    pub fn set_move_x(self, value: i32) -> ();
-
-    #[doc = "`get_MoveZ()` overload"]
-    #[method(name = "get_MoveZ", args = 0)]
-    pub fn get_move_z(self) -> i32;
-
-    #[doc = "`set_MoveZ(i32)` overload"]
-    #[method(name = "set_MoveZ", args = 1)]
-    pub fn set_move_z(self, value: i32) -> ();
-
-    #[doc = "`get_AttackX()` overload"]
-    #[method(name = "get_AttackX", args = 0)]
-    pub fn get_attack_x(self) -> i32;
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    #[method(name = "set_AttackX", args = 1)]
-    pub fn set_attack_x(self, value: i32) -> ();
-
-    #[doc = "`get_AttackZ()` overload"]
-    #[method(name = "get_AttackZ", args = 0)]
-    pub fn get_attack_z(self) -> i32;
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    #[method(name = "set_AttackZ", args = 1)]
-    pub fn set_attack_z(self, value: i32) -> ();
-
-    #[doc = "`get_Heal()` overload"]
-    #[method(name = "get_Heal", args = 0)]
-    pub fn get_heal(self) -> i32;
-
-    #[doc = "`set_Heal(i32)` overload"]
-    #[method(name = "set_Heal", args = 1)]
-    pub fn set_heal(self, value: i32) -> ();
-
-    #[doc = "`get_Damage()` overload"]
-    #[method(name = "get_Damage", args = 0)]
-    pub fn get_damage(self) -> i32;
-
-    #[doc = "`set_Damage(i32)` overload"]
-    #[method(name = "set_Damage", args = 1)]
-    pub fn set_damage(self, value: i32) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_ActionFunc.md")))]
-#[::unity2::class(namespace = "App", name = "AIThink.ActionFunc")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AIThink_ActionFunc {}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods]
-impl AIThink_ActionFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]
-    #[method(name = "Invoke", args = 3)]
-    pub fn invoke(
-        self,
-        command: i32,
-        v0: crate::app::aivalue::AIValue,
-        v1: crate::app::aivalue::AIValue,
-    ) -> crate::app::aithink::AIThink_Result;
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_ActionFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_ActionFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIThink_ActionFuncMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_TrimasteriesSkills.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_TrimasteriesSkills {
-    pub m_skills: ::unity2::Array<crate::app::skilldata::SkillData>,
-    pub m_count: i32,
-    pub m_last_engage_turn: i32,
-}
-
-impl ::unity2::ClassIdentity for AIThink_TrimasteriesSkills {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.TrimasteriesSkills";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_TrimasteriesSkills {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_TrimasteriesSkills {
-    #[doc = "`Prepare(crate::app::unit::Unit)` overload"]
-    #[method(name = "Prepare", args = 1)]
-    pub fn prepare(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Add(crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, skill: crate::app::skilldata::SkillData) -> ();
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`get_MadStorm()` overload"]
-    #[method(name = "get_MadStorm", args = 0)]
-    pub fn get_mad_storm(self) -> crate::app::skilldata::SkillData;
-
-    #[doc = "`get_Miserable()` overload"]
-    #[method(name = "get_Miserable", args = 0)]
-    pub fn get_miserable(self) -> crate::app::skilldata::SkillData;
-
-    #[doc = "`get_FallingStars()` overload"]
-    #[method(name = "get_FallingStars", args = 0)]
-    pub fn get_falling_stars(self) -> crate::app::skilldata::SkillData;
-
-    #[doc = "`GetKind(crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "GetKind", args = 1)]
-    pub fn get_kind(
-        self,
-        skill: crate::app::skilldata::SkillData,
-    ) -> crate::app::aithink::AIThink_TrimasteriesSkills_Kinds;
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_EnchantThink.md")))]
-#[::unity2::class(namespace = "App", name = "AIThink.EnchantThink")]
-#[parent(crate::system::object::Object)]
-pub struct AIThink_EnchantThink {
-    #[rename(name = "m_Unit")]
-    pub m_unit: crate::app::unit::Unit,
-    #[rename(name = "m_ItemInfos")]
-    pub m_item_infos: ::unity2::Array<crate::app::aithink::AIThink_EnchantThink_ItemInfo>,
-    #[rename(name = "m_ItemInfoCount")]
-    pub m_item_info_count: i32,
-    #[rename(name = "m_UnitScores")]
-    pub m_unit_scores: crate::system::collections::generic::dictionary_2::Dictionary_2<i32, u8>,
-    #[rename(name = "m_UnitSurroundings")]
-    pub m_unit_surroundings: crate::system::collections::generic::dictionary_2::Dictionary_2<
-        i32,
-        crate::app::aithink::AIThink_EnchantThink_SurroundingInfo,
-    >,
-    #[static_field]
-    #[rename(name = "Descs")]
-    pub descs: ::unity2::Array<crate::app::aithink::AIThink_EnchantThink_Desc>,
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods]
-impl AIThink_EnchantThink {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Think(crate::app::unit::Unit, bool)` overload"]
-    #[method(name = "Think", args = 2)]
-    pub fn think(self, unit: crate::app::unit::Unit, is_entrust: bool) -> bool;
-
-    #[doc = "`CollectItemInfos()` overload"]
-    #[method(name = "CollectItemInfos", args = 0)]
-    pub fn collect_item_infos(self) -> bool;
-
-    #[doc = "`CanUseItem(i32)` overload"]
-    #[method(name = "CanUseItem", args = 1)]
-    pub fn can_use_item(self, item_info_index: i32) -> bool;
-
-    #[doc = "`DecideMovePosAndTarget(i32, crate::app::aithink::AIThink_EnchantThink_DMPTResult)` overload"]
-    #[method(name = "DecideMovePosAndTarget", args = 2)]
-    pub fn decide_move_pos_and_target(
-        self,
-        item_info_index: i32,
-        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
-    ) -> bool;
-
-    #[doc = "`Reset(crate::app::unit::Unit)` overload"]
-    #[method(name = "Reset", args = 1)]
-    pub fn reset(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`AddItemInfo(i32, crate::app::aithink::AIThink_EnchantThink_Kinds)` overload"]
-    #[method(name = "AddItemInfo", args = 2)]
-    pub fn add_item_info(
-        self,
-        item_index: i32,
-        kind: crate::app::aithink::AIThink_EnchantThink_Kinds,
-    ) -> ();
-
-    #[doc = "`MakeUnitScoreKey(crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "MakeUnitScoreKey", args = 2)]
-    pub fn make_unit_score_key(unit: crate::app::unit::Unit, item_info_index: i32) -> i32;
-
-    #[doc = "`CalcUnitScore(u8, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScore", args = 3)]
-    pub fn calc_unit_score(
-        self,
-        kind: u8,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcPosScore(u8, i32, i32, i32, i32, crate::app::unititem::UnitItem, crate::app::aithink::AIThink_EnchantThink_DMPTResult)` overload"]
-    #[method(name = "CalcPosScore", args = 7)]
-    pub fn calc_pos_score(
-        self,
-        kind: u8,
-        move_x: i32,
-        move_z: i32,
-        r#move: i32,
-        item_info_index: i32,
-        unit_item: crate::app::unititem::UnitItem,
-        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
-    ) -> u32;
-
-    #[doc = "`CollectSurroundingInfo(crate::app::unit::Unit)` overload"]
-    #[method(name = "CollectSurroundingInfo", args = 1)]
-    pub fn collect_surrounding_info(self, target: crate::app::unit::Unit) -> ();
-
-    #[doc = "`CalcUnitScoreRest(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreRest", args = 4)]
-    pub fn calc_unit_score_rest(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreEngageCount(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreEngageCount", args = 4)]
-    pub fn calc_unit_score_engage_count(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreEfficacyMorph(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreEfficacyMorph", args = 4)]
-    pub fn calc_unit_score_efficacy_morph(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreSight(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreSight", args = 4)]
-    pub fn calc_unit_score_sight(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreNoChainAttack(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreNoChainAttack", args = 4)]
-    pub fn calc_unit_score_no_chain_attack(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreWeightZero(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreWeightZero", args = 4)]
-    pub fn calc_unit_score_weight_zero(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreNoSilence(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreNoSilence", args = 4)]
-    pub fn calc_unit_score_no_silence(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreReflectPhysics(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreReflectPhysics", args = 4)]
-    pub fn calc_unit_score_reflect_physics(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreReflectMagic(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreReflectMagic", args = 4)]
-    pub fn calc_unit_score_reflect_magic(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreNoBreak(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreNoBreak", args = 4)]
-    pub fn calc_unit_score_no_break(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreNoFreeze(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreNoFreeze", args = 4)]
-    pub fn calc_unit_score_no_freeze(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreNoDamage(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreNoDamage", args = 4)]
-    pub fn calc_unit_score_no_damage(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreHoldOut(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreHoldOut", args = 4)]
-    pub fn calc_unit_score_hold_out(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreWeapon(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreWeapon", args = 4)]
-    pub fn calc_unit_score_weapon(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcUnitScoreDummy(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "CalcUnitScoreDummy", args = 4)]
-    pub fn calc_unit_score_dummy(
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
-
-    #[doc = "`CalcPosScoreWhole(crate::app::unit::Unit, i32, i32, i32, i32, crate::app::unititem::UnitItem, crate::app::aithink::AIThink_EnchantThink_DMPTResult)` overload"]
-    #[method(name = "CalcPosScoreWhole", args = 7)]
-    pub fn calc_pos_score_whole(
-        self,
-        actor: crate::app::unit::Unit,
-        move_x: i32,
-        move_z: i32,
-        r#move: i32,
-        item_info_index: i32,
-        unit_item: crate::app::unititem::UnitItem,
-        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
-    ) -> u32;
-
-    #[doc = "`CalcPosScoreRange(crate::app::unit::Unit, i32, i32, i32, i32, crate::app::unititem::UnitItem, crate::app::aithink::AIThink_EnchantThink_DMPTResult)` overload"]
-    #[method(name = "CalcPosScoreRange", args = 7)]
-    pub fn calc_pos_score_range(
-        self,
-        actor: crate::app::unit::Unit,
-        move_x: i32,
-        move_z: i32,
-        r#move: i32,
-        item_info_index: i32,
-        unit_item: crate::app::unititem::UnitItem,
-        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
-    ) -> u32;
-
-    #[doc = "`CalcPosScoreRangeImpl(crate::app::unit::Unit, i32, i32, i32, i32, crate::app::unititem::UnitItem, crate::app::aithink::AIThink_EnchantThink_DMPTResult, bool)` overload"]
-    #[method(name = "CalcPosScoreRangeImpl", args = 8)]
-    pub fn calc_pos_score_range_impl(
-        self,
-        actor: crate::app::unit::Unit,
-        move_x: i32,
-        move_z: i32,
-        r#move: i32,
-        item_info_index: i32,
-        unit_item: crate::app::unititem::UnitItem,
-        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
-        is_whole: bool,
-    ) -> u32;
-
-    #[doc = "`CalcPosScoreNeighbor(crate::app::unit::Unit, i32, i32, i32, i32, crate::app::unititem::UnitItem, crate::app::aithink::AIThink_EnchantThink_DMPTResult)` overload"]
-    #[method(name = "CalcPosScoreNeighbor", args = 7)]
-    pub fn calc_pos_score_neighbor(
-        self,
-        actor: crate::app::unit::Unit,
-        move_x: i32,
-        move_z: i32,
-        r#move: i32,
-        item_info_index: i32,
-        unit_item: crate::app::unititem::UnitItem,
-        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
-    ) -> u32;
-
-    #[doc = "`CalcPosScoreDummy(crate::app::unit::Unit, i32, i32, i32, i32, crate::app::unititem::UnitItem, crate::app::aithink::AIThink_EnchantThink_DMPTResult)` overload"]
-    #[method(name = "CalcPosScoreDummy", args = 7)]
-    pub fn calc_pos_score_dummy(
-        self,
-        actor: crate::app::unit::Unit,
-        move_x: i32,
-        move_z: i32,
-        r#move: i32,
-        item_info_index: i32,
-        unit_item: crate::app::unititem::UnitItem,
-        result: crate::app::aithink::AIThink_EnchantThink_DMPTResult,
-    ) -> u32;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_EnchantThink {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_EnchantThink),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIThink_EnchantThinkMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_Command.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AIThink_Command {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AIThink_Command {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.Command";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_Command {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AIThink_Command {
-    pub fn every_time() -> Self {
-        Self { value: -1 }
-    }
-
-    pub fn non_actiive() -> Self {
-        Self { value: -2 }
-    }
-
-    pub fn active() -> Self {
-        Self { value: 0 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_EngageWaitAdditionalAttackImage.md")))]
-#[::unity2::class(namespace = "App", name = "AIThink.EngageWaitAdditionalAttackImage")]
-# [parent (crate :: app :: mapimagecore_1 :: MapImageCore_1 < u16 >)]
-pub struct AIThink_EngageWaitAdditionalAttackImage {}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods]
-impl AIThink_EngageWaitAdditionalAttackImage {
-    #[doc = "`Add(i32, u16)` overload"]
-    #[method(name = "Add", args = 2)]
-    pub fn add(self, index: i32, v: u16) -> ();
-
-    #[doc = "`IncRange1(i32, i32)` overload"]
-    #[method(name = "IncRange1", args = 2)]
-    pub fn inc_range1(self, x: i32, z: i32) -> ();
-
-    #[doc = "`IncRange2(i32, i32)` overload"]
-    #[method(name = "IncRange2", args = 2)]
-    pub fn inc_range2(self, x: i32, z: i32) -> ();
-
-    #[doc = "`SetRange12(i32, i32, u8, u8)` overload"]
-    #[method(name = "SetRange12", args = 4)]
-    pub fn set_range12(self, x: i32, z: i32, range1: u8, range2: u8) -> ();
-
-    #[doc = "`GetRange12(i32, i32, u8, u8)` overload"]
-    #[method(name = "GetRange12", args = 4)]
-    pub fn get_range12(self, x: i32, z: i32, range1: u8, range2: u8) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_EngageWaitAdditionalAttackImage {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_EngageWaitAdditionalAttackImage),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIThink_EngageWaitAdditionalAttackImageMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_RescueRodScoreResult.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_RescueRodScoreResult {}
-
-impl ::unity2::ClassIdentity for AIThink_RescueRodScoreResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.RescueRodScoreResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_RescueRodScoreResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_RescueRodScoreResult {
-    #[doc = "`get_Score()` overload"]
-    #[method(name = "get_Score", args = 0)]
-    pub fn get_score(self) -> u32;
-
-    #[doc = "`set_Score(u32)` overload"]
-    #[method(name = "set_Score", args = 1)]
-    pub fn set_score(self, value: u32) -> ();
-
-    #[doc = "`get_MoveX()` overload"]
-    #[method(name = "get_MoveX", args = 0)]
-    pub fn get_move_x(self) -> i32;
-
-    #[doc = "`set_MoveX(i32)` overload"]
-    #[method(name = "set_MoveX", args = 1)]
-    pub fn set_move_x(self, value: i32) -> ();
-
-    #[doc = "`get_MoveZ()` overload"]
-    #[method(name = "get_MoveZ", args = 0)]
-    pub fn get_move_z(self) -> i32;
-
-    #[doc = "`set_MoveZ(i32)` overload"]
-    #[method(name = "set_MoveZ", args = 1)]
-    pub fn set_move_z(self, value: i32) -> ();
-
-    #[doc = "`get_AttackX()` overload"]
-    #[method(name = "get_AttackX", args = 0)]
-    pub fn get_attack_x(self) -> i32;
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    #[method(name = "set_AttackX", args = 1)]
-    pub fn set_attack_x(self, value: i32) -> ();
-
-    #[doc = "`get_AttackZ()` overload"]
-    #[method(name = "get_AttackZ", args = 0)]
-    pub fn get_attack_z(self) -> i32;
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    #[method(name = "set_AttackZ", args = 1)]
-    pub fn set_attack_z(self, value: i32) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_MoveFlag.md")))]
-#[::unity2::class(namespace = "App", name = "AIThink.MoveFlag")]
-#[parent(crate::app::bitfield32::BitField32)]
-pub struct AIThink_MoveFlag {
-    #[static_field]
-    #[rename(name = "Through")]
-    pub through: i32,
-    #[static_field]
-    #[rename(name = "Break")]
-    pub r#break: i32,
-    #[static_field]
-    #[rename(name = "Back")]
-    pub back: i32,
-    #[static_field]
-    #[rename(name = "Slow")]
-    pub slow: i32,
-    #[static_field]
-    #[rename(name = "Door")]
-    pub door: i32,
-    #[static_field]
-    #[rename(name = "Ignore")]
-    pub ignore: i32,
-    #[static_field]
-    #[rename(name = "IgnoreIceTile")]
-    pub ignore_ice_tile: i32,
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods]
-impl AIThink_MoveFlag {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-aithink")]
-impl AIThink_MoveFlag {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_MoveFlag),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIThink_MoveFlagMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_AttackTarget.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_AttackTarget.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct AIThink_AttackTarget {
@@ -5083,91 +5697,7 @@ impl AIThink_AttackTarget {
     pub fn new(inst: crate::app::aithink::AIThink_AttackTarget) -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_UncontrollAttackTarget.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_UncontrollAttackTarget {
-    pub uas_result: crate::app::aithink::AIThink_UncontrollAttackScoreResult,
-}
-
-impl ::unity2::ClassIdentity for AIThink_UncontrollAttackTarget {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.UncontrollAttackTarget";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_UncontrollAttackTarget {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_UncontrollAttackTarget {
-    #[doc = "`get_Unit()` overload"]
-    #[method(name = "get_Unit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
-    #[method(name = "set_Unit", args = 1)]
-    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
-
-    #[doc = "`get_X()` overload"]
-    #[method(name = "get_X", args = 0)]
-    pub fn get_x(self) -> i32;
-
-    #[doc = "`set_X(i32)` overload"]
-    #[method(name = "set_X", args = 1)]
-    pub fn set_x(self, value: i32) -> ();
-
-    #[doc = "`get_Z()` overload"]
-    #[method(name = "get_Z", args = 0)]
-    pub fn get_z(self) -> i32;
-
-    #[doc = "`set_Z(i32)` overload"]
-    #[method(name = "set_Z", args = 1)]
-    pub fn set_z(self, value: i32) -> ();
-
-    #[doc = "`get_Score()` overload"]
-    #[method(name = "get_Score", args = 0)]
-    pub fn get_score(self) -> u32;
-
-    #[doc = "`get_MoveX()` overload"]
-    #[method(name = "get_MoveX", args = 0)]
-    pub fn get_move_x(self) -> i32;
-
-    #[doc = "`get_MoveZ()` overload"]
-    #[method(name = "get_MoveZ", args = 0)]
-    pub fn get_move_z(self) -> i32;
-
-    #[doc = "`get_AttackX()` overload"]
-    #[method(name = "get_AttackX", args = 0)]
-    pub fn get_attack_x(self) -> i32;
-
-    #[doc = "`get_AttackZ()` overload"]
-    #[method(name = "get_AttackZ", args = 0)]
-    pub fn get_attack_z(self) -> i32;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`New(crate::app::aithink::AIThink_UncontrollAttackTarget)` overload"]
-    #[method(name = "New", args = 1)]
-    pub fn new(inst: crate::app::aithink::AIThink_UncontrollAttackTarget) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_AttackFlag.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_AttackFlag.md"))]
 #[::unity2::class(namespace = "App", name = "AIThink.AttackFlag")]
 #[parent(crate::app::bitfield32::BitField32)]
 pub struct AIThink_AttackFlag {
@@ -5242,15 +5772,17 @@ impl AIThink_AttackFlag {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_UncontrollAttackScoreResult.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_RescueRodTarget.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_UncontrollAttackScoreResult {}
+pub struct AIThink_RescueRodTarget {
+    pub rrs_result: crate::app::aithink::AIThink_RescueRodScoreResult,
+}
 
-impl ::unity2::ClassIdentity for AIThink_UncontrollAttackScoreResult {
+impl ::unity2::ClassIdentity for AIThink_RescueRodTarget {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "AIThink.UncontrollAttackScoreResult";
+    const NAME: &'static str = "AIThink.RescueRodTarget";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -5259,7 +5791,7 @@ impl ::unity2::ClassIdentity for AIThink_UncontrollAttackScoreResult {
     }
 }
 
-impl ::unity2::IlType for AIThink_UncontrollAttackScoreResult {
+impl ::unity2::IlType for AIThink_RescueRodTarget {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -5270,83 +5802,7 @@ impl ::unity2::IlType for AIThink_UncontrollAttackScoreResult {
 
 #[cfg(feature = "app-aithink")]
 #[::unity2::methods(value)]
-impl AIThink_UncontrollAttackScoreResult {
-    #[doc = "`get_Score()` overload"]
-    #[method(name = "get_Score", args = 0)]
-    pub fn get_score(self) -> u32;
-
-    #[doc = "`set_Score(u32)` overload"]
-    #[method(name = "set_Score", args = 1)]
-    pub fn set_score(self, value: u32) -> ();
-
-    #[doc = "`get_MoveX()` overload"]
-    #[method(name = "get_MoveX", args = 0)]
-    pub fn get_move_x(self) -> i32;
-
-    #[doc = "`set_MoveX(i32)` overload"]
-    #[method(name = "set_MoveX", args = 1)]
-    pub fn set_move_x(self, value: i32) -> ();
-
-    #[doc = "`get_MoveZ()` overload"]
-    #[method(name = "get_MoveZ", args = 0)]
-    pub fn get_move_z(self) -> i32;
-
-    #[doc = "`set_MoveZ(i32)` overload"]
-    #[method(name = "set_MoveZ", args = 1)]
-    pub fn set_move_z(self, value: i32) -> ();
-
-    #[doc = "`get_AttackX()` overload"]
-    #[method(name = "get_AttackX", args = 0)]
-    pub fn get_attack_x(self) -> i32;
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    #[method(name = "set_AttackX", args = 1)]
-    pub fn set_attack_x(self, value: i32) -> ();
-
-    #[doc = "`get_AttackZ()` overload"]
-    #[method(name = "get_AttackZ", args = 0)]
-    pub fn get_attack_z(self) -> i32;
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    #[method(name = "set_AttackZ", args = 1)]
-    pub fn set_attack_z(self, value: i32) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EntrustAttackTarget.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_EntrustAttackTarget {
-    pub eas_result: crate::app::aithink::AIThink_EntrustAttackScoreResult,
-}
-
-impl ::unity2::ClassIdentity for AIThink_EntrustAttackTarget {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.EntrustAttackTarget";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_EntrustAttackTarget {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_EntrustAttackTarget {
+impl AIThink_RescueRodTarget {
     #[doc = "`get_Unit()` overload"]
     #[method(name = "get_Unit", args = 0)]
     pub fn get_unit(self) -> crate::app::unit::Unit;
@@ -5391,464 +5847,16 @@ impl AIThink_EntrustAttackTarget {
     #[method(name = "get_AttackZ", args = 0)]
     pub fn get_attack_z(self) -> i32;
 
-    #[doc = "`get_KillRate()` overload"]
-    #[method(name = "get_KillRate", args = 0)]
-    pub fn get_kill_rate(self) -> f32;
-
-    #[doc = "`get_DeadRate()` overload"]
-    #[method(name = "get_DeadRate", args = 0)]
-    pub fn get_dead_rate(self) -> f32;
-
     #[doc = "`Clear()` overload"]
     #[method(name = "Clear", args = 0)]
     pub fn clear(self) -> ();
 
-    #[doc = "`New(crate::app::aithink::AIThink_EntrustAttackTarget)` overload"]
+    #[doc = "`New(crate::app::aithink::AIThink_RescueRodTarget)` overload"]
     #[method(name = "New", args = 1)]
-    pub fn new(inst: crate::app::aithink::AIThink_EntrustAttackTarget) -> ();
+    pub fn new(inst: crate::app::aithink::AIThink_RescueRodTarget) -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_InterferenceTarget.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_InterferenceTarget {
-    pub is_result: crate::app::aithink::AIThink_InterferenceScoreResult,
-}
-
-impl ::unity2::ClassIdentity for AIThink_InterferenceTarget {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.InterferenceTarget";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_InterferenceTarget {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_InterferenceTarget {
-    #[doc = "`get_Unit()` overload"]
-    #[method(name = "get_Unit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
-    #[method(name = "set_Unit", args = 1)]
-    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
-
-    #[doc = "`get_X()` overload"]
-    #[method(name = "get_X", args = 0)]
-    pub fn get_x(self) -> i32;
-
-    #[doc = "`set_X(i32)` overload"]
-    #[method(name = "set_X", args = 1)]
-    pub fn set_x(self, value: i32) -> ();
-
-    #[doc = "`get_Z()` overload"]
-    #[method(name = "get_Z", args = 0)]
-    pub fn get_z(self) -> i32;
-
-    #[doc = "`set_Z(i32)` overload"]
-    #[method(name = "set_Z", args = 1)]
-    pub fn set_z(self, value: i32) -> ();
-
-    #[doc = "`get_Score()` overload"]
-    #[method(name = "get_Score", args = 0)]
-    pub fn get_score(self) -> u32;
-
-    #[doc = "`get_MoveX()` overload"]
-    #[method(name = "get_MoveX", args = 0)]
-    pub fn get_move_x(self) -> i32;
-
-    #[doc = "`get_MoveZ()` overload"]
-    #[method(name = "get_MoveZ", args = 0)]
-    pub fn get_move_z(self) -> i32;
-
-    #[doc = "`get_AttackX()` overload"]
-    #[method(name = "get_AttackX", args = 0)]
-    pub fn get_attack_x(self) -> i32;
-
-    #[doc = "`get_AttackZ()` overload"]
-    #[method(name = "get_AttackZ", args = 0)]
-    pub fn get_attack_z(self) -> i32;
-
-    #[doc = "`get_ItemIndex()` overload"]
-    #[method(name = "get_ItemIndex", args = 0)]
-    pub fn get_item_index(self) -> i32;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`New(crate::app::aithink::AIThink_InterferenceTarget)` overload"]
-    #[method(name = "New", args = 1)]
-    pub fn new(inst: crate::app::aithink::AIThink_InterferenceTarget) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_TrimasteriesSkills_Kinds.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AIThink_TrimasteriesSkills_Kinds {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AIThink_TrimasteriesSkills_Kinds {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.TrimasteriesSkills.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_TrimasteriesSkills_Kinds {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AIThink_TrimasteriesSkills_Kinds {
-    pub fn unknown() -> Self {
-        Self { value: -1 }
-    }
-
-    pub fn mad_storm() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn miserable() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn falling_stars() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn max() -> Self {
-        Self { value: 3 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_HealRodPositionResult.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_HealRodPositionResult {}
-
-impl ::unity2::ClassIdentity for AIThink_HealRodPositionResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.HealRodPositionResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_HealRodPositionResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_HealRodPositionResult {
-    #[doc = "`get_MoveX()` overload"]
-    #[method(name = "get_MoveX", args = 0)]
-    pub fn get_move_x(self) -> i32;
-
-    #[doc = "`set_MoveX(i32)` overload"]
-    #[method(name = "set_MoveX", args = 1)]
-    pub fn set_move_x(self, value: i32) -> ();
-
-    #[doc = "`get_MoveZ()` overload"]
-    #[method(name = "get_MoveZ", args = 0)]
-    pub fn get_move_z(self) -> i32;
-
-    #[doc = "`set_MoveZ(i32)` overload"]
-    #[method(name = "set_MoveZ", args = 1)]
-    pub fn set_move_z(self, value: i32) -> ();
-
-    #[doc = "`get_AttackX()` overload"]
-    #[method(name = "get_AttackX", args = 0)]
-    pub fn get_attack_x(self) -> i32;
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    #[method(name = "set_AttackX", args = 1)]
-    pub fn set_attack_x(self, value: i32) -> ();
-
-    #[doc = "`get_AttackZ()` overload"]
-    #[method(name = "get_AttackZ", args = 0)]
-    pub fn get_attack_z(self) -> i32;
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    #[method(name = "set_AttackZ", args = 1)]
-    pub fn set_attack_z(self, value: i32) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EnchantThink_SurroundingInfo.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_EnchantThink_SurroundingInfo {
-    pub m_value: u32,
-}
-
-impl ::unity2::ClassIdentity for AIThink_EnchantThink_SurroundingInfo {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.EnchantThink.SurroundingInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_EnchantThink_SurroundingInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_EnchantThink_SurroundingInfo {
-    #[doc = "`get_MorphCount()` overload"]
-    #[method(name = "get_MorphCount", args = 0)]
-    pub fn get_morph_count(self) -> i32;
-
-    #[doc = "`set_MorphCount(i32)` overload"]
-    #[method(name = "set_MorphCount", args = 1)]
-    pub fn set_morph_count(self, value: i32) -> ();
-
-    #[doc = "`get_PhysicalAttackCount()` overload"]
-    #[method(name = "get_PhysicalAttackCount", args = 0)]
-    pub fn get_physical_attack_count(self) -> i32;
-
-    #[doc = "`set_PhysicalAttackCount(i32)` overload"]
-    #[method(name = "set_PhysicalAttackCount", args = 1)]
-    pub fn set_physical_attack_count(self, value: i32) -> ();
-
-    #[doc = "`get_MagicAttackCount()` overload"]
-    #[method(name = "get_MagicAttackCount", args = 0)]
-    pub fn get_magic_attack_count(self) -> i32;
-
-    #[doc = "`set_MagicAttackCount(i32)` overload"]
-    #[method(name = "set_MagicAttackCount", args = 1)]
-    pub fn set_magic_attack_count(self, value: i32) -> ();
-
-    #[doc = "`get_AttackCount()` overload"]
-    #[method(name = "get_AttackCount", args = 0)]
-    pub fn get_attack_count(self) -> i32;
-
-    #[doc = "`get_ChainAttackCount()` overload"]
-    #[method(name = "get_ChainAttackCount", args = 0)]
-    pub fn get_chain_attack_count(self) -> i32;
-
-    #[doc = "`set_ChainAttackCount(i32)` overload"]
-    #[method(name = "set_ChainAttackCount", args = 1)]
-    pub fn set_chain_attack_count(self, value: i32) -> ();
-
-    #[doc = "`get_BreakCount()` overload"]
-    #[method(name = "get_BreakCount", args = 0)]
-    pub fn get_break_count(self) -> i32;
-
-    #[doc = "`set_BreakCount(i32)` overload"]
-    #[method(name = "set_BreakCount", args = 1)]
-    pub fn set_break_count(self, value: i32) -> ();
-
-    #[doc = "`get_SilenceCount()` overload"]
-    #[method(name = "get_SilenceCount", args = 0)]
-    pub fn get_silence_count(self) -> i32;
-
-    #[doc = "`set_SilenceCount(i32)` overload"]
-    #[method(name = "set_SilenceCount", args = 1)]
-    pub fn set_silence_count(self, value: i32) -> ();
-
-    #[doc = "`get_FreezeCount()` overload"]
-    #[method(name = "get_FreezeCount", args = 0)]
-    pub fn get_freeze_count(self) -> i32;
-
-    #[doc = "`set_FreezeCount(i32)` overload"]
-    #[method(name = "set_FreezeCount", args = 1)]
-    pub fn set_freeze_count(self, value: i32) -> ();
-
-    #[doc = "`Get(u32, i32)` overload"]
-    #[method(name = "Get", args = 2)]
-    pub fn get(self, mask: u32, shift: i32) -> i32;
-
-    #[doc = "`Set(u32, i32, i32)` overload"]
-    #[method(name = "Set", args = 3)]
-    pub fn set(self, mask: u32, shift: i32, v: i32) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_AttackPositionResult.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIThink_AttackPositionResult {}
-
-impl ::unity2::ClassIdentity for AIThink_AttackPositionResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.AttackPositionResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_AttackPositionResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods(value)]
-impl AIThink_AttackPositionResult {
-    #[doc = "`get_MoveX()` overload"]
-    #[method(name = "get_MoveX", args = 0)]
-    pub fn get_move_x(self) -> i32;
-
-    #[doc = "`set_MoveX(i32)` overload"]
-    #[method(name = "set_MoveX", args = 1)]
-    pub fn set_move_x(self, value: i32) -> ();
-
-    #[doc = "`get_MoveZ()` overload"]
-    #[method(name = "get_MoveZ", args = 0)]
-    pub fn get_move_z(self) -> i32;
-
-    #[doc = "`set_MoveZ(i32)` overload"]
-    #[method(name = "set_MoveZ", args = 1)]
-    pub fn set_move_z(self, value: i32) -> ();
-
-    #[doc = "`get_AttackX()` overload"]
-    #[method(name = "get_AttackX", args = 0)]
-    pub fn get_attack_x(self) -> i32;
-
-    #[doc = "`set_AttackX(i32)` overload"]
-    #[method(name = "set_AttackX", args = 1)]
-    pub fn set_attack_x(self, value: i32) -> ();
-
-    #[doc = "`get_AttackZ()` overload"]
-    #[method(name = "get_AttackZ", args = 0)]
-    pub fn get_attack_z(self) -> i32;
-
-    #[doc = "`set_AttackZ(i32)` overload"]
-    #[method(name = "set_AttackZ", args = 1)]
-    pub fn set_attack_z(self, value: i32) -> ();
-
-    #[doc = "`get_BlowScore()` overload"]
-    #[method(name = "get_BlowScore", args = 0)]
-    pub fn get_blow_score(self) -> u32;
-
-    #[doc = "`set_BlowScore(u32)` overload"]
-    #[method(name = "set_BlowScore", args = 1)]
-    pub fn set_blow_score(self, value: u32) -> ();
-
-    #[doc = "`get_ChainAttackCount()` overload"]
-    #[method(name = "get_ChainAttackCount", args = 0)]
-    pub fn get_chain_attack_count(self) -> i32;
-
-    #[doc = "`set_ChainAttackCount(i32)` overload"]
-    #[method(name = "set_ChainAttackCount", args = 1)]
-    pub fn set_chain_attack_count(self, value: i32) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_Result.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AIThink_Result {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AIThink_Result {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIThink.Result";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIThink_Result {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AIThink_Result {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn decide() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn reserve() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EngageWaitResult.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_EngageWaitResult.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct AIThink_EngageWaitResult {
@@ -5902,23 +5910,15 @@ impl AIThink_EngageWaitResult {
     ) -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_GodSkillTypes.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_InterferenceScoreResult.md"))]
 #[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AIThink_GodSkillTypes {
-    pub value: i32,
-}
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_InterferenceScoreResult {}
 
-impl ::unity2::ClassIdentity for AIThink_GodSkillTypes {
+impl ::unity2::ClassIdentity for AIThink_InterferenceScoreResult {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "AIThink.GodSkillTypes";
+    const NAME: &'static str = "AIThink.InterferenceScoreResult";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -5927,7 +5927,7 @@ impl ::unity2::ClassIdentity for AIThink_GodSkillTypes {
     }
 }
 
-impl ::unity2::IlType for AIThink_GodSkillTypes {
+impl ::unity2::IlType for AIThink_InterferenceScoreResult {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -5936,107 +5936,107 @@ impl ::unity2::IlType for AIThink_GodSkillTypes {
     }
 }
 
-impl AIThink_GodSkillTypes {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
+#[cfg(feature = "app-aithink")]
+#[::unity2::methods(value)]
+impl AIThink_InterferenceScoreResult {
+    #[doc = "`get_Score()` overload"]
+    #[method(name = "get_Score", args = 0)]
+    pub fn get_score(self) -> u32;
 
-    pub fn remagic() -> Self {
-        Self { value: 1 }
-    }
+    #[doc = "`set_Score(u32)` overload"]
+    #[method(name = "set_Score", args = 1)]
+    pub fn set_score(self, value: u32) -> ();
 
-    pub fn before_move() -> Self {
-        Self { value: 2 }
-    }
+    #[doc = "`get_MoveX()` overload"]
+    #[method(name = "get_MoveX", args = 0)]
+    pub fn get_move_x(self) -> i32;
 
-    pub fn vision() -> Self {
-        Self { value: 3 }
-    }
+    #[doc = "`set_MoveX(i32)` overload"]
+    #[method(name = "set_MoveX", args = 1)]
+    pub fn set_move_x(self, value: i32) -> ();
 
-    pub fn overlap() -> Self {
-        Self { value: 4 }
-    }
+    #[doc = "`get_MoveZ()` overload"]
+    #[method(name = "get_MoveZ", args = 0)]
+    pub fn get_move_z(self) -> i32;
 
-    pub fn support() -> Self {
-        Self { value: 5 }
-    }
+    #[doc = "`set_MoveZ(i32)` overload"]
+    #[method(name = "set_MoveZ", args = 1)]
+    pub fn set_move_z(self, value: i32) -> ();
 
-    pub fn engage_guard() -> Self {
-        Self { value: 6 }
-    }
+    #[doc = "`get_AttackX()` overload"]
+    #[method(name = "get_AttackX", args = 0)]
+    pub fn get_attack_x(self) -> i32;
 
-    pub fn pull_back() -> Self {
-        Self { value: 7 }
-    }
+    #[doc = "`set_AttackX(i32)` overload"]
+    #[method(name = "set_AttackX", args = 1)]
+    pub fn set_attack_x(self, value: i32) -> ();
 
-    pub fn god_change() -> Self {
-        Self { value: 8 }
-    }
+    #[doc = "`get_AttackZ()` overload"]
+    #[method(name = "get_AttackZ", args = 0)]
+    pub fn get_attack_z(self) -> i32;
 
-    pub fn decoy() -> Self {
-        Self { value: 9 }
-    }
+    #[doc = "`set_AttackZ(i32)` overload"]
+    #[method(name = "set_AttackZ", args = 1)]
+    pub fn set_attack_z(self, value: i32) -> ();
 
-    pub fn strategy() -> Self {
-        Self { value: 10 }
-    }
+    #[doc = "`get_ItemIndex()` overload"]
+    #[method(name = "get_ItemIndex", args = 0)]
+    pub fn get_item_index(self) -> i32;
 
-    pub fn strategy_holy_shield() -> Self {
-        Self { value: 11 }
-    }
+    #[doc = "`set_ItemIndex(i32)` overload"]
+    #[method(name = "set_ItemIndex", args = 1)]
+    pub fn set_item_index(self, value: i32) -> ();
 
-    pub fn trimasteries() -> Self {
-        Self { value: 12 }
-    }
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
 
-    pub fn contract() -> Self {
-        Self { value: 13 }
-    }
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aithink/AIThink_OverlapSkills.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIThink_OverlapSkills {
+    pub m_skills: ::unity2::Array<crate::app::skilldata::SkillData>,
+    pub m_count: i32,
+}
 
-    pub fn gaze() -> Self {
-        Self { value: 14 }
-    }
+impl ::unity2::ClassIdentity for AIThink_OverlapSkills {
+    const NAMESPACE: &'static str = "App";
 
-    pub fn num() -> Self {
-        Self { value: 15 }
+    const NAME: &'static str = "AIThink.OverlapSkills";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aithink/AIThink_EnchantThink_CalcUnitScoreFunction.md")))]
-#[::unity2::class(namespace = "App", name = "AIThink.EnchantThink.CalcUnitScoreFunction")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AIThink_EnchantThink_CalcUnitScoreFunction {}
-
-#[cfg(feature = "app-aithink")]
-#[::unity2::methods]
-impl AIThink_EnchantThink_CalcUnitScoreFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "Invoke", args = 4)]
-    pub fn invoke(
-        self,
-        think: crate::app::aithink::AIThink_EnchantThink,
-        actor: crate::app::unit::Unit,
-        target: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-    ) -> u8;
+impl ::unity2::IlType for AIThink_OverlapSkills {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
 }
 
 #[cfg(feature = "app-aithink")]
-impl AIThink_EnchantThink_CalcUnitScoreFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIThink_EnchantThink_CalcUnitScoreFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIThink_EnchantThink_CalcUnitScoreFunctionMethods>::ctor(this, object, method);
-        this
-    }
+#[::unity2::methods(value)]
+impl AIThink_OverlapSkills {
+    #[doc = "`Prepare()` overload"]
+    #[method(name = "Prepare", args = 0)]
+    pub fn prepare(self) -> ();
+
+    #[doc = "`Add(crate::app::skilldata::SkillData)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, skill: crate::app::skilldata::SkillData) -> ();
+
+    #[doc = "`GetByRandom()` overload"]
+    #[method(name = "GetByRandom", args = 0)]
+    pub fn get_by_random(self) -> crate::app::skilldata::SkillData;
+
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
 }

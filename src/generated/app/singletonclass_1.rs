@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/singletonclass_1/SingletonClass_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/singletonclass_1/SingletonClass_1.md"))]
 #[::unity2::class(namespace = "App", name = "SingletonClass`1")]
 #[parent(crate::system::object::Object)]
 pub struct SingletonClass_1<T0: ::unity2::ClassIdentity> {

@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structheader/StructHeader.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structheader/StructHeader.md"))]
 #[::unity2::class(namespace = "App", name = "StructHeader")]
 #[parent(crate::system::object::Object)]
 pub struct StructHeader {}
@@ -70,7 +70,7 @@ impl StructHeader {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structheader/StructHeader_Param.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structheader/StructHeader_Param.md"))]
 #[::unity2::class(namespace = "App", name = "StructHeader.Param")]
 #[parent(crate::system::object::Object)]
 pub struct StructHeader_Param {

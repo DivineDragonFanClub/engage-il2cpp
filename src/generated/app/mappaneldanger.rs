@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_Mode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_DangerType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -17,14 +17,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapPanelDanger_Mode {
+pub struct MapPanelDanger_DangerType {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapPanelDanger_Mode {
+impl ::unity2::ClassIdentity for MapPanelDanger_DangerType {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapPanelDanger.Mode";
+    const NAME: &'static str = "MapPanelDanger.DangerType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -33,7 +33,7 @@ impl ::unity2::ClassIdentity for MapPanelDanger_Mode {
     }
 }
 
-impl ::unity2::IlType for MapPanelDanger_Mode {
+impl ::unity2::IlType for MapPanelDanger_DangerType {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -42,17 +42,21 @@ impl ::unity2::IlType for MapPanelDanger_Mode {
     }
 }
 
-impl MapPanelDanger_Mode {
-    pub fn hide() -> Self {
+impl MapPanelDanger_DangerType {
+    pub fn rod() -> Self {
         Self { value: 0 }
     }
 
-    pub fn show() -> Self {
+    pub fn attack() -> Self {
         Self { value: 1 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 2 }
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldanger/MapPanelDanger.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldanger/MapPanelDanger.md"))]
 #[::unity2::class(namespace = "App", name = "MapPanelDanger")]
 pub struct MapPanelDanger {
     #[rename(name = "m_ImageList")]
@@ -204,7 +208,7 @@ impl MapPanelDanger {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_MeshIndex.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_MeshIndex.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -276,7 +280,7 @@ impl MapPanelDanger_MeshIndex {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_DangerType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_Mode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -285,14 +289,14 @@ impl MapPanelDanger_MeshIndex {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapPanelDanger_DangerType {
+pub struct MapPanelDanger_Mode {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapPanelDanger_DangerType {
+impl ::unity2::ClassIdentity for MapPanelDanger_Mode {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapPanelDanger.DangerType";
+    const NAME: &'static str = "MapPanelDanger.Mode";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -301,7 +305,7 @@ impl ::unity2::ClassIdentity for MapPanelDanger_DangerType {
     }
 }
 
-impl ::unity2::IlType for MapPanelDanger_DangerType {
+impl ::unity2::IlType for MapPanelDanger_Mode {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -310,16 +314,12 @@ impl ::unity2::IlType for MapPanelDanger_DangerType {
     }
 }
 
-impl MapPanelDanger_DangerType {
-    pub fn rod() -> Self {
+impl MapPanelDanger_Mode {
+    pub fn hide() -> Self {
         Self { value: 0 }
     }
 
-    pub fn attack() -> Self {
+    pub fn show() -> Self {
         Self { value: 1 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 2 }
     }
 }

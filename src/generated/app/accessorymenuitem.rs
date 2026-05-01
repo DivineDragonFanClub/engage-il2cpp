@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "AccessoryMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct AccessoryMenuItem {
@@ -160,7 +160,7 @@ impl AccessoryMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_SelectEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_SelectEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "AccessoryMenuItem.SelectEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct AccessoryMenuItem_SelectEventHandler {}
@@ -193,7 +193,7 @@ impl AccessoryMenuItem_SelectEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_DecideEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_DecideEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "AccessoryMenuItem.DecideEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct AccessoryMenuItem_DecideEventHandler {}
@@ -226,7 +226,7 @@ impl AccessoryMenuItem_DecideEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_RequestCloseEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_RequestCloseEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "AccessoryMenuItem.RequestCloseEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct AccessoryMenuItem_RequestCloseEventHandler {}

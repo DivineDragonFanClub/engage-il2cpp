@@ -8,75 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitparamdetail/UnitParamDetail_ValueDetail.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitParamDetail_ValueDetail {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitParamDetail_ValueDetail {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitParamDetail.ValueDetail";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitParamDetail_ValueDetail {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitParamDetail_ValueDetail {
-    pub fn base() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn god() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn terrain() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn support() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn effect() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn hub() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn weight() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 7 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitparamdetail/UnitParamDetail.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitparamdetail/UnitParamDetail.md"))]
 #[::unity2::class(namespace = "App", name = "UnitParamDetail")]
 #[parent(crate::system::object::Object)]
 pub struct UnitParamDetail {
@@ -142,5 +74,73 @@ impl UnitParamDetail {
         });
         <Self as IUnitParamDetailMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitparamdetail/UnitParamDetail_ValueDetail.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitParamDetail_ValueDetail {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitParamDetail_ValueDetail {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitParamDetail.ValueDetail";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitParamDetail_ValueDetail {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitParamDetail_ValueDetail {
+    pub fn base() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn god() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn terrain() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn support() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn effect() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn hub() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn weight() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 7 }
     }
 }

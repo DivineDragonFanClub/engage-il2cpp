@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortierelianceselectionunitmenu/SortieRelianceSelectionUnitMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortierelianceselectionunitmenu/SortieRelianceSelectionUnitMenu.md"))]
 #[::unity2::class(namespace = "App", name = "SortieRelianceSelectionUnitMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct SortieRelianceSelectionUnitMenu {}
@@ -52,7 +52,7 @@ impl SortieRelianceSelectionUnitMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortierelianceselectionunitmenu/SortieRelianceSelectionUnitMenu_UnitMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortierelianceselectionunitmenu/SortieRelianceSelectionUnitMenu_UnitMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "SortieRelianceSelectionUnitMenu.UnitMenuItem"

@@ -6,7 +6,7 @@ use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptable
 use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
     name = "CustomShadowNoCasterPass"
@@ -95,7 +95,7 @@ impl CustomShadowNoCasterPass {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass_CustomShadowConstantBuffer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass_CustomShadowConstantBuffer.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
     name = "CustomShadowNoCasterPass.CustomShadowConstantBuffer"

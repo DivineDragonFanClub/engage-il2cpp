@@ -12,47 +12,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectpausemenu/PhotographSelectPauseMenu_UpdateUIObjHandler.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "PhotographSelectPauseMenu.UpdateUIObjHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct PhotographSelectPauseMenu_UpdateUIObjHandler {}
-
-#[cfg(feature = "app-photographselectpausemenu")]
-#[::unity2::methods]
-impl PhotographSelectPauseMenu_UpdateUIObjHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, i32)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        category_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-        cur_category_idx: i32,
-    ) -> ();
-}
-
-#[cfg(feature = "app-photographselectpausemenu")]
-impl PhotographSelectPauseMenu_UpdateUIObjHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographSelectPauseMenu_UpdateUIObjHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographSelectPauseMenu_UpdateUIObjHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectpausemenu/PhotographSelectPauseMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectpausemenu/PhotographSelectPauseMenu.md"))]
 #[::unity2::class(namespace = "App", name = "PhotographSelectPauseMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct PhotographSelectPauseMenu {
@@ -134,6 +94,46 @@ impl PhotographSelectPauseMenu {
             dispos_manager,
             update_ui_obj_handler,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectpausemenu/PhotographSelectPauseMenu_UpdateUIObjHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "PhotographSelectPauseMenu.UpdateUIObjHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct PhotographSelectPauseMenu_UpdateUIObjHandler {}
+
+#[cfg(feature = "app-photographselectpausemenu")]
+#[::unity2::methods]
+impl PhotographSelectPauseMenu_UpdateUIObjHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, i32)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        category_list: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+        cur_category_idx: i32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-photographselectpausemenu")]
+impl PhotographSelectPauseMenu_UpdateUIObjHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographSelectPauseMenu_UpdateUIObjHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographSelectPauseMenu_UpdateUIObjHandlerMethods>::ctor(this, object, method);
         this
     }
 }

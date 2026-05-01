@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/playablebinding/PlayableBinding.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/playablebinding/PlayableBinding.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct PlayableBinding {
@@ -74,7 +74,7 @@ impl PlayableBinding {
     pub fn cctor() -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/playablebinding/PlayableBinding_CreateOutputMethod.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/playablebinding/PlayableBinding_CreateOutputMethod.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Playables",
     name = "PlayableBinding.CreateOutputMethod"

@@ -6,7 +6,7 @@ use crate::unity_engine::yieldinstruction::IYieldInstruction;
 use crate::unity_engine::yieldinstruction::YieldInstruction;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/waitforendofframe/WaitForEndOfFrame.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/waitforendofframe/WaitForEndOfFrame.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "WaitForEndOfFrame")]
 #[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]
 pub struct WaitForEndOfFrame {}

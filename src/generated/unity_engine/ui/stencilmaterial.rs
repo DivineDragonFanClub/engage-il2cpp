@@ -4,7 +4,57 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/stencilmaterial/StencilMaterial.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/stencilmaterial/StencilMaterial_MatEntry.md"))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "StencilMaterial.MatEntry")]
+#[parent(crate::system::object::Object)]
+pub struct StencilMaterial_MatEntry {
+    #[rename(name = "baseMat")]
+    pub base_mat: crate::unity_engine::material::Material,
+    #[rename(name = "customMat")]
+    pub custom_mat: crate::unity_engine::material::Material,
+    #[rename(name = "count")]
+    pub count: i32,
+    #[rename(name = "stencilId")]
+    pub stencil_id: i32,
+    #[rename(name = "operation")]
+    pub operation: crate::unity_engine::rendering::stencilop::StencilOp,
+    #[rename(name = "compareFunction")]
+    pub compare_function: crate::unity_engine::rendering::comparefunction::CompareFunction,
+    #[rename(name = "readMask")]
+    pub read_mask: i32,
+    #[rename(name = "writeMask")]
+    pub write_mask: i32,
+    #[rename(name = "useAlphaClip")]
+    pub use_alpha_clip: bool,
+    #[rename(name = "colorMask")]
+    pub color_mask: crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
+}
+
+#[cfg(feature = "unity_engine-ui-stencilmaterial")]
+#[::unity2::methods]
+impl StencilMaterial_MatEntry {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-stencilmaterial")]
+impl StencilMaterial_MatEntry {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StencilMaterial_MatEntry),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStencilMaterial_MatEntryMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/stencilmaterial/StencilMaterial.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI", name = "StencilMaterial")]
 #[parent(crate::system::object::Object)]
 pub struct StencilMaterial {
@@ -58,54 +108,4 @@ impl StencilMaterial {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/stencilmaterial/StencilMaterial_MatEntry.md")))]
-#[::unity2::class(namespace = "UnityEngine.UI", name = "StencilMaterial.MatEntry")]
-#[parent(crate::system::object::Object)]
-pub struct StencilMaterial_MatEntry {
-    #[rename(name = "baseMat")]
-    pub base_mat: crate::unity_engine::material::Material,
-    #[rename(name = "customMat")]
-    pub custom_mat: crate::unity_engine::material::Material,
-    #[rename(name = "count")]
-    pub count: i32,
-    #[rename(name = "stencilId")]
-    pub stencil_id: i32,
-    #[rename(name = "operation")]
-    pub operation: crate::unity_engine::rendering::stencilop::StencilOp,
-    #[rename(name = "compareFunction")]
-    pub compare_function: crate::unity_engine::rendering::comparefunction::CompareFunction,
-    #[rename(name = "readMask")]
-    pub read_mask: i32,
-    #[rename(name = "writeMask")]
-    pub write_mask: i32,
-    #[rename(name = "useAlphaClip")]
-    pub use_alpha_clip: bool,
-    #[rename(name = "colorMask")]
-    pub color_mask: crate::unity_engine::rendering::colorwritemask::ColorWriteMask,
-}
-
-#[cfg(feature = "unity_engine-ui-stencilmaterial")]
-#[::unity2::methods]
-impl StencilMaterial_MatEntry {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-ui-stencilmaterial")]
-impl StencilMaterial_MatEntry {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StencilMaterial_MatEntry),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStencilMaterial_MatEntryMethods>::ctor(this);
-        this
-    }
 }

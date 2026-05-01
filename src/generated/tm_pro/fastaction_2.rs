@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/fastaction_2/FastAction_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/fastaction_2/FastAction_2.md"))]
 #[::unity2::class(namespace = "TMPro", name = "FastAction`2")]
 #[parent(crate::system::object::Object)]
 pub struct FastAction_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {

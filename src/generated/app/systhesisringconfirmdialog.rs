@@ -14,7 +14,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog.md"))]
 #[::unity2::class(namespace = "App", name = "SysthesisRingConfirmDialog")]
 #[parent(crate::system::object::Object)]
 pub struct SysthesisRingConfirmDialog {}
@@ -51,7 +51,7 @@ impl SysthesisRingConfirmDialog {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_DecideEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_DecideEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "SysthesisRingConfirmDialog.DecideEventHandler"
@@ -87,7 +87,7 @@ impl SysthesisRingConfirmDialog_DecideEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_YesDialogItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_YesDialogItem.md"))]
 #[::unity2::class(namespace = "App", name = "SysthesisRingConfirmDialog.YesDialogItem")]
 #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
 pub struct SysthesisRingConfirmDialog_YesDialogItem {

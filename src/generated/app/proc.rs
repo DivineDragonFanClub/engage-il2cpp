@@ -12,7 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc.md"))]
 #[::unity2::class(namespace = "App", name = "Proc")]
 #[parent(crate::system::object::Object)]
 pub struct Proc {
@@ -298,7 +298,42 @@ impl Proc {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/proc/Proc_RootType.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc_ProcCallback_1.md"))]
+#[::unity2::class(namespace = "App", name = "Proc.ProcCallback`1")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+#[parent(crate::system::delegate::Delegate)]
+#[parent(crate::system::object::Object)]
+pub struct Proc_ProcCallback_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-proc")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> Proc_ProcCallback_1<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(T0)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, inst: T0) -> ();
+}
+
+#[cfg(feature = "app-proc")]
+impl<T0: ::unity2::ClassIdentity> Proc_ProcCallback_1<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Proc_ProcCallback_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProc_ProcCallback_1Methods<T0>>::ctor(this, object, method);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/proc/Proc_RootType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -347,40 +382,5 @@ impl Proc_RootType {
 
     pub fn num() -> Self {
         Self { value: 3 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/proc/Proc_ProcCallback_1.md")))]
-#[::unity2::class(namespace = "App", name = "Proc.ProcCallback`1")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-#[parent(crate::system::delegate::Delegate)]
-#[parent(crate::system::object::Object)]
-pub struct Proc_ProcCallback_1<T0: ::unity2::ClassIdentity> {}
-
-#[cfg(feature = "app-proc")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> Proc_ProcCallback_1<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(T0)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, inst: T0) -> ();
-}
-
-#[cfg(feature = "app-proc")]
-impl<T0: ::unity2::ClassIdentity> Proc_ProcCallback_1<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Proc_ProcCallback_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProc_ProcCallback_1Methods<T0>>::ctor(this, object, method);
-        this
     }
 }

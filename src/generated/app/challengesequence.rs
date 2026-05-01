@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengesequence/ChallengeSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengesequence/ChallengeSequence.md"))]
 #[::unity2::class(namespace = "App", name = "ChallengeSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct ChallengeSequence {
@@ -106,7 +106,7 @@ impl ChallengeSequence {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/challengesequence/ChallengeSequence_Label2.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/challengesequence/ChallengeSequence_Label2.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

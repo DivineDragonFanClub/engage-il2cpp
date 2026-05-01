@@ -16,7 +16,53 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/transformbillboard/TransformBillboard_Axis.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformbillboard/TransformBillboard.md"))]
+#[::unity2::class(namespace = "App", name = "TransformBillboard")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct TransformBillboard {
+    #[rename(name = "m_Axis")]
+    pub m_axis: crate::app::transformbillboard::TransformBillboard_Axis,
+    #[rename(name = "m_IsScaling")]
+    pub m_is_scaling: bool,
+    #[rename(name = "m_BaseScale")]
+    pub m_base_scale: f32,
+    #[static_field]
+    #[rename(name = "BaseDistance")]
+    pub base_distance: f32,
+    #[static_field]
+    #[rename(name = "BaseFov")]
+    pub base_fov: f32,
+}
+
+#[cfg(feature = "app-transformbillboard")]
+#[::unity2::methods]
+impl TransformBillboard {
+    #[doc = "`LateUpdate()` overload"]
+    #[method(name = "LateUpdate", args = 0)]
+    pub fn late_update(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-transformbillboard")]
+impl TransformBillboard {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TransformBillboard),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITransformBillboardMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/transformbillboard/TransformBillboard_Axis.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -61,51 +107,5 @@ impl TransformBillboard_Axis {
 
     pub fn y() -> Self {
         Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformbillboard/TransformBillboard.md")))]
-#[::unity2::class(namespace = "App", name = "TransformBillboard")]
-#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-pub struct TransformBillboard {
-    #[rename(name = "m_Axis")]
-    pub m_axis: crate::app::transformbillboard::TransformBillboard_Axis,
-    #[rename(name = "m_IsScaling")]
-    pub m_is_scaling: bool,
-    #[rename(name = "m_BaseScale")]
-    pub m_base_scale: f32,
-    #[static_field]
-    #[rename(name = "BaseDistance")]
-    pub base_distance: f32,
-    #[static_field]
-    #[rename(name = "BaseFov")]
-    pub base_fov: f32,
-}
-
-#[cfg(feature = "app-transformbillboard")]
-#[::unity2::methods]
-impl TransformBillboard {
-    #[doc = "`LateUpdate()` overload"]
-    #[method(name = "LateUpdate", args = 0)]
-    pub fn late_update(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-transformbillboard")]
-impl TransformBillboard {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TransformBillboard),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITransformBillboardMethods>::ctor(this);
-        this
     }
 }

@@ -18,7 +18,7 @@ use crate::unity_engine::ui::layoutgroup::ILayoutGroup;
 use crate::unity_engine::ui::layoutgroup::LayoutGroup;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/horizontallayoutgroup/HorizontalLayoutGroup.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/horizontallayoutgroup/HorizontalLayoutGroup.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI", name = "HorizontalLayoutGroup")]
 #[parent(crate::unity_engine::ui::horizontalorverticallayoutgroup::HorizontalOrVerticalLayoutGroup)]
 pub struct HorizontalLayoutGroup {}

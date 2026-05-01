@@ -8,7 +8,59 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldangerall/MapPanelDangerAll.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_DangerType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapPanelDangerAll_DangerType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapPanelDangerAll_DangerType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPanelDangerAll.DangerType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapPanelDangerAll_DangerType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapPanelDangerAll_DangerType {
+    pub fn attack() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn gunner() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldangerall/MapPanelDangerAll.md"))]
 #[::unity2::class(namespace = "App", name = "MapPanelDangerAll")]
 pub struct MapPanelDangerAll {
     #[rename(name = "m_AttackMaterial")]
@@ -137,59 +189,7 @@ impl MapPanelDangerAll {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_DangerType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapPanelDangerAll_DangerType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapPanelDangerAll_DangerType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapPanelDangerAll.DangerType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapPanelDangerAll_DangerType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapPanelDangerAll_DangerType {
-    pub fn attack() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn rod() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn gunner() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 3 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_MeshIndex.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldangerall/MapPanelDangerAll_MeshIndex.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

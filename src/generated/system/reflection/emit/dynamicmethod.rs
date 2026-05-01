@@ -10,7 +10,7 @@ use crate::system::reflection::methodinfo::IMethodInfo;
 use crate::system::reflection::methodinfo::MethodInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/dynamicmethod/DynamicMethod.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/dynamicmethod/DynamicMethod.md"))]
 #[::unity2::class(namespace = "System.Reflection.Emit", name = "DynamicMethod")]
 #[parent(crate::system::reflection::methodinfo::MethodInfo)]
 pub struct DynamicMethod {}

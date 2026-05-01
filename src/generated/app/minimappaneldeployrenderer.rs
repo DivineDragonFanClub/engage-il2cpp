@@ -20,7 +20,7 @@ use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
 use crate::unity_engine::ui::maskablegraphic::MaskableGraphic;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimappaneldeployrenderer/MiniMapPanelDeployRenderer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/minimappaneldeployrenderer/MiniMapPanelDeployRenderer.md"))]
 #[::unity2::class(namespace = "App", name = "MiniMapPanelDeployRenderer")]
 #[parent(crate::app::minimappanelbase::MiniMapPanelBase)]
 pub struct MiniMapPanelDeployRenderer {

@@ -8,7 +8,7 @@ use crate::unity_engine::vfx::visualeffectobject::IVisualEffectObject;
 use crate::unity_engine::vfx::visualeffectobject::VisualEffectObject;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/visualeffectasset/VisualEffectAsset.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/vfx/visualeffectasset/VisualEffectAsset.md"))]
 #[::unity2::class(namespace = "UnityEngine.VFX", name = "VisualEffectAsset")]
 #[parent(crate::unity_engine::vfx::visualeffectobject::VisualEffectObject)]
 pub struct VisualEffectAsset {

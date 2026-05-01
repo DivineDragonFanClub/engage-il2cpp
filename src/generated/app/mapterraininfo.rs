@@ -10,7 +10,292 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo_MapTerrainInfoSingle.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Side.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapTerrainInfo_Side {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapTerrainInfo_Side {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapTerrainInfo.Side";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapTerrainInfo_Side {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapTerrainInfo_Side {
+    pub fn left() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo.md"))]
+#[::unity2::class(namespace = "App", name = "MapTerrainInfo")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapterraininfo :: MapTerrainInfo >)]
+pub struct MapTerrainInfo {
+    #[static_field]
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_PrefabHandle")]
+    pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_MapTerrainInfoSingles")]
+    pub m_map_terrain_info_singles:
+        ::unity2::Array<crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle>,
+    #[static_field]
+    #[rename(name = "m_CalcUnit")]
+    pub m_calc_unit: crate::app::unit::Unit,
+    #[static_field]
+    #[rename(name = "m_BattleInfo")]
+    pub m_battle_info: crate::app::battleinfo::BattleInfo,
+}
+
+#[cfg(feature = "app-mapterraininfo")]
+#[::unity2::methods]
+impl MapTerrainInfo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`IsLoading()` overload"]
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading(self) -> bool;
+
+    #[doc = "`ShowAll()` overload"]
+    #[method(name = "ShowAll", args = 0)]
+    pub fn show_all(self) -> ();
+
+    #[doc = "`HideAll()` overload"]
+    #[method(name = "HideAll", args = 0)]
+    pub fn hide_all(self) -> ();
+
+    #[doc = "`EventShowAll()` overload"]
+    #[method(name = "EventShowAll", args = 0)]
+    pub fn event_show_all(self) -> ();
+
+    #[doc = "`EventHideAll()` overload"]
+    #[method(name = "EventHideAll", args = 0)]
+    pub fn event_hide_all(self) -> ();
+
+    #[doc = "`IsShowAny()` overload"]
+    #[method(name = "IsShowAny", args = 0)]
+    pub fn is_show_any(self) -> bool;
+
+    #[doc = "`GetCurrentUnit(i32, i32)` overload"]
+    #[method(name = "GetCurrentUnit", args = 2)]
+    pub fn get_current_unit(x: i32, z: i32) -> crate::app::unit::Unit;
+
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`CreateObjects()` overload"]
+    #[method(name = "CreateObjects", args = 0)]
+    pub fn create_objects(self) -> ();
+
+    #[doc = "`DeleteObjects()` overload"]
+    #[method(name = "DeleteObjects", args = 0)]
+    pub fn delete_objects(self) -> ();
+
+    #[doc = "`get_Left()` overload"]
+    #[method(name = "get_Left", args = 0)]
+    pub fn get_left(self) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle;
+
+    #[doc = "`get_Right()` overload"]
+    #[method(name = "get_Right", args = 0)]
+    pub fn get_right(self) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle;
+
+    #[doc = "`get_Edit()` overload"]
+    #[method(name = "get_Edit", args = 0)]
+    pub fn get_edit(self) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle;
+
+    #[doc = "`set_Edit(crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle)` overload"]
+    #[method(name = "set_Edit", args = 1)]
+    pub fn set_edit(
+        self,
+        value: crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle,
+    ) -> ();
+
+    #[doc = "`CreateEdit()` overload"]
+    #[method(name = "CreateEdit", args = 0)]
+    pub fn create_edit(self) -> ();
+
+    #[doc = "`DeleteEdit()` overload"]
+    #[method(name = "DeleteEdit", args = 0)]
+    pub fn delete_edit(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-mapterraininfo")]
+impl MapTerrainInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapTerrainInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapTerrainInfoMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Element.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapTerrainInfo_Element {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapTerrainInfo_Element {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapTerrainInfo.Element";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapTerrainInfo_Element {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapTerrainInfo_Element {
+    pub fn effects() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn avoid() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn def() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn res() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn heal() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn damage() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn player_def() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn enemy_def() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn stun() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn other() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn sight() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn cannon_root() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn stock() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn hit() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn title() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn terrain_name() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn overlap() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 19 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo_MapTerrainInfoSingle.md"))]
 #[::unity2::class(namespace = "App", name = "MapTerrainInfo.MapTerrainInfoSingle")]
 #[parent(crate::system::object::Object)]
 pub struct MapTerrainInfo_MapTerrainInfoSingle {
@@ -158,290 +443,5 @@ impl MapTerrainInfo_MapTerrainInfoSingle {
         });
         <Self as IMapTerrainInfo_MapTerrainInfoSingleMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Side.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapTerrainInfo_Side {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapTerrainInfo_Side {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapTerrainInfo.Side";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapTerrainInfo_Side {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapTerrainInfo_Side {
-    pub fn left() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn right() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapterraininfo/MapTerrainInfo.md")))]
-#[::unity2::class(namespace = "App", name = "MapTerrainInfo")]
-# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapterraininfo :: MapTerrainInfo >)]
-pub struct MapTerrainInfo {
-    #[static_field]
-    #[rename(name = "PrefabPath")]
-    pub prefab_path: ::unity2::Il2CppString,
-    #[rename(name = "m_PrefabHandle")]
-    pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-        crate::unity_engine::gameobject::GameObject,
-    >,
-    #[rename(name = "m_MapTerrainInfoSingles")]
-    pub m_map_terrain_info_singles:
-        ::unity2::Array<crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle>,
-    #[static_field]
-    #[rename(name = "m_CalcUnit")]
-    pub m_calc_unit: crate::app::unit::Unit,
-    #[static_field]
-    #[rename(name = "m_BattleInfo")]
-    pub m_battle_info: crate::app::battleinfo::BattleInfo,
-}
-
-#[cfg(feature = "app-mapterraininfo")]
-#[::unity2::methods]
-impl MapTerrainInfo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`IsLoading()` overload"]
-    #[method(name = "IsLoading", args = 0)]
-    pub fn is_loading(self) -> bool;
-
-    #[doc = "`ShowAll()` overload"]
-    #[method(name = "ShowAll", args = 0)]
-    pub fn show_all(self) -> ();
-
-    #[doc = "`HideAll()` overload"]
-    #[method(name = "HideAll", args = 0)]
-    pub fn hide_all(self) -> ();
-
-    #[doc = "`EventShowAll()` overload"]
-    #[method(name = "EventShowAll", args = 0)]
-    pub fn event_show_all(self) -> ();
-
-    #[doc = "`EventHideAll()` overload"]
-    #[method(name = "EventHideAll", args = 0)]
-    pub fn event_hide_all(self) -> ();
-
-    #[doc = "`IsShowAny()` overload"]
-    #[method(name = "IsShowAny", args = 0)]
-    pub fn is_show_any(self) -> bool;
-
-    #[doc = "`GetCurrentUnit(i32, i32)` overload"]
-    #[method(name = "GetCurrentUnit", args = 2)]
-    pub fn get_current_unit(x: i32, z: i32) -> crate::app::unit::Unit;
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`CreateObjects()` overload"]
-    #[method(name = "CreateObjects", args = 0)]
-    pub fn create_objects(self) -> ();
-
-    #[doc = "`DeleteObjects()` overload"]
-    #[method(name = "DeleteObjects", args = 0)]
-    pub fn delete_objects(self) -> ();
-
-    #[doc = "`get_Left()` overload"]
-    #[method(name = "get_Left", args = 0)]
-    pub fn get_left(self) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle;
-
-    #[doc = "`get_Right()` overload"]
-    #[method(name = "get_Right", args = 0)]
-    pub fn get_right(self) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle;
-
-    #[doc = "`get_Edit()` overload"]
-    #[method(name = "get_Edit", args = 0)]
-    pub fn get_edit(self) -> crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle;
-
-    #[doc = "`set_Edit(crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle)` overload"]
-    #[method(name = "set_Edit", args = 1)]
-    pub fn set_edit(
-        self,
-        value: crate::app::mapterraininfo::MapTerrainInfo_MapTerrainInfoSingle,
-    ) -> ();
-
-    #[doc = "`CreateEdit()` overload"]
-    #[method(name = "CreateEdit", args = 0)]
-    pub fn create_edit(self) -> ();
-
-    #[doc = "`DeleteEdit()` overload"]
-    #[method(name = "DeleteEdit", args = 0)]
-    pub fn delete_edit(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-mapterraininfo")]
-impl MapTerrainInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapTerrainInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapTerrainInfoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Element.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapTerrainInfo_Element {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapTerrainInfo_Element {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapTerrainInfo.Element";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapTerrainInfo_Element {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapTerrainInfo_Element {
-    pub fn effects() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn avoid() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn def() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn res() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn heal() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn damage() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn r#move() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn player_def() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn enemy_def() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn stun() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn other() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn sight() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn cannon_root() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn stock() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn attack() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn hit() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn title() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn terrain_name() -> Self {
-        Self { value: 17 }
-    }
-
-    pub fn overlap() -> Self {
-        Self { value: 18 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 19 }
     }
 }

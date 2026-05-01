@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugmenu/DebugMenu_BindMode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugmenu/DebugMenu_BindMode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -58,7 +58,56 @@ impl DebugMenu_BindMode {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmenu/DebugMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmenu/DebugMenu_AnchorLocation.md"))]
+#[::unity2::class(namespace = "App", name = "DebugMenu.AnchorLocation")]
+#[parent(crate::system::object::Object)]
+pub struct DebugMenu_AnchorLocation {}
+
+#[cfg(feature = "app-debugmenu")]
+#[::unity2::methods]
+impl DebugMenu_AnchorLocation {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+
+    #[doc = "`GetX(crate::app::gx::GX_Anchor)` overload"]
+    #[method(name = "GetX", args = 1)]
+    pub fn get_x(anchor: crate::app::gx::GX_Anchor) -> i32;
+
+    #[doc = "`GetY(crate::app::gx::GX_Anchor)` overload"]
+    #[method(name = "GetY", args = 1)]
+    pub fn get_y(anchor: crate::app::gx::GX_Anchor) -> i32;
+
+    #[doc = "`GetNext(crate::app::gx::GX_Anchor, i32, i32)` overload"]
+    #[method(name = "GetNext", args = 3)]
+    pub fn get_next(
+        anchor: crate::app::gx::GX_Anchor,
+        dx: i32,
+        dy: i32,
+    ) -> crate::app::gx::GX_Anchor;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugmenu")]
+impl DebugMenu_AnchorLocation {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugMenu_AnchorLocation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugMenu_AnchorLocationMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmenu/DebugMenu.md"))]
 #[::unity2::class(namespace = "App", name = "DebugMenu")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct DebugMenu {
@@ -570,55 +619,6 @@ impl DebugMenu {
             )
         });
         <Self as IDebugMenuMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmenu/DebugMenu_AnchorLocation.md")))]
-#[::unity2::class(namespace = "App", name = "DebugMenu.AnchorLocation")]
-#[parent(crate::system::object::Object)]
-pub struct DebugMenu_AnchorLocation {}
-
-#[cfg(feature = "app-debugmenu")]
-#[::unity2::methods]
-impl DebugMenu_AnchorLocation {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-
-    #[doc = "`GetX(crate::app::gx::GX_Anchor)` overload"]
-    #[method(name = "GetX", args = 1)]
-    pub fn get_x(anchor: crate::app::gx::GX_Anchor) -> i32;
-
-    #[doc = "`GetY(crate::app::gx::GX_Anchor)` overload"]
-    #[method(name = "GetY", args = 1)]
-    pub fn get_y(anchor: crate::app::gx::GX_Anchor) -> i32;
-
-    #[doc = "`GetNext(crate::app::gx::GX_Anchor, i32, i32)` overload"]
-    #[method(name = "GetNext", args = 3)]
-    pub fn get_next(
-        anchor: crate::app::gx::GX_Anchor,
-        dx: i32,
-        dy: i32,
-    ) -> crate::app::gx::GX_Anchor;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-debugmenu")]
-impl DebugMenu_AnchorLocation {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugMenu_AnchorLocation),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugMenu_AnchorLocationMethods>::ctor(this);
         this
     }
 }

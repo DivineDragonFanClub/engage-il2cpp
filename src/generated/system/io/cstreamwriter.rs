@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/cstreamwriter/CStreamWriter.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/cstreamwriter/CStreamWriter.md"))]
 #[::unity2::class(namespace = "System.IO", name = "CStreamWriter")]
 #[parent(crate::system::io::streamwriter::StreamWriter)]
 pub struct CStreamWriter {}

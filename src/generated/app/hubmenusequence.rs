@@ -12,55 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenusequence/HubMenuSequence.md")))]
-#[::unity2::class(namespace = "App", name = "HubMenuSequence")]
-# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: hubmenusequence :: HubMenuSequence >)]
-pub struct HubMenuSequence {
-    #[rename(name = "IsGotoNext")]
-    pub is_goto_next: bool,
-}
-
-#[cfg(feature = "app-hubmenusequence")]
-#[::unity2::methods]
-impl HubMenuSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> crate::app::procinst::ProcInst;
-
-    #[doc = "`OpenDialogNext()` overload"]
-    #[method(name = "OpenDialogNext", args = 0)]
-    pub fn open_dialog_next(self) -> ();
-
-    #[doc = "`OpenDialogGmap()` overload"]
-    #[method(name = "OpenDialogGmap", args = 0)]
-    pub fn open_dialog_gmap(self) -> ();
-
-    #[doc = "`CreateMapInfoBind()` overload"]
-    #[method(name = "CreateMapInfoBind", args = 0)]
-    pub fn create_map_info_bind(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubmenusequence")]
-impl HubMenuSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMenuSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMenuSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmenusequence/HubMenuSequence_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmenusequence/HubMenuSequence_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -133,5 +85,53 @@ impl HubMenuSequence_Label {
 
     pub fn end() -> Self {
         Self { value: 9 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmenusequence/HubMenuSequence.md"))]
+#[::unity2::class(namespace = "App", name = "HubMenuSequence")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: hubmenusequence :: HubMenuSequence >)]
+pub struct HubMenuSequence {
+    #[rename(name = "IsGotoNext")]
+    pub is_goto_next: bool,
+}
+
+#[cfg(feature = "app-hubmenusequence")]
+#[::unity2::methods]
+impl HubMenuSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> crate::app::procinst::ProcInst;
+
+    #[doc = "`OpenDialogNext()` overload"]
+    #[method(name = "OpenDialogNext", args = 0)]
+    pub fn open_dialog_next(self) -> ();
+
+    #[doc = "`OpenDialogGmap()` overload"]
+    #[method(name = "OpenDialogGmap", args = 0)]
+    pub fn open_dialog_gmap(self) -> ();
+
+    #[doc = "`CreateMapInfoBind()` overload"]
+    #[method(name = "CreateMapInfoBind", args = 0)]
+    pub fn create_map_info_bind(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubmenusequence")]
+impl HubMenuSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMenuSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMenuSequenceMethods>::ctor(this);
+        this
     }
 }

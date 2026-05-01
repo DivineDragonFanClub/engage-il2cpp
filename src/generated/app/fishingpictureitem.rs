@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingpictureitem/FishingPictureItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingpictureitem/FishingPictureItem.md"))]
 #[::unity2::class(namespace = "App", name = "FishingPictureItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct FishingPictureItem {
@@ -139,7 +139,7 @@ impl FishingPictureItem {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingpictureitem/FishingPictureItem_SpriteKind.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingpictureitem/FishingPictureItem_SpriteKind.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

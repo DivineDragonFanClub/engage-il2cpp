@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/iproxyfactory_2/IProxyFactory_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/iproxyfactory_2/IProxyFactory_2.md"))]
 #[::unity2::class(namespace = "MoonSharp.Interpreter.Interop", name = "IProxyFactory`2")]
 pub struct IProxyFactory_2<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {}
 

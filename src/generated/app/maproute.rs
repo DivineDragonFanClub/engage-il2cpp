@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maproute/MapRoute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maproute/MapRoute.md"))]
 #[::unity2::class(namespace = "App", name = "MapRoute")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maproute :: MapRoute >)]
 pub struct MapRoute {
@@ -348,7 +348,40 @@ impl MapRoute {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maproute/MapRoute_Flag.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maproute/MapRoute_Func.md"))]
+#[::unity2::class(namespace = "App", name = "MapRoute.Func")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapRoute_Func {}
+
+#[cfg(feature = "app-maproute")]
+#[::unity2::methods]
+impl MapRoute_Func {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32, i32)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, x: i32, z: i32) -> ();
+}
+
+#[cfg(feature = "app-maproute")]
+impl MapRoute_Func {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapRoute_Func),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapRoute_FuncMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maproute/MapRoute_Flag.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -417,38 +450,5 @@ impl MapRoute_Flag {
 
     pub fn mask_mind() -> Self {
         Self { value: 95 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maproute/MapRoute_Func.md")))]
-#[::unity2::class(namespace = "App", name = "MapRoute.Func")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct MapRoute_Func {}
-
-#[cfg(feature = "app-maproute")]
-#[::unity2::methods]
-impl MapRoute_Func {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32, i32)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(self, x: i32, z: i32) -> ();
-}
-
-#[cfg(feature = "app-maproute")]
-impl MapRoute_Func {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapRoute_Func),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapRoute_FuncMethods>::ctor(this, object, method);
-        this
     }
 }

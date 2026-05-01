@@ -6,30 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/beforerenderhelper/BeforeRenderHelper.md")))]
-#[::unity2::class(namespace = "UnityEngine", name = "BeforeRenderHelper")]
-#[parent(crate::system::object::Object)]
-pub struct BeforeRenderHelper {
-    #[static_field]
-    #[rename(name = "s_OrderBlocks")]
-    pub s_order_blocks: crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::beforerenderhelper::BeforeRenderHelper_OrderBlock,
-    >,
-}
-
-#[cfg(feature = "unity_engine-beforerenderhelper")]
-#[::unity2::methods]
-impl BeforeRenderHelper {
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke() -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/beforerenderhelper/BeforeRenderHelper_OrderBlock.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/beforerenderhelper/BeforeRenderHelper_OrderBlock.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct BeforeRenderHelper_OrderBlock {
@@ -56,4 +33,27 @@ impl ::unity2::IlType for BeforeRenderHelper_OrderBlock {
             ._1
             .byval_arg
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/beforerenderhelper/BeforeRenderHelper.md"))]
+#[::unity2::class(namespace = "UnityEngine", name = "BeforeRenderHelper")]
+#[parent(crate::system::object::Object)]
+pub struct BeforeRenderHelper {
+    #[static_field]
+    #[rename(name = "s_OrderBlocks")]
+    pub s_order_blocks: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::beforerenderhelper::BeforeRenderHelper_OrderBlock,
+    >,
+}
+
+#[cfg(feature = "unity_engine-beforerenderhelper")]
+#[::unity2::methods]
+impl BeforeRenderHelper {
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke() -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }

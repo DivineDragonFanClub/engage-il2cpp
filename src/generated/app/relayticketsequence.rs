@@ -10,47 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RelayTicketSequence_ProcDaily_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RelayTicketSequence_ProcDaily_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayTicketSequence.ProcDaily.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RelayTicketSequence_ProcDaily_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RelayTicketSequence_ProcDaily_Label {
-    pub fn end() -> Self {
-        Self { value: 0 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily.md"))]
 #[::unity2::class(namespace = "App", name = "RelayTicketSequence.ProcDaily")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct RelayTicketSequence_ProcDaily {}
@@ -95,7 +55,64 @@ impl RelayTicketSequence_ProcDaily {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence_ProcUse.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence.md"))]
+#[::unity2::class(namespace = "App", name = "RelayTicketSequence")]
+#[parent(crate::system::object::Object)]
+pub struct RelayTicketSequence {}
+
+#[cfg(feature = "app-relayticketsequence")]
+#[::unity2::methods]
+impl RelayTicketSequence {
+    #[doc = "`CreateBindUse(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindUse", args = 1)]
+    pub fn create_bind_use(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`CreateBindDaily(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindDaily", args = 1)]
+    pub fn create_bind_daily(super_: crate::app::procinst::ProcInst) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayTicketSequence_ProcDaily_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayTicketSequence_ProcDaily_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayTicketSequence.ProcDaily.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayTicketSequence_ProcDaily_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayTicketSequence_ProcDaily_Label {
+    pub fn end() -> Self {
+        Self { value: 0 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence_ProcUse.md"))]
 #[::unity2::class(namespace = "App", name = "RelayTicketSequence.ProcUse")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct RelayTicketSequence_ProcUse {}
@@ -134,21 +151,4 @@ impl RelayTicketSequence_ProcUse {
         <Self as IRelayTicketSequence_ProcUseMethods>::ctor(this);
         this
     }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence.md")))]
-#[::unity2::class(namespace = "App", name = "RelayTicketSequence")]
-#[parent(crate::system::object::Object)]
-pub struct RelayTicketSequence {}
-
-#[cfg(feature = "app-relayticketsequence")]
-#[::unity2::methods]
-impl RelayTicketSequence {
-    #[doc = "`CreateBindUse(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindUse", args = 1)]
-    pub fn create_bind_use(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`CreateBindDaily(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindDaily", args = 1)]
-    pub fn create_bind_daily(super_: crate::app::procinst::ProcInst) -> ();
 }

@@ -14,7 +14,179 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfoside/BattleInfoSide_Status.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct BattleInfoSide_Status {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for BattleInfoSide_Status {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleInfoSide.Status";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BattleInfoSide_Status {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl BattleInfoSide_Status {
+    pub fn offense() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn defense() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn chain_attack() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn chain_guard() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn engage_link() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn ignore_position() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn ignore_range() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn magic() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn heal_rod() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn interference_rod() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn long_range() -> Self {
+        Self { value: 2048 }
+    }
+
+    pub fn not_weapon() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn not_attack() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn not_stun() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn move_chain_attack() -> Self {
+        Self { value: 32768 }
+    }
+
+    pub fn haunt_chain_attack() -> Self {
+        Self { value: 65536 }
+    }
+
+    pub fn exp_battle() -> Self {
+        Self { value: 131072 }
+    }
+
+    pub fn exp_destroy() -> Self {
+        Self { value: 262144 }
+    }
+
+    pub fn exp_rod() -> Self {
+        Self { value: 524288 }
+    }
+
+    pub fn exp_rod_miss() -> Self {
+        Self { value: 1048576 }
+    }
+
+    pub fn give_exp_battle() -> Self {
+        Self { value: 2097152 }
+    }
+
+    pub fn gained() -> Self {
+        Self { value: 8388608 }
+    }
+
+    pub fn dead() -> Self {
+        Self { value: 16777216 }
+    }
+
+    pub fn chain_attacked() -> Self {
+        Self { value: 33554432 }
+    }
+
+    pub fn chain_guarded() -> Self {
+        Self { value: 67108864 }
+    }
+
+    pub fn blown() -> Self {
+        Self { value: 134217728 }
+    }
+
+    pub fn bounced() -> Self {
+        Self { value: 268435456 }
+    }
+
+    pub fn breaked() -> Self {
+        Self { value: 536870912 }
+    }
+
+    pub fn interrupting() -> Self {
+        Self { value: 1073741824 }
+    }
+
+    pub fn change_dragon() -> Self {
+        Self { value: -2147483648 }
+    }
+
+    pub fn mask_no_attack() -> Self {
+        Self { value: 12544 }
+    }
+
+    pub fn mask_exp() -> Self {
+        Self { value: 1966080 }
+    }
+
+    pub fn mask_chain() -> Self {
+        Self { value: 12 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide.md"))]
 #[::unity2::class(namespace = "App", name = "BattleInfoSide")]
 #[parent(crate::system::object::Object)]
 pub struct BattleInfoSide {
@@ -654,179 +826,7 @@ impl BattleInfoSide {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfoside/BattleInfoSide_Status.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct BattleInfoSide_Status {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for BattleInfoSide_Status {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleInfoSide.Status";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for BattleInfoSide_Status {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl BattleInfoSide_Status {
-    pub fn offense() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn defense() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn chain_attack() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn chain_guard() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn engage_link() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn ignore_position() -> Self {
-        Self { value: 32 }
-    }
-
-    pub fn ignore_range() -> Self {
-        Self { value: 64 }
-    }
-
-    pub fn magic() -> Self {
-        Self { value: 128 }
-    }
-
-    pub fn rod() -> Self {
-        Self { value: 256 }
-    }
-
-    pub fn heal_rod() -> Self {
-        Self { value: 512 }
-    }
-
-    pub fn interference_rod() -> Self {
-        Self { value: 1024 }
-    }
-
-    pub fn long_range() -> Self {
-        Self { value: 2048 }
-    }
-
-    pub fn not_weapon() -> Self {
-        Self { value: 4096 }
-    }
-
-    pub fn not_attack() -> Self {
-        Self { value: 8192 }
-    }
-
-    pub fn not_stun() -> Self {
-        Self { value: 16384 }
-    }
-
-    pub fn move_chain_attack() -> Self {
-        Self { value: 32768 }
-    }
-
-    pub fn haunt_chain_attack() -> Self {
-        Self { value: 65536 }
-    }
-
-    pub fn exp_battle() -> Self {
-        Self { value: 131072 }
-    }
-
-    pub fn exp_destroy() -> Self {
-        Self { value: 262144 }
-    }
-
-    pub fn exp_rod() -> Self {
-        Self { value: 524288 }
-    }
-
-    pub fn exp_rod_miss() -> Self {
-        Self { value: 1048576 }
-    }
-
-    pub fn give_exp_battle() -> Self {
-        Self { value: 2097152 }
-    }
-
-    pub fn gained() -> Self {
-        Self { value: 8388608 }
-    }
-
-    pub fn dead() -> Self {
-        Self { value: 16777216 }
-    }
-
-    pub fn chain_attacked() -> Self {
-        Self { value: 33554432 }
-    }
-
-    pub fn chain_guarded() -> Self {
-        Self { value: 67108864 }
-    }
-
-    pub fn blown() -> Self {
-        Self { value: 134217728 }
-    }
-
-    pub fn bounced() -> Self {
-        Self { value: 268435456 }
-    }
-
-    pub fn breaked() -> Self {
-        Self { value: 536870912 }
-    }
-
-    pub fn interrupting() -> Self {
-        Self { value: 1073741824 }
-    }
-
-    pub fn change_dragon() -> Self {
-        Self { value: -2147483648 }
-    }
-
-    pub fn mask_no_attack() -> Self {
-        Self { value: 12544 }
-    }
-
-    pub fn mask_exp() -> Self {
-        Self { value: 1966080 }
-    }
-
-    pub fn mask_chain() -> Self {
-        Self { value: 12 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide_BitFieldStatus.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfoside/BattleInfoSide_BitFieldStatus.md"))]
 #[::unity2::class(namespace = "App", name = "BattleInfoSide.BitFieldStatus")]
 # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battleinfoside :: BattleInfoSide_Status >)]
 pub struct BattleInfoSide_BitFieldStatus {}

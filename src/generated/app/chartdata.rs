@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartdata/ChartData_Item.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartdata/ChartData_Item.md"))]
 #[::unity2::class(namespace = "App", name = "ChartData.Item")]
 #[parent(crate::system::object::Object)]
 pub struct ChartData_Item {}
@@ -47,7 +47,7 @@ impl ChartData_Item {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartdata/ChartData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chartdata/ChartData.md"))]
 #[::unity2::class(namespace = "App", name = "ChartData")]
 # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: chartdata :: ChartData >)]
 pub struct ChartData {

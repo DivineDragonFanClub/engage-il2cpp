@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skillinheritancesequence/SkillInheritanceSequence_Label2.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/skillinheritancesequence/SkillInheritanceSequence_Label2.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -62,7 +62,7 @@ impl SkillInheritanceSequence_Label2 {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skillinheritancesequence/SkillInheritanceSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/skillinheritancesequence/SkillInheritanceSequence.md"))]
 #[::unity2::class(namespace = "App", name = "SkillInheritanceSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct SkillInheritanceSequence {}

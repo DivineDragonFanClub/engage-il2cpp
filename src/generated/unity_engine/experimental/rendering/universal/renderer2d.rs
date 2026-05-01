@@ -6,7 +6,7 @@ use crate::unity_engine::rendering::universal::scriptablerenderer::IScriptableRe
 use crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderer2d/Renderer2D.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderer2d/Renderer2D.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal",
     name = "Renderer2D"

@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talk_2/Talk_TalkType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talk_2/Talk_TalkType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -68,7 +68,7 @@ impl Talk_TalkType {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talk_2/Talk_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talk_2/Talk_2.md"))]
 #[::unity2::class(namespace = "App.Talk3D", name = "Talk")]
 #[parent(crate::system::object::Object)]
 pub struct Talk_2 {}

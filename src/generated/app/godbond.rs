@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godbond/GodBond.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godbond/GodBond.md"))]
 #[::unity2::class(namespace = "App", name = "GodBond")]
 #[parent(crate::app::pool::Pool_Node)]
 pub struct GodBond {

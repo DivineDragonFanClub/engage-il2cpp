@@ -6,37 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fxzex/FXZEx_HitPoint.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct FXZEx_HitPoint {
-    pub pos: crate::unity_engine::vector3::Vector3,
-    pub nrm: crate::unity_engine::vector3::Vector3,
-    pub col_index: i32,
-}
-
-impl ::unity2::ClassIdentity for FXZEx_HitPoint {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "FXZEx.HitPoint";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for FXZEx_HitPoint {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fxzex/FXZEx.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fxzex/FXZEx.md"))]
 #[::unity2::class(namespace = "Combat", name = "FXZEx")]
 #[parent(crate::system::object::Object)]
 pub struct FXZEx {
@@ -92,4 +62,34 @@ impl FXZEx {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fxzex/FXZEx_HitPoint.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FXZEx_HitPoint {
+    pub pos: crate::unity_engine::vector3::Vector3,
+    pub nrm: crate::unity_engine::vector3::Vector3,
+    pub col_index: i32,
+}
+
+impl ::unity2::ClassIdentity for FXZEx_HitPoint {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "FXZEx.HitPoint";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FXZEx_HitPoint {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
 }

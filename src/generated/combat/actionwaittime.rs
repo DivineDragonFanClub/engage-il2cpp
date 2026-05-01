@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionwaittime/ActionWaitTime.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionwaittime/ActionWaitTime.md"))]
 #[::unity2::class(namespace = "Combat", name = "ActionWaitTime")]
 #[parent(crate::combat::actionbase::ActionBase)]
 pub struct ActionWaitTime {

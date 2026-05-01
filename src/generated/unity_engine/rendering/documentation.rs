@@ -6,7 +6,7 @@ use crate::unity_engine::rendering::documentationinfo::DocumentationInfo;
 use crate::unity_engine::rendering::documentationinfo::IDocumentationInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/documentation/Documentation.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/documentation/Documentation.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering", name = "Documentation")]
 #[parent(crate::unity_engine::rendering::documentationinfo::DocumentationInfo)]
 pub struct Documentation {

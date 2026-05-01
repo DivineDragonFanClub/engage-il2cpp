@@ -10,7 +10,7 @@ use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
 use crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/minintparameter/MinIntParameter.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/minintparameter/MinIntParameter.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering", name = "MinIntParameter")]
 #[parent(crate::unity_engine::rendering::intparameter::IntParameter)]
 pub struct MinIntParameter {

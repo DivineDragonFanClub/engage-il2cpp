@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourcetexture2d/ResourceTexture2D.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/resourcetexture2d/ResourceTexture2D.md"))]
 #[::unity2::class(namespace = "App", name = "ResourceTexture2D")]
 # [parent (crate :: app :: tresourcehandle_1 :: TResourceHandle_1 < crate :: unity_engine :: texture2d :: Texture2D >)]
 pub struct ResourceTexture2D {}

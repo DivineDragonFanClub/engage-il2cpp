@@ -12,7 +12,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardCommentListMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct ProfileCardCommentListMenu {
@@ -184,82 +184,7 @@ impl ProfileCardCommentListMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_CancelEventHandler.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ProfileCardCommentListMenu.CancelEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ProfileCardCommentListMenu_CancelEventHandler {}
-
-#[cfg(feature = "app-profilecardcommentlistmenu")]
-#[::unity2::methods]
-impl ProfileCardCommentListMenu_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-profilecardcommentlistmenu")]
-impl ProfileCardCommentListMenu_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardCommentListMenu_CancelEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardCommentListMenu_CancelEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_SelectEventHandler.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ProfileCardCommentListMenu.SelectEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ProfileCardCommentListMenu_SelectEventHandler {}
-
-#[cfg(feature = "app-profilecardcommentlistmenu")]
-#[::unity2::methods]
-impl ProfileCardCommentListMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::profilecardcommentdata::ProfileCardCommentData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        comment_data: crate::app::profilecardcommentdata::ProfileCardCommentData,
-    ) -> ();
-}
-
-#[cfg(feature = "app-profilecardcommentlistmenu")]
-impl ProfileCardCommentListMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardCommentListMenu_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardCommentListMenu_SelectEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_DecideEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_DecideEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "ProfileCardCommentListMenu.DecideEventHandler"
@@ -298,7 +223,7 @@ impl ProfileCardCommentListMenu_DecideEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_DisposeEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_DisposeEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "ProfileCardCommentListMenu.DisposeEventHandler"
@@ -332,6 +257,81 @@ impl ProfileCardCommentListMenu_DisposeEventHandler {
         <Self as IProfileCardCommentListMenu_DisposeEventHandlerMethods>::ctor(
             this, object, method,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_CancelEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ProfileCardCommentListMenu.CancelEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ProfileCardCommentListMenu_CancelEventHandler {}
+
+#[cfg(feature = "app-profilecardcommentlistmenu")]
+#[::unity2::methods]
+impl ProfileCardCommentListMenu_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-profilecardcommentlistmenu")]
+impl ProfileCardCommentListMenu_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardCommentListMenu_CancelEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardCommentListMenu_CancelEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentlistmenu/ProfileCardCommentListMenu_SelectEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ProfileCardCommentListMenu.SelectEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ProfileCardCommentListMenu_SelectEventHandler {}
+
+#[cfg(feature = "app-profilecardcommentlistmenu")]
+#[::unity2::methods]
+impl ProfileCardCommentListMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::profilecardcommentdata::ProfileCardCommentData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        comment_data: crate::app::profilecardcommentdata::ProfileCardCommentData,
+    ) -> ();
+}
+
+#[cfg(feature = "app-profilecardcommentlistmenu")]
+impl ProfileCardCommentListMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardCommentListMenu_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardCommentListMenu_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

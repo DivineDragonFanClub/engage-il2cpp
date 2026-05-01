@@ -8,7 +8,40 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponlevel/WeaponLevel_Kind.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponlevel/WeaponLevel.md"))]
+#[::unity2::class(namespace = "App", name = "WeaponLevel")]
+#[parent(crate::system::object::Object)]
+pub struct WeaponLevel {}
+
+#[cfg(feature = "app-weaponlevel")]
+#[::unity2::methods]
+impl WeaponLevel {
+    #[doc = "`GetKind(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetKind", args = 1)]
+    pub fn get_kind(level: ::unity2::Il2CppString) -> crate::app::weaponlevel::WeaponLevel_Kind;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-weaponlevel")]
+impl WeaponLevel {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponLevel),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponLevelMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponlevel/WeaponLevel_Kind.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -65,38 +98,5 @@ impl WeaponLevel_Kind {
 
     pub fn s() -> Self {
         Self { value: 5 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponlevel/WeaponLevel.md")))]
-#[::unity2::class(namespace = "App", name = "WeaponLevel")]
-#[parent(crate::system::object::Object)]
-pub struct WeaponLevel {}
-
-#[cfg(feature = "app-weaponlevel")]
-#[::unity2::methods]
-impl WeaponLevel {
-    #[doc = "`GetKind(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetKind", args = 1)]
-    pub fn get_kind(level: ::unity2::Il2CppString) -> crate::app::weaponlevel::WeaponLevel_Kind;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-weaponlevel")]
-impl WeaponLevel {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WeaponLevel),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWeaponLevelMethods>::ctor(this);
-        this
     }
 }

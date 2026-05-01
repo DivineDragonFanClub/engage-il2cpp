@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stringresulthandler/StringResultHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stringresulthandler/StringResultHandler.md"))]
 #[::unity2::class(namespace = "System.IO", name = "StringResultHandler")]
 # [parent (crate :: system :: io :: searchresulthandler_1 :: SearchResultHandler_1 < :: unity2 :: Il2CppString >)]
 pub struct StringResultHandler {

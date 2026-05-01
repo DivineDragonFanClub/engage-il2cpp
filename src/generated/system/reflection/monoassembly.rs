@@ -8,7 +8,7 @@ use crate::system::reflection::runtimeassembly::IRuntimeAssembly;
 use crate::system::reflection::runtimeassembly::RuntimeAssembly;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoassembly/MonoAssembly.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/monoassembly/MonoAssembly.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "MonoAssembly")]
 #[parent(crate::system::reflection::runtimeassembly::RuntimeAssembly)]
 pub struct MonoAssembly {}

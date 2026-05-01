@@ -10,7 +10,7 @@ use crate::unity_engine::renderer::IRenderer;
 use crate::unity_engine::renderer::Renderer;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/linerenderer/LineRenderer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/linerenderer/LineRenderer.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "LineRenderer")]
 #[parent(crate::unity_engine::renderer::Renderer)]
 pub struct LineRenderer {}

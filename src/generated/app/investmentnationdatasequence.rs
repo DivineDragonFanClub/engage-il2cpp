@@ -16,7 +16,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence.md"))]
 #[::unity2::class(namespace = "App", name = "InvestmentNationDataSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: investmentnationdatasequence :: InvestmentNationDataSequence >)]
 pub struct InvestmentNationDataSequence {
@@ -108,7 +108,7 @@ impl InvestmentNationDataSequence {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_DecideEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_DecideEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "InvestmentNationDataSequence.DecideEventHandler"
@@ -146,7 +146,7 @@ impl InvestmentNationDataSequence_DecideEventHandler {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_Label2.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/investmentnationdatasequence/InvestmentNationDataSequence_Label2.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

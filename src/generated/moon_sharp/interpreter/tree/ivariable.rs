@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/ivariable/IVariable.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/ivariable/IVariable.md"))]
 #[::unity2::class(namespace = "MoonSharp.Interpreter.Tree", name = "IVariable")]
 pub struct IVariable {}
 

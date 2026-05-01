@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransporteritemmenu/DebugTransporterItemMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransporteritemmenu/DebugTransporterItemMenu.md"))]
 #[::unity2::class(namespace = "App", name = "DebugTransporterItemMenu")]
 #[parent(crate::system::object::Object)]
 pub struct DebugTransporterItemMenu {}
@@ -39,69 +39,7 @@ impl DebugTransporterItemMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransporteritemmenu/DebugTransporterItemMenu_SelectMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "DebugTransporterItemMenu.SelectMenuItem")]
-#[parent(crate::app::menuitem::MenuItem)]
-pub struct DebugTransporterItemMenu_SelectMenuItem {
-    #[rename(name = "m_TransporterIndex")]
-    pub m_transporter_index: i32,
-    #[rename(name = "m_ItemIndex")]
-    pub m_item_index: i32,
-}
-
-#[cfg(feature = "app-debugtransporteritemmenu")]
-#[::unity2::methods]
-impl DebugTransporterItemMenu_SelectMenuItem {
-    #[doc = "`.ctor(i32, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, transporter_index: i32, item_index: i32) -> ();
-
-    #[doc = "`GetColumnCount()` overload"]
-    #[method(name = "GetColumnCount", args = 0)]
-    pub fn get_column_count(self) -> i32;
-
-    #[doc = "`GetColumnWidth0()` overload"]
-    #[method(name = "GetColumnWidth0", args = 0)]
-    pub fn get_column_width0(self) -> f32;
-
-    #[doc = "`GetColumnWidth1()` overload"]
-    #[method(name = "GetColumnWidth1", args = 0)]
-    pub fn get_column_width1(self) -> f32;
-
-    #[doc = "`GetColumnName0()` overload"]
-    #[method(name = "GetColumnName0", args = 0)]
-    pub fn get_column_name0(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetColumnName1()` overload"]
-    #[method(name = "GetColumnName1", args = 0)]
-    pub fn get_column_name1(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
-}
-
-#[cfg(feature = "app-debugtransporteritemmenu")]
-impl DebugTransporterItemMenu_SelectMenuItem {
-    #[doc = "`.ctor(i32, i32)` — overload selector"]
-    pub fn new(transporter_index: i32, item_index: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugTransporterItemMenu_SelectMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugTransporterItemMenu_SelectMenuItemMethods>::ctor(
-            this,
-            transporter_index,
-            item_index,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransporteritemmenu/DebugTransporterItemMenu_EditMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransporteritemmenu/DebugTransporterItemMenu_EditMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "DebugTransporterItemMenu.EditMenuItem")]
 #[parent(crate::app::menuitem::MenuItem)]
 pub struct DebugTransporterItemMenu_EditMenuItem {
@@ -185,6 +123,68 @@ impl DebugTransporterItemMenu_EditMenuItem {
             )
         });
         <Self as IDebugTransporterItemMenu_EditMenuItemMethods>::ctor(this, index);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransporteritemmenu/DebugTransporterItemMenu_SelectMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "DebugTransporterItemMenu.SelectMenuItem")]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct DebugTransporterItemMenu_SelectMenuItem {
+    #[rename(name = "m_TransporterIndex")]
+    pub m_transporter_index: i32,
+    #[rename(name = "m_ItemIndex")]
+    pub m_item_index: i32,
+}
+
+#[cfg(feature = "app-debugtransporteritemmenu")]
+#[::unity2::methods]
+impl DebugTransporterItemMenu_SelectMenuItem {
+    #[doc = "`.ctor(i32, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, transporter_index: i32, item_index: i32) -> ();
+
+    #[doc = "`GetColumnCount()` overload"]
+    #[method(name = "GetColumnCount", args = 0)]
+    pub fn get_column_count(self) -> i32;
+
+    #[doc = "`GetColumnWidth0()` overload"]
+    #[method(name = "GetColumnWidth0", args = 0)]
+    pub fn get_column_width0(self) -> f32;
+
+    #[doc = "`GetColumnWidth1()` overload"]
+    #[method(name = "GetColumnWidth1", args = 0)]
+    pub fn get_column_width1(self) -> f32;
+
+    #[doc = "`GetColumnName0()` overload"]
+    #[method(name = "GetColumnName0", args = 0)]
+    pub fn get_column_name0(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetColumnName1()` overload"]
+    #[method(name = "GetColumnName1", args = 0)]
+    pub fn get_column_name1(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+}
+
+#[cfg(feature = "app-debugtransporteritemmenu")]
+impl DebugTransporterItemMenu_SelectMenuItem {
+    #[doc = "`.ctor(i32, i32)` — overload selector"]
+    pub fn new(transporter_index: i32, item_index: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugTransporterItemMenu_SelectMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugTransporterItemMenu_SelectMenuItemMethods>::ctor(
+            this,
+            transporter_index,
+            item_index,
+        );
         this
     }
 }

@@ -6,108 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/io/stream/Stream_ReadWriteParameters.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Stream_ReadWriteParameters {
-    pub buffer: ::unity2::Array<u8>,
-    pub offset: i32,
-    pub count: i32,
-}
-
-impl ::unity2::ClassIdentity for Stream_ReadWriteParameters {
-    const NAMESPACE: &'static str = "System.IO";
-
-    const NAME: &'static str = "Stream.ReadWriteParameters";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Stream_ReadWriteParameters {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream_SynchronousAsyncResult.md")))]
-#[::unity2::class(namespace = "System.IO", name = "Stream.SynchronousAsyncResult")]
-#[parent(crate::system::object::Object)]
-pub struct Stream_SynchronousAsyncResult {
-    #[rename(name = "_stateObject")]
-    pub state_object: ::unity2::IlInstance,
-    #[rename(name = "_isWrite")]
-    pub is_write: bool,
-    #[rename(name = "_endXxxCalled")]
-    pub end_xxx_called: bool,
-    #[rename(name = "_bytesRead")]
-    pub bytes_read: i32,
-}
-
-#[cfg(feature = "system-io-stream")]
-#[::unity2::methods]
-impl Stream_SynchronousAsyncResult {
-    #[doc = "`.ctor(i32, crate::system::object::Object)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, bytes_read: i32, async_state_object: crate::system::object::Object) -> ();
-
-    #[doc = "`.ctor(crate::system::object::Object)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, async_state_object: crate::system::object::Object) -> ();
-
-    #[doc = "`get_IsCompleted()` overload"]
-    #[method(name = "get_IsCompleted", args = 0)]
-    pub fn get_is_completed(self) -> bool;
-
-    #[doc = "`get_AsyncState()` overload"]
-    #[method(name = "get_AsyncState", args = 0)]
-    pub fn get_async_state(self) -> crate::system::object::Object;
-
-    #[doc = "`get_CompletedSynchronously()` overload"]
-    #[method(name = "get_CompletedSynchronously", args = 0)]
-    pub fn get_completed_synchronously(self) -> bool;
-
-    #[doc = "`ThrowIfError()` overload"]
-    #[method(name = "ThrowIfError", args = 0)]
-    pub fn throw_if_error(self) -> ();
-}
-
-#[cfg(feature = "system-io-stream")]
-impl Stream_SynchronousAsyncResult {
-    #[doc = "`.ctor(i32, crate::system::object::Object)` — overload selector"]
-    pub fn new(bytes_read: i32, async_state_object: crate::system::object::Object) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Stream_SynchronousAsyncResult),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStream_SynchronousAsyncResultMethods>::ctor(this, bytes_read, async_state_object);
-        this
-    }
-
-    #[doc = "`.ctor(crate::system::object::Object)` — overload selector"]
-    pub fn new_2(async_state_object: crate::system::object::Object) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Stream_SynchronousAsyncResult),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IStream_SynchronousAsyncResultMethods>::ctor_2(this, async_state_object);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream.md"))]
 #[::unity2::class(namespace = "System.IO", name = "Stream")]
 pub struct Stream {
     #[static_field]
@@ -236,7 +135,135 @@ impl Stream {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream_NullStream.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream_SynchronousAsyncResult.md"))]
+#[::unity2::class(namespace = "System.IO", name = "Stream.SynchronousAsyncResult")]
+#[parent(crate::system::object::Object)]
+pub struct Stream_SynchronousAsyncResult {
+    #[rename(name = "_stateObject")]
+    pub state_object: ::unity2::IlInstance,
+    #[rename(name = "_isWrite")]
+    pub is_write: bool,
+    #[rename(name = "_endXxxCalled")]
+    pub end_xxx_called: bool,
+    #[rename(name = "_bytesRead")]
+    pub bytes_read: i32,
+}
+
+#[cfg(feature = "system-io-stream")]
+#[::unity2::methods]
+impl Stream_SynchronousAsyncResult {
+    #[doc = "`.ctor(i32, crate::system::object::Object)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, bytes_read: i32, async_state_object: crate::system::object::Object) -> ();
+
+    #[doc = "`.ctor(crate::system::object::Object)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, async_state_object: crate::system::object::Object) -> ();
+
+    #[doc = "`get_IsCompleted()` overload"]
+    #[method(name = "get_IsCompleted", args = 0)]
+    pub fn get_is_completed(self) -> bool;
+
+    #[doc = "`get_AsyncState()` overload"]
+    #[method(name = "get_AsyncState", args = 0)]
+    pub fn get_async_state(self) -> crate::system::object::Object;
+
+    #[doc = "`get_CompletedSynchronously()` overload"]
+    #[method(name = "get_CompletedSynchronously", args = 0)]
+    pub fn get_completed_synchronously(self) -> bool;
+
+    #[doc = "`ThrowIfError()` overload"]
+    #[method(name = "ThrowIfError", args = 0)]
+    pub fn throw_if_error(self) -> ();
+}
+
+#[cfg(feature = "system-io-stream")]
+impl Stream_SynchronousAsyncResult {
+    #[doc = "`.ctor(i32, crate::system::object::Object)` — overload selector"]
+    pub fn new(bytes_read: i32, async_state_object: crate::system::object::Object) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Stream_SynchronousAsyncResult),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStream_SynchronousAsyncResultMethods>::ctor(this, bytes_read, async_state_object);
+        this
+    }
+
+    #[doc = "`.ctor(crate::system::object::Object)` — overload selector"]
+    pub fn new_2(async_state_object: crate::system::object::Object) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Stream_SynchronousAsyncResult),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IStream_SynchronousAsyncResultMethods>::ctor_2(this, async_state_object);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/io/stream/Stream_ReadWriteParameters.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Stream_ReadWriteParameters {
+    pub buffer: ::unity2::Array<u8>,
+    pub offset: i32,
+    pub count: i32,
+}
+
+impl ::unity2::ClassIdentity for Stream_ReadWriteParameters {
+    const NAMESPACE: &'static str = "System.IO";
+
+    const NAME: &'static str = "Stream.ReadWriteParameters";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Stream_ReadWriteParameters {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream_ReadWriteTask.md"))]
+#[::unity2::class(namespace = "System.IO", name = "Stream.ReadWriteTask")]
+pub struct Stream_ReadWriteTask {
+    #[rename(name = "_isRead")]
+    pub is_read: bool,
+    #[rename(name = "_stream")]
+    pub stream: crate::system::io::stream::Stream,
+    #[rename(name = "_buffer")]
+    pub buffer: ::unity2::Array<u8>,
+    #[rename(name = "_offset")]
+    pub offset: i32,
+    #[rename(name = "_count")]
+    pub count: i32,
+}
+
+#[cfg(feature = "system-io-stream")]
+#[::unity2::methods]
+impl Stream_ReadWriteTask {
+    #[doc = "`ClearBeginState()` overload"]
+    #[method(name = "ClearBeginState", args = 0)]
+    pub fn clear_begin_state(self) -> ();
+
+    #[doc = "`InvokeAsyncCallback(crate::system::object::Object)` overload"]
+    #[method(name = "InvokeAsyncCallback", args = 1)]
+    pub fn invoke_async_callback(completed_task: crate::system::object::Object) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream_NullStream.md"))]
 #[::unity2::class(namespace = "System.IO", name = "Stream.NullStream")]
 #[parent(crate::system::io::stream::Stream)]
 pub struct Stream_NullStream {}
@@ -319,31 +346,4 @@ impl Stream_NullStream {
         <Self as IStream_NullStreamMethods>::ctor(this);
         this
     }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/stream/Stream_ReadWriteTask.md")))]
-#[::unity2::class(namespace = "System.IO", name = "Stream.ReadWriteTask")]
-pub struct Stream_ReadWriteTask {
-    #[rename(name = "_isRead")]
-    pub is_read: bool,
-    #[rename(name = "_stream")]
-    pub stream: crate::system::io::stream::Stream,
-    #[rename(name = "_buffer")]
-    pub buffer: ::unity2::Array<u8>,
-    #[rename(name = "_offset")]
-    pub offset: i32,
-    #[rename(name = "_count")]
-    pub count: i32,
-}
-
-#[cfg(feature = "system-io-stream")]
-#[::unity2::methods]
-impl Stream_ReadWriteTask {
-    #[doc = "`ClearBeginState()` overload"]
-    #[method(name = "ClearBeginState", args = 0)]
-    pub fn clear_begin_state(self) -> ();
-
-    #[doc = "`InvokeAsyncCallback(crate::system::object::Object)` overload"]
-    #[method(name = "InvokeAsyncCallback", args = 1)]
-    pub fn invoke_async_callback(completed_task: crate::system::object::Object) -> ();
 }

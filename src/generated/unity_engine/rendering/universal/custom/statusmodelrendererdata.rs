@@ -10,7 +10,50 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData_ShaderResources.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom",
+    name = "StatusModelRendererData.ShaderResources"
+)]
+#[parent(crate::system::object::Object)]
+pub struct StatusModelRendererData_ShaderResources {
+    #[rename(name = "blitPS")]
+    pub blit_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "downsampleDepth")]
+    pub downsample_depth: crate::unity_engine::shader::Shader,
+    #[rename(name = "halfResoComposite")]
+    pub half_reso_composite: crate::unity_engine::shader::Shader,
+    #[rename(name = "copyDepthPS")]
+    pub copy_depth_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "samplingPS")]
+    pub sampling_ps: crate::unity_engine::shader::Shader,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+#[::unity2::methods]
+impl StatusModelRendererData_ShaderResources {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
+impl StatusModelRendererData_ShaderResources {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StatusModelRendererData_ShaderResources),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStatusModelRendererData_ShaderResourcesMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Custom",
     name = "StatusModelRendererData"
@@ -93,49 +136,6 @@ impl StatusModelRendererData {
             )
         });
         <Self as IStatusModelRendererDataMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/statusmodelrendererdata/StatusModelRendererData_ShaderResources.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal.Custom",
-    name = "StatusModelRendererData.ShaderResources"
-)]
-#[parent(crate::system::object::Object)]
-pub struct StatusModelRendererData_ShaderResources {
-    #[rename(name = "blitPS")]
-    pub blit_ps: crate::unity_engine::shader::Shader,
-    #[rename(name = "downsampleDepth")]
-    pub downsample_depth: crate::unity_engine::shader::Shader,
-    #[rename(name = "halfResoComposite")]
-    pub half_reso_composite: crate::unity_engine::shader::Shader,
-    #[rename(name = "copyDepthPS")]
-    pub copy_depth_ps: crate::unity_engine::shader::Shader,
-    #[rename(name = "samplingPS")]
-    pub sampling_ps: crate::unity_engine::shader::Shader,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
-#[::unity2::methods]
-impl StatusModelRendererData_ShaderResources {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-statusmodelrendererdata")]
-impl StatusModelRendererData_ShaderResources {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StatusModelRendererData_ShaderResources),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStatusModelRendererData_ShaderResourcesMethods>::ctor(this);
         this
     }
 }

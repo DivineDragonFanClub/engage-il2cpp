@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nn/hid/npadjoyleft/NpadJoyLeft.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nn/hid/npadjoyleft/NpadJoyLeft.md"))]
 #[::unity2::class(namespace = "nn.hid", name = "NpadJoyLeft")]
 #[parent(crate::system::object::Object)]
 pub struct NpadJoyLeft {}

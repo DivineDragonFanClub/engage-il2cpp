@@ -4,64 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/bitarray/BitArray_BitArrayEnumeratorSimple.md")))]
-#[::unity2::class(
-    namespace = "System.Collections",
-    name = "BitArray.BitArrayEnumeratorSimple"
-)]
-#[parent(crate::system::object::Object)]
-pub struct BitArray_BitArrayEnumeratorSimple {
-    #[rename(name = "bitarray")]
-    pub bitarray: crate::system::collections::bitarray::BitArray,
-    #[rename(name = "index")]
-    pub index: i32,
-    #[rename(name = "version")]
-    pub version: i32,
-    #[rename(name = "currentElement")]
-    pub current_element: bool,
-}
-
-#[cfg(feature = "system-collections-bitarray")]
-#[::unity2::methods]
-impl BitArray_BitArrayEnumeratorSimple {
-    #[doc = "`.ctor(crate::system::collections::bitarray::BitArray)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, bitarray: crate::system::collections::bitarray::BitArray) -> ();
-
-    #[doc = "`Clone()` overload"]
-    #[method(name = "Clone", args = 0)]
-    pub fn clone(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-}
-
-#[cfg(feature = "system-collections-bitarray")]
-impl BitArray_BitArrayEnumeratorSimple {
-    #[doc = "`.ctor(crate::system::collections::bitarray::BitArray)` — overload selector"]
-    pub fn new(bitarray: crate::system::collections::bitarray::BitArray) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BitArray_BitArrayEnumeratorSimple),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBitArray_BitArrayEnumeratorSimpleMethods>::ctor(this, bitarray);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/bitarray/BitArray.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/bitarray/BitArray.md"))]
 #[::unity2::class(namespace = "System.Collections", name = "BitArray")]
 #[parent(crate::system::object::Object)]
 pub struct BitArray {
@@ -189,6 +132,63 @@ impl BitArray {
             )
         });
         <Self as IBitArrayMethods>::ctor_3(this, values);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/bitarray/BitArray_BitArrayEnumeratorSimple.md"))]
+#[::unity2::class(
+    namespace = "System.Collections",
+    name = "BitArray.BitArrayEnumeratorSimple"
+)]
+#[parent(crate::system::object::Object)]
+pub struct BitArray_BitArrayEnumeratorSimple {
+    #[rename(name = "bitarray")]
+    pub bitarray: crate::system::collections::bitarray::BitArray,
+    #[rename(name = "index")]
+    pub index: i32,
+    #[rename(name = "version")]
+    pub version: i32,
+    #[rename(name = "currentElement")]
+    pub current_element: bool,
+}
+
+#[cfg(feature = "system-collections-bitarray")]
+#[::unity2::methods]
+impl BitArray_BitArrayEnumeratorSimple {
+    #[doc = "`.ctor(crate::system::collections::bitarray::BitArray)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, bitarray: crate::system::collections::bitarray::BitArray) -> ();
+
+    #[doc = "`Clone()` overload"]
+    #[method(name = "Clone", args = 0)]
+    pub fn clone(self) -> crate::system::object::Object;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+}
+
+#[cfg(feature = "system-collections-bitarray")]
+impl BitArray_BitArrayEnumeratorSimple {
+    #[doc = "`.ctor(crate::system::collections::bitarray::BitArray)` — overload selector"]
+    pub fn new(bitarray: crate::system::collections::bitarray::BitArray) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BitArray_BitArrayEnumeratorSimple),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBitArray_BitArrayEnumeratorSimpleMethods>::ctor(this, bitarray);
         this
     }
 }

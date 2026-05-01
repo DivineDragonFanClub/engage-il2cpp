@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagecorebyte/MapImageCoreByte.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagecorebyte/MapImageCoreByte.md"))]
 #[::unity2::class(namespace = "App", name = "MapImageCoreByte")]
 # [parent (crate :: app :: mapimagecore_1 :: MapImageCore_1 < u8 >)]
 pub struct MapImageCoreByte {}

@@ -6,7 +6,53 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/sendmouseevents/SendMouseEvents_HitInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/sendmouseevents/SendMouseEvents.md"))]
+#[::unity2::class(namespace = "UnityEngine", name = "SendMouseEvents")]
+#[parent(crate::system::object::Object)]
+pub struct SendMouseEvents {
+    #[static_field]
+    #[rename(name = "s_MouseUsed")]
+    pub s_mouse_used: bool,
+    #[static_field]
+    #[rename(name = "m_LastHit")]
+    pub m_last_hit: ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
+    #[static_field]
+    #[rename(name = "m_MouseDownHit")]
+    pub m_mouse_down_hit:
+        ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
+    #[static_field]
+    #[rename(name = "m_CurrentHit")]
+    pub m_current_hit:
+        ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
+    #[static_field]
+    #[rename(name = "m_Cameras")]
+    pub m_cameras: ::unity2::Array<crate::unity_engine::camera::Camera>,
+}
+
+#[cfg(feature = "unity_engine-sendmouseevents")]
+#[::unity2::methods]
+impl SendMouseEvents {
+    #[doc = "`SetMouseMoved()` overload"]
+    #[method(name = "SetMouseMoved", args = 0)]
+    pub fn set_mouse_moved() -> ();
+
+    #[doc = "`DoSendMouseEvents(i32)` overload"]
+    #[method(name = "DoSendMouseEvents", args = 1)]
+    pub fn do_send_mouse_events(skip_rt_cameras: i32) -> ();
+
+    #[doc = "`SendEvents(i32, crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"]
+    #[method(name = "SendEvents", args = 2)]
+    pub fn send_events(
+        i: i32,
+        hit: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
+    ) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/sendmouseevents/SendMouseEvents_HitInfo.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct SendMouseEvents_HitInfo {
@@ -54,50 +100,4 @@ impl SendMouseEvents_HitInfo {
         lhs: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
         rhs: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
     ) -> bool;
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/sendmouseevents/SendMouseEvents.md")))]
-#[::unity2::class(namespace = "UnityEngine", name = "SendMouseEvents")]
-#[parent(crate::system::object::Object)]
-pub struct SendMouseEvents {
-    #[static_field]
-    #[rename(name = "s_MouseUsed")]
-    pub s_mouse_used: bool,
-    #[static_field]
-    #[rename(name = "m_LastHit")]
-    pub m_last_hit: ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
-    #[static_field]
-    #[rename(name = "m_MouseDownHit")]
-    pub m_mouse_down_hit:
-        ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
-    #[static_field]
-    #[rename(name = "m_CurrentHit")]
-    pub m_current_hit:
-        ::unity2::Array<crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo>,
-    #[static_field]
-    #[rename(name = "m_Cameras")]
-    pub m_cameras: ::unity2::Array<crate::unity_engine::camera::Camera>,
-}
-
-#[cfg(feature = "unity_engine-sendmouseevents")]
-#[::unity2::methods]
-impl SendMouseEvents {
-    #[doc = "`SetMouseMoved()` overload"]
-    #[method(name = "SetMouseMoved", args = 0)]
-    pub fn set_mouse_moved() -> ();
-
-    #[doc = "`DoSendMouseEvents(i32)` overload"]
-    #[method(name = "DoSendMouseEvents", args = 1)]
-    pub fn do_send_mouse_events(skip_rt_cameras: i32) -> ();
-
-    #[doc = "`SendEvents(i32, crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo)` overload"]
-    #[method(name = "SendEvents", args = 2)]
-    pub fn send_events(
-        i: i32,
-        hit: crate::unity_engine::sendmouseevents::SendMouseEvents_HitInfo,
-    ) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
 }

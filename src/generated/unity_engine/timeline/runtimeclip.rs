@@ -8,7 +8,7 @@ use crate::unity_engine::timeline::runtimeelement::IRuntimeElement;
 use crate::unity_engine::timeline::runtimeelement::RuntimeElement;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/runtimeclip/RuntimeClip.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/runtimeclip/RuntimeClip.md"))]
 #[::unity2::class(namespace = "UnityEngine.Timeline", name = "RuntimeClip")]
 #[parent(crate::unity_engine::timeline::runtimeclipbase::RuntimeClipBase)]
 pub struct RuntimeClip {

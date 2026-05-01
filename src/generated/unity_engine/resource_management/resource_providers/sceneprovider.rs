@@ -6,115 +6,7 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider_UnloadSceneOp.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
-    name = "SceneProvider.UnloadSceneOp"
-)]
-# [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >)]
-pub struct SceneProvider_UnloadSceneOp {
-# [rename (name = "m_Instance")] pub m_instance : crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance ,
-# [rename (name = "m_sceneLoadHandle")] pub m_scene_load_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ,
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
-#[::unity2::methods]
-impl SceneProvider_UnloadSceneOp {
-    #[doc = "`Init(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)` overload"]
-    #[method(name = "Init", args = 1)]
-    pub fn init(
-        self,
-        scene_load_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >,
-    ) -> ();
-
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> ();
-
-    #[doc = "`InvokeWaitForCompletion()` overload"]
-    #[method(name = "InvokeWaitForCompletion", args = 0)]
-    pub fn invoke_wait_for_completion(self) -> bool;
-
-    #[doc = "`UnloadSceneCompleted(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
-    #[method(name = "UnloadSceneCompleted", args = 1)]
-    pub fn unload_scene_completed(
-        self,
-        obj: crate::unity_engine::asyncoperation::AsyncOperation,
-    ) -> ();
-
-    #[doc = "`UnloadSceneCompletedNoRelease(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
-    #[method(name = "UnloadSceneCompletedNoRelease", args = 1)]
-    pub fn unload_scene_completed_no_release(
-        self,
-        obj: crate::unity_engine::asyncoperation::AsyncOperation,
-    ) -> ();
-
-    #[doc = "`get_Progress()` overload"]
-    #[method(name = "get_Progress", args = 0)]
-    pub fn get_progress(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
-impl SceneProvider_UnloadSceneOp {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SceneProvider_UnloadSceneOp),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISceneProvider_UnloadSceneOpMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
-    name = "SceneProvider"
-)]
-#[parent(crate::system::object::Object)]
-pub struct SceneProvider {}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
-#[::unity2::methods]
-impl SceneProvider {
-    #[doc = "`ProvideScene(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, bool, i32)` overload"]
-    #[method(name = "ProvideScene", args = 5)]
-    pub fn provide_scene (self , resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , load_mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , activate_on_load : bool , priority : i32) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
-
-    #[doc = "`ReleaseScene(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)` overload"]
-    #[method(name = "ReleaseScene", args = 2)]
-    pub fn release_scene (self , resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , scene_load_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
-impl SceneProvider {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SceneProvider),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISceneProviderMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider_SceneOp.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider_SceneOp.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.ResourceProviders",
     name = "SceneProvider.SceneOp"
@@ -232,6 +124,114 @@ impl SceneProvider_SceneOp {
             )
         });
         <Self as ISceneProvider_SceneOpMethods>::ctor(this, rm);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider_UnloadSceneOp.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "SceneProvider.UnloadSceneOp"
+)]
+# [parent (crate :: unity_engine :: resource_management :: async_operations :: asyncoperationbase_1 :: AsyncOperationBase_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >)]
+pub struct SceneProvider_UnloadSceneOp {
+# [rename (name = "m_Instance")] pub m_instance : crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance ,
+# [rename (name = "m_sceneLoadHandle")] pub m_scene_load_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ,
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
+#[::unity2::methods]
+impl SceneProvider_UnloadSceneOp {
+    #[doc = "`Init(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)` overload"]
+    #[method(name = "Init", args = 1)]
+    pub fn init(
+        self,
+        scene_load_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >,
+    ) -> ();
+
+    #[doc = "`Execute()` overload"]
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+
+    #[doc = "`InvokeWaitForCompletion()` overload"]
+    #[method(name = "InvokeWaitForCompletion", args = 0)]
+    pub fn invoke_wait_for_completion(self) -> bool;
+
+    #[doc = "`UnloadSceneCompleted(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
+    #[method(name = "UnloadSceneCompleted", args = 1)]
+    pub fn unload_scene_completed(
+        self,
+        obj: crate::unity_engine::asyncoperation::AsyncOperation,
+    ) -> ();
+
+    #[doc = "`UnloadSceneCompletedNoRelease(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]
+    #[method(name = "UnloadSceneCompletedNoRelease", args = 1)]
+    pub fn unload_scene_completed_no_release(
+        self,
+        obj: crate::unity_engine::asyncoperation::AsyncOperation,
+    ) -> ();
+
+    #[doc = "`get_Progress()` overload"]
+    #[method(name = "get_Progress", args = 0)]
+    pub fn get_progress(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
+impl SceneProvider_UnloadSceneOp {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SceneProvider_UnloadSceneOp),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISceneProvider_UnloadSceneOpMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "SceneProvider"
+)]
+#[parent(crate::system::object::Object)]
+pub struct SceneProvider {}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
+#[::unity2::methods]
+impl SceneProvider {
+    #[doc = "`ProvideScene(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, bool, i32)` overload"]
+    #[method(name = "ProvideScene", args = 5)]
+    pub fn provide_scene (self , resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , load_mode : crate :: unity_engine :: scene_management :: loadscenemode :: LoadSceneMode , activate_on_load : bool , priority : i32) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[doc = "`ReleaseScene(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)` overload"]
+    #[method(name = "ReleaseScene", args = 2)]
+    pub fn release_scene (self , resource_manager : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , scene_load_handle : crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance >) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < crate :: unity_engine :: resource_management :: resource_providers :: sceneinstance :: SceneInstance > ;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
+impl SceneProvider {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SceneProvider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISceneProviderMethods>::ctor(this);
         this
     }
 }

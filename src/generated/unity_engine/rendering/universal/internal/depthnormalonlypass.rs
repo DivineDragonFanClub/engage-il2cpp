@@ -6,7 +6,7 @@ use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptable
 use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/depthnormalonlypass/DepthNormalOnlyPass.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/depthnormalonlypass/DepthNormalOnlyPass.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Internal",
     name = "DepthNormalOnlyPass"

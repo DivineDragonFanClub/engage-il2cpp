@@ -16,7 +16,59 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionattack/ActionAttack.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actionattack/ActionAttack_Stage.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ActionAttack_Stage {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ActionAttack_Stage {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "ActionAttack.Stage";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ActionAttack_Stage {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ActionAttack_Stage {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn approach() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 3 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionattack/ActionAttack.md"))]
 #[::unity2::class(namespace = "Combat", name = "ActionAttack")]
 #[parent(crate::combat::actionobservable::ActionObservable)]
 pub struct ActionAttack {
@@ -132,57 +184,5 @@ impl ActionAttack {
         });
         <Self as IActionAttackMethods>::ctor(this, chr, phase, time_to_chain_attack);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actionattack/ActionAttack_Stage.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ActionAttack_Stage {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for ActionAttack_Stage {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "ActionAttack.Stage";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ActionAttack_Stage {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ActionAttack_Stage {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn approach() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn attack() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 3 }
     }
 }

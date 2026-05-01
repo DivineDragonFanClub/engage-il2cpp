@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/listchangedeventargs_1/ListChangedEventArgs_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/listchangedeventargs_1/ListChangedEventArgs_1.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ListChangedEventArgs`1")]
 pub struct ListChangedEventArgs_1<T0: ::unity2::ClassIdentity> {
     #[rename(name = "index")]

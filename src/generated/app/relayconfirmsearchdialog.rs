@@ -12,7 +12,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog.md"))]
 #[::unity2::class(namespace = "App", name = "RelayConfirmSearchDialog")]
 #[parent(crate::system::object::Object)]
 pub struct RelayConfirmSearchDialog {}
@@ -45,7 +45,7 @@ impl RelayConfirmSearchDialog {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog_NoMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog_NoMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "RelayConfirmSearchDialog.NoMenuItem")]
 #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
 pub struct RelayConfirmSearchDialog_NoMenuItem {}
@@ -86,7 +86,7 @@ impl RelayConfirmSearchDialog_NoMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog_YesMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayconfirmsearchdialog/RelayConfirmSearchDialog_YesMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "RelayConfirmSearchDialog.YesMenuItem")]
 #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
 pub struct RelayConfirmSearchDialog_YesMenuItem {}

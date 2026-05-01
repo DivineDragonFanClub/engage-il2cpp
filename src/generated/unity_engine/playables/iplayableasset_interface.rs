@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/iplayableasset_interface/IPlayableAsset_Interface.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/playables/iplayableasset_interface/IPlayableAsset_Interface.md"))]
 #[::unity2::class(namespace = "UnityEngine.Playables", name = "IPlayableAsset")]
 pub struct IPlayableAsset_Interface {}
 

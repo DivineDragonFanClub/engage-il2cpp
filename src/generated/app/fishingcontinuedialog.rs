@@ -16,7 +16,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingcontinuedialog/FishingContinueDialog_DecideEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingcontinuedialog/FishingContinueDialog_DecideEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "FishingContinueDialog.DecideEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct FishingContinueDialog_DecideEventHandler {}
@@ -49,7 +49,7 @@ impl FishingContinueDialog_DecideEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingcontinuedialog/FishingContinueDialog.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingcontinuedialog/FishingContinueDialog.md"))]
 #[::unity2::class(namespace = "App", name = "FishingContinueDialog")]
 #[parent(crate::app::yesnodialog::YesNoDialog)]
 pub struct FishingContinueDialog {}

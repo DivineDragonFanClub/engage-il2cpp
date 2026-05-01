@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/deco_rodblock/Deco_RodBlock.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/deco_rodblock/Deco_RodBlock.md"))]
 #[::unity2::class(namespace = "Combat", name = "Deco_RodBlock")]
 #[parent(crate::combat::deco_rod::Deco_Rod)]
 pub struct Deco_RodBlock {}

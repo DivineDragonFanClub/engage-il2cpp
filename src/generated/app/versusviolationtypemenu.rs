@@ -14,7 +14,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu.md"))]
 #[::unity2::class(namespace = "App", name = "VersusViolationTypeMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct VersusViolationTypeMenu {
@@ -81,7 +81,23 @@ impl VersusViolationTypeMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu_DecideCallback.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu_VersusViolationTypeMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusViolationTypeMenu.VersusViolationTypeMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct VersusViolationTypeMenu_VersusViolationTypeMenuItem {}
+
+#[cfg(feature = "app-versusviolationtypemenu")]
+#[::unity2::methods]
+impl VersusViolationTypeMenu_VersusViolationTypeMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu_DecideCallback.md"))]
 #[::unity2::class(namespace = "App", name = "VersusViolationTypeMenu.DecideCallback")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct VersusViolationTypeMenu_DecideCallback {}
@@ -108,20 +124,4 @@ impl VersusViolationTypeMenu_DecideCallback {
         <Self as IVersusViolationTypeMenu_DecideCallbackMethods>::ctor(this, object, method);
         this
     }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusviolationtypemenu/VersusViolationTypeMenu_VersusViolationTypeMenuItem.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusViolationTypeMenu.VersusViolationTypeMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusViolationTypeMenu_VersusViolationTypeMenuItem {}
-
-#[cfg(feature = "app-versusviolationtypemenu")]
-#[::unity2::methods]
-impl VersusViolationTypeMenu_VersusViolationTypeMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
 }

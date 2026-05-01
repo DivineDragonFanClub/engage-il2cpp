@@ -6,54 +6,7 @@ use crate::unity_engine::resource_management::resource_providers::resourceprovid
 use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/legacyresourcesprovider/LegacyResourcesProvider.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
-    name = "LegacyResourcesProvider"
-)]
-# [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
-pub struct LegacyResourcesProvider {}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-#[::unity2::methods]
-impl LegacyResourcesProvider {
-    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
-    #[method(name = "Provide", args = 1)]
-    pub fn provide(
-        self,
-        pi : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
-    ) -> ();
-
-    #[doc = "`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]
-    #[method(name = "Release", args = 2)]
-    pub fn release(
-        self,
-        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
-        asset: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
-impl LegacyResourcesProvider {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(LegacyResourcesProvider),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ILegacyResourcesProviderMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/legacyresourcesprovider/LegacyResourcesProvider_InternalOp.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/legacyresourcesprovider/LegacyResourcesProvider_InternalOp.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.ResourceProviders",
     name = "LegacyResourcesProvider.InternalOp"
@@ -105,6 +58,53 @@ impl LegacyResourcesProvider_InternalOp {
             )
         });
         <Self as ILegacyResourcesProvider_InternalOpMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/legacyresourcesprovider/LegacyResourcesProvider.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "LegacyResourcesProvider"
+)]
+# [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
+pub struct LegacyResourcesProvider {}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
+#[::unity2::methods]
+impl LegacyResourcesProvider {
+    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
+    #[method(name = "Provide", args = 1)]
+    pub fn provide(
+        self,
+        pi : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+    ) -> ();
+
+    #[doc = "`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]
+    #[method(name = "Release", args = 2)]
+    pub fn release(
+        self,
+        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+        asset: crate::system::object::Object,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider")]
+impl LegacyResourcesProvider {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LegacyResourcesProvider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILegacyResourcesProviderMethods>::ctor(this);
         this
     }
 }

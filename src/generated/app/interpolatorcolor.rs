@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorcolor/InterpolatorColor.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorcolor/InterpolatorColor.md"))]
 #[::unity2::class(namespace = "App", name = "InterpolatorColor")]
 # [parent (crate :: app :: interpolator_1 :: Interpolator_1 < crate :: unity_engine :: color :: Color >)]
 pub struct InterpolatorColor {}

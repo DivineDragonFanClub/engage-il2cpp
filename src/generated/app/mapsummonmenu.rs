@@ -14,7 +14,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsummonmenu/MapSummonMenu_SummonColorMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsummonmenu/MapSummonMenu_SummonColorMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "MapSummonMenu.SummonColorMenuItem")]
 #[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
 pub struct MapSummonMenu_SummonColorMenuItem {
@@ -86,7 +86,7 @@ impl MapSummonMenu_SummonColorMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsummonmenu/MapSummonMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsummonmenu/MapSummonMenu.md"))]
 #[::unity2::class(namespace = "App", name = "MapSummonMenu")]
 #[parent(crate::app::mapbasicmenu::MapBasicMenu)]
 pub struct MapSummonMenu {

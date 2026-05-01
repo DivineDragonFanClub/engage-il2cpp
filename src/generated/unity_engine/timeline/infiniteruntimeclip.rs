@@ -6,7 +6,7 @@ use crate::unity_engine::timeline::runtimeelement::IRuntimeElement;
 use crate::unity_engine::timeline::runtimeelement::RuntimeElement;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/infiniteruntimeclip/InfiniteRuntimeClip.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/infiniteruntimeclip/InfiniteRuntimeClip.md"))]
 #[::unity2::class(namespace = "UnityEngine.Timeline", name = "InfiniteRuntimeClip")]
 #[parent(crate::unity_engine::timeline::runtimeelement::RuntimeElement)]
 pub struct InfiniteRuntimeClip {

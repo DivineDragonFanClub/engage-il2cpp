@@ -6,7 +6,7 @@ use crate::unity_engine::propertyattribute::IPropertyAttribute;
 use crate::unity_engine::propertyattribute::PropertyAttribute;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tooltipattribute/TooltipAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tooltipattribute/TooltipAttribute.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "TooltipAttribute")]
 #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
 pub struct TooltipAttribute {

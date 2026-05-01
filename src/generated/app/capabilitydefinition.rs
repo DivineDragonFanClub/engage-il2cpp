@@ -8,7 +8,64 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capabilitydefinition/CapabilityDefinition_Type.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilitydefinition/CapabilityDefinition.md"))]
+#[::unity2::class(namespace = "App", name = "CapabilityDefinition")]
+#[parent(crate::system::object::Object)]
+pub struct CapabilityDefinition {
+    #[static_field]
+    #[rename(name = "Num")]
+    pub num: i32,
+    #[static_field]
+    #[rename(name = "CcNum")]
+    pub cc_num: i32,
+    #[static_field]
+    #[rename(name = "GrowNum")]
+    pub grow_num: i32,
+    #[static_field]
+    #[rename(name = "Names")]
+    pub names: ::unity2::Array<::unity2::Il2CppString>,
+    #[static_field]
+    #[rename(name = "Helps")]
+    pub helps: ::unity2::Array<::unity2::Il2CppString>,
+}
+
+#[cfg(feature = "app-capabilitydefinition")]
+#[::unity2::methods]
+impl CapabilityDefinition {
+    #[doc = "`GetName(i32)` overload"]
+    #[method(name = "GetName", args = 1)]
+    pub fn get_name(index: i32) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetHelp(i32)` overload"]
+    #[method(name = "GetHelp", args = 1)]
+    pub fn get_help(index: i32) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-capabilitydefinition")]
+impl CapabilityDefinition {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CapabilityDefinition),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICapabilityDefinitionMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/capabilitydefinition/CapabilityDefinition_Type.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -101,62 +158,5 @@ impl CapabilityDefinition_Type {
 
     pub fn grow_num() -> Self {
         Self { value: 9 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilitydefinition/CapabilityDefinition.md")))]
-#[::unity2::class(namespace = "App", name = "CapabilityDefinition")]
-#[parent(crate::system::object::Object)]
-pub struct CapabilityDefinition {
-    #[static_field]
-    #[rename(name = "Num")]
-    pub num: i32,
-    #[static_field]
-    #[rename(name = "CcNum")]
-    pub cc_num: i32,
-    #[static_field]
-    #[rename(name = "GrowNum")]
-    pub grow_num: i32,
-    #[static_field]
-    #[rename(name = "Names")]
-    pub names: ::unity2::Array<::unity2::Il2CppString>,
-    #[static_field]
-    #[rename(name = "Helps")]
-    pub helps: ::unity2::Array<::unity2::Il2CppString>,
-}
-
-#[cfg(feature = "app-capabilitydefinition")]
-#[::unity2::methods]
-impl CapabilityDefinition {
-    #[doc = "`GetName(i32)` overload"]
-    #[method(name = "GetName", args = 1)]
-    pub fn get_name(index: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetHelp(i32)` overload"]
-    #[method(name = "GetHelp", args = 1)]
-    pub fn get_help(index: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-capabilitydefinition")]
-impl CapabilityDefinition {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CapabilityDefinition),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICapabilityDefinitionMethods>::ctor(this);
-        this
     }
 }

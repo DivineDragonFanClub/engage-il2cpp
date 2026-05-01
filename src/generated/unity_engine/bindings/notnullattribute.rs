@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/notnullattribute/NotNullAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/notnullattribute/NotNullAttribute.md"))]
 #[::unity2::class(namespace = "UnityEngine.Bindings", name = "NotNullAttribute")]
 pub struct NotNullAttribute {}
 

@@ -6,7 +6,7 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/async_operations/provideroperation_1/ProviderOperation_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/async_operations/provideroperation_1/ProviderOperation_1.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.AsyncOperations",
     name = "ProviderOperation`1"

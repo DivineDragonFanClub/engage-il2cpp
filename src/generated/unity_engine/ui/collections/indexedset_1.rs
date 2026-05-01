@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/collections/indexedset_1/IndexedSet_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/collections/indexedset_1/IndexedSet_1.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI.Collections", name = "IndexedSet`1")]
 #[parent(crate::system::object::Object)]
 pub struct IndexedSet_1<T0: ::unity2::ClassIdentity> {

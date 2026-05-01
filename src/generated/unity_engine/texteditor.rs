@@ -8,51 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/texteditor/TextEditor_DblClickSnapping.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TextEditor_DblClickSnapping {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TextEditor_DblClickSnapping {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "TextEditor.DblClickSnapping";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TextEditor_DblClickSnapping {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TextEditor_DblClickSnapping {
-    pub fn words() -> Self {
-        Self { value: 256 }
-    }
-
-    pub fn paragraphs() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/texteditor/TextEditor.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/texteditor/TextEditor.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "TextEditor")]
 #[parent(crate::system::object::Object)]
 pub struct TextEditor {
@@ -111,5 +67,49 @@ impl TextEditor {
         });
         <Self as ITextEditorMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/texteditor/TextEditor_DblClickSnapping.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TextEditor_DblClickSnapping {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TextEditor_DblClickSnapping {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "TextEditor.DblClickSnapping";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TextEditor_DblClickSnapping {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TextEditor_DblClickSnapping {
+    pub fn words() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn paragraphs() -> Self {
+        Self { value: 1 }
     }
 }

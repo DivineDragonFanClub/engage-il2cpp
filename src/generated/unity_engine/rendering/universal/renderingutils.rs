@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/renderingutils/RenderingUtils_StereoConstants.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/renderingutils/RenderingUtils_StereoConstants.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
     name = "RenderingUtils.StereoConstants"
@@ -49,7 +49,7 @@ impl RenderingUtils_StereoConstants {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/renderingutils/RenderingUtils.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/renderingutils/RenderingUtils.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "RenderingUtils")]
 #[parent(crate::system::object::Object)]
 pub struct RenderingUtils {

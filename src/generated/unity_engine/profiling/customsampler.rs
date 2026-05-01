@@ -6,7 +6,7 @@ use crate::unity_engine::profiling::sampler::ISampler;
 use crate::unity_engine::profiling::sampler::Sampler;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/profiling/customsampler/CustomSampler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/profiling/customsampler/CustomSampler.md"))]
 #[::unity2::class(namespace = "UnityEngine.Profiling", name = "CustomSampler")]
 #[parent(crate::unity_engine::profiling::sampler::Sampler)]
 pub struct CustomSampler {

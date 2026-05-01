@@ -12,71 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibotopsequence/AmiiboTopSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AmiiboTopSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AmiiboTopSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AmiiboTopSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AmiiboTopSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AmiiboTopSequence_Label {
-    pub fn init() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn entry() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn amiibo() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn accessory() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn sound() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn exit() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 6 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopsequence/AmiiboTopSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibotopsequence/AmiiboTopSequence.md"))]
 #[::unity2::class(namespace = "App", name = "AmiiboTopSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: amiibotopsequence :: AmiiboTopSequence >)]
 pub struct AmiiboTopSequence {
@@ -143,5 +79,69 @@ impl AmiiboTopSequence {
         });
         <Self as IAmiiboTopSequenceMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibotopsequence/AmiiboTopSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AmiiboTopSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AmiiboTopSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AmiiboTopSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AmiiboTopSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AmiiboTopSequence_Label {
+    pub fn init() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn entry() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn amiibo() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn accessory() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn sound() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 6 }
     }
 }

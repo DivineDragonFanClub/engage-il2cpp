@@ -10,7 +10,40 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_FillList.md"))]
+#[::unity2::class(namespace = "App", name = "Map.FillList")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: map :: Map_Pos >)]
+pub struct Map_FillList {}
+
+#[cfg(feature = "app-map")]
+#[::unity2::methods]
+impl Map_FillList {
+    #[doc = "`FillTerrain(i32, i32, i32, i32)` overload"]
+    #[method(name = "FillTerrain", args = 4)]
+    pub fn fill_terrain(self, x: i32, z: i32, before: i32, after: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-map")]
+impl Map_FillList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Map_FillList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMap_FillListMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map.md"))]
 #[::unity2::class(namespace = "App", name = "Map")]
 #[parent(crate::system::object::Object)]
 pub struct Map {
@@ -686,7 +719,63 @@ impl Map {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_CellMesh.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_CellVertex.md"))]
+#[::unity2::class(namespace = "App", name = "Map.CellVertex")]
+#[parent(crate::system::object::Object)]
+pub struct Map_CellVertex {
+    #[rename(name = "m_Position")]
+    pub m_position: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+}
+
+#[cfg(feature = "app-map")]
+#[::unity2::methods]
+impl Map_CellVertex {
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Calc(i32, i32)` overload"]
+    #[method(name = "Calc", args = 2)]
+    pub fn calc(self, x: i32, z: i32) -> ();
+
+    #[doc = "`get_Item(i32)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, i: i32) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`set_Item(i32, crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(self, i: i32, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[doc = "`get_MinHeight()` overload"]
+    #[method(name = "get_MinHeight", args = 0)]
+    pub fn get_min_height(self) -> f32;
+
+    #[doc = "`get_MaxHeight()` overload"]
+    #[method(name = "get_MaxHeight", args = 0)]
+    pub fn get_max_height(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-map")]
+impl Map_CellVertex {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Map_CellVertex),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMap_CellVertexMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_CellMesh.md"))]
 #[::unity2::class(namespace = "App", name = "Map.CellMesh")]
 #[parent(crate::app::dynamicmesh::DynamicMesh)]
 pub struct Map_CellMesh {
@@ -819,7 +908,7 @@ impl Map_CellMesh {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/map/Map_Pos.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/map/Map_Pos.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct Map_Pos {
@@ -854,93 +943,4 @@ impl Map_Pos {
     #[doc = "`.ctor(i32, i32)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, x: i32, z: i32) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_FillList.md")))]
-#[::unity2::class(namespace = "App", name = "Map.FillList")]
-# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: map :: Map_Pos >)]
-pub struct Map_FillList {}
-
-#[cfg(feature = "app-map")]
-#[::unity2::methods]
-impl Map_FillList {
-    #[doc = "`FillTerrain(i32, i32, i32, i32)` overload"]
-    #[method(name = "FillTerrain", args = 4)]
-    pub fn fill_terrain(self, x: i32, z: i32, before: i32, after: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-map")]
-impl Map_FillList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Map_FillList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMap_FillListMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_CellVertex.md")))]
-#[::unity2::class(namespace = "App", name = "Map.CellVertex")]
-#[parent(crate::system::object::Object)]
-pub struct Map_CellVertex {
-    #[rename(name = "m_Position")]
-    pub m_position: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-}
-
-#[cfg(feature = "app-map")]
-#[::unity2::methods]
-impl Map_CellVertex {
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Calc(i32, i32)` overload"]
-    #[method(name = "Calc", args = 2)]
-    pub fn calc(self, x: i32, z: i32) -> ();
-
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, i: i32) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_Item(i32, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_Item", args = 2)]
-    pub fn set_item(self, i: i32, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_MinHeight()` overload"]
-    #[method(name = "get_MinHeight", args = 0)]
-    pub fn get_min_height(self) -> f32;
-
-    #[doc = "`get_MaxHeight()` overload"]
-    #[method(name = "get_MaxHeight", args = 0)]
-    pub fn get_max_height(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-map")]
-impl Map_CellVertex {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Map_CellVertex),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMap_CellVertexMethods>::ctor(this);
-        this
-    }
 }

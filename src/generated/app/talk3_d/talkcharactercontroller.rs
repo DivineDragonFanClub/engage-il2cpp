@@ -16,55 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talkcharactercontroller/TalkCharacterController_FadeType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TalkCharacterController_FadeType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TalkCharacterController_FadeType {
-    const NAMESPACE: &'static str = "App.Talk3D";
-
-    const NAME: &'static str = "TalkCharacterController.FadeType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TalkCharacterController_FadeType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TalkCharacterController_FadeType {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn r#in() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn out() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkcharactercontroller/TalkCharacterController.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkcharactercontroller/TalkCharacterController.md"))]
 #[::unity2::class(namespace = "App.Talk3D", name = "TalkCharacterController")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct TalkCharacterController {
@@ -249,5 +201,53 @@ impl TalkCharacterController {
         });
         <Self as ITalkCharacterControllerMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talkcharactercontroller/TalkCharacterController_FadeType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TalkCharacterController_FadeType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TalkCharacterController_FadeType {
+    const NAMESPACE: &'static str = "App.Talk3D";
+
+    const NAME: &'static str = "TalkCharacterController.FadeType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TalkCharacterController_FadeType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TalkCharacterController_FadeType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn r#in() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn out() -> Self {
+        Self { value: 2 }
     }
 }

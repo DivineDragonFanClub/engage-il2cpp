@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktaganimation/TalkTagAnimation_TagID.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktaganimation/TalkTagAnimation_TagID.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -58,7 +58,7 @@ impl TalkTagAnimation_TagID {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktaganimation/TalkTagAnimation.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktaganimation/TalkTagAnimation.md"))]
 #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagAnimation")]
 #[parent(crate::app::talk3_d::talktag::TalkTag)]
 pub struct TalkTagAnimation {

@@ -8,60 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktag/TalkTag.md")))]
-#[::unity2::class(namespace = "App.Talk3D", name = "TalkTag")]
-#[parent(crate::system::object::Object)]
-pub struct TalkTag {}
-
-#[cfg(feature = "app-talk3_d-talktag")]
-#[::unity2::methods]
-impl TalkTag {
-    #[doc = "`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]
-    #[method(name = "Initialize", args = 1)]
-    pub fn initialize(self, talk_ptr: crate::app::talk3_d::talkptr::TalkPtr) -> ();
-
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> ();
-
-    #[doc = "`ExecuteForCharacterPreLoad()` overload"]
-    #[method(name = "ExecuteForCharacterPreLoad", args = 0)]
-    pub fn execute_for_character_pre_load(self) -> ();
-
-    #[doc = "`NeedFadeWait()` overload"]
-    #[method(name = "NeedFadeWait", args = 0)]
-    pub fn need_fade_wait(self) -> bool;
-
-    #[doc = "`GetResult()` overload"]
-    #[method(name = "GetResult", args = 0)]
-    pub fn get_result(self) -> crate::app::talk3_d::talktag::TalkTag_Result;
-
-    #[doc = "`GetResultForHeadText()` overload"]
-    #[method(name = "GetResultForHeadText", args = 0)]
-    pub fn get_result_for_head_text(self) -> crate::app::talk3_d::talktag::TalkTag_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-talk3_d-talktag")]
-impl TalkTag {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkTag),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkTagMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktag/TalkTag_Result.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktag/TalkTag_Result.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -126,5 +73,58 @@ impl TalkTag_Result {
 
     pub fn error() -> Self {
         Self { value: 7 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktag/TalkTag.md"))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkTag")]
+#[parent(crate::system::object::Object)]
+pub struct TalkTag {}
+
+#[cfg(feature = "app-talk3_d-talktag")]
+#[::unity2::methods]
+impl TalkTag {
+    #[doc = "`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]
+    #[method(name = "Initialize", args = 1)]
+    pub fn initialize(self, talk_ptr: crate::app::talk3_d::talkptr::TalkPtr) -> ();
+
+    #[doc = "`Execute()` overload"]
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+
+    #[doc = "`ExecuteForCharacterPreLoad()` overload"]
+    #[method(name = "ExecuteForCharacterPreLoad", args = 0)]
+    pub fn execute_for_character_pre_load(self) -> ();
+
+    #[doc = "`NeedFadeWait()` overload"]
+    #[method(name = "NeedFadeWait", args = 0)]
+    pub fn need_fade_wait(self) -> bool;
+
+    #[doc = "`GetResult()` overload"]
+    #[method(name = "GetResult", args = 0)]
+    pub fn get_result(self) -> crate::app::talk3_d::talktag::TalkTag_Result;
+
+    #[doc = "`GetResultForHeadText()` overload"]
+    #[method(name = "GetResultForHeadText", args = 0)]
+    pub fn get_result_for_head_text(self) -> crate::app::talk3_d::talktag::TalkTag_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talktag")]
+impl TalkTag {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkTag),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkTagMethods>::ctor(this);
+        this
     }
 }

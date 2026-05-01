@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainmesh/TerrainMesh.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/terrainmesh/TerrainMesh.md"))]
 #[::unity2::class(namespace = "App", name = "TerrainMesh")]
 #[parent(crate::app::map::Map_CellMesh)]
 pub struct TerrainMesh {

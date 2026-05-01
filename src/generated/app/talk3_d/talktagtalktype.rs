@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagtalktype/TalkTagTalkType.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagtalktype/TalkTagTalkType.md"))]
 #[::unity2::class(namespace = "App.Talk3D", name = "TalkTagTalkType")]
 #[parent(crate::app::talk3_d::talktag::TalkTag)]
 pub struct TalkTagTalkType {
@@ -64,7 +64,7 @@ impl TalkTagTalkType {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagtalktype/TalkTagTalkType_TagID.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagtalktype/TalkTagTalkType_TagID.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

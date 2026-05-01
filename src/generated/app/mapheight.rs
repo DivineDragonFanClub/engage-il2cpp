@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapheight/MapHeight_Layers.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapheight/MapHeight_Layers.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -58,59 +58,7 @@ impl MapHeight_Layers {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapheight/MapHeight_Plane.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapHeight_Plane {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapHeight_Plane {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapHeight.Plane";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapHeight_Plane {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapHeight_Plane {
-    pub fn up() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn down() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn left() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn right() -> Self {
-        Self { value: 3 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_CellInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_CellInfo.md"))]
 #[::unity2::class(namespace = "App", name = "MapHeight.CellInfo")]
 #[parent(crate::system::object::Object)]
 pub struct MapHeight_CellInfo {
@@ -182,7 +130,165 @@ impl MapHeight_CellInfo {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapheight/MapHeight_Plane.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapHeight_Plane {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapHeight_Plane {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapHeight.Plane";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapHeight_Plane {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapHeight_Plane {
+    pub fn up() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn down() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn left() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 3 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_EdgeIndex.md"))]
+#[::unity2::class(namespace = "App", name = "MapHeight.EdgeIndex")]
+#[parent(crate::system::object::Object)]
+pub struct MapHeight_EdgeIndex {
+    #[rename(name = "Index1")]
+    pub index1: i32,
+    #[rename(name = "Index2")]
+    pub index2: i32,
+}
+
+#[cfg(feature = "app-mapheight")]
+#[::unity2::methods]
+impl MapHeight_EdgeIndex {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapheight")]
+impl MapHeight_EdgeIndex {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHeight_EdgeIndex),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHeight_EdgeIndexMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_CellMap.md"))]
+#[::unity2::class(namespace = "App", name = "MapHeight.CellMap")]
+#[parent(crate::system::object::Object)]
+pub struct MapHeight_CellMap {
+    #[rename(name = "m_Cells")]
+    pub m_cells: ::unity2::Array<crate::app::mapheight::MapHeight_CellInfo>,
+    #[rename(name = "m_LayerMaskA")]
+    pub m_layer_mask_a: i32,
+    #[rename(name = "m_LayerMaskB")]
+    pub m_layer_mask_b: i32,
+}
+
+#[cfg(feature = "app-mapheight")]
+#[::unity2::methods]
+impl MapHeight_CellMap {
+    #[doc = "`.ctor(i32, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, layer_mask_a: i32, layer_mask_b: i32) -> ();
+
+    #[doc = "`GetX(i32, i32)` overload"]
+    #[method(name = "GetX", args = 2)]
+    pub fn get_x(self, x: i32, index: i32) -> f32;
+
+    #[doc = "`GetZ(i32, i32)` overload"]
+    #[method(name = "GetZ", args = 2)]
+    pub fn get_z(self, z: i32, index: i32) -> f32;
+
+    #[doc = "`GetHeight(i32, i32, i32)` overload"]
+    #[method(name = "GetHeight", args = 3)]
+    pub fn get_height(self, x: i32, z: i32, index: i32) -> f32;
+
+    #[doc = "`GetMaxHeight(i32, i32)` overload"]
+    #[method(name = "GetMaxHeight", args = 2)]
+    pub fn get_max_height(self, x: i32, z: i32) -> f32;
+
+    #[doc = "`GetMinHeight(i32, i32)` overload"]
+    #[method(name = "GetMinHeight", args = 2)]
+    pub fn get_min_height(self, x: i32, z: i32) -> f32;
+
+    #[doc = "`Get(i32, i32)` overload"]
+    #[method(name = "Get", args = 2)]
+    pub fn get(self, x: i32, z: i32) -> crate::app::mapheight::MapHeight_CellInfo;
+
+    #[doc = "`Update(i32, i32)` overload"]
+    #[method(name = "Update", args = 2)]
+    pub fn update(self, x: i32, z: i32) -> ();
+
+    #[doc = "`IsLayerMask(i32, i32, i32)` overload"]
+    #[method(name = "IsLayerMask", args = 3)]
+    pub fn is_layer_mask(self, x: i32, z: i32, layer_mask: i32) -> bool;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[cfg(feature = "app-mapheight")]
+impl MapHeight_CellMap {
+    #[doc = "`.ctor(i32, i32)` — overload selector"]
+    pub fn new(layer_mask_a: i32, layer_mask_b: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapHeight_CellMap),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapHeight_CellMapMethods>::ctor(this, layer_mask_a, layer_mask_b);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight.md"))]
 #[::unity2::class(namespace = "App", name = "MapHeight")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapheight :: MapHeight >)]
 pub struct MapHeight {
@@ -392,112 +498,6 @@ impl MapHeight {
             )
         });
         <Self as IMapHeightMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_EdgeIndex.md")))]
-#[::unity2::class(namespace = "App", name = "MapHeight.EdgeIndex")]
-#[parent(crate::system::object::Object)]
-pub struct MapHeight_EdgeIndex {
-    #[rename(name = "Index1")]
-    pub index1: i32,
-    #[rename(name = "Index2")]
-    pub index2: i32,
-}
-
-#[cfg(feature = "app-mapheight")]
-#[::unity2::methods]
-impl MapHeight_EdgeIndex {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapheight")]
-impl MapHeight_EdgeIndex {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHeight_EdgeIndex),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHeight_EdgeIndexMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapheight/MapHeight_CellMap.md")))]
-#[::unity2::class(namespace = "App", name = "MapHeight.CellMap")]
-#[parent(crate::system::object::Object)]
-pub struct MapHeight_CellMap {
-    #[rename(name = "m_Cells")]
-    pub m_cells: ::unity2::Array<crate::app::mapheight::MapHeight_CellInfo>,
-    #[rename(name = "m_LayerMaskA")]
-    pub m_layer_mask_a: i32,
-    #[rename(name = "m_LayerMaskB")]
-    pub m_layer_mask_b: i32,
-}
-
-#[cfg(feature = "app-mapheight")]
-#[::unity2::methods]
-impl MapHeight_CellMap {
-    #[doc = "`.ctor(i32, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, layer_mask_a: i32, layer_mask_b: i32) -> ();
-
-    #[doc = "`GetX(i32, i32)` overload"]
-    #[method(name = "GetX", args = 2)]
-    pub fn get_x(self, x: i32, index: i32) -> f32;
-
-    #[doc = "`GetZ(i32, i32)` overload"]
-    #[method(name = "GetZ", args = 2)]
-    pub fn get_z(self, z: i32, index: i32) -> f32;
-
-    #[doc = "`GetHeight(i32, i32, i32)` overload"]
-    #[method(name = "GetHeight", args = 3)]
-    pub fn get_height(self, x: i32, z: i32, index: i32) -> f32;
-
-    #[doc = "`GetMaxHeight(i32, i32)` overload"]
-    #[method(name = "GetMaxHeight", args = 2)]
-    pub fn get_max_height(self, x: i32, z: i32) -> f32;
-
-    #[doc = "`GetMinHeight(i32, i32)` overload"]
-    #[method(name = "GetMinHeight", args = 2)]
-    pub fn get_min_height(self, x: i32, z: i32) -> f32;
-
-    #[doc = "`Get(i32, i32)` overload"]
-    #[method(name = "Get", args = 2)]
-    pub fn get(self, x: i32, z: i32) -> crate::app::mapheight::MapHeight_CellInfo;
-
-    #[doc = "`Update(i32, i32)` overload"]
-    #[method(name = "Update", args = 2)]
-    pub fn update(self, x: i32, z: i32) -> ();
-
-    #[doc = "`IsLayerMask(i32, i32, i32)` overload"]
-    #[method(name = "IsLayerMask", args = 3)]
-    pub fn is_layer_mask(self, x: i32, z: i32, layer_mask: i32) -> bool;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
-
-#[cfg(feature = "app-mapheight")]
-impl MapHeight_CellMap {
-    #[doc = "`.ctor(i32, i32)` — overload selector"]
-    pub fn new(layer_mask_a: i32, layer_mask_b: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapHeight_CellMap),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapHeight_CellMapMethods>::ctor(this, layer_mask_a, layer_mask_b);
         this
     }
 }

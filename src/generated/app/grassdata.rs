@@ -8,7 +8,7 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/grassdata/GrassData_SpriteInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/grassdata/GrassData_SpriteInfo.md"))]
 #[::unity2::class(namespace = "App", name = "GrassData.SpriteInfo")]
 #[parent(crate::system::object::Object)]
 pub struct GrassData_SpriteInfo {
@@ -70,7 +70,7 @@ impl GrassData_SpriteInfo {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/grassdata/GrassData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/grassdata/GrassData.md"))]
 #[::unity2::class(namespace = "App", name = "GrassData")]
 #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
 pub struct GrassData {

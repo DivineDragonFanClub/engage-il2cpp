@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatortable/CalculatorTable.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatortable/CalculatorTable.md"))]
 #[::unity2::class(namespace = "App", name = "CalculatorTable")]
 # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < i32 >)]
 pub struct CalculatorTable {}

@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debuguserexceptionhandler/DebugUserExceptionHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debuguserexceptionhandler/DebugUserExceptionHandler.md"))]
 #[::unity2::class(namespace = "App", name = "DebugUserExceptionHandler")]
 #[parent(crate::system::object::Object)]
 pub struct DebugUserExceptionHandler {}

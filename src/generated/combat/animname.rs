@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animname/AnimName.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/animname/AnimName.md"))]
 #[::unity2::class(namespace = "Combat", name = "AnimName")]
 #[parent(crate::system::object::Object)]
 pub struct AnimName {}
@@ -89,7 +89,7 @@ impl AnimName {
     pub fn is_flying_2(name: ::unity2::Il2CppString) -> bool;
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/animname/AnimName_Race.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/animname/AnimName_Race.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

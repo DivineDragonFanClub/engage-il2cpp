@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_CullLightsJob.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_CullLightsJob.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct DeferredLights_CullLightsJob {}
@@ -42,7 +42,7 @@ impl DeferredLights_CullLightsJob {
     pub fn execute(self) -> ();
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_DrawCall.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_DrawCall.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct DeferredLights_DrawCall {
@@ -77,7 +77,7 @@ impl ::unity2::IlType for DeferredLights_DrawCall {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_GBufferHandles.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_GBufferHandles.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -141,210 +141,7 @@ impl DeferredLights_GBufferHandles {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_ShaderConstants.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal.Internal",
-    name = "DeferredLights.ShaderConstants"
-)]
-#[parent(crate::system::object::Object)]
-pub struct DeferredLights_ShaderConstants {
-    #[static_field]
-    #[rename(name = "_LitStencilRef")]
-    pub lit_stencil_ref: i32,
-    #[static_field]
-    #[rename(name = "_LitStencilReadMask")]
-    pub lit_stencil_read_mask: i32,
-    #[static_field]
-    #[rename(name = "_LitStencilWriteMask")]
-    pub lit_stencil_write_mask: i32,
-    #[static_field]
-    #[rename(name = "_SimpleLitStencilRef")]
-    pub simple_lit_stencil_ref: i32,
-    #[static_field]
-    #[rename(name = "_SimpleLitStencilReadMask")]
-    pub simple_lit_stencil_read_mask: i32,
-    #[static_field]
-    #[rename(name = "_SimpleLitStencilWriteMask")]
-    pub simple_lit_stencil_write_mask: i32,
-    #[static_field]
-    #[rename(name = "_StencilRef")]
-    pub stencil_ref: i32,
-    #[static_field]
-    #[rename(name = "_StencilReadMask")]
-    pub stencil_read_mask: i32,
-    #[static_field]
-    #[rename(name = "_StencilWriteMask")]
-    pub stencil_write_mask: i32,
-    #[static_field]
-    #[rename(name = "_LitPunctualStencilRef")]
-    pub lit_punctual_stencil_ref: i32,
-    #[static_field]
-    #[rename(name = "_LitPunctualStencilReadMask")]
-    pub lit_punctual_stencil_read_mask: i32,
-    #[static_field]
-    #[rename(name = "_LitPunctualStencilWriteMask")]
-    pub lit_punctual_stencil_write_mask: i32,
-    #[static_field]
-    #[rename(name = "_SimpleLitPunctualStencilRef")]
-    pub simple_lit_punctual_stencil_ref: i32,
-    #[static_field]
-    #[rename(name = "_SimpleLitPunctualStencilReadMask")]
-    pub simple_lit_punctual_stencil_read_mask: i32,
-    #[static_field]
-    #[rename(name = "_SimpleLitPunctualStencilWriteMask")]
-    pub simple_lit_punctual_stencil_write_mask: i32,
-    #[static_field]
-    #[rename(name = "_LitDirStencilRef")]
-    pub lit_dir_stencil_ref: i32,
-    #[static_field]
-    #[rename(name = "_LitDirStencilReadMask")]
-    pub lit_dir_stencil_read_mask: i32,
-    #[static_field]
-    #[rename(name = "_LitDirStencilWriteMask")]
-    pub lit_dir_stencil_write_mask: i32,
-    #[static_field]
-    #[rename(name = "_SimpleLitDirStencilRef")]
-    pub simple_lit_dir_stencil_ref: i32,
-    #[static_field]
-    #[rename(name = "_SimpleLitDirStencilReadMask")]
-    pub simple_lit_dir_stencil_read_mask: i32,
-    #[static_field]
-    #[rename(name = "_SimpleLitDirStencilWriteMask")]
-    pub simple_lit_dir_stencil_write_mask: i32,
-    #[static_field]
-    #[rename(name = "_ClearStencilRef")]
-    pub clear_stencil_ref: i32,
-    #[static_field]
-    #[rename(name = "_ClearStencilReadMask")]
-    pub clear_stencil_read_mask: i32,
-    #[static_field]
-    #[rename(name = "_ClearStencilWriteMask")]
-    pub clear_stencil_write_mask: i32,
-    #[static_field]
-    #[rename(name = "UDepthRanges")]
-    pub u_depth_ranges: i32,
-    #[static_field]
-    #[rename(name = "_DepthRanges")]
-    pub depth_ranges: i32,
-    #[static_field]
-    #[rename(name = "_DownsamplingWidth")]
-    pub downsampling_width: i32,
-    #[static_field]
-    #[rename(name = "_DownsamplingHeight")]
-    pub downsampling_height: i32,
-    #[static_field]
-    #[rename(name = "_SourceShiftX")]
-    pub source_shift_x: i32,
-    #[static_field]
-    #[rename(name = "_SourceShiftY")]
-    pub source_shift_y: i32,
-    #[static_field]
-    #[rename(name = "_TileShiftX")]
-    pub tile_shift_x: i32,
-    #[static_field]
-    #[rename(name = "_TileShiftY")]
-    pub tile_shift_y: i32,
-    #[static_field]
-    #[rename(name = "_tileXCount")]
-    pub tile_x_count: i32,
-    #[static_field]
-    #[rename(name = "_DepthRangeOffset")]
-    pub depth_range_offset: i32,
-    #[static_field]
-    #[rename(name = "_BitmaskTex")]
-    pub bitmask_tex: i32,
-    #[static_field]
-    #[rename(name = "UTileList")]
-    pub u_tile_list: i32,
-    #[static_field]
-    #[rename(name = "_TileList")]
-    pub tile_list: i32,
-    #[static_field]
-    #[rename(name = "UPunctualLightBuffer")]
-    pub u_punctual_light_buffer: i32,
-    #[static_field]
-    #[rename(name = "_PunctualLightBuffer")]
-    pub punctual_light_buffer: i32,
-    #[static_field]
-    #[rename(name = "URelLightList")]
-    pub u_rel_light_list: i32,
-    #[static_field]
-    #[rename(name = "_RelLightList")]
-    pub rel_light_list: i32,
-    #[static_field]
-    #[rename(name = "_TilePixelWidth")]
-    pub tile_pixel_width: i32,
-    #[static_field]
-    #[rename(name = "_TilePixelHeight")]
-    pub tile_pixel_height: i32,
-    #[static_field]
-    #[rename(name = "_InstanceOffset")]
-    pub instance_offset: i32,
-    #[static_field]
-    #[rename(name = "_DepthTex")]
-    pub depth_tex: i32,
-    #[static_field]
-    #[rename(name = "_DepthTexSize")]
-    pub depth_tex_size: i32,
-    #[static_field]
-    #[rename(name = "_ScreenSize")]
-    pub screen_size: i32,
-    #[static_field]
-    #[rename(name = "_ScreenToWorld")]
-    pub screen_to_world: i32,
-    #[static_field]
-    #[rename(name = "_unproject0")]
-    pub unproject0: i32,
-    #[static_field]
-    #[rename(name = "_unproject1")]
-    pub unproject1: i32,
-    #[static_field]
-    #[rename(name = "_MainLightPosition")]
-    pub main_light_position: i32,
-    #[static_field]
-    #[rename(name = "_MainLightColor")]
-    pub main_light_color: i32,
-    #[static_field]
-    #[rename(name = "_SpotLightScale")]
-    pub spot_light_scale: i32,
-    #[static_field]
-    #[rename(name = "_SpotLightBias")]
-    pub spot_light_bias: i32,
-    #[static_field]
-    #[rename(name = "_SpotLightGuard")]
-    pub spot_light_guard: i32,
-    #[static_field]
-    #[rename(name = "_LightPosWS")]
-    pub light_pos_ws: i32,
-    #[static_field]
-    #[rename(name = "_LightColor")]
-    pub light_color: i32,
-    #[static_field]
-    #[rename(name = "_LightAttenuation")]
-    pub light_attenuation: i32,
-    #[static_field]
-    #[rename(name = "_LightOcclusionProbInfo")]
-    pub light_occlusion_prob_info: i32,
-    #[static_field]
-    #[rename(name = "_LightDirection")]
-    pub light_direction: i32,
-    #[static_field]
-    #[rename(name = "_LightFlags")]
-    pub light_flags: i32,
-    #[static_field]
-    #[rename(name = "_ShadowLightIndex")]
-    pub shadow_light_index: i32,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
-#[::unity2::methods]
-impl DeferredLights_ShaderConstants {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Internal",
     name = "DeferredLights"
@@ -872,4 +669,207 @@ impl DeferredLights {
         );
         this
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_ShaderConstants.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "DeferredLights.ShaderConstants"
+)]
+#[parent(crate::system::object::Object)]
+pub struct DeferredLights_ShaderConstants {
+    #[static_field]
+    #[rename(name = "_LitStencilRef")]
+    pub lit_stencil_ref: i32,
+    #[static_field]
+    #[rename(name = "_LitStencilReadMask")]
+    pub lit_stencil_read_mask: i32,
+    #[static_field]
+    #[rename(name = "_LitStencilWriteMask")]
+    pub lit_stencil_write_mask: i32,
+    #[static_field]
+    #[rename(name = "_SimpleLitStencilRef")]
+    pub simple_lit_stencil_ref: i32,
+    #[static_field]
+    #[rename(name = "_SimpleLitStencilReadMask")]
+    pub simple_lit_stencil_read_mask: i32,
+    #[static_field]
+    #[rename(name = "_SimpleLitStencilWriteMask")]
+    pub simple_lit_stencil_write_mask: i32,
+    #[static_field]
+    #[rename(name = "_StencilRef")]
+    pub stencil_ref: i32,
+    #[static_field]
+    #[rename(name = "_StencilReadMask")]
+    pub stencil_read_mask: i32,
+    #[static_field]
+    #[rename(name = "_StencilWriteMask")]
+    pub stencil_write_mask: i32,
+    #[static_field]
+    #[rename(name = "_LitPunctualStencilRef")]
+    pub lit_punctual_stencil_ref: i32,
+    #[static_field]
+    #[rename(name = "_LitPunctualStencilReadMask")]
+    pub lit_punctual_stencil_read_mask: i32,
+    #[static_field]
+    #[rename(name = "_LitPunctualStencilWriteMask")]
+    pub lit_punctual_stencil_write_mask: i32,
+    #[static_field]
+    #[rename(name = "_SimpleLitPunctualStencilRef")]
+    pub simple_lit_punctual_stencil_ref: i32,
+    #[static_field]
+    #[rename(name = "_SimpleLitPunctualStencilReadMask")]
+    pub simple_lit_punctual_stencil_read_mask: i32,
+    #[static_field]
+    #[rename(name = "_SimpleLitPunctualStencilWriteMask")]
+    pub simple_lit_punctual_stencil_write_mask: i32,
+    #[static_field]
+    #[rename(name = "_LitDirStencilRef")]
+    pub lit_dir_stencil_ref: i32,
+    #[static_field]
+    #[rename(name = "_LitDirStencilReadMask")]
+    pub lit_dir_stencil_read_mask: i32,
+    #[static_field]
+    #[rename(name = "_LitDirStencilWriteMask")]
+    pub lit_dir_stencil_write_mask: i32,
+    #[static_field]
+    #[rename(name = "_SimpleLitDirStencilRef")]
+    pub simple_lit_dir_stencil_ref: i32,
+    #[static_field]
+    #[rename(name = "_SimpleLitDirStencilReadMask")]
+    pub simple_lit_dir_stencil_read_mask: i32,
+    #[static_field]
+    #[rename(name = "_SimpleLitDirStencilWriteMask")]
+    pub simple_lit_dir_stencil_write_mask: i32,
+    #[static_field]
+    #[rename(name = "_ClearStencilRef")]
+    pub clear_stencil_ref: i32,
+    #[static_field]
+    #[rename(name = "_ClearStencilReadMask")]
+    pub clear_stencil_read_mask: i32,
+    #[static_field]
+    #[rename(name = "_ClearStencilWriteMask")]
+    pub clear_stencil_write_mask: i32,
+    #[static_field]
+    #[rename(name = "UDepthRanges")]
+    pub u_depth_ranges: i32,
+    #[static_field]
+    #[rename(name = "_DepthRanges")]
+    pub depth_ranges: i32,
+    #[static_field]
+    #[rename(name = "_DownsamplingWidth")]
+    pub downsampling_width: i32,
+    #[static_field]
+    #[rename(name = "_DownsamplingHeight")]
+    pub downsampling_height: i32,
+    #[static_field]
+    #[rename(name = "_SourceShiftX")]
+    pub source_shift_x: i32,
+    #[static_field]
+    #[rename(name = "_SourceShiftY")]
+    pub source_shift_y: i32,
+    #[static_field]
+    #[rename(name = "_TileShiftX")]
+    pub tile_shift_x: i32,
+    #[static_field]
+    #[rename(name = "_TileShiftY")]
+    pub tile_shift_y: i32,
+    #[static_field]
+    #[rename(name = "_tileXCount")]
+    pub tile_x_count: i32,
+    #[static_field]
+    #[rename(name = "_DepthRangeOffset")]
+    pub depth_range_offset: i32,
+    #[static_field]
+    #[rename(name = "_BitmaskTex")]
+    pub bitmask_tex: i32,
+    #[static_field]
+    #[rename(name = "UTileList")]
+    pub u_tile_list: i32,
+    #[static_field]
+    #[rename(name = "_TileList")]
+    pub tile_list: i32,
+    #[static_field]
+    #[rename(name = "UPunctualLightBuffer")]
+    pub u_punctual_light_buffer: i32,
+    #[static_field]
+    #[rename(name = "_PunctualLightBuffer")]
+    pub punctual_light_buffer: i32,
+    #[static_field]
+    #[rename(name = "URelLightList")]
+    pub u_rel_light_list: i32,
+    #[static_field]
+    #[rename(name = "_RelLightList")]
+    pub rel_light_list: i32,
+    #[static_field]
+    #[rename(name = "_TilePixelWidth")]
+    pub tile_pixel_width: i32,
+    #[static_field]
+    #[rename(name = "_TilePixelHeight")]
+    pub tile_pixel_height: i32,
+    #[static_field]
+    #[rename(name = "_InstanceOffset")]
+    pub instance_offset: i32,
+    #[static_field]
+    #[rename(name = "_DepthTex")]
+    pub depth_tex: i32,
+    #[static_field]
+    #[rename(name = "_DepthTexSize")]
+    pub depth_tex_size: i32,
+    #[static_field]
+    #[rename(name = "_ScreenSize")]
+    pub screen_size: i32,
+    #[static_field]
+    #[rename(name = "_ScreenToWorld")]
+    pub screen_to_world: i32,
+    #[static_field]
+    #[rename(name = "_unproject0")]
+    pub unproject0: i32,
+    #[static_field]
+    #[rename(name = "_unproject1")]
+    pub unproject1: i32,
+    #[static_field]
+    #[rename(name = "_MainLightPosition")]
+    pub main_light_position: i32,
+    #[static_field]
+    #[rename(name = "_MainLightColor")]
+    pub main_light_color: i32,
+    #[static_field]
+    #[rename(name = "_SpotLightScale")]
+    pub spot_light_scale: i32,
+    #[static_field]
+    #[rename(name = "_SpotLightBias")]
+    pub spot_light_bias: i32,
+    #[static_field]
+    #[rename(name = "_SpotLightGuard")]
+    pub spot_light_guard: i32,
+    #[static_field]
+    #[rename(name = "_LightPosWS")]
+    pub light_pos_ws: i32,
+    #[static_field]
+    #[rename(name = "_LightColor")]
+    pub light_color: i32,
+    #[static_field]
+    #[rename(name = "_LightAttenuation")]
+    pub light_attenuation: i32,
+    #[static_field]
+    #[rename(name = "_LightOcclusionProbInfo")]
+    pub light_occlusion_prob_info: i32,
+    #[static_field]
+    #[rename(name = "_LightDirection")]
+    pub light_direction: i32,
+    #[static_field]
+    #[rename(name = "_LightFlags")]
+    pub light_flags: i32,
+    #[static_field]
+    #[rename(name = "_ShadowLightIndex")]
+    pub shadow_light_index: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-deferredlights")]
+#[::unity2::methods]
+impl DeferredLights_ShaderConstants {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }

@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescenelist/BattleSceneList.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlescenelist/BattleSceneList.md"))]
 #[::unity2::class(namespace = "App", name = "BattleSceneList")]
 # [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: battlescene :: BattleScene >)]
 pub struct BattleSceneList {

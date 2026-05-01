@@ -14,7 +14,47 @@ use crate::unity_engine::timeline::marker::IMarker;
 use crate::unity_engine::timeline::marker::Marker;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomcameramarker/MyRoomCameraMarker_Type.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomcameramarker/MyRoomCameraMarker.md"))]
+#[::unity2::class(namespace = "App", name = "MyRoomCameraMarker")]
+#[parent(crate::unity_engine::timeline::marker::Marker)]
+pub struct MyRoomCameraMarker {
+    #[rename(name = "CameraType")]
+    pub camera_type: crate::app::myroomcameramarker::MyRoomCameraMarker_Type,
+    #[rename(name = "CameraName")]
+    pub camera_name: ::unity2::Il2CppString,
+    #[rename(name = "AnimName")]
+    pub anim_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-myroomcameramarker")]
+#[::unity2::methods]
+impl MyRoomCameraMarker {
+    #[doc = "`get_id()` overload"]
+    #[method(name = "get_id", args = 0)]
+    pub fn get_id(self) -> crate::unity_engine::propertyname::PropertyName;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-myroomcameramarker")]
+impl MyRoomCameraMarker {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomCameraMarker),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomCameraMarkerMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomcameramarker/MyRoomCameraMarker_Type.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -55,45 +95,5 @@ impl MyRoomCameraMarker_Type {
 
     pub fn scene_camera() -> Self {
         Self { value: 1 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomcameramarker/MyRoomCameraMarker.md")))]
-#[::unity2::class(namespace = "App", name = "MyRoomCameraMarker")]
-#[parent(crate::unity_engine::timeline::marker::Marker)]
-pub struct MyRoomCameraMarker {
-    #[rename(name = "CameraType")]
-    pub camera_type: crate::app::myroomcameramarker::MyRoomCameraMarker_Type,
-    #[rename(name = "CameraName")]
-    pub camera_name: ::unity2::Il2CppString,
-    #[rename(name = "AnimName")]
-    pub anim_name: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-myroomcameramarker")]
-#[::unity2::methods]
-impl MyRoomCameraMarker {
-    #[doc = "`get_id()` overload"]
-    #[method(name = "get_id", args = 0)]
-    pub fn get_id(self) -> crate::unity_engine::propertyname::PropertyName;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-myroomcameramarker")]
-impl MyRoomCameraMarker {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomCameraMarker),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomCameraMarkerMethods>::ctor(this);
-        this
     }
 }

@@ -10,7 +10,7 @@ use crate::system::reflection::methodinfo::IMethodInfo;
 use crate::system::reflection::methodinfo::MethodInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/methodbuilder/MethodBuilder.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/emit/methodbuilder/MethodBuilder.md"))]
 #[::unity2::class(namespace = "System.Reflection.Emit", name = "MethodBuilder")]
 #[parent(crate::system::reflection::methodinfo::MethodInfo)]
 pub struct MethodBuilder {}

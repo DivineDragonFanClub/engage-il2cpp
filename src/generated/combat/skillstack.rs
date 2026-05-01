@@ -4,7 +4,73 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/skillstack/SkillStack.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/skillstack/SkillStack_Packet.md"))]
+#[::unity2::class(namespace = "Combat", name = "SkillStack.Packet")]
+#[parent(crate::system::object::Object)]
+pub struct SkillStack_Packet {}
+
+#[cfg(feature = "combat-skillstack")]
+#[::unity2::methods]
+impl SkillStack_Packet {
+    #[doc = "`get_FromSide()` overload"]
+    #[method(name = "get_FromSide", args = 0)]
+    pub fn get_from_side(self) -> i32;
+
+    #[doc = "`set_FromSide(i32)` overload"]
+    #[method(name = "set_FromSide", args = 1)]
+    pub fn set_from_side(self, value: i32) -> ();
+
+    #[doc = "`get_ToSide()` overload"]
+    #[method(name = "get_ToSide", args = 0)]
+    pub fn get_to_side(self) -> i32;
+
+    #[doc = "`set_ToSide(i32)` overload"]
+    #[method(name = "set_ToSide", args = 1)]
+    pub fn set_to_side(self, value: i32) -> ();
+
+    #[doc = "`ChangeSideFromTo_For絆神竜破(i32, i32)` overload"]
+    #[method(name = "ChangeSideFromTo_For絆神竜破", args = 2)]
+    pub fn change_side_from_to_for____(self, old: i32, new: i32) -> ();
+
+    #[doc = "`get_Data()` overload"]
+    #[method(name = "get_Data", args = 0)]
+    pub fn get_data(self) -> crate::app::skilldata::SkillData;
+
+    #[doc = "`set_Data(crate::app::skilldata::SkillData)` overload"]
+    #[method(name = "set_Data", args = 1)]
+    pub fn set_data(self, value: crate::app::skilldata::SkillData) -> ();
+
+    #[doc = "`.ctor(i32, i32, crate::app::skilldata::SkillData)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(self, from_side: i32, to_side: i32, data: crate::app::skilldata::SkillData) -> ();
+
+    #[doc = "`IsEqualTo(i32, i32, crate::app::skilldata::SkillData)` overload"]
+    #[method(name = "IsEqualTo", args = 3)]
+    pub fn is_equal_to(
+        self,
+        from_side: i32,
+        to_side: i32,
+        data: crate::app::skilldata::SkillData,
+    ) -> bool;
+}
+
+#[cfg(feature = "combat-skillstack")]
+impl SkillStack_Packet {
+    #[doc = "`.ctor(i32, i32, crate::app::skilldata::SkillData)` — overload selector"]
+    pub fn new(from_side: i32, to_side: i32, data: crate::app::skilldata::SkillData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SkillStack_Packet),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISkillStack_PacketMethods>::ctor(this, from_side, to_side, data);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/skillstack/SkillStack.md"))]
 #[::unity2::class(namespace = "Combat", name = "SkillStack")]
 #[parent(crate::system::object::Object)]
 pub struct SkillStack {
@@ -88,72 +154,6 @@ impl SkillStack {
             )
         });
         <Self as ISkillStackMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/skillstack/SkillStack_Packet.md")))]
-#[::unity2::class(namespace = "Combat", name = "SkillStack.Packet")]
-#[parent(crate::system::object::Object)]
-pub struct SkillStack_Packet {}
-
-#[cfg(feature = "combat-skillstack")]
-#[::unity2::methods]
-impl SkillStack_Packet {
-    #[doc = "`get_FromSide()` overload"]
-    #[method(name = "get_FromSide", args = 0)]
-    pub fn get_from_side(self) -> i32;
-
-    #[doc = "`set_FromSide(i32)` overload"]
-    #[method(name = "set_FromSide", args = 1)]
-    pub fn set_from_side(self, value: i32) -> ();
-
-    #[doc = "`get_ToSide()` overload"]
-    #[method(name = "get_ToSide", args = 0)]
-    pub fn get_to_side(self) -> i32;
-
-    #[doc = "`set_ToSide(i32)` overload"]
-    #[method(name = "set_ToSide", args = 1)]
-    pub fn set_to_side(self, value: i32) -> ();
-
-    #[doc = "`ChangeSideFromTo_For絆神竜破(i32, i32)` overload"]
-    #[method(name = "ChangeSideFromTo_For絆神竜破", args = 2)]
-    pub fn change_side_from_to_for____(self, old: i32, new: i32) -> ();
-
-    #[doc = "`get_Data()` overload"]
-    #[method(name = "get_Data", args = 0)]
-    pub fn get_data(self) -> crate::app::skilldata::SkillData;
-
-    #[doc = "`set_Data(crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "set_Data", args = 1)]
-    pub fn set_data(self, value: crate::app::skilldata::SkillData) -> ();
-
-    #[doc = "`.ctor(i32, i32, crate::app::skilldata::SkillData)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, from_side: i32, to_side: i32, data: crate::app::skilldata::SkillData) -> ();
-
-    #[doc = "`IsEqualTo(i32, i32, crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "IsEqualTo", args = 3)]
-    pub fn is_equal_to(
-        self,
-        from_side: i32,
-        to_side: i32,
-        data: crate::app::skilldata::SkillData,
-    ) -> bool;
-}
-
-#[cfg(feature = "combat-skillstack")]
-impl SkillStack_Packet {
-    #[doc = "`.ctor(i32, i32, crate::app::skilldata::SkillData)` — overload selector"]
-    pub fn new(from_side: i32, to_side: i32, data: crate::app::skilldata::SkillData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SkillStack_Packet),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISkillStack_PacketMethods>::ctor(this, from_side, to_side, data);
         this
     }
 }

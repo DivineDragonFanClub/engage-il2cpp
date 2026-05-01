@@ -4,56 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/diagnostics/performance_counters/globalperformancestopwatch/GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject.md")))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Diagnostics.PerformanceCounters",
-    name = "GlobalPerformanceStopwatch.GlobalPerformanceStopwatch_StopwatchObject"
-)]
-#[parent(crate::system::object::Object)]
-pub struct GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject {
-# [rename (name = "m_Parent")] pub m_parent : crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: globalperformancestopwatch :: GlobalPerformanceStopwatch ,
-}
-
-#[cfg(
-    feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
-)]
-#[::unity2::methods]
-impl GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::diagnostics::performance_counters::globalperformancestopwatch::GlobalPerformanceStopwatch)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        parent : crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: globalperformancestopwatch :: GlobalPerformanceStopwatch,
-    ) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-#[cfg(
-    feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
-)]
-impl GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::diagnostics::performance_counters::globalperformancestopwatch::GlobalPerformanceStopwatch)` — overload selector"]
-    pub fn new(
-        parent : crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: globalperformancestopwatch :: GlobalPerformanceStopwatch,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        < Self as IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObjectMethods > :: ctor (this , parent) ;
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/diagnostics/performance_counters/globalperformancestopwatch/GlobalPerformanceStopwatch.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/diagnostics/performance_counters/globalperformancestopwatch/GlobalPerformanceStopwatch.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Diagnostics.PerformanceCounters",
     name = "GlobalPerformanceStopwatch"
@@ -104,6 +55,55 @@ impl GlobalPerformanceStopwatch {
             )
         });
         <Self as IGlobalPerformanceStopwatchMethods>::ctor(this, perfcounter);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/diagnostics/performance_counters/globalperformancestopwatch/GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Diagnostics.PerformanceCounters",
+    name = "GlobalPerformanceStopwatch.GlobalPerformanceStopwatch_StopwatchObject"
+)]
+#[parent(crate::system::object::Object)]
+pub struct GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject {
+# [rename (name = "m_Parent")] pub m_parent : crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: globalperformancestopwatch :: GlobalPerformanceStopwatch ,
+}
+
+#[cfg(
+    feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
+)]
+#[::unity2::methods]
+impl GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::diagnostics::performance_counters::globalperformancestopwatch::GlobalPerformanceStopwatch)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        parent : crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: globalperformancestopwatch :: GlobalPerformanceStopwatch,
+    ) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(
+    feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch"
+)]
+impl GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::diagnostics::performance_counters::globalperformancestopwatch::GlobalPerformanceStopwatch)` — overload selector"]
+    pub fn new(
+        parent : crate :: moon_sharp :: interpreter :: diagnostics :: performance_counters :: globalperformancestopwatch :: GlobalPerformanceStopwatch,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    GlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObject
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        < Self as IGlobalPerformanceStopwatch_GlobalPerformanceStopwatch_StopwatchObjectMethods > :: ctor (this , parent) ;
         this
     }
 }

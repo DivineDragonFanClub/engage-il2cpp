@@ -18,7 +18,7 @@ use crate::unity_engine::ui::shadow::IShadow;
 use crate::unity_engine::ui::shadow::Shadow;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/outline/Outline.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/outline/Outline.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI", name = "Outline")]
 #[parent(crate::unity_engine::ui::shadow::Shadow)]
 pub struct Outline {}

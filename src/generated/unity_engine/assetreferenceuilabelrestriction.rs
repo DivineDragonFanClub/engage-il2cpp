@@ -6,7 +6,7 @@ use crate::unity_engine::assetreferenceuirestriction::AssetReferenceUIRestrictio
 use crate::unity_engine::assetreferenceuirestriction::IAssetReferenceUIRestriction;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/assetreferenceuilabelrestriction/AssetReferenceUILabelRestriction.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/assetreferenceuilabelrestriction/AssetReferenceUILabelRestriction.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "AssetReferenceUILabelRestriction")]
 #[parent(crate::unity_engine::assetreferenceuirestriction::AssetReferenceUIRestriction)]
 pub struct AssetReferenceUILabelRestriction {

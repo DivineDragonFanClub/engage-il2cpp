@@ -6,37 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldebug/MapPanelDebug_Entity.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapPanelDebug_Entity {
-    pub x: i32,
-    pub z: i32,
-    pub color: crate::unity_engine::color::Color,
-}
-
-impl ::unity2::ClassIdentity for MapPanelDebug_Entity {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapPanelDebug.Entity";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapPanelDebug_Entity {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldebug/MapPanelDebug.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappaneldebug/MapPanelDebug.md"))]
 #[::unity2::class(namespace = "App", name = "MapPanelDebug")]
 pub struct MapPanelDebug {
     #[rename(name = "m_Entitys")]
@@ -70,5 +40,35 @@ impl MapPanelDebug {
         });
         <Self as IMapPanelDebugMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldebug/MapPanelDebug_Entity.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapPanelDebug_Entity {
+    pub x: i32,
+    pub z: i32,
+    pub color: crate::unity_engine::color::Color,
+}
+
+impl ::unity2::ClassIdentity for MapPanelDebug_Entity {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPanelDebug.Entity";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapPanelDebug_Entity {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
     }
 }

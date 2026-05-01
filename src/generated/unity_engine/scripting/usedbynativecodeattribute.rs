@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/usedbynativecodeattribute/UsedByNativeCodeAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/usedbynativecodeattribute/UsedByNativeCodeAttribute.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Scripting",
     name = "UsedByNativeCodeAttribute"

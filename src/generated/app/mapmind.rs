@@ -18,17 +18,54 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_DoneField.md")))]
-#[::unity2::class(namespace = "App", name = "MapMind.DoneField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapmind :: MapMind_Done >)]
-pub struct MapMind_DoneField {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_CommandStack.md"))]
+#[::unity2::class(namespace = "App", name = "MapMind.CommandStack")]
+#[parent(crate::system::object::Object)]
+pub struct MapMind_CommandStack {
+    #[rename(name = "m_Statck")]
+    pub m_statck:
+        crate::system::collections::generic::stack_1::Stack_1<crate::app::mapmind::MapMind_Record>,
+}
 
 #[cfg(feature = "app-mapmind")]
 #[::unity2::methods]
-impl MapMind_DoneField {
-    #[doc = "`ToInt(crate::app::mapmind::MapMind_Done)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::mapmind::MapMind_Done) -> i32;
+impl MapMind_CommandStack {
+    #[doc = "`Peek()` overload"]
+    #[method(name = "Peek", args = 0)]
+    pub fn peek(self) -> crate::app::mapmind::MapMind_Type;
+
+    #[doc = "`Push(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    #[method(name = "Push", args = 3)]
+    pub fn push(
+        self,
+        r#type: crate::app::mapmind::MapMind_Type,
+        unit: crate::app::unit::Unit,
+        link: crate::app::unit::Unit,
+    ) -> ();
+
+    #[doc = "`Pop()` overload"]
+    #[method(name = "Pop", args = 0)]
+    pub fn pop(self) -> bool;
+
+    #[doc = "`Decide()` overload"]
+    #[method(name = "Decide", args = 0)]
+    pub fn decide(self) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`get_Exist()` overload"]
+    #[method(name = "get_Exist", args = 0)]
+    pub fn get_exist(self) -> bool;
+
+    #[doc = "`TryAddAchieveEngage(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit)` overload"]
+    #[method(name = "TryAddAchieveEngage", args = 2)]
+    pub fn try_add_achieve_engage(
+        self,
+        r#type: crate::app::mapmind::MapMind_Type,
+        unit: crate::app::unit::Unit,
+    ) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -36,282 +73,22 @@ impl MapMind_DoneField {
 }
 
 #[cfg(feature = "app-mapmind")]
-impl MapMind_DoneField {
+impl MapMind_CommandStack {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapMind_DoneField),
+                ::core::stringify!(MapMind_CommandStack),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapMind_DoneFieldMethods>::ctor(this);
+        <Self as IMapMind_CommandStackMethods>::ctor(this);
         this
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Type.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapMind_Type {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapMind_Type {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapMind.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapMind_Type {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapMind_Type {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn fixed() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn talk() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn attack() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn engage_start() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn engage_link() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn engage_attack() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn engage_rod() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn engage_rewarp() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn engage_charge() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn cannon() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn destroy() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn rod() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn item_use() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn item() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn trade() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn visit() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn breakdown() -> Self {
-        Self { value: 17 }
-    }
-
-    pub fn breakdown_enemy() -> Self {
-        Self { value: 18 }
-    }
-
-    pub fn escape() -> Self {
-        Self { value: 19 }
-    }
-
-    pub fn breakthrough() -> Self {
-        Self { value: 20 }
-    }
-
-    pub fn door() -> Self {
-        Self { value: 21 }
-    }
-
-    pub fn torch() -> Self {
-        Self { value: 22 }
-    }
-
-    pub fn treasure_box() -> Self {
-        Self { value: 23 }
-    }
-
-    pub fn transporter() -> Self {
-        Self { value: 24 }
-    }
-
-    pub fn rod_warp() -> Self {
-        Self { value: 25 }
-    }
-
-    pub fn rod_warp_dest() -> Self {
-        Self { value: 26 }
-    }
-
-    pub fn rod_rewarp() -> Self {
-        Self { value: 27 }
-    }
-
-    pub fn rod_rewarp_dest() -> Self {
-        Self { value: 28 }
-    }
-
-    pub fn rod_rescue() -> Self {
-        Self { value: 29 }
-    }
-
-    pub fn rod_interference() -> Self {
-        Self { value: 30 }
-    }
-
-    pub fn rod_torch() -> Self {
-        Self { value: 31 }
-    }
-
-    pub fn rod_creation() -> Self {
-        Self { value: 32 }
-    }
-
-    pub fn rod_nodus() -> Self {
-        Self { value: 33 }
-    }
-
-    pub fn dance() -> Self {
-        Self { value: 34 }
-    }
-
-    pub fn guard() -> Self {
-        Self { value: 35 }
-    }
-
-    pub fn dragon_vein() -> Self {
-        Self { value: 36 }
-    }
-
-    pub fn overlap_skill() -> Self {
-        Self { value: 37 }
-    }
-
-    pub fn command_skill() -> Self {
-        Self { value: 38 }
-    }
-
-    pub fn vision_create() -> Self {
-        Self { value: 39 }
-    }
-
-    pub fn vision_delete() -> Self {
-        Self { value: 40 }
-    }
-
-    pub fn god_change() -> Self {
-        Self { value: 41 }
-    }
-
-    pub fn destroy_village() -> Self {
-        Self { value: 42 }
-    }
-
-    pub fn turn_end() -> Self {
-        Self { value: 43 }
-    }
-
-    pub fn surrender() -> Self {
-        Self { value: 44 }
-    }
-
-    pub fn informal() -> Self {
-        Self { value: 45 }
-    }
-
-    pub fn rod_heal() -> Self {
-        Self { value: 46 }
-    }
-
-    pub fn rod_magic_shield() -> Self {
-        Self { value: 47 }
-    }
-
-    pub fn full_bullet() -> Self {
-        Self { value: 48 }
-    }
-
-    pub fn engage_wait() -> Self {
-        Self { value: 49 }
-    }
-
-    pub fn engage_summon() -> Self {
-        Self { value: 50 }
-    }
-
-    pub fn item_menu() -> Self {
-        Self { value: 51 }
-    }
-
-    pub fn enchant_menu() -> Self {
-        Self { value: 52 }
-    }
-
-    pub fn enchant() -> Self {
-        Self { value: 53 }
-    }
-
-    pub fn contract() -> Self {
-        Self { value: 54 }
-    }
-
-    pub fn sub_menu() -> Self {
-        Self { value: 55 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_MultiTargets.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_MultiTargets.md"))]
 #[::unity2::class(namespace = "App", name = "MapMind.MultiTargets")]
 # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapmind :: MapMind_Target >)]
 pub struct MapMind_MultiTargets {}
@@ -392,276 +169,7 @@ impl MapMind_MultiTargets {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Record.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapMind_Record {
-    pub r#type: crate::app::mapmind::MapMind_Type,
-    pub main: crate::app::mapmind::MapMind_Record_Value,
-    pub link: crate::app::mapmind::MapMind_Record_Value,
-}
-
-impl ::unity2::ClassIdentity for MapMind_Record {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapMind.Record";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapMind_Record {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-mapmind")]
-#[::unity2::methods(value)]
-impl MapMind_Record {
-    #[doc = "`.ctor(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        r#type: crate::app::mapmind::MapMind_Type,
-        unit: crate::app::unit::Unit,
-        link: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`Cancel()` overload"]
-    #[method(name = "Cancel", args = 0)]
-    pub fn cancel(self) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Record_Value.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapMind_Record_Value {
-    pub unit: crate::app::unit::Unit,
-    pub x: i32,
-    pub z: i32,
-    pub is_changed: bool,
-    pub engage_count: i32,
-    pub unit_item: crate::app::unititem::UnitItem,
-}
-
-impl ::unity2::ClassIdentity for MapMind_Record_Value {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapMind.Record.Value";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapMind_Record_Value {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-mapmind")]
-#[::unity2::methods(value)]
-impl MapMind_Record_Value {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Cancel()` overload"]
-    #[method(name = "Cancel", args = 0)]
-    pub fn cancel(self) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Target.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapMind_Target {
-    pub unit: crate::app::unit::Unit,
-    pub terrain: crate::app::terraindata_2::TerrainData_2,
-    pub x: i8,
-    pub z: i8,
-}
-
-impl ::unity2::ClassIdentity for MapMind_Target {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapMind.Target";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapMind_Target {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-mapmind")]
-#[::unity2::methods(value)]
-impl MapMind_Target {
-    #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> i8;
-
-    #[doc = "`set_Value(i8)` overload"]
-    #[method(name = "set_Value", args = 1)]
-    pub fn set_value(self, value: i8) -> ();
-
-    #[doc = "`get_Position()` overload"]
-    #[method(name = "get_Position", args = 0)]
-    pub fn get_position(self) -> crate::unity_engine::vector3::Vector3;
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Done.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapMind_Done {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapMind_Done {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapMind.Done";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapMind_Done {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapMind_Done {
-    pub fn talk() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn trade() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn putoff() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn transporter() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn action() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn sight() -> Self {
-        Self { value: 32 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_CommandStack.md")))]
-#[::unity2::class(namespace = "App", name = "MapMind.CommandStack")]
-#[parent(crate::system::object::Object)]
-pub struct MapMind_CommandStack {
-    #[rename(name = "m_Statck")]
-    pub m_statck:
-        crate::system::collections::generic::stack_1::Stack_1<crate::app::mapmind::MapMind_Record>,
-}
-
-#[cfg(feature = "app-mapmind")]
-#[::unity2::methods]
-impl MapMind_CommandStack {
-    #[doc = "`Peek()` overload"]
-    #[method(name = "Peek", args = 0)]
-    pub fn peek(self) -> crate::app::mapmind::MapMind_Type;
-
-    #[doc = "`Push(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "Push", args = 3)]
-    pub fn push(
-        self,
-        r#type: crate::app::mapmind::MapMind_Type,
-        unit: crate::app::unit::Unit,
-        link: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`Pop()` overload"]
-    #[method(name = "Pop", args = 0)]
-    pub fn pop(self) -> bool;
-
-    #[doc = "`Decide()` overload"]
-    #[method(name = "Decide", args = 0)]
-    pub fn decide(self) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`get_Exist()` overload"]
-    #[method(name = "get_Exist", args = 0)]
-    pub fn get_exist(self) -> bool;
-
-    #[doc = "`TryAddAchieveEngage(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit)` overload"]
-    #[method(name = "TryAddAchieveEngage", args = 2)]
-    pub fn try_add_achieve_engage(
-        self,
-        r#type: crate::app::mapmind::MapMind_Type,
-        unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapmind")]
-impl MapMind_CommandStack {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapMind_CommandStack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapMind_CommandStackMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind.md"))]
 #[::unity2::class(namespace = "App", name = "MapMind")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapmind :: MapMind >)]
 pub struct MapMind {
@@ -1070,5 +578,497 @@ impl MapMind {
         });
         <Self as IMapMindMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Done.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapMind_Done {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapMind_Done {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapMind.Done";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapMind_Done {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapMind_Done {
+    pub fn talk() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn trade() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn putoff() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn transporter() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn action() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn sight() -> Self {
+        Self { value: 32 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_DoneField.md"))]
+#[::unity2::class(namespace = "App", name = "MapMind.DoneField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapmind :: MapMind_Done >)]
+pub struct MapMind_DoneField {}
+
+#[cfg(feature = "app-mapmind")]
+#[::unity2::methods]
+impl MapMind_DoneField {
+    #[doc = "`ToInt(crate::app::mapmind::MapMind_Done)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::mapmind::MapMind_Done) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapmind")]
+impl MapMind_DoneField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapMind_DoneField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapMind_DoneFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Record_Value.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapMind_Record_Value {
+    pub unit: crate::app::unit::Unit,
+    pub x: i32,
+    pub z: i32,
+    pub is_changed: bool,
+    pub engage_count: i32,
+    pub unit_item: crate::app::unititem::UnitItem,
+}
+
+impl ::unity2::ClassIdentity for MapMind_Record_Value {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapMind.Record.Value";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapMind_Record_Value {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapmind")]
+#[::unity2::methods(value)]
+impl MapMind_Record_Value {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Cancel()` overload"]
+    #[method(name = "Cancel", args = 0)]
+    pub fn cancel(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Record.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapMind_Record {
+    pub r#type: crate::app::mapmind::MapMind_Type,
+    pub main: crate::app::mapmind::MapMind_Record_Value,
+    pub link: crate::app::mapmind::MapMind_Record_Value,
+}
+
+impl ::unity2::ClassIdentity for MapMind_Record {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapMind.Record";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapMind_Record {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapmind")]
+#[::unity2::methods(value)]
+impl MapMind_Record {
+    #[doc = "`.ctor(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        r#type: crate::app::mapmind::MapMind_Type,
+        unit: crate::app::unit::Unit,
+        link: crate::app::unit::Unit,
+    ) -> ();
+
+    #[doc = "`Cancel()` overload"]
+    #[method(name = "Cancel", args = 0)]
+    pub fn cancel(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Target.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapMind_Target {
+    pub unit: crate::app::unit::Unit,
+    pub terrain: crate::app::terraindata_2::TerrainData_2,
+    pub x: i8,
+    pub z: i8,
+}
+
+impl ::unity2::ClassIdentity for MapMind_Target {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapMind.Target";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapMind_Target {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapmind")]
+#[::unity2::methods(value)]
+impl MapMind_Target {
+    #[doc = "`get_Value()` overload"]
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> i8;
+
+    #[doc = "`set_Value(i8)` overload"]
+    #[method(name = "set_Value", args = 1)]
+    pub fn set_value(self, value: i8) -> ();
+
+    #[doc = "`get_Position()` overload"]
+    #[method(name = "get_Position", args = 0)]
+    pub fn get_position(self) -> crate::unity_engine::vector3::Vector3;
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Type.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapMind_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapMind_Type {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapMind.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapMind_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapMind_Type {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn fixed() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn talk() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn engage_start() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn engage_link() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn engage_attack() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn engage_rod() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn engage_rewarp() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn engage_charge() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn cannon() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn item_use() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn item() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn trade() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn visit() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn breakdown() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn breakdown_enemy() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn escape() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn breakthrough() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn door() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn torch() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn treasure_box() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn transporter() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn rod_warp() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn rod_warp_dest() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn rod_rewarp() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn rod_rewarp_dest() -> Self {
+        Self { value: 28 }
+    }
+
+    pub fn rod_rescue() -> Self {
+        Self { value: 29 }
+    }
+
+    pub fn rod_interference() -> Self {
+        Self { value: 30 }
+    }
+
+    pub fn rod_torch() -> Self {
+        Self { value: 31 }
+    }
+
+    pub fn rod_creation() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn rod_nodus() -> Self {
+        Self { value: 33 }
+    }
+
+    pub fn dance() -> Self {
+        Self { value: 34 }
+    }
+
+    pub fn guard() -> Self {
+        Self { value: 35 }
+    }
+
+    pub fn dragon_vein() -> Self {
+        Self { value: 36 }
+    }
+
+    pub fn overlap_skill() -> Self {
+        Self { value: 37 }
+    }
+
+    pub fn command_skill() -> Self {
+        Self { value: 38 }
+    }
+
+    pub fn vision_create() -> Self {
+        Self { value: 39 }
+    }
+
+    pub fn vision_delete() -> Self {
+        Self { value: 40 }
+    }
+
+    pub fn god_change() -> Self {
+        Self { value: 41 }
+    }
+
+    pub fn destroy_village() -> Self {
+        Self { value: 42 }
+    }
+
+    pub fn turn_end() -> Self {
+        Self { value: 43 }
+    }
+
+    pub fn surrender() -> Self {
+        Self { value: 44 }
+    }
+
+    pub fn informal() -> Self {
+        Self { value: 45 }
+    }
+
+    pub fn rod_heal() -> Self {
+        Self { value: 46 }
+    }
+
+    pub fn rod_magic_shield() -> Self {
+        Self { value: 47 }
+    }
+
+    pub fn full_bullet() -> Self {
+        Self { value: 48 }
+    }
+
+    pub fn engage_wait() -> Self {
+        Self { value: 49 }
+    }
+
+    pub fn engage_summon() -> Self {
+        Self { value: 50 }
+    }
+
+    pub fn item_menu() -> Self {
+        Self { value: 51 }
+    }
+
+    pub fn enchant_menu() -> Self {
+        Self { value: 52 }
+    }
+
+    pub fn enchant() -> Self {
+        Self { value: 53 }
+    }
+
+    pub fn contract() -> Self {
+        Self { value: 54 }
+    }
+
+    pub fn sub_menu() -> Self {
+        Self { value: 55 }
     }
 }

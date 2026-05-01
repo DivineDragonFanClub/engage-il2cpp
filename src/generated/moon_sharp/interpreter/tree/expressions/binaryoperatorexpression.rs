@@ -12,44 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_Node.md")))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Tree.Expressions",
-    name = "BinaryOperatorExpression.Node"
-)]
-#[parent(crate::system::object::Object)]
-pub struct BinaryOperatorExpression_Node {
-# [rename (name = "Expr")] pub expr : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression ,
-# [rename (name = "Op")] pub op : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
-# [rename (name = "Prev")] pub prev : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node ,
-# [rename (name = "Next")] pub next : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node ,
-}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
-#[::unity2::methods]
-impl BinaryOperatorExpression_Node {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
-impl BinaryOperatorExpression_Node {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BinaryOperatorExpression_Node),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBinaryOperatorExpression_NodeMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_LinkedList.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_LinkedList.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Tree.Expressions",
     name = "BinaryOperatorExpression.LinkedList"
@@ -85,7 +48,7 @@ impl BinaryOperatorExpression_LinkedList {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Tree.Expressions",
     name = "BinaryOperatorExpression"
@@ -241,7 +204,7 @@ impl BinaryOperatorExpression {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_Operator.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_Operator.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -338,5 +301,42 @@ impl BinaryOperatorExpression_Operator {
 
     pub fn power() -> Self {
         Self { value: 32768 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/expressions/binaryoperatorexpression/BinaryOperatorExpression_Node.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Expressions",
+    name = "BinaryOperatorExpression.Node"
+)]
+#[parent(crate::system::object::Object)]
+pub struct BinaryOperatorExpression_Node {
+# [rename (name = "Expr")] pub expr : crate :: moon_sharp :: interpreter :: tree :: expression :: Expression ,
+# [rename (name = "Op")] pub op : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Operator ,
+# [rename (name = "Prev")] pub prev : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node ,
+# [rename (name = "Next")] pub next : crate :: moon_sharp :: interpreter :: tree :: expressions :: binaryoperatorexpression :: BinaryOperatorExpression_Node ,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+#[::unity2::methods]
+impl BinaryOperatorExpression_Node {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-binaryoperatorexpression")]
+impl BinaryOperatorExpression_Node {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BinaryOperatorExpression_Node),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBinaryOperatorExpression_NodeMethods>::ctor(this);
+        this
     }
 }

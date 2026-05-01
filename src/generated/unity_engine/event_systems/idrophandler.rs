@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/idrophandler/IDropHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/idrophandler/IDropHandler.md"))]
 #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "IDropHandler")]
 pub struct IDropHandler {}
 

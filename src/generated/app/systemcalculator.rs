@@ -12,14 +12,47 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_Force3rdCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.Force3rdCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_Force3rdCommand {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStylePranaCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStylePranaCommand")]
+#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
+pub struct SystemCalculator_BattleStylePranaCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_Force3rdCommand {
+impl SystemCalculator_BattleStylePranaCommand {
+    #[doc = "`get_Style()` overload"]
+    #[method(name = "get_Style", args = 0)]
+    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_BattleStylePranaCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_BattleStylePranaCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_BattleStylePranaCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_JobRankHighCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.JobRankHighCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_JobRankHighCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_JobRankHighCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -34,29 +67,29 @@ impl SystemCalculator_Force3rdCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_Force3rdCommand {
+impl SystemCalculator_JobRankHighCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_Force3rdCommand),
+                ::core::stringify!(SystemCalculator_JobRankHighCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_Force3rdCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_JobRankHighCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WeaponLevelDCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.WeaponLevelDCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_GameModeCasualCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.GameModeCasualCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_WeaponLevelDCommand {}
+pub struct SystemCalculator_GameModeCasualCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_WeaponLevelDCommand {
+impl SystemCalculator_GameModeCasualCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -71,29 +104,29 @@ impl SystemCalculator_WeaponLevelDCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_WeaponLevelDCommand {
+impl SystemCalculator_GameModeCasualCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_WeaponLevelDCommand),
+                ::core::stringify!(SystemCalculator_GameModeCasualCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_WeaponLevelDCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_GameModeCasualCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_Force2ndCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.Force2ndCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_PhysicalAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.PhysicalAttributeCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_Force2ndCommand {}
+pub struct SystemCalculator_PhysicalAttributeCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_Force2ndCommand {
+impl SystemCalculator_PhysicalAttributeCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -108,22 +141,170 @@ impl SystemCalculator_Force2ndCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_Force2ndCommand {
+impl SystemCalculator_PhysicalAttributeCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_Force2ndCommand),
+                ::core::stringify!(SystemCalculator_PhysicalAttributeCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_Force2ndCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_PhysicalAttributeCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_GoodCommand.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleSideOffenseCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleSideOffenseCommand")]
+#[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
+pub struct SystemCalculator_BattleSideOffenseCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_BattleSideOffenseCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_BattleSideOffenseCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_BattleSideOffenseCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_BattleSideOffenseCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_GameModeClassicCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.GameModeClassicCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_GameModeClassicCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_GameModeClassicCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_GameModeClassicCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_GameModeClassicCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_GameModeClassicCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_JobIndexCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.JobIndexCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_JobIndexCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_JobIndexCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Func(::unity2::Il2CppString)` overload"]
+    #[method(name = "Func", args = 1)]
+    pub fn func(self, arg: ::unity2::Il2CppString) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_JobIndexCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_JobIndexCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_JobIndexCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindBowCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindBowCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_ItemKindBowCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_ItemKindBowCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_ItemKindBowCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_ItemKindBowCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_ItemKindBowCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_GoodCommand.md"))]
 #[::unity2::class(namespace = "App", name = "SystemCalculator.GoodCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
 pub struct SystemCalculator_GoodCommand {}
@@ -160,47 +341,14 @@ impl SystemCalculator_GoodCommand {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleHeavyCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStyleHeavyCommand")]
-#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
-pub struct SystemCalculator_BattleStyleHeavyCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_BattleStyleHeavyCommand {
-    #[doc = "`get_Style()` overload"]
-    #[method(name = "get_Style", args = 0)]
-    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_BattleStyleHeavyCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_BattleStyleHeavyCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_BattleStyleHeavyCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BadCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.BadCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_FireAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.FireAttributeCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_BadCommand {}
+pub struct SystemCalculator_FireAttributeCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_BadCommand {
+impl SystemCalculator_FireAttributeCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -215,22 +363,347 @@ impl SystemCalculator_BadCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_BadCommand {
+impl SystemCalculator_FireAttributeCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_BadCommand),
+                ::core::stringify!(SystemCalculator_FireAttributeCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_BadCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_FireAttributeCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleCommand.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WeaponLevelSCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.WeaponLevelSCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_WeaponLevelSCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_WeaponLevelSCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_WeaponLevelSCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_WeaponLevelSCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_WeaponLevelSCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleMagicCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStyleMagicCommand")]
+#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
+pub struct SystemCalculator_BattleStyleMagicCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_BattleStyleMagicCommand {
+    #[doc = "`get_Style()` overload"]
+    #[method(name = "get_Style", args = 0)]
+    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_BattleStyleMagicCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_BattleStyleMagicCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_BattleStyleMagicCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindSwordCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindSwordCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_ItemKindSwordCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_ItemKindSwordCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_ItemKindSwordCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_ItemKindSwordCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_ItemKindSwordCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindMagicCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindMagicCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_ItemKindMagicCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_ItemKindMagicCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_ItemKindMagicCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_ItemKindMagicCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_ItemKindMagicCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_JobRankLowCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.JobRankLowCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_JobRankLowCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_JobRankLowCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_JobRankLowCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_JobRankLowCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_JobRankLowCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleFlyCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStyleFlyCommand")]
+#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
+pub struct SystemCalculator_BattleStyleFlyCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_BattleStyleFlyCommand {
+    #[doc = "`get_Style()` overload"]
+    #[method(name = "get_Style", args = 0)]
+    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_BattleStyleFlyCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_BattleStyleFlyCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_BattleStyleFlyCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_GenderFemaleCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.GenderFemaleCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_GenderFemaleCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_GenderFemaleCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_GenderFemaleCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_GenderFemaleCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_GenderFemaleCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_SkillIndexCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.SkillIndexCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_SkillIndexCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_SkillIndexCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Func(::unity2::Il2CppString)` overload"]
+    #[method(name = "Func", args = 1)]
+    pub fn func(self, arg: ::unity2::Il2CppString) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_SkillIndexCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_SkillIndexCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_SkillIndexCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_EvilAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.EvilAttributeCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_EvilAttributeCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_EvilAttributeCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_EvilAttributeCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_EvilAttributeCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_EvilAttributeCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleCommand.md"))]
 #[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStyleCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
 pub struct SystemCalculator_BattleStyleCommand {}
@@ -271,88 +744,14 @@ impl SystemCalculator_BattleStyleCommand {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleMagicCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStyleMagicCommand")]
-#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
-pub struct SystemCalculator_BattleStyleMagicCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_BattleStyleMagicCommand {
-    #[doc = "`get_Style()` overload"]
-    #[method(name = "get_Style", args = 0)]
-    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_BattleStyleMagicCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_BattleStyleMagicCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_BattleStyleMagicCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_MoveCostCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.MoveCostCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_GenderMaleCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.GenderMaleCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_MoveCostCommand {}
+pub struct SystemCalculator_GenderMaleCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_MoveCostCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_ArgNum()` overload"]
-    #[method(name = "get_ArgNum", args = 0)]
-    pub fn get_arg_num(self) -> i32;
-
-    #[doc = "`Func(crate::system::collections::generic::list_1::List_1<f32>)` overload"]
-    #[method(name = "Func", args = 1)]
-    pub fn func(self, args: crate::system::collections::generic::list_1::List_1<f32>) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_MoveCostCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_MoveCostCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_MoveCostCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WeaponLevelBCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.WeaponLevelBCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_WeaponLevelBCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_WeaponLevelBCommand {
+impl SystemCalculator_GenderMaleCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -367,29 +766,29 @@ impl SystemCalculator_WeaponLevelBCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_WeaponLevelBCommand {
+impl SystemCalculator_GenderMaleCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_WeaponLevelBCommand),
+                ::core::stringify!(SystemCalculator_GenderMaleCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_WeaponLevelBCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_GenderMaleCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_JobRankLowCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.JobRankLowCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_LightAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.LightAttributeCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_JobRankLowCommand {}
+pub struct SystemCalculator_LightAttributeCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_JobRankLowCommand {
+impl SystemCalculator_LightAttributeCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -404,29 +803,29 @@ impl SystemCalculator_JobRankLowCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_JobRankLowCommand {
+impl SystemCalculator_LightAttributeCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_JobRankLowCommand),
+                ::core::stringify!(SystemCalculator_LightAttributeCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_JobRankLowCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_LightAttributeCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleFlyCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStyleFlyCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleCovertCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStyleCovertCommand")]
 #[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
-pub struct SystemCalculator_BattleStyleFlyCommand {}
+pub struct SystemCalculator_BattleStyleCovertCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_BattleStyleFlyCommand {
+impl SystemCalculator_BattleStyleCovertCommand {
     #[doc = "`get_Style()` overload"]
     #[method(name = "get_Style", args = 0)]
     pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
@@ -437,32 +836,173 @@ impl SystemCalculator_BattleStyleFlyCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_BattleStyleFlyCommand {
+impl SystemCalculator_BattleStyleCovertCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_BattleStyleFlyCommand),
+                ::core::stringify!(SystemCalculator_BattleStyleCovertCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_BattleStyleFlyCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_BattleStyleCovertCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleSideChainOffenseCommand.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "SystemCalculator.BattleSideChainOffenseCommand"
-)]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WeaponLevelCCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.WeaponLevelCCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_WeaponLevelCCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_WeaponLevelCCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_WeaponLevelCCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_WeaponLevelCCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_WeaponLevelCCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_Force1stCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.Force1stCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_Force1stCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_Force1stCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_Force1stCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_Force1stCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_Force1stCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleDragonCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStyleDragonCommand")]
+#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
+pub struct SystemCalculator_BattleStyleDragonCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_BattleStyleDragonCommand {
+    #[doc = "`get_Style()` overload"]
+    #[method(name = "get_Style", args = 0)]
+    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_BattleStyleDragonCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_BattleStyleDragonCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_BattleStyleDragonCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_FlyAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.FlyAttributeCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_FlyAttributeCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_FlyAttributeCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_FlyAttributeCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_FlyAttributeCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_FlyAttributeCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleSideDefenseCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleSideDefenseCommand")]
 #[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
-pub struct SystemCalculator_BattleSideChainOffenseCommand {}
+pub struct SystemCalculator_BattleSideDefenseCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_BattleSideChainOffenseCommand {
+impl SystemCalculator_BattleSideDefenseCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -477,36 +1017,36 @@ impl SystemCalculator_BattleSideChainOffenseCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_BattleSideChainOffenseCommand {
+impl SystemCalculator_BattleSideDefenseCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_BattleSideChainOffenseCommand),
+                ::core::stringify!(SystemCalculator_BattleSideDefenseCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_BattleSideChainOffenseCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_BattleSideDefenseCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindMagicCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindMagicCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemIndexCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemIndexCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_ItemKindMagicCommand {}
+pub struct SystemCalculator_ItemIndexCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_ItemKindMagicCommand {
+impl SystemCalculator_ItemIndexCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
+    #[doc = "`Func(::unity2::Il2CppString)` overload"]
+    #[method(name = "Func", args = 1)]
+    pub fn func(self, arg: ::unity2::Il2CppString) -> f32;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -514,29 +1054,29 @@ impl SystemCalculator_ItemKindMagicCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_ItemKindMagicCommand {
+impl SystemCalculator_ItemIndexCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_ItemKindMagicCommand),
+                ::core::stringify!(SystemCalculator_ItemIndexCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_ItemKindMagicCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_ItemIndexCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_PhysicalAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.PhysicalAttributeCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_NoneAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.NoneAttributeCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_PhysicalAttributeCommand {}
+pub struct SystemCalculator_NoneAttributeCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_PhysicalAttributeCommand {
+impl SystemCalculator_NoneAttributeCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -551,32 +1091,29 @@ impl SystemCalculator_PhysicalAttributeCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_PhysicalAttributeCommand {
+impl SystemCalculator_NoneAttributeCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_PhysicalAttributeCommand),
+                ::core::stringify!(SystemCalculator_NoneAttributeCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_PhysicalAttributeCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_NoneAttributeCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_RodTypeInterferenceCommand.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "SystemCalculator.RodTypeInterferenceCommand"
-)]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_DragonAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.DragonAttributeCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_RodTypeInterferenceCommand {}
+pub struct SystemCalculator_DragonAttributeCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_RodTypeInterferenceCommand {
+impl SystemCalculator_DragonAttributeCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -591,22 +1128,236 @@ impl SystemCalculator_RodTypeInterferenceCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_RodTypeInterferenceCommand {
+impl SystemCalculator_DragonAttributeCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_RodTypeInterferenceCommand),
+                ::core::stringify!(SystemCalculator_DragonAttributeCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_RodTypeInterferenceCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_DragonAttributeCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_VsyncCommand.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_Force2ndCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.Force2ndCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_Force2ndCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_Force2ndCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_Force2ndCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_Force2ndCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_Force2ndCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_PersonIndexCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.PersonIndexCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_PersonIndexCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_PersonIndexCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Func(::unity2::Il2CppString)` overload"]
+    #[method(name = "Func", args = 1)]
+    pub fn func(self, arg: ::unity2::Il2CppString) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_PersonIndexCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_PersonIndexCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_PersonIndexCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WindAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.WindAttributeCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_WindAttributeCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_WindAttributeCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_WindAttributeCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_WindAttributeCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_WindAttributeCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_MagicAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.MagicAttributeCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_MagicAttributeCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_MagicAttributeCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_MagicAttributeCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_MagicAttributeCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_MagicAttributeCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindSpecialCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindSpecialCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_ItemKindSpecialCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_ItemKindSpecialCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_ItemKindSpecialCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_ItemKindSpecialCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_ItemKindSpecialCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator")]
+#[parent(crate::app::calculatormanager::CalculatorManager)]
+pub struct SystemCalculator {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculatorMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_VsyncCommand.md"))]
 #[::unity2::class(namespace = "App", name = "SystemCalculator.VsyncCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
 pub struct SystemCalculator_VsyncCommand {}
@@ -647,14 +1398,14 @@ impl SystemCalculator_VsyncCommand {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_GameModeCasualCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.GameModeCasualCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_DifficultyLunaticCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.DifficultyLunaticCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_GameModeCasualCommand {}
+pub struct SystemCalculator_DifficultyLunaticCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_GameModeCasualCommand {
+impl SystemCalculator_DifficultyLunaticCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -669,62 +1420,29 @@ impl SystemCalculator_GameModeCasualCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_GameModeCasualCommand {
+impl SystemCalculator_DifficultyLunaticCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_GameModeCasualCommand),
+                ::core::stringify!(SystemCalculator_DifficultyLunaticCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_GameModeCasualCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_DifficultyLunaticCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStylePranaCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStylePranaCommand")]
-#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
-pub struct SystemCalculator_BattleStylePranaCommand {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindDaggerCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindDaggerCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_ItemKindDaggerCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_BattleStylePranaCommand {
-    #[doc = "`get_Style()` overload"]
-    #[method(name = "get_Style", args = 0)]
-    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_BattleStylePranaCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_BattleStylePranaCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_BattleStylePranaCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_PhaseOtherCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.PhaseOtherCommand")]
-#[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
-pub struct SystemCalculator_PhaseOtherCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_PhaseOtherCommand {
+impl SystemCalculator_ItemKindDaggerCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -739,29 +1457,29 @@ impl SystemCalculator_PhaseOtherCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_PhaseOtherCommand {
+impl SystemCalculator_ItemKindDaggerCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_PhaseOtherCommand),
+                ::core::stringify!(SystemCalculator_ItemKindDaggerCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_PhaseOtherCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_ItemKindDaggerCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_DragonAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.DragonAttributeCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WeaponLevelBCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.WeaponLevelBCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_DragonAttributeCommand {}
+pub struct SystemCalculator_WeaponLevelBCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_DragonAttributeCommand {
+impl SystemCalculator_WeaponLevelBCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -776,29 +1494,29 @@ impl SystemCalculator_DragonAttributeCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_DragonAttributeCommand {
+impl SystemCalculator_WeaponLevelBCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_DragonAttributeCommand),
+                ::core::stringify!(SystemCalculator_WeaponLevelBCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_DragonAttributeCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_WeaponLevelBCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_GenderFemaleCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.GenderFemaleCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_HeavyAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.HeavyAttributeCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_GenderFemaleCommand {}
+pub struct SystemCalculator_HeavyAttributeCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_GenderFemaleCommand {
+impl SystemCalculator_HeavyAttributeCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -813,66 +1531,29 @@ impl SystemCalculator_GenderFemaleCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_GenderFemaleCommand {
+impl SystemCalculator_HeavyAttributeCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_GenderFemaleCommand),
+                ::core::stringify!(SystemCalculator_HeavyAttributeCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_GenderFemaleCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_HeavyAttributeCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemIndexCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemIndexCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_Force3rdCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.Force3rdCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_ItemIndexCommand {}
+pub struct SystemCalculator_Force3rdCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_ItemIndexCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Func(::unity2::Il2CppString)` overload"]
-    #[method(name = "Func", args = 1)]
-    pub fn func(self, arg: ::unity2::Il2CppString) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_ItemIndexCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_ItemIndexCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_ItemIndexCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WindAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.WindAttributeCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_WindAttributeCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_WindAttributeCommand {
+impl SystemCalculator_Force3rdCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -887,62 +1568,29 @@ impl SystemCalculator_WindAttributeCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_WindAttributeCommand {
+impl SystemCalculator_Force3rdCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_WindAttributeCommand),
+                ::core::stringify!(SystemCalculator_Force3rdCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_WindAttributeCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_Force3rdCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ScreenShotCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.ScreenShotCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WeaponLevelDCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.WeaponLevelDCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_ScreenShotCommand {}
+pub struct SystemCalculator_WeaponLevelDCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_ScreenShotCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_ScreenShotCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_ScreenShotCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_ScreenShotCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_PhaseCurrentCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.PhaseCurrentCommand")]
-#[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
-pub struct SystemCalculator_PhaseCurrentCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_PhaseCurrentCommand {
+impl SystemCalculator_WeaponLevelDCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -957,491 +1605,22 @@ impl SystemCalculator_PhaseCurrentCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_PhaseCurrentCommand {
+impl SystemCalculator_WeaponLevelDCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_PhaseCurrentCommand),
+                ::core::stringify!(SystemCalculator_WeaponLevelDCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_PhaseCurrentCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_WeaponLevelDCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_FlyAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.FlyAttributeCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_FlyAttributeCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_FlyAttributeCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_FlyAttributeCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_FlyAttributeCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_FlyAttributeCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WeaponLevelCCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.WeaponLevelCCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_WeaponLevelCCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_WeaponLevelCCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_WeaponLevelCCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_WeaponLevelCCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_WeaponLevelCCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_DifficultyNormalCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.DifficultyNormalCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_DifficultyNormalCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_DifficultyNormalCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_DifficultyNormalCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_DifficultyNormalCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_DifficultyNormalCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_JobRankHighCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.JobRankHighCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_JobRankHighCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_JobRankHighCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_JobRankHighCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_JobRankHighCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_JobRankHighCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleCovertCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStyleCovertCommand")]
-#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
-pub struct SystemCalculator_BattleStyleCovertCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_BattleStyleCovertCommand {
-    #[doc = "`get_Style()` overload"]
-    #[method(name = "get_Style", args = 0)]
-    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_BattleStyleCovertCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_BattleStyleCovertCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_BattleStyleCovertCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator")]
-#[parent(crate::app::calculatormanager::CalculatorManager)]
-pub struct SystemCalculator {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculatorMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_IceAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.IceAttributeCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_IceAttributeCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_IceAttributeCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_IceAttributeCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_IceAttributeCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_IceAttributeCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_GameModeClassicCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.GameModeClassicCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_GameModeClassicCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_GameModeClassicCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_GameModeClassicCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_GameModeClassicCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_GameModeClassicCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindSwordCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindSwordCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_ItemKindSwordCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_ItemKindSwordCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_ItemKindSwordCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_ItemKindSwordCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_ItemKindSwordCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WalkAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.WalkAttributeCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_WalkAttributeCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_WalkAttributeCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_WalkAttributeCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_WalkAttributeCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_WalkAttributeCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_NoneAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.NoneAttributeCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_NoneAttributeCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_NoneAttributeCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_NoneAttributeCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_NoneAttributeCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_NoneAttributeCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_MorphAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.MorphAttributeCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_MorphAttributeCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_MorphAttributeCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_MorphAttributeCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_MorphAttributeCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_MorphAttributeCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_Force1stCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.Force1stCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_Force1stCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_Force1stCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_Force1stCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_Force1stCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_Force1stCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindLanceCommand.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindLanceCommand.md"))]
 #[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindLanceCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
 pub struct SystemCalculator_ItemKindLanceCommand {}
@@ -1478,14 +1657,14 @@ impl SystemCalculator_ItemKindLanceCommand {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WeaponLevelACommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.WeaponLevelACommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_DarkAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.DarkAttributeCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_WeaponLevelACommand {}
+pub struct SystemCalculator_DarkAttributeCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_WeaponLevelACommand {
+impl SystemCalculator_DarkAttributeCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -1500,22 +1679,96 @@ impl SystemCalculator_WeaponLevelACommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_WeaponLevelACommand {
+impl SystemCalculator_DarkAttributeCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_WeaponLevelACommand),
+                ::core::stringify!(SystemCalculator_DarkAttributeCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_WeaponLevelACommandMethods>::ctor(this);
+        <Self as ISystemCalculator_DarkAttributeCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleSideChainDefenseCommand.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_DifficultyNormalCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.DifficultyNormalCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_DifficultyNormalCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_DifficultyNormalCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_DifficultyNormalCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_DifficultyNormalCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_DifficultyNormalCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ThunderAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.ThunderAttributeCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_ThunderAttributeCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_ThunderAttributeCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_ThunderAttributeCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_ThunderAttributeCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_ThunderAttributeCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleSideChainDefenseCommand.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "SystemCalculator.BattleSideChainDefenseCommand"
@@ -1555,21 +1808,25 @@ impl SystemCalculator_BattleSideChainDefenseCommand {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_DarkAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.DarkAttributeCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_MoveCostCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.MoveCostCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_DarkAttributeCommand {}
+pub struct SystemCalculator_MoveCostCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_DarkAttributeCommand {
+impl SystemCalculator_MoveCostCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
+    #[doc = "`get_ArgNum()` overload"]
+    #[method(name = "get_ArgNum", args = 0)]
+    pub fn get_arg_num(self) -> i32;
+
+    #[doc = "`Func(crate::system::collections::generic::list_1::List_1<f32>)` overload"]
+    #[method(name = "Func", args = 1)]
+    pub fn func(self, args: crate::system::collections::generic::list_1::List_1<f32>) -> f32;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -1577,129 +1834,22 @@ impl SystemCalculator_DarkAttributeCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_DarkAttributeCommand {
+impl SystemCalculator_MoveCostCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_DarkAttributeCommand),
+                ::core::stringify!(SystemCalculator_MoveCostCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_DarkAttributeCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_MoveCostCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindBowCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindBowCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_ItemKindBowCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_ItemKindBowCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_ItemKindBowCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_ItemKindBowCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_ItemKindBowCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleSideOffenseCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleSideOffenseCommand")]
-#[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
-pub struct SystemCalculator_BattleSideOffenseCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_BattleSideOffenseCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_BattleSideOffenseCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_BattleSideOffenseCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_BattleSideOffenseCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleDragonCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStyleDragonCommand")]
-#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
-pub struct SystemCalculator_BattleStyleDragonCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_BattleStyleDragonCommand {
-    #[doc = "`get_Style()` overload"]
-    #[method(name = "get_Style", args = 0)]
-    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_BattleStyleDragonCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_BattleStyleDragonCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_BattleStyleDragonCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindRodCommand.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindRodCommand.md"))]
 #[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindRodCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
 pub struct SystemCalculator_ItemKindRodCommand {}
@@ -1736,14 +1886,14 @@ impl SystemCalculator_ItemKindRodCommand {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_DifficultyHardCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.DifficultyHardCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WalkAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.WalkAttributeCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_DifficultyHardCommand {}
+pub struct SystemCalculator_WalkAttributeCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_DifficultyHardCommand {
+impl SystemCalculator_WalkAttributeCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -1758,206 +1908,22 @@ impl SystemCalculator_DifficultyHardCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_DifficultyHardCommand {
+impl SystemCalculator_WalkAttributeCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_DifficultyHardCommand),
+                ::core::stringify!(SystemCalculator_WalkAttributeCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_DifficultyHardCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_WalkAttributeCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindSpecialCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindSpecialCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_ItemKindSpecialCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_ItemKindSpecialCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_ItemKindSpecialCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_ItemKindSpecialCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_ItemKindSpecialCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleCooperationCommand.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "SystemCalculator.BattleStyleCooperationCommand"
-)]
-#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
-pub struct SystemCalculator_BattleStyleCooperationCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_BattleStyleCooperationCommand {
-    #[doc = "`get_Style()` overload"]
-    #[method(name = "get_Style", args = 0)]
-    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_BattleStyleCooperationCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_BattleStyleCooperationCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_BattleStyleCooperationCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_RodTypeHealCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.RodTypeHealCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_RodTypeHealCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_RodTypeHealCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_RodTypeHealCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_RodTypeHealCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_RodTypeHealCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_JobIndexCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.JobIndexCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_JobIndexCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_JobIndexCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Func(::unity2::Il2CppString)` overload"]
-    #[method(name = "Func", args = 1)]
-    pub fn func(self, arg: ::unity2::Il2CppString) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_JobIndexCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_JobIndexCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_JobIndexCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_HeavyAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.HeavyAttributeCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_HeavyAttributeCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_HeavyAttributeCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_HeavyAttributeCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_HeavyAttributeCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_HeavyAttributeCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindAxeCommand.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindAxeCommand.md"))]
 #[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindAxeCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
 pub struct SystemCalculator_ItemKindAxeCommand {}
@@ -1994,225 +1960,7 @@ impl SystemCalculator_ItemKindAxeCommand {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleHorseCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStyleHorseCommand")]
-#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
-pub struct SystemCalculator_BattleStyleHorseCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_BattleStyleHorseCommand {
-    #[doc = "`get_Style()` overload"]
-    #[method(name = "get_Style", args = 0)]
-    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_BattleStyleHorseCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_BattleStyleHorseCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_BattleStyleHorseCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_FireAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.FireAttributeCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_FireAttributeCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_FireAttributeCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_FireAttributeCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_FireAttributeCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_FireAttributeCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_PersonIndexCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.PersonIndexCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_PersonIndexCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_PersonIndexCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Func(::unity2::Il2CppString)` overload"]
-    #[method(name = "Func", args = 1)]
-    pub fn func(self, arg: ::unity2::Il2CppString) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_PersonIndexCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_PersonIndexCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_PersonIndexCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindFistCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindFistCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_ItemKindFistCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_ItemKindFistCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_ItemKindFistCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_ItemKindFistCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_ItemKindFistCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_RodTypeBasicCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.RodTypeBasicCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_RodTypeBasicCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_RodTypeBasicCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_RodTypeBasicCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_RodTypeBasicCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_RodTypeBasicCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleSideDefenseCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleSideDefenseCommand")]
-#[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
-pub struct SystemCalculator_BattleSideDefenseCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_BattleSideDefenseCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_BattleSideDefenseCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_BattleSideDefenseCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_BattleSideDefenseCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_HorseAttributeCommand.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_HorseAttributeCommand.md"))]
 #[::unity2::class(namespace = "App", name = "SystemCalculator.HorseAttributeCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
 pub struct SystemCalculator_HorseAttributeCommand {}
@@ -2249,14 +1997,17 @@ impl SystemCalculator_HorseAttributeCommand {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ThunderAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.ThunderAttributeCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_ThunderAttributeCommand {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleSideChainOffenseCommand.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "SystemCalculator.BattleSideChainOffenseCommand"
+)]
+#[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
+pub struct SystemCalculator_BattleSideChainOffenseCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_ThunderAttributeCommand {
+impl SystemCalculator_BattleSideChainOffenseCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -2271,29 +2022,65 @@ impl SystemCalculator_ThunderAttributeCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_ThunderAttributeCommand {
+impl SystemCalculator_BattleSideChainOffenseCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_ThunderAttributeCommand),
+                ::core::stringify!(SystemCalculator_BattleSideChainOffenseCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_ThunderAttributeCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_BattleSideChainOffenseCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_MagicAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.MagicAttributeCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_MagicAttributeCommand {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleCooperationCommand.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "SystemCalculator.BattleStyleCooperationCommand"
+)]
+#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
+pub struct SystemCalculator_BattleStyleCooperationCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_MagicAttributeCommand {
+impl SystemCalculator_BattleStyleCooperationCommand {
+    #[doc = "`get_Style()` overload"]
+    #[method(name = "get_Style", args = 0)]
+    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_BattleStyleCooperationCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_BattleStyleCooperationCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_BattleStyleCooperationCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BadCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.BadCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_BadCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_BadCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -2308,29 +2095,29 @@ impl SystemCalculator_MagicAttributeCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_MagicAttributeCommand {
+impl SystemCalculator_BadCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_MagicAttributeCommand),
+                ::core::stringify!(SystemCalculator_BadCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_MagicAttributeCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_BadCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WeaponLevelSCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.WeaponLevelSCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_DifficultyHardCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.DifficultyHardCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_WeaponLevelSCommand {}
+pub struct SystemCalculator_DifficultyHardCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_WeaponLevelSCommand {
+impl SystemCalculator_DifficultyHardCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -2345,29 +2132,62 @@ impl SystemCalculator_WeaponLevelSCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_WeaponLevelSCommand {
+impl SystemCalculator_DifficultyHardCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_WeaponLevelSCommand),
+                ::core::stringify!(SystemCalculator_DifficultyHardCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_WeaponLevelSCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_DifficultyHardCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_EvilAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.EvilAttributeCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_EvilAttributeCommand {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleHorseCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStyleHorseCommand")]
+#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
+pub struct SystemCalculator_BattleStyleHorseCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_EvilAttributeCommand {
+impl SystemCalculator_BattleStyleHorseCommand {
+    #[doc = "`get_Style()` overload"]
+    #[method(name = "get_Style", args = 0)]
+    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_BattleStyleHorseCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_BattleStyleHorseCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_BattleStyleHorseCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_IceAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.IceAttributeCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_IceAttributeCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_IceAttributeCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -2382,29 +2202,29 @@ impl SystemCalculator_EvilAttributeCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_EvilAttributeCommand {
+impl SystemCalculator_IceAttributeCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_EvilAttributeCommand),
+                ::core::stringify!(SystemCalculator_IceAttributeCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_EvilAttributeCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_IceAttributeCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_LightAttributeCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.LightAttributeCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_MorphAttributeCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.MorphAttributeCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_LightAttributeCommand {}
+pub struct SystemCalculator_MorphAttributeCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_LightAttributeCommand {
+impl SystemCalculator_MorphAttributeCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -2419,29 +2239,29 @@ impl SystemCalculator_LightAttributeCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_LightAttributeCommand {
+impl SystemCalculator_MorphAttributeCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_LightAttributeCommand),
+                ::core::stringify!(SystemCalculator_MorphAttributeCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_LightAttributeCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_MorphAttributeCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_DifficultyLunaticCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.DifficultyLunaticCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_DifficultyLunaticCommand {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_PhaseCurrentCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.PhaseCurrentCommand")]
+#[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
+pub struct SystemCalculator_PhaseCurrentCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_DifficultyLunaticCommand {
+impl SystemCalculator_PhaseCurrentCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -2456,36 +2276,32 @@ impl SystemCalculator_DifficultyLunaticCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_DifficultyLunaticCommand {
+impl SystemCalculator_PhaseCurrentCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_DifficultyLunaticCommand),
+                ::core::stringify!(SystemCalculator_PhaseCurrentCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_DifficultyLunaticCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_PhaseCurrentCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_SkillIndexCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.SkillIndexCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_SkillIndexCommand {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_BattleStyleHeavyCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.BattleStyleHeavyCommand")]
+#[parent(crate::app::systemcalculator::SystemCalculator_BattleStyleCommand)]
+pub struct SystemCalculator_BattleStyleHeavyCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_SkillIndexCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Func(::unity2::Il2CppString)` overload"]
-    #[method(name = "Func", args = 1)]
-    pub fn func(self, arg: ::unity2::Il2CppString) -> f32;
+impl SystemCalculator_BattleStyleHeavyCommand {
+    #[doc = "`get_Style()` overload"]
+    #[method(name = "get_Style", args = 0)]
+    pub fn get_style(self) -> crate::app::battlestyle::BattleStyle_Types;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -2493,66 +2309,29 @@ impl SystemCalculator_SkillIndexCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_SkillIndexCommand {
+impl SystemCalculator_BattleStyleHeavyCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_SkillIndexCommand),
+                ::core::stringify!(SystemCalculator_BattleStyleHeavyCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_SkillIndexCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_BattleStyleHeavyCommandMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindDaggerCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindDaggerCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ItemKindFistCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.ItemKindFistCommand")]
 #[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_ItemKindDaggerCommand {}
+pub struct SystemCalculator_ItemKindFistCommand {}
 
 #[cfg(feature = "app-systemcalculator")]
 #[::unity2::methods]
-impl SystemCalculator_ItemKindDaggerCommand {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_ItemKindDaggerCommand {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_ItemKindDaggerCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISystemCalculator_ItemKindDaggerCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_GenderMaleCommand.md")))]
-#[::unity2::class(namespace = "App", name = "SystemCalculator.GenderMaleCommand")]
-#[parent(crate::app::calculatorcommand::CalculatorCommand)]
-pub struct SystemCalculator_GenderMaleCommand {}
-
-#[cfg(feature = "app-systemcalculator")]
-#[::unity2::methods]
-impl SystemCalculator_GenderMaleCommand {
+impl SystemCalculator_ItemKindFistCommand {
     #[doc = "`get_Name()` overload"]
     #[method(name = "get_Name", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -2567,17 +2346,238 @@ impl SystemCalculator_GenderMaleCommand {
 }
 
 #[cfg(feature = "app-systemcalculator")]
-impl SystemCalculator_GenderMaleCommand {
+impl SystemCalculator_ItemKindFistCommand {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SystemCalculator_GenderMaleCommand),
+                ::core::stringify!(SystemCalculator_ItemKindFistCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISystemCalculator_GenderMaleCommandMethods>::ctor(this);
+        <Self as ISystemCalculator_ItemKindFistCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_RodTypeBasicCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.RodTypeBasicCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_RodTypeBasicCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_RodTypeBasicCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_RodTypeBasicCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_RodTypeBasicCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_RodTypeBasicCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_ScreenShotCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.ScreenShotCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_ScreenShotCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_ScreenShotCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_ScreenShotCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_ScreenShotCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_ScreenShotCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_RodTypeHealCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.RodTypeHealCommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_RodTypeHealCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_RodTypeHealCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_RodTypeHealCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_RodTypeHealCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_RodTypeHealCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_WeaponLevelACommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.WeaponLevelACommand")]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_WeaponLevelACommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_WeaponLevelACommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_WeaponLevelACommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_WeaponLevelACommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_WeaponLevelACommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_PhaseOtherCommand.md"))]
+#[::unity2::class(namespace = "App", name = "SystemCalculator.PhaseOtherCommand")]
+#[parent(crate::app::gamecalculatorcommand::GameCalculatorCommand)]
+pub struct SystemCalculator_PhaseOtherCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_PhaseOtherCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_PhaseOtherCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_PhaseOtherCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_PhaseOtherCommandMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculator/SystemCalculator_RodTypeInterferenceCommand.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "SystemCalculator.RodTypeInterferenceCommand"
+)]
+#[parent(crate::app::calculatorcommand::CalculatorCommand)]
+pub struct SystemCalculator_RodTypeInterferenceCommand {}
+
+#[cfg(feature = "app-systemcalculator")]
+#[::unity2::methods]
+impl SystemCalculator_RodTypeInterferenceCommand {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systemcalculator")]
+impl SystemCalculator_RodTypeInterferenceCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SystemCalculator_RodTypeInterferenceCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISystemCalculator_RodTypeInterferenceCommandMethods>::ctor(this);
         this
     }
 }

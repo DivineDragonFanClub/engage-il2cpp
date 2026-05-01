@@ -10,7 +10,55 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/softwarekeyboard/SoftwareKeyboard.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/softwarekeyboard/SoftwareKeyboard_Preset.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SoftwareKeyboard_Preset {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SoftwareKeyboard_Preset {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SoftwareKeyboard.Preset";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SoftwareKeyboard_Preset {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SoftwareKeyboard_Preset {
+    pub fn default() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn download_code() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn reported_reason() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/softwarekeyboard/SoftwareKeyboard.md"))]
 #[::unity2::class(namespace = "App", name = "SoftwareKeyboard")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct SoftwareKeyboard {
@@ -135,53 +183,5 @@ impl SoftwareKeyboard {
             callback,
         );
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/softwarekeyboard/SoftwareKeyboard_Preset.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct SoftwareKeyboard_Preset {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for SoftwareKeyboard_Preset {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SoftwareKeyboard.Preset";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for SoftwareKeyboard_Preset {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl SoftwareKeyboard_Preset {
-    pub fn default() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn download_code() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn reported_reason() -> Self {
-        Self { value: 2 }
     }
 }

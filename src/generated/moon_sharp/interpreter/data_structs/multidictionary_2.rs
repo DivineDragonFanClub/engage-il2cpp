@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/data_structs/multidictionary_2/MultiDictionary_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/data_structs/multidictionary_2/MultiDictionary_2.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.DataStructs",
     name = "MultiDictionary`2"

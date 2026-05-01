@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorvector3/InterpolatorVector3.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorvector3/InterpolatorVector3.md"))]
 #[::unity2::class(namespace = "App", name = "InterpolatorVector3")]
 # [parent (crate :: app :: interpolator_1 :: Interpolator_1 < crate :: unity_engine :: vector3 :: Vector3 >)]
 pub struct InterpolatorVector3 {}

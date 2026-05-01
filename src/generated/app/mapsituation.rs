@@ -16,7 +16,60 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_Status.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_ForceCursor.md"))]
+#[::unity2::class(namespace = "App", name = "MapSituation.ForceCursor")]
+#[parent(crate::system::object::Object)]
+pub struct MapSituation_ForceCursor {}
+
+#[cfg(feature = "app-mapsituation")]
+#[::unity2::methods]
+impl MapSituation_ForceCursor {
+    #[doc = "`Set(i32, i32)` overload"]
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, x: i32, z: i32) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`get_X()` overload"]
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[doc = "`set_X(i32)` overload"]
+    #[method(name = "set_X", args = 1)]
+    pub fn set_x(self, value: i32) -> ();
+
+    #[doc = "`get_Z()` overload"]
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[doc = "`set_Z(i32)` overload"]
+    #[method(name = "set_Z", args = 1)]
+    pub fn set_z(self, value: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsituation")]
+impl MapSituation_ForceCursor {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSituation_ForceCursor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSituation_ForceCursorMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_SubPhases.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -25,14 +78,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapSituation_Status {
+pub struct MapSituation_SubPhases {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapSituation_Status {
+impl ::unity2::ClassIdentity for MapSituation_SubPhases {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapSituation.Status";
+    const NAME: &'static str = "MapSituation.SubPhases";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,7 +94,7 @@ impl ::unity2::ClassIdentity for MapSituation_Status {
     }
 }
 
-impl ::unity2::IlType for MapSituation_Status {
+impl ::unity2::IlType for MapSituation_SubPhases {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -50,41 +103,81 @@ impl ::unity2::IlType for MapSituation_Status {
     }
 }
 
-impl MapSituation_Status {
-    pub fn win_rule_breakdown() -> Self {
+impl MapSituation_SubPhases {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn charm_confusion() -> Self {
         Self { value: 1 }
     }
 
-    pub fn win_rule_destroy_boss() -> Self {
+    pub fn num() -> Self {
         Self { value: 2 }
-    }
-
-    pub fn sequence_replay_cancel() -> Self {
-        Self { value: 134217728 }
-    }
-
-    pub fn sequence_opening() -> Self {
-        Self { value: 268435456 }
-    }
-
-    pub fn sequence_ai_entrust_cancel() -> Self {
-        Self { value: 536870912 }
-    }
-
-    pub fn sequence_ai() -> Self {
-        Self { value: 1073741824 }
-    }
-
-    pub fn sequence_mind() -> Self {
-        Self { value: -2147483648 }
-    }
-
-    pub fn win_rule_mask() -> Self {
-        Self { value: 3 }
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_Player.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSituation_Player {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSituation_Player {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSituation.Player";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSituation_Player {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSituation_Player {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn human() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn ai() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn link() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn replay() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 5 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation.md"))]
 #[::unity2::class(namespace = "App", name = "MapSituation")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapsituation :: MapSituation >)]
 pub struct MapSituation {
@@ -492,7 +585,7 @@ impl MapSituation {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_Player.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_Status.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -501,14 +594,14 @@ impl MapSituation {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapSituation_Player {
+pub struct MapSituation_Status {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapSituation_Player {
+impl ::unity2::ClassIdentity for MapSituation_Status {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapSituation.Player";
+    const NAME: &'static str = "MapSituation.Status";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -517,7 +610,7 @@ impl ::unity2::ClassIdentity for MapSituation_Player {
     }
 }
 
-impl ::unity2::IlType for MapSituation_Player {
+impl ::unity2::IlType for MapSituation_Status {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -526,86 +619,41 @@ impl ::unity2::IlType for MapSituation_Player {
     }
 }
 
-impl MapSituation_Player {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn human() -> Self {
+impl MapSituation_Status {
+    pub fn win_rule_breakdown() -> Self {
         Self { value: 1 }
     }
 
-    pub fn ai() -> Self {
+    pub fn win_rule_destroy_boss() -> Self {
         Self { value: 2 }
     }
 
-    pub fn link() -> Self {
+    pub fn sequence_replay_cancel() -> Self {
+        Self { value: 134217728 }
+    }
+
+    pub fn sequence_opening() -> Self {
+        Self { value: 268435456 }
+    }
+
+    pub fn sequence_ai_entrust_cancel() -> Self {
+        Self { value: 536870912 }
+    }
+
+    pub fn sequence_ai() -> Self {
+        Self { value: 1073741824 }
+    }
+
+    pub fn sequence_mind() -> Self {
+        Self { value: -2147483648 }
+    }
+
+    pub fn win_rule_mask() -> Self {
         Self { value: 3 }
     }
-
-    pub fn replay() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 5 }
-    }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_ForceCursor.md")))]
-#[::unity2::class(namespace = "App", name = "MapSituation.ForceCursor")]
-#[parent(crate::system::object::Object)]
-pub struct MapSituation_ForceCursor {}
-
-#[cfg(feature = "app-mapsituation")]
-#[::unity2::methods]
-impl MapSituation_ForceCursor {
-    #[doc = "`Set(i32, i32)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, x: i32, z: i32) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`get_X()` overload"]
-    #[method(name = "get_X", args = 0)]
-    pub fn get_x(self) -> i32;
-
-    #[doc = "`set_X(i32)` overload"]
-    #[method(name = "set_X", args = 1)]
-    pub fn set_x(self, value: i32) -> ();
-
-    #[doc = "`get_Z()` overload"]
-    #[method(name = "get_Z", args = 0)]
-    pub fn get_z(self) -> i32;
-
-    #[doc = "`set_Z(i32)` overload"]
-    #[method(name = "set_Z", args = 1)]
-    pub fn set_z(self, value: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsituation")]
-impl MapSituation_ForceCursor {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSituation_ForceCursor),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSituation_ForceCursorMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_StatusField.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_StatusField.md"))]
 #[::unity2::class(namespace = "App", name = "MapSituation.StatusField")]
 # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsituation :: MapSituation_Status >)]
 pub struct MapSituation_StatusField {}
@@ -635,53 +683,5 @@ impl MapSituation_StatusField {
         });
         <Self as IMapSituation_StatusFieldMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_SubPhases.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapSituation_SubPhases {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSituation_SubPhases {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSituation.SubPhases";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSituation_SubPhases {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapSituation_SubPhases {
-    pub fn normal() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn charm_confusion() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 2 }
     }
 }

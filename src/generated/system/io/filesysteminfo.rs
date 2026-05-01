@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filesysteminfo/FileSystemInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/filesysteminfo/FileSystemInfo.md"))]
 #[::unity2::class(namespace = "System.IO", name = "FileSystemInfo")]
 pub struct FileSystemInfo {
     #[rename(name = "_data")]

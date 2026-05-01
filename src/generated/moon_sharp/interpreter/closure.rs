@@ -10,7 +10,55 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/closure/Closure.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/closure/Closure_UpvaluesType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Closure_UpvaluesType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Closure_UpvaluesType {
+    const NAMESPACE: &'static str = "MoonSharp.Interpreter";
+
+    const NAME: &'static str = "Closure.UpvaluesType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Closure_UpvaluesType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Closure_UpvaluesType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn environment() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn closure() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/closure/Closure.md"))]
 #[::unity2::class(namespace = "MoonSharp.Interpreter", name = "Closure")]
 #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
 pub struct Closure {
@@ -129,53 +177,5 @@ impl Closure {
         });
         <Self as IClosureMethods>::ctor(this, script, idx, symbols, resolved_locals);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/moon_sharp/interpreter/closure/Closure_UpvaluesType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct Closure_UpvaluesType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for Closure_UpvaluesType {
-    const NAMESPACE: &'static str = "MoonSharp.Interpreter";
-
-    const NAME: &'static str = "Closure.UpvaluesType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Closure_UpvaluesType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl Closure_UpvaluesType {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn environment() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn closure() -> Self {
-        Self { value: 2 }
     }
 }

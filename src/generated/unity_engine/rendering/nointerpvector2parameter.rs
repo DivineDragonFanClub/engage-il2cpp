@@ -8,7 +8,7 @@ use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
 use crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/nointerpvector2parameter/NoInterpVector2Parameter.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/nointerpvector2parameter/NoInterpVector2Parameter.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering", name = "NoInterpVector2Parameter")]
 # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < crate :: unity_engine :: vector2 :: Vector2 >)]
 pub struct NoInterpVector2Parameter {}

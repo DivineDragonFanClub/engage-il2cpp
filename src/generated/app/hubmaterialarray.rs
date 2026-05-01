@@ -14,36 +14,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmaterialarray/HubMaterialArray_MaterialInfo.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HubMaterialArray_MaterialInfo {
-    pub name: ::unity2::Il2CppString,
-    pub material: crate::unity_engine::material::Material,
-}
-
-impl ::unity2::ClassIdentity for HubMaterialArray_MaterialInfo {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubMaterialArray.MaterialInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for HubMaterialArray_MaterialInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmaterialarray/HubMaterialArray.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubmaterialarray/HubMaterialArray.md"))]
 #[::unity2::class(namespace = "App", name = "HubMaterialArray")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct HubMaterialArray {
@@ -94,5 +65,34 @@ impl HubMaterialArray {
         });
         <Self as IHubMaterialArrayMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubmaterialarray/HubMaterialArray_MaterialInfo.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct HubMaterialArray_MaterialInfo {
+    pub name: ::unity2::Il2CppString,
+    pub material: crate::unity_engine::material::Material,
+}
+
+impl ::unity2::ClassIdentity for HubMaterialArray_MaterialInfo {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubMaterialArray.MaterialInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubMaterialArray_MaterialInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
     }
 }

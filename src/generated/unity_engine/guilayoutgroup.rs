@@ -6,7 +6,7 @@ use crate::unity_engine::guilayoutentry::GUILayoutEntry;
 use crate::unity_engine::guilayoutentry::IGUILayoutEntry;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoutgroup/GUILayoutGroup.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayoutgroup/GUILayoutGroup.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "GUILayoutGroup")]
 #[parent(crate::unity_engine::guilayoutentry::GUILayoutEntry)]
 pub struct GUILayoutGroup {

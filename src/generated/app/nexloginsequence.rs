@@ -10,79 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexloginsequence/NexLoginSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct NexLoginSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for NexLoginSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexLoginSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for NexLoginSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl NexLoginSequence_Label {
-    pub fn setup_nsa() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn login() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn get_integer_settings() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn succeeded() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn cancelled() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn failed_without_error() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn error() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn error_and_cleanup() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 8 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexloginsequence/NexLoginSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexloginsequence/NexLoginSequence.md"))]
 #[::unity2::class(namespace = "App", name = "NexLoginSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct NexLoginSequence {
@@ -176,7 +104,7 @@ impl NexLoginSequence {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexloginsequence/NexLoginSequence_Result.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexloginsequence/NexLoginSequence_Result.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -221,5 +149,77 @@ impl NexLoginSequence_Result {
 
     pub fn succeeded() -> Self {
         Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexloginsequence/NexLoginSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct NexLoginSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for NexLoginSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NexLoginSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NexLoginSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl NexLoginSequence_Label {
+    pub fn setup_nsa() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn login() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn get_integer_settings() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn succeeded() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn cancelled() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn failed_without_error() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn error() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn error_and_cleanup() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 8 }
     }
 }

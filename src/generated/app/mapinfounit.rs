@@ -18,47 +18,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SuppressScene.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapInfoUnit_SuppressScene {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapInfoUnit_SuppressScene {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapInfoUnit.SuppressScene";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapInfoUnit_SuppressScene {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapInfoUnit_SuppressScene {
-    pub fn combat() -> Self {
-        Self { value: 1 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_InputState.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_InputState.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -106,7 +66,7 @@ impl MapInfoUnit_InputState {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfounit/MapInfoUnit.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapinfounit/MapInfoUnit.md"))]
 #[::unity2::class(namespace = "App", name = "MapInfoUnit")]
 # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapinfounit :: MapInfoUnit >)]
 pub struct MapInfoUnit {
@@ -258,7 +218,7 @@ impl MapInfoUnit {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SpriteKind.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SpriteKind.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -431,5 +391,45 @@ impl MapInfoUnit_SpriteKind {
 
     pub fn num() -> Self {
         Self { value: 34 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SuppressScene.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapInfoUnit_SuppressScene {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapInfoUnit_SuppressScene {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapInfoUnit.SuppressScene";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapInfoUnit_SuppressScene {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapInfoUnit_SuppressScene {
+    pub fn combat() -> Self {
+        Self { value: 1 }
     }
 }

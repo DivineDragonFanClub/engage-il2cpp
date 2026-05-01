@@ -16,111 +16,73 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_ColorFlags.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitModel_ColorFlags {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitmodel/UnitModel_ResourceHandle.md"))]
+#[::unity2::class(namespace = "App", name = "UnitModel.ResourceHandle")]
+#[parent(crate::system::object::Object)]
+pub struct UnitModel_ResourceHandle {
+    #[rename(name = "BodyPrefab")]
+    pub body_prefab: crate::app::resourcegameobject::ResourceGameObject,
+    #[rename(name = "HeadPrefab")]
+    pub head_prefab: crate::app::resourcegameobject::ResourceGameObject,
+    #[rename(name = "RidePrefab")]
+    pub ride_prefab: crate::app::resourcegameobject::ResourceGameObject,
+    #[rename(name = "LeftHandPrefab")]
+    pub left_hand_prefab: crate::app::resourcegameobject::ResourceGameObject,
+    #[rename(name = "RightHandPrefab")]
+    pub right_hand_prefab: crate::app::resourcegameobject::ResourceGameObject,
+    #[rename(name = "BodyAnim")]
+    pub body_anim: crate::app::resourceanimatorcontroller::ResourceAnimatorController,
+    #[rename(name = "RideAnim")]
+    pub ride_anim: crate::app::resourceanimatorcontroller::ResourceAnimatorController,
+    #[rename(name = "AccPrefabs")]
+    pub acc_prefabs: crate::system::collections::generic::list_1::List_1<
+        crate::app::resourcegameobject::ResourceGameObject,
+    >,
+    #[rename(name = "AccLocators")]
+    pub acc_locators: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
 }
 
-impl ::unity2::ClassIdentity for UnitModel_ColorFlags {
-    const NAMESPACE: &'static str = "App";
+#[cfg(feature = "app-unitmodel")]
+#[::unity2::methods]
+impl UnitModel_ResourceHandle {
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
 
-    const NAME: &'static str = "UnitModel.ColorFlags";
+    #[doc = "`LoadAsync(crate::app::assettable::AssetTable_Result)` overload"]
+    #[method(name = "LoadAsync", args = 1)]
+    pub fn load_async(self, result: crate::app::assettable::AssetTable_Result) -> ();
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    #[doc = "`IsLoading()` overload"]
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading(self) -> bool;
 
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
+    #[doc = "`Release()` overload"]
+    #[method(name = "Release", args = 0)]
+    pub fn release(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
-impl ::unity2::IlType for UnitModel_ColorFlags {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitModel_ColorFlags {
-    pub fn fixed() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn danager() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn enemy() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn ally() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn dirty() -> Self {
-        Self { value: 16 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_LoadMode.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitModel_LoadMode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitModel_LoadMode {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitModel.LoadMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[cfg(feature = "app-unitmodel")]
+impl UnitModel_ResourceHandle {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitModel_ResourceHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitModel_ResourceHandleMethods>::ctor(this);
+        this
     }
 }
 
-impl ::unity2::IlType for UnitModel_LoadMode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitModel_LoadMode {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn loading() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn done() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_DirtyFlags.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_DirtyFlags.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -180,7 +142,111 @@ impl UnitModel_DirtyFlags {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitmodel/UnitModel.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_LoadMode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitModel_LoadMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitModel_LoadMode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitModel.LoadMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitModel_LoadMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitModel_LoadMode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn loading() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn done() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_ColorFlags.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitModel_ColorFlags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitModel_ColorFlags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitModel.ColorFlags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitModel_ColorFlags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitModel_ColorFlags {
+    pub fn fixed() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn danager() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn enemy() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn ally() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn dirty() -> Self {
+        Self { value: 16 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitmodel/UnitModel.md"))]
 #[::unity2::class(namespace = "App", name = "UnitModel")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct UnitModel {
@@ -671,72 +737,6 @@ impl UnitModel {
             )
         });
         <Self as IUnitModelMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitmodel/UnitModel_ResourceHandle.md")))]
-#[::unity2::class(namespace = "App", name = "UnitModel.ResourceHandle")]
-#[parent(crate::system::object::Object)]
-pub struct UnitModel_ResourceHandle {
-    #[rename(name = "BodyPrefab")]
-    pub body_prefab: crate::app::resourcegameobject::ResourceGameObject,
-    #[rename(name = "HeadPrefab")]
-    pub head_prefab: crate::app::resourcegameobject::ResourceGameObject,
-    #[rename(name = "RidePrefab")]
-    pub ride_prefab: crate::app::resourcegameobject::ResourceGameObject,
-    #[rename(name = "LeftHandPrefab")]
-    pub left_hand_prefab: crate::app::resourcegameobject::ResourceGameObject,
-    #[rename(name = "RightHandPrefab")]
-    pub right_hand_prefab: crate::app::resourcegameobject::ResourceGameObject,
-    #[rename(name = "BodyAnim")]
-    pub body_anim: crate::app::resourceanimatorcontroller::ResourceAnimatorController,
-    #[rename(name = "RideAnim")]
-    pub ride_anim: crate::app::resourceanimatorcontroller::ResourceAnimatorController,
-    #[rename(name = "AccPrefabs")]
-    pub acc_prefabs: crate::system::collections::generic::list_1::List_1<
-        crate::app::resourcegameobject::ResourceGameObject,
-    >,
-    #[rename(name = "AccLocators")]
-    pub acc_locators: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-}
-
-#[cfg(feature = "app-unitmodel")]
-#[::unity2::methods]
-impl UnitModel_ResourceHandle {
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`LoadAsync(crate::app::assettable::AssetTable_Result)` overload"]
-    #[method(name = "LoadAsync", args = 1)]
-    pub fn load_async(self, result: crate::app::assettable::AssetTable_Result) -> ();
-
-    #[doc = "`IsLoading()` overload"]
-    #[method(name = "IsLoading", args = 0)]
-    pub fn is_loading(self) -> bool;
-
-    #[doc = "`Release()` overload"]
-    #[method(name = "Release", args = 0)]
-    pub fn release(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitmodel")]
-impl UnitModel_ResourceHandle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitModel_ResourceHandle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitModel_ResourceHandleMethods>::ctor(this);
         this
     }
 }

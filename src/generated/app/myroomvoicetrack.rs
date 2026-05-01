@@ -12,7 +12,7 @@ use crate::unity_engine::timeline::trackasset::ITrackAsset;
 use crate::unity_engine::timeline::trackasset::TrackAsset;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomvoicetrack/MyRoomVoiceTrack.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomvoicetrack/MyRoomVoiceTrack.md"))]
 #[::unity2::class(namespace = "App", name = "MyRoomVoiceTrack")]
 #[parent(crate::unity_engine::timeline::trackasset::TrackAsset)]
 pub struct MyRoomVoiceTrack {}

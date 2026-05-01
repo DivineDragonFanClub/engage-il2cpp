@@ -8,36 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitentrust/UnitEntrust.md")))]
-#[::unity2::class(namespace = "App", name = "UnitEntrust")]
-#[parent(crate::system::object::Object)]
-pub struct UnitEntrust {}
-
-#[cfg(feature = "app-unitentrust")]
-#[::unity2::methods]
-impl UnitEntrust {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitentrust")]
-impl UnitEntrust {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitEntrust),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitEntrustMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitentrust/UnitEntrust_Type.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitentrust/UnitEntrust_Type.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -102,5 +73,34 @@ impl UnitEntrust_Type {
 
     pub fn num() -> Self {
         Self { value: 7 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitentrust/UnitEntrust.md"))]
+#[::unity2::class(namespace = "App", name = "UnitEntrust")]
+#[parent(crate::system::object::Object)]
+pub struct UnitEntrust {}
+
+#[cfg(feature = "app-unitentrust")]
+#[::unity2::methods]
+impl UnitEntrust {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitentrust")]
+impl UnitEntrust {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitEntrust),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitEntrustMethods>::ctor(this);
+        this
     }
 }

@@ -24,259 +24,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubsequence/HubSequence_LastChapterSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct HubSequence_LastChapterSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for HubSequence_LastChapterSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubSequence.LastChapterSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for HubSequence_LastChapterSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl HubSequence_LastChapterSequence_Label {
-    pub fn menu() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn go_to() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn ranking() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 3 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterSequence_ConfirmDialogItemNo.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "HubSequence.LastChapterSequence.ConfirmDialogItemNo"
-)]
-#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-pub struct HubSequence_LastChapterSequence_ConfirmDialogItemNo {}
-
-#[cfg(feature = "app-hubsequence")]
-#[::unity2::methods]
-impl HubSequence_LastChapterSequence_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterSequence_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_LastChapterSequence_ConfirmDialogItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterRankingMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "HubSequence.LastChapterRankingMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct HubSequence_LastChapterRankingMenuItem {}
-
-#[cfg(feature = "app-hubsequence")]
-#[::unity2::methods]
-impl HubSequence_LastChapterRankingMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterRankingMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_LastChapterRankingMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequence_LastChapterRankingMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_AreaString.md")))]
-#[::unity2::class(namespace = "App", name = "HubSequence.AreaString")]
-#[parent(crate::system::object::Object)]
-pub struct HubSequence_AreaString {
-    #[rename(name = "m_value")]
-    pub m_value: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
-    #[rename(name = "m_lastValue")]
-    pub m_last_value: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-hubsequence")]
-#[::unity2::methods]
-impl HubSequence_AreaString {
-    #[doc = "`Push(::unity2::Il2CppString)` overload"]
-    #[method(name = "Push", args = 1)]
-    pub fn push(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Pop(::unity2::Il2CppString)` overload"]
-    #[method(name = "Pop", args = 1)]
-    pub fn pop(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_AreaString {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_AreaString),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequence_AreaStringMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterGoToMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "HubSequence.LastChapterGoToMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct HubSequence_LastChapterGoToMenuItem {}
-
-#[cfg(feature = "app-hubsequence")]
-#[::unity2::methods]
-impl HubSequence_LastChapterGoToMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterGoToMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_LastChapterGoToMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequence_LastChapterGoToMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "HubSequence.LastChapterMenu.RankingMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct HubSequence_LastChapterMenu_RankingMenuItem {}
-
-#[cfg(feature = "app-hubsequence")]
-#[::unity2::methods]
-impl HubSequence_LastChapterMenu_RankingMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterMenu_RankingMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_LastChapterMenu_RankingMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequence_LastChapterMenu_RankingMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_ConfirmEndRollDialogItemYes.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_ConfirmEndRollDialogItemYes.md"))]
 #[::unity2::class(namespace = "App", name = "HubSequence.ConfirmEndRollDialogItemYes")]
 #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
 pub struct HubSequence_ConfirmEndRollDialogItemYes {}
@@ -313,227 +61,132 @@ impl HubSequence_ConfirmEndRollDialogItemYes {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubsequence/HubSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct HubSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for HubSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for HubSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl HubSequence_Label {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn init() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn reload() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn main() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn talk() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn script() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn fast_travel() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn mascot() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn arena() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn pedestal() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn dragon_ride() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn fishing() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn muscle_exercise() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn ring_cleaning() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn fortune_telling() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn signboard() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn jukebox() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn rest_place() -> Self {
-        Self { value: 17 }
-    }
-
-    pub fn chest() -> Self {
-        Self { value: 18 }
-    }
-
-    pub fn amiibo() -> Self {
-        Self { value: 19 }
-    }
-
-    pub fn cape_tower() -> Self {
-        Self { value: 20 }
-    }
-
-    pub fn animal() -> Self {
-        Self { value: 21 }
-    }
-
-    pub fn photo() -> Self {
-        Self { value: 22 }
-    }
-
-    pub fn well() -> Self {
-        Self { value: 23 }
-    }
-
-    pub fn pool() -> Self {
-        Self { value: 24 }
-    }
-
-    pub fn fruit() -> Self {
-        Self { value: 25 }
-    }
-
-    pub fn horse() -> Self {
-        Self { value: 26 }
-    }
-
-    pub fn end_roll() -> Self {
-        Self { value: 27 }
-    }
-
-    pub fn flea_market() -> Self {
-        Self { value: 28 }
-    }
-
-    pub fn call_script() -> Self {
-        Self { value: 29 }
-    }
-
-    pub fn kizuna_exit() -> Self {
-        Self { value: 30 }
-    }
-
-    pub fn last_chapter() -> Self {
-        Self { value: 31 }
-    }
-
-    pub fn exit() -> Self {
-        Self { value: 32 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 33 }
-    }
-
-    pub fn tail() -> Self {
-        Self { value: 34 }
-    }
-
-    pub fn save_data_load() -> Self {
-        Self { value: 35 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "HubSequence.LastChapterSequence.ConfirmGotoLastDialogItemYes"
+    name = "HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog.YesMenuItem"
 )]
 #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes {}
+pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem {
+    #[rename(name = "m_ResultFunc")]
+    pub m_result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+}
 
 #[cfg(feature = "app-hubsequence")]
 #[::unity2::methods]
-impl HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem {
+    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem {
+    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]
+    pub fn new(
+        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        < Self as IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods > :: ctor (this , result_func) ;
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterGoToMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "HubSequence.LastChapterGoToMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct HubSequence_LastChapterGoToMenuItem {}
+
+#[cfg(feature = "app-hubsequence")]
+#[::unity2::methods]
+impl HubSequence_LastChapterGoToMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
 
     #[doc = "`ACall()` overload"]
     #[method(name = "ACall", args = 0)]
     pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes {
+impl HubSequence_LastChapterGoToMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes),
+                ::core::stringify!(HubSequence_LastChapterGoToMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods>::ctor(this);
+        <Self as IHubSequence_LastChapterGoToMenuItemMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog.NoMenuItem"
+)]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem {}
+
+#[cfg(feature = "app-hubsequence")]
+#[::unity2::methods]
+impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        < Self as IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods > :: ctor (this ,) ;
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence.md"))]
 #[::unity2::class(namespace = "App", name = "HubSequence")]
 # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)]
 pub struct HubSequence {
@@ -1349,207 +1002,7 @@ impl HubSequence {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog.NoMenuItem"
-)]
-#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem {}
-
-#[cfg(feature = "app-hubsequence")]
-#[::unity2::methods]
-impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItem
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        < Self as IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_NoMenuItemMethods > :: ctor (this ,) ;
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_GoToMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "HubSequence.LastChapterMenu.GoToMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct HubSequence_LastChapterMenu_GoToMenuItem {}
-
-#[cfg(feature = "app-hubsequence")]
-#[::unity2::methods]
-impl HubSequence_LastChapterMenu_GoToMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterMenu_GoToMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_LastChapterMenu_GoToMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequence_LastChapterMenu_GoToMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu.md")))]
-#[::unity2::class(namespace = "App", name = "HubSequence.LastChapterMenu")]
-#[parent(crate::app::basicmenu::BasicMenu)]
-pub struct HubSequence_LastChapterMenu {}
-
-#[cfg(feature = "app-hubsequence")]
-#[::unity2::methods]
-impl HubSequence_LastChapterMenu {
-    #[doc = "`get_CurrentMenuSelect()` overload"]
-    #[method(name = "get_CurrentMenuSelect", args = 0)]
-    pub fn get_current_menu_select() -> crate::app::basicmenuselect::BasicMenuSelect;
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        super_: crate::app::procinst::ProcInst,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        super_: crate::app::procinst::ProcInst,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubSequence_LastChapterMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubSequence_LastChapterMenuMethods>::ctor(this, menu_item_list, super_);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog.YesMenuItem"
-)]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem {
-    #[rename(name = "m_ResultFunc")]
-    pub m_result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-}
-
-#[cfg(feature = "app-hubsequence")]
-#[::unity2::methods]
-impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem {
-    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-hubsequence")]
-impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem {
-    #[doc = "`.ctor(crate::app::netenablesequence::NetEnableSequence_ResultFunction)` — overload selector"]
-    pub fn new(
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItem
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        < Self as IHubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog_YesMenuItemMethods > :: ctor (this , result_func) ;
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog"
-)]
-#[parent(crate::system::object::Object)]
-pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog {}
-
-#[cfg(feature = "app-hubsequence")]
-#[::unity2::methods]
-impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-    ) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterSequence.md"))]
 #[::unity2::class(namespace = "App", name = "HubSequence.LastChapterSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: hubsequence :: HubSequence_LastChapterSequence >)]
 pub struct HubSequence_LastChapterSequence {
@@ -1614,7 +1067,449 @@ impl HubSequence_LastChapterSequence {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_ConfirmEndRollDialogItemNo.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubsequence/HubSequence_LastChapterSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubSequence_LastChapterSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubSequence_LastChapterSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubSequence.LastChapterSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubSequence_LastChapterSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubSequence_LastChapterSequence_Label {
+    pub fn menu() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn go_to() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn ranking() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubsequence/HubSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubSequence_Label {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn init() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn reload() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn main() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn talk() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn script() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn fast_travel() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn mascot() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn arena() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn pedestal() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn dragon_ride() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn fishing() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn muscle_exercise() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn ring_cleaning() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn fortune_telling() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn signboard() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn jukebox() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn rest_place() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn chest() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn amiibo() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn cape_tower() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn animal() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn photo() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn well() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn pool() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn fruit() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn horse() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn end_roll() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn flea_market() -> Self {
+        Self { value: 28 }
+    }
+
+    pub fn call_script() -> Self {
+        Self { value: 29 }
+    }
+
+    pub fn kizuna_exit() -> Self {
+        Self { value: 30 }
+    }
+
+    pub fn last_chapter() -> Self {
+        Self { value: 31 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 33 }
+    }
+
+    pub fn tail() -> Self {
+        Self { value: 34 }
+    }
+
+    pub fn save_data_load() -> Self {
+        Self { value: 35 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "HubSequence.LastChapterMenu.RankingMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct HubSequence_LastChapterMenu_RankingMenuItem {}
+
+#[cfg(feature = "app-hubsequence")]
+#[::unity2::methods]
+impl HubSequence_LastChapterMenu_RankingMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterMenu_RankingMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_LastChapterMenu_RankingMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_LastChapterMenu_RankingMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterRankingMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "HubSequence.LastChapterRankingMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct HubSequence_LastChapterRankingMenuItem {}
+
+#[cfg(feature = "app-hubsequence")]
+#[::unity2::methods]
+impl HubSequence_LastChapterRankingMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterRankingMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_LastChapterRankingMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_LastChapterRankingMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_GoToMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "HubSequence.LastChapterMenu.GoToMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct HubSequence_LastChapterMenu_GoToMenuItem {}
+
+#[cfg(feature = "app-hubsequence")]
+#[::unity2::methods]
+impl HubSequence_LastChapterMenu_GoToMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterMenu_GoToMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_LastChapterMenu_GoToMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_LastChapterMenu_GoToMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu.md"))]
+#[::unity2::class(namespace = "App", name = "HubSequence.LastChapterMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct HubSequence_LastChapterMenu {}
+
+#[cfg(feature = "app-hubsequence")]
+#[::unity2::methods]
+impl HubSequence_LastChapterMenu {
+    #[doc = "`get_CurrentMenuSelect()` overload"]
+    #[method(name = "get_CurrentMenuSelect", args = 0)]
+    pub fn get_current_menu_select() -> crate::app::basicmenuselect::BasicMenuSelect;
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        super_: crate::app::procinst::ProcInst,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::procinst::ProcInst)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        super_: crate::app::procinst::ProcInst,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_LastChapterMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_LastChapterMenuMethods>::ctor(this, menu_item_list, super_);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "HubSequence.LastChapterSequence.ConfirmGotoLastDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes {}
+
+#[cfg(feature = "app-hubsequence")]
+#[::unity2::methods]
+impl HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_LastChapterSequence_ConfirmGotoLastDialogItemYesMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_ConfirmEndRollDialogItemNo.md"))]
 #[::unity2::class(namespace = "App", name = "HubSequence.ConfirmEndRollDialogItemNo")]
 #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
 pub struct HubSequence_ConfirmEndRollDialogItemNo {}
@@ -1647,6 +1542,111 @@ impl HubSequence_ConfirmEndRollDialogItemNo {
             )
         });
         <Self as IHubSequence_ConfirmEndRollDialogItemNoMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "HubSequence.LastChapterMenu.RankingMenuItem.ConfirmDialog"
+)]
+#[parent(crate::system::object::Object)]
+pub struct HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog {}
+
+#[cfg(feature = "app-hubsequence")]
+#[::unity2::methods]
+impl HubSequence_LastChapterMenu_RankingMenuItem_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::netenablesequence::NetEnableSequence_ResultFunction)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
+    ) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_AreaString.md"))]
+#[::unity2::class(namespace = "App", name = "HubSequence.AreaString")]
+#[parent(crate::system::object::Object)]
+pub struct HubSequence_AreaString {
+    #[rename(name = "m_value")]
+    pub m_value: crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>,
+    #[rename(name = "m_lastValue")]
+    pub m_last_value: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-hubsequence")]
+#[::unity2::methods]
+impl HubSequence_AreaString {
+    #[doc = "`Push(::unity2::Il2CppString)` overload"]
+    #[method(name = "Push", args = 1)]
+    pub fn push(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Pop(::unity2::Il2CppString)` overload"]
+    #[method(name = "Pop", args = 1)]
+    pub fn pop(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_AreaString {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_AreaString),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_AreaStringMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubsequence/HubSequence_LastChapterSequence_ConfirmDialogItemNo.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "HubSequence.LastChapterSequence.ConfirmDialogItemNo"
+)]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct HubSequence_LastChapterSequence_ConfirmDialogItemNo {}
+
+#[cfg(feature = "app-hubsequence")]
+#[::unity2::methods]
+impl HubSequence_LastChapterSequence_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-hubsequence")]
+impl HubSequence_LastChapterSequence_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubSequence_LastChapterSequence_ConfirmDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubSequence_LastChapterSequence_ConfirmDialogItemNoMethods>::ctor(this);
         this
     }
 }

@@ -4,83 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/boxcaster/BoxCaster_CastResult.md")))]
-#[::unity2::class(namespace = "Combat", name = "BoxCaster.CastResult")]
-#[parent(crate::system::object::Object)]
-pub struct BoxCaster_CastResult {
-    #[rename(name = "startPos")]
-    pub start_pos: crate::unity_engine::vector3::Vector3,
-    #[rename(name = "endPos")]
-    pub end_pos: crate::unity_engine::vector3::Vector3,
-    #[rename(name = "dir")]
-    pub dir: crate::unity_engine::vector3::Vector3,
-    #[rename(name = "sizeXZ")]
-    pub size_xz: f32,
-    #[rename(name = "sizeY")]
-    pub size_y: f32,
-    #[rename(name = "forward")]
-    pub forward: crate::unity_engine::quaternion::Quaternion,
-    #[rename(name = "NumHits")]
-    pub num_hits: i32,
-    #[rename(name = "Hits")]
-    pub hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
-}
-
-#[cfg(feature = "combat-boxcaster")]
-#[::unity2::methods]
-impl BoxCaster_CastResult {
-    #[doc = "`get_centerPos()` overload"]
-    #[method(name = "get_centerPos", args = 0)]
-    pub fn get_center_pos(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`.ctor(f32, f32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, setting_xz: f32, setting_y: f32) -> ();
-
-    #[doc = "`Cast(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32)` overload"]
-    #[method(name = "Cast", args = 4)]
-    pub fn cast(
-        self,
-        start_pos: crate::unity_engine::vector3::Vector3,
-        end_pos: crate::unity_engine::vector3::Vector3,
-        half_box_size: crate::unity_engine::vector3::Vector3,
-        mask: i32,
-    ) -> ();
-
-    #[doc = "`IsIntersect(crate::combat::fxz::FXZ, f32)` overload"]
-    #[method(name = "IsIntersect", args = 2)]
-    pub fn is_intersect(self, pos: crate::combat::fxz::FXZ, radius: f32) -> bool;
-
-    #[doc = "`IsDividedBy(i32)` overload"]
-    #[method(name = "IsDividedBy", args = 1)]
-    pub fn is_divided_by(self, mask: i32) -> bool;
-
-    #[doc = "`DrawGizmos()` overload"]
-    #[method(name = "DrawGizmos", args = 0)]
-    pub fn draw_gizmos(self) -> ();
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "combat-boxcaster")]
-impl BoxCaster_CastResult {
-    #[doc = "`.ctor(f32, f32)` — overload selector"]
-    pub fn new(setting_xz: f32, setting_y: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BoxCaster_CastResult),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBoxCaster_CastResultMethods>::ctor(this, setting_xz, setting_y);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/boxcaster/BoxCaster.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/boxcaster/BoxCaster.md"))]
 #[::unity2::class(namespace = "Combat", name = "BoxCaster")]
 #[parent(crate::system::object::Object)]
 pub struct BoxCaster {
@@ -267,6 +191,82 @@ impl BoxCaster {
             )
         });
         <Self as IBoxCasterMethods>::ctor_3(this, pos0, pos1);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/boxcaster/BoxCaster_CastResult.md"))]
+#[::unity2::class(namespace = "Combat", name = "BoxCaster.CastResult")]
+#[parent(crate::system::object::Object)]
+pub struct BoxCaster_CastResult {
+    #[rename(name = "startPos")]
+    pub start_pos: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "endPos")]
+    pub end_pos: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "dir")]
+    pub dir: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "sizeXZ")]
+    pub size_xz: f32,
+    #[rename(name = "sizeY")]
+    pub size_y: f32,
+    #[rename(name = "forward")]
+    pub forward: crate::unity_engine::quaternion::Quaternion,
+    #[rename(name = "NumHits")]
+    pub num_hits: i32,
+    #[rename(name = "Hits")]
+    pub hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
+}
+
+#[cfg(feature = "combat-boxcaster")]
+#[::unity2::methods]
+impl BoxCaster_CastResult {
+    #[doc = "`get_centerPos()` overload"]
+    #[method(name = "get_centerPos", args = 0)]
+    pub fn get_center_pos(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`.ctor(f32, f32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, setting_xz: f32, setting_y: f32) -> ();
+
+    #[doc = "`Cast(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32)` overload"]
+    #[method(name = "Cast", args = 4)]
+    pub fn cast(
+        self,
+        start_pos: crate::unity_engine::vector3::Vector3,
+        end_pos: crate::unity_engine::vector3::Vector3,
+        half_box_size: crate::unity_engine::vector3::Vector3,
+        mask: i32,
+    ) -> ();
+
+    #[doc = "`IsIntersect(crate::combat::fxz::FXZ, f32)` overload"]
+    #[method(name = "IsIntersect", args = 2)]
+    pub fn is_intersect(self, pos: crate::combat::fxz::FXZ, radius: f32) -> bool;
+
+    #[doc = "`IsDividedBy(i32)` overload"]
+    #[method(name = "IsDividedBy", args = 1)]
+    pub fn is_divided_by(self, mask: i32) -> bool;
+
+    #[doc = "`DrawGizmos()` overload"]
+    #[method(name = "DrawGizmos", args = 0)]
+    pub fn draw_gizmos(self) -> ();
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "combat-boxcaster")]
+impl BoxCaster_CastResult {
+    #[doc = "`.ctor(f32, f32)` — overload selector"]
+    pub fn new(setting_xz: f32, setting_y: f32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BoxCaster_CastResult),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBoxCaster_CastResultMethods>::ctor(this, setting_xz, setting_y);
         this
     }
 }

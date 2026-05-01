@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/colortaginfo/ColorTagInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/colortaginfo/ColorTagInfo.md"))]
 #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "ColorTagInfo")]
 #[parent(crate::system::object::Object)]
 pub struct ColorTagInfo {}

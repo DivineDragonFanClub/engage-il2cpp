@@ -6,7 +6,7 @@ use crate::system::reflection::memberinfo::IMemberInfo;
 use crate::system::reflection::memberinfo::MemberInfo;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/methodbase/MethodBase.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/methodbase/MethodBase.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "MethodBase")]
 #[parent(crate::system::reflection::memberinfo::MemberInfo)]
 pub struct MethodBase {}

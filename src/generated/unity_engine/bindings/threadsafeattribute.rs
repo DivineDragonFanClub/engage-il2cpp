@@ -6,7 +6,7 @@ use crate::unity_engine::bindings::nativemethodattribute::INativeMethodAttribute
 use crate::unity_engine::bindings::nativemethodattribute::NativeMethodAttribute;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/threadsafeattribute/ThreadSafeAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/bindings/threadsafeattribute/ThreadSafeAttribute.md"))]
 #[::unity2::class(namespace = "UnityEngine.Bindings", name = "ThreadSafeAttribute")]
 #[parent(crate::unity_engine::bindings::nativemethodattribute::NativeMethodAttribute)]
 pub struct ThreadSafeAttribute {}

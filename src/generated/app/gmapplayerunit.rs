@@ -10,51 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapplayerunit/GmapPlayerUnit_ModelType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct GmapPlayerUnit_ModelType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for GmapPlayerUnit_ModelType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GmapPlayerUnit.ModelType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for GmapPlayerUnit_ModelType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl GmapPlayerUnit_ModelType {
-    pub fn unit() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ship() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapplayerunit/GmapPlayerUnit.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapplayerunit/GmapPlayerUnit.md"))]
 #[::unity2::class(namespace = "App", name = "GmapPlayerUnit")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gmapplayerunit :: GmapPlayerUnit >)]
 pub struct GmapPlayerUnit {
@@ -233,5 +189,49 @@ impl GmapPlayerUnit {
         });
         <Self as IGmapPlayerUnitMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapplayerunit/GmapPlayerUnit_ModelType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GmapPlayerUnit_ModelType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GmapPlayerUnit_ModelType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GmapPlayerUnit.ModelType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GmapPlayerUnit_ModelType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GmapPlayerUnit_ModelType {
+    pub fn unit() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ship() -> Self {
+        Self { value: 1 }
     }
 }

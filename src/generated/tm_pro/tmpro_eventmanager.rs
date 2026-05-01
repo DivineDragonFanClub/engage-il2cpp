@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmpro_eventmanager/TMPro_EventManager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmpro_eventmanager/TMPro_EventManager.md"))]
 #[::unity2::class(namespace = "TMPro", name = "TMPro_EventManager")]
 #[parent(crate::system::object::Object)]
 pub struct TMPro_EventManager {

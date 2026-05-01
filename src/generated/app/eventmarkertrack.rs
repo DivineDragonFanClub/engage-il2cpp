@@ -14,7 +14,7 @@ use crate::unity_engine::timeline::trackasset::ITrackAsset;
 use crate::unity_engine::timeline::trackasset::TrackAsset;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventmarkertrack/EventMarkerTrack.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventmarkertrack/EventMarkerTrack.md"))]
 #[::unity2::class(namespace = "App", name = "EventMarkerTrack")]
 #[parent(crate::unity_engine::timeline::markertrack::MarkerTrack)]
 pub struct EventMarkerTrack {}

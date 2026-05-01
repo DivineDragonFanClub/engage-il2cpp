@@ -14,7 +14,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenucontent/DiscardItemMenuContent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenucontent/DiscardItemMenuContent.md"))]
 #[::unity2::class(namespace = "App", name = "DiscardItemMenuContent")]
 #[parent(crate::app::basicmenucontent::BasicMenuContent)]
 pub struct DiscardItemMenuContent {
@@ -97,7 +97,7 @@ impl DiscardItemMenuContent {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenucontent/DiscardItemMenuContent_KindIcon.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenucontent/DiscardItemMenuContent_KindIcon.md"))]
 #[::unity2::class(namespace = "App", name = "DiscardItemMenuContent.KindIcon")]
 #[parent(crate::system::object::Object)]
 pub struct DiscardItemMenuContent_KindIcon {

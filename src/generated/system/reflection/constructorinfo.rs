@@ -8,7 +8,7 @@ use crate::system::reflection::methodbase::IMethodBase;
 use crate::system::reflection::methodbase::MethodBase;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/constructorinfo/ConstructorInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/constructorinfo/ConstructorInfo.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "ConstructorInfo")]
 #[parent(crate::system::reflection::methodbase::MethodBase)]
 pub struct ConstructorInfo {

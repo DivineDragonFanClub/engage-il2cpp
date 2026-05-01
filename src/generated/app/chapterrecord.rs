@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chapterrecord/ChapterRecord.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chapterrecord/ChapterRecord.md"))]
 #[::unity2::class(namespace = "App", name = "ChapterRecord")]
 #[parent(crate::system::object::Object)]
 pub struct ChapterRecord {
@@ -101,7 +101,7 @@ impl ChapterRecord {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chapterrecord/ChapterRecord_Record.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/chapterrecord/ChapterRecord_Record.md"))]
 #[::unity2::class(namespace = "App", name = "ChapterRecord.Record")]
 #[parent(crate::system::object::Object)]
 pub struct ChapterRecord_Record {

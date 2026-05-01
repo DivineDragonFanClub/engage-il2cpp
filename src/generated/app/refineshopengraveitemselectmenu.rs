@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengraveitemselectmenu/RefineShopEngraveItemSelectMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopengraveitemselectmenu/RefineShopEngraveItemSelectMenu.md"))]
 #[::unity2::class(namespace = "App", name = "RefineShopEngraveItemSelectMenu")]
 #[parent(crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu)]
 pub struct RefineShopEngraveItemSelectMenu {}

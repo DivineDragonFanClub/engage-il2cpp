@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectmenuitem/MyRoomWakeupSelectMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectmenuitem/MyRoomWakeupSelectMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "MyRoomWakeupSelectMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct MyRoomWakeupSelectMenuItem {
@@ -127,7 +127,7 @@ impl MyRoomWakeupSelectMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectmenuitem/MyRoomWakeupSelectMenuItem_SimpleFade.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomwakeupselectmenuitem/MyRoomWakeupSelectMenuItem_SimpleFade.md"))]
 #[::unity2::class(namespace = "App", name = "MyRoomWakeupSelectMenuItem.SimpleFade")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct MyRoomWakeupSelectMenuItem_SimpleFade {}

@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/parentalcontrol/ParentalControl_BeginFCSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/parentalcontrol/ParentalControl_BeginFCSequence.md"))]
 #[::unity2::class(namespace = "App", name = "ParentalControl.BeginFCSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct ParentalControl_BeginFCSequence {}
@@ -51,7 +51,7 @@ impl ParentalControl_BeginFCSequence {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/parentalcontrol/ParentalControl.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/parentalcontrol/ParentalControl.md"))]
 #[::unity2::class(namespace = "App", name = "ParentalControl")]
 #[parent(crate::system::object::Object)]
 pub struct ParentalControl {

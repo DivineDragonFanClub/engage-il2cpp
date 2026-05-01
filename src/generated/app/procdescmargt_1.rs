@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescmargt_1/ProcDescMArgT_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdescmargt_1/ProcDescMArgT_1.md"))]
 #[::unity2::class(namespace = "App", name = "ProcDescMArgT`1")]
 #[parent(crate::app::procdesccallbase::ProcDescCallBase)]
 #[parent(crate::app::procdesc::ProcDesc)]

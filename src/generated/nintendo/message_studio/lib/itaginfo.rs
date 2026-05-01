@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/itaginfo/ITagInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/nintendo/message_studio/lib/itaginfo/ITagInfo.md"))]
 #[::unity2::class(namespace = "Nintendo.MessageStudio.Lib", name = "ITagInfo")]
 pub struct ITagInfo {}
 

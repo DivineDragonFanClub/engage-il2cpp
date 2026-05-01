@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/giftdialogitemno/GiftDialogItemNo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/giftdialogitemno/GiftDialogItemNo.md"))]
 #[::unity2::class(namespace = "App", name = "GiftDialogItemNo")]
 #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
 pub struct GiftDialogItemNo {}

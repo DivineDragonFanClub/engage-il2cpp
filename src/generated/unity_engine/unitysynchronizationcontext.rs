@@ -6,41 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext_WorkRequest.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct UnitySynchronizationContext_WorkRequest {}
-
-impl ::unity2::ClassIdentity for UnitySynchronizationContext_WorkRequest {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "UnitySynchronizationContext.WorkRequest";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitySynchronizationContext_WorkRequest {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
-#[::unity2::methods(value)]
-impl UnitySynchronizationContext_WorkRequest {
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "UnitySynchronizationContext")]
 pub struct UnitySynchronizationContext {
     #[rename(name = "m_AsyncWorkQueue")]
@@ -131,4 +97,38 @@ impl UnitySynchronizationContext {
         <Self as IUnitySynchronizationContextMethods>::ctor_2(this, queue, main_thread_id);
         this
     }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/unitysynchronizationcontext/UnitySynchronizationContext_WorkRequest.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct UnitySynchronizationContext_WorkRequest {}
+
+impl ::unity2::ClassIdentity for UnitySynchronizationContext_WorkRequest {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "UnitySynchronizationContext.WorkRequest";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitySynchronizationContext_WorkRequest {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-unitysynchronizationcontext")]
+#[::unity2::methods(value)]
+impl UnitySynchronizationContext_WorkRequest {
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
 }

@@ -12,7 +12,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintroinfosetter/JobIntroInfoSetter_WeaponSetter.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintroinfosetter/JobIntroInfoSetter_WeaponSetter.md"))]
 #[::unity2::class(namespace = "App", name = "JobIntroInfoSetter.WeaponSetter")]
 #[parent(crate::system::object::Object)]
 pub struct JobIntroInfoSetter_WeaponSetter {
@@ -70,7 +70,7 @@ impl JobIntroInfoSetter_WeaponSetter {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintroinfosetter/JobIntroInfoSetter.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintroinfosetter/JobIntroInfoSetter.md"))]
 #[::unity2::class(namespace = "App", name = "JobIntroInfoSetter")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct JobIntroInfoSetter {

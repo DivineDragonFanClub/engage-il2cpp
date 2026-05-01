@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/xrgraphics/XRGraphics_StereoRenderingMode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/xrgraphics/XRGraphics_StereoRenderingMode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -60,7 +60,7 @@ impl XRGraphics_StereoRenderingMode {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/xrgraphics/XRGraphics.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/xrgraphics/XRGraphics.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering", name = "XRGraphics")]
 #[parent(crate::system::object::Object)]
 pub struct XRGraphics {}

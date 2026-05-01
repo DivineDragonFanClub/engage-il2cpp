@@ -12,7 +12,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardtitlemenu/ProfileCardTitleMenu_DisposeEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardtitlemenu/ProfileCardTitleMenu_DisposeEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardTitleMenu.DisposeEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct ProfileCardTitleMenu_DisposeEventHandler {}
@@ -45,7 +45,7 @@ impl ProfileCardTitleMenu_DisposeEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardtitlemenu/ProfileCardTitleMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardtitlemenu/ProfileCardTitleMenu.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardTitleMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct ProfileCardTitleMenu {

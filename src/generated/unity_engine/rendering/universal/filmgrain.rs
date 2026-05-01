@@ -10,7 +10,7 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/filmgrain/FilmGrain.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/filmgrain/FilmGrain.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "FilmGrain")]
 #[parent(crate::unity_engine::rendering::volumecomponent::VolumeComponent)]
 pub struct FilmGrain {

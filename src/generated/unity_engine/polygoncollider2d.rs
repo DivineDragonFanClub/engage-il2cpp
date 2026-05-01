@@ -12,7 +12,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/polygoncollider2d/PolygonCollider2D.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/polygoncollider2d/PolygonCollider2D.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "PolygonCollider2D")]
 #[parent(crate::unity_engine::collider2d::Collider2D)]
 pub struct PolygonCollider2D {}

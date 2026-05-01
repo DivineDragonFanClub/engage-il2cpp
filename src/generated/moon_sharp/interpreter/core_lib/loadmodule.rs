@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/loadmodule/LoadModule.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/core_lib/loadmodule/LoadModule.md"))]
 #[::unity2::class(namespace = "MoonSharp.Interpreter.CoreLib", name = "LoadModule")]
 #[parent(crate::system::object::Object)]
 pub struct LoadModule {

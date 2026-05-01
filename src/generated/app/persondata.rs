@@ -20,63 +20,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Timing.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct PersonData_Timing {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for PersonData_Timing {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PersonData.Timing";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for PersonData_Timing {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl PersonData_Timing {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn begin() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn chapter() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn eternal() -> Self {
-        Self { value: 4 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Country.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Country.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -140,79 +84,7 @@ impl PersonData_Country {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Flags.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct PersonData_Flags {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for PersonData_Flags {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PersonData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for PersonData_Flags {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl PersonData_Flags {
-    pub fn candidate_for_friend() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn belong_name() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn talent() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn ignore_job_skill_remove() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn dark_warp() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn dress_reverse() -> Self {
-        Self { value: 32 }
-    }
-
-    pub fn simple_ui() -> Self {
-        Self { value: 64 }
-    }
-
-    pub fn derived_hero() -> Self {
-        Self { value: 128 }
-    }
-
-    pub fn summon_warp() -> Self {
-        Self { value: 256 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Colors.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Colors.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -264,7 +136,7 @@ impl PersonData_Colors {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/persondata/PersonData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/persondata/PersonData.md"))]
 #[::unity2::class(namespace = "App", name = "PersonData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: persondata :: PersonData >)]
 pub struct PersonData {
@@ -886,7 +758,129 @@ impl PersonData {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Ranks.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/persondata/PersonData_FlagField.md"))]
+#[::unity2::class(namespace = "App", name = "PersonData.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: persondata :: PersonData_Flags >)]
+pub struct PersonData_FlagField {}
+
+#[cfg(feature = "app-persondata")]
+#[::unity2::methods]
+impl PersonData_FlagField {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[doc = "`.ctor(crate::app::persondata::PersonData_Flags)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::persondata::PersonData_Flags) -> ();
+
+    #[doc = "`ToInt(crate::app::persondata::PersonData_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::persondata::PersonData_Flags) -> i32;
+}
+
+#[cfg(feature = "app-persondata")]
+impl PersonData_FlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PersonData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPersonData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::persondata::PersonData_Flags)` — overload selector"]
+    pub fn new_2(f: crate::app::persondata::PersonData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PersonData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IPersonData_FlagFieldMethods>::ctor_2(this, f);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Flags.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct PersonData_Flags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for PersonData_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "PersonData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PersonData_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl PersonData_Flags {
+    pub fn candidate_for_friend() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn belong_name() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn talent() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn ignore_job_skill_remove() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn dark_warp() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn dress_reverse() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn simple_ui() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn derived_hero() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn summon_warp() -> Self {
+        Self { value: 256 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Ranks.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -938,52 +932,58 @@ impl PersonData_Ranks {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/persondata/PersonData_FlagField.md")))]
-#[::unity2::class(namespace = "App", name = "PersonData.FlagField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: persondata :: PersonData_Flags >)]
-pub struct PersonData_FlagField {}
-
-#[cfg(feature = "app-persondata")]
-#[::unity2::methods]
-impl PersonData_FlagField {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, f: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::persondata::PersonData_Flags)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, f: crate::app::persondata::PersonData_Flags) -> ();
-
-    #[doc = "`ToInt(crate::app::persondata::PersonData_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::persondata::PersonData_Flags) -> i32;
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Timing.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct PersonData_Timing {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-persondata")]
-impl PersonData_FlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PersonData_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPersonData_FlagFieldMethods>::ctor(this, f);
-        this
+impl ::unity2::ClassIdentity for PersonData_Timing {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "PersonData.Timing";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PersonData_Timing {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl PersonData_Timing {
+    pub fn none() -> Self {
+        Self { value: 0 }
     }
 
-    #[doc = "`.ctor(crate::app::persondata::PersonData_Flags)` — overload selector"]
-    pub fn new_2(f: crate::app::persondata::PersonData_Flags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PersonData_FlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IPersonData_FlagFieldMethods>::ctor_2(this, f);
-        this
+    pub fn begin() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn chapter() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn eternal() -> Self {
+        Self { value: 4 }
     }
 }

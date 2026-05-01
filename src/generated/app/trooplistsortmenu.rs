@@ -16,119 +16,80 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/trooplistsortmenu/TroopListSortMenu_SortType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TroopListSortMenu_SortType {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistsortmenu/TroopListSortMenu_SortTitle.md"))]
+#[::unity2::class(namespace = "App", name = "TroopListSortMenu.SortTitle")]
+#[parent(crate::system::object::Object)]
+pub struct TroopListSortMenu_SortTitle {
+    #[rename(name = "m_root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_page")]
+    pub m_page: i32,
+    #[rename(name = "m_sortType")]
+    pub m_sort_type: crate::app::trooplistsortmenu::TroopListSortMenu_SortType,
+    #[rename(name = "m_title")]
+    pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_arrow")]
+    pub m_arrow: crate::unity_engine::gameobject::GameObject,
 }
 
-impl ::unity2::ClassIdentity for TroopListSortMenu_SortType {
-    const NAMESPACE: &'static str = "App";
+#[cfg(feature = "app-trooplistsortmenu")]
+#[::unity2::methods]
+impl TroopListSortMenu_SortTitle {
+    #[doc = "`Setup(i32, ::unity2::Il2CppString, crate::app::trooplistsortmenu::TroopListSortMenu_SortType)` overload"]
+    #[method(name = "Setup", args = 3)]
+    pub fn setup(
+        self,
+        page: i32,
+        title: ::unity2::Il2CppString,
+        r#type: crate::app::trooplistsortmenu::TroopListSortMenu_SortType,
+    ) -> ();
 
-    const NAME: &'static str = "TroopListSortMenu.SortType";
+    #[doc = "`SetArrow(crate::unity_engine::sprite::Sprite)` overload"]
+    #[method(name = "SetArrow", args = 1)]
+    pub fn set_arrow(self, set_arrow: crate::unity_engine::sprite::Sprite) -> ();
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    #[doc = "`SetArrowHide()` overload"]
+    #[method(name = "SetArrowHide", args = 0)]
+    pub fn set_arrow_hide(self) -> ();
 
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
+    #[doc = "`GetPage()` overload"]
+    #[method(name = "GetPage", args = 0)]
+    pub fn get_page(self) -> i32;
+
+    #[doc = "`GetSortType()` overload"]
+    #[method(name = "GetSortType", args = 0)]
+    pub fn get_sort_type(self) -> crate::app::trooplistsortmenu::TroopListSortMenu_SortType;
+
+    #[doc = "`GetCursorRectTransform()` overload"]
+    #[method(name = "GetCursorRectTransform", args = 0)]
+    pub fn get_cursor_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[doc = "`SetTextColor(bool)` overload"]
+    #[method(name = "SetTextColor", args = 1)]
+    pub fn set_text_color(self, is_active: bool) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
-impl ::unity2::IlType for TroopListSortMenu_SortType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TroopListSortMenu_SortType {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn class() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn level() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn exp() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn hp() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn str() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn mgc() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn tec() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn spd() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn luc() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn def() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn m_def() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn phy() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn attack() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn hit() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn crit() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn avoid() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn crit_avoid() -> Self {
-        Self { value: 17 }
-    }
-
-    pub fn r#move() -> Self {
-        Self { value: 18 }
+#[cfg(feature = "app-trooplistsortmenu")]
+impl TroopListSortMenu_SortTitle {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TroopListSortMenu_SortTitle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITroopListSortMenu_SortTitleMethods>::ctor(this);
+        this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistsortmenu/TroopListSortMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistsortmenu/TroopListSortMenu.md"))]
 #[::unity2::class(namespace = "App", name = "TroopListSortMenu")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct TroopListSortMenu {
@@ -294,7 +255,7 @@ impl TroopListSortMenu {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/trooplistsortmenu/TroopListSortMenu_SortOrder.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/trooplistsortmenu/TroopListSortMenu_SortOrder.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -342,75 +303,114 @@ impl TroopListSortMenu_SortOrder {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistsortmenu/TroopListSortMenu_SortTitle.md")))]
-#[::unity2::class(namespace = "App", name = "TroopListSortMenu.SortTitle")]
-#[parent(crate::system::object::Object)]
-pub struct TroopListSortMenu_SortTitle {
-    #[rename(name = "m_root")]
-    pub m_root: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_page")]
-    pub m_page: i32,
-    #[rename(name = "m_sortType")]
-    pub m_sort_type: crate::app::trooplistsortmenu::TroopListSortMenu_SortType,
-    #[rename(name = "m_title")]
-    pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_arrow")]
-    pub m_arrow: crate::unity_engine::gameobject::GameObject,
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/trooplistsortmenu/TroopListSortMenu_SortType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TroopListSortMenu_SortType {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-trooplistsortmenu")]
-#[::unity2::methods]
-impl TroopListSortMenu_SortTitle {
-    #[doc = "`Setup(i32, ::unity2::Il2CppString, crate::app::trooplistsortmenu::TroopListSortMenu_SortType)` overload"]
-    #[method(name = "Setup", args = 3)]
-    pub fn setup(
-        self,
-        page: i32,
-        title: ::unity2::Il2CppString,
-        r#type: crate::app::trooplistsortmenu::TroopListSortMenu_SortType,
-    ) -> ();
+impl ::unity2::ClassIdentity for TroopListSortMenu_SortType {
+    const NAMESPACE: &'static str = "App";
 
-    #[doc = "`SetArrow(crate::unity_engine::sprite::Sprite)` overload"]
-    #[method(name = "SetArrow", args = 1)]
-    pub fn set_arrow(self, set_arrow: crate::unity_engine::sprite::Sprite) -> ();
+    const NAME: &'static str = "TroopListSortMenu.SortType";
 
-    #[doc = "`SetArrowHide()` overload"]
-    #[method(name = "SetArrowHide", args = 0)]
-    pub fn set_arrow_hide(self) -> ();
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-    #[doc = "`GetPage()` overload"]
-    #[method(name = "GetPage", args = 0)]
-    pub fn get_page(self) -> i32;
-
-    #[doc = "`GetSortType()` overload"]
-    #[method(name = "GetSortType", args = 0)]
-    pub fn get_sort_type(self) -> crate::app::trooplistsortmenu::TroopListSortMenu_SortType;
-
-    #[doc = "`GetCursorRectTransform()` overload"]
-    #[method(name = "GetCursorRectTransform", args = 0)]
-    pub fn get_cursor_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
-
-    #[doc = "`SetTextColor(bool)` overload"]
-    #[method(name = "SetTextColor", args = 1)]
-    pub fn set_text_color(self, is_active: bool) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
 }
 
-#[cfg(feature = "app-trooplistsortmenu")]
-impl TroopListSortMenu_SortTitle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TroopListSortMenu_SortTitle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITroopListSortMenu_SortTitleMethods>::ctor(this);
-        this
+impl ::unity2::IlType for TroopListSortMenu_SortType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TroopListSortMenu_SortType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn class() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn level() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn exp() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn hp() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn str() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn mgc() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn tec() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn spd() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn luc() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn def() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn m_def() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn phy() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn hit() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn crit() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn avoid() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn crit_avoid() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 18 }
     }
 }

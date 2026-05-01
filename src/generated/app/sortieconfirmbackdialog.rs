@@ -18,7 +18,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbackdialog/SortieConfirmBackDialog_ConfirmYesDialogItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbackdialog/SortieConfirmBackDialog_ConfirmYesDialogItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "SortieConfirmBackDialog.ConfirmYesDialogItem"
@@ -54,7 +54,7 @@ impl SortieConfirmBackDialog_ConfirmYesDialogItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbackdialog/SortieConfirmBackDialog.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmbackdialog/SortieConfirmBackDialog.md"))]
 #[::unity2::class(namespace = "App", name = "SortieConfirmBackDialog")]
 #[parent(crate::app::yesnodialog::YesNoDialog)]
 pub struct SortieConfirmBackDialog {}

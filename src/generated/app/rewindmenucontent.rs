@@ -14,7 +14,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_KeyHelp.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_KeyHelp.md"))]
 #[::unity2::class(namespace = "App", name = "RewindMenuContent.KeyHelp")]
 #[parent(crate::system::object::Object)]
 pub struct RewindMenuContent_KeyHelp {
@@ -54,143 +54,7 @@ impl RewindMenuContent_KeyHelp {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_RestRewindTimes.md")))]
-#[::unity2::class(namespace = "App", name = "RewindMenuContent.RestRewindTimes")]
-#[parent(crate::system::object::Object)]
-pub struct RewindMenuContent_RestRewindTimes {
-    #[rename(name = "m_RootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Name")]
-    pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_Times")]
-    pub m_times: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-#[::unity2::methods]
-impl RewindMenuContent_RestRewindTimes {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`SetTimes(i32)` overload"]
-    #[method(name = "SetTimes", args = 1)]
-    pub fn set_times(self, times: i32) -> ();
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-impl RewindMenuContent_RestRewindTimes {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenuContent_RestRewindTimes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenuContent_RestRewindTimesMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_ScrollArrow.md")))]
-#[::unity2::class(namespace = "App", name = "RewindMenuContent.ScrollArrow")]
-#[parent(crate::system::object::Object)]
-pub struct RewindMenuContent_ScrollArrow {
-    #[rename(name = "m_RootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-#[::unity2::methods]
-impl RewindMenuContent_ScrollArrow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-impl RewindMenuContent_ScrollArrow {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenuContent_ScrollArrow),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenuContent_ScrollArrowMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_Phase.md")))]
-#[::unity2::class(namespace = "App", name = "RewindMenuContent.Phase")]
-#[parent(crate::system::object::Object)]
-pub struct RewindMenuContent_Phase {
-    #[rename(name = "m_RootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_TurnName")]
-    pub m_turn_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_Turn")]
-    pub m_turn: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_RestName")]
-    pub m_rest_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_Rest")]
-    pub m_rest: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-#[::unity2::methods]
-impl RewindMenuContent_Phase {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`SetTurn(i32)` overload"]
-    #[method(name = "SetTurn", args = 1)]
-    pub fn set_turn(self, turn: i32) -> ();
-
-    #[doc = "`SetRestUnitNum(i32)` overload"]
-    #[method(name = "SetRestUnitNum", args = 1)]
-    pub fn set_rest_unit_num(self, rest_unit_num: i32) -> ();
-}
-
-#[cfg(feature = "app-rewindmenucontent")]
-impl RewindMenuContent_Phase {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RewindMenuContent_Phase),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRewindMenuContent_PhaseMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent.md"))]
 #[::unity2::class(namespace = "App", name = "RewindMenuContent")]
 #[parent(crate::app::basicmenucontent::BasicMenuContent)]
 pub struct RewindMenuContent {
@@ -376,6 +240,142 @@ impl RewindMenuContent {
             )
         });
         <Self as IRewindMenuContentMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_Phase.md"))]
+#[::unity2::class(namespace = "App", name = "RewindMenuContent.Phase")]
+#[parent(crate::system::object::Object)]
+pub struct RewindMenuContent_Phase {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_TurnName")]
+    pub m_turn_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Turn")]
+    pub m_turn: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_RestName")]
+    pub m_rest_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Rest")]
+    pub m_rest: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+#[::unity2::methods]
+impl RewindMenuContent_Phase {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Show()` overload"]
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[doc = "`SetTurn(i32)` overload"]
+    #[method(name = "SetTurn", args = 1)]
+    pub fn set_turn(self, turn: i32) -> ();
+
+    #[doc = "`SetRestUnitNum(i32)` overload"]
+    #[method(name = "SetRestUnitNum", args = 1)]
+    pub fn set_rest_unit_num(self, rest_unit_num: i32) -> ();
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+impl RewindMenuContent_Phase {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenuContent_Phase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenuContent_PhaseMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_RestRewindTimes.md"))]
+#[::unity2::class(namespace = "App", name = "RewindMenuContent.RestRewindTimes")]
+#[parent(crate::system::object::Object)]
+pub struct RewindMenuContent_RestRewindTimes {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Name")]
+    pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Times")]
+    pub m_times: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+#[::unity2::methods]
+impl RewindMenuContent_RestRewindTimes {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`SetTimes(i32)` overload"]
+    #[method(name = "SetTimes", args = 1)]
+    pub fn set_times(self, times: i32) -> ();
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+impl RewindMenuContent_RestRewindTimes {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenuContent_RestRewindTimes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenuContent_RestRewindTimesMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindmenucontent/RewindMenuContent_ScrollArrow.md"))]
+#[::unity2::class(namespace = "App", name = "RewindMenuContent.ScrollArrow")]
+#[parent(crate::system::object::Object)]
+pub struct RewindMenuContent_ScrollArrow {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+#[::unity2::methods]
+impl RewindMenuContent_ScrollArrow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Show()` overload"]
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+}
+
+#[cfg(feature = "app-rewindmenucontent")]
+impl RewindMenuContent_ScrollArrow {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RewindMenuContent_ScrollArrow),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRewindMenuContent_ScrollArrowMethods>::ctor(this, root_object);
         this
     }
 }

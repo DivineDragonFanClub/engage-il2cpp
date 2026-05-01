@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addcomponentmenu/AddComponentMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addcomponentmenu/AddComponentMenu.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "AddComponentMenu")]
 pub struct AddComponentMenu {
     #[rename(name = "m_AddComponentMenu")]

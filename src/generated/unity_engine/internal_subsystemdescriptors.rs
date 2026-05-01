@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/internal_subsystemdescriptors/Internal_SubsystemDescriptors.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/internal_subsystemdescriptors/Internal_SubsystemDescriptors.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "Internal_SubsystemDescriptors")]
 #[parent(crate::system::object::Object)]
 pub struct Internal_SubsystemDescriptors {}

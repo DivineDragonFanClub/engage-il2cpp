@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Masks.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Masks.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -66,7 +66,7 @@ impl AccessoryData_Masks {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorydata/AccessoryData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorydata/AccessoryData.md"))]
 #[::unity2::class(namespace = "App", name = "AccessoryData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: accessorydata :: AccessoryData >)]
 pub struct AccessoryData {
@@ -308,7 +308,7 @@ impl AccessoryData {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Kinds.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Kinds.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

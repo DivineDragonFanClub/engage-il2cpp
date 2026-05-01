@@ -6,7 +6,60 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamevariable/GameVariable.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamevariable/GameVariable_Value.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct GameVariable_Value {
+    pub number: i32,
+    pub string: ::unity2::Il2CppString,
+}
+
+impl ::unity2::ClassIdentity for GameVariable_Value {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameVariable.Value";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GameVariable_Value {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-gamevariable")]
+#[::unity2::methods(value)]
+impl GameVariable_Value {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, num: i32) -> ();
+
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, str: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`IsNumber()` overload"]
+    #[method(name = "IsNumber", args = 0)]
+    pub fn is_number(self) -> bool;
+
+    #[doc = "`IsString()` overload"]
+    #[method(name = "IsString", args = 0)]
+    pub fn is_string(self) -> bool;
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamevariable/GameVariable.md"))]
 #[::unity2::class(namespace = "App", name = "GameVariable")]
 #[parent(crate::system::object::Object)]
 pub struct GameVariable {
@@ -255,57 +308,4 @@ impl GameVariable {
         <Self as IGameVariableMethods>::ctor(this, capacity);
         this
     }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gamevariable/GameVariable_Value.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct GameVariable_Value {
-    pub number: i32,
-    pub string: ::unity2::Il2CppString,
-}
-
-impl ::unity2::ClassIdentity for GameVariable_Value {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameVariable.Value";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for GameVariable_Value {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-gamevariable")]
-#[::unity2::methods(value)]
-impl GameVariable_Value {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, num: i32) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, str: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`IsNumber()` overload"]
-    #[method(name = "IsNumber", args = 0)]
-    pub fn is_number(self) -> bool;
-
-    #[doc = "`IsString()` overload"]
-    #[method(name = "IsString", args = 0)]
-    pub fn is_string(self) -> bool;
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
 }

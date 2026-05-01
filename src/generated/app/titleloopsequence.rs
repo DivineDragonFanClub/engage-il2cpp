@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titleloopsequence/TitleLoopSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titleloopsequence/TitleLoopSequence.md"))]
 #[::unity2::class(namespace = "App", name = "TitleLoopSequence")]
 # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: titleloopsequence :: TitleLoopSequence >)]
 pub struct TitleLoopSequence {
@@ -151,51 +151,7 @@ impl TitleLoopSequence {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titleloopsequence/TitleLoopSequence_LoopSequenceFromTitle.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TitleLoopSequence_LoopSequenceFromTitle {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TitleLoopSequence_LoopSequenceFromTitle {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TitleLoopSequence.LoopSequenceFromTitle";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TitleLoopSequence_LoopSequenceFromTitle {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TitleLoopSequence_LoopSequenceFromTitle {
-    pub fn grand_opening() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn job_intro() -> Self {
-        Self { value: 1 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titleloopsequence/TitleLoopSequence_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titleloopsequence/TitleLoopSequence_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -256,5 +212,49 @@ impl TitleLoopSequence_Label {
 
     pub fn end() -> Self {
         Self { value: 6 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titleloopsequence/TitleLoopSequence_LoopSequenceFromTitle.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TitleLoopSequence_LoopSequenceFromTitle {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TitleLoopSequence_LoopSequenceFromTitle {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TitleLoopSequence.LoopSequenceFromTitle";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TitleLoopSequence_LoopSequenceFromTitle {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TitleLoopSequence_LoopSequenceFromTitle {
+    pub fn grand_opening() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn job_intro() -> Self {
+        Self { value: 1 }
     }
 }

@@ -8,7 +8,7 @@ use crate::unity_engine::guilayoutgroup::GUILayoutGroup;
 use crate::unity_engine::guilayoutgroup::IGUILayoutGroup;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiscrollgroup/GUIScrollGroup.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guiscrollgroup/GUIScrollGroup.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "GUIScrollGroup")]
 #[parent(crate::unity_engine::guilayoutgroup::GUILayoutGroup)]
 pub struct GUIScrollGroup {

@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameusergmapdata/GameUserGmapData_EncountCounterType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameusergmapdata/GameUserGmapData_EncountCounterType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -60,7 +60,7 @@ impl GameUserGmapData_EncountCounterType {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameusergmapdata/GameUserGmapData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameusergmapdata/GameUserGmapData.md"))]
 #[::unity2::class(namespace = "App", name = "GameUserGmapData")]
 #[parent(crate::system::object::Object)]
 pub struct GameUserGmapData {

@@ -6,72 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator_Break.md")))]
-#[::unity2::class(namespace = "App", name = "AIBattleSimulator.Break")]
-#[parent(crate::system::object::Object)]
-pub struct AIBattleSimulator_Break {
-    #[static_field]
-    #[rename(name = "MaxStun")]
-    pub max_stun: f32,
-    #[rename(name = "m_BreakAttack")]
-    pub m_break_attack: f32,
-    #[rename(name = "m_Stun")]
-    pub m_stun: f32,
-}
-
-#[cfg(feature = "app-aibattlesimulator")]
-#[::unity2::methods]
-impl AIBattleSimulator_Break {
-    #[doc = "`Setup(crate::app::battleinfoside::BattleInfoSide, crate::app::aibattlesimulator::AIBattleSimulator_Indication)` overload"]
-    #[method(name = "Setup", args = 2)]
-    pub fn setup(
-        self,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        indication: crate::app::aibattlesimulator::AIBattleSimulator_Indication,
-    ) -> ();
-
-    #[doc = "`Disable()` overload"]
-    #[method(name = "Disable", args = 0)]
-    pub fn disable(self) -> ();
-
-    #[doc = "`Add(f32)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, break_attack: f32) -> ();
-
-    #[doc = "`get_BreakAttack()` overload"]
-    #[method(name = "get_BreakAttack", args = 0)]
-    pub fn get_break_attack(self) -> f32;
-
-    #[doc = "`get_Stun()` overload"]
-    #[method(name = "get_Stun", args = 0)]
-    pub fn get_stun(self) -> f32;
-
-    #[doc = "`get_IsNotBreak()` overload"]
-    #[method(name = "get_IsNotBreak", args = 0)]
-    pub fn get_is_not_break(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-aibattlesimulator")]
-impl AIBattleSimulator_Break {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIBattleSimulator_Break),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIBattleSimulator_BreakMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator_Indication.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator_Indication.md"))]
 #[::unity2::class(namespace = "App", name = "AIBattleSimulator.Indication")]
 #[parent(crate::system::object::Object)]
 pub struct AIBattleSimulator_Indication {
@@ -205,48 +140,7 @@ impl AIBattleSimulator_Indication {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator_ChainAttackCandidate.md")))]
-#[::unity2::class(namespace = "App", name = "AIBattleSimulator.ChainAttackCandidate")]
-#[parent(crate::system::object::Object)]
-pub struct AIBattleSimulator_ChainAttackCandidate {}
-
-#[cfg(feature = "app-aibattlesimulator")]
-#[::unity2::methods]
-impl AIBattleSimulator_ChainAttackCandidate {
-    #[doc = "`get_Side()` overload"]
-    #[method(name = "get_Side", args = 0)]
-    pub fn get_side(self) -> crate::app::battleinfoside::BattleInfoSide;
-
-    #[doc = "`set_Side(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "set_Side", args = 1)]
-    pub fn set_side(self, value: crate::app::battleinfoside::BattleInfoSide) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-aibattlesimulator")]
-impl AIBattleSimulator_ChainAttackCandidate {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIBattleSimulator_ChainAttackCandidate),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIBattleSimulator_ChainAttackCandidateMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator.md"))]
 #[::unity2::class(namespace = "App", name = "AIBattleSimulator")]
 #[parent(crate::app::aisimulatorbase::AISimulatorBase)]
 pub struct AIBattleSimulator {
@@ -447,6 +341,112 @@ impl AIBattleSimulator {
             )
         });
         <Self as IAIBattleSimulatorMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator_ChainAttackCandidate.md"))]
+#[::unity2::class(namespace = "App", name = "AIBattleSimulator.ChainAttackCandidate")]
+#[parent(crate::system::object::Object)]
+pub struct AIBattleSimulator_ChainAttackCandidate {}
+
+#[cfg(feature = "app-aibattlesimulator")]
+#[::unity2::methods]
+impl AIBattleSimulator_ChainAttackCandidate {
+    #[doc = "`get_Side()` overload"]
+    #[method(name = "get_Side", args = 0)]
+    pub fn get_side(self) -> crate::app::battleinfoside::BattleInfoSide;
+
+    #[doc = "`set_Side(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    #[method(name = "set_Side", args = 1)]
+    pub fn set_side(self, value: crate::app::battleinfoside::BattleInfoSide) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+impl AIBattleSimulator_ChainAttackCandidate {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIBattleSimulator_ChainAttackCandidate),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIBattleSimulator_ChainAttackCandidateMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator_Break.md"))]
+#[::unity2::class(namespace = "App", name = "AIBattleSimulator.Break")]
+#[parent(crate::system::object::Object)]
+pub struct AIBattleSimulator_Break {
+    #[static_field]
+    #[rename(name = "MaxStun")]
+    pub max_stun: f32,
+    #[rename(name = "m_BreakAttack")]
+    pub m_break_attack: f32,
+    #[rename(name = "m_Stun")]
+    pub m_stun: f32,
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+#[::unity2::methods]
+impl AIBattleSimulator_Break {
+    #[doc = "`Setup(crate::app::battleinfoside::BattleInfoSide, crate::app::aibattlesimulator::AIBattleSimulator_Indication)` overload"]
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(
+        self,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        indication: crate::app::aibattlesimulator::AIBattleSimulator_Indication,
+    ) -> ();
+
+    #[doc = "`Disable()` overload"]
+    #[method(name = "Disable", args = 0)]
+    pub fn disable(self) -> ();
+
+    #[doc = "`Add(f32)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, break_attack: f32) -> ();
+
+    #[doc = "`get_BreakAttack()` overload"]
+    #[method(name = "get_BreakAttack", args = 0)]
+    pub fn get_break_attack(self) -> f32;
+
+    #[doc = "`get_Stun()` overload"]
+    #[method(name = "get_Stun", args = 0)]
+    pub fn get_stun(self) -> f32;
+
+    #[doc = "`get_IsNotBreak()` overload"]
+    #[method(name = "get_IsNotBreak", args = 0)]
+    pub fn get_is_not_break(self) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+impl AIBattleSimulator_Break {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIBattleSimulator_Break),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIBattleSimulator_BreakMethods>::ctor(this);
         this
     }
 }

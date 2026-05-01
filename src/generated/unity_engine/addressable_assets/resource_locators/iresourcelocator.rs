@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_locators/iresourcelocator/IResourceLocator.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_locators/iresourcelocator/IResourceLocator.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.AddressableAssets.ResourceLocators",
     name = "IResourceLocator"

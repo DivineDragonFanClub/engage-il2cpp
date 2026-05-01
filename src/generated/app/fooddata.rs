@@ -14,7 +14,67 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fooddata/FoodData.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fooddata/FoodData_FoodCountry.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FoodData_FoodCountry {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FoodData_FoodCountry {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FoodData.FoodCountry";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FoodData_FoodCountry {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FoodData_FoodCountry {
+    pub fn filene() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn brodia() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn solum() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn ircion() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn lithos() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn other() -> Self {
+        Self { value: 5 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fooddata/FoodData.md"))]
 #[::unity2::class(namespace = "App", name = "FoodData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: fooddata :: FoodData >)]
 pub struct FoodData {}
@@ -119,65 +179,5 @@ impl FoodData {
         });
         <Self as IFoodDataMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fooddata/FoodData_FoodCountry.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct FoodData_FoodCountry {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for FoodData_FoodCountry {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FoodData.FoodCountry";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for FoodData_FoodCountry {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl FoodData_FoodCountry {
-    pub fn filene() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn brodia() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn solum() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn ircion() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn lithos() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn other() -> Self {
-        Self { value: 5 }
     }
 }

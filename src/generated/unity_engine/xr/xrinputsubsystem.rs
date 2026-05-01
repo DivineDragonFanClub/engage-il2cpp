@@ -8,7 +8,7 @@ use crate::unity_engine::integratedsubsystem_1::IIntegratedSubsystem_1;
 use crate::unity_engine::integratedsubsystem_1::IntegratedSubsystem_1;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrinputsubsystem/XRInputSubsystem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/xr/xrinputsubsystem/XRInputSubsystem.md"))]
 #[::unity2::class(namespace = "UnityEngine.XR", name = "XRInputSubsystem")]
 # [parent (crate :: unity_engine :: integratedsubsystem_1 :: IntegratedSubsystem_1 < crate :: unity_engine :: xr :: xrinputsubsystemdescriptor :: XRInputSubsystemDescriptor >)]
 pub struct XRInputSubsystem {

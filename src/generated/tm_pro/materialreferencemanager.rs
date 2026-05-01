@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/materialreferencemanager/MaterialReferenceManager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/materialreferencemanager/MaterialReferenceManager.md"))]
 #[::unity2::class(namespace = "TMPro", name = "MaterialReferenceManager")]
 #[parent(crate::system::object::Object)]
 pub struct MaterialReferenceManager {

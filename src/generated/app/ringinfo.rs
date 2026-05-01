@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo_RingInfoWindowRingModel.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo_RingInfoWindowRingModel.md"))]
 #[::unity2::class(namespace = "App", name = "RingInfo.RingInfoWindowRingModel")]
 #[parent(crate::system::object::Object)]
 pub struct RingInfo_RingInfoWindowRingModel {
@@ -102,7 +102,7 @@ impl RingInfo_RingInfoWindowRingModel {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo_RingPrefabObject.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo_RingPrefabObject.md"))]
 #[::unity2::class(namespace = "App", name = "RingInfo.RingPrefabObject")]
 #[parent(crate::system::object::Object)]
 pub struct RingInfo_RingPrefabObject {
@@ -249,7 +249,7 @@ impl RingInfo_RingPrefabObject {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo.md"))]
 #[::unity2::class(namespace = "App", name = "RingInfo")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringinfo :: RingInfo >)]
 pub struct RingInfo {

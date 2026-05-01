@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionbase/ActionBase.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actionbase/ActionBase.md"))]
 #[::unity2::class(namespace = "Combat", name = "ActionBase")]
 #[parent(crate::combat::state::State)]
 pub struct ActionBase {}

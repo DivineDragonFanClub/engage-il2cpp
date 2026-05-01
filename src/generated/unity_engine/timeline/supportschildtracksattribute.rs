@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/supportschildtracksattribute/SupportsChildTracksAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/supportschildtracksattribute/SupportsChildTracksAttribute.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Timeline",
     name = "SupportsChildTracksAttribute"

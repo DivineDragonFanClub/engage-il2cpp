@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/endofstreamexception/EndOfStreamException.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/endofstreamexception/EndOfStreamException.md"))]
 #[::unity2::class(namespace = "System.IO", name = "EndOfStreamException")]
 #[parent(crate::system::io::ioexception::IOException)]
 pub struct EndOfStreamException {}

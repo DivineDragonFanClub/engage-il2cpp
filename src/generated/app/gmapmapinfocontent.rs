@@ -12,77 +12,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmapinfocontent/GmapMapInfoContent_ItemInfo.md")))]
-#[::unity2::class(namespace = "App", name = "GmapMapInfoContent.ItemInfo")]
-#[parent(crate::system::object::Object)]
-pub struct GmapMapInfoContent_ItemInfo {
-    #[rename(name = "m_Root")]
-    pub m_root: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Icon")]
-    pub m_icon: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_Name")]
-    pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_Sub")]
-    pub m_sub: crate::unity_engine::gameobject::GameObject,
-}
-
-#[cfg(feature = "app-gmapmapinfocontent")]
-#[::unity2::methods]
-impl GmapMapInfoContent_ItemInfo {
-    #[doc = "`SetupObj(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "SetupObj", args = 1)]
-    pub fn setup_obj(self, root: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`SetName(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetName", args = 1)]
-    pub fn set_name(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetIcon(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetIcon", args = 1)]
-    pub fn set_icon(self, icon_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetSubHide()` overload"]
-    #[method(name = "SetSubHide", args = 0)]
-    pub fn set_sub_hide(self) -> ();
-
-    #[doc = "`SetArrow()` overload"]
-    #[method(name = "SetArrow", args = 0)]
-    pub fn set_arrow(self) -> ();
-
-    #[doc = "`SetIsCapture(bool, bool)` overload"]
-    #[method(name = "SetIsCapture", args = 2)]
-    pub fn set_is_capture(self, is_capture: bool, is_contains_lv1: bool) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gmapmapinfocontent")]
-impl GmapMapInfoContent_ItemInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GmapMapInfoContent_ItemInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGmapMapInfoContent_ItemInfoMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmapinfocontent/GmapMapInfoContent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmapinfocontent/GmapMapInfoContent.md"))]
 #[::unity2::class(namespace = "App", name = "GmapMapInfoContent")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct GmapMapInfoContent {
@@ -266,6 +196,76 @@ impl GmapMapInfoContent {
             )
         });
         <Self as IGmapMapInfoContentMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapmapinfocontent/GmapMapInfoContent_ItemInfo.md"))]
+#[::unity2::class(namespace = "App", name = "GmapMapInfoContent.ItemInfo")]
+#[parent(crate::system::object::Object)]
+pub struct GmapMapInfoContent_ItemInfo {
+    #[rename(name = "m_Root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Icon")]
+    pub m_icon: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_Name")]
+    pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Sub")]
+    pub m_sub: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-gmapmapinfocontent")]
+#[::unity2::methods]
+impl GmapMapInfoContent_ItemInfo {
+    #[doc = "`SetupObj(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "SetupObj", args = 1)]
+    pub fn setup_obj(self, root: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Show()` overload"]
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[doc = "`SetName(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetName", args = 1)]
+    pub fn set_name(self, name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`SetIcon(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetIcon", args = 1)]
+    pub fn set_icon(self, icon_name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`SetSubHide()` overload"]
+    #[method(name = "SetSubHide", args = 0)]
+    pub fn set_sub_hide(self) -> ();
+
+    #[doc = "`SetArrow()` overload"]
+    #[method(name = "SetArrow", args = 0)]
+    pub fn set_arrow(self) -> ();
+
+    #[doc = "`SetIsCapture(bool, bool)` overload"]
+    #[method(name = "SetIsCapture", args = 2)]
+    pub fn set_is_capture(self, is_capture: bool, is_contains_lv1: bool) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gmapmapinfocontent")]
+impl GmapMapInfoContent_ItemInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GmapMapInfoContent_ItemInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapMapInfoContent_ItemInfoMethods>::ctor(this);
         this
     }
 }

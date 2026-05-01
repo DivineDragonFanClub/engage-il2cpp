@@ -16,7 +16,188 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_DownloadYesNoDialog.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RelayProfileSequence.DownloadSequence.DownloadYesNoDialog"
+)]
+#[parent(crate::system::object::Object)]
+pub struct RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {}
+
+#[cfg(feature = "app-relayprofilesequence")]
+#[::unity2::methods]
+impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action::Action)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        mess: ::unity2::Il2CppString,
+        decide_callback: crate::system::action::Action,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence.md"))]
+#[::unity2::class(namespace = "App", name = "RelayProfileSequence")]
+#[parent(crate::system::object::Object)]
+pub struct RelayProfileSequence {}
+
+#[cfg(feature = "app-relayprofilesequence")]
+#[::unity2::methods]
+impl RelayProfileSequence {
+    #[doc = "`CreateBindUpload(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindUpload", args = 1)]
+    pub fn create_bind_upload(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`CreateBindDownload(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindDownload", args = 1)]
+    pub fn create_bind_download(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`GetPrincipalId()` overload"]
+    #[method(name = "GetPrincipalId", args = 0)]
+    pub fn get_principal_id() -> u64;
+
+    #[doc = "`GetPlayerIds()` overload"]
+    #[method(name = "GetPlayerIds", args = 0)]
+    pub fn get_player_ids() -> crate::system::collections::generic::list_1::List_1<u64>;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+impl RelayProfileSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayProfileSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayProfileSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayProfileSequence_DownloadSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayProfileSequence_DownloadSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayProfileSequence.DownloadSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayProfileSequence_DownloadSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayProfileSequence_DownloadSequence_Label {
+    pub fn download() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn sanitize() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn save() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 3 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RelayProfileSequence.DownloadSequence.DownloadYesNoDialog.YesItem"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem {
+    #[rename(name = "m_DecideCallback")]
+    pub m_decide_callback: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+#[::unity2::methods]
+impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem {
+    #[doc = "`.ctor(crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, decide_callback: crate::system::action::Action) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem {
+    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
+    pub fn new(decide_callback: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods>::ctor(
+            this,
+            decide_callback,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence.md"))]
 #[::unity2::class(namespace = "App", name = "RelayProfileSequence.DownloadSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct RelayProfileSequence_DownloadSequence {
@@ -98,52 +279,7 @@ impl RelayProfileSequence_DownloadSequence {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence.md")))]
-#[::unity2::class(namespace = "App", name = "RelayProfileSequence")]
-#[parent(crate::system::object::Object)]
-pub struct RelayProfileSequence {}
-
-#[cfg(feature = "app-relayprofilesequence")]
-#[::unity2::methods]
-impl RelayProfileSequence {
-    #[doc = "`CreateBindUpload(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindUpload", args = 1)]
-    pub fn create_bind_upload(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`CreateBindDownload(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindDownload", args = 1)]
-    pub fn create_bind_download(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`GetPrincipalId()` overload"]
-    #[method(name = "GetPrincipalId", args = 0)]
-    pub fn get_principal_id() -> u64;
-
-    #[doc = "`GetPlayerIds()` overload"]
-    #[method(name = "GetPlayerIds", args = 0)]
-    pub fn get_player_ids() -> crate::system::collections::generic::list_1::List_1<u64>;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-impl RelayProfileSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayProfileSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayProfileSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_UploadSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_UploadSequence.md"))]
 #[::unity2::class(namespace = "App", name = "RelayProfileSequence.UploadSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct RelayProfileSequence_UploadSequence {
@@ -184,141 +320,5 @@ impl RelayProfileSequence_UploadSequence {
         });
         <Self as IRelayProfileSequence_UploadSequenceMethods>::ctor(this);
         this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_DownloadYesNoDialog.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RelayProfileSequence.DownloadSequence.DownloadYesNoDialog"
-)]
-#[parent(crate::system::object::Object)]
-pub struct RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {}
-
-#[cfg(feature = "app-relayprofilesequence")]
-#[::unity2::methods]
-impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action::Action)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        mess: ::unity2::Il2CppString,
-        decide_callback: crate::system::action::Action,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RelayProfileSequence.DownloadSequence.DownloadYesNoDialog.YesItem"
-)]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem {
-    #[rename(name = "m_DecideCallback")]
-    pub m_decide_callback: crate::system::action::Action,
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-#[::unity2::methods]
-impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem {
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, decide_callback: crate::system::action::Action) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(decide_callback: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItemMethods>::ctor(
-            this,
-            decide_callback,
-        );
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RelayProfileSequence_DownloadSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RelayProfileSequence_DownloadSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayProfileSequence.DownloadSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RelayProfileSequence_DownloadSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RelayProfileSequence_DownloadSequence_Label {
-    pub fn download() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn sanitize() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn save() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 3 }
     }
 }

@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/istructuralequatable/IStructuralEquatable.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/istructuralequatable/IStructuralEquatable.md"))]
 #[::unity2::class(namespace = "System.Collections", name = "IStructuralEquatable")]
 pub struct IStructuralEquatable {}
 

@@ -18,7 +18,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerdollycart/CameraControllerDollyCart.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerdollycart/CameraControllerDollyCart.md"))]
 #[::unity2::class(namespace = "Combat", name = "CameraControllerDollyCart")]
 #[parent(crate::combat::basecameracontroller::BaseCameraController)]
 pub struct CameraControllerDollyCart {
@@ -70,7 +70,7 @@ impl CameraControllerDollyCart {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerdollycart/CameraControllerDollyCart_State.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerdollycart/CameraControllerDollyCart_State.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

@@ -12,43 +12,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_ItemParam.md")))]
-#[::unity2::class(namespace = "App", name = "ItemListYesNoDialog.ItemParam")]
-#[parent(crate::system::object::Object)]
-pub struct ItemListYesNoDialog_ItemParam {
-    #[rename(name = "sprite")]
-    pub sprite: crate::unity_engine::sprite::Sprite,
-    #[rename(name = "name")]
-    pub name: ::unity2::Il2CppString,
-    #[rename(name = "num")]
-    pub num: i32,
-}
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-#[::unity2::methods]
-impl ItemListYesNoDialog_ItemParam {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-itemlistyesnodialog")]
-impl ItemListYesNoDialog_ItemParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemListYesNoDialog_ItemParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemListYesNoDialog_ItemParamMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog.md"))]
 #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog")]
 #[parent(crate::app::yesnodialog::YesNoDialog)]
 pub struct ItemListYesNoDialog {}
@@ -146,7 +110,43 @@ impl ItemListYesNoDialog {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_MoneyParam.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_ItemParam.md"))]
+#[::unity2::class(namespace = "App", name = "ItemListYesNoDialog.ItemParam")]
+#[parent(crate::system::object::Object)]
+pub struct ItemListYesNoDialog_ItemParam {
+    #[rename(name = "sprite")]
+    pub sprite: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "name")]
+    pub name: ::unity2::Il2CppString,
+    #[rename(name = "num")]
+    pub num: i32,
+}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+#[::unity2::methods]
+impl ItemListYesNoDialog_ItemParam {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-itemlistyesnodialog")]
+impl ItemListYesNoDialog_ItemParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemListYesNoDialog_ItemParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemListYesNoDialog_ItemParamMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemlistyesnodialog/ItemListYesNoDialog_MoneyParam.md"))]
 #[::unity2::class(namespace = "App", name = "ItemListYesNoDialog.MoneyParam")]
 #[parent(crate::system::object::Object)]
 pub struct ItemListYesNoDialog_MoneyParam {

@@ -10,81 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_onLoad.md")))]
-#[::unity2::class(namespace = "App.Talk3D", name = "CharacterFactoryAsync.onLoad")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct CharacterFactoryAsync_onLoad {}
-
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-#[::unity2::methods]
-impl CharacterFactoryAsync_onLoad {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::combat::character::Character)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, chara: crate::combat::character::Character) -> ();
-}
-
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-impl CharacterFactoryAsync_onLoad {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CharacterFactoryAsync_onLoad),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICharacterFactoryAsync_onLoadMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_UnitStatusScope.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct CharacterFactoryAsync_UnitStatusScope {
-    pub m_unit: crate::app::unit::Unit,
-    pub m_value: i64,
-}
-
-impl ::unity2::ClassIdentity for CharacterFactoryAsync_UnitStatusScope {
-    const NAMESPACE: &'static str = "App.Talk3D";
-
-    const NAME: &'static str = "CharacterFactoryAsync.UnitStatusScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for CharacterFactoryAsync_UnitStatusScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
-#[::unity2::methods(value)]
-impl CharacterFactoryAsync_UnitStatusScope {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_2.md"))]
 #[::unity2::class(namespace = "App.Talk3D", name = "CharacterFactoryAsync")]
 #[parent(crate::system::object::Object)]
 pub struct CharacterFactoryAsync_2 {}
@@ -200,6 +126,80 @@ impl CharacterFactoryAsync_2 {
             )
         });
         <Self as ICharacterFactoryAsync_2Methods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_UnitStatusScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct CharacterFactoryAsync_UnitStatusScope {
+    pub m_unit: crate::app::unit::Unit,
+    pub m_value: i64,
+}
+
+impl ::unity2::ClassIdentity for CharacterFactoryAsync_UnitStatusScope {
+    const NAMESPACE: &'static str = "App.Talk3D";
+
+    const NAME: &'static str = "CharacterFactoryAsync.UnitStatusScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CharacterFactoryAsync_UnitStatusScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
+#[::unity2::methods(value)]
+impl CharacterFactoryAsync_UnitStatusScope {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/characterfactoryasync_2/CharacterFactoryAsync_onLoad.md"))]
+#[::unity2::class(namespace = "App.Talk3D", name = "CharacterFactoryAsync.onLoad")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct CharacterFactoryAsync_onLoad {}
+
+#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
+#[::unity2::methods]
+impl CharacterFactoryAsync_onLoad {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::combat::character::Character)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, chara: crate::combat::character::Character) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-characterfactoryasync_2")]
+impl CharacterFactoryAsync_onLoad {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CharacterFactoryAsync_onLoad),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICharacterFactoryAsync_onLoadMethods>::ctor(this, object, method);
         this
     }
 }

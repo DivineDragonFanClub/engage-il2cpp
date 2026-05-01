@@ -6,118 +6,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_WriteScope.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Stream_WriteScope {
-    pub m_stream: crate::app::stream_2::Stream_2,
-}
-
-impl ::unity2::ClassIdentity for Stream_WriteScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Stream.WriteScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Stream_WriteScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-stream_2")]
-#[::unity2::methods(value)]
-impl Stream_WriteScope {
-    #[doc = "`.ctor(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_Info.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Stream_Info {
-    pub position: i32,
-    pub version: i32,
-    pub size: i32,
-}
-
-impl ::unity2::ClassIdentity for Stream_Info {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Stream.Info";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Stream_Info {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_PositionScope.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Stream_PositionScope {
-    pub m_stream: crate::app::stream_2::Stream_2,
-    pub m_position: i32,
-}
-
-impl ::unity2::ClassIdentity for Stream_PositionScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Stream.PositionScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Stream_PositionScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-stream_2")]
-#[::unity2::methods(value)]
-impl Stream_PositionScope {
-    #[doc = "`.ctor(crate::app::stream_2::Stream_2, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, stream: crate::app::stream_2::Stream_2, position: i32) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_ReadScope.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_ReadScope.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct Stream_ReadScope {
@@ -165,7 +54,7 @@ impl Stream_ReadScope {
     pub fn set_version(self, value: i32) -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/stream_2/Stream_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/stream_2/Stream_2.md"))]
 #[::unity2::class(namespace = "App", name = "Stream")]
 #[parent(crate::system::object::Object)]
 pub struct Stream_2 {
@@ -634,5 +523,116 @@ impl Stream_2 {
         });
         <Self as IStream_2Methods>::ctor_4(this, stream);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_PositionScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Stream_PositionScope {
+    pub m_stream: crate::app::stream_2::Stream_2,
+    pub m_position: i32,
+}
+
+impl ::unity2::ClassIdentity for Stream_PositionScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Stream.PositionScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Stream_PositionScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-stream_2")]
+#[::unity2::methods(value)]
+impl Stream_PositionScope {
+    #[doc = "`.ctor(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, stream: crate::app::stream_2::Stream_2, position: i32) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_WriteScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Stream_WriteScope {
+    pub m_stream: crate::app::stream_2::Stream_2,
+}
+
+impl ::unity2::ClassIdentity for Stream_WriteScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Stream.WriteScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Stream_WriteScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-stream_2")]
+#[::unity2::methods(value)]
+impl Stream_WriteScope {
+    #[doc = "`.ctor(crate::app::stream_2::Stream_2, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, stream: crate::app::stream_2::Stream_2, version: i32) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/stream_2/Stream_Info.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Stream_Info {
+    pub position: i32,
+    pub version: i32,
+    pub size: i32,
+}
+
+impl ::unity2::ClassIdentity for Stream_Info {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Stream.Info";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Stream_Info {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
     }
 }

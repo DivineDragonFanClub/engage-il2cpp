@@ -12,7 +12,43 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringbaseringmenu/SynthesisRingBaseRingMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringbaseringmenu/SynthesisRingBaseRingMenu_CloseEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "SynthesisRingBaseRingMenu.CloseEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct SynthesisRingBaseRingMenu_CloseEventHandler {}
+
+#[cfg(feature = "app-synthesisringbaseringmenu")]
+#[::unity2::methods]
+impl SynthesisRingBaseRingMenu_CloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-synthesisringbaseringmenu")]
+impl SynthesisRingBaseRingMenu_CloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SynthesisRingBaseRingMenu_CloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISynthesisRingBaseRingMenu_CloseEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringbaseringmenu/SynthesisRingBaseRingMenu.md"))]
 #[::unity2::class(namespace = "App", name = "SynthesisRingBaseRingMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct SynthesisRingBaseRingMenu {
@@ -166,42 +202,6 @@ impl SynthesisRingBaseRingMenu {
             decide_event_handler,
             request_close_event_handler,
         );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringbaseringmenu/SynthesisRingBaseRingMenu_CloseEventHandler.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "SynthesisRingBaseRingMenu.CloseEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct SynthesisRingBaseRingMenu_CloseEventHandler {}
-
-#[cfg(feature = "app-synthesisringbaseringmenu")]
-#[::unity2::methods]
-impl SynthesisRingBaseRingMenu_CloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-synthesisringbaseringmenu")]
-impl SynthesisRingBaseRingMenu_CloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SynthesisRingBaseRingMenu_CloseEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISynthesisRingBaseRingMenu_CloseEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

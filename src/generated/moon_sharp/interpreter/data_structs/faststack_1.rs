@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/data_structs/faststack_1/FastStack_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/data_structs/faststack_1/FastStack_1.md"))]
 #[::unity2::class(namespace = "MoonSharp.Interpreter.DataStructs", name = "FastStack`1")]
 #[parent(crate::system::object::Object)]
 pub struct FastStack_1<T0: ::unity2::ClassIdentity> {

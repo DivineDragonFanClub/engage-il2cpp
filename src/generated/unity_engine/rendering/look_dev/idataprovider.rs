@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/look_dev/idataprovider/IDataProvider.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/look_dev/idataprovider/IDataProvider.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering.LookDev", name = "IDataProvider")]
 pub struct IDataProvider {}
 

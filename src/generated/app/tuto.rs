@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tuto/Tuto_ProcDescTutorial.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tuto/Tuto_ProcDescTutorial.md"))]
 #[::unity2::class(namespace = "App", name = "Tuto.ProcDescTutorial")]
 #[parent(crate::app::procdescuser::ProcDescUser)]
 pub struct Tuto_ProcDescTutorial {
@@ -47,7 +47,7 @@ impl Tuto_ProcDescTutorial {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tuto/Tuto.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tuto/Tuto.md"))]
 #[::unity2::class(namespace = "App", name = "Tuto")]
 #[parent(crate::system::object::Object)]
 pub struct Tuto {}

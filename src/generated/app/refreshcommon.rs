@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshcommon/RefreshCommon.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshcommon/RefreshCommon.md"))]
 #[::unity2::class(namespace = "App", name = "RefreshCommon")]
 #[parent(crate::system::object::Object)]
 pub struct RefreshCommon {

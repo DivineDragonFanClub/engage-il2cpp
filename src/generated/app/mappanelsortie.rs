@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelsortie/MapPanelSortie_DontPosChangeMap.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelsortie/MapPanelSortie_DontPosChangeMap.md"))]
 #[::unity2::class(namespace = "App", name = "MapPanelSortie.DontPosChangeMap")]
 #[parent(crate::system::object::Object)]
 pub struct MapPanelSortie_DontPosChangeMap {
@@ -52,7 +52,7 @@ impl MapPanelSortie_DontPosChangeMap {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelsortie/MapPanelSortie.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelsortie/MapPanelSortie.md"))]
 #[::unity2::class(namespace = "App", name = "MapPanelSortie")]
 pub struct MapPanelSortie {
     #[rename(name = "m_DontPosChangeMap")]

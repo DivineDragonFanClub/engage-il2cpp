@@ -12,56 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequencereliance/SortieSequenceReliance.md")))]
-#[::unity2::class(namespace = "App", name = "SortieSequenceReliance")]
-# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequencereliance :: SortieSequenceReliance >)]
-pub struct SortieSequenceReliance {}
-
-#[cfg(feature = "app-sortiesequencereliance")]
-#[::unity2::methods]
-impl SortieSequenceReliance {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`OnShutdown()` overload"]
-    #[method(name = "OnShutdown", args = 0)]
-    pub fn on_shutdown(self) -> ();
-
-    #[doc = "`Talk()` overload"]
-    #[method(name = "Talk", args = 0)]
-    pub fn talk(self) -> ();
-
-    #[doc = "`Buddy()` overload"]
-    #[method(name = "Buddy", args = 0)]
-    pub fn buddy(self) -> ();
-
-    #[doc = "`Message()` overload"]
-    #[method(name = "Message", args = 0)]
-    pub fn message(self) -> ();
-}
-
-#[cfg(feature = "app-sortiesequencereliance")]
-impl SortieSequenceReliance {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieSequenceReliance),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieSequenceRelianceMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencereliance/SortieSequenceReliance_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequencereliance/SortieSequenceReliance_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -114,5 +65,54 @@ impl SortieSequenceReliance_Label {
 
     pub fn end() -> Self {
         Self { value: 4 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequencereliance/SortieSequenceReliance.md"))]
+#[::unity2::class(namespace = "App", name = "SortieSequenceReliance")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: sortiesequencereliance :: SortieSequenceReliance >)]
+pub struct SortieSequenceReliance {}
+
+#[cfg(feature = "app-sortiesequencereliance")]
+#[::unity2::methods]
+impl SortieSequenceReliance {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`OnShutdown()` overload"]
+    #[method(name = "OnShutdown", args = 0)]
+    pub fn on_shutdown(self) -> ();
+
+    #[doc = "`Talk()` overload"]
+    #[method(name = "Talk", args = 0)]
+    pub fn talk(self) -> ();
+
+    #[doc = "`Buddy()` overload"]
+    #[method(name = "Buddy", args = 0)]
+    pub fn buddy(self) -> ();
+
+    #[doc = "`Message()` overload"]
+    #[method(name = "Message", args = 0)]
+    pub fn message(self) -> ();
+}
+
+#[cfg(feature = "app-sortiesequencereliance")]
+impl SortieSequenceReliance {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieSequenceReliance),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieSequenceRelianceMethods>::ctor(this);
+        this
     }
 }

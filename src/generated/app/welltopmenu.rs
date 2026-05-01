@@ -18,67 +18,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/welltopmenu/WellTopMenu_MenuResult.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct WellTopMenu_MenuResult {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for WellTopMenu_MenuResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "WellTopMenu.MenuResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for WellTopMenu_MenuResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl WellTopMenu_MenuResult {
-    pub fn item_exchange() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn evil_map_first() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn evil_map() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn evil_cannot_start() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn change_difficulty() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 5 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu.md"))]
 #[::unity2::class(namespace = "App", name = "WellTopMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct WellTopMenu {}
@@ -161,17 +101,17 @@ impl WellTopMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_EvilMapStartMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "WellTopMenu.EvilMapStartMenuItem")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_ItemExchangeMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "WellTopMenu.ItemExchangeMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct WellTopMenu_EvilMapStartMenuItem {
+pub struct WellTopMenu_ItemExchangeMenuItem {
     #[rename(name = "m_DecideEventHandler")]
     pub m_decide_event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
 }
 
 #[cfg(feature = "app-welltopmenu")]
 #[::unity2::methods]
-impl WellTopMenu_EvilMapStartMenuItem {
+impl WellTopMenu_ItemExchangeMenuItem {
     #[doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler)
@@ -195,22 +135,22 @@ impl WellTopMenu_EvilMapStartMenuItem {
 }
 
 #[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_EvilMapStartMenuItem {
+impl WellTopMenu_ItemExchangeMenuItem {
     #[doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"]
     pub fn new(event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(WellTopMenu_EvilMapStartMenuItem),
+                ::core::stringify!(WellTopMenu_ItemExchangeMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IWellTopMenu_EvilMapStartMenuItemMethods>::ctor(this, event_handler);
+        <Self as IWellTopMenu_ItemExchangeMenuItemMethods>::ctor(this, event_handler);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_EvilMapChangeDifficultyMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_EvilMapChangeDifficultyMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "WellTopMenu.EvilMapChangeDifficultyMenuItem"
@@ -262,7 +202,7 @@ impl WellTopMenu_EvilMapChangeDifficultyMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_DecideEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_DecideEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "WellTopMenu.DecideEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct WellTopMenu_DecideEventHandler {}
@@ -295,17 +235,17 @@ impl WellTopMenu_DecideEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_ItemExchangeMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "WellTopMenu.ItemExchangeMenuItem")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/welltopmenu/WellTopMenu_EvilMapStartMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "WellTopMenu.EvilMapStartMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct WellTopMenu_ItemExchangeMenuItem {
+pub struct WellTopMenu_EvilMapStartMenuItem {
     #[rename(name = "m_DecideEventHandler")]
     pub m_decide_event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler,
 }
 
 #[cfg(feature = "app-welltopmenu")]
 #[::unity2::methods]
-impl WellTopMenu_ItemExchangeMenuItem {
+impl WellTopMenu_EvilMapStartMenuItem {
     #[doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler)
@@ -329,17 +269,77 @@ impl WellTopMenu_ItemExchangeMenuItem {
 }
 
 #[cfg(feature = "app-welltopmenu")]
-impl WellTopMenu_ItemExchangeMenuItem {
+impl WellTopMenu_EvilMapStartMenuItem {
     #[doc = "`.ctor(crate::app::welltopmenu::WellTopMenu_DecideEventHandler)` — overload selector"]
     pub fn new(event_handler: crate::app::welltopmenu::WellTopMenu_DecideEventHandler) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(WellTopMenu_ItemExchangeMenuItem),
+                ::core::stringify!(WellTopMenu_EvilMapStartMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IWellTopMenu_ItemExchangeMenuItemMethods>::ctor(this, event_handler);
+        <Self as IWellTopMenu_EvilMapStartMenuItemMethods>::ctor(this, event_handler);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/welltopmenu/WellTopMenu_MenuResult.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct WellTopMenu_MenuResult {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for WellTopMenu_MenuResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "WellTopMenu.MenuResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for WellTopMenu_MenuResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl WellTopMenu_MenuResult {
+    pub fn item_exchange() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn evil_map_first() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn evil_map() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn evil_cannot_start() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn change_difficulty() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 5 }
     }
 }

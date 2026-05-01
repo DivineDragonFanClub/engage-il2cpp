@@ -10,58 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence_RandomPack.md")))]
-#[::unity2::class(namespace = "App.Squat", name = "MuscleSquatSequence.RandomPack")]
-#[parent(crate::system::object::Object)]
-pub struct MuscleSquatSequence_RandomPack {
-    #[rename(name = "type")]
-    pub r#type: ::unity2::Il2CppString,
-    #[rename(name = "param")]
-    pub param: f32,
-}
-
-#[cfg(feature = "app-squat-musclesquatsequence")]
-#[::unity2::methods]
-impl MuscleSquatSequence_RandomPack {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, f32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(self, set_type: ::unity2::Il2CppString, set_param: f32) -> ();
-}
-
-#[cfg(feature = "app-squat-musclesquatsequence")]
-impl MuscleSquatSequence_RandomPack {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MuscleSquatSequence_RandomPack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMuscleSquatSequence_RandomPackMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString, f32)` — overload selector"]
-    pub fn new_2(set_type: ::unity2::Il2CppString, set_param: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MuscleSquatSequence_RandomPack),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IMuscleSquatSequence_RandomPackMethods>::ctor_2(this, set_type, set_param);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence.md"))]
 #[::unity2::class(namespace = "App.Squat", name = "MuscleSquatSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct MuscleSquatSequence {
@@ -650,7 +599,7 @@ impl MuscleSquatSequence {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/musclesquatsequence/MuscleSquatSequence_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/musclesquatsequence/MuscleSquatSequence_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -719,5 +668,56 @@ impl MuscleSquatSequence_Label {
 
     pub fn r#final() -> Self {
         Self { value: 8 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence_RandomPack.md"))]
+#[::unity2::class(namespace = "App.Squat", name = "MuscleSquatSequence.RandomPack")]
+#[parent(crate::system::object::Object)]
+pub struct MuscleSquatSequence_RandomPack {
+    #[rename(name = "type")]
+    pub r#type: ::unity2::Il2CppString,
+    #[rename(name = "param")]
+    pub param: f32,
+}
+
+#[cfg(feature = "app-squat-musclesquatsequence")]
+#[::unity2::methods]
+impl MuscleSquatSequence_RandomPack {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.ctor(::unity2::Il2CppString, f32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(self, set_type: ::unity2::Il2CppString, set_param: f32) -> ();
+}
+
+#[cfg(feature = "app-squat-musclesquatsequence")]
+impl MuscleSquatSequence_RandomPack {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleSquatSequence_RandomPack),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMuscleSquatSequence_RandomPackMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::Il2CppString, f32)` — overload selector"]
+    pub fn new_2(set_type: ::unity2::Il2CppString, set_param: f32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleSquatSequence_RandomPack),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IMuscleSquatSequence_RandomPackMethods>::ctor_2(this, set_type, set_param);
+        this
     }
 }

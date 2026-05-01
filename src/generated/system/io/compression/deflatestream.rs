@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream_WriteMethod.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream_WriteMethod.md"))]
 #[::unity2::class(
     namespace = "System.IO.Compression",
     name = "DeflateStream.WriteMethod"
@@ -46,7 +46,7 @@ impl DeflateStream_WriteMethod {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream.md"))]
 #[::unity2::class(namespace = "System.IO.Compression", name = "DeflateStream")]
 #[parent(crate::system::io::stream::Stream)]
 pub struct DeflateStream {
@@ -267,7 +267,7 @@ impl DeflateStream {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream_ReadMethod.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream_ReadMethod.md"))]
 #[::unity2::class(namespace = "System.IO.Compression", name = "DeflateStream.ReadMethod")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct DeflateStream_ReadMethod {}

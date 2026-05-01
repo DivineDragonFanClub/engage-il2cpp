@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonsprite/CommonSprite.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/commonsprite/CommonSprite.md"))]
 #[::unity2::class(namespace = "App", name = "CommonSprite")]
 #[parent(crate::system::object::Object)]
 pub struct CommonSprite {

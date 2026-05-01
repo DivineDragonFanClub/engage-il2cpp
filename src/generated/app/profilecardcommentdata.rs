@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardcommentdata/ProfileCardCommentData_Categories.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardcommentdata/ProfileCardCommentData_Categories.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -78,7 +78,7 @@ impl ProfileCardCommentData_Categories {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentdata/ProfileCardCommentData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentdata/ProfileCardCommentData.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardCommentData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: profilecardcommentdata :: ProfileCardCommentData >)]
 pub struct ProfileCardCommentData {

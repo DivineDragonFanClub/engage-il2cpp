@@ -18,7 +18,63 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter_AspectMode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AspectRatioFitter_AspectMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AspectRatioFitter_AspectMode {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "AspectRatioFitter.AspectMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AspectRatioFitter_AspectMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AspectRatioFitter_AspectMode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn width_controls_height() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn height_controls_width() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn fit_in_parent() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn envelope_parent() -> Self {
+        Self { value: 4 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI", name = "AspectRatioFitter")]
 #[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]
 pub struct AspectRatioFitter {
@@ -142,61 +198,5 @@ impl AspectRatioFitter {
         });
         <Self as IAspectRatioFitterMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/aspectratiofitter/AspectRatioFitter_AspectMode.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AspectRatioFitter_AspectMode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AspectRatioFitter_AspectMode {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "AspectRatioFitter.AspectMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AspectRatioFitter_AspectMode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AspectRatioFitter_AspectMode {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn width_controls_height() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn height_controls_width() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn fit_in_parent() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn envelope_parent() -> Self {
-        Self { value: 4 }
     }
 }

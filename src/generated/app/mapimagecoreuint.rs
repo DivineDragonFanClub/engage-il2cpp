@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagecoreuint/MapImageCoreUint.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagecoreuint/MapImageCoreUint.md"))]
 #[::unity2::class(namespace = "App", name = "MapImageCoreUint")]
 # [parent (crate :: app :: mapimagecore_1 :: MapImageCore_1 < u32 >)]
 pub struct MapImageCoreUint {}

@@ -18,59 +18,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerbullet/CameraControllerBullet_State.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct CameraControllerBullet_State {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for CameraControllerBullet_State {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "CameraControllerBullet.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for CameraControllerBullet_State {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl CameraControllerBullet_State {
-    pub fn ready() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn before_shoot() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn shooting() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn after_shoot() -> Self {
-        Self { value: 3 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerbullet/CameraControllerBullet.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerbullet/CameraControllerBullet.md"))]
 #[::unity2::class(namespace = "Combat", name = "CameraControllerBullet")]
 #[parent(crate::combat::basecameracontroller::BaseCameraController)]
 pub struct CameraControllerBullet {
@@ -147,5 +95,57 @@ impl CameraControllerBullet {
         });
         <Self as ICameraControllerBulletMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerbullet/CameraControllerBullet_State.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CameraControllerBullet_State {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CameraControllerBullet_State {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CameraControllerBullet.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CameraControllerBullet_State {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CameraControllerBullet_State {
+    pub fn ready() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn before_shoot() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn shooting() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn after_shoot() -> Self {
+        Self { value: 3 }
     }
 }

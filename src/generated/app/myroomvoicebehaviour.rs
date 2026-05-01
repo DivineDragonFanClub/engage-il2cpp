@@ -6,7 +6,7 @@ use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
 use crate::unity_engine::playables::playablebehaviour::PlayableBehaviour;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomvoicebehaviour/MyRoomVoiceBehaviour.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomvoicebehaviour/MyRoomVoiceBehaviour.md"))]
 #[::unity2::class(namespace = "App", name = "MyRoomVoiceBehaviour")]
 #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
 pub struct MyRoomVoiceBehaviour {}

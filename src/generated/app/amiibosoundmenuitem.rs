@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibosoundmenuitem/AmiiboSoundMenuItem_YesItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibosoundmenuitem/AmiiboSoundMenuItem_YesItem.md"))]
 #[::unity2::class(namespace = "App", name = "AmiiboSoundMenuItem.YesItem")]
 #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
 pub struct AmiiboSoundMenuItem_YesItem {}
@@ -43,7 +43,7 @@ impl AmiiboSoundMenuItem_YesItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibosoundmenuitem/AmiiboSoundMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibosoundmenuitem/AmiiboSoundMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "AmiiboSoundMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct AmiiboSoundMenuItem {

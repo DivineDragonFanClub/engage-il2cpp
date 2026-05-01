@@ -8,49 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/executeevents/ExecuteEvents_EventFunction_1.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.EventSystems",
-    name = "ExecuteEvents.EventFunction`1"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-#[parent(crate::system::delegate::Delegate)]
-#[parent(crate::system::object::Object)]
-pub struct ExecuteEvents_EventFunction_1<T0: ::unity2::ClassIdentity> {}
-
-#[cfg(feature = "unity_engine-event_systems-executeevents")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> ExecuteEvents_EventFunction_1<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(T0, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        handler: T0,
-        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-event_systems-executeevents")]
-impl<T0: ::unity2::ClassIdentity> ExecuteEvents_EventFunction_1<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ExecuteEvents_EventFunction_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IExecuteEvents_EventFunction_1Methods<T0>>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/executeevents/ExecuteEvents.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/executeevents/ExecuteEvents.md"))]
 #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "ExecuteEvents")]
 #[parent(crate::system::object::Object)]
 pub struct ExecuteEvents {
@@ -325,4 +283,46 @@ impl ExecuteEvents {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/executeevents/ExecuteEvents_EventFunction_1.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.EventSystems",
+    name = "ExecuteEvents.EventFunction`1"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+#[parent(crate::system::delegate::Delegate)]
+#[parent(crate::system::object::Object)]
+pub struct ExecuteEvents_EventFunction_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "unity_engine-event_systems-executeevents")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> ExecuteEvents_EventFunction_1<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(T0, crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        handler: T0,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-event_systems-executeevents")]
+impl<T0: ::unity2::ClassIdentity> ExecuteEvents_EventFunction_1<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ExecuteEvents_EventFunction_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExecuteEvents_EventFunction_1Methods<T0>>::ctor(this, object, method);
+        this
+    }
 }

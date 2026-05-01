@@ -20,7 +20,127 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData_FlagField.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData.md"))]
+#[::unity2::class(namespace = "App", name = "RelayAwardData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relayawarddata :: RelayAwardData >)]
+pub struct RelayAwardData {
+    #[static_field]
+    #[rename(name = "s_Infos")]
+    pub s_infos: ::unity2::Array<crate::app::relayawarddata::RelayAwardData_Info>,
+}
+
+#[cfg(feature = "app-relayawarddata")]
+#[::unity2::methods]
+impl RelayAwardData {
+    #[doc = "`Load()` overload"]
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+
+    #[doc = "`get_Raid()` overload"]
+    #[method(name = "get_Raid", args = 0)]
+    pub fn get_raid(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Raid(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Raid", args = 1)]
+    pub fn set_raid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_ResultText()` overload"]
+    #[method(name = "get_ResultText", args = 0)]
+    pub fn get_result_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_ResultText(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_ResultText", args = 1)]
+    pub fn set_result_text(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Awards()` overload"]
+    #[method(name = "get_Awards", args = 0)]
+    pub fn get_awards(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[doc = "`set_Awards(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "set_Awards", args = 1)]
+    pub fn set_awards(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[doc = "`get_Flag()` overload"]
+    #[method(name = "get_Flag", args = 0)]
+    pub fn get_flag(self) -> crate::app::relayawarddata::RelayAwardData_FlagField;
+
+    #[doc = "`set_Flag(crate::app::relayawarddata::RelayAwardData_FlagField)` overload"]
+    #[method(name = "set_Flag", args = 1)]
+    pub fn set_flag(self, value: crate::app::relayawarddata::RelayAwardData_FlagField) -> ();
+
+    #[doc = "`GetRaid(crate::app::relayawarddata::RelayAwardData_Kinds)` overload"]
+    #[method(name = "GetRaid", args = 1)]
+    pub fn get_raid_2(
+        kind: crate::app::relayawarddata::RelayAwardData_Kinds,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetRecordKind(crate::app::relayawarddata::RelayAwardData_Kinds)` overload"]
+    #[method(name = "GetRecordKind", args = 1)]
+    pub fn get_record_kind(
+        kind: crate::app::relayawarddata::RelayAwardData_Kinds,
+    ) -> crate::app::unitrecord::UnitRecord_Kinds;
+
+    #[doc = "`GetCompareOp(crate::app::relayawarddata::RelayAwardData_Kinds)` overload"]
+    #[method(name = "GetCompareOp", args = 1)]
+    pub fn get_compare_op(
+        kind: crate::app::relayawarddata::RelayAwardData_Kinds,
+    ) -> crate::app::relayawarddata::RelayAwardData_CompareOp;
+
+    #[doc = "`Test(crate::app::relayawarddata::RelayAwardData_Kinds, crate::app::relayawarddata::RelayAwardData_Flags)` overload"]
+    #[method(name = "Test", args = 2)]
+    pub fn test(
+        kind: crate::app::relayawarddata::RelayAwardData_Kinds,
+        flag: crate::app::relayawarddata::RelayAwardData_Flags,
+    ) -> bool;
+
+    #[doc = "`TryGet(crate::app::relayawarddata::RelayAwardData_Kinds)` overload"]
+    #[method(name = "TryGet", args = 1)]
+    pub fn try_get(
+        kind: crate::app::relayawarddata::RelayAwardData_Kinds,
+    ) -> crate::app::relayawarddata::RelayAwardData;
+
+    #[doc = "`OnCompletedEnd()` overload"]
+    #[method(name = "OnCompletedEnd", args = 0)]
+    pub fn on_completed_end(self) -> ();
+
+    #[doc = "`GetDebugName()` overload"]
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`MakeInfos()` overload"]
+    #[method(name = "MakeInfos", args = 0)]
+    pub fn make_infos(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relayawarddata")]
+impl RelayAwardData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayAwardData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayAwardDataMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData_FlagField.md"))]
 #[::unity2::class(namespace = "App", name = "RelayAwardData.FlagField")]
 # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relayawarddata :: RelayAwardData_Flags >)]
 pub struct RelayAwardData_FlagField {}
@@ -70,7 +190,162 @@ impl RelayAwardData_FlagField {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Kinds.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Flags.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayAwardData_Flags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayAwardData_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayAwardData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayAwardData_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayAwardData_Flags {
+    pub fn mixed() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn show_count() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn negative() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn attack_plus() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn attack_minus() -> Self {
+        Self { value: 16 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_CompareOp.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayAwardData_CompareOp {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayAwardData_CompareOp {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayAwardData.CompareOp";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayAwardData_CompareOp {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayAwardData_CompareOp {
+    pub fn greater() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn less() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn zero() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn mixed_less() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn attack_greater_kill_less() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Info.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RelayAwardData_Info {
+    pub raid: ::unity2::Il2CppString,
+    pub record_kind: crate::app::unitrecord::UnitRecord_Kinds,
+    pub compare_op: crate::app::relayawarddata::RelayAwardData_CompareOp,
+}
+
+impl ::unity2::ClassIdentity for RelayAwardData_Info {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayAwardData.Info";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayAwardData_Info {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-relayawarddata")]
+#[::unity2::methods(value)]
+impl RelayAwardData_Info {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unitrecord::UnitRecord_Kinds, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        raid: ::unity2::Il2CppString,
+        kind: crate::app::unitrecord::UnitRecord_Kinds,
+        comp: crate::app::relayawarddata::RelayAwardData_CompareOp,
+    ) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Kinds.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -207,280 +482,5 @@ impl RelayAwardData_Kinds {
 
     pub fn num() -> Self {
         Self { value: 25 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Info.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RelayAwardData_Info {
-    pub raid: ::unity2::Il2CppString,
-    pub record_kind: crate::app::unitrecord::UnitRecord_Kinds,
-    pub compare_op: crate::app::relayawarddata::RelayAwardData_CompareOp,
-}
-
-impl ::unity2::ClassIdentity for RelayAwardData_Info {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayAwardData.Info";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RelayAwardData_Info {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-relayawarddata")]
-#[::unity2::methods(value)]
-impl RelayAwardData_Info {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unitrecord::UnitRecord_Kinds, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        raid: ::unity2::Il2CppString,
-        kind: crate::app::unitrecord::UnitRecord_Kinds,
-        comp: crate::app::relayawarddata::RelayAwardData_CompareOp,
-    ) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_CompareOp.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RelayAwardData_CompareOp {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RelayAwardData_CompareOp {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayAwardData.CompareOp";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RelayAwardData_CompareOp {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RelayAwardData_CompareOp {
-    pub fn greater() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn less() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn zero() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn mixed_less() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn attack_greater_kill_less() -> Self {
-        Self { value: 4 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Flags.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RelayAwardData_Flags {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RelayAwardData_Flags {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayAwardData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RelayAwardData_Flags {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RelayAwardData_Flags {
-    pub fn mixed() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn show_count() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn negative() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn attack_plus() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn attack_minus() -> Self {
-        Self { value: 16 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData.md")))]
-#[::unity2::class(namespace = "App", name = "RelayAwardData")]
-# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relayawarddata :: RelayAwardData >)]
-pub struct RelayAwardData {
-    #[static_field]
-    #[rename(name = "s_Infos")]
-    pub s_infos: ::unity2::Array<crate::app::relayawarddata::RelayAwardData_Info>,
-}
-
-#[cfg(feature = "app-relayawarddata")]
-#[::unity2::methods]
-impl RelayAwardData {
-    #[doc = "`Load()` overload"]
-    #[method(name = "Load", args = 0)]
-    pub fn load() -> ();
-
-    #[doc = "`get_Raid()` overload"]
-    #[method(name = "get_Raid", args = 0)]
-    pub fn get_raid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Raid(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Raid", args = 1)]
-    pub fn set_raid(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Name", args = 1)]
-    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_ResultText()` overload"]
-    #[method(name = "get_ResultText", args = 0)]
-    pub fn get_result_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_ResultText(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_ResultText", args = 1)]
-    pub fn set_result_text(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Awards()` overload"]
-    #[method(name = "get_Awards", args = 0)]
-    pub fn get_awards(self) -> ::unity2::Array<::unity2::Il2CppString>;
-
-    #[doc = "`set_Awards(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "set_Awards", args = 1)]
-    pub fn set_awards(self, value: ::unity2::Array<::unity2::Il2CppString>) -> ();
-
-    #[doc = "`get_Flag()` overload"]
-    #[method(name = "get_Flag", args = 0)]
-    pub fn get_flag(self) -> crate::app::relayawarddata::RelayAwardData_FlagField;
-
-    #[doc = "`set_Flag(crate::app::relayawarddata::RelayAwardData_FlagField)` overload"]
-    #[method(name = "set_Flag", args = 1)]
-    pub fn set_flag(self, value: crate::app::relayawarddata::RelayAwardData_FlagField) -> ();
-
-    #[doc = "`GetRaid(crate::app::relayawarddata::RelayAwardData_Kinds)` overload"]
-    #[method(name = "GetRaid", args = 1)]
-    pub fn get_raid_2(
-        kind: crate::app::relayawarddata::RelayAwardData_Kinds,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetRecordKind(crate::app::relayawarddata::RelayAwardData_Kinds)` overload"]
-    #[method(name = "GetRecordKind", args = 1)]
-    pub fn get_record_kind(
-        kind: crate::app::relayawarddata::RelayAwardData_Kinds,
-    ) -> crate::app::unitrecord::UnitRecord_Kinds;
-
-    #[doc = "`GetCompareOp(crate::app::relayawarddata::RelayAwardData_Kinds)` overload"]
-    #[method(name = "GetCompareOp", args = 1)]
-    pub fn get_compare_op(
-        kind: crate::app::relayawarddata::RelayAwardData_Kinds,
-    ) -> crate::app::relayawarddata::RelayAwardData_CompareOp;
-
-    #[doc = "`Test(crate::app::relayawarddata::RelayAwardData_Kinds, crate::app::relayawarddata::RelayAwardData_Flags)` overload"]
-    #[method(name = "Test", args = 2)]
-    pub fn test(
-        kind: crate::app::relayawarddata::RelayAwardData_Kinds,
-        flag: crate::app::relayawarddata::RelayAwardData_Flags,
-    ) -> bool;
-
-    #[doc = "`TryGet(crate::app::relayawarddata::RelayAwardData_Kinds)` overload"]
-    #[method(name = "TryGet", args = 1)]
-    pub fn try_get(
-        kind: crate::app::relayawarddata::RelayAwardData_Kinds,
-    ) -> crate::app::relayawarddata::RelayAwardData;
-
-    #[doc = "`OnCompletedEnd()` overload"]
-    #[method(name = "OnCompletedEnd", args = 0)]
-    pub fn on_completed_end(self) -> ();
-
-    #[doc = "`GetDebugName()` overload"]
-    #[method(name = "GetDebugName", args = 0)]
-    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`MakeInfos()` overload"]
-    #[method(name = "MakeInfos", args = 0)]
-    pub fn make_infos(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relayawarddata")]
-impl RelayAwardData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayAwardData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayAwardDataMethods>::ctor(this);
-        this
     }
 }

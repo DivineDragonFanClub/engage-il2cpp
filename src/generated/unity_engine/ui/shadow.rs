@@ -16,7 +16,7 @@ use crate::unity_engine::ui::basemesheffect::BaseMeshEffect;
 use crate::unity_engine::ui::basemesheffect::IBaseMeshEffect;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/shadow/Shadow.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/shadow/Shadow.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI", name = "Shadow")]
 #[parent(crate::unity_engine::ui::basemesheffect::BaseMeshEffect)]
 pub struct Shadow {

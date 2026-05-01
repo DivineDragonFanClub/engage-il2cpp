@@ -10,7 +10,87 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponsequence/RefineGodWeaponSequence.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponsequence/RefineGodWeaponSequence_Label2.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RefineGodWeaponSequence_Label2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RefineGodWeaponSequence_Label2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RefineGodWeaponSequence.Label2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RefineGodWeaponSequence_Label2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RefineGodWeaponSequence_Label2 {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn top() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn prepare_to_refine() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn weapon_select_to_refine() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn refine() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn finish_to_refine() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn prepare_to_reset() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn weapon_select_to_reset() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn reset() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn finish_to_reset() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 10 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponsequence/RefineGodWeaponSequence.md"))]
 #[::unity2::class(namespace = "App", name = "RefineGodWeaponSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct RefineGodWeaponSequence {
@@ -105,85 +185,5 @@ impl RefineGodWeaponSequence {
         });
         <Self as IRefineGodWeaponSequenceMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refinegodweaponsequence/RefineGodWeaponSequence_Label2.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RefineGodWeaponSequence_Label2 {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RefineGodWeaponSequence_Label2 {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RefineGodWeaponSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RefineGodWeaponSequence_Label2 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RefineGodWeaponSequence_Label2 {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn top() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn prepare_to_refine() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn weapon_select_to_refine() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn refine() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn finish_to_refine() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn prepare_to_reset() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn weapon_select_to_reset() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn reset() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn finish_to_reset() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 10 }
     }
 }

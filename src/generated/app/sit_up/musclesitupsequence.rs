@@ -10,55 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sit_up/musclesitupsequence/MuscleSitupSequence_judgeRank.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MuscleSitupSequence_judgeRank {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MuscleSitupSequence_judgeRank {
-    const NAMESPACE: &'static str = "App.SitUp";
-
-    const NAME: &'static str = "MuscleSitupSequence.judgeRank";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MuscleSitupSequence_judgeRank {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MuscleSitupSequence_judgeRank {
-    pub fn perfect() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn good() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn assist() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sit_up/musclesitupsequence/MuscleSitupSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sit_up/musclesitupsequence/MuscleSitupSequence.md"))]
 #[::unity2::class(namespace = "App.SitUp", name = "MuscleSitupSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct MuscleSitupSequence {
@@ -634,7 +586,7 @@ impl MuscleSitupSequence {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sit_up/musclesitupsequence/MuscleSitupSequence_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sit_up/musclesitupsequence/MuscleSitupSequence_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -703,5 +655,53 @@ impl MuscleSitupSequence_Label {
 
     pub fn r#final() -> Self {
         Self { value: 8 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sit_up/musclesitupsequence/MuscleSitupSequence_judgeRank.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MuscleSitupSequence_judgeRank {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MuscleSitupSequence_judgeRank {
+    const NAMESPACE: &'static str = "App.SitUp";
+
+    const NAME: &'static str = "MuscleSitupSequence.judgeRank";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MuscleSitupSequence_judgeRank {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MuscleSitupSequence_judgeRank {
+    pub fn perfect() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn good() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn assist() -> Self {
+        Self { value: 2 }
     }
 }

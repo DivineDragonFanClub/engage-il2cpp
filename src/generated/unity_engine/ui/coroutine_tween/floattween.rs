@@ -10,7 +10,39 @@ use crate::unity_engine::events::unityeventbase::IUnityEventBase;
 use crate::unity_engine::events::unityeventbase::UnityEventBase;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/coroutine_tween/floattween/FloatTween.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/floattween/FloatTween_FloatTweenCallback.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.UI.CoroutineTween",
+    name = "FloatTween.FloatTweenCallback"
+)]
+# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
+pub struct FloatTween_FloatTweenCallback {}
+
+#[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
+#[::unity2::methods]
+impl FloatTween_FloatTweenCallback {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
+impl FloatTween_FloatTweenCallback {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FloatTween_FloatTweenCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFloatTween_FloatTweenCallbackMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/coroutine_tween/floattween/FloatTween.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct FloatTween {
@@ -96,36 +128,4 @@ impl FloatTween {
     #[doc = "`ValidTarget()` overload"]
     #[method(name = "ValidTarget", args = 0)]
     pub fn valid_target(self) -> bool;
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/floattween/FloatTween_FloatTweenCallback.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.UI.CoroutineTween",
-    name = "FloatTween.FloatTweenCallback"
-)]
-# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
-pub struct FloatTween_FloatTweenCallback {}
-
-#[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
-#[::unity2::methods]
-impl FloatTween_FloatTweenCallback {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-ui-coroutine_tween-floattween")]
-impl FloatTween_FloatTweenCallback {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FloatTween_FloatTweenCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFloatTween_FloatTweenCallbackMethods>::ctor(this);
-        this
-    }
 }

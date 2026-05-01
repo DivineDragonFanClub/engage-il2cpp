@@ -6,7 +6,7 @@ use crate::unity_engine::androidjavaproxy::AndroidJavaProxy;
 use crate::unity_engine::androidjavaproxy::IAndroidJavaProxy;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavarunnableproxy/AndroidJavaRunnableProxy.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavarunnableproxy/AndroidJavaRunnableProxy.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "AndroidJavaRunnableProxy")]
 #[parent(crate::unity_engine::androidjavaproxy::AndroidJavaProxy)]
 pub struct AndroidJavaRunnableProxy {

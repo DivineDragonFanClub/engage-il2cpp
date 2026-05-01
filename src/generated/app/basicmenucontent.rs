@@ -12,7 +12,161 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent_Cursor.md"))]
+#[::unity2::class(namespace = "App", name = "BasicMenuContent.Cursor")]
+#[parent(crate::system::object::Object)]
+pub struct BasicMenuContent_Cursor {
+    #[rename(name = "m_menuContent")]
+    pub m_menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    #[rename(name = "m_objFrontCursor")]
+    pub m_obj_front_cursor: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_objBackCursor")]
+    pub m_obj_back_cursor: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_objFrontCursorBase")]
+    pub m_obj_front_cursor_base: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_backCursorRect")]
+    pub m_back_cursor_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_backCursorImage")]
+    pub m_back_cursor_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_backCursorAnimator")]
+    pub m_back_cursor_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_frontCursorAnimator")]
+    pub m_front_cursor_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_frontCursorBaseRect")]
+    pub m_front_cursor_base_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_frontCursorBaseParentRect")]
+    pub m_front_cursor_base_parent_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_posX")]
+    pub m_pos_x: f32,
+    #[rename(name = "m_posY")]
+    pub m_pos_y: f32,
+    #[rename(name = "m_fromX")]
+    pub m_from_x: f32,
+    #[rename(name = "m_fromY")]
+    pub m_from_y: f32,
+    #[rename(name = "m_fromW")]
+    pub m_from_w: f32,
+    #[rename(name = "m_fromH")]
+    pub m_from_h: f32,
+    #[rename(name = "m_moveTick")]
+    pub m_move_tick: f32,
+    #[rename(name = "m_moveFrame")]
+    pub m_move_frame: f32,
+    #[rename(name = "m_fixed")]
+    pub m_fixed: bool,
+    #[rename(name = "m_fixedWH")]
+    pub m_fixed_wh: bool,
+    #[rename(name = "m_firstTick")]
+    pub m_first_tick: bool,
+    #[rename(name = "m_lastVisibility")]
+    pub m_last_visibility: bool,
+    #[rename(name = "m_frontCursorVisibility")]
+    pub m_front_cursor_visibility: bool,
+    #[rename(name = "m_frontCursorMoveTick")]
+    pub m_front_cursor_move_tick: f32,
+    #[rename(name = "m_frontCursorMoveFrame")]
+    pub m_front_cursor_move_frame: f32,
+    #[rename(name = "m_frontCursorFromX")]
+    pub m_front_cursor_from_x: f32,
+    #[rename(name = "m_frontCursorFromY")]
+    pub m_front_cursor_from_y: f32,
+}
+
+#[cfg(feature = "app-basicmenucontent")]
+#[::unity2::methods]
+impl BasicMenuContent_Cursor {
+    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        obj_front_cursor: crate::unity_engine::gameobject::GameObject,
+        obj_back_cursor: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[doc = "`GetPosX()` overload"]
+    #[method(name = "GetPosX", args = 0)]
+    pub fn get_pos_x(self) -> f32;
+
+    #[doc = "`GetPosY()` overload"]
+    #[method(name = "GetPosY", args = 0)]
+    pub fn get_pos_y(self) -> f32;
+
+    #[doc = "`Tick(crate::app::basicmenucontent::BasicMenuContent_Scroll)` overload"]
+    #[method(name = "Tick", args = 1)]
+    pub fn tick(self, scroll: crate::app::basicmenucontent::BasicMenuContent_Scroll) -> ();
+
+    #[doc = "`UpdateVisibility()` overload"]
+    #[method(name = "UpdateVisibility", args = 0)]
+    pub fn update_visibility(self) -> ();
+
+    #[doc = "`MoveInstant()` overload"]
+    #[method(name = "MoveInstant", args = 0)]
+    pub fn move_instant(self) -> ();
+
+    #[doc = "`SetMoveFrame(f32)` overload"]
+    #[method(name = "SetMoveFrame", args = 1)]
+    pub fn set_move_frame(self, frame: f32) -> ();
+
+    #[doc = "`PauseAnim()` overload"]
+    #[method(name = "PauseAnim", args = 0)]
+    pub fn pause_anim(self) -> ();
+
+    #[doc = "`ResumeAnim()` overload"]
+    #[method(name = "ResumeAnim", args = 0)]
+    pub fn resume_anim(self) -> ();
+
+    #[doc = "`RestartAnim()` overload"]
+    #[method(name = "RestartAnim", args = 0)]
+    pub fn restart_anim(self) -> ();
+
+    #[doc = "`SetSiblingIndex(i32)` overload"]
+    #[method(name = "SetSiblingIndex", args = 1)]
+    pub fn set_sibling_index(self, index: i32) -> ();
+
+    #[doc = "`SetBackCursorImageEnabled(bool)` overload"]
+    #[method(name = "SetBackCursorImageEnabled", args = 1)]
+    pub fn set_back_cursor_image_enabled(self, enabled: bool) -> ();
+
+    #[doc = "`SetToKeepAnimatorState(bool)` overload"]
+    #[method(name = "SetToKeepAnimatorState", args = 1)]
+    pub fn set_to_keep_animator_state(self, keep: bool) -> ();
+
+    #[doc = "`MoveFrontCursorFrom(f32, f32, f32)` overload"]
+    #[method(name = "MoveFrontCursorFrom", args = 3)]
+    pub fn move_front_cursor_from(self, from_x: f32, from_y: f32, frame: f32) -> ();
+
+    #[doc = "`SetFrontCursorVisibility(bool)` overload"]
+    #[method(name = "SetFrontCursorVisibility", args = 1)]
+    pub fn set_front_cursor_visibility(self, visibility: bool) -> ();
+}
+
+#[cfg(feature = "app-basicmenucontent")]
+impl BasicMenuContent_Cursor {
+    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        obj_front_cursor: crate::unity_engine::gameobject::GameObject,
+        obj_back_cursor: crate::unity_engine::gameobject::GameObject,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BasicMenuContent_Cursor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBasicMenuContent_CursorMethods>::ctor(
+            this,
+            menu_content,
+            obj_front_cursor,
+            obj_back_cursor,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent.md"))]
 #[::unity2::class(namespace = "App", name = "BasicMenuContent")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct BasicMenuContent {
@@ -447,7 +601,7 @@ impl BasicMenuContent {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent_Scroll.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent_Scroll.md"))]
 #[::unity2::class(namespace = "App", name = "BasicMenuContent.Scroll")]
 #[parent(crate::system::object::Object)]
 pub struct BasicMenuContent_Scroll {
@@ -528,160 +682,6 @@ impl BasicMenuContent_Scroll {
             )
         });
         <Self as IBasicMenuContent_ScrollMethods>::ctor(this, menu_content, scroll_bar);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/basicmenucontent/BasicMenuContent_Cursor.md")))]
-#[::unity2::class(namespace = "App", name = "BasicMenuContent.Cursor")]
-#[parent(crate::system::object::Object)]
-pub struct BasicMenuContent_Cursor {
-    #[rename(name = "m_menuContent")]
-    pub m_menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    #[rename(name = "m_objFrontCursor")]
-    pub m_obj_front_cursor: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_objBackCursor")]
-    pub m_obj_back_cursor: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_objFrontCursorBase")]
-    pub m_obj_front_cursor_base: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_backCursorRect")]
-    pub m_back_cursor_rect: crate::unity_engine::recttransform::RectTransform,
-    #[rename(name = "m_backCursorImage")]
-    pub m_back_cursor_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_backCursorAnimator")]
-    pub m_back_cursor_animator: crate::unity_engine::animator::Animator,
-    #[rename(name = "m_frontCursorAnimator")]
-    pub m_front_cursor_animator: crate::unity_engine::animator::Animator,
-    #[rename(name = "m_frontCursorBaseRect")]
-    pub m_front_cursor_base_rect: crate::unity_engine::recttransform::RectTransform,
-    #[rename(name = "m_frontCursorBaseParentRect")]
-    pub m_front_cursor_base_parent_rect: crate::unity_engine::recttransform::RectTransform,
-    #[rename(name = "m_posX")]
-    pub m_pos_x: f32,
-    #[rename(name = "m_posY")]
-    pub m_pos_y: f32,
-    #[rename(name = "m_fromX")]
-    pub m_from_x: f32,
-    #[rename(name = "m_fromY")]
-    pub m_from_y: f32,
-    #[rename(name = "m_fromW")]
-    pub m_from_w: f32,
-    #[rename(name = "m_fromH")]
-    pub m_from_h: f32,
-    #[rename(name = "m_moveTick")]
-    pub m_move_tick: f32,
-    #[rename(name = "m_moveFrame")]
-    pub m_move_frame: f32,
-    #[rename(name = "m_fixed")]
-    pub m_fixed: bool,
-    #[rename(name = "m_fixedWH")]
-    pub m_fixed_wh: bool,
-    #[rename(name = "m_firstTick")]
-    pub m_first_tick: bool,
-    #[rename(name = "m_lastVisibility")]
-    pub m_last_visibility: bool,
-    #[rename(name = "m_frontCursorVisibility")]
-    pub m_front_cursor_visibility: bool,
-    #[rename(name = "m_frontCursorMoveTick")]
-    pub m_front_cursor_move_tick: f32,
-    #[rename(name = "m_frontCursorMoveFrame")]
-    pub m_front_cursor_move_frame: f32,
-    #[rename(name = "m_frontCursorFromX")]
-    pub m_front_cursor_from_x: f32,
-    #[rename(name = "m_frontCursorFromY")]
-    pub m_front_cursor_from_y: f32,
-}
-
-#[cfg(feature = "app-basicmenucontent")]
-#[::unity2::methods]
-impl BasicMenuContent_Cursor {
-    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        obj_front_cursor: crate::unity_engine::gameobject::GameObject,
-        obj_back_cursor: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`GetPosX()` overload"]
-    #[method(name = "GetPosX", args = 0)]
-    pub fn get_pos_x(self) -> f32;
-
-    #[doc = "`GetPosY()` overload"]
-    #[method(name = "GetPosY", args = 0)]
-    pub fn get_pos_y(self) -> f32;
-
-    #[doc = "`Tick(crate::app::basicmenucontent::BasicMenuContent_Scroll)` overload"]
-    #[method(name = "Tick", args = 1)]
-    pub fn tick(self, scroll: crate::app::basicmenucontent::BasicMenuContent_Scroll) -> ();
-
-    #[doc = "`UpdateVisibility()` overload"]
-    #[method(name = "UpdateVisibility", args = 0)]
-    pub fn update_visibility(self) -> ();
-
-    #[doc = "`MoveInstant()` overload"]
-    #[method(name = "MoveInstant", args = 0)]
-    pub fn move_instant(self) -> ();
-
-    #[doc = "`SetMoveFrame(f32)` overload"]
-    #[method(name = "SetMoveFrame", args = 1)]
-    pub fn set_move_frame(self, frame: f32) -> ();
-
-    #[doc = "`PauseAnim()` overload"]
-    #[method(name = "PauseAnim", args = 0)]
-    pub fn pause_anim(self) -> ();
-
-    #[doc = "`ResumeAnim()` overload"]
-    #[method(name = "ResumeAnim", args = 0)]
-    pub fn resume_anim(self) -> ();
-
-    #[doc = "`RestartAnim()` overload"]
-    #[method(name = "RestartAnim", args = 0)]
-    pub fn restart_anim(self) -> ();
-
-    #[doc = "`SetSiblingIndex(i32)` overload"]
-    #[method(name = "SetSiblingIndex", args = 1)]
-    pub fn set_sibling_index(self, index: i32) -> ();
-
-    #[doc = "`SetBackCursorImageEnabled(bool)` overload"]
-    #[method(name = "SetBackCursorImageEnabled", args = 1)]
-    pub fn set_back_cursor_image_enabled(self, enabled: bool) -> ();
-
-    #[doc = "`SetToKeepAnimatorState(bool)` overload"]
-    #[method(name = "SetToKeepAnimatorState", args = 1)]
-    pub fn set_to_keep_animator_state(self, keep: bool) -> ();
-
-    #[doc = "`MoveFrontCursorFrom(f32, f32, f32)` overload"]
-    #[method(name = "MoveFrontCursorFrom", args = 3)]
-    pub fn move_front_cursor_from(self, from_x: f32, from_y: f32, frame: f32) -> ();
-
-    #[doc = "`SetFrontCursorVisibility(bool)` overload"]
-    #[method(name = "SetFrontCursorVisibility", args = 1)]
-    pub fn set_front_cursor_visibility(self, visibility: bool) -> ();
-}
-
-#[cfg(feature = "app-basicmenucontent")]
-impl BasicMenuContent_Cursor {
-    #[doc = "`.ctor(crate::app::basicmenucontent::BasicMenuContent, crate::unity_engine::gameobject::GameObject, crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        obj_front_cursor: crate::unity_engine::gameobject::GameObject,
-        obj_back_cursor: crate::unity_engine::gameobject::GameObject,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BasicMenuContent_Cursor),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBasicMenuContent_CursorMethods>::ctor(
-            this,
-            menu_content,
-            obj_front_cursor,
-            obj_back_cursor,
-        );
         this
     }
 }

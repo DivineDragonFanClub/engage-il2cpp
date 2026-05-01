@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tresourcehandle_1/TResourceHandle_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tresourcehandle_1/TResourceHandle_1.md"))]
 #[::unity2::class(namespace = "App", name = "TResourceHandle`1")]
 #[parent(crate::app::resourcehandle_2::ResourceHandle_2)]
 #[parent(crate::system::object::Object)]

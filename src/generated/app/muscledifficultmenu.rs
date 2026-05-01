@@ -14,7 +14,69 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscledifficultmenu/MuscleDifficultMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscledifficultmenu/MuscleDifficultMenu_MuscleDifficultMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "MuscleDifficultMenu.MuscleDifficultMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct MuscleDifficultMenu_MuscleDifficultMenuItem {
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
+    #[rename(name = "m_IsEnable")]
+    pub m_is_enable: bool,
+}
+
+#[cfg(feature = "app-muscledifficultmenu")]
+#[::unity2::methods]
+impl MuscleDifficultMenu_MuscleDifficultMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, bool)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        name: ::unity2::Il2CppString,
+        event_handler: crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
+        enable: bool,
+    ) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-muscledifficultmenu")]
+impl MuscleDifficultMenu_MuscleDifficultMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, bool)` — overload selector"]
+    pub fn new(
+        name: ::unity2::Il2CppString,
+        event_handler: crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
+        enable: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleDifficultMenu_MuscleDifficultMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMuscleDifficultMenu_MuscleDifficultMenuItemMethods>::ctor(
+            this,
+            name,
+            event_handler,
+            enable,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscledifficultmenu/MuscleDifficultMenu.md"))]
 #[::unity2::class(namespace = "App", name = "MuscleDifficultMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct MuscleDifficultMenu {
@@ -104,7 +166,7 @@ impl MuscleDifficultMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscledifficultmenu/MuscleDifficultMenu_DecideEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscledifficultmenu/MuscleDifficultMenu_DecideEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "MuscleDifficultMenu.DecideEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct MuscleDifficultMenu_DecideEventHandler {}
@@ -133,68 +195,6 @@ impl MuscleDifficultMenu_DecideEventHandler {
             )
         });
         <Self as IMuscleDifficultMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscledifficultmenu/MuscleDifficultMenu_MuscleDifficultMenuItem.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "MuscleDifficultMenu.MuscleDifficultMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct MuscleDifficultMenu_MuscleDifficultMenuItem {
-    #[rename(name = "m_Name")]
-    pub m_name: ::unity2::Il2CppString,
-    #[rename(name = "m_DecideEventHandler")]
-    pub m_decide_event_handler:
-        crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
-    #[rename(name = "m_IsEnable")]
-    pub m_is_enable: bool,
-}
-
-#[cfg(feature = "app-muscledifficultmenu")]
-#[::unity2::methods]
-impl MuscleDifficultMenu_MuscleDifficultMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, bool)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        name: ::unity2::Il2CppString,
-        event_handler: crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
-        enable: bool,
-    ) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-muscledifficultmenu")]
-impl MuscleDifficultMenu_MuscleDifficultMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler, bool)` — overload selector"]
-    pub fn new(
-        name: ::unity2::Il2CppString,
-        event_handler: crate::app::muscledifficultmenu::MuscleDifficultMenu_DecideEventHandler,
-        enable: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MuscleDifficultMenu_MuscleDifficultMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMuscleDifficultMenu_MuscleDifficultMenuItemMethods>::ctor(
-            this,
-            name,
-            event_handler,
-            enable,
-        );
         this
     }
 }

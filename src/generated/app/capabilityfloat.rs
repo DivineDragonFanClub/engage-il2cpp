@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilityfloat/CapabilityFloat.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/capabilityfloat/CapabilityFloat.md"))]
 #[::unity2::class(namespace = "App", name = "CapabilityFloat")]
 # [parent (crate :: app :: capabilitybase_1 :: CapabilityBase_1 < f32 >)]
 pub struct CapabilityFloat {}

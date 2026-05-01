@@ -14,7 +14,7 @@ use crate::unity_engine::resource_management::util::componentsingleton_1_2::Comp
 use crate::unity_engine::resource_management::util::componentsingleton_1_2::IComponentSingleton_1_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/diagnostics/diagnosticeventcollectorsingleton/DiagnosticEventCollectorSingleton.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/diagnostics/diagnosticeventcollectorsingleton/DiagnosticEventCollectorSingleton.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.Diagnostics",
     name = "DiagnosticEventCollectorSingleton"

@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatsubspaceback/CombatSubspaceBack.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combatsubspaceback/CombatSubspaceBack.md"))]
 #[::unity2::class(namespace = "Combat", name = "CombatSubspaceBack")]
 #[parent(crate::combat::combatsubspace::CombatSubspace)]
 pub struct CombatSubspaceBack {}

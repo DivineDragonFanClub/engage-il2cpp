@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblytitleattribute/AssemblyTitleAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblytitleattribute/AssemblyTitleAttribute.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "AssemblyTitleAttribute")]
 pub struct AssemblyTitleAttribute {
     #[rename(name = "m_title")]

@@ -10,7 +10,49 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortierelianceselectionpartnermenu/SortieRelianceSelectionPartnerMenu_UnitMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortierelianceselectionpartnermenu/SortieRelianceSelectionPartnerMenu.md"))]
+#[::unity2::class(namespace = "App", name = "SortieRelianceSelectionPartnerMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct SortieRelianceSelectionPartnerMenu {}
+
+#[cfg(feature = "app-sortierelianceselectionpartnermenu")]
+#[::unity2::methods]
+impl SortieRelianceSelectionPartnerMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+}
+
+#[cfg(feature = "app-sortierelianceselectionpartnermenu")]
+impl SortieRelianceSelectionPartnerMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieRelianceSelectionPartnerMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieRelianceSelectionPartnerMenuMethods>::ctor(this, menu_item_list);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortierelianceselectionpartnermenu/SortieRelianceSelectionPartnerMenu_UnitMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "SortieRelianceSelectionPartnerMenu.UnitMenuItem"
@@ -68,48 +110,6 @@ impl SortieRelianceSelectionPartnerMenu_UnitMenuItem {
             )
         });
         <Self as ISortieRelianceSelectionPartnerMenu_UnitMenuItemMethods>::ctor(this, unit);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortierelianceselectionpartnermenu/SortieRelianceSelectionPartnerMenu.md")))]
-#[::unity2::class(namespace = "App", name = "SortieRelianceSelectionPartnerMenu")]
-#[parent(crate::app::basicmenu::BasicMenu)]
-pub struct SortieRelianceSelectionPartnerMenu {}
-
-#[cfg(feature = "app-sortierelianceselectionpartnermenu")]
-#[::unity2::methods]
-impl SortieRelianceSelectionPartnerMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> ();
-}
-
-#[cfg(feature = "app-sortierelianceselectionpartnermenu")]
-impl SortieRelianceSelectionPartnerMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieRelianceSelectionPartnerMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieRelianceSelectionPartnerMenuMethods>::ctor(this, menu_item_list);
         this
     }
 }

@@ -10,14 +10,14 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_AddAllMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "DebugTransporterMenu.AddAllMenuItem")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_LowestItemMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "DebugTransporterMenu.LowestItemMenuItem")]
 #[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]
-pub struct DebugTransporterMenu_AddAllMenuItem {}
+pub struct DebugTransporterMenu_LowestItemMenuItem {}
 
 #[cfg(feature = "app-debugtransportermenu")]
 #[::unity2::methods]
-impl DebugTransporterMenu_AddAllMenuItem {
+impl DebugTransporterMenu_LowestItemMenuItem {
     #[doc = "`GetName()` overload"]
     #[method(name = "GetName", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -36,162 +36,22 @@ impl DebugTransporterMenu_AddAllMenuItem {
 }
 
 #[cfg(feature = "app-debugtransportermenu")]
-impl DebugTransporterMenu_AddAllMenuItem {
+impl DebugTransporterMenu_LowestItemMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugTransporterMenu_AddAllMenuItem),
+                ::core::stringify!(DebugTransporterMenu_LowestItemMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugTransporterMenu_AddAllMenuItemMethods>::ctor(this);
+        <Self as IDebugTransporterMenu_LowestItemMenuItemMethods>::ctor(this);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu.md")))]
-#[::unity2::class(namespace = "App", name = "DebugTransporterMenu")]
-#[parent(crate::system::object::Object)]
-pub struct DebugTransporterMenu {}
-
-#[cfg(feature = "app-debugtransportermenu")]
-#[::unity2::methods]
-impl DebugTransporterMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-debugtransportermenu")]
-impl DebugTransporterMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugTransporterMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugTransporterMenuMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_DeleteAllMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "DebugTransporterMenu.DeleteAllMenuItem")]
-#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]
-pub struct DebugTransporterMenu_DeleteAllMenuItem {}
-
-#[cfg(feature = "app-debugtransportermenu")]
-#[::unity2::methods]
-impl DebugTransporterMenu_DeleteAllMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-debugtransportermenu")]
-impl DebugTransporterMenu_DeleteAllMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugTransporterMenu_DeleteAllMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugTransporterMenu_DeleteAllMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_TitleItem.md")))]
-#[::unity2::class(namespace = "App", name = "DebugTransporterMenu.TitleItem")]
-#[parent(crate::app::labelitem::LabelItem)]
-pub struct DebugTransporterMenu_TitleItem {}
-
-#[cfg(feature = "app-debugtransportermenu")]
-#[::unity2::methods]
-impl DebugTransporterMenu_TitleItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-debugtransportermenu")]
-impl DebugTransporterMenu_TitleItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugTransporterMenu_TitleItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugTransporterMenu_TitleItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_FillAllMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "DebugTransporterMenu.FillAllMenuItem")]
-#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]
-pub struct DebugTransporterMenu_FillAllMenuItem {}
-
-#[cfg(feature = "app-debugtransportermenu")]
-#[::unity2::methods]
-impl DebugTransporterMenu_FillAllMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-debugtransportermenu")]
-impl DebugTransporterMenu_FillAllMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugTransporterMenu_FillAllMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugTransporterMenu_FillAllMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_AddByKindMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_AddByKindMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "DebugTransporterMenu.AddByKindMenuItem")]
 #[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]
 pub struct DebugTransporterMenu_AddByKindMenuItem {
@@ -233,7 +93,77 @@ impl DebugTransporterMenu_AddByKindMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_BaseMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_DeleteAllMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "DebugTransporterMenu.DeleteAllMenuItem")]
+#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]
+pub struct DebugTransporterMenu_DeleteAllMenuItem {}
+
+#[cfg(feature = "app-debugtransportermenu")]
+#[::unity2::methods]
+impl DebugTransporterMenu_DeleteAllMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugtransportermenu")]
+impl DebugTransporterMenu_DeleteAllMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugTransporterMenu_DeleteAllMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugTransporterMenu_DeleteAllMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_TitleItem.md"))]
+#[::unity2::class(namespace = "App", name = "DebugTransporterMenu.TitleItem")]
+#[parent(crate::app::labelitem::LabelItem)]
+pub struct DebugTransporterMenu_TitleItem {}
+
+#[cfg(feature = "app-debugtransportermenu")]
+#[::unity2::methods]
+impl DebugTransporterMenu_TitleItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugtransportermenu")]
+impl DebugTransporterMenu_TitleItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugTransporterMenu_TitleItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugTransporterMenu_TitleItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_BaseMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "DebugTransporterMenu.BaseMenuItem")]
 #[parent(crate::app::menuitem::MenuItem)]
 pub struct DebugTransporterMenu_BaseMenuItem {}
@@ -270,14 +200,84 @@ impl DebugTransporterMenu_BaseMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_LowestItemMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "DebugTransporterMenu.LowestItemMenuItem")]
-#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]
-pub struct DebugTransporterMenu_LowestItemMenuItem {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu.md"))]
+#[::unity2::class(namespace = "App", name = "DebugTransporterMenu")]
+#[parent(crate::system::object::Object)]
+pub struct DebugTransporterMenu {}
 
 #[cfg(feature = "app-debugtransportermenu")]
 #[::unity2::methods]
-impl DebugTransporterMenu_LowestItemMenuItem {
+impl DebugTransporterMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugtransportermenu")]
+impl DebugTransporterMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugTransporterMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugTransporterMenuMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_FillAllMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "DebugTransporterMenu.FillAllMenuItem")]
+#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]
+pub struct DebugTransporterMenu_FillAllMenuItem {}
+
+#[cfg(feature = "app-debugtransportermenu")]
+#[::unity2::methods]
+impl DebugTransporterMenu_FillAllMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugtransportermenu")]
+impl DebugTransporterMenu_FillAllMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugTransporterMenu_FillAllMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugTransporterMenu_FillAllMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransportermenu/DebugTransporterMenu_AddAllMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "DebugTransporterMenu.AddAllMenuItem")]
+#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]
+pub struct DebugTransporterMenu_AddAllMenuItem {}
+
+#[cfg(feature = "app-debugtransportermenu")]
+#[::unity2::methods]
+impl DebugTransporterMenu_AddAllMenuItem {
     #[doc = "`GetName()` overload"]
     #[method(name = "GetName", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
@@ -296,17 +296,17 @@ impl DebugTransporterMenu_LowestItemMenuItem {
 }
 
 #[cfg(feature = "app-debugtransportermenu")]
-impl DebugTransporterMenu_LowestItemMenuItem {
+impl DebugTransporterMenu_AddAllMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugTransporterMenu_LowestItemMenuItem),
+                ::core::stringify!(DebugTransporterMenu_AddAllMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugTransporterMenu_LowestItemMenuItemMethods>::ctor(this);
+        <Self as IDebugTransporterMenu_AddAllMenuItemMethods>::ctor(this);
         this
     }
 }

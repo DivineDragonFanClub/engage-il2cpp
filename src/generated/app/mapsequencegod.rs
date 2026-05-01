@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngage.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngage.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngage")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct MapSequenceGod_ProcEngage {}
@@ -87,7 +87,92 @@ impl MapSequenceGod_ProcEngage {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngageStart.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngageCancel.md"))]
+#[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngageCancel")]
+#[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]
+pub struct MapSequenceGod_ProcEngageCancel {}
+
+#[cfg(feature = "app-mapsequencegod")]
+#[::unity2::methods]
+impl MapSequenceGod_ProcEngageCancel {
+    #[doc = "`Cancel()` overload"]
+    #[method(name = "Cancel", args = 0)]
+    pub fn cancel(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencegod")]
+impl MapSequenceGod_ProcEngageCancel {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceGod_ProcEngageCancel),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceGod_ProcEngageCancelMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencegod/MapSequenceGod_Kind.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceGod_Kind {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceGod_Kind {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceGod.Kind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceGod_Kind {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceGod_Kind {
+    pub fn engage_start() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn engage_link() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn god_change() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngageStart.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngageStart")]
 #[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]
 pub struct MapSequenceGod_ProcEngageStart {
@@ -166,7 +251,7 @@ impl MapSequenceGod_ProcEngageStart {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceGod")]
 #[parent(crate::system::object::Object)]
 pub struct MapSequenceGod {}
@@ -215,7 +300,7 @@ impl MapSequenceGod {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencegod/MapSequenceGod_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencegod/MapSequenceGod_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -259,91 +344,6 @@ impl MapSequenceGod_Label {
     }
 
     pub fn end() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngageCancel.md")))]
-#[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngageCancel")]
-#[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]
-pub struct MapSequenceGod_ProcEngageCancel {}
-
-#[cfg(feature = "app-mapsequencegod")]
-#[::unity2::methods]
-impl MapSequenceGod_ProcEngageCancel {
-    #[doc = "`Cancel()` overload"]
-    #[method(name = "Cancel", args = 0)]
-    pub fn cancel(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsequencegod")]
-impl MapSequenceGod_ProcEngageCancel {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceGod_ProcEngageCancel),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceGod_ProcEngageCancelMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencegod/MapSequenceGod_Kind.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapSequenceGod_Kind {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSequenceGod_Kind {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceGod.Kind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSequenceGod_Kind {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapSequenceGod_Kind {
-    pub fn engage_start() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn engage_link() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn god_change() -> Self {
         Self { value: 2 }
     }
 }

@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hlslarray/HLSLArray.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hlslarray/HLSLArray.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering", name = "HLSLArray")]
 pub struct HLSLArray {
     #[rename(name = "arraySize")]

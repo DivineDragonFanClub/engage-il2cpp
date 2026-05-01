@@ -4,7 +4,62 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharamodel/UnitInfoWindowCharaModel.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharamodel/UnitInfoWindowCharaModel_ReservedCharaVoice.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "UnitInfoWindowCharaModel.ReservedCharaVoice"
+)]
+#[parent(crate::system::object::Object)]
+pub struct UnitInfoWindowCharaModel_ReservedCharaVoice {
+    #[rename(name = "m_PersonSwitchName")]
+    pub m_person_switch_name: ::unity2::Il2CppString,
+    #[rename(name = "m_EngageSwitchName")]
+    pub m_engage_switch_name: ::unity2::Il2CppString,
+    #[rename(name = "m_EventName")]
+    pub m_event_name: ::unity2::Il2CppString,
+    #[rename(name = "m_Chara")]
+    pub m_chara: crate::combat::character::Character,
+}
+
+#[cfg(feature = "app-unitinfowindowcharamodel")]
+#[::unity2::methods]
+impl UnitInfoWindowCharaModel_ReservedCharaVoice {
+    #[doc = "`ReserveVoice(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::combat::character::Character)` overload"]
+    #[method(name = "ReserveVoice", args = 4)]
+    pub fn reserve_voice(
+        self,
+        person_switch_name: ::unity2::Il2CppString,
+        engage_switch_name: ::unity2::Il2CppString,
+        event_name: ::unity2::Il2CppString,
+        chara: crate::combat::character::Character,
+    ) -> ();
+
+    #[doc = "`PlayVoice()` overload"]
+    #[method(name = "PlayVoice", args = 0)]
+    pub fn play_voice(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitinfowindowcharamodel")]
+impl UnitInfoWindowCharaModel_ReservedCharaVoice {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitInfoWindowCharaModel_ReservedCharaVoice),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharamodel/UnitInfoWindowCharaModel.md"))]
 #[::unity2::class(namespace = "App", name = "UnitInfoWindowCharaModel")]
 #[parent(crate::system::object::Object)]
 pub struct UnitInfoWindowCharaModel {
@@ -430,61 +485,6 @@ impl UnitInfoWindowCharaModel {
             is_duplicate_render_texture,
             is_reverse,
         );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfowindowcharamodel/UnitInfoWindowCharaModel_ReservedCharaVoice.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "UnitInfoWindowCharaModel.ReservedCharaVoice"
-)]
-#[parent(crate::system::object::Object)]
-pub struct UnitInfoWindowCharaModel_ReservedCharaVoice {
-    #[rename(name = "m_PersonSwitchName")]
-    pub m_person_switch_name: ::unity2::Il2CppString,
-    #[rename(name = "m_EngageSwitchName")]
-    pub m_engage_switch_name: ::unity2::Il2CppString,
-    #[rename(name = "m_EventName")]
-    pub m_event_name: ::unity2::Il2CppString,
-    #[rename(name = "m_Chara")]
-    pub m_chara: crate::combat::character::Character,
-}
-
-#[cfg(feature = "app-unitinfowindowcharamodel")]
-#[::unity2::methods]
-impl UnitInfoWindowCharaModel_ReservedCharaVoice {
-    #[doc = "`ReserveVoice(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::combat::character::Character)` overload"]
-    #[method(name = "ReserveVoice", args = 4)]
-    pub fn reserve_voice(
-        self,
-        person_switch_name: ::unity2::Il2CppString,
-        engage_switch_name: ::unity2::Il2CppString,
-        event_name: ::unity2::Il2CppString,
-        chara: crate::combat::character::Character,
-    ) -> ();
-
-    #[doc = "`PlayVoice()` overload"]
-    #[method(name = "PlayVoice", args = 0)]
-    pub fn play_voice(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitinfowindowcharamodel")]
-impl UnitInfoWindowCharaModel_ReservedCharaVoice {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitInfoWindowCharaModel_ReservedCharaVoice),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitInfoWindowCharaModel_ReservedCharaVoiceMethods>::ctor(this);
         this
     }
 }

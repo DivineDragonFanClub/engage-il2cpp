@@ -14,7 +14,7 @@ use crate::unity_engine::tilemaps::tilebase::ITileBase;
 use crate::unity_engine::tilemaps::tilebase::TileBase;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/tilemaps/tile/Tile_ColliderType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/tilemaps/tile/Tile_ColliderType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -62,7 +62,7 @@ impl Tile_ColliderType {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tilemaps/tile/Tile.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/tilemaps/tile/Tile.md"))]
 #[::unity2::class(namespace = "UnityEngine.Tilemaps", name = "Tile")]
 #[parent(crate::unity_engine::tilemaps::tilebase::TileBase)]
 pub struct Tile {

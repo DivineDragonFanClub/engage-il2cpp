@@ -6,17 +6,107 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_KeyCollection.md")))]
-#[::unity2::class(namespace = "System.Collections", name = "Hashtable.KeyCollection")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_HashtableDebugView.md"))]
+#[::unity2::class(
+    namespace = "System.Collections",
+    name = "Hashtable.HashtableDebugView"
+)]
 #[parent(crate::system::object::Object)]
-pub struct Hashtable_KeyCollection {
+pub struct Hashtable_HashtableDebugView {}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_HashtableEnumerator.md"))]
+#[::unity2::class(
+    namespace = "System.Collections",
+    name = "Hashtable.HashtableEnumerator"
+)]
+#[parent(crate::system::object::Object)]
+pub struct Hashtable_HashtableEnumerator {
+    #[rename(name = "hashtable")]
+    pub hashtable: crate::system::collections::hashtable::Hashtable,
+    #[rename(name = "bucket")]
+    pub bucket: i32,
+    #[rename(name = "version")]
+    pub version: i32,
+    #[rename(name = "current")]
+    pub current: bool,
+    #[rename(name = "getObjectRetType")]
+    pub get_object_ret_type: i32,
+    #[rename(name = "currentKey")]
+    pub current_key: ::unity2::IlInstance,
+    #[rename(name = "currentValue")]
+    pub current_value: ::unity2::IlInstance,
+}
+
+#[cfg(feature = "system-collections-hashtable")]
+#[::unity2::methods]
+impl Hashtable_HashtableEnumerator {
+    #[doc = "`.ctor(crate::system::collections::hashtable::Hashtable, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        hashtable: crate::system::collections::hashtable::Hashtable,
+        get_obj_ret_type: i32,
+    ) -> ();
+
+    #[doc = "`Clone()` overload"]
+    #[method(name = "Clone", args = 0)]
+    pub fn clone(self) -> crate::system::object::Object;
+
+    #[doc = "`get_Key()` overload"]
+    #[method(name = "get_Key", args = 0)]
+    pub fn get_key(self) -> crate::system::object::Object;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`get_Entry()` overload"]
+    #[method(name = "get_Entry", args = 0)]
+    pub fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`get_Value()` overload"]
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> crate::system::object::Object;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+}
+
+#[cfg(feature = "system-collections-hashtable")]
+impl Hashtable_HashtableEnumerator {
+    #[doc = "`.ctor(crate::system::collections::hashtable::Hashtable, i32)` — overload selector"]
+    pub fn new(
+        hashtable: crate::system::collections::hashtable::Hashtable,
+        get_obj_ret_type: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Hashtable_HashtableEnumerator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHashtable_HashtableEnumeratorMethods>::ctor(this, hashtable, get_obj_ret_type);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_ValueCollection.md"))]
+#[::unity2::class(namespace = "System.Collections", name = "Hashtable.ValueCollection")]
+#[parent(crate::system::object::Object)]
+pub struct Hashtable_ValueCollection {
     #[rename(name = "_hashtable")]
     pub hashtable: crate::system::collections::hashtable::Hashtable,
 }
 
 #[cfg(feature = "system-collections-hashtable")]
 #[::unity2::methods]
-impl Hashtable_KeyCollection {
+impl Hashtable_ValueCollection {
     #[doc = "`.ctor(crate::system::collections::hashtable::Hashtable)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, hashtable: crate::system::collections::hashtable::Hashtable) -> ();
@@ -43,30 +133,52 @@ impl Hashtable_KeyCollection {
 }
 
 #[cfg(feature = "system-collections-hashtable")]
-impl Hashtable_KeyCollection {
+impl Hashtable_ValueCollection {
     #[doc = "`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"]
     pub fn new(hashtable: crate::system::collections::hashtable::Hashtable) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(Hashtable_KeyCollection),
+                ::core::stringify!(Hashtable_ValueCollection),
                 ::core::stringify!(new),
             )
         });
-        <Self as IHashtable_KeyCollectionMethods>::ctor(this, hashtable);
+        <Self as IHashtable_ValueCollectionMethods>::ctor(this, hashtable);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_HashtableDebugView.md")))]
-#[::unity2::class(
-    namespace = "System.Collections",
-    name = "Hashtable.HashtableDebugView"
-)]
-#[parent(crate::system::object::Object)]
-pub struct Hashtable_HashtableDebugView {}
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/hashtable/Hashtable_bucket.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Hashtable_bucket {
+    pub key: ::unity2::IlInstance,
+    pub val: ::unity2::IlInstance,
+    pub hash_coll: i32,
+}
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_SyncHashtable.md")))]
+impl ::unity2::ClassIdentity for Hashtable_bucket {
+    const NAMESPACE: &'static str = "System.Collections";
+
+    const NAME: &'static str = "Hashtable.bucket";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Hashtable_bucket {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_SyncHashtable.md"))]
 #[::unity2::class(namespace = "System.Collections", name = "Hashtable.SyncHashtable")]
 #[parent(crate::system::collections::hashtable::Hashtable)]
 pub struct Hashtable_SyncHashtable {
@@ -186,37 +298,59 @@ impl Hashtable_SyncHashtable {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/hashtable/Hashtable_bucket.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Hashtable_bucket {
-    pub key: ::unity2::IlInstance,
-    pub val: ::unity2::IlInstance,
-    pub hash_coll: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_KeyCollection.md"))]
+#[::unity2::class(namespace = "System.Collections", name = "Hashtable.KeyCollection")]
+#[parent(crate::system::object::Object)]
+pub struct Hashtable_KeyCollection {
+    #[rename(name = "_hashtable")]
+    pub hashtable: crate::system::collections::hashtable::Hashtable,
 }
 
-impl ::unity2::ClassIdentity for Hashtable_bucket {
-    const NAMESPACE: &'static str = "System.Collections";
+#[cfg(feature = "system-collections-hashtable")]
+#[::unity2::methods]
+impl Hashtable_KeyCollection {
+    #[doc = "`.ctor(crate::system::collections::hashtable::Hashtable)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, hashtable: crate::system::collections::hashtable::Hashtable) -> ();
 
-    const NAME: &'static str = "Hashtable.bucket";
+    #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
+    #[method(name = "CopyTo", args = 2)]
+    pub fn copy_to(self, array: ::unity2::IlInstance, array_index: i32) -> ();
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    #[doc = "`GetEnumerator()` overload"]
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
 
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    #[doc = "`get_IsSynchronized()` overload"]
+    #[method(name = "get_IsSynchronized", args = 0)]
+    pub fn get_is_synchronized(self) -> bool;
+
+    #[doc = "`get_SyncRoot()` overload"]
+    #[method(name = "get_SyncRoot", args = 0)]
+    pub fn get_sync_root(self) -> crate::system::object::Object;
+
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+}
+
+#[cfg(feature = "system-collections-hashtable")]
+impl Hashtable_KeyCollection {
+    #[doc = "`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"]
+    pub fn new(hashtable: crate::system::collections::hashtable::Hashtable) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Hashtable_KeyCollection),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHashtable_KeyCollectionMethods>::ctor(this, hashtable);
+        this
     }
 }
 
-impl ::unity2::IlType for Hashtable_bucket {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable.md"))]
 #[::unity2::class(namespace = "System.Collections", name = "Hashtable")]
 #[parent(crate::system::object::Object)]
 pub struct Hashtable {
@@ -632,140 +766,6 @@ impl Hashtable {
             )
         });
         <Self as IHashtableMethods>::ctor_9(this, capacity, equality_comparer);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_HashtableEnumerator.md")))]
-#[::unity2::class(
-    namespace = "System.Collections",
-    name = "Hashtable.HashtableEnumerator"
-)]
-#[parent(crate::system::object::Object)]
-pub struct Hashtable_HashtableEnumerator {
-    #[rename(name = "hashtable")]
-    pub hashtable: crate::system::collections::hashtable::Hashtable,
-    #[rename(name = "bucket")]
-    pub bucket: i32,
-    #[rename(name = "version")]
-    pub version: i32,
-    #[rename(name = "current")]
-    pub current: bool,
-    #[rename(name = "getObjectRetType")]
-    pub get_object_ret_type: i32,
-    #[rename(name = "currentKey")]
-    pub current_key: ::unity2::IlInstance,
-    #[rename(name = "currentValue")]
-    pub current_value: ::unity2::IlInstance,
-}
-
-#[cfg(feature = "system-collections-hashtable")]
-#[::unity2::methods]
-impl Hashtable_HashtableEnumerator {
-    #[doc = "`.ctor(crate::system::collections::hashtable::Hashtable, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        hashtable: crate::system::collections::hashtable::Hashtable,
-        get_obj_ret_type: i32,
-    ) -> ();
-
-    #[doc = "`Clone()` overload"]
-    #[method(name = "Clone", args = 0)]
-    pub fn clone(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Key()` overload"]
-    #[method(name = "get_Key", args = 0)]
-    pub fn get_key(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`get_Entry()` overload"]
-    #[method(name = "get_Entry", args = 0)]
-    pub fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> crate::system::object::Object;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-}
-
-#[cfg(feature = "system-collections-hashtable")]
-impl Hashtable_HashtableEnumerator {
-    #[doc = "`.ctor(crate::system::collections::hashtable::Hashtable, i32)` — overload selector"]
-    pub fn new(
-        hashtable: crate::system::collections::hashtable::Hashtable,
-        get_obj_ret_type: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Hashtable_HashtableEnumerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHashtable_HashtableEnumeratorMethods>::ctor(this, hashtable, get_obj_ret_type);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/hashtable/Hashtable_ValueCollection.md")))]
-#[::unity2::class(namespace = "System.Collections", name = "Hashtable.ValueCollection")]
-#[parent(crate::system::object::Object)]
-pub struct Hashtable_ValueCollection {
-    #[rename(name = "_hashtable")]
-    pub hashtable: crate::system::collections::hashtable::Hashtable,
-}
-
-#[cfg(feature = "system-collections-hashtable")]
-#[::unity2::methods]
-impl Hashtable_ValueCollection {
-    #[doc = "`.ctor(crate::system::collections::hashtable::Hashtable)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, hashtable: crate::system::collections::hashtable::Hashtable) -> ();
-
-    #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
-    #[method(name = "CopyTo", args = 2)]
-    pub fn copy_to(self, array: ::unity2::IlInstance, array_index: i32) -> ();
-
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`get_IsSynchronized()` overload"]
-    #[method(name = "get_IsSynchronized", args = 0)]
-    pub fn get_is_synchronized(self) -> bool;
-
-    #[doc = "`get_SyncRoot()` overload"]
-    #[method(name = "get_SyncRoot", args = 0)]
-    pub fn get_sync_root(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-}
-
-#[cfg(feature = "system-collections-hashtable")]
-impl Hashtable_ValueCollection {
-    #[doc = "`.ctor(crate::system::collections::hashtable::Hashtable)` — overload selector"]
-    pub fn new(hashtable: crate::system::collections::hashtable::Hashtable) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Hashtable_ValueCollection),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHashtable_ValueCollectionMethods>::ctor(this, hashtable);
         this
     }
 }

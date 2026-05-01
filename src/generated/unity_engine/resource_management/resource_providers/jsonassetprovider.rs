@@ -8,7 +8,7 @@ use crate::unity_engine::resource_management::resource_providers::textdataprovid
 use crate::unity_engine::resource_management::resource_providers::textdataprovider::TextDataProvider;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/jsonassetprovider/JsonAssetProvider.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/jsonassetprovider/JsonAssetProvider.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.ResourceProviders",
     name = "JsonAssetProvider"

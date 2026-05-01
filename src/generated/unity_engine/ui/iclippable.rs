@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/iclippable/IClippable.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/iclippable/IClippable.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI", name = "IClippable")]
 pub struct IClippable {}
 

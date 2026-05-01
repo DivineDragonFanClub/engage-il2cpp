@@ -12,7 +12,82 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographeditdisposmenu/PhotographEditDisposMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographeditdisposmenu/PhotographEditDisposMenu_ReturnHandler.md"))]
+#[::unity2::class(namespace = "App", name = "PhotographEditDisposMenu.ReturnHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct PhotographEditDisposMenu_ReturnHandler {}
+
+#[cfg(feature = "app-photographeditdisposmenu")]
+#[::unity2::methods]
+impl PhotographEditDisposMenu_ReturnHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::photographsequence::PhotographSequence_Label)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, label: crate::app::photographsequence::PhotographSequence_Label) -> ();
+}
+
+#[cfg(feature = "app-photographeditdisposmenu")]
+impl PhotographEditDisposMenu_ReturnHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographEditDisposMenu_ReturnHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographEditDisposMenu_ReturnHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographeditdisposmenu/PhotographEditDisposMenu_UpdateUIObjHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "PhotographEditDisposMenu.UpdateUIObjHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct PhotographEditDisposMenu_UpdateUIObjHandler {}
+
+#[cfg(feature = "app-photographeditdisposmenu")]
+#[::unity2::methods]
+impl PhotographEditDisposMenu_UpdateUIObjHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(bool, bool, i32, i32)` overload"]
+    #[method(name = "Invoke", args = 4)]
+    pub fn invoke(
+        self,
+        is_arrow_active: bool,
+        is_mascot: bool,
+        pause_no: i32,
+        pause_count: i32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-photographeditdisposmenu")]
+impl PhotographEditDisposMenu_UpdateUIObjHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographEditDisposMenu_UpdateUIObjHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographEditDisposMenu_UpdateUIObjHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographeditdisposmenu/PhotographEditDisposMenu.md"))]
 #[::unity2::class(namespace = "App", name = "PhotographEditDisposMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct PhotographEditDisposMenu {
@@ -152,81 +227,6 @@ impl PhotographEditDisposMenu {
             update_ui_obj_handler,
             return_handler,
         );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographeditdisposmenu/PhotographEditDisposMenu_UpdateUIObjHandler.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "PhotographEditDisposMenu.UpdateUIObjHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct PhotographEditDisposMenu_UpdateUIObjHandler {}
-
-#[cfg(feature = "app-photographeditdisposmenu")]
-#[::unity2::methods]
-impl PhotographEditDisposMenu_UpdateUIObjHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(bool, bool, i32, i32)` overload"]
-    #[method(name = "Invoke", args = 4)]
-    pub fn invoke(
-        self,
-        is_arrow_active: bool,
-        is_mascot: bool,
-        pause_no: i32,
-        pause_count: i32,
-    ) -> ();
-}
-
-#[cfg(feature = "app-photographeditdisposmenu")]
-impl PhotographEditDisposMenu_UpdateUIObjHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographEditDisposMenu_UpdateUIObjHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographEditDisposMenu_UpdateUIObjHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographeditdisposmenu/PhotographEditDisposMenu_ReturnHandler.md")))]
-#[::unity2::class(namespace = "App", name = "PhotographEditDisposMenu.ReturnHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct PhotographEditDisposMenu_ReturnHandler {}
-
-#[cfg(feature = "app-photographeditdisposmenu")]
-#[::unity2::methods]
-impl PhotographEditDisposMenu_ReturnHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::photographsequence::PhotographSequence_Label)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, label: crate::app::photographsequence::PhotographSequence_Label) -> ();
-}
-
-#[cfg(feature = "app-photographeditdisposmenu")]
-impl PhotographEditDisposMenu_ReturnHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographEditDisposMenu_ReturnHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographEditDisposMenu_ReturnHandlerMethods>::ctor(this, object, method);
         this
     }
 }

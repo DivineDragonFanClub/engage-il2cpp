@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrust/SortieEntrust_Executor.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrust/SortieEntrust_Executor.md"))]
 #[::unity2::class(namespace = "App", name = "SortieEntrust.Executor")]
 #[parent(crate::system::object::Object)]
 pub struct SortieEntrust_Executor {
@@ -78,7 +78,7 @@ impl SortieEntrust_Executor {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrust/SortieEntrust.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieentrust/SortieEntrust.md"))]
 #[::unity2::class(namespace = "App", name = "SortieEntrust")]
 #[parent(crate::system::object::Object)]
 pub struct SortieEntrust {}

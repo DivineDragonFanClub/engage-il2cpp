@@ -16,7 +16,73 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger_TriggerEvent.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.EventSystems",
+    name = "EventTrigger.TriggerEvent"
+)]
+# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >)]
+pub struct EventTrigger_TriggerEvent {}
+
+#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
+#[::unity2::methods]
+impl EventTrigger_TriggerEvent {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
+impl EventTrigger_TriggerEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventTrigger_TriggerEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventTrigger_TriggerEventMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger_Entry.md"))]
+#[::unity2::class(namespace = "UnityEngine.EventSystems", name = "EventTrigger.Entry")]
+#[parent(crate::system::object::Object)]
+pub struct EventTrigger_Entry {
+    #[rename(name = "eventID")]
+    pub event_id: crate::unity_engine::event_systems::eventtriggertype::EventTriggerType,
+    #[rename(name = "callback")]
+    pub callback: crate::unity_engine::event_systems::eventtrigger::EventTrigger_TriggerEvent,
+}
+
+#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
+#[::unity2::methods]
+impl EventTrigger_Entry {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
+impl EventTrigger_Entry {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventTrigger_Entry),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventTrigger_EntryMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger.md"))]
 #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "EventTrigger")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct EventTrigger {
@@ -207,72 +273,6 @@ impl EventTrigger {
             )
         });
         <Self as IEventTriggerMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger_Entry.md")))]
-#[::unity2::class(namespace = "UnityEngine.EventSystems", name = "EventTrigger.Entry")]
-#[parent(crate::system::object::Object)]
-pub struct EventTrigger_Entry {
-    #[rename(name = "eventID")]
-    pub event_id: crate::unity_engine::event_systems::eventtriggertype::EventTriggerType,
-    #[rename(name = "callback")]
-    pub callback: crate::unity_engine::event_systems::eventtrigger::EventTrigger_TriggerEvent,
-}
-
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-#[::unity2::methods]
-impl EventTrigger_Entry {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-impl EventTrigger_Entry {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventTrigger_Entry),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventTrigger_EntryMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/eventtrigger/EventTrigger_TriggerEvent.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.EventSystems",
-    name = "EventTrigger.TriggerEvent"
-)]
-# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < crate :: unity_engine :: event_systems :: baseeventdata :: BaseEventData >)]
-pub struct EventTrigger_TriggerEvent {}
-
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-#[::unity2::methods]
-impl EventTrigger_TriggerEvent {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-event_systems-eventtrigger")]
-impl EventTrigger_TriggerEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventTrigger_TriggerEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventTrigger_TriggerEventMethods>::ctor(this);
         this
     }
 }

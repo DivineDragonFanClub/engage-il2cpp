@@ -6,31 +6,7 @@ use crate::unity_engine::rendering::universal::scriptablerenderer::IScriptableRe
 use crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customforwardrenderer/CustomForwardRenderer_Profiling.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal.Custom",
-    name = "CustomForwardRenderer.Profiling"
-)]
-#[parent(crate::system::object::Object)]
-pub struct CustomForwardRenderer_Profiling {
-    #[static_field]
-    #[rename(name = "k_Name")]
-    pub k_name: ::unity2::Il2CppString,
-    #[static_field]
-    #[rename(name = "createCameraRenderTarget")]
-    pub create_camera_render_target:
-        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-custom-customforwardrenderer")]
-#[::unity2::methods]
-impl CustomForwardRenderer_Profiling {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customforwardrenderer/CustomForwardRenderer.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customforwardrenderer/CustomForwardRenderer.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Custom",
     name = "CustomForwardRenderer"
@@ -261,4 +237,28 @@ impl CustomForwardRenderer {
         <Self as ICustomForwardRendererMethods>::ctor(this, data);
         this
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/customforwardrenderer/CustomForwardRenderer_Profiling.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom",
+    name = "CustomForwardRenderer.Profiling"
+)]
+#[parent(crate::system::object::Object)]
+pub struct CustomForwardRenderer_Profiling {
+    #[static_field]
+    #[rename(name = "k_Name")]
+    pub k_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "createCameraRenderTarget")]
+    pub create_camera_render_target:
+        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-custom-customforwardrenderer")]
+#[::unity2::methods]
+impl CustomForwardRenderer_Profiling {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }

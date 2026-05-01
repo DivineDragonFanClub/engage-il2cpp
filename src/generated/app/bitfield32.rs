@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bitfield32/BitField32.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bitfield32/BitField32.md"))]
 #[::unity2::class(namespace = "App", name = "BitField32")]
 #[parent(crate::app::bitfieldcommon::BitFieldCommon)]
 pub struct BitField32 {

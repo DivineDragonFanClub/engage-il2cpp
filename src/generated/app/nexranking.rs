@@ -12,7 +12,96 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_UploadSequence_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_Data.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct NexRanking_Data {
+    pub person_index: i32,
+    pub god_index: i32,
+}
+
+impl ::unity2::ClassIdentity for NexRanking_Data {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NexRanking.Data";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NexRanking_Data {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-nexranking")]
+#[::unity2::methods(value)]
+impl NexRanking_Data {
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_DownloadSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct NexRanking_DownloadSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for NexRanking_DownloadSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NexRanking.DownloadSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NexRanking_DownloadSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl NexRanking_DownloadSequence_Label {
+    pub fn get() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn succeeded() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn error() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_UploadSequence_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -64,7 +153,93 @@ impl NexRanking_UploadSequence_Label {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking_DownloadSequence.md"))]
+#[::unity2::class(namespace = "App", name = "NexRanking.DownloadSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct NexRanking_DownloadSequence {
+    #[static_field]
+    #[rename(name = "MaxBatch")]
+    pub max_batch: u32,
+    #[rename(name = "m_Data")]
+    pub m_data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+    #[rename(name = "m_RatingValues")]
+    pub m_rating_values: ::unity2::Array<i64>,
+    #[rename(name = "m_DataIndex")]
+    pub m_data_index: i32,
+    #[rename(name = "m_ChapterIndex")]
+    pub m_chapter_index: i32,
+    #[rename(name = "m_StartDataId")]
+    pub m_start_data_id: u64,
+    #[rename(name = "m_StartSlot")]
+    pub m_start_slot: i32,
+    #[rename(name = "m_EndDataId")]
+    pub m_end_data_id: u64,
+    #[rename(name = "m_EndSlot")]
+    pub m_end_slot: i32,
+    #[rename(name = "m_DataIds")]
+    pub m_data_ids: crate::system::collections::generic::list_1::List_1<u64>,
+}
+
+#[cfg(feature = "app-nexranking")]
+#[::unity2::methods]
+impl NexRanking_DownloadSequence {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        cid: ::unity2::Il2CppString,
+        data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+    ) -> ();
+
+    #[doc = "`Login()` overload"]
+    #[method(name = "Login", args = 0)]
+    pub fn login(self) -> ();
+
+    #[doc = "`Postlogin()` overload"]
+    #[method(name = "Postlogin", args = 0)]
+    pub fn postlogin(self) -> ();
+
+    #[doc = "`GetRating()` overload"]
+    #[method(name = "GetRating", args = 0)]
+    pub fn get_rating(self) -> ();
+
+    #[doc = "`Succeeded()` overload"]
+    #[method(name = "Succeeded", args = 0)]
+    pub fn succeeded(self) -> ();
+
+    #[doc = "`Error()` overload"]
+    #[method(name = "Error", args = 0)]
+    pub fn error(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        cid: ::unity2::Il2CppString,
+        data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+    ) -> ();
+}
+
+#[cfg(feature = "app-nexranking")]
+impl NexRanking_DownloadSequence {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` — overload selector"]
+    pub fn new(
+        cid: ::unity2::Il2CppString,
+        data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRanking_DownloadSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexRanking_DownloadSequenceMethods>::ctor(this, cid, data);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking.md"))]
 #[::unity2::class(namespace = "App", name = "NexRanking")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexranking :: NexRanking >)]
 pub struct NexRanking {
@@ -167,59 +342,7 @@ impl NexRanking {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_DownloadSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct NexRanking_DownloadSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for NexRanking_DownloadSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexRanking.DownloadSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for NexRanking_DownloadSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl NexRanking_DownloadSequence_Label {
-    pub fn get() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn succeeded() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn error() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 3 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking_UploadSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking_UploadSequence.md"))]
 #[::unity2::class(namespace = "App", name = "NexRanking.UploadSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct NexRanking_UploadSequence {
@@ -294,127 +417,4 @@ impl NexRanking_UploadSequence {
         <Self as INexRanking_UploadSequenceMethods>::ctor(this, cid, pairs);
         this
     }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexranking/NexRanking_DownloadSequence.md")))]
-#[::unity2::class(namespace = "App", name = "NexRanking.DownloadSequence")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct NexRanking_DownloadSequence {
-    #[static_field]
-    #[rename(name = "MaxBatch")]
-    pub max_batch: u32,
-    #[rename(name = "m_Data")]
-    pub m_data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-    #[rename(name = "m_RatingValues")]
-    pub m_rating_values: ::unity2::Array<i64>,
-    #[rename(name = "m_DataIndex")]
-    pub m_data_index: i32,
-    #[rename(name = "m_ChapterIndex")]
-    pub m_chapter_index: i32,
-    #[rename(name = "m_StartDataId")]
-    pub m_start_data_id: u64,
-    #[rename(name = "m_StartSlot")]
-    pub m_start_slot: i32,
-    #[rename(name = "m_EndDataId")]
-    pub m_end_data_id: u64,
-    #[rename(name = "m_EndSlot")]
-    pub m_end_slot: i32,
-    #[rename(name = "m_DataIds")]
-    pub m_data_ids: crate::system::collections::generic::list_1::List_1<u64>,
-}
-
-#[cfg(feature = "app-nexranking")]
-#[::unity2::methods]
-impl NexRanking_DownloadSequence {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        cid: ::unity2::Il2CppString,
-        data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-    ) -> ();
-
-    #[doc = "`Login()` overload"]
-    #[method(name = "Login", args = 0)]
-    pub fn login(self) -> ();
-
-    #[doc = "`Postlogin()` overload"]
-    #[method(name = "Postlogin", args = 0)]
-    pub fn postlogin(self) -> ();
-
-    #[doc = "`GetRating()` overload"]
-    #[method(name = "GetRating", args = 0)]
-    pub fn get_rating(self) -> ();
-
-    #[doc = "`Succeeded()` overload"]
-    #[method(name = "Succeeded", args = 0)]
-    pub fn succeeded(self) -> ();
-
-    #[doc = "`Error()` overload"]
-    #[method(name = "Error", args = 0)]
-    pub fn error(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        cid: ::unity2::Il2CppString,
-        data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-    ) -> ();
-}
-
-#[cfg(feature = "app-nexranking")]
-impl NexRanking_DownloadSequence {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::app::nexranking::NexRanking_Data>)` — overload selector"]
-    pub fn new(
-        cid: ::unity2::Il2CppString,
-        data: ::unity2::Array<crate::app::nexranking::NexRanking_Data>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRanking_DownloadSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRanking_DownloadSequenceMethods>::ctor(this, cid, data);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexranking/NexRanking_Data.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct NexRanking_Data {
-    pub person_index: i32,
-    pub god_index: i32,
-}
-
-impl ::unity2::ClassIdentity for NexRanking_Data {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexRanking.Data";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for NexRanking_Data {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-nexranking")]
-#[::unity2::methods(value)]
-impl NexRanking_Data {
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
 }

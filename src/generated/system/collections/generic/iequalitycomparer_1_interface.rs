@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/iequalitycomparer_1_interface/IEqualityComparer_1_Interface.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/iequalitycomparer_1_interface/IEqualityComparer_1_Interface.md"))]
 #[::unity2::class(namespace = "System.Collections.Generic", name = "IEqualityComparer`1")]
 pub struct IEqualityComparer_1_Interface<T0: ::unity2::ClassIdentity> {}
 

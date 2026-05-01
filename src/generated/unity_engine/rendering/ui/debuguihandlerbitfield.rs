@@ -14,7 +14,7 @@ use crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidg
 use crate::unity_engine::rendering::ui::debuguihandlerwidget::IDebugUIHandlerWidget;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlerbitfield/DebugUIHandlerBitField.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/ui/debuguihandlerbitfield/DebugUIHandlerBitField.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.UI",
     name = "DebugUIHandlerBitField"

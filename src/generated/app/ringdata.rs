@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringdata/RingData_Kinds.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringdata/RingData_Kinds.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -66,63 +66,7 @@ impl RingData_Kinds {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringdata/RingData_Ranks.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RingData_Ranks {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RingData_Ranks {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingData.Ranks";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RingData_Ranks {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RingData_Ranks {
-    pub fn c() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn b() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn a() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn s() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn max() -> Self {
-        Self { value: 4 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringdata/RingData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringdata/RingData.md"))]
 #[::unity2::class(namespace = "App", name = "RingData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: ringdata :: RingData >)]
 pub struct RingData {
@@ -402,5 +346,61 @@ impl RingData {
         });
         <Self as IRingDataMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringdata/RingData_Ranks.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingData_Ranks {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingData_Ranks {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingData.Ranks";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingData_Ranks {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingData_Ranks {
+    pub fn c() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn b() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn a() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn s() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 4 }
     }
 }

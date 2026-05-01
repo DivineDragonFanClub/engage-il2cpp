@@ -20,7 +20,7 @@ use crate::unity_engine::ui::graphic::Graphic;
 use crate::unity_engine::ui::graphic::IGraphic;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/maskablegraphic/MaskableGraphic.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/maskablegraphic/MaskableGraphic.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI", name = "MaskableGraphic")]
 #[parent(crate::unity_engine::ui::graphic::Graphic)]
 pub struct MaskableGraphic {
@@ -165,7 +165,7 @@ impl MaskableGraphic {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/maskablegraphic/MaskableGraphic_CullStateChangedEvent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/maskablegraphic/MaskableGraphic_CullStateChangedEvent.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.UI",
     name = "MaskableGraphic.CullStateChangedEvent"

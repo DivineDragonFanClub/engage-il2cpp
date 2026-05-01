@@ -12,7 +12,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfavoritecharactermenu/ProfileCardFavoriteCharacterMenu_DisposeEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfavoritecharactermenu/ProfileCardFavoriteCharacterMenu_DisposeEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "ProfileCardFavoriteCharacterMenu.DisposeEventHandler"
@@ -50,7 +50,7 @@ impl ProfileCardFavoriteCharacterMenu_DisposeEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfavoritecharactermenu/ProfileCardFavoriteCharacterMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfavoritecharactermenu/ProfileCardFavoriteCharacterMenu.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardFavoriteCharacterMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct ProfileCardFavoriteCharacterMenu {

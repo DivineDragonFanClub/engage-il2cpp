@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblytrademarkattribute/AssemblyTrademarkAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblytrademarkattribute/AssemblyTrademarkAttribute.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "AssemblyTrademarkAttribute")]
 pub struct AssemblyTrademarkAttribute {
     #[rename(name = "m_trademark")]

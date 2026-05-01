@@ -12,7 +12,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongranapproach/ActionGranApproach.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongranapproach/ActionGranApproach.md"))]
 #[::unity2::class(namespace = "Combat", name = "ActionGranApproach")]
 #[parent(crate::combat::actiongranbase::ActionGranBase)]
 pub struct ActionGranApproach {

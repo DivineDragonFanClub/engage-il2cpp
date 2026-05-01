@@ -14,40 +14,93 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_DecideEventHandler.md")))]
-#[::unity2::class(namespace = "App", name = "RelayMapMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RelayMapMenu_DecideEventHandler {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_MapMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "RelayMapMenu.MapMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct RelayMapMenu_MapMenuItem {
+    #[rename(name = "m_Rdata")]
+    pub m_rdata: crate::app::relaydata::RelayData,
+    #[rename(name = "m_SelectEventHandler")]
+    pub m_select_event_handler: crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler,
+}
 
 #[cfg(feature = "app-relaymapmenu")]
 #[::unity2::methods]
-impl RelayMapMenu_DecideEventHandler {
+impl RelayMapMenu_MapMenuItem {
+    #[doc = "`.ctor(crate::app::chapterdata::ChapterData, crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        cdata: crate::app::chapterdata::ChapterData,
+        select_event_handler: crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler,
+    ) -> ();
+
+    #[doc = "`OnBuildMenuItemContent()` overload"]
+    #[method(name = "OnBuildMenuItemContent", args = 0)]
+    pub fn on_build_menu_item_content(self) -> ();
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-relaymapmenu")]
+impl RelayMapMenu_MapMenuItem {
+    #[doc = "`.ctor(crate::app::chapterdata::ChapterData, crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler)` — overload selector"]
+    pub fn new(
+        cdata: crate::app::chapterdata::ChapterData,
+        select_event_handler: crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayMapMenu_MapMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayMapMenu_MapMenuItemMethods>::ctor(this, cdata, select_event_handler);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_SelectEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "RelayMapMenu.SelectEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RelayMapMenu_SelectEventHandler {}
+
+#[cfg(feature = "app-relaymapmenu")]
+#[::unity2::methods]
+impl RelayMapMenu_SelectEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+    #[doc = "`Invoke(crate::app::relaydata::RelayData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, relay_data: crate::app::relaydata::RelayData) -> ();
 }
 
 #[cfg(feature = "app-relaymapmenu")]
-impl RelayMapMenu_DecideEventHandler {
+impl RelayMapMenu_SelectEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RelayMapMenu_DecideEventHandler),
+                ::core::stringify!(RelayMapMenu_SelectEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRelayMapMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IRelayMapMenu_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu.md"))]
 #[::unity2::class(namespace = "App", name = "RelayMapMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct RelayMapMenu {
@@ -129,60 +182,7 @@ impl RelayMapMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_MapMenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "RelayMapMenu.MapMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct RelayMapMenu_MapMenuItem {
-    #[rename(name = "m_Rdata")]
-    pub m_rdata: crate::app::relaydata::RelayData,
-    #[rename(name = "m_SelectEventHandler")]
-    pub m_select_event_handler: crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler,
-}
-
-#[cfg(feature = "app-relaymapmenu")]
-#[::unity2::methods]
-impl RelayMapMenu_MapMenuItem {
-    #[doc = "`.ctor(crate::app::chapterdata::ChapterData, crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        cdata: crate::app::chapterdata::ChapterData,
-        select_event_handler: crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler,
-    ) -> ();
-
-    #[doc = "`OnBuildMenuItemContent()` overload"]
-    #[method(name = "OnBuildMenuItemContent", args = 0)]
-    pub fn on_build_menu_item_content(self) -> ();
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-relaymapmenu")]
-impl RelayMapMenu_MapMenuItem {
-    #[doc = "`.ctor(crate::app::chapterdata::ChapterData, crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler)` — overload selector"]
-    pub fn new(
-        cdata: crate::app::chapterdata::ChapterData,
-        select_event_handler: crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayMapMenu_MapMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayMapMenu_MapMenuItemMethods>::ctor(this, cdata, select_event_handler);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_RequestCloseEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_RequestCloseEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "RelayMapMenu.RequestCloseEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct RelayMapMenu_RequestCloseEventHandler {}
@@ -215,35 +215,35 @@ impl RelayMapMenu_RequestCloseEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_SelectEventHandler.md")))]
-#[::unity2::class(namespace = "App", name = "RelayMapMenu.SelectEventHandler")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "RelayMapMenu.DecideEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RelayMapMenu_SelectEventHandler {}
+pub struct RelayMapMenu_DecideEventHandler {}
 
 #[cfg(feature = "app-relaymapmenu")]
 #[::unity2::methods]
-impl RelayMapMenu_SelectEventHandler {
+impl RelayMapMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke(crate::app::relaydata::RelayData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, relay_data: crate::app::relaydata::RelayData) -> ();
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
 }
 
 #[cfg(feature = "app-relaymapmenu")]
-impl RelayMapMenu_SelectEventHandler {
+impl RelayMapMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RelayMapMenu_SelectEventHandler),
+                ::core::stringify!(RelayMapMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRelayMapMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        <Self as IRelayMapMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

@@ -10,56 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymessagemenu/RelayMessageMenu_MenuItem.md")))]
-#[::unity2::class(namespace = "App", name = "RelayMessageMenu.MenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct RelayMessageMenu_MenuItem {}
-
-#[cfg(feature = "app-relaymessagemenu")]
-#[::unity2::methods]
-impl RelayMessageMenu_MenuItem {
-    #[doc = "`get_Data()` overload"]
-    #[method(name = "get_Data", args = 0)]
-    pub fn get_data(self) -> crate::app::relaystampdata::RelayStampData;
-
-    #[doc = "`set_Data(crate::app::relaystampdata::RelayStampData)` overload"]
-    #[method(name = "set_Data", args = 1)]
-    pub fn set_data(self, value: crate::app::relaystampdata::RelayStampData) -> ();
-
-    #[doc = "`.ctor(crate::app::relaystampdata::RelayStampData)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, data: crate::app::relaystampdata::RelayStampData) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-relaymessagemenu")]
-impl RelayMessageMenu_MenuItem {
-    #[doc = "`.ctor(crate::app::relaystampdata::RelayStampData)` — overload selector"]
-    pub fn new(data: crate::app::relaystampdata::RelayStampData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayMessageMenu_MenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayMessageMenu_MenuItemMethods>::ctor(this, data);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymessagemenu/RelayMessageMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymessagemenu/RelayMessageMenu.md"))]
 #[::unity2::class(namespace = "App", name = "RelayMessageMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct RelayMessageMenu {
@@ -131,6 +82,55 @@ impl RelayMessageMenu {
             )
         });
         <Self as IRelayMessageMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymessagemenu/RelayMessageMenu_MenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "RelayMessageMenu.MenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct RelayMessageMenu_MenuItem {}
+
+#[cfg(feature = "app-relaymessagemenu")]
+#[::unity2::methods]
+impl RelayMessageMenu_MenuItem {
+    #[doc = "`get_Data()` overload"]
+    #[method(name = "get_Data", args = 0)]
+    pub fn get_data(self) -> crate::app::relaystampdata::RelayStampData;
+
+    #[doc = "`set_Data(crate::app::relaystampdata::RelayStampData)` overload"]
+    #[method(name = "set_Data", args = 1)]
+    pub fn set_data(self, value: crate::app::relaystampdata::RelayStampData) -> ();
+
+    #[doc = "`.ctor(crate::app::relaystampdata::RelayStampData)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, data: crate::app::relaystampdata::RelayStampData) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-relaymessagemenu")]
+impl RelayMessageMenu_MenuItem {
+    #[doc = "`.ctor(crate::app::relaystampdata::RelayStampData)` — overload selector"]
+    pub fn new(data: crate::app::relaystampdata::RelayStampData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayMessageMenu_MenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayMessageMenu_MenuItemMethods>::ctor(this, data);
         this
     }
 }

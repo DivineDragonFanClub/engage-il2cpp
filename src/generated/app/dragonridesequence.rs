@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence_PrizeData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence_PrizeData.md"))]
 #[::unity2::class(namespace = "App", name = "DragonRideSequence.PrizeData")]
 #[parent(crate::system::object::Object)]
 pub struct DragonRideSequence_PrizeData {}
@@ -88,7 +88,99 @@ impl DragonRideSequence_PrizeData {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridesequence/DragonRideSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct DragonRideSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for DragonRideSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DragonRideSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DragonRideSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl DragonRideSequence_Label {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn init() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn check_test() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn ready_menu() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn play_select() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn check_new_difficult() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn announce_new_difficult() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn difficult_select() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn ready_game() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn execute_game() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn prize_talk() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn prize_bond() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn prize_item() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 13 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence.md"))]
 #[::unity2::class(namespace = "App", name = "DragonRideSequence")]
 # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)]
 pub struct DragonRideSequence {
@@ -272,97 +364,5 @@ impl DragonRideSequence {
         });
         <Self as IDragonRideSequenceMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridesequence/DragonRideSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct DragonRideSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for DragonRideSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DragonRideSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for DragonRideSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl DragonRideSequence_Label {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn init() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn check_test() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn ready_menu() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn play_select() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn check_new_difficult() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn announce_new_difficult() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn difficult_select() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn ready_game() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn execute_game() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn prize_talk() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn prize_bond() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn prize_item() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn exit() -> Self {
-        Self { value: 13 }
     }
 }

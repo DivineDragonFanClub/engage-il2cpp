@@ -18,7 +18,7 @@ use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
 use crate::unity_engine::ui::maskablegraphic::MaskableGraphic;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_submeshui/TMP_SubMeshUI.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_submeshui/TMP_SubMeshUI.md"))]
 #[::unity2::class(namespace = "TMPro", name = "TMP_SubMeshUI")]
 #[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]
 pub struct TMP_SubMeshUI {

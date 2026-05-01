@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/registration_policies/iregistrationpolicy/IRegistrationPolicy.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/registration_policies/iregistrationpolicy/IRegistrationPolicy.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Interop.RegistrationPolicies",
     name = "IRegistrationPolicy"

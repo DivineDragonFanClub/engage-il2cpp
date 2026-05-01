@@ -10,7 +10,91 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubcookingsequence/HubCookingSequence.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubcookingsequence/HubCookingSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubCookingSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubCookingSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubCookingSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubCookingSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubCookingSequence_Label {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn init() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn select_dish() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn select_with_units() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn select_foodstuff() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn end_select() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn cook() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn start_cook_play() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn cooking_result() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn add_achieve() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn quit_select() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 11 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubcookingsequence/HubCookingSequence.md"))]
 #[::unity2::class(namespace = "App", name = "HubCookingSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct HubCookingSequence {
@@ -329,7 +413,7 @@ impl HubCookingSequence {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubcookingsequence/HubCookingSequence_LookTarget.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubcookingsequence/HubCookingSequence_LookTarget.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -370,89 +454,5 @@ impl HubCookingSequence_LookTarget {
 
     pub fn other() -> Self {
         Self { value: 1 }
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubcookingsequence/HubCookingSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct HubCookingSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for HubCookingSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubCookingSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for HubCookingSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl HubCookingSequence_Label {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn init() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn select_dish() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn select_with_units() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn select_foodstuff() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn end_select() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn cook() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn start_cook_play() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn cooking_result() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn add_achieve() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn quit_select() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn exit() -> Self {
-        Self { value: 11 }
     }
 }

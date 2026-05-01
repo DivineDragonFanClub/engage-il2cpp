@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combat_viewer_ex_methods/acts2i/ActS2I.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/combat_viewer_ex_methods/acts2i/ActS2I.md"))]
 #[::unity2::class(namespace = "Combat.CombatViewerExMethods", name = "ActS2I")]
 #[parent(crate::system::object::Object)]
 pub struct ActS2I {

@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/diagnostics/performance_counters/iperformancestopwatch_interface/IPerformanceStopwatch_Interface.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/diagnostics/performance_counters/iperformancestopwatch_interface/IPerformanceStopwatch_Interface.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Diagnostics.PerformanceCounters",
     name = "IPerformanceStopwatch"

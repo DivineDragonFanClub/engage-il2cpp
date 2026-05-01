@@ -18,7 +18,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubgotomap/HubGoToMap_GoToDialogItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubgotomap/HubGoToMap_GoToDialogItem.md"))]
 #[::unity2::class(namespace = "App", name = "HubGoToMap.GoToDialogItem")]
 #[parent(crate::app::confirmdialogitemfunc::ConfirmDialogItemFunc)]
 pub struct HubGoToMap_GoToDialogItem {
@@ -63,7 +63,7 @@ impl HubGoToMap_GoToDialogItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubgotomap/HubGoToMap.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubgotomap/HubGoToMap.md"))]
 #[::unity2::class(namespace = "App", name = "HubGoToMap")]
 #[parent(crate::app::basicdialog::BasicDialog)]
 pub struct HubGoToMap {}

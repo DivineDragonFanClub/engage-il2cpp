@@ -14,53 +14,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapenvironment/MapEnvironment.md")))]
-#[::unity2::class(namespace = "App", name = "MapEnvironment")]
-# [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapenvironment :: MapEnvironment >)]
-pub struct MapEnvironment {
-    #[rename(name = "Bmap")]
-    pub bmap: crate::app::mapenvironment::MapEnvironment_Param,
-    #[rename(name = "Combat")]
-    pub combat: crate::app::mapenvironment::MapEnvironment_Param,
-}
-
-#[cfg(feature = "app-mapenvironment")]
-#[::unity2::methods]
-impl MapEnvironment {
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
-
-    #[doc = "`SetShadowTransition(f32)` overload"]
-    #[method(name = "SetShadowTransition", args = 1)]
-    pub fn set_shadow_transition(self, transition: f32) -> ();
-
-    #[doc = "`SetTransition(f32)` overload"]
-    #[method(name = "SetTransition", args = 1)]
-    pub fn set_transition(self, transition: f32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapenvironment")]
-impl MapEnvironment {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapEnvironment),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapEnvironmentMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapenvironment/MapEnvironment_Param.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapenvironment/MapEnvironment_Param.md"))]
 #[::unity2::class(namespace = "App", name = "MapEnvironment.Param")]
 #[parent(crate::system::object::Object)]
 pub struct MapEnvironment_Param {
@@ -105,6 +59,52 @@ impl MapEnvironment_Param {
             )
         });
         <Self as IMapEnvironment_ParamMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapenvironment/MapEnvironment.md"))]
+#[::unity2::class(namespace = "App", name = "MapEnvironment")]
+# [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: mapenvironment :: MapEnvironment >)]
+pub struct MapEnvironment {
+    #[rename(name = "Bmap")]
+    pub bmap: crate::app::mapenvironment::MapEnvironment_Param,
+    #[rename(name = "Combat")]
+    pub combat: crate::app::mapenvironment::MapEnvironment_Param,
+}
+
+#[cfg(feature = "app-mapenvironment")]
+#[::unity2::methods]
+impl MapEnvironment {
+    #[doc = "`Start()` overload"]
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[doc = "`SetShadowTransition(f32)` overload"]
+    #[method(name = "SetShadowTransition", args = 1)]
+    pub fn set_shadow_transition(self, transition: f32) -> ();
+
+    #[doc = "`SetTransition(f32)` overload"]
+    #[method(name = "SetTransition", args = 1)]
+    pub fn set_transition(self, transition: f32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapenvironment")]
+impl MapEnvironment {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapEnvironment),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapEnvironmentMethods>::ctor(this);
         this
     }
 }

@@ -12,79 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencereplay/MapSequenceReplay_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapSequenceReplay_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSequenceReplay_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceReplay.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSequenceReplay_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapSequenceReplay_Label {
-    pub fn read() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn mind() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn engage_start() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn engage_link() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn engage_rewarp() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn god_change() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn surrender() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn cancel() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 8 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencereplay/MapSequenceReplay.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencereplay/MapSequenceReplay.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceReplay")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequencereplay :: MapSequenceReplay >)]
 pub struct MapSequenceReplay {}
@@ -170,5 +98,77 @@ impl MapSequenceReplay {
         });
         <Self as IMapSequenceReplayMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencereplay/MapSequenceReplay_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceReplay_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceReplay_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceReplay.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceReplay_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceReplay_Label {
+    pub fn read() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn mind() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn engage_start() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn engage_link() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn engage_rewarp() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn god_change() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn surrender() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn cancel() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 8 }
     }
 }

@@ -12,60 +12,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig_AngleBorder.md")))]
-#[::unity2::class(namespace = "App", name = "FishingConfig.AngleBorder")]
-#[parent(crate::system::object::Object)]
-pub struct FishingConfig_AngleBorder {
-    #[rename(name = "High")]
-    pub high: f32,
-    #[rename(name = "Middle")]
-    pub middle: f32,
-    #[rename(name = "Low")]
-    pub low: f32,
-}
-
-#[cfg(feature = "app-fishingconfig")]
-#[::unity2::methods]
-impl FishingConfig_AngleBorder {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(f32, f32, f32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor_2(self, set_high: f32, set_middle: f32, set_low: f32) -> ();
-}
-
-#[cfg(feature = "app-fishingconfig")]
-impl FishingConfig_AngleBorder {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingConfig_AngleBorder),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingConfig_AngleBorderMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(f32, f32, f32)` — overload selector"]
-    pub fn new_2(set_high: f32, set_middle: f32, set_low: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingConfig_AngleBorder),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IFishingConfig_AngleBorderMethods>::ctor_2(this, set_high, set_middle, set_low);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig.md"))]
 #[::unity2::class(namespace = "App", name = "FishingConfig")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct FishingConfig {
@@ -257,7 +204,7 @@ impl FishingConfig {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig_FixCameraConfig.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig_FixCameraConfig.md"))]
 #[::unity2::class(namespace = "App", name = "FishingConfig.FixCameraConfig")]
 #[parent(crate::system::object::Object)]
 pub struct FishingConfig_FixCameraConfig {
@@ -294,6 +241,59 @@ impl FishingConfig_FixCameraConfig {
             )
         });
         <Self as IFishingConfig_FixCameraConfigMethods>::ctor(this, set_pos, set_rot);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingconfig/FishingConfig_AngleBorder.md"))]
+#[::unity2::class(namespace = "App", name = "FishingConfig.AngleBorder")]
+#[parent(crate::system::object::Object)]
+pub struct FishingConfig_AngleBorder {
+    #[rename(name = "High")]
+    pub high: f32,
+    #[rename(name = "Middle")]
+    pub middle: f32,
+    #[rename(name = "Low")]
+    pub low: f32,
+}
+
+#[cfg(feature = "app-fishingconfig")]
+#[::unity2::methods]
+impl FishingConfig_AngleBorder {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.ctor(f32, f32, f32)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor_2(self, set_high: f32, set_middle: f32, set_low: f32) -> ();
+}
+
+#[cfg(feature = "app-fishingconfig")]
+impl FishingConfig_AngleBorder {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingConfig_AngleBorder),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingConfig_AngleBorderMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(f32, f32, f32)` — overload selector"]
+    pub fn new_2(set_high: f32, set_middle: f32, set_low: f32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingConfig_AngleBorder),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IFishingConfig_AngleBorderMethods>::ctor_2(this, set_high, set_middle, set_low);
         this
     }
 }

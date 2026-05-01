@@ -12,7 +12,42 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog_DecideEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog.md"))]
+#[::unity2::class(namespace = "App", name = "ProfileCardStampVisibilitySettingDialog")]
+#[parent(crate::system::object::Object)]
+pub struct ProfileCardStampVisibilitySettingDialog {}
+
+#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
+#[::unity2::methods]
+impl ProfileCardStampVisibilitySettingDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+    ) -> crate::app::basicdialog::BasicDialog;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
+impl ProfileCardStampVisibilitySettingDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardStampVisibilitySettingDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardStampVisibilitySettingDialogMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog_DecideEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "ProfileCardStampVisibilitySettingDialog.DecideEventHandler"
@@ -50,42 +85,7 @@ impl ProfileCardStampVisibilitySettingDialog_DecideEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog.md")))]
-#[::unity2::class(namespace = "App", name = "ProfileCardStampVisibilitySettingDialog")]
-#[parent(crate::system::object::Object)]
-pub struct ProfileCardStampVisibilitySettingDialog {}
-
-#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
-#[::unity2::methods]
-impl ProfileCardStampVisibilitySettingDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-    ) -> crate::app::basicdialog::BasicDialog;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
-impl ProfileCardStampVisibilitySettingDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardStampVisibilitySettingDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardStampVisibilitySettingDialogMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog_DialogMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog_DialogMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "ProfileCardStampVisibilitySettingDialog.DialogMenuItem"

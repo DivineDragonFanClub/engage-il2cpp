@@ -18,7 +18,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterlyinghorse/CharacterLyingHorse_Progress.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characterlyinghorse/CharacterLyingHorse_Progress.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -66,7 +66,7 @@ impl CharacterLyingHorse_Progress {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlyinghorse/CharacterLyingHorse.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characterlyinghorse/CharacterLyingHorse.md"))]
 #[::unity2::class(namespace = "Combat", name = "CharacterLyingHorse")]
 #[parent(crate::combat::characterlying::CharacterLying)]
 pub struct CharacterLyingHorse {

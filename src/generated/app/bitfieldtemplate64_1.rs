@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bitfieldtemplate64_1/BitFieldTemplate64_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/bitfieldtemplate64_1/BitFieldTemplate64_1.md"))]
 #[::unity2::class(namespace = "App", name = "BitFieldTemplate64`1")]
 #[parent(crate::app::bitfield64::BitField64)]
 #[parent(crate::app::bitfieldcommon::BitFieldCommon)]

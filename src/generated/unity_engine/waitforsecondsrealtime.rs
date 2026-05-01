@@ -6,7 +6,7 @@ use crate::unity_engine::customyieldinstruction::CustomYieldInstruction;
 use crate::unity_engine::customyieldinstruction::ICustomYieldInstruction;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/waitforsecondsrealtime/WaitForSecondsRealtime.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/waitforsecondsrealtime/WaitForSecondsRealtime.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "WaitForSecondsRealtime")]
 #[parent(crate::unity_engine::customyieldinstruction::CustomYieldInstruction)]
 pub struct WaitForSecondsRealtime {

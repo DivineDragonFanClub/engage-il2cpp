@@ -20,7 +20,7 @@ use crate::unity_engine::ui::selectable::ISelectable;
 use crate::unity_engine::ui::selectable::Selectable;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/button/Button.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/button/Button.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI", name = "Button")]
 #[parent(crate::unity_engine::ui::selectable::Selectable)]
 pub struct Button {
@@ -85,7 +85,7 @@ impl Button {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/button/Button_ButtonClickedEvent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/button/Button_ButtonClickedEvent.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI", name = "Button.ButtonClickedEvent")]
 #[parent(crate::unity_engine::events::unityevent::UnityEvent)]
 pub struct Button_ButtonClickedEvent {}

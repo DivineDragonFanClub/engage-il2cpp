@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblyfileversionattribute/AssemblyFileVersionAttribute.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/assemblyfileversionattribute/AssemblyFileVersionAttribute.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "AssemblyFileVersionAttribute")]
 pub struct AssemblyFileVersionAttribute {
     #[rename(name = "_version")]

@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debuguirebuildchecker/DebugUIRebuildChecker.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debuguirebuildchecker/DebugUIRebuildChecker.md"))]
 #[::unity2::class(namespace = "App", name = "DebugUIRebuildChecker")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: debuguirebuildchecker :: DebugUIRebuildChecker >)]
 pub struct DebugUIRebuildChecker {}

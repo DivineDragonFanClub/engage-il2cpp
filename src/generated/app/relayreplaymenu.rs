@@ -18,7 +18,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu.md"))]
 #[::unity2::class(namespace = "App", name = "RelayReplayMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct RelayReplayMenu {
@@ -94,158 +94,7 @@ impl RelayReplayMenu {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_SelectEventHandler.md")))]
-#[::unity2::class(namespace = "App", name = "RelayReplayMenu.SelectEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RelayReplayMenu_SelectEventHandler {}
-
-#[cfg(feature = "app-relayreplaymenu")]
-#[::unity2::methods]
-impl RelayReplayMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, meta_data: crate::app::relayservermetadata::RelayServerMetaData) -> ();
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl RelayReplayMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayReplayMenu_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayReplayMenu_SelectEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog.md")))]
-#[::unity2::class(namespace = "App", name = "RelayReplayMenu.RelayConfirmReplayDialog")]
-#[parent(crate::app::basicdialog::BasicDialog)]
-pub struct RelayReplayMenu_RelayConfirmReplayDialog {}
-
-#[cfg(feature = "app-relayreplaymenu")]
-#[::unity2::methods]
-impl RelayReplayMenu_RelayConfirmReplayDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        decide: crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
-    ) -> ();
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl RelayReplayMenu_RelayConfirmReplayDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayReplayMenu_RelayConfirmReplayDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayReplayMenu_RelayConfirmReplayDialogMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RequestCloseEventHandler.md")))]
-#[::unity2::class(namespace = "App", name = "RelayReplayMenu.RequestCloseEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RelayReplayMenu_RequestCloseEventHandler {}
-
-#[cfg(feature = "app-relayreplaymenu")]
-#[::unity2::methods]
-impl RelayReplayMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl RelayReplayMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayReplayMenu_RequestCloseEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayReplayMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_DecideEventHandler.md")))]
-#[::unity2::class(namespace = "App", name = "RelayReplayMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RelayReplayMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-relayreplaymenu")]
-#[::unity2::methods]
-impl RelayReplayMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl RelayReplayMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayReplayMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayReplayMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog_DialogItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog_DialogItem.md"))]
 #[::unity2::class(
     namespace = "App",
     name = "RelayReplayMenu.RelayConfirmReplayDialog.DialogItem"
@@ -292,45 +141,7 @@ impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RelayReplayMenu.RelayConfirmReplayDialog.DialogItem.DialogDecideEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler {}
-
-#[cfg(feature = "app-relayreplaymenu")]
-#[::unity2::methods]
-impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-relayreplaymenu")]
-impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        < Self as IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods > :: ctor (this , object , method) ;
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_ReplayMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_ReplayMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "RelayReplayMenu.ReplayMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct RelayReplayMenu_ReplayMenuItem {
@@ -406,6 +217,195 @@ impl RelayReplayMenu_ReplayMenuItem {
             select_event_handler,
             decide_event_handler,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RelayReplayMenu.RelayConfirmReplayDialog.DialogItem.DialogDecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler {}
+
+#[cfg(feature = "app-relayreplaymenu")]
+#[::unity2::methods]
+impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    RelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandler
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        < Self as IRelayReplayMenu_RelayConfirmReplayDialog_DialogItem_DialogDecideEventHandlerMethods > :: ctor (this , object , method) ;
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_SelectEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "RelayReplayMenu.SelectEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RelayReplayMenu_SelectEventHandler {}
+
+#[cfg(feature = "app-relayreplaymenu")]
+#[::unity2::methods]
+impl RelayReplayMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, meta_data: crate::app::relayservermetadata::RelayServerMetaData) -> ();
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl RelayReplayMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayReplayMenu_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayReplayMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RelayConfirmReplayDialog.md"))]
+#[::unity2::class(namespace = "App", name = "RelayReplayMenu.RelayConfirmReplayDialog")]
+#[parent(crate::app::basicdialog::BasicDialog)]
+pub struct RelayReplayMenu_RelayConfirmReplayDialog {}
+
+#[cfg(feature = "app-relayreplaymenu")]
+#[::unity2::methods]
+impl RelayReplayMenu_RelayConfirmReplayDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        decide: crate::app::relayreplaymenu::RelayReplayMenu_DecideEventHandler,
+    ) -> ();
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl RelayReplayMenu_RelayConfirmReplayDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayReplayMenu_RelayConfirmReplayDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayReplayMenu_RelayConfirmReplayDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "RelayReplayMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RelayReplayMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-relayreplaymenu")]
+#[::unity2::methods]
+impl RelayReplayMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl RelayReplayMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayReplayMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayReplayMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayreplaymenu/RelayReplayMenu_RequestCloseEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "RelayReplayMenu.RequestCloseEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RelayReplayMenu_RequestCloseEventHandler {}
+
+#[cfg(feature = "app-relayreplaymenu")]
+#[::unity2::methods]
+impl RelayReplayMenu_RequestCloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-relayreplaymenu")]
+impl RelayReplayMenu_RequestCloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayReplayMenu_RequestCloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayReplayMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

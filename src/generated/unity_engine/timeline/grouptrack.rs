@@ -12,7 +12,7 @@ use crate::unity_engine::timeline::trackasset::ITrackAsset;
 use crate::unity_engine::timeline::trackasset::TrackAsset;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/grouptrack/GroupTrack.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/grouptrack/GroupTrack.md"))]
 #[::unity2::class(namespace = "UnityEngine.Timeline", name = "GroupTrack")]
 #[parent(crate::unity_engine::timeline::trackasset::TrackAsset)]
 pub struct GroupTrack {}

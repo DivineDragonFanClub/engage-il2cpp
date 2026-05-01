@@ -20,7 +20,7 @@ use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
 use crate::unity_engine::ui::maskablegraphic::MaskableGraphic;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/uniticon/UnitIcon.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/uniticon/UnitIcon.md"))]
 #[::unity2::class(namespace = "App", name = "UnitIcon")]
 #[parent(crate::unity_engine::ui::image::Image)]
 pub struct UnitIcon {

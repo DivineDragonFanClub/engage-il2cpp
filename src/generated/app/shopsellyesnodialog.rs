@@ -16,7 +16,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellyesnodialog/ShopSellYesNoDialog_YesEventHandler.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellyesnodialog/ShopSellYesNoDialog_YesEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "ShopSellYesNoDialog.YesEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
 pub struct ShopSellYesNoDialog_YesEventHandler {}
@@ -49,7 +49,7 @@ impl ShopSellYesNoDialog_YesEventHandler {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellyesnodialog/ShopSellYesNoDialog.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellyesnodialog/ShopSellYesNoDialog.md"))]
 #[::unity2::class(namespace = "App", name = "ShopSellYesNoDialog")]
 #[parent(crate::app::yesnodialog::YesNoDialog)]
 pub struct ShopSellYesNoDialog {}

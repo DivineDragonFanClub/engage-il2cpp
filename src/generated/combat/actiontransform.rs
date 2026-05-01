@@ -12,7 +12,55 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiontransform/ActionTransform.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiontransform/ActionTransform_State.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ActionTransform_State {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ActionTransform_State {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "ActionTransform.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ActionTransform_State {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ActionTransform_State {
+    pub fn begin() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn transform() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn finish() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiontransform/ActionTransform.md"))]
 #[::unity2::class(namespace = "Combat", name = "ActionTransform")]
 #[parent(crate::combat::actionbase::ActionBase)]
 pub struct ActionTransform {
@@ -61,53 +109,5 @@ impl ActionTransform {
         });
         <Self as IActionTransformMethods>::ctor(this, do_player, do_enemy);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiontransform/ActionTransform_State.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ActionTransform_State {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for ActionTransform_State {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "ActionTransform.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ActionTransform_State {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ActionTransform_State {
-    pub fn begin() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn transform() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn finish() -> Self {
-        Self { value: 2 }
     }
 }

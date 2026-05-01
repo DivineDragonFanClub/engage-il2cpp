@@ -12,7 +12,89 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptmenu/ScriptMenu_EventMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptmenu/ScriptMenu_EventMenu.md"))]
+#[::unity2::class(namespace = "App", name = "ScriptMenu.EventMenu")]
+#[parent(crate::app::debugmenu::DebugMenu)]
+pub struct ScriptMenu_EventMenu {
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+    #[rename(name = "m_Address")]
+    pub m_address: i32,
+    #[rename(name = "m_CancelCall")]
+    pub m_cancel_call: crate::moon_sharp::interpreter::dynvalue::DynValue,
+    #[rename(name = "m_CancelJump")]
+    pub m_cancel_jump: crate::moon_sharp::interpreter::dynvalue::DynValue,
+}
+
+#[cfg(feature = "app-scriptmenu")]
+#[::unity2::methods]
+impl ScriptMenu_EventMenu {
+    #[doc = "`GetIndex()` overload"]
+    #[method(name = "GetIndex", args = 0)]
+    pub fn get_index(self) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`LoadCursor()` overload"]
+    #[method(name = "LoadCursor", args = 0)]
+    pub fn load_cursor(self) -> ();
+
+    #[doc = "`ToSelectableIndex(i32)` overload"]
+    #[method(name = "ToSelectableIndex", args = 1)]
+    pub fn to_selectable_index(self, select: i32) -> i32;
+
+    #[doc = "`SaveCursor(bool)` overload"]
+    #[method(name = "SaveCursor", args = 1)]
+    pub fn save_cursor(self, decide: bool) -> ();
+
+    #[doc = "`OnOpen()` overload"]
+    #[method(name = "OnOpen", args = 0)]
+    pub fn on_open(self) -> ();
+
+    #[doc = "`OnClose()` overload"]
+    #[method(name = "OnClose", args = 0)]
+    pub fn on_close(self) -> ();
+
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[doc = "`XCall()` overload"]
+    #[method(name = "XCall", args = 0)]
+    pub fn x_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[doc = "`SetCancelCall(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
+    #[method(name = "SetCancelCall", args = 1)]
+    pub fn set_cancel_call(self, value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+
+    #[doc = "`SetCancelJump(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
+    #[method(name = "SetCancelJump", args = 1)]
+    pub fn set_cancel_jump(self, value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
+}
+
+#[cfg(feature = "app-scriptmenu")]
+impl ScriptMenu_EventMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptMenu_EventMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptMenu_EventMenuMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptmenu/ScriptMenu_EventMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "ScriptMenu.EventMenuItem")]
 #[parent(crate::app::menuitem::MenuItem)]
 pub struct ScriptMenu_EventMenuItem {
@@ -110,7 +192,7 @@ impl ScriptMenu_EventMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptmenu/ScriptMenu.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptmenu/ScriptMenu.md"))]
 #[::unity2::class(namespace = "App", name = "ScriptMenu")]
 #[parent(crate::app::scriptutil::ScriptUtil)]
 pub struct ScriptMenu {}
@@ -211,88 +293,6 @@ impl ScriptMenu {
             )
         });
         <Self as IScriptMenuMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptmenu/ScriptMenu_EventMenu.md")))]
-#[::unity2::class(namespace = "App", name = "ScriptMenu.EventMenu")]
-#[parent(crate::app::debugmenu::DebugMenu)]
-pub struct ScriptMenu_EventMenu {
-    #[rename(name = "m_Index")]
-    pub m_index: i32,
-    #[rename(name = "m_Address")]
-    pub m_address: i32,
-    #[rename(name = "m_CancelCall")]
-    pub m_cancel_call: crate::moon_sharp::interpreter::dynvalue::DynValue,
-    #[rename(name = "m_CancelJump")]
-    pub m_cancel_jump: crate::moon_sharp::interpreter::dynvalue::DynValue,
-}
-
-#[cfg(feature = "app-scriptmenu")]
-#[::unity2::methods]
-impl ScriptMenu_EventMenu {
-    #[doc = "`GetIndex()` overload"]
-    #[method(name = "GetIndex", args = 0)]
-    pub fn get_index(self) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`LoadCursor()` overload"]
-    #[method(name = "LoadCursor", args = 0)]
-    pub fn load_cursor(self) -> ();
-
-    #[doc = "`ToSelectableIndex(i32)` overload"]
-    #[method(name = "ToSelectableIndex", args = 1)]
-    pub fn to_selectable_index(self, select: i32) -> i32;
-
-    #[doc = "`SaveCursor(bool)` overload"]
-    #[method(name = "SaveCursor", args = 1)]
-    pub fn save_cursor(self, decide: bool) -> ();
-
-    #[doc = "`OnOpen()` overload"]
-    #[method(name = "OnOpen", args = 0)]
-    pub fn on_open(self) -> ();
-
-    #[doc = "`OnClose()` overload"]
-    #[method(name = "OnClose", args = 0)]
-    pub fn on_close(self) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::menuitem::MenuItem_Result;
-
-    #[doc = "`XCall()` overload"]
-    #[method(name = "XCall", args = 0)]
-    pub fn x_call(self) -> crate::app::menuitem::MenuItem_Result;
-
-    #[doc = "`SetCancelCall(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    #[method(name = "SetCancelCall", args = 1)]
-    pub fn set_cancel_call(self, value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
-
-    #[doc = "`SetCancelJump(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]
-    #[method(name = "SetCancelJump", args = 1)]
-    pub fn set_cancel_jump(self, value: crate::moon_sharp::interpreter::dynvalue::DynValue) -> ();
-}
-
-#[cfg(feature = "app-scriptmenu")]
-impl ScriptMenu_EventMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScriptMenu_EventMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScriptMenu_EventMenuMethods>::ctor(this);
         this
     }
 }

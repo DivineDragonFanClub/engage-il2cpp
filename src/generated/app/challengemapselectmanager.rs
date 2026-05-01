@@ -8,47 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectmanager/ChallengeMapSelectManager_ReturnEventHandler.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ChallengeMapSelectManager.ReturnEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ChallengeMapSelectManager_ReturnEventHandler {}
-
-#[cfg(feature = "app-challengemapselectmanager")]
-#[::unity2::methods]
-impl ChallengeMapSelectManager_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, crate::app::challengedata::ChallengeData)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        result: crate::app::basicmenu::BasicMenu_Result,
-        challenge_data: crate::app::challengedata::ChallengeData,
-    ) -> ();
-}
-
-#[cfg(feature = "app-challengemapselectmanager")]
-impl ChallengeMapSelectManager_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeMapSelectManager_ReturnEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IChallengeMapSelectManager_ReturnEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectmanager/ChallengeMapSelectManager.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectmanager/ChallengeMapSelectManager.md"))]
 #[::unity2::class(namespace = "App", name = "ChallengeMapSelectManager")]
 #[parent(crate::system::object::Object)]
 pub struct ChallengeMapSelectManager {
@@ -119,6 +79,46 @@ impl ChallengeMapSelectManager {
             default_challenge_data,
             return_event_handler,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectmanager/ChallengeMapSelectManager_ReturnEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ChallengeMapSelectManager.ReturnEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ChallengeMapSelectManager_ReturnEventHandler {}
+
+#[cfg(feature = "app-challengemapselectmanager")]
+#[::unity2::methods]
+impl ChallengeMapSelectManager_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, crate::app::challengedata::ChallengeData)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        result: crate::app::basicmenu::BasicMenu_Result,
+        challenge_data: crate::app::challengedata::ChallengeData,
+    ) -> ();
+}
+
+#[cfg(feature = "app-challengemapselectmanager")]
+impl ChallengeMapSelectManager_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeMapSelectManager_ReturnEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeMapSelectManager_ReturnEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

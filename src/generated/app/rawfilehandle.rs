@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rawfilehandle/RawFileHandle.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rawfilehandle/RawFileHandle.md"))]
 #[::unity2::class(namespace = "App", name = "RawFileHandle")]
 # [parent (crate :: app :: filehandle_1 :: FileHandle_1 < crate :: app :: filedata :: FileData >)]
 pub struct RawFileHandle {}

@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/async_operations/asyncoperationbase_1/AsyncOperationBase_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/async_operations/asyncoperationbase_1/AsyncOperationBase_1.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.AsyncOperations",
     name = "AsyncOperationBase`1"

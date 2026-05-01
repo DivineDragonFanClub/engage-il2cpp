@@ -10,7 +10,7 @@ use crate::unity_engine::gui::GUI;
 use crate::unity_engine::gui::IGUI;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gx/GX.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gx/GX.md"))]
 #[::unity2::class(namespace = "App", name = "GX")]
 #[parent(crate::unity_engine::gui::GUI)]
 pub struct GX {
@@ -174,7 +174,7 @@ impl GX {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gx/GX_Anchor.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gx/GX_Anchor.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

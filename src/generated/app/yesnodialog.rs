@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/yesnodialog/YesNoDialog.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/yesnodialog/YesNoDialog.md"))]
 #[::unity2::class(namespace = "App", name = "YesNoDialog")]
 #[parent(crate::app::basicdialog::BasicDialog)]
 pub struct YesNoDialog {}

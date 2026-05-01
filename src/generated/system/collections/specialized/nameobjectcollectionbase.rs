@@ -4,64 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectKeysEnumerator.md")))]
-#[::unity2::class(
-    namespace = "System.Collections.Specialized",
-    name = "NameObjectCollectionBase.NameObjectKeysEnumerator"
-)]
-#[parent(crate::system::object::Object)]
-pub struct NameObjectCollectionBase_NameObjectKeysEnumerator {
-    #[rename(name = "_pos")]
-    pub pos: i32,
-    #[rename(name = "_coll")]
-    pub coll:
-        crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase,
-    #[rename(name = "_version")]
-    pub version: i32,
-}
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-#[::unity2::methods]
-impl NameObjectCollectionBase_NameObjectKeysEnumerator {
-    #[doc = "`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        coll : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase,
-    ) -> ();
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-}
-
-#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
-impl NameObjectCollectionBase_NameObjectKeysEnumerator {
-    #[doc = "`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` — overload selector"]
-    pub fn new(
-        coll : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NameObjectCollectionBase_NameObjectKeysEnumerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INameObjectCollectionBase_NameObjectKeysEnumeratorMethods>::ctor(this, coll);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase.md"))]
 #[::unity2::class(
     namespace = "System.Collections.Specialized",
     name = "NameObjectCollectionBase"
@@ -221,7 +164,64 @@ impl NameObjectCollectionBase {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectEntry.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectKeysEnumerator.md"))]
+#[::unity2::class(
+    namespace = "System.Collections.Specialized",
+    name = "NameObjectCollectionBase.NameObjectKeysEnumerator"
+)]
+#[parent(crate::system::object::Object)]
+pub struct NameObjectCollectionBase_NameObjectKeysEnumerator {
+    #[rename(name = "_pos")]
+    pub pos: i32,
+    #[rename(name = "_coll")]
+    pub coll:
+        crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase,
+    #[rename(name = "_version")]
+    pub version: i32,
+}
+
+#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
+#[::unity2::methods]
+impl NameObjectCollectionBase_NameObjectKeysEnumerator {
+    #[doc = "`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        coll : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase,
+    ) -> ();
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::system::object::Object;
+}
+
+#[cfg(feature = "system-collections-specialized-nameobjectcollectionbase")]
+impl NameObjectCollectionBase_NameObjectKeysEnumerator {
+    #[doc = "`.ctor(crate::system::collections::specialized::nameobjectcollectionbase::NameObjectCollectionBase)` — overload selector"]
+    pub fn new(
+        coll : crate :: system :: collections :: specialized :: nameobjectcollectionbase :: NameObjectCollectionBase,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NameObjectCollectionBase_NameObjectKeysEnumerator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INameObjectCollectionBase_NameObjectKeysEnumeratorMethods>::ctor(this, coll);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/nameobjectcollectionbase/NameObjectCollectionBase_NameObjectEntry.md"))]
 #[::unity2::class(
     namespace = "System.Collections.Specialized",
     name = "NameObjectCollectionBase.NameObjectEntry"

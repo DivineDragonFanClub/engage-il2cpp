@@ -6,7 +6,62 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditchecker/MapEditChecker.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapeditchecker/MapEditChecker_CheckRange.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapEditChecker_CheckRange {
+    pub min_x: i32,
+    pub max_x: i32,
+    pub min_z: i32,
+    pub max_z: i32,
+}
+
+impl ::unity2::ClassIdentity for MapEditChecker_CheckRange {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapEditChecker.CheckRange";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapEditChecker_CheckRange {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapeditchecker")]
+#[::unity2::methods(value)]
+impl MapEditChecker_CheckRange {
+    #[doc = "`.ctor(i32, i32, i32, i32)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(self, x1: i32, x2: i32, z1: i32, z2: i32) -> ();
+
+    #[doc = "`IsRange(crate::app::mappos::MapPos)` overload"]
+    #[method(name = "IsRange", args = 1)]
+    pub fn is_range(self, pos: crate::app::mappos::MapPos) -> bool;
+
+    #[doc = "`IsRange(i32, i32)` overload"]
+    #[method(name = "IsRange", args = 2)]
+    pub fn is_range_2(self, x: i32, z: i32) -> bool;
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditchecker/MapEditChecker.md"))]
 #[::unity2::class(namespace = "App", name = "MapEditChecker")]
 #[parent(crate::system::object::Object)]
 pub struct MapEditChecker {}
@@ -88,59 +143,4 @@ impl MapEditChecker {
         <Self as IMapEditCheckerMethods>::ctor(this);
         this
     }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapeditchecker/MapEditChecker_CheckRange.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapEditChecker_CheckRange {
-    pub min_x: i32,
-    pub max_x: i32,
-    pub min_z: i32,
-    pub max_z: i32,
-}
-
-impl ::unity2::ClassIdentity for MapEditChecker_CheckRange {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapEditChecker.CheckRange";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapEditChecker_CheckRange {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-mapeditchecker")]
-#[::unity2::methods(value)]
-impl MapEditChecker_CheckRange {
-    #[doc = "`.ctor(i32, i32, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(self, x1: i32, x2: i32, z1: i32, z2: i32) -> ();
-
-    #[doc = "`IsRange(crate::app::mappos::MapPos)` overload"]
-    #[method(name = "IsRange", args = 1)]
-    pub fn is_range(self, pos: crate::app::mappos::MapPos) -> bool;
-
-    #[doc = "`IsRange(i32, i32)` overload"]
-    #[method(name = "IsRange", args = 2)]
-    pub fn is_range_2(self, x: i32, z: i32) -> bool;
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
 }

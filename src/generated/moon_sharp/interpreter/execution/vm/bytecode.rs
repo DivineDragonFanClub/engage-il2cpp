@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/bytecode/ByteCode.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/bytecode/ByteCode.md"))]
 #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.VM", name = "ByteCode")]
 #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
 pub struct ByteCode {
@@ -328,7 +328,7 @@ impl ByteCode {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/bytecode/ByteCode_SourceCodeStackGuard.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/bytecode/ByteCode_SourceCodeStackGuard.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Execution.VM",
     name = "ByteCode.SourceCodeStackGuard"

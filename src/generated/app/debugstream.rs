@@ -6,7 +6,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugstream/DebugStream.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugstream/DebugStream.md"))]
 #[::unity2::class(namespace = "App", name = "DebugStream")]
 #[parent(crate::app::stream_2::Stream_2)]
 pub struct DebugStream {}

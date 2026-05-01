@@ -4,7 +4,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/memberinfo/MemberInfo.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/reflection/memberinfo/MemberInfo.md"))]
 #[::unity2::class(namespace = "System.Reflection", name = "MemberInfo")]
 #[parent(crate::system::object::Object)]
 pub struct MemberInfo {}

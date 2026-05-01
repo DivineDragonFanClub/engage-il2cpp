@@ -10,7 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculatorinstance_1/SystemCalculatorInstance_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systemcalculatorinstance_1/SystemCalculatorInstance_1.md"))]
 #[::unity2::class(namespace = "App", name = "SystemCalculatorInstance`1")]
 #[parent(crate::app::systemcalculator::SystemCalculator)]
 #[parent(crate::app::calculatormanager::CalculatorManager)]

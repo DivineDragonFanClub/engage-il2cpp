@@ -12,7 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridepresetparamdata/DragonRidePresetParamData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridepresetparamdata/DragonRidePresetParamData.md"))]
 #[::unity2::class(namespace = "App", name = "DragonRidePresetParamData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: dragonridepresetparamdata :: DragonRidePresetParamData >)]
 pub struct DragonRidePresetParamData {}
@@ -280,7 +280,7 @@ impl DragonRidePresetParamData {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridepresetparamdata/DragonRidePresetParamData_CourseData.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridepresetparamdata/DragonRidePresetParamData_CourseData.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct DragonRidePresetParamData_CourseData {

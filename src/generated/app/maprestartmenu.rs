@@ -10,40 +10,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maprestartmenu/MapRestartMenu.md")))]
-#[::unity2::class(namespace = "App", name = "MapRestartMenu")]
-#[parent(crate::system::object::Object)]
-pub struct MapRestartMenu {}
-
-#[cfg(feature = "app-maprestartmenu")]
-#[::unity2::methods]
-impl MapRestartMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maprestartmenu")]
-impl MapRestartMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapRestartMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapRestartMenuMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maprestartmenu/MapRestartMenu_ConfirmRestartItemYes.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maprestartmenu/MapRestartMenu_ConfirmRestartItemYes.md"))]
 #[::unity2::class(namespace = "App", name = "MapRestartMenu.ConfirmRestartItemYes")]
 #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
 pub struct MapRestartMenu_ConfirmRestartItemYes {
@@ -79,6 +46,39 @@ impl MapRestartMenu_ConfirmRestartItemYes {
             )
         });
         <Self as IMapRestartMenu_ConfirmRestartItemYesMethods>::ctor(this, text, keep_level);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maprestartmenu/MapRestartMenu.md"))]
+#[::unity2::class(namespace = "App", name = "MapRestartMenu")]
+#[parent(crate::system::object::Object)]
+pub struct MapRestartMenu {}
+
+#[cfg(feature = "app-maprestartmenu")]
+#[::unity2::methods]
+impl MapRestartMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maprestartmenu")]
+impl MapRestartMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapRestartMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapRestartMenuMethods>::ctor(this);
         this
     }
 }

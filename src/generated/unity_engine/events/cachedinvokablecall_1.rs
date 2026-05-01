@@ -8,7 +8,7 @@ use crate::unity_engine::events::invokablecall_1::IInvokableCall_1;
 use crate::unity_engine::events::invokablecall_1::InvokableCall_1;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/cachedinvokablecall_1/CachedInvokableCall_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/cachedinvokablecall_1/CachedInvokableCall_1.md"))]
 #[::unity2::class(namespace = "UnityEngine.Events", name = "CachedInvokableCall`1")]
 # [parent (crate :: unity_engine :: events :: invokablecall_1 :: InvokableCall_1 < T0 >)]
 #[parent(crate::unity_engine::events::baseinvokablecall::BaseInvokableCall)]

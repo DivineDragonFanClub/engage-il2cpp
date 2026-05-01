@@ -26,167 +26,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomsequence/MyRoomSequence_Label.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MyRoomSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MyRoomSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MyRoomSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MyRoomSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MyRoomSequence_Label {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn select() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn reliance() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn reliance_main() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn wakeup_confirm() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn wakeup_main() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn wakeup_exit() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn recall() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn recall_reliance() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn recall_wakeup() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn recall_movie() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn recall_music() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn set_difficulty() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn exit() -> Self {
-        Self { value: 13 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "MyRoomSequence.SleepConfirmDialog.ConfirmDialogItemNo"
-)]
-#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {}
-
-#[cfg(feature = "app-myroomsequence")]
-#[::unity2::methods]
-impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-myroomsequence")]
-impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes.md")))]
-#[::unity2::class(
-    namespace = "App",
-    name = "MyRoomSequence.SleepConfirmDialog.ConfirmDialogItemYes"
-)]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {}
-
-#[cfg(feature = "app-myroomsequence")]
-#[::unity2::methods]
-impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-myroomsequence")]
-impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog.md"))]
 #[::unity2::class(namespace = "App", name = "MyRoomSequence.SleepConfirmDialog")]
 #[parent(crate::app::yesnodialog::YesNoDialog)]
 pub struct MyRoomSequence_SleepConfirmDialog {}
@@ -228,7 +68,7 @@ impl MyRoomSequence_SleepConfirmDialog {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_RelianceUnitMenuItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_RelianceUnitMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "MyRoomSequence.RelianceUnitMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
 pub struct MyRoomSequence_RelianceUnitMenuItem {}
@@ -288,7 +128,43 @@ impl MyRoomSequence_RelianceUnitMenuItem {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "MyRoomSequence.SleepConfirmDialog.ConfirmDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {}
+
+#[cfg(feature = "app-myroomsequence")]
+#[::unity2::methods]
+impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-myroomsequence")]
+impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemYesMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence.md"))]
 #[::unity2::class(namespace = "App", name = "MyRoomSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: myroomsequence :: MyRoomSequence >)]
 pub struct MyRoomSequence {
@@ -423,7 +299,131 @@ impl MyRoomSequence {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_RelianceListMenu.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomsequence/MyRoomSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MyRoomSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MyRoomSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MyRoomSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MyRoomSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MyRoomSequence_Label {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn select() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn reliance() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn reliance_main() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn wakeup_confirm() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn wakeup_main() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn wakeup_exit() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn recall() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn recall_reliance() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn recall_wakeup() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn recall_movie() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn recall_music() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn set_difficulty() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 13 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "MyRoomSequence.SleepConfirmDialog.ConfirmDialogItemNo"
+)]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {}
+
+#[cfg(feature = "app-myroomsequence")]
+#[::unity2::methods]
+impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-myroomsequence")]
+impl MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomSequence_SleepConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomsequence/MyRoomSequence_RelianceListMenu.md"))]
 #[::unity2::class(namespace = "App", name = "MyRoomSequence.RelianceListMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
 pub struct MyRoomSequence_RelianceListMenu {}

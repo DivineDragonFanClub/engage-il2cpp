@@ -14,87 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobintrodata/JobIntroData_BattleType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct JobIntroData_BattleType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for JobIntroData_BattleType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "JobIntroData.BattleType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for JobIntroData_BattleType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl JobIntroData_BattleType {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn attack1() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn attack2() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn attack3() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn attack4() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn attack5() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn miss() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn parry() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn guard() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn heal() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn finish() -> Self {
-        Self { value: 10 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrodata/JobIntroData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/jobintrodata/JobIntroData.md"))]
 #[::unity2::class(namespace = "App", name = "JobIntroData")]
 # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: jobintrodata :: JobIntroData >)]
 pub struct JobIntroData {}
@@ -236,5 +156,85 @@ impl JobIntroData {
         });
         <Self as IJobIntroDataMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/jobintrodata/JobIntroData_BattleType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct JobIntroData_BattleType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for JobIntroData_BattleType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "JobIntroData.BattleType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for JobIntroData_BattleType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl JobIntroData_BattleType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn attack1() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn attack2() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn attack3() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn attack4() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn attack5() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn miss() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn parry() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn guard() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn heal() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn finish() -> Self {
+        Self { value: 10 }
     }
 }

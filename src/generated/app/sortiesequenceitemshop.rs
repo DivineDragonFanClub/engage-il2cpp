@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceitemshop/SortieSequenceItemShop.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortiesequenceitemshop/SortieSequenceItemShop.md"))]
 #[::unity2::class(namespace = "App", name = "SortieSequenceItemShop")]
 #[parent(crate::app::hubitemshopsequence::HubItemShopSequence)]
 pub struct SortieSequenceItemShop {}

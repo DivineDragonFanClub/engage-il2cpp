@@ -4,7 +4,47 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/tess/Tess.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/tess/Tess_ActiveRegion.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
+    name = "Tess.ActiveRegion"
+)]
+#[parent(crate::system::object::Object)]
+pub struct Tess_ActiveRegion {
+# [rename (name = "_eUp")] pub e_up : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ,
+# [rename (name = "_nodeUp")] pub node_up : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: dict_1 :: Dict_1_Node < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: tess :: Tess_ActiveRegion > ,
+# [rename (name = "_windingNumber")] pub winding_number : i32 ,
+# [rename (name = "_inside")] pub inside : bool ,
+# [rename (name = "_sentinel")] pub sentinel : bool ,
+# [rename (name = "_dirty")] pub dirty : bool ,
+# [rename (name = "_fixUpperEdge")] pub fix_upper_edge : bool ,
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")]
+#[::unity2::methods]
+impl Tess_ActiveRegion {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")]
+impl Tess_ActiveRegion {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Tess_ActiveRegion),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITess_ActiveRegionMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/tess/Tess.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
     name = "Tess"
@@ -369,46 +409,6 @@ impl Tess {
             )
         });
         <Self as ITessMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/tess/Tess_ActiveRegion.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
-    name = "Tess.ActiveRegion"
-)]
-#[parent(crate::system::object::Object)]
-pub struct Tess_ActiveRegion {
-# [rename (name = "_eUp")] pub e_up : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ,
-# [rename (name = "_nodeUp")] pub node_up : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: dict_1 :: Dict_1_Node < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: tess :: Tess_ActiveRegion > ,
-# [rename (name = "_windingNumber")] pub winding_number : i32 ,
-# [rename (name = "_inside")] pub inside : bool ,
-# [rename (name = "_sentinel")] pub sentinel : bool ,
-# [rename (name = "_dirty")] pub dirty : bool ,
-# [rename (name = "_fixUpperEdge")] pub fix_upper_edge : bool ,
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")]
-#[::unity2::methods]
-impl Tess_ActiveRegion {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-tess")]
-impl Tess_ActiveRegion {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Tess_ActiveRegion),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITess_ActiveRegionMethods>::ctor(this);
         this
     }
 }

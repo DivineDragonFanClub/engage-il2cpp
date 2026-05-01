@@ -6,7 +6,7 @@ use crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::m
 use crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Pooled_1;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/mesh_2/Mesh_2.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/mesh_2/Mesh_2.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
     name = "Mesh"

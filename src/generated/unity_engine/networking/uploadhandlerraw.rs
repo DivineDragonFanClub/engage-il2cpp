@@ -6,7 +6,7 @@ use crate::unity_engine::networking::uploadhandler::IUploadHandler;
 use crate::unity_engine::networking::uploadhandler::UploadHandler;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/uploadhandlerraw/UploadHandlerRaw.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/networking/uploadhandlerraw/UploadHandlerRaw.md"))]
 #[::unity2::class(namespace = "UnityEngine.Networking", name = "UploadHandlerRaw")]
 #[parent(crate::unity_engine::networking::uploadhandler::UploadHandler)]
 pub struct UploadHandlerRaw {}

@@ -16,7 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_ForceType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_HPStockType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -25,14 +25,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct UnitInfoParamSetter_ForceType {
+pub struct UnitInfoParamSetter_HPStockType {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for UnitInfoParamSetter_ForceType {
+impl ::unity2::ClassIdentity for UnitInfoParamSetter_HPStockType {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "UnitInfoParamSetter.ForceType";
+    const NAME: &'static str = "UnitInfoParamSetter.HPStockType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,7 +41,7 @@ impl ::unity2::ClassIdentity for UnitInfoParamSetter_ForceType {
     }
 }
 
-impl ::unity2::IlType for UnitInfoParamSetter_ForceType {
+impl ::unity2::IlType for UnitInfoParamSetter_HPStockType {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -50,29 +50,25 @@ impl ::unity2::IlType for UnitInfoParamSetter_ForceType {
     }
 }
 
-impl UnitInfoParamSetter_ForceType {
-    pub fn player() -> Self {
+impl UnitInfoParamSetter_HPStockType {
+    pub fn normal() -> Self {
         Self { value: 0 }
     }
 
-    pub fn enemy() -> Self {
+    pub fn rampage() -> Self {
         Self { value: 1 }
     }
 
-    pub fn ally() -> Self {
+    pub fn player() -> Self {
         Self { value: 2 }
     }
 
-    pub fn f4th() -> Self {
-        Self { value: 3 }
-    }
-
     pub fn count() -> Self {
-        Self { value: 4 }
+        Self { value: 3 }
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_WdwType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_WdwType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -140,7 +136,55 @@ impl UnitInfoParamSetter_WdwType {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoparamsetter/UnitInfoParamSetter.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_GodBuffType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitInfoParamSetter_GodBuffType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitInfoParamSetter_GodBuffType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitInfoParamSetter.GodBuffType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitInfoParamSetter_GodBuffType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitInfoParamSetter_GodBuffType {
+    pub fn blue() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn red() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn count() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoparamsetter/UnitInfoParamSetter.md"))]
 #[::unity2::class(namespace = "App", name = "UnitInfoParamSetter")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct UnitInfoParamSetter {
@@ -371,7 +415,7 @@ impl UnitInfoParamSetter {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_HPStockType.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_ForceType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -380,14 +424,14 @@ impl UnitInfoParamSetter {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct UnitInfoParamSetter_HPStockType {
+pub struct UnitInfoParamSetter_ForceType {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for UnitInfoParamSetter_HPStockType {
+impl ::unity2::ClassIdentity for UnitInfoParamSetter_ForceType {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "UnitInfoParamSetter.HPStockType";
+    const NAME: &'static str = "UnitInfoParamSetter.ForceType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -396,7 +440,7 @@ impl ::unity2::ClassIdentity for UnitInfoParamSetter_HPStockType {
     }
 }
 
-impl ::unity2::IlType for UnitInfoParamSetter_HPStockType {
+impl ::unity2::IlType for UnitInfoParamSetter_ForceType {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -405,68 +449,24 @@ impl ::unity2::IlType for UnitInfoParamSetter_HPStockType {
     }
 }
 
-impl UnitInfoParamSetter_HPStockType {
-    pub fn normal() -> Self {
+impl UnitInfoParamSetter_ForceType {
+    pub fn player() -> Self {
         Self { value: 0 }
     }
 
-    pub fn rampage() -> Self {
+    pub fn enemy() -> Self {
         Self { value: 1 }
     }
 
-    pub fn player() -> Self {
+    pub fn ally() -> Self {
         Self { value: 2 }
     }
 
-    pub fn count() -> Self {
+    pub fn f4th() -> Self {
         Self { value: 3 }
     }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparamsetter/UnitInfoParamSetter_GodBuffType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitInfoParamSetter_GodBuffType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitInfoParamSetter_GodBuffType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfoParamSetter.GodBuffType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitInfoParamSetter_GodBuffType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitInfoParamSetter_GodBuffType {
-    pub fn blue() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn red() -> Self {
-        Self { value: 1 }
-    }
 
     pub fn count() -> Self {
-        Self { value: 2 }
+        Self { value: 4 }
     }
 }

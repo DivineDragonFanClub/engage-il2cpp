@@ -8,7 +8,47 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_NormalQuality.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ScreenSpaceAmbientOcclusionSettings"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScreenSpaceAmbientOcclusionSettings {
+# [rename (name = "Downsample")] pub downsample : bool ,
+# [rename (name = "Source")] pub source : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings_DepthSource ,
+# [rename (name = "NormalSamples")] pub normal_samples : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings_NormalQuality ,
+# [rename (name = "Intensity")] pub intensity : f32 ,
+# [rename (name = "DirectLightingStrength")] pub direct_lighting_strength : f32 ,
+# [rename (name = "Radius")] pub radius : f32 ,
+# [rename (name = "SampleCount")] pub sample_count : i32 ,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings")]
+#[::unity2::methods]
+impl ScreenSpaceAmbientOcclusionSettings {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings")]
+impl ScreenSpaceAmbientOcclusionSettings {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScreenSpaceAmbientOcclusionSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScreenSpaceAmbientOcclusionSettingsMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_NormalQuality.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -56,47 +96,7 @@ impl ScreenSpaceAmbientOcclusionSettings_NormalQuality {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings.md")))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal",
-    name = "ScreenSpaceAmbientOcclusionSettings"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ScreenSpaceAmbientOcclusionSettings {
-# [rename (name = "Downsample")] pub downsample : bool ,
-# [rename (name = "Source")] pub source : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings_DepthSource ,
-# [rename (name = "NormalSamples")] pub normal_samples : crate :: unity_engine :: rendering :: universal :: screenspaceambientocclusionsettings :: ScreenSpaceAmbientOcclusionSettings_NormalQuality ,
-# [rename (name = "Intensity")] pub intensity : f32 ,
-# [rename (name = "DirectLightingStrength")] pub direct_lighting_strength : f32 ,
-# [rename (name = "Radius")] pub radius : f32 ,
-# [rename (name = "SampleCount")] pub sample_count : i32 ,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings")]
-#[::unity2::methods]
-impl ScreenSpaceAmbientOcclusionSettings {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-screenspaceambientocclusionsettings")]
-impl ScreenSpaceAmbientOcclusionSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScreenSpaceAmbientOcclusionSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScreenSpaceAmbientOcclusionSettingsMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_DepthSource.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusionsettings/ScreenSpaceAmbientOcclusionSettings_DepthSource.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,

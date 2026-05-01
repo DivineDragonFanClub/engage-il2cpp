@@ -10,7 +10,97 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera_DemoTelop.md"))]
+#[::unity2::class(namespace = "App", name = "HubPlayCamera.DemoTelop")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct HubPlayCamera_DemoTelop {
+    #[rename(name = "Root")]
+    pub root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "UIObject")]
+    pub ui_object: crate::unity_engine::gameobject::GameObject,
+    #[static_field]
+    #[rename(name = "UIAssetPath")]
+    pub ui_asset_path: ::unity2::Il2CppString,
+    #[rename(name = "m_animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+}
+
+#[cfg(feature = "app-hubplaycamera")]
+#[::unity2::methods]
+impl HubPlayCamera_DemoTelop {
+    #[doc = "`get_Data()` overload"]
+    #[method(name = "get_Data", args = 0)]
+    pub fn get_data(self) -> crate::app::hubdemodata::HubDemoData;
+
+    #[doc = "`get_UIHandle()` overload"]
+    #[method(name = "get_UIHandle", args = 0)]
+    pub fn get_ui_handle(self) -> crate::app::resourcehandle_2::ResourceHandle_2;
+
+    #[doc = "`set_UIHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]
+    #[method(name = "set_UIHandle", args = 1)]
+    pub fn set_ui_handle(self, value: crate::app::resourcehandle_2::ResourceHandle_2) -> ();
+
+    #[doc = "`.ctor(crate::app::hubdemodata::HubDemoData)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, data: crate::app::hubdemodata::HubDemoData) -> ();
+
+    #[doc = "`IsLoading()` overload"]
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading(self) -> bool;
+
+    #[doc = "`IsClosing()` overload"]
+    #[method(name = "IsClosing", args = 0)]
+    pub fn is_closing(self) -> bool;
+
+    #[doc = "`Build()` overload"]
+    #[method(name = "Build", args = 0)]
+    pub fn build(self) -> ();
+
+    #[doc = "`Open()` overload"]
+    #[method(name = "Open", args = 0)]
+    pub fn open(self) -> ();
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+
+    #[doc = "`Close()` overload"]
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[doc = "`Exit()` overload"]
+    #[method(name = "Exit", args = 0)]
+    pub fn exit(self) -> ();
+
+    #[doc = "`CreateDefaultDesc()` overload"]
+    #[method(name = "CreateDefaultDesc", args = 0)]
+    pub fn create_default_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubdemodata::HubDemoData)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        data: crate::app::hubdemodata::HubDemoData,
+    ) -> ();
+}
+
+#[cfg(feature = "app-hubplaycamera")]
+impl HubPlayCamera_DemoTelop {
+    #[doc = "`.ctor(crate::app::hubdemodata::HubDemoData)` — overload selector"]
+    pub fn new(data: crate::app::hubdemodata::HubDemoData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubPlayCamera_DemoTelop),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubPlayCamera_DemoTelopMethods>::ctor(this, data);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera.md"))]
 #[::unity2::class(namespace = "App", name = "HubPlayCamera")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct HubPlayCamera {
@@ -103,7 +193,7 @@ impl HubPlayCamera {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplaycamera/HubPlayCamera_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubplaycamera/HubPlayCamera_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -152,95 +242,5 @@ impl HubPlayCamera_Label {
 
     pub fn exit() -> Self {
         Self { value: 3 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaycamera/HubPlayCamera_DemoTelop.md")))]
-#[::unity2::class(namespace = "App", name = "HubPlayCamera.DemoTelop")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct HubPlayCamera_DemoTelop {
-    #[rename(name = "Root")]
-    pub root: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "UIObject")]
-    pub ui_object: crate::unity_engine::gameobject::GameObject,
-    #[static_field]
-    #[rename(name = "UIAssetPath")]
-    pub ui_asset_path: ::unity2::Il2CppString,
-    #[rename(name = "m_animator")]
-    pub m_animator: crate::unity_engine::animator::Animator,
-}
-
-#[cfg(feature = "app-hubplaycamera")]
-#[::unity2::methods]
-impl HubPlayCamera_DemoTelop {
-    #[doc = "`get_Data()` overload"]
-    #[method(name = "get_Data", args = 0)]
-    pub fn get_data(self) -> crate::app::hubdemodata::HubDemoData;
-
-    #[doc = "`get_UIHandle()` overload"]
-    #[method(name = "get_UIHandle", args = 0)]
-    pub fn get_ui_handle(self) -> crate::app::resourcehandle_2::ResourceHandle_2;
-
-    #[doc = "`set_UIHandle(crate::app::resourcehandle_2::ResourceHandle_2)` overload"]
-    #[method(name = "set_UIHandle", args = 1)]
-    pub fn set_ui_handle(self, value: crate::app::resourcehandle_2::ResourceHandle_2) -> ();
-
-    #[doc = "`.ctor(crate::app::hubdemodata::HubDemoData)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, data: crate::app::hubdemodata::HubDemoData) -> ();
-
-    #[doc = "`IsLoading()` overload"]
-    #[method(name = "IsLoading", args = 0)]
-    pub fn is_loading(self) -> bool;
-
-    #[doc = "`IsClosing()` overload"]
-    #[method(name = "IsClosing", args = 0)]
-    pub fn is_closing(self) -> bool;
-
-    #[doc = "`Build()` overload"]
-    #[method(name = "Build", args = 0)]
-    pub fn build(self) -> ();
-
-    #[doc = "`Open()` overload"]
-    #[method(name = "Open", args = 0)]
-    pub fn open(self) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
-
-    #[doc = "`Close()` overload"]
-    #[method(name = "Close", args = 0)]
-    pub fn close(self) -> ();
-
-    #[doc = "`Exit()` overload"]
-    #[method(name = "Exit", args = 0)]
-    pub fn exit(self) -> ();
-
-    #[doc = "`CreateDefaultDesc()` overload"]
-    #[method(name = "CreateDefaultDesc", args = 0)]
-    pub fn create_default_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::hubdemodata::HubDemoData)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        data: crate::app::hubdemodata::HubDemoData,
-    ) -> ();
-}
-
-#[cfg(feature = "app-hubplaycamera")]
-impl HubPlayCamera_DemoTelop {
-    #[doc = "`.ctor(crate::app::hubdemodata::HubDemoData)` — overload selector"]
-    pub fn new(data: crate::app::hubdemodata::HubDemoData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayCamera_DemoTelop),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubPlayCamera_DemoTelopMethods>::ctor(this, data);
-        this
     }
 }

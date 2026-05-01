@@ -8,7 +8,7 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipelineeditorresources/UniversalRenderPipelineEditorResources_MaterialResources.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipelineeditorresources/UniversalRenderPipelineEditorResources_MaterialResources.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
     name = "UniversalRenderPipelineEditorResources.MaterialResources"
@@ -47,7 +47,7 @@ impl UniversalRenderPipelineEditorResources_MaterialResources {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipelineeditorresources/UniversalRenderPipelineEditorResources.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipelineeditorresources/UniversalRenderPipelineEditorResources.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
     name = "UniversalRenderPipelineEditorResources"
@@ -82,7 +82,7 @@ impl UniversalRenderPipelineEditorResources {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipelineeditorresources/UniversalRenderPipelineEditorResources_ShaderResources.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipelineeditorresources/UniversalRenderPipelineEditorResources_ShaderResources.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
     name = "UniversalRenderPipelineEditorResources.ShaderResources"

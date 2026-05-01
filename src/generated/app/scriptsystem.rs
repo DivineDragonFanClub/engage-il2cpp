@@ -12,44 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptsystem/ScriptSystem_CameraList.md")))]
-#[::unity2::class(namespace = "App", name = "ScriptSystem.CameraList")]
-# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: camera :: Camera >)]
-pub struct ScriptSystem_CameraList {}
-
-#[cfg(feature = "app-scriptsystem")]
-#[::unity2::methods]
-impl ScriptSystem_CameraList {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, tag: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::unity_engine::camera::Camera;
-
-    #[doc = "`Find(::unity2::Il2CppString)` overload"]
-    #[method(name = "Find", args = 1)]
-    pub fn find(self, name: ::unity2::Il2CppString) -> crate::unity_engine::camera::Camera;
-}
-
-#[cfg(feature = "app-scriptsystem")]
-impl ScriptSystem_CameraList {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(tag: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScriptSystem_CameraList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScriptSystem_CameraListMethods>::ctor(this, tag);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/scriptsystem/ScriptSystem_DebugButton.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/scriptsystem/ScriptSystem_DebugButton.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -133,7 +96,7 @@ impl ScriptSystem_DebugButton {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptsystem/ScriptSystem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptsystem/ScriptSystem.md"))]
 #[::unity2::class(namespace = "App", name = "ScriptSystem")]
 #[parent(crate::app::scriptutil::ScriptUtil)]
 pub struct ScriptSystem {}
@@ -562,6 +525,43 @@ impl ScriptSystem {
             )
         });
         <Self as IScriptSystemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/scriptsystem/ScriptSystem_CameraList.md"))]
+#[::unity2::class(namespace = "App", name = "ScriptSystem.CameraList")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: camera :: Camera >)]
+pub struct ScriptSystem_CameraList {}
+
+#[cfg(feature = "app-scriptsystem")]
+#[::unity2::methods]
+impl ScriptSystem_CameraList {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, tag: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::unity_engine::camera::Camera;
+
+    #[doc = "`Find(::unity2::Il2CppString)` overload"]
+    #[method(name = "Find", args = 1)]
+    pub fn find(self, name: ::unity2::Il2CppString) -> crate::unity_engine::camera::Camera;
+}
+
+#[cfg(feature = "app-scriptsystem")]
+impl ScriptSystem_CameraList {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(tag: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptSystem_CameraList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptSystem_CameraListMethods>::ctor(this, tag);
         this
     }
 }

@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavaexception/AndroidJavaException.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/androidjavaexception/AndroidJavaException.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "AndroidJavaException")]
 pub struct AndroidJavaException {
     #[rename(name = "mJavaStackTrace")]

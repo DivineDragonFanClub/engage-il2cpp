@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorfloat/InterpolatorFloat.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/interpolatorfloat/InterpolatorFloat.md"))]
 #[::unity2::class(namespace = "App", name = "InterpolatorFloat")]
 # [parent (crate :: app :: interpolator_1 :: Interpolator_1 < f32 >)]
 pub struct InterpolatorFloat {}

@@ -6,7 +6,31 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aienum/AIEnum_SkillRangeEnemyData.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aienum/AIEnum.md"))]
+#[::unity2::class(namespace = "App", name = "AIEnum")]
+#[parent(crate::system::object::Object)]
+pub struct AIEnum {
+    #[static_field]
+    #[rename(name = "s_SkillRangeEnemyEnumerator")]
+    pub s_skill_range_enemy_enumerator: crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator,
+}
+
+#[cfg(feature = "app-aienum")]
+#[::unity2::methods]
+impl AIEnum {
+    #[doc = "`GetSkillRangeEnemy(crate::app::unit::Unit, crate::app::skilldata::SkillData, i32, i32, i32, i32)` overload"]
+    #[method(name = "GetSkillRangeEnemy", args = 6)]
+    pub fn get_skill_range_enemy(
+        unit: crate::app::unit::Unit,
+        skill: crate::app::skilldata::SkillData,
+        x: i32,
+        z: i32,
+        target_x: i32,
+        target_z: i32,
+    ) -> crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator;
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aienum/AIEnum_SkillRangeEnemyData.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct AIEnum_SkillRangeEnemyData {
@@ -36,31 +60,7 @@ impl ::unity2::IlType for AIEnum_SkillRangeEnemyData {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aienum/AIEnum.md")))]
-#[::unity2::class(namespace = "App", name = "AIEnum")]
-#[parent(crate::system::object::Object)]
-pub struct AIEnum {
-    #[static_field]
-    #[rename(name = "s_SkillRangeEnemyEnumerator")]
-    pub s_skill_range_enemy_enumerator: crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator,
-}
-
-#[cfg(feature = "app-aienum")]
-#[::unity2::methods]
-impl AIEnum {
-    #[doc = "`GetSkillRangeEnemy(crate::app::unit::Unit, crate::app::skilldata::SkillData, i32, i32, i32, i32)` overload"]
-    #[method(name = "GetSkillRangeEnemy", args = 6)]
-    pub fn get_skill_range_enemy(
-        unit: crate::app::unit::Unit,
-        skill: crate::app::skilldata::SkillData,
-        x: i32,
-        z: i32,
-        target_x: i32,
-        target_z: i32,
-    ) -> crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator;
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aienum/AIEnum_SkillRangeEnemyEnumerator.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aienum/AIEnum_SkillRangeEnemyEnumerator.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct AIEnum_SkillRangeEnemyEnumerator {

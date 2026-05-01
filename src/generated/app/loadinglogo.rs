@@ -18,7 +18,120 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadinglogo/LoadingLogo_Sequences.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct LoadingLogo_Sequences {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for LoadingLogo_Sequences {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "LoadingLogo.Sequences";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for LoadingLogo_Sequences {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl LoadingLogo_Sequences {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn show() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn idle() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn change() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn hide() -> Self {
+        Self { value: 4 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo_UnitDotObject.md"))]
+#[::unity2::class(namespace = "App", name = "LoadingLogo.UnitDotObject")]
+#[parent(crate::system::object::Object)]
+pub struct LoadingLogo_UnitDotObject {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Image")]
+    pub m_image: crate::unity_engine::ui::rawimage::RawImage,
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_Material")]
+    pub m_material: crate::unity_engine::material::Material,
+}
+
+#[cfg(feature = "app-loadinglogo")]
+#[::unity2::methods]
+impl LoadingLogo_UnitDotObject {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Setup(crate::app::persondata::PersonData, bool)` overload"]
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(self, person: crate::app::persondata::PersonData, is_female: bool) -> bool;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`GetUnitDotTexturePath(crate::app::persondata::PersonData, bool)` overload"]
+    #[method(name = "GetUnitDotTexturePath", args = 2)]
+    pub fn get_unit_dot_texture_path(
+        person: crate::app::persondata::PersonData,
+        is_female: bool,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`LoadUnitDotTextureAll()` overload"]
+    #[method(name = "LoadUnitDotTextureAll", args = 0)]
+    pub fn load_unit_dot_texture_all() -> ();
+}
+
+#[cfg(feature = "app-loadinglogo")]
+impl LoadingLogo_UnitDotObject {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LoadingLogo_UnitDotObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILoadingLogo_UnitDotObjectMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo.md"))]
 #[::unity2::class(namespace = "App", name = "LoadingLogo")]
 # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: loadinglogo :: LoadingLogo >)]
 pub struct LoadingLogo {
@@ -189,119 +302,6 @@ impl LoadingLogo {
             )
         });
         <Self as ILoadingLogoMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/loadinglogo/LoadingLogo_Sequences.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct LoadingLogo_Sequences {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for LoadingLogo_Sequences {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "LoadingLogo.Sequences";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for LoadingLogo_Sequences {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl LoadingLogo_Sequences {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn show() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn idle() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn change() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn hide() -> Self {
-        Self { value: 4 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/loadinglogo/LoadingLogo_UnitDotObject.md")))]
-#[::unity2::class(namespace = "App", name = "LoadingLogo.UnitDotObject")]
-#[parent(crate::system::object::Object)]
-pub struct LoadingLogo_UnitDotObject {
-    #[rename(name = "m_RootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Image")]
-    pub m_image: crate::unity_engine::ui::rawimage::RawImage,
-    #[rename(name = "m_Animator")]
-    pub m_animator: crate::unity_engine::animator::Animator,
-    #[rename(name = "m_Material")]
-    pub m_material: crate::unity_engine::material::Material,
-}
-
-#[cfg(feature = "app-loadinglogo")]
-#[::unity2::methods]
-impl LoadingLogo_UnitDotObject {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Setup(crate::app::persondata::PersonData, bool)` overload"]
-    #[method(name = "Setup", args = 2)]
-    pub fn setup(self, person: crate::app::persondata::PersonData, is_female: bool) -> bool;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`GetUnitDotTexturePath(crate::app::persondata::PersonData, bool)` overload"]
-    #[method(name = "GetUnitDotTexturePath", args = 2)]
-    pub fn get_unit_dot_texture_path(
-        person: crate::app::persondata::PersonData,
-        is_female: bool,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`LoadUnitDotTextureAll()` overload"]
-    #[method(name = "LoadUnitDotTextureAll", args = 0)]
-    pub fn load_unit_dot_texture_all() -> ();
-}
-
-#[cfg(feature = "app-loadinglogo")]
-impl LoadingLogo_UnitDotObject {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(LoadingLogo_UnitDotObject),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ILoadingLogo_UnitDotObjectMethods>::ctor(this, root_object);
         this
     }
 }

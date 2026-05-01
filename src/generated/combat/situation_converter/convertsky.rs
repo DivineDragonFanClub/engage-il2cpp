@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertsky/ConvertSky.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertsky/ConvertSky.md"))]
 #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertSky")]
 #[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]
 pub struct ConvertSky {}

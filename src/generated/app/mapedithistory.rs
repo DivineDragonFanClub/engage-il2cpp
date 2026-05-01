@@ -6,7 +6,141 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_ReplaceObjectCommand.md"))]
+#[::unity2::class(namespace = "App", name = "MapEditHistory.ReplaceObjectCommand")]
+#[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]
+pub struct MapEditHistory_ReplaceObjectCommand {
+    #[rename(name = "m_X")]
+    pub m_x: i32,
+    #[rename(name = "m_Z")]
+    pub m_z: i32,
+    #[rename(name = "m_DeleteRotate")]
+    pub m_delete_rotate: i32,
+    #[rename(name = "m_DeleteObjName")]
+    pub m_delete_obj_name: ::unity2::Il2CppString,
+    #[rename(name = "m_CreateObjName")]
+    pub m_create_obj_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-mapedithistory")]
+#[::unity2::methods]
+impl MapEditHistory_ReplaceObjectCommand {
+    #[doc = "`.ctor(i32, i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        x: i32,
+        z: i32,
+        delete_rotate: i32,
+        delete_obj_name: ::unity2::Il2CppString,
+        create_obj_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`Do()` overload"]
+    #[method(name = "Do", args = 0)]
+    pub fn r#do(self) -> ();
+
+    #[doc = "`Undo()` overload"]
+    #[method(name = "Undo", args = 0)]
+    pub fn undo(self) -> ();
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-mapedithistory")]
+impl MapEditHistory_ReplaceObjectCommand {
+    #[doc = "`.ctor(i32, i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(
+        x: i32,
+        z: i32,
+        delete_rotate: i32,
+        delete_obj_name: ::unity2::Il2CppString,
+        create_obj_name: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapEditHistory_ReplaceObjectCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapEditHistory_ReplaceObjectCommandMethods>::ctor(
+            this,
+            x,
+            z,
+            delete_rotate,
+            delete_obj_name,
+            create_obj_name,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_DeleteObjectCommand.md"))]
+#[::unity2::class(namespace = "App", name = "MapEditHistory.DeleteObjectCommand")]
+#[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]
+pub struct MapEditHistory_DeleteObjectCommand {
+    #[rename(name = "m_X")]
+    pub m_x: i32,
+    #[rename(name = "m_Z")]
+    pub m_z: i32,
+    #[rename(name = "m_DeleteObjectName")]
+    pub m_delete_object_name: ::unity2::Il2CppString,
+    #[rename(name = "m_Rotate")]
+    pub m_rotate: i32,
+}
+
+#[cfg(feature = "app-mapedithistory")]
+#[::unity2::methods]
+impl MapEditHistory_DeleteObjectCommand {
+    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString, i32)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        x: i32,
+        z: i32,
+        delete_object_name: ::unity2::Il2CppString,
+        rotate: i32,
+    ) -> ();
+
+    #[doc = "`Do()` overload"]
+    #[method(name = "Do", args = 0)]
+    pub fn r#do(self) -> ();
+
+    #[doc = "`Undo()` overload"]
+    #[method(name = "Undo", args = 0)]
+    pub fn undo(self) -> ();
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-mapedithistory")]
+impl MapEditHistory_DeleteObjectCommand {
+    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString, i32)` — overload selector"]
+    pub fn new(x: i32, z: i32, delete_object_name: ::unity2::Il2CppString, rotate: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapEditHistory_DeleteObjectCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapEditHistory_DeleteObjectCommandMethods>::ctor(
+            this,
+            x,
+            z,
+            delete_object_name,
+            rotate,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory.md"))]
 #[::unity2::class(namespace = "App", name = "MapEditHistory")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapedithistory :: MapEditHistory >)]
 pub struct MapEditHistory {
@@ -116,35 +250,24 @@ impl MapEditHistory {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_ReplaceObjectCommand.md")))]
-#[::unity2::class(namespace = "App", name = "MapEditHistory.ReplaceObjectCommand")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_CreateObjectCommand.md"))]
+#[::unity2::class(namespace = "App", name = "MapEditHistory.CreateObjectCommand")]
 #[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]
-pub struct MapEditHistory_ReplaceObjectCommand {
+pub struct MapEditHistory_CreateObjectCommand {
     #[rename(name = "m_X")]
     pub m_x: i32,
     #[rename(name = "m_Z")]
     pub m_z: i32,
-    #[rename(name = "m_DeleteRotate")]
-    pub m_delete_rotate: i32,
-    #[rename(name = "m_DeleteObjName")]
-    pub m_delete_obj_name: ::unity2::Il2CppString,
-    #[rename(name = "m_CreateObjName")]
-    pub m_create_obj_name: ::unity2::Il2CppString,
+    #[rename(name = "m_ObjectName")]
+    pub m_object_name: ::unity2::Il2CppString,
 }
 
 #[cfg(feature = "app-mapedithistory")]
 #[::unity2::methods]
-impl MapEditHistory_ReplaceObjectCommand {
-    #[doc = "`.ctor(i32, i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
-        x: i32,
-        z: i32,
-        delete_rotate: i32,
-        delete_obj_name: ::unity2::Il2CppString,
-        create_obj_name: ::unity2::Il2CppString,
-    ) -> ();
+impl MapEditHistory_CreateObjectCommand {
+    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(self, x: i32, z: i32, object_name: ::unity2::Il2CppString) -> ();
 
     #[doc = "`Do()` overload"]
     #[method(name = "Do", args = 0)]
@@ -160,35 +283,22 @@ impl MapEditHistory_ReplaceObjectCommand {
 }
 
 #[cfg(feature = "app-mapedithistory")]
-impl MapEditHistory_ReplaceObjectCommand {
-    #[doc = "`.ctor(i32, i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(
-        x: i32,
-        z: i32,
-        delete_rotate: i32,
-        delete_obj_name: ::unity2::Il2CppString,
-        create_obj_name: ::unity2::Il2CppString,
-    ) -> Self {
+impl MapEditHistory_CreateObjectCommand {
+    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(x: i32, z: i32, object_name: ::unity2::Il2CppString) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapEditHistory_ReplaceObjectCommand),
+                ::core::stringify!(MapEditHistory_CreateObjectCommand),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapEditHistory_ReplaceObjectCommandMethods>::ctor(
-            this,
-            x,
-            z,
-            delete_rotate,
-            delete_obj_name,
-            create_obj_name,
-        );
+        <Self as IMapEditHistory_CreateObjectCommandMethods>::ctor(this, x, z, object_name);
         this
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_RotateObjectCommand.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_RotateObjectCommand.md"))]
 #[::unity2::class(namespace = "App", name = "MapEditHistory.RotateObjectCommand")]
 #[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]
 pub struct MapEditHistory_RotateObjectCommand {
@@ -244,69 +354,7 @@ impl MapEditHistory_RotateObjectCommand {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_DeleteObjectCommand.md")))]
-#[::unity2::class(namespace = "App", name = "MapEditHistory.DeleteObjectCommand")]
-#[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]
-pub struct MapEditHistory_DeleteObjectCommand {
-    #[rename(name = "m_X")]
-    pub m_x: i32,
-    #[rename(name = "m_Z")]
-    pub m_z: i32,
-    #[rename(name = "m_DeleteObjectName")]
-    pub m_delete_object_name: ::unity2::Il2CppString,
-    #[rename(name = "m_Rotate")]
-    pub m_rotate: i32,
-}
-
-#[cfg(feature = "app-mapedithistory")]
-#[::unity2::methods]
-impl MapEditHistory_DeleteObjectCommand {
-    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString, i32)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        x: i32,
-        z: i32,
-        delete_object_name: ::unity2::Il2CppString,
-        rotate: i32,
-    ) -> ();
-
-    #[doc = "`Do()` overload"]
-    #[method(name = "Do", args = 0)]
-    pub fn r#do(self) -> ();
-
-    #[doc = "`Undo()` overload"]
-    #[method(name = "Undo", args = 0)]
-    pub fn undo(self) -> ();
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-mapedithistory")]
-impl MapEditHistory_DeleteObjectCommand {
-    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString, i32)` — overload selector"]
-    pub fn new(x: i32, z: i32, delete_object_name: ::unity2::Il2CppString, rotate: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapEditHistory_DeleteObjectCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapEditHistory_DeleteObjectCommandMethods>::ctor(
-            this,
-            x,
-            z,
-            delete_object_name,
-            rotate,
-        );
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_MapEditCommand.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_MapEditCommand.md"))]
 #[::unity2::class(namespace = "App", name = "MapEditHistory.MapEditCommand")]
 #[parent(crate::system::object::Object)]
 pub struct MapEditHistory_MapEditCommand {}
@@ -339,54 +387,6 @@ impl MapEditHistory_MapEditCommand {
             )
         });
         <Self as IMapEditHistory_MapEditCommandMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapedithistory/MapEditHistory_CreateObjectCommand.md")))]
-#[::unity2::class(namespace = "App", name = "MapEditHistory.CreateObjectCommand")]
-#[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]
-pub struct MapEditHistory_CreateObjectCommand {
-    #[rename(name = "m_X")]
-    pub m_x: i32,
-    #[rename(name = "m_Z")]
-    pub m_z: i32,
-    #[rename(name = "m_ObjectName")]
-    pub m_object_name: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-mapedithistory")]
-#[::unity2::methods]
-impl MapEditHistory_CreateObjectCommand {
-    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, x: i32, z: i32, object_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Do()` overload"]
-    #[method(name = "Do", args = 0)]
-    pub fn r#do(self) -> ();
-
-    #[doc = "`Undo()` overload"]
-    #[method(name = "Undo", args = 0)]
-    pub fn undo(self) -> ();
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-mapedithistory")]
-impl MapEditHistory_CreateObjectCommand {
-    #[doc = "`.ctor(i32, i32, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(x: i32, z: i32, object_name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapEditHistory_CreateObjectCommand),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapEditHistory_CreateObjectCommandMethods>::ctor(this, x, z, object_name);
         this
     }
 }

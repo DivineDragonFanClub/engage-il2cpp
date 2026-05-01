@@ -12,7 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexprofile/NexProfile_ServerSequence_Mode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexprofile/NexProfile_ServerSequence_Mode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -56,7 +56,63 @@ impl NexProfile_ServerSequence_Mode {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexprofile/NexProfile_ServerSequence_Label.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexprofile/NexProfile_Results.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct NexProfile_Results {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for NexProfile_Results {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NexProfile.Results";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NexProfile_Results {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl NexProfile_Results {
+    pub fn failed() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn failed_not_found() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn failed_permission_denied() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn cancelled() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn succeeded() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexprofile/NexProfile_ServerSequence_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -124,7 +180,73 @@ impl NexProfile_ServerSequence_Label {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexprofile/NexProfile_ServerSequence.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexprofile/NexProfile.md"))]
+#[::unity2::class(namespace = "App", name = "NexProfile")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexprofile :: NexProfile >)]
+pub struct NexProfile {
+    #[rename(name = "m_LastResult")]
+    pub m_last_result: crate::app::nexprofile::NexProfile_Results,
+    #[rename(name = "m_LastResultData")]
+    pub m_last_result_data: crate::app::profilecard::ProfileCard,
+}
+
+#[cfg(feature = "app-nexprofile")]
+#[::unity2::methods]
+impl NexProfile {
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`Upload(crate::app::procinst::ProcInst, crate::app::profilecard::ProfileCard)` overload"]
+    #[method(name = "Upload", args = 2)]
+    pub fn upload(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        profile: crate::app::profilecard::ProfileCard,
+    ) -> bool;
+
+    #[doc = "`Download(crate::app::procinst::ProcInst, u64)` overload"]
+    #[method(name = "Download", args = 2)]
+    pub fn download(self, super_: crate::app::procinst::ProcInst, principal_id: u64) -> bool;
+
+    #[doc = "`get_Result()` overload"]
+    #[method(name = "get_Result", args = 0)]
+    pub fn get_result(self) -> crate::app::nexprofile::NexProfile_Results;
+
+    #[doc = "`get_ResultData()` overload"]
+    #[method(name = "get_ResultData", args = 0)]
+    pub fn get_result_data(self) -> crate::app::profilecard::ProfileCard;
+
+    #[doc = "`ClearResult()` overload"]
+    #[method(name = "ClearResult", args = 0)]
+    pub fn clear_result(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-nexprofile")]
+impl NexProfile {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexProfile),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexProfileMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexprofile/NexProfile_ServerSequence.md"))]
 #[::unity2::class(namespace = "App", name = "NexProfile.ServerSequence")]
 #[parent(crate::app::procinst::ProcInst)]
 pub struct NexProfile_ServerSequence {
@@ -253,128 +375,6 @@ impl NexProfile_ServerSequence {
             )
         });
         <Self as INexProfile_ServerSequenceMethods>::ctor(this, mode, principal_id, profile);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexprofile/NexProfile_Results.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct NexProfile_Results {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for NexProfile_Results {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexProfile.Results";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for NexProfile_Results {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl NexProfile_Results {
-    pub fn failed() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn failed_not_found() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn failed_permission_denied() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn cancelled() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn succeeded() -> Self {
-        Self { value: 4 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexprofile/NexProfile.md")))]
-#[::unity2::class(namespace = "App", name = "NexProfile")]
-# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexprofile :: NexProfile >)]
-pub struct NexProfile {
-    #[rename(name = "m_LastResult")]
-    pub m_last_result: crate::app::nexprofile::NexProfile_Results,
-    #[rename(name = "m_LastResultData")]
-    pub m_last_result_data: crate::app::profilecard::ProfileCard,
-}
-
-#[cfg(feature = "app-nexprofile")]
-#[::unity2::methods]
-impl NexProfile {
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`Upload(crate::app::procinst::ProcInst, crate::app::profilecard::ProfileCard)` overload"]
-    #[method(name = "Upload", args = 2)]
-    pub fn upload(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        profile: crate::app::profilecard::ProfileCard,
-    ) -> bool;
-
-    #[doc = "`Download(crate::app::procinst::ProcInst, u64)` overload"]
-    #[method(name = "Download", args = 2)]
-    pub fn download(self, super_: crate::app::procinst::ProcInst, principal_id: u64) -> bool;
-
-    #[doc = "`get_Result()` overload"]
-    #[method(name = "get_Result", args = 0)]
-    pub fn get_result(self) -> crate::app::nexprofile::NexProfile_Results;
-
-    #[doc = "`get_ResultData()` overload"]
-    #[method(name = "get_ResultData", args = 0)]
-    pub fn get_result_data(self) -> crate::app::profilecard::ProfileCard;
-
-    #[doc = "`ClearResult()` overload"]
-    #[method(name = "ClearResult", args = 0)]
-    pub fn clear_result(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-nexprofile")]
-impl NexProfile {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexProfile),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexProfileMethods>::ctor(this);
         this
     }
 }

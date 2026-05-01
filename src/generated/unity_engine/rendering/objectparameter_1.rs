@@ -8,7 +8,7 @@ use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
 use crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/objectparameter_1/ObjectParameter_1.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/objectparameter_1/ObjectParameter_1.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering", name = "ObjectParameter`1")]
 # [parent (crate :: unity_engine :: rendering :: volumeparameter_1 :: VolumeParameter_1 < T0 >)]
 #[parent(crate::unity_engine::rendering::volumeparameter::VolumeParameter)]

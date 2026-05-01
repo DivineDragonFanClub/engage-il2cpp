@@ -20,40 +20,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData_StatusField.md")))]
-#[::unity2::class(namespace = "App", name = "GameUserData.StatusField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserdata :: GameUserData_Statuses >)]
-pub struct GameUserData_StatusField {}
-
-#[cfg(feature = "app-gameuserdata")]
-#[::unity2::methods]
-impl GameUserData_StatusField {
-    #[doc = "`ToInt(crate::app::gameuserdata::GameUserData_Statuses)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::gameuserdata::GameUserData_Statuses) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gameuserdata")]
-impl GameUserData_StatusField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserData_StatusField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserData_StatusFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_MapModes.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_MapModes.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -113,7 +80,148 @@ impl GameUserData_MapModes {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Statuses.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GameUserData_Statuses {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GameUserData_Statuses {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GameUserData.Statuses";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GameUserData_Statuses {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GameUserData_Statuses {
+    pub fn contents_mounted() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn finished_setup_map() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn casual() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn phoenix() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn encount_map() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn continued_map() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn fixed_grow() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn completed() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn temporary_saved() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn temporary_loaded() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn net_login_once() -> Self {
+        Self { value: 2048 }
+    }
+
+    pub fn restart_map() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn recollection_map() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn ignore_kizuna() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn evil_completed() -> Self {
+        Self { value: 32768 }
+    }
+
+    pub fn init_begin_of_map() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn init_end_of_map() -> Self {
+        Self { value: 13826 }
+    }
+
+    pub fn init_end_of_contents() -> Self {
+        Self { value: 1537 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData_StatusField.md"))]
+#[::unity2::class(namespace = "App", name = "GameUserData.StatusField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: gameuserdata :: GameUserData_Statuses >)]
+pub struct GameUserData_StatusField {}
+
+#[cfg(feature = "app-gameuserdata")]
+#[::unity2::methods]
+impl GameUserData_StatusField {
+    #[doc = "`ToInt(crate::app::gameuserdata::GameUserData_Statuses)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::gameuserdata::GameUserData_Statuses) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gameuserdata")]
+impl GameUserData_StatusField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserData_StatusField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserData_StatusFieldMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData.md"))]
 #[::unity2::class(namespace = "App", name = "GameUserData")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: gameuserdata :: GameUserData >)]
 pub struct GameUserData {
@@ -897,154 +1005,7 @@ impl GameUserData {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Statuses.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct GameUserData_Statuses {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for GameUserData_Statuses {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GameUserData.Statuses";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for GameUserData_Statuses {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl GameUserData_Statuses {
-    pub fn contents_mounted() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn finished_setup_map() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn casual() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn phoenix() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn encount_map() -> Self {
-        Self { value: 32 }
-    }
-
-    pub fn continued_map() -> Self {
-        Self { value: 64 }
-    }
-
-    pub fn fixed_grow() -> Self {
-        Self { value: 128 }
-    }
-
-    pub fn completed() -> Self {
-        Self { value: 256 }
-    }
-
-    pub fn temporary_saved() -> Self {
-        Self { value: 512 }
-    }
-
-    pub fn temporary_loaded() -> Self {
-        Self { value: 1024 }
-    }
-
-    pub fn net_login_once() -> Self {
-        Self { value: 2048 }
-    }
-
-    pub fn restart_map() -> Self {
-        Self { value: 4096 }
-    }
-
-    pub fn recollection_map() -> Self {
-        Self { value: 8192 }
-    }
-
-    pub fn ignore_kizuna() -> Self {
-        Self { value: 16384 }
-    }
-
-    pub fn evil_completed() -> Self {
-        Self { value: 32768 }
-    }
-
-    pub fn init_begin_of_map() -> Self {
-        Self { value: 16384 }
-    }
-
-    pub fn init_end_of_map() -> Self {
-        Self { value: 13826 }
-    }
-
-    pub fn init_end_of_contents() -> Self {
-        Self { value: 1537 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData_ProcDescSetSequence.md")))]
-#[::unity2::class(namespace = "App", name = "GameUserData.ProcDescSetSequence")]
-#[parent(crate::app::procdescuser::ProcDescUser)]
-pub struct GameUserData_ProcDescSetSequence {
-    #[rename(name = "m_Sequence")]
-    pub m_sequence: crate::app::gameuserdata::GameUserData_Sequences,
-}
-
-#[cfg(feature = "app-gameuserdata")]
-#[::unity2::methods]
-impl GameUserData_ProcDescSetSequence {
-    #[doc = "`.ctor(crate::app::gameuserdata::GameUserData_Sequences)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, sequence: crate::app::gameuserdata::GameUserData_Sequences) -> ();
-
-    #[doc = "`Execute(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "Execute", args = 1)]
-    pub fn execute(
-        self,
-        inst: crate::app::procinst::ProcInst,
-    ) -> crate::app::procdesc::ProcDesc_Result;
-}
-
-#[cfg(feature = "app-gameuserdata")]
-impl GameUserData_ProcDescSetSequence {
-    #[doc = "`.ctor(crate::app::gameuserdata::GameUserData_Sequences)` — overload selector"]
-    pub fn new(sequence: crate::app::gameuserdata::GameUserData_Sequences) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserData_ProcDescSetSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserData_ProcDescSetSequenceMethods>::ctor(this, sequence);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Sequences.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gameuserdata/GameUserData_Sequences.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -1113,5 +1074,44 @@ impl GameUserData_Sequences {
 
     pub fn num() -> Self {
         Self { value: 8 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserdata/GameUserData_ProcDescSetSequence.md"))]
+#[::unity2::class(namespace = "App", name = "GameUserData.ProcDescSetSequence")]
+#[parent(crate::app::procdescuser::ProcDescUser)]
+pub struct GameUserData_ProcDescSetSequence {
+    #[rename(name = "m_Sequence")]
+    pub m_sequence: crate::app::gameuserdata::GameUserData_Sequences,
+}
+
+#[cfg(feature = "app-gameuserdata")]
+#[::unity2::methods]
+impl GameUserData_ProcDescSetSequence {
+    #[doc = "`.ctor(crate::app::gameuserdata::GameUserData_Sequences)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, sequence: crate::app::gameuserdata::GameUserData_Sequences) -> ();
+
+    #[doc = "`Execute(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "Execute", args = 1)]
+    pub fn execute(
+        self,
+        inst: crate::app::procinst::ProcInst,
+    ) -> crate::app::procdesc::ProcDesc_Result;
+}
+
+#[cfg(feature = "app-gameuserdata")]
+impl GameUserData_ProcDescSetSequence {
+    #[doc = "`.ctor(crate::app::gameuserdata::GameUserData_Sequences)` — overload selector"]
+    pub fn new(sequence: crate::app::gameuserdata::GameUserData_Sequences) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserData_ProcDescSetSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserData_ProcDescSetSequenceMethods>::ctor(this, sequence);
+        this
     }
 }

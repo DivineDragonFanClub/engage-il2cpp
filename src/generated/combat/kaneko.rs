@@ -4,40 +4,27 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_DummyDisposable.md")))]
-#[::unity2::class(namespace = "Combat", name = "Kaneko.DummyDisposable")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_Screen.md"))]
+#[::unity2::class(namespace = "Combat", name = "Kaneko.Screen")]
 #[parent(crate::system::object::Object)]
-pub struct Kaneko_DummyDisposable {}
+pub struct Kaneko_Screen {
+    #[static_field]
+    #[rename(name = "width")]
+    pub width: f32,
+    #[static_field]
+    #[rename(name = "height")]
+    pub height: f32,
+}
 
 #[cfg(feature = "combat-kaneko")]
 #[::unity2::methods]
-impl Kaneko_DummyDisposable {
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+impl Kaneko_Screen {
+    #[doc = "`get_WH()` overload"]
+    #[method(name = "get_WH", args = 0)]
+    pub fn get_wh() -> crate::unity_engine::vector2::Vector2;
 }
 
-#[cfg(feature = "combat-kaneko")]
-impl Kaneko_DummyDisposable {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Kaneko_DummyDisposable),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IKaneko_DummyDisposableMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko.md"))]
 #[::unity2::class(namespace = "Combat", name = "Kaneko")]
 #[parent(crate::system::object::Object)]
 pub struct Kaneko {
@@ -270,7 +257,40 @@ impl Kaneko {
     pub fn cctor() -> ();
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_GUIFitScope.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_DummyDisposable.md"))]
+#[::unity2::class(namespace = "Combat", name = "Kaneko.DummyDisposable")]
+#[parent(crate::system::object::Object)]
+pub struct Kaneko_DummyDisposable {}
+
+#[cfg(feature = "combat-kaneko")]
+#[::unity2::methods]
+impl Kaneko_DummyDisposable {
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-kaneko")]
+impl Kaneko_DummyDisposable {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Kaneko_DummyDisposable),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IKaneko_DummyDisposableMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_GUIFitScope.md"))]
 #[::unity2::class(namespace = "Combat", name = "Kaneko.GUIFitScope")]
 #[parent(crate::system::object::Object)]
 pub struct Kaneko_GUIFitScope {}
@@ -301,24 +321,4 @@ impl Kaneko_GUIFitScope {
         <Self as IKaneko_GUIFitScopeMethods>::ctor(this);
         this
     }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_Screen.md")))]
-#[::unity2::class(namespace = "Combat", name = "Kaneko.Screen")]
-#[parent(crate::system::object::Object)]
-pub struct Kaneko_Screen {
-    #[static_field]
-    #[rename(name = "width")]
-    pub width: f32,
-    #[static_field]
-    #[rename(name = "height")]
-    pub height: f32,
-}
-
-#[cfg(feature = "combat-kaneko")]
-#[::unity2::methods]
-impl Kaneko_Screen {
-    #[doc = "`get_WH()` overload"]
-    #[method(name = "get_WH", args = 0)]
-    pub fn get_wh() -> crate::unity_engine::vector2::Vector2;
 }

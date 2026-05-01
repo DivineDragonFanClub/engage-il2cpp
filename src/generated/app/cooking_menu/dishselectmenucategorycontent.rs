@@ -16,7 +16,42 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent_Category.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent_CategoryObject.md"))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "DishSelectMenuCategoryContent.CategoryObject"
+)]
+#[parent(crate::system::object::Object)]
+pub struct DishSelectMenuCategoryContent_CategoryObject {
+# [rename (name = "m_Object")] pub m_object : crate :: unity_engine :: gameobject :: GameObject ,
+# [rename (name = "m_Category")] pub m_category : crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_Category ,
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
+#[::unity2::methods]
+impl DishSelectMenuCategoryContent_CategoryObject {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
+impl DishSelectMenuCategoryContent_CategoryObject {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DishSelectMenuCategoryContent_CategoryObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishSelectMenuCategoryContent_CategoryObjectMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent_Category.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -56,7 +91,7 @@ impl DishSelectMenuCategoryContent_Category {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent.md"))]
 #[::unity2::class(namespace = "App.CookingMenu", name = "DishSelectMenuCategoryContent")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct DishSelectMenuCategoryContent {
@@ -155,41 +190,6 @@ impl DishSelectMenuCategoryContent {
             )
         });
         <Self as IDishSelectMenuCategoryContentMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent_CategoryObject.md")))]
-#[::unity2::class(
-    namespace = "App.CookingMenu",
-    name = "DishSelectMenuCategoryContent.CategoryObject"
-)]
-#[parent(crate::system::object::Object)]
-pub struct DishSelectMenuCategoryContent_CategoryObject {
-# [rename (name = "m_Object")] pub m_object : crate :: unity_engine :: gameobject :: GameObject ,
-# [rename (name = "m_Category")] pub m_category : crate :: app :: cooking_menu :: dishselectmenucategorycontent :: DishSelectMenuCategoryContent_Category ,
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
-#[::unity2::methods]
-impl DishSelectMenuCategoryContent_CategoryObject {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
-impl DishSelectMenuCategoryContent_CategoryObject {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DishSelectMenuCategoryContent_CategoryObject),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDishSelectMenuCategoryContent_CategoryObjectMethods>::ctor(this);
         this
     }
 }

@@ -8,7 +8,7 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/propertyinfoitem/PropertyInfoItem.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/propertyinfoitem/PropertyInfoItem.md"))]
 #[::unity2::class(namespace = "App", name = "PropertyInfoItem")]
 # [parent (crate :: app :: memberinfoitem_1 :: MemberInfoItem_1 < crate :: system :: reflection :: propertyinfo :: PropertyInfo >)]
 pub struct PropertyInfoItem {}

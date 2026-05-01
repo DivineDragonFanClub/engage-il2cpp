@@ -16,7 +16,59 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/flipbook/Flipbook.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/flipbook/Flipbook_Mode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Flipbook_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Flipbook_Mode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Flipbook.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Flipbook_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Flipbook_Mode {
+    pub fn r#loop() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn stop() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn stop_and_hide() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn delete_object() -> Self {
+        Self { value: 3 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/flipbook/Flipbook.md"))]
 #[::unity2::class(namespace = "App", name = "Flipbook")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
 pub struct Flipbook {
@@ -137,57 +189,5 @@ impl Flipbook {
         });
         <Self as IFlipbookMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/flipbook/Flipbook_Mode.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct Flipbook_Mode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for Flipbook_Mode {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Flipbook.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Flipbook_Mode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl Flipbook_Mode {
-    pub fn r#loop() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn stop() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn stop_and_hide() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn delete_object() -> Self {
-        Self { value: 3 }
     }
 }

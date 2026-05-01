@@ -22,221 +22,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FuncExp1.md")))]
-#[::unity2::class(namespace = "App", name = "BattleCalculator.FuncExp1")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct BattleCalculator_FuncExp1 {}
-
-#[cfg(feature = "app-battlecalculator")]
-#[::unity2::methods]
-impl BattleCalculator_FuncExp1 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, current: crate::app::battleinfoside::BattleInfoSide) -> i32;
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_FuncExp1 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator_FuncExp1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleCalculator_FuncExp1Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_DetailScope.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BattleCalculator_DetailScope {
-    pub m_info: crate::app::battleinfo::BattleInfo,
-}
-
-impl ::unity2::ClassIdentity for BattleCalculator_DetailScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleCalculator.DetailScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for BattleCalculator_DetailScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-battlecalculator")]
-#[::unity2::methods(value)]
-impl BattleCalculator_DetailScope {
-    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, info: crate::app::battleinfo::BattleInfo) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_TrainingResult.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct BattleCalculator_TrainingResult {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for BattleCalculator_TrainingResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleCalculator.TrainingResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for BattleCalculator_TrainingResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl BattleCalculator_TrainingResult {
-    pub fn win() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn lose() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_OrderList.md")))]
-#[::unity2::class(namespace = "App", name = "BattleCalculator.OrderList")]
-# [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: battlecalculator :: BattleCalculator_Order >)]
-pub struct BattleCalculator_OrderList {
-    #[static_field]
-    #[rename(name = "MaxOrder")]
-    pub max_order: i32,
-}
-
-#[cfg(feature = "app-battlecalculator")]
-#[::unity2::methods]
-impl BattleCalculator_OrderList {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`TryAdd(crate::app::battleinfo::BattleInfo, crate::app::battleside::BattleSide_Type)` overload"]
-    #[method(name = "TryAdd", args = 2)]
-    pub fn try_add(
-        self,
-        info: crate::app::battleinfo::BattleInfo,
-        side: crate::app::battleside::BattleSide_Type,
-    ) -> ();
-
-    #[doc = "`CanSwap(crate::app::battleside::BattleSide_Type, i32)` overload"]
-    #[method(name = "CanSwap", args = 2)]
-    pub fn can_swap(self, side: crate::app::battleside::BattleSide_Type, index: i32) -> bool;
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_OrderList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator_OrderList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleCalculator_OrderListMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_HitSkill.md")))]
-#[::unity2::class(namespace = "App", name = "BattleCalculator.HitSkill")]
-#[parent(crate::app::pool::Pool_Node)]
-pub struct BattleCalculator_HitSkill {
-    #[rename(name = "Side")]
-    pub side: crate::app::battleinfoside::BattleInfoSide,
-    #[rename(name = "Action")]
-    pub action: crate::app::skilldata::SkillData_Actions,
-    #[rename(name = "Skill")]
-    pub skill: crate::app::skilldata::SkillData,
-}
-
-#[cfg(feature = "app-battlecalculator")]
-#[::unity2::methods]
-impl BattleCalculator_HitSkill {
-    #[doc = "`OnEnter()` overload"]
-    #[method(name = "OnEnter", args = 0)]
-    pub fn on_enter(self) -> ();
-
-    #[doc = "`OnExit()` overload"]
-    #[method(name = "OnExit", args = 0)]
-    pub fn on_exit(self) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`get_SortKey()` overload"]
-    #[method(name = "get_SortKey", args = 0)]
-    pub fn get_sort_key(self) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_HitSkill {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator_HitSkill),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleCalculator_HitSkillMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_SeparatorScope.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_SeparatorScope.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
 pub struct BattleCalculator_SeparatorScope {
@@ -299,7 +85,132 @@ impl BattleCalculator_SeparatorScope {
     ) -> crate::app::battleinfoside::BattleInfoSide;
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_TargetScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BattleCalculator_TargetScope {
+    pub m_current: crate::app::battleinfoside::BattleInfoSide,
+    pub m_reverse: crate::app::battleinfoside::BattleInfoSide,
+    pub m_is_dump: bool,
+}
+
+impl ::unity2::ClassIdentity for BattleCalculator_TargetScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleCalculator.TargetScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BattleCalculator_TargetScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[::unity2::methods(value)]
+impl BattleCalculator_TargetScope {
+    #[doc = "`.ctor(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, bool)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        reverse: crate::app::battleinfoside::BattleInfoSide,
+        is_dump: bool,
+    ) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_HitSkillPool.md"))]
+#[::unity2::class(namespace = "App", name = "BattleCalculator.HitSkillPool")]
+# [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: battlecalculator :: BattleCalculator_HitSkill >)]
+pub struct BattleCalculator_HitSkillPool {}
+
+#[cfg(feature = "app-battlecalculator")]
+#[::unity2::methods]
+impl BattleCalculator_HitSkillPool {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Add(crate::app::battleinfoside::BattleInfoSide, crate::app::skilldata::SkillData_Timings, crate::app::skilldata::SkillData_Actions)` overload"]
+    #[method(name = "Add", args = 3)]
+    pub fn add(
+        self,
+        side: crate::app::battleinfoside::BattleInfoSide,
+        timing: crate::app::skilldata::SkillData_Timings,
+        action: crate::app::skilldata::SkillData_Actions,
+    ) -> ();
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_HitSkillPool {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleCalculator_HitSkillPool),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleCalculator_HitSkillPoolMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_DetailScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BattleCalculator_DetailScope {
+    pub m_info: crate::app::battleinfo::BattleInfo,
+}
+
+impl ::unity2::ClassIdentity for BattleCalculator_DetailScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleCalculator.DetailScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BattleCalculator_DetailScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[::unity2::methods(value)]
+impl BattleCalculator_DetailScope {
+    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, info: crate::app::battleinfo::BattleInfo) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator.md"))]
 #[::unity2::class(namespace = "App", name = "BattleCalculator")]
 #[parent(crate::system::object::Object)]
 pub struct BattleCalculator {
@@ -986,7 +897,7 @@ impl BattleCalculator {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Mode.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_TrainingResult.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -995,14 +906,14 @@ impl BattleCalculator {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct BattleCalculator_Mode {
+pub struct BattleCalculator_TrainingResult {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for BattleCalculator_Mode {
+impl ::unity2::ClassIdentity for BattleCalculator_TrainingResult {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "BattleCalculator.Mode";
+    const NAME: &'static str = "BattleCalculator.TrainingResult";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1011,7 +922,7 @@ impl ::unity2::ClassIdentity for BattleCalculator_Mode {
     }
 }
 
-impl ::unity2::IlType for BattleCalculator_Mode {
+impl ::unity2::IlType for BattleCalculator_TrainingResult {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -1020,58 +931,114 @@ impl ::unity2::IlType for BattleCalculator_Mode {
     }
 }
 
-impl BattleCalculator_Mode {
-    pub fn battle() -> Self {
+impl BattleCalculator_TrainingResult {
+    pub fn win() -> Self {
         Self { value: 0 }
     }
 
-    pub fn job_intro() -> Self {
+    pub fn lose() -> Self {
         Self { value: 1 }
-    }
-
-    pub fn class_change() -> Self {
-        Self { value: 2 }
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FuncExp2.md")))]
-#[::unity2::class(namespace = "App", name = "BattleCalculator.FuncExp2")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct BattleCalculator_FuncExp2 {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_HitSkill.md"))]
+#[::unity2::class(namespace = "App", name = "BattleCalculator.HitSkill")]
+#[parent(crate::app::pool::Pool_Node)]
+pub struct BattleCalculator_HitSkill {
+    #[rename(name = "Side")]
+    pub side: crate::app::battleinfoside::BattleInfoSide,
+    #[rename(name = "Action")]
+    pub action: crate::app::skilldata::SkillData_Actions,
+    #[rename(name = "Skill")]
+    pub skill: crate::app::skilldata::SkillData,
+}
 
 #[cfg(feature = "app-battlecalculator")]
 #[::unity2::methods]
-impl BattleCalculator_FuncExp2 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+impl BattleCalculator_HitSkill {
+    #[doc = "`OnEnter()` overload"]
+    #[method(name = "OnEnter", args = 0)]
+    pub fn on_enter(self) -> ();
 
-    #[doc = "`Invoke(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        reverse: crate::app::battleinfoside::BattleInfoSide,
-    ) -> i32;
+    #[doc = "`OnExit()` overload"]
+    #[method(name = "OnExit", args = 0)]
+    pub fn on_exit(self) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`get_SortKey()` overload"]
+    #[method(name = "get_SortKey", args = 0)]
+    pub fn get_sort_key(self) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_FuncExp2 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl BattleCalculator_HitSkill {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator_FuncExp2),
+                ::core::stringify!(BattleCalculator_HitSkill),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleCalculator_FuncExp2Methods>::ctor(this, object, method);
+        <Self as IBattleCalculator_HitSkillMethods>::ctor(this);
         this
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Attributes.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_OrderList.md"))]
+#[::unity2::class(namespace = "App", name = "BattleCalculator.OrderList")]
+# [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: battlecalculator :: BattleCalculator_Order >)]
+pub struct BattleCalculator_OrderList {
+    #[static_field]
+    #[rename(name = "MaxOrder")]
+    pub max_order: i32,
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[::unity2::methods]
+impl BattleCalculator_OrderList {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`TryAdd(crate::app::battleinfo::BattleInfo, crate::app::battleside::BattleSide_Type)` overload"]
+    #[method(name = "TryAdd", args = 2)]
+    pub fn try_add(
+        self,
+        info: crate::app::battleinfo::BattleInfo,
+        side: crate::app::battleside::BattleSide_Type,
+    ) -> ();
+
+    #[doc = "`CanSwap(crate::app::battleside::BattleSide_Type, i32)` overload"]
+    #[method(name = "CanSwap", args = 2)]
+    pub fn can_swap(self, side: crate::app::battleside::BattleSide_Type, index: i32) -> bool;
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_OrderList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleCalculator_OrderList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleCalculator_OrderListMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Attributes.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -1119,118 +1086,7 @@ impl BattleCalculator_Attributes {
     }
 }
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_Order.md")))]
-#[::unity2::class(namespace = "App", name = "BattleCalculator.Order")]
-#[parent(crate::app::pool::Pool_Node)]
-pub struct BattleCalculator_Order {
-    #[rename(name = "Side")]
-    pub side: crate::app::battleside::BattleSide_Type,
-}
-
-#[cfg(feature = "app-battlecalculator")]
-#[::unity2::methods]
-impl BattleCalculator_Order {
-    #[doc = "`OnEnter()` overload"]
-    #[method(name = "OnEnter", args = 0)]
-    pub fn on_enter(self) -> ();
-
-    #[doc = "`OnExit()` overload"]
-    #[method(name = "OnExit", args = 0)]
-    pub fn on_exit(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_Order {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator_Order),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleCalculator_OrderMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_HitSkillPool.md")))]
-#[::unity2::class(namespace = "App", name = "BattleCalculator.HitSkillPool")]
-# [parent (crate :: app :: pool :: Pool_List_1 < crate :: app :: battlecalculator :: BattleCalculator_HitSkill >)]
-pub struct BattleCalculator_HitSkillPool {}
-
-#[cfg(feature = "app-battlecalculator")]
-#[::unity2::methods]
-impl BattleCalculator_HitSkillPool {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Add(crate::app::battleinfoside::BattleInfoSide, crate::app::skilldata::SkillData_Timings, crate::app::skilldata::SkillData_Actions)` overload"]
-    #[method(name = "Add", args = 3)]
-    pub fn add(
-        self,
-        side: crate::app::battleinfoside::BattleInfoSide,
-        timing: crate::app::skilldata::SkillData_Timings,
-        action: crate::app::skilldata::SkillData_Actions,
-    ) -> ();
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_HitSkillPool {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator_HitSkillPool),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleCalculator_HitSkillPoolMethods>::ctor(this);
-        this
-    }
-}
-
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FlagField.md")))]
-#[::unity2::class(namespace = "App", name = "BattleCalculator.FlagField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battlecalculator :: BattleCalculator_Flags >)]
-pub struct BattleCalculator_FlagField {}
-
-#[cfg(feature = "app-battlecalculator")]
-#[::unity2::methods]
-impl BattleCalculator_FlagField {
-    #[doc = "`ToInt(crate::app::battlecalculator::BattleCalculator_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::battlecalculator::BattleCalculator_Flags) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-battlecalculator")]
-impl BattleCalculator_FlagField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleCalculator_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleCalculator_FlagFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Flags.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Flags.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -1302,19 +1158,133 @@ impl BattleCalculator_Flags {
     }
 }
 
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_TargetScope.md")))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BattleCalculator_TargetScope {
-    pub m_current: crate::app::battleinfoside::BattleInfoSide,
-    pub m_reverse: crate::app::battleinfoside::BattleInfoSide,
-    pub m_is_dump: bool,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FuncExp2.md"))]
+#[::unity2::class(namespace = "App", name = "BattleCalculator.FuncExp2")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct BattleCalculator_FuncExp2 {}
+
+#[cfg(feature = "app-battlecalculator")]
+#[::unity2::methods]
+impl BattleCalculator_FuncExp2 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        current: crate::app::battleinfoside::BattleInfoSide,
+        reverse: crate::app::battleinfoside::BattleInfoSide,
+    ) -> i32;
 }
 
-impl ::unity2::ClassIdentity for BattleCalculator_TargetScope {
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_FuncExp2 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleCalculator_FuncExp2),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleCalculator_FuncExp2Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FuncExp1.md"))]
+#[::unity2::class(namespace = "App", name = "BattleCalculator.FuncExp1")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct BattleCalculator_FuncExp1 {}
+
+#[cfg(feature = "app-battlecalculator")]
+#[::unity2::methods]
+impl BattleCalculator_FuncExp1 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, current: crate::app::battleinfoside::BattleInfoSide) -> i32;
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_FuncExp1 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleCalculator_FuncExp1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleCalculator_FuncExp1Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_Order.md"))]
+#[::unity2::class(namespace = "App", name = "BattleCalculator.Order")]
+#[parent(crate::app::pool::Pool_Node)]
+pub struct BattleCalculator_Order {
+    #[rename(name = "Side")]
+    pub side: crate::app::battleside::BattleSide_Type,
+}
+
+#[cfg(feature = "app-battlecalculator")]
+#[::unity2::methods]
+impl BattleCalculator_Order {
+    #[doc = "`OnEnter()` overload"]
+    #[method(name = "OnEnter", args = 0)]
+    pub fn on_enter(self) -> ();
+
+    #[doc = "`OnExit()` overload"]
+    #[method(name = "OnExit", args = 0)]
+    pub fn on_exit(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_Order {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleCalculator_Order),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleCalculator_OrderMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battlecalculator/BattleCalculator_Mode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct BattleCalculator_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for BattleCalculator_Mode {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "BattleCalculator.TargetScope";
+    const NAME: &'static str = "BattleCalculator.Mode";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1323,7 +1293,7 @@ impl ::unity2::ClassIdentity for BattleCalculator_TargetScope {
     }
 }
 
-impl ::unity2::IlType for BattleCalculator_TargetScope {
+impl ::unity2::IlType for BattleCalculator_Mode {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -1332,19 +1302,49 @@ impl ::unity2::IlType for BattleCalculator_TargetScope {
     }
 }
 
-#[cfg(feature = "app-battlecalculator")]
-#[::unity2::methods(value)]
-impl BattleCalculator_TargetScope {
-    #[doc = "`.ctor(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, bool)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        current: crate::app::battleinfoside::BattleInfoSide,
-        reverse: crate::app::battleinfoside::BattleInfoSide,
-        is_dump: bool,
-    ) -> ();
+impl BattleCalculator_Mode {
+    pub fn battle() -> Self {
+        Self { value: 0 }
+    }
 
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
+    pub fn job_intro() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn class_change() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlecalculator/BattleCalculator_FlagField.md"))]
+#[::unity2::class(namespace = "App", name = "BattleCalculator.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battlecalculator :: BattleCalculator_Flags >)]
+pub struct BattleCalculator_FlagField {}
+
+#[cfg(feature = "app-battlecalculator")]
+#[::unity2::methods]
+impl BattleCalculator_FlagField {
+    #[doc = "`ToInt(crate::app::battlecalculator::BattleCalculator_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::battlecalculator::BattleCalculator_Flags) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-battlecalculator")]
+impl BattleCalculator_FlagField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleCalculator_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleCalculator_FlagFieldMethods>::ctor(this);
+        this
+    }
 }

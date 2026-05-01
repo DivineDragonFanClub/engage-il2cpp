@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/basic_descriptors/iwireabledescriptor/IWireableDescriptor.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/basic_descriptors/iwireabledescriptor/IWireableDescriptor.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Interop.BasicDescriptors",
     name = "IWireableDescriptor"

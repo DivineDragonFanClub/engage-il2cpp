@@ -6,7 +6,7 @@ use crate::unity_engine::events::unityeventbase::IUnityEventBase;
 use crate::unity_engine::events::unityeventbase::UnityEventBase;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/unityevent_3/UnityEvent_3.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/events/unityevent_3/UnityEvent_3.md"))]
 #[::unity2::class(namespace = "UnityEngine.Events", name = "UnityEvent`3")]
 #[parent(crate::unity_engine::events::unityeventbase::UnityEventBase)]
 #[parent(crate::system::object::Object)]

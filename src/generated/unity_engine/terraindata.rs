@@ -10,7 +10,79 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/terraindata/TerrainData.md")))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/terraindata/TerrainData_BoundaryValueType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TerrainData_BoundaryValueType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TerrainData_BoundaryValueType {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "TerrainData.BoundaryValueType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TerrainData_BoundaryValueType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TerrainData_BoundaryValueType {
+    pub fn max_heightmap_res() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn min_detail_res_per_patch() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn max_detail_res_per_patch() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn max_detail_patch_count() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn max_details_per_res() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn min_alphamap_res() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn max_alphamap_res() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn min_base_map_res() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn max_base_map_res() -> Self {
+        Self { value: 8 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/terraindata/TerrainData.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "TerrainData")]
 #[parent(crate::unity_engine::object_2::Object_2)]
 pub struct TerrainData {
@@ -143,77 +215,5 @@ impl TerrainData {
         });
         <Self as ITerrainDataMethods>::ctor(this);
         this
-    }
-}
-
-#[cfg_attr(doc, doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/terraindata/TerrainData_BoundaryValueType.md")))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TerrainData_BoundaryValueType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TerrainData_BoundaryValueType {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "TerrainData.BoundaryValueType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TerrainData_BoundaryValueType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TerrainData_BoundaryValueType {
-    pub fn max_heightmap_res() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn min_detail_res_per_patch() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn max_detail_res_per_patch() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn max_detail_patch_count() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn max_details_per_res() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn min_alphamap_res() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn max_alphamap_res() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn min_base_map_res() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn max_base_map_res() -> Self {
-        Self { value: 8 }
     }
 }

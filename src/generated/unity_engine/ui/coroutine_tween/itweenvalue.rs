@@ -2,7 +2,7 @@
 
 use ::unity2::prelude::*;
 
-# [cfg_attr (doc , doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/itweenvalue/ITweenValue.md")))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/coroutine_tween/itweenvalue/ITweenValue.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI.CoroutineTween", name = "ITweenValue")]
 pub struct ITweenValue {}
 
