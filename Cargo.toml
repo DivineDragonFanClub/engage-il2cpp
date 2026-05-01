@@ -9,7 +9,7 @@ description = "Auto-generated Rust bindings for Fire Emblem Engage"
 [dependencies]
 skyline = "0.6"
 lazysimd = { git = "https://github.com/Raytwo/lazysimd" }
-unity2 = { git = "https://github.com/DivineDragonFanClub/unity2" }
+unity2 = { git = "https://github.com/DivineDragonFanClub/unity2", tag = "0.2.0" }
 
 [features]
 default = []
