@@ -78,14 +78,17 @@ jobs:
           EOF
       - name: Build docs
         env:
-          RUSTFLAGS: "--cfg skyline_std_v3 -g"
+          RUSTFLAGS: "--cfg skyline_std_v3 -Cdebuginfo=0"
           SKYLINE_ADD_NRO_HEADER: "1"
+          CARGO_INCREMENTAL: "0"
         run: |
           rustup run skyline-v3 cargo doc \
             --target $HOME/.cargo/skyline/aarch64-skyline-switch.json \
             -Z json-target-spec \
             -Z build-std=core,alloc,std,panic_abort \
-            --features all
+            --features all \
+            --no-deps \
+            -j 2
       - name: Add redirect
         run: echo '<meta http-equiv="refresh" content="0;url=engage_il2cpp/index.html">' > target/aarch64-skyline-switch/doc/index.html
       - name: Remove lock file
