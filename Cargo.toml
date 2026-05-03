@@ -5,7 +5,7 @@ edition = "2021"
 license = "MPL-2.0"
 repository = "https://github.com/DivineDragonFanClub/engage-il2cpp"
 description = "Auto-generated Rust bindings for Fire Emblem Engage"
-include = ["src/**/*", "docs/**/*", "Cargo.toml", "README*", "LICENSE*", "CHANGELOG*"]
+include = ["src/**/*", "docs/**/*", "Cargo.toml", "features.json", "README*", "LICENSE*", "CHANGELOG*"]
 
 [dependencies]
 skyline = "0.6"
