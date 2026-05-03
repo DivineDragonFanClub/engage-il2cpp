@@ -8,247 +8,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo_RingInfoWindowRingModel.md"))]
-#[::unity2::class(namespace = "App", name = "RingInfo.RingInfoWindowRingModel")]
-#[parent(crate::system::object::Object)]
-pub struct RingInfo_RingInfoWindowRingModel {
-    #[rename(name = "m_Index")]
-    pub m_index: i32,
-    #[rename(name = "PrefabPath")]
-    pub prefab_path: ::unity2::Il2CppString,
-    #[rename(name = "m_PrefabHandle")]
-    pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-        crate::unity_engine::gameobject::GameObject,
-    >,
-    #[rename(name = "m_GameObject")]
-    pub m_game_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_CameraObject")]
-    pub m_camera_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Camera")]
-    pub m_camera: crate::unity_engine::camera::Camera,
-    #[rename(name = "m_Animator")]
-    pub m_animator: crate::unity_engine::animator::Animator,
-}
-
-#[cfg(feature = "app-ringinfo")]
-#[::unity2::methods]
-impl RingInfo_RingInfoWindowRingModel {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, index: i32) -> ();
-
-    #[doc = "`CreateAsync()` overload"]
-    #[method(name = "CreateAsync", args = 0)]
-    pub fn create_async(self) -> ();
-
-    #[doc = "`IsCreating()` overload"]
-    #[method(name = "IsCreating", args = 0)]
-    pub fn is_creating(self) -> bool;
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy(self) -> ();
-
-    #[doc = "`CreateImpl()` overload"]
-    #[method(name = "CreateImpl", args = 0)]
-    pub fn create_impl(self) -> ();
-
-    #[doc = "`Setup()` overload"]
-    #[method(name = "Setup", args = 0)]
-    pub fn setup(self) -> bool;
-
-    #[doc = "`GetRenderTexture()` overload"]
-    #[method(name = "GetRenderTexture", args = 0)]
-    pub fn get_render_texture(self) -> crate::unity_engine::rendertexture::RenderTexture;
-
-    #[doc = "`get_PrefabObject()` overload"]
-    #[method(name = "get_PrefabObject", args = 0)]
-    pub fn get_prefab_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`get_RingModelRoot()` overload"]
-    #[method(name = "get_RingModelRoot", args = 0)]
-    pub fn get_ring_model_root(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`SetAnimatorEnable(bool)` overload"]
-    #[method(name = "SetAnimatorEnable", args = 1)]
-    pub fn set_animator_enable(self, value: bool) -> ();
-
-    #[doc = "`GetDirtyTextureValue(i32)` overload"]
-    #[method(name = "GetDirtyTextureValue", args = 1)]
-    pub fn get_dirty_texture_value(self, dirty: i32) -> f32;
-
-    #[doc = "`PlayDecisionAnim()` overload"]
-    #[method(name = "PlayDecisionAnim", args = 0)]
-    pub fn play_decision_anim(self) -> ();
-
-    #[doc = "`GetModelPosition()` overload"]
-    #[method(name = "GetModelPosition", args = 0)]
-    pub fn get_model_position(self) -> crate::unity_engine::vector3::Vector3;
-}
-
-#[cfg(feature = "app-ringinfo")]
-impl RingInfo_RingInfoWindowRingModel {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(index: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingInfo_RingInfoWindowRingModel),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingInfo_RingInfoWindowRingModelMethods>::ctor(this, index);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo_RingPrefabObject.md"))]
-#[::unity2::class(namespace = "App", name = "RingInfo.RingPrefabObject")]
-#[parent(crate::system::object::Object)]
-pub struct RingInfo_RingPrefabObject {
-    #[static_field]
-    #[rename(name = "s_RingPrefabObjectDict")]
-    pub s_ring_prefab_object_dict: crate::system::collections::generic::dictionary_2::Dictionary_2<
-        ::unity2::Il2CppString,
-        crate::app::ringinfo::RingInfo_RingPrefabObject,
-    >,
-    #[rename(name = "m_RingInfoWindow")]
-    pub m_ring_info_window: crate::app::ringinfo::RingInfo_RingInfoWindowRingModel,
-    #[rename(name = "m_ResourceHandle")]
-    pub m_resource_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
-        crate::unity_engine::gameobject::GameObject,
-    >,
-    #[rename(name = "m_RingObject")]
-    pub m_ring_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_God")]
-    pub m_god: crate::app::godunit::GodUnit,
-    #[rename(name = "m_Materials")]
-    pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
-    #[rename(name = "m_RingData")]
-    pub m_ring_data: crate::app::ringdata::RingData,
-}
-
-#[cfg(feature = "app-ringinfo")]
-#[::unity2::methods]
-impl RingInfo_RingPrefabObject {
-    #[doc = "`get_m_IsVisibleDirty()` overload"]
-    #[method(name = "get_m_IsVisibleDirty", args = 0)]
-    pub fn get_m_is_visible_dirty(self) -> bool;
-
-    #[doc = "`set_m_IsVisibleDirty(bool)` overload"]
-    #[method(name = "set_m_IsVisibleDirty", args = 1)]
-    pub fn set_m_is_visible_dirty(self, value: bool) -> ();
-
-    #[doc = "`get_IsDelete()` overload"]
-    #[method(name = "get_IsDelete", args = 0)]
-    pub fn get_is_delete(self) -> bool;
-
-    #[doc = "`set_IsDelete(bool)` overload"]
-    #[method(name = "set_IsDelete", args = 1)]
-    pub fn set_is_delete(self, value: bool) -> ();
-
-    #[doc = "`CreateObject(crate::app::ringinfo::RingInfo_RingInfoWindowRingModel, crate::app::godunit::GodUnit, crate::app::ringdata::RingData, bool, bool)` overload"]
-    #[method(name = "CreateObject", args = 5)]
-    pub fn create_object(
-        ring_info_window: crate::app::ringinfo::RingInfo_RingInfoWindowRingModel,
-        god: crate::app::godunit::GodUnit,
-        ring: crate::app::ringdata::RingData,
-        is_play_animation: bool,
-        is_visible_dirty: bool,
-    ) -> crate::app::ringinfo::RingInfo_RingPrefabObject;
-
-    #[doc = "`CreateObjectImpl(crate::app::godunit::GodUnit, crate::app::ringinfo::RingInfo_RingInfoWindowRingModel, bool)` overload"]
-    #[method(name = "CreateObjectImpl", args = 3)]
-    pub fn create_object_impl(
-        god: crate::app::godunit::GodUnit,
-        ring_info_window: crate::app::ringinfo::RingInfo_RingInfoWindowRingModel,
-        is_visible_dirty: bool,
-    ) -> crate::app::ringinfo::RingInfo_RingPrefabObject;
-
-    #[doc = "`CreateObjectImpl(crate::app::ringdata::RingData, crate::app::ringinfo::RingInfo_RingInfoWindowRingModel, bool, bool)` overload"]
-    #[method(name = "CreateObjectImpl", args = 4)]
-    pub fn create_object_impl_2(
-        ring_data: crate::app::ringdata::RingData,
-        ring_info_window: crate::app::ringinfo::RingInfo_RingInfoWindowRingModel,
-        is_play_animation: bool,
-        is_visible_dirty: bool,
-    ) -> crate::app::ringinfo::RingInfo_RingPrefabObject;
-
-    #[doc = "`GetRingPrefabPath(crate::app::godunit::GodUnit)` overload"]
-    #[method(name = "GetRingPrefabPath", args = 1)]
-    pub fn get_ring_prefab_path(god: crate::app::godunit::GodUnit) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::ringinfo::RingInfo_RingInfoWindowRingModel, crate::app::godunit::GodUnit, crate::app::ringdata::RingData, bool)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
-        prefab_path: ::unity2::Il2CppString,
-        ring_info_window: crate::app::ringinfo::RingInfo_RingInfoWindowRingModel,
-        god: crate::app::godunit::GodUnit,
-        ring: crate::app::ringdata::RingData,
-        is_visible_dirty: bool,
-    ) -> ();
-
-    #[doc = "`DeleteAll()` overload"]
-    #[method(name = "DeleteAll", args = 0)]
-    pub fn delete_all() -> ();
-
-    #[doc = "`Delete()` overload"]
-    #[method(name = "Delete", args = 0)]
-    pub fn delete(self) -> ();
-
-    #[doc = "`UpdateDirtyAll()` overload"]
-    #[method(name = "UpdateDirtyAll", args = 0)]
-    pub fn update_dirty_all() -> ();
-
-    #[doc = "`UpdateDirty()` overload"]
-    #[method(name = "UpdateDirty", args = 0)]
-    pub fn update_dirty(self) -> ();
-
-    #[doc = "`CreateImpl()` overload"]
-    #[method(name = "CreateImpl", args = 0)]
-    pub fn create_impl(self) -> ();
-
-    #[doc = "`GetGodAsciiName(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "GetGodAsciiName", args = 1)]
-    pub fn get_god_ascii_name(
-        ring_object: crate::unity_engine::gameobject::GameObject,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-ringinfo")]
-impl RingInfo_RingPrefabObject {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::ringinfo::RingInfo_RingInfoWindowRingModel, crate::app::godunit::GodUnit, crate::app::ringdata::RingData, bool)` — overload selector"]
-    pub fn new(
-        prefab_path: ::unity2::Il2CppString,
-        ring_info_window: crate::app::ringinfo::RingInfo_RingInfoWindowRingModel,
-        god: crate::app::godunit::GodUnit,
-        ring: crate::app::ringdata::RingData,
-        is_visible_dirty: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingInfo_RingPrefabObject),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingInfo_RingPrefabObjectMethods>::ctor(
-            this,
-            prefab_path,
-            ring_info_window,
-            god,
-            ring,
-            is_visible_dirty,
-        );
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo.md"))]
 #[::unity2::class(namespace = "App", name = "RingInfo")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringinfo :: RingInfo >)]
@@ -413,6 +172,247 @@ impl RingInfo {
             )
         });
         <Self as IRingInfoMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo_RingPrefabObject.md"))]
+#[::unity2::class(namespace = "App", name = "RingInfo.RingPrefabObject")]
+#[parent(crate::system::object::Object)]
+pub struct RingInfo_RingPrefabObject {
+    #[static_field]
+    #[rename(name = "s_RingPrefabObjectDict")]
+    pub s_ring_prefab_object_dict: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::app::ringinfo::RingInfo_RingPrefabObject,
+    >,
+    #[rename(name = "m_RingInfoWindow")]
+    pub m_ring_info_window: crate::app::ringinfo::RingInfo_RingInfoWindowRingModel,
+    #[rename(name = "m_ResourceHandle")]
+    pub m_resource_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_RingObject")]
+    pub m_ring_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_God")]
+    pub m_god: crate::app::godunit::GodUnit,
+    #[rename(name = "m_Materials")]
+    pub m_materials: ::unity2::Array<crate::unity_engine::material::Material>,
+    #[rename(name = "m_RingData")]
+    pub m_ring_data: crate::app::ringdata::RingData,
+}
+
+#[cfg(feature = "app-ringinfo")]
+#[::unity2::methods]
+impl RingInfo_RingPrefabObject {
+    #[doc = "`get_m_IsVisibleDirty()` overload"]
+    #[method(name = "get_m_IsVisibleDirty", args = 0)]
+    pub fn get_m_is_visible_dirty(self) -> bool;
+
+    #[doc = "`set_m_IsVisibleDirty(bool)` overload"]
+    #[method(name = "set_m_IsVisibleDirty", args = 1)]
+    pub fn set_m_is_visible_dirty(self, value: bool) -> ();
+
+    #[doc = "`get_IsDelete()` overload"]
+    #[method(name = "get_IsDelete", args = 0)]
+    pub fn get_is_delete(self) -> bool;
+
+    #[doc = "`set_IsDelete(bool)` overload"]
+    #[method(name = "set_IsDelete", args = 1)]
+    pub fn set_is_delete(self, value: bool) -> ();
+
+    #[doc = "`CreateObject(crate::app::ringinfo::RingInfo_RingInfoWindowRingModel, crate::app::godunit::GodUnit, crate::app::ringdata::RingData, bool, bool)` overload"]
+    #[method(name = "CreateObject", args = 5)]
+    pub fn create_object(
+        ring_info_window: crate::app::ringinfo::RingInfo_RingInfoWindowRingModel,
+        god: crate::app::godunit::GodUnit,
+        ring: crate::app::ringdata::RingData,
+        is_play_animation: bool,
+        is_visible_dirty: bool,
+    ) -> crate::app::ringinfo::RingInfo_RingPrefabObject;
+
+    #[doc = "`CreateObjectImpl(crate::app::godunit::GodUnit, crate::app::ringinfo::RingInfo_RingInfoWindowRingModel, bool)` overload"]
+    #[method(name = "CreateObjectImpl", args = 3)]
+    pub fn create_object_impl(
+        god: crate::app::godunit::GodUnit,
+        ring_info_window: crate::app::ringinfo::RingInfo_RingInfoWindowRingModel,
+        is_visible_dirty: bool,
+    ) -> crate::app::ringinfo::RingInfo_RingPrefabObject;
+
+    #[doc = "`CreateObjectImpl(crate::app::ringdata::RingData, crate::app::ringinfo::RingInfo_RingInfoWindowRingModel, bool, bool)` overload"]
+    #[method(name = "CreateObjectImpl", args = 4)]
+    pub fn create_object_impl_2(
+        ring_data: crate::app::ringdata::RingData,
+        ring_info_window: crate::app::ringinfo::RingInfo_RingInfoWindowRingModel,
+        is_play_animation: bool,
+        is_visible_dirty: bool,
+    ) -> crate::app::ringinfo::RingInfo_RingPrefabObject;
+
+    #[doc = "`GetRingPrefabPath(crate::app::godunit::GodUnit)` overload"]
+    #[method(name = "GetRingPrefabPath", args = 1)]
+    pub fn get_ring_prefab_path(god: crate::app::godunit::GodUnit) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::ringinfo::RingInfo_RingInfoWindowRingModel, crate::app::godunit::GodUnit, crate::app::ringdata::RingData, bool)` overload"]
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        prefab_path: ::unity2::Il2CppString,
+        ring_info_window: crate::app::ringinfo::RingInfo_RingInfoWindowRingModel,
+        god: crate::app::godunit::GodUnit,
+        ring: crate::app::ringdata::RingData,
+        is_visible_dirty: bool,
+    ) -> ();
+
+    #[doc = "`DeleteAll()` overload"]
+    #[method(name = "DeleteAll", args = 0)]
+    pub fn delete_all() -> ();
+
+    #[doc = "`Delete()` overload"]
+    #[method(name = "Delete", args = 0)]
+    pub fn delete(self) -> ();
+
+    #[doc = "`UpdateDirtyAll()` overload"]
+    #[method(name = "UpdateDirtyAll", args = 0)]
+    pub fn update_dirty_all() -> ();
+
+    #[doc = "`UpdateDirty()` overload"]
+    #[method(name = "UpdateDirty", args = 0)]
+    pub fn update_dirty(self) -> ();
+
+    #[doc = "`CreateImpl()` overload"]
+    #[method(name = "CreateImpl", args = 0)]
+    pub fn create_impl(self) -> ();
+
+    #[doc = "`GetGodAsciiName(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "GetGodAsciiName", args = 1)]
+    pub fn get_god_ascii_name(
+        ring_object: crate::unity_engine::gameobject::GameObject,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-ringinfo")]
+impl RingInfo_RingPrefabObject {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::ringinfo::RingInfo_RingInfoWindowRingModel, crate::app::godunit::GodUnit, crate::app::ringdata::RingData, bool)` — overload selector"]
+    pub fn new(
+        prefab_path: ::unity2::Il2CppString,
+        ring_info_window: crate::app::ringinfo::RingInfo_RingInfoWindowRingModel,
+        god: crate::app::godunit::GodUnit,
+        ring: crate::app::ringdata::RingData,
+        is_visible_dirty: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingInfo_RingPrefabObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingInfo_RingPrefabObjectMethods>::ctor(
+            this,
+            prefab_path,
+            ring_info_window,
+            god,
+            ring,
+            is_visible_dirty,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringinfo/RingInfo_RingInfoWindowRingModel.md"))]
+#[::unity2::class(namespace = "App", name = "RingInfo.RingInfoWindowRingModel")]
+#[parent(crate::system::object::Object)]
+pub struct RingInfo_RingInfoWindowRingModel {
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+    #[rename(name = "PrefabPath")]
+    pub prefab_path: ::unity2::Il2CppString,
+    #[rename(name = "m_PrefabHandle")]
+    pub m_prefab_handle: crate::app::tresourcehandle_1::TResourceHandle_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+    #[rename(name = "m_GameObject")]
+    pub m_game_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_CameraObject")]
+    pub m_camera_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Camera")]
+    pub m_camera: crate::unity_engine::camera::Camera,
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+}
+
+#[cfg(feature = "app-ringinfo")]
+#[::unity2::methods]
+impl RingInfo_RingInfoWindowRingModel {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, index: i32) -> ();
+
+    #[doc = "`CreateAsync()` overload"]
+    #[method(name = "CreateAsync", args = 0)]
+    pub fn create_async(self) -> ();
+
+    #[doc = "`IsCreating()` overload"]
+    #[method(name = "IsCreating", args = 0)]
+    pub fn is_creating(self) -> bool;
+
+    #[doc = "`Destroy()` overload"]
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+
+    #[doc = "`CreateImpl()` overload"]
+    #[method(name = "CreateImpl", args = 0)]
+    pub fn create_impl(self) -> ();
+
+    #[doc = "`Setup()` overload"]
+    #[method(name = "Setup", args = 0)]
+    pub fn setup(self) -> bool;
+
+    #[doc = "`GetRenderTexture()` overload"]
+    #[method(name = "GetRenderTexture", args = 0)]
+    pub fn get_render_texture(self) -> crate::unity_engine::rendertexture::RenderTexture;
+
+    #[doc = "`get_PrefabObject()` overload"]
+    #[method(name = "get_PrefabObject", args = 0)]
+    pub fn get_prefab_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`get_RingModelRoot()` overload"]
+    #[method(name = "get_RingModelRoot", args = 0)]
+    pub fn get_ring_model_root(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`SetAnimatorEnable(bool)` overload"]
+    #[method(name = "SetAnimatorEnable", args = 1)]
+    pub fn set_animator_enable(self, value: bool) -> ();
+
+    #[doc = "`GetDirtyTextureValue(i32)` overload"]
+    #[method(name = "GetDirtyTextureValue", args = 1)]
+    pub fn get_dirty_texture_value(self, dirty: i32) -> f32;
+
+    #[doc = "`PlayDecisionAnim()` overload"]
+    #[method(name = "PlayDecisionAnim", args = 0)]
+    pub fn play_decision_anim(self) -> ();
+
+    #[doc = "`GetModelPosition()` overload"]
+    #[method(name = "GetModelPosition", args = 0)]
+    pub fn get_model_position(self) -> crate::unity_engine::vector3::Vector3;
+}
+
+#[cfg(feature = "app-ringinfo")]
+impl RingInfo_RingInfoWindowRingModel {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(index: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingInfo_RingInfoWindowRingModel),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingInfo_RingInfoWindowRingModelMethods>::ctor(this, index);
         this
     }
 }

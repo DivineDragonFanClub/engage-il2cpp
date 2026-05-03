@@ -14,39 +14,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistselectmenu/FriendListSelectMenu_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "FriendListSelectMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct FriendListSelectMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-friendlistselectmenu")]
-#[::unity2::methods]
-impl FriendListSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, pid: ::unity2::Il2CppString) -> ();
-}
-
-#[cfg(feature = "app-friendlistselectmenu")]
-impl FriendListSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FriendListSelectMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFriendListSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistselectmenu/FriendListSelectMenu_FriendListSelectMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
@@ -104,6 +71,39 @@ impl FriendListSelectMenu_FriendListSelectMenuItem {
             pid,
             decide_event_handler,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistselectmenu/FriendListSelectMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "FriendListSelectMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct FriendListSelectMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-friendlistselectmenu")]
+#[::unity2::methods]
+impl FriendListSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, pid: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "app-friendlistselectmenu")]
+impl FriendListSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FriendListSelectMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFriendListSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

@@ -6,6 +6,46 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/initialization/cacheinitialization/CacheInitialization.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets.Initialization",
+    name = "CacheInitialization"
+)]
+#[parent(crate::system::object::Object)]
+pub struct CacheInitialization {}
+
+#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
+#[::unity2::methods]
+impl CacheInitialization {
+    #[doc = "`Initialize(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "Initialize", args = 2)]
+    pub fn initialize(self, id: ::unity2::Il2CppString, data_str: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`InitializeAsync(crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "InitializeAsync", args = 3)]
+    pub fn initialize_async (self , rm : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , id : :: unity2 :: Il2CppString , data : :: unity2 :: Il2CppString) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > ;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
+impl CacheInitialization {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CacheInitialization),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICacheInitializationMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/initialization/cacheinitialization/CacheInitialization_CacheInitOp.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.AddressableAssets.Initialization",
@@ -53,46 +93,6 @@ impl CacheInitialization_CacheInitOp {
             )
         });
         <Self as ICacheInitialization_CacheInitOpMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/initialization/cacheinitialization/CacheInitialization.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.AddressableAssets.Initialization",
-    name = "CacheInitialization"
-)]
-#[parent(crate::system::object::Object)]
-pub struct CacheInitialization {}
-
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
-#[::unity2::methods]
-impl CacheInitialization {
-    #[doc = "`Initialize(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Initialize", args = 2)]
-    pub fn initialize(self, id: ::unity2::Il2CppString, data_str: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`InitializeAsync(crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "InitializeAsync", args = 3)]
-    pub fn initialize_async (self , rm : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager , id : :: unity2 :: Il2CppString , data : :: unity2 :: Il2CppString) -> crate :: unity_engine :: resource_management :: async_operations :: asyncoperationhandle_1 :: AsyncOperationHandle_1 < bool > ;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-addressable_assets-initialization-cacheinitialization")]
-impl CacheInitialization {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CacheInitialization),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICacheInitializationMethods>::ctor(this);
         this
     }
 }

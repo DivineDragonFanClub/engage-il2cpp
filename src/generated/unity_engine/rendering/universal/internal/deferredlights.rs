@@ -42,105 +42,6 @@ impl DeferredLights_CullLightsJob {
     pub fn execute(self) -> ();
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_DrawCall.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DeferredLights_DrawCall {
-    pub tile_list: crate::unity_engine::computebuffer::ComputeBuffer,
-    pub punctual_light_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
-    pub rel_light_list: crate::unity_engine::computebuffer::ComputeBuffer,
-    pub tile_list_size: i32,
-    pub punctual_light_buffer_size: i32,
-    pub rel_light_list_size: i32,
-    pub instance_offset: i32,
-    pub instance_count: i32,
-}
-
-impl ::unity2::ClassIdentity for DeferredLights_DrawCall {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-    const NAME: &'static str = "DeferredLights.DrawCall";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for DeferredLights_DrawCall {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_GBufferHandles.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct DeferredLights_GBufferHandles {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for DeferredLights_GBufferHandles {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
-
-    const NAME: &'static str = "DeferredLights.GBufferHandles";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for DeferredLights_GBufferHandles {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl DeferredLights_GBufferHandles {
-    pub fn depth_as_color() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn albedo() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn specular_metallic() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn normal_smoothness() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn lighting() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn shadow_mask() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn count() -> Self {
-        Self { value: 6 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -872,4 +773,103 @@ impl DeferredLights_ShaderConstants {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_DrawCall.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DeferredLights_DrawCall {
+    pub tile_list: crate::unity_engine::computebuffer::ComputeBuffer,
+    pub punctual_light_buffer: crate::unity_engine::computebuffer::ComputeBuffer,
+    pub rel_light_list: crate::unity_engine::computebuffer::ComputeBuffer,
+    pub tile_list_size: i32,
+    pub punctual_light_buffer_size: i32,
+    pub rel_light_list_size: i32,
+    pub instance_offset: i32,
+    pub instance_count: i32,
+}
+
+impl ::unity2::ClassIdentity for DeferredLights_DrawCall {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+    const NAME: &'static str = "DeferredLights.DrawCall";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DeferredLights_DrawCall {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/internal/deferredlights/DeferredLights_GBufferHandles.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct DeferredLights_GBufferHandles {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for DeferredLights_GBufferHandles {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal.Internal";
+
+    const NAME: &'static str = "DeferredLights.GBufferHandles";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DeferredLights_GBufferHandles {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl DeferredLights_GBufferHandles {
+    pub fn depth_as_color() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn albedo() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn specular_metallic() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn normal_smoothness() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn lighting() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn shadow_mask() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn count() -> Self {
+        Self { value: 6 }
+    }
 }

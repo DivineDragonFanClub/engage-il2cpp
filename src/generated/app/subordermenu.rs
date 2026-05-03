@@ -14,6 +14,66 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/subordermenu/SubOrderMenu.md"))]
+#[::unity2::class(namespace = "App", name = "SubOrderMenu")]
+#[parent(crate::app::mapbasicmenu::MapBasicMenu)]
+pub struct SubOrderMenu {
+    #[static_field]
+    #[rename(name = "m_parentMenu")]
+    pub m_parent_menu: crate::app::mapsystemmenu::MapSystemMenu,
+}
+
+#[cfg(feature = "app-subordermenu")]
+#[::unity2::methods]
+impl SubOrderMenu {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::mapsystemmenu::MapSystemMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        parent_menu: crate::app::mapsystemmenu::MapSystemMenu,
+        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
+    ) -> ();
+}
+
+#[cfg(feature = "app-subordermenu")]
+impl SubOrderMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SubOrderMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISubOrderMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/subordermenu/SubOrderMenu_SubOrderMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "SubOrderMenu.SubOrderMenuItem")]
 #[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
@@ -74,66 +134,6 @@ impl SubOrderMenu_SubOrderMenuItem {
             )
         });
         <Self as ISubOrderMenu_SubOrderMenuItemMethods>::ctor(this, r#type);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/subordermenu/SubOrderMenu.md"))]
-#[::unity2::class(namespace = "App", name = "SubOrderMenu")]
-#[parent(crate::app::mapbasicmenu::MapBasicMenu)]
-pub struct SubOrderMenu {
-    #[static_field]
-    #[rename(name = "m_parentMenu")]
-    pub m_parent_menu: crate::app::mapsystemmenu::MapSystemMenu,
-}
-
-#[cfg(feature = "app-subordermenu")]
-#[::unity2::methods]
-impl SubOrderMenu {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::mapsystemmenu::MapSystemMenu, crate::app::basicmenuitem::BasicMenuItem)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        parent_menu: crate::app::mapsystemmenu::MapSystemMenu,
-        parent_menu_item: crate::app::basicmenuitem::BasicMenuItem,
-    ) -> ();
-}
-
-#[cfg(feature = "app-subordermenu")]
-impl SubOrderMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::sortiesubmenucontent::SortieSubMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::sortiesubmenucontent::SortieSubMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SubOrderMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISubOrderMenuMethods>::ctor(this, menu_item_list, menu_content);
         this
     }
 }

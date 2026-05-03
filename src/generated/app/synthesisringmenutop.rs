@@ -68,42 +68,6 @@ impl SynthesisRingMenuTop_Result {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringmenutop/SynthesisRingMenuTop_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "SynthesisRingMenuTop.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct SynthesisRingMenuTop_DecideEventHandler {}
-
-#[cfg(feature = "app-synthesisringmenutop")]
-#[::unity2::methods]
-impl SynthesisRingMenuTop_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
-    ) -> ();
-}
-
-#[cfg(feature = "app-synthesisringmenutop")]
-impl SynthesisRingMenuTop_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SynthesisRingMenuTop_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISynthesisRingMenuTop_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringmenutop/SynthesisRingMenuTop.md"))]
 #[::unity2::class(namespace = "App", name = "SynthesisRingMenuTop")]
 #[parent(crate::system::object::Object)]
@@ -201,6 +165,42 @@ impl SynthesisRingMenuTop {
             initial_menu_select,
             decide_event_handler,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringmenutop/SynthesisRingMenuTop_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "SynthesisRingMenuTop.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct SynthesisRingMenuTop_DecideEventHandler {}
+
+#[cfg(feature = "app-synthesisringmenutop")]
+#[::unity2::methods]
+impl SynthesisRingMenuTop_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        result: crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,
+    ) -> ();
+}
+
+#[cfg(feature = "app-synthesisringmenutop")]
+impl SynthesisRingMenuTop_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SynthesisRingMenuTop_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISynthesisRingMenuTop_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

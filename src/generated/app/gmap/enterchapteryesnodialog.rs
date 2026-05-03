@@ -24,59 +24,94 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_Type.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_EnterChapterDialogMainItemNo.md"))]
+#[::unity2::class(
+    namespace = "App.Gmap",
+    name = "EnterChapterYesNoDialog.EnterChapterDialogMainItemNo"
 )]
-pub struct EnterChapterYesNoDialog_Type {
-    pub value: i32,
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct EnterChapterYesNoDialog_EnterChapterDialogMainItemNo {}
+
+#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
+#[::unity2::methods]
+impl EnterChapterYesNoDialog_EnterChapterDialogMainItemNo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
-impl ::unity2::ClassIdentity for EnterChapterYesNoDialog_Type {
-    const NAMESPACE: &'static str = "App.Gmap";
-
-    const NAME: &'static str = "EnterChapterYesNoDialog.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
+impl EnterChapterYesNoDialog_EnterChapterDialogMainItemNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EnterChapterYesNoDialog_EnterChapterDialogMainItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEnterChapterYesNoDialog_EnterChapterDialogMainItemNoMethods>::ctor(this);
+        this
     }
 }
 
-impl ::unity2::IlType for EnterChapterYesNoDialog_Type {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog.md"))]
+#[::unity2::class(namespace = "App.Gmap", name = "EnterChapterYesNoDialog")]
+#[parent(crate::app::yesnodialog::YesNoDialog)]
+pub struct EnterChapterYesNoDialog {}
+
+#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
+#[::unity2::methods]
+impl EnterChapterYesNoDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::app::gmapspot::GmapSpot, crate::system::action::Action, crate::system::action::Action)` overload"]
+    #[method(name = "CreateBind", args = 5)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        r#type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
+        now_spot: crate::app::gmapspot::GmapSpot,
+        yes_callback: crate::system::action::Action,
+        yes_callback2: crate::system::action::Action,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemyes::BasicDialogItemYes)` overload"]
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind_2(
+        super_: crate::app::procinst::ProcInst,
+        message: ::unity2::Il2CppString,
+        yes_item: crate::app::basicdialogitemyes::BasicDialogItemYes,
+        yes_item2: crate::app::basicdialogitemyes::BasicDialogItemYes,
+    ) -> crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog;
 }
 
-impl EnterChapterYesNoDialog_Type {
-    pub fn main() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn encount() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn training() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn recollection() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn select_battle() -> Self {
-        Self { value: 4 }
+#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
+impl EnterChapterYesNoDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EnterChapterYesNoDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEnterChapterYesNoDialogMethods>::ctor(this, menu_item_list, menu_content);
+        this
     }
 }
 
@@ -185,94 +220,59 @@ impl EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_EnterChapterDialogMainItemNo.md"))]
-#[::unity2::class(
-    namespace = "App.Gmap",
-    name = "EnterChapterYesNoDialog.EnterChapterDialogMainItemNo"
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_Type.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
 )]
-#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-pub struct EnterChapterYesNoDialog_EnterChapterDialogMainItemNo {}
-
-#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
-#[::unity2::methods]
-impl EnterChapterYesNoDialog_EnterChapterDialogMainItemNo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+pub struct EnterChapterYesNoDialog_Type {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
-impl EnterChapterYesNoDialog_EnterChapterDialogMainItemNo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EnterChapterYesNoDialog_EnterChapterDialogMainItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEnterChapterYesNoDialog_EnterChapterDialogMainItemNoMethods>::ctor(this);
-        this
+impl ::unity2::ClassIdentity for EnterChapterYesNoDialog_Type {
+    const NAMESPACE: &'static str = "App.Gmap";
+
+    const NAME: &'static str = "EnterChapterYesNoDialog.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog.md"))]
-#[::unity2::class(namespace = "App.Gmap", name = "EnterChapterYesNoDialog")]
-#[parent(crate::app::yesnodialog::YesNoDialog)]
-pub struct EnterChapterYesNoDialog {}
-
-#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
-#[::unity2::methods]
-impl EnterChapterYesNoDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type, crate::app::gmapspot::GmapSpot, crate::system::action::Action, crate::system::action::Action)` overload"]
-    #[method(name = "CreateBind", args = 5)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        r#type: crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog_Type,
-        now_spot: crate::app::gmapspot::GmapSpot,
-        yes_callback: crate::system::action::Action,
-        yes_callback2: crate::system::action::Action,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemyes::BasicDialogItemYes)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind_2(
-        super_: crate::app::procinst::ProcInst,
-        message: ::unity2::Il2CppString,
-        yes_item: crate::app::basicdialogitemyes::BasicDialogItemYes,
-        yes_item2: crate::app::basicdialogitemyes::BasicDialogItemYes,
-    ) -> crate::app::gmap::enterchapteryesnodialog::EnterChapterYesNoDialog;
+impl ::unity2::IlType for EnterChapterYesNoDialog_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
 }
 
-#[cfg(feature = "app-gmap-enterchapteryesnodialog")]
-impl EnterChapterYesNoDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EnterChapterYesNoDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEnterChapterYesNoDialogMethods>::ctor(this, menu_item_list, menu_content);
-        this
+impl EnterChapterYesNoDialog_Type {
+    pub fn main() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn encount() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn training() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn recollection() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn select_battle() -> Self {
+        Self { value: 4 }
     }
 }
 

@@ -8,6 +8,108 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking_Probability.md"))]
+#[::unity2::class(namespace = "App", name = "Cooking.Probability")]
+#[parent(crate::system::object::Object)]
+pub struct Cooking_Probability {
+    #[static_field]
+    #[rename(name = "BaseProbability")]
+    pub base_probability: ::unity2::Array<f32>,
+    #[static_field]
+    #[rename(name = "ProbabilityCorrections")]
+    pub probability_corrections: ::unity2::Array<::unity2::Array<f32>>,
+    #[static_field]
+    #[rename(name = "ProbabilityFromFoodstuff")]
+    pub probability_from_foodstuff: ::unity2::Array<::unity2::Array<f32>>,
+}
+
+#[cfg(feature = "app-cooking")]
+#[::unity2::methods]
+impl Cooking_Probability {
+    #[doc = "`GetProbabilities(crate::app::cookdata::CookData_Difficulty, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"]
+    #[method(name = "GetProbabilities", args = 2)]
+    pub fn get_probabilities(
+        difficulty: crate::app::cookdata::CookData_Difficulty,
+        foodstuffs: ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
+    ) -> crate::system::collections::generic::list_1::List_1<f32>;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-cooking")]
+impl Cooking_Probability {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Cooking_Probability),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICooking_ProbabilityMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_ConversationType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Cooking_ConversationType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Cooking_ConversationType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Cooking.ConversationType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Cooking_ConversationType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Cooking_ConversationType {
+    pub fn about_delicious() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn monologue() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn dialogue() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 3 }
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Quality.md"))]
 #[repr(C)]
 #[derive(
@@ -69,6 +171,50 @@ impl Cooking_Quality {
 
     pub fn none() -> Self {
         Self { value: 6 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Order.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Cooking_Order {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Cooking_Order {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Cooking.Order";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Cooking_Order {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Cooking_Order {
+    pub fn before() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn after() -> Self {
+        Self { value: 1 }
     }
 }
 
@@ -147,152 +293,6 @@ impl Cooking {
             )
         });
         <Self as ICookingMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_ConversationType.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct Cooking_ConversationType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for Cooking_ConversationType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Cooking.ConversationType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Cooking_ConversationType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl Cooking_ConversationType {
-    pub fn about_delicious() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn monologue() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn dialogue() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 3 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/cooking/Cooking_Order.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct Cooking_Order {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for Cooking_Order {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Cooking.Order";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Cooking_Order {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl Cooking_Order {
-    pub fn before() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn after() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking/Cooking_Probability.md"))]
-#[::unity2::class(namespace = "App", name = "Cooking.Probability")]
-#[parent(crate::system::object::Object)]
-pub struct Cooking_Probability {
-    #[static_field]
-    #[rename(name = "BaseProbability")]
-    pub base_probability: ::unity2::Array<f32>,
-    #[static_field]
-    #[rename(name = "ProbabilityCorrections")]
-    pub probability_corrections: ::unity2::Array<::unity2::Array<f32>>,
-    #[static_field]
-    #[rename(name = "ProbabilityFromFoodstuff")]
-    pub probability_from_foodstuff: ::unity2::Array<::unity2::Array<f32>>,
-}
-
-#[cfg(feature = "app-cooking")]
-#[::unity2::methods]
-impl Cooking_Probability {
-    #[doc = "`GetProbabilities(crate::app::cookdata::CookData_Difficulty, ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>)` overload"]
-    #[method(name = "GetProbabilities", args = 2)]
-    pub fn get_probabilities(
-        difficulty: crate::app::cookdata::CookData_Difficulty,
-        foodstuffs: ::unity2::Array<crate::app::foodstuffdata::FoodstuffData>,
-    ) -> crate::system::collections::generic::list_1::List_1<f32>;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-cooking")]
-impl Cooking_Probability {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Cooking_Probability),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICooking_ProbabilityMethods>::ctor(this);
         this
     }
 }

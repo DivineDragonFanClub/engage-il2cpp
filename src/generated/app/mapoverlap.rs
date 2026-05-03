@@ -6,6 +6,151 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapoverlap/MapOverlap_Data.md"))]
+#[::unity2::class(namespace = "App", name = "MapOverlap.Data")]
+#[parent(crate::system::object::Object)]
+pub struct MapOverlap_Data {}
+
+#[cfg(feature = "app-mapoverlap")]
+#[::unity2::methods]
+impl MapOverlap_Data {
+    #[doc = "`get_X()` overload"]
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[doc = "`set_X(i32)` overload"]
+    #[method(name = "set_X", args = 1)]
+    pub fn set_x(self, value: i32) -> ();
+
+    #[doc = "`get_Z()` overload"]
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[doc = "`set_Z(i32)` overload"]
+    #[method(name = "set_Z", args = 1)]
+    pub fn set_z(self, value: i32) -> ();
+
+    #[doc = "`get_Index()` overload"]
+    #[method(name = "get_Index", args = 0)]
+    pub fn get_index(self) -> i32;
+
+    #[doc = "`set_Index(i32)` overload"]
+    #[method(name = "set_Index", args = 1)]
+    pub fn set_index(self, value: i32) -> ();
+
+    #[doc = "`get_Hp()` overload"]
+    #[method(name = "get_Hp", args = 0)]
+    pub fn get_hp(self) -> i32;
+
+    #[doc = "`set_Hp(i32)` overload"]
+    #[method(name = "set_Hp", args = 1)]
+    pub fn set_hp(self, value: i32) -> ();
+
+    #[doc = "`get_Life()` overload"]
+    #[method(name = "get_Life", args = 0)]
+    pub fn get_life(self) -> i32;
+
+    #[doc = "`set_Life(i32)` overload"]
+    #[method(name = "set_Life", args = 1)]
+    pub fn set_life(self, value: i32) -> ();
+
+    #[doc = "`get_Turn()` overload"]
+    #[method(name = "get_Turn", args = 0)]
+    pub fn get_turn(self) -> i32;
+
+    #[doc = "`set_Turn(i32)` overload"]
+    #[method(name = "set_Turn", args = 1)]
+    pub fn set_turn(self, value: i32) -> ();
+
+    #[doc = "`get_Phase()` overload"]
+    #[method(name = "get_Phase", args = 0)]
+    pub fn get_phase(self) -> crate::app::force::Force_Type;
+
+    #[doc = "`set_Phase(crate::app::force::Force_Type)` overload"]
+    #[method(name = "set_Phase", args = 1)]
+    pub fn set_phase(self, value: crate::app::force::Force_Type) -> ();
+
+    #[doc = "`get_Effect()` overload"]
+    #[method(name = "get_Effect", args = 0)]
+    pub fn get_effect(self) -> crate::app::resourceobject::ResourceObject;
+
+    #[doc = "`set_Effect(crate::app::resourceobject::ResourceObject)` overload"]
+    #[method(name = "set_Effect", args = 1)]
+    pub fn set_effect(self, value: crate::app::resourceobject::ResourceObject) -> ();
+
+    #[doc = "`get_Terrain()` overload"]
+    #[method(name = "get_Terrain", args = 0)]
+    pub fn get_terrain(self) -> crate::app::terraindata_2::TerrainData_2;
+
+    #[doc = "`get_Age()` overload"]
+    #[method(name = "get_Age", args = 0)]
+    pub fn get_age(self) -> i32;
+
+    #[doc = "`get_MaxHp()` overload"]
+    #[method(name = "get_MaxHp", args = 0)]
+    pub fn get_max_hp(self) -> i32;
+
+    #[doc = "`IsSight()` overload"]
+    #[method(name = "IsSight", args = 0)]
+    pub fn is_sight(self) -> bool;
+
+    #[doc = "`CanBreakable()` overload"]
+    #[method(name = "CanBreakable", args = 0)]
+    pub fn can_breakable(self) -> bool;
+
+    #[doc = "`CanBreakable(crate::app::unit::Unit)` overload"]
+    #[method(name = "CanBreakable", args = 1)]
+    pub fn can_breakable_2(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[doc = "`CanBreakable(crate::app::force::Force_Type)` overload"]
+    #[method(name = "CanBreakable", args = 1)]
+    pub fn can_breakable_3(self, force: crate::app::force::Force_Type) -> bool;
+
+    #[doc = "`get_Sight()` overload"]
+    #[method(name = "get_Sight", args = 0)]
+    pub fn get_sight(self) -> i32;
+
+    #[doc = "`GetPosition()` overload"]
+    #[method(name = "GetPosition", args = 0)]
+    pub fn get_position(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`GetScale()` overload"]
+    #[method(name = "GetScale", args = 0)]
+    pub fn get_scale(self) -> f32;
+
+    #[doc = "`CreateEffect()` overload"]
+    #[method(name = "CreateEffect", args = 0)]
+    pub fn create_effect(self) -> ();
+
+    #[doc = "`UpdateEffect()` overload"]
+    #[method(name = "UpdateEffect", args = 0)]
+    pub fn update_effect(self) -> ();
+
+    #[doc = "`DeleteEffect()` overload"]
+    #[method(name = "DeleteEffect", args = 0)]
+    pub fn delete_effect(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapoverlap")]
+impl MapOverlap_Data {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapOverlap_Data),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapOverlap_DataMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapoverlap/MapOverlap.md"))]
 #[::unity2::class(namespace = "App", name = "MapOverlap")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapoverlap :: MapOverlap >)]
@@ -198,151 +343,6 @@ impl MapOverlap {
             )
         });
         <Self as IMapOverlapMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapoverlap/MapOverlap_Data.md"))]
-#[::unity2::class(namespace = "App", name = "MapOverlap.Data")]
-#[parent(crate::system::object::Object)]
-pub struct MapOverlap_Data {}
-
-#[cfg(feature = "app-mapoverlap")]
-#[::unity2::methods]
-impl MapOverlap_Data {
-    #[doc = "`get_X()` overload"]
-    #[method(name = "get_X", args = 0)]
-    pub fn get_x(self) -> i32;
-
-    #[doc = "`set_X(i32)` overload"]
-    #[method(name = "set_X", args = 1)]
-    pub fn set_x(self, value: i32) -> ();
-
-    #[doc = "`get_Z()` overload"]
-    #[method(name = "get_Z", args = 0)]
-    pub fn get_z(self) -> i32;
-
-    #[doc = "`set_Z(i32)` overload"]
-    #[method(name = "set_Z", args = 1)]
-    pub fn set_z(self, value: i32) -> ();
-
-    #[doc = "`get_Index()` overload"]
-    #[method(name = "get_Index", args = 0)]
-    pub fn get_index(self) -> i32;
-
-    #[doc = "`set_Index(i32)` overload"]
-    #[method(name = "set_Index", args = 1)]
-    pub fn set_index(self, value: i32) -> ();
-
-    #[doc = "`get_Hp()` overload"]
-    #[method(name = "get_Hp", args = 0)]
-    pub fn get_hp(self) -> i32;
-
-    #[doc = "`set_Hp(i32)` overload"]
-    #[method(name = "set_Hp", args = 1)]
-    pub fn set_hp(self, value: i32) -> ();
-
-    #[doc = "`get_Life()` overload"]
-    #[method(name = "get_Life", args = 0)]
-    pub fn get_life(self) -> i32;
-
-    #[doc = "`set_Life(i32)` overload"]
-    #[method(name = "set_Life", args = 1)]
-    pub fn set_life(self, value: i32) -> ();
-
-    #[doc = "`get_Turn()` overload"]
-    #[method(name = "get_Turn", args = 0)]
-    pub fn get_turn(self) -> i32;
-
-    #[doc = "`set_Turn(i32)` overload"]
-    #[method(name = "set_Turn", args = 1)]
-    pub fn set_turn(self, value: i32) -> ();
-
-    #[doc = "`get_Phase()` overload"]
-    #[method(name = "get_Phase", args = 0)]
-    pub fn get_phase(self) -> crate::app::force::Force_Type;
-
-    #[doc = "`set_Phase(crate::app::force::Force_Type)` overload"]
-    #[method(name = "set_Phase", args = 1)]
-    pub fn set_phase(self, value: crate::app::force::Force_Type) -> ();
-
-    #[doc = "`get_Effect()` overload"]
-    #[method(name = "get_Effect", args = 0)]
-    pub fn get_effect(self) -> crate::app::resourceobject::ResourceObject;
-
-    #[doc = "`set_Effect(crate::app::resourceobject::ResourceObject)` overload"]
-    #[method(name = "set_Effect", args = 1)]
-    pub fn set_effect(self, value: crate::app::resourceobject::ResourceObject) -> ();
-
-    #[doc = "`get_Terrain()` overload"]
-    #[method(name = "get_Terrain", args = 0)]
-    pub fn get_terrain(self) -> crate::app::terraindata_2::TerrainData_2;
-
-    #[doc = "`get_Age()` overload"]
-    #[method(name = "get_Age", args = 0)]
-    pub fn get_age(self) -> i32;
-
-    #[doc = "`get_MaxHp()` overload"]
-    #[method(name = "get_MaxHp", args = 0)]
-    pub fn get_max_hp(self) -> i32;
-
-    #[doc = "`IsSight()` overload"]
-    #[method(name = "IsSight", args = 0)]
-    pub fn is_sight(self) -> bool;
-
-    #[doc = "`CanBreakable()` overload"]
-    #[method(name = "CanBreakable", args = 0)]
-    pub fn can_breakable(self) -> bool;
-
-    #[doc = "`CanBreakable(crate::app::unit::Unit)` overload"]
-    #[method(name = "CanBreakable", args = 1)]
-    pub fn can_breakable_2(self, unit: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`CanBreakable(crate::app::force::Force_Type)` overload"]
-    #[method(name = "CanBreakable", args = 1)]
-    pub fn can_breakable_3(self, force: crate::app::force::Force_Type) -> bool;
-
-    #[doc = "`get_Sight()` overload"]
-    #[method(name = "get_Sight", args = 0)]
-    pub fn get_sight(self) -> i32;
-
-    #[doc = "`GetPosition()` overload"]
-    #[method(name = "GetPosition", args = 0)]
-    pub fn get_position(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GetScale()` overload"]
-    #[method(name = "GetScale", args = 0)]
-    pub fn get_scale(self) -> f32;
-
-    #[doc = "`CreateEffect()` overload"]
-    #[method(name = "CreateEffect", args = 0)]
-    pub fn create_effect(self) -> ();
-
-    #[doc = "`UpdateEffect()` overload"]
-    #[method(name = "UpdateEffect", args = 0)]
-    pub fn update_effect(self) -> ();
-
-    #[doc = "`DeleteEffect()` overload"]
-    #[method(name = "DeleteEffect", args = 0)]
-    pub fn delete_effect(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapoverlap")]
-impl MapOverlap_Data {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapOverlap_Data),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapOverlap_DataMethods>::ctor(this);
         this
     }
 }

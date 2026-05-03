@@ -16,6 +16,46 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/charactercollision/CharacterCollision_Kinds.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CharacterCollision_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CharacterCollision_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "CharacterCollision.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CharacterCollision_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CharacterCollision_Kinds {
+    pub fn _unnamed() -> Self {
+        Self { value: 0 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/charactercollision/CharacterCollision.md"))]
 #[::unity2::class(namespace = "App", name = "CharacterCollision")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -75,45 +115,5 @@ impl CharacterCollision {
         });
         <Self as ICharacterCollisionMethods>::ctor(this);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/charactercollision/CharacterCollision_Kinds.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct CharacterCollision_Kinds {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for CharacterCollision_Kinds {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "CharacterCollision.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for CharacterCollision_Kinds {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl CharacterCollision_Kinds {
-    pub fn _unnamed() -> Self {
-        Self { value: 0 }
     }
 }

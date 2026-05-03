@@ -8,54 +8,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/language/Language_Voices.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct Language_Voices {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for Language_Voices {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Language.Voices";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Language_Voices {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl Language_Voices {
-    pub fn japanese() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn english() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn max() -> Self {
-        Self { value: 2 }
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/language/Language_Langs.md"))]
 #[repr(C)]
 #[derive(
@@ -258,5 +210,53 @@ impl Language {
         });
         <Self as ILanguageMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/language/Language_Voices.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Language_Voices {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Language_Voices {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Language.Voices";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Language_Voices {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Language_Voices {
+    pub fn japanese() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn english() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 2 }
     }
 }

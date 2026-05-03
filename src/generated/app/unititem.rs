@@ -8,54 +8,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unititem/UnitItem_Flags.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitItem_Flags {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitItem_Flags {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitItem.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitItem_Flags {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitItem_Flags {
-    pub fn equipped() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn drop() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn skip_log() -> Self {
-        Self { value: 4 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititem/UnitItem.md"))]
 #[::unity2::class(namespace = "App", name = "UnitItem")]
 #[parent(crate::system::object::Object)]
@@ -613,5 +565,53 @@ impl UnitItem {
         });
         <Self as IUnitItemMethods>::ctor_5(this, unit_item);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unititem/UnitItem_Flags.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitItem_Flags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitItem_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitItem.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitItem_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitItem_Flags {
+    pub fn equipped() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn drop() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn skip_log() -> Self {
+        Self { value: 4 }
     }
 }

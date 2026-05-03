@@ -4,14 +4,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui_elements/uir/utility_2/Utility_GPUBuffer_1.md"))]
-#[::unity2::class(namespace = "UnityEngine.UIElements.UIR", name = "Utility.GPUBuffer`1")]
-#[parent(crate::system::object::Object)]
-pub struct Utility_GPUBuffer_1<T0: ::unity2::ClassIdentity> {
-    #[rename(name = "buffer")]
-    pub buffer: ::unity2::IntPtr,
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui_elements/uir/utility_2/Utility_2.md"))]
 #[::unity2::class(namespace = "UnityEngine.UIElements.UIR", name = "Utility")]
 #[parent(crate::system::object::Object)]
@@ -75,4 +67,12 @@ impl Utility_2 {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui_elements/uir/utility_2/Utility_GPUBuffer_1.md"))]
+#[::unity2::class(namespace = "UnityEngine.UIElements.UIR", name = "Utility.GPUBuffer`1")]
+#[parent(crate::system::object::Object)]
+pub struct Utility_GPUBuffer_1<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "buffer")]
+    pub buffer: ::unity2::IntPtr,
 }

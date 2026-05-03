@@ -9,60 +9,6 @@ use ::unity2::prelude::*;
 #[parent(crate::system::object::Object)]
 pub struct Stack_StackDebugView {}
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/stack/Stack_StackEnumerator.md"))]
-#[::unity2::class(namespace = "System.Collections", name = "Stack.StackEnumerator")]
-#[parent(crate::system::object::Object)]
-pub struct Stack_StackEnumerator {
-    #[rename(name = "_stack")]
-    pub stack: crate::system::collections::stack::Stack,
-    #[rename(name = "_index")]
-    pub index: i32,
-    #[rename(name = "_version")]
-    pub version: i32,
-    #[rename(name = "currentElement")]
-    pub current_element: ::unity2::IlInstance,
-}
-
-#[cfg(feature = "system-collections-stack")]
-#[::unity2::methods]
-impl Stack_StackEnumerator {
-    #[doc = "`.ctor(crate::system::collections::stack::Stack)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, stack: crate::system::collections::stack::Stack) -> ();
-
-    #[doc = "`Clone()` overload"]
-    #[method(name = "Clone", args = 0)]
-    pub fn clone(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-}
-
-#[cfg(feature = "system-collections-stack")]
-impl Stack_StackEnumerator {
-    #[doc = "`.ctor(crate::system::collections::stack::Stack)` — overload selector"]
-    pub fn new(stack: crate::system::collections::stack::Stack) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Stack_StackEnumerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStack_StackEnumeratorMethods>::ctor(this, stack);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/stack/Stack.md"))]
 #[::unity2::class(namespace = "System.Collections", name = "Stack")]
 #[parent(crate::system::object::Object)]
@@ -154,6 +100,60 @@ impl Stack {
             )
         });
         <Self as IStackMethods>::ctor_2(this, initial_capacity);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/stack/Stack_StackEnumerator.md"))]
+#[::unity2::class(namespace = "System.Collections", name = "Stack.StackEnumerator")]
+#[parent(crate::system::object::Object)]
+pub struct Stack_StackEnumerator {
+    #[rename(name = "_stack")]
+    pub stack: crate::system::collections::stack::Stack,
+    #[rename(name = "_index")]
+    pub index: i32,
+    #[rename(name = "_version")]
+    pub version: i32,
+    #[rename(name = "currentElement")]
+    pub current_element: ::unity2::IlInstance,
+}
+
+#[cfg(feature = "system-collections-stack")]
+#[::unity2::methods]
+impl Stack_StackEnumerator {
+    #[doc = "`.ctor(crate::system::collections::stack::Stack)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, stack: crate::system::collections::stack::Stack) -> ();
+
+    #[doc = "`Clone()` overload"]
+    #[method(name = "Clone", args = 0)]
+    pub fn clone(self) -> crate::system::object::Object;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+}
+
+#[cfg(feature = "system-collections-stack")]
+impl Stack_StackEnumerator {
+    #[doc = "`.ctor(crate::system::collections::stack::Stack)` — overload selector"]
+    pub fn new(stack: crate::system::collections::stack::Stack) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Stack_StackEnumerator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStack_StackEnumeratorMethods>::ctor(this, stack);
         this
     }
 }

@@ -18,6 +18,120 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive_FlagField.md"))]
+#[::unity2::class(namespace = "App", name = "MapPanelActive.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > >)]
+pub struct MapPanelActive_FlagField {}
+
+#[cfg(feature = "app-mappanelactive")]
+#[::unity2::methods]
+impl MapPanelActive_FlagField {
+    #[doc = "`ToLong(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)` overload"]
+    #[method(name = "ToLong", args = 1)]
+    pub fn to_long(
+        self,
+        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
+            crate::app::mapdeploy::MapDeploy,
+        >,
+    ) -> i64;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mappanelactive")]
+impl MapPanelActive_FlagField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPanelActive_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPanelActive_FlagFieldMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappanelactive/MapPanelActive_MeshIndex.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapPanelActive_MeshIndex {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapPanelActive_MeshIndex {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPanelActive.MeshIndex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapPanelActive_MeshIndex {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapPanelActive_MeshIndex {
+    pub fn r#move() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn heal() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn support() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn interference() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn dance() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn action() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn range() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn overlap() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 9 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive.md"))]
 #[::unity2::class(namespace = "App", name = "MapPanelActive")]
 pub struct MapPanelActive {
@@ -314,120 +428,6 @@ impl MapPanelActive {
             )
         });
         <Self as IMapPanelActiveMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappanelactive/MapPanelActive_MeshIndex.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapPanelActive_MeshIndex {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapPanelActive_MeshIndex {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapPanelActive.MeshIndex";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapPanelActive_MeshIndex {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapPanelActive_MeshIndex {
-    pub fn r#move() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn attack() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn heal() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn support() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn interference() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn dance() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn action() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn range() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn overlap() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 9 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mappanelactive/MapPanelActive_FlagField.md"))]
-#[::unity2::class(namespace = "App", name = "MapPanelActive.FlagField")]
-# [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < crate :: app :: mapdeploy :: MapDeploy > >)]
-pub struct MapPanelActive_FlagField {}
-
-#[cfg(feature = "app-mappanelactive")]
-#[::unity2::methods]
-impl MapPanelActive_FlagField {
-    #[doc = "`ToLong(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<crate::app::mapdeploy::MapDeploy>)` overload"]
-    #[method(name = "ToLong", args = 1)]
-    pub fn to_long(
-        self,
-        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<
-            crate::app::mapdeploy::MapDeploy,
-        >,
-    ) -> i64;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mappanelactive")]
-impl MapPanelActive_FlagField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapPanelActive_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapPanelActive_FlagFieldMethods>::ctor(this);
         this
     }
 }

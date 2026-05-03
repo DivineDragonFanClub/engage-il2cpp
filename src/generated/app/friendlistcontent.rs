@@ -12,103 +12,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistcontent/FriendListContent_FriendContent.md"))]
-#[::unity2::class(namespace = "App", name = "FriendListContent.FriendContent")]
-#[parent(crate::system::object::Object)]
-pub struct FriendListContent_FriendContent {}
-
-#[cfg(feature = "app-friendlistcontent")]
-#[::unity2::methods]
-impl FriendListContent_FriendContent {
-    #[doc = "`get_TitleObj()` overload"]
-    #[method(name = "get_TitleObj", args = 0)]
-    pub fn get_title_obj(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`set_TitleObj(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "set_TitleObj", args = 1)]
-    pub fn set_title_obj(self, value: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`get_MessageObj()` overload"]
-    #[method(name = "get_MessageObj", args = 0)]
-    pub fn get_message_obj(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`set_MessageObj(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "set_MessageObj", args = 1)]
-    pub fn set_message_obj(self, value: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`get_StampObj()` overload"]
-    #[method(name = "get_StampObj", args = 0)]
-    pub fn get_stamp_obj(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`set_StampObj(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "set_StampObj", args = 1)]
-    pub fn set_stamp_obj(self, value: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`get_PictureObj()` overload"]
-    #[method(name = "get_PictureObj", args = 0)]
-    pub fn get_picture_obj(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`set_PictureObj(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "set_PictureObj", args = 1)]
-    pub fn set_picture_obj(self, value: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`SetTextObj(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "SetTextObj", args = 1)]
-    pub fn set_text_obj(self, text_root: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`SetTitle(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetTitle", args = 1)]
-    pub fn set_title(self, title: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetMessage(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetMessage", args = 1)]
-    pub fn set_message(self, message: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`SetStamp(crate::unity_engine::sprite::Sprite)` overload"]
-    #[method(name = "SetStamp", args = 1)]
-    pub fn set_stamp(self, sprite: crate::unity_engine::sprite::Sprite) -> ();
-
-    #[doc = "`SetImage(crate::unity_engine::sprite::Sprite)` overload"]
-    #[method(name = "SetImage", args = 1)]
-    pub fn set_image(self, sprite: crate::unity_engine::sprite::Sprite) -> ();
-
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
-
-    #[doc = "`StartShow()` overload"]
-    #[method(name = "StartShow", args = 0)]
-    pub fn start_show(self) -> ();
-
-    #[doc = "`StartHide(bool)` overload"]
-    #[method(name = "StartHide", args = 1)]
-    pub fn start_hide(self, is_chara_change: bool) -> ();
-
-    #[doc = "`IsChanging()` overload"]
-    #[method(name = "IsChanging", args = 0)]
-    pub fn is_changing(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-friendlistcontent")]
-impl FriendListContent_FriendContent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FriendListContent_FriendContent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFriendListContent_FriendContentMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistcontent/FriendListContent.md"))]
 #[::unity2::class(namespace = "App", name = "FriendListContent")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -234,6 +137,103 @@ impl FriendListContent {
             )
         });
         <Self as IFriendListContentMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/friendlistcontent/FriendListContent_FriendContent.md"))]
+#[::unity2::class(namespace = "App", name = "FriendListContent.FriendContent")]
+#[parent(crate::system::object::Object)]
+pub struct FriendListContent_FriendContent {}
+
+#[cfg(feature = "app-friendlistcontent")]
+#[::unity2::methods]
+impl FriendListContent_FriendContent {
+    #[doc = "`get_TitleObj()` overload"]
+    #[method(name = "get_TitleObj", args = 0)]
+    pub fn get_title_obj(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`set_TitleObj(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "set_TitleObj", args = 1)]
+    pub fn set_title_obj(self, value: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`get_MessageObj()` overload"]
+    #[method(name = "get_MessageObj", args = 0)]
+    pub fn get_message_obj(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`set_MessageObj(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "set_MessageObj", args = 1)]
+    pub fn set_message_obj(self, value: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`get_StampObj()` overload"]
+    #[method(name = "get_StampObj", args = 0)]
+    pub fn get_stamp_obj(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`set_StampObj(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "set_StampObj", args = 1)]
+    pub fn set_stamp_obj(self, value: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`get_PictureObj()` overload"]
+    #[method(name = "get_PictureObj", args = 0)]
+    pub fn get_picture_obj(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`set_PictureObj(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "set_PictureObj", args = 1)]
+    pub fn set_picture_obj(self, value: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`SetTextObj(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "SetTextObj", args = 1)]
+    pub fn set_text_obj(self, text_root: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`SetTitle(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetTitle", args = 1)]
+    pub fn set_title(self, title: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`SetMessage(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetMessage", args = 1)]
+    pub fn set_message(self, message: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`SetStamp(crate::unity_engine::sprite::Sprite)` overload"]
+    #[method(name = "SetStamp", args = 1)]
+    pub fn set_stamp(self, sprite: crate::unity_engine::sprite::Sprite) -> ();
+
+    #[doc = "`SetImage(crate::unity_engine::sprite::Sprite)` overload"]
+    #[method(name = "SetImage", args = 1)]
+    pub fn set_image(self, sprite: crate::unity_engine::sprite::Sprite) -> ();
+
+    #[doc = "`Show()` overload"]
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[doc = "`StartShow()` overload"]
+    #[method(name = "StartShow", args = 0)]
+    pub fn start_show(self) -> ();
+
+    #[doc = "`StartHide(bool)` overload"]
+    #[method(name = "StartHide", args = 1)]
+    pub fn start_hide(self, is_chara_change: bool) -> ();
+
+    #[doc = "`IsChanging()` overload"]
+    #[method(name = "IsChanging", args = 0)]
+    pub fn is_changing(self) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-friendlistcontent")]
+impl FriendListContent_FriendContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FriendListContent_FriendContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFriendListContent_FriendContentMethods>::ctor(this);
         this
     }
 }

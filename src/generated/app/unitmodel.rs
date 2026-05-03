@@ -16,6 +16,122 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_DirtyFlags.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitModel_DirtyFlags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitModel_DirtyFlags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitModel.DirtyFlags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitModel_DirtyFlags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitModel_DirtyFlags {
+    pub fn speed() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn animation() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn renderer() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn shine() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn alpha() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn bright() -> Self {
+        Self { value: 32 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_ColorFlags.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitModel_ColorFlags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitModel_ColorFlags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitModel.ColorFlags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitModel_ColorFlags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitModel_ColorFlags {
+    pub fn fixed() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn danager() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn enemy() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn ally() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn dirty() -> Self {
+        Self { value: 16 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitmodel/UnitModel_ResourceHandle.md"))]
 #[::unity2::class(namespace = "App", name = "UnitModel.ResourceHandle")]
 #[parent(crate::system::object::Object)]
@@ -82,66 +198,6 @@ impl UnitModel_ResourceHandle {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_DirtyFlags.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitModel_DirtyFlags {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitModel_DirtyFlags {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitModel.DirtyFlags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitModel_DirtyFlags {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitModel_DirtyFlags {
-    pub fn speed() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn animation() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn renderer() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn shine() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn alpha() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn bright() -> Self {
-        Self { value: 32 }
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_LoadMode.md"))]
 #[repr(C)]
 #[derive(
@@ -187,62 +243,6 @@ impl UnitModel_LoadMode {
 
     pub fn done() -> Self {
         Self { value: 2 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitmodel/UnitModel_ColorFlags.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitModel_ColorFlags {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitModel_ColorFlags {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitModel.ColorFlags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitModel_ColorFlags {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitModel_ColorFlags {
-    pub fn fixed() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn danager() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn enemy() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn ally() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn dirty() -> Self {
-        Self { value: 16 }
     }
 }
 

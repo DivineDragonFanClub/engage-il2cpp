@@ -16,205 +16,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_FlagField.md"))]
-#[::unity2::class(namespace = "App", name = "MapDispos.FlagField")]
-#[parent(crate::app::bitfield32::BitField32)]
-pub struct MapDispos_FlagField {}
-
-#[cfg(feature = "app-mapdispos")]
-#[::unity2::methods]
-impl MapDispos_FlagField {
-    #[doc = "`Set(crate::app::mapdispos::MapDispos_Flag)` overload"]
-    #[method(name = "Set", args = 1)]
-    pub fn set(self, f: crate::app::mapdispos::MapDispos_Flag) -> ();
-
-    #[doc = "`Test(crate::app::mapdispos::MapDispos_Flag)` overload"]
-    #[method(name = "Test", args = 1)]
-    pub fn test(self, f: crate::app::mapdispos::MapDispos_Flag) -> bool;
-
-    #[doc = "`Not(crate::app::mapdispos::MapDispos_Flag)` overload"]
-    #[method(name = "Not", args = 1)]
-    pub fn not(self, f: crate::app::mapdispos::MapDispos_Flag) -> bool;
-
-    #[doc = "`Clear(crate::app::mapdispos::MapDispos_Flag)` overload"]
-    #[method(name = "Clear", args = 1)]
-    pub fn clear(self, f: crate::app::mapdispos::MapDispos_Flag) -> ();
-
-    #[doc = "`Reset(crate::app::mapdispos::MapDispos_Flag)` overload"]
-    #[method(name = "Reset", args = 1)]
-    pub fn reset(self, f: crate::app::mapdispos::MapDispos_Flag) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapdispos")]
-impl MapDispos_FlagField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDispos_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDispos_FlagFieldMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_PosList.md"))]
-#[::unity2::class(namespace = "App", name = "MapDispos.PosList")]
-# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapdispos :: MapDispos_Pos >)]
-pub struct MapDispos_PosList {}
-
-#[cfg(feature = "app-mapdispos")]
-#[::unity2::methods]
-impl MapDispos_PosList {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Register(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, i32)` overload"]
-    #[method(name = "Register", args = 2)]
-    pub fn register(
-        self,
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-        limit: i32,
-    ) -> ();
-
-    #[doc = "`PopFront()` overload"]
-    #[method(name = "PopFront", args = 0)]
-    pub fn pop_front(self) -> crate::app::mapdispos::MapDispos_Pos;
-
-    #[doc = "`TryRemove(crate::app::disposdata::DisposData)` overload"]
-    #[method(name = "TryRemove", args = 1)]
-    pub fn try_remove(self, data: crate::app::disposdata::DisposData) -> bool;
-}
-
-#[cfg(feature = "app-mapdispos")]
-impl MapDispos_PosList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDispos_PosList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDispos_PosListMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_ProcDispos.md"))]
-#[::unity2::class(namespace = "App", name = "MapDispos.ProcDispos")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct MapDispos_ProcDispos {
-    #[static_field]
-    #[rename(name = "s_ProcessCount")]
-    pub s_process_count: i32,
-    #[rename(name = "m_List")]
-    pub m_list: crate::app::mapdispos::MapDispos_ActualDataList,
-    #[rename(name = "m_DisposFlag")]
-    pub m_dispos_flag: crate::app::mapdispos::MapDispos_FlagField,
-}
-
-#[cfg(feature = "app-mapdispos")]
-#[::unity2::methods]
-impl MapDispos_ProcDispos {
-    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` overload"]
-    #[method(name = "Create", args = 3)]
-    pub fn create(
-        super_: crate::app::procinst::ProcInst,
-        list: crate::app::mapdispos::MapDispos_ActualDataList,
-        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
-    ) -> ();
-
-    #[doc = "`IsExist()` overload"]
-    #[method(name = "IsExist", args = 0)]
-    pub fn is_exist() -> bool;
-
-    #[doc = "`.ctor(crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        list: crate::app::mapdispos::MapDispos_ActualDataList,
-        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
-    ) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`Load()` overload"]
-    #[method(name = "Load", args = 0)]
-    pub fn load(self) -> ();
-
-    #[doc = "`WaitLoad()` overload"]
-    #[method(name = "WaitLoad", args = 0)]
-    pub fn wait_load(self) -> ();
-
-    #[doc = "`Focus()` overload"]
-    #[method(name = "Focus", args = 0)]
-    pub fn focus(self) -> ();
-
-    #[doc = "`Dispos()` overload"]
-    #[method(name = "Dispos", args = 0)]
-    pub fn dispos(self) -> ();
-
-    #[doc = "`WaitDispos()` overload"]
-    #[method(name = "WaitDispos", args = 0)]
-    pub fn wait_dispos(self) -> ();
-
-    #[doc = "`InstantIfPossible(crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` overload"]
-    #[method(name = "InstantIfPossible", args = 2)]
-    pub fn instant_if_possible(
-        list: crate::app::mapdispos::MapDispos_ActualDataList,
-        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
-    ) -> bool;
-
-    #[doc = "`CheckHide(crate::app::mapdispos::MapDispos_ActualDataList)` overload"]
-    #[method(name = "CheckHide", args = 1)]
-    pub fn check_hide(list: crate::app::mapdispos::MapDispos_ActualDataList) -> bool;
-
-    #[doc = "`CalcFocusPos(crate::app::mapdispos::MapDispos_ActualDataList, i32, i32)` overload"]
-    #[method(name = "CalcFocusPos", args = 3)]
-    pub fn calc_focus_pos(
-        list: crate::app::mapdispos::MapDispos_ActualDataList,
-        focus_x: i32,
-        focus_z: i32,
-    ) -> bool;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-mapdispos")]
-impl MapDispos_ProcDispos {
-    #[doc = "`.ctor(crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` — overload selector"]
-    pub fn new(
-        list: crate::app::mapdispos::MapDispos_ActualDataList,
-        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDispos_ProcDispos),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDispos_ProcDisposMethods>::ctor(this, list, dispos_flag);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_ActualData.md"))]
 #[::unity2::class(namespace = "App", name = "MapDispos.ActualData")]
 #[parent(crate::system::object::Object)]
@@ -403,6 +204,102 @@ impl MapDispos_ActualData {
             )
         });
         <Self as IMapDispos_ActualDataMethods>::ctor(this, data, position_data);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_FlagField.md"))]
+#[::unity2::class(namespace = "App", name = "MapDispos.FlagField")]
+#[parent(crate::app::bitfield32::BitField32)]
+pub struct MapDispos_FlagField {}
+
+#[cfg(feature = "app-mapdispos")]
+#[::unity2::methods]
+impl MapDispos_FlagField {
+    #[doc = "`Set(crate::app::mapdispos::MapDispos_Flag)` overload"]
+    #[method(name = "Set", args = 1)]
+    pub fn set(self, f: crate::app::mapdispos::MapDispos_Flag) -> ();
+
+    #[doc = "`Test(crate::app::mapdispos::MapDispos_Flag)` overload"]
+    #[method(name = "Test", args = 1)]
+    pub fn test(self, f: crate::app::mapdispos::MapDispos_Flag) -> bool;
+
+    #[doc = "`Not(crate::app::mapdispos::MapDispos_Flag)` overload"]
+    #[method(name = "Not", args = 1)]
+    pub fn not(self, f: crate::app::mapdispos::MapDispos_Flag) -> bool;
+
+    #[doc = "`Clear(crate::app::mapdispos::MapDispos_Flag)` overload"]
+    #[method(name = "Clear", args = 1)]
+    pub fn clear(self, f: crate::app::mapdispos::MapDispos_Flag) -> ();
+
+    #[doc = "`Reset(crate::app::mapdispos::MapDispos_Flag)` overload"]
+    #[method(name = "Reset", args = 1)]
+    pub fn reset(self, f: crate::app::mapdispos::MapDispos_Flag) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapdispos")]
+impl MapDispos_FlagField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDispos_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDispos_FlagFieldMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_PosList.md"))]
+#[::unity2::class(namespace = "App", name = "MapDispos.PosList")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapdispos :: MapDispos_Pos >)]
+pub struct MapDispos_PosList {}
+
+#[cfg(feature = "app-mapdispos")]
+#[::unity2::methods]
+impl MapDispos_PosList {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Register(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, i32)` overload"]
+    #[method(name = "Register", args = 2)]
+    pub fn register(
+        self,
+        data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+        limit: i32,
+    ) -> ();
+
+    #[doc = "`PopFront()` overload"]
+    #[method(name = "PopFront", args = 0)]
+    pub fn pop_front(self) -> crate::app::mapdispos::MapDispos_Pos;
+
+    #[doc = "`TryRemove(crate::app::disposdata::DisposData)` overload"]
+    #[method(name = "TryRemove", args = 1)]
+    pub fn try_remove(self, data: crate::app::disposdata::DisposData) -> bool;
+}
+
+#[cfg(feature = "app-mapdispos")]
+impl MapDispos_PosList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDispos_PosList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDispos_PosListMethods>::ctor(this);
         this
     }
 }
@@ -610,142 +507,6 @@ impl MapDispos {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_ActualDataList.md"))]
-#[::unity2::class(namespace = "App", name = "MapDispos.ActualDataList")]
-# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapdispos :: MapDispos_ActualData >)]
-pub struct MapDispos_ActualDataList {}
-
-#[cfg(feature = "app-mapdispos")]
-#[::unity2::methods]
-impl MapDispos_ActualDataList {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(
-        self,
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-        position_data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-    ) -> ();
-
-    #[doc = "`Calc(crate::app::mapdispos::MapDispos_Flag)` overload"]
-    #[method(name = "Calc", args = 1)]
-    pub fn calc(self, dispos_flag: crate::app::mapdispos::MapDispos_Flag) -> bool;
-
-    #[doc = "`Filter(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]
-    #[method(name = "Filter", args = 1)]
-    pub fn filter(
-        self,
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>;
-}
-
-#[cfg(feature = "app-mapdispos")]
-impl MapDispos_ActualDataList {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` — overload selector"]
-    pub fn new(
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDispos_ActualDataList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDispos_ActualDataListMethods>::ctor(this, data_list);
-        this
-    }
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` — overload selector"]
-    pub fn new_2(
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-        position_data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::disposdata::DisposData,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDispos_ActualDataList),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IMapDispos_ActualDataListMethods>::ctor_2(this, data_list, position_data_list);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_Pos.md"))]
-#[::unity2::class(namespace = "App", name = "MapDispos.Pos")]
-#[parent(crate::system::object::Object)]
-pub struct MapDispos_Pos {}
-
-#[cfg(feature = "app-mapdispos")]
-#[::unity2::methods]
-impl MapDispos_Pos {
-    #[doc = "`get_X()` overload"]
-    #[method(name = "get_X", args = 0)]
-    pub fn get_x(self) -> i32;
-
-    #[doc = "`set_X(i32)` overload"]
-    #[method(name = "set_X", args = 1)]
-    pub fn set_x(self, value: i32) -> ();
-
-    #[doc = "`get_Z()` overload"]
-    #[method(name = "get_Z", args = 0)]
-    pub fn get_z(self) -> i32;
-
-    #[doc = "`set_Z(i32)` overload"]
-    #[method(name = "set_Z", args = 1)]
-    pub fn set_z(self, value: i32) -> ();
-
-    #[doc = "`get_Dir()` overload"]
-    #[method(name = "get_Dir", args = 0)]
-    pub fn get_dir(self) -> crate::app::disposdata::DisposData_Directions;
-
-    #[doc = "`set_Dir(crate::app::disposdata::DisposData_Directions)` overload"]
-    #[method(name = "set_Dir", args = 1)]
-    pub fn set_dir(self, value: crate::app::disposdata::DisposData_Directions) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapdispos")]
-impl MapDispos_Pos {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDispos_Pos),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDispos_PosMethods>::ctor(this);
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdispos/MapDispos_Flag.md"))]
 #[repr(C)]
 #[derive(
@@ -830,6 +591,162 @@ impl MapDispos_Flag {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_ProcDispos.md"))]
+#[::unity2::class(namespace = "App", name = "MapDispos.ProcDispos")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct MapDispos_ProcDispos {
+    #[static_field]
+    #[rename(name = "s_ProcessCount")]
+    pub s_process_count: i32,
+    #[rename(name = "m_List")]
+    pub m_list: crate::app::mapdispos::MapDispos_ActualDataList,
+    #[rename(name = "m_DisposFlag")]
+    pub m_dispos_flag: crate::app::mapdispos::MapDispos_FlagField,
+}
+
+#[cfg(feature = "app-mapdispos")]
+#[::unity2::methods]
+impl MapDispos_ProcDispos {
+    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` overload"]
+    #[method(name = "Create", args = 3)]
+    pub fn create(
+        super_: crate::app::procinst::ProcInst,
+        list: crate::app::mapdispos::MapDispos_ActualDataList,
+        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
+    ) -> ();
+
+    #[doc = "`IsExist()` overload"]
+    #[method(name = "IsExist", args = 0)]
+    pub fn is_exist() -> bool;
+
+    #[doc = "`.ctor(crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        list: crate::app::mapdispos::MapDispos_ActualDataList,
+        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
+    ) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`Load()` overload"]
+    #[method(name = "Load", args = 0)]
+    pub fn load(self) -> ();
+
+    #[doc = "`WaitLoad()` overload"]
+    #[method(name = "WaitLoad", args = 0)]
+    pub fn wait_load(self) -> ();
+
+    #[doc = "`Focus()` overload"]
+    #[method(name = "Focus", args = 0)]
+    pub fn focus(self) -> ();
+
+    #[doc = "`Dispos()` overload"]
+    #[method(name = "Dispos", args = 0)]
+    pub fn dispos(self) -> ();
+
+    #[doc = "`WaitDispos()` overload"]
+    #[method(name = "WaitDispos", args = 0)]
+    pub fn wait_dispos(self) -> ();
+
+    #[doc = "`InstantIfPossible(crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` overload"]
+    #[method(name = "InstantIfPossible", args = 2)]
+    pub fn instant_if_possible(
+        list: crate::app::mapdispos::MapDispos_ActualDataList,
+        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
+    ) -> bool;
+
+    #[doc = "`CheckHide(crate::app::mapdispos::MapDispos_ActualDataList)` overload"]
+    #[method(name = "CheckHide", args = 1)]
+    pub fn check_hide(list: crate::app::mapdispos::MapDispos_ActualDataList) -> bool;
+
+    #[doc = "`CalcFocusPos(crate::app::mapdispos::MapDispos_ActualDataList, i32, i32)` overload"]
+    #[method(name = "CalcFocusPos", args = 3)]
+    pub fn calc_focus_pos(
+        list: crate::app::mapdispos::MapDispos_ActualDataList,
+        focus_x: i32,
+        focus_z: i32,
+    ) -> bool;
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-mapdispos")]
+impl MapDispos_ProcDispos {
+    #[doc = "`.ctor(crate::app::mapdispos::MapDispos_ActualDataList, crate::app::mapdispos::MapDispos_Flag)` — overload selector"]
+    pub fn new(
+        list: crate::app::mapdispos::MapDispos_ActualDataList,
+        dispos_flag: crate::app::mapdispos::MapDispos_Flag,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDispos_ProcDispos),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDispos_ProcDisposMethods>::ctor(this, list, dispos_flag);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_Pos.md"))]
+#[::unity2::class(namespace = "App", name = "MapDispos.Pos")]
+#[parent(crate::system::object::Object)]
+pub struct MapDispos_Pos {}
+
+#[cfg(feature = "app-mapdispos")]
+#[::unity2::methods]
+impl MapDispos_Pos {
+    #[doc = "`get_X()` overload"]
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[doc = "`set_X(i32)` overload"]
+    #[method(name = "set_X", args = 1)]
+    pub fn set_x(self, value: i32) -> ();
+
+    #[doc = "`get_Z()` overload"]
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[doc = "`set_Z(i32)` overload"]
+    #[method(name = "set_Z", args = 1)]
+    pub fn set_z(self, value: i32) -> ();
+
+    #[doc = "`get_Dir()` overload"]
+    #[method(name = "get_Dir", args = 0)]
+    pub fn get_dir(self) -> crate::app::disposdata::DisposData_Directions;
+
+    #[doc = "`set_Dir(crate::app::disposdata::DisposData_Directions)` overload"]
+    #[method(name = "set_Dir", args = 1)]
+    pub fn set_dir(self, value: crate::app::disposdata::DisposData_Directions) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapdispos")]
+impl MapDispos_Pos {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDispos_Pos),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDispos_PosMethods>::ctor(this);
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdispos/MapDispos_ActualData_CalcResults.md"))]
 #[repr(C)]
 #[derive(
@@ -879,5 +796,88 @@ impl MapDispos_ActualData_CalcResults {
 
     pub fn disable() -> Self {
         Self { value: 3 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdispos/MapDispos_ActualDataList.md"))]
+#[::unity2::class(namespace = "App", name = "MapDispos.ActualDataList")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapdispos :: MapDispos_ActualData >)]
+pub struct MapDispos_ActualDataList {}
+
+#[cfg(feature = "app-mapdispos")]
+#[::unity2::methods]
+impl MapDispos_ActualDataList {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+        position_data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+    ) -> ();
+
+    #[doc = "`Calc(crate::app::mapdispos::MapDispos_Flag)` overload"]
+    #[method(name = "Calc", args = 1)]
+    pub fn calc(self, dispos_flag: crate::app::mapdispos::MapDispos_Flag) -> bool;
+
+    #[doc = "`Filter(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` overload"]
+    #[method(name = "Filter", args = 1)]
+    pub fn filter(
+        self,
+        data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>;
+}
+
+#[cfg(feature = "app-mapdispos")]
+impl MapDispos_ActualDataList {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` — overload selector"]
+    pub fn new(
+        data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDispos_ActualDataList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDispos_ActualDataListMethods>::ctor(this, data_list);
+        this
+    }
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>, crate::system::collections::generic::list_1::List_1<crate::app::disposdata::DisposData>)` — overload selector"]
+    pub fn new_2(
+        data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+        position_data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::disposdata::DisposData,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDispos_ActualDataList),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IMapDispos_ActualDataListMethods>::ctor_2(this, data_list, position_data_list);
+        this
     }
 }

@@ -16,6 +16,39 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellroot/ShopSellRoot_ReturnEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "ShopSellRoot.ReturnEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ShopSellRoot_ReturnEventHandler {}
+
+#[cfg(feature = "app-shopsellroot")]
+#[::unity2::methods]
+impl ShopSellRoot_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-shopsellroot")]
+impl ShopSellRoot_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ShopSellRoot_ReturnEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopSellRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellroot/ShopSellRoot.md"))]
 #[::unity2::class(namespace = "App", name = "ShopSellRoot")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -150,39 +183,6 @@ impl ShopSellRoot {
             )
         });
         <Self as IShopSellRootMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/shopsellroot/ShopSellRoot_ReturnEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "ShopSellRoot.ReturnEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ShopSellRoot_ReturnEventHandler {}
-
-#[cfg(feature = "app-shopsellroot")]
-#[::unity2::methods]
-impl ShopSellRoot_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
-}
-
-#[cfg(feature = "app-shopsellroot")]
-impl ShopSellRoot_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ShopSellRoot_ReturnEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IShopSellRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

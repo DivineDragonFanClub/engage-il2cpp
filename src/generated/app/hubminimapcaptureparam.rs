@@ -8,6 +8,40 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimapcaptureparam/HubMiniMapCaptureParam.md"))]
+#[::unity2::class(namespace = "App", name = "HubMiniMapCaptureParam")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct HubMiniMapCaptureParam {
+    #[rename(name = "m_CaptureParamList")]
+    pub m_capture_param_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::hubminimapcaptureparam::HubMiniMapCaptureParam_CaptureParam1,
+    >,
+}
+
+#[cfg(feature = "app-hubminimapcaptureparam")]
+#[::unity2::methods]
+impl HubMiniMapCaptureParam {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-hubminimapcaptureparam")]
+impl HubMiniMapCaptureParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubMiniMapCaptureParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubMiniMapCaptureParamMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimapcaptureparam/HubMiniMapCaptureParam_CaptureParam1.md"))]
 #[::unity2::class(namespace = "App", name = "HubMiniMapCaptureParam.CaptureParam1")]
 #[parent(crate::system::object::Object)]
@@ -40,40 +74,6 @@ impl HubMiniMapCaptureParam_CaptureParam1 {
             )
         });
         <Self as IHubMiniMapCaptureParam_CaptureParam1Methods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubminimapcaptureparam/HubMiniMapCaptureParam.md"))]
-#[::unity2::class(namespace = "App", name = "HubMiniMapCaptureParam")]
-#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-pub struct HubMiniMapCaptureParam {
-    #[rename(name = "m_CaptureParamList")]
-    pub m_capture_param_list: crate::system::collections::generic::list_1::List_1<
-        crate::app::hubminimapcaptureparam::HubMiniMapCaptureParam_CaptureParam1,
-    >,
-}
-
-#[cfg(feature = "app-hubminimapcaptureparam")]
-#[::unity2::methods]
-impl HubMiniMapCaptureParam {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubminimapcaptureparam")]
-impl HubMiniMapCaptureParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubMiniMapCaptureParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubMiniMapCaptureParamMethods>::ctor(this);
         this
     }
 }

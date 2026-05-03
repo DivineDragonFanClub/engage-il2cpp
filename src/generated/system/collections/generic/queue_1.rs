@@ -6,6 +6,70 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/queue_1/Queue_1_Enumerator.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Queue_1_Enumerator<T0> {
+    pub _phantom: ::core::marker::PhantomData<(T0,)>,
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for Queue_1_Enumerator<T0> {
+    const NAMESPACE: &'static str = "System.Collections.Generic";
+
+    const NAME: &'static str = "Queue`1.Enumerator";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                .expect("generic instantiation")
+        })
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for Queue_1_Enumerator<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "system-collections-generic-queue_1")]
+#[::unity2::methods(value)]
+impl<T0: ::unity2::ClassIdentity> Queue_1_Enumerator<T0> {
+    #[doc = "`.ctor(crate::system::collections::generic::queue_1::Queue_1<T0>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, q: crate::system::collections::generic::queue_1::Queue_1<T0>) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> T0;
+
+    #[doc = "`ThrowEnumerationNotStartedOrEnded()` overload"]
+    #[method(name = "ThrowEnumerationNotStartedOrEnded", args = 0)]
+    pub fn throw_enumeration_not_started_or_ended(self) -> ();
+
+    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
+    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
+    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
+    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
+    pub fn system_collections_i_enumerator_reset(self) -> ();
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/generic/queue_1/Queue_1.md"))]
 #[::unity2::class(namespace = "System.Collections.Generic", name = "Queue`1")]
 #[parent(crate::system::object::Object)]
@@ -155,68 +219,4 @@ impl<T0: ::unity2::ClassIdentity> Queue_1<T0> {
         <Self as IQueue_1Methods<T0>>::ctor_3(this, collection);
         this
     }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/system/collections/generic/queue_1/Queue_1_Enumerator.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Queue_1_Enumerator<T0> {
-    pub _phantom: ::core::marker::PhantomData<(T0,)>,
-}
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for Queue_1_Enumerator<T0> {
-    const NAMESPACE: &'static str = "System.Collections.Generic";
-
-    const NAME: &'static str = "Queue`1.Enumerator";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
-                .expect("generic instantiation")
-        })
-    }
-}
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for Queue_1_Enumerator<T0> {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "system-collections-generic-queue_1")]
-#[::unity2::methods(value)]
-impl<T0: ::unity2::ClassIdentity> Queue_1_Enumerator<T0> {
-    #[doc = "`.ctor(crate::system::collections::generic::queue_1::Queue_1<T0>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, q: crate::system::collections::generic::queue_1::Queue_1<T0>) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> T0;
-
-    #[doc = "`ThrowEnumerationNotStartedOrEnded()` overload"]
-    #[method(name = "ThrowEnumerationNotStartedOrEnded", args = 0)]
-    pub fn throw_enumeration_not_started_or_ended(self) -> ();
-
-    #[doc = "`System.Collections.IEnumerator.get_Current()` overload"]
-    #[method(name = "System.Collections.IEnumerator.get_Current", args = 0)]
-    pub fn system_collections_i_enumerator_get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`System.Collections.IEnumerator.Reset()` overload"]
-    #[method(name = "System.Collections.IEnumerator.Reset", args = 0)]
-    pub fn system_collections_i_enumerator_reset(self) -> ();
 }

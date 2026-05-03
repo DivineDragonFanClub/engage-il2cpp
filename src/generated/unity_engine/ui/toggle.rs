@@ -24,50 +24,6 @@ use crate::unity_engine::ui::selectable::ISelectable;
 use crate::unity_engine::ui::selectable::Selectable;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/toggle/Toggle_ToggleTransition.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct Toggle_ToggleTransition {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for Toggle_ToggleTransition {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Toggle.ToggleTransition";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Toggle_ToggleTransition {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl Toggle_ToggleTransition {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn fade() -> Self {
-        Self { value: 1 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/toggle/Toggle.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI", name = "Toggle")]
 #[parent(crate::unity_engine::ui::selectable::Selectable)]
@@ -226,5 +182,49 @@ impl Toggle_ToggleEvent {
         });
         <Self as IToggle_ToggleEventMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/toggle/Toggle_ToggleTransition.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Toggle_ToggleTransition {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Toggle_ToggleTransition {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "Toggle.ToggleTransition";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Toggle_ToggleTransition {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Toggle_ToggleTransition {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn fade() -> Self {
+        Self { value: 1 }
     }
 }

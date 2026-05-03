@@ -6,107 +6,6 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/addressablesimpl/AddressablesImpl_ResourceLocatorInfo.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.AddressableAssets",
-    name = "AddressablesImpl.ResourceLocatorInfo"
-)]
-#[parent(crate::system::object::Object)]
-pub struct AddressablesImpl_ResourceLocatorInfo {}
-
-#[cfg(feature = "unity_engine-addressable_assets-addressablesimpl")]
-#[::unity2::methods]
-impl AddressablesImpl_ResourceLocatorInfo {
-    #[doc = "`get_Locator()` overload"]
-    #[method(name = "get_Locator", args = 0)]
-    pub fn get_locator (self ,) -> crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator ;
-
-    #[doc = "`set_Locator(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator)` overload"]
-    #[method(name = "set_Locator", args = 1)]
-    pub fn set_locator(
-        self,
-        value : crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator,
-    ) -> ();
-
-    #[doc = "`get_LocalHash()` overload"]
-    #[method(name = "get_LocalHash", args = 0)]
-    pub fn get_local_hash(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_LocalHash(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_LocalHash", args = 1)]
-    pub fn set_local_hash(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_CatalogLocation()` overload"]
-    #[method(name = "get_CatalogLocation", args = 0)]
-    pub fn get_catalog_location (self ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation ;
-
-    #[doc = "`set_CatalogLocation(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
-    #[method(name = "set_CatalogLocation", args = 1)]
-    pub fn set_catalog_location(
-        self,
-        value : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
-    ) -> ();
-
-    #[doc = "`get_ContentUpdateAvailable()` overload"]
-    #[method(name = "get_ContentUpdateAvailable", args = 0)]
-    pub fn get_content_update_available(self) -> bool;
-
-    #[doc = "`set_ContentUpdateAvailable(bool)` overload"]
-    #[method(name = "set_ContentUpdateAvailable", args = 1)]
-    pub fn set_content_update_available(self, value: bool) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        loc : crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator,
-        local_hash: ::unity2::Il2CppString,
-        remote_catalog_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
-    ) -> ();
-
-    #[doc = "`get_HashLocation()` overload"]
-    #[method(name = "get_HashLocation", args = 0)]
-    pub fn get_hash_location (self ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation ;
-
-    #[doc = "`get_CanUpdateContent()` overload"]
-    #[method(name = "get_CanUpdateContent", args = 0)]
-    pub fn get_can_update_content(self) -> bool;
-
-    #[doc = "`UpdateContent(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
-    #[method(name = "UpdateContent", args = 3)]
-    pub fn update_content(
-        self,
-        locator : crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator,
-        hash: ::unity2::Il2CppString,
-        loc : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-addressable_assets-addressablesimpl")]
-impl AddressablesImpl_ResourceLocatorInfo {
-    #[doc = "`.ctor(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` — overload selector"]
-    pub fn new(
-        loc : crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator,
-        local_hash: ::unity2::Il2CppString,
-        remote_catalog_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AddressablesImpl_ResourceLocatorInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAddressablesImpl_ResourceLocatorInfoMethods>::ctor(
-            this,
-            loc,
-            local_hash,
-            remote_catalog_location,
-        );
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/addressablesimpl/AddressablesImpl.md"))]
 #[::unity2::class(namespace = "UnityEngine.AddressableAssets", name = "AddressablesImpl")]
 #[parent(crate::system::object::Object)]
@@ -698,6 +597,107 @@ impl AddressablesImpl_LoadResourceLocationKeyOp {
             )
         });
         <Self as IAddressablesImpl_LoadResourceLocationKeyOpMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/addressablesimpl/AddressablesImpl_ResourceLocatorInfo.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets",
+    name = "AddressablesImpl.ResourceLocatorInfo"
+)]
+#[parent(crate::system::object::Object)]
+pub struct AddressablesImpl_ResourceLocatorInfo {}
+
+#[cfg(feature = "unity_engine-addressable_assets-addressablesimpl")]
+#[::unity2::methods]
+impl AddressablesImpl_ResourceLocatorInfo {
+    #[doc = "`get_Locator()` overload"]
+    #[method(name = "get_Locator", args = 0)]
+    pub fn get_locator (self ,) -> crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator ;
+
+    #[doc = "`set_Locator(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator)` overload"]
+    #[method(name = "set_Locator", args = 1)]
+    pub fn set_locator(
+        self,
+        value : crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator,
+    ) -> ();
+
+    #[doc = "`get_LocalHash()` overload"]
+    #[method(name = "get_LocalHash", args = 0)]
+    pub fn get_local_hash(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_LocalHash(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_LocalHash", args = 1)]
+    pub fn set_local_hash(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_CatalogLocation()` overload"]
+    #[method(name = "get_CatalogLocation", args = 0)]
+    pub fn get_catalog_location (self ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation ;
+
+    #[doc = "`set_CatalogLocation(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
+    #[method(name = "set_CatalogLocation", args = 1)]
+    pub fn set_catalog_location(
+        self,
+        value : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+    ) -> ();
+
+    #[doc = "`get_ContentUpdateAvailable()` overload"]
+    #[method(name = "get_ContentUpdateAvailable", args = 0)]
+    pub fn get_content_update_available(self) -> bool;
+
+    #[doc = "`set_ContentUpdateAvailable(bool)` overload"]
+    #[method(name = "set_ContentUpdateAvailable", args = 1)]
+    pub fn set_content_update_available(self, value: bool) -> ();
+
+    #[doc = "`.ctor(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        loc : crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator,
+        local_hash: ::unity2::Il2CppString,
+        remote_catalog_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+    ) -> ();
+
+    #[doc = "`get_HashLocation()` overload"]
+    #[method(name = "get_HashLocation", args = 0)]
+    pub fn get_hash_location (self ,) -> crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation ;
+
+    #[doc = "`get_CanUpdateContent()` overload"]
+    #[method(name = "get_CanUpdateContent", args = 0)]
+    pub fn get_can_update_content(self) -> bool;
+
+    #[doc = "`UpdateContent(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]
+    #[method(name = "UpdateContent", args = 3)]
+    pub fn update_content(
+        self,
+        locator : crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator,
+        hash: ::unity2::Il2CppString,
+        loc : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-addressablesimpl")]
+impl AddressablesImpl_ResourceLocatorInfo {
+    #[doc = "`.ctor(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` — overload selector"]
+    pub fn new(
+        loc : crate :: unity_engine :: addressable_assets :: resource_locators :: iresourcelocator :: IResourceLocator,
+        local_hash: ::unity2::Il2CppString,
+        remote_catalog_location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AddressablesImpl_ResourceLocatorInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAddressablesImpl_ResourceLocatorInfoMethods>::ctor(
+            this,
+            loc,
+            local_hash,
+            remote_catalog_location,
+        );
         this
     }
 }

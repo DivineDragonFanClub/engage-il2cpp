@@ -14,79 +14,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog.md"))]
-#[::unity2::class(namespace = "App", name = "SysthesisRingConfirmDialog")]
-#[parent(crate::system::object::Object)]
-pub struct SysthesisRingConfirmDialog {}
-
-#[cfg(feature = "app-systhesisringconfirmdialog")]
-#[::unity2::methods]
-impl SysthesisRingConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        proc: crate::app::procinst::ProcInst,
-        text: ::unity2::Il2CppString,
-        decide_event_handler : crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-systhesisringconfirmdialog")]
-impl SysthesisRingConfirmDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SysthesisRingConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISysthesisRingConfirmDialogMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_DecideEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "SysthesisRingConfirmDialog.DecideEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct SysthesisRingConfirmDialog_DecideEventHandler {}
-
-#[cfg(feature = "app-systhesisringconfirmdialog")]
-#[::unity2::methods]
-impl SysthesisRingConfirmDialog_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-systhesisringconfirmdialog")]
-impl SysthesisRingConfirmDialog_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SysthesisRingConfirmDialog_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISysthesisRingConfirmDialog_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_YesDialogItem.md"))]
 #[::unity2::class(namespace = "App", name = "SysthesisRingConfirmDialog.YesDialogItem")]
 #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
@@ -128,6 +55,79 @@ impl SysthesisRingConfirmDialog_YesDialogItem {
             this,
             decide_event_handler,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog_DecideEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "SysthesisRingConfirmDialog.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct SysthesisRingConfirmDialog_DecideEventHandler {}
+
+#[cfg(feature = "app-systhesisringconfirmdialog")]
+#[::unity2::methods]
+impl SysthesisRingConfirmDialog_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-systhesisringconfirmdialog")]
+impl SysthesisRingConfirmDialog_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SysthesisRingConfirmDialog_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISysthesisRingConfirmDialog_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/systhesisringconfirmdialog/SysthesisRingConfirmDialog.md"))]
+#[::unity2::class(namespace = "App", name = "SysthesisRingConfirmDialog")]
+#[parent(crate::system::object::Object)]
+pub struct SysthesisRingConfirmDialog {}
+
+#[cfg(feature = "app-systhesisringconfirmdialog")]
+#[::unity2::methods]
+impl SysthesisRingConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        proc: crate::app::procinst::ProcInst,
+        text: ::unity2::Il2CppString,
+        decide_event_handler : crate :: app :: systhesisringconfirmdialog :: SysthesisRingConfirmDialog_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-systhesisringconfirmdialog")]
+impl SysthesisRingConfirmDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SysthesisRingConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISysthesisRingConfirmDialogMethods>::ctor(this);
         this
     }
 }

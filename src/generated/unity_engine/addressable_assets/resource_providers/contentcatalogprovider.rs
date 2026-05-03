@@ -10,63 +10,6 @@ use crate::unity_engine::resource_management::resource_providers::resourceprovid
 use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.AddressableAssets.ResourceProviders",
-    name = "ContentCatalogProvider"
-)]
-# [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
-pub struct ContentCatalogProvider {
-# [rename (name = "DisableCatalogUpdateOnStart")] pub disable_catalog_update_on_start : bool ,
-# [rename (name = "IsLocalCatalogInBundle")] pub is_local_catalog_in_bundle : bool ,
-# [rename (name = "m_LocationToCatalogLoadOpMap")] pub m_location_to_catalog_load_op_map : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: unity_engine :: addressable_assets :: resource_providers :: contentcatalogprovider :: ContentCatalogProvider_InternalOp > ,
-# [rename (name = "m_RM")] pub m_rm : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager ,
-}
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-#[::unity2::methods]
-impl ContentCatalogProvider {
-    #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        resource_manager_instance : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
-    ) -> ();
-
-    #[doc = "`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]
-    #[method(name = "Release", args = 2)]
-    pub fn release(
-        self,
-        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
-        obj: crate::system::object::Object,
-    ) -> ();
-
-    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
-    #[method(name = "Provide", args = 1)]
-    pub fn provide(
-        self,
-        provider_interface : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
-impl ContentCatalogProvider {
-    #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` — overload selector"]
-    pub fn new(
-        resource_manager_instance : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ContentCatalogProvider),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IContentCatalogProviderMethods>::ctor(this, resource_manager_instance);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider_InternalOp.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.AddressableAssets.ResourceProviders",
@@ -159,6 +102,63 @@ impl ContentCatalogProvider_InternalOp {
             )
         });
         <Self as IContentCatalogProvider_InternalOpMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/resource_providers/contentcatalogprovider/ContentCatalogProvider.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets.ResourceProviders",
+    name = "ContentCatalogProvider"
+)]
+# [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
+pub struct ContentCatalogProvider {
+# [rename (name = "DisableCatalogUpdateOnStart")] pub disable_catalog_update_on_start : bool ,
+# [rename (name = "IsLocalCatalogInBundle")] pub is_local_catalog_in_bundle : bool ,
+# [rename (name = "m_LocationToCatalogLoadOpMap")] pub m_location_to_catalog_load_op_map : crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation , crate :: unity_engine :: addressable_assets :: resource_providers :: contentcatalogprovider :: ContentCatalogProvider_InternalOp > ,
+# [rename (name = "m_RM")] pub m_rm : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager ,
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+#[::unity2::methods]
+impl ContentCatalogProvider {
+    #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        resource_manager_instance : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
+    ) -> ();
+
+    #[doc = "`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]
+    #[method(name = "Release", args = 2)]
+    pub fn release(
+        self,
+        location : crate :: unity_engine :: resource_management :: resource_locations :: iresourcelocation :: IResourceLocation,
+        obj: crate::system::object::Object,
+    ) -> ();
+
+    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
+    #[method(name = "Provide", args = 1)]
+    pub fn provide(
+        self,
+        provider_interface : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-resource_providers-contentcatalogprovider")]
+impl ContentCatalogProvider {
+    #[doc = "`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` — overload selector"]
+    pub fn new(
+        resource_manager_instance : crate :: unity_engine :: resource_management :: resourcemanager :: ResourceManager,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ContentCatalogProvider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IContentCatalogProviderMethods>::ctor(this, resource_manager_instance);
         this
     }
 }

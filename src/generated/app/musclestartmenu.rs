@@ -14,75 +14,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclestartmenu/MuscleStartMenu_MuscleStartMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "MuscleStartMenu.MuscleStartMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct MuscleStartMenu_MuscleStartMenuItem {
-    #[rename(name = "m_TitleText")]
-    pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_CommentText")]
-    pub m_comment_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_RuleText")]
-    pub m_rule_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_EffectText")]
-    pub m_effect_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_ID")]
-    pub m_id: ::unity2::Il2CppString,
-    #[rename(name = "m_ItemName")]
-    pub m_item_name: ::unity2::Il2CppString,
-    #[rename(name = "m_Title")]
-    pub m_title: ::unity2::Il2CppString,
-    #[rename(name = "m_Comment")]
-    pub m_comment: ::unity2::Il2CppString,
-    #[rename(name = "m_Rule")]
-    pub m_rule: ::unity2::Il2CppString,
-    #[rename(name = "m_Effect")]
-    pub m_effect: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-musclestartmenu")]
-#[::unity2::methods]
-impl MuscleStartMenu_MuscleStartMenuItem {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        set_menu: crate::unity_engine::gameobject::GameObject,
-        id: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-}
-
-#[cfg(feature = "app-musclestartmenu")]
-impl MuscleStartMenu_MuscleStartMenuItem {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(
-        set_menu: crate::unity_engine::gameobject::GameObject,
-        id: ::unity2::Il2CppString,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MuscleStartMenu_MuscleStartMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMuscleStartMenu_MuscleStartMenuItemMethods>::ctor(this, set_menu, id);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclestartmenu/MuscleStartMenu_DecideEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "MuscleStartMenu.DecideEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -190,6 +121,75 @@ impl MuscleStartMenu {
             menu_content,
             decide_event_handler,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/musclestartmenu/MuscleStartMenu_MuscleStartMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "MuscleStartMenu.MuscleStartMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct MuscleStartMenu_MuscleStartMenuItem {
+    #[rename(name = "m_TitleText")]
+    pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_CommentText")]
+    pub m_comment_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_RuleText")]
+    pub m_rule_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_EffectText")]
+    pub m_effect_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_ID")]
+    pub m_id: ::unity2::Il2CppString,
+    #[rename(name = "m_ItemName")]
+    pub m_item_name: ::unity2::Il2CppString,
+    #[rename(name = "m_Title")]
+    pub m_title: ::unity2::Il2CppString,
+    #[rename(name = "m_Comment")]
+    pub m_comment: ::unity2::Il2CppString,
+    #[rename(name = "m_Rule")]
+    pub m_rule: ::unity2::Il2CppString,
+    #[rename(name = "m_Effect")]
+    pub m_effect: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-musclestartmenu")]
+#[::unity2::methods]
+impl MuscleStartMenu_MuscleStartMenuItem {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        set_menu: crate::unity_engine::gameobject::GameObject,
+        id: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+}
+
+#[cfg(feature = "app-musclestartmenu")]
+impl MuscleStartMenu_MuscleStartMenuItem {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(
+        set_menu: crate::unity_engine::gameobject::GameObject,
+        id: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleStartMenu_MuscleStartMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMuscleStartMenu_MuscleStartMenuItemMethods>::ctor(this, set_menu, id);
         this
     }
 }

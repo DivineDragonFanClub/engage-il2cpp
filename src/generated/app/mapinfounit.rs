@@ -18,7 +18,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_InputState.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SuppressScene.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -27,14 +27,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapInfoUnit_InputState {
+pub struct MapInfoUnit_SuppressScene {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapInfoUnit_InputState {
+impl ::unity2::ClassIdentity for MapInfoUnit_SuppressScene {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapInfoUnit.InputState";
+    const NAME: &'static str = "MapInfoUnit.SuppressScene";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -43,7 +43,7 @@ impl ::unity2::ClassIdentity for MapInfoUnit_InputState {
     }
 }
 
-impl ::unity2::IlType for MapInfoUnit_InputState {
+impl ::unity2::IlType for MapInfoUnit_SuppressScene {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -52,17 +52,9 @@ impl ::unity2::IlType for MapInfoUnit_InputState {
     }
 }
 
-impl MapInfoUnit_InputState {
-    pub fn neutral() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn switch() -> Self {
+impl MapInfoUnit_SuppressScene {
+    pub fn combat() -> Self {
         Self { value: 1 }
-    }
-
-    pub fn select() -> Self {
-        Self { value: 2 }
     }
 }
 
@@ -394,7 +386,7 @@ impl MapInfoUnit_SpriteKind {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_SuppressScene.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapinfounit/MapInfoUnit_InputState.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -403,14 +395,14 @@ impl MapInfoUnit_SpriteKind {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapInfoUnit_SuppressScene {
+pub struct MapInfoUnit_InputState {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapInfoUnit_SuppressScene {
+impl ::unity2::ClassIdentity for MapInfoUnit_InputState {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapInfoUnit.SuppressScene";
+    const NAME: &'static str = "MapInfoUnit.InputState";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -419,7 +411,7 @@ impl ::unity2::ClassIdentity for MapInfoUnit_SuppressScene {
     }
 }
 
-impl ::unity2::IlType for MapInfoUnit_SuppressScene {
+impl ::unity2::IlType for MapInfoUnit_InputState {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -428,8 +420,16 @@ impl ::unity2::IlType for MapInfoUnit_SuppressScene {
     }
 }
 
-impl MapInfoUnit_SuppressScene {
-    pub fn combat() -> Self {
+impl MapInfoUnit_InputState {
+    pub fn neutral() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn switch() -> Self {
         Self { value: 1 }
+    }
+
+    pub fn select() -> Self {
+        Self { value: 2 }
     }
 }

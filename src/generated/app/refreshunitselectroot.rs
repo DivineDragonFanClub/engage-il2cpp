@@ -12,6 +12,40 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectroot/RefreshUnitSelectRoot_UnitWindowUnitInfo.md"))]
+#[::unity2::class(namespace = "App", name = "RefreshUnitSelectRoot.UnitWindowUnitInfo")]
+#[parent(crate::system::object::Object)]
+pub struct RefreshUnitSelectRoot_UnitWindowUnitInfo {
+    #[rename(name = "m_UnitIcon")]
+    pub m_unit_icon: crate::app::uniticon::UnitIcon,
+    #[rename(name = "m_UnitName")]
+    pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-refreshunitselectroot")]
+#[::unity2::methods]
+impl RefreshUnitSelectRoot_UnitWindowUnitInfo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-refreshunitselectroot")]
+impl RefreshUnitSelectRoot_UnitWindowUnitInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshUnitSelectRoot_UnitWindowUnitInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectroot/RefreshUnitSelectRoot.md"))]
 #[::unity2::class(namespace = "App", name = "RefreshUnitSelectRoot")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -197,40 +231,6 @@ impl RefreshUnitSelectRoot {
             )
         });
         <Self as IRefreshUnitSelectRootMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitselectroot/RefreshUnitSelectRoot_UnitWindowUnitInfo.md"))]
-#[::unity2::class(namespace = "App", name = "RefreshUnitSelectRoot.UnitWindowUnitInfo")]
-#[parent(crate::system::object::Object)]
-pub struct RefreshUnitSelectRoot_UnitWindowUnitInfo {
-    #[rename(name = "m_UnitIcon")]
-    pub m_unit_icon: crate::app::uniticon::UnitIcon,
-    #[rename(name = "m_UnitName")]
-    pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-}
-
-#[cfg(feature = "app-refreshunitselectroot")]
-#[::unity2::methods]
-impl RefreshUnitSelectRoot_UnitWindowUnitInfo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-refreshunitselectroot")]
-impl RefreshUnitSelectRoot_UnitWindowUnitInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSelectRoot_UnitWindowUnitInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSelectRoot_UnitWindowUnitInfoMethods>::ctor(this);
         this
     }
 }

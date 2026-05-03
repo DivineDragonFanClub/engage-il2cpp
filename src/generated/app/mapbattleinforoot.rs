@@ -16,6 +16,62 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapbattleinforoot/MapBattleInfoRoot_StatusShowType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapBattleInfoRoot_StatusShowType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapBattleInfoRoot_StatusShowType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapBattleInfoRoot.StatusShowType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapBattleInfoRoot_StatusShowType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapBattleInfoRoot_StatusShowType {
+    pub fn hide() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn full() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn hp_only() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn hit_only() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 4 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattleinforoot/MapBattleInfoRoot.md"))]
 #[::unity2::class(namespace = "App", name = "MapBattleInfoRoot")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -197,61 +253,5 @@ impl MapBattleInfoRoot {
         });
         <Self as IMapBattleInfoRootMethods>::ctor(this);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapbattleinforoot/MapBattleInfoRoot_StatusShowType.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapBattleInfoRoot_StatusShowType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapBattleInfoRoot_StatusShowType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapBattleInfoRoot.StatusShowType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapBattleInfoRoot_StatusShowType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapBattleInfoRoot_StatusShowType {
-    pub fn hide() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn full() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn hp_only() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn hit_only() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 4 }
     }
 }

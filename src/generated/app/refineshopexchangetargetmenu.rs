@@ -12,44 +12,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangetargetmenu/RefineShopExchangeTargetMenu_CloseEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RefineShopExchangeTargetMenu.CloseEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RefineShopExchangeTargetMenu_CloseEventHandler {}
-
-#[cfg(feature = "app-refineshopexchangetargetmenu")]
-#[::unity2::methods]
-impl RefineShopExchangeTargetMenu_CloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-refineshopexchangetargetmenu")]
-impl RefineShopExchangeTargetMenu_CloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopExchangeTargetMenu_CloseEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopExchangeTargetMenu_CloseEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangetargetmenu/RefineShopExchangeTargetMenu.md"))]
 #[::unity2::class(namespace = "App", name = "RefineShopExchangeTargetMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -142,6 +104,44 @@ impl RefineShopExchangeTargetMenu {
             menu_content,
             initial_select_index,
             close_event_handler,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshopexchangetargetmenu/RefineShopExchangeTargetMenu_CloseEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineShopExchangeTargetMenu.CloseEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineShopExchangeTargetMenu_CloseEventHandler {}
+
+#[cfg(feature = "app-refineshopexchangetargetmenu")]
+#[::unity2::methods]
+impl RefineShopExchangeTargetMenu_CloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-refineshopexchangetargetmenu")]
+impl RefineShopExchangeTargetMenu_CloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopExchangeTargetMenu_CloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopExchangeTargetMenu_CloseEventHandlerMethods>::ctor(
+            this, object, method,
         );
         this
     }

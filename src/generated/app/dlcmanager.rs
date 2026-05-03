@@ -8,6 +8,54 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dlcmanager/DLCManager_Content.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct DLCManager_Content {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for DLCManager_Content {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DLCManager.Content";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DLCManager_Content {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl DLCManager_Content {
+    pub fn e0() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn h0() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 2 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_MountData.md"))]
 #[::unity2::class(namespace = "App", name = "DLCManager.MountData")]
 #[parent(crate::system::object::Object)]
@@ -40,6 +88,40 @@ impl DLCManager_MountData {
             )
         });
         <Self as IDLCManager_MountDataMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_DLCList.md"))]
+#[::unity2::class(namespace = "App", name = "DLCManager.DLCList")]
+#[parent(crate::system::object::Object)]
+pub struct DLCManager_DLCList {
+    #[rename(name = "content")]
+    pub content: crate::app::dlcmanager::DLCManager_Content,
+    #[rename(name = "hasContent")]
+    pub has_content: bool,
+}
+
+#[cfg(feature = "app-dlcmanager")]
+#[::unity2::methods]
+impl DLCManager_DLCList {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-dlcmanager")]
+impl DLCManager_DLCList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DLCManager_DLCList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDLCManager_DLCListMethods>::ctor(this);
         this
     }
 }
@@ -221,88 +303,6 @@ impl DLCManager {
             )
         });
         <Self as IDLCManagerMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dlcmanager/DLCManager_Content.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct DLCManager_Content {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for DLCManager_Content {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DLCManager.Content";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for DLCManager_Content {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl DLCManager_Content {
-    pub fn e0() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn h0() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dlcmanager/DLCManager_DLCList.md"))]
-#[::unity2::class(namespace = "App", name = "DLCManager.DLCList")]
-#[parent(crate::system::object::Object)]
-pub struct DLCManager_DLCList {
-    #[rename(name = "content")]
-    pub content: crate::app::dlcmanager::DLCManager_Content,
-    #[rename(name = "hasContent")]
-    pub has_content: bool,
-}
-
-#[cfg(feature = "app-dlcmanager")]
-#[::unity2::methods]
-impl DLCManager_DLCList {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-dlcmanager")]
-impl DLCManager_DLCList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DLCManager_DLCList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDLCManager_DLCListMethods>::ctor(this);
         this
     }
 }

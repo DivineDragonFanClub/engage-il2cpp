@@ -8,110 +8,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdesc/ProcDesc_Type.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ProcDesc_Type {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for ProcDesc_Type {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProcDesc.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ProcDesc_Type {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ProcDesc_Type {
-    pub fn end() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn halt() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn jump() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn label() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn push() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn pop() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn persistent() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn wait_time() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn wait_frame() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn r#yield() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn call() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn tick() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn args() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn wait_func() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn jump_func() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn user() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn max() -> Self {
-        Self { value: 16 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procdesc/ProcDesc.md"))]
 #[::unity2::class(namespace = "App", name = "ProcDesc")]
 #[parent(crate::system::object::Object)]
@@ -232,5 +128,109 @@ impl ProcDesc_Result {
 
     pub fn pop() -> Self {
         Self { value: 8 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procdesc/ProcDesc_Type.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ProcDesc_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ProcDesc_Type {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ProcDesc.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ProcDesc_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ProcDesc_Type {
+    pub fn end() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn halt() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn jump() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn label() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn push() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn pop() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn persistent() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn wait_time() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn wait_frame() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn r#yield() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn call() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn tick() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn args() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn wait_func() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn jump_func() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn user() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 16 }
     }
 }

@@ -57,180 +57,6 @@ impl DiscardItemMenu_DecideCallback {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_DiscardItemEmptyMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "DiscardItemMenu.DiscardItemEmptyMenuItem")]
-#[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
-pub struct DiscardItemMenu_DiscardItemEmptyMenuItem {}
-
-#[cfg(feature = "app-discarditemmenu")]
-#[::unity2::methods]
-impl DiscardItemMenu_DiscardItemEmptyMenuItem {
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`GetUnitItem()` overload"]
-    #[method(name = "GetUnitItem", args = 0)]
-    pub fn get_unit_item(self) -> crate::app::unititem::UnitItem;
-
-    #[doc = "`GetBlankText()` overload"]
-    #[method(name = "GetBlankText", args = 0)]
-    pub fn get_blank_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`IsVisibleItemIconOnBlank()` overload"]
-    #[method(name = "IsVisibleItemIconOnBlank", args = 0)]
-    pub fn is_visible_item_icon_on_blank(self) -> bool;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-impl DiscardItemMenu_DiscardItemEmptyMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DiscardItemMenu_DiscardItemEmptyMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDiscardItemMenu_DiscardItemEmptyMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_ConfirmDialog_YesEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "DiscardItemMenu.ConfirmDialog.YesEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct DiscardItemMenu_ConfirmDialog_YesEventHandler {}
-
-#[cfg(feature = "app-discarditemmenu")]
-#[::unity2::methods]
-impl DiscardItemMenu_ConfirmDialog_YesEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-impl DiscardItemMenu_ConfirmDialog_YesEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DiscardItemMenu_ConfirmDialog_YesEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDiscardItemMenu_ConfirmDialog_YesEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_CancelCallback.md"))]
-#[::unity2::class(namespace = "App", name = "DiscardItemMenu.CancelCallback")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct DiscardItemMenu_CancelCallback {}
-
-#[cfg(feature = "app-discarditemmenu")]
-#[::unity2::methods]
-impl DiscardItemMenu_CancelCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-impl DiscardItemMenu_CancelCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DiscardItemMenu_CancelCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDiscardItemMenu_CancelCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_ConfirmDialog_YesDialogItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "DiscardItemMenu.ConfirmDialog.YesDialogItem"
-)]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct DiscardItemMenu_ConfirmDialog_YesDialogItem {
-    #[rename(name = "m_YesEventHandler")]
-    pub m_yes_event_handler:
-        crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler,
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-#[::unity2::methods]
-impl DiscardItemMenu_ConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        yes_event_handler : crate :: app :: discarditemmenu :: DiscardItemMenu_ConfirmDialog_YesEventHandler,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-discarditemmenu")]
-impl DiscardItemMenu_ConfirmDialog_YesDialogItem {
-    #[doc = "`.ctor(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` — overload selector"]
-    pub fn new(
-        yes_event_handler : crate :: app :: discarditemmenu :: DiscardItemMenu_ConfirmDialog_YesEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DiscardItemMenu_ConfirmDialog_YesDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods>::ctor(
-            this,
-            yes_event_handler,
-        );
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_ConfirmDialog.md"))]
 #[::unity2::class(namespace = "App", name = "DiscardItemMenu.ConfirmDialog")]
 #[parent(crate::app::yesnodialog::YesNoDialog)]
@@ -433,6 +259,90 @@ impl DiscardItemMenu {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_ConfirmDialog_YesDialogItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "DiscardItemMenu.ConfirmDialog.YesDialogItem"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct DiscardItemMenu_ConfirmDialog_YesDialogItem {
+    #[rename(name = "m_YesEventHandler")]
+    pub m_yes_event_handler:
+        crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler,
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+#[::unity2::methods]
+impl DiscardItemMenu_ConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        yes_event_handler : crate :: app :: discarditemmenu :: DiscardItemMenu_ConfirmDialog_YesEventHandler,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+impl DiscardItemMenu_ConfirmDialog_YesDialogItem {
+    #[doc = "`.ctor(crate::app::discarditemmenu::DiscardItemMenu_ConfirmDialog_YesEventHandler)` — overload selector"]
+    pub fn new(
+        yes_event_handler : crate :: app :: discarditemmenu :: DiscardItemMenu_ConfirmDialog_YesEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DiscardItemMenu_ConfirmDialog_YesDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDiscardItemMenu_ConfirmDialog_YesDialogItemMethods>::ctor(
+            this,
+            yes_event_handler,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_ConfirmDialog_YesEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "DiscardItemMenu.ConfirmDialog.YesEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct DiscardItemMenu_ConfirmDialog_YesEventHandler {}
+
+#[cfg(feature = "app-discarditemmenu")]
+#[::unity2::methods]
+impl DiscardItemMenu_ConfirmDialog_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+impl DiscardItemMenu_ConfirmDialog_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DiscardItemMenu_ConfirmDialog_YesEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDiscardItemMenu_ConfirmDialog_YesEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_DiscardItemMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "DiscardItemMenu.DiscardItemMenuItem")]
 #[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
@@ -506,6 +416,96 @@ impl DiscardItemMenu_DiscardItemMenuItem {
             )
         });
         <Self as IDiscardItemMenu_DiscardItemMenuItemMethods>::ctor(this, owner_item_index);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_DiscardItemEmptyMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "DiscardItemMenu.DiscardItemEmptyMenuItem")]
+#[parent(crate::app::basicitemmenuitem::BasicItemMenuItem)]
+pub struct DiscardItemMenu_DiscardItemEmptyMenuItem {}
+
+#[cfg(feature = "app-discarditemmenu")]
+#[::unity2::methods]
+impl DiscardItemMenu_DiscardItemEmptyMenuItem {
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`GetUnitItem()` overload"]
+    #[method(name = "GetUnitItem", args = 0)]
+    pub fn get_unit_item(self) -> crate::app::unititem::UnitItem;
+
+    #[doc = "`GetBlankText()` overload"]
+    #[method(name = "GetBlankText", args = 0)]
+    pub fn get_blank_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`IsVisibleItemIconOnBlank()` overload"]
+    #[method(name = "IsVisibleItemIconOnBlank", args = 0)]
+    pub fn is_visible_item_icon_on_blank(self) -> bool;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+impl DiscardItemMenu_DiscardItemEmptyMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DiscardItemMenu_DiscardItemEmptyMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDiscardItemMenu_DiscardItemEmptyMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/discarditemmenu/DiscardItemMenu_CancelCallback.md"))]
+#[::unity2::class(namespace = "App", name = "DiscardItemMenu.CancelCallback")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct DiscardItemMenu_CancelCallback {}
+
+#[cfg(feature = "app-discarditemmenu")]
+#[::unity2::methods]
+impl DiscardItemMenu_CancelCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-discarditemmenu")]
+impl DiscardItemMenu_CancelCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DiscardItemMenu_CancelCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDiscardItemMenu_CancelCallbackMethods>::ctor(this, object, method);
         this
     }
 }

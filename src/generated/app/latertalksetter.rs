@@ -12,126 +12,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter.md"))]
-#[::unity2::class(namespace = "App", name = "LaterTalkSetter")]
-#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-pub struct LaterTalkSetter {
-    #[rename(name = "CharaSolo")]
-    pub chara_solo: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "CharaPair")]
-    pub chara_pair: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "Main")]
-    pub main: crate::app::latertalksetter::LaterTalkSetter_UnitInfo,
-    #[rename(name = "PairLeft")]
-    pub pair_left: crate::app::latertalksetter::LaterTalkSetter_UnitInfo,
-    #[rename(name = "PairRight")]
-    pub pair_right: crate::app::latertalksetter::LaterTalkSetter_UnitInfo,
-    #[rename(name = "Symbol")]
-    pub symbol: crate::unity_engine::ui::image::Image,
-    #[rename(name = "MainText")]
-    pub main_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_BaseDispTime")]
-    pub m_base_disp_time: f32,
-    #[rename(name = "m_OthersTime")]
-    pub m_others_time: f32,
-    #[rename(name = "m_WaitTimeAfter")]
-    pub m_wait_time_after: f32,
-    #[rename(name = "m_CurrentTime")]
-    pub m_current_time: f32,
-    #[rename(name = "m_UnitData")]
-    pub m_unit_data: crate::system::collections::generic::list_1::List_1<
-        crate::app::latertalksetter::LaterTalkSetter_UnitData,
-    >,
-    #[rename(name = "m_UnitIndex")]
-    pub m_unit_index: i32,
-    #[rename(name = "m_StartTime")]
-    pub m_start_time: f64,
-}
-
-#[cfg(feature = "app-latertalksetter")]
-#[::unity2::methods]
-impl LaterTalkSetter {
-    #[doc = "`Init()` overload"]
-    #[method(name = "Init", args = 0)]
-    pub fn init(self) -> ();
-
-    #[doc = "`UpdateData()` overload"]
-    #[method(name = "UpdateData", args = 0)]
-    pub fn update_data(self) -> ();
-
-    #[doc = "`SetUnitData(crate::app::unit::Unit, crate::app::latertalksetter::LaterTalkSetter_UnitInfo)` overload"]
-    #[method(name = "SetUnitData", args = 2)]
-    pub fn set_unit_data(
-        self,
-        unit: crate::app::unit::Unit,
-        info: crate::app::latertalksetter::LaterTalkSetter_UnitInfo,
-    ) -> ();
-
-    #[doc = "`get_IsStarted()` overload"]
-    #[method(name = "get_IsStarted", args = 0)]
-    pub fn get_is_started(self) -> bool;
-
-    #[doc = "`get_IsFinished()` overload"]
-    #[method(name = "get_IsFinished", args = 0)]
-    pub fn get_is_finished(self) -> bool;
-
-    #[doc = "`get_IsFinishedCompletely()` overload"]
-    #[method(name = "get_IsFinishedCompletely", args = 0)]
-    pub fn get_is_finished_completely(self) -> bool;
-
-    #[doc = "`get_CurrentUnit()` overload"]
-    #[method(name = "get_CurrentUnit", args = 0)]
-    pub fn get_current_unit(self) -> crate::app::latertalksetter::LaterTalkSetter_UnitData;
-
-    #[doc = "`get_NextUnit()` overload"]
-    #[method(name = "get_NextUnit", args = 0)]
-    pub fn get_next_unit(self) -> crate::app::latertalksetter::LaterTalkSetter_UnitData;
-
-    #[doc = "`get_LastDispTime()` overload"]
-    #[method(name = "get_LastDispTime", args = 0)]
-    pub fn get_last_disp_time(self) -> f32;
-
-    #[doc = "`get_DisplayTime()` overload"]
-    #[method(name = "get_DisplayTime", args = 0)]
-    pub fn get_display_time(self) -> f32;
-
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> ();
-
-    #[doc = "`ForceFinish(f32)` overload"]
-    #[method(name = "ForceFinish", args = 1)]
-    pub fn force_finish(self, fade_out_time: f32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-latertalksetter")]
-impl LaterTalkSetter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(LaterTalkSetter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ILaterTalkSetterMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter_UnitInfo.md"))]
 #[::unity2::class(namespace = "App", name = "LaterTalkSetter.UnitInfo")]
 #[parent(crate::system::object::Object)]
@@ -261,6 +141,126 @@ impl LaterTalkSetter_UnitData {
             )
         });
         <Self as ILaterTalkSetter_UnitDataMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/latertalksetter/LaterTalkSetter.md"))]
+#[::unity2::class(namespace = "App", name = "LaterTalkSetter")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct LaterTalkSetter {
+    #[rename(name = "CharaSolo")]
+    pub chara_solo: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "CharaPair")]
+    pub chara_pair: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "Main")]
+    pub main: crate::app::latertalksetter::LaterTalkSetter_UnitInfo,
+    #[rename(name = "PairLeft")]
+    pub pair_left: crate::app::latertalksetter::LaterTalkSetter_UnitInfo,
+    #[rename(name = "PairRight")]
+    pub pair_right: crate::app::latertalksetter::LaterTalkSetter_UnitInfo,
+    #[rename(name = "Symbol")]
+    pub symbol: crate::unity_engine::ui::image::Image,
+    #[rename(name = "MainText")]
+    pub main_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_BaseDispTime")]
+    pub m_base_disp_time: f32,
+    #[rename(name = "m_OthersTime")]
+    pub m_others_time: f32,
+    #[rename(name = "m_WaitTimeAfter")]
+    pub m_wait_time_after: f32,
+    #[rename(name = "m_CurrentTime")]
+    pub m_current_time: f32,
+    #[rename(name = "m_UnitData")]
+    pub m_unit_data: crate::system::collections::generic::list_1::List_1<
+        crate::app::latertalksetter::LaterTalkSetter_UnitData,
+    >,
+    #[rename(name = "m_UnitIndex")]
+    pub m_unit_index: i32,
+    #[rename(name = "m_StartTime")]
+    pub m_start_time: f64,
+}
+
+#[cfg(feature = "app-latertalksetter")]
+#[::unity2::methods]
+impl LaterTalkSetter {
+    #[doc = "`Init()` overload"]
+    #[method(name = "Init", args = 0)]
+    pub fn init(self) -> ();
+
+    #[doc = "`UpdateData()` overload"]
+    #[method(name = "UpdateData", args = 0)]
+    pub fn update_data(self) -> ();
+
+    #[doc = "`SetUnitData(crate::app::unit::Unit, crate::app::latertalksetter::LaterTalkSetter_UnitInfo)` overload"]
+    #[method(name = "SetUnitData", args = 2)]
+    pub fn set_unit_data(
+        self,
+        unit: crate::app::unit::Unit,
+        info: crate::app::latertalksetter::LaterTalkSetter_UnitInfo,
+    ) -> ();
+
+    #[doc = "`get_IsStarted()` overload"]
+    #[method(name = "get_IsStarted", args = 0)]
+    pub fn get_is_started(self) -> bool;
+
+    #[doc = "`get_IsFinished()` overload"]
+    #[method(name = "get_IsFinished", args = 0)]
+    pub fn get_is_finished(self) -> bool;
+
+    #[doc = "`get_IsFinishedCompletely()` overload"]
+    #[method(name = "get_IsFinishedCompletely", args = 0)]
+    pub fn get_is_finished_completely(self) -> bool;
+
+    #[doc = "`get_CurrentUnit()` overload"]
+    #[method(name = "get_CurrentUnit", args = 0)]
+    pub fn get_current_unit(self) -> crate::app::latertalksetter::LaterTalkSetter_UnitData;
+
+    #[doc = "`get_NextUnit()` overload"]
+    #[method(name = "get_NextUnit", args = 0)]
+    pub fn get_next_unit(self) -> crate::app::latertalksetter::LaterTalkSetter_UnitData;
+
+    #[doc = "`get_LastDispTime()` overload"]
+    #[method(name = "get_LastDispTime", args = 0)]
+    pub fn get_last_disp_time(self) -> f32;
+
+    #[doc = "`get_DisplayTime()` overload"]
+    #[method(name = "get_DisplayTime", args = 0)]
+    pub fn get_display_time(self) -> f32;
+
+    #[doc = "`Start()` overload"]
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> ();
+
+    #[doc = "`ForceFinish(f32)` overload"]
+    #[method(name = "ForceFinish", args = 1)]
+    pub fn force_finish(self, fade_out_time: f32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-latertalksetter")]
+impl LaterTalkSetter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(LaterTalkSetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILaterTalkSetterMethods>::ctor(this);
         this
     }
 }

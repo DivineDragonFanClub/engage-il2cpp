@@ -8,58 +8,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI_ResultPhase.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct FishingResultUI_ResultPhase {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for FishingResultUI_ResultPhase {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FishingResultUI.ResultPhase";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for FishingResultUI_ResultPhase {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl FishingResultUI_ResultPhase {
-    pub fn before_open() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn open() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn wait_close() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn phase_count() -> Self {
-        Self { value: 3 }
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI_SpriteKind.md"))]
 #[repr(C)]
 #[derive(
@@ -202,5 +150,57 @@ impl FishingResultUI {
         });
         <Self as IFishingResultUIMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingresultui/FishingResultUI_ResultPhase.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FishingResultUI_ResultPhase {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FishingResultUI_ResultPhase {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FishingResultUI.ResultPhase";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FishingResultUI_ResultPhase {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FishingResultUI_ResultPhase {
+    pub fn before_open() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn open() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn wait_close() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn phase_count() -> Self {
+        Self { value: 3 }
     }
 }

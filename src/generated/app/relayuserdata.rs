@@ -4,6 +4,75 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayuserdata/RelayUserData_EnteredBattle.md"))]
+#[::unity2::class(namespace = "App", name = "RelayUserData.EnteredBattle")]
+#[parent(crate::system::object::Object)]
+pub struct RelayUserData_EnteredBattle {}
+
+#[cfg(feature = "app-relayuserdata")]
+#[::unity2::methods]
+impl RelayUserData_EnteredBattle {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`IsValid()` overload"]
+    #[method(name = "IsValid", args = 0)]
+    pub fn is_valid(self) -> bool;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`get_DataId()` overload"]
+    #[method(name = "get_DataId", args = 0)]
+    pub fn get_data_id(self) -> u64;
+
+    #[doc = "`set_DataId(u64)` overload"]
+    #[method(name = "set_DataId", args = 1)]
+    pub fn set_data_id(self, value: u64) -> ();
+
+    #[doc = "`get_PlayerIndex()` overload"]
+    #[method(name = "get_PlayerIndex", args = 0)]
+    pub fn get_player_index(self) -> i32;
+
+    #[doc = "`set_PlayerIndex(i32)` overload"]
+    #[method(name = "set_PlayerIndex", args = 1)]
+    pub fn set_player_index(self, value: i32) -> ();
+
+    #[doc = "`get_IsAwarded()` overload"]
+    #[method(name = "get_IsAwarded", args = 0)]
+    pub fn get_is_awarded(self) -> bool;
+
+    #[doc = "`set_IsAwarded(bool)` overload"]
+    #[method(name = "set_IsAwarded", args = 1)]
+    pub fn set_is_awarded(self, value: bool) -> ();
+}
+
+#[cfg(feature = "app-relayuserdata")]
+impl RelayUserData_EnteredBattle {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayUserData_EnteredBattle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayUserData_EnteredBattleMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayuserdata/RelayUserData.md"))]
 #[::unity2::class(namespace = "App", name = "RelayUserData")]
 #[parent(crate::system::object::Object)]
@@ -102,75 +171,6 @@ impl RelayUserData {
             )
         });
         <Self as IRelayUserDataMethods>::ctor_2(this, from);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayuserdata/RelayUserData_EnteredBattle.md"))]
-#[::unity2::class(namespace = "App", name = "RelayUserData.EnteredBattle")]
-#[parent(crate::system::object::Object)]
-pub struct RelayUserData_EnteredBattle {}
-
-#[cfg(feature = "app-relayuserdata")]
-#[::unity2::methods]
-impl RelayUserData_EnteredBattle {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`IsValid()` overload"]
-    #[method(name = "IsValid", args = 0)]
-    pub fn is_valid(self) -> bool;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Serialize", args = 1)]
-    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Deserialize", args = 1)]
-    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`get_DataId()` overload"]
-    #[method(name = "get_DataId", args = 0)]
-    pub fn get_data_id(self) -> u64;
-
-    #[doc = "`set_DataId(u64)` overload"]
-    #[method(name = "set_DataId", args = 1)]
-    pub fn set_data_id(self, value: u64) -> ();
-
-    #[doc = "`get_PlayerIndex()` overload"]
-    #[method(name = "get_PlayerIndex", args = 0)]
-    pub fn get_player_index(self) -> i32;
-
-    #[doc = "`set_PlayerIndex(i32)` overload"]
-    #[method(name = "set_PlayerIndex", args = 1)]
-    pub fn set_player_index(self, value: i32) -> ();
-
-    #[doc = "`get_IsAwarded()` overload"]
-    #[method(name = "get_IsAwarded", args = 0)]
-    pub fn get_is_awarded(self) -> bool;
-
-    #[doc = "`set_IsAwarded(bool)` overload"]
-    #[method(name = "set_IsAwarded", args = 1)]
-    pub fn set_is_awarded(self, value: bool) -> ();
-}
-
-#[cfg(feature = "app-relayuserdata")]
-impl RelayUserData_EnteredBattle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayUserData_EnteredBattle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayUserData_EnteredBattleMethods>::ctor(this);
         this
     }
 }

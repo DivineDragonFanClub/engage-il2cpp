@@ -10,34 +10,40 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_MoneyParam.md"))]
-#[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog.MoneyParam")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_ItemParam.md"))]
+#[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog.ItemParam")]
 #[parent(crate::system::object::Object)]
-pub struct ExchangeYesNoDialog_MoneyParam {
+pub struct ExchangeYesNoDialog_ItemParam {
+    #[rename(name = "sprite")]
+    pub sprite: crate::unity_engine::sprite::Sprite,
+    #[rename(name = "name")]
+    pub name: ::unity2::Il2CppString,
     #[rename(name = "num")]
     pub num: i32,
+    #[rename(name = "enabledNum")]
+    pub enabled_num: bool,
 }
 
 #[cfg(feature = "app-exchangeyesnodialog")]
 #[::unity2::methods]
-impl ExchangeYesNoDialog_MoneyParam {
+impl ExchangeYesNoDialog_ItemParam {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-exchangeyesnodialog")]
-impl ExchangeYesNoDialog_MoneyParam {
+impl ExchangeYesNoDialog_ItemParam {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ExchangeYesNoDialog_MoneyParam),
+                ::core::stringify!(ExchangeYesNoDialog_ItemParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IExchangeYesNoDialog_MoneyParamMethods>::ctor(this);
+        <Self as IExchangeYesNoDialog_ItemParamMethods>::ctor(this);
         this
     }
 }
@@ -588,40 +594,34 @@ impl ExchangeYesNoDialog {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_ItemParam.md"))]
-#[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog.ItemParam")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeyesnodialog/ExchangeYesNoDialog_MoneyParam.md"))]
+#[::unity2::class(namespace = "App", name = "ExchangeYesNoDialog.MoneyParam")]
 #[parent(crate::system::object::Object)]
-pub struct ExchangeYesNoDialog_ItemParam {
-    #[rename(name = "sprite")]
-    pub sprite: crate::unity_engine::sprite::Sprite,
-    #[rename(name = "name")]
-    pub name: ::unity2::Il2CppString,
+pub struct ExchangeYesNoDialog_MoneyParam {
     #[rename(name = "num")]
     pub num: i32,
-    #[rename(name = "enabledNum")]
-    pub enabled_num: bool,
 }
 
 #[cfg(feature = "app-exchangeyesnodialog")]
 #[::unity2::methods]
-impl ExchangeYesNoDialog_ItemParam {
+impl ExchangeYesNoDialog_MoneyParam {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-exchangeyesnodialog")]
-impl ExchangeYesNoDialog_ItemParam {
+impl ExchangeYesNoDialog_MoneyParam {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ExchangeYesNoDialog_ItemParam),
+                ::core::stringify!(ExchangeYesNoDialog_MoneyParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IExchangeYesNoDialog_ItemParamMethods>::ctor(this);
+        <Self as IExchangeYesNoDialog_MoneyParamMethods>::ctor(this);
         this
     }
 }

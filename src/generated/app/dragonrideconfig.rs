@@ -12,50 +12,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideconfig/DragonRideConfig_ShotConfig.md"))]
-#[::unity2::class(namespace = "App", name = "DragonRideConfig.ShotConfig")]
-#[parent(crate::system::object::Object)]
-pub struct DragonRideConfig_ShotConfig {
-    #[rename(name = "ShotRepeatIntervalSec")]
-    pub shot_repeat_interval_sec: f32,
-    #[rename(name = "ShotTriggerIntervalSec")]
-    pub shot_trigger_interval_sec: f32,
-    #[rename(name = "SpecialTimeSec")]
-    pub special_time_sec: f32,
-    #[rename(name = "SpecialIntervalSec")]
-    pub special_interval_sec: f32,
-    #[rename(name = "IsShotPenetrate")]
-    pub is_shot_penetrate: bool,
-    #[rename(name = "IsShowRaySquare")]
-    pub is_show_ray_square: bool,
-    #[rename(name = "IsNeedRouletteStop")]
-    pub is_need_roulette_stop: bool,
-}
-
-#[cfg(feature = "app-dragonrideconfig")]
-#[::unity2::methods]
-impl DragonRideConfig_ShotConfig {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-dragonrideconfig")]
-impl DragonRideConfig_ShotConfig {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideConfig_ShotConfig),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideConfig_ShotConfigMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideconfig/DragonRideConfig.md"))]
 #[::unity2::class(namespace = "App", name = "DragonRideConfig")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -168,6 +124,50 @@ impl DragonRideConfig_ResultConfig {
             )
         });
         <Self as IDragonRideConfig_ResultConfigMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonrideconfig/DragonRideConfig_ShotConfig.md"))]
+#[::unity2::class(namespace = "App", name = "DragonRideConfig.ShotConfig")]
+#[parent(crate::system::object::Object)]
+pub struct DragonRideConfig_ShotConfig {
+    #[rename(name = "ShotRepeatIntervalSec")]
+    pub shot_repeat_interval_sec: f32,
+    #[rename(name = "ShotTriggerIntervalSec")]
+    pub shot_trigger_interval_sec: f32,
+    #[rename(name = "SpecialTimeSec")]
+    pub special_time_sec: f32,
+    #[rename(name = "SpecialIntervalSec")]
+    pub special_interval_sec: f32,
+    #[rename(name = "IsShotPenetrate")]
+    pub is_shot_penetrate: bool,
+    #[rename(name = "IsShowRaySquare")]
+    pub is_show_ray_square: bool,
+    #[rename(name = "IsNeedRouletteStop")]
+    pub is_need_roulette_stop: bool,
+}
+
+#[cfg(feature = "app-dragonrideconfig")]
+#[::unity2::methods]
+impl DragonRideConfig_ShotConfig {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-dragonrideconfig")]
+impl DragonRideConfig_ShotConfig {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideConfig_ShotConfig),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideConfig_ShotConfigMethods>::ctor(this);
         this
     }
 }

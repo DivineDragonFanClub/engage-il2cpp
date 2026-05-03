@@ -6,6 +6,36 @@ use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptable
 use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass_CustomShadowConstantBuffer.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
+    name = "CustomShadowNoCasterPass.CustomShadowConstantBuffer"
+)]
+#[parent(crate::system::object::Object)]
+pub struct CustomShadowNoCasterPass_CustomShadowConstantBuffer {
+    #[static_field]
+    #[rename(name = "_WorldToShadow")]
+    pub world_to_shadow: i32,
+    #[static_field]
+    #[rename(name = "_ShadowParams")]
+    pub shadow_params: i32,
+    #[static_field]
+    #[rename(name = "_ShadowOffset0")]
+    pub shadow_offset0: i32,
+    #[static_field]
+    #[rename(name = "_ShadowOffset1")]
+    pub shadow_offset1: i32,
+    #[static_field]
+    #[rename(name = "_ShadowOffset2")]
+    pub shadow_offset2: i32,
+    #[static_field]
+    #[rename(name = "_ShadowOffset3")]
+    pub shadow_offset3: i32,
+    #[static_field]
+    #[rename(name = "_ShadowmapSize")]
+    pub shadowmap_size: i32,
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
@@ -93,34 +123,4 @@ impl CustomShadowNoCasterPass {
         <Self as ICustomShadowNoCasterPassMethods>::ctor(this, evt);
         this
     }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/custom/internal/customshadownocasterpass/CustomShadowNoCasterPass_CustomShadowConstantBuffer.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal.Custom.Internal",
-    name = "CustomShadowNoCasterPass.CustomShadowConstantBuffer"
-)]
-#[parent(crate::system::object::Object)]
-pub struct CustomShadowNoCasterPass_CustomShadowConstantBuffer {
-    #[static_field]
-    #[rename(name = "_WorldToShadow")]
-    pub world_to_shadow: i32,
-    #[static_field]
-    #[rename(name = "_ShadowParams")]
-    pub shadow_params: i32,
-    #[static_field]
-    #[rename(name = "_ShadowOffset0")]
-    pub shadow_offset0: i32,
-    #[static_field]
-    #[rename(name = "_ShadowOffset1")]
-    pub shadow_offset1: i32,
-    #[static_field]
-    #[rename(name = "_ShadowOffset2")]
-    pub shadow_offset2: i32,
-    #[static_field]
-    #[rename(name = "_ShadowOffset3")]
-    pub shadow_offset3: i32,
-    #[static_field]
-    #[rename(name = "_ShadowmapSize")]
-    pub shadowmap_size: i32,
 }

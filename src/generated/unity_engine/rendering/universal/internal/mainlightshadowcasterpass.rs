@@ -6,51 +6,6 @@ use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptable
 use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/mainlightshadowcasterpass/MainLightShadowCasterPass_MainLightShadowConstantBuffer.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal.Internal",
-    name = "MainLightShadowCasterPass.MainLightShadowConstantBuffer"
-)]
-#[parent(crate::system::object::Object)]
-pub struct MainLightShadowCasterPass_MainLightShadowConstantBuffer {
-    #[static_field]
-    #[rename(name = "_WorldToShadow")]
-    pub world_to_shadow: i32,
-    #[static_field]
-    #[rename(name = "_ShadowParams")]
-    pub shadow_params: i32,
-    #[static_field]
-    #[rename(name = "_CascadeShadowSplitSpheres0")]
-    pub cascade_shadow_split_spheres0: i32,
-    #[static_field]
-    #[rename(name = "_CascadeShadowSplitSpheres1")]
-    pub cascade_shadow_split_spheres1: i32,
-    #[static_field]
-    #[rename(name = "_CascadeShadowSplitSpheres2")]
-    pub cascade_shadow_split_spheres2: i32,
-    #[static_field]
-    #[rename(name = "_CascadeShadowSplitSpheres3")]
-    pub cascade_shadow_split_spheres3: i32,
-    #[static_field]
-    #[rename(name = "_CascadeShadowSplitSphereRadii")]
-    pub cascade_shadow_split_sphere_radii: i32,
-    #[static_field]
-    #[rename(name = "_ShadowOffset0")]
-    pub shadow_offset0: i32,
-    #[static_field]
-    #[rename(name = "_ShadowOffset1")]
-    pub shadow_offset1: i32,
-    #[static_field]
-    #[rename(name = "_ShadowOffset2")]
-    pub shadow_offset2: i32,
-    #[static_field]
-    #[rename(name = "_ShadowOffset3")]
-    pub shadow_offset3: i32,
-    #[static_field]
-    #[rename(name = "_ShadowmapSize")]
-    pub shadowmap_size: i32,
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/mainlightshadowcasterpass/MainLightShadowCasterPass.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -172,4 +127,49 @@ impl MainLightShadowCasterPass {
         <Self as IMainLightShadowCasterPassMethods>::ctor(this, evt);
         this
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/mainlightshadowcasterpass/MainLightShadowCasterPass_MainLightShadowConstantBuffer.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "MainLightShadowCasterPass.MainLightShadowConstantBuffer"
+)]
+#[parent(crate::system::object::Object)]
+pub struct MainLightShadowCasterPass_MainLightShadowConstantBuffer {
+    #[static_field]
+    #[rename(name = "_WorldToShadow")]
+    pub world_to_shadow: i32,
+    #[static_field]
+    #[rename(name = "_ShadowParams")]
+    pub shadow_params: i32,
+    #[static_field]
+    #[rename(name = "_CascadeShadowSplitSpheres0")]
+    pub cascade_shadow_split_spheres0: i32,
+    #[static_field]
+    #[rename(name = "_CascadeShadowSplitSpheres1")]
+    pub cascade_shadow_split_spheres1: i32,
+    #[static_field]
+    #[rename(name = "_CascadeShadowSplitSpheres2")]
+    pub cascade_shadow_split_spheres2: i32,
+    #[static_field]
+    #[rename(name = "_CascadeShadowSplitSpheres3")]
+    pub cascade_shadow_split_spheres3: i32,
+    #[static_field]
+    #[rename(name = "_CascadeShadowSplitSphereRadii")]
+    pub cascade_shadow_split_sphere_radii: i32,
+    #[static_field]
+    #[rename(name = "_ShadowOffset0")]
+    pub shadow_offset0: i32,
+    #[static_field]
+    #[rename(name = "_ShadowOffset1")]
+    pub shadow_offset1: i32,
+    #[static_field]
+    #[rename(name = "_ShadowOffset2")]
+    pub shadow_offset2: i32,
+    #[static_field]
+    #[rename(name = "_ShadowOffset3")]
+    pub shadow_offset3: i32,
+    #[static_field]
+    #[rename(name = "_ShadowmapSize")]
+    pub shadowmap_size: i32,
 }

@@ -1,4 +1,3 @@
-
 use unity2::{IntPtr, MethodInfo};
 
 fn method_info_intptr(callback_ptr: *mut u8, args: u8) -> IntPtr {
@@ -74,7 +73,8 @@ pub use list_1_ext::*;
 mod dictionary_2_ext {
     use crate::system::collections::generic::dictionary_2::{Dictionary_2, IDictionary_2Methods};
 
-    pub trait Dictionary_2Ext<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity> {
+    pub trait Dictionary_2Ext<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity>
+    {
         fn iter(self) -> Dictionary_2Iter<K, V>;
     }
 
@@ -91,7 +91,10 @@ mod dictionary_2_ext {
         }
     }
 
-    pub struct Dictionary_2Iter<K: Copy + ::unity2::ClassIdentity, V: Copy + ::unity2::ClassIdentity> {
+    pub struct Dictionary_2Iter<
+        K: Copy + ::unity2::ClassIdentity,
+        V: Copy + ::unity2::ClassIdentity,
+    > {
         dict: Dictionary_2<K, V>,
         index: i32,
         len: i32,
@@ -455,8 +458,7 @@ mod proc_desc_patch {
             position: usize,
             descs: impl IntoIterator<Item = ProcDesc>,
         ) -> Self {
-            self.patches
-                .push((position, descs.into_iter().collect()));
+            self.patches.push((position, descs.into_iter().collect()));
             self
         }
 
@@ -629,10 +631,16 @@ mod basic_menu_item_ext {
 
     pub trait BasicMenuItemMethods {
         extern "C" fn get_name(this: BasicMenuItem, method_info: OptionalMethod) -> Il2CppString;
-        extern "C" fn a_call(_this: BasicMenuItem, _method_info: OptionalMethod) -> BasicMenuResult {
+        extern "C" fn a_call(
+            _this: BasicMenuItem,
+            _method_info: OptionalMethod,
+        ) -> BasicMenuResult {
             BasicMenuResult::new()
         }
-        extern "C" fn b_call(_this: BasicMenuItem, _method_info: OptionalMethod) -> BasicMenuResult {
+        extern "C" fn b_call(
+            _this: BasicMenuItem,
+            _method_info: OptionalMethod,
+        ) -> BasicMenuResult {
             BasicMenuResult::new()
                 .with_close_this(true)
                 .with_se_cancel(true)
@@ -943,7 +951,9 @@ mod config_basic_menu_item_ext {
 
     pub trait ConfigBasicMenuItemExt: Sized {
         fn new_switch<M: ConfigBasicMenuItemSwitchMethods>(title: impl Into<Il2CppString>) -> Self;
-        fn new_command<M: ConfigBasicMenuItemCommandMethods>(title: impl Into<Il2CppString>) -> Self;
+        fn new_command<M: ConfigBasicMenuItemCommandMethods>(
+            title: impl Into<Il2CppString>,
+        ) -> Self;
         fn new_gauge<M: ConfigBasicMenuItemGaugeMethods>(title: impl Into<Il2CppString>) -> Self;
         fn change_key_value_b(value: bool) -> bool;
     }
@@ -988,7 +998,9 @@ mod config_basic_menu_item_ext {
             item
         }
 
-        fn new_command<M: ConfigBasicMenuItemCommandMethods>(title: impl Into<Il2CppString>) -> Self {
+        fn new_command<M: ConfigBasicMenuItemCommandMethods>(
+            title: impl Into<Il2CppString>,
+        ) -> Self {
             let item = ConfigBasicMenuItem::new();
             M::init_content(item);
 
@@ -1270,13 +1282,18 @@ mod dyn_value_args_ext {
 ))]
 pub use dyn_value_args_ext::*;
 
-#[cfg(all(feature = "app-eventscript", feature = "moon_sharp-interpreter-dynvalue"))]
+#[cfg(all(
+    feature = "app-eventscript",
+    feature = "moon_sharp-interpreter-dynvalue"
+))]
 mod event_script_ext {
     use crate::app::eventscript::{
         EventScript, EventScript_ActionArgs, EventScript_FunctionArgs, IEventScriptMethods,
     };
     use crate::moon_sharp::interpreter::dynvalue::DynValue;
-    use unity2::{Array, Class, FromIlInstance, Il2CppString, IlInstance, IntPtr, MethodInfo, OptionalMethod};
+    use unity2::{
+        Array, Class, FromIlInstance, Il2CppString, IlInstance, IntPtr, MethodInfo, OptionalMethod,
+    };
 
     #[::unity2::class(namespace = "App", name = "EventScript.ActionArgs")]
     pub struct EventScriptActionArgsExt {
@@ -1374,7 +1391,10 @@ mod event_script_ext {
         }
     }
 }
-#[cfg(all(feature = "app-eventscript", feature = "moon_sharp-interpreter-dynvalue"))]
+#[cfg(all(
+    feature = "app-eventscript",
+    feature = "moon_sharp-interpreter-dynvalue"
+))]
 pub use event_script_ext::*;
 
 #[cfg(all(
@@ -1395,11 +1415,15 @@ mod asset_bundle_ext {
     }
 
     pub trait AssetBundleExt {
-        fn load_from_memory_async_internal(binary: Array<u8>, crc: u32) -> AssetBundleCreateRequest;
+        fn load_from_memory_async_internal(binary: Array<u8>, crc: u32)
+            -> AssetBundleCreateRequest;
     }
 
     impl AssetBundleExt for AssetBundle {
-        fn load_from_memory_async_internal(binary: Array<u8>, crc: u32) -> AssetBundleCreateRequest {
+        fn load_from_memory_async_internal(
+            binary: Array<u8>,
+            crc: u32,
+        ) -> AssetBundleCreateRequest {
             static METHOD_PTR: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
             let ptr = *METHOD_PTR.get_or_init(|| {
                 let p = lookup_method_by_signature(

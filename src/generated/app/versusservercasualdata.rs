@@ -6,60 +6,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusservercasualdata/VersusServerCasualData_GodBondBackup.md"))]
-#[::unity2::class(namespace = "App", name = "VersusServerCasualData.GodBondBackup")]
-#[parent(crate::system::object::Object)]
-pub struct VersusServerCasualData_GodBondBackup {
-    #[static_field]
-    #[rename(name = "BufferSize")]
-    pub buffer_size: i32,
-    #[rename(name = "m_Buffer")]
-    pub m_buffer: ::unity2::Array<u8>,
-    #[rename(name = "m_Stream")]
-    pub m_stream: crate::app::stream_2::Stream_2,
-    #[rename(name = "m_BondsDict")]
-    pub m_bonds_dict: crate::system::collections::generic::dictionary_2::Dictionary_2<
-        ::unity2::Il2CppString,
-        i32,
-    >,
-}
-
-#[cfg(feature = "app-versusservercasualdata")]
-#[::unity2::methods]
-impl VersusServerCasualData_GodBondBackup {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Save()` overload"]
-    #[method(name = "Save", args = 0)]
-    pub fn save(self) -> ();
-
-    #[doc = "`Restore()` overload"]
-    #[method(name = "Restore", args = 0)]
-    pub fn restore(self) -> ();
-}
-
-#[cfg(feature = "app-versusservercasualdata")]
-impl VersusServerCasualData_GodBondBackup {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusServerCasualData_GodBondBackup),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusServerCasualData_GodBondBackupMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusservercasualdata/VersusServerCasualData.md"))]
 #[::unity2::class(namespace = "App", name = "VersusServerCasualData")]
 #[parent(crate::app::versusserverdata::VersusServerData)]
@@ -178,6 +124,60 @@ impl VersusServerCasualData {
             )
         });
         <Self as IVersusServerCasualDataMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versusservercasualdata/VersusServerCasualData_GodBondBackup.md"))]
+#[::unity2::class(namespace = "App", name = "VersusServerCasualData.GodBondBackup")]
+#[parent(crate::system::object::Object)]
+pub struct VersusServerCasualData_GodBondBackup {
+    #[static_field]
+    #[rename(name = "BufferSize")]
+    pub buffer_size: i32,
+    #[rename(name = "m_Buffer")]
+    pub m_buffer: ::unity2::Array<u8>,
+    #[rename(name = "m_Stream")]
+    pub m_stream: crate::app::stream_2::Stream_2,
+    #[rename(name = "m_BondsDict")]
+    pub m_bonds_dict: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        i32,
+    >,
+}
+
+#[cfg(feature = "app-versusservercasualdata")]
+#[::unity2::methods]
+impl VersusServerCasualData_GodBondBackup {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Save()` overload"]
+    #[method(name = "Save", args = 0)]
+    pub fn save(self) -> ();
+
+    #[doc = "`Restore()` overload"]
+    #[method(name = "Restore", args = 0)]
+    pub fn restore(self) -> ();
+}
+
+#[cfg(feature = "app-versusservercasualdata")]
+impl VersusServerCasualData_GodBondBackup {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusServerCasualData_GodBondBackup),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusServerCasualData_GodBondBackupMethods>::ctor(this);
         this
     }
 }

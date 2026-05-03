@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Masks.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Kinds.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -23,14 +23,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct AccessoryData_Masks {
+pub struct AccessoryData_Kinds {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for AccessoryData_Masks {
+impl ::unity2::ClassIdentity for AccessoryData_Kinds {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "AccessoryData.Masks";
+    const NAME: &'static str = "AccessoryData.Kinds";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -39,7 +39,7 @@ impl ::unity2::ClassIdentity for AccessoryData_Masks {
     }
 }
 
-impl ::unity2::IlType for AccessoryData_Masks {
+impl ::unity2::IlType for AccessoryData_Kinds {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -48,21 +48,25 @@ impl ::unity2::IlType for AccessoryData_Masks {
     }
 }
 
-impl AccessoryData_Masks {
+impl AccessoryData_Kinds {
     pub fn body() -> Self {
-        Self { value: 1 }
+        Self { value: 0 }
     }
 
     pub fn head() -> Self {
-        Self { value: 2 }
+        Self { value: 1 }
     }
 
     pub fn face() -> Self {
-        Self { value: 4 }
+        Self { value: 2 }
     }
 
     pub fn back() -> Self {
-        Self { value: 8 }
+        Self { value: 3 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 4 }
     }
 }
 
@@ -308,7 +312,7 @@ impl AccessoryData {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Kinds.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/accessorydata/AccessoryData_Masks.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -317,14 +321,14 @@ impl AccessoryData {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct AccessoryData_Kinds {
+pub struct AccessoryData_Masks {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for AccessoryData_Kinds {
+impl ::unity2::ClassIdentity for AccessoryData_Masks {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "AccessoryData.Kinds";
+    const NAME: &'static str = "AccessoryData.Masks";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -333,7 +337,7 @@ impl ::unity2::ClassIdentity for AccessoryData_Kinds {
     }
 }
 
-impl ::unity2::IlType for AccessoryData_Kinds {
+impl ::unity2::IlType for AccessoryData_Masks {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -342,24 +346,20 @@ impl ::unity2::IlType for AccessoryData_Kinds {
     }
 }
 
-impl AccessoryData_Kinds {
+impl AccessoryData_Masks {
     pub fn body() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn head() -> Self {
         Self { value: 1 }
     }
 
-    pub fn face() -> Self {
+    pub fn head() -> Self {
         Self { value: 2 }
     }
 
-    pub fn back() -> Self {
-        Self { value: 3 }
+    pub fn face() -> Self {
+        Self { value: 4 }
     }
 
-    pub fn num() -> Self {
-        Self { value: 4 }
+    pub fn back() -> Self {
+        Self { value: 8 }
     }
 }

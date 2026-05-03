@@ -87,21 +87,33 @@ impl MapSequenceGod_ProcEngage {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngageCancel.md"))]
-#[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngageCancel")]
-#[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]
-pub struct MapSequenceGod_ProcEngageCancel {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod.md"))]
+#[::unity2::class(namespace = "App", name = "MapSequenceGod")]
+#[parent(crate::system::object::Object)]
+pub struct MapSequenceGod {}
 
 #[cfg(feature = "app-mapsequencegod")]
 #[::unity2::methods]
-impl MapSequenceGod_ProcEngageCancel {
-    #[doc = "`Cancel()` overload"]
-    #[method(name = "Cancel", args = 0)]
-    pub fn cancel(self) -> ();
+impl MapSequenceGod {
+    #[doc = "`CreateBindEngageSimple(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindEngageSimple", args = 1)]
+    pub fn create_bind_engage_simple(super_: crate::app::procinst::ProcInst) -> ();
 
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+    #[doc = "`CreateBindEngageStart(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindEngageStart", args = 1)]
+    pub fn create_bind_engage_start(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`CreateBindEngageLink(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindEngageLink", args = 1)]
+    pub fn create_bind_engage_link(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`CreateBindGodChange(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindGodChange", args = 1)]
+    pub fn create_bind_god_change(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`CreateBindEngageCancel(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindEngageCancel", args = 1)]
+    pub fn create_bind_engage_cancel(super_: crate::app::procinst::ProcInst) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -109,17 +121,17 @@ impl MapSequenceGod_ProcEngageCancel {
 }
 
 #[cfg(feature = "app-mapsequencegod")]
-impl MapSequenceGod_ProcEngageCancel {
+impl MapSequenceGod {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceGod_ProcEngageCancel),
+                ::core::stringify!(MapSequenceGod),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapSequenceGod_ProcEngageCancelMethods>::ctor(this);
+        <Self as IMapSequenceGodMethods>::ctor(this);
         this
     }
 }
@@ -169,6 +181,43 @@ impl MapSequenceGod_Kind {
 
     pub fn god_change() -> Self {
         Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod_ProcEngageCancel.md"))]
+#[::unity2::class(namespace = "App", name = "MapSequenceGod.ProcEngageCancel")]
+#[parent(crate::app::mapsequencegod::MapSequenceGod_ProcEngage)]
+pub struct MapSequenceGod_ProcEngageCancel {}
+
+#[cfg(feature = "app-mapsequencegod")]
+#[::unity2::methods]
+impl MapSequenceGod_ProcEngageCancel {
+    #[doc = "`Cancel()` overload"]
+    #[method(name = "Cancel", args = 0)]
+    pub fn cancel(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencegod")]
+impl MapSequenceGod_ProcEngageCancel {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceGod_ProcEngageCancel),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceGod_ProcEngageCancelMethods>::ctor(this);
+        this
     }
 }
 
@@ -247,55 +296,6 @@ impl MapSequenceGod_ProcEngageStart {
             )
         });
         <Self as IMapSequenceGod_ProcEngageStartMethods>::ctor(this, kind, is_simple);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencegod/MapSequenceGod.md"))]
-#[::unity2::class(namespace = "App", name = "MapSequenceGod")]
-#[parent(crate::system::object::Object)]
-pub struct MapSequenceGod {}
-
-#[cfg(feature = "app-mapsequencegod")]
-#[::unity2::methods]
-impl MapSequenceGod {
-    #[doc = "`CreateBindEngageSimple(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindEngageSimple", args = 1)]
-    pub fn create_bind_engage_simple(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`CreateBindEngageStart(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindEngageStart", args = 1)]
-    pub fn create_bind_engage_start(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`CreateBindEngageLink(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindEngageLink", args = 1)]
-    pub fn create_bind_engage_link(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`CreateBindGodChange(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindGodChange", args = 1)]
-    pub fn create_bind_god_change(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`CreateBindEngageCancel(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindEngageCancel", args = 1)]
-    pub fn create_bind_engage_cancel(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsequencegod")]
-impl MapSequenceGod {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceGod),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceGodMethods>::ctor(this);
         this
     }
 }

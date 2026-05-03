@@ -10,58 +10,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingsequence/FortuneTellingSequence_Label2.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct FortuneTellingSequence_Label2 {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for FortuneTellingSequence_Label2 {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "FortuneTellingSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for FortuneTellingSequence_Label2 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl FortuneTellingSequence_Label2 {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn unit_select() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn fortune_telling() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 3 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fortunetellingsequence/FortuneTellingSequence.md"))]
 #[::unity2::class(namespace = "App", name = "FortuneTellingSequence")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -135,5 +83,57 @@ impl FortuneTellingSequence {
         });
         <Self as IFortuneTellingSequenceMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fortunetellingsequence/FortuneTellingSequence_Label2.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FortuneTellingSequence_Label2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FortuneTellingSequence_Label2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "FortuneTellingSequence.Label2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FortuneTellingSequence_Label2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FortuneTellingSequence_Label2 {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn unit_select() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn fortune_telling() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 3 }
     }
 }

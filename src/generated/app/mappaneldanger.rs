@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_DangerType.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_Mode.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -17,14 +17,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapPanelDanger_DangerType {
+pub struct MapPanelDanger_Mode {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapPanelDanger_DangerType {
+impl ::unity2::ClassIdentity for MapPanelDanger_Mode {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapPanelDanger.DangerType";
+    const NAME: &'static str = "MapPanelDanger.Mode";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -33,7 +33,7 @@ impl ::unity2::ClassIdentity for MapPanelDanger_DangerType {
     }
 }
 
-impl ::unity2::IlType for MapPanelDanger_DangerType {
+impl ::unity2::IlType for MapPanelDanger_Mode {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -42,17 +42,13 @@ impl ::unity2::IlType for MapPanelDanger_DangerType {
     }
 }
 
-impl MapPanelDanger_DangerType {
-    pub fn rod() -> Self {
+impl MapPanelDanger_Mode {
+    pub fn hide() -> Self {
         Self { value: 0 }
     }
 
-    pub fn attack() -> Self {
+    pub fn show() -> Self {
         Self { value: 1 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 2 }
     }
 }
 
@@ -208,6 +204,54 @@ impl MapPanelDanger {
     }
 }
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_DangerType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapPanelDanger_DangerType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapPanelDanger_DangerType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapPanelDanger.DangerType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapPanelDanger_DangerType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapPanelDanger_DangerType {
+    pub fn rod() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 2 }
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_MeshIndex.md"))]
 #[repr(C)]
 #[derive(
@@ -277,49 +321,5 @@ impl MapPanelDanger_MeshIndex {
 
     pub fn num() -> Self {
         Self { value: 8 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mappaneldanger/MapPanelDanger_Mode.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapPanelDanger_Mode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapPanelDanger_Mode {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapPanelDanger.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapPanelDanger_Mode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapPanelDanger_Mode {
-    pub fn hide() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn show() -> Self {
-        Self { value: 1 }
     }
 }

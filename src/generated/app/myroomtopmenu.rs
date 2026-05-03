@@ -18,6 +18,108 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomtopmenu/MyRoomTopMenu_RecallSelectMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "MyRoomTopMenu.RecallSelectMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct MyRoomTopMenu_RecallSelectMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler: crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-myroomtopmenu")]
+#[::unity2::methods]
+impl MyRoomTopMenu_RecallSelectMenuItem {
+    #[doc = "`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        event_handler: crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-myroomtopmenu")]
+impl MyRoomTopMenu_RecallSelectMenuItem {
+    #[doc = "`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(event_handler: crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomTopMenu_RecallSelectMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomTopMenu_RecallSelectMenuItemMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomtopmenu/MyRoomTopMenu_SetDifficultySelectMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "MyRoomTopMenu.SetDifficultySelectMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct MyRoomTopMenu_SetDifficultySelectMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler: crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-myroomtopmenu")]
+#[::unity2::methods]
+impl MyRoomTopMenu_SetDifficultySelectMenuItem {
+    #[doc = "`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        event_handler: crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-myroomtopmenu")]
+impl MyRoomTopMenu_SetDifficultySelectMenuItem {
+    #[doc = "`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(event_handler: crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomTopMenu_SetDifficultySelectMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomTopMenu_SetDifficultySelectMenuItemMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomtopmenu/MyRoomTopMenu.md"))]
 #[::unity2::class(namespace = "App", name = "MyRoomTopMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -101,6 +203,39 @@ impl MyRoomTopMenu {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomtopmenu/MyRoomTopMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "MyRoomTopMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MyRoomTopMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-myroomtopmenu")]
+#[::unity2::methods]
+impl MyRoomTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, result: crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult) -> ();
+}
+
+#[cfg(feature = "app-myroomtopmenu")]
+impl MyRoomTopMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomTopMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomtopmenu/MyRoomTopMenu_MenuResult.md"))]
 #[repr(C)]
 #[derive(
@@ -150,141 +285,6 @@ impl MyRoomTopMenu_MenuResult {
 
     pub fn end() -> Self {
         Self { value: 3 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomtopmenu/MyRoomTopMenu_SetDifficultySelectMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "MyRoomTopMenu.SetDifficultySelectMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct MyRoomTopMenu_SetDifficultySelectMenuItem {
-    #[rename(name = "m_DecideEventHandler")]
-    pub m_decide_event_handler: crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler,
-}
-
-#[cfg(feature = "app-myroomtopmenu")]
-#[::unity2::methods]
-impl MyRoomTopMenu_SetDifficultySelectMenuItem {
-    #[doc = "`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        event_handler: crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-myroomtopmenu")]
-impl MyRoomTopMenu_SetDifficultySelectMenuItem {
-    #[doc = "`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(event_handler: crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomTopMenu_SetDifficultySelectMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomTopMenu_SetDifficultySelectMenuItemMethods>::ctor(this, event_handler);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomtopmenu/MyRoomTopMenu_RecallSelectMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "MyRoomTopMenu.RecallSelectMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct MyRoomTopMenu_RecallSelectMenuItem {
-    #[rename(name = "m_DecideEventHandler")]
-    pub m_decide_event_handler: crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler,
-}
-
-#[cfg(feature = "app-myroomtopmenu")]
-#[::unity2::methods]
-impl MyRoomTopMenu_RecallSelectMenuItem {
-    #[doc = "`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        event_handler: crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-myroomtopmenu")]
-impl MyRoomTopMenu_RecallSelectMenuItem {
-    #[doc = "`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(event_handler: crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomTopMenu_RecallSelectMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomTopMenu_RecallSelectMenuItemMethods>::ctor(this, event_handler);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomtopmenu/MyRoomTopMenu_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "MyRoomTopMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct MyRoomTopMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-myroomtopmenu")]
-#[::unity2::methods]
-impl MyRoomTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, result: crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult) -> ();
-}
-
-#[cfg(feature = "app-myroomtopmenu")]
-impl MyRoomTopMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomTopMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomTopMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
     }
 }
 

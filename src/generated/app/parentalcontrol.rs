@@ -6,6 +6,39 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/parentalcontrol/ParentalControl.md"))]
+#[::unity2::class(namespace = "App", name = "ParentalControl")]
+#[parent(crate::system::object::Object)]
+pub struct ParentalControl {
+    #[static_field]
+    #[rename(name = "s_IsBeginFC")]
+    pub s_is_begin_fc: bool,
+}
+
+#[cfg(feature = "app-parentalcontrol")]
+#[::unity2::methods]
+impl ParentalControl {
+    #[doc = "`BeginFreeCommunication(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "BeginFreeCommunication", args = 1)]
+    pub fn begin_free_communication(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`get_ResultBeginFreeCommunication()` overload"]
+    #[method(name = "get_ResultBeginFreeCommunication", args = 0)]
+    pub fn get_result_begin_free_communication() -> bool;
+
+    #[doc = "`EndFreeCommunication()` overload"]
+    #[method(name = "EndFreeCommunication", args = 0)]
+    pub fn end_free_communication() -> ();
+
+    #[doc = "`IsFreeCommunicationAvailable()` overload"]
+    #[method(name = "IsFreeCommunicationAvailable", args = 0)]
+    pub fn is_free_communication_available() -> bool;
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/parentalcontrol/ParentalControl_BeginFCSequence.md"))]
 #[::unity2::class(namespace = "App", name = "ParentalControl.BeginFCSequence")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -49,37 +82,4 @@ impl ParentalControl_BeginFCSequence {
         <Self as IParentalControl_BeginFCSequenceMethods>::ctor(this);
         this
     }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/parentalcontrol/ParentalControl.md"))]
-#[::unity2::class(namespace = "App", name = "ParentalControl")]
-#[parent(crate::system::object::Object)]
-pub struct ParentalControl {
-    #[static_field]
-    #[rename(name = "s_IsBeginFC")]
-    pub s_is_begin_fc: bool,
-}
-
-#[cfg(feature = "app-parentalcontrol")]
-#[::unity2::methods]
-impl ParentalControl {
-    #[doc = "`BeginFreeCommunication(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "BeginFreeCommunication", args = 1)]
-    pub fn begin_free_communication(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`get_ResultBeginFreeCommunication()` overload"]
-    #[method(name = "get_ResultBeginFreeCommunication", args = 0)]
-    pub fn get_result_begin_free_communication() -> bool;
-
-    #[doc = "`EndFreeCommunication()` overload"]
-    #[method(name = "EndFreeCommunication", args = 0)]
-    pub fn end_free_communication() -> ();
-
-    #[doc = "`IsFreeCommunicationAvailable()` overload"]
-    #[method(name = "IsFreeCommunicationAvailable", args = 0)]
-    pub fn is_free_communication_available() -> bool;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
 }

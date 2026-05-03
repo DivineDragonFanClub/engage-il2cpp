@@ -14,83 +14,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/solanelinfosequence/SolanelInfoSequence_Label2.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct SolanelInfoSequence_Label2 {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for SolanelInfoSequence_Label2 {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SolanelInfoSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for SolanelInfoSequence_Label2 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl SolanelInfoSequence_Label2 {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfosequence/SolanelInfoSequence_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "SolanelInfoSequence.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct SolanelInfoSequence_DecideEventHandler {}
-
-#[cfg(feature = "app-solanelinfosequence")]
-#[::unity2::methods]
-impl SolanelInfoSequence_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, result: crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult) -> ();
-}
-
-#[cfg(feature = "app-solanelinfosequence")]
-impl SolanelInfoSequence_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SolanelInfoSequence_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISolanelInfoSequence_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfosequence/SolanelInfoSequence.md"))]
 #[::unity2::class(namespace = "App", name = "SolanelInfoSequence")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -168,6 +91,83 @@ impl SolanelInfoSequence {
             )
         });
         <Self as ISolanelInfoSequenceMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/solanelinfosequence/SolanelInfoSequence_Label2.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SolanelInfoSequence_Label2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SolanelInfoSequence_Label2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SolanelInfoSequence.Label2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SolanelInfoSequence_Label2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SolanelInfoSequence_Label2 {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfosequence/SolanelInfoSequence_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "SolanelInfoSequence.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct SolanelInfoSequence_DecideEventHandler {}
+
+#[cfg(feature = "app-solanelinfosequence")]
+#[::unity2::methods]
+impl SolanelInfoSequence_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, result: crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult) -> ();
+}
+
+#[cfg(feature = "app-solanelinfosequence")]
+impl SolanelInfoSequence_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SolanelInfoSequence_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISolanelInfoSequence_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

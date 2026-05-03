@@ -10,6 +10,39 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/font/Font_FontTextureRebuildCallback.md"))]
+#[::unity2::class(namespace = "UnityEngine", name = "Font.FontTextureRebuildCallback")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct Font_FontTextureRebuildCallback {}
+
+#[cfg(feature = "unity_engine-font")]
+#[::unity2::methods]
+impl Font_FontTextureRebuildCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-font")]
+impl Font_FontTextureRebuildCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Font_FontTextureRebuildCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFont_FontTextureRebuildCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/font/Font.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "Font")]
 #[parent(crate::unity_engine::object_2::Object_2)]
@@ -77,37 +110,4 @@ impl Font {
         ch: u16,
         info: crate::unity_engine::characterinfo::CharacterInfo,
     ) -> bool;
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/font/Font_FontTextureRebuildCallback.md"))]
-#[::unity2::class(namespace = "UnityEngine", name = "Font.FontTextureRebuildCallback")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct Font_FontTextureRebuildCallback {}
-
-#[cfg(feature = "unity_engine-font")]
-#[::unity2::methods]
-impl Font_FontTextureRebuildCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-font")]
-impl Font_FontTextureRebuildCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Font_FontTextureRebuildCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFont_FontTextureRebuildCallbackMethods>::ctor(this, object, method);
-        this
-    }
 }

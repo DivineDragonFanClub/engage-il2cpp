@@ -10,6 +10,114 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparammanager/UnitInfoParamManager_ValueType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct UnitInfoParamManager_ValueType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for UnitInfoParamManager_ValueType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitInfoParamManager.ValueType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitInfoParamManager_ValueType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl UnitInfoParamManager_ValueType {
+    pub fn max_hp() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn rating() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn hit() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn critical() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn avoid() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn secure() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn continuous() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn str() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn magic() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn tech() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn quick() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn def() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn mdef() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn luck() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn phys() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 17 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoparammanager/UnitInfoParamManager.md"))]
 #[::unity2::class(namespace = "App", name = "UnitInfoParamManager")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: unitinfoparammanager :: UnitInfoParamManager >)]
@@ -143,113 +251,5 @@ impl UnitInfoParamManager {
         });
         <Self as IUnitInfoParamManagerMethods>::ctor(this);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitinfoparammanager/UnitInfoParamManager_ValueType.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct UnitInfoParamManager_ValueType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for UnitInfoParamManager_ValueType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitInfoParamManager.ValueType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitInfoParamManager_ValueType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl UnitInfoParamManager_ValueType {
-    pub fn max_hp() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn rating() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn attack() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn hit() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn critical() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn avoid() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn secure() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn continuous() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn str() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn magic() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn tech() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn quick() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn def() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn mdef() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn luck() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn phys() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn r#move() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 17 }
     }
 }

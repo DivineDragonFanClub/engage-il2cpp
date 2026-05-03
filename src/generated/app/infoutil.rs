@@ -8,6 +8,107 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil_StatusSkill.md"))]
+#[::unity2::class(namespace = "App", name = "InfoUtil.StatusSkill")]
+#[parent(crate::system::object::Object)]
+pub struct InfoUtil_StatusSkill {}
+
+#[cfg(feature = "app-infoutil")]
+#[::unity2::methods]
+impl InfoUtil_StatusSkill {
+    #[doc = "`get_Data()` overload"]
+    #[method(name = "get_Data", args = 0)]
+    pub fn get_data(self) -> crate::app::skilldata::SkillData;
+
+    #[doc = "`set_Data(crate::app::skilldata::SkillData)` overload"]
+    #[method(name = "set_Data", args = 1)]
+    pub fn set_data(self, value: crate::app::skilldata::SkillData) -> ();
+
+    #[doc = "`get_IsActive()` overload"]
+    #[method(name = "get_IsActive", args = 0)]
+    pub fn get_is_active(self) -> bool;
+
+    #[doc = "`set_IsActive(bool)` overload"]
+    #[method(name = "set_IsActive", args = 1)]
+    pub fn set_is_active(self, value: bool) -> ();
+
+    #[doc = "`get_Category()` overload"]
+    #[method(name = "get_Category", args = 0)]
+    pub fn get_category(self) -> crate::app::skilldata::SkillData_Categorys;
+
+    #[doc = "`set_Category(crate::app::skilldata::SkillData_Categorys)` overload"]
+    #[method(name = "set_Category", args = 1)]
+    pub fn set_category(self, value: crate::app::skilldata::SkillData_Categorys) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-infoutil")]
+impl InfoUtil_StatusSkill {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InfoUtil_StatusSkill),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInfoUtil_StatusSkillMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/infoutil/InfoUtil_HpStockSpriteType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct InfoUtil_HpStockSpriteType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for InfoUtil_HpStockSpriteType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "InfoUtil.HpStockSpriteType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for InfoUtil_HpStockSpriteType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl InfoUtil_HpStockSpriteType {
+    pub fn enemy() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn rampage() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn player() -> Self {
+        Self { value: 2 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil.md"))]
 #[::unity2::class(namespace = "App", name = "InfoUtil")]
 #[parent(crate::system::object::Object)]
@@ -385,107 +486,6 @@ impl InfoUtil {
             )
         });
         <Self as IInfoUtilMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/infoutil/InfoUtil_HpStockSpriteType.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct InfoUtil_HpStockSpriteType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for InfoUtil_HpStockSpriteType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "InfoUtil.HpStockSpriteType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for InfoUtil_HpStockSpriteType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl InfoUtil_HpStockSpriteType {
-    pub fn enemy() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn rampage() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn player() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/infoutil/InfoUtil_StatusSkill.md"))]
-#[::unity2::class(namespace = "App", name = "InfoUtil.StatusSkill")]
-#[parent(crate::system::object::Object)]
-pub struct InfoUtil_StatusSkill {}
-
-#[cfg(feature = "app-infoutil")]
-#[::unity2::methods]
-impl InfoUtil_StatusSkill {
-    #[doc = "`get_Data()` overload"]
-    #[method(name = "get_Data", args = 0)]
-    pub fn get_data(self) -> crate::app::skilldata::SkillData;
-
-    #[doc = "`set_Data(crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "set_Data", args = 1)]
-    pub fn set_data(self, value: crate::app::skilldata::SkillData) -> ();
-
-    #[doc = "`get_IsActive()` overload"]
-    #[method(name = "get_IsActive", args = 0)]
-    pub fn get_is_active(self) -> bool;
-
-    #[doc = "`set_IsActive(bool)` overload"]
-    #[method(name = "set_IsActive", args = 1)]
-    pub fn set_is_active(self, value: bool) -> ();
-
-    #[doc = "`get_Category()` overload"]
-    #[method(name = "get_Category", args = 0)]
-    pub fn get_category(self) -> crate::app::skilldata::SkillData_Categorys;
-
-    #[doc = "`set_Category(crate::app::skilldata::SkillData_Categorys)` overload"]
-    #[method(name = "set_Category", args = 1)]
-    pub fn set_category(self, value: crate::app::skilldata::SkillData_Categorys) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-infoutil")]
-impl InfoUtil_StatusSkill {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InfoUtil_StatusSkill),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInfoUtil_StatusSkillMethods>::ctor(this);
         this
     }
 }

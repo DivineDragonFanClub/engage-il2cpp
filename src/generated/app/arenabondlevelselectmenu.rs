@@ -24,6 +24,120 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ArenaBondLevelSelectMenu.ConfirmDialog.ConfirmDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
+    #[rename(name = "m_DecideAction")]
+    pub m_decide_action: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-arenabondlevelselectmenu")]
+#[::unity2::methods]
+impl ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor(crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, decide_action: crate::system::action::Action) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-arenabondlevelselectmenu")]
+impl ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
+    pub fn new(decide_action: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
+            this,
+            decide_action,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_ChangeGodEventHandle.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ArenaBondLevelSelectMenu.ChangeGodEventHandle"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ArenaBondLevelSelectMenu_ChangeGodEventHandle {}
+
+#[cfg(feature = "app-arenabondlevelselectmenu")]
+#[::unity2::methods]
+impl ArenaBondLevelSelectMenu_ChangeGodEventHandle {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-arenabondlevelselectmenu")]
+impl ArenaBondLevelSelectMenu_ChangeGodEventHandle {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondLevelSelectMenu_ChangeGodEventHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondLevelSelectMenu_ChangeGodEventHandleMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_SelectEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ArenaBondLevelSelectMenu.SelectEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ArenaBondLevelSelectMenu_SelectEventHandler {}
+
+#[cfg(feature = "app-arenabondlevelselectmenu")]
+#[::unity2::methods]
+impl ArenaBondLevelSelectMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::godunit::GodUnit, i32, i32)` overload"]
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(self, god: crate::app::godunit::GodUnit, from_lv: i32, to_lv: i32) -> ();
+}
+
+#[cfg(feature = "app-arenabondlevelselectmenu")]
+impl ArenaBondLevelSelectMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondLevelSelectMenu_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondLevelSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu.md"))]
 #[::unity2::class(namespace = "App", name = "ArenaBondLevelSelectMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -132,80 +246,34 @@ impl ArenaBondLevelSelectMenu {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "ArenaBondLevelSelectMenu.ConfirmDialog.ConfirmDialogItemYes"
+    name = "ArenaBondLevelSelectMenu.ConfirmDialog.ConfirmDialogItemNo"
 )]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
-    #[rename(name = "m_DecideAction")]
-    pub m_decide_action: crate::system::action::Action,
-}
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo {}
 
 #[cfg(feature = "app-arenabondlevelselectmenu")]
 #[::unity2::methods]
-impl ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, decide_action: crate::system::action::Action) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+impl ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-arenabondlevelselectmenu")]
-impl ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(decide_action: crate::system::action::Action) -> Self {
+impl ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYes),
+                ::core::stringify!(ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
-            this,
-            decide_action,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_ChangeGodEventHandle.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ArenaBondLevelSelectMenu.ChangeGodEventHandle"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ArenaBondLevelSelectMenu_ChangeGodEventHandle {}
-
-#[cfg(feature = "app-arenabondlevelselectmenu")]
-#[::unity2::methods]
-impl ArenaBondLevelSelectMenu_ChangeGodEventHandle {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-arenabondlevelselectmenu")]
-impl ArenaBondLevelSelectMenu_ChangeGodEventHandle {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondLevelSelectMenu_ChangeGodEventHandle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaBondLevelSelectMenu_ChangeGodEventHandleMethods>::ctor(this, object, method);
+        <Self as IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
         this
     }
 }
@@ -384,74 +452,6 @@ impl ArenaBondLevelSelectMenu_ArenaBondLevelSelectMenuItem {
             change_unit_to_prev_event_handler,
             change_unit_to_next_event_handler,
         );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ArenaBondLevelSelectMenu.ConfirmDialog.ConfirmDialogItemNo"
-)]
-#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-pub struct ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo {}
-
-#[cfg(feature = "app-arenabondlevelselectmenu")]
-#[::unity2::methods]
-impl ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-arenabondlevelselectmenu")]
-impl ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaBondLevelSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondlevelselectmenu/ArenaBondLevelSelectMenu_SelectEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ArenaBondLevelSelectMenu.SelectEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ArenaBondLevelSelectMenu_SelectEventHandler {}
-
-#[cfg(feature = "app-arenabondlevelselectmenu")]
-#[::unity2::methods]
-impl ArenaBondLevelSelectMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::godunit::GodUnit, i32, i32)` overload"]
-    #[method(name = "Invoke", args = 3)]
-    pub fn invoke(self, god: crate::app::godunit::GodUnit, from_lv: i32, to_lv: i32) -> ();
-}
-
-#[cfg(feature = "app-arenabondlevelselectmenu")]
-impl ArenaBondLevelSelectMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondLevelSelectMenu_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaBondLevelSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

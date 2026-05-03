@@ -51,6 +51,101 @@ impl AICannon_CannonSkillScope {
     pub fn dispose(self) -> ();
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicannon/AICannon_CannonData.md"))]
+#[::unity2::class(namespace = "App", name = "AICannon.CannonData")]
+#[parent(crate::system::object::Object)]
+pub struct AICannon_CannonData {}
+
+#[cfg(feature = "app-aicannon")]
+#[::unity2::methods]
+impl AICannon_CannonData {
+    #[doc = "`.ctor(i32, i32, crate::app::cannoninspector::CannonInspector)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        x: i32,
+        z: i32,
+        inspector: crate::app::cannoninspector::CannonInspector,
+    ) -> ();
+
+    #[doc = "`get_X()` overload"]
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[doc = "`get_Z()` overload"]
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[doc = "`get_Inspector()` overload"]
+    #[method(name = "get_Inspector", args = 0)]
+    pub fn get_inspector(self) -> crate::app::cannoninspector::CannonInspector;
+
+    #[doc = "`get_Occupant()` overload"]
+    #[method(name = "get_Occupant", args = 0)]
+    pub fn get_occupant(self) -> i32;
+
+    #[doc = "`set_Occupant(i32)` overload"]
+    #[method(name = "set_Occupant", args = 1)]
+    pub fn set_occupant(self, value: i32) -> ();
+}
+
+#[cfg(feature = "app-aicannon")]
+impl AICannon_CannonData {
+    #[doc = "`.ctor(i32, i32, crate::app::cannoninspector::CannonInspector)` — overload selector"]
+    pub fn new(x: i32, z: i32, inspector: crate::app::cannoninspector::CannonInspector) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AICannon_CannonData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAICannon_CannonDataMethods>::ctor(this, x, z, inspector);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicannon/AICannon_ChangeEquipScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AICannon_ChangeEquipScope {
+    pub m_actor: crate::app::unit::Unit,
+    pub m_equipped_index: i32,
+}
+
+impl ::unity2::ClassIdentity for AICannon_ChangeEquipScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AICannon.ChangeEquipScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AICannon_ChangeEquipScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-aicannon")]
+#[::unity2::methods(value)]
+impl AICannon_ChangeEquipScope {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, actor: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicannon/AICannon.md"))]
 #[::unity2::class(namespace = "App", name = "AICannon")]
 #[parent(crate::system::object::Object)]
@@ -134,101 +229,6 @@ impl AICannon {
             )
         });
         <Self as IAICannonMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aicannon/AICannon_ChangeEquipScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AICannon_ChangeEquipScope {
-    pub m_actor: crate::app::unit::Unit,
-    pub m_equipped_index: i32,
-}
-
-impl ::unity2::ClassIdentity for AICannon_ChangeEquipScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AICannon.ChangeEquipScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AICannon_ChangeEquipScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-aicannon")]
-#[::unity2::methods(value)]
-impl AICannon_ChangeEquipScope {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, actor: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aicannon/AICannon_CannonData.md"))]
-#[::unity2::class(namespace = "App", name = "AICannon.CannonData")]
-#[parent(crate::system::object::Object)]
-pub struct AICannon_CannonData {}
-
-#[cfg(feature = "app-aicannon")]
-#[::unity2::methods]
-impl AICannon_CannonData {
-    #[doc = "`.ctor(i32, i32, crate::app::cannoninspector::CannonInspector)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        x: i32,
-        z: i32,
-        inspector: crate::app::cannoninspector::CannonInspector,
-    ) -> ();
-
-    #[doc = "`get_X()` overload"]
-    #[method(name = "get_X", args = 0)]
-    pub fn get_x(self) -> i32;
-
-    #[doc = "`get_Z()` overload"]
-    #[method(name = "get_Z", args = 0)]
-    pub fn get_z(self) -> i32;
-
-    #[doc = "`get_Inspector()` overload"]
-    #[method(name = "get_Inspector", args = 0)]
-    pub fn get_inspector(self) -> crate::app::cannoninspector::CannonInspector;
-
-    #[doc = "`get_Occupant()` overload"]
-    #[method(name = "get_Occupant", args = 0)]
-    pub fn get_occupant(self) -> i32;
-
-    #[doc = "`set_Occupant(i32)` overload"]
-    #[method(name = "set_Occupant", args = 1)]
-    pub fn set_occupant(self, value: i32) -> ();
-}
-
-#[cfg(feature = "app-aicannon")]
-impl AICannon_CannonData {
-    #[doc = "`.ctor(i32, i32, crate::app::cannoninspector::CannonInspector)` — overload selector"]
-    pub fn new(x: i32, z: i32, inspector: crate::app::cannoninspector::CannonInspector) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AICannon_CannonData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAICannon_CannonDataMethods>::ctor(this, x, z, inspector);
         this
     }
 }

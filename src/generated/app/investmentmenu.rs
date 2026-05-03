@@ -74,39 +74,6 @@ impl InvestmentMenu {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenu/InvestmentMenu_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "InvestmentMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct InvestmentMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-investmentmenu")]
-#[::unity2::methods]
-impl InvestmentMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, index: i32) -> ();
-}
-
-#[cfg(feature = "app-investmentmenu")]
-impl InvestmentMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InvestmentMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInvestmentMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenu/InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
@@ -165,6 +132,39 @@ impl InvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItem {
         <Self as IInvestmentMenu_InvestmentMenuItem_InvestmentSubMenuItemMethods>::ctor(
             this, cost, parent,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/investmentmenu/InvestmentMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "InvestmentMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct InvestmentMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-investmentmenu")]
+#[::unity2::methods]
+impl InvestmentMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, index: i32) -> ();
+}
+
+#[cfg(feature = "app-investmentmenu")]
+impl InvestmentMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InvestmentMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInvestmentMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

@@ -42,6 +42,35 @@ impl<T0: ::unity2::ClassIdentity> SortGeneric_DelegateComparer_1<T0> {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortgeneric/SortGeneric.md"))]
+#[::unity2::class(namespace = "App", name = "SortGeneric")]
+#[parent(crate::app::sortconstant::SortConstant)]
+pub struct SortGeneric {}
+
+#[cfg(feature = "app-sortgeneric")]
+#[::unity2::methods]
+impl SortGeneric {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sortgeneric")]
+impl SortGeneric {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortGeneric),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortGenericMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortgeneric/SortGeneric_ElementComparer_1.md"))]
 #[::unity2::class(namespace = "App", name = "SortGeneric.ElementComparer`1")]
 #[parent(crate::system::object::Object)]
@@ -71,35 +100,6 @@ impl<T0: ::unity2::ClassIdentity> SortGeneric_ElementComparer_1<T0> {
             )
         });
         <Self as ISortGeneric_ElementComparer_1Methods<T0>>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortgeneric/SortGeneric.md"))]
-#[::unity2::class(namespace = "App", name = "SortGeneric")]
-#[parent(crate::app::sortconstant::SortConstant)]
-pub struct SortGeneric {}
-
-#[cfg(feature = "app-sortgeneric")]
-#[::unity2::methods]
-impl SortGeneric {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sortgeneric")]
-impl SortGeneric {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortGeneric),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortGenericMethods>::ctor(this);
         this
     }
 }

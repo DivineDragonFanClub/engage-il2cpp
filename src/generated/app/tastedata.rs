@@ -20,7 +20,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_Flags.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_ConditionType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -29,14 +29,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct TasteData_Flags {
+pub struct TasteData_ConditionType {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for TasteData_Flags {
+impl ::unity2::ClassIdentity for TasteData_ConditionType {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "TasteData.Flags";
+    const NAME: &'static str = "TasteData.ConditionType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -45,7 +45,7 @@ impl ::unity2::ClassIdentity for TasteData_Flags {
     }
 }
 
-impl ::unity2::IlType for TasteData_Flags {
+impl ::unity2::IlType for TasteData_ConditionType {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -54,17 +54,121 @@ impl ::unity2::IlType for TasteData_Flags {
     }
 }
 
-impl TasteData_Flags {
-    pub fn is_bad() -> Self {
+impl TasteData_ConditionType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn come_from_brodia() -> Self {
         Self { value: 1 }
     }
 
-    pub fn disable_food_enhance() -> Self {
+    pub fn come_from_filene() -> Self {
         Self { value: 2 }
     }
 
-    pub fn is_make_bento() -> Self {
+    pub fn come_from_solum() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn come_from_ircion() -> Self {
         Self { value: 4 }
+    }
+
+    pub fn come_from_lithos() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn is_male() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn is_female() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn is_adult() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn is_child() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn is_lueur() -> Self {
+        Self { value: 10 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_TasteGrade.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TasteData_TasteGrade {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TasteData_TasteGrade {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TasteData.TasteGrade";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TasteData_TasteGrade {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TasteData_TasteGrade {
+    pub fn ss() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn s() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn a() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn b() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn c() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn d() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn e() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn f() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn g() -> Self {
+        Self { value: 8 }
     }
 }
 
@@ -215,6 +319,54 @@ impl TasteData {
     }
 }
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_Flags.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TasteData_Flags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TasteData_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TasteData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TasteData_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TasteData_Flags {
+    pub fn is_bad() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn disable_food_enhance() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn is_make_bento() -> Self {
+        Self { value: 4 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tastedata/TasteData_FlagField.md"))]
 #[::unity2::class(namespace = "App", name = "TasteData.FlagField")]
 # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: tastedata :: TasteData_Flags >)]
@@ -262,157 +414,5 @@ impl TasteData_FlagField {
         });
         <Self as ITasteData_FlagFieldMethods>::ctor_2(this, f);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_ConditionType.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TasteData_ConditionType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TasteData_ConditionType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TasteData.ConditionType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TasteData_ConditionType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TasteData_ConditionType {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn come_from_brodia() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn come_from_filene() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn come_from_solum() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn come_from_ircion() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn come_from_lithos() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn is_male() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn is_female() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn is_adult() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn is_child() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn is_lueur() -> Self {
-        Self { value: 10 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tastedata/TasteData_TasteGrade.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TasteData_TasteGrade {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TasteData_TasteGrade {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TasteData.TasteGrade";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TasteData_TasteGrade {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TasteData_TasteGrade {
-    pub fn ss() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn s() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn a() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn b() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn c() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn d() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn e() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn f() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn g() -> Self {
-        Self { value: 8 }
     }
 }

@@ -10,162 +10,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencemind/MapSequenceMind_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapSequenceMind_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSequenceMind_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceMind.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSequenceMind_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapSequenceMind_Label {
-    pub fn move_skip() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn after_ai_engage_rewarp() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn attack() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn rod() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn item_use() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn breakdown() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn breakdown_enemy() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn destroy() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn escape() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn visit() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn destroy_village() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn treasure_box() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn door() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn torch() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn talk() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn dance() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn guard() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn full_bullet() -> Self {
-        Self { value: 17 }
-    }
-
-    pub fn enchant() -> Self {
-        Self { value: 18 }
-    }
-
-    pub fn contract() -> Self {
-        Self { value: 19 }
-    }
-
-    pub fn engage_charge() -> Self {
-        Self { value: 20 }
-    }
-
-    pub fn engage_wait() -> Self {
-        Self { value: 21 }
-    }
-
-    pub fn engage_summon() -> Self {
-        Self { value: 22 }
-    }
-
-    pub fn overlap_skill() -> Self {
-        Self { value: 23 }
-    }
-
-    pub fn command_skill() -> Self {
-        Self { value: 24 }
-    }
-
-    pub fn event_battle() -> Self {
-        Self { value: 25 }
-    }
-
-    pub fn fixed() -> Self {
-        Self { value: 26 }
-    }
-
-    pub fn dead() -> Self {
-        Self { value: 27 }
-    }
-
-    pub fn dead_without_event() -> Self {
-        Self { value: 28 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 29 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceMind")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -467,6 +311,195 @@ impl MapSequenceMind {
     }
 }
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencemind/MapSequenceMind_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceMind_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceMind_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceMind.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceMind_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceMind_Label {
+    pub fn move_skip() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn after_ai_engage_rewarp() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn item_use() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn breakdown() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn breakdown_enemy() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn escape() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn visit() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn destroy_village() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn treasure_box() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn door() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn torch() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn talk() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn dance() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn guard() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn full_bullet() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn enchant() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn contract() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn engage_charge() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn engage_wait() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn engage_summon() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn overlap_skill() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn command_skill() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn event_battle() -> Self {
+        Self { value: 25 }
+    }
+
+    pub fn fixed() -> Self {
+        Self { value: 26 }
+    }
+
+    pub fn dead() -> Self {
+        Self { value: 27 }
+    }
+
+    pub fn dead_without_event() -> Self {
+        Self { value: 28 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 29 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind_ProcMindBase.md"))]
+#[::unity2::class(namespace = "App", name = "MapSequenceMind.ProcMindBase")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct MapSequenceMind_ProcMindBase {}
+
+#[cfg(feature = "app-mapsequencemind")]
+#[::unity2::methods]
+impl MapSequenceMind_ProcMindBase {
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsequencemind")]
+impl MapSequenceMind_ProcMindBase {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSequenceMind_ProcMindBase),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSequenceMind_ProcMindBaseMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind_ProcEscape.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceMind.ProcEscape")]
 #[parent(crate::app::mapsequencemind::MapSequenceMind_ProcMindBase)]
@@ -507,39 +540,6 @@ impl MapSequenceMind_ProcEscape {
             )
         });
         <Self as IMapSequenceMind_ProcEscapeMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequencemind/MapSequenceMind_ProcMindBase.md"))]
-#[::unity2::class(namespace = "App", name = "MapSequenceMind.ProcMindBase")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct MapSequenceMind_ProcMindBase {}
-
-#[cfg(feature = "app-mapsequencemind")]
-#[::unity2::methods]
-impl MapSequenceMind_ProcMindBase {
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsequencemind")]
-impl MapSequenceMind_ProcMindBase {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSequenceMind_ProcMindBase),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSequenceMind_ProcMindBaseMethods>::ctor(this);
         this
     }
 }

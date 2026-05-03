@@ -12,6 +12,88 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimageunit/MapImageUnit_PositionScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapImageUnit_PositionScope {
+    pub m_unit: crate::app::unit::Unit,
+    pub m_x: i32,
+    pub m_z: i32,
+}
+
+impl ::unity2::ClassIdentity for MapImageUnit_PositionScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapImageUnit.PositionScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapImageUnit_PositionScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapimageunit")]
+#[::unity2::methods(value)]
+impl MapImageUnit_PositionScope {
+    #[doc = "`.ctor(crate::app::unit::Unit, i32, i32)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(self, unit: crate::app::unit::Unit, x: i32, z: i32) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimageunit/MapImageUnit_UnitScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapImageUnit_UnitScope {
+    pub m_unit: crate::app::unit::Unit,
+}
+
+impl ::unity2::ClassIdentity for MapImageUnit_UnitScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapImageUnit.UnitScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapImageUnit_UnitScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapimageunit")]
+#[::unity2::methods(value)]
+impl MapImageUnit_UnitScope {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimageunit/MapImageUnit.md"))]
 #[::unity2::class(namespace = "App", name = "MapImageUnit")]
 #[parent(crate::app::mapimagecorebyte::MapImageCoreByte)]
@@ -122,86 +204,4 @@ impl MapImageUnit {
         <Self as IMapImageUnitMethods>::ctor(this);
         this
     }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimageunit/MapImageUnit_PositionScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapImageUnit_PositionScope {
-    pub m_unit: crate::app::unit::Unit,
-    pub m_x: i32,
-    pub m_z: i32,
-}
-
-impl ::unity2::ClassIdentity for MapImageUnit_PositionScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapImageUnit.PositionScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapImageUnit_PositionScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-mapimageunit")]
-#[::unity2::methods(value)]
-impl MapImageUnit_PositionScope {
-    #[doc = "`.ctor(crate::app::unit::Unit, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, unit: crate::app::unit::Unit, x: i32, z: i32) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimageunit/MapImageUnit_UnitScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapImageUnit_UnitScope {
-    pub m_unit: crate::app::unit::Unit,
-}
-
-impl ::unity2::ClassIdentity for MapImageUnit_UnitScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapImageUnit.UnitScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapImageUnit_UnitScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-mapimageunit")]
-#[::unity2::methods(value)]
-impl MapImageUnit_UnitScope {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
 }

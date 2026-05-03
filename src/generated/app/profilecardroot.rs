@@ -84,44 +84,6 @@ impl ProfileCardRoot_RectInfo {
     ) -> f32;
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_AchievementInfo.md"))]
-#[::unity2::class(namespace = "App", name = "ProfileCardRoot.AchievementInfo")]
-#[parent(crate::system::object::Object)]
-pub struct ProfileCardRoot_AchievementInfo {
-    #[rename(name = "m_Icon")]
-    pub m_icon: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_Caption")]
-    pub m_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_Count")]
-    pub m_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_BgImage")]
-    pub m_bg_image: crate::unity_engine::ui::image::Image,
-}
-
-#[cfg(feature = "app-profilecardroot")]
-#[::unity2::methods]
-impl ProfileCardRoot_AchievementInfo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-profilecardroot")]
-impl ProfileCardRoot_AchievementInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardRoot_AchievementInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardRoot_AchievementInfoMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_SortieCountInfo.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardRoot.SortieCountInfo")]
 #[parent(crate::system::object::Object)]
@@ -158,6 +120,44 @@ impl ProfileCardRoot_SortieCountInfo {
             )
         });
         <Self as IProfileCardRoot_SortieCountInfoMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardroot/ProfileCardRoot_AchievementInfo.md"))]
+#[::unity2::class(namespace = "App", name = "ProfileCardRoot.AchievementInfo")]
+#[parent(crate::system::object::Object)]
+pub struct ProfileCardRoot_AchievementInfo {
+    #[rename(name = "m_Icon")]
+    pub m_icon: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_Caption")]
+    pub m_caption: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Count")]
+    pub m_count: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_BgImage")]
+    pub m_bg_image: crate::unity_engine::ui::image::Image,
+}
+
+#[cfg(feature = "app-profilecardroot")]
+#[::unity2::methods]
+impl ProfileCardRoot_AchievementInfo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-profilecardroot")]
+impl ProfileCardRoot_AchievementInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardRoot_AchievementInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardRoot_AchievementInfoMethods>::ctor(this);
         this
     }
 }

@@ -12,36 +12,6 @@ use crate::unity_engine::timeline::trackasset::ITrackAsset;
 use crate::unity_engine::timeline::trackasset::TrackAsset;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationtrack/AnimationTrack_AnimationTrackUpgrade.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Timeline",
-    name = "AnimationTrack.AnimationTrackUpgrade"
-)]
-#[parent(crate::system::object::Object)]
-pub struct AnimationTrack_AnimationTrackUpgrade {}
-
-#[cfg(feature = "unity_engine-timeline-animationtrack")]
-#[::unity2::methods]
-impl AnimationTrack_AnimationTrackUpgrade {
-    #[doc = "`ConvertRotationsToEuler(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
-    #[method(name = "ConvertRotationsToEuler", args = 1)]
-    pub fn convert_rotations_to_euler(
-        track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
-    ) -> ();
-
-    #[doc = "`ConvertRootMotion(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
-    #[method(name = "ConvertRootMotion", args = 1)]
-    pub fn convert_root_motion(
-        track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
-    ) -> ();
-
-    #[doc = "`ConvertInfiniteTrack(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
-    #[method(name = "ConvertInfiniteTrack", args = 1)]
-    pub fn convert_infinite_track(
-        track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
-    ) -> ();
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationtrack/AnimationTrack.md"))]
 #[::unity2::class(namespace = "UnityEngine.Timeline", name = "AnimationTrack")]
 #[parent(crate::unity_engine::timeline::trackasset::TrackAsset)]
@@ -591,4 +561,34 @@ impl AnimationTrack {
         <Self as IAnimationTrackMethods>::ctor(this);
         this
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationtrack/AnimationTrack_AnimationTrackUpgrade.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Timeline",
+    name = "AnimationTrack.AnimationTrackUpgrade"
+)]
+#[parent(crate::system::object::Object)]
+pub struct AnimationTrack_AnimationTrackUpgrade {}
+
+#[cfg(feature = "unity_engine-timeline-animationtrack")]
+#[::unity2::methods]
+impl AnimationTrack_AnimationTrackUpgrade {
+    #[doc = "`ConvertRotationsToEuler(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
+    #[method(name = "ConvertRotationsToEuler", args = 1)]
+    pub fn convert_rotations_to_euler(
+        track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
+    ) -> ();
+
+    #[doc = "`ConvertRootMotion(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
+    #[method(name = "ConvertRootMotion", args = 1)]
+    pub fn convert_root_motion(
+        track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
+    ) -> ();
+
+    #[doc = "`ConvertInfiniteTrack(crate::unity_engine::timeline::animationtrack::AnimationTrack)` overload"]
+    #[method(name = "ConvertInfiniteTrack", args = 1)]
+    pub fn convert_infinite_track(
+        track: crate::unity_engine::timeline::animationtrack::AnimationTrack,
+    ) -> ();
 }

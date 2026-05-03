@@ -12,39 +12,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpproc/HelpProc_EventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "HelpProc.EventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct HelpProc_EventHandler {}
-
-#[cfg(feature = "app-helpproc")]
-#[::unity2::methods]
-impl HelpProc_EventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-helpproc")]
-impl HelpProc_EventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HelpProc_EventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHelpProc_EventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpproc/HelpProc.md"))]
 #[::unity2::class(namespace = "App", name = "HelpProc")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: helpproc :: HelpProc >)]
@@ -198,6 +165,39 @@ impl HelpProc {
             )
         });
         <Self as IHelpProcMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/helpproc/HelpProc_EventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "HelpProc.EventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct HelpProc_EventHandler {}
+
+#[cfg(feature = "app-helpproc")]
+#[::unity2::methods]
+impl HelpProc_EventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-helpproc")]
+impl HelpProc_EventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HelpProc_EventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHelpProc_EventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

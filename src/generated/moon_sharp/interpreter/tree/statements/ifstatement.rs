@@ -8,48 +8,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/ifstatement/IfStatement_IfBlock.md"))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Tree.Statements",
-    name = "IfStatement.IfBlock"
-)]
-#[parent(crate::system::object::Object)]
-pub struct IfStatement_IfBlock {
-    #[rename(name = "Exp")]
-    pub exp: crate::moon_sharp::interpreter::tree::expression::Expression,
-    #[rename(name = "Block")]
-    pub block: crate::moon_sharp::interpreter::tree::statement::Statement,
-    #[rename(name = "StackFrame")]
-    pub stack_frame:
-        crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
-    #[rename(name = "Source")]
-    pub source: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
-#[::unity2::methods]
-impl IfStatement_IfBlock {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
-impl IfStatement_IfBlock {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(IfStatement_IfBlock),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IIfStatement_IfBlockMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/ifstatement/IfStatement.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Tree.Statements",
@@ -113,6 +71,48 @@ impl IfStatement {
             )
         });
         <Self as IIfStatementMethods>::ctor(this, lcontext);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/tree/statements/ifstatement/IfStatement_IfBlock.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Tree.Statements",
+    name = "IfStatement.IfBlock"
+)]
+#[parent(crate::system::object::Object)]
+pub struct IfStatement_IfBlock {
+    #[rename(name = "Exp")]
+    pub exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+    #[rename(name = "Block")]
+    pub block: crate::moon_sharp::interpreter::tree::statement::Statement,
+    #[rename(name = "StackFrame")]
+    pub stack_frame:
+        crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock,
+    #[rename(name = "Source")]
+    pub source: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
+#[::unity2::methods]
+impl IfStatement_IfBlock {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
+impl IfStatement_IfBlock {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(IfStatement_IfBlock),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IIfStatement_IfBlockMethods>::ctor(this);
         this
     }
 }

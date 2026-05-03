@@ -14,58 +14,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiongranbase/ActionGranBase_MoveAct.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ActionGranBase_MoveAct {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for ActionGranBase_MoveAct {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "ActionGranBase.MoveAct";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ActionGranBase_MoveAct {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ActionGranBase_MoveAct {
-    pub fn waiting() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn running() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn backstep() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn warp() -> Self {
-        Self { value: 3 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/actiongranbase/ActionGranBase.md"))]
 #[::unity2::class(namespace = "Combat", name = "ActionGranBase")]
 #[parent(crate::combat::actiondisposerholder::ActionDisposerHolder)]
@@ -168,5 +116,57 @@ impl ActionGranBase {
         });
         <Self as IActionGranBaseMethods>::ctor(this, ghr);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/actiongranbase/ActionGranBase_MoveAct.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ActionGranBase_MoveAct {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ActionGranBase_MoveAct {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "ActionGranBase.MoveAct";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ActionGranBase_MoveAct {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ActionGranBase_MoveAct {
+    pub fn waiting() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn running() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn backstep() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn warp() -> Self {
+        Self { value: 3 }
     }
 }

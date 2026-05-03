@@ -43,17 +43,21 @@ impl DebugAccessoryMenu_AddAllMenuItem {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu.md"))]
-#[::unity2::class(namespace = "App", name = "DebugAccessoryMenu")]
-#[parent(crate::system::object::Object)]
-pub struct DebugAccessoryMenu {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu_DeleteAllMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "DebugAccessoryMenu.DeleteAllMenuItem")]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct DebugAccessoryMenu_DeleteAllMenuItem {}
 
 #[cfg(feature = "app-debugaccessorymenu")]
 #[::unity2::methods]
-impl DebugAccessoryMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+impl DebugAccessoryMenu_DeleteAllMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -61,17 +65,17 @@ impl DebugAccessoryMenu {
 }
 
 #[cfg(feature = "app-debugaccessorymenu")]
-impl DebugAccessoryMenu {
+impl DebugAccessoryMenu_DeleteAllMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugAccessoryMenu),
+                ::core::stringify!(DebugAccessoryMenu_DeleteAllMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugAccessoryMenuMethods>::ctor(this);
+        <Self as IDebugAccessoryMenu_DeleteAllMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -138,21 +142,17 @@ impl DebugAccessoryMenu_AccessoryMenuItem {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu_DeleteAllMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "DebugAccessoryMenu.DeleteAllMenuItem")]
-#[parent(crate::app::menuitem::MenuItem)]
-pub struct DebugAccessoryMenu_DeleteAllMenuItem {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugaccessorymenu/DebugAccessoryMenu.md"))]
+#[::unity2::class(namespace = "App", name = "DebugAccessoryMenu")]
+#[parent(crate::system::object::Object)]
+pub struct DebugAccessoryMenu {}
 
 #[cfg(feature = "app-debugaccessorymenu")]
 #[::unity2::methods]
-impl DebugAccessoryMenu_DeleteAllMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+impl DebugAccessoryMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -160,17 +160,17 @@ impl DebugAccessoryMenu_DeleteAllMenuItem {
 }
 
 #[cfg(feature = "app-debugaccessorymenu")]
-impl DebugAccessoryMenu_DeleteAllMenuItem {
+impl DebugAccessoryMenu {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugAccessoryMenu_DeleteAllMenuItem),
+                ::core::stringify!(DebugAccessoryMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugAccessoryMenu_DeleteAllMenuItemMethods>::ctor(this);
+        <Self as IDebugAccessoryMenuMethods>::ctor(this);
         this
     }
 }

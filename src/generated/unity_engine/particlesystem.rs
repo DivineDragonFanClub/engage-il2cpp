@@ -10,17 +10,17 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TrailModule.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SubEmittersModule.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_TrailModule {
+pub struct ParticleSystem_SubEmittersModule {
     pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
 }
 
-impl ::unity2::ClassIdentity for ParticleSystem_TrailModule {
+impl ::unity2::ClassIdentity for ParticleSystem_SubEmittersModule {
     const NAMESPACE: &'static str = "UnityEngine";
 
-    const NAME: &'static str = "ParticleSystem.TrailModule";
+    const NAME: &'static str = "ParticleSystem.SubEmittersModule";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -29,7 +29,7 @@ impl ::unity2::ClassIdentity for ParticleSystem_TrailModule {
     }
 }
 
-impl ::unity2::IlType for ParticleSystem_TrailModule {
+impl ::unity2::IlType for ParticleSystem_SubEmittersModule {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -40,23 +40,23 @@ impl ::unity2::IlType for ParticleSystem_TrailModule {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_TrailModule {
+impl ParticleSystem_SubEmittersModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SizeOverLifetimeModule.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LifetimeByEmitterSpeedModule.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_SizeOverLifetimeModule {
+pub struct ParticleSystem_LifetimeByEmitterSpeedModule {
     pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
 }
 
-impl ::unity2::ClassIdentity for ParticleSystem_SizeOverLifetimeModule {
+impl ::unity2::ClassIdentity for ParticleSystem_LifetimeByEmitterSpeedModule {
     const NAMESPACE: &'static str = "UnityEngine";
 
-    const NAME: &'static str = "ParticleSystem.SizeOverLifetimeModule";
+    const NAME: &'static str = "ParticleSystem.LifetimeByEmitterSpeedModule";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -65,7 +65,7 @@ impl ::unity2::ClassIdentity for ParticleSystem_SizeOverLifetimeModule {
     }
 }
 
-impl ::unity2::IlType for ParticleSystem_SizeOverLifetimeModule {
+impl ::unity2::IlType for ParticleSystem_LifetimeByEmitterSpeedModule {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -76,23 +76,23 @@ impl ::unity2::IlType for ParticleSystem_SizeOverLifetimeModule {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_SizeOverLifetimeModule {
+impl ParticleSystem_LifetimeByEmitterSpeedModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_RotationBySpeedModule.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Collision.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_RotationBySpeedModule {
-    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+pub struct ParticleSystem_PlaybackState_Collision {
+    pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
 }
 
-impl ::unity2::ClassIdentity for ParticleSystem_RotationBySpeedModule {
+impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Collision {
     const NAMESPACE: &'static str = "UnityEngine";
 
-    const NAME: &'static str = "ParticleSystem.RotationBySpeedModule";
+    const NAME: &'static str = "ParticleSystem.PlaybackState.Collision";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -101,7 +101,35 @@ impl ::unity2::ClassIdentity for ParticleSystem_RotationBySpeedModule {
     }
 }
 
-impl ::unity2::IlType for ParticleSystem_RotationBySpeedModule {
+impl ::unity2::IlType for ParticleSystem_PlaybackState_Collision {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_RotationOverLifetimeModule.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_RotationOverLifetimeModule {
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_RotationOverLifetimeModule {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.RotationOverLifetimeModule";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_RotationOverLifetimeModule {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -112,7 +140,43 @@ impl ::unity2::IlType for ParticleSystem_RotationBySpeedModule {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_RotationBySpeedModule {
+impl ParticleSystem_RotationOverLifetimeModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_CustomDataModule.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_CustomDataModule {
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_CustomDataModule {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.CustomDataModule";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_CustomDataModule {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_CustomDataModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
@@ -154,17 +218,17 @@ impl ParticleSystem_NoiseModule {
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LightsModule.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ColorBySpeedModule.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_LightsModule {
+pub struct ParticleSystem_ColorBySpeedModule {
     pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
 }
 
-impl ::unity2::ClassIdentity for ParticleSystem_LightsModule {
+impl ::unity2::ClassIdentity for ParticleSystem_ColorBySpeedModule {
     const NAMESPACE: &'static str = "UnityEngine";
 
-    const NAME: &'static str = "ParticleSystem.LightsModule";
+    const NAME: &'static str = "ParticleSystem.ColorBySpeedModule";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -173,7 +237,7 @@ impl ::unity2::ClassIdentity for ParticleSystem_LightsModule {
     }
 }
 
-impl ::unity2::IlType for ParticleSystem_LightsModule {
+impl ::unity2::IlType for ParticleSystem_ColorBySpeedModule {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -184,10 +248,688 @@ impl ::unity2::IlType for ParticleSystem_LightsModule {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_LightsModule {
+impl ParticleSystem_ColorBySpeedModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TextureSheetAnimationModule.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_TextureSheetAnimationModule {
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_TextureSheetAnimationModule {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.TextureSheetAnimationModule";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_TextureSheetAnimationModule {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_TextureSheetAnimationModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Seed.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_PlaybackState_Seed {
+    pub x: u32,
+    pub y: u32,
+    pub z: u32,
+    pub w: u32,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Seed {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.PlaybackState.Seed";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_PlaybackState_Seed {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TrailModule.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_TrailModule {
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_TrailModule {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.TrailModule";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_TrailModule {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_TrailModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_EmissionModule.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_EmissionModule {
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_EmissionModule {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.EmissionModule";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_EmissionModule {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_EmissionModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+
+    #[doc = "`get_enabled()` overload"]
+    #[method(name = "get_enabled", args = 0)]
+    pub fn get_enabled(self) -> bool;
+
+    #[doc = "`set_enabled(bool)` overload"]
+    #[method(name = "set_enabled", args = 1)]
+    pub fn set_enabled(self, value: bool) -> ();
+
+    #[doc = "`set_rateOverTime(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    #[method(name = "set_rateOverTime", args = 1)]
+    pub fn set_rate_over_time(
+        self,
+        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+    ) -> ();
+
+    #[doc = "`get_rateOverTimeMultiplier()` overload"]
+    #[method(name = "get_rateOverTimeMultiplier", args = 0)]
+    pub fn get_rate_over_time_multiplier(self) -> f32;
+
+    #[doc = "`get_enabled_Injected(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)` overload"]
+    #[method(name = "get_enabled_Injected", args = 1)]
+    pub fn get_enabled_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+    ) -> bool;
+
+    #[doc = "`set_enabled_Injected(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule, bool)` overload"]
+    #[method(name = "set_enabled_Injected", args = 2)]
+    pub fn set_enabled_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+        value: bool,
+    ) -> ();
+
+    #[doc = "`set_rateOverTime_Injected(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule, crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    #[method(name = "set_rateOverTime_Injected", args = 2)]
+    pub fn set_rate_over_time_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+    ) -> ();
+
+    #[doc = "`get_rateOverTimeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)` overload"]
+    #[method(name = "get_rateOverTimeMultiplier_Injected", args = 1)]
+    pub fn get_rate_over_time_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
+    ) -> f32;
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MainModule.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_MainModule {
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_MainModule {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.MainModule";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_MainModule {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_MainModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+
+    #[doc = "`get_duration()` overload"]
+    #[method(name = "get_duration", args = 0)]
+    pub fn get_duration(self) -> f32;
+
+    #[doc = "`get_loop()` overload"]
+    #[method(name = "get_loop", args = 0)]
+    pub fn get_loop(self) -> bool;
+
+    #[doc = "`set_loop(bool)` overload"]
+    #[method(name = "set_loop", args = 1)]
+    pub fn set_loop(self, value: bool) -> ();
+
+    #[doc = "`get_startDelayMultiplier()` overload"]
+    #[method(name = "get_startDelayMultiplier", args = 0)]
+    pub fn get_start_delay_multiplier(self) -> f32;
+
+    #[doc = "`set_startDelayMultiplier(f32)` overload"]
+    #[method(name = "set_startDelayMultiplier", args = 1)]
+    pub fn set_start_delay_multiplier(self, value: f32) -> ();
+
+    #[doc = "`get_startLifetimeMultiplier()` overload"]
+    #[method(name = "get_startLifetimeMultiplier", args = 0)]
+    pub fn get_start_lifetime_multiplier(self) -> f32;
+
+    #[doc = "`set_startLifetimeMultiplier(f32)` overload"]
+    #[method(name = "set_startLifetimeMultiplier", args = 1)]
+    pub fn set_start_lifetime_multiplier(self, value: f32) -> ();
+
+    #[doc = "`get_startSpeedMultiplier()` overload"]
+    #[method(name = "get_startSpeedMultiplier", args = 0)]
+    pub fn get_start_speed_multiplier(self) -> f32;
+
+    #[doc = "`set_startSpeedMultiplier(f32)` overload"]
+    #[method(name = "set_startSpeedMultiplier", args = 1)]
+    pub fn set_start_speed_multiplier(self, value: f32) -> ();
+
+    #[doc = "`get_startSizeMultiplier()` overload"]
+    #[method(name = "get_startSizeMultiplier", args = 0)]
+    pub fn get_start_size_multiplier(self) -> f32;
+
+    #[doc = "`set_startSizeMultiplier(f32)` overload"]
+    #[method(name = "set_startSizeMultiplier", args = 1)]
+    pub fn set_start_size_multiplier(self, value: f32) -> ();
+
+    #[doc = "`set_startRotation(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    #[method(name = "set_startRotation", args = 1)]
+    pub fn set_start_rotation(
+        self,
+        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+    ) -> ();
+
+    #[doc = "`get_startRotationMultiplier()` overload"]
+    #[method(name = "get_startRotationMultiplier", args = 0)]
+    pub fn get_start_rotation_multiplier(self) -> f32;
+
+    #[doc = "`set_startRotationMultiplier(f32)` overload"]
+    #[method(name = "set_startRotationMultiplier", args = 1)]
+    pub fn set_start_rotation_multiplier(self, value: f32) -> ();
+
+    #[doc = "`get_startRotationXMultiplier()` overload"]
+    #[method(name = "get_startRotationXMultiplier", args = 0)]
+    pub fn get_start_rotation_x_multiplier(self) -> f32;
+
+    #[doc = "`set_startRotationXMultiplier(f32)` overload"]
+    #[method(name = "set_startRotationXMultiplier", args = 1)]
+    pub fn set_start_rotation_x_multiplier(self, value: f32) -> ();
+
+    #[doc = "`get_startRotationYMultiplier()` overload"]
+    #[method(name = "get_startRotationYMultiplier", args = 0)]
+    pub fn get_start_rotation_y_multiplier(self) -> f32;
+
+    #[doc = "`set_startRotationYMultiplier(f32)` overload"]
+    #[method(name = "set_startRotationYMultiplier", args = 1)]
+    pub fn set_start_rotation_y_multiplier(self, value: f32) -> ();
+
+    #[doc = "`get_startRotationZMultiplier()` overload"]
+    #[method(name = "get_startRotationZMultiplier", args = 0)]
+    pub fn get_start_rotation_z_multiplier(self) -> f32;
+
+    #[doc = "`set_startRotationZMultiplier(f32)` overload"]
+    #[method(name = "set_startRotationZMultiplier", args = 1)]
+    pub fn set_start_rotation_z_multiplier(self, value: f32) -> ();
+
+    #[doc = "`get_startColor()` overload"]
+    #[method(name = "get_startColor", args = 0)]
+    pub fn get_start_color(
+        self,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient;
+
+    #[doc = "`set_startColor(crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]
+    #[method(name = "set_startColor", args = 1)]
+    pub fn set_start_color(
+        self,
+        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
+    ) -> ();
+
+    #[doc = "`get_gravityModifierMultiplier()` overload"]
+    #[method(name = "get_gravityModifierMultiplier", args = 0)]
+    pub fn get_gravity_modifier_multiplier(self) -> f32;
+
+    #[doc = "`set_gravityModifierMultiplier(f32)` overload"]
+    #[method(name = "set_gravityModifierMultiplier", args = 1)]
+    pub fn set_gravity_modifier_multiplier(self, value: f32) -> ();
+
+    #[doc = "`get_simulationSpace()` overload"]
+    #[method(name = "get_simulationSpace", args = 0)]
+    pub fn get_simulation_space(
+        self,
+    ) -> crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace;
+
+    #[doc = "`set_simulationSpace(crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)` overload"]
+    #[method(name = "set_simulationSpace", args = 1)]
+    pub fn set_simulation_space(
+        self,
+        value: crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
+    ) -> ();
+
+    #[doc = "`get_simulationSpeed()` overload"]
+    #[method(name = "get_simulationSpeed", args = 0)]
+    pub fn get_simulation_speed(self) -> f32;
+
+    #[doc = "`set_simulationSpeed(f32)` overload"]
+    #[method(name = "set_simulationSpeed", args = 1)]
+    pub fn set_simulation_speed(self, value: f32) -> ();
+
+    #[doc = "`get_scalingMode()` overload"]
+    #[method(name = "get_scalingMode", args = 0)]
+    pub fn get_scaling_mode(
+        self,
+    ) -> crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode;
+
+    #[doc = "`set_scalingMode(crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)` overload"]
+    #[method(name = "set_scalingMode", args = 1)]
+    pub fn set_scaling_mode(
+        self,
+        value: crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
+    ) -> ();
+
+    #[doc = "`get_playOnAwake()` overload"]
+    #[method(name = "get_playOnAwake", args = 0)]
+    pub fn get_play_on_awake(self) -> bool;
+
+    #[doc = "`set_playOnAwake(bool)` overload"]
+    #[method(name = "set_playOnAwake", args = 1)]
+    pub fn set_play_on_awake(self, value: bool) -> ();
+
+    #[doc = "`get_maxParticles()` overload"]
+    #[method(name = "get_maxParticles", args = 0)]
+    pub fn get_max_particles(self) -> i32;
+
+    #[doc = "`set_maxParticles(i32)` overload"]
+    #[method(name = "set_maxParticles", args = 1)]
+    pub fn set_max_particles(self, value: i32) -> ();
+
+    #[doc = "`get_stopAction()` overload"]
+    #[method(name = "get_stopAction", args = 0)]
+    pub fn get_stop_action(
+        self,
+    ) -> crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction;
+
+    #[doc = "`set_stopAction(crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)` overload"]
+    #[method(name = "set_stopAction", args = 1)]
+    pub fn set_stop_action(
+        self,
+        value: crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,
+    ) -> ();
+
+    #[doc = "`get_cullingMode()` overload"]
+    #[method(name = "get_cullingMode", args = 0)]
+    pub fn get_culling_mode(
+        self,
+    ) -> crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode;
+
+    #[doc = "`set_cullingMode(crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)` overload"]
+    #[method(name = "set_cullingMode", args = 1)]
+    pub fn set_culling_mode(
+        self,
+        value: crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,
+    ) -> ();
+
+    #[doc = "`get_duration_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_duration_Injected", args = 1)]
+    pub fn get_duration_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> f32;
+
+    #[doc = "`get_loop_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_loop_Injected", args = 1)]
+    pub fn get_loop_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> bool;
+
+    #[doc = "`set_loop_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, bool)` overload"]
+    #[method(name = "set_loop_Injected", args = 2)]
+    pub fn set_loop_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: bool,
+    ) -> ();
+
+    #[doc = "`get_startDelayMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_startDelayMultiplier_Injected", args = 1)]
+    pub fn get_start_delay_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> f32;
+
+    #[doc = "`set_startDelayMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    #[method(name = "set_startDelayMultiplier_Injected", args = 2)]
+    pub fn set_start_delay_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+    ) -> ();
+
+    #[doc = "`get_startLifetimeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_startLifetimeMultiplier_Injected", args = 1)]
+    pub fn get_start_lifetime_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> f32;
+
+    #[doc = "`set_startLifetimeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    #[method(name = "set_startLifetimeMultiplier_Injected", args = 2)]
+    pub fn set_start_lifetime_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+    ) -> ();
+
+    #[doc = "`get_startSpeedMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_startSpeedMultiplier_Injected", args = 1)]
+    pub fn get_start_speed_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> f32;
+
+    #[doc = "`set_startSpeedMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    #[method(name = "set_startSpeedMultiplier_Injected", args = 2)]
+    pub fn set_start_speed_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+    ) -> ();
+
+    #[doc = "`get_startSizeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_startSizeMultiplier_Injected", args = 1)]
+    pub fn get_start_size_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> f32;
+
+    #[doc = "`set_startSizeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    #[method(name = "set_startSizeMultiplier_Injected", args = 2)]
+    pub fn set_start_size_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+    ) -> ();
+
+    #[doc = "`set_startRotation_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
+    #[method(name = "set_startRotation_Injected", args = 2)]
+    pub fn set_start_rotation_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
+    ) -> ();
+
+    #[doc = "`get_startRotationMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_startRotationMultiplier_Injected", args = 1)]
+    pub fn get_start_rotation_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> f32;
+
+    #[doc = "`set_startRotationMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    #[method(name = "set_startRotationMultiplier_Injected", args = 2)]
+    pub fn set_start_rotation_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+    ) -> ();
+
+    #[doc = "`get_startRotationXMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_startRotationXMultiplier_Injected", args = 1)]
+    pub fn get_start_rotation_x_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> f32;
+
+    #[doc = "`set_startRotationXMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    #[method(name = "set_startRotationXMultiplier_Injected", args = 2)]
+    pub fn set_start_rotation_x_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+    ) -> ();
+
+    #[doc = "`get_startRotationYMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_startRotationYMultiplier_Injected", args = 1)]
+    pub fn get_start_rotation_y_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> f32;
+
+    #[doc = "`set_startRotationYMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    #[method(name = "set_startRotationYMultiplier_Injected", args = 2)]
+    pub fn set_start_rotation_y_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+    ) -> ();
+
+    #[doc = "`get_startRotationZMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_startRotationZMultiplier_Injected", args = 1)]
+    pub fn get_start_rotation_z_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> f32;
+
+    #[doc = "`set_startRotationZMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    #[method(name = "set_startRotationZMultiplier_Injected", args = 2)]
+    pub fn set_start_rotation_z_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+    ) -> ();
+
+    #[doc = "`get_startColor_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]
+    #[method(name = "get_startColor_Injected", args = 2)]
+    pub fn get_start_color_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        ret: crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
+    ) -> ();
+
+    #[doc = "`set_startColor_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]
+    #[method(name = "set_startColor_Injected", args = 2)]
+    pub fn set_start_color_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
+    ) -> ();
+
+    #[doc = "`get_gravityModifierMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_gravityModifierMultiplier_Injected", args = 1)]
+    pub fn get_gravity_modifier_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> f32;
+
+    #[doc = "`set_gravityModifierMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    #[method(name = "set_gravityModifierMultiplier_Injected", args = 2)]
+    pub fn set_gravity_modifier_multiplier_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+    ) -> ();
+
+    #[doc = "`get_simulationSpace_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_simulationSpace_Injected", args = 1)]
+    pub fn get_simulation_space_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace;
+
+    #[doc = "`set_simulationSpace_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)` overload"]
+    #[method(name = "set_simulationSpace_Injected", args = 2)]
+    pub fn set_simulation_space_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
+    ) -> ();
+
+    #[doc = "`get_simulationSpeed_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_simulationSpeed_Injected", args = 1)]
+    pub fn get_simulation_speed_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> f32;
+
+    #[doc = "`set_simulationSpeed_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
+    #[method(name = "set_simulationSpeed_Injected", args = 2)]
+    pub fn set_simulation_speed_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: f32,
+    ) -> ();
+
+    #[doc = "`get_scalingMode_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_scalingMode_Injected", args = 1)]
+    pub fn get_scaling_mode_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode;
+
+    #[doc = "`set_scalingMode_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)` overload"]
+    #[method(name = "set_scalingMode_Injected", args = 2)]
+    pub fn set_scaling_mode_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
+    ) -> ();
+
+    #[doc = "`get_playOnAwake_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_playOnAwake_Injected", args = 1)]
+    pub fn get_play_on_awake_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> bool;
+
+    #[doc = "`set_playOnAwake_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, bool)` overload"]
+    #[method(name = "set_playOnAwake_Injected", args = 2)]
+    pub fn set_play_on_awake_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: bool,
+    ) -> ();
+
+    #[doc = "`get_maxParticles_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_maxParticles_Injected", args = 1)]
+    pub fn get_max_particles_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> i32;
+
+    #[doc = "`set_maxParticles_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, i32)` overload"]
+    #[method(name = "set_maxParticles_Injected", args = 2)]
+    pub fn set_max_particles_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: i32,
+    ) -> ();
+
+    #[doc = "`get_stopAction_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_stopAction_Injected", args = 1)]
+    pub fn get_stop_action_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction;
+
+    #[doc = "`set_stopAction_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)` overload"]
+    #[method(name = "set_stopAction_Injected", args = 2)]
+    pub fn set_stop_action_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,
+    ) -> ();
+
+    #[doc = "`get_cullingMode_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
+    #[method(name = "get_cullingMode_Injected", args = 1)]
+    pub fn get_culling_mode_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+    ) -> crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode;
+
+    #[doc = "`set_cullingMode_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)` overload"]
+    #[method(name = "set_cullingMode_Injected", args = 2)]
+    pub fn set_culling_mode_injected(
+        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
+        value: crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,
+    ) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Emission.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_PlaybackState_Emission {
+    pub m_particle_spacing: f32,
+    pub m_to_emit_accumulator: f32,
+    pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Emission {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.PlaybackState.Emission";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_PlaybackState_Emission {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
 }
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ShapeModule.md"))]
@@ -277,310 +1019,6 @@ impl ParticleSystem_ShapeModule {
     ) -> ();
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Trail.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_PlaybackState_Trail {
-    pub m_timer: f32,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Trail {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.PlaybackState.Trail";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_PlaybackState_Trail {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Seed4.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_PlaybackState_Seed4 {
-    pub x: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-    pub y: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-    pub z: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-    pub w: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Seed4 {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.PlaybackState.Seed4";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_PlaybackState_Seed4 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TriggerModule.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_TriggerModule {
-    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_TriggerModule {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.TriggerModule";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_TriggerModule {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_TriggerModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_Particle.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_Particle {
-    pub m_position: crate::unity_engine::vector3::Vector3,
-    pub m_velocity: crate::unity_engine::vector3::Vector3,
-    pub m_animated_velocity: crate::unity_engine::vector3::Vector3,
-    pub m_initial_velocity: crate::unity_engine::vector3::Vector3,
-    pub m_axis_of_rotation: crate::unity_engine::vector3::Vector3,
-    pub m_rotation: crate::unity_engine::vector3::Vector3,
-    pub m_angular_velocity: crate::unity_engine::vector3::Vector3,
-    pub m_start_size: crate::unity_engine::vector3::Vector3,
-    pub m_start_color: crate::unity_engine::color32::Color32,
-    pub m_random_seed: u32,
-    pub m_parent_random_seed: u32,
-    pub m_lifetime: f32,
-    pub m_start_lifetime: f32,
-    pub m_mesh_index: i32,
-    pub m_emit_accumulator0: f32,
-    pub m_emit_accumulator1: f32,
-    pub m_flags: u32,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_Particle {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.Particle";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_Particle {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_Particle {
-    #[doc = "`set_lifetime(f32)` overload"]
-    #[method(name = "set_lifetime", args = 1)]
-    pub fn set_lifetime(self, value: f32) -> ();
-
-    #[doc = "`set_position(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_position", args = 1)]
-    pub fn set_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`set_velocity(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_velocity", args = 1)]
-    pub fn set_velocity(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`set_remainingLifetime(f32)` overload"]
-    #[method(name = "set_remainingLifetime", args = 1)]
-    pub fn set_remaining_lifetime(self, value: f32) -> ();
-
-    #[doc = "`set_startLifetime(f32)` overload"]
-    #[method(name = "set_startLifetime", args = 1)]
-    pub fn set_start_lifetime(self, value: f32) -> ();
-
-    #[doc = "`set_startColor(crate::unity_engine::color32::Color32)` overload"]
-    #[method(name = "set_startColor", args = 1)]
-    pub fn set_start_color(self, value: crate::unity_engine::color32::Color32) -> ();
-
-    #[doc = "`set_randomSeed(u32)` overload"]
-    #[method(name = "set_randomSeed", args = 1)]
-    pub fn set_random_seed(self, value: u32) -> ();
-
-    #[doc = "`set_startSize(f32)` overload"]
-    #[method(name = "set_startSize", args = 1)]
-    pub fn set_start_size(self, value: f32) -> ();
-
-    #[doc = "`set_rotation(f32)` overload"]
-    #[method(name = "set_rotation", args = 1)]
-    pub fn set_rotation(self, value: f32) -> ();
-
-    #[doc = "`set_rotation3D(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_rotation3D", args = 1)]
-    pub fn set_rotation3_d(self, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`set_angularVelocity3D(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_angularVelocity3D", args = 1)]
-    pub fn set_angular_velocity3_d(self, value: crate::unity_engine::vector3::Vector3) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LimitVelocityOverLifetimeModule.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_LimitVelocityOverLifetimeModule {
-    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_LimitVelocityOverLifetimeModule {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.LimitVelocityOverLifetimeModule";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_LimitVelocityOverLifetimeModule {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_LimitVelocityOverLifetimeModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_EmissionModule.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_EmissionModule {
-    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_EmissionModule {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.EmissionModule";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_EmissionModule {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_EmissionModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-
-    #[doc = "`get_enabled()` overload"]
-    #[method(name = "get_enabled", args = 0)]
-    pub fn get_enabled(self) -> bool;
-
-    #[doc = "`set_enabled(bool)` overload"]
-    #[method(name = "set_enabled", args = 1)]
-    pub fn set_enabled(self, value: bool) -> ();
-
-    #[doc = "`set_rateOverTime(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_rateOverTime", args = 1)]
-    pub fn set_rate_over_time(
-        self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_rateOverTimeMultiplier()` overload"]
-    #[method(name = "get_rateOverTimeMultiplier", args = 0)]
-    pub fn get_rate_over_time_multiplier(self) -> f32;
-
-    #[doc = "`get_enabled_Injected(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)` overload"]
-    #[method(name = "get_enabled_Injected", args = 1)]
-    pub fn get_enabled_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
-    ) -> bool;
-
-    #[doc = "`set_enabled_Injected(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule, bool)` overload"]
-    #[method(name = "set_enabled_Injected", args = 2)]
-    pub fn set_enabled_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
-        value: bool,
-    ) -> ();
-
-    #[doc = "`set_rateOverTime_Injected(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule, crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_rateOverTime_Injected", args = 2)]
-    pub fn set_rate_over_time_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_rateOverTimeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)` overload"]
-    #[method(name = "get_rateOverTimeMultiplier_Injected", args = 1)]
-    pub fn get_rate_over_time_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,
-    ) -> f32;
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ColorOverLifetimeModule.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -617,6 +1055,40 @@ impl ParticleSystem_ColorOverLifetimeModule {
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
 }
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_Trails.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_Trails {
+    pub positions:
+        crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
+    pub front_positions: crate::system::collections::generic::list_1::List_1<i32>,
+    pub back_positions: crate::system::collections::generic::list_1::List_1<i32>,
+    pub position_counts: crate::system::collections::generic::list_1::List_1<i32>,
+    pub max_trail_count: i32,
+    pub max_positions_per_trail_count: i32,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_Trails {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.Trails";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_Trails {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_InheritVelocityModule.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -651,6 +1123,108 @@ impl ParticleSystem_InheritVelocityModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Shape.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_PlaybackState_Shape {
+    pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
+    pub m_radius_timer: f32,
+    pub m_radius_timer_prev: f32,
+    pub m_arc_timer: f32,
+    pub m_arc_timer_prev: f32,
+    pub m_mesh_spawn_timer: f32,
+    pub m_mesh_spawn_timer_prev: f32,
+    pub m_ordered_mesh_vertex_index: i32,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Shape {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.PlaybackState.Shape";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_PlaybackState_Shape {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_PlaybackState {
+    pub m_accumulated_dt: f32,
+    pub m_start_delay: f32,
+    pub m_playback_time: f32,
+    pub m_ring_buffer_index: i32,
+    pub m_emission: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Emission,
+    pub m_initial: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Initial,
+    pub m_shape: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Shape,
+    pub m_force: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Force,
+    pub m_collision: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Collision,
+    pub m_noise: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Noise,
+    pub m_lights: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Lights,
+    pub m_trail: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Trail,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.PlaybackState";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_PlaybackState {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Noise.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_PlaybackState_Noise {
+    pub m_scroll_offset: f32,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Noise {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.PlaybackState.Noise";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_PlaybackState_Noise {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
 }
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/particlesystem/ParticleSystem.md"))]
@@ -1358,17 +1932,17 @@ impl ParticleSystem {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_CollisionModule.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SizeBySpeedModule.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_CollisionModule {
+pub struct ParticleSystem_SizeBySpeedModule {
     pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
 }
 
-impl ::unity2::ClassIdentity for ParticleSystem_CollisionModule {
+impl ::unity2::ClassIdentity for ParticleSystem_SizeBySpeedModule {
     const NAMESPACE: &'static str = "UnityEngine";
 
-    const NAME: &'static str = "ParticleSystem.CollisionModule";
+    const NAME: &'static str = "ParticleSystem.SizeBySpeedModule";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1377,7 +1951,7 @@ impl ::unity2::ClassIdentity for ParticleSystem_CollisionModule {
     }
 }
 
-impl ::unity2::IlType for ParticleSystem_CollisionModule {
+impl ::unity2::IlType for ParticleSystem_SizeBySpeedModule {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -1388,82 +1962,23 @@ impl ::unity2::IlType for ParticleSystem_CollisionModule {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_CollisionModule {
+impl ParticleSystem_SizeBySpeedModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Seed.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ExternalForcesModule.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_PlaybackState_Seed {
-    pub x: u32,
-    pub y: u32,
-    pub z: u32,
-    pub w: u32,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Seed {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.PlaybackState.Seed";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_PlaybackState_Seed {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Force.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_PlaybackState_Force {
-    pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Force {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.PlaybackState.Force";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_PlaybackState_Force {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_CustomDataModule.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_CustomDataModule {
+pub struct ParticleSystem_ExternalForcesModule {
     pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
 }
 
-impl ::unity2::ClassIdentity for ParticleSystem_CustomDataModule {
+impl ::unity2::ClassIdentity for ParticleSystem_ExternalForcesModule {
     const NAMESPACE: &'static str = "UnityEngine";
 
-    const NAME: &'static str = "ParticleSystem.CustomDataModule";
+    const NAME: &'static str = "ParticleSystem.ExternalForcesModule";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1472,7 +1987,7 @@ impl ::unity2::ClassIdentity for ParticleSystem_CustomDataModule {
     }
 }
 
-impl ::unity2::IlType for ParticleSystem_CustomDataModule {
+impl ::unity2::IlType for ParticleSystem_ExternalForcesModule {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -1483,23 +1998,39 @@ impl ::unity2::IlType for ParticleSystem_CustomDataModule {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_CustomDataModule {
+impl ParticleSystem_ExternalForcesModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LifetimeByEmitterSpeedModule.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_Particle.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_LifetimeByEmitterSpeedModule {
-    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+pub struct ParticleSystem_Particle {
+    pub m_position: crate::unity_engine::vector3::Vector3,
+    pub m_velocity: crate::unity_engine::vector3::Vector3,
+    pub m_animated_velocity: crate::unity_engine::vector3::Vector3,
+    pub m_initial_velocity: crate::unity_engine::vector3::Vector3,
+    pub m_axis_of_rotation: crate::unity_engine::vector3::Vector3,
+    pub m_rotation: crate::unity_engine::vector3::Vector3,
+    pub m_angular_velocity: crate::unity_engine::vector3::Vector3,
+    pub m_start_size: crate::unity_engine::vector3::Vector3,
+    pub m_start_color: crate::unity_engine::color32::Color32,
+    pub m_random_seed: u32,
+    pub m_parent_random_seed: u32,
+    pub m_lifetime: f32,
+    pub m_start_lifetime: f32,
+    pub m_mesh_index: i32,
+    pub m_emit_accumulator0: f32,
+    pub m_emit_accumulator1: f32,
+    pub m_flags: u32,
 }
 
-impl ::unity2::ClassIdentity for ParticleSystem_LifetimeByEmitterSpeedModule {
+impl ::unity2::ClassIdentity for ParticleSystem_Particle {
     const NAMESPACE: &'static str = "UnityEngine";
 
-    const NAME: &'static str = "ParticleSystem.LifetimeByEmitterSpeedModule";
+    const NAME: &'static str = "ParticleSystem.Particle";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -1508,7 +2039,7 @@ impl ::unity2::ClassIdentity for ParticleSystem_LifetimeByEmitterSpeedModule {
     }
 }
 
-impl ::unity2::IlType for ParticleSystem_LifetimeByEmitterSpeedModule {
+impl ::unity2::IlType for ParticleSystem_Particle {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -1519,795 +2050,50 @@ impl ::unity2::IlType for ParticleSystem_LifetimeByEmitterSpeedModule {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_LifetimeByEmitterSpeedModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Initial.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_PlaybackState_Initial {
-    pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Initial {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.PlaybackState.Initial";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_PlaybackState_Initial {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Collision.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_PlaybackState_Collision {
-    pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Collision {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.PlaybackState.Collision";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_PlaybackState_Collision {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TextureSheetAnimationModule.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_TextureSheetAnimationModule {
-    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_TextureSheetAnimationModule {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.TextureSheetAnimationModule";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_TextureSheetAnimationModule {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_TextureSheetAnimationModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MinMaxCurve.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_MinMaxCurve {
-    pub m_mode: crate::unity_engine::particlesystemcurvemode::ParticleSystemCurveMode,
-    pub m_curve_multiplier: f32,
-    pub m_curve_min: crate::unity_engine::animationcurve::AnimationCurve,
-    pub m_curve_max: crate::unity_engine::animationcurve::AnimationCurve,
-    pub m_constant_min: f32,
-    pub m_constant_max: f32,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_MinMaxCurve {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.MinMaxCurve";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_MinMaxCurve {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_MinMaxCurve {
-    #[doc = "`.ctor(f32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, constant: f32) -> ();
-
-    #[doc = "`op_Implicit(f32)` overload"]
-    #[method(name = "op_Implicit", args = 1)]
-    pub fn op_implicit(
-        constant: f32,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_VelocityOverLifetimeModule.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_VelocityOverLifetimeModule {
-    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_VelocityOverLifetimeModule {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.VelocityOverLifetimeModule";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_VelocityOverLifetimeModule {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_VelocityOverLifetimeModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_PlaybackState {
-    pub m_accumulated_dt: f32,
-    pub m_start_delay: f32,
-    pub m_playback_time: f32,
-    pub m_ring_buffer_index: i32,
-    pub m_emission: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Emission,
-    pub m_initial: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Initial,
-    pub m_shape: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Shape,
-    pub m_force: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Force,
-    pub m_collision: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Collision,
-    pub m_noise: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Noise,
-    pub m_lights: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Lights,
-    pub m_trail: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Trail,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.PlaybackState";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_PlaybackState {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ForceOverLifetimeModule.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_ForceOverLifetimeModule {
-    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_ForceOverLifetimeModule {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.ForceOverLifetimeModule";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_ForceOverLifetimeModule {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_ForceOverLifetimeModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ColorBySpeedModule.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_ColorBySpeedModule {
-    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_ColorBySpeedModule {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.ColorBySpeedModule";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_ColorBySpeedModule {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_ColorBySpeedModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Shape.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_PlaybackState_Shape {
-    pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
-    pub m_radius_timer: f32,
-    pub m_radius_timer_prev: f32,
-    pub m_arc_timer: f32,
-    pub m_arc_timer_prev: f32,
-    pub m_mesh_spawn_timer: f32,
-    pub m_mesh_spawn_timer_prev: f32,
-    pub m_ordered_mesh_vertex_index: i32,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Shape {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.PlaybackState.Shape";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_PlaybackState_Shape {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MainModule.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_MainModule {
-    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_MainModule {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.MainModule";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_MainModule {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_MainModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-
-    #[doc = "`get_duration()` overload"]
-    #[method(name = "get_duration", args = 0)]
-    pub fn get_duration(self) -> f32;
-
-    #[doc = "`get_loop()` overload"]
-    #[method(name = "get_loop", args = 0)]
-    pub fn get_loop(self) -> bool;
-
-    #[doc = "`set_loop(bool)` overload"]
-    #[method(name = "set_loop", args = 1)]
-    pub fn set_loop(self, value: bool) -> ();
-
-    #[doc = "`get_startDelayMultiplier()` overload"]
-    #[method(name = "get_startDelayMultiplier", args = 0)]
-    pub fn get_start_delay_multiplier(self) -> f32;
-
-    #[doc = "`set_startDelayMultiplier(f32)` overload"]
-    #[method(name = "set_startDelayMultiplier", args = 1)]
-    pub fn set_start_delay_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startLifetimeMultiplier()` overload"]
-    #[method(name = "get_startLifetimeMultiplier", args = 0)]
-    pub fn get_start_lifetime_multiplier(self) -> f32;
-
-    #[doc = "`set_startLifetimeMultiplier(f32)` overload"]
-    #[method(name = "set_startLifetimeMultiplier", args = 1)]
-    pub fn set_start_lifetime_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startSpeedMultiplier()` overload"]
-    #[method(name = "get_startSpeedMultiplier", args = 0)]
-    pub fn get_start_speed_multiplier(self) -> f32;
-
-    #[doc = "`set_startSpeedMultiplier(f32)` overload"]
-    #[method(name = "set_startSpeedMultiplier", args = 1)]
-    pub fn set_start_speed_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startSizeMultiplier()` overload"]
-    #[method(name = "get_startSizeMultiplier", args = 0)]
-    pub fn get_start_size_multiplier(self) -> f32;
-
-    #[doc = "`set_startSizeMultiplier(f32)` overload"]
-    #[method(name = "set_startSizeMultiplier", args = 1)]
-    pub fn set_start_size_multiplier(self, value: f32) -> ();
-
-    #[doc = "`set_startRotation(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_startRotation", args = 1)]
-    pub fn set_start_rotation(
-        self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_startRotationMultiplier()` overload"]
-    #[method(name = "get_startRotationMultiplier", args = 0)]
-    pub fn get_start_rotation_multiplier(self) -> f32;
-
-    #[doc = "`set_startRotationMultiplier(f32)` overload"]
-    #[method(name = "set_startRotationMultiplier", args = 1)]
-    pub fn set_start_rotation_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startRotationXMultiplier()` overload"]
-    #[method(name = "get_startRotationXMultiplier", args = 0)]
-    pub fn get_start_rotation_x_multiplier(self) -> f32;
-
-    #[doc = "`set_startRotationXMultiplier(f32)` overload"]
-    #[method(name = "set_startRotationXMultiplier", args = 1)]
-    pub fn set_start_rotation_x_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startRotationYMultiplier()` overload"]
-    #[method(name = "get_startRotationYMultiplier", args = 0)]
-    pub fn get_start_rotation_y_multiplier(self) -> f32;
-
-    #[doc = "`set_startRotationYMultiplier(f32)` overload"]
-    #[method(name = "set_startRotationYMultiplier", args = 1)]
-    pub fn set_start_rotation_y_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startRotationZMultiplier()` overload"]
-    #[method(name = "get_startRotationZMultiplier", args = 0)]
-    pub fn get_start_rotation_z_multiplier(self) -> f32;
-
-    #[doc = "`set_startRotationZMultiplier(f32)` overload"]
-    #[method(name = "set_startRotationZMultiplier", args = 1)]
-    pub fn set_start_rotation_z_multiplier(self, value: f32) -> ();
-
-    #[doc = "`get_startColor()` overload"]
-    #[method(name = "get_startColor", args = 0)]
-    pub fn get_start_color(
-        self,
-    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient;
-
-    #[doc = "`set_startColor(crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]
+impl ParticleSystem_Particle {
+    #[doc = "`set_lifetime(f32)` overload"]
+    #[method(name = "set_lifetime", args = 1)]
+    pub fn set_lifetime(self, value: f32) -> ();
+
+    #[doc = "`set_position(crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "set_position", args = 1)]
+    pub fn set_position(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[doc = "`set_velocity(crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "set_velocity", args = 1)]
+    pub fn set_velocity(self, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[doc = "`set_remainingLifetime(f32)` overload"]
+    #[method(name = "set_remainingLifetime", args = 1)]
+    pub fn set_remaining_lifetime(self, value: f32) -> ();
+
+    #[doc = "`set_startLifetime(f32)` overload"]
+    #[method(name = "set_startLifetime", args = 1)]
+    pub fn set_start_lifetime(self, value: f32) -> ();
+
+    #[doc = "`set_startColor(crate::unity_engine::color32::Color32)` overload"]
     #[method(name = "set_startColor", args = 1)]
-    pub fn set_start_color(
-        self,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
-    ) -> ();
+    pub fn set_start_color(self, value: crate::unity_engine::color32::Color32) -> ();
 
-    #[doc = "`get_gravityModifierMultiplier()` overload"]
-    #[method(name = "get_gravityModifierMultiplier", args = 0)]
-    pub fn get_gravity_modifier_multiplier(self) -> f32;
+    #[doc = "`set_randomSeed(u32)` overload"]
+    #[method(name = "set_randomSeed", args = 1)]
+    pub fn set_random_seed(self, value: u32) -> ();
 
-    #[doc = "`set_gravityModifierMultiplier(f32)` overload"]
-    #[method(name = "set_gravityModifierMultiplier", args = 1)]
-    pub fn set_gravity_modifier_multiplier(self, value: f32) -> ();
+    #[doc = "`set_startSize(f32)` overload"]
+    #[method(name = "set_startSize", args = 1)]
+    pub fn set_start_size(self, value: f32) -> ();
 
-    #[doc = "`get_simulationSpace()` overload"]
-    #[method(name = "get_simulationSpace", args = 0)]
-    pub fn get_simulation_space(
-        self,
-    ) -> crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace;
+    #[doc = "`set_rotation(f32)` overload"]
+    #[method(name = "set_rotation", args = 1)]
+    pub fn set_rotation(self, value: f32) -> ();
 
-    #[doc = "`set_simulationSpace(crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)` overload"]
-    #[method(name = "set_simulationSpace", args = 1)]
-    pub fn set_simulation_space(
-        self,
-        value: crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
-    ) -> ();
+    #[doc = "`set_rotation3D(crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "set_rotation3D", args = 1)]
+    pub fn set_rotation3_d(self, value: crate::unity_engine::vector3::Vector3) -> ();
 
-    #[doc = "`get_simulationSpeed()` overload"]
-    #[method(name = "get_simulationSpeed", args = 0)]
-    pub fn get_simulation_speed(self) -> f32;
-
-    #[doc = "`set_simulationSpeed(f32)` overload"]
-    #[method(name = "set_simulationSpeed", args = 1)]
-    pub fn set_simulation_speed(self, value: f32) -> ();
-
-    #[doc = "`get_scalingMode()` overload"]
-    #[method(name = "get_scalingMode", args = 0)]
-    pub fn get_scaling_mode(
-        self,
-    ) -> crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode;
-
-    #[doc = "`set_scalingMode(crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)` overload"]
-    #[method(name = "set_scalingMode", args = 1)]
-    pub fn set_scaling_mode(
-        self,
-        value: crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
-    ) -> ();
-
-    #[doc = "`get_playOnAwake()` overload"]
-    #[method(name = "get_playOnAwake", args = 0)]
-    pub fn get_play_on_awake(self) -> bool;
-
-    #[doc = "`set_playOnAwake(bool)` overload"]
-    #[method(name = "set_playOnAwake", args = 1)]
-    pub fn set_play_on_awake(self, value: bool) -> ();
-
-    #[doc = "`get_maxParticles()` overload"]
-    #[method(name = "get_maxParticles", args = 0)]
-    pub fn get_max_particles(self) -> i32;
-
-    #[doc = "`set_maxParticles(i32)` overload"]
-    #[method(name = "set_maxParticles", args = 1)]
-    pub fn set_max_particles(self, value: i32) -> ();
-
-    #[doc = "`get_stopAction()` overload"]
-    #[method(name = "get_stopAction", args = 0)]
-    pub fn get_stop_action(
-        self,
-    ) -> crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction;
-
-    #[doc = "`set_stopAction(crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)` overload"]
-    #[method(name = "set_stopAction", args = 1)]
-    pub fn set_stop_action(
-        self,
-        value: crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,
-    ) -> ();
-
-    #[doc = "`get_cullingMode()` overload"]
-    #[method(name = "get_cullingMode", args = 0)]
-    pub fn get_culling_mode(
-        self,
-    ) -> crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode;
-
-    #[doc = "`set_cullingMode(crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)` overload"]
-    #[method(name = "set_cullingMode", args = 1)]
-    pub fn set_culling_mode(
-        self,
-        value: crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,
-    ) -> ();
-
-    #[doc = "`get_duration_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_duration_Injected", args = 1)]
-    pub fn get_duration_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`get_loop_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_loop_Injected", args = 1)]
-    pub fn get_loop_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> bool;
-
-    #[doc = "`set_loop_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, bool)` overload"]
-    #[method(name = "set_loop_Injected", args = 2)]
-    pub fn set_loop_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: bool,
-    ) -> ();
-
-    #[doc = "`get_startDelayMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startDelayMultiplier_Injected", args = 1)]
-    pub fn get_start_delay_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startDelayMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startDelayMultiplier_Injected", args = 2)]
-    pub fn set_start_delay_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startLifetimeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startLifetimeMultiplier_Injected", args = 1)]
-    pub fn get_start_lifetime_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startLifetimeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startLifetimeMultiplier_Injected", args = 2)]
-    pub fn set_start_lifetime_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startSpeedMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startSpeedMultiplier_Injected", args = 1)]
-    pub fn get_start_speed_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startSpeedMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startSpeedMultiplier_Injected", args = 2)]
-    pub fn set_start_speed_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startSizeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startSizeMultiplier_Injected", args = 1)]
-    pub fn get_start_size_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startSizeMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startSizeMultiplier_Injected", args = 2)]
-    pub fn set_start_size_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`set_startRotation_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]
-    #[method(name = "set_startRotation_Injected", args = 2)]
-    pub fn set_start_rotation_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve,
-    ) -> ();
-
-    #[doc = "`get_startRotationMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startRotationMultiplier_Injected", args = 1)]
-    pub fn get_start_rotation_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startRotationMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startRotationMultiplier_Injected", args = 2)]
-    pub fn set_start_rotation_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startRotationXMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startRotationXMultiplier_Injected", args = 1)]
-    pub fn get_start_rotation_x_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startRotationXMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startRotationXMultiplier_Injected", args = 2)]
-    pub fn set_start_rotation_x_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startRotationYMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startRotationYMultiplier_Injected", args = 1)]
-    pub fn get_start_rotation_y_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startRotationYMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startRotationYMultiplier_Injected", args = 2)]
-    pub fn set_start_rotation_y_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startRotationZMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_startRotationZMultiplier_Injected", args = 1)]
-    pub fn get_start_rotation_z_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_startRotationZMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_startRotationZMultiplier_Injected", args = 2)]
-    pub fn set_start_rotation_z_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_startColor_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]
-    #[method(name = "get_startColor_Injected", args = 2)]
-    pub fn get_start_color_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        ret: crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
-    ) -> ();
-
-    #[doc = "`set_startColor_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]
-    #[method(name = "set_startColor_Injected", args = 2)]
-    pub fn set_start_color_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient,
-    ) -> ();
-
-    #[doc = "`get_gravityModifierMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_gravityModifierMultiplier_Injected", args = 1)]
-    pub fn get_gravity_modifier_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_gravityModifierMultiplier_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_gravityModifierMultiplier_Injected", args = 2)]
-    pub fn set_gravity_modifier_multiplier_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_simulationSpace_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_simulationSpace_Injected", args = 1)]
-    pub fn get_simulation_space_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace;
-
-    #[doc = "`set_simulationSpace_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)` overload"]
-    #[method(name = "set_simulationSpace_Injected", args = 2)]
-    pub fn set_simulation_space_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,
-    ) -> ();
-
-    #[doc = "`get_simulationSpeed_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_simulationSpeed_Injected", args = 1)]
-    pub fn get_simulation_speed_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> f32;
-
-    #[doc = "`set_simulationSpeed_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]
-    #[method(name = "set_simulationSpeed_Injected", args = 2)]
-    pub fn set_simulation_speed_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: f32,
-    ) -> ();
-
-    #[doc = "`get_scalingMode_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_scalingMode_Injected", args = 1)]
-    pub fn get_scaling_mode_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode;
-
-    #[doc = "`set_scalingMode_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)` overload"]
-    #[method(name = "set_scalingMode_Injected", args = 2)]
-    pub fn set_scaling_mode_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,
-    ) -> ();
-
-    #[doc = "`get_playOnAwake_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_playOnAwake_Injected", args = 1)]
-    pub fn get_play_on_awake_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> bool;
-
-    #[doc = "`set_playOnAwake_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, bool)` overload"]
-    #[method(name = "set_playOnAwake_Injected", args = 2)]
-    pub fn set_play_on_awake_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: bool,
-    ) -> ();
-
-    #[doc = "`get_maxParticles_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_maxParticles_Injected", args = 1)]
-    pub fn get_max_particles_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> i32;
-
-    #[doc = "`set_maxParticles_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, i32)` overload"]
-    #[method(name = "set_maxParticles_Injected", args = 2)]
-    pub fn set_max_particles_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: i32,
-    ) -> ();
-
-    #[doc = "`get_stopAction_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_stopAction_Injected", args = 1)]
-    pub fn get_stop_action_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction;
-
-    #[doc = "`set_stopAction_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)` overload"]
-    #[method(name = "set_stopAction_Injected", args = 2)]
-    pub fn set_stop_action_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,
-    ) -> ();
-
-    #[doc = "`get_cullingMode_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]
-    #[method(name = "get_cullingMode_Injected", args = 1)]
-    pub fn get_culling_mode_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-    ) -> crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode;
-
-    #[doc = "`set_cullingMode_Injected(crate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)` overload"]
-    #[method(name = "set_cullingMode_Injected", args = 2)]
-    pub fn set_culling_mode_injected(
-        unity_self: crate::unity_engine::particlesystem::ParticleSystem_MainModule,
-        value: crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,
-    ) -> ();
+    #[doc = "`set_angularVelocity3D(crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "set_angularVelocity3D", args = 1)]
+    pub fn set_angular_velocity3_d(self, value: crate::unity_engine::vector3::Vector3) -> ();
 }
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MinMaxGradient.md"))]
@@ -2360,17 +2146,18 @@ impl ParticleSystem_MinMaxGradient {
     ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient;
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ExternalForcesModule.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Lights.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_ExternalForcesModule {
-    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+pub struct ParticleSystem_PlaybackState_Lights {
+    pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
+    pub m_particle_emission_counter: f32,
 }
 
-impl ::unity2::ClassIdentity for ParticleSystem_ExternalForcesModule {
+impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Lights {
     const NAMESPACE: &'static str = "UnityEngine";
 
-    const NAME: &'static str = "ParticleSystem.ExternalForcesModule";
+    const NAME: &'static str = "ParticleSystem.PlaybackState.Lights";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -2379,7 +2166,40 @@ impl ::unity2::ClassIdentity for ParticleSystem_ExternalForcesModule {
     }
 }
 
-impl ::unity2::IlType for ParticleSystem_ExternalForcesModule {
+impl ::unity2::IlType for ParticleSystem_PlaybackState_Lights {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_MinMaxCurve.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_MinMaxCurve {
+    pub m_mode: crate::unity_engine::particlesystemcurvemode::ParticleSystemCurveMode,
+    pub m_curve_multiplier: f32,
+    pub m_curve_min: crate::unity_engine::animationcurve::AnimationCurve,
+    pub m_curve_max: crate::unity_engine::animationcurve::AnimationCurve,
+    pub m_constant_min: f32,
+    pub m_constant_max: f32,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_MinMaxCurve {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.MinMaxCurve";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_MinMaxCurve {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -2390,7 +2210,349 @@ impl ::unity2::IlType for ParticleSystem_ExternalForcesModule {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_ExternalForcesModule {
+impl ParticleSystem_MinMaxCurve {
+    #[doc = "`.ctor(f32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, constant: f32) -> ();
+
+    #[doc = "`op_Implicit(f32)` overload"]
+    #[method(name = "op_Implicit", args = 1)]
+    pub fn op_implicit(
+        constant: f32,
+    ) -> crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SizeOverLifetimeModule.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_SizeOverLifetimeModule {
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_SizeOverLifetimeModule {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.SizeOverLifetimeModule";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_SizeOverLifetimeModule {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_SizeOverLifetimeModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LimitVelocityOverLifetimeModule.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_LimitVelocityOverLifetimeModule {
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_LimitVelocityOverLifetimeModule {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.LimitVelocityOverLifetimeModule";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_LimitVelocityOverLifetimeModule {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_LimitVelocityOverLifetimeModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_CollisionModule.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_CollisionModule {
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_CollisionModule {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.CollisionModule";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_CollisionModule {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_CollisionModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Trail.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_PlaybackState_Trail {
+    pub m_timer: f32,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Trail {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.PlaybackState.Trail";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_PlaybackState_Trail {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_ForceOverLifetimeModule.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_ForceOverLifetimeModule {
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_ForceOverLifetimeModule {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.ForceOverLifetimeModule";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_ForceOverLifetimeModule {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_ForceOverLifetimeModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Force.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_PlaybackState_Force {
+    pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Force {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.PlaybackState.Force";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_PlaybackState_Force {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Initial.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_PlaybackState_Initial {
+    pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Initial {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.PlaybackState.Initial";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_PlaybackState_Initial {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_TriggerModule.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_TriggerModule {
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_TriggerModule {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.TriggerModule";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_TriggerModule {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_TriggerModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_VelocityOverLifetimeModule.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_VelocityOverLifetimeModule {
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_VelocityOverLifetimeModule {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.VelocityOverLifetimeModule";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_VelocityOverLifetimeModule {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_VelocityOverLifetimeModule {
+    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_LightsModule.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ParticleSystem_LightsModule {
+    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+}
+
+impl ::unity2::ClassIdentity for ParticleSystem_LightsModule {
+    const NAMESPACE: &'static str = "UnityEngine";
+
+    const NAME: &'static str = "ParticleSystem.LightsModule";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ParticleSystem_LightsModule {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-particlesystem")]
+#[::unity2::methods(value)]
+impl ParticleSystem_LightsModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
@@ -2435,23 +2597,20 @@ impl ::unity2::IlType for ParticleSystem_EmitParams {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_Trails.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Seed4.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_Trails {
-    pub positions:
-        crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,
-    pub front_positions: crate::system::collections::generic::list_1::List_1<i32>,
-    pub back_positions: crate::system::collections::generic::list_1::List_1<i32>,
-    pub position_counts: crate::system::collections::generic::list_1::List_1<i32>,
-    pub max_trail_count: i32,
-    pub max_positions_per_trail_count: i32,
+pub struct ParticleSystem_PlaybackState_Seed4 {
+    pub x: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
+    pub y: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
+    pub z: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
+    pub w: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
 }
 
-impl ::unity2::ClassIdentity for ParticleSystem_Trails {
+impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Seed4 {
     const NAMESPACE: &'static str = "UnityEngine";
 
-    const NAME: &'static str = "ParticleSystem.Trails";
+    const NAME: &'static str = "ParticleSystem.PlaybackState.Seed4";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -2460,7 +2619,7 @@ impl ::unity2::ClassIdentity for ParticleSystem_Trails {
     }
 }
 
-impl ::unity2::IlType for ParticleSystem_Trails {
+impl ::unity2::IlType for ParticleSystem_PlaybackState_Seed4 {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -2469,17 +2628,17 @@ impl ::unity2::IlType for ParticleSystem_Trails {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SubEmittersModule.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_RotationBySpeedModule.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_SubEmittersModule {
+pub struct ParticleSystem_RotationBySpeedModule {
     pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
 }
 
-impl ::unity2::ClassIdentity for ParticleSystem_SubEmittersModule {
+impl ::unity2::ClassIdentity for ParticleSystem_RotationBySpeedModule {
     const NAMESPACE: &'static str = "UnityEngine";
 
-    const NAME: &'static str = "ParticleSystem.SubEmittersModule";
+    const NAME: &'static str = "ParticleSystem.RotationBySpeedModule";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -2488,7 +2647,7 @@ impl ::unity2::ClassIdentity for ParticleSystem_SubEmittersModule {
     }
 }
 
-impl ::unity2::IlType for ParticleSystem_SubEmittersModule {
+impl ::unity2::IlType for ParticleSystem_RotationBySpeedModule {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -2499,166 +2658,7 @@ impl ::unity2::IlType for ParticleSystem_SubEmittersModule {
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[::unity2::methods(value)]
-impl ParticleSystem_SubEmittersModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Emission.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_PlaybackState_Emission {
-    pub m_particle_spacing: f32,
-    pub m_to_emit_accumulator: f32,
-    pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Emission {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.PlaybackState.Emission";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_PlaybackState_Emission {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Lights.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_PlaybackState_Lights {
-    pub m_random: crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,
-    pub m_particle_emission_counter: f32,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Lights {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.PlaybackState.Lights";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_PlaybackState_Lights {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Noise.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_PlaybackState_Noise {
-    pub m_scroll_offset: f32,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_PlaybackState_Noise {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.PlaybackState.Noise";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_PlaybackState_Noise {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_RotationOverLifetimeModule.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_RotationOverLifetimeModule {
-    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_RotationOverLifetimeModule {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.RotationOverLifetimeModule";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_RotationOverLifetimeModule {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_RotationOverLifetimeModule {
-    #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particlesystem/ParticleSystem_SizeBySpeedModule.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ParticleSystem_SizeBySpeedModule {
-    pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-}
-
-impl ::unity2::ClassIdentity for ParticleSystem_SizeBySpeedModule {
-    const NAMESPACE: &'static str = "UnityEngine";
-
-    const NAME: &'static str = "ParticleSystem.SizeBySpeedModule";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ParticleSystem_SizeBySpeedModule {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-particlesystem")]
-#[::unity2::methods(value)]
-impl ParticleSystem_SizeBySpeedModule {
+impl ParticleSystem_RotationBySpeedModule {
     #[doc = "`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, particle_system: crate::unity_engine::particlesystem::ParticleSystem) -> ();

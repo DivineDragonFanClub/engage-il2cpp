@@ -334,29 +334,6 @@ impl UniversalRenderPipeline {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline_Context.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal",
-    name = "UniversalRenderPipeline.Profiling.Pipeline.Context"
-)]
-#[parent(crate::system::object::Object)]
-pub struct UniversalRenderPipeline_Profiling_Pipeline_Context {
-    #[static_field]
-    #[rename(name = "k_Name")]
-    pub k_name: ::unity2::Il2CppString,
-    #[static_field]
-    #[rename(name = "submit")]
-    pub submit: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
-#[::unity2::methods]
-impl UniversalRenderPipeline_Profiling_Pipeline_Context {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline_Renderer.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
@@ -384,21 +361,30 @@ impl UniversalRenderPipeline_Profiling_Pipeline_Renderer {
     pub fn cctor() -> ();
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline_XR.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_CustomRPTime.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
-    name = "UniversalRenderPipeline.Profiling.Pipeline.XR"
+    name = "UniversalRenderPipeline.CustomRPTime"
 )]
 #[parent(crate::system::object::Object)]
-pub struct UniversalRenderPipeline_Profiling_Pipeline_XR {
+pub struct UniversalRenderPipeline_CustomRPTime {
     #[static_field]
-    #[rename(name = "mirrorView")]
-    pub mirror_view: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[rename(name = "_Enabled")]
+    pub enabled: bool,
+    #[static_field]
+    #[rename(name = "_Time")]
+    pub time: f64,
+    #[static_field]
+    #[rename(name = "_PrevTime")]
+    pub prev_time: f64,
+    #[static_field]
+    #[rename(name = "_TimeResetValue")]
+    pub time_reset_value: f64,
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
 #[::unity2::methods]
-impl UniversalRenderPipeline_Profiling_Pipeline_XR {
+impl UniversalRenderPipeline_CustomRPTime {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
@@ -436,30 +422,44 @@ impl UniversalRenderPipeline_Profiling {
     pub fn cctor() -> ();
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_CustomRPTime.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline_Context.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
-    name = "UniversalRenderPipeline.CustomRPTime"
+    name = "UniversalRenderPipeline.Profiling.Pipeline.Context"
 )]
 #[parent(crate::system::object::Object)]
-pub struct UniversalRenderPipeline_CustomRPTime {
+pub struct UniversalRenderPipeline_Profiling_Pipeline_Context {
     #[static_field]
-    #[rename(name = "_Enabled")]
-    pub enabled: bool,
+    #[rename(name = "k_Name")]
+    pub k_name: ::unity2::Il2CppString,
     #[static_field]
-    #[rename(name = "_Time")]
-    pub time: f64,
-    #[static_field]
-    #[rename(name = "_PrevTime")]
-    pub prev_time: f64,
-    #[static_field]
-    #[rename(name = "_TimeResetValue")]
-    pub time_reset_value: f64,
+    #[rename(name = "submit")]
+    pub submit: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
 #[::unity2::methods]
-impl UniversalRenderPipeline_CustomRPTime {
+impl UniversalRenderPipeline_Profiling_Pipeline_Context {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline_XR.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "UniversalRenderPipeline.Profiling.Pipeline.XR"
+)]
+#[parent(crate::system::object::Object)]
+pub struct UniversalRenderPipeline_Profiling_Pipeline_XR {
+    #[static_field]
+    #[rename(name = "mirrorView")]
+    pub mirror_view: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
+#[::unity2::methods]
+impl UniversalRenderPipeline_Profiling_Pipeline_XR {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();

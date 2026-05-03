@@ -20,6 +20,35 @@ use crate::unity_engine::ui::selectable::ISelectable;
 use crate::unity_engine::ui::selectable::Selectable;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/button/Button_ButtonClickedEvent.md"))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "Button.ButtonClickedEvent")]
+#[parent(crate::unity_engine::events::unityevent::UnityEvent)]
+pub struct Button_ButtonClickedEvent {}
+
+#[cfg(feature = "unity_engine-ui-button")]
+#[::unity2::methods]
+impl Button_ButtonClickedEvent {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-button")]
+impl Button_ButtonClickedEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Button_ButtonClickedEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IButton_ButtonClickedEventMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/button/Button.md"))]
 #[::unity2::class(namespace = "UnityEngine.UI", name = "Button")]
 #[parent(crate::unity_engine::ui::selectable::Selectable)]
@@ -81,35 +110,6 @@ impl Button {
             )
         });
         <Self as IButtonMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/button/Button_ButtonClickedEvent.md"))]
-#[::unity2::class(namespace = "UnityEngine.UI", name = "Button.ButtonClickedEvent")]
-#[parent(crate::unity_engine::events::unityevent::UnityEvent)]
-pub struct Button_ButtonClickedEvent {}
-
-#[cfg(feature = "unity_engine-ui-button")]
-#[::unity2::methods]
-impl Button_ButtonClickedEvent {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-ui-button")]
-impl Button_ButtonClickedEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Button_ButtonClickedEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IButton_ButtonClickedEventMethods>::ctor(this);
         this
     }
 }

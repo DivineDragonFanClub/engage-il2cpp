@@ -34,6 +34,91 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_DebugPersistentMenu.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence.DebugPersistentMenu")]
+#[parent(crate::app::debugmenu::DebugMenu)]
+pub struct VersusSequence_DebugPersistentMenu {}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_DebugPersistentMenu {
+    #[doc = "`get_IsInitCasual()` overload"]
+    #[method(name = "get_IsInitCasual", args = 0)]
+    pub fn get_is_init_casual() -> bool;
+
+    #[doc = "`set_IsInitCasual(bool)` overload"]
+    #[method(name = "set_IsInitCasual", args = 1)]
+    pub fn set_is_init_casual(value: bool) -> ();
+
+    #[doc = "`get_IsSelectReplay()` overload"]
+    #[method(name = "get_IsSelectReplay", args = 0)]
+    pub fn get_is_select_replay() -> bool;
+
+    #[doc = "`set_IsSelectReplay(bool)` overload"]
+    #[method(name = "set_IsSelectReplay", args = 1)]
+    pub fn set_is_select_replay(value: bool) -> ();
+
+    #[doc = "`get_IsNotDeleteReplay()` overload"]
+    #[method(name = "get_IsNotDeleteReplay", args = 0)]
+    pub fn get_is_not_delete_replay() -> bool;
+
+    #[doc = "`set_IsNotDeleteReplay(bool)` overload"]
+    #[method(name = "set_IsNotDeleteReplay", args = 1)]
+    pub fn set_is_not_delete_replay(value: bool) -> ();
+
+    #[doc = "`get_IsLocalAirportMode()` overload"]
+    #[method(name = "get_IsLocalAirportMode", args = 0)]
+    pub fn get_is_local_airport_mode() -> bool;
+
+    #[doc = "`set_IsLocalAirportMode(bool)` overload"]
+    #[method(name = "set_IsLocalAirportMode", args = 1)]
+    pub fn set_is_local_airport_mode(value: bool) -> ();
+
+    #[doc = "`get_IsReportedEdit()` overload"]
+    #[method(name = "get_IsReportedEdit", args = 0)]
+    pub fn get_is_reported_edit() -> bool;
+
+    #[doc = "`set_IsReportedEdit(bool)` overload"]
+    #[method(name = "set_IsReportedEdit", args = 1)]
+    pub fn set_is_reported_edit(value: bool) -> ();
+
+    #[doc = "`get_IsDuplicate()` overload"]
+    #[method(name = "get_IsDuplicate", args = 0)]
+    pub fn get_is_duplicate() -> bool;
+
+    #[doc = "`set_IsDuplicate(bool)` overload"]
+    #[method(name = "set_IsDuplicate", args = 1)]
+    pub fn set_is_duplicate(value: bool) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_DebugPersistentMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_DebugPersistentMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_DebugPersistentMenuMethods>::ctor(this);
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence_Label.md"))]
 #[repr(C)]
 #[derive(
@@ -78,69 +163,179 @@ impl VersusSequence_VersusSequenceNet_SelectReplaySequence_Label {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusProfileMenu_VersusProfileMenuItem.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusTopMenu_RankedMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "VersusSequence.VersusProfileMenu.VersusProfileMenuItem"
+    name = "VersusSequence.VersusTopMenu.RankedMenuItem"
 )]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusProfileMenu_VersusProfileMenuItem {
-    #[rename(name = "m_Index")]
-    pub m_index: i32,
-    #[rename(name = "m_Profile")]
-    pub m_profile: crate::app::profilecard::ProfileCard,
-    #[rename(name = "m_IsEnable")]
-    pub m_is_enable: bool,
-    #[rename(name = "m_Name")]
-    pub m_name: ::unity2::Il2CppString,
-    #[rename(name = "m_PrincipalID")]
-    pub m_principal_id: u64,
-}
+pub struct VersusSequence_VersusTopMenu_RankedMenuItem {}
 
 #[cfg(feature = "app-versussequence")]
 #[::unity2::methods]
-impl VersusSequence_VersusProfileMenu_VersusProfileMenuItem {
-    #[doc = "`.ctor(i32, crate::app::profilecard::ProfileCard, bool)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        index: i32,
-        profile: crate::app::profilecard::ProfileCard,
-        is_enable: bool,
-    ) -> ();
+impl VersusSequence_VersusTopMenu_RankedMenuItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 
     #[doc = "`ACall()` overload"]
     #[method(name = "ACall", args = 0)]
     pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+    #[doc = "`IsValid()` overload"]
+    #[method(name = "IsValid", args = 0)]
+    pub fn is_valid(self) -> bool;
 
-    #[doc = "`OnBuildMenuItemContent()` overload"]
-    #[method(name = "OnBuildMenuItemContent", args = 0)]
-    pub fn on_build_menu_item_content(self) -> ();
-
-    #[doc = "`OpenDialog()` overload"]
-    #[method(name = "OpenDialog", args = 0)]
-    pub fn open_dialog(self) -> crate::app::basicmenu::BasicMenu_Result;
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
 }
 
 #[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusProfileMenu_VersusProfileMenuItem {
-    #[doc = "`.ctor(i32, crate::app::profilecard::ProfileCard, bool)` — overload selector"]
-    pub fn new(index: i32, profile: crate::app::profilecard::ProfileCard, is_enable: bool) -> Self {
+impl VersusSequence_VersusTopMenu_RankedMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusProfileMenu_VersusProfileMenuItem),
+                ::core::stringify!(VersusSequence_VersusTopMenu_RankedMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IVersusSequence_VersusProfileMenu_VersusProfileMenuItemMethods>::ctor(
-            this, index, profile, is_enable,
-        );
+        <Self as IVersusSequence_VersusTopMenu_RankedMenuItemMethods>::ctor(this);
         this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusRankedMenu_MapEditMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusRankedMenu.MapEditMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct VersusSequence_VersusRankedMenu_MapEditMenuItem {}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusRankedMenu_MapEditMenuItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusRankedMenu_MapEditMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusRankedMenu_MapEditMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusRankedMenu_MapEditMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ResultDialog_AssistItem.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence.ResultDialog.AssistItem")]
+#[parent(crate::app::basicdialogitem::BasicDialogItem)]
+pub struct VersusSequence_ResultDialog_AssistItem {
+    #[rename(name = "m_SelectId")]
+    pub m_select_id: crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_ResultDialog_AssistItem {
+    #[doc = "`.ctor(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu, ::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        select_id: crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu,
+        messege: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_ResultDialog_AssistItem {
+    #[doc = "`.ctor(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(
+        select_id: crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu,
+        messege: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_ResultDialog_AssistItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_ResultDialog_AssistItemMethods>::ctor(this, select_id, messege);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussequence/VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity
+    for VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType
+{
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str =
+        "VersusSequence.VersusSequenceNet.DownloadMetaFromDataCodeSequence.DataType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType
+    for VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType
+{
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType {
+    pub fn casual() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ranked() -> Self {
+        Self { value: 1 }
     }
 }
 
@@ -367,6 +562,118 @@ impl VersusSequence_VersusSequenceNet {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ResultDialog_DecideEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.ResultDialog.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct VersusSequence_ResultDialog_DecideEventHandler {}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_ResultDialog_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        set: crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu,
+    ) -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_ResultDialog_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_ResultDialog_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_ResultDialog_DecideEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusRankedMenu.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence.VersusRankedMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct VersusSequence_VersusRankedMenu {
+    #[static_field]
+    #[rename(name = "m_MenuContent")]
+    pub m_menu_content: crate::app::versustopmenucontent::VersusTopMenuContent,
+    #[static_field]
+    #[rename(name = "m_InitialSelected")]
+    pub m_initial_selected: i32,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusRankedMenu {
+    #[doc = "`InitializedSelected()` overload"]
+    #[method(name = "InitializedSelected", args = 0)]
+    pub fn initialized_selected() -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::versustopmenucontent::VersusTopMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetTutorial()` overload"]
+    #[method(name = "GetTutorial", args = 0)]
+    pub fn get_tutorial(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusRankedMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::versustopmenucontent::VersusTopMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusRankedMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusRankedMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusFriendMenu.md"))]
 #[::unity2::class(namespace = "App", name = "VersusSequence.VersusFriendMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -448,118 +755,88 @@ impl VersusSequence_VersusFriendMenu {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusTopMenu_RankedMenuItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusTopMenu.RankedMenuItem"
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussequence/VersusSequence_VersusRankedMenu_Result2.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
 )]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusTopMenu_RankedMenuItem {}
+pub struct VersusSequence_VersusRankedMenu_Result2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for VersusSequence_VersusRankedMenu_Result2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "VersusSequence.VersusRankedMenu.Result2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for VersusSequence_VersusRankedMenu_Result2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl VersusSequence_VersusRankedMenu_Result2 {
+    pub fn start() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn map_edit() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn result() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn mock_battle() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn top() -> Self {
+        Self { value: 0 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_IVersusSequenceBase.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence.IVersusSequenceBase")]
+pub struct VersusSequence_IVersusSequenceBase {}
 
 #[cfg(feature = "app-versussequence")]
 #[::unity2::methods]
-impl VersusSequence_VersusTopMenu_RankedMenuItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+impl VersusSequence_IVersusSequenceBase {
+    #[doc = "`JumpTo(crate::app::versussequence::VersusSequence_Label)` overload"]
+    #[method(name = "JumpTo", args = 1)]
+    pub fn jump_to(self, label: crate::app::versussequence::VersusSequence_Label) -> ();
 
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    #[doc = "`GetMyEditDataId()` overload"]
+    #[method(name = "GetMyEditDataId", args = 0)]
+    pub fn get_my_edit_data_id(self) -> u64;
 
-    #[doc = "`IsValid()` overload"]
-    #[method(name = "IsValid", args = 0)]
-    pub fn is_valid(self) -> bool;
+    #[doc = "`GetNowRateName()` overload"]
+    #[method(name = "GetNowRateName", args = 0)]
+    pub fn get_now_rate_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusTopMenu_RankedMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusTopMenu_RankedMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusTopMenu_RankedMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusYesNoDialog_NoItem.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence.VersusYesNoDialog.NoItem")]
-#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-pub struct VersusSequence_VersusYesNoDialog_NoItem {
-    #[rename(name = "m_Name")]
-    pub m_name: ::unity2::Il2CppString,
-    #[rename(name = "m_CancelCallback")]
-    pub m_cancel_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
-}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusYesNoDialog_NoItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, name: ::unity2::Il2CppString, callback: crate::system::action::Action) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(
-        self,
-        name: ::unity2::Il2CppString,
-        callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusYesNoDialog_NoItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]
-    pub fn new(name: ::unity2::Il2CppString, callback: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusYesNoDialog_NoItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusYesNoDialog_NoItemMethods>::ctor(this, name, callback);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` — overload selector"]
-    pub fn new_2(
-        name: ::unity2::Il2CppString,
-        callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusYesNoDialog_NoItem),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IVersusSequence_VersusYesNoDialog_NoItemMethods>::ctor_2(this, name, callback);
-        this
-    }
+    #[doc = "`SetProfileTarget(crate::app::profilecard::ProfileCard)` overload"]
+    #[method(name = "SetProfileTarget", args = 1)]
+    pub fn set_profile_target(self, profile: crate::app::profilecard::ProfileCard) -> ();
 }
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence.md"))]
@@ -636,215 +913,6 @@ impl VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceLocal_MetaDataPack.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusSequenceLocal.MetaDataPack"
-)]
-#[parent(crate::system::object::Object)]
-pub struct VersusSequence_VersusSequenceLocal_MetaDataPack {
-    #[rename(name = "path")]
-    pub path: ::unity2::Il2CppString,
-    #[rename(name = "data")]
-    pub data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusSequenceLocal_MetaDataPack {
-    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        path: ::unity2::Il2CppString,
-    ) -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusSequenceLocal_MetaDataPack {
-    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(
-        data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        path: ::unity2::Il2CppString,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusSequenceLocal_MetaDataPack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusSequenceLocal_MetaDataPackMethods>::ctor(this, data, path);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussequence/VersusSequence_ProfileDownloadSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct VersusSequence_ProfileDownloadSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for VersusSequence_ProfileDownloadSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "VersusSequence.ProfileDownloadSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for VersusSequence_ProfileDownloadSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl VersusSequence_ProfileDownloadSequence_Label {
-    pub fn sanitize() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn save() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussequence/VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity
-    for VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType
-{
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str =
-        "VersusSequence.VersusSequenceNet.DownloadMetaFromDataCodeSequence.DataType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType
-    for VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType
-{
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl VersusSequence_VersusSequenceNet_DownloadMetaFromDataCodeSequence_DataType {
-    pub fn casual() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ranked() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ProfileDownloadSequence.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence.ProfileDownloadSequence")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct VersusSequence_ProfileDownloadSequence {
-    #[rename(name = "m_ReplayMetaData")]
-    pub m_replay_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_ProfileDownloadSequence {
-    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        replay_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-    ) -> ();
-
-    #[doc = "`TryGetOpponentInfo(::unity2::Il2CppString, u64)` overload"]
-    #[method(name = "TryGetOpponentInfo", args = 2)]
-    pub fn try_get_opponent_info(self, name: ::unity2::Il2CppString, principal_id: u64) -> bool;
-
-    #[doc = "`Download()` overload"]
-    #[method(name = "Download", args = 0)]
-    pub fn download(self) -> ();
-
-    #[doc = "`PostDownload()` overload"]
-    #[method(name = "PostDownload", args = 0)]
-    pub fn post_download(self) -> ();
-
-    #[doc = "`Sanitize()` overload"]
-    #[method(name = "Sanitize", args = 0)]
-    pub fn sanitize(self) -> ();
-
-    #[doc = "`OpenDialog()` overload"]
-    #[method(name = "OpenDialog", args = 0)]
-    pub fn open_dialog(self) -> ();
-
-    #[doc = "`Save()` overload"]
-    #[method(name = "Save", args = 0)]
-    pub fn save(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        replay_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-    ) -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_ProfileDownloadSequence {
-    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` — overload selector"]
-    pub fn new(
-        replay_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_ProfileDownloadSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_ProfileDownloadSequenceMethods>::ctor(this, replay_meta_data);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback.md"))]
 #[::unity2::class(
     namespace = "App",
@@ -888,61 +956,17 @@ impl VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadReplaySequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct VersusSequence_VersusSequenceNet_UploadReplaySequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for VersusSequence_VersusSequenceNet_UploadReplaySequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "VersusSequence.VersusSequenceNet.UploadReplaySequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for VersusSequence_VersusSequenceNet_UploadReplaySequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl VersusSequence_VersusSequenceNet_UploadReplaySequence_Label {
-    pub fn error() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusRankedMenu_StartMenuItem.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusTopMenu_CasualMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "VersusSequence.VersusRankedMenu.StartMenuItem"
+    name = "VersusSequence.VersusTopMenu.CasualMenuItem"
 )]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusRankedMenu_StartMenuItem {}
+pub struct VersusSequence_VersusTopMenu_CasualMenuItem {}
 
 #[cfg(feature = "app-versussequence")]
 #[::unity2::methods]
-impl VersusSequence_VersusRankedMenu_StartMenuItem {
+impl VersusSequence_VersusTopMenu_CasualMenuItem {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
@@ -954,450 +978,184 @@ impl VersusSequence_VersusRankedMenu_StartMenuItem {
     #[doc = "`OnSelect()` overload"]
     #[method(name = "OnSelect", args = 0)]
     pub fn on_select(self) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
 }
 
 #[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusRankedMenu_StartMenuItem {
+impl VersusSequence_VersusTopMenu_CasualMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusRankedMenu_StartMenuItem),
+                ::core::stringify!(VersusSequence_VersusTopMenu_CasualMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IVersusSequence_VersusRankedMenu_StartMenuItemMethods>::ctor(this);
+        <Self as IVersusSequence_VersusTopMenu_CasualMenuItemMethods>::ctor(this);
         this
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceLocal.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence.VersusSequenceLocal")]
-# [parent (crate :: app :: versussequence :: VersusSequence_VersusSequenceBase_1 < crate :: app :: versussequence :: VersusSequence_VersusSequenceLocal >)]
-pub struct VersusSequence_VersusSequenceLocal {
-    #[rename(name = "m_RootPath")]
-    pub m_root_path: ::unity2::Il2CppString,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusTopMenu.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence.VersusTopMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct VersusSequence_VersusTopMenu {
     #[static_field]
-    #[rename(name = "RateTop")]
-    pub rate_top: i32,
+    #[rename(name = "m_MenuContent")]
+    pub m_menu_content: crate::app::versustopmenucontent::VersusTopMenuContent,
     #[static_field]
-    #[rename(name = "RateBottom")]
-    pub rate_bottom: i32,
-    #[rename(name = "m_MyCasualMetaDataPath")]
-    pub m_my_casual_meta_data_path: ::unity2::Il2CppString,
-    #[rename(name = "m_MyEditDataPath")]
-    pub m_my_edit_data_path: ::unity2::Il2CppString,
-    #[rename(name = "m_SelectedReplayMetaPath")]
-    pub m_selected_replay_meta_path: ::unity2::Il2CppString,
-    #[rename(name = "m_IsSucceededLastUpload")]
-    pub m_is_succeeded_last_upload: bool,
-    #[rename(name = "m_LastReplayGetSlot")]
-    pub m_last_replay_get_slot: u16,
+    #[rename(name = "m_InitialSelected")]
+    pub m_initial_selected: i32,
 }
 
 #[cfg(feature = "app-versussequence")]
 #[::unity2::methods]
-impl VersusSequence_VersusSequenceLocal {
-    #[doc = "`InitImpl()` overload"]
-    #[method(name = "InitImpl", args = 0)]
-    pub fn init_impl(self) -> ();
-
-    #[doc = "`FinalImpl()` overload"]
-    #[method(name = "FinalImpl", args = 0)]
-    pub fn final_impl(self) -> ();
-
-    #[doc = "`IsFailedJumpToTopImpl()` overload"]
-    #[method(name = "IsFailedJumpToTopImpl", args = 0)]
-    pub fn is_failed_jump_to_top_impl(self) -> bool;
-
-    #[doc = "`IsReportedEditMapImpl()` overload"]
-    #[method(name = "IsReportedEditMapImpl", args = 0)]
-    pub fn is_reported_edit_map_impl(self) -> bool;
-
-    #[doc = "`UploadReportDataImpl()` overload"]
-    #[method(name = "UploadReportDataImpl", args = 0)]
-    pub fn upload_report_data_impl(self) -> ();
+impl VersusSequence_VersusTopMenu {
+    #[doc = "`InitializedSelected()` overload"]
+    #[method(name = "InitializedSelected", args = 0)]
+    pub fn initialized_selected() -> ();
 
     #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
     #[method(name = "CreateBind", args = 1)]
     pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
 
-    #[doc = "`CreateBindUploadEditData(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindUploadEditData", args = 1)]
-    pub fn create_bind_upload_edit_data(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`CreateBindUploadCasualData(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindUploadCasualData", args = 1)]
-    pub fn create_bind_upload_casual_data(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`InitializeLanRootPath()` overload"]
-    #[method(name = "InitializeLanRootPath", args = 0)]
-    pub fn initialize_lan_root_path(self) -> ();
-
-    #[doc = "`GetRateDirectoriesPaths()` overload"]
-    #[method(name = "GetRateDirectoriesPaths", args = 0)]
-    pub fn get_rate_directories_paths(self) -> ::unity2::Array<::unity2::Il2CppString>;
-
-    #[doc = "`GetRateDirPath(i32)` overload"]
-    #[method(name = "GetRateDirPath", args = 1)]
-    pub fn get_rate_dir_path(self, rate: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`AppendRate(i32)` overload"]
-    #[method(name = "AppendRate", args = 1)]
-    pub fn append_rate(rate: i32) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetDataFileName(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, i32)` overload"]
-    #[method(name = "GetDataFileName", args = 2)]
-    pub fn get_data_file_name(
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        rate: i32,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetDataFileName(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "GetDataFileName", args = 2)]
-    pub fn get_data_file_name_2(
-        player_name: ::unity2::Il2CppString,
-        rate: i32,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetDataFileName(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]
-    #[method(name = "GetDataFileName", args = 1)]
-    pub fn get_data_file_name_3(
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetDataFileName(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetDataFileName", args = 1)]
-    pub fn get_data_file_name_4(owner_name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMetaDataFileName(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, i32)` overload"]
-    #[method(name = "GetMetaDataFileName", args = 2)]
-    pub fn get_meta_data_file_name(
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        rate: i32,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMetaDataFileName(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "GetMetaDataFileName", args = 2)]
-    pub fn get_meta_data_file_name_2(
-        owner_name: ::unity2::Il2CppString,
-        rate: i32,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`MoveFiles(::unity2::Il2CppString, i32, i32)` overload"]
-    #[method(name = "MoveFiles", args = 3)]
-    pub fn move_files(
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
         self,
-        player_name: ::unity2::Il2CppString,
-        from_rate: i32,
-        to_rate: i32,
-    ) -> bool;
-
-    #[doc = "`GetReplayDataPath(::unity2::Il2CppString, u16)` overload"]
-    #[method(name = "GetReplayDataPath", args = 2)]
-    pub fn get_replay_data_path(
-        self,
-        player_name: ::unity2::Il2CppString,
-        slot_id: u16,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetReplayMetaPath(::unity2::Il2CppString, u16)` overload"]
-    #[method(name = "GetReplayMetaPath", args = 2)]
-    pub fn get_replay_meta_path(
-        self,
-        player_name: ::unity2::Il2CppString,
-        slot_id: u16,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetReplayMetaPaths(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetReplayMetaPaths", args = 1)]
-    pub fn get_replay_meta_paths(
-        self,
-        player_name: ::unity2::Il2CppString,
-    ) -> ::unity2::Array<::unity2::Il2CppString>;
-
-    #[doc = "`GetCasualDirectoryPath()` overload"]
-    #[method(name = "GetCasualDirectoryPath", args = 0)]
-    pub fn get_casual_directory_path(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetCasualDataPath(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetCasualDataPath", args = 1)]
-    pub fn get_casual_data_path(
-        self,
-        player_name: ::unity2::Il2CppString,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetCasualMetaPath(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetCasualMetaPath", args = 1)]
-    pub fn get_casual_meta_path(
-        self,
-        player_name: ::unity2::Il2CppString,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`FindCasualMetaPath(u64)` overload"]
-    #[method(name = "FindCasualMetaPath", args = 1)]
-    pub fn find_casual_meta_path(self, principal_id: u64) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetPath(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]
-    #[method(name = "GetPath", args = 1)]
-    pub fn get_path(
-        self,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`FindRankedMetaPath(u64)` overload"]
-    #[method(name = "FindRankedMetaPath", args = 1)]
-    pub fn find_ranked_meta_path(self, principal_id: u64) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetPlayerName(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetPlayerName", args = 1)]
-    pub fn get_player_name(self, path: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`TryGetPrincipalId(u64)` overload"]
-    #[method(name = "TryGetPrincipalId", args = 1)]
-    pub fn try_get_principal_id(self, principal_id: u64) -> bool;
-
-    #[doc = "`GetLocalNickName()` overload"]
-    #[method(name = "GetLocalNickName", args = 0)]
-    pub fn get_local_nick_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetMyCasualMetaDataImpl()` overload"]
-    #[method(name = "GetMyCasualMetaDataImpl", args = 0)]
-    pub fn get_my_casual_meta_data_impl(self) -> ();
-
-    #[doc = "`PostGetMyCasualMetaDataImpl()` overload"]
-    #[method(name = "PostGetMyCasualMetaDataImpl", args = 0)]
-    pub fn post_get_my_casual_meta_data_impl(self) -> ();
-
-    #[doc = "`GetEditMetaDataImpl()` overload"]
-    #[method(name = "GetEditMetaDataImpl", args = 0)]
-    pub fn get_edit_meta_data_impl(self) -> ();
-
-    #[doc = "`PostGetEditMetaDataImpl()` overload"]
-    #[method(name = "PostGetEditMetaDataImpl", args = 0)]
-    pub fn post_get_edit_meta_data_impl(self) -> ();
-
-    #[doc = "`UpdateRateImpl()` overload"]
-    #[method(name = "UpdateRateImpl", args = 0)]
-    pub fn update_rate_impl(self) -> ();
-
-    #[doc = "`SetRankedInfoImpl()` overload"]
-    #[method(name = "SetRankedInfoImpl", args = 0)]
-    pub fn set_ranked_info_impl(self) -> ();
-
-    #[doc = "`UploadEditDataImpl()` overload"]
-    #[method(name = "UploadEditDataImpl", args = 0)]
-    pub fn upload_edit_data_impl(self) -> ();
-
-    #[doc = "`LocalUpload(::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16)` overload"]
-    #[method(name = "LocalUpload", args = 4)]
-    pub fn local_upload(
-        self,
-        player_name: ::unity2::Il2CppString,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        data: crate::app::versusserverrankeddata::VersusServerRankedData,
-        rate_data_type: u16,
-    ) -> ();
-
-    #[doc = "`PostUploadEditDataImpl()` overload"]
-    #[method(name = "PostUploadEditDataImpl", args = 0)]
-    pub fn post_upload_edit_data_impl(self) -> ();
-
-    #[doc = "`DownloadMetaCasualFromDataCodeImpl()` overload"]
-    #[method(name = "DownloadMetaCasualFromDataCodeImpl", args = 0)]
-    pub fn download_meta_casual_from_data_code_impl(self) -> ();
-
-    #[doc = "`DownloadMetaRankedFromDataCodeImpl()` overload"]
-    #[method(name = "DownloadMetaRankedFromDataCodeImpl", args = 0)]
-    pub fn download_meta_ranked_from_data_code_impl(self) -> ();
-
-    #[doc = "`CheckAccessibleProfileImpl(crate::app::versus::Versus_Mode, crate::app::nexversus::NexVersus_TargetSlotList)` overload"]
-    #[method(name = "CheckAccessibleProfileImpl", args = 2)]
-    pub fn check_accessible_profile_impl(
-        self,
-        mode: crate::app::versus::Versus_Mode,
-        target_slot_list: crate::app::nexversus::NexVersus_TargetSlotList,
-    ) -> ();
-
-    #[doc = "`DownloadMetaProfileImpl(crate::app::versus::Versus_Mode, crate::app::profilecard::ProfileCard)` overload"]
-    #[method(name = "DownloadMetaProfileImpl", args = 2)]
-    pub fn download_meta_profile_impl(
-        self,
-        mode: crate::app::versus::Versus_Mode,
-        profile: crate::app::profilecard::ProfileCard,
-    ) -> ();
-
-    #[doc = "`DownloadCasualImpl()` overload"]
-    #[method(name = "DownloadCasualImpl", args = 0)]
-    pub fn download_casual_impl(self) -> ();
-
-    #[doc = "`UploadReplayImpl()` overload"]
-    #[method(name = "UploadReplayImpl", args = 0)]
-    pub fn upload_replay_impl(self) -> ();
-
-    #[doc = "`GetUploadReplaySlot(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetUploadReplaySlot", args = 1)]
-    pub fn get_upload_replay_slot(self, opponent_name: ::unity2::Il2CppString) -> u16;
-
-    #[doc = "`UploadCasualImpl()` overload"]
-    #[method(name = "UploadCasualImpl", args = 0)]
-    pub fn upload_casual_impl(self) -> ();
-
-    #[doc = "`ChangeCasualImpl()` overload"]
-    #[method(name = "ChangeCasualImpl", args = 0)]
-    pub fn change_casual_impl(self) -> ();
-
-    #[doc = "`ChangeCasualOpponentImpl()` overload"]
-    #[method(name = "ChangeCasualOpponentImpl", args = 0)]
-    pub fn change_casual_opponent_impl(self) -> ();
-
-    #[doc = "`SearchSameRateImpl()` overload"]
-    #[method(name = "SearchSameRateImpl", args = 0)]
-    pub fn search_same_rate_impl(self) -> ();
-
-    #[doc = "`ExcludeMySearchRankedData()` overload"]
-    #[method(name = "ExcludeMySearchRankedData", args = 0)]
-    pub fn exclude_my_search_ranked_data(self) -> ();
-
-    #[doc = "`SearchCasualImpl()` overload"]
-    #[method(name = "SearchCasualImpl", args = 0)]
-    pub fn search_casual_impl(self) -> ();
-
-    #[doc = "`SearchCasualLocal(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>, bool)` overload"]
-    #[method(name = "SearchCasualLocal", args = 2)]
-    pub fn search_casual_local(
-        self,
-        result_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
         >,
-        is_myself: bool,
+        menu_content: crate::app::versustopmenucontent::VersusTopMenuContent,
     ) -> ();
 
-    #[doc = "`SearchCasualFriendImpl()` overload"]
-    #[method(name = "SearchCasualFriendImpl", args = 0)]
-    pub fn search_casual_friend_impl(self) -> ();
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`SearchRankedFriendImpl()` overload"]
-    #[method(name = "SearchRankedFriendImpl", args = 0)]
-    pub fn search_ranked_friend_impl(self) -> ();
+    #[doc = "`GetTutorial()` overload"]
+    #[method(name = "GetTutorial", args = 0)]
+    pub fn get_tutorial(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`ExcludeMySearchCasualData(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]
-    #[method(name = "ExcludeMySearchCasualData", args = 1)]
-    pub fn exclude_my_search_casual_data(
-        self,
-        data_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        >,
-    ) -> ();
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 
-    #[doc = "`DownloadImpl()` overload"]
-    #[method(name = "DownloadImpl", args = 0)]
-    pub fn download_impl(self) -> ();
-
-    #[doc = "`DownloadMyEditImpl()` overload"]
-    #[method(name = "DownloadMyEditImpl", args = 0)]
-    pub fn download_my_edit_impl(self) -> ();
-
-    #[doc = "`SelectReplayImpl()` overload"]
-    #[method(name = "SelectReplayImpl", args = 0)]
-    pub fn select_replay_impl(self) -> ();
-
-    #[doc = "`MostOldestReplayMetaData(::unity2::Array<::unity2::Il2CppString>, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, ::unity2::Il2CppString)` overload"]
-    #[method(name = "MostOldestReplayMetaData", args = 3)]
-    pub fn most_oldest_replay_meta_data(
-        self,
-        paths: ::unity2::Array<::unity2::Il2CppString>,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        meta_path: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`DownloadReplayImpl()` overload"]
-    #[method(name = "DownloadReplayImpl", args = 0)]
-    pub fn download_replay_impl(self) -> ();
-
-    #[doc = "`ChangeReplayMetaImpl()` overload"]
-    #[method(name = "ChangeReplayMetaImpl", args = 0)]
-    pub fn change_replay_meta_impl(self) -> ();
-
-    #[doc = "`SearchMyDataToDataId()` overload"]
-    #[method(name = "SearchMyDataToDataId", args = 0)]
-    pub fn search_my_data_to_data_id(self) -> u64;
-
-    #[doc = "`GetLastUploadedResultImpl()` overload"]
-    #[method(name = "GetLastUploadedResultImpl", args = 0)]
-    pub fn get_last_uploaded_result_impl(self) -> bool;
-
-    #[doc = "`GetDownloadedEditMetaDataImpl()` overload"]
-    #[method(name = "GetDownloadedEditMetaDataImpl", args = 0)]
-    pub fn get_downloaded_edit_meta_data_impl(
-        self,
-    ) -> crate::app::versusserverrankedmetadata::VersusServerRankedMetaData;
-
-    #[doc = "`ChangeRankedMetaDataImpl(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]
-    #[method(name = "ChangeRankedMetaDataImpl", args = 1)]
-    pub fn change_ranked_meta_data_impl(
-        self,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-    ) -> ();
-
-    #[doc = "`ChangeDataTypeImpl(u64, u16)` overload"]
-    #[method(name = "ChangeDataTypeImpl", args = 2)]
-    pub fn change_data_type_impl(self, data_id: u64, data_type: u16) -> ();
-
-    #[doc = "`InitEditDataImpl()` overload"]
-    #[method(name = "InitEditDataImpl", args = 0)]
-    pub fn init_edit_data_impl(self) -> ();
-
-    #[doc = "`CheckParentalControlImpl()` overload"]
-    #[method(name = "CheckParentalControlImpl", args = 0)]
-    pub fn check_parental_control_impl(self) -> ();
-
-    #[doc = "`IsParentalControlAvailableImpl()` overload"]
-    #[method(name = "IsParentalControlAvailableImpl", args = 0)]
-    pub fn is_parental_control_available_impl(self) -> bool;
-
-    #[doc = "`EndParentalControlImpl()` overload"]
-    #[method(name = "EndParentalControlImpl", args = 0)]
-    pub fn end_parental_control_impl(self) -> ();
-
-    #[doc = "`CreateSelectReplayMetaMenu(::unity2::Array<::unity2::Il2CppString>, crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)` overload"]
-    #[method(name = "CreateSelectReplayMetaMenu", args = 2)]
-    pub fn create_select_replay_meta_menu(
-        self,
-        meta_paths: ::unity2::Array<::unity2::Il2CppString>,
-        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback,
-    ) -> ();
-
-    #[doc = "`Deserialize(::unity2::Il2CppString)` overload"]
-    #[method(name = "Deserialize", args = 1)]
-    pub fn deserialize(
-        self,
-        path: ::unity2::Il2CppString,
-    ) -> crate::app::versusserverreplaymetadata::VersusServerReplayMetaData;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }
 
 #[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusSequenceLocal {
+impl VersusSequence_VersusTopMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::versustopmenucontent::VersusTopMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusTopMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusTopMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusMatchingMenu_CodeMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusMatchingMenu.CodeMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct VersusSequence_VersusMatchingMenu_CodeMenuItem {}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusMatchingMenu_CodeMenuItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusMatchingMenu_CodeMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusSequenceLocal),
+                ::core::stringify!(VersusSequence_VersusMatchingMenu_CodeMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IVersusSequence_VersusSequenceLocalMethods>::ctor(this);
+        <Self as IVersusSequence_VersusMatchingMenu_CodeMenuItemMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussequence/VersusSequence_VersusTopMenu_Result2.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct VersusSequence_VersusTopMenu_Result2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for VersusSequence_VersusTopMenu_Result2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "VersusSequence.VersusTopMenu.Result2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for VersusSequence_VersusTopMenu_Result2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl VersusSequence_VersusTopMenu_Result2 {
+    pub fn casual() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ranked() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn top() -> Self {
+        Self { value: 0 }
     }
 }
 
@@ -1453,951 +1211,92 @@ impl VersusSequence_ResultDialog_SelectMenu {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusCasualMenu.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence.VersusCasualMenu")]
-#[parent(crate::app::basicmenu::BasicMenu)]
-pub struct VersusSequence_VersusCasualMenu {
-    #[static_field]
-    #[rename(name = "c_MapMax")]
-    pub c_map_max: i32,
-    #[static_field]
-    #[rename(name = "m_MenuContent")]
-    pub m_menu_content: crate::app::versusmapmenucontent::VersusMapMenuContent,
-    #[static_field]
-    #[rename(name = "m_InitialSelected")]
-    pub m_initial_selected: i32,
-}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusCasualMenu {
-    #[doc = "`InitializedSelected()` overload"]
-    #[method(name = "InitializedSelected", args = 0)]
-    pub fn initialized_selected() -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusmapmenucontent::VersusMapMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::versusmapmenucontent::VersusMapMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetTutorial()` overload"]
-    #[method(name = "GetTutorial", args = 0)]
-    pub fn get_tutorial(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusCasualMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusmapmenucontent::VersusMapMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::versusmapmenucontent::VersusMapMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusCasualMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusCasualMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ResultDialog.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence.ResultDialog")]
-#[parent(crate::app::basicdialog::BasicDialog)]
-pub struct VersusSequence_ResultDialog {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_ResultDialog {
-    #[doc = "`get_EventHandler()` overload"]
-    #[method(name = "get_EventHandler", args = 0)]
-    pub fn get_event_handler(
-    ) -> crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler;
-
-    #[doc = "`set_EventHandler(crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler)` overload"]
-    #[method(name = "set_EventHandler", args = 1)]
-    pub fn set_event_handler(
-        value: crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        event_handler: crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler,
-    ) -> crate::app::versussequence::VersusSequence_ResultDialog;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_ResultDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_ResultDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_ResultDialogMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusYesNoDialog_YesItem.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence.VersusYesNoDialog.YesItem")]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct VersusSequence_VersusYesNoDialog_YesItem {
-    #[rename(name = "m_Name")]
-    pub m_name: ::unity2::Il2CppString,
-    #[rename(name = "m_DecideCallback")]
-    pub m_decide_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
-    #[rename(name = "m_CancelCallback")]
-    pub m_cancel_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
-}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusYesNoDialog_YesItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        name: ::unity2::Il2CppString,
-        decide_callback: crate::system::action::Action,
-        cancel_callback: crate::system::action::Action,
-    ) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor_2(
-        self,
-        name: ::unity2::Il2CppString,
-        decide_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
-        cancel_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusYesNoDialog_YesItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::system::action::Action)` — overload selector"]
-    pub fn new(
-        name: ::unity2::Il2CppString,
-        decide_callback: crate::system::action::Action,
-        cancel_callback: crate::system::action::Action,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusYesNoDialog_YesItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusYesNoDialog_YesItemMethods>::ctor(
-            this,
-            name,
-            decide_callback,
-            cancel_callback,
-        );
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` — overload selector"]
-    pub fn new_2(
-        name: ::unity2::Il2CppString,
-        decide_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
-        cancel_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusYesNoDialog_YesItem),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IVersusSequence_VersusYesNoDialog_YesItemMethods>::ctor_2(
-            this,
-            name,
-            decide_callback,
-            cancel_callback,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusRankedMenu_ResultMenuItem.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "VersusSequence.VersusRankedMenu.ResultMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusRankedMenu_ResultMenuItem {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusRankedMenu_ResultMenuItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusRankedMenu_ResultMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusRankedMenu_ResultMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusRankedMenu_ResultMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusMatchingMenu_RandomMenuItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusMatchingMenu.RandomMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusMatchingMenu_RandomMenuItem {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusMatchingMenu_RandomMenuItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusMatchingMenu_RandomMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusMatchingMenu_RandomMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusMatchingMenu_RandomMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ProfileUploadSequence.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence.ProfileUploadSequence")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct VersusSequence_ProfileUploadSequence {
-    #[rename(name = "m_Profile")]
-    pub m_profile: crate::app::profilecard::ProfileCard,
-}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_ProfileUploadSequence {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Sanitize()` overload"]
-    #[method(name = "Sanitize", args = 0)]
-    pub fn sanitize(self) -> ();
-
-    #[doc = "`Upload()` overload"]
-    #[method(name = "Upload", args = 0)]
-    pub fn upload(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_ProfileUploadSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_ProfileUploadSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_ProfileUploadSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusYesNoDialog.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence.VersusYesNoDialog")]
-#[parent(crate::app::yesnodialog::YesNoDialog)]
-pub struct VersusSequence_VersusYesNoDialog {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusYesNoDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::action::Action, crate::system::action::Action)` overload"]
-    #[method(name = "CreateBind", args = 6)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        message: ::unity2::Il2CppString,
-        yes_name: ::unity2::Il2CppString,
-        no_name: ::unity2::Il2CppString,
-        decide_callback: crate::system::action::Action,
-        cancel_callback: crate::system::action::Action,
-    ) -> crate::app::versussequence::VersusSequence_VersusYesNoDialog;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` overload"]
-    #[method(name = "CreateBind", args = 6)]
-    pub fn create_bind_2(
-        super_: crate::app::procinst::ProcInst,
-        message: ::unity2::Il2CppString,
-        yes_name: ::unity2::Il2CppString,
-        no_name: ::unity2::Il2CppString,
-        decide_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
-        cancel_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
-    ) -> crate::app::versussequence::VersusSequence_VersusYesNoDialog;
-
-    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::versussequence::VersusSequence_VersusYesNoDialog_YesItem, crate::app::versussequence::VersusSequence_VersusYesNoDialog_NoItem)` overload"]
-    #[method(name = "CreateBindImpl", args = 6)]
-    pub fn create_bind_impl(
-        super_: crate::app::procinst::ProcInst,
-        message: ::unity2::Il2CppString,
-        yes_name: ::unity2::Il2CppString,
-        no_name: ::unity2::Il2CppString,
-        yes_item: crate::app::versussequence::VersusSequence_VersusYesNoDialog_YesItem,
-        no_item: crate::app::versussequence::VersusSequence_VersusYesNoDialog_NoItem,
-    ) -> crate::app::versussequence::VersusSequence_VersusYesNoDialog;
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusYesNoDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusYesNoDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusYesNoDialogMethods>::ctor(
-            this,
-            menu_item_list,
-            menu_content,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusRankedMenu_MapEditMenuItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusRankedMenu.MapEditMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusRankedMenu_MapEditMenuItem {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusRankedMenu_MapEditMenuItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusRankedMenu_MapEditMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusRankedMenu_MapEditMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusRankedMenu_MapEditMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusSequenceNet.SelectReplaySequence.Callback"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::nexversus::NexVersus_Results, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        result: crate::app::nexversus::NexVersus_Results,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-    ) -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusSequenceNet_SelectReplaySequence_CallbackMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussequence/VersusSequence_VersusRankedMenu_Result2.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct VersusSequence_VersusRankedMenu_Result2 {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for VersusSequence_VersusRankedMenu_Result2 {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "VersusSequence.VersusRankedMenu.Result2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for VersusSequence_VersusRankedMenu_Result2 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl VersusSequence_VersusRankedMenu_Result2 {
-    pub fn start() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn map_edit() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn result() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn mock_battle() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn top() -> Self {
-        Self { value: 0 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusMatchingMenu_CodeMenuItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusMatchingMenu.CodeMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusMatchingMenu_CodeMenuItem {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusMatchingMenu_CodeMenuItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusMatchingMenu_CodeMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusMatchingMenu_CodeMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusMatchingMenu_CodeMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ResultDialog_DecideEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.ResultDialog.DecideEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct VersusSequence_ResultDialog_DecideEventHandler {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_ResultDialog_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        set: crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu,
-    ) -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_ResultDialog_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_ResultDialog_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_ResultDialog_DecideEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusFriendMenu_FriendCasualMenuItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusFriendMenu.FriendCasualMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusFriendMenu_FriendCasualMenuItem {
-    #[rename(name = "m_MetaData")]
-    pub m_meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-    #[rename(name = "m_FriendNumber")]
-    pub m_friend_number: i32,
-    #[rename(name = "m_Name")]
-    pub m_name: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusFriendMenu_FriendCasualMenuItem {
-    #[doc = "`.ctor(crate::app::versusservercasualmetadata::VersusServerCasualMetaData, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        num: i32,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnBuildMenuItemContent()` overload"]
-    #[method(name = "OnBuildMenuItemContent", args = 0)]
-    pub fn on_build_menu_item_content(self) -> ();
-
-    #[doc = "`StartBattleDialog()` overload"]
-    #[method(name = "StartBattleDialog", args = 0)]
-    pub fn start_battle_dialog(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusFriendMenu_FriendCasualMenuItem {
-    #[doc = "`.ctor(crate::app::versusservercasualmetadata::VersusServerCasualMetaData, i32)` — overload selector"]
-    pub fn new(
-        meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
-        num: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusFriendMenu_FriendCasualMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusFriendMenu_FriendCasualMenuItemMethods>::ctor(
-            this, meta_data, num,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusFriendMenu_FriendRankedMenuItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusFriendMenu.FriendRankedMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusFriendMenu_FriendRankedMenuItem {
-    #[rename(name = "m_MetaData")]
-    pub m_meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-    #[rename(name = "m_FriendNumber")]
-    pub m_friend_number: i32,
-    #[rename(name = "m_Name")]
-    pub m_name: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusFriendMenu_FriendRankedMenuItem {
-    #[doc = "`.ctor(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        num: i32,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnBuildMenuItemContent()` overload"]
-    #[method(name = "OnBuildMenuItemContent", args = 0)]
-    pub fn on_build_menu_item_content(self) -> ();
-
-    #[doc = "`StartBattleDialog()` overload"]
-    #[method(name = "StartBattleDialog", args = 0)]
-    pub fn start_battle_dialog(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusFriendMenu_FriendRankedMenuItem {
-    #[doc = "`.ctor(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, i32)` — overload selector"]
-    pub fn new(
-        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
-        num: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusFriendMenu_FriendRankedMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusFriendMenu_FriendRankedMenuItemMethods>::ctor(
-            this, meta_data, num,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusRankedMenu.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence.VersusRankedMenu")]
-#[parent(crate::app::basicmenu::BasicMenu)]
-pub struct VersusSequence_VersusRankedMenu {
-    #[static_field]
-    #[rename(name = "m_MenuContent")]
-    pub m_menu_content: crate::app::versustopmenucontent::VersusTopMenuContent,
-    #[static_field]
-    #[rename(name = "m_InitialSelected")]
-    pub m_initial_selected: i32,
-}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusRankedMenu {
-    #[doc = "`InitializedSelected()` overload"]
-    #[method(name = "InitializedSelected", args = 0)]
-    pub fn initialized_selected() -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::versustopmenucontent::VersusTopMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetTutorial()` overload"]
-    #[method(name = "GetTutorial", args = 0)]
-    pub fn get_tutorial(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusRankedMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::versustopmenucontent::VersusTopMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusRankedMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusRankedMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadEditMapSequence.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusSequenceNet.UploadEditMapSequence"
+    name = "VersusSequence.VersusSequenceNet.SelectReplaySequence"
 )]
 #[parent(crate::app::procinst::ProcInst)]
-pub struct VersusSequence_VersusSequenceNet_UploadEditMapSequence {
-    #[rename(name = "m_IsNewUpload")]
-    pub m_is_new_upload: bool,
+pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence {
+    #[rename(name = "m_Callback")]
+    pub m_callback:
+        crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
+    #[rename(name = "m_ResultData")]
+    pub m_result_data: crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
 }
 
 #[cfg(feature = "app-versussequence")]
 #[::unity2::methods]
-impl VersusSequence_VersusSequenceNet_UploadEditMapSequence {
-    #[doc = "`get_Result()` overload"]
-    #[method(name = "get_Result", args = 0)]
-    pub fn get_result() -> crate::app::nexversus::NexVersus_Results;
-
-    #[doc = "`set_Result(crate::app::nexversus::NexVersus_Results)` overload"]
-    #[method(name = "set_Result", args = 1)]
-    pub fn set_result(value: crate::app::nexversus::NexVersus_Results) -> ();
-
-    #[doc = "`.ctor(bool)` overload"]
+impl VersusSequence_VersusSequenceNet_SelectReplaySequence {
+    #[doc = "`.ctor(crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` overload"]
     #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, is_new_upload: bool) -> ();
+    pub fn ctor(
+        self,
+        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
+    ) -> ();
 
-    #[doc = "`UploadEditMap()` overload"]
-    #[method(name = "UploadEditMap", args = 0)]
-    pub fn upload_edit_map(self) -> crate::system::collections::ienumerator::IEnumerator;
+    #[doc = "`GetReplaySlots()` overload"]
+    #[method(name = "GetReplaySlots", args = 0)]
+    pub fn get_replay_slots(self) -> crate::system::collections::ienumerator::IEnumerator;
 
-    #[doc = "`PostUploadEditMap()` overload"]
-    #[method(name = "PostUploadEditMap", args = 0)]
-    pub fn post_upload_edit_map(self) -> ();
+    #[doc = "`SortMetaData()` overload"]
+    #[method(name = "SortMetaData", args = 0)]
+    pub fn sort_meta_data(self) -> ();
 
-    #[doc = "`UploadReplayDatas()` overload"]
-    #[method(name = "UploadReplayDatas", args = 0)]
-    pub fn upload_replay_datas(self) -> crate::system::collections::ienumerator::IEnumerator;
+    #[doc = "`Error()` overload"]
+    #[method(name = "Error", args = 0)]
+    pub fn error(self) -> ();
 
-    #[doc = "`UploadReplay(u16)` overload"]
-    #[method(name = "UploadReplay", args = 1)]
-    pub fn upload_replay(self, slot_id: u16) -> ();
+    #[doc = "`OpenSelectMenu()` overload"]
+    #[method(name = "OpenSelectMenu", args = 0)]
+    pub fn open_select_menu(self) -> ();
 
-    #[doc = "`PostUploadReplay()` overload"]
-    #[method(name = "PostUploadReplay", args = 0)]
-    pub fn post_upload_replay(self) -> ();
-
-    #[doc = "`SetResult()` overload"]
-    #[method(name = "SetResult", args = 0)]
-    pub fn set_result_2(self) -> ();
-
-    #[doc = "`PrintError()` overload"]
-    #[method(name = "PrintError", args = 0)]
-    pub fn print_error(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` overload"]
     #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst, is_new_upload: bool) -> ();
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
+    ) -> ();
+
+    #[doc = "`CreateSelectBind(crate::app::procinst::ProcInst, crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` overload"]
+    #[method(name = "CreateSelectBind", args = 2)]
+    pub fn create_select_bind(
+        super_: crate::app::procinst::ProcInst,
+        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
+    ) -> ();
 }
 
 #[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusSequenceNet_UploadEditMapSequence {
-    #[doc = "`.ctor(bool)` — overload selector"]
-    pub fn new(is_new_upload: bool) -> Self {
+impl VersusSequence_VersusSequenceNet_SelectReplaySequence {
+    #[doc = "`.ctor(crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` — overload selector"]
+    pub fn new(
+        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusSequenceNet_UploadEditMapSequence),
+                ::core::stringify!(VersusSequence_VersusSequenceNet_SelectReplaySequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as IVersusSequence_VersusSequenceNet_UploadEditMapSequenceMethods>::ctor(
-            this,
-            is_new_upload,
+        <Self as IVersusSequence_VersusSequenceNet_SelectReplaySequenceMethods>::ctor(
+            this, callback,
         );
         this
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusRankedMenu_MockBattleMenuItem.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusMatchingMenu_ProfileMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "VersusSequence.VersusRankedMenu.MockBattleMenuItem"
+    name = "VersusSequence.VersusMatchingMenu.ProfileMenuItem"
 )]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusRankedMenu_MockBattleMenuItem {}
+pub struct VersusSequence_VersusMatchingMenu_ProfileMenuItem {}
 
 #[cfg(feature = "app-versussequence")]
 #[::unity2::methods]
-impl VersusSequence_VersusRankedMenu_MockBattleMenuItem {
+impl VersusSequence_VersusMatchingMenu_ProfileMenuItem {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
@@ -2409,24 +1308,20 @@ impl VersusSequence_VersusRankedMenu_MockBattleMenuItem {
     #[doc = "`OnSelect()` overload"]
     #[method(name = "OnSelect", args = 0)]
     pub fn on_select(self) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
 }
 
 #[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusRankedMenu_MockBattleMenuItem {
+impl VersusSequence_VersusMatchingMenu_ProfileMenuItem {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusRankedMenu_MockBattleMenuItem),
+                ::core::stringify!(VersusSequence_VersusMatchingMenu_ProfileMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IVersusSequence_VersusRankedMenu_MockBattleMenuItemMethods>::ctor(this);
+        <Self as IVersusSequence_VersusMatchingMenu_ProfileMenuItemMethods>::ctor(this);
         this
     }
 }
@@ -2488,481 +1383,6 @@ impl VersusSequence_VersusMatchingMenu_Result2 {
 
     pub fn top() -> Self {
         Self { value: 0 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ResultDialog_AssistItem.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence.ResultDialog.AssistItem")]
-#[parent(crate::app::basicdialogitem::BasicDialogItem)]
-pub struct VersusSequence_ResultDialog_AssistItem {
-    #[rename(name = "m_SelectId")]
-    pub m_select_id: crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu,
-}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_ResultDialog_AssistItem {
-    #[doc = "`.ctor(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        select_id: crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu,
-        messege: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_ResultDialog_AssistItem {
-    #[doc = "`.ctor(crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(
-        select_id: crate::app::versussequence::VersusSequence_ResultDialog_SelectMenu,
-        messege: ::unity2::Il2CppString,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_ResultDialog_AssistItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_ResultDialog_AssistItemMethods>::ctor(this, select_id, messege);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusMatchingMenu_FriendMenuItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusMatchingMenu.FriendMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusMatchingMenu_FriendMenuItem {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusMatchingMenu_FriendMenuItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusMatchingMenu_FriendMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusMatchingMenu_FriendMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusMatchingMenu_FriendMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "VersusSequence.VersusSequenceNet.UploadEditMapSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label {
-    pub fn error() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.ProfileDownloadSequence.DownloadYesNoDialog.YesItem"
-)]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem {
-    #[rename(name = "m_DecideCallback")]
-    pub m_decide_callback: crate::system::action::Action,
-}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem {
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, decide_callback: crate::system::action::Action) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(decide_callback: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItemMethods>::ctor(
-            this,
-            decide_callback,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusTopMenu_CasualMenuItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusTopMenu.CasualMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusTopMenu_CasualMenuItem {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusTopMenu_CasualMenuItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusTopMenu_CasualMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusTopMenu_CasualMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusTopMenu_CasualMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusSequenceLocal.SelectReplayMetaMenuItem"
-)]
-#[parent(crate::app::menuitem::MenuItem)]
-pub struct VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem {
-# [rename (name = "m_MetaData")] pub m_meta_data : crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData ,
-# [rename (name = "m_MetaPath")] pub m_meta_path : :: unity2 :: Il2CppString ,
-# [rename (name = "m_SlotId")] pub m_slot_id : u16 ,
-# [rename (name = "m_ACallback")] pub m_a_callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback ,
-# [rename (name = "m_IsUpload")] pub m_is_upload : bool ,
-# [rename (name = "m_IsPlay")] pub m_is_play : bool ,
-}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, u16, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)` overload"]
-    #[method(name = ".ctor", args = 6)]
-    pub fn ctor(
-        self,
-        path: ::unity2::Il2CppString,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        slot_id: u16,
-        is_upload: bool,
-        is_play: bool,
-        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`IsEnable()` overload"]
-    #[method(name = "IsEnable", args = 0)]
-    pub fn is_enable(self) -> bool;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::menuitem::MenuItem_Result;
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, u16, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)` — overload selector"]
-    pub fn new(
-        path: ::unity2::Il2CppString,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        slot_id: u16,
-        is_upload: bool,
-        is_play: bool,
-        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItemMethods>::ctor(
-            this, path, meta_data, slot_id, is_upload, is_play, callback,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence")]
-#[parent(crate::system::object::Object)]
-pub struct VersusSequence {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`CreateBindUploadEditData(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindUploadEditData", args = 1)]
-    pub fn create_bind_upload_edit_data(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`CreateBindUploadCasualData(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindUploadCasualData", args = 1)]
-    pub fn create_bind_upload_casual_data(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`ShowDisableNetworkMessage(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "ShowDisableNetworkMessage", args = 1)]
-    pub fn show_disable_network_message(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`JumpToTop()` overload"]
-    #[method(name = "JumpToTop", args = 0)]
-    pub fn jump_to_top() -> ();
-
-    #[doc = "`JumpToCasual()` overload"]
-    #[method(name = "JumpToCasual", args = 0)]
-    pub fn jump_to_casual() -> ();
-
-    #[doc = "`JumpToRanked()` overload"]
-    #[method(name = "JumpToRanked", args = 0)]
-    pub fn jump_to_ranked() -> ();
-
-    #[doc = "`JumpToMatching()` overload"]
-    #[method(name = "JumpToMatching", args = 0)]
-    pub fn jump_to_matching() -> ();
-
-    #[doc = "`JumpToMatchingStart()` overload"]
-    #[method(name = "JumpToMatchingStart", args = 0)]
-    pub fn jump_to_matching_start() -> ();
-
-    #[doc = "`JumpToNetCasual()` overload"]
-    #[method(name = "JumpToNetCasual", args = 0)]
-    pub fn jump_to_net_casual() -> ();
-
-    #[doc = "`JumpToMapEdit()` overload"]
-    #[method(name = "JumpToMapEdit", args = 0)]
-    pub fn jump_to_map_edit() -> ();
-
-    #[doc = "`JumpToReplay()` overload"]
-    #[method(name = "JumpToReplay", args = 0)]
-    pub fn jump_to_replay() -> ();
-
-    #[doc = "`JumpToMockBattle()` overload"]
-    #[method(name = "JumpToMockBattle", args = 0)]
-    pub fn jump_to_mock_battle() -> ();
-
-    #[doc = "`JumpToReward()` overload"]
-    #[method(name = "JumpToReward", args = 0)]
-    pub fn jump_to_reward() -> ();
-
-    #[doc = "`JumpToMapSequence()` overload"]
-    #[method(name = "JumpToMapSequence", args = 0)]
-    pub fn jump_to_map_sequence() -> ();
-
-    #[doc = "`JumpToEnd()` overload"]
-    #[method(name = "JumpToEnd", args = 0)]
-    pub fn jump_to_end() -> ();
-
-    #[doc = "`GetSequence()` overload"]
-    #[method(name = "GetSequence", args = 0)]
-    pub fn get_sequence() -> crate::app::versussequence::VersusSequence_IVersusSequenceBase;
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.ProfileDownloadSequence.DownloadYesNoDialog"
-)]
-#[parent(crate::system::object::Object)]
-pub struct VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action::Action)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        mess: ::unity2::Il2CppString,
-        decide_callback: crate::system::action::Action,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialogMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusSequenceNet.SelectReplaySequence.SelectReplayMenuItem"
-)]
-#[parent(crate::app::menuitem::MenuItem)]
-pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem {
-    #[rename(name = "m_MetaData")]
-    pub m_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-    #[rename(name = "m_Callback")]
-    pub m_callback:
-        crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
-    #[rename(name = "m_Index")]
-    pub m_index: i32,
-    #[rename(name = "m_IsUpload")]
-    pub m_is_upload: bool,
-    #[rename(name = "m_IsPlay")]
-    pub m_is_play: bool,
-}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem {
-    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, i32, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        index: i32,
-        is_upload: bool,
-        is_play: bool,
-        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`IsEnable()` overload"]
-    #[method(name = "IsEnable", args = 0)]
-    pub fn is_enable(self) -> bool;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::menuitem::MenuItem_Result;
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem {
-    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, i32, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` — overload selector"]
-    pub fn new(
-        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
-        index: i32,
-        is_upload: bool,
-        is_play: bool,
-        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        < Self as IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItemMethods > :: ctor (this , meta_data , index , is_upload , is_play , callback) ;
-        this
     }
 }
 
@@ -3037,131 +1457,6 @@ impl VersusSequence_VersusMatchingMenu {
             menu_item_list,
             menu_content,
         );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusMatchingMenu_ProfileMenuItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusMatchingMenu.ProfileMenuItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusMatchingMenu_ProfileMenuItem {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_VersusMatchingMenu_ProfileMenuItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusMatchingMenu_ProfileMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusMatchingMenu_ProfileMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_VersusMatchingMenu_ProfileMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_DebugPersistentMenu.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence.DebugPersistentMenu")]
-#[parent(crate::app::debugmenu::DebugMenu)]
-pub struct VersusSequence_DebugPersistentMenu {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_DebugPersistentMenu {
-    #[doc = "`get_IsInitCasual()` overload"]
-    #[method(name = "get_IsInitCasual", args = 0)]
-    pub fn get_is_init_casual() -> bool;
-
-    #[doc = "`set_IsInitCasual(bool)` overload"]
-    #[method(name = "set_IsInitCasual", args = 1)]
-    pub fn set_is_init_casual(value: bool) -> ();
-
-    #[doc = "`get_IsSelectReplay()` overload"]
-    #[method(name = "get_IsSelectReplay", args = 0)]
-    pub fn get_is_select_replay() -> bool;
-
-    #[doc = "`set_IsSelectReplay(bool)` overload"]
-    #[method(name = "set_IsSelectReplay", args = 1)]
-    pub fn set_is_select_replay(value: bool) -> ();
-
-    #[doc = "`get_IsNotDeleteReplay()` overload"]
-    #[method(name = "get_IsNotDeleteReplay", args = 0)]
-    pub fn get_is_not_delete_replay() -> bool;
-
-    #[doc = "`set_IsNotDeleteReplay(bool)` overload"]
-    #[method(name = "set_IsNotDeleteReplay", args = 1)]
-    pub fn set_is_not_delete_replay(value: bool) -> ();
-
-    #[doc = "`get_IsLocalAirportMode()` overload"]
-    #[method(name = "get_IsLocalAirportMode", args = 0)]
-    pub fn get_is_local_airport_mode() -> bool;
-
-    #[doc = "`set_IsLocalAirportMode(bool)` overload"]
-    #[method(name = "set_IsLocalAirportMode", args = 1)]
-    pub fn set_is_local_airport_mode(value: bool) -> ();
-
-    #[doc = "`get_IsReportedEdit()` overload"]
-    #[method(name = "get_IsReportedEdit", args = 0)]
-    pub fn get_is_reported_edit() -> bool;
-
-    #[doc = "`set_IsReportedEdit(bool)` overload"]
-    #[method(name = "set_IsReportedEdit", args = 1)]
-    pub fn set_is_reported_edit(value: bool) -> ();
-
-    #[doc = "`get_IsDuplicate()` overload"]
-    #[method(name = "get_IsDuplicate", args = 0)]
-    pub fn get_is_duplicate() -> bool;
-
-    #[doc = "`set_IsDuplicate(bool)` overload"]
-    #[method(name = "set_IsDuplicate", args = 1)]
-    pub fn set_is_duplicate(value: bool) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-versussequence")]
-impl VersusSequence_DebugPersistentMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_DebugPersistentMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVersusSequence_DebugPersistentMenuMethods>::ctor(this);
         this
     }
 }
@@ -3319,6 +1614,392 @@ impl VersusSequence_Label {
 
     pub fn end() -> Self {
         Self { value: 29 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusProfileMenu_VersusProfileMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusProfileMenu.VersusProfileMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct VersusSequence_VersusProfileMenu_VersusProfileMenuItem {
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+    #[rename(name = "m_Profile")]
+    pub m_profile: crate::app::profilecard::ProfileCard,
+    #[rename(name = "m_IsEnable")]
+    pub m_is_enable: bool,
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+    #[rename(name = "m_PrincipalID")]
+    pub m_principal_id: u64,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusProfileMenu_VersusProfileMenuItem {
+    #[doc = "`.ctor(i32, crate::app::profilecard::ProfileCard, bool)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        index: i32,
+        profile: crate::app::profilecard::ProfileCard,
+        is_enable: bool,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`OnBuildMenuItemContent()` overload"]
+    #[method(name = "OnBuildMenuItemContent", args = 0)]
+    pub fn on_build_menu_item_content(self) -> ();
+
+    #[doc = "`OpenDialog()` overload"]
+    #[method(name = "OpenDialog", args = 0)]
+    pub fn open_dialog(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusProfileMenu_VersusProfileMenuItem {
+    #[doc = "`.ctor(i32, crate::app::profilecard::ProfileCard, bool)` — overload selector"]
+    pub fn new(index: i32, profile: crate::app::profilecard::ProfileCard, is_enable: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusProfileMenu_VersusProfileMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusProfileMenu_VersusProfileMenuItemMethods>::ctor(
+            this, index, profile, is_enable,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence")]
+#[parent(crate::system::object::Object)]
+pub struct VersusSequence {}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`CreateBindUploadEditData(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindUploadEditData", args = 1)]
+    pub fn create_bind_upload_edit_data(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`CreateBindUploadCasualData(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindUploadCasualData", args = 1)]
+    pub fn create_bind_upload_casual_data(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`ShowDisableNetworkMessage(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "ShowDisableNetworkMessage", args = 1)]
+    pub fn show_disable_network_message(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`JumpToTop()` overload"]
+    #[method(name = "JumpToTop", args = 0)]
+    pub fn jump_to_top() -> ();
+
+    #[doc = "`JumpToCasual()` overload"]
+    #[method(name = "JumpToCasual", args = 0)]
+    pub fn jump_to_casual() -> ();
+
+    #[doc = "`JumpToRanked()` overload"]
+    #[method(name = "JumpToRanked", args = 0)]
+    pub fn jump_to_ranked() -> ();
+
+    #[doc = "`JumpToMatching()` overload"]
+    #[method(name = "JumpToMatching", args = 0)]
+    pub fn jump_to_matching() -> ();
+
+    #[doc = "`JumpToMatchingStart()` overload"]
+    #[method(name = "JumpToMatchingStart", args = 0)]
+    pub fn jump_to_matching_start() -> ();
+
+    #[doc = "`JumpToNetCasual()` overload"]
+    #[method(name = "JumpToNetCasual", args = 0)]
+    pub fn jump_to_net_casual() -> ();
+
+    #[doc = "`JumpToMapEdit()` overload"]
+    #[method(name = "JumpToMapEdit", args = 0)]
+    pub fn jump_to_map_edit() -> ();
+
+    #[doc = "`JumpToReplay()` overload"]
+    #[method(name = "JumpToReplay", args = 0)]
+    pub fn jump_to_replay() -> ();
+
+    #[doc = "`JumpToMockBattle()` overload"]
+    #[method(name = "JumpToMockBattle", args = 0)]
+    pub fn jump_to_mock_battle() -> ();
+
+    #[doc = "`JumpToReward()` overload"]
+    #[method(name = "JumpToReward", args = 0)]
+    pub fn jump_to_reward() -> ();
+
+    #[doc = "`JumpToMapSequence()` overload"]
+    #[method(name = "JumpToMapSequence", args = 0)]
+    pub fn jump_to_map_sequence() -> ();
+
+    #[doc = "`JumpToEnd()` overload"]
+    #[method(name = "JumpToEnd", args = 0)]
+    pub fn jump_to_end() -> ();
+
+    #[doc = "`GetSequence()` overload"]
+    #[method(name = "GetSequence", args = 0)]
+    pub fn get_sequence() -> crate::app::versussequence::VersusSequence_IVersusSequenceBase;
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadEditMapSequence.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusSequenceNet.UploadEditMapSequence"
+)]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct VersusSequence_VersusSequenceNet_UploadEditMapSequence {
+    #[rename(name = "m_IsNewUpload")]
+    pub m_is_new_upload: bool,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusSequenceNet_UploadEditMapSequence {
+    #[doc = "`get_Result()` overload"]
+    #[method(name = "get_Result", args = 0)]
+    pub fn get_result() -> crate::app::nexversus::NexVersus_Results;
+
+    #[doc = "`set_Result(crate::app::nexversus::NexVersus_Results)` overload"]
+    #[method(name = "set_Result", args = 1)]
+    pub fn set_result(value: crate::app::nexversus::NexVersus_Results) -> ();
+
+    #[doc = "`.ctor(bool)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, is_new_upload: bool) -> ();
+
+    #[doc = "`UploadEditMap()` overload"]
+    #[method(name = "UploadEditMap", args = 0)]
+    pub fn upload_edit_map(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`PostUploadEditMap()` overload"]
+    #[method(name = "PostUploadEditMap", args = 0)]
+    pub fn post_upload_edit_map(self) -> ();
+
+    #[doc = "`UploadReplayDatas()` overload"]
+    #[method(name = "UploadReplayDatas", args = 0)]
+    pub fn upload_replay_datas(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`UploadReplay(u16)` overload"]
+    #[method(name = "UploadReplay", args = 1)]
+    pub fn upload_replay(self, slot_id: u16) -> ();
+
+    #[doc = "`PostUploadReplay()` overload"]
+    #[method(name = "PostUploadReplay", args = 0)]
+    pub fn post_upload_replay(self) -> ();
+
+    #[doc = "`SetResult()` overload"]
+    #[method(name = "SetResult", args = 0)]
+    pub fn set_result_2(self) -> ();
+
+    #[doc = "`PrintError()` overload"]
+    #[method(name = "PrintError", args = 0)]
+    pub fn print_error(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst, is_new_upload: bool) -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusSequenceNet_UploadEditMapSequence {
+    #[doc = "`.ctor(bool)` — overload selector"]
+    pub fn new(is_new_upload: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusSequenceNet_UploadEditMapSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusSequenceNet_UploadEditMapSequenceMethods>::ctor(
+            this,
+            is_new_upload,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusSequenceLocal.SelectReplayMetaMenuItem"
+)]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem {
+# [rename (name = "m_MetaData")] pub m_meta_data : crate :: app :: versusserverreplaymetadata :: VersusServerReplayMetaData ,
+# [rename (name = "m_MetaPath")] pub m_meta_path : :: unity2 :: Il2CppString ,
+# [rename (name = "m_SlotId")] pub m_slot_id : u16 ,
+# [rename (name = "m_ACallback")] pub m_a_callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback ,
+# [rename (name = "m_IsUpload")] pub m_is_upload : bool ,
+# [rename (name = "m_IsPlay")] pub m_is_play : bool ,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, u16, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)` overload"]
+    #[method(name = ".ctor", args = 6)]
+    pub fn ctor(
+        self,
+        path: ::unity2::Il2CppString,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        slot_id: u16,
+        is_upload: bool,
+        is_play: bool,
+        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`IsEnable()` overload"]
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::menuitem::MenuItem_Result;
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, u16, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)` — overload selector"]
+    pub fn new(
+        path: ::unity2::Il2CppString,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        slot_id: u16,
+        is_upload: bool,
+        is_play: bool,
+        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItemMethods>::ctor(
+            this, path, meta_data, slot_id, is_upload, is_play, callback,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusYesNoDialog_YesItem.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence.VersusYesNoDialog.YesItem")]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct VersusSequence_VersusYesNoDialog_YesItem {
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+    #[rename(name = "m_DecideCallback")]
+    pub m_decide_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
+    #[rename(name = "m_CancelCallback")]
+    pub m_cancel_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusYesNoDialog_YesItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        name: ::unity2::Il2CppString,
+        decide_callback: crate::system::action::Action,
+        cancel_callback: crate::system::action::Action,
+    ) -> ();
+
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor_2(
+        self,
+        name: ::unity2::Il2CppString,
+        decide_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
+        cancel_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusYesNoDialog_YesItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action, crate::system::action::Action)` — overload selector"]
+    pub fn new(
+        name: ::unity2::Il2CppString,
+        decide_callback: crate::system::action::Action,
+        cancel_callback: crate::system::action::Action,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusYesNoDialog_YesItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusYesNoDialog_YesItemMethods>::ctor(
+            this,
+            name,
+            decide_callback,
+            cancel_callback,
+        );
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` — overload selector"]
+    pub fn new_2(
+        name: ::unity2::Il2CppString,
+        decide_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
+        cancel_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusYesNoDialog_YesItem),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IVersusSequence_VersusYesNoDialog_YesItemMethods>::ctor_2(
+            this,
+            name,
+            decide_callback,
+            cancel_callback,
+        );
+        this
     }
 }
 
@@ -4024,6 +2705,695 @@ impl<T0: ::unity2::ClassIdentity> VersusSequence_VersusSequenceBase_1<T0> {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ProfileUploadSequence.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence.ProfileUploadSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct VersusSequence_ProfileUploadSequence {
+    #[rename(name = "m_Profile")]
+    pub m_profile: crate::app::profilecard::ProfileCard,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_ProfileUploadSequence {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Sanitize()` overload"]
+    #[method(name = "Sanitize", args = 0)]
+    pub fn sanitize(self) -> ();
+
+    #[doc = "`Upload()` overload"]
+    #[method(name = "Upload", args = 0)]
+    pub fn upload(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_ProfileUploadSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_ProfileUploadSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_ProfileUploadSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceLocal_MetaDataPack.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusSequenceLocal.MetaDataPack"
+)]
+#[parent(crate::system::object::Object)]
+pub struct VersusSequence_VersusSequenceLocal_MetaDataPack {
+    #[rename(name = "path")]
+    pub path: ::unity2::Il2CppString,
+    #[rename(name = "data")]
+    pub data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusSequenceLocal_MetaDataPack {
+    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, ::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        path: ::unity2::Il2CppString,
+    ) -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusSequenceLocal_MetaDataPack {
+    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(
+        data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        path: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusSequenceLocal_MetaDataPack),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusSequenceLocal_MetaDataPackMethods>::ctor(this, data, path);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusRankedMenu_StartMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusRankedMenu.StartMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct VersusSequence_VersusRankedMenu_StartMenuItem {}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusRankedMenu_StartMenuItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusRankedMenu_StartMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusRankedMenu_StartMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusRankedMenu_StartMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ResultDialog.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence.ResultDialog")]
+#[parent(crate::app::basicdialog::BasicDialog)]
+pub struct VersusSequence_ResultDialog {}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_ResultDialog {
+    #[doc = "`get_EventHandler()` overload"]
+    #[method(name = "get_EventHandler", args = 0)]
+    pub fn get_event_handler(
+    ) -> crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler;
+
+    #[doc = "`set_EventHandler(crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler)` overload"]
+    #[method(name = "set_EventHandler", args = 1)]
+    pub fn set_event_handler(
+        value: crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        event_handler: crate::app::versussequence::VersusSequence_ResultDialog_DecideEventHandler,
+    ) -> crate::app::versussequence::VersusSequence_ResultDialog;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_ResultDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_ResultDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_ResultDialogMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadReplaySequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct VersusSequence_VersusSequenceNet_UploadReplaySequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for VersusSequence_VersusSequenceNet_UploadReplaySequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "VersusSequence.VersusSequenceNet.UploadReplaySequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for VersusSequence_VersusSequenceNet_UploadReplaySequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl VersusSequence_VersusSequenceNet_UploadReplaySequence_Label {
+    pub fn error() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusRankedMenu_ResultMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusRankedMenu.ResultMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct VersusSequence_VersusRankedMenu_ResultMenuItem {}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusRankedMenu_ResultMenuItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusRankedMenu_ResultMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusRankedMenu_ResultMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusRankedMenu_ResultMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusCasualMenu.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence.VersusCasualMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct VersusSequence_VersusCasualMenu {
+    #[static_field]
+    #[rename(name = "c_MapMax")]
+    pub c_map_max: i32,
+    #[static_field]
+    #[rename(name = "m_MenuContent")]
+    pub m_menu_content: crate::app::versusmapmenucontent::VersusMapMenuContent,
+    #[static_field]
+    #[rename(name = "m_InitialSelected")]
+    pub m_initial_selected: i32,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusCasualMenu {
+    #[doc = "`InitializedSelected()` overload"]
+    #[method(name = "InitializedSelected", args = 0)]
+    pub fn initialized_selected() -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusmapmenucontent::VersusMapMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::versusmapmenucontent::VersusMapMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetTutorial()` overload"]
+    #[method(name = "GetTutorial", args = 0)]
+    pub fn get_tutorial(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusCasualMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versusmapmenucontent::VersusMapMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::versusmapmenucontent::VersusMapMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusCasualMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusCasualMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusYesNoDialog_NoItem.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence.VersusYesNoDialog.NoItem")]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct VersusSequence_VersusYesNoDialog_NoItem {
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+    #[rename(name = "m_CancelCallback")]
+    pub m_cancel_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusYesNoDialog_NoItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, name: ::unity2::Il2CppString, callback: crate::system::action::Action) -> ();
+
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        name: ::unity2::Il2CppString,
+        callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusYesNoDialog_NoItem {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]
+    pub fn new(name: ::unity2::Il2CppString, callback: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusYesNoDialog_NoItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusYesNoDialog_NoItemMethods>::ctor(this, name, callback);
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` — overload selector"]
+    pub fn new_2(
+        name: ::unity2::Il2CppString,
+        callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusYesNoDialog_NoItem),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IVersusSequence_VersusYesNoDialog_NoItemMethods>::ctor_2(this, name, callback);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusYesNoDialog.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence.VersusYesNoDialog")]
+#[parent(crate::app::yesnodialog::YesNoDialog)]
+pub struct VersusSequence_VersusYesNoDialog {}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusYesNoDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::action::Action, crate::system::action::Action)` overload"]
+    #[method(name = "CreateBind", args = 6)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        message: ::unity2::Il2CppString,
+        yes_name: ::unity2::Il2CppString,
+        no_name: ::unity2::Il2CppString,
+        decide_callback: crate::system::action::Action,
+        cancel_callback: crate::system::action::Action,
+    ) -> crate::app::versussequence::VersusSequence_VersusYesNoDialog;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>, crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>)` overload"]
+    #[method(name = "CreateBind", args = 6)]
+    pub fn create_bind_2(
+        super_: crate::app::procinst::ProcInst,
+        message: ::unity2::Il2CppString,
+        yes_name: ::unity2::Il2CppString,
+        no_name: ::unity2::Il2CppString,
+        decide_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
+        cancel_callback: crate::system::func_1::Func_1<crate::app::basicmenu::BasicMenu_Result>,
+    ) -> crate::app::versussequence::VersusSequence_VersusYesNoDialog;
+
+    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::versussequence::VersusSequence_VersusYesNoDialog_YesItem, crate::app::versussequence::VersusSequence_VersusYesNoDialog_NoItem)` overload"]
+    #[method(name = "CreateBindImpl", args = 6)]
+    pub fn create_bind_impl(
+        super_: crate::app::procinst::ProcInst,
+        message: ::unity2::Il2CppString,
+        yes_name: ::unity2::Il2CppString,
+        no_name: ::unity2::Il2CppString,
+        yes_item: crate::app::versussequence::VersusSequence_VersusYesNoDialog_YesItem,
+        no_item: crate::app::versussequence::VersusSequence_VersusYesNoDialog_NoItem,
+    ) -> crate::app::versussequence::VersusSequence_VersusYesNoDialog;
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusYesNoDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusYesNoDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusYesNoDialogMethods>::ctor(
+            this,
+            menu_item_list,
+            menu_content,
+        );
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussequence/VersusSequence_ProfileDownloadSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct VersusSequence_ProfileDownloadSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for VersusSequence_ProfileDownloadSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "VersusSequence.ProfileDownloadSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for VersusSequence_ProfileDownloadSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl VersusSequence_ProfileDownloadSequence_Label {
+    pub fn sanitize() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn save() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceLocal_LocalRate.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusSequenceLocal.LocalRate"
+)]
+#[parent(crate::system::object::Object)]
+pub struct VersusSequence_VersusSequenceLocal_LocalRate {}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusSequenceLocal_LocalRate {
+    #[doc = "`ParseToNumber(u16)` overload"]
+    #[method(name = "ParseToNumber", args = 1)]
+    pub fn parse_to_number(rate_data_type: u16) -> i32;
+
+    #[doc = "`ParseToDataType(i32)` overload"]
+    #[method(name = "ParseToDataType", args = 1)]
+    pub fn parse_to_data_type(rate_number: i32) -> u16;
+
+    #[doc = "`ParseToSlotId(i32)` overload"]
+    #[method(name = "ParseToSlotId", args = 1)]
+    pub fn parse_to_slot_id(index: i32) -> u16;
+
+    #[doc = "`PerseToSlotIndex(u16)` overload"]
+    #[method(name = "PerseToSlotIndex", args = 1)]
+    pub fn perse_to_slot_index(slot_id: u16) -> i32;
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusSequenceNet.SelectReplaySequence.Callback"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback {}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::nexversus::NexVersus_Results, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        result: crate::app::nexversus::NexVersus_Results,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+    ) -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusSequenceNet_SelectReplaySequence_CallbackMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusFriendMenu_FriendCasualMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusFriendMenu.FriendCasualMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct VersusSequence_VersusFriendMenu_FriendCasualMenuItem {
+    #[rename(name = "m_MetaData")]
+    pub m_meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+    #[rename(name = "m_FriendNumber")]
+    pub m_friend_number: i32,
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusFriendMenu_FriendCasualMenuItem {
+    #[doc = "`.ctor(crate::app::versusservercasualmetadata::VersusServerCasualMetaData, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+        num: i32,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnBuildMenuItemContent()` overload"]
+    #[method(name = "OnBuildMenuItemContent", args = 0)]
+    pub fn on_build_menu_item_content(self) -> ();
+
+    #[doc = "`StartBattleDialog()` overload"]
+    #[method(name = "StartBattleDialog", args = 0)]
+    pub fn start_battle_dialog(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusFriendMenu_FriendCasualMenuItem {
+    #[doc = "`.ctor(crate::app::versusservercasualmetadata::VersusServerCasualMetaData, i32)` — overload selector"]
+    pub fn new(
+        meta_data: crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+        num: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusFriendMenu_FriendCasualMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusFriendMenu_FriendCasualMenuItemMethods>::ctor(
+            this, meta_data, num,
+        );
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadReplaySequence.md"))]
 #[::unity2::class(
     namespace = "App",
@@ -4126,23 +3496,64 @@ impl VersusSequence_VersusSequenceNet_UploadReplaySequence {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusCasualMenu_SelectMapMenuItem.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussequence/VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "VersusSequence.VersusSequenceNet.UploadEditMapSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl VersusSequence_VersusSequenceNet_UploadEditMapSequence_Label {
+    pub fn error() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusMatchingMenu_RandomMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "VersusSequence.VersusCasualMenu.SelectMapMenuItem"
+    name = "VersusSequence.VersusMatchingMenu.RandomMenuItem"
 )]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct VersusSequence_VersusCasualMenu_SelectMapMenuItem {
-    #[rename(name = "m_MapNumber")]
-    pub m_map_number: i32,
-}
+pub struct VersusSequence_VersusMatchingMenu_RandomMenuItem {}
 
 #[cfg(feature = "app-versussequence")]
 #[::unity2::methods]
-impl VersusSequence_VersusCasualMenu_SelectMapMenuItem {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, map_number: i32) -> ();
+impl VersusSequence_VersusMatchingMenu_RandomMenuItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 
     #[doc = "`ACall()` overload"]
     #[method(name = "ACall", args = 0)]
@@ -4154,17 +3565,526 @@ impl VersusSequence_VersusCasualMenu_SelectMapMenuItem {
 }
 
 #[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusCasualMenu_SelectMapMenuItem {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(map_number: i32) -> Self {
+impl VersusSequence_VersusMatchingMenu_RandomMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusCasualMenu_SelectMapMenuItem),
+                ::core::stringify!(VersusSequence_VersusMatchingMenu_RandomMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IVersusSequence_VersusCasualMenu_SelectMapMenuItemMethods>::ctor(this, map_number);
+        <Self as IVersusSequence_VersusMatchingMenu_RandomMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.ProfileDownloadSequence.DownloadYesNoDialog.YesItem"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem {
+    #[rename(name = "m_DecideCallback")]
+    pub m_decide_callback: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem {
+    #[doc = "`.ctor(crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, decide_callback: crate::system::action::Action) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem {
+    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
+    pub fn new(decide_callback: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItem
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialog_YesItemMethods>::ctor(
+            this,
+            decide_callback,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceLocal.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence.VersusSequenceLocal")]
+# [parent (crate :: app :: versussequence :: VersusSequence_VersusSequenceBase_1 < crate :: app :: versussequence :: VersusSequence_VersusSequenceLocal >)]
+pub struct VersusSequence_VersusSequenceLocal {
+    #[rename(name = "m_RootPath")]
+    pub m_root_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "RateTop")]
+    pub rate_top: i32,
+    #[static_field]
+    #[rename(name = "RateBottom")]
+    pub rate_bottom: i32,
+    #[rename(name = "m_MyCasualMetaDataPath")]
+    pub m_my_casual_meta_data_path: ::unity2::Il2CppString,
+    #[rename(name = "m_MyEditDataPath")]
+    pub m_my_edit_data_path: ::unity2::Il2CppString,
+    #[rename(name = "m_SelectedReplayMetaPath")]
+    pub m_selected_replay_meta_path: ::unity2::Il2CppString,
+    #[rename(name = "m_IsSucceededLastUpload")]
+    pub m_is_succeeded_last_upload: bool,
+    #[rename(name = "m_LastReplayGetSlot")]
+    pub m_last_replay_get_slot: u16,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusSequenceLocal {
+    #[doc = "`InitImpl()` overload"]
+    #[method(name = "InitImpl", args = 0)]
+    pub fn init_impl(self) -> ();
+
+    #[doc = "`FinalImpl()` overload"]
+    #[method(name = "FinalImpl", args = 0)]
+    pub fn final_impl(self) -> ();
+
+    #[doc = "`IsFailedJumpToTopImpl()` overload"]
+    #[method(name = "IsFailedJumpToTopImpl", args = 0)]
+    pub fn is_failed_jump_to_top_impl(self) -> bool;
+
+    #[doc = "`IsReportedEditMapImpl()` overload"]
+    #[method(name = "IsReportedEditMapImpl", args = 0)]
+    pub fn is_reported_edit_map_impl(self) -> bool;
+
+    #[doc = "`UploadReportDataImpl()` overload"]
+    #[method(name = "UploadReportDataImpl", args = 0)]
+    pub fn upload_report_data_impl(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`CreateBindUploadEditData(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindUploadEditData", args = 1)]
+    pub fn create_bind_upload_edit_data(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`CreateBindUploadCasualData(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindUploadCasualData", args = 1)]
+    pub fn create_bind_upload_casual_data(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`InitializeLanRootPath()` overload"]
+    #[method(name = "InitializeLanRootPath", args = 0)]
+    pub fn initialize_lan_root_path(self) -> ();
+
+    #[doc = "`GetRateDirectoriesPaths()` overload"]
+    #[method(name = "GetRateDirectoriesPaths", args = 0)]
+    pub fn get_rate_directories_paths(self) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[doc = "`GetRateDirPath(i32)` overload"]
+    #[method(name = "GetRateDirPath", args = 1)]
+    pub fn get_rate_dir_path(self, rate: i32) -> ::unity2::Il2CppString;
+
+    #[doc = "`AppendRate(i32)` overload"]
+    #[method(name = "AppendRate", args = 1)]
+    pub fn append_rate(rate: i32) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetDataFileName(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, i32)` overload"]
+    #[method(name = "GetDataFileName", args = 2)]
+    pub fn get_data_file_name(
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        rate: i32,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetDataFileName(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "GetDataFileName", args = 2)]
+    pub fn get_data_file_name_2(
+        player_name: ::unity2::Il2CppString,
+        rate: i32,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetDataFileName(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]
+    #[method(name = "GetDataFileName", args = 1)]
+    pub fn get_data_file_name_3(
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetDataFileName(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetDataFileName", args = 1)]
+    pub fn get_data_file_name_4(owner_name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMetaDataFileName(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, i32)` overload"]
+    #[method(name = "GetMetaDataFileName", args = 2)]
+    pub fn get_meta_data_file_name(
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        rate: i32,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMetaDataFileName(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "GetMetaDataFileName", args = 2)]
+    pub fn get_meta_data_file_name_2(
+        owner_name: ::unity2::Il2CppString,
+        rate: i32,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`MoveFiles(::unity2::Il2CppString, i32, i32)` overload"]
+    #[method(name = "MoveFiles", args = 3)]
+    pub fn move_files(
+        self,
+        player_name: ::unity2::Il2CppString,
+        from_rate: i32,
+        to_rate: i32,
+    ) -> bool;
+
+    #[doc = "`GetReplayDataPath(::unity2::Il2CppString, u16)` overload"]
+    #[method(name = "GetReplayDataPath", args = 2)]
+    pub fn get_replay_data_path(
+        self,
+        player_name: ::unity2::Il2CppString,
+        slot_id: u16,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetReplayMetaPath(::unity2::Il2CppString, u16)` overload"]
+    #[method(name = "GetReplayMetaPath", args = 2)]
+    pub fn get_replay_meta_path(
+        self,
+        player_name: ::unity2::Il2CppString,
+        slot_id: u16,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetReplayMetaPaths(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetReplayMetaPaths", args = 1)]
+    pub fn get_replay_meta_paths(
+        self,
+        player_name: ::unity2::Il2CppString,
+    ) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[doc = "`GetCasualDirectoryPath()` overload"]
+    #[method(name = "GetCasualDirectoryPath", args = 0)]
+    pub fn get_casual_directory_path(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetCasualDataPath(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetCasualDataPath", args = 1)]
+    pub fn get_casual_data_path(
+        self,
+        player_name: ::unity2::Il2CppString,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetCasualMetaPath(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetCasualMetaPath", args = 1)]
+    pub fn get_casual_meta_path(
+        self,
+        player_name: ::unity2::Il2CppString,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`FindCasualMetaPath(u64)` overload"]
+    #[method(name = "FindCasualMetaPath", args = 1)]
+    pub fn find_casual_meta_path(self, principal_id: u64) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetPath(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]
+    #[method(name = "GetPath", args = 1)]
+    pub fn get_path(
+        self,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`FindRankedMetaPath(u64)` overload"]
+    #[method(name = "FindRankedMetaPath", args = 1)]
+    pub fn find_ranked_meta_path(self, principal_id: u64) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetPlayerName(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetPlayerName", args = 1)]
+    pub fn get_player_name(self, path: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[doc = "`TryGetPrincipalId(u64)` overload"]
+    #[method(name = "TryGetPrincipalId", args = 1)]
+    pub fn try_get_principal_id(self, principal_id: u64) -> bool;
+
+    #[doc = "`GetLocalNickName()` overload"]
+    #[method(name = "GetLocalNickName", args = 0)]
+    pub fn get_local_nick_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetMyCasualMetaDataImpl()` overload"]
+    #[method(name = "GetMyCasualMetaDataImpl", args = 0)]
+    pub fn get_my_casual_meta_data_impl(self) -> ();
+
+    #[doc = "`PostGetMyCasualMetaDataImpl()` overload"]
+    #[method(name = "PostGetMyCasualMetaDataImpl", args = 0)]
+    pub fn post_get_my_casual_meta_data_impl(self) -> ();
+
+    #[doc = "`GetEditMetaDataImpl()` overload"]
+    #[method(name = "GetEditMetaDataImpl", args = 0)]
+    pub fn get_edit_meta_data_impl(self) -> ();
+
+    #[doc = "`PostGetEditMetaDataImpl()` overload"]
+    #[method(name = "PostGetEditMetaDataImpl", args = 0)]
+    pub fn post_get_edit_meta_data_impl(self) -> ();
+
+    #[doc = "`UpdateRateImpl()` overload"]
+    #[method(name = "UpdateRateImpl", args = 0)]
+    pub fn update_rate_impl(self) -> ();
+
+    #[doc = "`SetRankedInfoImpl()` overload"]
+    #[method(name = "SetRankedInfoImpl", args = 0)]
+    pub fn set_ranked_info_impl(self) -> ();
+
+    #[doc = "`UploadEditDataImpl()` overload"]
+    #[method(name = "UploadEditDataImpl", args = 0)]
+    pub fn upload_edit_data_impl(self) -> ();
+
+    #[doc = "`LocalUpload(::unity2::Il2CppString, crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, crate::app::versusserverrankeddata::VersusServerRankedData, u16)` overload"]
+    #[method(name = "LocalUpload", args = 4)]
+    pub fn local_upload(
+        self,
+        player_name: ::unity2::Il2CppString,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        data: crate::app::versusserverrankeddata::VersusServerRankedData,
+        rate_data_type: u16,
+    ) -> ();
+
+    #[doc = "`PostUploadEditDataImpl()` overload"]
+    #[method(name = "PostUploadEditDataImpl", args = 0)]
+    pub fn post_upload_edit_data_impl(self) -> ();
+
+    #[doc = "`DownloadMetaCasualFromDataCodeImpl()` overload"]
+    #[method(name = "DownloadMetaCasualFromDataCodeImpl", args = 0)]
+    pub fn download_meta_casual_from_data_code_impl(self) -> ();
+
+    #[doc = "`DownloadMetaRankedFromDataCodeImpl()` overload"]
+    #[method(name = "DownloadMetaRankedFromDataCodeImpl", args = 0)]
+    pub fn download_meta_ranked_from_data_code_impl(self) -> ();
+
+    #[doc = "`CheckAccessibleProfileImpl(crate::app::versus::Versus_Mode, crate::app::nexversus::NexVersus_TargetSlotList)` overload"]
+    #[method(name = "CheckAccessibleProfileImpl", args = 2)]
+    pub fn check_accessible_profile_impl(
+        self,
+        mode: crate::app::versus::Versus_Mode,
+        target_slot_list: crate::app::nexversus::NexVersus_TargetSlotList,
+    ) -> ();
+
+    #[doc = "`DownloadMetaProfileImpl(crate::app::versus::Versus_Mode, crate::app::profilecard::ProfileCard)` overload"]
+    #[method(name = "DownloadMetaProfileImpl", args = 2)]
+    pub fn download_meta_profile_impl(
+        self,
+        mode: crate::app::versus::Versus_Mode,
+        profile: crate::app::profilecard::ProfileCard,
+    ) -> ();
+
+    #[doc = "`DownloadCasualImpl()` overload"]
+    #[method(name = "DownloadCasualImpl", args = 0)]
+    pub fn download_casual_impl(self) -> ();
+
+    #[doc = "`UploadReplayImpl()` overload"]
+    #[method(name = "UploadReplayImpl", args = 0)]
+    pub fn upload_replay_impl(self) -> ();
+
+    #[doc = "`GetUploadReplaySlot(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetUploadReplaySlot", args = 1)]
+    pub fn get_upload_replay_slot(self, opponent_name: ::unity2::Il2CppString) -> u16;
+
+    #[doc = "`UploadCasualImpl()` overload"]
+    #[method(name = "UploadCasualImpl", args = 0)]
+    pub fn upload_casual_impl(self) -> ();
+
+    #[doc = "`ChangeCasualImpl()` overload"]
+    #[method(name = "ChangeCasualImpl", args = 0)]
+    pub fn change_casual_impl(self) -> ();
+
+    #[doc = "`ChangeCasualOpponentImpl()` overload"]
+    #[method(name = "ChangeCasualOpponentImpl", args = 0)]
+    pub fn change_casual_opponent_impl(self) -> ();
+
+    #[doc = "`SearchSameRateImpl()` overload"]
+    #[method(name = "SearchSameRateImpl", args = 0)]
+    pub fn search_same_rate_impl(self) -> ();
+
+    #[doc = "`ExcludeMySearchRankedData()` overload"]
+    #[method(name = "ExcludeMySearchRankedData", args = 0)]
+    pub fn exclude_my_search_ranked_data(self) -> ();
+
+    #[doc = "`SearchCasualImpl()` overload"]
+    #[method(name = "SearchCasualImpl", args = 0)]
+    pub fn search_casual_impl(self) -> ();
+
+    #[doc = "`SearchCasualLocal(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>, bool)` overload"]
+    #[method(name = "SearchCasualLocal", args = 2)]
+    pub fn search_casual_local(
+        self,
+        result_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+        >,
+        is_myself: bool,
+    ) -> ();
+
+    #[doc = "`SearchCasualFriendImpl()` overload"]
+    #[method(name = "SearchCasualFriendImpl", args = 0)]
+    pub fn search_casual_friend_impl(self) -> ();
+
+    #[doc = "`SearchRankedFriendImpl()` overload"]
+    #[method(name = "SearchRankedFriendImpl", args = 0)]
+    pub fn search_ranked_friend_impl(self) -> ();
+
+    #[doc = "`ExcludeMySearchCasualData(crate::system::collections::generic::list_1::List_1<crate::app::versusservercasualmetadata::VersusServerCasualMetaData>)` overload"]
+    #[method(name = "ExcludeMySearchCasualData", args = 1)]
+    pub fn exclude_my_search_casual_data(
+        self,
+        data_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::versusservercasualmetadata::VersusServerCasualMetaData,
+        >,
+    ) -> ();
+
+    #[doc = "`DownloadImpl()` overload"]
+    #[method(name = "DownloadImpl", args = 0)]
+    pub fn download_impl(self) -> ();
+
+    #[doc = "`DownloadMyEditImpl()` overload"]
+    #[method(name = "DownloadMyEditImpl", args = 0)]
+    pub fn download_my_edit_impl(self) -> ();
+
+    #[doc = "`SelectReplayImpl()` overload"]
+    #[method(name = "SelectReplayImpl", args = 0)]
+    pub fn select_replay_impl(self) -> ();
+
+    #[doc = "`MostOldestReplayMetaData(::unity2::Array<::unity2::Il2CppString>, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, ::unity2::Il2CppString)` overload"]
+    #[method(name = "MostOldestReplayMetaData", args = 3)]
+    pub fn most_oldest_replay_meta_data(
+        self,
+        paths: ::unity2::Array<::unity2::Il2CppString>,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        meta_path: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`DownloadReplayImpl()` overload"]
+    #[method(name = "DownloadReplayImpl", args = 0)]
+    pub fn download_replay_impl(self) -> ();
+
+    #[doc = "`ChangeReplayMetaImpl()` overload"]
+    #[method(name = "ChangeReplayMetaImpl", args = 0)]
+    pub fn change_replay_meta_impl(self) -> ();
+
+    #[doc = "`SearchMyDataToDataId()` overload"]
+    #[method(name = "SearchMyDataToDataId", args = 0)]
+    pub fn search_my_data_to_data_id(self) -> u64;
+
+    #[doc = "`GetLastUploadedResultImpl()` overload"]
+    #[method(name = "GetLastUploadedResultImpl", args = 0)]
+    pub fn get_last_uploaded_result_impl(self) -> bool;
+
+    #[doc = "`GetDownloadedEditMetaDataImpl()` overload"]
+    #[method(name = "GetDownloadedEditMetaDataImpl", args = 0)]
+    pub fn get_downloaded_edit_meta_data_impl(
+        self,
+    ) -> crate::app::versusserverrankedmetadata::VersusServerRankedMetaData;
+
+    #[doc = "`ChangeRankedMetaDataImpl(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData)` overload"]
+    #[method(name = "ChangeRankedMetaDataImpl", args = 1)]
+    pub fn change_ranked_meta_data_impl(
+        self,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+    ) -> ();
+
+    #[doc = "`ChangeDataTypeImpl(u64, u16)` overload"]
+    #[method(name = "ChangeDataTypeImpl", args = 2)]
+    pub fn change_data_type_impl(self, data_id: u64, data_type: u16) -> ();
+
+    #[doc = "`InitEditDataImpl()` overload"]
+    #[method(name = "InitEditDataImpl", args = 0)]
+    pub fn init_edit_data_impl(self) -> ();
+
+    #[doc = "`CheckParentalControlImpl()` overload"]
+    #[method(name = "CheckParentalControlImpl", args = 0)]
+    pub fn check_parental_control_impl(self) -> ();
+
+    #[doc = "`IsParentalControlAvailableImpl()` overload"]
+    #[method(name = "IsParentalControlAvailableImpl", args = 0)]
+    pub fn is_parental_control_available_impl(self) -> bool;
+
+    #[doc = "`EndParentalControlImpl()` overload"]
+    #[method(name = "EndParentalControlImpl", args = 0)]
+    pub fn end_parental_control_impl(self) -> ();
+
+    #[doc = "`CreateSelectReplayMetaMenu(::unity2::Array<::unity2::Il2CppString>, crate::app::versussequence::VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback)` overload"]
+    #[method(name = "CreateSelectReplayMetaMenu", args = 2)]
+    pub fn create_select_replay_meta_menu(
+        self,
+        meta_paths: ::unity2::Array<::unity2::Il2CppString>,
+        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceLocal_SelectReplayMetaMenuItem_ACallback,
+    ) -> ();
+
+    #[doc = "`Deserialize(::unity2::Il2CppString)` overload"]
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(
+        self,
+        path: ::unity2::Il2CppString,
+    ) -> crate::app::versusserverreplaymetadata::VersusServerReplayMetaData;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusSequenceLocal {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusSequenceLocal),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusSequenceLocalMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.ProfileDownloadSequence.DownloadYesNoDialog"
+)]
+#[parent(crate::system::object::Object)]
+pub struct VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog {}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action::Action)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        mess: ::unity2::Il2CppString,
+        decide_callback: crate::system::action::Action,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_ProfileDownloadSequence_DownloadYesNoDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_ProfileDownloadSequence_DownloadYesNoDialogMethods>::ctor(this);
         this
     }
 }
@@ -4243,252 +4163,332 @@ impl VersusSequence_VersusProfileMenu {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "VersusSequence.VersusSequenceNet.SelectReplaySequence"
-)]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_ProfileDownloadSequence.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSequence.ProfileDownloadSequence")]
 #[parent(crate::app::procinst::ProcInst)]
-pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence {
-    #[rename(name = "m_Callback")]
-    pub m_callback:
-        crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
-    #[rename(name = "m_ResultData")]
-    pub m_result_data: crate::app::nexversus::NexVersus_ReplaySlotMetaResultData,
+pub struct VersusSequence_ProfileDownloadSequence {
+    #[rename(name = "m_ReplayMetaData")]
+    pub m_replay_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
 }
 
 #[cfg(feature = "app-versussequence")]
 #[::unity2::methods]
-impl VersusSequence_VersusSequenceNet_SelectReplaySequence {
-    #[doc = "`.ctor(crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` overload"]
+impl VersusSequence_ProfileDownloadSequence {
+    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(
         self,
-        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
+        replay_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
     ) -> ();
 
-    #[doc = "`GetReplaySlots()` overload"]
-    #[method(name = "GetReplaySlots", args = 0)]
-    pub fn get_replay_slots(self) -> crate::system::collections::ienumerator::IEnumerator;
+    #[doc = "`TryGetOpponentInfo(::unity2::Il2CppString, u64)` overload"]
+    #[method(name = "TryGetOpponentInfo", args = 2)]
+    pub fn try_get_opponent_info(self, name: ::unity2::Il2CppString, principal_id: u64) -> bool;
 
-    #[doc = "`SortMetaData()` overload"]
-    #[method(name = "SortMetaData", args = 0)]
-    pub fn sort_meta_data(self) -> ();
+    #[doc = "`Download()` overload"]
+    #[method(name = "Download", args = 0)]
+    pub fn download(self) -> ();
 
-    #[doc = "`Error()` overload"]
-    #[method(name = "Error", args = 0)]
-    pub fn error(self) -> ();
+    #[doc = "`PostDownload()` overload"]
+    #[method(name = "PostDownload", args = 0)]
+    pub fn post_download(self) -> ();
 
-    #[doc = "`OpenSelectMenu()` overload"]
-    #[method(name = "OpenSelectMenu", args = 0)]
-    pub fn open_select_menu(self) -> ();
+    #[doc = "`Sanitize()` overload"]
+    #[method(name = "Sanitize", args = 0)]
+    pub fn sanitize(self) -> ();
 
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` overload"]
+    #[doc = "`OpenDialog()` overload"]
+    #[method(name = "OpenDialog", args = 0)]
+    pub fn open_dialog(self) -> ();
+
+    #[doc = "`Save()` overload"]
+    #[method(name = "Save", args = 0)]
+    pub fn save(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` overload"]
     #[method(name = "CreateBind", args = 2)]
     pub fn create_bind(
         super_: crate::app::procinst::ProcInst,
-        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
-    ) -> ();
-
-    #[doc = "`CreateSelectBind(crate::app::procinst::ProcInst, crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` overload"]
-    #[method(name = "CreateSelectBind", args = 2)]
-    pub fn create_select_bind(
-        super_: crate::app::procinst::ProcInst,
-        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
+        replay_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
     ) -> ();
 }
 
 #[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusSequenceNet_SelectReplaySequence {
-    #[doc = "`.ctor(crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` — overload selector"]
+impl VersusSequence_ProfileDownloadSequence {
+    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData)` — overload selector"]
     pub fn new(
-        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
+        replay_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusSequenceNet_SelectReplaySequence),
+                ::core::stringify!(VersusSequence_ProfileDownloadSequence),
                 ::core::stringify!(new),
             )
         });
-        <Self as IVersusSequence_VersusSequenceNet_SelectReplaySequenceMethods>::ctor(
-            this, callback,
-        );
+        <Self as IVersusSequence_ProfileDownloadSequenceMethods>::ctor(this, replay_meta_data);
         this
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/versussequence/VersusSequence_VersusTopMenu_Result2.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusSequenceNet.SelectReplaySequence.SelectReplayMenuItem"
 )]
-pub struct VersusSequence_VersusTopMenu_Result2 {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for VersusSequence_VersusTopMenu_Result2 {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "VersusSequence.VersusTopMenu.Result2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for VersusSequence_VersusTopMenu_Result2 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl VersusSequence_VersusTopMenu_Result2 {
-    pub fn casual() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ranked() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn top() -> Self {
-        Self { value: 0 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusTopMenu.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence.VersusTopMenu")]
-#[parent(crate::app::basicmenu::BasicMenu)]
-pub struct VersusSequence_VersusTopMenu {
-    #[static_field]
-    #[rename(name = "m_MenuContent")]
-    pub m_menu_content: crate::app::versustopmenucontent::VersusTopMenuContent,
-    #[static_field]
-    #[rename(name = "m_InitialSelected")]
-    pub m_initial_selected: i32,
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem {
+    #[rename(name = "m_MetaData")]
+    pub m_meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+    #[rename(name = "m_Callback")]
+    pub m_callback:
+        crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+    #[rename(name = "m_IsUpload")]
+    pub m_is_upload: bool,
+    #[rename(name = "m_IsPlay")]
+    pub m_is_play: bool,
 }
 
 #[cfg(feature = "app-versussequence")]
 #[::unity2::methods]
-impl VersusSequence_VersusTopMenu {
-    #[doc = "`InitializedSelected()` overload"]
-    #[method(name = "InitializedSelected", args = 0)]
-    pub fn initialized_selected() -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
+impl VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem {
+    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, i32, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` overload"]
+    #[method(name = ".ctor", args = 5)]
     pub fn ctor(
         self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::versustopmenucontent::VersusTopMenuContent,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        index: i32,
+        is_upload: bool,
+        is_play: bool,
+        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
     ) -> ();
 
     #[doc = "`GetName()` overload"]
     #[method(name = "GetName", args = 0)]
     pub fn get_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`GetTutorial()` overload"]
-    #[method(name = "GetTutorial", args = 0)]
-    pub fn get_tutorial(self) -> ::unity2::Il2CppString;
+    #[doc = "`IsEnable()` overload"]
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
 
     #[doc = "`BCall()` overload"]
     #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
+    pub fn b_call(self) -> crate::app::menuitem::MenuItem_Result;
 }
 
 #[cfg(feature = "app-versussequence")]
-impl VersusSequence_VersusTopMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::versustopmenucontent::VersusTopMenuContent)` — overload selector"]
+impl VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem {
+    #[doc = "`.ctor(crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, i32, bool, bool, crate::app::versussequence::VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback)` — overload selector"]
     pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::versustopmenucontent::VersusTopMenuContent,
+        meta_data: crate::app::versusserverreplaymetadata::VersusServerReplayMetaData,
+        index: i32,
+        is_upload: bool,
+        is_play: bool,
+        callback : crate :: app :: versussequence :: VersusSequence_VersusSequenceNet_SelectReplaySequence_Callback,
     ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSequence_VersusTopMenu),
+                ::core::stringify!(
+                    VersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItem
+                ),
                 ::core::stringify!(new),
             )
         });
-        <Self as IVersusSequence_VersusTopMenuMethods>::ctor(this, menu_item_list, menu_content);
+        < Self as IVersusSequence_VersusSequenceNet_SelectReplaySequence_SelectReplayMenuItemMethods > :: ctor (this , meta_data , index , is_upload , is_play , callback) ;
         this
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_IVersusSequenceBase.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSequence.IVersusSequenceBase")]
-pub struct VersusSequence_IVersusSequenceBase {}
-
-#[cfg(feature = "app-versussequence")]
-#[::unity2::methods]
-impl VersusSequence_IVersusSequenceBase {
-    #[doc = "`JumpTo(crate::app::versussequence::VersusSequence_Label)` overload"]
-    #[method(name = "JumpTo", args = 1)]
-    pub fn jump_to(self, label: crate::app::versussequence::VersusSequence_Label) -> ();
-
-    #[doc = "`GetMyEditDataId()` overload"]
-    #[method(name = "GetMyEditDataId", args = 0)]
-    pub fn get_my_edit_data_id(self) -> u64;
-
-    #[doc = "`GetNowRateName()` overload"]
-    #[method(name = "GetNowRateName", args = 0)]
-    pub fn get_now_rate_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`SetProfileTarget(crate::app::profilecard::ProfileCard)` overload"]
-    #[method(name = "SetProfileTarget", args = 1)]
-    pub fn set_profile_target(self, profile: crate::app::profilecard::ProfileCard) -> ();
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusSequenceLocal_LocalRate.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusMatchingMenu_FriendMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "VersusSequence.VersusSequenceLocal.LocalRate"
+    name = "VersusSequence.VersusMatchingMenu.FriendMenuItem"
 )]
-#[parent(crate::system::object::Object)]
-pub struct VersusSequence_VersusSequenceLocal_LocalRate {}
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct VersusSequence_VersusMatchingMenu_FriendMenuItem {}
 
 #[cfg(feature = "app-versussequence")]
 #[::unity2::methods]
-impl VersusSequence_VersusSequenceLocal_LocalRate {
-    #[doc = "`ParseToNumber(u16)` overload"]
-    #[method(name = "ParseToNumber", args = 1)]
-    pub fn parse_to_number(rate_data_type: u16) -> i32;
+impl VersusSequence_VersusMatchingMenu_FriendMenuItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 
-    #[doc = "`ParseToDataType(i32)` overload"]
-    #[method(name = "ParseToDataType", args = 1)]
-    pub fn parse_to_data_type(rate_number: i32) -> u16;
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
 
-    #[doc = "`ParseToSlotId(i32)` overload"]
-    #[method(name = "ParseToSlotId", args = 1)]
-    pub fn parse_to_slot_id(index: i32) -> u16;
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+}
 
-    #[doc = "`PerseToSlotIndex(u16)` overload"]
-    #[method(name = "PerseToSlotIndex", args = 1)]
-    pub fn perse_to_slot_index(slot_id: u16) -> i32;
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusMatchingMenu_FriendMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusMatchingMenu_FriendMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusMatchingMenu_FriendMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusRankedMenu_MockBattleMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusRankedMenu.MockBattleMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct VersusSequence_VersusRankedMenu_MockBattleMenuItem {}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusRankedMenu_MockBattleMenuItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusRankedMenu_MockBattleMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusRankedMenu_MockBattleMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusRankedMenu_MockBattleMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusCasualMenu_SelectMapMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusCasualMenu.SelectMapMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct VersusSequence_VersusCasualMenu_SelectMapMenuItem {
+    #[rename(name = "m_MapNumber")]
+    pub m_map_number: i32,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusCasualMenu_SelectMapMenuItem {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, map_number: i32) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusCasualMenu_SelectMapMenuItem {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(map_number: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusCasualMenu_SelectMapMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusCasualMenu_SelectMapMenuItemMethods>::ctor(this, map_number);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussequence/VersusSequence_VersusFriendMenu_FriendRankedMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "VersusSequence.VersusFriendMenu.FriendRankedMenuItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct VersusSequence_VersusFriendMenu_FriendRankedMenuItem {
+    #[rename(name = "m_MetaData")]
+    pub m_meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+    #[rename(name = "m_FriendNumber")]
+    pub m_friend_number: i32,
+    #[rename(name = "m_Name")]
+    pub m_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-versussequence")]
+#[::unity2::methods]
+impl VersusSequence_VersusFriendMenu_FriendRankedMenuItem {
+    #[doc = "`.ctor(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        num: i32,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnBuildMenuItemContent()` overload"]
+    #[method(name = "OnBuildMenuItemContent", args = 0)]
+    pub fn on_build_menu_item_content(self) -> ();
+
+    #[doc = "`StartBattleDialog()` overload"]
+    #[method(name = "StartBattleDialog", args = 0)]
+    pub fn start_battle_dialog(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-versussequence")]
+impl VersusSequence_VersusFriendMenu_FriendRankedMenuItem {
+    #[doc = "`.ctor(crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, i32)` — overload selector"]
+    pub fn new(
+        meta_data: crate::app::versusserverrankedmetadata::VersusServerRankedMetaData,
+        num: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VersusSequence_VersusFriendMenu_FriendRankedMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusSequence_VersusFriendMenu_FriendRankedMenuItemMethods>::ctor(
+            this, meta_data, num,
+        );
+        this
+    }
 }

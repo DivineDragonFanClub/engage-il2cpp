@@ -216,6 +216,79 @@ impl AIInterruptAttack {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterruptattack/AIInterruptAttack_CandidateList.md"))]
+#[::unity2::class(namespace = "App", name = "AIInterruptAttack.CandidateList")]
+#[parent(crate::system::object::Object)]
+pub struct AIInterruptAttack_CandidateList {
+    #[rename(name = "m_Pool")]
+    pub m_pool: crate::system::collections::generic::list_1::List_1<
+        crate::app::aiinterruptattack::AIInterruptAttack_Candidate,
+    >,
+    #[rename(name = "m_List")]
+    pub m_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::aiinterruptattack::AIInterruptAttack_Candidate,
+    >,
+}
+
+#[cfg(feature = "app-aiinterruptattack")]
+#[::unity2::methods]
+impl AIInterruptAttack_CandidateList {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Add(crate::app::unit::Unit, bool, bool, i32)` overload"]
+    #[method(name = "Add", args = 4)]
+    pub fn add(
+        self,
+        unit: crate::app::unit::Unit,
+        is_think_break: bool,
+        is_think_chain: bool,
+        dist: i32,
+    ) -> ();
+
+    #[doc = "`Sort()` overload"]
+    #[method(name = "Sort", args = 0)]
+    pub fn sort(self) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`HasAttacker()` overload"]
+    #[method(name = "HasAttacker", args = 0)]
+    pub fn has_attacker(self) -> bool;
+
+    #[doc = "`GetAttacker()` overload"]
+    #[method(name = "GetAttacker", args = 0)]
+    pub fn get_attacker(self) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate;
+
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[doc = "`get_Item(i32)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, index: i32)
+        -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate;
+}
+
+#[cfg(feature = "app-aiinterruptattack")]
+impl AIInterruptAttack_CandidateList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIInterruptAttack_CandidateList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIInterruptAttack_CandidateListMethods>::ctor(this);
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aiinterruptattack/AIInterruptAttack_AttackScoreResult.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -296,79 +369,6 @@ impl AIInterruptAttack_AttackScoreResult {
     #[doc = "`Clear()` overload"]
     #[method(name = "Clear", args = 0)]
     pub fn clear(self) -> ();
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterruptattack/AIInterruptAttack_CandidateList.md"))]
-#[::unity2::class(namespace = "App", name = "AIInterruptAttack.CandidateList")]
-#[parent(crate::system::object::Object)]
-pub struct AIInterruptAttack_CandidateList {
-    #[rename(name = "m_Pool")]
-    pub m_pool: crate::system::collections::generic::list_1::List_1<
-        crate::app::aiinterruptattack::AIInterruptAttack_Candidate,
-    >,
-    #[rename(name = "m_List")]
-    pub m_list: crate::system::collections::generic::list_1::List_1<
-        crate::app::aiinterruptattack::AIInterruptAttack_Candidate,
-    >,
-}
-
-#[cfg(feature = "app-aiinterruptattack")]
-#[::unity2::methods]
-impl AIInterruptAttack_CandidateList {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Add(crate::app::unit::Unit, bool, bool, i32)` overload"]
-    #[method(name = "Add", args = 4)]
-    pub fn add(
-        self,
-        unit: crate::app::unit::Unit,
-        is_think_break: bool,
-        is_think_chain: bool,
-        dist: i32,
-    ) -> ();
-
-    #[doc = "`Sort()` overload"]
-    #[method(name = "Sort", args = 0)]
-    pub fn sort(self) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`HasAttacker()` overload"]
-    #[method(name = "HasAttacker", args = 0)]
-    pub fn has_attacker(self) -> bool;
-
-    #[doc = "`GetAttacker()` overload"]
-    #[method(name = "GetAttacker", args = 0)]
-    pub fn get_attacker(self) -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate;
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, index: i32)
-        -> crate::app::aiinterruptattack::AIInterruptAttack_Candidate;
-}
-
-#[cfg(feature = "app-aiinterruptattack")]
-impl AIInterruptAttack_CandidateList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIInterruptAttack_CandidateList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIInterruptAttack_CandidateListMethods>::ctor(this);
-        this
-    }
 }
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aiinterruptattack/AIInterruptAttack_Candidate.md"))]

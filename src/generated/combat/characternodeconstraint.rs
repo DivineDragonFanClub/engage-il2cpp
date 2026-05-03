@@ -16,54 +16,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characternodeconstraint/CharacterNodeConstraint_State.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct CharacterNodeConstraint_State {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for CharacterNodeConstraint_State {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "CharacterNodeConstraint.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for CharacterNodeConstraint_State {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl CharacterNodeConstraint_State {
-    pub fn uninitialized() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn no_use() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn running() -> Self {
-        Self { value: 2 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/characternodeconstraint/CharacterNodeConstraint.md"))]
 #[::unity2::class(namespace = "Combat", name = "CharacterNodeConstraint")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -122,5 +74,53 @@ impl CharacterNodeConstraint {
         });
         <Self as ICharacterNodeConstraintMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/characternodeconstraint/CharacterNodeConstraint_State.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CharacterNodeConstraint_State {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CharacterNodeConstraint_State {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CharacterNodeConstraint.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CharacterNodeConstraint_State {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CharacterNodeConstraint_State {
+    pub fn uninitialized() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn no_use() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn running() -> Self {
+        Self { value: 2 }
     }
 }

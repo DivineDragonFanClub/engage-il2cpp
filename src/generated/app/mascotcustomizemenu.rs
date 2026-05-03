@@ -18,6 +18,198 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu_PartsMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "MascotCustomizeMenu.PartsMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct MascotCustomizeMenu_PartsMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-mascotcustomizemenu")]
+#[::unity2::methods]
+impl MascotCustomizeMenu_PartsMenuItem {
+    #[doc = "`.ctor(crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        event_handler: crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mascotcustomizemenu")]
+impl MascotCustomizeMenu_PartsMenuItem {
+    #[doc = "`.ctor(crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        event_handler: crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MascotCustomizeMenu_PartsMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMascotCustomizeMenu_PartsMenuItemMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "MascotCustomizeMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MascotCustomizeMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-mascotcustomizemenu")]
+#[::unity2::methods]
+impl MascotCustomizeMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::mascotcustomizemenu::MascotCustomizeMenu_MenuResult)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        result: crate::app::mascotcustomizemenu::MascotCustomizeMenu_MenuResult,
+    ) -> ();
+}
+
+#[cfg(feature = "app-mascotcustomizemenu")]
+impl MascotCustomizeMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MascotCustomizeMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMascotCustomizeMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotcustomizemenu/MascotCustomizeMenu_MenuResult.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MascotCustomizeMenu_MenuResult {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MascotCustomizeMenu_MenuResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MascotCustomizeMenu.MenuResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MascotCustomizeMenu_MenuResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MascotCustomizeMenu_MenuResult {
+    pub fn parts() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn color() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu_ColorMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "MascotCustomizeMenu.ColorMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct MascotCustomizeMenu_ColorMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-mascotcustomizemenu")]
+#[::unity2::methods]
+impl MascotCustomizeMenu_ColorMenuItem {
+    #[doc = "`.ctor(crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        event_handler: crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mascotcustomizemenu")]
+impl MascotCustomizeMenu_ColorMenuItem {
+    #[doc = "`.ctor(crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        event_handler: crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MascotCustomizeMenu_ColorMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMascotCustomizeMenu_ColorMenuItemMethods>::ctor(this, event_handler);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu.md"))]
 #[::unity2::class(namespace = "App", name = "MascotCustomizeMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -97,198 +289,6 @@ impl MascotCustomizeMenu {
             initial_selected,
             event_handler,
         );
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotcustomizemenu/MascotCustomizeMenu_MenuResult.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MascotCustomizeMenu_MenuResult {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MascotCustomizeMenu_MenuResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MascotCustomizeMenu.MenuResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MascotCustomizeMenu_MenuResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MascotCustomizeMenu_MenuResult {
-    pub fn parts() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn color() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "MascotCustomizeMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct MascotCustomizeMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-mascotcustomizemenu")]
-#[::unity2::methods]
-impl MascotCustomizeMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::mascotcustomizemenu::MascotCustomizeMenu_MenuResult)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        result: crate::app::mascotcustomizemenu::MascotCustomizeMenu_MenuResult,
-    ) -> ();
-}
-
-#[cfg(feature = "app-mascotcustomizemenu")]
-impl MascotCustomizeMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MascotCustomizeMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMascotCustomizeMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu_ColorMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "MascotCustomizeMenu.ColorMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct MascotCustomizeMenu_ColorMenuItem {
-    #[rename(name = "m_DecideEventHandler")]
-    pub m_decide_event_handler:
-        crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
-}
-
-#[cfg(feature = "app-mascotcustomizemenu")]
-#[::unity2::methods]
-impl MascotCustomizeMenu_ColorMenuItem {
-    #[doc = "`.ctor(crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        event_handler: crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mascotcustomizemenu")]
-impl MascotCustomizeMenu_ColorMenuItem {
-    #[doc = "`.ctor(crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        event_handler: crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MascotCustomizeMenu_ColorMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMascotCustomizeMenu_ColorMenuItemMethods>::ctor(this, event_handler);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcustomizemenu/MascotCustomizeMenu_PartsMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "MascotCustomizeMenu.PartsMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct MascotCustomizeMenu_PartsMenuItem {
-    #[rename(name = "m_DecideEventHandler")]
-    pub m_decide_event_handler:
-        crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
-}
-
-#[cfg(feature = "app-mascotcustomizemenu")]
-#[::unity2::methods]
-impl MascotCustomizeMenu_PartsMenuItem {
-    #[doc = "`.ctor(crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        event_handler: crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mascotcustomizemenu")]
-impl MascotCustomizeMenu_PartsMenuItem {
-    #[doc = "`.ctor(crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        event_handler: crate::app::mascotcustomizemenu::MascotCustomizeMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MascotCustomizeMenu_PartsMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMascotCustomizeMenu_PartsMenuItemMethods>::ctor(this, event_handler);
         this
     }
 }

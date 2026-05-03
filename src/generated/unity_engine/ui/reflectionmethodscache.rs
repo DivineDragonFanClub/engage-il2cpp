@@ -50,6 +50,50 @@ impl ReflectionMethodsCache_Raycast3DCallback {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.UI",
+    name = "ReflectionMethodsCache.GetRayIntersectionAllNonAllocCallback"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback {}
+
+#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
+#[::unity2::methods]
+impl ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::unity_engine::ray::Ray, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>, f32, i32)` overload"]
+    #[method(name = "Invoke", args = 4)]
+    pub fn invoke(
+        self,
+        r: crate::unity_engine::ray::Ray,
+        results: ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+        f: f32,
+        i: i32,
+    ) -> i32;
+}
+
+#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
+impl ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_RaycastAllCallback.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.UI",
@@ -87,92 +131,6 @@ impl ReflectionMethodsCache_RaycastAllCallback {
             )
         });
         <Self as IReflectionMethodsCache_RaycastAllCallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_GetRaycastNonAllocCallback.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.UI",
-    name = "ReflectionMethodsCache.GetRaycastNonAllocCallback"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ReflectionMethodsCache_GetRaycastNonAllocCallback {}
-
-#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-#[::unity2::methods]
-impl ReflectionMethodsCache_GetRaycastNonAllocCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::ray::Ray, ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>, f32, i32)` overload"]
-    #[method(name = "Invoke", args = 4)]
-    pub fn invoke(
-        self,
-        r: crate::unity_engine::ray::Ray,
-        results: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
-        f: f32,
-        i: i32,
-    ) -> i32;
-}
-
-#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-impl ReflectionMethodsCache_GetRaycastNonAllocCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ReflectionMethodsCache_GetRaycastNonAllocCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IReflectionMethodsCache_GetRaycastNonAllocCallbackMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_Raycast2DCallback.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.UI",
-    name = "ReflectionMethodsCache.Raycast2DCallback"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ReflectionMethodsCache_Raycast2DCallback {}
-
-#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-#[::unity2::methods]
-impl ReflectionMethodsCache_Raycast2DCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, i32)` overload"]
-    #[method(name = "Invoke", args = 4)]
-    pub fn invoke(
-        self,
-        p1: crate::unity_engine::vector2::Vector2,
-        p2: crate::unity_engine::vector2::Vector2,
-        f: f32,
-        i: i32,
-    ) -> crate::unity_engine::raycasthit2d::RaycastHit2D;
-}
-
-#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-impl ReflectionMethodsCache_Raycast2DCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ReflectionMethodsCache_Raycast2DCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IReflectionMethodsCache_Raycast2DCallbackMethods>::ctor(this, object, method);
         this
     }
 }
@@ -265,44 +223,86 @@ impl ReflectionMethodsCache_GetRayIntersectionAllCallback {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_Raycast2DCallback.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.UI",
-    name = "ReflectionMethodsCache.GetRayIntersectionAllNonAllocCallback"
+    name = "ReflectionMethodsCache.Raycast2DCallback"
 )]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback {}
+pub struct ReflectionMethodsCache_Raycast2DCallback {}
 
 #[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
 #[::unity2::methods]
-impl ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback {
+impl ReflectionMethodsCache_Raycast2DCallback {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke(crate::unity_engine::ray::Ray, ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>, f32, i32)` overload"]
+    #[doc = "`Invoke(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32, i32)` overload"]
+    #[method(name = "Invoke", args = 4)]
+    pub fn invoke(
+        self,
+        p1: crate::unity_engine::vector2::Vector2,
+        p2: crate::unity_engine::vector2::Vector2,
+        f: f32,
+        i: i32,
+    ) -> crate::unity_engine::raycasthit2d::RaycastHit2D;
+}
+
+#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
+impl ReflectionMethodsCache_Raycast2DCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ReflectionMethodsCache_Raycast2DCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IReflectionMethodsCache_Raycast2DCallbackMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/reflectionmethodscache/ReflectionMethodsCache_GetRaycastNonAllocCallback.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.UI",
+    name = "ReflectionMethodsCache.GetRaycastNonAllocCallback"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ReflectionMethodsCache_GetRaycastNonAllocCallback {}
+
+#[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
+#[::unity2::methods]
+impl ReflectionMethodsCache_GetRaycastNonAllocCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::unity_engine::ray::Ray, ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>, f32, i32)` overload"]
     #[method(name = "Invoke", args = 4)]
     pub fn invoke(
         self,
         r: crate::unity_engine::ray::Ray,
-        results: ::unity2::Array<crate::unity_engine::raycasthit2d::RaycastHit2D>,
+        results: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit>,
         f: f32,
         i: i32,
     ) -> i32;
 }
 
 #[cfg(feature = "unity_engine-ui-reflectionmethodscache")]
-impl ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback {
+impl ReflectionMethodsCache_GetRaycastNonAllocCallback {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ReflectionMethodsCache_GetRayIntersectionAllNonAllocCallback),
+                ::core::stringify!(ReflectionMethodsCache_GetRaycastNonAllocCallback),
                 ::core::stringify!(new),
             )
         });
-        <Self as IReflectionMethodsCache_GetRayIntersectionAllNonAllocCallbackMethods>::ctor(
+        <Self as IReflectionMethodsCache_GetRaycastNonAllocCallbackMethods>::ctor(
             this, object, method,
         );
         this

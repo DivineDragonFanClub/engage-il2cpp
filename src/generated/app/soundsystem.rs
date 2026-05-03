@@ -8,323 +8,23 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundsystem/SoundSystem_LipSyncDataFile.md"))]
-#[::unity2::class(namespace = "App", name = "SoundSystem.LipSyncDataFile")]
-#[parent(crate::system::object::Object)]
-pub struct SoundSystem_LipSyncDataFile {
-    #[static_field]
-    #[rename(name = "LoadDirectoryMax")]
-    pub load_directory_max: i32,
-    #[rename(name = "m_isExpandFileData")]
-    pub m_is_expand_file_data: bool,
-    #[rename(name = "m_lipSyncDataList")]
-    pub m_lip_sync_data_list: crate::system::collections::generic::list_1::List_1<
-        crate::app::soundsystem::SoundSystem_LipSyncData,
-    >,
-    #[rename(name = "m_rawFileHandle")]
-    pub m_raw_file_handle: ::unity2::Array<crate::app::rawfilehandle::RawFileHandle>,
-}
-
-#[cfg(feature = "app-soundsystem")]
-#[::unity2::methods]
-impl SoundSystem_LipSyncDataFile {
-    #[doc = "`GetLipSyncFilePath(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "GetLipSyncFilePath", args = 2)]
-    pub fn get_lip_sync_file_path(
-        file_name: ::unity2::Il2CppString,
-        patch_index: i32,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetLipSyncFileRelativePath(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetLipSyncFileRelativePath", args = 1)]
-    pub fn get_lip_sync_file_relative_path(
-        file_name: ::unity2::Il2CppString,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`GetLipSyncDataCount()` overload"]
-    #[method(name = "GetLipSyncDataCount", args = 0)]
-    pub fn get_lip_sync_data_count(self) -> i32;
-
-    #[doc = "`GetLipSyncData(i32)` overload"]
-    #[method(name = "GetLipSyncData", args = 1)]
-    pub fn get_lip_sync_data(self, index: i32) -> crate::app::soundsystem::SoundSystem_LipSyncData;
-
-    #[doc = "`LoadAsync(::unity2::Il2CppString)` overload"]
-    #[method(name = "LoadAsync", args = 1)]
-    pub fn load_async(self, file_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`ExpandFileData()` overload"]
-    #[method(name = "ExpandFileData", args = 0)]
-    pub fn expand_file_data(self) -> bool;
-
-    #[doc = "`Unload()` overload"]
-    #[method(name = "Unload", args = 0)]
-    pub fn unload(self) -> ();
-}
-
-#[cfg(feature = "app-soundsystem")]
-impl SoundSystem_LipSyncDataFile {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundSystem_LipSyncDataFile),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundSystem_LipSyncDataFileMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundsystem/SoundSystem.md"))]
-#[::unity2::class(namespace = "App", name = "SoundSystem")]
-#[parent(crate::system::object::Object)]
-pub struct SoundSystem {
-    #[static_field]
-    #[rename(name = "SoundHandleCount")]
-    pub sound_handle_count: i32,
-}
-
-#[cfg(feature = "app-soundsystem")]
-#[::unity2::methods]
-impl SoundSystem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-soundsystem")]
-impl SoundSystem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundSystem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundSystemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundsystem/SoundSystem_ResultSoundLoad.md"))]
-#[::unity2::class(namespace = "App", name = "SoundSystem.ResultSoundLoad")]
-#[parent(crate::system::object::Object)]
-pub struct SoundSystem_ResultSoundLoad {
-    #[rename(name = "m_status")]
-    pub m_status: crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status,
-}
-
-#[cfg(feature = "app-soundsystem")]
-#[::unity2::methods]
-impl SoundSystem_ResultSoundLoad {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`SetStatus(crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status)` overload"]
-    #[method(name = "SetStatus", args = 1)]
-    pub fn set_status(
-        self,
-        status: crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status,
-    ) -> ();
-
-    #[doc = "`IsLoading()` overload"]
-    #[method(name = "IsLoading", args = 0)]
-    pub fn is_loading(self) -> bool;
-
-    #[doc = "`IsLoadSuccess()` overload"]
-    #[method(name = "IsLoadSuccess", args = 0)]
-    pub fn is_load_success(self) -> bool;
-
-    #[doc = "`IsLoadFault()` overload"]
-    #[method(name = "IsLoadFault", args = 0)]
-    pub fn is_load_fault(self) -> bool;
-}
-
-#[cfg(feature = "app-soundsystem")]
-impl SoundSystem_ResultSoundLoad {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundSystem_ResultSoundLoad),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundSystem_ResultSoundLoadMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundsystem/SoundSystem_ResultSoundLoadList.md"))]
-#[::unity2::class(namespace = "App", name = "SoundSystem.ResultSoundLoadList")]
-#[parent(crate::system::object::Object)]
-pub struct SoundSystem_ResultSoundLoadList {
-    #[rename(name = "m_resultList")]
-    pub m_result_list: crate::system::collections::generic::list_1::List_1<
-        crate::app::soundsystem::SoundSystem_ResultSoundLoad,
-    >,
-}
-
-#[cfg(feature = "app-soundsystem")]
-#[::unity2::methods]
-impl SoundSystem_ResultSoundLoadList {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Add(crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, result: crate::app::soundsystem::SoundSystem_ResultSoundLoad) -> ();
-
-    #[doc = "`IsLoading()` overload"]
-    #[method(name = "IsLoading", args = 0)]
-    pub fn is_loading(self) -> bool;
-
-    #[doc = "`IsLoadSuccess()` overload"]
-    #[method(name = "IsLoadSuccess", args = 0)]
-    pub fn is_load_success(self) -> bool;
-}
-
-#[cfg(feature = "app-soundsystem")]
-impl SoundSystem_ResultSoundLoadList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundSystem_ResultSoundLoadList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundSystem_ResultSoundLoadListMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundsystem/SoundSystem_ISoundPlay.md"))]
-#[::unity2::class(namespace = "App", name = "SoundSystem.ISoundPlay")]
-pub struct SoundSystem_ISoundPlay {}
-
-#[cfg(feature = "app-soundsystem")]
-#[::unity2::methods]
-impl SoundSystem_ISoundPlay {
-    #[doc = "`PopTemporaryGameObject()` overload"]
-    #[method(name = "PopTemporaryGameObject", args = 0)]
-    pub fn pop_temporary_game_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`IsEventLoaded(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsEventLoaded", args = 1)]
-    pub fn is_event_loaded(self, event_name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`PostEvent(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = "PostEvent", args = 2)]
-    pub fn post_event(
-        self,
-        name: ::unity2::Il2CppString,
-        is_get_position: bool,
-    ) -> crate::app::soundsystem::SoundSystem_SoundHandle;
-
-    #[doc = "`PostEvent(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool)` overload"]
-    #[method(name = "PostEvent", args = 3)]
-    pub fn post_event_2(
-        self,
-        name: ::unity2::Il2CppString,
-        game_object: crate::unity_engine::gameobject::GameObject,
-        is_get_position: bool,
-    ) -> crate::app::soundsystem::SoundSystem_SoundHandle;
-
-    #[doc = "`PostEventWithTemporaryGameObject(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool)` overload"]
-    #[method(name = "PostEventWithTemporaryGameObject", args = 3)]
-    pub fn post_event_with_temporary_game_object(
-        self,
-        name: ::unity2::Il2CppString,
-        temporary_game_object: crate::unity_engine::gameobject::GameObject,
-        is_get_position: bool,
-    ) -> crate::app::soundsystem::SoundSystem_SoundHandle;
-
-    #[doc = "`StopSoundOnEvent(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "StopSoundOnEvent", args = 2)]
-    pub fn stop_sound_on_event(self, event_name: ::unity2::Il2CppString, fade_msec: i32) -> ();
-
-    #[doc = "`StopSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "StopSoundOnEvent", args = 3)]
-    pub fn stop_sound_on_event_2(
-        self,
-        event_name: ::unity2::Il2CppString,
-        fade_msec: i32,
-        game_object: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`PauseSoundOnEvent(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "PauseSoundOnEvent", args = 2)]
-    pub fn pause_sound_on_event(self, event_name: ::unity2::Il2CppString, fade_msec: i32) -> ();
-
-    #[doc = "`PauseSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "PauseSoundOnEvent", args = 3)]
-    pub fn pause_sound_on_event_2(
-        self,
-        event_name: ::unity2::Il2CppString,
-        fade_msec: i32,
-        game_object: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`ResumeSoundOnEvent(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "ResumeSoundOnEvent", args = 2)]
-    pub fn resume_sound_on_event(self, event_name: ::unity2::Il2CppString, fade_msec: i32) -> ();
-
-    #[doc = "`ResumeSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "ResumeSoundOnEvent", args = 3)]
-    pub fn resume_sound_on_event_2(
-        self,
-        event_name: ::unity2::Il2CppString,
-        fade_msec: i32,
-        game_object: crate::unity_engine::gameobject::GameObject,
-    ) -> ();
-
-    #[doc = "`StopByPlayingId(u32, i32)` overload"]
-    #[method(name = "StopByPlayingId", args = 2)]
-    pub fn stop_by_playing_id(self, playing_id: u32, fade_msec: i32) -> ();
-
-    #[doc = "`GetPlayPosition(u32, i32)` overload"]
-    #[method(name = "GetPlayPosition", args = 2)]
-    pub fn get_play_position(self, playing_id: u32, position_offset: i32) -> i32;
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/soundsystem/SoundSystem_LipSyncStructData.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/soundsystem/SoundSystem_ResultSoundLoad_Status.md"))]
 #[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct SoundSystem_LipSyncStructData {
-    pub m_msec: i32,
-    pub m_width: f32,
-    pub m_height: f32,
-    pub m_tongue: f32,
-    pub m_a: f32,
-    pub m_i: f32,
-    pub m_u: f32,
-    pub m_e: f32,
-    pub m_o: f32,
-    pub m_vol: f32,
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SoundSystem_ResultSoundLoad_Status {
+    pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for SoundSystem_LipSyncStructData {
+impl ::unity2::ClassIdentity for SoundSystem_ResultSoundLoad_Status {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "SoundSystem.LipSyncStructData";
+    const NAME: &'static str = "SoundSystem.ResultSoundLoad.Status";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -333,7 +33,7 @@ impl ::unity2::ClassIdentity for SoundSystem_LipSyncStructData {
     }
 }
 
-impl ::unity2::IlType for SoundSystem_LipSyncStructData {
+impl ::unity2::IlType for SoundSystem_ResultSoundLoad_Status {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -342,97 +42,17 @@ impl ::unity2::IlType for SoundSystem_LipSyncStructData {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundsystem/SoundSystem_SoundHandle.md"))]
-#[::unity2::class(namespace = "App", name = "SoundSystem.SoundHandle")]
-#[parent(crate::system::object::Object)]
-pub struct SoundSystem_SoundHandle {}
+impl SoundSystem_ResultSoundLoad_Status {
+    pub fn load() -> Self {
+        Self { value: 0 }
+    }
 
-#[cfg(feature = "app-soundsystem")]
-#[::unity2::methods]
-impl SoundSystem_SoundHandle {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    pub fn success() -> Self {
+        Self { value: 1 }
+    }
 
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
-
-    #[doc = "`GetGameObject()` overload"]
-    #[method(name = "GetGameObject", args = 0)]
-    pub fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`GetEventName()` overload"]
-    #[method(name = "GetEventName", args = 0)]
-    pub fn get_event_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetEventId()` overload"]
-    #[method(name = "GetEventId", args = 0)]
-    pub fn get_event_id(self) -> u32;
-
-    #[doc = "`GetPlayingId()` overload"]
-    #[method(name = "GetPlayingId", args = 0)]
-    pub fn get_playing_id(self) -> u32;
-
-    #[doc = "`IsEnable()` overload"]
-    #[method(name = "IsEnable", args = 0)]
-    pub fn is_enable(self) -> bool;
-
-    #[doc = "`IsPlaying()` overload"]
-    #[method(name = "IsPlaying", args = 0)]
-    pub fn is_playing(self) -> bool;
-
-    #[doc = "`GetCharacter()` overload"]
-    #[method(name = "GetCharacter", args = 0)]
-    pub fn get_character(self) -> crate::combat::character::Character;
-
-    #[doc = "`GetEventCharacterMouthController()` overload"]
-    #[method(name = "GetEventCharacterMouthController", args = 0)]
-    pub fn get_event_character_mouth_controller(
-        self,
-    ) -> crate::app::eventcharactermouthcontroller::EventCharacterMouthController;
-
-    #[doc = "`GetLipSyncDataFileName()` overload"]
-    #[method(name = "GetLipSyncDataFileName", args = 0)]
-    pub fn get_lip_sync_data_file_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`SetCharacter(crate::combat::character::Character)` overload"]
-    #[method(name = "SetCharacter", args = 1)]
-    pub fn set_character(self, character: crate::combat::character::Character) -> ();
-
-    #[doc = "`SetEventCharacterMouthController(crate::app::eventcharactermouthcontroller::EventCharacterMouthController)` overload"]
-    #[method(name = "SetEventCharacterMouthController", args = 1)]
-    pub fn set_event_character_mouth_controller(
-        self,
-        event_character_mouth_controller : crate :: app :: eventcharactermouthcontroller :: EventCharacterMouthController,
-    ) -> ();
-
-    #[doc = "`Stop(i32)` overload"]
-    #[method(name = "Stop", args = 1)]
-    pub fn stop(self, fade_msec: i32) -> ();
-
-    #[doc = "`Pause(i32)` overload"]
-    #[method(name = "Pause", args = 1)]
-    pub fn pause(self, fade_msec: i32) -> ();
-
-    #[doc = "`Resume(i32)` overload"]
-    #[method(name = "Resume", args = 1)]
-    pub fn resume(self, fade_msec: i32) -> ();
-}
-
-#[cfg(feature = "app-soundsystem")]
-impl SoundSystem_SoundHandle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundSystem_SoundHandle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundSystem_SoundHandleMethods>::ctor(this);
-        this
+    pub fn fault() -> Self {
+        Self { value: 2 }
     }
 }
 
@@ -775,23 +395,115 @@ impl SoundSystem_ISoundLoad {
     pub fn clear_prepare(self) -> ();
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/soundsystem/SoundSystem_ResultSoundLoad_Status.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct SoundSystem_ResultSoundLoad_Status {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundsystem/SoundSystem_ISoundPlay.md"))]
+#[::unity2::class(namespace = "App", name = "SoundSystem.ISoundPlay")]
+pub struct SoundSystem_ISoundPlay {}
+
+#[cfg(feature = "app-soundsystem")]
+#[::unity2::methods]
+impl SoundSystem_ISoundPlay {
+    #[doc = "`PopTemporaryGameObject()` overload"]
+    #[method(name = "PopTemporaryGameObject", args = 0)]
+    pub fn pop_temporary_game_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`IsEventLoaded(::unity2::Il2CppString)` overload"]
+    #[method(name = "IsEventLoaded", args = 1)]
+    pub fn is_event_loaded(self, event_name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`PostEvent(::unity2::Il2CppString, bool)` overload"]
+    #[method(name = "PostEvent", args = 2)]
+    pub fn post_event(
+        self,
+        name: ::unity2::Il2CppString,
+        is_get_position: bool,
+    ) -> crate::app::soundsystem::SoundSystem_SoundHandle;
+
+    #[doc = "`PostEvent(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool)` overload"]
+    #[method(name = "PostEvent", args = 3)]
+    pub fn post_event_2(
+        self,
+        name: ::unity2::Il2CppString,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        is_get_position: bool,
+    ) -> crate::app::soundsystem::SoundSystem_SoundHandle;
+
+    #[doc = "`PostEventWithTemporaryGameObject(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool)` overload"]
+    #[method(name = "PostEventWithTemporaryGameObject", args = 3)]
+    pub fn post_event_with_temporary_game_object(
+        self,
+        name: ::unity2::Il2CppString,
+        temporary_game_object: crate::unity_engine::gameobject::GameObject,
+        is_get_position: bool,
+    ) -> crate::app::soundsystem::SoundSystem_SoundHandle;
+
+    #[doc = "`StopSoundOnEvent(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "StopSoundOnEvent", args = 2)]
+    pub fn stop_sound_on_event(self, event_name: ::unity2::Il2CppString, fade_msec: i32) -> ();
+
+    #[doc = "`StopSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "StopSoundOnEvent", args = 3)]
+    pub fn stop_sound_on_event_2(
+        self,
+        event_name: ::unity2::Il2CppString,
+        fade_msec: i32,
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[doc = "`PauseSoundOnEvent(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "PauseSoundOnEvent", args = 2)]
+    pub fn pause_sound_on_event(self, event_name: ::unity2::Il2CppString, fade_msec: i32) -> ();
+
+    #[doc = "`PauseSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "PauseSoundOnEvent", args = 3)]
+    pub fn pause_sound_on_event_2(
+        self,
+        event_name: ::unity2::Il2CppString,
+        fade_msec: i32,
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[doc = "`ResumeSoundOnEvent(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "ResumeSoundOnEvent", args = 2)]
+    pub fn resume_sound_on_event(self, event_name: ::unity2::Il2CppString, fade_msec: i32) -> ();
+
+    #[doc = "`ResumeSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "ResumeSoundOnEvent", args = 3)]
+    pub fn resume_sound_on_event_2(
+        self,
+        event_name: ::unity2::Il2CppString,
+        fade_msec: i32,
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> ();
+
+    #[doc = "`StopByPlayingId(u32, i32)` overload"]
+    #[method(name = "StopByPlayingId", args = 2)]
+    pub fn stop_by_playing_id(self, playing_id: u32, fade_msec: i32) -> ();
+
+    #[doc = "`GetPlayPosition(u32, i32)` overload"]
+    #[method(name = "GetPlayPosition", args = 2)]
+    pub fn get_play_position(self, playing_id: u32, position_offset: i32) -> i32;
 }
 
-impl ::unity2::ClassIdentity for SoundSystem_ResultSoundLoad_Status {
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/soundsystem/SoundSystem_LipSyncStructData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct SoundSystem_LipSyncStructData {
+    pub m_msec: i32,
+    pub m_width: f32,
+    pub m_height: f32,
+    pub m_tongue: f32,
+    pub m_a: f32,
+    pub m_i: f32,
+    pub m_u: f32,
+    pub m_e: f32,
+    pub m_o: f32,
+    pub m_vol: f32,
+}
+
+impl ::unity2::ClassIdentity for SoundSystem_LipSyncStructData {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "SoundSystem.ResultSoundLoad.Status";
+    const NAME: &'static str = "SoundSystem.LipSyncStructData";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -800,7 +512,7 @@ impl ::unity2::ClassIdentity for SoundSystem_ResultSoundLoad_Status {
     }
 }
 
-impl ::unity2::IlType for SoundSystem_ResultSoundLoad_Status {
+impl ::unity2::IlType for SoundSystem_LipSyncStructData {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -809,17 +521,174 @@ impl ::unity2::IlType for SoundSystem_ResultSoundLoad_Status {
     }
 }
 
-impl SoundSystem_ResultSoundLoad_Status {
-    pub fn load() -> Self {
-        Self { value: 0 }
-    }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundsystem/SoundSystem_ResultSoundLoadList.md"))]
+#[::unity2::class(namespace = "App", name = "SoundSystem.ResultSoundLoadList")]
+#[parent(crate::system::object::Object)]
+pub struct SoundSystem_ResultSoundLoadList {
+    #[rename(name = "m_resultList")]
+    pub m_result_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::soundsystem::SoundSystem_ResultSoundLoad,
+    >,
+}
 
-    pub fn success() -> Self {
-        Self { value: 1 }
-    }
+#[cfg(feature = "app-soundsystem")]
+#[::unity2::methods]
+impl SoundSystem_ResultSoundLoadList {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 
-    pub fn fault() -> Self {
-        Self { value: 2 }
+    #[doc = "`Add(crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, result: crate::app::soundsystem::SoundSystem_ResultSoundLoad) -> ();
+
+    #[doc = "`IsLoading()` overload"]
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading(self) -> bool;
+
+    #[doc = "`IsLoadSuccess()` overload"]
+    #[method(name = "IsLoadSuccess", args = 0)]
+    pub fn is_load_success(self) -> bool;
+}
+
+#[cfg(feature = "app-soundsystem")]
+impl SoundSystem_ResultSoundLoadList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundSystem_ResultSoundLoadList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundSystem_ResultSoundLoadListMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundsystem/SoundSystem_LipSyncDataFile.md"))]
+#[::unity2::class(namespace = "App", name = "SoundSystem.LipSyncDataFile")]
+#[parent(crate::system::object::Object)]
+pub struct SoundSystem_LipSyncDataFile {
+    #[static_field]
+    #[rename(name = "LoadDirectoryMax")]
+    pub load_directory_max: i32,
+    #[rename(name = "m_isExpandFileData")]
+    pub m_is_expand_file_data: bool,
+    #[rename(name = "m_lipSyncDataList")]
+    pub m_lip_sync_data_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::soundsystem::SoundSystem_LipSyncData,
+    >,
+    #[rename(name = "m_rawFileHandle")]
+    pub m_raw_file_handle: ::unity2::Array<crate::app::rawfilehandle::RawFileHandle>,
+}
+
+#[cfg(feature = "app-soundsystem")]
+#[::unity2::methods]
+impl SoundSystem_LipSyncDataFile {
+    #[doc = "`GetLipSyncFilePath(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "GetLipSyncFilePath", args = 2)]
+    pub fn get_lip_sync_file_path(
+        file_name: ::unity2::Il2CppString,
+        patch_index: i32,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetLipSyncFileRelativePath(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetLipSyncFileRelativePath", args = 1)]
+    pub fn get_lip_sync_file_relative_path(
+        file_name: ::unity2::Il2CppString,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`GetLipSyncDataCount()` overload"]
+    #[method(name = "GetLipSyncDataCount", args = 0)]
+    pub fn get_lip_sync_data_count(self) -> i32;
+
+    #[doc = "`GetLipSyncData(i32)` overload"]
+    #[method(name = "GetLipSyncData", args = 1)]
+    pub fn get_lip_sync_data(self, index: i32) -> crate::app::soundsystem::SoundSystem_LipSyncData;
+
+    #[doc = "`LoadAsync(::unity2::Il2CppString)` overload"]
+    #[method(name = "LoadAsync", args = 1)]
+    pub fn load_async(self, file_name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`ExpandFileData()` overload"]
+    #[method(name = "ExpandFileData", args = 0)]
+    pub fn expand_file_data(self) -> bool;
+
+    #[doc = "`Unload()` overload"]
+    #[method(name = "Unload", args = 0)]
+    pub fn unload(self) -> ();
+}
+
+#[cfg(feature = "app-soundsystem")]
+impl SoundSystem_LipSyncDataFile {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundSystem_LipSyncDataFile),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundSystem_LipSyncDataFileMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundsystem/SoundSystem_ResultSoundLoad.md"))]
+#[::unity2::class(namespace = "App", name = "SoundSystem.ResultSoundLoad")]
+#[parent(crate::system::object::Object)]
+pub struct SoundSystem_ResultSoundLoad {
+    #[rename(name = "m_status")]
+    pub m_status: crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status,
+}
+
+#[cfg(feature = "app-soundsystem")]
+#[::unity2::methods]
+impl SoundSystem_ResultSoundLoad {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`SetStatus(crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status)` overload"]
+    #[method(name = "SetStatus", args = 1)]
+    pub fn set_status(
+        self,
+        status: crate::app::soundsystem::SoundSystem_ResultSoundLoad_Status,
+    ) -> ();
+
+    #[doc = "`IsLoading()` overload"]
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading(self) -> bool;
+
+    #[doc = "`IsLoadSuccess()` overload"]
+    #[method(name = "IsLoadSuccess", args = 0)]
+    pub fn is_load_success(self) -> bool;
+
+    #[doc = "`IsLoadFault()` overload"]
+    #[method(name = "IsLoadFault", args = 0)]
+    pub fn is_load_fault(self) -> bool;
+}
+
+#[cfg(feature = "app-soundsystem")]
+impl SoundSystem_ResultSoundLoad {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundSystem_ResultSoundLoad),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundSystem_ResultSoundLoadMethods>::ctor(this);
+        this
     }
 }
 
@@ -935,6 +804,137 @@ impl SoundSystem_LipSyncData {
             )
         });
         <Self as ISoundSystem_LipSyncDataMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundsystem/SoundSystem.md"))]
+#[::unity2::class(namespace = "App", name = "SoundSystem")]
+#[parent(crate::system::object::Object)]
+pub struct SoundSystem {
+    #[static_field]
+    #[rename(name = "SoundHandleCount")]
+    pub sound_handle_count: i32,
+}
+
+#[cfg(feature = "app-soundsystem")]
+#[::unity2::methods]
+impl SoundSystem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-soundsystem")]
+impl SoundSystem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundSystem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundSystemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundsystem/SoundSystem_SoundHandle.md"))]
+#[::unity2::class(namespace = "App", name = "SoundSystem.SoundHandle")]
+#[parent(crate::system::object::Object)]
+pub struct SoundSystem_SoundHandle {}
+
+#[cfg(feature = "app-soundsystem")]
+#[::unity2::methods]
+impl SoundSystem_SoundHandle {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Finalize()` overload"]
+    #[method(name = "Finalize", args = 0)]
+    pub fn finalize(self) -> ();
+
+    #[doc = "`GetGameObject()` overload"]
+    #[method(name = "GetGameObject", args = 0)]
+    pub fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`GetEventName()` overload"]
+    #[method(name = "GetEventName", args = 0)]
+    pub fn get_event_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetEventId()` overload"]
+    #[method(name = "GetEventId", args = 0)]
+    pub fn get_event_id(self) -> u32;
+
+    #[doc = "`GetPlayingId()` overload"]
+    #[method(name = "GetPlayingId", args = 0)]
+    pub fn get_playing_id(self) -> u32;
+
+    #[doc = "`IsEnable()` overload"]
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
+
+    #[doc = "`IsPlaying()` overload"]
+    #[method(name = "IsPlaying", args = 0)]
+    pub fn is_playing(self) -> bool;
+
+    #[doc = "`GetCharacter()` overload"]
+    #[method(name = "GetCharacter", args = 0)]
+    pub fn get_character(self) -> crate::combat::character::Character;
+
+    #[doc = "`GetEventCharacterMouthController()` overload"]
+    #[method(name = "GetEventCharacterMouthController", args = 0)]
+    pub fn get_event_character_mouth_controller(
+        self,
+    ) -> crate::app::eventcharactermouthcontroller::EventCharacterMouthController;
+
+    #[doc = "`GetLipSyncDataFileName()` overload"]
+    #[method(name = "GetLipSyncDataFileName", args = 0)]
+    pub fn get_lip_sync_data_file_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`SetCharacter(crate::combat::character::Character)` overload"]
+    #[method(name = "SetCharacter", args = 1)]
+    pub fn set_character(self, character: crate::combat::character::Character) -> ();
+
+    #[doc = "`SetEventCharacterMouthController(crate::app::eventcharactermouthcontroller::EventCharacterMouthController)` overload"]
+    #[method(name = "SetEventCharacterMouthController", args = 1)]
+    pub fn set_event_character_mouth_controller(
+        self,
+        event_character_mouth_controller : crate :: app :: eventcharactermouthcontroller :: EventCharacterMouthController,
+    ) -> ();
+
+    #[doc = "`Stop(i32)` overload"]
+    #[method(name = "Stop", args = 1)]
+    pub fn stop(self, fade_msec: i32) -> ();
+
+    #[doc = "`Pause(i32)` overload"]
+    #[method(name = "Pause", args = 1)]
+    pub fn pause(self, fade_msec: i32) -> ();
+
+    #[doc = "`Resume(i32)` overload"]
+    #[method(name = "Resume", args = 1)]
+    pub fn resume(self, fade_msec: i32) -> ();
+}
+
+#[cfg(feature = "app-soundsystem")]
+impl SoundSystem_SoundHandle {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundSystem_SoundHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundSystem_SoundHandleMethods>::ctor(this);
         this
     }
 }

@@ -12,42 +12,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/funcitem/FuncItem_Func.md"))]
-#[::unity2::class(namespace = "App", name = "FuncItem.Func")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct FuncItem_Func {}
-
-#[cfg(feature = "app-funcitem")]
-#[::unity2::methods]
-impl FuncItem_Func {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::menuitem::MenuItem)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        item: crate::app::menuitem::MenuItem,
-    ) -> crate::app::menuitem::MenuItem_Result;
-}
-
-#[cfg(feature = "app-funcitem")]
-impl FuncItem_Func {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FuncItem_Func),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFuncItem_FuncMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/funcitem/FuncItem.md"))]
 #[::unity2::class(namespace = "App", name = "FuncItem")]
 #[parent(crate::app::stringitem::StringItem)]
@@ -84,6 +48,42 @@ impl FuncItem {
             )
         });
         <Self as IFuncItemMethods>::ctor(this, name, func);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/funcitem/FuncItem_Func.md"))]
+#[::unity2::class(namespace = "App", name = "FuncItem.Func")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct FuncItem_Func {}
+
+#[cfg(feature = "app-funcitem")]
+#[::unity2::methods]
+impl FuncItem_Func {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::menuitem::MenuItem)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        item: crate::app::menuitem::MenuItem,
+    ) -> crate::app::menuitem::MenuItem_Result;
+}
+
+#[cfg(feature = "app-funcitem")]
+impl FuncItem_Func {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FuncItem_Func),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFuncItem_FuncMethods>::ctor(this, object, method);
         this
     }
 }

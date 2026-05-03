@@ -6,6 +6,45 @@ use crate::unity_engine::resource_management::resource_providers::resourceprovid
 use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::ResourceProviderBase;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/bundledassetprovider/BundledAssetProvider.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
+    name = "BundledAssetProvider"
+)]
+# [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
+pub struct BundledAssetProvider {}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
+#[::unity2::methods]
+impl BundledAssetProvider {
+    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
+    #[method(name = "Provide", args = 1)]
+    pub fn provide(
+        self,
+        provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
+impl BundledAssetProvider {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BundledAssetProvider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBundledAssetProviderMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/bundledassetprovider/BundledAssetProvider_InternalOp.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.ResourceProviders",
@@ -96,45 +135,6 @@ impl BundledAssetProvider_InternalOp {
             )
         });
         <Self as IBundledAssetProvider_InternalOpMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/resource_providers/bundledassetprovider/BundledAssetProvider.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.ResourceManagement.ResourceProviders",
-    name = "BundledAssetProvider"
-)]
-# [parent (crate :: unity_engine :: resource_management :: resource_providers :: resourceproviderbase :: ResourceProviderBase)]
-pub struct BundledAssetProvider {}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
-#[::unity2::methods]
-impl BundledAssetProvider {
-    #[doc = "`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]
-    #[method(name = "Provide", args = 1)]
-    pub fn provide(
-        self,
-        provide_handle : crate :: unity_engine :: resource_management :: resource_providers :: providehandle :: ProvideHandle,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-resource_management-resource_providers-bundledassetprovider")]
-impl BundledAssetProvider {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BundledAssetProvider),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBundledAssetProviderMethods>::ctor(this);
         this
     }
 }

@@ -10,6 +10,64 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalk/HubPlayTalk_CallPuppetEvent.md"))]
+#[::unity2::class(namespace = "App", name = "HubPlayTalk.CallPuppetEvent")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct HubPlayTalk_CallPuppetEvent {
+    #[rename(name = "File")]
+    pub file: ::unity2::Il2CppString,
+    #[rename(name = "Mid")]
+    pub mid: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-hubplaytalk")]
+#[::unity2::methods]
+impl HubPlayTalk_CallPuppetEvent {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        file: ::unity2::Il2CppString,
+        mid: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, file: ::unity2::Il2CppString, mid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Entry()` overload"]
+    #[method(name = "Entry", args = 0)]
+    pub fn entry(self) -> ();
+
+    #[doc = "`Main()` overload"]
+    #[method(name = "Main", args = 0)]
+    pub fn main(self) -> ();
+
+    #[doc = "`Exit()` overload"]
+    #[method(name = "Exit", args = 0)]
+    pub fn exit(self) -> ();
+
+    #[doc = "`CreateDesc()` overload"]
+    #[method(name = "CreateDesc", args = 0)]
+    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
+}
+
+#[cfg(feature = "app-hubplaytalk")]
+impl HubPlayTalk_CallPuppetEvent {
+    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(file: ::unity2::Il2CppString, mid: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubPlayTalk_CallPuppetEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubPlayTalk_CallPuppetEventMethods>::ctor(this, file, mid);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalk/HubPlayTalk.md"))]
 #[::unity2::class(namespace = "App", name = "HubPlayTalk")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -424,63 +482,5 @@ impl HubPlayTalk_TalkType {
 
     pub fn event() -> Self {
         Self { value: 2 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubplaytalk/HubPlayTalk_CallPuppetEvent.md"))]
-#[::unity2::class(namespace = "App", name = "HubPlayTalk.CallPuppetEvent")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct HubPlayTalk_CallPuppetEvent {
-    #[rename(name = "File")]
-    pub file: ::unity2::Il2CppString,
-    #[rename(name = "Mid")]
-    pub mid: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-hubplaytalk")]
-#[::unity2::methods]
-impl HubPlayTalk_CallPuppetEvent {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        file: ::unity2::Il2CppString,
-        mid: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, file: ::unity2::Il2CppString, mid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Entry()` overload"]
-    #[method(name = "Entry", args = 0)]
-    pub fn entry(self) -> ();
-
-    #[doc = "`Main()` overload"]
-    #[method(name = "Main", args = 0)]
-    pub fn main(self) -> ();
-
-    #[doc = "`Exit()` overload"]
-    #[method(name = "Exit", args = 0)]
-    pub fn exit(self) -> ();
-
-    #[doc = "`CreateDesc()` overload"]
-    #[method(name = "CreateDesc", args = 0)]
-    pub fn create_desc(self) -> ::unity2::Array<crate::app::procdesc::ProcDesc>;
-}
-
-#[cfg(feature = "app-hubplaytalk")]
-impl HubPlayTalk_CallPuppetEvent {
-    #[doc = "`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(file: ::unity2::Il2CppString, mid: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubPlayTalk_CallPuppetEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubPlayTalk_CallPuppetEventMethods>::ctor(this, file, mid);
-        this
     }
 }

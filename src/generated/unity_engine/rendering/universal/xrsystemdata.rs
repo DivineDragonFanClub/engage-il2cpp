@@ -8,6 +8,39 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystemdata/XRSystemData.md"))]
+#[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystemData")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct XRSystemData {
+    #[rename(name = "shaders")]
+    pub shaders:
+        crate::unity_engine::rendering::universal::xrsystemdata::XRSystemData_ShaderResources,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
+#[::unity2::methods]
+impl XRSystemData {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
+impl XRSystemData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(XRSystemData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IXRSystemDataMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystemdata/XRSystemData_ShaderResources.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
@@ -41,39 +74,6 @@ impl XRSystemData_ShaderResources {
             )
         });
         <Self as IXRSystemData_ShaderResourcesMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystemdata/XRSystemData.md"))]
-#[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystemData")]
-#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-pub struct XRSystemData {
-    #[rename(name = "shaders")]
-    pub shaders:
-        crate::unity_engine::rendering::universal::xrsystemdata::XRSystemData_ShaderResources,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
-#[::unity2::methods]
-impl XRSystemData {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-xrsystemdata")]
-impl XRSystemData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(XRSystemData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IXRSystemDataMethods>::ctor(this);
         this
     }
 }

@@ -16,66 +16,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventcharactermouthcontroller/EventCharacterMouthController_AnimLayer.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct EventCharacterMouthController_AnimLayer {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for EventCharacterMouthController_AnimLayer {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EventCharacterMouthController.AnimLayer";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for EventCharacterMouthController_AnimLayer {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl EventCharacterMouthController_AnimLayer {
-    pub fn layer_a() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn layer_i() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn layer_u() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn layer_e() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn layer_o() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn max() -> Self {
-        Self { value: 5 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventcharactermouthcontroller/EventCharacterMouthController.md"))]
 #[::unity2::class(namespace = "App", name = "EventCharacterMouthController")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -151,5 +91,65 @@ impl EventCharacterMouthController {
         });
         <Self as IEventCharacterMouthControllerMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventcharactermouthcontroller/EventCharacterMouthController_AnimLayer.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EventCharacterMouthController_AnimLayer {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EventCharacterMouthController_AnimLayer {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "EventCharacterMouthController.AnimLayer";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EventCharacterMouthController_AnimLayer {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EventCharacterMouthController_AnimLayer {
+    pub fn layer_a() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn layer_i() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn layer_u() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn layer_e() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn layer_o() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 5 }
     }
 }

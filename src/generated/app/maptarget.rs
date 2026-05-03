@@ -70,276 +70,6 @@ impl MapTarget_ActionMask {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maptarget/MapTarget_DataSet.md"))]
-#[::unity2::class(namespace = "App", name = "MapTarget.DataSet")]
-#[parent(crate::system::object::Object)]
-pub struct MapTarget_DataSet {
-    #[rename(name = "m_List")]
-    pub m_list:
-        crate::system::collections::generic::list_1::List_1<crate::app::maptarget::MapTarget_Data>,
-    #[rename(name = "m_Stack")]
-    pub m_stack: crate::system::collections::generic::stack_1::Stack_1<
-        crate::app::maptarget::MapTarget_Data,
-    >,
-}
-
-#[cfg(feature = "app-maptarget")]
-#[::unity2::methods]
-impl MapTarget_DataSet {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, capacity: i32) -> ();
-
-    #[doc = "`get_List()` overload"]
-    #[method(name = "get_List", args = 0)]
-    pub fn get_list(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::maptarget::MapTarget_Data>;
-
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
-
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, i: i32) -> crate::app::maptarget::MapTarget_Data;
-
-    #[doc = "`get_ItemMask()` overload"]
-    #[method(name = "get_ItemMask", args = 0)]
-    pub fn get_item_mask(self) -> u32;
-
-    #[doc = "`set_ItemMask(u32)` overload"]
-    #[method(name = "set_ItemMask", args = 1)]
-    pub fn set_item_mask(self, value: u32) -> ();
-
-    #[doc = "`IndexOf(crate::app::unit::Unit)` overload"]
-    #[method(name = "IndexOf", args = 1)]
-    pub fn index_of(self, unit: crate::app::unit::Unit) -> i32;
-
-    #[doc = "`IndexOf(i32, i32)` overload"]
-    #[method(name = "IndexOf", args = 2)]
-    pub fn index_of_2(self, x: i32, z: i32) -> i32;
-
-    #[doc = "`IsExist(crate::app::unit::Unit)` overload"]
-    #[method(name = "IsExist", args = 1)]
-    pub fn is_exist(self, unit: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`IsExist(i32, i32)` overload"]
-    #[method(name = "IsExist", args = 2)]
-    pub fn is_exist_2(self, x: i32, z: i32) -> bool;
-
-    #[doc = "`NewData()` overload"]
-    #[method(name = "NewData", args = 0)]
-    pub fn new_data(self) -> crate::app::maptarget::MapTarget_Data;
-
-    #[doc = "`NewData(crate::app::unit::Unit, i32, i32, u32, i32)` overload"]
-    #[method(name = "NewData", args = 5)]
-    pub fn new_data_2(
-        self,
-        unit: crate::app::unit::Unit,
-        x: i32,
-        z: i32,
-        item_mask: u32,
-        select_item_index: i32,
-    ) -> crate::app::maptarget::MapTarget_Data;
-
-    #[doc = "`NewData(i32, i32, u32, i32)` overload"]
-    #[method(name = "NewData", args = 4)]
-    pub fn new_data_3(
-        self,
-        x: i32,
-        z: i32,
-        item_mask: u32,
-        select_item_index: i32,
-    ) -> crate::app::maptarget::MapTarget_Data;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`CopyFrom(crate::app::maptarget::MapTarget_DataSet)` overload"]
-    #[method(name = "CopyFrom", args = 1)]
-    pub fn copy_from(self, from: crate::app::maptarget::MapTarget_DataSet) -> ();
-
-    #[doc = "`Sort()` overload"]
-    #[method(name = "Sort", args = 0)]
-    pub fn sort(self) -> ();
-
-    #[doc = "`GetDataItemCount()` overload"]
-    #[method(name = "GetDataItemCount", args = 0)]
-    pub fn get_data_item_count(self) -> i32;
-}
-
-#[cfg(feature = "app-maptarget")]
-impl MapTarget_DataSet {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(capacity: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapTarget_DataSet),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapTarget_DataSetMethods>::ctor(this, capacity);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maptarget/MapTarget_Data.md"))]
-#[::unity2::class(namespace = "App", name = "MapTarget.Data")]
-#[parent(crate::system::object::Object)]
-pub struct MapTarget_Data {
-    #[rename(name = "m_Index")]
-    pub m_index: u8,
-    #[rename(name = "m_Unit")]
-    pub m_unit: crate::app::unit::Unit,
-    #[rename(name = "m_X")]
-    pub m_x: i8,
-    #[rename(name = "m_Z")]
-    pub m_z: i8,
-    #[rename(name = "m_X1")]
-    pub m_x1: i8,
-    #[rename(name = "m_Z1")]
-    pub m_z1: i8,
-    #[rename(name = "m_X2")]
-    pub m_x2: i8,
-    #[rename(name = "m_Z2")]
-    pub m_z2: i8,
-    #[rename(name = "m_ItemMask")]
-    pub m_item_mask: u32,
-    #[rename(name = "m_SelectItemIndex")]
-    pub m_select_item_index: i8,
-}
-
-#[cfg(feature = "app-maptarget")]
-#[::unity2::methods]
-impl MapTarget_Data {
-    #[doc = "`Set(crate::app::unit::Unit, u32, i32)` overload"]
-    #[method(name = "Set", args = 3)]
-    pub fn set(
-        self,
-        unit: crate::app::unit::Unit,
-        item_mask: u32,
-        select_item_index: i32,
-    ) -> crate::app::maptarget::MapTarget_Data;
-
-    #[doc = "`Set(crate::app::unit::Unit, i32, i32, u32, i32)` overload"]
-    #[method(name = "Set", args = 5)]
-    pub fn set_2(
-        self,
-        unit: crate::app::unit::Unit,
-        x: i32,
-        z: i32,
-        item_mask: u32,
-        select_item_index: i32,
-    ) -> crate::app::maptarget::MapTarget_Data;
-
-    #[doc = "`Set(i32, i32, u32, i32)` overload"]
-    #[method(name = "Set", args = 4)]
-    pub fn set_3(
-        self,
-        x: i32,
-        z: i32,
-        item_mask: u32,
-        select_item_index: i32,
-    ) -> crate::app::maptarget::MapTarget_Data;
-
-    #[doc = "`SetRect(i32, i32, i32, i32)` overload"]
-    #[method(name = "SetRect", args = 4)]
-    pub fn set_rect(
-        self,
-        x1: i32,
-        z1: i32,
-        x2: i32,
-        z2: i32,
-    ) -> crate::app::maptarget::MapTarget_Data;
-
-    #[doc = "`get_Index()` overload"]
-    #[method(name = "get_Index", args = 0)]
-    pub fn get_index(self) -> i32;
-
-    #[doc = "`set_Index(i32)` overload"]
-    #[method(name = "set_Index", args = 1)]
-    pub fn set_index(self, value: i32) -> ();
-
-    #[doc = "`get_Unit()` overload"]
-    #[method(name = "get_Unit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`get_X()` overload"]
-    #[method(name = "get_X", args = 0)]
-    pub fn get_x(self) -> i32;
-
-    #[doc = "`get_Z()` overload"]
-    #[method(name = "get_Z", args = 0)]
-    pub fn get_z(self) -> i32;
-
-    #[doc = "`get_X1()` overload"]
-    #[method(name = "get_X1", args = 0)]
-    pub fn get_x1(self) -> i32;
-
-    #[doc = "`get_Z1()` overload"]
-    #[method(name = "get_Z1", args = 0)]
-    pub fn get_z1(self) -> i32;
-
-    #[doc = "`get_X2()` overload"]
-    #[method(name = "get_X2", args = 0)]
-    pub fn get_x2(self) -> i32;
-
-    #[doc = "`get_Z2()` overload"]
-    #[method(name = "get_Z2", args = 0)]
-    pub fn get_z2(self) -> i32;
-
-    #[doc = "`get_ItemMask()` overload"]
-    #[method(name = "get_ItemMask", args = 0)]
-    pub fn get_item_mask(self) -> u32;
-
-    #[doc = "`get_SelectItemIndex()` overload"]
-    #[method(name = "get_SelectItemIndex", args = 0)]
-    pub fn get_select_item_index(self) -> i32;
-
-    #[doc = "`set_SelectItemIndex(i32)` overload"]
-    #[method(name = "set_SelectItemIndex", args = 1)]
-    pub fn set_select_item_index(self, value: i32) -> ();
-
-    #[doc = "`CheckItemMask(i32)` overload"]
-    #[method(name = "CheckItemMask", args = 1)]
-    pub fn check_item_mask(self, index: i32) -> bool;
-
-    #[doc = "`IsOutSide(i32, i32)` overload"]
-    #[method(name = "IsOutSide", args = 2)]
-    pub fn is_out_side(self, x: i32, z: i32) -> bool;
-
-    #[doc = "`CopyFrom(crate::app::maptarget::MapTarget_Data)` overload"]
-    #[method(name = "CopyFrom", args = 1)]
-    pub fn copy_from(self, from: crate::app::maptarget::MapTarget_Data) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-maptarget")]
-impl MapTarget_Data {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapTarget_Data),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapTarget_DataMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maptarget/MapTarget.md"))]
 #[::unity2::class(namespace = "App", name = "MapTarget")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: maptarget :: MapTarget >)]
@@ -838,6 +568,160 @@ impl MapTarget {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maptarget/MapTarget_Data.md"))]
+#[::unity2::class(namespace = "App", name = "MapTarget.Data")]
+#[parent(crate::system::object::Object)]
+pub struct MapTarget_Data {
+    #[rename(name = "m_Index")]
+    pub m_index: u8,
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+    #[rename(name = "m_X")]
+    pub m_x: i8,
+    #[rename(name = "m_Z")]
+    pub m_z: i8,
+    #[rename(name = "m_X1")]
+    pub m_x1: i8,
+    #[rename(name = "m_Z1")]
+    pub m_z1: i8,
+    #[rename(name = "m_X2")]
+    pub m_x2: i8,
+    #[rename(name = "m_Z2")]
+    pub m_z2: i8,
+    #[rename(name = "m_ItemMask")]
+    pub m_item_mask: u32,
+    #[rename(name = "m_SelectItemIndex")]
+    pub m_select_item_index: i8,
+}
+
+#[cfg(feature = "app-maptarget")]
+#[::unity2::methods]
+impl MapTarget_Data {
+    #[doc = "`Set(crate::app::unit::Unit, u32, i32)` overload"]
+    #[method(name = "Set", args = 3)]
+    pub fn set(
+        self,
+        unit: crate::app::unit::Unit,
+        item_mask: u32,
+        select_item_index: i32,
+    ) -> crate::app::maptarget::MapTarget_Data;
+
+    #[doc = "`Set(crate::app::unit::Unit, i32, i32, u32, i32)` overload"]
+    #[method(name = "Set", args = 5)]
+    pub fn set_2(
+        self,
+        unit: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        item_mask: u32,
+        select_item_index: i32,
+    ) -> crate::app::maptarget::MapTarget_Data;
+
+    #[doc = "`Set(i32, i32, u32, i32)` overload"]
+    #[method(name = "Set", args = 4)]
+    pub fn set_3(
+        self,
+        x: i32,
+        z: i32,
+        item_mask: u32,
+        select_item_index: i32,
+    ) -> crate::app::maptarget::MapTarget_Data;
+
+    #[doc = "`SetRect(i32, i32, i32, i32)` overload"]
+    #[method(name = "SetRect", args = 4)]
+    pub fn set_rect(
+        self,
+        x1: i32,
+        z1: i32,
+        x2: i32,
+        z2: i32,
+    ) -> crate::app::maptarget::MapTarget_Data;
+
+    #[doc = "`get_Index()` overload"]
+    #[method(name = "get_Index", args = 0)]
+    pub fn get_index(self) -> i32;
+
+    #[doc = "`set_Index(i32)` overload"]
+    #[method(name = "set_Index", args = 1)]
+    pub fn set_index(self, value: i32) -> ();
+
+    #[doc = "`get_Unit()` overload"]
+    #[method(name = "get_Unit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`get_X()` overload"]
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[doc = "`get_Z()` overload"]
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[doc = "`get_X1()` overload"]
+    #[method(name = "get_X1", args = 0)]
+    pub fn get_x1(self) -> i32;
+
+    #[doc = "`get_Z1()` overload"]
+    #[method(name = "get_Z1", args = 0)]
+    pub fn get_z1(self) -> i32;
+
+    #[doc = "`get_X2()` overload"]
+    #[method(name = "get_X2", args = 0)]
+    pub fn get_x2(self) -> i32;
+
+    #[doc = "`get_Z2()` overload"]
+    #[method(name = "get_Z2", args = 0)]
+    pub fn get_z2(self) -> i32;
+
+    #[doc = "`get_ItemMask()` overload"]
+    #[method(name = "get_ItemMask", args = 0)]
+    pub fn get_item_mask(self) -> u32;
+
+    #[doc = "`get_SelectItemIndex()` overload"]
+    #[method(name = "get_SelectItemIndex", args = 0)]
+    pub fn get_select_item_index(self) -> i32;
+
+    #[doc = "`set_SelectItemIndex(i32)` overload"]
+    #[method(name = "set_SelectItemIndex", args = 1)]
+    pub fn set_select_item_index(self, value: i32) -> ();
+
+    #[doc = "`CheckItemMask(i32)` overload"]
+    #[method(name = "CheckItemMask", args = 1)]
+    pub fn check_item_mask(self, index: i32) -> bool;
+
+    #[doc = "`IsOutSide(i32, i32)` overload"]
+    #[method(name = "IsOutSide", args = 2)]
+    pub fn is_out_side(self, x: i32, z: i32) -> bool;
+
+    #[doc = "`CopyFrom(crate::app::maptarget::MapTarget_Data)` overload"]
+    #[method(name = "CopyFrom", args = 1)]
+    pub fn copy_from(self, from: crate::app::maptarget::MapTarget_Data) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-maptarget")]
+impl MapTarget_Data {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapTarget_Data),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapTarget_DataMethods>::ctor(this);
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/maptarget/MapTarget_RangeType.md"))]
 #[repr(C)]
 #[derive(
@@ -883,5 +767,121 @@ impl MapTarget_RangeType {
 
     pub fn specified_item() -> Self {
         Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/maptarget/MapTarget_DataSet.md"))]
+#[::unity2::class(namespace = "App", name = "MapTarget.DataSet")]
+#[parent(crate::system::object::Object)]
+pub struct MapTarget_DataSet {
+    #[rename(name = "m_List")]
+    pub m_list:
+        crate::system::collections::generic::list_1::List_1<crate::app::maptarget::MapTarget_Data>,
+    #[rename(name = "m_Stack")]
+    pub m_stack: crate::system::collections::generic::stack_1::Stack_1<
+        crate::app::maptarget::MapTarget_Data,
+    >,
+}
+
+#[cfg(feature = "app-maptarget")]
+#[::unity2::methods]
+impl MapTarget_DataSet {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, capacity: i32) -> ();
+
+    #[doc = "`get_List()` overload"]
+    #[method(name = "get_List", args = 0)]
+    pub fn get_list(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::maptarget::MapTarget_Data>;
+
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[doc = "`get_Item(i32)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, i: i32) -> crate::app::maptarget::MapTarget_Data;
+
+    #[doc = "`get_ItemMask()` overload"]
+    #[method(name = "get_ItemMask", args = 0)]
+    pub fn get_item_mask(self) -> u32;
+
+    #[doc = "`set_ItemMask(u32)` overload"]
+    #[method(name = "set_ItemMask", args = 1)]
+    pub fn set_item_mask(self, value: u32) -> ();
+
+    #[doc = "`IndexOf(crate::app::unit::Unit)` overload"]
+    #[method(name = "IndexOf", args = 1)]
+    pub fn index_of(self, unit: crate::app::unit::Unit) -> i32;
+
+    #[doc = "`IndexOf(i32, i32)` overload"]
+    #[method(name = "IndexOf", args = 2)]
+    pub fn index_of_2(self, x: i32, z: i32) -> i32;
+
+    #[doc = "`IsExist(crate::app::unit::Unit)` overload"]
+    #[method(name = "IsExist", args = 1)]
+    pub fn is_exist(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[doc = "`IsExist(i32, i32)` overload"]
+    #[method(name = "IsExist", args = 2)]
+    pub fn is_exist_2(self, x: i32, z: i32) -> bool;
+
+    #[doc = "`NewData()` overload"]
+    #[method(name = "NewData", args = 0)]
+    pub fn new_data(self) -> crate::app::maptarget::MapTarget_Data;
+
+    #[doc = "`NewData(crate::app::unit::Unit, i32, i32, u32, i32)` overload"]
+    #[method(name = "NewData", args = 5)]
+    pub fn new_data_2(
+        self,
+        unit: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        item_mask: u32,
+        select_item_index: i32,
+    ) -> crate::app::maptarget::MapTarget_Data;
+
+    #[doc = "`NewData(i32, i32, u32, i32)` overload"]
+    #[method(name = "NewData", args = 4)]
+    pub fn new_data_3(
+        self,
+        x: i32,
+        z: i32,
+        item_mask: u32,
+        select_item_index: i32,
+    ) -> crate::app::maptarget::MapTarget_Data;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`CopyFrom(crate::app::maptarget::MapTarget_DataSet)` overload"]
+    #[method(name = "CopyFrom", args = 1)]
+    pub fn copy_from(self, from: crate::app::maptarget::MapTarget_DataSet) -> ();
+
+    #[doc = "`Sort()` overload"]
+    #[method(name = "Sort", args = 0)]
+    pub fn sort(self) -> ();
+
+    #[doc = "`GetDataItemCount()` overload"]
+    #[method(name = "GetDataItemCount", args = 0)]
+    pub fn get_data_item_count(self) -> i32;
+}
+
+#[cfg(feature = "app-maptarget")]
+impl MapTarget_DataSet {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(capacity: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapTarget_DataSet),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapTarget_DataSetMethods>::ctor(this, capacity);
+        this
     }
 }

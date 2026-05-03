@@ -12,90 +12,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponparammenu/RefineGodWeaponParamMenu_SelectEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RefineGodWeaponParamMenu.SelectEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RefineGodWeaponParamMenu_SelectEventHandler {}
-
-#[cfg(feature = "app-refinegodweaponparammenu")]
-#[::unity2::methods]
-impl RefineGodWeaponParamMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, bool)` overload"]
-    #[method(name = "Invoke", args = 4)]
-    pub fn invoke(
-        self,
-        god_unit: crate::app::godunit::GodUnit,
-        item_data: crate::app::itemdata::ItemData,
-        refine_kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
-        refine_or_reset: bool,
-    ) -> ();
-}
-
-#[cfg(feature = "app-refinegodweaponparammenu")]
-impl RefineGodWeaponParamMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineGodWeaponParamMenu_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineGodWeaponParamMenu_SelectEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponparammenu/RefineGodWeaponParamMenu_DecideEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RefineGodWeaponParamMenu.DecideEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RefineGodWeaponParamMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-refinegodweaponparammenu")]
-#[::unity2::methods]
-impl RefineGodWeaponParamMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::godweaponrefinedata::GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, i32, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Invoke", args = 4)]
-    pub fn invoke(
-        self,
-        refine_data: crate::app::godweaponrefinedata::GodWeaponRefineData,
-        refine_kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
-        current_level: i32,
-        sid: ::unity2::Il2CppString,
-    ) -> ();
-}
-
-#[cfg(feature = "app-refinegodweaponparammenu")]
-impl RefineGodWeaponParamMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineGodWeaponParamMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineGodWeaponParamMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponparammenu/RefineGodWeaponParamMenu.md"))]
 #[::unity2::class(namespace = "App", name = "RefineGodWeaponParamMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -282,6 +198,48 @@ impl RefineGodWeaponParamMenu {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponparammenu/RefineGodWeaponParamMenu_SelectEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineGodWeaponParamMenu.SelectEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineGodWeaponParamMenu_SelectEventHandler {}
+
+#[cfg(feature = "app-refinegodweaponparammenu")]
+#[::unity2::methods]
+impl RefineGodWeaponParamMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, bool)` overload"]
+    #[method(name = "Invoke", args = 4)]
+    pub fn invoke(
+        self,
+        god_unit: crate::app::godunit::GodUnit,
+        item_data: crate::app::itemdata::ItemData,
+        refine_kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
+        refine_or_reset: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "app-refinegodweaponparammenu")]
+impl RefineGodWeaponParamMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponParamMenu_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponParamMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponparammenu/RefineGodWeaponParamMenu_RequestCloseEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
@@ -316,6 +274,48 @@ impl RefineGodWeaponParamMenu_RequestCloseEventHandler {
         <Self as IRefineGodWeaponParamMenu_RequestCloseEventHandlerMethods>::ctor(
             this, object, method,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refinegodweaponparammenu/RefineGodWeaponParamMenu_DecideEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineGodWeaponParamMenu.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineGodWeaponParamMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-refinegodweaponparammenu")]
+#[::unity2::methods]
+impl RefineGodWeaponParamMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::godweaponrefinedata::GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, i32, ::unity2::Il2CppString)` overload"]
+    #[method(name = "Invoke", args = 4)]
+    pub fn invoke(
+        self,
+        refine_data: crate::app::godweaponrefinedata::GodWeaponRefineData,
+        refine_kind: crate::app::godweaponrefinedata::GodWeaponRefineData_Kind,
+        current_level: i32,
+        sid: ::unity2::Il2CppString,
+    ) -> ();
+}
+
+#[cfg(feature = "app-refinegodweaponparammenu")]
+impl RefineGodWeaponParamMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineGodWeaponParamMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineGodWeaponParamMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

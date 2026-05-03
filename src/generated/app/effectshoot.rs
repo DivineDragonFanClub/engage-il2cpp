@@ -16,39 +16,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectshoot/EffectShoot_Callback.md"))]
-#[::unity2::class(namespace = "App", name = "EffectShoot.Callback")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EffectShoot_Callback {}
-
-#[cfg(feature = "app-effectshoot")]
-#[::unity2::methods]
-impl EffectShoot_Callback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::effectshoot::EffectShoot)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, shoot: crate::app::effectshoot::EffectShoot) -> ();
-}
-
-#[cfg(feature = "app-effectshoot")]
-impl EffectShoot_Callback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EffectShoot_Callback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEffectShoot_CallbackMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectshoot/EffectShoot.md"))]
 #[::unity2::class(namespace = "App", name = "EffectShoot")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -123,6 +90,39 @@ impl EffectShoot {
             )
         });
         <Self as IEffectShootMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectshoot/EffectShoot_Callback.md"))]
+#[::unity2::class(namespace = "App", name = "EffectShoot.Callback")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct EffectShoot_Callback {}
+
+#[cfg(feature = "app-effectshoot")]
+#[::unity2::methods]
+impl EffectShoot_Callback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::effectshoot::EffectShoot)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, shoot: crate::app::effectshoot::EffectShoot) -> ();
+}
+
+#[cfg(feature = "app-effectshoot")]
+impl EffectShoot_Callback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EffectShoot_Callback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEffectShoot_CallbackMethods>::ctor(this, object, method);
         this
     }
 }

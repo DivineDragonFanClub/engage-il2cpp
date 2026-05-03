@@ -18,23 +18,20 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_Flags.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_SetupScope.md"))]
 #[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct BattleInfo_Flags {
-    pub value: i32,
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BattleInfo_SetupScope {
+    pub m_info: crate::app::battleinfo::BattleInfo,
+    pub m_offense: crate::app::unit::Unit,
+    pub m_defense: crate::app::unit::Unit,
+    pub m_updated: u8,
 }
 
-impl ::unity2::ClassIdentity for BattleInfo_Flags {
+impl ::unity2::ClassIdentity for BattleInfo_SetupScope {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "BattleInfo.Flags";
+    const NAME: &'static str = "BattleInfo.SetupScope";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -43,7 +40,7 @@ impl ::unity2::ClassIdentity for BattleInfo_Flags {
     }
 }
 
-impl ::unity2::IlType for BattleInfo_Flags {
+impl ::unity2::IlType for BattleInfo_SetupScope {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -52,126 +49,34 @@ impl ::unity2::IlType for BattleInfo_Flags {
     }
 }
 
-impl BattleInfo_Flags {
-    pub fn simulation() -> Self {
-        Self { value: 1 }
-    }
+#[cfg(feature = "app-battleinfo")]
+#[::unity2::methods(value)]
+impl BattleInfo_SetupScope {
+    #[doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"]
+    #[method(name = "GetSide", args = 1)]
+    pub fn get_side(
+        self,
+        side: crate::app::battleside::BattleSide_Type,
+    ) -> crate::app::battleinfoside::BattleInfoSide;
 
-    pub fn warmup() -> Self {
-        Self { value: 2 }
-    }
+    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo, crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::app::unit::Unit, crate::app::unititem::UnitItem, i32, i32, i32, i32)` overload"]
+    #[method(name = ".ctor", args = 9)]
+    pub fn ctor(
+        self,
+        info: crate::app::battleinfo::BattleInfo,
+        offense: crate::app::unit::Unit,
+        unit_item: crate::app::unititem::UnitItem,
+        defense: crate::app::unit::Unit,
+        revenge_item: crate::app::unititem::UnitItem,
+        attack_x: i32,
+        attack_z: i32,
+        target_x: i32,
+        target_z: i32,
+    ) -> ();
 
-    pub fn alone() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn event() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn dance() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn training() -> Self {
-        Self { value: 32 }
-    }
-
-    pub fn rod() -> Self {
-        Self { value: 64 }
-    }
-
-    pub fn destroy() -> Self {
-        Self { value: 128 }
-    }
-
-    pub fn multi_battle() -> Self {
-        Self { value: 256 }
-    }
-
-    pub fn bow_cannon() -> Self {
-        Self { value: 512 }
-    }
-
-    pub fn magic_cannon() -> Self {
-        Self { value: 1024 }
-    }
-
-    pub fn fire_cannon() -> Self {
-        Self { value: 2048 }
-    }
-
-    pub fn engage_attack() -> Self {
-        Self { value: 4096 }
-    }
-
-    pub fn traial() -> Self {
-        Self { value: 8192 }
-    }
-
-    pub fn ignore_range() -> Self {
-        Self { value: 16384 }
-    }
-
-    pub fn ignore_position() -> Self {
-        Self { value: 32768 }
-    }
-
-    pub fn ignore_offense_position() -> Self {
-        Self { value: 65536 }
-    }
-
-    pub fn ignore_revenge() -> Self {
-        Self { value: 131072 }
-    }
-
-    pub fn ignore_break() -> Self {
-        Self { value: 262144 }
-    }
-
-    pub fn ignore_terrain() -> Self {
-        Self { value: 524288 }
-    }
-
-    pub fn ignore_support() -> Self {
-        Self { value: 1048576 }
-    }
-
-    pub fn ignore_blow() -> Self {
-        Self { value: 2097152 }
-    }
-
-    pub fn ignore_chain() -> Self {
-        Self { value: 4194304 }
-    }
-
-    pub fn ignore_skill() -> Self {
-        Self { value: 8388608 }
-    }
-
-    pub fn hide_combat_gauge() -> Self {
-        Self { value: 16777216 }
-    }
-
-    pub fn skip_combat_grow() -> Self {
-        Self { value: 33554432 }
-    }
-
-    pub fn full_bullet() -> Self {
-        Self { value: 67108864 }
-    }
-
-    pub fn summon() -> Self {
-        Self { value: 134217728 }
-    }
-
-    pub fn enchant() -> Self {
-        Self { value: 268435456 }
-    }
-
-    pub fn cannon_mask() -> Self {
-        Self { value: 3584 }
-    }
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
 }
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo.md"))]
@@ -697,6 +602,316 @@ impl BattleInfo {
     }
 }
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_MindScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BattleInfo_MindScope {
+    pub m_unit: crate::app::unit::Unit,
+    pub m_skill: crate::app::skilldata::SkillData,
+    pub m_mind: crate::app::mapmind::MapMind_Type,
+}
+
+impl ::unity2::ClassIdentity for BattleInfo_MindScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleInfo.MindScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BattleInfo_MindScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+#[::unity2::methods(value)]
+impl BattleInfo_MindScope {
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::mapmind::MapMind_Type, crate::app::skilldata::SkillData)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        mind: crate::app::mapmind::MapMind_Type,
+        skill: crate::app::skilldata::SkillData,
+    ) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_FlagField.md"))]
+#[::unity2::class(namespace = "App", name = "BattleInfo.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battleinfo :: BattleInfo_Flags >)]
+pub struct BattleInfo_FlagField {}
+
+#[cfg(feature = "app-battleinfo")]
+#[::unity2::methods]
+impl BattleInfo_FlagField {
+    #[doc = "`ToInt(crate::app::battleinfo::BattleInfo_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::battleinfo::BattleInfo_Flags) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-battleinfo")]
+impl BattleInfo_FlagField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleInfo_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleInfo_FlagFieldMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_BattleInfoSideArray.md"))]
+#[::unity2::class(namespace = "App", name = "BattleInfo.BattleInfoSideArray")]
+# [parent (crate :: app :: battleside :: BattleSide_ContainerArray_1 < crate :: app :: battleinfoside :: BattleInfoSide >)]
+pub struct BattleInfo_BattleInfoSideArray {}
+
+#[cfg(feature = "app-battleinfo")]
+#[::unity2::methods]
+impl BattleInfo_BattleInfoSideArray {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-battleinfo")]
+impl BattleInfo_BattleInfoSideArray {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleInfo_BattleInfoSideArray),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleInfo_BattleInfoSideArrayMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_SupportData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct BattleInfo_SupportData {
+    pub unit: crate::app::unit::Unit,
+    pub status: crate::app::battleinfoside::BattleInfoSide_Status,
+}
+
+impl ::unity2::ClassIdentity for BattleInfo_SupportData {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleInfo.SupportData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BattleInfo_SupportData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-battleinfo")]
+#[::unity2::methods(value)]
+impl BattleInfo_SupportData {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::battleinfoside::BattleInfoSide_Status)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        unit: crate::app::unit::Unit,
+        status: crate::app::battleinfoside::BattleInfoSide_Status,
+    ) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_Flags.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct BattleInfo_Flags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for BattleInfo_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleInfo.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BattleInfo_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl BattleInfo_Flags {
+    pub fn simulation() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn warmup() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn alone() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn event() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn dance() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn training() -> Self {
+        Self { value: 32 }
+    }
+
+    pub fn rod() -> Self {
+        Self { value: 64 }
+    }
+
+    pub fn destroy() -> Self {
+        Self { value: 128 }
+    }
+
+    pub fn multi_battle() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn bow_cannon() -> Self {
+        Self { value: 512 }
+    }
+
+    pub fn magic_cannon() -> Self {
+        Self { value: 1024 }
+    }
+
+    pub fn fire_cannon() -> Self {
+        Self { value: 2048 }
+    }
+
+    pub fn engage_attack() -> Self {
+        Self { value: 4096 }
+    }
+
+    pub fn traial() -> Self {
+        Self { value: 8192 }
+    }
+
+    pub fn ignore_range() -> Self {
+        Self { value: 16384 }
+    }
+
+    pub fn ignore_position() -> Self {
+        Self { value: 32768 }
+    }
+
+    pub fn ignore_offense_position() -> Self {
+        Self { value: 65536 }
+    }
+
+    pub fn ignore_revenge() -> Self {
+        Self { value: 131072 }
+    }
+
+    pub fn ignore_break() -> Self {
+        Self { value: 262144 }
+    }
+
+    pub fn ignore_terrain() -> Self {
+        Self { value: 524288 }
+    }
+
+    pub fn ignore_support() -> Self {
+        Self { value: 1048576 }
+    }
+
+    pub fn ignore_blow() -> Self {
+        Self { value: 2097152 }
+    }
+
+    pub fn ignore_chain() -> Self {
+        Self { value: 4194304 }
+    }
+
+    pub fn ignore_skill() -> Self {
+        Self { value: 8388608 }
+    }
+
+    pub fn hide_combat_gauge() -> Self {
+        Self { value: 16777216 }
+    }
+
+    pub fn skip_combat_grow() -> Self {
+        Self { value: 33554432 }
+    }
+
+    pub fn full_bullet() -> Self {
+        Self { value: 67108864 }
+    }
+
+    pub fn summon() -> Self {
+        Self { value: 134217728 }
+    }
+
+    pub fn enchant() -> Self {
+        Self { value: 268435456 }
+    }
+
+    pub fn cannon_mask() -> Self {
+        Self { value: 3584 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_SupportList.md"))]
 #[::unity2::class(namespace = "App", name = "BattleInfo.SupportList")]
 # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: battleinfo :: BattleInfo_SupportData >)]
@@ -756,219 +971,4 @@ impl BattleInfo_SupportList {
         <Self as IBattleInfo_SupportListMethods>::ctor(this);
         this
     }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_FlagField.md"))]
-#[::unity2::class(namespace = "App", name = "BattleInfo.FlagField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: battleinfo :: BattleInfo_Flags >)]
-pub struct BattleInfo_FlagField {}
-
-#[cfg(feature = "app-battleinfo")]
-#[::unity2::methods]
-impl BattleInfo_FlagField {
-    #[doc = "`ToInt(crate::app::battleinfo::BattleInfo_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::battleinfo::BattleInfo_Flags) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-battleinfo")]
-impl BattleInfo_FlagField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleInfo_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleInfo_FlagFieldMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_SupportData.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BattleInfo_SupportData {
-    pub unit: crate::app::unit::Unit,
-    pub status: crate::app::battleinfoside::BattleInfoSide_Status,
-}
-
-impl ::unity2::ClassIdentity for BattleInfo_SupportData {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleInfo.SupportData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for BattleInfo_SupportData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-battleinfo")]
-#[::unity2::methods(value)]
-impl BattleInfo_SupportData {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::battleinfoside::BattleInfoSide_Status)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(
-        self,
-        unit: crate::app::unit::Unit,
-        status: crate::app::battleinfoside::BattleInfoSide_Status,
-    ) -> ();
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battleinfo/BattleInfo_BattleInfoSideArray.md"))]
-#[::unity2::class(namespace = "App", name = "BattleInfo.BattleInfoSideArray")]
-# [parent (crate :: app :: battleside :: BattleSide_ContainerArray_1 < crate :: app :: battleinfoside :: BattleInfoSide >)]
-pub struct BattleInfo_BattleInfoSideArray {}
-
-#[cfg(feature = "app-battleinfo")]
-#[::unity2::methods]
-impl BattleInfo_BattleInfoSideArray {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-battleinfo")]
-impl BattleInfo_BattleInfoSideArray {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleInfo_BattleInfoSideArray),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleInfo_BattleInfoSideArrayMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_MindScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BattleInfo_MindScope {
-    pub m_unit: crate::app::unit::Unit,
-    pub m_skill: crate::app::skilldata::SkillData,
-    pub m_mind: crate::app::mapmind::MapMind_Type,
-}
-
-impl ::unity2::ClassIdentity for BattleInfo_MindScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleInfo.MindScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for BattleInfo_MindScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-battleinfo")]
-#[::unity2::methods(value)]
-impl BattleInfo_MindScope {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::mapmind::MapMind_Type, crate::app::skilldata::SkillData)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        unit: crate::app::unit::Unit,
-        mind: crate::app::mapmind::MapMind_Type,
-        skill: crate::app::skilldata::SkillData,
-    ) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battleinfo/BattleInfo_SetupScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct BattleInfo_SetupScope {
-    pub m_info: crate::app::battleinfo::BattleInfo,
-    pub m_offense: crate::app::unit::Unit,
-    pub m_defense: crate::app::unit::Unit,
-    pub m_updated: u8,
-}
-
-impl ::unity2::ClassIdentity for BattleInfo_SetupScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleInfo.SetupScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for BattleInfo_SetupScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-battleinfo")]
-#[::unity2::methods(value)]
-impl BattleInfo_SetupScope {
-    #[doc = "`GetSide(crate::app::battleside::BattleSide_Type)` overload"]
-    #[method(name = "GetSide", args = 1)]
-    pub fn get_side(
-        self,
-        side: crate::app::battleside::BattleSide_Type,
-    ) -> crate::app::battleinfoside::BattleInfoSide;
-
-    #[doc = "`.ctor(crate::app::battleinfo::BattleInfo, crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::app::unit::Unit, crate::app::unititem::UnitItem, i32, i32, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 9)]
-    pub fn ctor(
-        self,
-        info: crate::app::battleinfo::BattleInfo,
-        offense: crate::app::unit::Unit,
-        unit_item: crate::app::unititem::UnitItem,
-        defense: crate::app::unit::Unit,
-        revenge_item: crate::app::unititem::UnitItem,
-        attack_x: i32,
-        attack_z: i32,
-        target_x: i32,
-        target_z: i32,
-    ) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
 }

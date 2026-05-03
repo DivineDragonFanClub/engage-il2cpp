@@ -6,117 +6,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenum/UnitEnum.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct UnitEnum {
-    pub m_types: ::unity2::Array<crate::app::force::Force_Type>,
-}
-
-impl ::unity2::ClassIdentity for UnitEnum {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "UnitEnum";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for UnitEnum {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-unitenum")]
-#[::unity2::methods(value)]
-impl UnitEnum {
-    #[doc = "`GetEnumerator(::unity2::Array<crate::app::force::Force_Type>)` overload"]
-    #[method(name = "GetEnumerator", args = 1)]
-    pub fn get_enumerator(
-        types: ::unity2::Array<crate::app::force::Force_Type>,
-    ) -> crate::app::unitenum::UnitEnum;
-
-    #[doc = "`GetOnMapForce()` overload"]
-    #[method(name = "GetOnMapForce", args = 0)]
-    pub fn get_on_map_force() -> crate::app::unitenum::UnitEnum;
-
-    #[doc = "`GetEnemy(crate::app::force::Force_Type)` overload"]
-    #[method(name = "GetEnemy", args = 1)]
-    pub fn get_enemy(force: crate::app::force::Force_Type) -> crate::app::unitenum::UnitEnum;
-
-    #[doc = "`GetAlly(crate::app::force::Force_Type)` overload"]
-    #[method(name = "GetAlly", args = 1)]
-    pub fn get_ally(force: crate::app::force::Force_Type) -> crate::app::unitenum::UnitEnum;
-
-    #[doc = "`GetMask(u32)` overload"]
-    #[method(name = "GetMask", args = 1)]
-    pub fn get_mask(mask: u32) -> crate::app::unitenum::UnitEnum;
-
-    #[doc = "`GetOnSortieForce()` overload"]
-    #[method(name = "GetOnSortieForce", args = 0)]
-    pub fn get_on_sortie_force() -> crate::app::unitenum::UnitEnum;
-
-    #[doc = "`GetUsedForce()` overload"]
-    #[method(name = "GetUsedForce", args = 0)]
-    pub fn get_used_force() -> crate::app::unitenum::UnitEnum;
-
-    #[doc = "`GetSelfForce()` overload"]
-    #[method(name = "GetSelfForce", args = 0)]
-    pub fn get_self_force() -> crate::app::unitenum::UnitEnum;
-
-    #[doc = "`GetSamePlayerForce()` overload"]
-    #[method(name = "GetSamePlayerForce", args = 0)]
-    pub fn get_same_player_force() -> crate::app::unitenum::UnitEnum;
-
-    #[doc = "`Get(crate::app::force::Force_Type)` overload"]
-    #[method(name = "Get", args = 1)]
-    pub fn get(r#type: crate::app::force::Force_Type) -> crate::app::unitenum::UnitEnum;
-
-    #[doc = "`GetTarget(crate::app::unit::Unit, i32, i32)` overload"]
-    #[method(name = "GetTarget", args = 3)]
-    pub fn get_target(
-        unit: crate::app::unit::Unit,
-        near: i32,
-        far: i32,
-    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator;
-
-    #[doc = "`GetTarget(crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "GetTarget", args = 2)]
-    pub fn get_target_2(
-        unit: crate::app::unit::Unit,
-        skill: crate::app::skilldata::SkillData,
-    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator;
-
-    #[doc = "`GetTarget(crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
-    #[method(name = "GetTarget", args = 5)]
-    pub fn get_target_3(
-        unit: crate::app::unit::Unit,
-        x: i32,
-        z: i32,
-        near: i32,
-        far: i32,
-    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator;
-
-    #[doc = "`.ctor(::unity2::Array<crate::app::force::Force_Type>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, types: ::unity2::Array<crate::app::force::Force_Type>) -> ();
-
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator_2(self) -> crate::app::unitenum::UnitEnum_Enumerator;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenum/UnitEnum_Enumerator.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -253,4 +142,115 @@ impl UnitEnum_TargetEnumerator {
     #[doc = "`GetEnumerator()` overload"]
     #[method(name = "GetEnumerator", args = 0)]
     pub fn get_enumerator(self) -> crate::app::unitenum::UnitEnum_TargetEnumerator;
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/unitenum/UnitEnum.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct UnitEnum {
+    pub m_types: ::unity2::Array<crate::app::force::Force_Type>,
+}
+
+impl ::unity2::ClassIdentity for UnitEnum {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "UnitEnum";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for UnitEnum {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-unitenum")]
+#[::unity2::methods(value)]
+impl UnitEnum {
+    #[doc = "`GetEnumerator(::unity2::Array<crate::app::force::Force_Type>)` overload"]
+    #[method(name = "GetEnumerator", args = 1)]
+    pub fn get_enumerator(
+        types: ::unity2::Array<crate::app::force::Force_Type>,
+    ) -> crate::app::unitenum::UnitEnum;
+
+    #[doc = "`GetOnMapForce()` overload"]
+    #[method(name = "GetOnMapForce", args = 0)]
+    pub fn get_on_map_force() -> crate::app::unitenum::UnitEnum;
+
+    #[doc = "`GetEnemy(crate::app::force::Force_Type)` overload"]
+    #[method(name = "GetEnemy", args = 1)]
+    pub fn get_enemy(force: crate::app::force::Force_Type) -> crate::app::unitenum::UnitEnum;
+
+    #[doc = "`GetAlly(crate::app::force::Force_Type)` overload"]
+    #[method(name = "GetAlly", args = 1)]
+    pub fn get_ally(force: crate::app::force::Force_Type) -> crate::app::unitenum::UnitEnum;
+
+    #[doc = "`GetMask(u32)` overload"]
+    #[method(name = "GetMask", args = 1)]
+    pub fn get_mask(mask: u32) -> crate::app::unitenum::UnitEnum;
+
+    #[doc = "`GetOnSortieForce()` overload"]
+    #[method(name = "GetOnSortieForce", args = 0)]
+    pub fn get_on_sortie_force() -> crate::app::unitenum::UnitEnum;
+
+    #[doc = "`GetUsedForce()` overload"]
+    #[method(name = "GetUsedForce", args = 0)]
+    pub fn get_used_force() -> crate::app::unitenum::UnitEnum;
+
+    #[doc = "`GetSelfForce()` overload"]
+    #[method(name = "GetSelfForce", args = 0)]
+    pub fn get_self_force() -> crate::app::unitenum::UnitEnum;
+
+    #[doc = "`GetSamePlayerForce()` overload"]
+    #[method(name = "GetSamePlayerForce", args = 0)]
+    pub fn get_same_player_force() -> crate::app::unitenum::UnitEnum;
+
+    #[doc = "`Get(crate::app::force::Force_Type)` overload"]
+    #[method(name = "Get", args = 1)]
+    pub fn get(r#type: crate::app::force::Force_Type) -> crate::app::unitenum::UnitEnum;
+
+    #[doc = "`GetTarget(crate::app::unit::Unit, i32, i32)` overload"]
+    #[method(name = "GetTarget", args = 3)]
+    pub fn get_target(
+        unit: crate::app::unit::Unit,
+        near: i32,
+        far: i32,
+    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator;
+
+    #[doc = "`GetTarget(crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]
+    #[method(name = "GetTarget", args = 2)]
+    pub fn get_target_2(
+        unit: crate::app::unit::Unit,
+        skill: crate::app::skilldata::SkillData,
+    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator;
+
+    #[doc = "`GetTarget(crate::app::unit::Unit, i32, i32, i32, i32)` overload"]
+    #[method(name = "GetTarget", args = 5)]
+    pub fn get_target_3(
+        unit: crate::app::unit::Unit,
+        x: i32,
+        z: i32,
+        near: i32,
+        far: i32,
+    ) -> crate::app::unitenum::UnitEnum_TargetEnumerator;
+
+    #[doc = "`.ctor(::unity2::Array<crate::app::force::Force_Type>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, types: ::unity2::Array<crate::app::force::Force_Type>) -> ();
+
+    #[doc = "`GetEnumerator()` overload"]
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator_2(self) -> crate::app::unitenum::UnitEnum_Enumerator;
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }

@@ -6,153 +6,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderPassBlock.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal",
-    name = "ScriptableRenderer.RenderPassBlock"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ScriptableRenderer_RenderPassBlock {
-    #[static_field]
-    #[rename(name = "BeforeRendering")]
-    pub before_rendering: i32,
-    #[static_field]
-    #[rename(name = "MainRenderingOpaque")]
-    pub main_rendering_opaque: i32,
-    #[static_field]
-    #[rename(name = "MainRenderingTransparent")]
-    pub main_rendering_transparent: i32,
-    #[static_field]
-    #[rename(name = "AfterRendering")]
-    pub after_rendering: i32,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[::unity2::methods]
-impl ScriptableRenderer_RenderPassBlock {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderingFeatures.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal",
-    name = "ScriptableRenderer.RenderingFeatures"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ScriptableRenderer_RenderingFeatures {}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[::unity2::methods]
-impl ScriptableRenderer_RenderingFeatures {
-    #[doc = "`get_cameraStacking()` overload"]
-    #[method(name = "get_cameraStacking", args = 0)]
-    pub fn get_camera_stacking(self) -> bool;
-
-    #[doc = "`set_cameraStacking(bool)` overload"]
-    #[method(name = "set_cameraStacking", args = 1)]
-    pub fn set_camera_stacking(self, value: bool) -> ();
-
-    #[doc = "`get_msaa()` overload"]
-    #[method(name = "get_msaa", args = 0)]
-    pub fn get_msaa(self) -> bool;
-
-    #[doc = "`set_msaa(bool)` overload"]
-    #[method(name = "set_msaa", args = 1)]
-    pub fn set_msaa(self, value: bool) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-impl ScriptableRenderer_RenderingFeatures {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ScriptableRenderer_RenderingFeatures),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IScriptableRenderer_RenderingFeaturesMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal",
-    name = "ScriptableRenderer.Profiling"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ScriptableRenderer_Profiling {
-    #[static_field]
-    #[rename(name = "k_Name")]
-    pub k_name: ::unity2::Il2CppString,
-    #[static_field]
-    #[rename(name = "setPerCameraShaderVariables")]
-    pub set_per_camera_shader_variables:
-        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    #[static_field]
-    #[rename(name = "sortRenderPasses")]
-    pub sort_render_passes: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    #[static_field]
-    #[rename(name = "setupLights")]
-    pub setup_lights: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    #[static_field]
-    #[rename(name = "setupCamera")]
-    pub setup_camera: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    #[static_field]
-    #[rename(name = "addRenderPasses")]
-    pub add_render_passes: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    #[static_field]
-    #[rename(name = "clearRenderingState")]
-    pub clear_rendering_state: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    #[static_field]
-    #[rename(name = "internalStartRendering")]
-    pub internal_start_rendering:
-        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-    #[static_field]
-    #[rename(name = "internalFinishRendering")]
-    pub internal_finish_rendering:
-        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[::unity2::methods]
-impl ScriptableRenderer_Profiling {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderPass.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal",
-    name = "ScriptableRenderer.Profiling.RenderPass"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ScriptableRenderer_Profiling_RenderPass {
-    #[static_field]
-    #[rename(name = "k_Name")]
-    pub k_name: ::unity2::Il2CppString,
-    #[static_field]
-    #[rename(name = "configure")]
-    pub configure: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[::unity2::methods]
-impl ScriptableRenderer_Profiling_RenderPass {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -211,6 +64,106 @@ impl ScriptableRenderer_RenderBlocks {
     #[doc = "`GetRange(i32)` overload"]
     #[method(name = "GetRange", args = 1)]
     pub fn get_range (self , index : i32) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange ;
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks_BlockRange.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct ScriptableRenderer_RenderBlocks_BlockRange {
+    pub m_current: i32,
+    pub m_end: i32,
+}
+
+impl ::unity2::ClassIdentity for ScriptableRenderer_RenderBlocks_BlockRange {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "ScriptableRenderer.RenderBlocks.BlockRange";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ScriptableRenderer_RenderBlocks_BlockRange {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods(value)]
+impl ScriptableRenderer_RenderBlocks_BlockRange {
+    #[doc = "`.ctor(i32, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, begin: i32, end: i32) -> ();
+
+    #[doc = "`GetEnumerator()` overload"]
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange ;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> i32;
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ScriptableRenderer.Profiling"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScriptableRenderer_Profiling {
+    #[static_field]
+    #[rename(name = "k_Name")]
+    pub k_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "setPerCameraShaderVariables")]
+    pub set_per_camera_shader_variables:
+        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "sortRenderPasses")]
+    pub sort_render_passes: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "setupLights")]
+    pub setup_lights: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "setupCamera")]
+    pub setup_camera: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "addRenderPasses")]
+    pub add_render_passes: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "clearRenderingState")]
+    pub clear_rendering_state: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "internalStartRendering")]
+    pub internal_start_rendering:
+        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+    #[static_field]
+    #[rename(name = "internalFinishRendering")]
+    pub internal_finish_rendering:
+        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods]
+impl ScriptableRenderer_Profiling {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderBlock.md"))]
@@ -638,55 +591,102 @@ impl ScriptableRenderer {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderBlocks_BlockRange.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct ScriptableRenderer_RenderBlocks_BlockRange {
-    pub m_current: i32,
-    pub m_end: i32,
-}
-
-impl ::unity2::ClassIdentity for ScriptableRenderer_RenderBlocks_BlockRange {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-    const NAME: &'static str = "ScriptableRenderer.RenderBlocks.BlockRange";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ScriptableRenderer_RenderBlocks_BlockRange {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderPassBlock.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ScriptableRenderer.RenderPassBlock"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScriptableRenderer_RenderPassBlock {
+    #[static_field]
+    #[rename(name = "BeforeRendering")]
+    pub before_rendering: i32,
+    #[static_field]
+    #[rename(name = "MainRenderingOpaque")]
+    pub main_rendering_opaque: i32,
+    #[static_field]
+    #[rename(name = "MainRenderingTransparent")]
+    pub main_rendering_transparent: i32,
+    #[static_field]
+    #[rename(name = "AfterRendering")]
+    pub after_rendering: i32,
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
-#[::unity2::methods(value)]
-impl ScriptableRenderer_RenderBlocks_BlockRange {
-    #[doc = "`.ctor(i32, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, begin: i32, end: i32) -> ();
+#[::unity2::methods]
+impl ScriptableRenderer_RenderPassBlock {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
 
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator (self ,) -> crate :: unity_engine :: rendering :: universal :: scriptablerenderer :: ScriptableRenderer_RenderBlocks_BlockRange ;
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_Profiling_RenderPass.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ScriptableRenderer.Profiling.RenderPass"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScriptableRenderer_Profiling_RenderPass {
+    #[static_field]
+    #[rename(name = "k_Name")]
+    pub k_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "configure")]
+    pub configure: crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+}
 
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods]
+impl ScriptableRenderer_Profiling_RenderPass {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
 
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> i32;
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/scriptablerenderer/ScriptableRenderer_RenderingFeatures.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ScriptableRenderer.RenderingFeatures"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ScriptableRenderer_RenderingFeatures {}
 
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+#[::unity2::methods]
+impl ScriptableRenderer_RenderingFeatures {
+    #[doc = "`get_cameraStacking()` overload"]
+    #[method(name = "get_cameraStacking", args = 0)]
+    pub fn get_camera_stacking(self) -> bool;
+
+    #[doc = "`set_cameraStacking(bool)` overload"]
+    #[method(name = "set_cameraStacking", args = 1)]
+    pub fn set_camera_stacking(self, value: bool) -> ();
+
+    #[doc = "`get_msaa()` overload"]
+    #[method(name = "get_msaa", args = 0)]
+    pub fn get_msaa(self) -> bool;
+
+    #[doc = "`set_msaa(bool)` overload"]
+    #[method(name = "set_msaa", args = 1)]
+    pub fn set_msaa(self, value: bool) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-scriptablerenderer")]
+impl ScriptableRenderer_RenderingFeatures {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ScriptableRenderer_RenderingFeatures),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptableRenderer_RenderingFeaturesMethods>::ctor(this);
+        this
+    }
 }

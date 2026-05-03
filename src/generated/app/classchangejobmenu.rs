@@ -68,6 +68,55 @@ impl ClassChangeJobMenu_ConfirmDialog_ConfirmDialogItemYes {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchangejobmenu/ClassChangeJobMenu_ConfirmDialog.md"))]
+#[::unity2::class(namespace = "App", name = "ClassChangeJobMenu.ConfirmDialog")]
+#[parent(crate::app::yesnodialog::YesNoDialog)]
+pub struct ClassChangeJobMenu_ConfirmDialog {
+    #[static_field]
+    #[rename(name = "m_data")]
+    pub m_data: crate::app::classchange::ClassChange_ChangeJobData,
+}
+
+#[cfg(feature = "app-classchangejobmenu")]
+#[::unity2::methods]
+impl ClassChangeJobMenu_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::classchange::ClassChange_ChangeJobData)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::basicmenu::BasicMenu,
+        data: crate::app::classchange::ClassChange_ChangeJobData,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
+}
+
+#[cfg(feature = "app-classchangejobmenu")]
+impl ClassChangeJobMenu_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ClassChangeJobMenu_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IClassChangeJobMenu_ConfirmDialogMethods>::ctor(this, menu_item_list);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchangejobmenu/ClassChangeJobMenu.md"))]
 #[::unity2::class(namespace = "App", name = "ClassChangeJobMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -167,55 +216,6 @@ impl ClassChangeJobMenu {
             )
         });
         <Self as IClassChangeJobMenuMethods>::ctor(this, menu_item_list, root);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchangejobmenu/ClassChangeJobMenu_ConfirmDialog.md"))]
-#[::unity2::class(namespace = "App", name = "ClassChangeJobMenu.ConfirmDialog")]
-#[parent(crate::app::yesnodialog::YesNoDialog)]
-pub struct ClassChangeJobMenu_ConfirmDialog {
-    #[static_field]
-    #[rename(name = "m_data")]
-    pub m_data: crate::app::classchange::ClassChange_ChangeJobData,
-}
-
-#[cfg(feature = "app-classchangejobmenu")]
-#[::unity2::methods]
-impl ClassChangeJobMenu_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::basicmenu::BasicMenu, crate::app::classchange::ClassChange_ChangeJobData)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::basicmenu::BasicMenu,
-        data: crate::app::classchange::ClassChange_ChangeJobData,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> ();
-}
-
-#[cfg(feature = "app-classchangejobmenu")]
-impl ClassChangeJobMenu_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ClassChangeJobMenu_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IClassChangeJobMenu_ConfirmDialogMethods>::ctor(this, menu_item_list);
         this
     }
 }

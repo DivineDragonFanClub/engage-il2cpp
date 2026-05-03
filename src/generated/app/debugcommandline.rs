@@ -32,48 +32,6 @@ impl DebugCommandline_OptBaseAttribute {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline.md"))]
-#[::unity2::class(namespace = "App", name = "DebugCommandline")]
-#[parent(crate::system::object::Object)]
-pub struct DebugCommandline {}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptionAttribute.md"))]
-#[::unity2::class(namespace = "App", name = "DebugCommandline.OptionAttribute")]
-#[parent(crate::app::debugcommandline::DebugCommandline_OptBaseAttribute)]
-pub struct DebugCommandline_OptionAttribute {}
-
-#[cfg(feature = "app-debugcommandline")]
-#[::unity2::methods]
-impl DebugCommandline_OptionAttribute {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Name", args = 1)]
-    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
-}
-
-#[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline_OptionAttribute {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandline_OptionAttribute),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugCommandline_OptionAttributeMethods>::ctor(this, name);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_StringSetter.md"))]
 #[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.StringSetter")]
 #[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]
@@ -112,99 +70,6 @@ impl DebugCommandline_OptProperty_StringSetter {
             )
         });
         <Self as IDebugCommandline_OptProperty_StringSetterMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_Property.md"))]
-#[::unity2::class(namespace = "App", name = "DebugCommandline.Property")]
-#[parent(crate::system::object::Object)]
-pub struct DebugCommandline_Property {
-    #[static_field]
-    #[rename(name = "OptSortValue")]
-    pub opt_sort_value: i32,
-    #[static_field]
-    #[rename(name = "OptwSortValue")]
-    pub optw_sort_value: i32,
-    #[rename(name = "m_Info")]
-    pub m_info: crate::system::reflection::propertyinfo::PropertyInfo,
-}
-
-#[cfg(feature = "app-debugcommandline")]
-#[::unity2::methods]
-impl DebugCommandline_Property {
-    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, info: crate::system::reflection::propertyinfo::PropertyInfo) -> ();
-
-    #[doc = "`Process(crate::system::object::Object, ::unity2::Array<::unity2::Il2CppString>, i32)` overload"]
-    #[method(name = "Process", args = 3)]
-    pub fn process(
-        self,
-        obj: crate::system::object::Object,
-        args: ::unity2::Array<::unity2::Il2CppString>,
-        arg_index: i32,
-    ) -> i32;
-
-    #[doc = "`get_SortValue()` overload"]
-    #[method(name = "get_SortValue", args = 0)]
-    pub fn get_sort_value(self) -> i32;
-}
-
-#[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline_Property {
-    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo)` — overload selector"]
-    pub fn new(info: crate::system::reflection::propertyinfo::PropertyInfo) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandline_Property),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugCommandline_PropertyMethods>::ctor(this, info);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_BoolSetter.md"))]
-#[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.BoolSetter")]
-#[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]
-pub struct DebugCommandline_OptProperty_BoolSetter {}
-
-#[cfg(feature = "app-debugcommandline")]
-#[::unity2::methods]
-impl DebugCommandline_OptProperty_BoolSetter {
-    #[doc = "`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Set", args = 3)]
-    pub fn set(
-        self,
-        obj: crate::system::object::Object,
-        property_info: crate::system::reflection::propertyinfo::PropertyInfo,
-        value: ::unity2::Il2CppString,
-    ) -> bool;
-
-    #[doc = "`get_IsNeedValue()` overload"]
-    #[method(name = "get_IsNeedValue", args = 0)]
-    pub fn get_is_need_value(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline_OptProperty_BoolSetter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandline_OptProperty_BoolSetter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugCommandline_OptProperty_BoolSetterMethods>::ctor(this);
         this
     }
 }
@@ -263,31 +128,53 @@ impl DebugCommandline_OptwProperty {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptionWildcardAttribute.md"))]
-#[::unity2::class(namespace = "App", name = "DebugCommandline.OptionWildcardAttribute")]
-#[parent(crate::app::debugcommandline::DebugCommandline_OptBaseAttribute)]
-pub struct DebugCommandline_OptionWildcardAttribute {}
-
-#[cfg(feature = "app-debugcommandline")]
-#[::unity2::methods]
-impl DebugCommandline_OptionWildcardAttribute {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, pattern: ::unity2::Il2CppString) -> ();
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_Property.md"))]
+#[::unity2::class(namespace = "App", name = "DebugCommandline.Property")]
+#[parent(crate::system::object::Object)]
+pub struct DebugCommandline_Property {
+    #[static_field]
+    #[rename(name = "OptSortValue")]
+    pub opt_sort_value: i32,
+    #[static_field]
+    #[rename(name = "OptwSortValue")]
+    pub optw_sort_value: i32,
+    #[rename(name = "m_Info")]
+    pub m_info: crate::system::reflection::propertyinfo::PropertyInfo,
 }
 
 #[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline_OptionWildcardAttribute {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(pattern: ::unity2::Il2CppString) -> Self {
+#[::unity2::methods]
+impl DebugCommandline_Property {
+    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, info: crate::system::reflection::propertyinfo::PropertyInfo) -> ();
+
+    #[doc = "`Process(crate::system::object::Object, ::unity2::Array<::unity2::Il2CppString>, i32)` overload"]
+    #[method(name = "Process", args = 3)]
+    pub fn process(
+        self,
+        obj: crate::system::object::Object,
+        args: ::unity2::Array<::unity2::Il2CppString>,
+        arg_index: i32,
+    ) -> i32;
+
+    #[doc = "`get_SortValue()` overload"]
+    #[method(name = "get_SortValue", args = 0)]
+    pub fn get_sort_value(self) -> i32;
+}
+
+#[cfg(feature = "app-debugcommandline")]
+impl DebugCommandline_Property {
+    #[doc = "`.ctor(crate::system::reflection::propertyinfo::PropertyInfo)` — overload selector"]
+    pub fn new(info: crate::system::reflection::propertyinfo::PropertyInfo) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandline_OptionWildcardAttribute),
+                ::core::stringify!(DebugCommandline_Property),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugCommandline_OptionWildcardAttributeMethods>::ctor(this, pattern);
+        <Self as IDebugCommandline_PropertyMethods>::ctor(this, info);
         this
     }
 }
@@ -334,6 +221,90 @@ impl DebugCommandline_OptProperty_Setter {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_FloatSetter.md"))]
+#[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.FloatSetter")]
+#[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]
+pub struct DebugCommandline_OptProperty_FloatSetter {}
+
+#[cfg(feature = "app-debugcommandline")]
+#[::unity2::methods]
+impl DebugCommandline_OptProperty_FloatSetter {
+    #[doc = "`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]
+    #[method(name = "Set", args = 3)]
+    pub fn set(
+        self,
+        obj: crate::system::object::Object,
+        property_info: crate::system::reflection::propertyinfo::PropertyInfo,
+        value: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[doc = "`get_IsNeedValue()` overload"]
+    #[method(name = "get_IsNeedValue", args = 0)]
+    pub fn get_is_need_value(self) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugcommandline")]
+impl DebugCommandline_OptProperty_FloatSetter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugCommandline_OptProperty_FloatSetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugCommandline_OptProperty_FloatSetterMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptionAttribute.md"))]
+#[::unity2::class(namespace = "App", name = "DebugCommandline.OptionAttribute")]
+#[parent(crate::app::debugcommandline::DebugCommandline_OptBaseAttribute)]
+pub struct DebugCommandline_OptionAttribute {}
+
+#[cfg(feature = "app-debugcommandline")]
+#[::unity2::methods]
+impl DebugCommandline_OptionAttribute {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "app-debugcommandline")]
+impl DebugCommandline_OptionAttribute {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugCommandline_OptionAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugCommandline_OptionAttributeMethods>::ctor(this, name);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline.md"))]
+#[::unity2::class(namespace = "App", name = "DebugCommandline")]
+#[parent(crate::system::object::Object)]
+pub struct DebugCommandline {}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_IntSetter.md"))]
 #[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.IntSetter")]
 #[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]
@@ -376,14 +347,14 @@ impl DebugCommandline_OptProperty_IntSetter {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_FloatSetter.md"))]
-#[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.FloatSetter")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptProperty_BoolSetter.md"))]
+#[::unity2::class(namespace = "App", name = "DebugCommandline.OptProperty.BoolSetter")]
 #[parent(crate::app::debugcommandline::DebugCommandline_OptProperty_Setter)]
-pub struct DebugCommandline_OptProperty_FloatSetter {}
+pub struct DebugCommandline_OptProperty_BoolSetter {}
 
 #[cfg(feature = "app-debugcommandline")]
 #[::unity2::methods]
-impl DebugCommandline_OptProperty_FloatSetter {
+impl DebugCommandline_OptProperty_BoolSetter {
     #[doc = "`Set(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::Il2CppString)` overload"]
     #[method(name = "Set", args = 3)]
     pub fn set(
@@ -403,17 +374,17 @@ impl DebugCommandline_OptProperty_FloatSetter {
 }
 
 #[cfg(feature = "app-debugcommandline")]
-impl DebugCommandline_OptProperty_FloatSetter {
+impl DebugCommandline_OptProperty_BoolSetter {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugCommandline_OptProperty_FloatSetter),
+                ::core::stringify!(DebugCommandline_OptProperty_BoolSetter),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugCommandline_OptProperty_FloatSetterMethods>::ctor(this);
+        <Self as IDebugCommandline_OptProperty_BoolSetterMethods>::ctor(this);
         this
     }
 }
@@ -468,6 +439,35 @@ impl DebugCommandline_OptProperty {
             )
         });
         <Self as IDebugCommandline_OptPropertyMethods>::ctor(this, info, attribute);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugcommandline/DebugCommandline_OptionWildcardAttribute.md"))]
+#[::unity2::class(namespace = "App", name = "DebugCommandline.OptionWildcardAttribute")]
+#[parent(crate::app::debugcommandline::DebugCommandline_OptBaseAttribute)]
+pub struct DebugCommandline_OptionWildcardAttribute {}
+
+#[cfg(feature = "app-debugcommandline")]
+#[::unity2::methods]
+impl DebugCommandline_OptionWildcardAttribute {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, pattern: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "app-debugcommandline")]
+impl DebugCommandline_OptionWildcardAttribute {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(pattern: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugCommandline_OptionWildcardAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugCommandline_OptionWildcardAttributeMethods>::ctor(this, pattern);
         this
     }
 }

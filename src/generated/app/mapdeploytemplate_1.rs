@@ -16,6 +16,139 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_Queue.md"))]
+#[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.Queue")]
+#[parent(crate::system::object::Object)]
+pub struct MapDeployTemplate_1_Queue<T0: ::unity2::ClassIdentity> {
+    #[static_field]
+    #[rename(name = "QueueSize")]
+    pub queue_size: i32,
+    #[rename(name = "m_Datas")]
+    pub m_datas:
+        ::unity2::Array<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>>,
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+}
+
+#[cfg(feature = "app-mapdeploytemplate_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_Queue<T0> {
+    #[doc = "`Set(i32, i32, crate::app::dir_2::Dir_Type, i32)` overload"]
+    #[method(name = "Set", args = 4)]
+    pub fn set(self, x: i32, z: i32, dir: crate::app::dir_2::Dir_Type, cost: i32) -> ();
+
+    #[doc = "`Next()` overload"]
+    #[method(name = "Next", args = 0)]
+    pub fn next(self) -> ();
+
+    #[doc = "`ResetIndex()` overload"]
+    #[method(name = "ResetIndex", args = 0)]
+    pub fn reset_index(self) -> ();
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self)
+        -> crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>;
+
+    #[doc = "`set_Current(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>)` overload"]
+    #[method(name = "set_Current", args = 1)]
+    pub fn set_current(
+        self,
+        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>,
+    ) -> ();
+
+    #[doc = "`get_CurrentX()` overload"]
+    #[method(name = "get_CurrentX", args = 0)]
+    pub fn get_current_x(self) -> i32;
+
+    #[doc = "`set_CurrentX(i32)` overload"]
+    #[method(name = "set_CurrentX", args = 1)]
+    pub fn set_current_x(self, value: i32) -> ();
+
+    #[doc = "`get_CurrentZ()` overload"]
+    #[method(name = "get_CurrentZ", args = 0)]
+    pub fn get_current_z(self) -> i32;
+
+    #[doc = "`set_CurrentZ(i32)` overload"]
+    #[method(name = "set_CurrentZ", args = 1)]
+    pub fn set_current_z(self, value: i32) -> ();
+
+    #[doc = "`get_CurrentDir()` overload"]
+    #[method(name = "get_CurrentDir", args = 0)]
+    pub fn get_current_dir(self) -> crate::app::dir_2::Dir_Type;
+
+    #[doc = "`set_CurrentDir(crate::app::dir_2::Dir_Type)` overload"]
+    #[method(name = "set_CurrentDir", args = 1)]
+    pub fn set_current_dir(self, value: crate::app::dir_2::Dir_Type) -> ();
+
+    #[doc = "`get_CurrentCost()` overload"]
+    #[method(name = "get_CurrentCost", args = 0)]
+    pub fn get_current_cost(self) -> i32;
+
+    #[doc = "`set_CurrentCost(i32)` overload"]
+    #[method(name = "set_CurrentCost", args = 1)]
+    pub fn set_current_cost(self, value: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapdeploytemplate_1")]
+impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_Queue<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDeployTemplate_1_Queue),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDeployTemplate_1_QueueMethods<T0>>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_FlagField.md"))]
+#[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < T0 > >)]
+#[parent(crate::app::bitfield64::BitField64)]
+#[parent(crate::app::bitfieldcommon::BitFieldCommon)]
+#[parent(crate::system::object::Object)]
+pub struct MapDeployTemplate_1_FlagField<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-mapdeploytemplate_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_FlagField<T0> {
+    #[doc = "`ToLong(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>)` overload"]
+    #[method(name = "ToLong", args = 1)]
+    pub fn to_long(
+        self,
+        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>,
+    ) -> i64;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapdeploytemplate_1")]
+impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_FlagField<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapDeployTemplate_1_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDeployTemplate_1_FlagFieldMethods<T0>>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_SwapBufferScope.md"))]
 #[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.SwapBufferScope")]
 #[parent(crate::system::object::Object)]
@@ -117,132 +250,6 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_DisplayType<T0> {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_Queue_Data.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapDeployTemplate_1_Queue_Data<T0> {
-    pub _phantom: ::core::marker::PhantomData<(T0,)>,
-}
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapDeployTemplate_1_Queue_Data<T0> {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapDeployTemplate`1.Queue.Data";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| {
-            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
-                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
-                .expect("generic instantiation")
-        })
-    }
-}
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapDeployTemplate_1_Queue_Data<T0> {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_Queue.md"))]
-#[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.Queue")]
-#[parent(crate::system::object::Object)]
-pub struct MapDeployTemplate_1_Queue<T0: ::unity2::ClassIdentity> {
-    #[static_field]
-    #[rename(name = "QueueSize")]
-    pub queue_size: i32,
-    #[rename(name = "m_Datas")]
-    pub m_datas:
-        ::unity2::Array<crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>>,
-    #[rename(name = "m_Index")]
-    pub m_index: i32,
-}
-
-#[cfg(feature = "app-mapdeploytemplate_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_Queue<T0> {
-    #[doc = "`Set(i32, i32, crate::app::dir_2::Dir_Type, i32)` overload"]
-    #[method(name = "Set", args = 4)]
-    pub fn set(self, x: i32, z: i32, dir: crate::app::dir_2::Dir_Type, cost: i32) -> ();
-
-    #[doc = "`Next()` overload"]
-    #[method(name = "Next", args = 0)]
-    pub fn next(self) -> ();
-
-    #[doc = "`ResetIndex()` overload"]
-    #[method(name = "ResetIndex", args = 0)]
-    pub fn reset_index(self) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self)
-        -> crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>;
-
-    #[doc = "`set_Current(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>)` overload"]
-    #[method(name = "set_Current", args = 1)]
-    pub fn set_current(
-        self,
-        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Queue_Data<T0>,
-    ) -> ();
-
-    #[doc = "`get_CurrentX()` overload"]
-    #[method(name = "get_CurrentX", args = 0)]
-    pub fn get_current_x(self) -> i32;
-
-    #[doc = "`set_CurrentX(i32)` overload"]
-    #[method(name = "set_CurrentX", args = 1)]
-    pub fn set_current_x(self, value: i32) -> ();
-
-    #[doc = "`get_CurrentZ()` overload"]
-    #[method(name = "get_CurrentZ", args = 0)]
-    pub fn get_current_z(self) -> i32;
-
-    #[doc = "`set_CurrentZ(i32)` overload"]
-    #[method(name = "set_CurrentZ", args = 1)]
-    pub fn set_current_z(self, value: i32) -> ();
-
-    #[doc = "`get_CurrentDir()` overload"]
-    #[method(name = "get_CurrentDir", args = 0)]
-    pub fn get_current_dir(self) -> crate::app::dir_2::Dir_Type;
-
-    #[doc = "`set_CurrentDir(crate::app::dir_2::Dir_Type)` overload"]
-    #[method(name = "set_CurrentDir", args = 1)]
-    pub fn set_current_dir(self, value: crate::app::dir_2::Dir_Type) -> ();
-
-    #[doc = "`get_CurrentCost()` overload"]
-    #[method(name = "get_CurrentCost", args = 0)]
-    pub fn get_current_cost(self) -> i32;
-
-    #[doc = "`set_CurrentCost(i32)` overload"]
-    #[method(name = "set_CurrentCost", args = 1)]
-    pub fn set_current_cost(self, value: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapdeploytemplate_1")]
-impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_Queue<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDeployTemplate_1_Queue),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDeployTemplate_1_QueueMethods<T0>>::ctor(this);
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_ImageType.md"))]
 #[repr(C)]
 #[derive(
@@ -331,6 +338,355 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_ImageType<T0> {
     pub fn num() -> Self {
         Self {
             value: 7,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_Queue_Data.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapDeployTemplate_1_Queue_Data<T0> {
+    pub _phantom: ::core::marker::PhantomData<(T0,)>,
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapDeployTemplate_1_Queue_Data<T0> {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapDeployTemplate`1.Queue.Data";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| {
+            ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME)
+                .make_generic(&[<T0 as ::unity2::ClassIdentity>::class()])
+                .expect("generic instantiation")
+        })
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapDeployTemplate_1_Queue_Data<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_Flag.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapDeployTemplate_1_Flag<T0: ::unity2::ClassIdentity> {
+    pub value: i32,
+    pub _phantom: ::core::marker::PhantomData<(T0)>,
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapDeployTemplate_1_Flag<T0> {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapDeployTemplate`1.Flag";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapDeployTemplate_1_Flag<T0> {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_Flag<T0> {
+    pub fn full_area() -> Self {
+        Self {
+            value: 1,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn enemy() -> Self {
+        Self {
+            value: 2,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn appear() -> Self {
+        Self {
+            value: 4,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn appear_ai_no_move() -> Self {
+        Self {
+            value: 16,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn route() -> Self {
+        Self {
+            value: 32,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn fixed() -> Self {
+        Self {
+            value: 64,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn idle() -> Self {
+        Self {
+            value: 128,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn cost_free() -> Self {
+        Self {
+            value: 256,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn door_free() -> Self {
+        Self {
+            value: 512,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn sight_free() -> Self {
+        Self {
+            value: 1024,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn block_free() -> Self {
+        Self {
+            value: 4096,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn range_side() -> Self {
+        Self {
+            value: 8192,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn show() -> Self {
+        Self {
+            value: 16384,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn event() -> Self {
+        Self {
+            value: 32768,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn dispos() -> Self {
+        Self {
+            value: 65536,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn cost_free_skill() -> Self {
+        Self {
+            value: 131072,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn enemy_pass_skill() -> Self {
+        Self {
+            value: 262144,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn danger() -> Self {
+        Self {
+            value: 1048576,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn attack() -> Self {
+        Self {
+            value: 16777216,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn rod() -> Self {
+        Self {
+            value: 33554432,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn interference_rod() -> Self {
+        Self {
+            value: 67108864,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn heal_rod() -> Self {
+        Self {
+            value: 134217728,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn support_rod() -> Self {
+        Self {
+            value: 268435456,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn rewarp_rod() -> Self {
+        Self {
+            value: 536870912,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn engage() -> Self {
+        Self {
+            value: 1073741824,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn engage_here() -> Self {
+        Self {
+            value: -2147483648,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn cannon() -> Self {
+        Self {
+            value: 0,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn equip() -> Self {
+        Self {
+            value: 0,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn select() -> Self {
+        Self {
+            value: 0,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn basic_rod() -> Self {
+        Self {
+            value: 0,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn ignore_silent() -> Self {
+        Self {
+            value: 0,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn keep_attack_image() -> Self {
+        Self {
+            value: 0,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn keep_rod_image() -> Self {
+        Self {
+            value: 0,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn keep_action_image() -> Self {
+        Self {
+            value: 0,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn before_move() -> Self {
+        Self {
+            value: 0,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn clamp_area() -> Self {
+        Self {
+            value: 0,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn ignore_cannon() -> Self {
+        Self {
+            value: 0,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn full_bullet() -> Self {
+        Self {
+            value: 0,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn mask_free() -> Self {
+        Self {
+            value: 131328,
+            _phantom: ::core::marker::PhantomData,
+        }
+    }
+
+    pub fn mask_weapon() -> Self {
+        Self {
+            value: 1593835520,
             _phantom: ::core::marker::PhantomData,
         }
     }
@@ -1143,361 +1499,5 @@ impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1<T0> {
         });
         <Self as IMapDeployTemplate_1Methods<T0>>::ctor(this);
         this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_FlagField.md"))]
-#[::unity2::class(namespace = "App", name = "MapDeployTemplate`1.FlagField")]
-# [parent (crate :: app :: bitfieldtemplate64_1 :: BitFieldTemplate64_1 < crate :: app :: mapdeploytemplate_1 :: MapDeployTemplate_1_Flag < T0 > >)]
-#[parent(crate::app::bitfield64::BitField64)]
-#[parent(crate::app::bitfieldcommon::BitFieldCommon)]
-#[parent(crate::system::object::Object)]
-pub struct MapDeployTemplate_1_FlagField<T0: ::unity2::ClassIdentity> {}
-
-#[cfg(feature = "app-mapdeploytemplate_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_FlagField<T0> {
-    #[doc = "`ToLong(crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>)` overload"]
-    #[method(name = "ToLong", args = 1)]
-    pub fn to_long(
-        self,
-        value: crate::app::mapdeploytemplate_1::MapDeployTemplate_1_Flag<T0>,
-    ) -> i64;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapdeploytemplate_1")]
-impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_FlagField<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapDeployTemplate_1_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapDeployTemplate_1_FlagFieldMethods<T0>>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapdeploytemplate_1/MapDeployTemplate_1_Flag.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapDeployTemplate_1_Flag<T0: ::unity2::ClassIdentity> {
-    pub value: i32,
-    pub _phantom: ::core::marker::PhantomData<(T0)>,
-}
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for MapDeployTemplate_1_Flag<T0> {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapDeployTemplate`1.Flag";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for MapDeployTemplate_1_Flag<T0> {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl<T0: ::unity2::ClassIdentity> MapDeployTemplate_1_Flag<T0> {
-    pub fn full_area() -> Self {
-        Self {
-            value: 1,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn enemy() -> Self {
-        Self {
-            value: 2,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn appear() -> Self {
-        Self {
-            value: 4,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn appear_ai_no_move() -> Self {
-        Self {
-            value: 16,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn route() -> Self {
-        Self {
-            value: 32,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn fixed() -> Self {
-        Self {
-            value: 64,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn idle() -> Self {
-        Self {
-            value: 128,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn cost_free() -> Self {
-        Self {
-            value: 256,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn door_free() -> Self {
-        Self {
-            value: 512,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn sight_free() -> Self {
-        Self {
-            value: 1024,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn block_free() -> Self {
-        Self {
-            value: 4096,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn range_side() -> Self {
-        Self {
-            value: 8192,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn show() -> Self {
-        Self {
-            value: 16384,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn event() -> Self {
-        Self {
-            value: 32768,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn dispos() -> Self {
-        Self {
-            value: 65536,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn cost_free_skill() -> Self {
-        Self {
-            value: 131072,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn enemy_pass_skill() -> Self {
-        Self {
-            value: 262144,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn danger() -> Self {
-        Self {
-            value: 1048576,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn attack() -> Self {
-        Self {
-            value: 16777216,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn rod() -> Self {
-        Self {
-            value: 33554432,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn interference_rod() -> Self {
-        Self {
-            value: 67108864,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn heal_rod() -> Self {
-        Self {
-            value: 134217728,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn support_rod() -> Self {
-        Self {
-            value: 268435456,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn rewarp_rod() -> Self {
-        Self {
-            value: 536870912,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn engage() -> Self {
-        Self {
-            value: 1073741824,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn engage_here() -> Self {
-        Self {
-            value: -2147483648,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn cannon() -> Self {
-        Self {
-            value: 0,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn equip() -> Self {
-        Self {
-            value: 0,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn select() -> Self {
-        Self {
-            value: 0,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn basic_rod() -> Self {
-        Self {
-            value: 0,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn ignore_silent() -> Self {
-        Self {
-            value: 0,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn keep_attack_image() -> Self {
-        Self {
-            value: 0,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn keep_rod_image() -> Self {
-        Self {
-            value: 0,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn keep_action_image() -> Self {
-        Self {
-            value: 0,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn before_move() -> Self {
-        Self {
-            value: 0,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn clamp_area() -> Self {
-        Self {
-            value: 0,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn ignore_cannon() -> Self {
-        Self {
-            value: 0,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn full_bullet() -> Self {
-        Self {
-            value: 0,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn mask_free() -> Self {
-        Self {
-            value: 131328,
-            _phantom: ::core::marker::PhantomData,
-        }
-    }
-
-    pub fn mask_weapon() -> Self {
-        Self {
-            value: 1593835520,
-            _phantom: ::core::marker::PhantomData,
-        }
     }
 }

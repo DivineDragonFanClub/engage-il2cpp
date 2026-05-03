@@ -12,6 +12,58 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_CharaPhoto.md"))]
+#[::unity2::class(namespace = "App", name = "SynthesisRingInfoWindow.CharaPhoto")]
+#[parent(crate::system::object::Object)]
+pub struct SynthesisRingInfoWindow_CharaPhoto {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_RootAnimator")]
+    pub m_root_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_CharaImage")]
+    pub m_chara_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_FrameImage")]
+    pub m_frame_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_IsSetup")]
+    pub m_is_setup: bool,
+}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+#[::unity2::methods]
+impl SynthesisRingInfoWindow_CharaPhoto {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`FadeIn()` overload"]
+    #[method(name = "FadeIn", args = 0)]
+    pub fn fade_in(self) -> ();
+
+    #[doc = "`FadeOut()` overload"]
+    #[method(name = "FadeOut", args = 0)]
+    pub fn fade_out(self) -> ();
+
+    #[doc = "`SetRingChara(crate::app::ringdata::RingData)` overload"]
+    #[method(name = "SetRingChara", args = 1)]
+    pub fn set_ring_chara(self, ring_data: crate::app::ringdata::RingData) -> ();
+}
+
+#[cfg(feature = "app-synthesisringinfowindow")]
+impl SynthesisRingInfoWindow_CharaPhoto {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SynthesisRingInfoWindow_CharaPhoto),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISynthesisRingInfoWindow_CharaPhotoMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_RingEnhance.md"))]
 #[::unity2::class(namespace = "App", name = "SynthesisRingInfoWindow.RingEnhance")]
 #[parent(crate::system::object::Object)]
@@ -169,58 +221,6 @@ impl SynthesisRingInfoWindow {
             )
         });
         <Self as ISynthesisRingInfoWindowMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/synthesisringinfowindow/SynthesisRingInfoWindow_CharaPhoto.md"))]
-#[::unity2::class(namespace = "App", name = "SynthesisRingInfoWindow.CharaPhoto")]
-#[parent(crate::system::object::Object)]
-pub struct SynthesisRingInfoWindow_CharaPhoto {
-    #[rename(name = "m_RootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_RootAnimator")]
-    pub m_root_animator: crate::unity_engine::animator::Animator,
-    #[rename(name = "m_CharaImage")]
-    pub m_chara_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_FrameImage")]
-    pub m_frame_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_IsSetup")]
-    pub m_is_setup: bool,
-}
-
-#[cfg(feature = "app-synthesisringinfowindow")]
-#[::unity2::methods]
-impl SynthesisRingInfoWindow_CharaPhoto {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`FadeIn()` overload"]
-    #[method(name = "FadeIn", args = 0)]
-    pub fn fade_in(self) -> ();
-
-    #[doc = "`FadeOut()` overload"]
-    #[method(name = "FadeOut", args = 0)]
-    pub fn fade_out(self) -> ();
-
-    #[doc = "`SetRingChara(crate::app::ringdata::RingData)` overload"]
-    #[method(name = "SetRingChara", args = 1)]
-    pub fn set_ring_chara(self, ring_data: crate::app::ringdata::RingData) -> ();
-}
-
-#[cfg(feature = "app-synthesisringinfowindow")]
-impl SynthesisRingInfoWindow_CharaPhoto {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SynthesisRingInfoWindow_CharaPhoto),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISynthesisRingInfoWindow_CharaPhotoMethods>::ctor(this);
         this
     }
 }

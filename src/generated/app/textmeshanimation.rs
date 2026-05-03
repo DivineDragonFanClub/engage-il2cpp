@@ -16,6 +16,99 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation.md"))]
+#[::unity2::class(namespace = "App", name = "TextMeshAnimation")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct TextMeshAnimation {
+    #[rename(name = "Params")]
+    pub params: ::unity2::Array<crate::app::textmeshanimation::TextMeshAnimation_AnimationParams>,
+    #[rename(name = "m_TextComponent")]
+    pub m_text_component: crate::tm_pro::tmp_text::TMP_Text,
+    #[rename(name = "m_IsAnimation")]
+    pub m_is_animation: bool,
+    #[rename(name = "m_IsFirstFrame")]
+    pub m_is_first_frame: bool,
+    #[rename(name = "m_NowAnimationIndex")]
+    pub m_now_animation_index: i32,
+    #[rename(name = "m_NowTime")]
+    pub m_now_time: f32,
+}
+
+#[cfg(feature = "app-textmeshanimation")]
+#[::unity2::methods]
+impl TextMeshAnimation {
+    #[doc = "`get_isUnscaledDeltaTime()` overload"]
+    #[method(name = "get_isUnscaledDeltaTime", args = 0)]
+    pub fn get_is_unscaled_delta_time(self) -> bool;
+
+    #[doc = "`set_isUnscaledDeltaTime(bool)` overload"]
+    #[method(name = "set_isUnscaledDeltaTime", args = 1)]
+    pub fn set_is_unscaled_delta_time(self, value: bool) -> ();
+
+    #[doc = "`Awake()` overload"]
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[doc = "`AnimationText()` overload"]
+    #[method(name = "AnimationText", args = 0)]
+    pub fn animation_text(self) -> ();
+
+    #[doc = "`SetText(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetText", args = 1)]
+    pub fn set_text(self, text: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Restart()` overload"]
+    #[method(name = "Restart", args = 0)]
+    pub fn restart(self) -> ();
+
+    #[doc = "`StartAnimation()` overload"]
+    #[method(name = "StartAnimation", args = 0)]
+    pub fn start_animation(self) -> ();
+
+    #[doc = "`Skip()` overload"]
+    #[method(name = "Skip", args = 0)]
+    pub fn skip(self) -> ();
+
+    #[doc = "`StartAnimation(i32)` overload"]
+    #[method(name = "StartAnimation", args = 1)]
+    pub fn start_animation_2(self, index: i32) -> ();
+
+    #[doc = "`ToNextAnimation()` overload"]
+    #[method(name = "ToNextAnimation", args = 0)]
+    pub fn to_next_animation(self) -> ();
+
+    #[doc = "`SetAsUnscaledInChildren(crate::unity_engine::transform::Transform, bool)` overload"]
+    #[method(name = "SetAsUnscaledInChildren", args = 2)]
+    pub fn set_as_unscaled_in_children(
+        root: crate::unity_engine::transform::Transform,
+        v: bool,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-textmeshanimation")]
+impl TextMeshAnimation {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TextMeshAnimation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITextMeshAnimationMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation_AnimationParams.md"))]
 #[::unity2::class(namespace = "App", name = "TextMeshAnimation.AnimationParams")]
 #[parent(crate::system::object::Object)]
@@ -249,98 +342,5 @@ impl TextMeshAnimation_PivotType {
 
     pub fn base_line() -> Self {
         Self { value: 1 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/textmeshanimation/TextMeshAnimation.md"))]
-#[::unity2::class(namespace = "App", name = "TextMeshAnimation")]
-#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-pub struct TextMeshAnimation {
-    #[rename(name = "Params")]
-    pub params: ::unity2::Array<crate::app::textmeshanimation::TextMeshAnimation_AnimationParams>,
-    #[rename(name = "m_TextComponent")]
-    pub m_text_component: crate::tm_pro::tmp_text::TMP_Text,
-    #[rename(name = "m_IsAnimation")]
-    pub m_is_animation: bool,
-    #[rename(name = "m_IsFirstFrame")]
-    pub m_is_first_frame: bool,
-    #[rename(name = "m_NowAnimationIndex")]
-    pub m_now_animation_index: i32,
-    #[rename(name = "m_NowTime")]
-    pub m_now_time: f32,
-}
-
-#[cfg(feature = "app-textmeshanimation")]
-#[::unity2::methods]
-impl TextMeshAnimation {
-    #[doc = "`get_isUnscaledDeltaTime()` overload"]
-    #[method(name = "get_isUnscaledDeltaTime", args = 0)]
-    pub fn get_is_unscaled_delta_time(self) -> bool;
-
-    #[doc = "`set_isUnscaledDeltaTime(bool)` overload"]
-    #[method(name = "set_isUnscaledDeltaTime", args = 1)]
-    pub fn set_is_unscaled_delta_time(self, value: bool) -> ();
-
-    #[doc = "`Awake()` overload"]
-    #[method(name = "Awake", args = 0)]
-    pub fn awake(self) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`AnimationText()` overload"]
-    #[method(name = "AnimationText", args = 0)]
-    pub fn animation_text(self) -> ();
-
-    #[doc = "`SetText(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetText", args = 1)]
-    pub fn set_text(self, text: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Restart()` overload"]
-    #[method(name = "Restart", args = 0)]
-    pub fn restart(self) -> ();
-
-    #[doc = "`StartAnimation()` overload"]
-    #[method(name = "StartAnimation", args = 0)]
-    pub fn start_animation(self) -> ();
-
-    #[doc = "`Skip()` overload"]
-    #[method(name = "Skip", args = 0)]
-    pub fn skip(self) -> ();
-
-    #[doc = "`StartAnimation(i32)` overload"]
-    #[method(name = "StartAnimation", args = 1)]
-    pub fn start_animation_2(self, index: i32) -> ();
-
-    #[doc = "`ToNextAnimation()` overload"]
-    #[method(name = "ToNextAnimation", args = 0)]
-    pub fn to_next_animation(self) -> ();
-
-    #[doc = "`SetAsUnscaledInChildren(crate::unity_engine::transform::Transform, bool)` overload"]
-    #[method(name = "SetAsUnscaledInChildren", args = 2)]
-    pub fn set_as_unscaled_in_children(
-        root: crate::unity_engine::transform::Transform,
-        v: bool,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-textmeshanimation")]
-impl TextMeshAnimation {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TextMeshAnimation),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITextMeshAnimationMethods>::ctor(this);
-        this
     }
 }

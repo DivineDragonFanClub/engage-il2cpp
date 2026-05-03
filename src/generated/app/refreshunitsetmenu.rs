@@ -16,129 +16,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_Result2.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RefreshUnitSetMenu_Result2 {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RefreshUnitSetMenu_Result2 {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RefreshUnitSetMenu.Result2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RefreshUnitSetMenu_Result2 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RefreshUnitSetMenu_Result2 {
-    pub fn unit_select() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ok() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn ok_without_demo() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn cancel() -> Self {
-        Self { value: 3 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "RefreshUnitSetMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RefreshUnitSetMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-refreshunitsetmenu")]
-#[::unity2::methods]
-impl RefreshUnitSetMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::refreshunitsetmenu::RefreshUnitSetMenu_Result2, i32, crate::app::hubfacilitydata::HubFacilityData)` overload"]
-    #[method(name = "Invoke", args = 3)]
-    pub fn invoke(
-        self,
-        result: crate::app::refreshunitsetmenu::RefreshUnitSetMenu_Result2,
-        unit_index: i32,
-        facility_data: crate::app::hubfacilitydata::HubFacilityData,
-    ) -> ();
-}
-
-#[cfg(feature = "app-refreshunitsetmenu")]
-impl RefreshUnitSetMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSetMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_SetUnitEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "RefreshUnitSetMenu.SetUnitEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RefreshUnitSetMenu_SetUnitEventHandler {}
-
-#[cfg(feature = "app-refreshunitsetmenu")]
-#[::unity2::methods]
-impl RefreshUnitSetMenu_SetUnitEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32, crate::app::unit::Unit)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(self, unit_index: i32, unit: crate::app::unit::Unit) -> ();
-}
-
-#[cfg(feature = "app-refreshunitsetmenu")]
-impl RefreshUnitSetMenu_SetUnitEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetMenu_SetUnitEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSetMenu_SetUnitEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu.md"))]
 #[::unity2::class(namespace = "App", name = "RefreshUnitSetMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -345,6 +222,77 @@ impl RefreshUnitSetMenu {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_SetUnitEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "RefreshUnitSetMenu.SetUnitEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefreshUnitSetMenu_SetUnitEventHandler {}
+
+#[cfg(feature = "app-refreshunitsetmenu")]
+#[::unity2::methods]
+impl RefreshUnitSetMenu_SetUnitEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32, crate::app::unit::Unit)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, unit_index: i32, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-refreshunitsetmenu")]
+impl RefreshUnitSetMenu_SetUnitEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshUnitSetMenu_SetUnitEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshUnitSetMenu_SetUnitEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "RefreshUnitSetMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefreshUnitSetMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-refreshunitsetmenu")]
+#[::unity2::methods]
+impl RefreshUnitSetMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::refreshunitsetmenu::RefreshUnitSetMenu_Result2, i32, crate::app::hubfacilitydata::HubFacilityData)` overload"]
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(
+        self,
+        result: crate::app::refreshunitsetmenu::RefreshUnitSetMenu_Result2,
+        unit_index: i32,
+        facility_data: crate::app::hubfacilitydata::HubFacilityData,
+    ) -> ();
+}
+
+#[cfg(feature = "app-refreshunitsetmenu")]
+impl RefreshUnitSetMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshUnitSetMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshUnitSetMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_SelectFacilityEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
@@ -378,5 +326,57 @@ impl RefreshUnitSetMenu_SelectFacilityEventHandler {
         });
         <Self as IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods>::ctor(this, object, method);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshunitsetmenu/RefreshUnitSetMenu_Result2.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RefreshUnitSetMenu_Result2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RefreshUnitSetMenu_Result2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RefreshUnitSetMenu.Result2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RefreshUnitSetMenu_Result2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RefreshUnitSetMenu_Result2 {
+    pub fn unit_select() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ok() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn ok_without_demo() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn cancel() -> Self {
+        Self { value: 3 }
     }
 }

@@ -4,110 +4,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/sortedlist/SortedList_SortedListDebugView.md"))]
-#[::unity2::class(
-    namespace = "System.Collections",
-    name = "SortedList.SortedListDebugView"
-)]
-#[parent(crate::system::object::Object)]
-pub struct SortedList_SortedListDebugView {}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/sortedlist/SortedList_SortedListEnumerator.md"))]
-#[::unity2::class(
-    namespace = "System.Collections",
-    name = "SortedList.SortedListEnumerator"
-)]
-#[parent(crate::system::object::Object)]
-pub struct SortedList_SortedListEnumerator {
-    #[rename(name = "sortedList")]
-    pub sorted_list: crate::system::collections::sortedlist::SortedList,
-    #[rename(name = "key")]
-    pub key: ::unity2::IlInstance,
-    #[rename(name = "value")]
-    pub value: ::unity2::IlInstance,
-    #[rename(name = "index")]
-    pub index: i32,
-    #[rename(name = "startIndex")]
-    pub start_index: i32,
-    #[rename(name = "endIndex")]
-    pub end_index: i32,
-    #[rename(name = "version")]
-    pub version: i32,
-    #[rename(name = "current")]
-    pub current: bool,
-    #[rename(name = "getObjectRetType")]
-    pub get_object_ret_type: i32,
-}
-
-#[cfg(feature = "system-collections-sortedlist")]
-#[::unity2::methods]
-impl SortedList_SortedListEnumerator {
-    #[doc = "`.ctor(crate::system::collections::sortedlist::SortedList, i32, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        sorted_list: crate::system::collections::sortedlist::SortedList,
-        index: i32,
-        count: i32,
-        get_obj_ret_type: i32,
-    ) -> ();
-
-    #[doc = "`Clone()` overload"]
-    #[method(name = "Clone", args = 0)]
-    pub fn clone(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Key()` overload"]
-    #[method(name = "get_Key", args = 0)]
-    pub fn get_key(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`get_Entry()` overload"]
-    #[method(name = "get_Entry", args = 0)]
-    pub fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry;
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> crate::system::object::Object;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-}
-
-#[cfg(feature = "system-collections-sortedlist")]
-impl SortedList_SortedListEnumerator {
-    #[doc = "`.ctor(crate::system::collections::sortedlist::SortedList, i32, i32, i32)` — overload selector"]
-    pub fn new(
-        sorted_list: crate::system::collections::sortedlist::SortedList,
-        index: i32,
-        count: i32,
-        get_obj_ret_type: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortedList_SortedListEnumerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortedList_SortedListEnumeratorMethods>::ctor(
-            this,
-            sorted_list,
-            index,
-            count,
-            get_obj_ret_type,
-        );
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/sortedlist/SortedList_SyncSortedList.md"))]
 #[::unity2::class(namespace = "System.Collections", name = "SortedList.SyncSortedList")]
 #[parent(crate::system::collections::sortedlist::SortedList)]
@@ -506,6 +402,106 @@ impl SortedList {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/sortedlist/SortedList_SortedListDebugView.md"))]
+#[::unity2::class(
+    namespace = "System.Collections",
+    name = "SortedList.SortedListDebugView"
+)]
+#[parent(crate::system::object::Object)]
+pub struct SortedList_SortedListDebugView {}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/sortedlist/SortedList_KeyList.md"))]
+#[::unity2::class(namespace = "System.Collections", name = "SortedList.KeyList")]
+#[parent(crate::system::object::Object)]
+pub struct SortedList_KeyList {
+    #[rename(name = "sortedList")]
+    pub sorted_list: crate::system::collections::sortedlist::SortedList,
+}
+
+#[cfg(feature = "system-collections-sortedlist")]
+#[::unity2::methods]
+impl SortedList_KeyList {
+    #[doc = "`.ctor(crate::system::collections::sortedlist::SortedList)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, sorted_list: crate::system::collections::sortedlist::SortedList) -> ();
+
+    #[doc = "`get_Count()` overload"]
+    #[method(name = "get_Count", args = 0)]
+    pub fn get_count(self) -> i32;
+
+    #[doc = "`get_IsReadOnly()` overload"]
+    #[method(name = "get_IsReadOnly", args = 0)]
+    pub fn get_is_read_only(self) -> bool;
+
+    #[doc = "`get_IsSynchronized()` overload"]
+    #[method(name = "get_IsSynchronized", args = 0)]
+    pub fn get_is_synchronized(self) -> bool;
+
+    #[doc = "`get_SyncRoot()` overload"]
+    #[method(name = "get_SyncRoot", args = 0)]
+    pub fn get_sync_root(self) -> crate::system::object::Object;
+
+    #[doc = "`Add(crate::system::object::Object)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, key: crate::system::object::Object) -> i32;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Contains(crate::system::object::Object)` overload"]
+    #[method(name = "Contains", args = 1)]
+    pub fn contains(self, key: crate::system::object::Object) -> bool;
+
+    #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
+    #[method(name = "CopyTo", args = 2)]
+    pub fn copy_to(self, array: ::unity2::IlInstance, array_index: i32) -> ();
+
+    #[doc = "`Insert(i32, crate::system::object::Object)` overload"]
+    #[method(name = "Insert", args = 2)]
+    pub fn insert(self, index: i32, value: crate::system::object::Object) -> ();
+
+    #[doc = "`get_Item(i32)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, index: i32) -> crate::system::object::Object;
+
+    #[doc = "`set_Item(i32, crate::system::object::Object)` overload"]
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(self, index: i32, value: crate::system::object::Object) -> ();
+
+    #[doc = "`GetEnumerator()` overload"]
+    #[method(name = "GetEnumerator", args = 0)]
+    pub fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`IndexOf(crate::system::object::Object)` overload"]
+    #[method(name = "IndexOf", args = 1)]
+    pub fn index_of(self, key: crate::system::object::Object) -> i32;
+
+    #[doc = "`Remove(crate::system::object::Object)` overload"]
+    #[method(name = "Remove", args = 1)]
+    pub fn remove(self, key: crate::system::object::Object) -> ();
+
+    #[doc = "`RemoveAt(i32)` overload"]
+    #[method(name = "RemoveAt", args = 1)]
+    pub fn remove_at(self, index: i32) -> ();
+}
+
+#[cfg(feature = "system-collections-sortedlist")]
+impl SortedList_KeyList {
+    #[doc = "`.ctor(crate::system::collections::sortedlist::SortedList)` — overload selector"]
+    pub fn new(sorted_list: crate::system::collections::sortedlist::SortedList) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortedList_KeyList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortedList_KeyListMethods>::ctor(this, sorted_list);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/sortedlist/SortedList_ValueList.md"))]
 #[::unity2::class(namespace = "System.Collections", name = "SortedList.ValueList")]
 #[parent(crate::system::object::Object)]
@@ -598,94 +594,98 @@ impl SortedList_ValueList {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/sortedlist/SortedList_KeyList.md"))]
-#[::unity2::class(namespace = "System.Collections", name = "SortedList.KeyList")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/sortedlist/SortedList_SortedListEnumerator.md"))]
+#[::unity2::class(
+    namespace = "System.Collections",
+    name = "SortedList.SortedListEnumerator"
+)]
 #[parent(crate::system::object::Object)]
-pub struct SortedList_KeyList {
+pub struct SortedList_SortedListEnumerator {
     #[rename(name = "sortedList")]
     pub sorted_list: crate::system::collections::sortedlist::SortedList,
+    #[rename(name = "key")]
+    pub key: ::unity2::IlInstance,
+    #[rename(name = "value")]
+    pub value: ::unity2::IlInstance,
+    #[rename(name = "index")]
+    pub index: i32,
+    #[rename(name = "startIndex")]
+    pub start_index: i32,
+    #[rename(name = "endIndex")]
+    pub end_index: i32,
+    #[rename(name = "version")]
+    pub version: i32,
+    #[rename(name = "current")]
+    pub current: bool,
+    #[rename(name = "getObjectRetType")]
+    pub get_object_ret_type: i32,
 }
 
 #[cfg(feature = "system-collections-sortedlist")]
 #[::unity2::methods]
-impl SortedList_KeyList {
-    #[doc = "`.ctor(crate::system::collections::sortedlist::SortedList)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, sorted_list: crate::system::collections::sortedlist::SortedList) -> ();
+impl SortedList_SortedListEnumerator {
+    #[doc = "`.ctor(crate::system::collections::sortedlist::SortedList, i32, i32, i32)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        sorted_list: crate::system::collections::sortedlist::SortedList,
+        index: i32,
+        count: i32,
+        get_obj_ret_type: i32,
+    ) -> ();
 
-    #[doc = "`get_Count()` overload"]
-    #[method(name = "get_Count", args = 0)]
-    pub fn get_count(self) -> i32;
+    #[doc = "`Clone()` overload"]
+    #[method(name = "Clone", args = 0)]
+    pub fn clone(self) -> crate::system::object::Object;
 
-    #[doc = "`get_IsReadOnly()` overload"]
-    #[method(name = "get_IsReadOnly", args = 0)]
-    pub fn get_is_read_only(self) -> bool;
+    #[doc = "`get_Key()` overload"]
+    #[method(name = "get_Key", args = 0)]
+    pub fn get_key(self) -> crate::system::object::Object;
 
-    #[doc = "`get_IsSynchronized()` overload"]
-    #[method(name = "get_IsSynchronized", args = 0)]
-    pub fn get_is_synchronized(self) -> bool;
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
 
-    #[doc = "`get_SyncRoot()` overload"]
-    #[method(name = "get_SyncRoot", args = 0)]
-    pub fn get_sync_root(self) -> crate::system::object::Object;
+    #[doc = "`get_Entry()` overload"]
+    #[method(name = "get_Entry", args = 0)]
+    pub fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry;
 
-    #[doc = "`Add(crate::system::object::Object)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, key: crate::system::object::Object) -> i32;
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::system::object::Object;
 
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
+    #[doc = "`get_Value()` overload"]
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> crate::system::object::Object;
 
-    #[doc = "`Contains(crate::system::object::Object)` overload"]
-    #[method(name = "Contains", args = 1)]
-    pub fn contains(self, key: crate::system::object::Object) -> bool;
-
-    #[doc = "`CopyTo(::unity2::IlInstance, i32)` overload"]
-    #[method(name = "CopyTo", args = 2)]
-    pub fn copy_to(self, array: ::unity2::IlInstance, array_index: i32) -> ();
-
-    #[doc = "`Insert(i32, crate::system::object::Object)` overload"]
-    #[method(name = "Insert", args = 2)]
-    pub fn insert(self, index: i32, value: crate::system::object::Object) -> ();
-
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, index: i32) -> crate::system::object::Object;
-
-    #[doc = "`set_Item(i32, crate::system::object::Object)` overload"]
-    #[method(name = "set_Item", args = 2)]
-    pub fn set_item(self, index: i32, value: crate::system::object::Object) -> ();
-
-    #[doc = "`GetEnumerator()` overload"]
-    #[method(name = "GetEnumerator", args = 0)]
-    pub fn get_enumerator(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`IndexOf(crate::system::object::Object)` overload"]
-    #[method(name = "IndexOf", args = 1)]
-    pub fn index_of(self, key: crate::system::object::Object) -> i32;
-
-    #[doc = "`Remove(crate::system::object::Object)` overload"]
-    #[method(name = "Remove", args = 1)]
-    pub fn remove(self, key: crate::system::object::Object) -> ();
-
-    #[doc = "`RemoveAt(i32)` overload"]
-    #[method(name = "RemoveAt", args = 1)]
-    pub fn remove_at(self, index: i32) -> ();
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
 }
 
 #[cfg(feature = "system-collections-sortedlist")]
-impl SortedList_KeyList {
-    #[doc = "`.ctor(crate::system::collections::sortedlist::SortedList)` — overload selector"]
-    pub fn new(sorted_list: crate::system::collections::sortedlist::SortedList) -> Self {
+impl SortedList_SortedListEnumerator {
+    #[doc = "`.ctor(crate::system::collections::sortedlist::SortedList, i32, i32, i32)` — overload selector"]
+    pub fn new(
+        sorted_list: crate::system::collections::sortedlist::SortedList,
+        index: i32,
+        count: i32,
+        get_obj_ret_type: i32,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SortedList_KeyList),
+                ::core::stringify!(SortedList_SortedListEnumerator),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISortedList_KeyListMethods>::ctor(this, sorted_list);
+        <Self as ISortedList_SortedListEnumeratorMethods>::ctor(
+            this,
+            sorted_list,
+            index,
+            count,
+            get_obj_ret_type,
+        );
         this
     }
 }

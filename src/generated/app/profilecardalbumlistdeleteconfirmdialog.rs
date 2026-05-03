@@ -52,6 +52,43 @@ impl ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistdeleteconfirmdialog/ProfileCardAlbumListDeleteConfirmDialog.md"))]
+#[::unity2::class(namespace = "App", name = "ProfileCardAlbumListDeleteConfirmDialog")]
+#[parent(crate::system::object::Object)]
+pub struct ProfileCardAlbumListDeleteConfirmDialog {}
+
+#[cfg(feature = "app-profilecardalbumlistdeleteconfirmdialog")]
+#[::unity2::methods]
+impl ProfileCardAlbumListDeleteConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        user_name: ::unity2::Il2CppString,
+        yes_event_handler : crate :: app :: profilecardalbumlistdeleteconfirmdialog :: ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler,
+    ) -> crate::app::yesnodialog::YesNoDialog;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-profilecardalbumlistdeleteconfirmdialog")]
+impl ProfileCardAlbumListDeleteConfirmDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardAlbumListDeleteConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardAlbumListDeleteConfirmDialogMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistdeleteconfirmdialog/ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
@@ -97,43 +134,6 @@ impl ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem {
             message,
             yes_event_handler,
         );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistdeleteconfirmdialog/ProfileCardAlbumListDeleteConfirmDialog.md"))]
-#[::unity2::class(namespace = "App", name = "ProfileCardAlbumListDeleteConfirmDialog")]
-#[parent(crate::system::object::Object)]
-pub struct ProfileCardAlbumListDeleteConfirmDialog {}
-
-#[cfg(feature = "app-profilecardalbumlistdeleteconfirmdialog")]
-#[::unity2::methods]
-impl ProfileCardAlbumListDeleteConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        user_name: ::unity2::Il2CppString,
-        yes_event_handler : crate :: app :: profilecardalbumlistdeleteconfirmdialog :: ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler,
-    ) -> crate::app::yesnodialog::YesNoDialog;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-profilecardalbumlistdeleteconfirmdialog")]
-impl ProfileCardAlbumListDeleteConfirmDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardAlbumListDeleteConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardAlbumListDeleteConfirmDialogMethods>::ctor(this);
         this
     }
 }

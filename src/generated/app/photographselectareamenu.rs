@@ -14,62 +14,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectareamenu/PhotographSelectAreaMenu.md"))]
-#[::unity2::class(namespace = "App", name = "PhotographSelectAreaMenu")]
-#[parent(crate::app::basicmenu::BasicMenu)]
-pub struct PhotographSelectAreaMenu {}
-
-#[cfg(feature = "app-photographselectareamenu")]
-#[::unity2::methods]
-impl PhotographSelectAreaMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-        select_handler : crate :: app :: photographselectareamenu :: PhotographSelectAreaMenu_SelectHandler,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    ) -> ();
-
-    #[doc = "`OnClose()` overload"]
-    #[method(name = "OnClose", args = 0)]
-    pub fn on_close(self) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-photographselectareamenu")]
-impl PhotographSelectAreaMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::basicmenucontent::BasicMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographSelectAreaMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographSelectAreaMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectareamenu/PhotographSelectAreaMenu_SelectHandler.md"))]
 #[::unity2::class(namespace = "App", name = "PhotographSelectAreaMenu.SelectHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -161,6 +105,62 @@ impl PhotographSelectAreaMenu_MenuItem {
             )
         });
         <Self as IPhotographSelectAreaMenu_MenuItemMethods>::ctor(this, area_data, select_handler);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographselectareamenu/PhotographSelectAreaMenu.md"))]
+#[::unity2::class(namespace = "App", name = "PhotographSelectAreaMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct PhotographSelectAreaMenu {}
+
+#[cfg(feature = "app-photographselectareamenu")]
+#[::unity2::methods]
+impl PhotographSelectAreaMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographselectareamenu::PhotographSelectAreaMenu_SelectHandler)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+        select_handler : crate :: app :: photographselectareamenu :: PhotographSelectAreaMenu_SelectHandler,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> ();
+
+    #[doc = "`OnClose()` overload"]
+    #[method(name = "OnClose", args = 0)]
+    pub fn on_close(self) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-photographselectareamenu")]
+impl PhotographSelectAreaMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::basicmenucontent::BasicMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographSelectAreaMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographSelectAreaMenuMethods>::ctor(this, menu_item_list, menu_content);
         this
     }
 }

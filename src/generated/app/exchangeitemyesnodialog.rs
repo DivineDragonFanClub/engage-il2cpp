@@ -22,35 +22,48 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeitemyesnodialog/ExchangeItemYesNoDialog_YesEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "ExchangeItemYesNoDialog.YesEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ExchangeItemYesNoDialog_YesEventHandler {}
-
-#[cfg(feature = "app-exchangeitemyesnodialog")]
-#[::unity2::methods]
-impl ExchangeItemYesNoDialog_YesEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeitemyesnodialog/ExchangeItemYesNoDialog_YesMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "ExchangeItemYesNoDialog.YesMenuItem")]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct ExchangeItemYesNoDialog_YesMenuItem {
+    #[rename(name = "m_YesEventHandler")]
+    pub m_yes_event_handler:
+        crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler,
 }
 
 #[cfg(feature = "app-exchangeitemyesnodialog")]
-impl ExchangeItemYesNoDialog_YesEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+#[::unity2::methods]
+impl ExchangeItemYesNoDialog_YesMenuItem {
+    #[doc = "`.ctor(crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        yes_event_handler : crate :: app :: exchangeitemyesnodialog :: ExchangeItemYesNoDialog_YesEventHandler,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-exchangeitemyesnodialog")]
+impl ExchangeItemYesNoDialog_YesMenuItem {
+    #[doc = "`.ctor(crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)` — overload selector"]
+    pub fn new(
+        yes_event_handler : crate :: app :: exchangeitemyesnodialog :: ExchangeItemYesNoDialog_YesEventHandler,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ExchangeItemYesNoDialog_YesEventHandler),
+                ::core::stringify!(ExchangeItemYesNoDialog_YesMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IExchangeItemYesNoDialog_YesEventHandlerMethods>::ctor(this, object, method);
+        <Self as IExchangeItemYesNoDialog_YesMenuItemMethods>::ctor(this, yes_event_handler);
         this
     }
 }
@@ -110,48 +123,35 @@ impl ExchangeItemYesNoDialog {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeitemyesnodialog/ExchangeItemYesNoDialog_YesMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "ExchangeItemYesNoDialog.YesMenuItem")]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct ExchangeItemYesNoDialog_YesMenuItem {
-    #[rename(name = "m_YesEventHandler")]
-    pub m_yes_event_handler:
-        crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler,
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/exchangeitemyesnodialog/ExchangeItemYesNoDialog_YesEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "ExchangeItemYesNoDialog.YesEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ExchangeItemYesNoDialog_YesEventHandler {}
 
 #[cfg(feature = "app-exchangeitemyesnodialog")]
 #[::unity2::methods]
-impl ExchangeItemYesNoDialog_YesMenuItem {
-    #[doc = "`.ctor(crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        yes_event_handler : crate :: app :: exchangeitemyesnodialog :: ExchangeItemYesNoDialog_YesEventHandler,
-    ) -> ();
+impl ExchangeItemYesNoDialog_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
 }
 
 #[cfg(feature = "app-exchangeitemyesnodialog")]
-impl ExchangeItemYesNoDialog_YesMenuItem {
-    #[doc = "`.ctor(crate::app::exchangeitemyesnodialog::ExchangeItemYesNoDialog_YesEventHandler)` — overload selector"]
-    pub fn new(
-        yes_event_handler : crate :: app :: exchangeitemyesnodialog :: ExchangeItemYesNoDialog_YesEventHandler,
-    ) -> Self {
+impl ExchangeItemYesNoDialog_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ExchangeItemYesNoDialog_YesMenuItem),
+                ::core::stringify!(ExchangeItemYesNoDialog_YesEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IExchangeItemYesNoDialog_YesMenuItemMethods>::ctor(this, yes_event_handler);
+        <Self as IExchangeItemYesNoDialog_YesEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

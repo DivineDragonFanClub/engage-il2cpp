@@ -24,87 +24,6 @@ use crate::unity_engine::ui::selectable::ISelectable;
 use crate::unity_engine::ui::selectable::Selectable;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/slider/Slider_Direction.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct Slider_Direction {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for Slider_Direction {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "Slider.Direction";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Slider_Direction {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl Slider_Direction {
-    pub fn left_to_right() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn right_to_left() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn bottom_to_top() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn top_to_bottom() -> Self {
-        Self { value: 3 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider_SliderEvent.md"))]
-#[::unity2::class(namespace = "UnityEngine.UI", name = "Slider.SliderEvent")]
-# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
-pub struct Slider_SliderEvent {}
-
-#[cfg(feature = "unity_engine-ui-slider")]
-#[::unity2::methods]
-impl Slider_SliderEvent {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-ui-slider")]
-impl Slider_SliderEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Slider_SliderEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISlider_SliderEventMethods>::ctor(this);
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/slider/Slider_Axis.md"))]
 #[repr(C)]
 #[derive(
@@ -420,5 +339,86 @@ impl Slider {
         });
         <Self as ISliderMethods>::ctor(this);
         this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/slider/Slider_SliderEvent.md"))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "Slider.SliderEvent")]
+# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < f32 >)]
+pub struct Slider_SliderEvent {}
+
+#[cfg(feature = "unity_engine-ui-slider")]
+#[::unity2::methods]
+impl Slider_SliderEvent {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-slider")]
+impl Slider_SliderEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Slider_SliderEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISlider_SliderEventMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/slider/Slider_Direction.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Slider_Direction {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Slider_Direction {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "Slider.Direction";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Slider_Direction {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Slider_Direction {
+    pub fn left_to_right() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn right_to_left() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn bottom_to_top() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn top_to_bottom() -> Self {
+        Self { value: 3 }
     }
 }

@@ -8,41 +8,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/componentsinchildrenenumerator_1/ComponentsInChildrenEnumerator_1_Func.md"))]
-#[::unity2::class(namespace = "App", name = "ComponentsInChildrenEnumerator`1.Func")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-#[parent(crate::system::delegate::Delegate)]
-#[parent(crate::system::object::Object)]
-pub struct ComponentsInChildrenEnumerator_1_Func<T0: ::unity2::ClassIdentity> {}
-
-#[cfg(feature = "app-componentsinchildrenenumerator_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> ComponentsInChildrenEnumerator_1_Func<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(T0)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, component: T0) -> ();
-}
-
-#[cfg(feature = "app-componentsinchildrenenumerator_1")]
-impl<T0: ::unity2::ClassIdentity> ComponentsInChildrenEnumerator_1_Func<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ComponentsInChildrenEnumerator_1_Func),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IComponentsInChildrenEnumerator_1_FuncMethods<T0>>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/componentsinchildrenenumerator_1/ComponentsInChildrenEnumerator_1.md"))]
 #[::unity2::class(namespace = "App", name = "ComponentsInChildrenEnumerator`1")]
 #[parent(crate::system::object::Object)]
@@ -77,6 +42,41 @@ impl<T0: ::unity2::ClassIdentity> ComponentsInChildrenEnumerator_1<T0> {
             )
         });
         <Self as IComponentsInChildrenEnumerator_1Methods<T0>>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/componentsinchildrenenumerator_1/ComponentsInChildrenEnumerator_1_Func.md"))]
+#[::unity2::class(namespace = "App", name = "ComponentsInChildrenEnumerator`1.Func")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+#[parent(crate::system::delegate::Delegate)]
+#[parent(crate::system::object::Object)]
+pub struct ComponentsInChildrenEnumerator_1_Func<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-componentsinchildrenenumerator_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> ComponentsInChildrenEnumerator_1_Func<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(T0)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, component: T0) -> ();
+}
+
+#[cfg(feature = "app-componentsinchildrenenumerator_1")]
+impl<T0: ::unity2::ClassIdentity> ComponentsInChildrenEnumerator_1_Func<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ComponentsInChildrenEnumerator_1_Func),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IComponentsInChildrenEnumerator_1_FuncMethods<T0>>::ctor(this, object, method);
         this
     }
 }

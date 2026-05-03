@@ -14,6 +14,62 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundmanager/SoundManager_ParamFader.md"))]
+#[::unity2::class(namespace = "App", name = "SoundManager.ParamFader")]
+#[parent(crate::system::object::Object)]
+pub struct SoundManager_ParamFader {
+    #[rename(name = "m_now")]
+    pub m_now: f32,
+    #[rename(name = "m_from")]
+    pub m_from: f32,
+    #[rename(name = "m_to")]
+    pub m_to: f32,
+    #[rename(name = "m_time")]
+    pub m_time: f32,
+    #[rename(name = "m_duration")]
+    pub m_duration: f32,
+}
+
+#[cfg(feature = "app-soundmanager")]
+#[::unity2::methods]
+impl SoundManager_ParamFader {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`Get()` overload"]
+    #[method(name = "Get", args = 0)]
+    pub fn get(self) -> f32;
+
+    #[doc = "`Set(f32, i32)` overload"]
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, param: f32, msec: i32) -> ();
+
+    #[doc = "`Tick()` overload"]
+    #[method(name = "Tick", args = 0)]
+    pub fn tick(self) -> ();
+}
+
+#[cfg(feature = "app-soundmanager")]
+impl SoundManager_ParamFader {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundManager_ParamFader),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundManager_ParamFaderMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundmanager/SoundManager.md"))]
 #[::unity2::class(namespace = "App", name = "SoundManager")]
 # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: soundmanager :: SoundManager >)]
@@ -750,62 +806,6 @@ impl SoundManager {
             )
         });
         <Self as ISoundManagerMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundmanager/SoundManager_ParamFader.md"))]
-#[::unity2::class(namespace = "App", name = "SoundManager.ParamFader")]
-#[parent(crate::system::object::Object)]
-pub struct SoundManager_ParamFader {
-    #[rename(name = "m_now")]
-    pub m_now: f32,
-    #[rename(name = "m_from")]
-    pub m_from: f32,
-    #[rename(name = "m_to")]
-    pub m_to: f32,
-    #[rename(name = "m_time")]
-    pub m_time: f32,
-    #[rename(name = "m_duration")]
-    pub m_duration: f32,
-}
-
-#[cfg(feature = "app-soundmanager")]
-#[::unity2::methods]
-impl SoundManager_ParamFader {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`Get()` overload"]
-    #[method(name = "Get", args = 0)]
-    pub fn get(self) -> f32;
-
-    #[doc = "`Set(f32, i32)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, param: f32, msec: i32) -> ();
-
-    #[doc = "`Tick()` overload"]
-    #[method(name = "Tick", args = 0)]
-    pub fn tick(self) -> ();
-}
-
-#[cfg(feature = "app-soundmanager")]
-impl SoundManager_ParamFader {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundManager_ParamFader),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundManager_ParamFaderMethods>::ctor(this);
         this
     }
 }

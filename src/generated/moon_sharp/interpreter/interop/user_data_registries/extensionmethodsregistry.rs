@@ -4,53 +4,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/user_data_registries/extensionmethodsregistry/ExtensionMethodsRegistry_UnresolvedGenericMethod.md"))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Interop.UserDataRegistries",
-    name = "ExtensionMethodsRegistry.UnresolvedGenericMethod"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ExtensionMethodsRegistry_UnresolvedGenericMethod {
-    #[rename(name = "Method")]
-    pub method: crate::system::reflection::methodinfo::MethodInfo,
-    #[rename(name = "AccessMode")]
-    pub access_mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-    #[rename(name = "AlreadyAddedTypes")]
-    pub already_added_types:
-        crate::system::collections::generic::hashset_1::HashSet_1<::unity2::SystemType>,
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-user_data_registries-extensionmethodsregistry")]
-#[::unity2::methods]
-impl ExtensionMethodsRegistry_UnresolvedGenericMethod {
-    #[doc = "`.ctor(crate::system::reflection::methodinfo::MethodInfo, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        mi: crate::system::reflection::methodinfo::MethodInfo,
-        mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-    ) -> ();
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-user_data_registries-extensionmethodsregistry")]
-impl ExtensionMethodsRegistry_UnresolvedGenericMethod {
-    #[doc = "`.ctor(crate::system::reflection::methodinfo::MethodInfo, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` — overload selector"]
-    pub fn new(
-        mi: crate::system::reflection::methodinfo::MethodInfo,
-        mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ExtensionMethodsRegistry_UnresolvedGenericMethod),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IExtensionMethodsRegistry_UnresolvedGenericMethodMethods>::ctor(this, mi, mode);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/user_data_registries/extensionmethodsregistry/ExtensionMethodsRegistry.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Interop.UserDataRegistries",
@@ -127,6 +80,53 @@ impl ExtensionMethodsRegistry {
             )
         });
         <Self as IExtensionMethodsRegistryMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/user_data_registries/extensionmethodsregistry/ExtensionMethodsRegistry_UnresolvedGenericMethod.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop.UserDataRegistries",
+    name = "ExtensionMethodsRegistry.UnresolvedGenericMethod"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ExtensionMethodsRegistry_UnresolvedGenericMethod {
+    #[rename(name = "Method")]
+    pub method: crate::system::reflection::methodinfo::MethodInfo,
+    #[rename(name = "AccessMode")]
+    pub access_mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+    #[rename(name = "AlreadyAddedTypes")]
+    pub already_added_types:
+        crate::system::collections::generic::hashset_1::HashSet_1<::unity2::SystemType>,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-user_data_registries-extensionmethodsregistry")]
+#[::unity2::methods]
+impl ExtensionMethodsRegistry_UnresolvedGenericMethod {
+    #[doc = "`.ctor(crate::system::reflection::methodinfo::MethodInfo, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        mi: crate::system::reflection::methodinfo::MethodInfo,
+        mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+    ) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-user_data_registries-extensionmethodsregistry")]
+impl ExtensionMethodsRegistry_UnresolvedGenericMethod {
+    #[doc = "`.ctor(crate::system::reflection::methodinfo::MethodInfo, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` — overload selector"]
+    pub fn new(
+        mi: crate::system::reflection::methodinfo::MethodInfo,
+        mode: crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ExtensionMethodsRegistry_UnresolvedGenericMethod),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExtensionMethodsRegistry_UnresolvedGenericMethodMethods>::ctor(this, mi, mode);
         this
     }
 }

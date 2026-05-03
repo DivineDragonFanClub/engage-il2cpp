@@ -14,44 +14,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuyyesnodialogyesmenuitem/ItemShopBuyYesNoDialogYesMenuItem_YesEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ItemShopBuyYesNoDialogYesMenuItem.YesEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ItemShopBuyYesNoDialogYesMenuItem_YesEventHandler {}
-
-#[cfg(feature = "app-itemshopbuyyesnodialogyesmenuitem")]
-#[::unity2::methods]
-impl ItemShopBuyYesNoDialogYesMenuItem_YesEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-itemshopbuyyesnodialogyesmenuitem")]
-impl ItemShopBuyYesNoDialogYesMenuItem_YesEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemShopBuyYesNoDialogYesMenuItem_YesEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemShopBuyYesNoDialogYesMenuItem_YesEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuyyesnodialogyesmenuitem/ItemShopBuyYesNoDialogYesMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "ItemShopBuyYesNoDialogYesMenuItem")]
 #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
@@ -88,6 +50,44 @@ impl ItemShopBuyYesNoDialogYesMenuItem {
             )
         });
         <Self as IItemShopBuyYesNoDialogYesMenuItemMethods>::ctor(this, yes_event_handler);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuyyesnodialogyesmenuitem/ItemShopBuyYesNoDialogYesMenuItem_YesEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ItemShopBuyYesNoDialogYesMenuItem.YesEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ItemShopBuyYesNoDialogYesMenuItem_YesEventHandler {}
+
+#[cfg(feature = "app-itemshopbuyyesnodialogyesmenuitem")]
+#[::unity2::methods]
+impl ItemShopBuyYesNoDialogYesMenuItem_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-itemshopbuyyesnodialogyesmenuitem")]
+impl ItemShopBuyYesNoDialogYesMenuItem_YesEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemShopBuyYesNoDialogYesMenuItem_YesEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemShopBuyYesNoDialogYesMenuItem_YesEventHandlerMethods>::ctor(
+            this, object, method,
+        );
         this
     }
 }

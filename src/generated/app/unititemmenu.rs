@@ -12,39 +12,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititemmenu/UnitItemMenu_RequestCloseEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "UnitItemMenu.RequestCloseEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct UnitItemMenu_RequestCloseEventHandler {}
-
-#[cfg(feature = "app-unititemmenu")]
-#[::unity2::methods]
-impl UnitItemMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-unititemmenu")]
-impl UnitItemMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitItemMenu_RequestCloseEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitItemMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititemmenu/UnitItemMenu_DecideEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "UnitItemMenu.DecideEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -74,6 +41,39 @@ impl UnitItemMenu_DecideEventHandler {
             )
         });
         <Self as IUnitItemMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unititemmenu/UnitItemMenu_RequestCloseEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "UnitItemMenu.RequestCloseEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct UnitItemMenu_RequestCloseEventHandler {}
+
+#[cfg(feature = "app-unititemmenu")]
+#[::unity2::methods]
+impl UnitItemMenu_RequestCloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-unititemmenu")]
+impl UnitItemMenu_RequestCloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitItemMenu_RequestCloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitItemMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

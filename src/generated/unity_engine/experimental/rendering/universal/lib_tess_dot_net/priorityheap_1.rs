@@ -8,43 +8,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1_HandleElem.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
-    name = "PriorityHeap`1.HandleElem"
-)]
-#[parent(crate::system::object::Object)]
-pub struct PriorityHeap_1_HandleElem<T0: ::unity2::ClassIdentity> {
-    #[rename(name = "_key")]
-    pub key: T0,
-    #[rename(name = "_node")]
-    pub node: i32,
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> PriorityHeap_1_HandleElem<T0> {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
-impl<T0: ::unity2::ClassIdentity> PriorityHeap_1_HandleElem<T0> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PriorityHeap_1_HandleElem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPriorityHeap_1_HandleElemMethods<T0>>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
@@ -126,6 +89,43 @@ impl<T0: ::unity2::ClassIdentity> PriorityHeap_1<T0> {
             )
         });
         <Self as IPriorityHeap_1Methods<T0>>::ctor(this, initial_size, leq);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/priorityheap_1/PriorityHeap_1_HandleElem.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
+    name = "PriorityHeap`1.HandleElem"
+)]
+#[parent(crate::system::object::Object)]
+pub struct PriorityHeap_1_HandleElem<T0: ::unity2::ClassIdentity> {
+    #[rename(name = "_key")]
+    pub key: T0,
+    #[rename(name = "_node")]
+    pub node: i32,
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> PriorityHeap_1_HandleElem<T0> {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]
+impl<T0: ::unity2::ClassIdentity> PriorityHeap_1_HandleElem<T0> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PriorityHeap_1_HandleElem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPriorityHeap_1_HandleElemMethods<T0>>::ctor(this);
         this
     }
 }

@@ -6,6 +6,87 @@ use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptable
 use crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal.Internal",
+    name = "ColorGradingLutPass"
+)]
+#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
+pub struct ColorGradingLutPass {
+    #[rename(name = "m_LutBuilderLdr")]
+    pub m_lut_builder_ldr: crate::unity_engine::material::Material,
+    #[rename(name = "m_LutBuilderHdr")]
+    pub m_lut_builder_hdr: crate::unity_engine::material::Material,
+    #[rename(name = "m_HdrLutFormat")]
+    pub m_hdr_lut_format:
+        crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+    #[rename(name = "m_LdrLutFormat")]
+    pub m_ldr_lut_format:
+        crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
+    #[rename(name = "m_InternalLut")]
+    pub m_internal_lut:
+        crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
+    #[rename(name = "m_HableCurve")]
+    pub m_hable_curve: crate::unity_engine::rendering::hablecurve::HableCurve,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
+#[::unity2::methods]
+impl ColorGradingLutPass {
+    #[doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::universal::postprocessdata::PostProcessData)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
+    ) -> ();
+
+    #[doc = "`Setup(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
+    #[method(name = "Setup", args = 1)]
+    pub fn setup(
+        self,
+        internal_lut : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle,
+    ) -> ();
+
+    #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
+    #[method(name = "Execute", args = 2)]
+    pub fn execute(
+        self,
+        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
+        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
+    ) -> ();
+
+    #[doc = "`OnFinishCameraStackRendering(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
+    #[method(name = "OnFinishCameraStackRendering", args = 1)]
+    pub fn on_finish_camera_stack_rendering(
+        self,
+        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
+    ) -> ();
+
+    #[doc = "`Cleanup()` overload"]
+    #[method(name = "Cleanup", args = 0)]
+    pub fn cleanup(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
+impl ColorGradingLutPass {
+    #[doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::universal::postprocessdata::PostProcessData)` — overload selector"]
+    pub fn new(
+        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
+        data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ColorGradingLutPass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IColorGradingLutPassMethods>::ctor(this, evt, data);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass_ShaderConstants.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal.Internal",
@@ -93,85 +174,4 @@ impl ColorGradingLutPass_ShaderConstants {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/internal/colorgradinglutpass/ColorGradingLutPass.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal.Internal",
-    name = "ColorGradingLutPass"
-)]
-#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]
-pub struct ColorGradingLutPass {
-    #[rename(name = "m_LutBuilderLdr")]
-    pub m_lut_builder_ldr: crate::unity_engine::material::Material,
-    #[rename(name = "m_LutBuilderHdr")]
-    pub m_lut_builder_hdr: crate::unity_engine::material::Material,
-    #[rename(name = "m_HdrLutFormat")]
-    pub m_hdr_lut_format:
-        crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
-    #[rename(name = "m_LdrLutFormat")]
-    pub m_ldr_lut_format:
-        crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat,
-    #[rename(name = "m_InternalLut")]
-    pub m_internal_lut:
-        crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,
-    #[rename(name = "m_HableCurve")]
-    pub m_hable_curve: crate::unity_engine::rendering::hablecurve::HableCurve,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
-#[::unity2::methods]
-impl ColorGradingLutPass {
-    #[doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::universal::postprocessdata::PostProcessData)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
-    ) -> ();
-
-    #[doc = "`Setup(crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle)` overload"]
-    #[method(name = "Setup", args = 1)]
-    pub fn setup(
-        self,
-        internal_lut : crate :: unity_engine :: rendering :: universal :: rendertargethandle :: RenderTargetHandle,
-    ) -> ();
-
-    #[doc = "`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]
-    #[method(name = "Execute", args = 2)]
-    pub fn execute(
-        self,
-        context: crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,
-        rendering_data: crate::unity_engine::rendering::universal::renderingdata::RenderingData,
-    ) -> ();
-
-    #[doc = "`OnFinishCameraStackRendering(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]
-    #[method(name = "OnFinishCameraStackRendering", args = 1)]
-    pub fn on_finish_camera_stack_rendering(
-        self,
-        cmd: crate::unity_engine::rendering::commandbuffer::CommandBuffer,
-    ) -> ();
-
-    #[doc = "`Cleanup()` overload"]
-    #[method(name = "Cleanup", args = 0)]
-    pub fn cleanup(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass")]
-impl ColorGradingLutPass {
-    #[doc = "`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent, crate::unity_engine::rendering::universal::postprocessdata::PostProcessData)` — overload selector"]
-    pub fn new(
-        evt: crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent,
-        data: crate::unity_engine::rendering::universal::postprocessdata::PostProcessData,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ColorGradingLutPass),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IColorGradingLutPassMethods>::ctor(this, evt, data);
-        this
-    }
 }

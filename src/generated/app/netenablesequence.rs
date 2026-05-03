@@ -22,56 +22,21 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ResultFunction.md"))]
-#[::unity2::class(namespace = "App", name = "NetEnableSequence.ResultFunction")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct NetEnableSequence_ResultFunction {}
-
-#[cfg(feature = "app-netenablesequence")]
-#[::unity2::methods]
-impl NetEnableSequence_ResultFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(bool)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, is_enable: bool) -> ();
-}
-
-#[cfg(feature = "app-netenablesequence")]
-impl NetEnableSequence_ResultFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NetEnableSequence_ResultFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INetEnableSequence_ResultFunctionMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/netenablesequence/NetEnableSequence_Label.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/netenablesequence/NetEnableSequence_Arg.md"))]
 #[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct NetEnableSequence_Label {
-    pub value: i32,
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct NetEnableSequence_Arg {
+    pub without_confirm: bool,
+    pub can_write_config: bool,
+    pub is_net_login_once: bool,
+    pub is_reflect_net_result: bool,
+    pub result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
 }
 
-impl ::unity2::ClassIdentity for NetEnableSequence_Label {
+impl ::unity2::ClassIdentity for NetEnableSequence_Arg {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "NetEnableSequence.Label";
+    const NAME: &'static str = "NetEnableSequence.Arg";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -80,22 +45,12 @@ impl ::unity2::ClassIdentity for NetEnableSequence_Label {
     }
 }
 
-impl ::unity2::IlType for NetEnableSequence_Label {
+impl ::unity2::IlType for NetEnableSequence_Arg {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
             ._1
             .byval_arg
-    }
-}
-
-impl NetEnableSequence_Label {
-    pub fn login() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn result() -> Self {
-        Self { value: 1 }
     }
 }
 
@@ -202,6 +157,116 @@ impl NetEnableSequence {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ResultFunction.md"))]
+#[::unity2::class(namespace = "App", name = "NetEnableSequence.ResultFunction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct NetEnableSequence_ResultFunction {}
+
+#[cfg(feature = "app-netenablesequence")]
+#[::unity2::methods]
+impl NetEnableSequence_ResultFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(bool)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, is_enable: bool) -> ();
+}
+
+#[cfg(feature = "app-netenablesequence")]
+impl NetEnableSequence_ResultFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NetEnableSequence_ResultFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INetEnableSequence_ResultFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/netenablesequence/NetEnableSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct NetEnableSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for NetEnableSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NetEnableSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NetEnableSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl NetEnableSequence_Label {
+    pub fn login() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn result() -> Self {
+        Self { value: 1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog.md"))]
+#[::unity2::class(namespace = "App", name = "NetEnableSequence.ConfirmDialog")]
+#[parent(crate::system::object::Object)]
+pub struct NetEnableSequence_ConfirmDialog {}
+
+#[cfg(feature = "app-netenablesequence")]
+#[::unity2::methods]
+impl NetEnableSequence_ConfirmDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-netenablesequence")]
+impl NetEnableSequence_ConfirmDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NetEnableSequence_ConfirmDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INetEnableSequence_ConfirmDialogMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog_YesMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
@@ -242,39 +307,6 @@ impl NetEnableSequence_ConfirmDialog_YesMenuItem {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog.md"))]
-#[::unity2::class(namespace = "App", name = "NetEnableSequence.ConfirmDialog")]
-#[parent(crate::system::object::Object)]
-pub struct NetEnableSequence_ConfirmDialog {}
-
-#[cfg(feature = "app-netenablesequence")]
-#[::unity2::methods]
-impl NetEnableSequence_ConfirmDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-netenablesequence")]
-impl NetEnableSequence_ConfirmDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NetEnableSequence_ConfirmDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INetEnableSequence_ConfirmDialogMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netenablesequence/NetEnableSequence_ConfirmDialog_NoMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "NetEnableSequence.ConfirmDialog.NoMenuItem")]
 #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
@@ -305,37 +337,5 @@ impl NetEnableSequence_ConfirmDialog_NoMenuItem {
         });
         <Self as INetEnableSequence_ConfirmDialog_NoMenuItemMethods>::ctor(this);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/netenablesequence/NetEnableSequence_Arg.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct NetEnableSequence_Arg {
-    pub without_confirm: bool,
-    pub can_write_config: bool,
-    pub is_net_login_once: bool,
-    pub is_reflect_net_result: bool,
-    pub result_func: crate::app::netenablesequence::NetEnableSequence_ResultFunction,
-}
-
-impl ::unity2::ClassIdentity for NetEnableSequence_Arg {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NetEnableSequence.Arg";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for NetEnableSequence_Arg {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
     }
 }

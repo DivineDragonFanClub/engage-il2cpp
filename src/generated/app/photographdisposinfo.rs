@@ -14,37 +14,63 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md"))]
-#[::unity2::class(namespace = "App", name = "PhotographDisposInfo.FlagField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags >)]
-pub struct PhotographDisposInfo_FlagField {}
-
-#[cfg(feature = "app-photographdisposinfo")]
-#[::unity2::methods]
-impl PhotographDisposInfo_FlagField {
-    #[doc = "`ToInt(crate::app::photographdisposinfo::PhotographDisposInfo_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::photographdisposinfo::PhotographDisposInfo_Flags)
-        -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_Flags.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct PhotographDisposInfo_Flags {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-photographdisposinfo")]
-impl PhotographDisposInfo_FlagField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographDisposInfo_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographDisposInfo_FlagFieldMethods>::ctor(this);
-        this
+impl ::unity2::ClassIdentity for PhotographDisposInfo_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "PhotographDisposInfo.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PhotographDisposInfo_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl PhotographDisposInfo_Flags {
+    pub fn training() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn pool_side() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn in_pool() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn can_dispos_god() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn mascot() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn sitting() -> Self {
+        Self { value: 32 }
     }
 }
 
@@ -398,62 +424,36 @@ impl PhotographDisposInfo_CharacterType {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographdisposinfo/PhotographDisposInfo_Flags.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct PhotographDisposInfo_Flags {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographdisposinfo/PhotographDisposInfo_FlagField.md"))]
+#[::unity2::class(namespace = "App", name = "PhotographDisposInfo.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: photographdisposinfo :: PhotographDisposInfo_Flags >)]
+pub struct PhotographDisposInfo_FlagField {}
+
+#[cfg(feature = "app-photographdisposinfo")]
+#[::unity2::methods]
+impl PhotographDisposInfo_FlagField {
+    #[doc = "`ToInt(crate::app::photographdisposinfo::PhotographDisposInfo_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::photographdisposinfo::PhotographDisposInfo_Flags)
+        -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
-impl ::unity2::ClassIdentity for PhotographDisposInfo_Flags {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PhotographDisposInfo.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for PhotographDisposInfo_Flags {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl PhotographDisposInfo_Flags {
-    pub fn training() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn pool_side() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn in_pool() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn can_dispos_god() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn mascot() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn sitting() -> Self {
-        Self { value: 32 }
+#[cfg(feature = "app-photographdisposinfo")]
+impl PhotographDisposInfo_FlagField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographDisposInfo_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographDisposInfo_FlagFieldMethods>::ctor(this);
+        this
     }
 }

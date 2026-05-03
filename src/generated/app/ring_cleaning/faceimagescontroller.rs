@@ -16,6 +16,70 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_AnimType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct FaceImagesController_AnimType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for FaceImagesController_AnimType {
+    const NAMESPACE: &'static str = "App.RingCleaning";
+
+    const NAME: &'static str = "FaceImagesController.AnimType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FaceImagesController_AnimType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl FaceImagesController_AnimType {
+    pub fn none() -> Self {
+        Self { value: -1 }
+    }
+
+    pub fn normal() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn surprise() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn smile() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn die() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn relax() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn shy() -> Self {
+        Self { value: 5 }
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_PlayPattern.md"))]
 #[repr(C)]
 #[derive(
@@ -220,70 +284,6 @@ impl FaceImagesController {
         });
         <Self as IFaceImagesControllerMethods>::ctor(this);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ring_cleaning/faceimagescontroller/FaceImagesController_AnimType.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct FaceImagesController_AnimType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for FaceImagesController_AnimType {
-    const NAMESPACE: &'static str = "App.RingCleaning";
-
-    const NAME: &'static str = "FaceImagesController.AnimType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for FaceImagesController_AnimType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl FaceImagesController_AnimType {
-    pub fn none() -> Self {
-        Self { value: -1 }
-    }
-
-    pub fn normal() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn surprise() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn smile() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn die() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn relax() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn shy() -> Self {
-        Self { value: 5 }
     }
 }
 

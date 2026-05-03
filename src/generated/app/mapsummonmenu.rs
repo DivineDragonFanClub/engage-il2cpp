@@ -14,78 +14,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsummonmenu/MapSummonMenu_SummonColorMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "MapSummonMenu.SummonColorMenuItem")]
-#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
-pub struct MapSummonMenu_SummonColorMenuItem {
-    #[rename(name = "m_Color")]
-    pub m_color: crate::app::persondata::PersonData_Colors,
-}
-
-#[cfg(feature = "app-mapsummonmenu")]
-#[::unity2::methods]
-impl MapSummonMenu_SummonColorMenuItem {
-    #[doc = "`get_FlagID()` overload"]
-    #[method(name = "get_FlagID", args = 0)]
-    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`OnBuild()` overload"]
-    #[method(name = "OnBuild", args = 0)]
-    pub fn on_build(self) -> ();
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`OnDeselect()` overload"]
-    #[method(name = "OnDeselect", args = 0)]
-    pub fn on_deselect(self) -> ();
-
-    #[doc = "`OnCursorMoveEnd()` overload"]
-    #[method(name = "OnCursorMoveEnd", args = 0)]
-    pub fn on_cursor_move_end(self) -> ();
-
-    #[doc = "`.ctor(crate::app::persondata::PersonData_Colors)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, color: crate::app::persondata::PersonData_Colors) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetCommandHelp()` overload"]
-    #[method(name = "GetCommandHelp", args = 0)]
-    pub fn get_command_help(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`SetupHelpText()` overload"]
-    #[method(name = "SetupHelpText", args = 0)]
-    pub fn setup_help_text(self) -> ();
-
-    #[doc = "`GetMapAttribute()` overload"]
-    #[method(name = "GetMapAttribute", args = 0)]
-    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-mapsummonmenu")]
-impl MapSummonMenu_SummonColorMenuItem {
-    #[doc = "`.ctor(crate::app::persondata::PersonData_Colors)` — overload selector"]
-    pub fn new(color: crate::app::persondata::PersonData_Colors) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSummonMenu_SummonColorMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSummonMenu_SummonColorMenuItemMethods>::ctor(this, color);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsummonmenu/MapSummonMenu.md"))]
 #[::unity2::class(namespace = "App", name = "MapSummonMenu")]
 #[parent(crate::app::mapbasicmenu::MapBasicMenu)]
@@ -161,6 +89,78 @@ impl MapSummonMenu {
             )
         });
         <Self as IMapSummonMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsummonmenu/MapSummonMenu_SummonColorMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "MapSummonMenu.SummonColorMenuItem")]
+#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]
+pub struct MapSummonMenu_SummonColorMenuItem {
+    #[rename(name = "m_Color")]
+    pub m_color: crate::app::persondata::PersonData_Colors,
+}
+
+#[cfg(feature = "app-mapsummonmenu")]
+#[::unity2::methods]
+impl MapSummonMenu_SummonColorMenuItem {
+    #[doc = "`get_FlagID()` overload"]
+    #[method(name = "get_FlagID", args = 0)]
+    pub fn get_flag_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`OnBuild()` overload"]
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`OnDeselect()` overload"]
+    #[method(name = "OnDeselect", args = 0)]
+    pub fn on_deselect(self) -> ();
+
+    #[doc = "`OnCursorMoveEnd()` overload"]
+    #[method(name = "OnCursorMoveEnd", args = 0)]
+    pub fn on_cursor_move_end(self) -> ();
+
+    #[doc = "`.ctor(crate::app::persondata::PersonData_Colors)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, color: crate::app::persondata::PersonData_Colors) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetCommandHelp()` overload"]
+    #[method(name = "GetCommandHelp", args = 0)]
+    pub fn get_command_help(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`SetupHelpText()` overload"]
+    #[method(name = "SetupHelpText", args = 0)]
+    pub fn setup_help_text(self) -> ();
+
+    #[doc = "`GetMapAttribute()` overload"]
+    #[method(name = "GetMapAttribute", args = 0)]
+    pub fn get_map_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-mapsummonmenu")]
+impl MapSummonMenu_SummonColorMenuItem {
+    #[doc = "`.ctor(crate::app::persondata::PersonData_Colors)` — overload selector"]
+    pub fn new(color: crate::app::persondata::PersonData_Colors) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSummonMenu_SummonColorMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSummonMenu_SummonColorMenuItemMethods>::ctor(this, color);
         this
     }
 }

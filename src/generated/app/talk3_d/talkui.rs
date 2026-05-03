@@ -14,6 +14,47 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_SystemObjects.md"))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.SystemObjects")]
+#[parent(crate::app::talk3_d::talkui::TalkUI_TalkObjects)]
+pub struct TalkUI_SystemObjects {}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+#[::unity2::methods]
+impl TalkUI_SystemObjects {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "AddToLog", args = 2)]
+    pub fn add_to_log(
+        self,
+        label: ::unity2::Il2CppString,
+        talker_name: ::unity2::Il2CppString,
+    ) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl TalkUI_SystemObjects {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkUI_SystemObjects),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkUI_SystemObjectsMethods>::ctor(this, root_object);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI.md"))]
 #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI")]
 # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: talk3_d :: talkui :: TalkUI >)]
@@ -246,100 +287,91 @@ impl TalkUI {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_FaceObjects.md"))]
-#[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.FaceObjects")]
-#[parent(crate::app::talk3_d::talkui::TalkUI_StandObjects)]
-pub struct TalkUI_FaceObjects {
-    #[rename(name = "m_Panel")]
-    pub m_panel: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_PanelAnimator")]
-    pub m_panel_animator: crate::unity_engine::animator::Animator,
-    #[rename(name = "m_FaceL")]
-    pub m_face_l: crate::app::talk3_d::talkui::TalkUI_FaceObjects_Face,
-    #[rename(name = "m_FaceR")]
-    pub m_face_r: crate::app::talk3_d::talkui::TalkUI_FaceObjects_Face,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_FaceObjects_Face.md"))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.FaceObjects.Face")]
+#[parent(crate::system::object::Object)]
+pub struct TalkUI_FaceObjects_Face {
+    #[static_field]
+    #[rename(name = "FaceSlideLength")]
+    pub face_slide_length: f32,
+    #[rename(name = "m_Image")]
+    pub m_image: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_ImageBaseX")]
+    pub m_image_base_x: f32,
+    #[rename(name = "m_IsDirRight")]
+    pub m_is_dir_right: bool,
+    #[rename(name = "m_material")]
+    pub m_material: crate::unity_engine::material::Material,
 }
 
 #[cfg(feature = "app-talk3_d-talkui")]
 #[::unity2::methods]
-impl TalkUI_FaceObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`FadeInFaceL()` overload"]
-    #[method(name = "FadeInFaceL", args = 0)]
-    pub fn fade_in_face_l(self) -> ();
-
-    #[doc = "`FadeOutFaceL()` overload"]
-    #[method(name = "FadeOutFaceL", args = 0)]
-    pub fn fade_out_face_l(self) -> ();
-
-    #[doc = "`SetFaceSlideRateL(f32)` overload"]
-    #[method(name = "SetFaceSlideRateL", args = 1)]
-    pub fn set_face_slide_rate_l(self, face_slide_rate: f32) -> ();
-
-    #[doc = "`EnableSilhouetteL()` overload"]
-    #[method(name = "EnableSilhouetteL", args = 0)]
-    pub fn enable_silhouette_l(self) -> ();
-
-    #[doc = "`DisableSilhouetteL()` overload"]
-    #[method(name = "DisableSilhouetteL", args = 0)]
-    pub fn disable_silhouette_l(self) -> ();
-
-    #[doc = "`FadeInFaceR()` overload"]
-    #[method(name = "FadeInFaceR", args = 0)]
-    pub fn fade_in_face_r(self) -> ();
-
-    #[doc = "`FadeOutFaceR()` overload"]
-    #[method(name = "FadeOutFaceR", args = 0)]
-    pub fn fade_out_face_r(self) -> ();
-
-    #[doc = "`SetFaceSlideRateR(f32)` overload"]
-    #[method(name = "SetFaceSlideRateR", args = 1)]
-    pub fn set_face_slide_rate_r(self, face_slide_rate: f32) -> ();
-
-    #[doc = "`EnableSilhouetteR()` overload"]
-    #[method(name = "EnableSilhouetteR", args = 0)]
-    pub fn enable_silhouette_r(self) -> ();
-
-    #[doc = "`DisableSilhouetteR()` overload"]
-    #[method(name = "DisableSilhouetteR", args = 0)]
-    pub fn disable_silhouette_r(self) -> ();
-
-    #[doc = "`OpenPanel()` overload"]
-    #[method(name = "OpenPanel", args = 0)]
-    pub fn open_panel(self) -> ();
-
-    #[doc = "`ClosePanel()` overload"]
-    #[method(name = "ClosePanel", args = 0)]
-    pub fn close_panel(self) -> ();
-
-    #[doc = "`CloseAll()` overload"]
-    #[method(name = "CloseAll", args = 0)]
-    pub fn close_all(self) -> ();
+impl TalkUI_FaceObjects_Face {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, bool)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        image_name: ::unity2::Il2CppString,
+        is_dir_right: bool,
+    ) -> ();
 
     #[doc = "`Destroy()` overload"]
     #[method(name = "Destroy", args = 0)]
     pub fn destroy(self) -> ();
+
+    #[doc = "`FadeIn()` overload"]
+    #[method(name = "FadeIn", args = 0)]
+    pub fn fade_in(self) -> ();
+
+    #[doc = "`FadeOut()` overload"]
+    #[method(name = "FadeOut", args = 0)]
+    pub fn fade_out(self) -> ();
+
+    #[doc = "`SetSlideRate(f32)` overload"]
+    #[method(name = "SetSlideRate", args = 1)]
+    pub fn set_slide_rate(self, face_slide_rate: f32) -> ();
+
+    #[doc = "`EnableSilhouette()` overload"]
+    #[method(name = "EnableSilhouette", args = 0)]
+    pub fn enable_silhouette(self) -> ();
+
+    #[doc = "`DisableSilhouette()` overload"]
+    #[method(name = "DisableSilhouette", args = 0)]
+    pub fn disable_silhouette(self) -> ();
+
+    #[doc = "`Close()` overload"]
+    #[method(name = "Close", args = 0)]
+    pub fn close(self) -> ();
+
+    #[doc = "`ResetAnim()` overload"]
+    #[method(name = "ResetAnim", args = 0)]
+    pub fn reset_anim(self) -> ();
 }
 
 #[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_FaceObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+impl TalkUI_FaceObjects_Face {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, bool)` — overload selector"]
+    pub fn new(
+        root_object: crate::unity_engine::gameobject::GameObject,
+        image_name: ::unity2::Il2CppString,
+        is_dir_right: bool,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TalkUI_FaceObjects),
+                ::core::stringify!(TalkUI_FaceObjects_Face),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITalkUI_FaceObjectsMethods>::ctor(this, root_object);
+        <Self as ITalkUI_FaceObjects_FaceMethods>::ctor(
+            this,
+            root_object,
+            image_name,
+            is_dir_right,
+        );
         this
     }
 }
@@ -534,156 +566,6 @@ impl TalkUI_TalkObjects {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_KeyHelpObjects.md"))]
-#[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.KeyHelpObjects")]
-#[parent(crate::system::object::Object)]
-pub struct TalkUI_KeyHelpObjects {
-    #[rename(name = "m_rootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_talkObjects")]
-    pub m_talk_objects: crate::app::talk3_d::talkui::TalkUI_TalkObjects,
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-#[::unity2::methods]
-impl TalkUI_KeyHelpObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, game_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`SetTalkObjects(crate::app::talk3_d::talkui::TalkUI_TalkObjects)` overload"]
-    #[method(name = "SetTalkObjects", args = 1)]
-    pub fn set_talk_objects(
-        self,
-        talk_objects: crate::app::talk3_d::talkui::TalkUI_TalkObjects,
-    ) -> ();
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`Setup()` overload"]
-    #[method(name = "Setup", args = 0)]
-    pub fn setup(self) -> ();
-
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_KeyHelpObjects {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(game_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkUI_KeyHelpObjects),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkUI_KeyHelpObjectsMethods>::ctor(this, game_object);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_FaceObjects_Face.md"))]
-#[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.FaceObjects.Face")]
-#[parent(crate::system::object::Object)]
-pub struct TalkUI_FaceObjects_Face {
-    #[static_field]
-    #[rename(name = "FaceSlideLength")]
-    pub face_slide_length: f32,
-    #[rename(name = "m_Image")]
-    pub m_image: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Animator")]
-    pub m_animator: crate::unity_engine::animator::Animator,
-    #[rename(name = "m_ImageBaseX")]
-    pub m_image_base_x: f32,
-    #[rename(name = "m_IsDirRight")]
-    pub m_is_dir_right: bool,
-    #[rename(name = "m_material")]
-    pub m_material: crate::unity_engine::material::Material,
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-#[::unity2::methods]
-impl TalkUI_FaceObjects_Face {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, bool)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        image_name: ::unity2::Il2CppString,
-        is_dir_right: bool,
-    ) -> ();
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy(self) -> ();
-
-    #[doc = "`FadeIn()` overload"]
-    #[method(name = "FadeIn", args = 0)]
-    pub fn fade_in(self) -> ();
-
-    #[doc = "`FadeOut()` overload"]
-    #[method(name = "FadeOut", args = 0)]
-    pub fn fade_out(self) -> ();
-
-    #[doc = "`SetSlideRate(f32)` overload"]
-    #[method(name = "SetSlideRate", args = 1)]
-    pub fn set_slide_rate(self, face_slide_rate: f32) -> ();
-
-    #[doc = "`EnableSilhouette()` overload"]
-    #[method(name = "EnableSilhouette", args = 0)]
-    pub fn enable_silhouette(self) -> ();
-
-    #[doc = "`DisableSilhouette()` overload"]
-    #[method(name = "DisableSilhouette", args = 0)]
-    pub fn disable_silhouette(self) -> ();
-
-    #[doc = "`Close()` overload"]
-    #[method(name = "Close", args = 0)]
-    pub fn close(self) -> ();
-
-    #[doc = "`ResetAnim()` overload"]
-    #[method(name = "ResetAnim", args = 0)]
-    pub fn reset_anim(self) -> ();
-}
-
-#[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_FaceObjects_Face {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, ::unity2::Il2CppString, bool)` — overload selector"]
-    pub fn new(
-        root_object: crate::unity_engine::gameobject::GameObject,
-        image_name: ::unity2::Il2CppString,
-        is_dir_right: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkUI_FaceObjects_Face),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkUI_FaceObjects_FaceMethods>::ctor(
-            this,
-            root_object,
-            image_name,
-            is_dir_right,
-        );
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_StandObjects.md"))]
 #[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.StandObjects")]
 #[parent(crate::app::talk3_d::talkui::TalkUI_SystemObjects)]
@@ -765,14 +647,23 @@ impl TalkUI_StandObjects {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_SystemObjects.md"))]
-#[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.SystemObjects")]
-#[parent(crate::app::talk3_d::talkui::TalkUI_TalkObjects)]
-pub struct TalkUI_SystemObjects {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_FaceObjects.md"))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.FaceObjects")]
+#[parent(crate::app::talk3_d::talkui::TalkUI_StandObjects)]
+pub struct TalkUI_FaceObjects {
+    #[rename(name = "m_Panel")]
+    pub m_panel: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_PanelAnimator")]
+    pub m_panel_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_FaceL")]
+    pub m_face_l: crate::app::talk3_d::talkui::TalkUI_FaceObjects_Face,
+    #[rename(name = "m_FaceR")]
+    pub m_face_r: crate::app::talk3_d::talkui::TalkUI_FaceObjects_Face,
+}
 
 #[cfg(feature = "app-talk3_d-talkui")]
 #[::unity2::methods]
-impl TalkUI_SystemObjects {
+impl TalkUI_FaceObjects {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
@@ -781,27 +672,136 @@ impl TalkUI_SystemObjects {
     #[method(name = "Reset", args = 0)]
     pub fn reset(self) -> ();
 
-    #[doc = "`AddToLog(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "AddToLog", args = 2)]
-    pub fn add_to_log(
-        self,
-        label: ::unity2::Il2CppString,
-        talker_name: ::unity2::Il2CppString,
-    ) -> ();
+    #[doc = "`FadeInFaceL()` overload"]
+    #[method(name = "FadeInFaceL", args = 0)]
+    pub fn fade_in_face_l(self) -> ();
+
+    #[doc = "`FadeOutFaceL()` overload"]
+    #[method(name = "FadeOutFaceL", args = 0)]
+    pub fn fade_out_face_l(self) -> ();
+
+    #[doc = "`SetFaceSlideRateL(f32)` overload"]
+    #[method(name = "SetFaceSlideRateL", args = 1)]
+    pub fn set_face_slide_rate_l(self, face_slide_rate: f32) -> ();
+
+    #[doc = "`EnableSilhouetteL()` overload"]
+    #[method(name = "EnableSilhouetteL", args = 0)]
+    pub fn enable_silhouette_l(self) -> ();
+
+    #[doc = "`DisableSilhouetteL()` overload"]
+    #[method(name = "DisableSilhouetteL", args = 0)]
+    pub fn disable_silhouette_l(self) -> ();
+
+    #[doc = "`FadeInFaceR()` overload"]
+    #[method(name = "FadeInFaceR", args = 0)]
+    pub fn fade_in_face_r(self) -> ();
+
+    #[doc = "`FadeOutFaceR()` overload"]
+    #[method(name = "FadeOutFaceR", args = 0)]
+    pub fn fade_out_face_r(self) -> ();
+
+    #[doc = "`SetFaceSlideRateR(f32)` overload"]
+    #[method(name = "SetFaceSlideRateR", args = 1)]
+    pub fn set_face_slide_rate_r(self, face_slide_rate: f32) -> ();
+
+    #[doc = "`EnableSilhouetteR()` overload"]
+    #[method(name = "EnableSilhouetteR", args = 0)]
+    pub fn enable_silhouette_r(self) -> ();
+
+    #[doc = "`DisableSilhouetteR()` overload"]
+    #[method(name = "DisableSilhouetteR", args = 0)]
+    pub fn disable_silhouette_r(self) -> ();
+
+    #[doc = "`OpenPanel()` overload"]
+    #[method(name = "OpenPanel", args = 0)]
+    pub fn open_panel(self) -> ();
+
+    #[doc = "`ClosePanel()` overload"]
+    #[method(name = "ClosePanel", args = 0)]
+    pub fn close_panel(self) -> ();
+
+    #[doc = "`CloseAll()` overload"]
+    #[method(name = "CloseAll", args = 0)]
+    pub fn close_all(self) -> ();
+
+    #[doc = "`Destroy()` overload"]
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
 }
 
 #[cfg(feature = "app-talk3_d-talkui")]
-impl TalkUI_SystemObjects {
+impl TalkUI_FaceObjects {
     #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
     pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(TalkUI_SystemObjects),
+                ::core::stringify!(TalkUI_FaceObjects),
                 ::core::stringify!(new),
             )
         });
-        <Self as ITalkUI_SystemObjectsMethods>::ctor(this, root_object);
+        <Self as ITalkUI_FaceObjectsMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkui/TalkUI_KeyHelpObjects.md"))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkUI.KeyHelpObjects")]
+#[parent(crate::system::object::Object)]
+pub struct TalkUI_KeyHelpObjects {
+    #[rename(name = "m_rootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_talkObjects")]
+    pub m_talk_objects: crate::app::talk3_d::talkui::TalkUI_TalkObjects,
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+#[::unity2::methods]
+impl TalkUI_KeyHelpObjects {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, game_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`SetTalkObjects(crate::app::talk3_d::talkui::TalkUI_TalkObjects)` overload"]
+    #[method(name = "SetTalkObjects", args = 1)]
+    pub fn set_talk_objects(
+        self,
+        talk_objects: crate::app::talk3_d::talkui::TalkUI_TalkObjects,
+    ) -> ();
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`Setup()` overload"]
+    #[method(name = "Setup", args = 0)]
+    pub fn setup(self) -> ();
+
+    #[doc = "`Show()` overload"]
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talkui")]
+impl TalkUI_KeyHelpObjects {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(game_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkUI_KeyHelpObjects),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkUI_KeyHelpObjectsMethods>::ctor(this, game_object);
         this
     }
 }

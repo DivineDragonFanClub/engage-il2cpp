@@ -6,6 +6,52 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/bytecode/ByteCode_SourceCodeStackGuard.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Execution.VM",
+    name = "ByteCode.SourceCodeStackGuard"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ByteCode_SourceCodeStackGuard {
+    #[rename(name = "m_Bc")]
+    pub m_bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
+#[::unity2::methods]
+impl ByteCode_SourceCodeStackGuard {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
+impl ByteCode_SourceCodeStackGuard {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` — overload selector"]
+    pub fn new(
+        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ByteCode_SourceCodeStackGuard),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IByteCode_SourceCodeStackGuardMethods>::ctor(this, sref, bc);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/bytecode/ByteCode.md"))]
 #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.VM", name = "ByteCode")]
 #[parent(crate::moon_sharp::interpreter::refidobject::RefIdObject)]
@@ -324,52 +370,6 @@ impl ByteCode {
             )
         });
         <Self as IByteCodeMethods>::ctor(this, script);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/bytecode/ByteCode_SourceCodeStackGuard.md"))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Execution.VM",
-    name = "ByteCode.SourceCodeStackGuard"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ByteCode_SourceCodeStackGuard {
-    #[rename(name = "m_Bc")]
-    pub m_bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-}
-
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
-#[::unity2::methods]
-impl ByteCode_SourceCodeStackGuard {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-    ) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-bytecode")]
-impl ByteCode_SourceCodeStackGuard {
-    #[doc = "`.ctor(crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` — overload selector"]
-    pub fn new(
-        sref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ByteCode_SourceCodeStackGuard),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IByteCode_SourceCodeStackGuardMethods>::ctor(this, sref, bc);
         this
     }
 }

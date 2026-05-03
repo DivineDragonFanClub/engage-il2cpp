@@ -6,43 +6,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimagerange/MapImageRange_Pos.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapImageRange_Pos {
-    pub x: u8,
-    pub z: u8,
-}
-
-impl ::unity2::ClassIdentity for MapImageRange_Pos {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapImageRange.Pos";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapImageRange_Pos {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-mapimagerange")]
-#[::unity2::methods(value)]
-impl MapImageRange_Pos {
-    #[doc = "`.ctor(i32, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, x: i32, z: i32) -> ();
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapimagerange/MapImageRange.md"))]
 #[::unity2::class(namespace = "App", name = "MapImageRange")]
 #[parent(crate::system::object::Object)]
@@ -131,4 +94,41 @@ impl MapImageRange {
         <Self as IMapImageRangeMethods>::ctor(this);
         this
     }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapimagerange/MapImageRange_Pos.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapImageRange_Pos {
+    pub x: u8,
+    pub z: u8,
+}
+
+impl ::unity2::ClassIdentity for MapImageRange_Pos {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapImageRange.Pos";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapImageRange_Pos {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapimagerange")]
+#[::unity2::methods(value)]
+impl MapImageRange_Pos {
+    #[doc = "`.ctor(i32, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, x: i32, z: i32) -> ();
 }

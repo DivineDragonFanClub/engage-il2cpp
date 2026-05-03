@@ -10,70 +10,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubfleamarketsequence/HubFleaMarketSequence_Label2.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct HubFleaMarketSequence_Label2 {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for HubFleaMarketSequence_Label2 {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubFleaMarketSequence.Label2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for HubFleaMarketSequence_Label2 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl HubFleaMarketSequence_Label2 {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn top() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn unit_select_to_buy() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn buy() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn unit_select_to_sell() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn sell() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 6 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubfleamarketsequence/HubFleaMarketSequence.md"))]
 #[::unity2::class(namespace = "App", name = "HubFleaMarketSequence")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -182,5 +118,69 @@ impl HubFleaMarketSequence {
         });
         <Self as IHubFleaMarketSequenceMethods>::ctor(this, is_enabled_voice);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubfleamarketsequence/HubFleaMarketSequence_Label2.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubFleaMarketSequence_Label2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubFleaMarketSequence_Label2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubFleaMarketSequence.Label2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubFleaMarketSequence_Label2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubFleaMarketSequence_Label2 {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn top() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn unit_select_to_buy() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn buy() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn unit_select_to_sell() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn sell() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 6 }
     }
 }

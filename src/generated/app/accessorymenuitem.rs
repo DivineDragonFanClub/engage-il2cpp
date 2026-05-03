@@ -10,6 +10,72 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "AccessoryMenuItem.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AccessoryMenuItem_DecideEventHandler {}
+
+#[cfg(feature = "app-accessorymenuitem")]
+#[::unity2::methods]
+impl AccessoryMenuItem_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::accessorydata::AccessoryData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, accessory_data: crate::app::accessorydata::AccessoryData) -> ();
+}
+
+#[cfg(feature = "app-accessorymenuitem")]
+impl AccessoryMenuItem_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryMenuItem_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryMenuItem_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_SelectEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "AccessoryMenuItem.SelectEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AccessoryMenuItem_SelectEventHandler {}
+
+#[cfg(feature = "app-accessorymenuitem")]
+#[::unity2::methods]
+impl AccessoryMenuItem_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::accessorydata::AccessoryData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, accessory_data: crate::app::accessorydata::AccessoryData) -> ();
+}
+
+#[cfg(feature = "app-accessorymenuitem")]
+impl AccessoryMenuItem_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryMenuItem_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryMenuItem_SelectEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "AccessoryMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -156,72 +222,6 @@ impl AccessoryMenuItem {
             select_event_handler,
             decide_event_handler,
         );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_SelectEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "AccessoryMenuItem.SelectEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AccessoryMenuItem_SelectEventHandler {}
-
-#[cfg(feature = "app-accessorymenuitem")]
-#[::unity2::methods]
-impl AccessoryMenuItem_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::accessorydata::AccessoryData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, accessory_data: crate::app::accessorydata::AccessoryData) -> ();
-}
-
-#[cfg(feature = "app-accessorymenuitem")]
-impl AccessoryMenuItem_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryMenuItem_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccessoryMenuItem_SelectEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessorymenuitem/AccessoryMenuItem_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "AccessoryMenuItem.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AccessoryMenuItem_DecideEventHandler {}
-
-#[cfg(feature = "app-accessorymenuitem")]
-#[::unity2::methods]
-impl AccessoryMenuItem_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::accessorydata::AccessoryData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, accessory_data: crate::app::accessorydata::AccessoryData) -> ();
-}
-
-#[cfg(feature = "app-accessorymenuitem")]
-impl AccessoryMenuItem_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryMenuItem_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccessoryMenuItem_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

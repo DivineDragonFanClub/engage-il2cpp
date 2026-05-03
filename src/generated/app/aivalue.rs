@@ -64,76 +64,6 @@ impl AIValue_Order {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_UnionValue.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIValue_UnionValue {
-    pub v8_0: u8,
-    pub v8_1: u8,
-    pub v16: i16,
-}
-
-impl ::unity2::ClassIdentity for AIValue_UnionValue {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIValue.UnionValue";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIValue_UnionValue {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_Value.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AIValue_Value {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AIValue_Value {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIValue.Value";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIValue_Value {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AIValue_Value {
-    pub fn num() -> Self {
-        Self { value: 4 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aivalue/AIValue.md"))]
 #[::unity2::class(namespace = "App", name = "AIValue")]
 #[parent(crate::system::object::Object)]
@@ -280,5 +210,75 @@ impl AIValue {
         });
         <Self as IAIValueMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_Value.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AIValue_Value {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AIValue_Value {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIValue.Value";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIValue_Value {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AIValue_Value {
+    pub fn num() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aivalue/AIValue_UnionValue.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIValue_UnionValue {
+    pub v8_0: u8,
+    pub v8_1: u8,
+    pub v16: i16,
+}
+
+impl ::unity2::ClassIdentity for AIValue_UnionValue {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIValue.UnionValue";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIValue_UnionValue {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
     }
 }

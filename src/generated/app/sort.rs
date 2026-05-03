@@ -6,6 +6,40 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sort/Sort_ElementComparer.md"))]
+#[::unity2::class(namespace = "App", name = "Sort.ElementComparer")]
+#[parent(crate::system::object::Object)]
+pub struct Sort_ElementComparer {}
+
+#[cfg(feature = "app-sort")]
+#[::unity2::methods]
+impl Sort_ElementComparer {
+    #[doc = "`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(self, a: crate::system::object::Object, b: crate::system::object::Object)
+        -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-sort")]
+impl Sort_ElementComparer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Sort_ElementComparer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISort_ElementComparerMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sort/Sort.md"))]
 #[::unity2::class(namespace = "App", name = "Sort")]
 #[parent(crate::app::sortconstant::SortConstant)]
@@ -83,40 +117,6 @@ impl Sort {
             )
         });
         <Self as ISortMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sort/Sort_ElementComparer.md"))]
-#[::unity2::class(namespace = "App", name = "Sort.ElementComparer")]
-#[parent(crate::system::object::Object)]
-pub struct Sort_ElementComparer {}
-
-#[cfg(feature = "app-sort")]
-#[::unity2::methods]
-impl Sort_ElementComparer {
-    #[doc = "`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Compare", args = 2)]
-    pub fn compare(self, a: crate::system::object::Object, b: crate::system::object::Object)
-        -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-sort")]
-impl Sort_ElementComparer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Sort_ElementComparer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISort_ElementComparerMethods>::ctor(this);
         this
     }
 }

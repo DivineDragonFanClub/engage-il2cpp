@@ -18,35 +18,38 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementmenu/AchievementMenu_AchievementMenuNoneItem.md"))]
-#[::unity2::class(namespace = "App", name = "AchievementMenu.AchievementMenuNoneItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct AchievementMenu_AchievementMenuNoneItem {}
-
-#[cfg(feature = "app-achievementmenu")]
-#[::unity2::methods]
-impl AchievementMenu_AchievementMenuNoneItem {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementmenu/AchievementMenu_YesMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "AchievementMenu.YesMenuItem")]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct AchievementMenu_YesMenuItem {
+    #[rename(name = "m_YesEventHandler")]
+    pub m_yes_event_handler: crate::system::action::Action,
 }
 
 #[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu_AchievementMenuNoneItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+#[::unity2::methods]
+impl AchievementMenu_YesMenuItem {
+    #[doc = "`.ctor(crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, yes_event_handler: crate::system::action::Action) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-achievementmenu")]
+impl AchievementMenu_YesMenuItem {
+    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
+    pub fn new(yes_event_handler: crate::system::action::Action) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(AchievementMenu_AchievementMenuNoneItem),
+                ::core::stringify!(AchievementMenu_YesMenuItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IAchievementMenu_AchievementMenuNoneItemMethods>::ctor(this);
+        <Self as IAchievementMenu_YesMenuItemMethods>::ctor(this, yes_event_handler);
         this
     }
 }
@@ -296,38 +299,35 @@ impl AchievementMenu_GetBondsExchangeDialog {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementmenu/AchievementMenu_YesMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "AchievementMenu.YesMenuItem")]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct AchievementMenu_YesMenuItem {
-    #[rename(name = "m_YesEventHandler")]
-    pub m_yes_event_handler: crate::system::action::Action,
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/achievementmenu/AchievementMenu_AchievementMenuNoneItem.md"))]
+#[::unity2::class(namespace = "App", name = "AchievementMenu.AchievementMenuNoneItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct AchievementMenu_AchievementMenuNoneItem {}
 
 #[cfg(feature = "app-achievementmenu")]
 #[::unity2::methods]
-impl AchievementMenu_YesMenuItem {
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, yes_event_handler: crate::system::action::Action) -> ();
+impl AchievementMenu_AchievementMenuNoneItem {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
 }
 
 #[cfg(feature = "app-achievementmenu")]
-impl AchievementMenu_YesMenuItem {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(yes_event_handler: crate::system::action::Action) -> Self {
+impl AchievementMenu_AchievementMenuNoneItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(AchievementMenu_YesMenuItem),
+                ::core::stringify!(AchievementMenu_AchievementMenuNoneItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IAchievementMenu_YesMenuItemMethods>::ctor(this, yes_event_handler);
+        <Self as IAchievementMenu_AchievementMenuNoneItemMethods>::ctor(this);
         this
     }
 }

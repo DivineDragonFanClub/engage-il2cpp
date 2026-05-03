@@ -14,7 +14,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terraindata_2/TerrainData_Layers.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terraindata_2/TerrainData_Commands.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -23,14 +23,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct TerrainData_Layers {
+pub struct TerrainData_Commands {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for TerrainData_Layers {
+impl ::unity2::ClassIdentity for TerrainData_Commands {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "TerrainData.Layers";
+    const NAME: &'static str = "TerrainData.Commands";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -39,7 +39,7 @@ impl ::unity2::ClassIdentity for TerrainData_Layers {
     }
 }
 
-impl ::unity2::IlType for TerrainData_Layers {
+impl ::unity2::IlType for TerrainData_Commands {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -48,13 +48,65 @@ impl ::unity2::IlType for TerrainData_Layers {
     }
 }
 
-impl TerrainData_Layers {
-    pub fn lower() -> Self {
+impl TerrainData_Commands {
+    pub fn none() -> Self {
         Self { value: 0 }
     }
 
-    pub fn upper() -> Self {
+    pub fn torch_on() -> Self {
         Self { value: 1 }
+    }
+
+    pub fn torch_off() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terraindata_2/TerrainData_Destroyers.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TerrainData_Destroyers {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TerrainData_Destroyers {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TerrainData.Destroyers";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TerrainData_Destroyers {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TerrainData_Destroyers {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn player() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn enemy() -> Self {
+        Self { value: 2 }
     }
 }
 
@@ -110,7 +162,7 @@ impl TerrainData_Prohibitions {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terraindata_2/TerrainData_Destroyers.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terraindata_2/TerrainData_Layers.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -119,14 +171,14 @@ impl TerrainData_Prohibitions {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct TerrainData_Destroyers {
+pub struct TerrainData_Layers {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for TerrainData_Destroyers {
+impl ::unity2::ClassIdentity for TerrainData_Layers {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "TerrainData.Destroyers";
+    const NAME: &'static str = "TerrainData.Layers";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -135,7 +187,7 @@ impl ::unity2::ClassIdentity for TerrainData_Destroyers {
     }
 }
 
-impl ::unity2::IlType for TerrainData_Destroyers {
+impl ::unity2::IlType for TerrainData_Layers {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -144,65 +196,13 @@ impl ::unity2::IlType for TerrainData_Destroyers {
     }
 }
 
-impl TerrainData_Destroyers {
-    pub fn none() -> Self {
+impl TerrainData_Layers {
+    pub fn lower() -> Self {
         Self { value: 0 }
     }
 
-    pub fn player() -> Self {
+    pub fn upper() -> Self {
         Self { value: 1 }
-    }
-
-    pub fn enemy() -> Self {
-        Self { value: 2 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/terraindata_2/TerrainData_Commands.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TerrainData_Commands {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TerrainData_Commands {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TerrainData.Commands";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TerrainData_Commands {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TerrainData_Commands {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn torch_on() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn torch_off() -> Self {
-        Self { value: 2 }
     }
 }
 

@@ -12,6 +12,78 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_RequestCloseEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "AccessoryShopBuyMenu.RequestCloseEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AccessoryShopBuyMenu_RequestCloseEventHandler {}
+
+#[cfg(feature = "app-accessoryshopbuymenu")]
+#[::unity2::methods]
+impl AccessoryShopBuyMenu_RequestCloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-accessoryshopbuymenu")]
+impl AccessoryShopBuyMenu_RequestCloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopBuyMenu_RequestCloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopBuyMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_ChangeKindEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "AccessoryShopBuyMenu.ChangeKindEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct AccessoryShopBuyMenu_ChangeKindEventHandler {}
+
+#[cfg(feature = "app-accessoryshopbuymenu")]
+#[::unity2::methods]
+impl AccessoryShopBuyMenu_ChangeKindEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::accessorydata::AccessoryData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, accessory_data: crate::app::accessorydata::AccessoryData) -> ();
+}
+
+#[cfg(feature = "app-accessoryshopbuymenu")]
+impl AccessoryShopBuyMenu_ChangeKindEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AccessoryShopBuyMenu_ChangeKindEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccessoryShopBuyMenu_ChangeKindEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_SelectEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "AccessoryShopBuyMenu.SelectEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -210,42 +282,6 @@ impl AccessoryShopBuyMenu {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_ChangeKindEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "AccessoryShopBuyMenu.ChangeKindEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AccessoryShopBuyMenu_ChangeKindEventHandler {}
-
-#[cfg(feature = "app-accessoryshopbuymenu")]
-#[::unity2::methods]
-impl AccessoryShopBuyMenu_ChangeKindEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::accessorydata::AccessoryData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, accessory_data: crate::app::accessorydata::AccessoryData) -> ();
-}
-
-#[cfg(feature = "app-accessoryshopbuymenu")]
-impl AccessoryShopBuyMenu_ChangeKindEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryShopBuyMenu_ChangeKindEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccessoryShopBuyMenu_ChangeKindEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_DecideEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "AccessoryShopBuyMenu.DecideEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -275,42 +311,6 @@ impl AccessoryShopBuyMenu_DecideEventHandler {
             )
         });
         <Self as IAccessoryShopBuyMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_RequestCloseEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "AccessoryShopBuyMenu.RequestCloseEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct AccessoryShopBuyMenu_RequestCloseEventHandler {}
-
-#[cfg(feature = "app-accessoryshopbuymenu")]
-#[::unity2::methods]
-impl AccessoryShopBuyMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-accessoryshopbuymenu")]
-impl AccessoryShopBuyMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AccessoryShopBuyMenu_RequestCloseEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAccessoryShopBuyMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

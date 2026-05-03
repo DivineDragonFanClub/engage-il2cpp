@@ -20,53 +20,43 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/killedbonusdata/KilledBonusData_FlagField.md"))]
-#[::unity2::class(namespace = "App", name = "KilledBonusData.FlagField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: killedbonusdata :: KilledBonusData_Flags >)]
-pub struct KilledBonusData_FlagField {}
-
-#[cfg(feature = "app-killedbonusdata")]
-#[::unity2::methods]
-impl KilledBonusData_FlagField {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, f: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::killedbonusdata::KilledBonusData_Flags)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, f: crate::app::killedbonusdata::KilledBonusData_Flags) -> ();
-
-    #[doc = "`ToInt(crate::app::killedbonusdata::KilledBonusData_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::killedbonusdata::KilledBonusData_Flags) -> i32;
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/killedbonusdata/KilledBonusData_Flags.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct KilledBonusData_Flags {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-killedbonusdata")]
-impl KilledBonusData_FlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(KilledBonusData_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IKilledBonusData_FlagFieldMethods>::ctor(this, f);
-        this
-    }
+impl ::unity2::ClassIdentity for KilledBonusData_Flags {
+    const NAMESPACE: &'static str = "App";
 
-    #[doc = "`.ctor(crate::app::killedbonusdata::KilledBonusData_Flags)` — overload selector"]
-    pub fn new_2(f: crate::app::killedbonusdata::KilledBonusData_Flags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(KilledBonusData_FlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IKilledBonusData_FlagFieldMethods>::ctor_2(this, f);
-        this
+    const NAME: &'static str = "KilledBonusData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for KilledBonusData_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl KilledBonusData_Flags {
+    pub fn god() -> Self {
+        Self { value: 1 }
     }
 }
 
@@ -203,42 +193,52 @@ impl KilledBonusData_Kinds {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/killedbonusdata/KilledBonusData_Flags.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct KilledBonusData_Flags {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/killedbonusdata/KilledBonusData_FlagField.md"))]
+#[::unity2::class(namespace = "App", name = "KilledBonusData.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: killedbonusdata :: KilledBonusData_Flags >)]
+pub struct KilledBonusData_FlagField {}
+
+#[cfg(feature = "app-killedbonusdata")]
+#[::unity2::methods]
+impl KilledBonusData_FlagField {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[doc = "`.ctor(crate::app::killedbonusdata::KilledBonusData_Flags)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::killedbonusdata::KilledBonusData_Flags) -> ();
+
+    #[doc = "`ToInt(crate::app::killedbonusdata::KilledBonusData_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::killedbonusdata::KilledBonusData_Flags) -> i32;
 }
 
-impl ::unity2::ClassIdentity for KilledBonusData_Flags {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "KilledBonusData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+#[cfg(feature = "app-killedbonusdata")]
+impl KilledBonusData_FlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(KilledBonusData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IKilledBonusData_FlagFieldMethods>::ctor(this, f);
+        this
     }
-}
 
-impl ::unity2::IlType for KilledBonusData_Flags {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl KilledBonusData_Flags {
-    pub fn god() -> Self {
-        Self { value: 1 }
+    #[doc = "`.ctor(crate::app::killedbonusdata::KilledBonusData_Flags)` — overload selector"]
+    pub fn new_2(f: crate::app::killedbonusdata::KilledBonusData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(KilledBonusData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IKilledBonusData_FlagFieldMethods>::ctor_2(this, f);
+        this
     }
 }

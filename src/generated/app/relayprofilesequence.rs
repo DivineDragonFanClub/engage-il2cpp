@@ -16,46 +16,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_DownloadYesNoDialog.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RelayProfileSequence.DownloadSequence.DownloadYesNoDialog"
-)]
-#[parent(crate::system::object::Object)]
-pub struct RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {}
-
-#[cfg(feature = "app-relayprofilesequence")]
-#[::unity2::methods]
-impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action::Action)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        mess: ::unity2::Il2CppString,
-        decide_callback: crate::system::action::Action,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence.md"))]
 #[::unity2::class(namespace = "App", name = "RelayProfileSequence")]
 #[parent(crate::system::object::Object)]
@@ -97,6 +57,46 @@ impl RelayProfileSequence {
             )
         });
         <Self as IRelayProfileSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence_DownloadYesNoDialog.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RelayProfileSequence.DownloadSequence.DownloadYesNoDialog"
+)]
+#[parent(crate::system::object::Object)]
+pub struct RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {}
+
+#[cfg(feature = "app-relayprofilesequence")]
+#[::unity2::methods]
+impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::system::action::Action)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        mess: ::unity2::Il2CppString,
+        decide_callback: crate::system::action::Action,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayProfileSequence_DownloadSequence_DownloadYesNoDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayProfileSequence_DownloadSequence_DownloadYesNoDialogMethods>::ctor(this);
         this
     }
 }
@@ -197,6 +197,50 @@ impl RelayProfileSequence_DownloadSequence_DownloadYesNoDialog_YesItem {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_UploadSequence.md"))]
+#[::unity2::class(namespace = "App", name = "RelayProfileSequence.UploadSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RelayProfileSequence_UploadSequence {
+    #[rename(name = "m_Profile")]
+    pub m_profile: crate::app::profilecard::ProfileCard,
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+#[::unity2::methods]
+impl RelayProfileSequence_UploadSequence {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Sanitize()` overload"]
+    #[method(name = "Sanitize", args = 0)]
+    pub fn sanitize(self) -> ();
+
+    #[doc = "`Upload()` overload"]
+    #[method(name = "Upload", args = 0)]
+    pub fn upload(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+}
+
+#[cfg(feature = "app-relayprofilesequence")]
+impl RelayProfileSequence_UploadSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayProfileSequence_UploadSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayProfileSequence_UploadSequenceMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_DownloadSequence.md"))]
 #[::unity2::class(namespace = "App", name = "RelayProfileSequence.DownloadSequence")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -275,50 +319,6 @@ impl RelayProfileSequence_DownloadSequence {
             principal_id,
             player_ids,
         );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayprofilesequence/RelayProfileSequence_UploadSequence.md"))]
-#[::unity2::class(namespace = "App", name = "RelayProfileSequence.UploadSequence")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct RelayProfileSequence_UploadSequence {
-    #[rename(name = "m_Profile")]
-    pub m_profile: crate::app::profilecard::ProfileCard,
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-#[::unity2::methods]
-impl RelayProfileSequence_UploadSequence {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Sanitize()` overload"]
-    #[method(name = "Sanitize", args = 0)]
-    pub fn sanitize(self) -> ();
-
-    #[doc = "`Upload()` overload"]
-    #[method(name = "Upload", args = 0)]
-    pub fn upload(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-}
-
-#[cfg(feature = "app-relayprofilesequence")]
-impl RelayProfileSequence_UploadSequence {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayProfileSequence_UploadSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayProfileSequence_UploadSequenceMethods>::ctor(this);
         this
     }
 }

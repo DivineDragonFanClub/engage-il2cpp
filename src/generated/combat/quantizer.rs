@@ -8,6 +8,27 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/quantizer/Quantizer.md"))]
+#[::unity2::class(namespace = "Combat", name = "Quantizer")]
+#[parent(crate::system::object::Object)]
+pub struct Quantizer {}
+
+#[cfg(feature = "combat-quantizer")]
+#[::unity2::methods]
+impl Quantizer {
+    #[doc = "`FItoVec3(f32, i32)` overload"]
+    #[method(name = "FItoVec3", args = 2)]
+    pub fn f_ito_vec3(f: f32, i: i32) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`FXZtoI(crate::combat::fxz::FXZ)` overload"]
+    #[method(name = "FXZtoI", args = 1)]
+    pub fn fx_zto_i(xz: crate::combat::fxz::FXZ) -> i32;
+
+    #[doc = "`ItoFXZ(i32)` overload"]
+    #[method(name = "ItoFXZ", args = 1)]
+    pub fn ito_fxz(i: i32) -> crate::combat::fxz::FXZ;
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/quantizer/Quantizer_MajorAxis.md"))]
 #[repr(C)]
 #[derive(
@@ -58,25 +79,4 @@ impl Quantizer_MajorAxis {
     pub fn mask() -> Self {
         Self { value: 3 }
     }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/quantizer/Quantizer.md"))]
-#[::unity2::class(namespace = "Combat", name = "Quantizer")]
-#[parent(crate::system::object::Object)]
-pub struct Quantizer {}
-
-#[cfg(feature = "combat-quantizer")]
-#[::unity2::methods]
-impl Quantizer {
-    #[doc = "`FItoVec3(f32, i32)` overload"]
-    #[method(name = "FItoVec3", args = 2)]
-    pub fn f_ito_vec3(f: f32, i: i32) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`FXZtoI(crate::combat::fxz::FXZ)` overload"]
-    #[method(name = "FXZtoI", args = 1)]
-    pub fn fx_zto_i(xz: crate::combat::fxz::FXZ) -> i32;
-
-    #[doc = "`ItoFXZ(i32)` overload"]
-    #[method(name = "ItoFXZ", args = 1)]
-    pub fn ito_fxz(i: i32) -> crate::combat::fxz::FXZ;
 }

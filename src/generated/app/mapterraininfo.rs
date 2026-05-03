@@ -10,7 +10,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Side.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Element.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -19,14 +19,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapTerrainInfo_Side {
+pub struct MapTerrainInfo_Element {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapTerrainInfo_Side {
+impl ::unity2::ClassIdentity for MapTerrainInfo_Element {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapTerrainInfo.Side";
+    const NAME: &'static str = "MapTerrainInfo.Element";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -35,7 +35,7 @@ impl ::unity2::ClassIdentity for MapTerrainInfo_Side {
     }
 }
 
-impl ::unity2::IlType for MapTerrainInfo_Side {
+impl ::unity2::IlType for MapTerrainInfo_Element {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -44,17 +44,85 @@ impl ::unity2::IlType for MapTerrainInfo_Side {
     }
 }
 
-impl MapTerrainInfo_Side {
-    pub fn left() -> Self {
+impl MapTerrainInfo_Element {
+    pub fn effects() -> Self {
         Self { value: 0 }
     }
 
-    pub fn right() -> Self {
+    pub fn avoid() -> Self {
         Self { value: 1 }
     }
 
-    pub fn num() -> Self {
+    pub fn def() -> Self {
         Self { value: 2 }
+    }
+
+    pub fn res() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn heal() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn damage() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn player_def() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn enemy_def() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn stun() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn other() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn sight() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn cannon_root() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn stock() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn hit() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn title() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn terrain_name() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn overlap() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 19 }
     }
 }
 
@@ -176,122 +244,6 @@ impl MapTerrainInfo {
         });
         <Self as IMapTerrainInfoMethods>::ctor(this);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Element.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapTerrainInfo_Element {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapTerrainInfo_Element {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapTerrainInfo.Element";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapTerrainInfo_Element {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapTerrainInfo_Element {
-    pub fn effects() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn avoid() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn def() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn res() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn heal() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn damage() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn r#move() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn player_def() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn enemy_def() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn stun() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn other() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn sight() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn cannon_root() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn stock() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn attack() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn hit() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn title() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn terrain_name() -> Self {
-        Self { value: 17 }
-    }
-
-    pub fn overlap() -> Self {
-        Self { value: 18 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 19 }
     }
 }
 
@@ -443,5 +395,53 @@ impl MapTerrainInfo_MapTerrainInfoSingle {
         });
         <Self as IMapTerrainInfo_MapTerrainInfoSingleMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapterraininfo/MapTerrainInfo_Side.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapTerrainInfo_Side {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapTerrainInfo_Side {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapTerrainInfo.Side";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapTerrainInfo_Side {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapTerrainInfo_Side {
+    pub fn left() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 2 }
     }
 }

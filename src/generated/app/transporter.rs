@@ -4,6 +4,53 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transporter/Transporter_Data.md"))]
+#[::unity2::class(namespace = "App", name = "Transporter.Data")]
+#[parent(crate::system::object::Object)]
+pub struct Transporter_Data {
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: i32,
+    #[rename(name = "m_UnitItem")]
+    pub m_unit_item: crate::app::unititem::UnitItem,
+}
+
+#[cfg(feature = "app-transporter")]
+#[::unity2::methods]
+impl Transporter_Data {
+    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Serialize", args = 1)]
+    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
+    #[method(name = "Deserialize", args = 1)]
+    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
+
+    #[doc = "`get_UnitItem()` overload"]
+    #[method(name = "get_UnitItem", args = 0)]
+    pub fn get_unit_item(self) -> crate::app::unititem::UnitItem;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-transporter")]
+impl Transporter_Data {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Transporter_Data),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITransporter_DataMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transporter/Transporter.md"))]
 #[::unity2::class(namespace = "App", name = "Transporter")]
 #[parent(crate::system::object::Object)]
@@ -130,53 +177,6 @@ impl Transporter {
             )
         });
         <Self as ITransporterMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transporter/Transporter_Data.md"))]
-#[::unity2::class(namespace = "App", name = "Transporter.Data")]
-#[parent(crate::system::object::Object)]
-pub struct Transporter_Data {
-    #[static_field]
-    #[rename(name = "Version")]
-    pub version: i32,
-    #[rename(name = "m_UnitItem")]
-    pub m_unit_item: crate::app::unititem::UnitItem,
-}
-
-#[cfg(feature = "app-transporter")]
-#[::unity2::methods]
-impl Transporter_Data {
-    #[doc = "`Serialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Serialize", args = 1)]
-    pub fn serialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`Deserialize(crate::app::stream_2::Stream_2)` overload"]
-    #[method(name = "Deserialize", args = 1)]
-    pub fn deserialize(self, stream: crate::app::stream_2::Stream_2) -> ();
-
-    #[doc = "`get_UnitItem()` overload"]
-    #[method(name = "get_UnitItem", args = 0)]
-    pub fn get_unit_item(self) -> crate::app::unititem::UnitItem;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-transporter")]
-impl Transporter_Data {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Transporter_Data),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITransporter_DataMethods>::ctor(this);
         this
     }
 }

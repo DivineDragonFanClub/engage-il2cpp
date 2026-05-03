@@ -6,140 +6,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator_Indication.md"))]
-#[::unity2::class(namespace = "App", name = "AIBattleSimulator.Indication")]
-#[parent(crate::system::object::Object)]
-pub struct AIBattleSimulator_Indication {
-    #[rename(name = "m_Power")]
-    pub m_power: i32,
-    #[rename(name = "m_SkillPower")]
-    pub m_skill_power: i32,
-    #[rename(name = "m_Hit")]
-    pub m_hit: f32,
-    #[rename(name = "m_Critical")]
-    pub m_critical: f32,
-    #[rename(name = "m_Skill")]
-    pub m_skill: f32,
-    #[rename(name = "m_SkillCritical")]
-    pub m_skill_critical: f32,
-    #[rename(name = "m_Prevent")]
-    pub m_prevent: f32,
-    #[rename(name = "m_Miss")]
-    pub m_miss: f32,
-    #[rename(name = "m_Expectation")]
-    pub m_expectation: f32,
-    #[rename(name = "m_IsSkillKill")]
-    pub m_is_skill_kill: bool,
-}
-
-#[cfg(feature = "app-aibattlesimulator")]
-#[::unity2::methods]
-impl AIBattleSimulator_Indication {
-    #[doc = "`get_Power()` overload"]
-    #[method(name = "get_Power", args = 0)]
-    pub fn get_power(self) -> i32;
-
-    #[doc = "`set_Power(i32)` overload"]
-    #[method(name = "set_Power", args = 1)]
-    pub fn set_power(self, value: i32) -> ();
-
-    #[doc = "`get_SkillPower()` overload"]
-    #[method(name = "get_SkillPower", args = 0)]
-    pub fn get_skill_power(self) -> i32;
-
-    #[doc = "`set_SkillPower(i32)` overload"]
-    #[method(name = "set_SkillPower", args = 1)]
-    pub fn set_skill_power(self, value: i32) -> ();
-
-    #[doc = "`get_Hit()` overload"]
-    #[method(name = "get_Hit", args = 0)]
-    pub fn get_hit(self) -> f32;
-
-    #[doc = "`set_Hit(f32)` overload"]
-    #[method(name = "set_Hit", args = 1)]
-    pub fn set_hit(self, value: f32) -> ();
-
-    #[doc = "`get_Critical()` overload"]
-    #[method(name = "get_Critical", args = 0)]
-    pub fn get_critical(self) -> f32;
-
-    #[doc = "`set_Critical(f32)` overload"]
-    #[method(name = "set_Critical", args = 1)]
-    pub fn set_critical(self, value: f32) -> ();
-
-    #[doc = "`get_Skill()` overload"]
-    #[method(name = "get_Skill", args = 0)]
-    pub fn get_skill(self) -> f32;
-
-    #[doc = "`set_Skill(f32)` overload"]
-    #[method(name = "set_Skill", args = 1)]
-    pub fn set_skill(self, value: f32) -> ();
-
-    #[doc = "`get_SkillCritical()` overload"]
-    #[method(name = "get_SkillCritical", args = 0)]
-    pub fn get_skill_critical(self) -> f32;
-
-    #[doc = "`set_SkillCritical(f32)` overload"]
-    #[method(name = "set_SkillCritical", args = 1)]
-    pub fn set_skill_critical(self, value: f32) -> ();
-
-    #[doc = "`get_Prevent()` overload"]
-    #[method(name = "get_Prevent", args = 0)]
-    pub fn get_prevent(self) -> f32;
-
-    #[doc = "`set_Prevent(f32)` overload"]
-    #[method(name = "set_Prevent", args = 1)]
-    pub fn set_prevent(self, value: f32) -> ();
-
-    #[doc = "`get_Miss()` overload"]
-    #[method(name = "get_Miss", args = 0)]
-    pub fn get_miss(self) -> f32;
-
-    #[doc = "`set_Miss(f32)` overload"]
-    #[method(name = "set_Miss", args = 1)]
-    pub fn set_miss(self, value: f32) -> ();
-
-    #[doc = "`get_Expectation()` overload"]
-    #[method(name = "get_Expectation", args = 0)]
-    pub fn get_expectation(self) -> f32;
-
-    #[doc = "`set_Expectation(f32)` overload"]
-    #[method(name = "set_Expectation", args = 1)]
-    pub fn set_expectation(self, value: f32) -> ();
-
-    #[doc = "`get_IsSkillKill()` overload"]
-    #[method(name = "get_IsSkillKill", args = 0)]
-    pub fn get_is_skill_kill(self) -> bool;
-
-    #[doc = "`set_IsSkillKill(bool)` overload"]
-    #[method(name = "set_IsSkillKill", args = 1)]
-    pub fn set_is_skill_kill(self, value: bool) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-aibattlesimulator")]
-impl AIBattleSimulator_Indication {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(AIBattleSimulator_Indication),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAIBattleSimulator_IndicationMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator.md"))]
 #[::unity2::class(namespace = "App", name = "AIBattleSimulator")]
 #[parent(crate::app::aisimulatorbase::AISimulatorBase)]
@@ -447,6 +313,140 @@ impl AIBattleSimulator_Break {
             )
         });
         <Self as IAIBattleSimulator_BreakMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/aibattlesimulator/AIBattleSimulator_Indication.md"))]
+#[::unity2::class(namespace = "App", name = "AIBattleSimulator.Indication")]
+#[parent(crate::system::object::Object)]
+pub struct AIBattleSimulator_Indication {
+    #[rename(name = "m_Power")]
+    pub m_power: i32,
+    #[rename(name = "m_SkillPower")]
+    pub m_skill_power: i32,
+    #[rename(name = "m_Hit")]
+    pub m_hit: f32,
+    #[rename(name = "m_Critical")]
+    pub m_critical: f32,
+    #[rename(name = "m_Skill")]
+    pub m_skill: f32,
+    #[rename(name = "m_SkillCritical")]
+    pub m_skill_critical: f32,
+    #[rename(name = "m_Prevent")]
+    pub m_prevent: f32,
+    #[rename(name = "m_Miss")]
+    pub m_miss: f32,
+    #[rename(name = "m_Expectation")]
+    pub m_expectation: f32,
+    #[rename(name = "m_IsSkillKill")]
+    pub m_is_skill_kill: bool,
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+#[::unity2::methods]
+impl AIBattleSimulator_Indication {
+    #[doc = "`get_Power()` overload"]
+    #[method(name = "get_Power", args = 0)]
+    pub fn get_power(self) -> i32;
+
+    #[doc = "`set_Power(i32)` overload"]
+    #[method(name = "set_Power", args = 1)]
+    pub fn set_power(self, value: i32) -> ();
+
+    #[doc = "`get_SkillPower()` overload"]
+    #[method(name = "get_SkillPower", args = 0)]
+    pub fn get_skill_power(self) -> i32;
+
+    #[doc = "`set_SkillPower(i32)` overload"]
+    #[method(name = "set_SkillPower", args = 1)]
+    pub fn set_skill_power(self, value: i32) -> ();
+
+    #[doc = "`get_Hit()` overload"]
+    #[method(name = "get_Hit", args = 0)]
+    pub fn get_hit(self) -> f32;
+
+    #[doc = "`set_Hit(f32)` overload"]
+    #[method(name = "set_Hit", args = 1)]
+    pub fn set_hit(self, value: f32) -> ();
+
+    #[doc = "`get_Critical()` overload"]
+    #[method(name = "get_Critical", args = 0)]
+    pub fn get_critical(self) -> f32;
+
+    #[doc = "`set_Critical(f32)` overload"]
+    #[method(name = "set_Critical", args = 1)]
+    pub fn set_critical(self, value: f32) -> ();
+
+    #[doc = "`get_Skill()` overload"]
+    #[method(name = "get_Skill", args = 0)]
+    pub fn get_skill(self) -> f32;
+
+    #[doc = "`set_Skill(f32)` overload"]
+    #[method(name = "set_Skill", args = 1)]
+    pub fn set_skill(self, value: f32) -> ();
+
+    #[doc = "`get_SkillCritical()` overload"]
+    #[method(name = "get_SkillCritical", args = 0)]
+    pub fn get_skill_critical(self) -> f32;
+
+    #[doc = "`set_SkillCritical(f32)` overload"]
+    #[method(name = "set_SkillCritical", args = 1)]
+    pub fn set_skill_critical(self, value: f32) -> ();
+
+    #[doc = "`get_Prevent()` overload"]
+    #[method(name = "get_Prevent", args = 0)]
+    pub fn get_prevent(self) -> f32;
+
+    #[doc = "`set_Prevent(f32)` overload"]
+    #[method(name = "set_Prevent", args = 1)]
+    pub fn set_prevent(self, value: f32) -> ();
+
+    #[doc = "`get_Miss()` overload"]
+    #[method(name = "get_Miss", args = 0)]
+    pub fn get_miss(self) -> f32;
+
+    #[doc = "`set_Miss(f32)` overload"]
+    #[method(name = "set_Miss", args = 1)]
+    pub fn set_miss(self, value: f32) -> ();
+
+    #[doc = "`get_Expectation()` overload"]
+    #[method(name = "get_Expectation", args = 0)]
+    pub fn get_expectation(self) -> f32;
+
+    #[doc = "`set_Expectation(f32)` overload"]
+    #[method(name = "set_Expectation", args = 1)]
+    pub fn set_expectation(self, value: f32) -> ();
+
+    #[doc = "`get_IsSkillKill()` overload"]
+    #[method(name = "get_IsSkillKill", args = 0)]
+    pub fn get_is_skill_kill(self) -> bool;
+
+    #[doc = "`set_IsSkillKill(bool)` overload"]
+    #[method(name = "set_IsSkillKill", args = 1)]
+    pub fn set_is_skill_kill(self, value: bool) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-aibattlesimulator")]
+impl AIBattleSimulator_Indication {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(AIBattleSimulator_Indication),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAIBattleSimulator_IndicationMethods>::ctor(this);
         this
     }
 }

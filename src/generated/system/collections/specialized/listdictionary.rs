@@ -4,6 +4,187 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_NodeEnumerator.md"))]
+#[::unity2::class(
+    namespace = "System.Collections.Specialized",
+    name = "ListDictionary.NodeEnumerator"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ListDictionary_NodeEnumerator {
+    #[rename(name = "list")]
+    pub list: crate::system::collections::specialized::listdictionary::ListDictionary,
+    #[rename(name = "current")]
+    pub current:
+        crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode,
+    #[rename(name = "version")]
+    pub version: i32,
+    #[rename(name = "start")]
+    pub start: bool,
+}
+
+#[cfg(feature = "system-collections-specialized-listdictionary")]
+#[::unity2::methods]
+impl ListDictionary_NodeEnumerator {
+    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        list: crate::system::collections::specialized::listdictionary::ListDictionary,
+    ) -> ();
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`get_Entry()` overload"]
+    #[method(name = "get_Entry", args = 0)]
+    pub fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry;
+
+    #[doc = "`get_Key()` overload"]
+    #[method(name = "get_Key", args = 0)]
+    pub fn get_key(self) -> crate::system::object::Object;
+
+    #[doc = "`get_Value()` overload"]
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> crate::system::object::Object;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+}
+
+#[cfg(feature = "system-collections-specialized-listdictionary")]
+impl ListDictionary_NodeEnumerator {
+    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary)` — overload selector"]
+    pub fn new(
+        list: crate::system::collections::specialized::listdictionary::ListDictionary,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ListDictionary_NodeEnumerator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IListDictionary_NodeEnumeratorMethods>::ctor(this, list);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_DictionaryNode.md"))]
+#[::unity2::class(
+    namespace = "System.Collections.Specialized",
+    name = "ListDictionary.DictionaryNode"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ListDictionary_DictionaryNode {
+    #[rename(name = "key")]
+    pub key: ::unity2::IlInstance,
+    #[rename(name = "value")]
+    pub value: ::unity2::IlInstance,
+    #[rename(name = "next")]
+    pub next:
+        crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode,
+}
+
+#[cfg(feature = "system-collections-specialized-listdictionary")]
+#[::unity2::methods]
+impl ListDictionary_DictionaryNode {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "system-collections-specialized-listdictionary")]
+impl ListDictionary_DictionaryNode {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ListDictionary_DictionaryNode),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IListDictionary_DictionaryNodeMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_NodeKeyValueCollection.md"))]
+#[::unity2::class(
+    namespace = "System.Collections.Specialized",
+    name = "ListDictionary.NodeKeyValueCollection"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ListDictionary_NodeKeyValueCollection {
+    #[rename(name = "list")]
+    pub list: crate::system::collections::specialized::listdictionary::ListDictionary,
+    #[rename(name = "isKeys")]
+    pub is_keys: bool,
+}
+
+#[cfg(feature = "system-collections-specialized-listdictionary")]
+#[::unity2::methods]
+impl ListDictionary_NodeKeyValueCollection {
+    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        list: crate::system::collections::specialized::listdictionary::ListDictionary,
+        is_keys: bool,
+    ) -> ();
+
+    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
+    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
+    pub fn system_collections_i_collection_copy_to(
+        self,
+        array: ::unity2::IlInstance,
+        index: i32,
+    ) -> ();
+
+    #[doc = "`System.Collections.ICollection.get_Count()` overload"]
+    #[method(name = "System.Collections.ICollection.get_Count", args = 0)]
+    pub fn system_collections_i_collection_get_count(self) -> i32;
+
+    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
+    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
+    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
+
+    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
+    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
+    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
+
+    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
+    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
+    pub fn system_collections_i_enumerable_get_enumerator(
+        self,
+    ) -> crate::system::collections::ienumerator::IEnumerator;
+}
+
+#[cfg(feature = "system-collections-specialized-listdictionary")]
+impl ListDictionary_NodeKeyValueCollection {
+    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` — overload selector"]
+    pub fn new(
+        list: crate::system::collections::specialized::listdictionary::ListDictionary,
+        is_keys: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ListDictionary_NodeKeyValueCollection),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IListDictionary_NodeKeyValueCollectionMethods>::ctor(this, list, is_keys);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary.md"))]
 #[::unity2::class(namespace = "System.Collections.Specialized", name = "ListDictionary")]
 #[parent(crate::system::object::Object)]
@@ -135,187 +316,6 @@ impl ListDictionary {
             )
         });
         <Self as IListDictionaryMethods>::ctor_2(this, comparer);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_NodeEnumerator.md"))]
-#[::unity2::class(
-    namespace = "System.Collections.Specialized",
-    name = "ListDictionary.NodeEnumerator"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ListDictionary_NodeEnumerator {
-    #[rename(name = "list")]
-    pub list: crate::system::collections::specialized::listdictionary::ListDictionary,
-    #[rename(name = "current")]
-    pub current:
-        crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode,
-    #[rename(name = "version")]
-    pub version: i32,
-    #[rename(name = "start")]
-    pub start: bool,
-}
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-#[::unity2::methods]
-impl ListDictionary_NodeEnumerator {
-    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        list: crate::system::collections::specialized::listdictionary::ListDictionary,
-    ) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Entry()` overload"]
-    #[method(name = "get_Entry", args = 0)]
-    pub fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry;
-
-    #[doc = "`get_Key()` overload"]
-    #[method(name = "get_Key", args = 0)]
-    pub fn get_key(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-}
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_NodeEnumerator {
-    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary)` — overload selector"]
-    pub fn new(
-        list: crate::system::collections::specialized::listdictionary::ListDictionary,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ListDictionary_NodeEnumerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IListDictionary_NodeEnumeratorMethods>::ctor(this, list);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_NodeKeyValueCollection.md"))]
-#[::unity2::class(
-    namespace = "System.Collections.Specialized",
-    name = "ListDictionary.NodeKeyValueCollection"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ListDictionary_NodeKeyValueCollection {
-    #[rename(name = "list")]
-    pub list: crate::system::collections::specialized::listdictionary::ListDictionary,
-    #[rename(name = "isKeys")]
-    pub is_keys: bool,
-}
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-#[::unity2::methods]
-impl ListDictionary_NodeKeyValueCollection {
-    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        list: crate::system::collections::specialized::listdictionary::ListDictionary,
-        is_keys: bool,
-    ) -> ();
-
-    #[doc = "`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]
-    #[method(name = "System.Collections.ICollection.CopyTo", args = 2)]
-    pub fn system_collections_i_collection_copy_to(
-        self,
-        array: ::unity2::IlInstance,
-        index: i32,
-    ) -> ();
-
-    #[doc = "`System.Collections.ICollection.get_Count()` overload"]
-    #[method(name = "System.Collections.ICollection.get_Count", args = 0)]
-    pub fn system_collections_i_collection_get_count(self) -> i32;
-
-    #[doc = "`System.Collections.ICollection.get_IsSynchronized()` overload"]
-    #[method(name = "System.Collections.ICollection.get_IsSynchronized", args = 0)]
-    pub fn system_collections_i_collection_get_is_synchronized(self) -> bool;
-
-    #[doc = "`System.Collections.ICollection.get_SyncRoot()` overload"]
-    #[method(name = "System.Collections.ICollection.get_SyncRoot", args = 0)]
-    pub fn system_collections_i_collection_get_sync_root(self) -> crate::system::object::Object;
-
-    #[doc = "`System.Collections.IEnumerable.GetEnumerator()` overload"]
-    #[method(name = "System.Collections.IEnumerable.GetEnumerator", args = 0)]
-    pub fn system_collections_i_enumerable_get_enumerator(
-        self,
-    ) -> crate::system::collections::ienumerator::IEnumerator;
-}
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_NodeKeyValueCollection {
-    #[doc = "`.ctor(crate::system::collections::specialized::listdictionary::ListDictionary, bool)` — overload selector"]
-    pub fn new(
-        list: crate::system::collections::specialized::listdictionary::ListDictionary,
-        is_keys: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ListDictionary_NodeKeyValueCollection),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IListDictionary_NodeKeyValueCollectionMethods>::ctor(this, list, is_keys);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/specialized/listdictionary/ListDictionary_DictionaryNode.md"))]
-#[::unity2::class(
-    namespace = "System.Collections.Specialized",
-    name = "ListDictionary.DictionaryNode"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ListDictionary_DictionaryNode {
-    #[rename(name = "key")]
-    pub key: ::unity2::IlInstance,
-    #[rename(name = "value")]
-    pub value: ::unity2::IlInstance,
-    #[rename(name = "next")]
-    pub next:
-        crate::system::collections::specialized::listdictionary::ListDictionary_DictionaryNode,
-}
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-#[::unity2::methods]
-impl ListDictionary_DictionaryNode {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "system-collections-specialized-listdictionary")]
-impl ListDictionary_DictionaryNode {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ListDictionary_DictionaryNode),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IListDictionary_DictionaryNodeMethods>::ctor(this);
         this
     }
 }

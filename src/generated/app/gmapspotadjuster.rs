@@ -14,34 +14,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspotadjuster/GmapSpotAdjuster_TargetModel.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct GmapSpotAdjuster_TargetModel {
-    pub _unnamed: ::unity2::Il2CppString,
-}
-
-impl ::unity2::ClassIdentity for GmapSpotAdjuster_TargetModel {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GmapSpotAdjuster.TargetModel";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for GmapSpotAdjuster_TargetModel {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspotadjuster/GmapSpotAdjuster.md"))]
 #[::unity2::class(namespace = "App", name = "GmapSpotAdjuster")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -110,5 +82,33 @@ impl GmapSpotAdjuster {
         });
         <Self as IGmapSpotAdjusterMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspotadjuster/GmapSpotAdjuster_TargetModel.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct GmapSpotAdjuster_TargetModel {
+    pub _unnamed: ::unity2::Il2CppString,
+}
+
+impl ::unity2::ClassIdentity for GmapSpotAdjuster_TargetModel {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GmapSpotAdjuster.TargetModel";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GmapSpotAdjuster_TargetModel {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
     }
 }

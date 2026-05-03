@@ -14,14 +14,18 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_GrowthWriter.md"))]
-#[::unity2::class(namespace = "App", name = "GameUserRestartData.GrowthWriter")]
-# [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: gameuserrestartdata :: GameUserRestartData_Growth >)]
-pub struct GameUserRestartData_GrowthWriter {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_GameConfigWriter.md"))]
+#[::unity2::class(namespace = "App", name = "GameUserRestartData.GameConfigWriter")]
+#[parent(crate::app::stream_2::Stream_2)]
+pub struct GameUserRestartData_GameConfigWriter {}
 
 #[cfg(feature = "app-gameuserrestartdata")]
 #[::unity2::methods]
-impl GameUserRestartData_GrowthWriter {
+impl GameUserRestartData_GameConfigWriter {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
     #[doc = "`Read()` overload"]
     #[method(name = "Read", args = 0)]
     pub fn read(self) -> ();
@@ -29,156 +33,20 @@ impl GameUserRestartData_GrowthWriter {
     #[doc = "`Write()` overload"]
     #[method(name = "Write", args = 0)]
     pub fn write(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-gameuserrestartdata")]
-impl GameUserRestartData_GrowthWriter {
+impl GameUserRestartData_GameConfigWriter {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserRestartData_GrowthWriter),
+                ::core::stringify!(GameUserRestartData_GameConfigWriter),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGameUserRestartData_GrowthWriterMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_RestartStream.md"))]
-#[::unity2::class(namespace = "App", name = "GameUserRestartData.RestartStream")]
-#[parent(crate::app::stream_2::Stream_2)]
-pub struct GameUserRestartData_RestartStream {
-    #[static_field]
-    #[rename(name = "Version")]
-    pub version: i32,
-    #[static_field]
-    #[rename(name = "MaxSize")]
-    pub max_size: i32,
-    #[static_field]
-    #[rename(name = "MagicNumber")]
-    pub magic_number: i32,
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-#[::unity2::methods]
-impl GameUserRestartData_RestartStream {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`TryReadHeader()` overload"]
-    #[method(name = "TryReadHeader", args = 0)]
-    pub fn try_read_header(self) -> crate::app::chapterdata::ChapterData;
-
-    #[doc = "`IsEnable()` overload"]
-    #[method(name = "IsEnable", args = 0)]
-    pub fn is_enable(self) -> bool;
-
-    #[doc = "`Save()` overload"]
-    #[method(name = "Save", args = 0)]
-    pub fn save(self) -> ();
-
-    #[doc = "`Load(bool, bool, bool)` overload"]
-    #[method(name = "Load", args = 3)]
-    pub fn load(self, keep_level: bool, keep_achieve: bool, completed: bool) -> bool;
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-impl GameUserRestartData_RestartStream {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserRestartData_RestartStream),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserRestartData_RestartStreamMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_RecordWriter.md"))]
-#[::unity2::class(namespace = "App", name = "GameUserRestartData.RecordWriter")]
-# [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , i32 >)]
-pub struct GameUserRestartData_RecordWriter {}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-#[::unity2::methods]
-impl GameUserRestartData_RecordWriter {
-    #[doc = "`Read(crate::app::unitrecord::UnitRecord_Kinds)` overload"]
-    #[method(name = "Read", args = 1)]
-    pub fn read(self, kind: crate::app::unitrecord::UnitRecord_Kinds) -> ();
-
-    #[doc = "`Write(crate::app::unitrecord::UnitRecord_Kinds)` overload"]
-    #[method(name = "Write", args = 1)]
-    pub fn write(self, kind: crate::app::unitrecord::UnitRecord_Kinds) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-impl GameUserRestartData_RecordWriter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserRestartData_RecordWriter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserRestartData_RecordWriterMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_Growth.md"))]
-#[::unity2::class(namespace = "App", name = "GameUserRestartData.Growth")]
-#[parent(crate::system::object::Object)]
-pub struct GameUserRestartData_Growth {
-    #[rename(name = "Job")]
-    pub job: crate::app::jobdata::JobData,
-    #[rename(name = "Level")]
-    pub level: i32,
-    #[rename(name = "Exp")]
-    pub exp: i32,
-    #[rename(name = "GrowCapability")]
-    pub grow_capability: crate::app::capability::Capability,
-    #[rename(name = "LevelCapability")]
-    pub level_capability: crate::app::unitbasecapability::UnitBaseCapability,
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-#[::unity2::methods]
-impl GameUserRestartData_Growth {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-gameuserrestartdata")]
-impl GameUserRestartData_Growth {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserRestartData_Growth),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameUserRestartData_GrowthMethods>::ctor(this);
+        <Self as IGameUserRestartData_GameConfigWriterMethods>::ctor(this);
         this
     }
 }
@@ -293,6 +161,142 @@ impl GameUserRestartData {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_RestartStream.md"))]
+#[::unity2::class(namespace = "App", name = "GameUserRestartData.RestartStream")]
+#[parent(crate::app::stream_2::Stream_2)]
+pub struct GameUserRestartData_RestartStream {
+    #[static_field]
+    #[rename(name = "Version")]
+    pub version: i32,
+    #[static_field]
+    #[rename(name = "MaxSize")]
+    pub max_size: i32,
+    #[static_field]
+    #[rename(name = "MagicNumber")]
+    pub magic_number: i32,
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+#[::unity2::methods]
+impl GameUserRestartData_RestartStream {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`TryReadHeader()` overload"]
+    #[method(name = "TryReadHeader", args = 0)]
+    pub fn try_read_header(self) -> crate::app::chapterdata::ChapterData;
+
+    #[doc = "`IsEnable()` overload"]
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
+
+    #[doc = "`Save()` overload"]
+    #[method(name = "Save", args = 0)]
+    pub fn save(self) -> ();
+
+    #[doc = "`Load(bool, bool, bool)` overload"]
+    #[method(name = "Load", args = 3)]
+    pub fn load(self, keep_level: bool, keep_achieve: bool, completed: bool) -> bool;
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+impl GameUserRestartData_RestartStream {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserRestartData_RestartStream),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserRestartData_RestartStreamMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_Growth.md"))]
+#[::unity2::class(namespace = "App", name = "GameUserRestartData.Growth")]
+#[parent(crate::system::object::Object)]
+pub struct GameUserRestartData_Growth {
+    #[rename(name = "Job")]
+    pub job: crate::app::jobdata::JobData,
+    #[rename(name = "Level")]
+    pub level: i32,
+    #[rename(name = "Exp")]
+    pub exp: i32,
+    #[rename(name = "GrowCapability")]
+    pub grow_capability: crate::app::capability::Capability,
+    #[rename(name = "LevelCapability")]
+    pub level_capability: crate::app::unitbasecapability::UnitBaseCapability,
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+#[::unity2::methods]
+impl GameUserRestartData_Growth {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+impl GameUserRestartData_Growth {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserRestartData_Growth),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserRestartData_GrowthMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_VariableWriter.md"))]
+#[::unity2::class(namespace = "App", name = "GameUserRestartData.VariableWriter")]
+# [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , i32 >)]
+pub struct GameUserRestartData_VariableWriter {}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+#[::unity2::methods]
+impl GameUserRestartData_VariableWriter {
+    #[doc = "`Read(bool)` overload"]
+    #[method(name = "Read", args = 1)]
+    pub fn read(self, is_network: bool) -> ();
+
+    #[doc = "`Read(::unity2::Il2CppString)` overload"]
+    #[method(name = "Read", args = 1)]
+    pub fn read_2(self, header: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Write()` overload"]
+    #[method(name = "Write", args = 0)]
+    pub fn write(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-gameuserrestartdata")]
+impl GameUserRestartData_VariableWriter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameUserRestartData_VariableWriter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameUserRestartData_VariableWriterMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_CompleteWriter.md"))]
 #[::unity2::class(namespace = "App", name = "GameUserRestartData.CompleteWriter")]
 #[parent(crate::system::object::Object)]
@@ -339,25 +343,21 @@ impl GameUserRestartData_CompleteWriter {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_VariableWriter.md"))]
-#[::unity2::class(namespace = "App", name = "GameUserRestartData.VariableWriter")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_RecordWriter.md"))]
+#[::unity2::class(namespace = "App", name = "GameUserRestartData.RecordWriter")]
 # [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , i32 >)]
-pub struct GameUserRestartData_VariableWriter {}
+pub struct GameUserRestartData_RecordWriter {}
 
 #[cfg(feature = "app-gameuserrestartdata")]
 #[::unity2::methods]
-impl GameUserRestartData_VariableWriter {
-    #[doc = "`Read(bool)` overload"]
+impl GameUserRestartData_RecordWriter {
+    #[doc = "`Read(crate::app::unitrecord::UnitRecord_Kinds)` overload"]
     #[method(name = "Read", args = 1)]
-    pub fn read(self, is_network: bool) -> ();
+    pub fn read(self, kind: crate::app::unitrecord::UnitRecord_Kinds) -> ();
 
-    #[doc = "`Read(::unity2::Il2CppString)` overload"]
-    #[method(name = "Read", args = 1)]
-    pub fn read_2(self, header: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Write()` overload"]
-    #[method(name = "Write", args = 0)]
-    pub fn write(self) -> ();
+    #[doc = "`Write(crate::app::unitrecord::UnitRecord_Kinds)` overload"]
+    #[method(name = "Write", args = 1)]
+    pub fn write(self, kind: crate::app::unitrecord::UnitRecord_Kinds) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -365,17 +365,17 @@ impl GameUserRestartData_VariableWriter {
 }
 
 #[cfg(feature = "app-gameuserrestartdata")]
-impl GameUserRestartData_VariableWriter {
+impl GameUserRestartData_RecordWriter {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserRestartData_VariableWriter),
+                ::core::stringify!(GameUserRestartData_RecordWriter),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGameUserRestartData_VariableWriterMethods>::ctor(this);
+        <Self as IGameUserRestartData_RecordWriterMethods>::ctor(this);
         this
     }
 }
@@ -432,18 +432,14 @@ impl GameUserRestartData_Targtes {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_GameConfigWriter.md"))]
-#[::unity2::class(namespace = "App", name = "GameUserRestartData.GameConfigWriter")]
-#[parent(crate::app::stream_2::Stream_2)]
-pub struct GameUserRestartData_GameConfigWriter {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gameuserrestartdata/GameUserRestartData_GrowthWriter.md"))]
+#[::unity2::class(namespace = "App", name = "GameUserRestartData.GrowthWriter")]
+# [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < :: unity2 :: Il2CppString , crate :: app :: gameuserrestartdata :: GameUserRestartData_Growth >)]
+pub struct GameUserRestartData_GrowthWriter {}
 
 #[cfg(feature = "app-gameuserrestartdata")]
 #[::unity2::methods]
-impl GameUserRestartData_GameConfigWriter {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
+impl GameUserRestartData_GrowthWriter {
     #[doc = "`Read()` overload"]
     #[method(name = "Read", args = 0)]
     pub fn read(self) -> ();
@@ -451,20 +447,24 @@ impl GameUserRestartData_GameConfigWriter {
     #[doc = "`Write()` overload"]
     #[method(name = "Write", args = 0)]
     pub fn write(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-gameuserrestartdata")]
-impl GameUserRestartData_GameConfigWriter {
+impl GameUserRestartData_GrowthWriter {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GameUserRestartData_GameConfigWriter),
+                ::core::stringify!(GameUserRestartData_GrowthWriter),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGameUserRestartData_GameConfigWriterMethods>::ctor(this);
+        <Self as IGameUserRestartData_GrowthWriterMethods>::ctor(this);
         this
     }
 }

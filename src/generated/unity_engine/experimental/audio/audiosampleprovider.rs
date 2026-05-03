@@ -8,6 +8,29 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/audio/audiosampleprovider/AudioSampleProvider.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Audio",
+    name = "AudioSampleProvider"
+)]
+#[parent(crate::system::object::Object)]
+pub struct AudioSampleProvider {
+# [rename (name = "sampleFramesAvailable")] pub sample_frames_available : crate :: unity_engine :: experimental :: audio :: audiosampleprovider :: AudioSampleProvider_SampleFramesHandler ,
+# [rename (name = "sampleFramesOverflow")] pub sample_frames_overflow : crate :: unity_engine :: experimental :: audio :: audiosampleprovider :: AudioSampleProvider_SampleFramesHandler ,
+}
+
+#[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider")]
+#[::unity2::methods]
+impl AudioSampleProvider {
+    #[doc = "`InvokeSampleFramesAvailable(i32)` overload"]
+    #[method(name = "InvokeSampleFramesAvailable", args = 1)]
+    pub fn invoke_sample_frames_available(self, sample_frame_count: i32) -> ();
+
+    #[doc = "`InvokeSampleFramesOverflow(i32)` overload"]
+    #[method(name = "InvokeSampleFramesOverflow", args = 1)]
+    pub fn invoke_sample_frames_overflow(self, dropped_sample_frame_count: i32) -> ();
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/audio/audiosampleprovider/AudioSampleProvider_SampleFramesHandler.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Audio",
@@ -46,27 +69,4 @@ impl AudioSampleProvider_SampleFramesHandler {
         <Self as IAudioSampleProvider_SampleFramesHandlerMethods>::ctor(this, object, method);
         this
     }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/audio/audiosampleprovider/AudioSampleProvider.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Experimental.Audio",
-    name = "AudioSampleProvider"
-)]
-#[parent(crate::system::object::Object)]
-pub struct AudioSampleProvider {
-# [rename (name = "sampleFramesAvailable")] pub sample_frames_available : crate :: unity_engine :: experimental :: audio :: audiosampleprovider :: AudioSampleProvider_SampleFramesHandler ,
-# [rename (name = "sampleFramesOverflow")] pub sample_frames_overflow : crate :: unity_engine :: experimental :: audio :: audiosampleprovider :: AudioSampleProvider_SampleFramesHandler ,
-}
-
-#[cfg(feature = "unity_engine-experimental-audio-audiosampleprovider")]
-#[::unity2::methods]
-impl AudioSampleProvider {
-    #[doc = "`InvokeSampleFramesAvailable(i32)` overload"]
-    #[method(name = "InvokeSampleFramesAvailable", args = 1)]
-    pub fn invoke_sample_frames_available(self, sample_frame_count: i32) -> ();
-
-    #[doc = "`InvokeSampleFramesOverflow(i32)` overload"]
-    #[method(name = "InvokeSampleFramesOverflow", args = 1)]
-    pub fn invoke_sample_frames_overflow(self, dropped_sample_frame_count: i32) -> ();
 }

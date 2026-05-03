@@ -63,6 +63,207 @@ impl UnitSelectSubMenu {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_EntrustMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.EntrustMenuItem")]
+#[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
+pub struct UnitSelectSubMenu_EntrustMenuItem {}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+#[::unity2::methods]
+impl UnitSelectSubMenu_EntrustMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+impl UnitSelectSubMenu_EntrustMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectSubMenu_EntrustMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectSubMenu_EntrustMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_StoreAllMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.StoreAllMenuItem")]
+#[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
+pub struct UnitSelectSubMenu_StoreAllMenuItem {}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+#[::unity2::methods]
+impl UnitSelectSubMenu_StoreAllMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+impl UnitSelectSubMenu_StoreAllMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectSubMenu_StoreAllMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectSubMenu_StoreAllMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_SkillMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.SkillMenuItem")]
+#[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
+pub struct UnitSelectSubMenu_SkillMenuItem {}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+#[::unity2::methods]
+impl UnitSelectSubMenu_SkillMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+impl UnitSelectSubMenu_SkillMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectSubMenu_SkillMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectSubMenu_SkillMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_TradeMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.TradeMenuItem")]
+#[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
+pub struct UnitSelectSubMenu_TradeMenuItem {}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+#[::unity2::methods]
+impl UnitSelectSubMenu_TradeMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+impl UnitSelectSubMenu_TradeMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectSubMenu_TradeMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectSubMenu_TradeMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_InventoryMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.InventoryMenuItem")]
+#[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
+pub struct UnitSelectSubMenu_InventoryMenuItem {}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+#[::unity2::methods]
+impl UnitSelectSubMenu_InventoryMenuItem {
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitselectsubmenu")]
+impl UnitSelectSubMenu_InventoryMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectSubMenu_InventoryMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectSubMenu_InventoryMenuItemMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_BaseMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.BaseMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -133,207 +334,6 @@ impl UnitSelectSubMenu_ClassChangeMenuItem {
             )
         });
         <Self as IUnitSelectSubMenu_ClassChangeMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_StoreAllMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.StoreAllMenuItem")]
-#[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
-pub struct UnitSelectSubMenu_StoreAllMenuItem {}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-#[::unity2::methods]
-impl UnitSelectSubMenu_StoreAllMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-impl UnitSelectSubMenu_StoreAllMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectSubMenu_StoreAllMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectSubMenu_StoreAllMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_InventoryMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.InventoryMenuItem")]
-#[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
-pub struct UnitSelectSubMenu_InventoryMenuItem {}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-#[::unity2::methods]
-impl UnitSelectSubMenu_InventoryMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-impl UnitSelectSubMenu_InventoryMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectSubMenu_InventoryMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectSubMenu_InventoryMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_TradeMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.TradeMenuItem")]
-#[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
-pub struct UnitSelectSubMenu_TradeMenuItem {}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-#[::unity2::methods]
-impl UnitSelectSubMenu_TradeMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-impl UnitSelectSubMenu_TradeMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectSubMenu_TradeMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectSubMenu_TradeMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_EntrustMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.EntrustMenuItem")]
-#[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
-pub struct UnitSelectSubMenu_EntrustMenuItem {}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-#[::unity2::methods]
-impl UnitSelectSubMenu_EntrustMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-impl UnitSelectSubMenu_EntrustMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectSubMenu_EntrustMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectSubMenu_EntrustMenuItemMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitselectsubmenu/UnitSelectSubMenu_SkillMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "UnitSelectSubMenu.SkillMenuItem")]
-#[parent(crate::app::unitselectsubmenu::UnitSelectSubMenu_BaseMenuItem)]
-pub struct UnitSelectSubMenu_SkillMenuItem {}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-#[::unity2::methods]
-impl UnitSelectSubMenu_SkillMenuItem {
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitselectsubmenu")]
-impl UnitSelectSubMenu_SkillMenuItem {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectSubMenu_SkillMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectSubMenu_SkillMenuItemMethods>::ctor(this);
         this
     }
 }

@@ -10,6 +10,81 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomrelianceselect/MyRoomRelianceSelect_MyRoomRelianceSelectItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "MyRoomRelianceSelect.MyRoomRelianceSelectItem"
+)]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct MyRoomRelianceSelect_MyRoomRelianceSelectItem {
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+}
+
+#[cfg(feature = "app-myroomrelianceselect")]
+#[::unity2::methods]
+impl MyRoomRelianceSelect_MyRoomRelianceSelectItem {
+    #[doc = "`get_IsTalk()` overload"]
+    #[method(name = "get_IsTalk", args = 0)]
+    pub fn get_is_talk(self) -> bool;
+
+    #[doc = "`set_IsTalk(bool)` overload"]
+    #[method(name = "set_IsTalk", args = 1)]
+    pub fn set_is_talk(self, value: bool) -> ();
+
+    #[doc = "`get_IsBlank()` overload"]
+    #[method(name = "get_IsBlank", args = 0)]
+    pub fn get_is_blank(self) -> bool;
+
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`GetSortOrder()` overload"]
+    #[method(name = "GetSortOrder", args = 0)]
+    pub fn get_sort_order(self) -> i32;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`GetUnit()` overload"]
+    #[method(name = "GetUnit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`UpdateTalkState()` overload"]
+    #[method(name = "UpdateTalkState", args = 0)]
+    pub fn update_talk_state(self) -> ();
+}
+
+#[cfg(feature = "app-myroomrelianceselect")]
+impl MyRoomRelianceSelect_MyRoomRelianceSelectItem {
+    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
+    pub fn new(unit: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomRelianceSelect_MyRoomRelianceSelectItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomRelianceSelect_MyRoomRelianceSelectItemMethods>::ctor(this, unit);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomrelianceselect/MyRoomRelianceSelect.md"))]
 #[::unity2::class(namespace = "App", name = "MyRoomRelianceSelect")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -107,81 +182,6 @@ impl MyRoomRelianceSelect {
             )
         });
         <Self as IMyRoomRelianceSelectMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomrelianceselect/MyRoomRelianceSelect_MyRoomRelianceSelectItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "MyRoomRelianceSelect.MyRoomRelianceSelectItem"
-)]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct MyRoomRelianceSelect_MyRoomRelianceSelectItem {
-    #[rename(name = "m_Unit")]
-    pub m_unit: crate::app::unit::Unit,
-}
-
-#[cfg(feature = "app-myroomrelianceselect")]
-#[::unity2::methods]
-impl MyRoomRelianceSelect_MyRoomRelianceSelectItem {
-    #[doc = "`get_IsTalk()` overload"]
-    #[method(name = "get_IsTalk", args = 0)]
-    pub fn get_is_talk(self) -> bool;
-
-    #[doc = "`set_IsTalk(bool)` overload"]
-    #[method(name = "set_IsTalk", args = 1)]
-    pub fn set_is_talk(self, value: bool) -> ();
-
-    #[doc = "`get_IsBlank()` overload"]
-    #[method(name = "get_IsBlank", args = 0)]
-    pub fn get_is_blank(self) -> bool;
-
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`GetSortOrder()` overload"]
-    #[method(name = "GetSortOrder", args = 0)]
-    pub fn get_sort_order(self) -> i32;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`GetUnit()` overload"]
-    #[method(name = "GetUnit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`UpdateTalkState()` overload"]
-    #[method(name = "UpdateTalkState", args = 0)]
-    pub fn update_talk_state(self) -> ();
-}
-
-#[cfg(feature = "app-myroomrelianceselect")]
-impl MyRoomRelianceSelect_MyRoomRelianceSelectItem {
-    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
-    pub fn new(unit: crate::app::unit::Unit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomRelianceSelect_MyRoomRelianceSelectItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomRelianceSelect_MyRoomRelianceSelectItemMethods>::ctor(this, unit);
         this
     }
 }

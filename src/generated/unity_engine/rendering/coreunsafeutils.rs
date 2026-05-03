@@ -6,40 +6,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_UintKeyGetter.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct CoreUnsafeUtils_UintKeyGetter {}
-
-impl ::unity2::ClassIdentity for CoreUnsafeUtils_UintKeyGetter {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
-
-    const NAME: &'static str = "CoreUnsafeUtils.UintKeyGetter";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for CoreUnsafeUtils_UintKeyGetter {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
-#[::unity2::methods(value)]
-impl CoreUnsafeUtils_UintKeyGetter {
-    #[doc = "`Get(u32)` overload"]
-    #[method(name = "Get", args = 1)]
-    pub fn get(self, v: u32) -> u32;
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_IKeyGetter_2.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering",
@@ -73,6 +39,40 @@ impl CoreUnsafeUtils {
     #[doc = "`HaveDuplicates(::unity2::Array<i32>)` overload"]
     #[method(name = "HaveDuplicates", args = 1)]
     pub fn have_duplicates(arr: ::unity2::Array<i32>) -> bool;
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_UintKeyGetter.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct CoreUnsafeUtils_UintKeyGetter {}
+
+impl ::unity2::ClassIdentity for CoreUnsafeUtils_UintKeyGetter {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+
+    const NAME: &'static str = "CoreUnsafeUtils.UintKeyGetter";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CoreUnsafeUtils_UintKeyGetter {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-rendering-coreunsafeutils")]
+#[::unity2::methods(value)]
+impl CoreUnsafeUtils_UintKeyGetter {
+    #[doc = "`Get(u32)` overload"]
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, v: u32) -> u32;
 }
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_DefaultKeyGetter_1.md"))]

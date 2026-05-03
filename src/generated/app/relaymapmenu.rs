@@ -14,6 +14,39 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_SelectEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "RelayMapMenu.SelectEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RelayMapMenu_SelectEventHandler {}
+
+#[cfg(feature = "app-relaymapmenu")]
+#[::unity2::methods]
+impl RelayMapMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::relaydata::RelayData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, relay_data: crate::app::relaydata::RelayData) -> ();
+}
+
+#[cfg(feature = "app-relaymapmenu")]
+impl RelayMapMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayMapMenu_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayMapMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_MapMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "RelayMapMenu.MapMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -63,39 +96,6 @@ impl RelayMapMenu_MapMenuItem {
             )
         });
         <Self as IRelayMapMenu_MapMenuItemMethods>::ctor(this, cdata, select_event_handler);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_SelectEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "RelayMapMenu.SelectEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RelayMapMenu_SelectEventHandler {}
-
-#[cfg(feature = "app-relaymapmenu")]
-#[::unity2::methods]
-impl RelayMapMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::relaydata::RelayData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, relay_data: crate::app::relaydata::RelayData) -> ();
-}
-
-#[cfg(feature = "app-relaymapmenu")]
-impl RelayMapMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayMapMenu_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayMapMenu_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -182,39 +182,6 @@ impl RelayMapMenu {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_RequestCloseEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "RelayMapMenu.RequestCloseEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RelayMapMenu_RequestCloseEventHandler {}
-
-#[cfg(feature = "app-relaymapmenu")]
-#[::unity2::methods]
-impl RelayMapMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-relaymapmenu")]
-impl RelayMapMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayMapMenu_RequestCloseEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayMapMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_DecideEventHandler.md"))]
 #[::unity2::class(namespace = "App", name = "RelayMapMenu.DecideEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -244,6 +211,39 @@ impl RelayMapMenu_DecideEventHandler {
             )
         });
         <Self as IRelayMapMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymapmenu/RelayMapMenu_RequestCloseEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "RelayMapMenu.RequestCloseEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RelayMapMenu_RequestCloseEventHandler {}
+
+#[cfg(feature = "app-relaymapmenu")]
+#[::unity2::methods]
+impl RelayMapMenu_RequestCloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-relaymapmenu")]
+impl RelayMapMenu_RequestCloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayMapMenu_RequestCloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayMapMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

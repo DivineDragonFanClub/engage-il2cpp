@@ -16,7 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingfish/FishingFish_FishState.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingfish/FishingFish_CounterVoiceFlag.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -25,14 +25,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct FishingFish_FishState {
+pub struct FishingFish_CounterVoiceFlag {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for FishingFish_FishState {
+impl ::unity2::ClassIdentity for FishingFish_CounterVoiceFlag {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "FishingFish.FishState";
+    const NAME: &'static str = "FishingFish.CounterVoiceFlag";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,7 +41,7 @@ impl ::unity2::ClassIdentity for FishingFish_FishState {
     }
 }
 
-impl ::unity2::IlType for FishingFish_FishState {
+impl ::unity2::IlType for FishingFish_CounterVoiceFlag {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -50,45 +50,17 @@ impl ::unity2::IlType for FishingFish_FishState {
     }
 }
 
-impl FishingFish_FishState {
-    pub fn wait_entry() -> Self {
+impl FishingFish_CounterVoiceFlag {
+    pub fn wait() -> Self {
         Self { value: 0 }
     }
 
-    pub fn wait_catch() -> Self {
+    pub fn right() -> Self {
         Self { value: 1 }
     }
 
-    pub fn catching() -> Self {
+    pub fn left() -> Self {
         Self { value: 2 }
-    }
-
-    pub fn wait_assist() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn battle() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn weak() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn lethal() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn escape() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn defeat() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn state_num() -> Self {
-        Self { value: 9 }
     }
 }
 
@@ -527,7 +499,7 @@ impl FishingFish {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingfish/FishingFish_CounterVoiceFlag.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fishingfish/FishingFish_FishState.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -536,14 +508,14 @@ impl FishingFish {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct FishingFish_CounterVoiceFlag {
+pub struct FishingFish_FishState {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for FishingFish_CounterVoiceFlag {
+impl ::unity2::ClassIdentity for FishingFish_FishState {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "FishingFish.CounterVoiceFlag";
+    const NAME: &'static str = "FishingFish.FishState";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -552,7 +524,7 @@ impl ::unity2::ClassIdentity for FishingFish_CounterVoiceFlag {
     }
 }
 
-impl ::unity2::IlType for FishingFish_CounterVoiceFlag {
+impl ::unity2::IlType for FishingFish_FishState {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -561,16 +533,44 @@ impl ::unity2::IlType for FishingFish_CounterVoiceFlag {
     }
 }
 
-impl FishingFish_CounterVoiceFlag {
-    pub fn wait() -> Self {
+impl FishingFish_FishState {
+    pub fn wait_entry() -> Self {
         Self { value: 0 }
     }
 
-    pub fn right() -> Self {
+    pub fn wait_catch() -> Self {
         Self { value: 1 }
     }
 
-    pub fn left() -> Self {
+    pub fn catching() -> Self {
         Self { value: 2 }
+    }
+
+    pub fn wait_assist() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn battle() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn weak() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn lethal() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn escape() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn defeat() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn state_num() -> Self {
+        Self { value: 9 }
     }
 }

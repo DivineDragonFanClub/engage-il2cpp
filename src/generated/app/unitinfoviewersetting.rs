@@ -16,6 +16,44 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md"))]
+#[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.UnitData")]
+#[parent(crate::system::object::Object)]
+pub struct UnitInfoViewerSetting_UnitData {
+    #[rename(name = "person")]
+    pub person: ::unity2::Il2CppString,
+    #[rename(name = "job")]
+    pub job: ::unity2::Il2CppString,
+    #[rename(name = "weapon")]
+    pub weapon: ::unity2::Il2CppString,
+    #[rename(name = "force")]
+    pub force: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+#[::unity2::methods]
+impl UnitInfoViewerSetting_UnitData {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-unitinfoviewersetting")]
+impl UnitInfoViewerSetting_UnitData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitInfoViewerSetting_UnitData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitInfoViewerSetting_UnitDataMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_ForceList.md"))]
 #[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.ForceList")]
 #[parent(crate::system::object::Object)]
@@ -93,44 +131,6 @@ impl UnitInfoViewerSetting_Seq {
 
     pub fn normal() -> Self {
         Self { value: 2 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/unitinfoviewersetting/UnitInfoViewerSetting_UnitData.md"))]
-#[::unity2::class(namespace = "App", name = "UnitInfoViewerSetting.UnitData")]
-#[parent(crate::system::object::Object)]
-pub struct UnitInfoViewerSetting_UnitData {
-    #[rename(name = "person")]
-    pub person: ::unity2::Il2CppString,
-    #[rename(name = "job")]
-    pub job: ::unity2::Il2CppString,
-    #[rename(name = "weapon")]
-    pub weapon: ::unity2::Il2CppString,
-    #[rename(name = "force")]
-    pub force: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-#[::unity2::methods]
-impl UnitInfoViewerSetting_UnitData {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-unitinfoviewersetting")]
-impl UnitInfoViewerSetting_UnitData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitInfoViewerSetting_UnitData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitInfoViewerSetting_UnitDataMethods>::ctor(this);
-        this
     }
 }
 

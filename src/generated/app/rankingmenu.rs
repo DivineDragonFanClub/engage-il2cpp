@@ -10,65 +10,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingmenu/RankingMenu.md"))]
-#[::unity2::class(namespace = "App", name = "RankingMenu")]
-#[parent(crate::app::basicmenu::BasicMenu)]
-pub struct RankingMenu {
-    #[static_field]
-    #[rename(name = "MaxRankingCount")]
-    pub max_ranking_count: i32,
-}
-
-#[cfg(feature = "app-rankingmenu")]
-#[::unity2::methods]
-impl RankingMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::chapterdata::ChapterData)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        chapter: crate::app::chapterdata::ChapterData,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::rankingmenucontent::RankingMenuContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::rankingmenucontent::RankingMenuContent,
-    ) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-rankingmenu")]
-impl RankingMenu {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::rankingmenucontent::RankingMenuContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::rankingmenucontent::RankingMenuContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RankingMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRankingMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingmenu/RankingMenu_RankingMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "RankingMenu.RankingMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -134,6 +75,65 @@ impl RankingMenu_RankingMenuItem {
             )
         });
         <Self as IRankingMenu_RankingMenuItemMethods>::ctor_2(this, index, data);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rankingmenu/RankingMenu.md"))]
+#[::unity2::class(namespace = "App", name = "RankingMenu")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct RankingMenu {
+    #[static_field]
+    #[rename(name = "MaxRankingCount")]
+    pub max_ranking_count: i32,
+}
+
+#[cfg(feature = "app-rankingmenu")]
+#[::unity2::methods]
+impl RankingMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::chapterdata::ChapterData)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        chapter: crate::app::chapterdata::ChapterData,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::rankingmenucontent::RankingMenuContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::rankingmenucontent::RankingMenuContent,
+    ) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-rankingmenu")]
+impl RankingMenu {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::rankingmenucontent::RankingMenuContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::rankingmenucontent::RankingMenuContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RankingMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRankingMenuMethods>::ctor(this, menu_item_list, menu_content);
         this
     }
 }

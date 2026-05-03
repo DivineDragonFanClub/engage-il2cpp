@@ -16,107 +16,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_ForceCursor.md"))]
-#[::unity2::class(namespace = "App", name = "MapSituation.ForceCursor")]
-#[parent(crate::system::object::Object)]
-pub struct MapSituation_ForceCursor {}
-
-#[cfg(feature = "app-mapsituation")]
-#[::unity2::methods]
-impl MapSituation_ForceCursor {
-    #[doc = "`Set(i32, i32)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, x: i32, z: i32) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`get_X()` overload"]
-    #[method(name = "get_X", args = 0)]
-    pub fn get_x(self) -> i32;
-
-    #[doc = "`set_X(i32)` overload"]
-    #[method(name = "set_X", args = 1)]
-    pub fn set_x(self, value: i32) -> ();
-
-    #[doc = "`get_Z()` overload"]
-    #[method(name = "get_Z", args = 0)]
-    pub fn get_z(self) -> i32;
-
-    #[doc = "`set_Z(i32)` overload"]
-    #[method(name = "set_Z", args = 1)]
-    pub fn set_z(self, value: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapsituation")]
-impl MapSituation_ForceCursor {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSituation_ForceCursor),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSituation_ForceCursorMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_SubPhases.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapSituation_SubPhases {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSituation_SubPhases {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSituation.SubPhases";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSituation_SubPhases {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapSituation_SubPhases {
-    pub fn normal() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn charm_confusion() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 2 }
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_Player.md"))]
 #[repr(C)]
 #[derive(
@@ -174,6 +73,39 @@ impl MapSituation_Player {
 
     pub fn num() -> Self {
         Self { value: 5 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_StatusField.md"))]
+#[::unity2::class(namespace = "App", name = "MapSituation.StatusField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsituation :: MapSituation_Status >)]
+pub struct MapSituation_StatusField {}
+
+#[cfg(feature = "app-mapsituation")]
+#[::unity2::methods]
+impl MapSituation_StatusField {
+    #[doc = "`ToInt(crate::app::mapsituation::MapSituation_Status)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::mapsituation::MapSituation_Status) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsituation")]
+impl MapSituation_StatusField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSituation_StatusField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSituation_StatusFieldMethods>::ctor(this);
+        this
     }
 }
 
@@ -585,6 +517,59 @@ impl MapSituation {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_ForceCursor.md"))]
+#[::unity2::class(namespace = "App", name = "MapSituation.ForceCursor")]
+#[parent(crate::system::object::Object)]
+pub struct MapSituation_ForceCursor {}
+
+#[cfg(feature = "app-mapsituation")]
+#[::unity2::methods]
+impl MapSituation_ForceCursor {
+    #[doc = "`Set(i32, i32)` overload"]
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, x: i32, z: i32) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`get_X()` overload"]
+    #[method(name = "get_X", args = 0)]
+    pub fn get_x(self) -> i32;
+
+    #[doc = "`set_X(i32)` overload"]
+    #[method(name = "set_X", args = 1)]
+    pub fn set_x(self, value: i32) -> ();
+
+    #[doc = "`get_Z()` overload"]
+    #[method(name = "get_Z", args = 0)]
+    pub fn get_z(self) -> i32;
+
+    #[doc = "`set_Z(i32)` overload"]
+    #[method(name = "set_Z", args = 1)]
+    pub fn set_z(self, value: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapsituation")]
+impl MapSituation_ForceCursor {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSituation_ForceCursor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSituation_ForceCursorMethods>::ctor(this);
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_Status.md"))]
 #[repr(C)]
 #[derive(
@@ -653,35 +638,50 @@ impl MapSituation_Status {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsituation/MapSituation_StatusField.md"))]
-#[::unity2::class(namespace = "App", name = "MapSituation.StatusField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapsituation :: MapSituation_Status >)]
-pub struct MapSituation_StatusField {}
-
-#[cfg(feature = "app-mapsituation")]
-#[::unity2::methods]
-impl MapSituation_StatusField {
-    #[doc = "`ToInt(crate::app::mapsituation::MapSituation_Status)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::mapsituation::MapSituation_Status) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsituation/MapSituation_SubPhases.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSituation_SubPhases {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-mapsituation")]
-impl MapSituation_StatusField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSituation_StatusField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSituation_StatusFieldMethods>::ctor(this);
-        this
+impl ::unity2::ClassIdentity for MapSituation_SubPhases {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSituation.SubPhases";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSituation_SubPhases {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSituation_SubPhases {
+    pub fn normal() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn charm_confusion() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 2 }
     }
 }

@@ -20,56 +20,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaystampdata/RelayStampData_FlagField.md"))]
-#[::unity2::class(namespace = "App", name = "RelayStampData.FlagField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relaystampdata :: RelayStampData_Flags >)]
-pub struct RelayStampData_FlagField {}
-
-#[cfg(feature = "app-relaystampdata")]
-#[::unity2::methods]
-impl RelayStampData_FlagField {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, f: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::relaystampdata::RelayStampData_Flags)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, f: crate::app::relaystampdata::RelayStampData_Flags) -> ();
-
-    #[doc = "`ToInt(crate::app::relaystampdata::RelayStampData_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::relaystampdata::RelayStampData_Flags) -> i32;
-}
-
-#[cfg(feature = "app-relaystampdata")]
-impl RelayStampData_FlagField {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayStampData_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayStampData_FlagFieldMethods>::ctor(this, f);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::relaystampdata::RelayStampData_Flags)` — overload selector"]
-    pub fn new_2(f: crate::app::relaystampdata::RelayStampData_Flags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayStampData_FlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IRelayStampData_FlagFieldMethods>::ctor_2(this, f);
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relaystampdata/RelayStampData_Flags.md"))]
 #[repr(C)]
 #[derive(
@@ -288,5 +238,55 @@ impl RelayStampData_Kinds {
 
     pub fn country_count() -> Self {
         Self { value: 6 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaystampdata/RelayStampData_FlagField.md"))]
+#[::unity2::class(namespace = "App", name = "RelayStampData.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: relaystampdata :: RelayStampData_Flags >)]
+pub struct RelayStampData_FlagField {}
+
+#[cfg(feature = "app-relaystampdata")]
+#[::unity2::methods]
+impl RelayStampData_FlagField {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, f: i32) -> ();
+
+    #[doc = "`.ctor(crate::app::relaystampdata::RelayStampData_Flags)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: crate::app::relaystampdata::RelayStampData_Flags) -> ();
+
+    #[doc = "`ToInt(crate::app::relaystampdata::RelayStampData_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::relaystampdata::RelayStampData_Flags) -> i32;
+}
+
+#[cfg(feature = "app-relaystampdata")]
+impl RelayStampData_FlagField {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayStampData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayStampData_FlagFieldMethods>::ctor(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::relaystampdata::RelayStampData_Flags)` — overload selector"]
+    pub fn new_2(f: crate::app::relaystampdata::RelayStampData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayStampData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IRelayStampData_FlagFieldMethods>::ctor_2(this, f);
+        this
     }
 }

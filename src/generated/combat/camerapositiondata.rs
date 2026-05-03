@@ -72,46 +72,6 @@ impl CameraPositionData_TargetJoint {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData_CameraShakeSettings.md"))]
-#[::unity2::class(namespace = "Combat", name = "CameraPositionData.CameraShakeSettings")]
-#[parent(crate::system::object::Object)]
-pub struct CameraPositionData_CameraShakeSettings {
-    #[rename(name = "ShakeDuration")]
-    pub shake_duration: i32,
-    #[rename(name = "ShakeRadius")]
-    pub shake_radius: f32,
-    #[rename(name = "ArmorStepDuraton")]
-    pub armor_step_duraton: i32,
-    #[rename(name = "ArmorStepMagnitude")]
-    pub armor_step_magnitude: f32,
-    #[rename(name = "ScaleCurveDistance")]
-    pub scale_curve_distance: crate::unity_engine::animationcurve::AnimationCurve,
-}
-
-#[cfg(feature = "combat-camerapositiondata")]
-#[::unity2::methods]
-impl CameraPositionData_CameraShakeSettings {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "combat-camerapositiondata")]
-impl CameraPositionData_CameraShakeSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CameraPositionData_CameraShakeSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICameraPositionData_CameraShakeSettingsMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData.md"))]
 #[::unity2::class(namespace = "Combat", name = "CameraPositionData")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -320,6 +280,46 @@ impl CameraPositionData {
             )
         });
         <Self as ICameraPositionDataMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerapositiondata/CameraPositionData_CameraShakeSettings.md"))]
+#[::unity2::class(namespace = "Combat", name = "CameraPositionData.CameraShakeSettings")]
+#[parent(crate::system::object::Object)]
+pub struct CameraPositionData_CameraShakeSettings {
+    #[rename(name = "ShakeDuration")]
+    pub shake_duration: i32,
+    #[rename(name = "ShakeRadius")]
+    pub shake_radius: f32,
+    #[rename(name = "ArmorStepDuraton")]
+    pub armor_step_duraton: i32,
+    #[rename(name = "ArmorStepMagnitude")]
+    pub armor_step_magnitude: f32,
+    #[rename(name = "ScaleCurveDistance")]
+    pub scale_curve_distance: crate::unity_engine::animationcurve::AnimationCurve,
+}
+
+#[cfg(feature = "combat-camerapositiondata")]
+#[::unity2::methods]
+impl CameraPositionData_CameraShakeSettings {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-camerapositiondata")]
+impl CameraPositionData_CameraShakeSettings {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CameraPositionData_CameraShakeSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICameraPositionData_CameraShakeSettingsMethods>::ctor(this);
         this
     }
 }

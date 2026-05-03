@@ -8,6 +8,62 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gyromnager/GyroMnager_DeviceType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GyroMnager_DeviceType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GyroMnager_DeviceType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GyroMnager.DeviceType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GyroMnager_DeviceType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GyroMnager_DeviceType {
+    pub fn joy_left() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn joy_right() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn handheld() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn full_key() -> Self {
+        Self { value: 0 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gyromnager/GyroMnager.md"))]
 #[::unity2::class(namespace = "App", name = "GyroMnager")]
 #[parent(crate::system::object::Object)]
@@ -78,61 +134,5 @@ impl GyroMnager {
         });
         <Self as IGyroMnagerMethods>::ctor(this);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gyromnager/GyroMnager_DeviceType.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct GyroMnager_DeviceType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for GyroMnager_DeviceType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GyroMnager.DeviceType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for GyroMnager_DeviceType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl GyroMnager_DeviceType {
-    pub fn joy_left() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn joy_right() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn max() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn handheld() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn full_key() -> Self {
-        Self { value: 0 }
     }
 }

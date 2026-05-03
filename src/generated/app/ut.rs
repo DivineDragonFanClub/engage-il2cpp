@@ -10,72 +10,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ut/Ut_EnumList.md"))]
-#[::unity2::class(namespace = "App", name = "Ut.EnumList")]
-# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: system :: object :: Object >)]
-pub struct Ut_EnumList {}
-
-#[cfg(feature = "app-ut")]
-#[::unity2::methods]
-impl Ut_EnumList {
-    #[doc = "`.ctor(::unity2::SystemType)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, r#type: ::unity2::SystemType) -> ();
-
-    #[doc = "`GetIndex(crate::system::object::Object)` overload"]
-    #[method(name = "GetIndex", args = 1)]
-    pub fn get_index(self, value: crate::system::object::Object) -> i32;
-}
-
-#[cfg(feature = "app-ut")]
-impl Ut_EnumList {
-    #[doc = "`.ctor(::unity2::SystemType)` — overload selector"]
-    pub fn new(r#type: ::unity2::SystemType) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Ut_EnumList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUt_EnumListMethods>::ctor(this, r#type);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ut/Ut_GameObjectFunction.md"))]
-#[::unity2::class(namespace = "App", name = "Ut.GameObjectFunction")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct Ut_GameObjectFunction {}
-
-#[cfg(feature = "app-ut")]
-#[::unity2::methods]
-impl Ut_GameObjectFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, go: crate::unity_engine::gameobject::GameObject) -> ();
-}
-
-#[cfg(feature = "app-ut")]
-impl Ut_GameObjectFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Ut_GameObjectFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUt_GameObjectFunctionMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ut/Ut.md"))]
 #[::unity2::class(namespace = "App", name = "Ut")]
 #[parent(crate::system::object::Object)]
@@ -541,6 +475,72 @@ impl Ut {
             )
         });
         <Self as IUtMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ut/Ut_EnumList.md"))]
+#[::unity2::class(namespace = "App", name = "Ut.EnumList")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: system :: object :: Object >)]
+pub struct Ut_EnumList {}
+
+#[cfg(feature = "app-ut")]
+#[::unity2::methods]
+impl Ut_EnumList {
+    #[doc = "`.ctor(::unity2::SystemType)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, r#type: ::unity2::SystemType) -> ();
+
+    #[doc = "`GetIndex(crate::system::object::Object)` overload"]
+    #[method(name = "GetIndex", args = 1)]
+    pub fn get_index(self, value: crate::system::object::Object) -> i32;
+}
+
+#[cfg(feature = "app-ut")]
+impl Ut_EnumList {
+    #[doc = "`.ctor(::unity2::SystemType)` — overload selector"]
+    pub fn new(r#type: ::unity2::SystemType) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Ut_EnumList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUt_EnumListMethods>::ctor(this, r#type);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ut/Ut_GameObjectFunction.md"))]
+#[::unity2::class(namespace = "App", name = "Ut.GameObjectFunction")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct Ut_GameObjectFunction {}
+
+#[cfg(feature = "app-ut")]
+#[::unity2::methods]
+impl Ut_GameObjectFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, go: crate::unity_engine::gameobject::GameObject) -> ();
+}
+
+#[cfg(feature = "app-ut")]
+impl Ut_GameObjectFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Ut_GameObjectFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUt_GameObjectFunctionMethods>::ctor(this, object, method);
         this
     }
 }

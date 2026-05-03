@@ -14,6 +14,62 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningvoicedata/RingCleaningVoiceData_Situation.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingCleaningVoiceData_Situation {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingCleaningVoiceData_Situation {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingCleaningVoiceData.Situation";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingCleaningVoiceData_Situation {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingCleaningVoiceData_Situation {
+    pub fn start() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn clean_strongly_not_dirty() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn clean_dirty() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn clean_strongly_diry() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn finish() -> Self {
+        Self { value: 4 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningvoicedata/RingCleaningVoiceData.md"))]
 #[::unity2::class(namespace = "App", name = "RingCleaningVoiceData")]
 # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: ringcleaningvoicedata :: RingCleaningVoiceData >)]
@@ -216,61 +272,5 @@ impl RingCleaningVoiceData_VoiceLabel {
 
     pub fn thank03() -> Self {
         Self { value: 15 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringcleaningvoicedata/RingCleaningVoiceData_Situation.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RingCleaningVoiceData_Situation {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RingCleaningVoiceData_Situation {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingCleaningVoiceData.Situation";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RingCleaningVoiceData_Situation {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RingCleaningVoiceData_Situation {
-    pub fn start() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn clean_strongly_not_dirty() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn clean_dirty() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn clean_strongly_diry() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn finish() -> Self {
-        Self { value: 4 }
     }
 }

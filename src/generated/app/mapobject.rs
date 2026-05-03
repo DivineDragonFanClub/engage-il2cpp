@@ -18,6 +18,84 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_Lods.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapObject_Lods {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapObject_Lods {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapObject.Lods";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapObject_Lods {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapObject_Lods {
+    pub fn _unnamed() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ____cull() -> Self {
+        Self { value: 3 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_Pair.md"))]
+#[::unity2::class(namespace = "App", name = "MapObject.Pair")]
+#[parent(crate::system::object::Object)]
+pub struct MapObject_Pair {
+    #[rename(name = "src")]
+    pub src: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "dst")]
+    pub dst: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-mapobject")]
+#[::unity2::methods]
+impl MapObject_Pair {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapobject")]
+impl MapObject_Pair {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapObject_Pair),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapObject_PairMethods>::ctor(this);
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_LightmapScales.md"))]
 #[repr(C)]
 #[derive(
@@ -74,91 +152,6 @@ impl MapObject_LightmapScales {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_RigidInfo.md"))]
-#[::unity2::class(namespace = "App", name = "MapObject.RigidInfo")]
-#[parent(crate::system::object::Object)]
-pub struct MapObject_RigidInfo {
-    #[rename(name = "transform")]
-    pub transform: crate::unity_engine::transform::Transform,
-    #[rename(name = "position")]
-    pub position: crate::unity_engine::vector3::Vector3,
-    #[rename(name = "scale")]
-    pub scale: crate::unity_engine::vector3::Vector3,
-    #[rename(name = "rotation")]
-    pub rotation: crate::unity_engine::quaternion::Quaternion,
-    #[rename(name = "rigidbody")]
-    pub rigidbody: crate::unity_engine::rigidbody::Rigidbody,
-}
-
-#[cfg(feature = "app-mapobject")]
-#[::unity2::methods]
-impl MapObject_RigidInfo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapobject")]
-impl MapObject_RigidInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject_RigidInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapObject_RigidInfoMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_RigidList.md"))]
-#[::unity2::class(namespace = "App", name = "MapObject.RigidList")]
-# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapobject :: MapObject_RigidInfo >)]
-pub struct MapObject_RigidList {}
-
-#[cfg(feature = "app-mapobject")]
-#[::unity2::methods]
-impl MapObject_RigidList {
-    #[doc = "`Add(::unity2::Array<crate::unity_engine::gameobject::GameObject>)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>) -> ();
-
-    #[doc = "`Add(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add_2(self, go: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`SetBreak(bool)` overload"]
-    #[method(name = "SetBreak", args = 1)]
-    pub fn set_break(self, enabled: bool) -> ();
-
-    #[doc = "`Explosion(crate::unity_engine::vector3::Vector3, f32)` overload"]
-    #[method(name = "Explosion", args = 2)]
-    pub fn explosion(self, hit: crate::unity_engine::vector3::Vector3, pow: f32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapobject")]
-impl MapObject_RigidList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject_RigidList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapObject_RigidListMethods>::ctor(this);
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_Kinds.md"))]
 #[repr(C)]
 #[derive(
@@ -199,7 +192,7 @@ impl MapObject_Kinds {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_BakeTypes.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_Actions.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -208,14 +201,14 @@ impl MapObject_Kinds {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapObject_BakeTypes {
+pub struct MapObject_Actions {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapObject_BakeTypes {
+impl ::unity2::ClassIdentity for MapObject_Actions {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapObject.BakeTypes";
+    const NAME: &'static str = "MapObject.Actions";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -224,7 +217,7 @@ impl ::unity2::ClassIdentity for MapObject_BakeTypes {
     }
 }
 
-impl ::unity2::IlType for MapObject_BakeTypes {
+impl ::unity2::IlType for MapObject_Actions {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -233,9 +226,90 @@ impl ::unity2::IlType for MapObject_BakeTypes {
     }
 }
 
-impl MapObject_BakeTypes {
-    pub fn _unnamed() -> Self {
+impl MapObject_Actions {
+    pub fn none() -> Self {
         Self { value: 0 }
+    }
+
+    pub fn idle() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn done() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_DitherManager.md"))]
+#[::unity2::class(namespace = "App", name = "MapObject.DitherManager")]
+#[parent(crate::system::object::Object)]
+pub struct MapObject_DitherManager {
+    #[rename(name = "m_Pairs")]
+    pub m_pairs: crate::system::collections::generic::list_1::List_1<
+        crate::app::mapobject::MapObject_DitherPair,
+    >,
+    #[rename(name = "m_Renderers")]
+    pub m_renderers: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        crate::unity_engine::renderer::Renderer,
+        crate::app::mapobject::MapObject_DitherPair,
+    >,
+    #[rename(name = "m_Alpha")]
+    pub m_alpha: f32,
+}
+
+#[cfg(feature = "app-mapobject")]
+#[::unity2::methods]
+impl MapObject_DitherManager {
+    #[doc = "`Setup(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "Setup", args = 1)]
+    pub fn setup(self, root: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`CommitAlpha()` overload"]
+    #[method(name = "CommitAlpha", args = 0)]
+    pub fn commit_alpha(self) -> ();
+
+    #[doc = "`SetAlpha(f32)` overload"]
+    #[method(name = "SetAlpha", args = 1)]
+    pub fn set_alpha(self, alpha: f32) -> ();
+
+    #[doc = "`GetAlpha()` overload"]
+    #[method(name = "GetAlpha", args = 0)]
+    pub fn get_alpha(self) -> f32;
+
+    #[doc = "`SetRenderAlpha(crate::unity_engine::renderer::Renderer, f32)` overload"]
+    #[method(name = "SetRenderAlpha", args = 2)]
+    pub fn set_render_alpha(
+        self,
+        render: crate::unity_engine::renderer::Renderer,
+        alpha: f32,
+    ) -> ();
+
+    #[doc = "`SetRendersAlpha(::unity2::Array<crate::unity_engine::renderer::Renderer>, f32)` overload"]
+    #[method(name = "SetRendersAlpha", args = 2)]
+    pub fn set_renders_alpha(
+        self,
+        renders: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
+        alpha: f32,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapobject")]
+impl MapObject_DitherManager {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapObject_DitherManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapObject_DitherManagerMethods>::ctor(this);
+        this
     }
 }
 
@@ -670,57 +744,29 @@ impl MapObject {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_DitherManager.md"))]
-#[::unity2::class(namespace = "App", name = "MapObject.DitherManager")]
-#[parent(crate::system::object::Object)]
-pub struct MapObject_DitherManager {
-    #[rename(name = "m_Pairs")]
-    pub m_pairs: crate::system::collections::generic::list_1::List_1<
-        crate::app::mapobject::MapObject_DitherPair,
-    >,
-    #[rename(name = "m_Renderers")]
-    pub m_renderers: crate::system::collections::generic::dictionary_2::Dictionary_2<
-        crate::unity_engine::renderer::Renderer,
-        crate::app::mapobject::MapObject_DitherPair,
-    >,
-    #[rename(name = "m_Alpha")]
-    pub m_alpha: f32,
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_RigidList.md"))]
+#[::unity2::class(namespace = "App", name = "MapObject.RigidList")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapobject :: MapObject_RigidInfo >)]
+pub struct MapObject_RigidList {}
 
 #[cfg(feature = "app-mapobject")]
 #[::unity2::methods]
-impl MapObject_DitherManager {
-    #[doc = "`Setup(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "Setup", args = 1)]
-    pub fn setup(self, root: crate::unity_engine::gameobject::GameObject) -> ();
+impl MapObject_RigidList {
+    #[doc = "`Add(::unity2::Array<crate::unity_engine::gameobject::GameObject>)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, objects: ::unity2::Array<crate::unity_engine::gameobject::GameObject>) -> ();
 
-    #[doc = "`CommitAlpha()` overload"]
-    #[method(name = "CommitAlpha", args = 0)]
-    pub fn commit_alpha(self) -> ();
+    #[doc = "`Add(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add_2(self, go: crate::unity_engine::gameobject::GameObject) -> ();
 
-    #[doc = "`SetAlpha(f32)` overload"]
-    #[method(name = "SetAlpha", args = 1)]
-    pub fn set_alpha(self, alpha: f32) -> ();
+    #[doc = "`SetBreak(bool)` overload"]
+    #[method(name = "SetBreak", args = 1)]
+    pub fn set_break(self, enabled: bool) -> ();
 
-    #[doc = "`GetAlpha()` overload"]
-    #[method(name = "GetAlpha", args = 0)]
-    pub fn get_alpha(self) -> f32;
-
-    #[doc = "`SetRenderAlpha(crate::unity_engine::renderer::Renderer, f32)` overload"]
-    #[method(name = "SetRenderAlpha", args = 2)]
-    pub fn set_render_alpha(
-        self,
-        render: crate::unity_engine::renderer::Renderer,
-        alpha: f32,
-    ) -> ();
-
-    #[doc = "`SetRendersAlpha(::unity2::Array<crate::unity_engine::renderer::Renderer>, f32)` overload"]
-    #[method(name = "SetRendersAlpha", args = 2)]
-    pub fn set_renders_alpha(
-        self,
-        renders: ::unity2::Array<crate::unity_engine::renderer::Renderer>,
-        alpha: f32,
-    ) -> ();
+    #[doc = "`Explosion(crate::unity_engine::vector3::Vector3, f32)` overload"]
+    #[method(name = "Explosion", args = 2)]
+    pub fn explosion(self, hit: crate::unity_engine::vector3::Vector3, pow: f32) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -728,99 +774,53 @@ impl MapObject_DitherManager {
 }
 
 #[cfg(feature = "app-mapobject")]
-impl MapObject_DitherManager {
+impl MapObject_RigidList {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject_DitherManager),
+                ::core::stringify!(MapObject_RigidList),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapObject_DitherManagerMethods>::ctor(this);
+        <Self as IMapObject_RigidListMethods>::ctor(this);
         this
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_Actions.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapObject_Actions {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapObject_Actions {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapObject.Actions";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapObject_Actions {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapObject_Actions {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn idle() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn done() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_Pair.md"))]
-#[::unity2::class(namespace = "App", name = "MapObject.Pair")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_State.md"))]
+#[::unity2::class(namespace = "App", name = "MapObject.State")]
 #[parent(crate::system::object::Object)]
-pub struct MapObject_Pair {
-    #[rename(name = "src")]
-    pub src: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "dst")]
-    pub dst: crate::unity_engine::gameobject::GameObject,
+pub struct MapObject_State {
+    #[rename(name = "対象オブジェクト")]
+    pub _unnamed: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
 }
 
 #[cfg(feature = "app-mapobject")]
 #[::unity2::methods]
-impl MapObject_Pair {
+impl MapObject_State {
+    #[doc = "`SetActive(bool)` overload"]
+    #[method(name = "SetActive", args = 1)]
+    pub fn set_active(self, enable: bool) -> ();
+
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-mapobject")]
-impl MapObject_Pair {
+impl MapObject_State {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject_Pair),
+                ::core::stringify!(MapObject_State),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapObject_PairMethods>::ctor(this);
+        <Self as IMapObject_StateMethods>::ctor(this);
         this
     }
 }
@@ -884,43 +884,47 @@ impl MapObject_DitherPair {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_State.md"))]
-#[::unity2::class(namespace = "App", name = "MapObject.State")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapobject/MapObject_RigidInfo.md"))]
+#[::unity2::class(namespace = "App", name = "MapObject.RigidInfo")]
 #[parent(crate::system::object::Object)]
-pub struct MapObject_State {
-    #[rename(name = "対象オブジェクト")]
-    pub _unnamed: ::unity2::Array<crate::unity_engine::gameobject::GameObject>,
+pub struct MapObject_RigidInfo {
+    #[rename(name = "transform")]
+    pub transform: crate::unity_engine::transform::Transform,
+    #[rename(name = "position")]
+    pub position: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "scale")]
+    pub scale: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "rotation")]
+    pub rotation: crate::unity_engine::quaternion::Quaternion,
+    #[rename(name = "rigidbody")]
+    pub rigidbody: crate::unity_engine::rigidbody::Rigidbody,
 }
 
 #[cfg(feature = "app-mapobject")]
 #[::unity2::methods]
-impl MapObject_State {
-    #[doc = "`SetActive(bool)` overload"]
-    #[method(name = "SetActive", args = 1)]
-    pub fn set_active(self, enable: bool) -> ();
-
+impl MapObject_RigidInfo {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-mapobject")]
-impl MapObject_State {
+impl MapObject_RigidInfo {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(MapObject_State),
+                ::core::stringify!(MapObject_RigidInfo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMapObject_StateMethods>::ctor(this);
+        <Self as IMapObject_RigidInfoMethods>::ctor(this);
         this
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_Lods.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapobject/MapObject_BakeTypes.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -929,14 +933,14 @@ impl MapObject_State {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapObject_Lods {
+pub struct MapObject_BakeTypes {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapObject_Lods {
+impl ::unity2::ClassIdentity for MapObject_BakeTypes {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapObject.Lods";
+    const NAME: &'static str = "MapObject.BakeTypes";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -945,7 +949,7 @@ impl ::unity2::ClassIdentity for MapObject_Lods {
     }
 }
 
-impl ::unity2::IlType for MapObject_Lods {
+impl ::unity2::IlType for MapObject_BakeTypes {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -954,12 +958,8 @@ impl ::unity2::IlType for MapObject_Lods {
     }
 }
 
-impl MapObject_Lods {
+impl MapObject_BakeTypes {
     pub fn _unnamed() -> Self {
         Self { value: 0 }
-    }
-
-    pub fn ____cull() -> Self {
-        Self { value: 3 }
     }
 }

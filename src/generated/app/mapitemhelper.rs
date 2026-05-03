@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemhelper/MapItemHelper_BlessFlags.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemhelper/MapItemHelper_Flag.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -17,14 +17,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapItemHelper_BlessFlags {
+pub struct MapItemHelper_Flag {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapItemHelper_BlessFlags {
+impl ::unity2::ClassIdentity for MapItemHelper_Flag {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapItemHelper.BlessFlags";
+    const NAME: &'static str = "MapItemHelper.Flag";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -33,7 +33,7 @@ impl ::unity2::ClassIdentity for MapItemHelper_BlessFlags {
     }
 }
 
-impl ::unity2::IlType for MapItemHelper_BlessFlags {
+impl ::unity2::IlType for MapItemHelper_Flag {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -42,29 +42,25 @@ impl ::unity2::IlType for MapItemHelper_BlessFlags {
     }
 }
 
-impl MapItemHelper_BlessFlags {
-    pub fn heal() -> Self {
+impl MapItemHelper_Flag {
+    pub fn attack() -> Self {
         Self { value: 1 }
     }
 
-    pub fn stock() -> Self {
+    pub fn rod() -> Self {
         Self { value: 2 }
     }
 
-    pub fn disorder() -> Self {
+    pub fn destroy() -> Self {
         Self { value: 4 }
     }
 
-    pub fn engage_turn() -> Self {
+    pub fn offense() -> Self {
         Self { value: 8 }
     }
 
-    pub fn engage_count() -> Self {
+    pub fn direct_rod() -> Self {
         Self { value: 16 }
-    }
-
-    pub fn max_heal() -> Self {
-        Self { value: 32 }
     }
 }
 
@@ -289,7 +285,7 @@ impl MapItemHelper {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemhelper/MapItemHelper_Flag.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapitemhelper/MapItemHelper_BlessFlags.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -298,14 +294,14 @@ impl MapItemHelper {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapItemHelper_Flag {
+pub struct MapItemHelper_BlessFlags {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapItemHelper_Flag {
+impl ::unity2::ClassIdentity for MapItemHelper_BlessFlags {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapItemHelper.Flag";
+    const NAME: &'static str = "MapItemHelper.BlessFlags";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -314,7 +310,7 @@ impl ::unity2::ClassIdentity for MapItemHelper_Flag {
     }
 }
 
-impl ::unity2::IlType for MapItemHelper_Flag {
+impl ::unity2::IlType for MapItemHelper_BlessFlags {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -323,24 +319,28 @@ impl ::unity2::IlType for MapItemHelper_Flag {
     }
 }
 
-impl MapItemHelper_Flag {
-    pub fn attack() -> Self {
+impl MapItemHelper_BlessFlags {
+    pub fn heal() -> Self {
         Self { value: 1 }
     }
 
-    pub fn rod() -> Self {
+    pub fn stock() -> Self {
         Self { value: 2 }
     }
 
-    pub fn destroy() -> Self {
+    pub fn disorder() -> Self {
         Self { value: 4 }
     }
 
-    pub fn offense() -> Self {
+    pub fn engage_turn() -> Self {
         Self { value: 8 }
     }
 
-    pub fn direct_rod() -> Self {
+    pub fn engage_count() -> Self {
         Self { value: 16 }
+    }
+
+    pub fn max_heal() -> Self {
+        Self { value: 32 }
     }
 }

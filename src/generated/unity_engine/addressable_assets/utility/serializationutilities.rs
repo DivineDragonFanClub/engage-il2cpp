@@ -8,6 +8,40 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.AddressableAssets.Utility",
+    name = "SerializationUtilities"
+)]
+#[parent(crate::system::object::Object)]
+pub struct SerializationUtilities {}
+
+#[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities")]
+#[::unity2::methods]
+impl SerializationUtilities {
+    #[doc = "`ReadInt32FromByteArray(::unity2::Array<u8>, i32)` overload"]
+    #[method(name = "ReadInt32FromByteArray", args = 2)]
+    pub fn read_int32_from_byte_array(data: ::unity2::Array<u8>, offset: i32) -> i32;
+
+    #[doc = "`WriteInt32ToByteArray(::unity2::Array<u8>, i32, i32)` overload"]
+    #[method(name = "WriteInt32ToByteArray", args = 3)]
+    pub fn write_int32_to_byte_array(data: ::unity2::Array<u8>, val: i32, offset: i32) -> i32;
+
+    #[doc = "`ReadObjectFromByteArray(::unity2::Array<u8>, i32)` overload"]
+    #[method(name = "ReadObjectFromByteArray", args = 2)]
+    pub fn read_object_from_byte_array(
+        key_data: ::unity2::Array<u8>,
+        data_index: i32,
+    ) -> crate::system::object::Object;
+
+    #[doc = "`WriteObjectToByteList(crate::system::object::Object, crate::system::collections::generic::list_1::List_1<u8>)` overload"]
+    #[method(name = "WriteObjectToByteList", args = 2)]
+    pub fn write_object_to_byte_list(
+        obj: crate::system::object::Object,
+        buffer: crate::system::collections::generic::list_1::List_1<u8>,
+    ) -> i32;
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities_ObjectType.md"))]
 #[repr(C)]
 #[derive(
@@ -74,38 +108,4 @@ impl SerializationUtilities_ObjectType {
     pub fn json_object() -> Self {
         Self { value: 7 }
     }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/addressable_assets/utility/serializationutilities/SerializationUtilities.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.AddressableAssets.Utility",
-    name = "SerializationUtilities"
-)]
-#[parent(crate::system::object::Object)]
-pub struct SerializationUtilities {}
-
-#[cfg(feature = "unity_engine-addressable_assets-utility-serializationutilities")]
-#[::unity2::methods]
-impl SerializationUtilities {
-    #[doc = "`ReadInt32FromByteArray(::unity2::Array<u8>, i32)` overload"]
-    #[method(name = "ReadInt32FromByteArray", args = 2)]
-    pub fn read_int32_from_byte_array(data: ::unity2::Array<u8>, offset: i32) -> i32;
-
-    #[doc = "`WriteInt32ToByteArray(::unity2::Array<u8>, i32, i32)` overload"]
-    #[method(name = "WriteInt32ToByteArray", args = 3)]
-    pub fn write_int32_to_byte_array(data: ::unity2::Array<u8>, val: i32, offset: i32) -> i32;
-
-    #[doc = "`ReadObjectFromByteArray(::unity2::Array<u8>, i32)` overload"]
-    #[method(name = "ReadObjectFromByteArray", args = 2)]
-    pub fn read_object_from_byte_array(
-        key_data: ::unity2::Array<u8>,
-        data_index: i32,
-    ) -> crate::system::object::Object;
-
-    #[doc = "`WriteObjectToByteList(crate::system::object::Object, crate::system::collections::generic::list_1::List_1<u8>)` overload"]
-    #[method(name = "WriteObjectToByteList", args = 2)]
-    pub fn write_object_to_byte_list(
-        obj: crate::system::object::Object,
-        buffer: crate::system::collections::generic::list_1::List_1<u8>,
-    ) -> i32;
 }

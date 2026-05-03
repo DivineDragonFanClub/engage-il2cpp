@@ -8,21 +8,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_compatibility/TMP_Compatibility.md"))]
-#[::unity2::class(namespace = "TMPro", name = "TMP_Compatibility")]
-#[parent(crate::system::object::Object)]
-pub struct TMP_Compatibility {}
-
-#[cfg(feature = "tm_pro-tmp_compatibility")]
-#[::unity2::methods]
-impl TMP_Compatibility {
-    #[doc = "`ConvertTextAlignmentEnumValues(crate::tm_pro::textalignmentoptions::TextAlignmentOptions)` overload"]
-    #[method(name = "ConvertTextAlignmentEnumValues", args = 1)]
-    pub fn convert_text_alignment_enum_values(
-        old_value: crate::tm_pro::textalignmentoptions::TextAlignmentOptions,
-    ) -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions;
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/tm_pro/tmp_compatibility/TMP_Compatibility_AnchorPositions.md"))]
 #[repr(C)]
 #[derive(
@@ -101,4 +86,19 @@ impl TMP_Compatibility_AnchorPositions {
     pub fn none() -> Self {
         Self { value: 10 }
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/tm_pro/tmp_compatibility/TMP_Compatibility.md"))]
+#[::unity2::class(namespace = "TMPro", name = "TMP_Compatibility")]
+#[parent(crate::system::object::Object)]
+pub struct TMP_Compatibility {}
+
+#[cfg(feature = "tm_pro-tmp_compatibility")]
+#[::unity2::methods]
+impl TMP_Compatibility {
+    #[doc = "`ConvertTextAlignmentEnumValues(crate::tm_pro::textalignmentoptions::TextAlignmentOptions)` overload"]
+    #[method(name = "ConvertTextAlignmentEnumValues", args = 1)]
+    pub fn convert_text_alignment_enum_values(
+        old_value: crate::tm_pro::textalignmentoptions::TextAlignmentOptions,
+    ) -> crate::tm_pro::textalignmentoptions::TextAlignmentOptions;
 }

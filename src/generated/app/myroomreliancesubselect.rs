@@ -16,220 +16,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_AmiiboBenefitSequence.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "MyRoomRelianceSubSelect.AmiiboBenefitSequence"
-)]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct MyRoomRelianceSubSelect_AmiiboBenefitSequence {
-    #[rename(name = "m_GodUnit")]
-    pub m_god_unit: crate::app::godunit::GodUnit,
-    #[rename(name = "m_PieceCount")]
-    pub m_piece_count: i32,
-}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-#[::unity2::methods]
-impl MyRoomRelianceSubSelect_AmiiboBenefitSequence {
-    #[doc = "`.ctor(crate::app::godunit::GodUnit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, god_unit: crate::app::godunit::GodUnit) -> ();
-
-    #[doc = "`Accessory()` overload"]
-    #[method(name = "Accessory", args = 0)]
-    pub fn accessory(self) -> ();
-
-    #[doc = "`Music()` overload"]
-    #[method(name = "Music", args = 0)]
-    pub fn music(self) -> ();
-
-    #[doc = "`PieceOfBond()` overload"]
-    #[method(name = "PieceOfBond", args = 0)]
-    pub fn piece_of_bond(self) -> ();
-
-    #[doc = "`Message(crate::app::godunit::GodUnit, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Message", args = 3)]
-    pub fn message(
-        self,
-        god_unit: crate::app::godunit::GodUnit,
-        sprite_name: ::unity2::Il2CppString,
-        item_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        unit: crate::app::unit::Unit,
-        god_unit: crate::app::godunit::GodUnit,
-    ) -> ();
-}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-impl MyRoomRelianceSubSelect_AmiiboBenefitSequence {
-    #[doc = "`.ctor(crate::app::godunit::GodUnit)` — overload selector"]
-    pub fn new(god_unit: crate::app::godunit::GodUnit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomRelianceSubSelect_AmiiboBenefitSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomRelianceSubSelect_AmiiboBenefitSequenceMethods>::ctor(this, god_unit);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect.md"))]
-#[::unity2::class(namespace = "App", name = "MyRoomRelianceSubSelect")]
-#[parent(crate::app::basicmenu::BasicMenu)]
-pub struct MyRoomRelianceSubSelect {
-    #[rename(name = "IsRankPhase")]
-    pub is_rank_phase: bool,
-    #[rename(name = "m_MenuSelectList")]
-    pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<
-        crate::app::basicmenuselect::BasicMenuSelect,
-    >,
-}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-#[::unity2::methods]
-impl MyRoomRelianceSubSelect {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        select_unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`CreateMenuList(crate::app::unit::Unit)` overload"]
-    #[method(name = "CreateMenuList", args = 1)]
-    pub fn create_menu_list(
-        select_unit: crate::app::unit::Unit,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent,
-    ) -> ();
-
-    #[doc = "`RebuildMenu(crate::app::unit::Unit)` overload"]
-    #[method(name = "RebuildMenu", args = 1)]
-    pub fn rebuild_menu(self, select_unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`UpdateTalkState()` overload"]
-    #[method(name = "UpdateTalkState", args = 0)]
-    pub fn update_talk_state(self) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`AfterBuild()` overload"]
-    #[method(name = "AfterBuild", args = 0)]
-    pub fn after_build(self) -> ();
-
-    #[doc = "`KeyUp(bool)` overload"]
-    #[method(name = "KeyUp", args = 1)]
-    pub fn key_up(self, is_trigger: bool) -> ();
-
-    #[doc = "`KeyDown(bool)` overload"]
-    #[method(name = "KeyDown", args = 1)]
-    pub fn key_down(self, is_trigger: bool) -> ();
-
-    #[doc = "`KeyLeft(bool)` overload"]
-    #[method(name = "KeyLeft", args = 1)]
-    pub fn key_left(self, is_trigger: bool) -> ();
-
-    #[doc = "`KeyRight(bool)` overload"]
-    #[method(name = "KeyRight", args = 1)]
-    pub fn key_right(self, is_trigger: bool) -> ();
-
-    #[doc = "`CustomCall()` overload"]
-    #[method(name = "CustomCall", args = 0)]
-    pub fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-}
-
-#[cfg(feature = "app-myroomreliancesubselect")]
-impl MyRoomRelianceSubSelect {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-        menu_content: crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomRelianceSubSelect),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomRelianceSubSelectMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MyRoomRelianceSubSelect.MyRoomRelianceCallSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn main() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem.md"))]
 #[::unity2::class(
     namespace = "App",
@@ -372,6 +158,72 @@ impl MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem {
         <Self as IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods>::ctor_2(
             this, unit_l, god_unit,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_AmiiboBenefitSequence.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "MyRoomRelianceSubSelect.AmiiboBenefitSequence"
+)]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct MyRoomRelianceSubSelect_AmiiboBenefitSequence {
+    #[rename(name = "m_GodUnit")]
+    pub m_god_unit: crate::app::godunit::GodUnit,
+    #[rename(name = "m_PieceCount")]
+    pub m_piece_count: i32,
+}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+#[::unity2::methods]
+impl MyRoomRelianceSubSelect_AmiiboBenefitSequence {
+    #[doc = "`.ctor(crate::app::godunit::GodUnit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, god_unit: crate::app::godunit::GodUnit) -> ();
+
+    #[doc = "`Accessory()` overload"]
+    #[method(name = "Accessory", args = 0)]
+    pub fn accessory(self) -> ();
+
+    #[doc = "`Music()` overload"]
+    #[method(name = "Music", args = 0)]
+    pub fn music(self) -> ();
+
+    #[doc = "`PieceOfBond()` overload"]
+    #[method(name = "PieceOfBond", args = 0)]
+    pub fn piece_of_bond(self) -> ();
+
+    #[doc = "`Message(crate::app::godunit::GodUnit, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "Message", args = 3)]
+    pub fn message(
+        self,
+        god_unit: crate::app::godunit::GodUnit,
+        sprite_name: ::unity2::Il2CppString,
+        item_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        god_unit: crate::app::godunit::GodUnit,
+    ) -> ();
+}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+impl MyRoomRelianceSubSelect_AmiiboBenefitSequence {
+    #[doc = "`.ctor(crate::app::godunit::GodUnit)` — overload selector"]
+    pub fn new(god_unit: crate::app::godunit::GodUnit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomRelianceSubSelect_AmiiboBenefitSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomRelianceSubSelect_AmiiboBenefitSequenceMethods>::ctor(this, god_unit);
         this
     }
 }
@@ -563,6 +415,154 @@ impl MyRoomRelianceSubSelect_MyRoomRelianceCallSequence {
             )
         });
         <Self as IMyRoomRelianceSubSelect_MyRoomRelianceCallSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MyRoomRelianceSubSelect.MyRoomRelianceCallSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn main() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect.md"))]
+#[::unity2::class(namespace = "App", name = "MyRoomRelianceSubSelect")]
+#[parent(crate::app::basicmenu::BasicMenu)]
+pub struct MyRoomRelianceSubSelect {
+    #[rename(name = "IsRankPhase")]
+    pub is_rank_phase: bool,
+    #[rename(name = "m_MenuSelectList")]
+    pub m_menu_select_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::basicmenuselect::BasicMenuSelect,
+    >,
+}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+#[::unity2::methods]
+impl MyRoomRelianceSubSelect {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        select_unit: crate::app::unit::Unit,
+    ) -> ();
+
+    #[doc = "`CreateMenuList(crate::app::unit::Unit)` overload"]
+    #[method(name = "CreateMenuList", args = 1)]
+    pub fn create_menu_list(
+        select_unit: crate::app::unit::Unit,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>;
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent,
+    ) -> ();
+
+    #[doc = "`RebuildMenu(crate::app::unit::Unit)` overload"]
+    #[method(name = "RebuildMenu", args = 1)]
+    pub fn rebuild_menu(self, select_unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`UpdateTalkState()` overload"]
+    #[method(name = "UpdateTalkState", args = 0)]
+    pub fn update_talk_state(self) -> ();
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`AfterBuild()` overload"]
+    #[method(name = "AfterBuild", args = 0)]
+    pub fn after_build(self) -> ();
+
+    #[doc = "`KeyUp(bool)` overload"]
+    #[method(name = "KeyUp", args = 1)]
+    pub fn key_up(self, is_trigger: bool) -> ();
+
+    #[doc = "`KeyDown(bool)` overload"]
+    #[method(name = "KeyDown", args = 1)]
+    pub fn key_down(self, is_trigger: bool) -> ();
+
+    #[doc = "`KeyLeft(bool)` overload"]
+    #[method(name = "KeyLeft", args = 1)]
+    pub fn key_left(self, is_trigger: bool) -> ();
+
+    #[doc = "`KeyRight(bool)` overload"]
+    #[method(name = "KeyRight", args = 1)]
+    pub fn key_right(self, is_trigger: bool) -> ();
+
+    #[doc = "`CustomCall()` overload"]
+    #[method(name = "CustomCall", args = 0)]
+    pub fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+}
+
+#[cfg(feature = "app-myroomreliancesubselect")]
+impl MyRoomRelianceSubSelect {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+        menu_content: crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomRelianceSubSelect),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomRelianceSubSelectMethods>::ctor(this, menu_item_list, menu_content);
         this
     }
 }

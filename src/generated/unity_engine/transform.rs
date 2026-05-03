@@ -8,6 +8,52 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/transform/Transform_Enumerator.md"))]
+#[::unity2::class(namespace = "UnityEngine", name = "Transform.Enumerator")]
+#[parent(crate::system::object::Object)]
+pub struct Transform_Enumerator {
+    #[rename(name = "outer")]
+    pub outer: crate::unity_engine::transform::Transform,
+    #[rename(name = "currentIndex")]
+    pub current_index: i32,
+}
+
+#[cfg(feature = "unity_engine-transform")]
+#[::unity2::methods]
+impl Transform_Enumerator {
+    #[doc = "`.ctor(crate::unity_engine::transform::Transform)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, outer: crate::unity_engine::transform::Transform) -> ();
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-transform")]
+impl Transform_Enumerator {
+    #[doc = "`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]
+    pub fn new(outer: crate::unity_engine::transform::Transform) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Transform_Enumerator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITransform_EnumeratorMethods>::ctor(this, outer);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/transform/Transform.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "Transform")]
 #[parent(crate::unity_engine::component::Component)]
@@ -706,52 +752,6 @@ impl Transform {
             )
         });
         <Self as ITransformMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/transform/Transform_Enumerator.md"))]
-#[::unity2::class(namespace = "UnityEngine", name = "Transform.Enumerator")]
-#[parent(crate::system::object::Object)]
-pub struct Transform_Enumerator {
-    #[rename(name = "outer")]
-    pub outer: crate::unity_engine::transform::Transform,
-    #[rename(name = "currentIndex")]
-    pub current_index: i32,
-}
-
-#[cfg(feature = "unity_engine-transform")]
-#[::unity2::methods]
-impl Transform_Enumerator {
-    #[doc = "`.ctor(crate::unity_engine::transform::Transform)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, outer: crate::unity_engine::transform::Transform) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-transform")]
-impl Transform_Enumerator {
-    #[doc = "`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]
-    pub fn new(outer: crate::unity_engine::transform::Transform) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Transform_Enumerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITransform_EnumeratorMethods>::ctor(this, outer);
         this
     }
 }

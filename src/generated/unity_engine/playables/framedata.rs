@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/framedata/FrameData_EvaluationType.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/framedata/FrameData_Flags.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -17,14 +17,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct FrameData_EvaluationType {
+pub struct FrameData_Flags {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for FrameData_EvaluationType {
+impl ::unity2::ClassIdentity for FrameData_Flags {
     const NAMESPACE: &'static str = "UnityEngine.Playables";
 
-    const NAME: &'static str = "FrameData.EvaluationType";
+    const NAME: &'static str = "FrameData.Flags";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -33,7 +33,7 @@ impl ::unity2::ClassIdentity for FrameData_EvaluationType {
     }
 }
 
-impl ::unity2::IlType for FrameData_EvaluationType {
+impl ::unity2::IlType for FrameData_Flags {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -42,13 +42,29 @@ impl ::unity2::IlType for FrameData_EvaluationType {
     }
 }
 
-impl FrameData_EvaluationType {
+impl FrameData_Flags {
     pub fn evaluate() -> Self {
-        Self { value: 0 }
+        Self { value: 1 }
     }
 
-    pub fn playback() -> Self {
-        Self { value: 1 }
+    pub fn seek_occured() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn r#loop() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn hold() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn effective_play_state_delayed() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn effective_play_state_playing() -> Self {
+        Self { value: 32 }
     }
 }
 
@@ -133,7 +149,7 @@ impl FrameData {
     pub fn get_effective_play_state(self) -> crate::unity_engine::playables::playstate::PlayState;
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/framedata/FrameData_Flags.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/playables/framedata/FrameData_EvaluationType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -142,14 +158,14 @@ impl FrameData {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct FrameData_Flags {
+pub struct FrameData_EvaluationType {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for FrameData_Flags {
+impl ::unity2::ClassIdentity for FrameData_EvaluationType {
     const NAMESPACE: &'static str = "UnityEngine.Playables";
 
-    const NAME: &'static str = "FrameData.Flags";
+    const NAME: &'static str = "FrameData.EvaluationType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -158,7 +174,7 @@ impl ::unity2::ClassIdentity for FrameData_Flags {
     }
 }
 
-impl ::unity2::IlType for FrameData_Flags {
+impl ::unity2::IlType for FrameData_EvaluationType {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -167,28 +183,12 @@ impl ::unity2::IlType for FrameData_Flags {
     }
 }
 
-impl FrameData_Flags {
+impl FrameData_EvaluationType {
     pub fn evaluate() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn playback() -> Self {
         Self { value: 1 }
-    }
-
-    pub fn seek_occured() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn r#loop() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn hold() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn effective_play_state_delayed() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn effective_play_state_playing() -> Self {
-        Self { value: 32 }
     }
 }

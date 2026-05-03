@@ -10,42 +10,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventscript/EventScript_FunctionArgs.md"))]
-#[::unity2::class(namespace = "App", name = "EventScript.FunctionArgs")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventScript_FunctionArgs {}
-
-#[cfg(feature = "app-eventscript")]
-#[::unity2::methods]
-impl EventScript_FunctionArgs {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
-    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
-}
-
-#[cfg(feature = "app-eventscript")]
-impl EventScript_FunctionArgs {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventScript_FunctionArgs),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventScript_FunctionArgsMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventscript/EventScript.md"))]
 #[::unity2::class(namespace = "App", name = "EventScript")]
 #[parent(crate::moon_sharp::interpreter::script::Script)]
@@ -177,6 +141,42 @@ impl EventScript {
             )
         });
         <Self as IEventScriptMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventscript/EventScript_FunctionArgs.md"))]
+#[::unity2::class(namespace = "App", name = "EventScript.FunctionArgs")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct EventScript_FunctionArgs {}
+
+#[cfg(feature = "app-eventscript")]
+#[::unity2::methods]
+impl EventScript_FunctionArgs {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue;
+}
+
+#[cfg(feature = "app-eventscript")]
+impl EventScript_FunctionArgs {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventScript_FunctionArgs),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventScript_FunctionArgsMethods>::ctor(this, object, method);
         this
     }
 }

@@ -6,39 +6,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransporteritemmenu/DebugTransporterItemMenu.md"))]
-#[::unity2::class(namespace = "App", name = "DebugTransporterItemMenu")]
-#[parent(crate::system::object::Object)]
-pub struct DebugTransporterItemMenu {}
-
-#[cfg(feature = "app-debugtransporteritemmenu")]
-#[::unity2::methods]
-impl DebugTransporterItemMenu {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-debugtransporteritemmenu")]
-impl DebugTransporterItemMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugTransporterItemMenu),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugTransporterItemMenuMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransporteritemmenu/DebugTransporterItemMenu_EditMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "DebugTransporterItemMenu.EditMenuItem")]
 #[parent(crate::app::menuitem::MenuItem)]
@@ -123,6 +90,39 @@ impl DebugTransporterItemMenu_EditMenuItem {
             )
         });
         <Self as IDebugTransporterItemMenu_EditMenuItemMethods>::ctor(this, index);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugtransporteritemmenu/DebugTransporterItemMenu.md"))]
+#[::unity2::class(namespace = "App", name = "DebugTransporterItemMenu")]
+#[parent(crate::system::object::Object)]
+pub struct DebugTransporterItemMenu {}
+
+#[cfg(feature = "app-debugtransporteritemmenu")]
+#[::unity2::methods]
+impl DebugTransporterItemMenu {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugtransporteritemmenu")]
+impl DebugTransporterItemMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugTransporterItemMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugTransporterItemMenuMethods>::ctor(this);
         this
     }
 }

@@ -8,74 +8,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/random_2/Random_Type.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct Random_Type {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for Random_Type {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Random.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Random_Type {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl Random_Type {
-    pub fn system() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn game() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn spot() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn hub() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn hub_item() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn kill_bonus() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn combat() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 7 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/random_2/Random_2.md"))]
 #[::unity2::class(namespace = "App", name = "Random")]
 #[parent(crate::system::object::Object)]
@@ -247,5 +179,73 @@ impl Random_2 {
         });
         <Self as IRandom_2Methods>::ctor_2(this, seed);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/random_2/Random_Type.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Random_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for Random_Type {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Random.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Random_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl Random_Type {
+    pub fn system() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn game() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn spot() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn hub() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn hub_item() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn kill_bonus() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn combat() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 7 }
     }
 }

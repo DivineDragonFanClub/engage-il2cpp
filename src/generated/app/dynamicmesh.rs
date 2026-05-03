@@ -8,6 +8,54 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dynamicmesh/DynamicMesh_StaticIndices.md"))]
+#[::unity2::class(namespace = "App", name = "DynamicMesh.StaticIndices")]
+#[parent(crate::system::object::Object)]
+pub struct DynamicMesh_StaticIndices {
+    #[static_field]
+    #[rename(name = "s_Indices")]
+    pub s_indices: ::unity2::Array<::unity2::Array<u16>>,
+}
+
+#[cfg(feature = "app-dynamicmesh")]
+#[::unity2::methods]
+impl DynamicMesh_StaticIndices {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+
+    #[doc = "`GetIndices(crate::app::dynamicmesh::DynamicMesh_Mode)` overload"]
+    #[method(name = "GetIndices", args = 1)]
+    pub fn get_indices(mode: crate::app::dynamicmesh::DynamicMesh_Mode) -> ::unity2::Array<u16>;
+
+    #[doc = "`GetTriangleCount(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]
+    #[method(name = "GetTriangleCount", args = 2)]
+    pub fn get_triangle_count(
+        mode: crate::app::dynamicmesh::DynamicMesh_Mode,
+        vertex_count: i32,
+    ) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-dynamicmesh")]
+impl DynamicMesh_StaticIndices {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DynamicMesh_StaticIndices),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDynamicMesh_StaticIndicesMethods>::ctor(this);
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_Scope.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -97,126 +145,6 @@ impl DynamicMesh_State {
     #[doc = "`Clear()` overload"]
     #[method(name = "Clear", args = 0)]
     pub fn clear(self) -> ();
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dynamicmesh/DynamicMesh_StaticIndices.md"))]
-#[::unity2::class(namespace = "App", name = "DynamicMesh.StaticIndices")]
-#[parent(crate::system::object::Object)]
-pub struct DynamicMesh_StaticIndices {
-    #[static_field]
-    #[rename(name = "s_Indices")]
-    pub s_indices: ::unity2::Array<::unity2::Array<u16>>,
-}
-
-#[cfg(feature = "app-dynamicmesh")]
-#[::unity2::methods]
-impl DynamicMesh_StaticIndices {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-
-    #[doc = "`GetIndices(crate::app::dynamicmesh::DynamicMesh_Mode)` overload"]
-    #[method(name = "GetIndices", args = 1)]
-    pub fn get_indices(mode: crate::app::dynamicmesh::DynamicMesh_Mode) -> ::unity2::Array<u16>;
-
-    #[doc = "`GetTriangleCount(crate::app::dynamicmesh::DynamicMesh_Mode, i32)` overload"]
-    #[method(name = "GetTriangleCount", args = 2)]
-    pub fn get_triangle_count(
-        mode: crate::app::dynamicmesh::DynamicMesh_Mode,
-        vertex_count: i32,
-    ) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-dynamicmesh")]
-impl DynamicMesh_StaticIndices {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DynamicMesh_StaticIndices),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDynamicMesh_StaticIndicesMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_Mode.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct DynamicMesh_Mode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for DynamicMesh_Mode {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DynamicMesh.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for DynamicMesh_Mode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl DynamicMesh_Mode {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn triangle() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn quad() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn pyramid() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn fan() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn fan_ccw() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn strip() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn lines() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn cell() -> Self {
-        Self { value: 3 }
-    }
 }
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dynamicmesh/DynamicMesh.md"))]
@@ -438,5 +366,77 @@ impl DynamicMesh {
         });
         <Self as IDynamicMeshMethods>::ctor_3(this, go, sub_mesh_count, vertex_capacity);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dynamicmesh/DynamicMesh_Mode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct DynamicMesh_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for DynamicMesh_Mode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DynamicMesh.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DynamicMesh_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl DynamicMesh_Mode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn triangle() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn quad() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn pyramid() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn fan() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn fan_ccw() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn strip() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn lines() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn cell() -> Self {
+        Self { value: 3 }
     }
 }

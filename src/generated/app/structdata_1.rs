@@ -47,6 +47,41 @@ impl<T0: ::unity2::ClassIdentity> StructData_1_EachFuncBool<T0> {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structdata_1/StructData_1_EachFuncVoid.md"))]
+#[::unity2::class(namespace = "App", name = "StructData`1.EachFuncVoid")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+#[parent(crate::system::delegate::Delegate)]
+#[parent(crate::system::object::Object)]
+pub struct StructData_1_EachFuncVoid<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-structdata_1")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> StructData_1_EachFuncVoid<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(T0)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, data: T0) -> ();
+}
+
+#[cfg(feature = "app-structdata_1")]
+impl<T0: ::unity2::ClassIdentity> StructData_1_EachFuncVoid<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(StructData_1_EachFuncVoid),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStructData_1_EachFuncVoidMethods<T0>>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structdata_1/StructData_1.md"))]
 #[::unity2::class(namespace = "App", name = "StructData`1")]
 # [parent (crate :: app :: structtemplate_1 :: StructTemplate_1 < T0 >)]
@@ -177,41 +212,6 @@ impl<T0: ::unity2::ClassIdentity> StructData_1<T0> {
             )
         });
         <Self as IStructData_1Methods<T0>>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/structdata_1/StructData_1_EachFuncVoid.md"))]
-#[::unity2::class(namespace = "App", name = "StructData`1.EachFuncVoid")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-#[parent(crate::system::delegate::Delegate)]
-#[parent(crate::system::object::Object)]
-pub struct StructData_1_EachFuncVoid<T0: ::unity2::ClassIdentity> {}
-
-#[cfg(feature = "app-structdata_1")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> StructData_1_EachFuncVoid<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(T0)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, data: T0) -> ();
-}
-
-#[cfg(feature = "app-structdata_1")]
-impl<T0: ::unity2::ClassIdentity> StructData_1_EachFuncVoid<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(StructData_1_EachFuncVoid),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IStructData_1_EachFuncVoidMethods<T0>>::ctor(this, object, method);
         this
     }
 }

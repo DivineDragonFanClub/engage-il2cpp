@@ -12,129 +12,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinetargetmenu/RefineShopRefineTargetMenu_DecideToRefineEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RefineShopRefineTargetMenu.DecideToRefineEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RefineShopRefineTargetMenu_DecideToRefineEventHandler {}
-
-#[cfg(feature = "app-refineshoprefinetargetmenu")]
-#[::unity2::methods]
-impl RefineShopRefineTargetMenu_DecideToRefineEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32, crate::app::unititem::UnitItem, i32, i32, i32, i32)` overload"]
-    #[method(name = "Invoke", args = 6)]
-    pub fn invoke(
-        self,
-        refine_level: i32,
-        refined_unit_item: crate::app::unititem::UnitItem,
-        iron_num: i32,
-        steel_num: i32,
-        silver_num: i32,
-        price: i32,
-    ) -> ();
-}
-
-#[cfg(feature = "app-refineshoprefinetargetmenu")]
-impl RefineShopRefineTargetMenu_DecideToRefineEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopRefineTargetMenu_DecideToRefineEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopRefineTargetMenu_DecideToRefineEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinetargetmenu/RefineShopRefineTargetMenu_DecideToEvolveEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RefineShopRefineTargetMenu.DecideToEvolveEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RefineShopRefineTargetMenu_DecideToEvolveEventHandler {}
-
-#[cfg(feature = "app-refineshoprefinetargetmenu")]
-#[::unity2::methods]
-impl RefineShopRefineTargetMenu_DecideToEvolveEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unititem::UnitItem, i32)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(self, evolved_unit_item: crate::app::unititem::UnitItem, evolve_index: i32)
-        -> ();
-}
-
-#[cfg(feature = "app-refineshoprefinetargetmenu")]
-impl RefineShopRefineTargetMenu_DecideToEvolveEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopRefineTargetMenu_DecideToEvolveEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopRefineTargetMenu_DecideToEvolveEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinetargetmenu/RefineShopRefineTargetMenu_RequestCloseEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RefineShopRefineTargetMenu.RequestCloseEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RefineShopRefineTargetMenu_RequestCloseEventHandler {}
-
-#[cfg(feature = "app-refineshoprefinetargetmenu")]
-#[::unity2::methods]
-impl RefineShopRefineTargetMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-refineshoprefinetargetmenu")]
-impl RefineShopRefineTargetMenu_RequestCloseEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopRefineTargetMenu_RequestCloseEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopRefineTargetMenu_RequestCloseEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinetargetmenu/RefineShopRefineTargetMenu.md"))]
 #[::unity2::class(namespace = "App", name = "RefineShopRefineTargetMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -271,6 +148,129 @@ impl RefineShopRefineTargetMenu_SelectEventHandler {
             )
         });
         <Self as IRefineShopRefineTargetMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinetargetmenu/RefineShopRefineTargetMenu_RequestCloseEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineShopRefineTargetMenu.RequestCloseEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineShopRefineTargetMenu_RequestCloseEventHandler {}
+
+#[cfg(feature = "app-refineshoprefinetargetmenu")]
+#[::unity2::methods]
+impl RefineShopRefineTargetMenu_RequestCloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-refineshoprefinetargetmenu")]
+impl RefineShopRefineTargetMenu_RequestCloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopRefineTargetMenu_RequestCloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopRefineTargetMenu_RequestCloseEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinetargetmenu/RefineShopRefineTargetMenu_DecideToRefineEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineShopRefineTargetMenu.DecideToRefineEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineShopRefineTargetMenu_DecideToRefineEventHandler {}
+
+#[cfg(feature = "app-refineshoprefinetargetmenu")]
+#[::unity2::methods]
+impl RefineShopRefineTargetMenu_DecideToRefineEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32, crate::app::unititem::UnitItem, i32, i32, i32, i32)` overload"]
+    #[method(name = "Invoke", args = 6)]
+    pub fn invoke(
+        self,
+        refine_level: i32,
+        refined_unit_item: crate::app::unititem::UnitItem,
+        iron_num: i32,
+        steel_num: i32,
+        silver_num: i32,
+        price: i32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-refineshoprefinetargetmenu")]
+impl RefineShopRefineTargetMenu_DecideToRefineEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopRefineTargetMenu_DecideToRefineEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopRefineTargetMenu_DecideToRefineEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinetargetmenu/RefineShopRefineTargetMenu_DecideToEvolveEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineShopRefineTargetMenu.DecideToEvolveEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineShopRefineTargetMenu_DecideToEvolveEventHandler {}
+
+#[cfg(feature = "app-refineshoprefinetargetmenu")]
+#[::unity2::methods]
+impl RefineShopRefineTargetMenu_DecideToEvolveEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unititem::UnitItem, i32)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, evolved_unit_item: crate::app::unititem::UnitItem, evolve_index: i32)
+        -> ();
+}
+
+#[cfg(feature = "app-refineshoprefinetargetmenu")]
+impl RefineShopRefineTargetMenu_DecideToEvolveEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopRefineTargetMenu_DecideToEvolveEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopRefineTargetMenu_DecideToEvolveEventHandlerMethods>::ctor(
+            this, object, method,
+        );
         this
     }
 }

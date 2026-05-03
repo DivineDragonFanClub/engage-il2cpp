@@ -10,66 +10,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibomanager/AmiiboManager_Sequence.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AmiiboManager_Sequence {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AmiiboManager_Sequence {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AmiiboManager.Sequence";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AmiiboManager_Sequence {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AmiiboManager_Sequence {
-    pub fn sequence_none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn sequence_init() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn sequence_search() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn sequence_active() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn sequence_mount() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn sequence_deactive() -> Self {
-        Self { value: 5 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibomanager/AmiiboManager.md"))]
 #[::unity2::class(namespace = "App", name = "AmiiboManager")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: amiibomanager :: AmiiboManager >)]
@@ -235,5 +175,65 @@ impl AmiiboManager_AmiiboInfo {
         });
         <Self as IAmiiboManager_AmiiboInfoMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibomanager/AmiiboManager_Sequence.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AmiiboManager_Sequence {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AmiiboManager_Sequence {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AmiiboManager.Sequence";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AmiiboManager_Sequence {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AmiiboManager_Sequence {
+    pub fn sequence_none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn sequence_init() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn sequence_search() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn sequence_active() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn sequence_mount() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn sequence_deactive() -> Self {
+        Self { value: 5 }
     }
 }

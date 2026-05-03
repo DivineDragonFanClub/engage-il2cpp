@@ -10,6 +10,42 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem_UpdateFunction.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.LowLevel",
+    name = "PlayerLoopSystem.UpdateFunction"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct PlayerLoopSystem_UpdateFunction {}
+
+#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
+#[::unity2::methods]
+impl PlayerLoopSystem_UpdateFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
+impl PlayerLoopSystem_UpdateFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PlayerLoopSystem_UpdateFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPlayerLoopSystem_UpdateFunctionMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -50,40 +86,4 @@ impl PlayerLoopSystem {
     #[doc = "`ToString()` overload"]
     #[method(name = "ToString", args = 0)]
     pub fn to_string(self) -> ::unity2::Il2CppString;
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/low_level/playerloopsystem/PlayerLoopSystem_UpdateFunction.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.LowLevel",
-    name = "PlayerLoopSystem.UpdateFunction"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct PlayerLoopSystem_UpdateFunction {}
-
-#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
-#[::unity2::methods]
-impl PlayerLoopSystem_UpdateFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-low_level-playerloopsystem")]
-impl PlayerLoopSystem_UpdateFunction {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PlayerLoopSystem_UpdateFunction),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPlayerLoopSystem_UpdateFunctionMethods>::ctor(this, object, method);
-        this
-    }
 }

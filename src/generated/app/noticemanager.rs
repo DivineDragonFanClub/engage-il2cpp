@@ -18,70 +18,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/noticemanager/NoticeManager_Kinds.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct NoticeManager_Kinds {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for NoticeManager_Kinds {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NoticeManager.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for NoticeManager_Kinds {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl NoticeManager_Kinds {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn facility() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn kizuna() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn tutorial() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn notebook() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn ring_list() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 6 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/noticemanager/NoticeManager.md"))]
 #[::unity2::class(namespace = "App", name = "NoticeManager")]
 # [parent (crate :: app :: singletonmonobehaviour_1 :: SingletonMonoBehaviour_1 < crate :: app :: noticemanager :: NoticeManager >)]
@@ -168,5 +104,69 @@ impl NoticeManager {
         });
         <Self as INoticeManagerMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/noticemanager/NoticeManager_Kinds.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct NoticeManager_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for NoticeManager_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NoticeManager.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NoticeManager_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl NoticeManager_Kinds {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn facility() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn kizuna() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn tutorial() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn notebook() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn ring_list() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 6 }
     }
 }

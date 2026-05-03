@@ -54,91 +54,6 @@ impl TroopListMenu_ConfirmBattleSequence {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenu/TroopListMenu_TroopListMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "TroopListMenu.TroopListMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct TroopListMenu_TroopListMenuItem {
-    #[rename(name = "m_index")]
-    pub m_index: i32,
-    #[rename(name = "m_mode")]
-    pub m_mode: crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode,
-}
-
-#[cfg(feature = "app-trooplistmenu")]
-#[::unity2::methods]
-impl TroopListMenu_TroopListMenuItem {
-    #[doc = "`.ctor(i32, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        index: i32,
-        mode: crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode,
-    ) -> ();
-
-    #[doc = "`GetUnit()` overload"]
-    #[method(name = "GetUnit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`GetTmpUnit()` overload"]
-    #[method(name = "GetTmpUnit", args = 0)]
-    pub fn get_tmp_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`GetMode()` overload"]
-    #[method(name = "GetMode", args = 0)]
-    pub fn get_mode(self) -> crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode;
-
-    #[doc = "`GetRectTransform()` overload"]
-    #[method(name = "GetRectTransform", args = 0)]
-    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`BCall()` overload"]
-    #[method(name = "BCall", args = 0)]
-    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`RCall()` overload"]
-    #[method(name = "RCall", args = 0)]
-    pub fn r_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`PlusCall()` overload"]
-    #[method(name = "PlusCall", args = 0)]
-    pub fn plus_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`SetPage(i32)` overload"]
-    #[method(name = "SetPage", args = 1)]
-    pub fn set_page(self, page: i32) -> ();
-}
-
-#[cfg(feature = "app-trooplistmenu")]
-impl TroopListMenu_TroopListMenuItem {
-    #[doc = "`.ctor(i32, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` — overload selector"]
-    pub fn new(
-        index: i32,
-        mode: crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TroopListMenu_TroopListMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITroopListMenu_TroopListMenuItemMethods>::ctor(this, index, mode);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenu/TroopListMenu.md"))]
 #[::unity2::class(namespace = "App", name = "TroopListMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -291,6 +206,91 @@ impl TroopListMenu {
             )
         });
         <Self as ITroopListMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistmenu/TroopListMenu_TroopListMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "TroopListMenu.TroopListMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct TroopListMenu_TroopListMenuItem {
+    #[rename(name = "m_index")]
+    pub m_index: i32,
+    #[rename(name = "m_mode")]
+    pub m_mode: crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode,
+}
+
+#[cfg(feature = "app-trooplistmenu")]
+#[::unity2::methods]
+impl TroopListMenu_TroopListMenuItem {
+    #[doc = "`.ctor(i32, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        index: i32,
+        mode: crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode,
+    ) -> ();
+
+    #[doc = "`GetUnit()` overload"]
+    #[method(name = "GetUnit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`GetTmpUnit()` overload"]
+    #[method(name = "GetTmpUnit", args = 0)]
+    pub fn get_tmp_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`GetMode()` overload"]
+    #[method(name = "GetMode", args = 0)]
+    pub fn get_mode(self) -> crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode;
+
+    #[doc = "`GetRectTransform()` overload"]
+    #[method(name = "GetRectTransform", args = 0)]
+    pub fn get_rect_transform(self) -> crate::unity_engine::recttransform::RectTransform;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`BCall()` overload"]
+    #[method(name = "BCall", args = 0)]
+    pub fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`RCall()` overload"]
+    #[method(name = "RCall", args = 0)]
+    pub fn r_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`PlusCall()` overload"]
+    #[method(name = "PlusCall", args = 0)]
+    pub fn plus_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`SetPage(i32)` overload"]
+    #[method(name = "SetPage", args = 1)]
+    pub fn set_page(self, page: i32) -> ();
+}
+
+#[cfg(feature = "app-trooplistmenu")]
+impl TroopListMenu_TroopListMenuItem {
+    #[doc = "`.ctor(i32, crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode)` — overload selector"]
+    pub fn new(
+        index: i32,
+        mode: crate::app::sortiesequencetrooplist::SortieSequenceTroopList_Mode,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TroopListMenu_TroopListMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITroopListMenu_TroopListMenuItemMethods>::ctor(this, index, mode);
         this
     }
 }

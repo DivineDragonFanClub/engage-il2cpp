@@ -12,6 +12,154 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence_Result1Proc.md"))]
+#[::unity2::class(namespace = "App", name = "RingSynthesisSequence.Result1Proc")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RingSynthesisSequence_Result1Proc {
+    #[rename(name = "m_RefineRingResult1Window")]
+    pub m_refine_ring_result1_window: crate::app::refineringresult1window::RefineRingResult1Window,
+    #[rename(name = "m_RingData")]
+    pub m_ring_data: crate::app::ringdata::RingData,
+}
+
+#[cfg(feature = "app-ringsynthesissequence")]
+#[::unity2::methods]
+impl RingSynthesisSequence_Result1Proc {
+    #[doc = "`CreateBind(crate::app::ringsynthesissequence::RingSynthesisSequence, crate::app::ringdata::RingData)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::ringsynthesissequence::RingSynthesisSequence,
+        ring_data: crate::app::ringdata::RingData,
+    ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_Result1Proc;
+
+    #[doc = "`.ctor(crate::app::ringdata::RingData)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, ring_data: crate::app::ringdata::RingData) -> ();
+
+    #[doc = "`Create()` overload"]
+    #[method(name = "Create", args = 0)]
+    pub fn create(self) -> ();
+
+    #[doc = "`IsOpening()` overload"]
+    #[method(name = "IsOpening", args = 0)]
+    pub fn is_opening(self) -> bool;
+
+    #[doc = "`IsKeyInputted()` overload"]
+    #[method(name = "IsKeyInputted", args = 0)]
+    pub fn is_key_inputted(self) -> bool;
+
+    #[doc = "`IsClosing()` overload"]
+    #[method(name = "IsClosing", args = 0)]
+    pub fn is_closing(self) -> bool;
+
+    #[doc = "`Destroy()` overload"]
+    #[method(name = "Destroy", args = 0)]
+    pub fn destroy(self) -> ();
+}
+
+#[cfg(feature = "app-ringsynthesissequence")]
+impl RingSynthesisSequence_Result1Proc {
+    #[doc = "`.ctor(crate::app::ringdata::RingData)` — overload selector"]
+    pub fn new(ring_data: crate::app::ringdata::RingData) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingSynthesisSequence_Result1Proc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingSynthesisSequence_Result1ProcMethods>::ctor(this, ring_data);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence_SkipListenerProc.md"))]
+#[::unity2::class(namespace = "App", name = "RingSynthesisSequence.SkipListenerProc")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RingSynthesisSequence_SkipListenerProc {}
+
+#[cfg(feature = "app-ringsynthesissequence")]
+#[::unity2::methods]
+impl RingSynthesisSequence_SkipListenerProc {
+    #[doc = "`get_m_Pause()` overload"]
+    #[method(name = "get_m_Pause", args = 0)]
+    pub fn get_m_pause(self) -> bool;
+
+    #[doc = "`set_m_Pause(bool)` overload"]
+    #[method(name = "set_m_Pause", args = 1)]
+    pub fn set_m_pause(self, value: bool) -> ();
+
+    #[doc = "`Create(crate::app::ringsynthesissequence::RingSynthesisSequence)` overload"]
+    #[method(name = "Create", args = 1)]
+    pub fn create(
+        super_: crate::app::ringsynthesissequence::RingSynthesisSequence,
+    ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc;
+
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-ringsynthesissequence")]
+impl RingSynthesisSequence_SkipListenerProc {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingSynthesisSequence_SkipListenerProc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingSynthesisSequence_SkipListenerProcMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringsynthesissequence/RingSynthesisSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingSynthesisSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingSynthesisSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingSynthesisSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingSynthesisSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingSynthesisSequence_Label {
+    pub fn skip() -> Self {
+        Self { value: 0 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence.md"))]
 #[::unity2::class(namespace = "App", name = "RingSynthesisSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringsynthesissequence :: RingSynthesisSequence >)]
@@ -190,154 +338,6 @@ impl RingSynthesisSequence {
             )
         });
         <Self as IRingSynthesisSequenceMethods>::ctor(this, result, end_event_handler);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence_SkipListenerProc.md"))]
-#[::unity2::class(namespace = "App", name = "RingSynthesisSequence.SkipListenerProc")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct RingSynthesisSequence_SkipListenerProc {}
-
-#[cfg(feature = "app-ringsynthesissequence")]
-#[::unity2::methods]
-impl RingSynthesisSequence_SkipListenerProc {
-    #[doc = "`get_m_Pause()` overload"]
-    #[method(name = "get_m_Pause", args = 0)]
-    pub fn get_m_pause(self) -> bool;
-
-    #[doc = "`set_m_Pause(bool)` overload"]
-    #[method(name = "set_m_Pause", args = 1)]
-    pub fn set_m_pause(self, value: bool) -> ();
-
-    #[doc = "`Create(crate::app::ringsynthesissequence::RingSynthesisSequence)` overload"]
-    #[method(name = "Create", args = 1)]
-    pub fn create(
-        super_: crate::app::ringsynthesissequence::RingSynthesisSequence,
-    ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_SkipListenerProc;
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence_SkipListenerProc {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingSynthesisSequence_SkipListenerProc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingSynthesisSequence_SkipListenerProcMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringsynthesissequence/RingSynthesisSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RingSynthesisSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RingSynthesisSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingSynthesisSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RingSynthesisSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RingSynthesisSequence_Label {
-    pub fn skip() -> Self {
-        Self { value: 0 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringsynthesissequence/RingSynthesisSequence_Result1Proc.md"))]
-#[::unity2::class(namespace = "App", name = "RingSynthesisSequence.Result1Proc")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct RingSynthesisSequence_Result1Proc {
-    #[rename(name = "m_RefineRingResult1Window")]
-    pub m_refine_ring_result1_window: crate::app::refineringresult1window::RefineRingResult1Window,
-    #[rename(name = "m_RingData")]
-    pub m_ring_data: crate::app::ringdata::RingData,
-}
-
-#[cfg(feature = "app-ringsynthesissequence")]
-#[::unity2::methods]
-impl RingSynthesisSequence_Result1Proc {
-    #[doc = "`CreateBind(crate::app::ringsynthesissequence::RingSynthesisSequence, crate::app::ringdata::RingData)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::ringsynthesissequence::RingSynthesisSequence,
-        ring_data: crate::app::ringdata::RingData,
-    ) -> crate::app::ringsynthesissequence::RingSynthesisSequence_Result1Proc;
-
-    #[doc = "`.ctor(crate::app::ringdata::RingData)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, ring_data: crate::app::ringdata::RingData) -> ();
-
-    #[doc = "`Create()` overload"]
-    #[method(name = "Create", args = 0)]
-    pub fn create(self) -> ();
-
-    #[doc = "`IsOpening()` overload"]
-    #[method(name = "IsOpening", args = 0)]
-    pub fn is_opening(self) -> bool;
-
-    #[doc = "`IsKeyInputted()` overload"]
-    #[method(name = "IsKeyInputted", args = 0)]
-    pub fn is_key_inputted(self) -> bool;
-
-    #[doc = "`IsClosing()` overload"]
-    #[method(name = "IsClosing", args = 0)]
-    pub fn is_closing(self) -> bool;
-
-    #[doc = "`Destroy()` overload"]
-    #[method(name = "Destroy", args = 0)]
-    pub fn destroy(self) -> ();
-}
-
-#[cfg(feature = "app-ringsynthesissequence")]
-impl RingSynthesisSequence_Result1Proc {
-    #[doc = "`.ctor(crate::app::ringdata::RingData)` — overload selector"]
-    pub fn new(ring_data: crate::app::ringdata::RingData) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingSynthesisSequence_Result1Proc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingSynthesisSequence_Result1ProcMethods>::ctor(this, ring_data);
         this
     }
 }

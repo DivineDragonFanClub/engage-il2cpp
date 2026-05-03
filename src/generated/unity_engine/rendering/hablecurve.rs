@@ -52,63 +52,38 @@ impl HableCurve_Segment {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hablecurve/HableCurve_Uniforms.md"))]
-#[::unity2::class(namespace = "UnityEngine.Rendering", name = "HableCurve.Uniforms")]
-#[parent(crate::system::object::Object)]
-pub struct HableCurve_Uniforms {
-    #[rename(name = "parent")]
-    pub parent: crate::unity_engine::rendering::hablecurve::HableCurve,
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/hablecurve/HableCurve_DirectParams.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct HableCurve_DirectParams {
+    pub x0: f32,
+    pub y0: f32,
+    pub x1: f32,
+    pub y1: f32,
+    pub w: f32,
+    pub overshoot_x: f32,
+    pub overshoot_y: f32,
+    pub gamma: f32,
 }
 
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-#[::unity2::methods]
-impl HableCurve_Uniforms {
-    #[doc = "`.ctor(crate::unity_engine::rendering::hablecurve::HableCurve)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, parent: crate::unity_engine::rendering::hablecurve::HableCurve) -> ();
+impl ::unity2::ClassIdentity for HableCurve_DirectParams {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
-    #[doc = "`get_curve()` overload"]
-    #[method(name = "get_curve", args = 0)]
-    pub fn get_curve(self) -> crate::unity_engine::vector4::Vector4;
+    const NAME: &'static str = "HableCurve.DirectParams";
 
-    #[doc = "`get_toeSegmentA()` overload"]
-    #[method(name = "get_toeSegmentA", args = 0)]
-    pub fn get_toe_segment_a(self) -> crate::unity_engine::vector4::Vector4;
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-    #[doc = "`get_toeSegmentB()` overload"]
-    #[method(name = "get_toeSegmentB", args = 0)]
-    pub fn get_toe_segment_b(self) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`get_midSegmentA()` overload"]
-    #[method(name = "get_midSegmentA", args = 0)]
-    pub fn get_mid_segment_a(self) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`get_midSegmentB()` overload"]
-    #[method(name = "get_midSegmentB", args = 0)]
-    pub fn get_mid_segment_b(self) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`get_shoSegmentA()` overload"]
-    #[method(name = "get_shoSegmentA", args = 0)]
-    pub fn get_sho_segment_a(self) -> crate::unity_engine::vector4::Vector4;
-
-    #[doc = "`get_shoSegmentB()` overload"]
-    #[method(name = "get_shoSegmentB", args = 0)]
-    pub fn get_sho_segment_b(self) -> crate::unity_engine::vector4::Vector4;
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
 }
 
-#[cfg(feature = "unity_engine-rendering-hablecurve")]
-impl HableCurve_Uniforms {
-    #[doc = "`.ctor(crate::unity_engine::rendering::hablecurve::HableCurve)` — overload selector"]
-    pub fn new(parent: crate::unity_engine::rendering::hablecurve::HableCurve) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HableCurve_Uniforms),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHableCurve_UniformsMethods>::ctor(this, parent);
-        this
+impl ::unity2::IlType for HableCurve_DirectParams {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
     }
 }
 
@@ -213,37 +188,62 @@ impl HableCurve {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/hablecurve/HableCurve_DirectParams.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct HableCurve_DirectParams {
-    pub x0: f32,
-    pub y0: f32,
-    pub x1: f32,
-    pub y1: f32,
-    pub w: f32,
-    pub overshoot_x: f32,
-    pub overshoot_y: f32,
-    pub gamma: f32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/hablecurve/HableCurve_Uniforms.md"))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "HableCurve.Uniforms")]
+#[parent(crate::system::object::Object)]
+pub struct HableCurve_Uniforms {
+    #[rename(name = "parent")]
+    pub parent: crate::unity_engine::rendering::hablecurve::HableCurve,
 }
 
-impl ::unity2::ClassIdentity for HableCurve_DirectParams {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering";
+#[cfg(feature = "unity_engine-rendering-hablecurve")]
+#[::unity2::methods]
+impl HableCurve_Uniforms {
+    #[doc = "`.ctor(crate::unity_engine::rendering::hablecurve::HableCurve)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, parent: crate::unity_engine::rendering::hablecurve::HableCurve) -> ();
 
-    const NAME: &'static str = "HableCurve.DirectParams";
+    #[doc = "`get_curve()` overload"]
+    #[method(name = "get_curve", args = 0)]
+    pub fn get_curve(self) -> crate::unity_engine::vector4::Vector4;
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    #[doc = "`get_toeSegmentA()` overload"]
+    #[method(name = "get_toeSegmentA", args = 0)]
+    pub fn get_toe_segment_a(self) -> crate::unity_engine::vector4::Vector4;
 
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
+    #[doc = "`get_toeSegmentB()` overload"]
+    #[method(name = "get_toeSegmentB", args = 0)]
+    pub fn get_toe_segment_b(self) -> crate::unity_engine::vector4::Vector4;
+
+    #[doc = "`get_midSegmentA()` overload"]
+    #[method(name = "get_midSegmentA", args = 0)]
+    pub fn get_mid_segment_a(self) -> crate::unity_engine::vector4::Vector4;
+
+    #[doc = "`get_midSegmentB()` overload"]
+    #[method(name = "get_midSegmentB", args = 0)]
+    pub fn get_mid_segment_b(self) -> crate::unity_engine::vector4::Vector4;
+
+    #[doc = "`get_shoSegmentA()` overload"]
+    #[method(name = "get_shoSegmentA", args = 0)]
+    pub fn get_sho_segment_a(self) -> crate::unity_engine::vector4::Vector4;
+
+    #[doc = "`get_shoSegmentB()` overload"]
+    #[method(name = "get_shoSegmentB", args = 0)]
+    pub fn get_sho_segment_b(self) -> crate::unity_engine::vector4::Vector4;
 }
 
-impl ::unity2::IlType for HableCurve_DirectParams {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
+#[cfg(feature = "unity_engine-rendering-hablecurve")]
+impl HableCurve_Uniforms {
+    #[doc = "`.ctor(crate::unity_engine::rendering::hablecurve::HableCurve)` — overload selector"]
+    pub fn new(parent: crate::unity_engine::rendering::hablecurve::HableCurve) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HableCurve_Uniforms),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHableCurve_UniformsMethods>::ctor(this, parent);
+        this
     }
 }

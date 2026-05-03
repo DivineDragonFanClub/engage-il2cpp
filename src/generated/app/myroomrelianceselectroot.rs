@@ -12,6 +12,96 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomrelianceselectroot/MyRoomRelianceSelectRoot_CursorTop.md"))]
+#[::unity2::class(namespace = "App", name = "MyRoomRelianceSelectRoot.CursorTop")]
+#[parent(crate::system::object::Object)]
+pub struct MyRoomRelianceSelectRoot_CursorTop {
+    #[rename(name = "ResetRect")]
+    pub reset_rect: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "RankC_PosX")]
+    pub rank_c_pos_x: f32,
+    #[rename(name = "RankB_PosX")]
+    pub rank_b_pos_x: f32,
+    #[rename(name = "RankA_PosX")]
+    pub rank_a_pos_x: f32,
+    #[rename(name = "RankS_PosX")]
+    pub rank_s_pos_x: f32,
+    #[rename(name = "MoveFrame")]
+    pub move_frame: f32,
+    #[rename(name = "m_cursorTop")]
+    pub m_cursor_top: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_selectIndex")]
+    pub m_select_index: i32,
+    #[rename(name = "m_prevIndex")]
+    pub m_prev_index: i32,
+    #[rename(name = "m_moveTick")]
+    pub m_move_tick: f32,
+}
+
+#[cfg(feature = "app-myroomrelianceselectroot")]
+#[::unity2::methods]
+impl MyRoomRelianceSelectRoot_CursorTop {
+    #[doc = "`get_OpenCount()` overload"]
+    #[method(name = "get_OpenCount", args = 0)]
+    pub fn get_open_count(self) -> i32;
+
+    #[doc = "`set_OpenCount(i32)` overload"]
+    #[method(name = "set_OpenCount", args = 1)]
+    pub fn set_open_count(self, value: i32) -> ();
+
+    #[doc = "`.ctor(crate::unity_engine::recttransform::RectTransform)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, transform: crate::unity_engine::recttransform::RectTransform) -> ();
+
+    #[doc = "`Reset(crate::unity_engine::recttransform::RectTransform)` overload"]
+    #[method(name = "Reset", args = 1)]
+    pub fn reset(self, transform: crate::unity_engine::recttransform::RectTransform) -> ();
+
+    #[doc = "`SetSelectIndex(i32)` overload"]
+    #[method(name = "SetSelectIndex", args = 1)]
+    pub fn set_select_index(self, select_index: i32) -> ();
+
+    #[doc = "`GetSelectIndex()` overload"]
+    #[method(name = "GetSelectIndex", args = 0)]
+    pub fn get_select_index(self) -> i32;
+
+    #[doc = "`KeyLeft(bool)` overload"]
+    #[method(name = "KeyLeft", args = 1)]
+    pub fn key_left(self, is_trigger: bool) -> ();
+
+    #[doc = "`KeyRight(bool)` overload"]
+    #[method(name = "KeyRight", args = 1)]
+    pub fn key_right(self, is_trigger: bool) -> ();
+
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[doc = "`GetCorrectedYCoord()` overload"]
+    #[method(name = "GetCorrectedYCoord", args = 0)]
+    pub fn get_corrected_y_coord(self) -> f32;
+
+    #[doc = "`GetPositionX(i32)` overload"]
+    #[method(name = "GetPositionX", args = 1)]
+    pub fn get_position_x(self, select_index: i32) -> f32;
+}
+
+#[cfg(feature = "app-myroomrelianceselectroot")]
+impl MyRoomRelianceSelectRoot_CursorTop {
+    #[doc = "`.ctor(crate::unity_engine::recttransform::RectTransform)` — overload selector"]
+    pub fn new(transform: crate::unity_engine::recttransform::RectTransform) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MyRoomRelianceSelectRoot_CursorTop),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomRelianceSelectRoot_CursorTopMethods>::ctor(this, transform);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomrelianceselectroot/MyRoomRelianceSelectRoot.md"))]
 #[::unity2::class(namespace = "App", name = "MyRoomRelianceSelectRoot")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -134,96 +224,6 @@ impl MyRoomRelianceSelectRoot {
             )
         });
         <Self as IMyRoomRelianceSelectRootMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/myroomrelianceselectroot/MyRoomRelianceSelectRoot_CursorTop.md"))]
-#[::unity2::class(namespace = "App", name = "MyRoomRelianceSelectRoot.CursorTop")]
-#[parent(crate::system::object::Object)]
-pub struct MyRoomRelianceSelectRoot_CursorTop {
-    #[rename(name = "ResetRect")]
-    pub reset_rect: crate::unity_engine::recttransform::RectTransform,
-    #[rename(name = "RankC_PosX")]
-    pub rank_c_pos_x: f32,
-    #[rename(name = "RankB_PosX")]
-    pub rank_b_pos_x: f32,
-    #[rename(name = "RankA_PosX")]
-    pub rank_a_pos_x: f32,
-    #[rename(name = "RankS_PosX")]
-    pub rank_s_pos_x: f32,
-    #[rename(name = "MoveFrame")]
-    pub move_frame: f32,
-    #[rename(name = "m_cursorTop")]
-    pub m_cursor_top: crate::unity_engine::recttransform::RectTransform,
-    #[rename(name = "m_selectIndex")]
-    pub m_select_index: i32,
-    #[rename(name = "m_prevIndex")]
-    pub m_prev_index: i32,
-    #[rename(name = "m_moveTick")]
-    pub m_move_tick: f32,
-}
-
-#[cfg(feature = "app-myroomrelianceselectroot")]
-#[::unity2::methods]
-impl MyRoomRelianceSelectRoot_CursorTop {
-    #[doc = "`get_OpenCount()` overload"]
-    #[method(name = "get_OpenCount", args = 0)]
-    pub fn get_open_count(self) -> i32;
-
-    #[doc = "`set_OpenCount(i32)` overload"]
-    #[method(name = "set_OpenCount", args = 1)]
-    pub fn set_open_count(self, value: i32) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, transform: crate::unity_engine::recttransform::RectTransform) -> ();
-
-    #[doc = "`Reset(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = "Reset", args = 1)]
-    pub fn reset(self, transform: crate::unity_engine::recttransform::RectTransform) -> ();
-
-    #[doc = "`SetSelectIndex(i32)` overload"]
-    #[method(name = "SetSelectIndex", args = 1)]
-    pub fn set_select_index(self, select_index: i32) -> ();
-
-    #[doc = "`GetSelectIndex()` overload"]
-    #[method(name = "GetSelectIndex", args = 0)]
-    pub fn get_select_index(self) -> i32;
-
-    #[doc = "`KeyLeft(bool)` overload"]
-    #[method(name = "KeyLeft", args = 1)]
-    pub fn key_left(self, is_trigger: bool) -> ();
-
-    #[doc = "`KeyRight(bool)` overload"]
-    #[method(name = "KeyRight", args = 1)]
-    pub fn key_right(self, is_trigger: bool) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`GetCorrectedYCoord()` overload"]
-    #[method(name = "GetCorrectedYCoord", args = 0)]
-    pub fn get_corrected_y_coord(self) -> f32;
-
-    #[doc = "`GetPositionX(i32)` overload"]
-    #[method(name = "GetPositionX", args = 1)]
-    pub fn get_position_x(self, select_index: i32) -> f32;
-}
-
-#[cfg(feature = "app-myroomrelianceselectroot")]
-impl MyRoomRelianceSelectRoot_CursorTop {
-    #[doc = "`.ctor(crate::unity_engine::recttransform::RectTransform)` — overload selector"]
-    pub fn new(transform: crate::unity_engine::recttransform::RectTransform) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MyRoomRelianceSelectRoot_CursorTop),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMyRoomRelianceSelectRoot_CursorTopMethods>::ctor(this, transform);
         this
     }
 }

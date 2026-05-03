@@ -8,103 +8,54 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_ConditionType.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct HubUtil_ConditionType {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil_BSpline.md"))]
+#[::unity2::class(namespace = "App", name = "HubUtil.BSpline")]
+#[parent(crate::system::object::Object)]
+pub struct HubUtil_BSpline {}
+
+#[cfg(feature = "app-hubutil")]
+#[::unity2::methods]
+impl HubUtil_BSpline {
+    #[doc = "`Loop(i32, i32, i32)` overload"]
+    #[method(name = "Loop", args = 3)]
+    pub fn r#loop(n: i32, min: i32, max: i32) -> i32;
+
+    #[doc = "`Coefficient(f32)` overload"]
+    #[method(name = "Coefficient", args = 1)]
+    pub fn coefficient(t: f32) -> f32;
+
+    #[doc = "`Calc(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]
+    #[method(name = "Calc", args = 2)]
+    pub fn calc(
+        v: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        t: f32,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`CalcLoop(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]
+    #[method(name = "CalcLoop", args = 2)]
+    pub fn calc_loop(
+        v: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+        t: f32,
+    ) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
-impl ::unity2::ClassIdentity for HubUtil_ConditionType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "HubUtil.ConditionType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for HubUtil_ConditionType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl HubUtil_ConditionType {
-    pub fn morning() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn day() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn evening() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn night() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn weapon_opened() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn item_opened() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn refinement_opened() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn accessory_opened() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn tent1() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn tent2() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn tent3() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn fire() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn fortune_hut_opened() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn flea_market() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn statue() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn pool_circle_swim() -> Self {
-        Self { value: 15 }
+#[cfg(feature = "app-hubutil")]
+impl HubUtil_BSpline {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(HubUtil_BSpline),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubUtil_BSplineMethods>::ctor(this);
+        this
     }
 }
 
@@ -849,57 +800,6 @@ impl HubUtil {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/hubutil/HubUtil_BSpline.md"))]
-#[::unity2::class(namespace = "App", name = "HubUtil.BSpline")]
-#[parent(crate::system::object::Object)]
-pub struct HubUtil_BSpline {}
-
-#[cfg(feature = "app-hubutil")]
-#[::unity2::methods]
-impl HubUtil_BSpline {
-    #[doc = "`Loop(i32, i32, i32)` overload"]
-    #[method(name = "Loop", args = 3)]
-    pub fn r#loop(n: i32, min: i32, max: i32) -> i32;
-
-    #[doc = "`Coefficient(f32)` overload"]
-    #[method(name = "Coefficient", args = 1)]
-    pub fn coefficient(t: f32) -> f32;
-
-    #[doc = "`Calc(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]
-    #[method(name = "Calc", args = 2)]
-    pub fn calc(
-        v: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        t: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`CalcLoop(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]
-    #[method(name = "CalcLoop", args = 2)]
-    pub fn calc_loop(
-        v: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-        t: f32,
-    ) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-hubutil")]
-impl HubUtil_BSpline {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(HubUtil_BSpline),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IHubUtil_BSplineMethods>::ctor(this);
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_TimezoneType.md"))]
 #[repr(C)]
 #[derive(
@@ -953,5 +853,105 @@ impl HubUtil_TimezoneType {
 
     pub fn max() -> Self {
         Self { value: 4 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/hubutil/HubUtil_ConditionType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct HubUtil_ConditionType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for HubUtil_ConditionType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "HubUtil.ConditionType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for HubUtil_ConditionType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl HubUtil_ConditionType {
+    pub fn morning() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn day() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn evening() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn night() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn weapon_opened() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn item_opened() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn refinement_opened() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn accessory_opened() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn tent1() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn tent2() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn tent3() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn fire() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn fortune_hut_opened() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn flea_market() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn statue() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn pool_circle_swim() -> Self {
+        Self { value: 15 }
     }
 }

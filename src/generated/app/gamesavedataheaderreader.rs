@@ -12,147 +12,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_Handle.md"))]
-#[::unity2::class(namespace = "App", name = "GameSaveDataHeaderReader.Handle")]
-#[parent(crate::system::object::Object)]
-pub struct GameSaveDataHeaderReader_Handle {}
-
-#[cfg(feature = "app-gamesavedataheaderreader")]
-#[::unity2::methods]
-impl GameSaveDataHeaderReader_Handle {
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, r#type: crate::app::gamesavedata::GameSaveData_Types, index: i32) -> ();
-
-    #[doc = "`IsRunning()` overload"]
-    #[method(name = "IsRunning", args = 0)]
-    pub fn is_running(self) -> bool;
-
-    #[doc = "`IsNoData()` overload"]
-    #[method(name = "IsNoData", args = 0)]
-    pub fn is_no_data(self) -> bool;
-
-    #[doc = "`IsSucceeded()` overload"]
-    #[method(name = "IsSucceeded", args = 0)]
-    pub fn is_succeeded(self) -> bool;
-
-    #[doc = "`IsFailed()` overload"]
-    #[method(name = "IsFailed", args = 0)]
-    pub fn is_failed(self) -> bool;
-
-    #[doc = "`get_Type()` overload"]
-    #[method(name = "get_Type", args = 0)]
-    pub fn get_type(self) -> crate::app::gamesavedata::GameSaveData_Types;
-
-    #[doc = "`set_Type(crate::app::gamesavedata::GameSaveData_Types)` overload"]
-    #[method(name = "set_Type", args = 1)]
-    pub fn set_type(self, value: crate::app::gamesavedata::GameSaveData_Types) -> ();
-
-    #[doc = "`get_Index()` overload"]
-    #[method(name = "get_Index", args = 0)]
-    pub fn get_index(self) -> i32;
-
-    #[doc = "`set_Index(i32)` overload"]
-    #[method(name = "set_Index", args = 1)]
-    pub fn set_index(self, value: i32) -> ();
-
-    #[doc = "`get_State()` overload"]
-    #[method(name = "get_State", args = 0)]
-    pub fn get_state(self)
-        -> crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States;
-
-    #[doc = "`set_State(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States)` overload"]
-    #[method(name = "set_State", args = 1)]
-    pub fn set_state(
-        self,
-        value: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States,
-    ) -> ();
-
-    #[doc = "`get_Header()` overload"]
-    #[method(name = "get_Header", args = 0)]
-    pub fn get_header(self) -> crate::app::gamesavedataheader::GameSaveDataHeader;
-
-    #[doc = "`set_Header(crate::app::gamesavedataheader::GameSaveDataHeader)` overload"]
-    #[method(name = "set_Header", args = 1)]
-    pub fn set_header(self, value: crate::app::gamesavedataheader::GameSaveDataHeader) -> ();
-}
-
-#[cfg(feature = "app-gamesavedataheaderreader")]
-impl GameSaveDataHeaderReader_Handle {
-    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32)` — overload selector"]
-    pub fn new(r#type: crate::app::gamesavedata::GameSaveData_Types, index: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveDataHeaderReader_Handle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameSaveDataHeaderReader_HandleMethods>::ctor(this, r#type, index);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_ProcRelease.md"))]
-#[::unity2::class(namespace = "App", name = "GameSaveDataHeaderReader.ProcRelease")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct GameSaveDataHeaderReader_ProcRelease {
-    #[rename(name = "m_Handles")]
-    pub m_handles: crate::system::collections::generic::list_1::List_1<
-        crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-    >,
-}
-
-#[cfg(feature = "app-gamesavedataheaderreader")]
-#[::unity2::methods]
-impl GameSaveDataHeaderReader_ProcRelease {
-    #[doc = "`Create(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)` overload"]
-    #[method(name = "Create", args = 2)]
-    pub fn create(
-        super_: crate::app::procinst::ProcInst,
-        handles: crate::system::collections::generic::list_1::List_1<
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-        >,
-    ) -> ();
-
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        handles: crate::system::collections::generic::list_1::List_1<
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-        >,
-    ) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-}
-
-#[cfg(feature = "app-gamesavedataheaderreader")]
-impl GameSaveDataHeaderReader_ProcRelease {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)` — overload selector"]
-    pub fn new(
-        handles: crate::system::collections::generic::list_1::List_1<
-            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GameSaveDataHeaderReader_ProcRelease),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGameSaveDataHeaderReader_ProcReleaseMethods>::ctor(this, handles);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_HandleList.md"))]
 #[::unity2::class(namespace = "App", name = "GameSaveDataHeaderReader.HandleList")]
 # [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: gamesavedataheaderreader :: GameSaveDataHeaderReader_Handle >)]
@@ -249,6 +108,66 @@ impl GameSaveDataHeaderReader {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_ProcRelease.md"))]
+#[::unity2::class(namespace = "App", name = "GameSaveDataHeaderReader.ProcRelease")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct GameSaveDataHeaderReader_ProcRelease {
+    #[rename(name = "m_Handles")]
+    pub m_handles: crate::system::collections::generic::list_1::List_1<
+        crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+    >,
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+#[::unity2::methods]
+impl GameSaveDataHeaderReader_ProcRelease {
+    #[doc = "`Create(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)` overload"]
+    #[method(name = "Create", args = 2)]
+    pub fn create(
+        super_: crate::app::procinst::ProcInst,
+        handles: crate::system::collections::generic::list_1::List_1<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> ();
+
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        handles: crate::system::collections::generic::list_1::List_1<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+impl GameSaveDataHeaderReader_ProcRelease {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle>)` — overload selector"]
+    pub fn new(
+        handles: crate::system::collections::generic::list_1::List_1<
+            crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_Handle,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSaveDataHeaderReader_ProcRelease),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSaveDataHeaderReader_ProcReleaseMethods>::ctor(this, handles);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_ProcRead.md"))]
 #[::unity2::class(namespace = "App", name = "GameSaveDataHeaderReader.ProcRead")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -303,6 +222,87 @@ impl GameSaveDataHeaderReader_ProcRead {
             )
         });
         <Self as IGameSaveDataHeaderReader_ProcReadMethods>::ctor(this, handle);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gamesavedataheaderreader/GameSaveDataHeaderReader_Handle.md"))]
+#[::unity2::class(namespace = "App", name = "GameSaveDataHeaderReader.Handle")]
+#[parent(crate::system::object::Object)]
+pub struct GameSaveDataHeaderReader_Handle {}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+#[::unity2::methods]
+impl GameSaveDataHeaderReader_Handle {
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, r#type: crate::app::gamesavedata::GameSaveData_Types, index: i32) -> ();
+
+    #[doc = "`IsRunning()` overload"]
+    #[method(name = "IsRunning", args = 0)]
+    pub fn is_running(self) -> bool;
+
+    #[doc = "`IsNoData()` overload"]
+    #[method(name = "IsNoData", args = 0)]
+    pub fn is_no_data(self) -> bool;
+
+    #[doc = "`IsSucceeded()` overload"]
+    #[method(name = "IsSucceeded", args = 0)]
+    pub fn is_succeeded(self) -> bool;
+
+    #[doc = "`IsFailed()` overload"]
+    #[method(name = "IsFailed", args = 0)]
+    pub fn is_failed(self) -> bool;
+
+    #[doc = "`get_Type()` overload"]
+    #[method(name = "get_Type", args = 0)]
+    pub fn get_type(self) -> crate::app::gamesavedata::GameSaveData_Types;
+
+    #[doc = "`set_Type(crate::app::gamesavedata::GameSaveData_Types)` overload"]
+    #[method(name = "set_Type", args = 1)]
+    pub fn set_type(self, value: crate::app::gamesavedata::GameSaveData_Types) -> ();
+
+    #[doc = "`get_Index()` overload"]
+    #[method(name = "get_Index", args = 0)]
+    pub fn get_index(self) -> i32;
+
+    #[doc = "`set_Index(i32)` overload"]
+    #[method(name = "set_Index", args = 1)]
+    pub fn set_index(self, value: i32) -> ();
+
+    #[doc = "`get_State()` overload"]
+    #[method(name = "get_State", args = 0)]
+    pub fn get_state(self)
+        -> crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States;
+
+    #[doc = "`set_State(crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States)` overload"]
+    #[method(name = "set_State", args = 1)]
+    pub fn set_state(
+        self,
+        value: crate::app::gamesavedataheaderreader::GameSaveDataHeaderReader_States,
+    ) -> ();
+
+    #[doc = "`get_Header()` overload"]
+    #[method(name = "get_Header", args = 0)]
+    pub fn get_header(self) -> crate::app::gamesavedataheader::GameSaveDataHeader;
+
+    #[doc = "`set_Header(crate::app::gamesavedataheader::GameSaveDataHeader)` overload"]
+    #[method(name = "set_Header", args = 1)]
+    pub fn set_header(self, value: crate::app::gamesavedataheader::GameSaveDataHeader) -> ();
+}
+
+#[cfg(feature = "app-gamesavedataheaderreader")]
+impl GameSaveDataHeaderReader_Handle {
+    #[doc = "`.ctor(crate::app::gamesavedata::GameSaveData_Types, i32)` — overload selector"]
+    pub fn new(r#type: crate::app::gamesavedata::GameSaveData_Types, index: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GameSaveDataHeaderReader_Handle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGameSaveDataHeaderReader_HandleMethods>::ctor(this, r#type, index);
         this
     }
 }

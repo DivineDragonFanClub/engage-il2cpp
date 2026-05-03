@@ -18,55 +18,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlesequence/TitleSequence_PedestalData.md"))]
-#[::unity2::class(namespace = "App", name = "TitleSequence.PedestalData")]
-# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: titlesequence :: TitleSequence_PedestalData >)]
-pub struct TitleSequence_PedestalData {}
-
-#[cfg(feature = "app-titlesequence")]
-#[::unity2::methods]
-impl TitleSequence_PedestalData {
-    #[doc = "`get_PedestalName()` overload"]
-    #[method(name = "get_PedestalName", args = 0)]
-    pub fn get_pedestal_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_PedestalName(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_PedestalName", args = 1)]
-    pub fn set_pedestal_name(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Cid()` overload"]
-    #[method(name = "get_Cid", args = 0)]
-    pub fn get_cid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Cid(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Cid", args = 1)]
-    pub fn set_cid(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Load()` overload"]
-    #[method(name = "Load", args = 0)]
-    pub fn load() -> ();
-}
-
-#[cfg(feature = "app-titlesequence")]
-impl TitleSequence_PedestalData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TitleSequence_PedestalData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITitleSequence_PedestalDataMethods>::ctor(this);
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/titlesequence/TitleSequence_Label.md"))]
 #[repr(C)]
 #[derive(
@@ -224,6 +175,55 @@ impl TitleSequence {
             )
         });
         <Self as ITitleSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/titlesequence/TitleSequence_PedestalData.md"))]
+#[::unity2::class(namespace = "App", name = "TitleSequence.PedestalData")]
+# [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: titlesequence :: TitleSequence_PedestalData >)]
+pub struct TitleSequence_PedestalData {}
+
+#[cfg(feature = "app-titlesequence")]
+#[::unity2::methods]
+impl TitleSequence_PedestalData {
+    #[doc = "`get_PedestalName()` overload"]
+    #[method(name = "get_PedestalName", args = 0)]
+    pub fn get_pedestal_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_PedestalName(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_PedestalName", args = 1)]
+    pub fn set_pedestal_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Cid()` overload"]
+    #[method(name = "get_Cid", args = 0)]
+    pub fn get_cid(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Cid(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Cid", args = 1)]
+    pub fn set_cid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Load()` overload"]
+    #[method(name = "Load", args = 0)]
+    pub fn load() -> ();
+}
+
+#[cfg(feature = "app-titlesequence")]
+impl TitleSequence_PedestalData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TitleSequence_PedestalData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITitleSequence_PedestalDataMethods>::ctor(this);
         this
     }
 }

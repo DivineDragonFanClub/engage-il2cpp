@@ -78,47 +78,6 @@ impl ProfileCardAlbumListMenuOverLimit_ProfileCardAlbumListMenuOverLimitItem {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit_CancelEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ProfileCardAlbumListMenuOverLimit.CancelEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ProfileCardAlbumListMenuOverLimit_CancelEventHandler {}
-
-#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
-#[::unity2::methods]
-impl ProfileCardAlbumListMenuOverLimit_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        super_: crate::app::procinst::ProcInst,
-    ) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
-impl ProfileCardAlbumListMenuOverLimit_CancelEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardAlbumListMenuOverLimit_CancelEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardAlbumListMenuOverLimit_CancelEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardAlbumListMenuOverLimit")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -219,6 +178,47 @@ impl ProfileCardAlbumListMenuOverLimit {
             menu_content,
             profile_card_album_root,
             cancel_event_handler,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardalbumlistmenuoverlimit/ProfileCardAlbumListMenuOverLimit_CancelEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ProfileCardAlbumListMenuOverLimit.CancelEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ProfileCardAlbumListMenuOverLimit_CancelEventHandler {}
+
+#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
+#[::unity2::methods]
+impl ProfileCardAlbumListMenuOverLimit_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        super_: crate::app::procinst::ProcInst,
+    ) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-profilecardalbumlistmenuoverlimit")]
+impl ProfileCardAlbumListMenuOverLimit_CancelEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardAlbumListMenuOverLimit_CancelEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardAlbumListMenuOverLimit_CancelEventHandlerMethods>::ctor(
+            this, object, method,
         );
         this
     }

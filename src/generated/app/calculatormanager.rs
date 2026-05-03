@@ -10,6 +10,35 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_CommandList.md"))]
+#[::unity2::class(namespace = "App", name = "CalculatorManager.CommandList")]
+# [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: app :: calculatorcommand :: CalculatorCommand >)]
+pub struct CalculatorManager_CommandList {}
+
+#[cfg(feature = "app-calculatormanager")]
+#[::unity2::methods]
+impl CalculatorManager_CommandList {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-calculatormanager")]
+impl CalculatorManager_CommandList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CalculatorManager_CommandList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICalculatorManager_CommandListMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_StackPool.md"))]
 #[::unity2::class(namespace = "App", name = "CalculatorManager.StackPool")]
 # [parent (crate :: system :: collections :: generic :: stack_1 :: Stack_1 < crate :: app :: calculatormanager :: CalculatorManager_CommandStack >)]
@@ -39,31 +68,46 @@ impl CalculatorManager_StackPool {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_CommandList.md"))]
-#[::unity2::class(namespace = "App", name = "CalculatorManager.CommandList")]
-# [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: app :: calculatorcommand :: CalculatorCommand >)]
-pub struct CalculatorManager_CommandList {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_CommandStack.md"))]
+#[::unity2::class(namespace = "App", name = "CalculatorManager.CommandStack")]
+#[parent(crate::system::object::Object)]
+pub struct CalculatorManager_CommandStack {
+    #[rename(name = "ValueStack")]
+    pub value_stack: crate::system::collections::generic::stack_1::Stack_1<f32>,
+    #[rename(name = "IndexStack")]
+    pub index_stack: crate::system::collections::generic::stack_1::Stack_1<i32>,
+    #[rename(name = "StackArgs")]
+    pub stack_args: crate::system::collections::generic::list_1::List_1<f32>,
+    #[rename(name = "LocalArgs")]
+    pub local_args: crate::system::collections::generic::list_1::List_1<f32>,
+    #[rename(name = "TempArgs")]
+    pub temp_args: crate::system::collections::generic::list_1::List_1<f32>,
+}
 
 #[cfg(feature = "app-calculatormanager")]
 #[::unity2::methods]
-impl CalculatorManager_CommandList {
+impl CalculatorManager_CommandStack {
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-calculatormanager")]
-impl CalculatorManager_CommandList {
+impl CalculatorManager_CommandStack {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(CalculatorManager_CommandList),
+                ::core::stringify!(CalculatorManager_CommandStack),
                 ::core::stringify!(new),
             )
         });
-        <Self as ICalculatorManager_CommandListMethods>::ctor(this);
+        <Self as ICalculatorManager_CommandStackMethods>::ctor(this);
         this
     }
 }
@@ -316,50 +360,6 @@ impl CalculatorManager {
             )
         });
         <Self as ICalculatorManagerMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/calculatormanager/CalculatorManager_CommandStack.md"))]
-#[::unity2::class(namespace = "App", name = "CalculatorManager.CommandStack")]
-#[parent(crate::system::object::Object)]
-pub struct CalculatorManager_CommandStack {
-    #[rename(name = "ValueStack")]
-    pub value_stack: crate::system::collections::generic::stack_1::Stack_1<f32>,
-    #[rename(name = "IndexStack")]
-    pub index_stack: crate::system::collections::generic::stack_1::Stack_1<i32>,
-    #[rename(name = "StackArgs")]
-    pub stack_args: crate::system::collections::generic::list_1::List_1<f32>,
-    #[rename(name = "LocalArgs")]
-    pub local_args: crate::system::collections::generic::list_1::List_1<f32>,
-    #[rename(name = "TempArgs")]
-    pub temp_args: crate::system::collections::generic::list_1::List_1<f32>,
-}
-
-#[cfg(feature = "app-calculatormanager")]
-#[::unity2::methods]
-impl CalculatorManager_CommandStack {
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-calculatormanager")]
-impl CalculatorManager_CommandStack {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CalculatorManager_CommandStack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICalculatorManager_CommandStackMethods>::ctor(this);
         this
     }
 }

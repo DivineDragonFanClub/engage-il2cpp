@@ -4,161 +4,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI.md"))]
-#[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI")]
-#[parent(crate::system::object::Object)]
-pub struct TalkLogUI {}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-#[::unity2::methods]
-impl TalkLogUI {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-impl TalkLogUI {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkLogUI),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkLogUIMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_Cursor.md"))]
-#[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.Cursor")]
-#[parent(crate::system::object::Object)]
-pub struct TalkLogUI_Cursor {
-    #[rename(name = "m_RootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Animator")]
-    pub m_animator: crate::unity_engine::animator::Animator,
-    #[rename(name = "m_PosFrom")]
-    pub m_pos_from: crate::unity_engine::vector3::Vector3,
-    #[rename(name = "m_PosTo")]
-    pub m_pos_to: crate::unity_engine::vector3::Vector3,
-    #[rename(name = "m_Time")]
-    pub m_time: f32,
-    #[rename(name = "m_Duration")]
-    pub m_duration: f32,
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-#[::unity2::methods]
-impl TalkLogUI_Cursor {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`MovePosition(crate::app::talk3_d::talklogui::TalkLogUI_Window, f32)` overload"]
-    #[method(name = "MovePosition", args = 2)]
-    pub fn move_position(
-        self,
-        win: crate::app::talk3_d::talklogui::TalkLogUI_Window,
-        msec: f32,
-    ) -> ();
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-impl TalkLogUI_Cursor {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkLogUI_Cursor),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkLogUI_CursorMethods>::ctor(this, root_object);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_ScrollBar.md"))]
-#[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.ScrollBar")]
-#[parent(crate::system::object::Object)]
-pub struct TalkLogUI_ScrollBar {
-    #[rename(name = "m_RootObject")]
-    pub m_root_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_ScrollBar")]
-    pub m_scroll_bar: crate::unity_engine::ui::scrollbar::Scrollbar,
-    #[rename(name = "m_ScrollAreaImage")]
-    pub m_scroll_area_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_SlideHandleImage")]
-    pub m_slide_handle_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_ItemMax")]
-    pub m_item_max: i32,
-    #[rename(name = "m_SlideHandlePosFrom")]
-    pub m_slide_handle_pos_from: f32,
-    #[rename(name = "m_SlideHandlePosTo")]
-    pub m_slide_handle_pos_to: f32,
-    #[rename(name = "m_Time")]
-    pub m_time: f32,
-    #[rename(name = "m_Duration")]
-    pub m_duration: f32,
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-#[::unity2::methods]
-impl TalkLogUI_ScrollBar {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        root_object: crate::unity_engine::gameobject::GameObject,
-        item_max: i32,
-    ) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`MoveSlideHandlePos(f32, f32, f32)` overload"]
-    #[method(name = "MoveSlideHandlePos", args = 3)]
-    pub fn move_slide_handle_pos(self, scroll_index: f32, log_num: f32, msec: f32) -> ();
-
-    #[doc = "`SetSlideHandleSize(f32)` overload"]
-    #[method(name = "SetSlideHandleSize", args = 1)]
-    pub fn set_slide_handle_size(self, log_num: f32) -> ();
-
-    #[doc = "`Show()` overload"]
-    #[method(name = "Show", args = 0)]
-    pub fn show(self) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-}
-
-#[cfg(feature = "app-talk3_d-talklogui")]
-impl TalkLogUI_ScrollBar {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32)` — overload selector"]
-    pub fn new(root_object: crate::unity_engine::gameobject::GameObject, item_max: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkLogUI_ScrollBar),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkLogUI_ScrollBarMethods>::ctor(this, root_object, item_max);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_Window.md"))]
 #[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.Window")]
 #[parent(crate::system::object::Object)]
@@ -285,6 +130,161 @@ impl TalkLogUI_Window {
             )
         });
         <Self as ITalkLogUI_WindowMethods>::ctor(this, index, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_Cursor.md"))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.Cursor")]
+#[parent(crate::system::object::Object)]
+pub struct TalkLogUI_Cursor {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Animator")]
+    pub m_animator: crate::unity_engine::animator::Animator,
+    #[rename(name = "m_PosFrom")]
+    pub m_pos_from: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_PosTo")]
+    pub m_pos_to: crate::unity_engine::vector3::Vector3,
+    #[rename(name = "m_Time")]
+    pub m_time: f32,
+    #[rename(name = "m_Duration")]
+    pub m_duration: f32,
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+#[::unity2::methods]
+impl TalkLogUI_Cursor {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[doc = "`MovePosition(crate::app::talk3_d::talklogui::TalkLogUI_Window, f32)` overload"]
+    #[method(name = "MovePosition", args = 2)]
+    pub fn move_position(
+        self,
+        win: crate::app::talk3_d::talklogui::TalkLogUI_Window,
+        msec: f32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+impl TalkLogUI_Cursor {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkLogUI_Cursor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkLogUI_CursorMethods>::ctor(this, root_object);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI.md"))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI")]
+#[parent(crate::system::object::Object)]
+pub struct TalkLogUI {}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+#[::unity2::methods]
+impl TalkLogUI {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+impl TalkLogUI {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkLogUI),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkLogUIMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talklogui/TalkLogUI_ScrollBar.md"))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkLogUI.ScrollBar")]
+#[parent(crate::system::object::Object)]
+pub struct TalkLogUI_ScrollBar {
+    #[rename(name = "m_RootObject")]
+    pub m_root_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_ScrollBar")]
+    pub m_scroll_bar: crate::unity_engine::ui::scrollbar::Scrollbar,
+    #[rename(name = "m_ScrollAreaImage")]
+    pub m_scroll_area_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_SlideHandleImage")]
+    pub m_slide_handle_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_ItemMax")]
+    pub m_item_max: i32,
+    #[rename(name = "m_SlideHandlePosFrom")]
+    pub m_slide_handle_pos_from: f32,
+    #[rename(name = "m_SlideHandlePosTo")]
+    pub m_slide_handle_pos_to: f32,
+    #[rename(name = "m_Time")]
+    pub m_time: f32,
+    #[rename(name = "m_Duration")]
+    pub m_duration: f32,
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+#[::unity2::methods]
+impl TalkLogUI_ScrollBar {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        root_object: crate::unity_engine::gameobject::GameObject,
+        item_max: i32,
+    ) -> ();
+
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[doc = "`MoveSlideHandlePos(f32, f32, f32)` overload"]
+    #[method(name = "MoveSlideHandlePos", args = 3)]
+    pub fn move_slide_handle_pos(self, scroll_index: f32, log_num: f32, msec: f32) -> ();
+
+    #[doc = "`SetSlideHandleSize(f32)` overload"]
+    #[method(name = "SetSlideHandleSize", args = 1)]
+    pub fn set_slide_handle_size(self, log_num: f32) -> ();
+
+    #[doc = "`Show()` overload"]
+    #[method(name = "Show", args = 0)]
+    pub fn show(self) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talklogui")]
+impl TalkLogUI_ScrollBar {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32)` — overload selector"]
+    pub fn new(root_object: crate::unity_engine::gameobject::GameObject, item_max: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkLogUI_ScrollBar),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkLogUI_ScrollBarMethods>::ctor(this, root_object, item_max);
         this
     }
 }

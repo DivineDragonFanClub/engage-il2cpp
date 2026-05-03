@@ -4,6 +4,88 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/vibrationmanager/VibrationManager_VibHandle.md"))]
+#[::unity2::class(namespace = "App", name = "VibrationManager.VibHandle")]
+#[parent(crate::system::object::Object)]
+pub struct VibrationManager_VibHandle {
+    #[static_field]
+    #[rename(name = "DEVICE_COUNT_MAX")]
+    pub device_count_max: i32,
+    #[rename(name = "m_deviceCount")]
+    pub m_device_count: i32,
+    #[rename(name = "m_deviceHandles")]
+    pub m_device_handles:
+        ::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>,
+    #[rename(name = "m_deviceInfos")]
+    pub m_device_infos: ::unity2::Array<crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo>,
+    #[rename(name = "m_value")]
+    pub m_value: crate::nn::hid::vibrationvalue::VibrationValue,
+    #[rename(name = "m_amplitudeMagnitude")]
+    pub m_amplitude_magnitude: f32,
+    #[rename(name = "m_file")]
+    pub m_file: crate::app::vibrationfile::VibrationFile,
+    #[rename(name = "m_sample")]
+    pub m_sample: i32,
+    #[rename(name = "m_sampleLoop")]
+    pub m_sample_loop: bool,
+}
+
+#[cfg(feature = "app-vibrationmanager")]
+#[::unity2::methods]
+impl VibrationManager_VibHandle {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`SetupPad(crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]
+    #[method(name = "SetupPad", args = 2)]
+    pub fn setup_pad(
+        self,
+        npad_id: crate::nn::hid::npadid::NpadId,
+        npad_style: crate::nn::hid::npadstyle::NpadStyle,
+    ) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Set(crate::app::vibrationfile::VibrationFile, bool)` overload"]
+    #[method(name = "Set", args = 2)]
+    pub fn set(self, file: crate::app::vibrationfile::VibrationFile, is_loop: bool) -> ();
+
+    #[doc = "`SetAmplitudeMagnitude(f32)` overload"]
+    #[method(name = "SetAmplitudeMagnitude", args = 1)]
+    pub fn set_amplitude_magnitude(self, amplitude_magnitude: f32) -> ();
+
+    #[doc = "`SetAmplitude(f32, f32)` overload"]
+    #[method(name = "SetAmplitude", args = 2)]
+    pub fn set_amplitude(self, amp_low: f32, amp_high: f32) -> ();
+
+    #[doc = "`SetFrequecy(f32, f32)` overload"]
+    #[method(name = "SetFrequecy", args = 2)]
+    pub fn set_frequecy(self, freq_low: f32, freq_high: f32) -> ();
+
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+}
+
+#[cfg(feature = "app-vibrationmanager")]
+impl VibrationManager_VibHandle {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(VibrationManager_VibHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVibrationManager_VibHandleMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/vibrationmanager/VibrationManager.md"))]
 #[::unity2::class(namespace = "App", name = "VibrationManager")]
 #[parent(crate::system::object::Object)]
@@ -105,88 +187,6 @@ impl VibrationManager {
             )
         });
         <Self as IVibrationManagerMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/vibrationmanager/VibrationManager_VibHandle.md"))]
-#[::unity2::class(namespace = "App", name = "VibrationManager.VibHandle")]
-#[parent(crate::system::object::Object)]
-pub struct VibrationManager_VibHandle {
-    #[static_field]
-    #[rename(name = "DEVICE_COUNT_MAX")]
-    pub device_count_max: i32,
-    #[rename(name = "m_deviceCount")]
-    pub m_device_count: i32,
-    #[rename(name = "m_deviceHandles")]
-    pub m_device_handles:
-        ::unity2::Array<crate::nn::hid::vibrationdevicehandle::VibrationDeviceHandle>,
-    #[rename(name = "m_deviceInfos")]
-    pub m_device_infos: ::unity2::Array<crate::nn::hid::vibrationdeviceinfo::VibrationDeviceInfo>,
-    #[rename(name = "m_value")]
-    pub m_value: crate::nn::hid::vibrationvalue::VibrationValue,
-    #[rename(name = "m_amplitudeMagnitude")]
-    pub m_amplitude_magnitude: f32,
-    #[rename(name = "m_file")]
-    pub m_file: crate::app::vibrationfile::VibrationFile,
-    #[rename(name = "m_sample")]
-    pub m_sample: i32,
-    #[rename(name = "m_sampleLoop")]
-    pub m_sample_loop: bool,
-}
-
-#[cfg(feature = "app-vibrationmanager")]
-#[::unity2::methods]
-impl VibrationManager_VibHandle {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`SetupPad(crate::nn::hid::npadid::NpadId, crate::nn::hid::npadstyle::NpadStyle)` overload"]
-    #[method(name = "SetupPad", args = 2)]
-    pub fn setup_pad(
-        self,
-        npad_id: crate::nn::hid::npadid::NpadId,
-        npad_style: crate::nn::hid::npadstyle::NpadStyle,
-    ) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Set(crate::app::vibrationfile::VibrationFile, bool)` overload"]
-    #[method(name = "Set", args = 2)]
-    pub fn set(self, file: crate::app::vibrationfile::VibrationFile, is_loop: bool) -> ();
-
-    #[doc = "`SetAmplitudeMagnitude(f32)` overload"]
-    #[method(name = "SetAmplitudeMagnitude", args = 1)]
-    pub fn set_amplitude_magnitude(self, amplitude_magnitude: f32) -> ();
-
-    #[doc = "`SetAmplitude(f32, f32)` overload"]
-    #[method(name = "SetAmplitude", args = 2)]
-    pub fn set_amplitude(self, amp_low: f32, amp_high: f32) -> ();
-
-    #[doc = "`SetFrequecy(f32, f32)` overload"]
-    #[method(name = "SetFrequecy", args = 2)]
-    pub fn set_frequecy(self, freq_low: f32, freq_high: f32) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-}
-
-#[cfg(feature = "app-vibrationmanager")]
-impl VibrationManager_VibHandle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(VibrationManager_VibHandle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IVibrationManager_VibHandleMethods>::ctor(this);
         this
     }
 }

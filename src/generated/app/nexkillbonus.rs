@@ -12,6 +12,170 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_Kinds.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct NexKillBonus_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for NexKillBonus_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NexKillBonus.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NexKillBonus_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl NexKillBonus_Kinds {
+    pub fn kill() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn killed() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn max() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_ServerSequence_Mode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct NexKillBonus_ServerSequence_Mode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for NexKillBonus_ServerSequence_Mode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NexKillBonus.ServerSequence.Mode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NexKillBonus_ServerSequence_Mode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl NexKillBonus_ServerSequence_Mode {
+    pub fn download() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn upload() -> Self {
+        Self { value: 1 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_ServerSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct NexKillBonus_ServerSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for NexKillBonus_ServerSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NexKillBonus.ServerSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NexKillBonus_ServerSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl NexKillBonus_ServerSequence_Label {
+    pub fn search_data() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn search_self_data() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn delete_data() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn get_data() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn post_data() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn update_data() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn succeeded() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn error() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 8 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus_ServerSequence.md"))]
 #[::unity2::class(namespace = "App", name = "NexKillBonus.ServerSequence")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -151,78 +315,6 @@ impl NexKillBonus_ServerSequence {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_ServerSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct NexKillBonus_ServerSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for NexKillBonus_ServerSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexKillBonus.ServerSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for NexKillBonus_ServerSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl NexKillBonus_ServerSequence_Label {
-    pub fn search_data() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn search_self_data() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn delete_data() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn get_data() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn post_data() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn update_data() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn succeeded() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn error() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 8 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexkillbonus/NexKillBonus.md"))]
 #[::unity2::class(namespace = "App", name = "NexKillBonus")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexkillbonus :: NexKillBonus >)]
@@ -345,97 +437,5 @@ impl NexKillBonus {
         });
         <Self as INexKillBonusMethods>::ctor(this);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_ServerSequence_Mode.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct NexKillBonus_ServerSequence_Mode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for NexKillBonus_ServerSequence_Mode {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexKillBonus.ServerSequence.Mode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for NexKillBonus_ServerSequence_Mode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl NexKillBonus_ServerSequence_Mode {
-    pub fn download() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn upload() -> Self {
-        Self { value: 1 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexkillbonus/NexKillBonus_Kinds.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct NexKillBonus_Kinds {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for NexKillBonus_Kinds {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexKillBonus.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for NexKillBonus_Kinds {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl NexKillBonus_Kinds {
-    pub fn kill() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn killed() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn max() -> Self {
-        Self { value: 2 }
     }
 }

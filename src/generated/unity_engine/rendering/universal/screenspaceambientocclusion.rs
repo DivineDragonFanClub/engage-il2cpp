@@ -16,61 +16,6 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity
-    for ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses
-{
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-    const NAME: &'static str =
-        "ScreenSpaceAmbientOcclusion.ScreenSpaceAmbientOcclusionPass.ShaderPasses";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses {
-    pub fn ao() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn blur_horizontal() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn blur_vertical() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn blur_final() -> Self {
-        Self { value: 3 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
@@ -135,6 +80,61 @@ impl ScreenSpaceAmbientOcclusion {
         });
         <Self as IScreenSpaceAmbientOcclusionMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/screenspaceambientocclusion/ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity
+    for ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses
+{
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str =
+        "ScreenSpaceAmbientOcclusion.ScreenSpaceAmbientOcclusionPass.ShaderPasses";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ScreenSpaceAmbientOcclusion_ScreenSpaceAmbientOcclusionPass_ShaderPasses {
+    pub fn ao() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn blur_horizontal() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn blur_vertical() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn blur_final() -> Self {
+        Self { value: 3 }
     }
 }
 

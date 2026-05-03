@@ -12,49 +12,43 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprefab/MapPrefab.md"))]
-#[::unity2::class(namespace = "App", name = "MapPrefab")]
-#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-pub struct MapPrefab {
-    #[rename(name = "m_Entitys")]
-    pub m_entitys: crate::system::collections::generic::list_1::List_1<
-        crate::app::mapprefab::MapPrefab_Entity,
-    >,
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapprefab/MapPrefab_Category.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapPrefab_Category {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-mapprefab")]
-#[::unity2::methods]
-impl MapPrefab {
-    #[doc = "`HasObject(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "HasObject", args = 1)]
-    pub fn has_object(self, go: crate::unity_engine::gameobject::GameObject) -> bool;
+impl ::unity2::ClassIdentity for MapPrefab_Category {
+    const NAMESPACE: &'static str = "App";
 
-    #[doc = "`Add(crate::app::mapprefab::MapPrefab_Entity)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, entity: crate::app::mapprefab::MapPrefab_Entity) -> ();
+    const NAME: &'static str = "MapPrefab.Category";
 
-    #[doc = "`Sort()` overload"]
-    #[method(name = "Sort", args = 0)]
-    pub fn sort(self) -> ();
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
 }
 
-#[cfg(feature = "app-mapprefab")]
-impl MapPrefab {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapPrefab),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapPrefabMethods>::ctor(this);
-        this
+impl ::unity2::IlType for MapPrefab_Category {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapPrefab_Category {
+    pub fn _unnamed() -> Self {
+        Self { value: 0 }
     }
 }
 
@@ -93,46 +87,6 @@ impl ::unity2::IlType for MapPrefab_Region {
 }
 
 impl MapPrefab_Region {
-    pub fn _unnamed() -> Self {
-        Self { value: 0 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapprefab/MapPrefab_Category.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapPrefab_Category {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapPrefab_Category {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapPrefab.Category";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapPrefab_Category {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapPrefab_Category {
     pub fn _unnamed() -> Self {
         Self { value: 0 }
     }
@@ -182,6 +136,52 @@ impl MapPrefab_Entity {
             )
         });
         <Self as IMapPrefab_EntityMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapprefab/MapPrefab.md"))]
+#[::unity2::class(namespace = "App", name = "MapPrefab")]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct MapPrefab {
+    #[rename(name = "m_Entitys")]
+    pub m_entitys: crate::system::collections::generic::list_1::List_1<
+        crate::app::mapprefab::MapPrefab_Entity,
+    >,
+}
+
+#[cfg(feature = "app-mapprefab")]
+#[::unity2::methods]
+impl MapPrefab {
+    #[doc = "`HasObject(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "HasObject", args = 1)]
+    pub fn has_object(self, go: crate::unity_engine::gameobject::GameObject) -> bool;
+
+    #[doc = "`Add(crate::app::mapprefab::MapPrefab_Entity)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, entity: crate::app::mapprefab::MapPrefab_Entity) -> ();
+
+    #[doc = "`Sort()` overload"]
+    #[method(name = "Sort", args = 0)]
+    pub fn sort(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapprefab")]
+impl MapPrefab {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapPrefab),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapPrefabMethods>::ctor(this);
         this
     }
 }

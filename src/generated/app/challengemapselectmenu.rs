@@ -12,6 +12,39 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectmenu/ChallengeMapSelectMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "ChallengeMapSelectMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ChallengeMapSelectMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-challengemapselectmenu")]
+#[::unity2::methods]
+impl ChallengeMapSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::challengedata::ChallengeData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, chapter_data: crate::app::challengedata::ChallengeData) -> ();
+}
+
+#[cfg(feature = "app-challengemapselectmenu")]
+impl ChallengeMapSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeMapSelectMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeMapSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectmenu/ChallengeMapSelectMenu_RequestCloseEventHandler.md"))]
 #[::unity2::class(
     namespace = "App",
@@ -46,72 +79,6 @@ impl ChallengeMapSelectMenu_RequestCloseEventHandler {
         <Self as IChallengeMapSelectMenu_RequestCloseEventHandlerMethods>::ctor(
             this, object, method,
         );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectmenu/ChallengeMapSelectMenu_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "ChallengeMapSelectMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ChallengeMapSelectMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-challengemapselectmenu")]
-#[::unity2::methods]
-impl ChallengeMapSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::challengedata::ChallengeData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, chapter_data: crate::app::challengedata::ChallengeData) -> ();
-}
-
-#[cfg(feature = "app-challengemapselectmenu")]
-impl ChallengeMapSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeMapSelectMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IChallengeMapSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectmenu/ChallengeMapSelectMenu_SelectEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "ChallengeMapSelectMenu.SelectEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ChallengeMapSelectMenu_SelectEventHandler {}
-
-#[cfg(feature = "app-challengemapselectmenu")]
-#[::unity2::methods]
-impl ChallengeMapSelectMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::challengedata::ChallengeData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, chapter_data: crate::app::challengedata::ChallengeData) -> ();
-}
-
-#[cfg(feature = "app-challengemapselectmenu")]
-impl ChallengeMapSelectMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeMapSelectMenu_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IChallengeMapSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -176,6 +143,39 @@ impl ChallengeMapSelectMenu {
             )
         });
         <Self as IChallengeMapSelectMenuMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectmenu/ChallengeMapSelectMenu_SelectEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "ChallengeMapSelectMenu.SelectEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ChallengeMapSelectMenu_SelectEventHandler {}
+
+#[cfg(feature = "app-challengemapselectmenu")]
+#[::unity2::methods]
+impl ChallengeMapSelectMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::challengedata::ChallengeData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, chapter_data: crate::app::challengedata::ChallengeData) -> ();
+}
+
+#[cfg(feature = "app-challengemapselectmenu")]
+impl ChallengeMapSelectMenu_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeMapSelectMenu_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeMapSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

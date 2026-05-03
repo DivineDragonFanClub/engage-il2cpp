@@ -10,6 +10,54 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/async_operations/groupoperation/GroupOperation_GroupOperationSettings.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GroupOperation_GroupOperationSettings {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GroupOperation_GroupOperationSettings {
+    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.AsyncOperations";
+
+    const NAME: &'static str = "GroupOperation.GroupOperationSettings";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GroupOperation_GroupOperationSettings {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GroupOperation_GroupOperationSettings {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn release_dependencies_on_failure() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn allow_failed_dependencies() -> Self {
+        Self { value: 2 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/resource_management/async_operations/groupoperation/GroupOperation.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.ResourceManagement.AsyncOperations",
@@ -144,53 +192,5 @@ impl GroupOperation {
         });
         <Self as IGroupOperationMethods>::ctor(this);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/resource_management/async_operations/groupoperation/GroupOperation_GroupOperationSettings.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct GroupOperation_GroupOperationSettings {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for GroupOperation_GroupOperationSettings {
-    const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.AsyncOperations";
-
-    const NAME: &'static str = "GroupOperation.GroupOperationSettings";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for GroupOperation_GroupOperationSettings {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl GroupOperation_GroupOperationSettings {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn release_dependencies_on_failure() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn allow_failed_dependencies() -> Self {
-        Self { value: 2 }
     }
 }

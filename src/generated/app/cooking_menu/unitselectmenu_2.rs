@@ -14,6 +14,44 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "UnitSelectMenu.UnitSelectMenuItem.SelectEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler {}
+
+#[cfg(feature = "app-cooking_menu-unitselectmenu_2")]
+#[::unity2::methods]
+impl UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-unitselectmenu_2")]
+impl UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_2.md"))]
 #[::unity2::class(namespace = "App.CookingMenu", name = "UnitSelectMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -224,44 +262,6 @@ impl UnitSelectMenu_UnitSelectMenuItem {
             )
         });
         <Self as IUnitSelectMenu_UnitSelectMenuItemMethods>::ctor(this, unit, select_event_handler);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App.CookingMenu",
-    name = "UnitSelectMenu.UnitSelectMenuItem.SelectEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler {}
-
-#[cfg(feature = "app-cooking_menu-unitselectmenu_2")]
-#[::unity2::methods]
-impl UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
-}
-
-#[cfg(feature = "app-cooking_menu-unitselectmenu_2")]
-impl UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods>::ctor(
-            this, object, method,
-        );
         this
     }
 }

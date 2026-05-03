@@ -12,81 +12,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_Results.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapSkill_Results {
-    pub skill: crate::app::skilldata::SkillData,
-    pub current: crate::app::mapskill::MapSkill_Result,
-    pub reverse: crate::app::mapskill::MapSkill_Result,
-}
-
-impl ::unity2::ClassIdentity for MapSkill_Results {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSkill.Results";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSkill_Results {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-#[::unity2::methods(value)]
-impl MapSkill_Results {
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`IsEnable()` overload"]
-    #[method(name = "IsEnable", args = 0)]
-    pub fn is_enable(self) -> bool;
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapskill/MapSkill_SkillCalculator_UnitList.md"))]
-#[::unity2::class(namespace = "App", name = "MapSkill.SkillCalculator.UnitList")]
-# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
-pub struct MapSkill_SkillCalculator_UnitList {}
-
-#[cfg(feature = "app-mapskill")]
-#[::unity2::methods]
-impl MapSkill_SkillCalculator_UnitList {
-    #[doc = "`TryAdd(crate::app::unit::Unit)` overload"]
-    #[method(name = "TryAdd", args = 1)]
-    pub fn try_add(self, unit: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapskill")]
-impl MapSkill_SkillCalculator_UnitList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSkill_SkillCalculator_UnitList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSkill_SkillCalculator_UnitListMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapskill/MapSkill_UnitFunc.md"))]
 #[::unity2::class(namespace = "App", name = "MapSkill.UnitFunc")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
@@ -120,99 +45,206 @@ impl MapSkill_UnitFunc {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_AroundCalculator_Result.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapSkill_AroundCalculator_Result {
-    pub target: crate::app::unit::Unit,
-    pub skill: crate::app::skilldata::SkillData,
-}
-
-impl ::unity2::ClassIdentity for MapSkill_AroundCalculator_Result {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSkill.AroundCalculator.Result";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSkill_AroundCalculator_Result {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapskill/MapSkill_TerrainFunc.md"))]
+#[::unity2::class(namespace = "App", name = "MapSkill.TerrainFunc")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MapSkill_TerrainFunc {}
 
 #[cfg(feature = "app-mapskill")]
-#[::unity2::methods(value)]
-impl MapSkill_AroundCalculator_Result {
-    #[doc = "`Commit(crate::app::unit::Unit)` overload"]
-    #[method(name = "Commit", args = 1)]
-    pub fn commit(self, unit: crate::app::unit::Unit) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_FixedCalculator.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapSkill_FixedCalculator {
-    pub m_unit: crate::app::unit::Unit,
-    pub m_skill: crate::app::skilldata::SkillData,
-    pub m_targets: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
-}
-
-impl ::unity2::ClassIdentity for MapSkill_FixedCalculator {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSkill.FixedCalculator";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSkill_FixedCalculator {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-#[::unity2::methods(value)]
-impl MapSkill_FixedCalculator {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]
+#[::unity2::methods]
+impl MapSkill_TerrainFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, unit: crate::app::unit::Unit, skill: crate::app::skilldata::SkillData) -> ();
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`IsIgnore(crate::app::skilldata::SkillData)` overload"]
-    #[method(name = "IsIgnore", args = 1)]
-    pub fn is_ignore(self, skill: crate::app::skilldata::SkillData) -> bool;
+    #[doc = "`Invoke(i32, i32, crate::app::terraindata_2::TerrainData_2)` overload"]
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(self, x: i32, z: i32, terrain: crate::app::terraindata_2::TerrainData_2) -> ();
+}
 
-    #[doc = "`Enumerate()` overload"]
-    #[method(name = "Enumerate", args = 0)]
-    pub fn enumerate(self) -> bool;
+#[cfg(feature = "app-mapskill")]
+impl MapSkill_TerrainFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSkill_TerrainFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSkill_TerrainFuncMethods>::ctor(this, object, method);
+        this
+    }
+}
 
-    #[doc = "`ExecuteAct(crate::app::unit::Unit)` overload"]
-    #[method(name = "ExecuteAct", args = 1)]
-    pub fn execute_act(self, target: crate::app::unit::Unit) -> bool;
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_AroundCalculator.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapSkill_AroundCalculator {
+    pub m_side: crate::app::battleinfoside::BattleInfoSide,
+    pub m_results: crate::system::collections::generic::list_1::List_1<
+        crate::app::mapskill::MapSkill_AroundCalculator_Result,
+    >,
+}
 
-    #[doc = "`Commit(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "Commit", args = 1)]
-    pub fn commit(self, super_: crate::app::procinst::ProcInst) -> ();
+impl ::unity2::ClassIdentity for MapSkill_AroundCalculator {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSkill.AroundCalculator";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSkill_AroundCalculator {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+#[::unity2::methods(value)]
+impl MapSkill_AroundCalculator {
+    #[doc = "`.ctor(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, side: crate::app::battleinfoside::BattleInfoSide) -> ();
+
+    #[doc = "`Enumerate(crate::app::skilldata::SkillData_Frequencies)` overload"]
+    #[method(name = "Enumerate", args = 1)]
+    pub fn enumerate(self, frequency: crate::app::skilldata::SkillData_Frequencies) -> bool;
 
     #[doc = "`Dispose()` overload"]
     #[method(name = "Dispose", args = 0)]
     pub fn dispose(self) -> ();
+
+    #[doc = "`get_Results()` overload"]
+    #[method(name = "get_Results", args = 0)]
+    pub fn get_results(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::mapskill::MapSkill_AroundCalculator_Result,
+    >;
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_HistoryScope.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapSkill_HistoryScope {
+    pub m_unit: crate::app::unit::Unit,
+    pub m_prev_hp: i32,
+    pub m_prev_count: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSkill_HistoryScope {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSkill.HistoryScope";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSkill_HistoryScope {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+#[::unity2::methods(value)]
+impl MapSkill_HistoryScope {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_Result.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapSkill_Result {
+    pub moved: bool,
+    pub unit: crate::app::unit::Unit,
+    pub x: i32,
+    pub z: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSkill_Result {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSkill.Result";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSkill_Result {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+#[::unity2::methods(value)]
+impl MapSkill_Result {
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapskill/MapSkill_SkillCalculator_UnitList.md"))]
+#[::unity2::class(namespace = "App", name = "MapSkill.SkillCalculator.UnitList")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: unit :: Unit >)]
+pub struct MapSkill_SkillCalculator_UnitList {}
+
+#[cfg(feature = "app-mapskill")]
+#[::unity2::methods]
+impl MapSkill_SkillCalculator_UnitList {
+    #[doc = "`TryAdd(crate::app::unit::Unit)` overload"]
+    #[method(name = "TryAdd", args = 1)]
+    pub fn try_add(self, unit: crate::app::unit::Unit) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapskill")]
+impl MapSkill_SkillCalculator_UnitList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapSkill_SkillCalculator_UnitList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapSkill_SkillCalculator_UnitListMethods>::ctor(this);
+        this
+    }
 }
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapskill/MapSkill.md"))]
@@ -436,6 +468,101 @@ impl MapSkill {
     }
 }
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_AroundCalculator_Result.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapSkill_AroundCalculator_Result {
+    pub target: crate::app::unit::Unit,
+    pub skill: crate::app::skilldata::SkillData,
+}
+
+impl ::unity2::ClassIdentity for MapSkill_AroundCalculator_Result {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSkill.AroundCalculator.Result";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSkill_AroundCalculator_Result {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+#[::unity2::methods(value)]
+impl MapSkill_AroundCalculator_Result {
+    #[doc = "`Commit(crate::app::unit::Unit)` overload"]
+    #[method(name = "Commit", args = 1)]
+    pub fn commit(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_FixedCalculator.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapSkill_FixedCalculator {
+    pub m_unit: crate::app::unit::Unit,
+    pub m_skill: crate::app::skilldata::SkillData,
+    pub m_targets: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+}
+
+impl ::unity2::ClassIdentity for MapSkill_FixedCalculator {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSkill.FixedCalculator";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSkill_FixedCalculator {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapskill")]
+#[::unity2::methods(value)]
+impl MapSkill_FixedCalculator {
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, unit: crate::app::unit::Unit, skill: crate::app::skilldata::SkillData) -> ();
+
+    #[doc = "`IsIgnore(crate::app::skilldata::SkillData)` overload"]
+    #[method(name = "IsIgnore", args = 1)]
+    pub fn is_ignore(self, skill: crate::app::skilldata::SkillData) -> bool;
+
+    #[doc = "`Enumerate()` overload"]
+    #[method(name = "Enumerate", args = 0)]
+    pub fn enumerate(self) -> bool;
+
+    #[doc = "`ExecuteAct(crate::app::unit::Unit)` overload"]
+    #[method(name = "ExecuteAct", args = 1)]
+    pub fn execute_act(self, target: crate::app::unit::Unit) -> bool;
+
+    #[doc = "`Commit(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "Commit", args = 1)]
+    pub fn commit(self, super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_SkillCalculator.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -492,20 +619,19 @@ impl MapSkill_SkillCalculator {
     pub fn dispose(self) -> ();
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_Result.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_Results.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapSkill_Result {
-    pub moved: bool,
-    pub unit: crate::app::unit::Unit,
-    pub x: i32,
-    pub z: i32,
+pub struct MapSkill_Results {
+    pub skill: crate::app::skilldata::SkillData,
+    pub current: crate::app::mapskill::MapSkill_Result,
+    pub reverse: crate::app::mapskill::MapSkill_Result,
 }
 
-impl ::unity2::ClassIdentity for MapSkill_Result {
+impl ::unity2::ClassIdentity for MapSkill_Results {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapSkill.Result";
+    const NAME: &'static str = "MapSkill.Results";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -514,7 +640,7 @@ impl ::unity2::ClassIdentity for MapSkill_Result {
     }
 }
 
-impl ::unity2::IlType for MapSkill_Result {
+impl ::unity2::IlType for MapSkill_Results {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -525,138 +651,12 @@ impl ::unity2::IlType for MapSkill_Result {
 
 #[cfg(feature = "app-mapskill")]
 #[::unity2::methods(value)]
-impl MapSkill_Result {
+impl MapSkill_Results {
     #[doc = "`Reset()` overload"]
     #[method(name = "Reset", args = 0)]
     pub fn reset(self) -> ();
-}
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_HistoryScope.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapSkill_HistoryScope {
-    pub m_unit: crate::app::unit::Unit,
-    pub m_prev_hp: i32,
-    pub m_prev_count: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSkill_HistoryScope {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSkill.HistoryScope";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSkill_HistoryScope {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-#[::unity2::methods(value)]
-impl MapSkill_HistoryScope {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapskill/MapSkill_AroundCalculator.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapSkill_AroundCalculator {
-    pub m_side: crate::app::battleinfoside::BattleInfoSide,
-    pub m_results: crate::system::collections::generic::list_1::List_1<
-        crate::app::mapskill::MapSkill_AroundCalculator_Result,
-    >,
-}
-
-impl ::unity2::ClassIdentity for MapSkill_AroundCalculator {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSkill.AroundCalculator";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSkill_AroundCalculator {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-mapskill")]
-#[::unity2::methods(value)]
-impl MapSkill_AroundCalculator {
-    #[doc = "`.ctor(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, side: crate::app::battleinfoside::BattleInfoSide) -> ();
-
-    #[doc = "`Enumerate(crate::app::skilldata::SkillData_Frequencies)` overload"]
-    #[method(name = "Enumerate", args = 1)]
-    pub fn enumerate(self, frequency: crate::app::skilldata::SkillData_Frequencies) -> bool;
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`get_Results()` overload"]
-    #[method(name = "get_Results", args = 0)]
-    pub fn get_results(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::mapskill::MapSkill_AroundCalculator_Result,
-    >;
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapskill/MapSkill_TerrainFunc.md"))]
-#[::unity2::class(namespace = "App", name = "MapSkill.TerrainFunc")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct MapSkill_TerrainFunc {}
-
-#[cfg(feature = "app-mapskill")]
-#[::unity2::methods]
-impl MapSkill_TerrainFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32, i32, crate::app::terraindata_2::TerrainData_2)` overload"]
-    #[method(name = "Invoke", args = 3)]
-    pub fn invoke(self, x: i32, z: i32, terrain: crate::app::terraindata_2::TerrainData_2) -> ();
-}
-
-#[cfg(feature = "app-mapskill")]
-impl MapSkill_TerrainFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapSkill_TerrainFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapSkill_TerrainFuncMethods>::ctor(this, object, method);
-        this
-    }
+    #[doc = "`IsEnable()` overload"]
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
 }

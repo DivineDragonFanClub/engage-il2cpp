@@ -10,6 +10,45 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound_WaitSE.md"))]
+#[::unity2::class(namespace = "App", name = "TalkSound.WaitSE")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct TalkSound_WaitSE {
+    #[static_field]
+    #[rename(name = "MinimumWaitSec")]
+    pub minimum_wait_sec: f32,
+    #[rename(name = "m_Sec")]
+    pub m_sec: f32,
+}
+
+#[cfg(feature = "app-talksound")]
+#[::unity2::methods]
+impl TalkSound_WaitSE {
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-talksound")]
+impl TalkSound_WaitSE {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkSound_WaitSE),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkSound_WaitSEMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound.md"))]
 #[::unity2::class(namespace = "App", name = "TalkSound")]
 #[parent(crate::system::object::Object)]
@@ -243,44 +282,5 @@ impl TalkSound_SoundType {
 
     pub fn env() -> Self {
         Self { value: 2 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talksound/TalkSound_WaitSE.md"))]
-#[::unity2::class(namespace = "App", name = "TalkSound.WaitSE")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct TalkSound_WaitSE {
-    #[static_field]
-    #[rename(name = "MinimumWaitSec")]
-    pub minimum_wait_sec: f32,
-    #[rename(name = "m_Sec")]
-    pub m_sec: f32,
-}
-
-#[cfg(feature = "app-talksound")]
-#[::unity2::methods]
-impl TalkSound_WaitSE {
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-talksound")]
-impl TalkSound_WaitSE {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkSound_WaitSE),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkSound_WaitSEMethods>::ctor(this);
-        this
     }
 }

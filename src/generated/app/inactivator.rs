@@ -16,6 +16,52 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inactivator/Inactivator.md"))]
+#[::unity2::class(namespace = "App", name = "Inactivator")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct Inactivator {
+    #[rename(name = "m_Flags")]
+    pub m_flags: crate::app::inactivator::Inactivator_Flags,
+    #[rename(name = "m_Variable")]
+    pub m_variable: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-inactivator")]
+#[::unity2::methods]
+impl Inactivator {
+    #[doc = "`IsUsed()` overload"]
+    #[method(name = "IsUsed", args = 0)]
+    pub fn is_used(self) -> bool;
+
+    #[doc = "`GetKind()` overload"]
+    #[method(name = "GetKind", args = 0)]
+    pub fn get_kind() -> crate::app::inactivator::Inactivator_Kind;
+
+    #[doc = "`Awake()` overload"]
+    #[method(name = "Awake", args = 0)]
+    pub fn awake(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-inactivator")]
+impl Inactivator {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Inactivator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInactivatorMethods>::ctor(this);
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/inactivator/Inactivator_Kind.md"))]
 #[repr(C)]
 #[derive(
@@ -73,52 +119,6 @@ impl Inactivator_Kind {
 
     pub fn gmap() -> Self {
         Self { value: 5 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/inactivator/Inactivator.md"))]
-#[::unity2::class(namespace = "App", name = "Inactivator")]
-#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-pub struct Inactivator {
-    #[rename(name = "m_Flags")]
-    pub m_flags: crate::app::inactivator::Inactivator_Flags,
-    #[rename(name = "m_Variable")]
-    pub m_variable: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-inactivator")]
-#[::unity2::methods]
-impl Inactivator {
-    #[doc = "`IsUsed()` overload"]
-    #[method(name = "IsUsed", args = 0)]
-    pub fn is_used(self) -> bool;
-
-    #[doc = "`GetKind()` overload"]
-    #[method(name = "GetKind", args = 0)]
-    pub fn get_kind() -> crate::app::inactivator::Inactivator_Kind;
-
-    #[doc = "`Awake()` overload"]
-    #[method(name = "Awake", args = 0)]
-    pub fn awake(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-inactivator")]
-impl Inactivator {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Inactivator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInactivatorMethods>::ctor(this);
-        this
     }
 }
 

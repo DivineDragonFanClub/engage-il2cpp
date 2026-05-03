@@ -20,6 +20,245 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Kinds.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayAwardData_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayAwardData_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayAwardData.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayAwardData_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayAwardData_Kinds {
+    pub fn kill() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn damaged() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn heal() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn r#break() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn engage() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn use_item() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn poison() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn skill() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn damaged0() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn critical() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn efficacy() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn engage_attack() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn chain_guard() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn blow() -> Self {
+        Self { value: 14 }
+    }
+
+    pub fn direct_attack() -> Self {
+        Self { value: 15 }
+    }
+
+    pub fn indirect_attack() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 17 }
+    }
+
+    pub fn chain_attack() -> Self {
+        Self { value: 18 }
+    }
+
+    pub fn mixed_least() -> Self {
+        Self { value: 19 }
+    }
+
+    pub fn move_least() -> Self {
+        Self { value: 20 }
+    }
+
+    pub fn damage_least() -> Self {
+        Self { value: 21 }
+    }
+
+    pub fn fixed() -> Self {
+        Self { value: 22 }
+    }
+
+    pub fn healed() -> Self {
+        Self { value: 23 }
+    }
+
+    pub fn skilled() -> Self {
+        Self { value: 24 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 25 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_CompareOp.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RelayAwardData_CompareOp {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RelayAwardData_CompareOp {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayAwardData.CompareOp";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayAwardData_CompareOp {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RelayAwardData_CompareOp {
+    pub fn greater() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn less() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn zero() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn mixed_less() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn attack_greater_kill_less() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Info.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RelayAwardData_Info {
+    pub raid: ::unity2::Il2CppString,
+    pub record_kind: crate::app::unitrecord::UnitRecord_Kinds,
+    pub compare_op: crate::app::relayawarddata::RelayAwardData_CompareOp,
+}
+
+impl ::unity2::ClassIdentity for RelayAwardData_Info {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RelayAwardData.Info";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RelayAwardData_Info {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-relayawarddata")]
+#[::unity2::methods(value)]
+impl RelayAwardData_Info {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unitrecord::UnitRecord_Kinds, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        raid: ::unity2::Il2CppString,
+        kind: crate::app::unitrecord::UnitRecord_Kinds,
+        comp: crate::app::relayawarddata::RelayAwardData_CompareOp,
+    ) -> ();
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayawarddata/RelayAwardData.md"))]
 #[::unity2::class(namespace = "App", name = "RelayAwardData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: relayawarddata :: RelayAwardData >)]
@@ -243,244 +482,5 @@ impl RelayAwardData_Flags {
 
     pub fn attack_minus() -> Self {
         Self { value: 16 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_CompareOp.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RelayAwardData_CompareOp {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RelayAwardData_CompareOp {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayAwardData.CompareOp";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RelayAwardData_CompareOp {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RelayAwardData_CompareOp {
-    pub fn greater() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn less() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn zero() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn mixed_less() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn attack_greater_kill_less() -> Self {
-        Self { value: 4 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Info.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RelayAwardData_Info {
-    pub raid: ::unity2::Il2CppString,
-    pub record_kind: crate::app::unitrecord::UnitRecord_Kinds,
-    pub compare_op: crate::app::relayawarddata::RelayAwardData_CompareOp,
-}
-
-impl ::unity2::ClassIdentity for RelayAwardData_Info {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayAwardData.Info";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RelayAwardData_Info {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-relayawarddata")]
-#[::unity2::methods(value)]
-impl RelayAwardData_Info {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::unitrecord::UnitRecord_Kinds, crate::app::relayawarddata::RelayAwardData_CompareOp)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        raid: ::unity2::Il2CppString,
-        kind: crate::app::unitrecord::UnitRecord_Kinds,
-        comp: crate::app::relayawarddata::RelayAwardData_CompareOp,
-    ) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayawarddata/RelayAwardData_Kinds.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RelayAwardData_Kinds {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RelayAwardData_Kinds {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RelayAwardData.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RelayAwardData_Kinds {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RelayAwardData_Kinds {
-    pub fn kill() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn damaged() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn heal() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn r#break() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn engage() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn use_item() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn poison() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn r#move() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn skill() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn damaged0() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn critical() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn efficacy() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn engage_attack() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn chain_guard() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn blow() -> Self {
-        Self { value: 14 }
-    }
-
-    pub fn direct_attack() -> Self {
-        Self { value: 15 }
-    }
-
-    pub fn indirect_attack() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn attack() -> Self {
-        Self { value: 17 }
-    }
-
-    pub fn chain_attack() -> Self {
-        Self { value: 18 }
-    }
-
-    pub fn mixed_least() -> Self {
-        Self { value: 19 }
-    }
-
-    pub fn move_least() -> Self {
-        Self { value: 20 }
-    }
-
-    pub fn damage_least() -> Self {
-        Self { value: 21 }
-    }
-
-    pub fn fixed() -> Self {
-        Self { value: 22 }
-    }
-
-    pub fn healed() -> Self {
-        Self { value: 23 }
-    }
-
-    pub fn skilled() -> Self {
-        Self { value: 24 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 25 }
     }
 }

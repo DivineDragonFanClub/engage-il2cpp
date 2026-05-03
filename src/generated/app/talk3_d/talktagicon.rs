@@ -10,54 +10,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagicon/TalkTagIcon.md"))]
-#[::unity2::class(namespace = "App.Talk3D", name = "TalkTagIcon")]
-#[parent(crate::app::talk3_d::talktag::TalkTag)]
-pub struct TalkTagIcon {
-    #[rename(name = "m_TagID")]
-    pub m_tag_id: crate::app::talk3_d::talktagicon::TalkTagIcon_TagID,
-    #[rename(name = "m_KindName")]
-    pub m_kind_name: ::unity2::Il2CppString,
-    #[rename(name = "m_Result")]
-    pub m_result: crate::app::talk3_d::talktag::TalkTag_Result,
-}
-
-#[cfg(feature = "app-talk3_d-talktagicon")]
-#[::unity2::methods]
-impl TalkTagIcon {
-    #[doc = "`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]
-    #[method(name = "Initialize", args = 1)]
-    pub fn initialize(self, talk_ptr: crate::app::talk3_d::talkptr::TalkPtr) -> ();
-
-    #[doc = "`Execute()` overload"]
-    #[method(name = "Execute", args = 0)]
-    pub fn execute(self) -> ();
-
-    #[doc = "`GetResult()` overload"]
-    #[method(name = "GetResult", args = 0)]
-    pub fn get_result(self) -> crate::app::talk3_d::talktag::TalkTag_Result;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-talk3_d-talktagicon")]
-impl TalkTagIcon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkTagIcon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkTagIconMethods>::ctor(this);
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talktagicon/TalkTagIcon_TagID.md"))]
 #[repr(C)]
 #[derive(
@@ -103,5 +55,53 @@ impl TalkTagIcon_TagID {
 
     pub fn system() -> Self {
         Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talktagicon/TalkTagIcon.md"))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkTagIcon")]
+#[parent(crate::app::talk3_d::talktag::TalkTag)]
+pub struct TalkTagIcon {
+    #[rename(name = "m_TagID")]
+    pub m_tag_id: crate::app::talk3_d::talktagicon::TalkTagIcon_TagID,
+    #[rename(name = "m_KindName")]
+    pub m_kind_name: ::unity2::Il2CppString,
+    #[rename(name = "m_Result")]
+    pub m_result: crate::app::talk3_d::talktag::TalkTag_Result,
+}
+
+#[cfg(feature = "app-talk3_d-talktagicon")]
+#[::unity2::methods]
+impl TalkTagIcon {
+    #[doc = "`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]
+    #[method(name = "Initialize", args = 1)]
+    pub fn initialize(self, talk_ptr: crate::app::talk3_d::talkptr::TalkPtr) -> ();
+
+    #[doc = "`Execute()` overload"]
+    #[method(name = "Execute", args = 0)]
+    pub fn execute(self) -> ();
+
+    #[doc = "`GetResult()` overload"]
+    #[method(name = "GetResult", args = 0)]
+    pub fn get_result(self) -> crate::app::talk3_d::talktag::TalkTag_Result;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talktagicon")]
+impl TalkTagIcon {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkTagIcon),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkTagIconMethods>::ctor(this);
+        this
     }
 }

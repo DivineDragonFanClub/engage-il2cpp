@@ -10,6 +10,52 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animation/Animation_Enumerator.md"))]
+#[::unity2::class(namespace = "UnityEngine", name = "Animation.Enumerator")]
+#[parent(crate::system::object::Object)]
+pub struct Animation_Enumerator {
+    #[rename(name = "m_Outer")]
+    pub m_outer: crate::unity_engine::animation::Animation,
+    #[rename(name = "m_CurrentIndex")]
+    pub m_current_index: i32,
+}
+
+#[cfg(feature = "unity_engine-animation")]
+#[::unity2::methods]
+impl Animation_Enumerator {
+    #[doc = "`.ctor(crate::unity_engine::animation::Animation)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, outer: crate::unity_engine::animation::Animation) -> ();
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-animation")]
+impl Animation_Enumerator {
+    #[doc = "`.ctor(crate::unity_engine::animation::Animation)` — overload selector"]
+    pub fn new(outer: crate::unity_engine::animation::Animation) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Animation_Enumerator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimation_EnumeratorMethods>::ctor(this, outer);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animation/Animation.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "Animation")]
 #[parent(crate::unity_engine::behaviour::Behaviour)]
@@ -353,52 +399,6 @@ impl Animation {
             )
         });
         <Self as IAnimationMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/animation/Animation_Enumerator.md"))]
-#[::unity2::class(namespace = "UnityEngine", name = "Animation.Enumerator")]
-#[parent(crate::system::object::Object)]
-pub struct Animation_Enumerator {
-    #[rename(name = "m_Outer")]
-    pub m_outer: crate::unity_engine::animation::Animation,
-    #[rename(name = "m_CurrentIndex")]
-    pub m_current_index: i32,
-}
-
-#[cfg(feature = "unity_engine-animation")]
-#[::unity2::methods]
-impl Animation_Enumerator {
-    #[doc = "`.ctor(crate::unity_engine::animation::Animation)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, outer: crate::unity_engine::animation::Animation) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-animation")]
-impl Animation_Enumerator {
-    #[doc = "`.ctor(crate::unity_engine::animation::Animation)` — overload selector"]
-    pub fn new(outer: crate::unity_engine::animation::Animation) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Animation_Enumerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IAnimation_EnumeratorMethods>::ctor(this, outer);
         this
     }
 }

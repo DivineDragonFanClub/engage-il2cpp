@@ -14,6 +14,65 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_ShaderResources.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ForwardRendererData.ShaderResources"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ForwardRendererData_ShaderResources {
+    #[rename(name = "blitPS")]
+    pub blit_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "zprepass")]
+    pub zprepass: crate::unity_engine::shader::Shader,
+    #[rename(name = "downsampleDepth")]
+    pub downsample_depth: crate::unity_engine::shader::Shader,
+    #[rename(name = "halfResoComposite")]
+    pub half_reso_composite: crate::unity_engine::shader::Shader,
+    #[rename(name = "lightOcclusion")]
+    pub light_occlusion: crate::unity_engine::shader::Shader,
+    #[rename(name = "copyDepthPS")]
+    pub copy_depth_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "screenSpaceShadowPS")]
+    pub screen_space_shadow_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "samplingPS")]
+    pub sampling_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "tileDepthInfoPS")]
+    pub tile_depth_info_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "tileDeferredPS")]
+    pub tile_deferred_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "stencilDeferredPS")]
+    pub stencil_deferred_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "fallbackErrorPS")]
+    pub fallback_error_ps: crate::unity_engine::shader::Shader,
+    #[rename(name = "materialErrorPS")]
+    pub material_error_ps: crate::unity_engine::shader::Shader,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
+#[::unity2::methods]
+impl ForwardRendererData_ShaderResources {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
+impl ForwardRendererData_ShaderResources {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ForwardRendererData_ShaderResources),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IForwardRendererData_ShaderResourcesMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
@@ -198,64 +257,5 @@ impl ForwardRendererData_MixedResolutionFlag {
 
     pub fn count() -> Self {
         Self { value: 6 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrendererdata/ForwardRendererData_ShaderResources.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal",
-    name = "ForwardRendererData.ShaderResources"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ForwardRendererData_ShaderResources {
-    #[rename(name = "blitPS")]
-    pub blit_ps: crate::unity_engine::shader::Shader,
-    #[rename(name = "zprepass")]
-    pub zprepass: crate::unity_engine::shader::Shader,
-    #[rename(name = "downsampleDepth")]
-    pub downsample_depth: crate::unity_engine::shader::Shader,
-    #[rename(name = "halfResoComposite")]
-    pub half_reso_composite: crate::unity_engine::shader::Shader,
-    #[rename(name = "lightOcclusion")]
-    pub light_occlusion: crate::unity_engine::shader::Shader,
-    #[rename(name = "copyDepthPS")]
-    pub copy_depth_ps: crate::unity_engine::shader::Shader,
-    #[rename(name = "screenSpaceShadowPS")]
-    pub screen_space_shadow_ps: crate::unity_engine::shader::Shader,
-    #[rename(name = "samplingPS")]
-    pub sampling_ps: crate::unity_engine::shader::Shader,
-    #[rename(name = "tileDepthInfoPS")]
-    pub tile_depth_info_ps: crate::unity_engine::shader::Shader,
-    #[rename(name = "tileDeferredPS")]
-    pub tile_deferred_ps: crate::unity_engine::shader::Shader,
-    #[rename(name = "stencilDeferredPS")]
-    pub stencil_deferred_ps: crate::unity_engine::shader::Shader,
-    #[rename(name = "fallbackErrorPS")]
-    pub fallback_error_ps: crate::unity_engine::shader::Shader,
-    #[rename(name = "materialErrorPS")]
-    pub material_error_ps: crate::unity_engine::shader::Shader,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-#[::unity2::methods]
-impl ForwardRendererData_ShaderResources {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-forwardrendererdata")]
-impl ForwardRendererData_ShaderResources {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ForwardRendererData_ShaderResources),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IForwardRendererData_ShaderResourcesMethods>::ctor(this);
-        this
     }
 }

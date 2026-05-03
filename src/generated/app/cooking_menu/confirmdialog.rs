@@ -18,6 +18,45 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/confirmdialog/ConfirmDialog_ConfirmDialogItemYes.md"))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "ConfirmDialog.ConfirmDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct ConfirmDialog_ConfirmDialogItemYes {
+    #[rename(name = "m_Action")]
+    pub m_action: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-cooking_menu-confirmdialog")]
+#[::unity2::methods]
+impl ConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, text: ::unity2::Il2CppString, action: crate::system::action::Action) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-cooking_menu-confirmdialog")]
+impl ConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]
+    pub fn new(text: ::unity2::Il2CppString, action: crate::system::action::Action) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ConfirmDialog_ConfirmDialogItemYes),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConfirmDialog_ConfirmDialogItemYesMethods>::ctor(this, text, action);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/confirmdialog/ConfirmDialog.md"))]
 #[::unity2::class(namespace = "App.CookingMenu", name = "ConfirmDialog")]
 #[parent(crate::app::yesnodialog::YesNoDialog)]
@@ -63,45 +102,6 @@ impl ConfirmDialog {
             )
         });
         <Self as IConfirmDialogMethods>::ctor(this, menu_item_list);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/confirmdialog/ConfirmDialog_ConfirmDialogItemYes.md"))]
-#[::unity2::class(
-    namespace = "App.CookingMenu",
-    name = "ConfirmDialog.ConfirmDialogItemYes"
-)]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct ConfirmDialog_ConfirmDialogItemYes {
-    #[rename(name = "m_Action")]
-    pub m_action: crate::system::action::Action,
-}
-
-#[cfg(feature = "app-cooking_menu-confirmdialog")]
-#[::unity2::methods]
-impl ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, text: ::unity2::Il2CppString, action: crate::system::action::Action) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-cooking_menu-confirmdialog")]
-impl ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]
-    pub fn new(text: ::unity2::Il2CppString, action: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ConfirmDialog_ConfirmDialogItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IConfirmDialog_ConfirmDialogItemYesMethods>::ctor(this, text, action);
         this
     }
 }

@@ -30,36 +30,6 @@ impl AIEnum {
     ) -> crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator;
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aienum/AIEnum_SkillRangeEnemyData.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AIEnum_SkillRangeEnemyData {
-    pub unit: crate::app::unit::Unit,
-    pub x: i8,
-    pub z: i8,
-}
-
-impl ::unity2::ClassIdentity for AIEnum_SkillRangeEnemyData {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AIEnum.SkillRangeEnemyData";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AIEnum_SkillRangeEnemyData {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aienum/AIEnum_SkillRangeEnemyEnumerator.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -140,4 +110,34 @@ impl AIEnum_SkillRangeEnemyEnumerator {
     #[doc = "`GetEnumerator()` overload"]
     #[method(name = "GetEnumerator", args = 0)]
     pub fn get_enumerator(self) -> crate::app::aienum::AIEnum_SkillRangeEnemyEnumerator;
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/aienum/AIEnum_SkillRangeEnemyData.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AIEnum_SkillRangeEnemyData {
+    pub unit: crate::app::unit::Unit,
+    pub x: i8,
+    pub z: i8,
+}
+
+impl ::unity2::ClassIdentity for AIEnum_SkillRangeEnemyData {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AIEnum.SkillRangeEnemyData";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AIEnum_SkillRangeEnemyData {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
 }

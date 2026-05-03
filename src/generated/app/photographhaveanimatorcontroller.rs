@@ -20,109 +20,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController_UpdateFaceAnime.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "PhotographHaveAnimatorController.UpdateFaceAnime"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct PhotographHaveAnimatorController_UpdateFaceAnime {}
-
-#[cfg(feature = "app-photographhaveanimatorcontroller")]
-#[::unity2::methods]
-impl PhotographHaveAnimatorController_UpdateFaceAnime {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, face_anime: ::unity2::Il2CppString) -> ();
-}
-
-#[cfg(feature = "app-photographhaveanimatorcontroller")]
-impl PhotographHaveAnimatorController_UpdateFaceAnime {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographHaveAnimatorController_UpdateFaceAnime),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographHaveAnimatorController_UpdateFaceAnimeMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController.md"))]
-#[::unity2::class(namespace = "App", name = "PhotographHaveAnimatorController")]
-#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-pub struct PhotographHaveAnimatorController {
-# [rename (name = "m_AnimatorController")] pub m_animator_controller : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController > ,
-# [rename (name = "m_AnimeTime")] pub m_anime_time : f32 ,
-# [rename (name = "m_Update")] pub m_update : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_UpdateAnime ,
-# [rename (name = "m_FaceUpdate")] pub m_face_update : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_UpdateFaceAnime ,
-# [rename (name = "m_faceAnime")] pub m_face_anime : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_FaceAnime ,
-# [rename (name = "m_BeforeFaceAnime")] pub m_before_face_anime : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_FaceAnime ,
-# [rename (name = "m_Sprite")] pub m_sprite : crate :: unity_engine :: sprite :: Sprite ,
-}
-
-#[cfg(feature = "app-photographhaveanimatorcontroller")]
-#[::unity2::methods]
-impl PhotographHaveAnimatorController {
-    #[doc = "`get_AnimatorController()` overload"]
-    #[method(name = "get_AnimatorController", args = 0)]
-    pub fn get_animator_controller(
-        self,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
-    >;
-
-    #[doc = "`get_AnimeTime()` overload"]
-    #[method(name = "get_AnimeTime", args = 0)]
-    pub fn get_anime_time(self) -> f32;
-
-    #[doc = "`SetUpdate(crate::app::photographhaveanimatorcontroller::PhotographHaveAnimatorController_UpdateAnime, crate::app::photographhaveanimatorcontroller::PhotographHaveAnimatorController_UpdateFaceAnime)` overload"]
-    #[method(name = "SetUpdate", args = 2)]
-    pub fn set_update(
-        self,
-        update : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_UpdateAnime,
-        face_anime : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_UpdateFaceAnime,
-    ) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`GetSprite()` overload"]
-    #[method(name = "GetSprite", args = 0)]
-    pub fn get_sprite(self) -> crate::unity_engine::sprite::Sprite;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-photographhaveanimatorcontroller")]
-impl PhotographHaveAnimatorController {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographHaveAnimatorController),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographHaveAnimatorControllerMethods>::ctor(this);
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController_FaceAnime.md"))]
 #[repr(C)]
 #[derive(
@@ -211,6 +108,71 @@ impl PhotographHaveAnimatorController_FaceAnime {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController.md"))]
+#[::unity2::class(namespace = "App", name = "PhotographHaveAnimatorController")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct PhotographHaveAnimatorController {
+# [rename (name = "m_AnimatorController")] pub m_animator_controller : crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: unity_engine :: runtimeanimatorcontroller :: RuntimeAnimatorController > ,
+# [rename (name = "m_AnimeTime")] pub m_anime_time : f32 ,
+# [rename (name = "m_Update")] pub m_update : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_UpdateAnime ,
+# [rename (name = "m_FaceUpdate")] pub m_face_update : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_UpdateFaceAnime ,
+# [rename (name = "m_faceAnime")] pub m_face_anime : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_FaceAnime ,
+# [rename (name = "m_BeforeFaceAnime")] pub m_before_face_anime : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_FaceAnime ,
+# [rename (name = "m_Sprite")] pub m_sprite : crate :: unity_engine :: sprite :: Sprite ,
+}
+
+#[cfg(feature = "app-photographhaveanimatorcontroller")]
+#[::unity2::methods]
+impl PhotographHaveAnimatorController {
+    #[doc = "`get_AnimatorController()` overload"]
+    #[method(name = "get_AnimatorController", args = 0)]
+    pub fn get_animator_controller(
+        self,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::runtimeanimatorcontroller::RuntimeAnimatorController,
+    >;
+
+    #[doc = "`get_AnimeTime()` overload"]
+    #[method(name = "get_AnimeTime", args = 0)]
+    pub fn get_anime_time(self) -> f32;
+
+    #[doc = "`SetUpdate(crate::app::photographhaveanimatorcontroller::PhotographHaveAnimatorController_UpdateAnime, crate::app::photographhaveanimatorcontroller::PhotographHaveAnimatorController_UpdateFaceAnime)` overload"]
+    #[method(name = "SetUpdate", args = 2)]
+    pub fn set_update(
+        self,
+        update : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_UpdateAnime,
+        face_anime : crate :: app :: photographhaveanimatorcontroller :: PhotographHaveAnimatorController_UpdateFaceAnime,
+    ) -> ();
+
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[doc = "`GetSprite()` overload"]
+    #[method(name = "GetSprite", args = 0)]
+    pub fn get_sprite(self) -> crate::unity_engine::sprite::Sprite;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-photographhaveanimatorcontroller")]
+impl PhotographHaveAnimatorController {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographHaveAnimatorController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographHaveAnimatorControllerMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController_UpdateAnime.md"))]
 #[::unity2::class(
     namespace = "App",
@@ -243,6 +205,44 @@ impl PhotographHaveAnimatorController_UpdateAnime {
             )
         });
         <Self as IPhotographHaveAnimatorController_UpdateAnimeMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographhaveanimatorcontroller/PhotographHaveAnimatorController_UpdateFaceAnime.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "PhotographHaveAnimatorController.UpdateFaceAnime"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct PhotographHaveAnimatorController_UpdateFaceAnime {}
+
+#[cfg(feature = "app-photographhaveanimatorcontroller")]
+#[::unity2::methods]
+impl PhotographHaveAnimatorController_UpdateFaceAnime {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, face_anime: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "app-photographhaveanimatorcontroller")]
+impl PhotographHaveAnimatorController_UpdateFaceAnime {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographHaveAnimatorController_UpdateFaceAnime),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographHaveAnimatorController_UpdateFaceAnimeMethods>::ctor(
+            this, object, method,
+        );
         this
     }
 }

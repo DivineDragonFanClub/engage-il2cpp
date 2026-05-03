@@ -8,41 +8,6 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessdata/PostProcessData.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal",
-    name = "PostProcessData"
-)]
-#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
-pub struct PostProcessData {
-# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData_ShaderResources ,
-# [rename (name = "textures")] pub textures : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData_TextureResources ,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
-#[::unity2::methods]
-impl PostProcessData {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
-impl PostProcessData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PostProcessData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPostProcessDataMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessdata/PostProcessData_TextureResources.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
@@ -80,6 +45,41 @@ impl PostProcessData_TextureResources {
             )
         });
         <Self as IPostProcessData_TextureResourcesMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/postprocessdata/PostProcessData.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "PostProcessData"
+)]
+#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+pub struct PostProcessData {
+# [rename (name = "shaders")] pub shaders : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData_ShaderResources ,
+# [rename (name = "textures")] pub textures : crate :: unity_engine :: rendering :: universal :: postprocessdata :: PostProcessData_TextureResources ,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
+#[::unity2::methods]
+impl PostProcessData {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-postprocessdata")]
+impl PostProcessData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PostProcessData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPostProcessDataMethods>::ctor(this);
         this
     }
 }

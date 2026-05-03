@@ -14,48 +14,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Offset.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct RangeData_Offset {
-    pub x: i8,
-    pub z: i8,
-    pub target: crate::app::rangedata::RangeData_Targets,
-}
-
-impl ::unity2::ClassIdentity for RangeData_Offset {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RangeData.Offset";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RangeData_Offset {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-rangedata")]
-#[::unity2::methods(value)]
-impl RangeData_Offset {
-    #[doc = "`.ctor(i32, i32, crate::app::rangedata::RangeData_Targets)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(self, x: i32, z: i32, target: crate::app::rangedata::RangeData_Targets) -> ();
-
-    #[doc = "`ToString()` overload"]
-    #[method(name = "ToString", args = 0)]
-    pub fn to_string(self) -> ::unity2::Il2CppString;
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData.md"))]
 #[::unity2::class(namespace = "App", name = "RangeData")]
 # [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: rangedata :: RangeData >)]
@@ -191,62 +149,6 @@ impl RangeData {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Targets.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RangeData_Targets {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RangeData_Targets {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RangeData.Targets";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RangeData_Targets {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RangeData_Targets {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn self_() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn enemy() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn friend() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn both() -> Self {
-        Self { value: 4 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rangedata/RangeData_DirOffsets.md"))]
 #[::unity2::class(namespace = "App", name = "RangeData.DirOffsets")]
 #[parent(crate::system::object::Object)]
@@ -319,5 +221,103 @@ impl RangeData_DirOffsets {
         });
         <Self as IRangeData_DirOffsetsMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Offset.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct RangeData_Offset {
+    pub x: i8,
+    pub z: i8,
+    pub target: crate::app::rangedata::RangeData_Targets,
+}
+
+impl ::unity2::ClassIdentity for RangeData_Offset {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RangeData.Offset";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RangeData_Offset {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-rangedata")]
+#[::unity2::methods(value)]
+impl RangeData_Offset {
+    #[doc = "`.ctor(i32, i32, crate::app::rangedata::RangeData_Targets)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(self, x: i32, z: i32, target: crate::app::rangedata::RangeData_Targets) -> ();
+
+    #[doc = "`ToString()` overload"]
+    #[method(name = "ToString", args = 0)]
+    pub fn to_string(self) -> ::unity2::Il2CppString;
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rangedata/RangeData_Targets.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RangeData_Targets {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RangeData_Targets {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RangeData.Targets";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RangeData_Targets {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RangeData_Targets {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn self_() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn enemy() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn friend() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn both() -> Self {
+        Self { value: 4 }
     }
 }

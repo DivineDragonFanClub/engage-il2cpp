@@ -12,7 +12,7 @@ use crate::unity_engine::event_systems::baseeventdata::BaseEventData;
 use crate::unity_engine::event_systems::baseeventdata::IBaseEventData;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/pointereventdata/PointerEventData_InputButton.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/pointereventdata/PointerEventData_FramePressState.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -21,14 +21,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct PointerEventData_InputButton {
+pub struct PointerEventData_FramePressState {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for PointerEventData_InputButton {
+impl ::unity2::ClassIdentity for PointerEventData_FramePressState {
     const NAMESPACE: &'static str = "UnityEngine.EventSystems";
 
-    const NAME: &'static str = "PointerEventData.InputButton";
+    const NAME: &'static str = "PointerEventData.FramePressState";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -37,7 +37,7 @@ impl ::unity2::ClassIdentity for PointerEventData_InputButton {
     }
 }
 
-impl ::unity2::IlType for PointerEventData_InputButton {
+impl ::unity2::IlType for PointerEventData_FramePressState {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -46,17 +46,21 @@ impl ::unity2::IlType for PointerEventData_InputButton {
     }
 }
 
-impl PointerEventData_InputButton {
-    pub fn left() -> Self {
+impl PointerEventData_FramePressState {
+    pub fn pressed() -> Self {
         Self { value: 0 }
     }
 
-    pub fn right() -> Self {
+    pub fn released() -> Self {
         Self { value: 1 }
     }
 
-    pub fn middle() -> Self {
+    pub fn pressed_and_released() -> Self {
         Self { value: 2 }
+    }
+
+    pub fn not_changed() -> Self {
+        Self { value: 3 }
     }
 }
 
@@ -302,7 +306,7 @@ impl PointerEventData {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/pointereventdata/PointerEventData_FramePressState.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/event_systems/pointereventdata/PointerEventData_InputButton.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -311,14 +315,14 @@ impl PointerEventData {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct PointerEventData_FramePressState {
+pub struct PointerEventData_InputButton {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for PointerEventData_FramePressState {
+impl ::unity2::ClassIdentity for PointerEventData_InputButton {
     const NAMESPACE: &'static str = "UnityEngine.EventSystems";
 
-    const NAME: &'static str = "PointerEventData.FramePressState";
+    const NAME: &'static str = "PointerEventData.InputButton";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -327,7 +331,7 @@ impl ::unity2::ClassIdentity for PointerEventData_FramePressState {
     }
 }
 
-impl ::unity2::IlType for PointerEventData_FramePressState {
+impl ::unity2::IlType for PointerEventData_InputButton {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -336,20 +340,16 @@ impl ::unity2::IlType for PointerEventData_FramePressState {
     }
 }
 
-impl PointerEventData_FramePressState {
-    pub fn pressed() -> Self {
+impl PointerEventData_InputButton {
+    pub fn left() -> Self {
         Self { value: 0 }
     }
 
-    pub fn released() -> Self {
+    pub fn right() -> Self {
         Self { value: 1 }
     }
 
-    pub fn pressed_and_released() -> Self {
+    pub fn middle() -> Self {
         Self { value: 2 }
-    }
-
-    pub fn not_changed() -> Self {
-        Self { value: 3 }
     }
 }

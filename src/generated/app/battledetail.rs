@@ -12,17 +12,14 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_HitParam.md"))]
-#[::unity2::class(namespace = "App", name = "BattleDetail.HitParam")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_AttackParam.md"))]
+#[::unity2::class(namespace = "App", name = "BattleDetail.AttackParam")]
 #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-pub struct BattleDetail_HitParam {
-    #[rename(name = "m_InterferenceRod")]
-    pub m_interference_rod: crate::app::calculatorcommand::CalculatorCommand,
-}
+pub struct BattleDetail_AttackParam {}
 
 #[cfg(feature = "app-battledetail")]
 #[::unity2::methods]
-impl BattleDetail_HitParam {
+impl BattleDetail_AttackParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, detail: crate::app::battledetail::BattleDetail) -> ();
@@ -33,152 +30,75 @@ impl BattleDetail_HitParam {
 }
 
 #[cfg(feature = "app-battledetail")]
-impl BattleDetail_HitParam {
+impl BattleDetail_AttackParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
     pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_HitParam),
+                ::core::stringify!(BattleDetail_AttackParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleDetail_HitParamMethods>::ctor(this, detail);
+        <Self as IBattleDetail_AttackParamMethods>::ctor(this, detail);
         this
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battledetail/BattleDetail_BattleParams.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct BattleDetail_BattleParams {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for BattleDetail_BattleParams {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "BattleDetail.BattleParams";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for BattleDetail_BattleParams {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl BattleDetail_BattleParams {
-    pub fn unit_attack() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn unit_defense() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn attack() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn defense() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn hit() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn avoid() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn critical() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn secure() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn continuous() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn simple_power() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn simple_hit() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn simple_critical() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 12 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_DetailParam.md"))]
-#[::unity2::class(namespace = "App", name = "BattleDetail.DetailParam")]
-#[parent(crate::app::battledetail::BattleDetail_CommandParam)]
-pub struct BattleDetail_DetailParam {
-    #[rename(name = "m_Detail")]
-    pub m_detail: crate::app::battledetail::BattleDetail,
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_ContinuousParam.md"))]
+#[::unity2::class(namespace = "App", name = "BattleDetail.ContinuousParam")]
+#[parent(crate::app::battledetail::BattleDetail_DetailParam)]
+pub struct BattleDetail_ContinuousParam {}
 
 #[cfg(feature = "app-battledetail")]
 #[::unity2::methods]
-impl BattleDetail_DetailParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        detail: crate::app::battledetail::BattleDetail,
-        command: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`get_Detail()` overload"]
-    #[method(name = "get_Detail", args = 0)]
-    pub fn get_detail(self) -> crate::app::battledetail::BattleDetail;
-
-    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "Calculate", args = 1)]
-    pub fn calculate(self, side: crate::app::battleinfoside::BattleInfoSide) -> f32;
+impl BattleDetail_ContinuousParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, detail: crate::app::battledetail::BattleDetail) -> ();
 }
 
 #[cfg(feature = "app-battledetail")]
-impl BattleDetail_DetailParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(
-        detail: crate::app::battledetail::BattleDetail,
-        command: ::unity2::Il2CppString,
-    ) -> Self {
+impl BattleDetail_ContinuousParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
+    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_DetailParam),
+                ::core::stringify!(BattleDetail_ContinuousParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleDetail_DetailParamMethods>::ctor(this, detail, command);
+        <Self as IBattleDetail_ContinuousParamMethods>::ctor(this, detail);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_SecureParam.md"))]
+#[::unity2::class(namespace = "App", name = "BattleDetail.SecureParam")]
+#[parent(crate::app::battledetail::BattleDetail_DetailParam)]
+pub struct BattleDetail_SecureParam {}
+
+#[cfg(feature = "app-battledetail")]
+#[::unity2::methods]
+impl BattleDetail_SecureParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, detail: crate::app::battledetail::BattleDetail) -> ();
+}
+
+#[cfg(feature = "app-battledetail")]
+impl BattleDetail_SecureParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
+    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleDetail_SecureParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleDetail_SecureParamMethods>::ctor(this, detail);
         this
     }
 }
@@ -562,69 +482,120 @@ impl BattleDetail {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_CriticalParam.md"))]
-#[::unity2::class(namespace = "App", name = "BattleDetail.CriticalParam")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_UnitDefenseParam.md"))]
+#[::unity2::class(namespace = "App", name = "BattleDetail.UnitDefenseParam")]
 #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-pub struct BattleDetail_CriticalParam {}
+pub struct BattleDetail_UnitDefenseParam {}
 
 #[cfg(feature = "app-battledetail")]
 #[::unity2::methods]
-impl BattleDetail_CriticalParam {
+impl BattleDetail_UnitDefenseParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, detail: crate::app::battledetail::BattleDetail) -> ();
 }
 
 #[cfg(feature = "app-battledetail")]
-impl BattleDetail_CriticalParam {
+impl BattleDetail_UnitDefenseParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
     pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_CriticalParam),
+                ::core::stringify!(BattleDetail_UnitDefenseParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleDetail_CriticalParamMethods>::ctor(this, detail);
+        <Self as IBattleDetail_UnitDefenseParamMethods>::ctor(this, detail);
         this
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_SimpleHitParam.md"))]
-#[::unity2::class(namespace = "App", name = "BattleDetail.SimpleHitParam")]
-#[parent(crate::app::battledetail::BattleDetail_CommandParam)]
-pub struct BattleDetail_SimpleHitParam {}
-
-#[cfg(feature = "app-battledetail")]
-#[::unity2::methods]
-impl BattleDetail_SimpleHitParam {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`get_Kind()` overload"]
-    #[method(name = "get_Kind", args = 0)]
-    pub fn get_kind(self) -> crate::app::battleparam::BattleParam_Kinds;
-
-    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "Calculate", args = 1)]
-    pub fn calculate(self, side: crate::app::battleinfoside::BattleInfoSide) -> f32;
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/battledetail/BattleDetail_BattleParams.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct BattleDetail_BattleParams {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-battledetail")]
-impl BattleDetail_SimpleHitParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_SimpleHitParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleDetail_SimpleHitParamMethods>::ctor(this);
-        this
+impl ::unity2::ClassIdentity for BattleDetail_BattleParams {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "BattleDetail.BattleParams";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for BattleDetail_BattleParams {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl BattleDetail_BattleParams {
+    pub fn unit_attack() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn unit_defense() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn attack() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn defense() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn hit() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn avoid() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn critical() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn secure() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn continuous() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn simple_power() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn simple_hit() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn simple_critical() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 12 }
     }
 }
 
@@ -661,6 +632,42 @@ impl BattleDetail_SimplePowerParam {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_HitParam.md"))]
+#[::unity2::class(namespace = "App", name = "BattleDetail.HitParam")]
+#[parent(crate::app::battledetail::BattleDetail_DetailParam)]
+pub struct BattleDetail_HitParam {
+    #[rename(name = "m_InterferenceRod")]
+    pub m_interference_rod: crate::app::calculatorcommand::CalculatorCommand,
+}
+
+#[cfg(feature = "app-battledetail")]
+#[::unity2::methods]
+impl BattleDetail_HitParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, detail: crate::app::battledetail::BattleDetail) -> ();
+
+    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    #[method(name = "Calculate", args = 1)]
+    pub fn calculate(self, side: crate::app::battleinfoside::BattleInfoSide) -> f32;
+}
+
+#[cfg(feature = "app-battledetail")]
+impl BattleDetail_HitParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
+    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleDetail_HitParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleDetail_HitParamMethods>::ctor(this, detail);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_AvoidParam.md"))]
 #[::unity2::class(namespace = "App", name = "BattleDetail.AvoidParam")]
 #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
@@ -690,6 +697,130 @@ impl BattleDetail_AvoidParam {
             )
         });
         <Self as IBattleDetail_AvoidParamMethods>::ctor(this, detail);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_DetailParam.md"))]
+#[::unity2::class(namespace = "App", name = "BattleDetail.DetailParam")]
+#[parent(crate::app::battledetail::BattleDetail_CommandParam)]
+pub struct BattleDetail_DetailParam {
+    #[rename(name = "m_Detail")]
+    pub m_detail: crate::app::battledetail::BattleDetail,
+}
+
+#[cfg(feature = "app-battledetail")]
+#[::unity2::methods]
+impl BattleDetail_DetailParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail, ::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        detail: crate::app::battledetail::BattleDetail,
+        command: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`get_Detail()` overload"]
+    #[method(name = "get_Detail", args = 0)]
+    pub fn get_detail(self) -> crate::app::battledetail::BattleDetail;
+
+    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    #[method(name = "Calculate", args = 1)]
+    pub fn calculate(self, side: crate::app::battleinfoside::BattleInfoSide) -> f32;
+}
+
+#[cfg(feature = "app-battledetail")]
+impl BattleDetail_DetailParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(
+        detail: crate::app::battledetail::BattleDetail,
+        command: ::unity2::Il2CppString,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleDetail_DetailParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleDetail_DetailParamMethods>::ctor(this, detail, command);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_UnitAttackParam.md"))]
+#[::unity2::class(namespace = "App", name = "BattleDetail.UnitAttackParam")]
+#[parent(crate::app::battledetail::BattleDetail_DetailParam)]
+pub struct BattleDetail_UnitAttackParam {}
+
+#[cfg(feature = "app-battledetail")]
+#[::unity2::methods]
+impl BattleDetail_UnitAttackParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, detail: crate::app::battledetail::BattleDetail) -> ();
+}
+
+#[cfg(feature = "app-battledetail")]
+impl BattleDetail_UnitAttackParam {
+    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
+    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleDetail_UnitAttackParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleDetail_UnitAttackParamMethods>::ctor(this, detail);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_CommandParam.md"))]
+#[::unity2::class(namespace = "App", name = "BattleDetail.CommandParam")]
+#[parent(crate::app::battleparam::BattleParam)]
+pub struct BattleDetail_CommandParam {
+    #[rename(name = "m_Command")]
+    pub m_command: crate::app::calculatorcommand::CalculatorCommand,
+}
+
+#[cfg(feature = "app-battledetail")]
+#[::unity2::methods]
+impl BattleDetail_CommandParam {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, command: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Command()` overload"]
+    #[method(name = "get_Command", args = 0)]
+    pub fn get_command(self) -> crate::app::calculatorcommand::CalculatorCommand;
+
+    #[doc = "`Get(::unity2::Il2CppString, crate::app::battleinfoside::BattleInfoSide)` overload"]
+    #[method(name = "Get", args = 2)]
+    pub fn get(
+        self,
+        name: ::unity2::Il2CppString,
+        side: crate::app::battleinfoside::BattleInfoSide,
+    ) -> f32;
+
+    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    #[method(name = "Calculate", args = 1)]
+    pub fn calculate(self, side: crate::app::battleinfoside::BattleInfoSide) -> f32;
+}
+
+#[cfg(feature = "app-battledetail")]
+impl BattleDetail_CommandParam {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(command: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleDetail_CommandParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleDetail_CommandParamMethods>::ctor(this, command);
         this
     }
 }
@@ -814,112 +945,6 @@ impl BattleDetail_BaseParams {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_UnitDefenseParam.md"))]
-#[::unity2::class(namespace = "App", name = "BattleDetail.UnitDefenseParam")]
-#[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-pub struct BattleDetail_UnitDefenseParam {}
-
-#[cfg(feature = "app-battledetail")]
-#[::unity2::methods]
-impl BattleDetail_UnitDefenseParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, detail: crate::app::battledetail::BattleDetail) -> ();
-}
-
-#[cfg(feature = "app-battledetail")]
-impl BattleDetail_UnitDefenseParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
-    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_UnitDefenseParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleDetail_UnitDefenseParamMethods>::ctor(this, detail);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_DefenseParam.md"))]
-#[::unity2::class(namespace = "App", name = "BattleDetail.DefenseParam")]
-#[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-pub struct BattleDetail_DefenseParam {}
-
-#[cfg(feature = "app-battledetail")]
-#[::unity2::methods]
-impl BattleDetail_DefenseParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, detail: crate::app::battledetail::BattleDetail) -> ();
-}
-
-#[cfg(feature = "app-battledetail")]
-impl BattleDetail_DefenseParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
-    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_DefenseParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleDetail_DefenseParamMethods>::ctor(this, detail);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_CommandParam.md"))]
-#[::unity2::class(namespace = "App", name = "BattleDetail.CommandParam")]
-#[parent(crate::app::battleparam::BattleParam)]
-pub struct BattleDetail_CommandParam {
-    #[rename(name = "m_Command")]
-    pub m_command: crate::app::calculatorcommand::CalculatorCommand,
-}
-
-#[cfg(feature = "app-battledetail")]
-#[::unity2::methods]
-impl BattleDetail_CommandParam {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, command: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Command()` overload"]
-    #[method(name = "get_Command", args = 0)]
-    pub fn get_command(self) -> crate::app::calculatorcommand::CalculatorCommand;
-
-    #[doc = "`Get(::unity2::Il2CppString, crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "Get", args = 2)]
-    pub fn get(
-        self,
-        name: ::unity2::Il2CppString,
-        side: crate::app::battleinfoside::BattleInfoSide,
-    ) -> f32;
-
-    #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "Calculate", args = 1)]
-    pub fn calculate(self, side: crate::app::battleinfoside::BattleInfoSide) -> f32;
-}
-
-#[cfg(feature = "app-battledetail")]
-impl BattleDetail_CommandParam {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(command: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_CommandParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleDetail_CommandParamMethods>::ctor(this, command);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_SimpleCriticalParam.md"))]
 #[::unity2::class(namespace = "App", name = "BattleDetail.SimpleCriticalParam")]
 #[parent(crate::app::battledetail::BattleDetail_CommandParam)]
@@ -957,104 +982,79 @@ impl BattleDetail_SimpleCriticalParam {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_UnitAttackParam.md"))]
-#[::unity2::class(namespace = "App", name = "BattleDetail.UnitAttackParam")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_DefenseParam.md"))]
+#[::unity2::class(namespace = "App", name = "BattleDetail.DefenseParam")]
 #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-pub struct BattleDetail_UnitAttackParam {}
+pub struct BattleDetail_DefenseParam {}
 
 #[cfg(feature = "app-battledetail")]
 #[::unity2::methods]
-impl BattleDetail_UnitAttackParam {
+impl BattleDetail_DefenseParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, detail: crate::app::battledetail::BattleDetail) -> ();
 }
 
 #[cfg(feature = "app-battledetail")]
-impl BattleDetail_UnitAttackParam {
+impl BattleDetail_DefenseParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
     pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_UnitAttackParam),
+                ::core::stringify!(BattleDetail_DefenseParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleDetail_UnitAttackParamMethods>::ctor(this, detail);
+        <Self as IBattleDetail_DefenseParamMethods>::ctor(this, detail);
         this
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_SecureParam.md"))]
-#[::unity2::class(namespace = "App", name = "BattleDetail.SecureParam")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_CriticalParam.md"))]
+#[::unity2::class(namespace = "App", name = "BattleDetail.CriticalParam")]
 #[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-pub struct BattleDetail_SecureParam {}
+pub struct BattleDetail_CriticalParam {}
 
 #[cfg(feature = "app-battledetail")]
 #[::unity2::methods]
-impl BattleDetail_SecureParam {
+impl BattleDetail_CriticalParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, detail: crate::app::battledetail::BattleDetail) -> ();
 }
 
 #[cfg(feature = "app-battledetail")]
-impl BattleDetail_SecureParam {
+impl BattleDetail_CriticalParam {
     #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
     pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_SecureParam),
+                ::core::stringify!(BattleDetail_CriticalParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleDetail_SecureParamMethods>::ctor(this, detail);
+        <Self as IBattleDetail_CriticalParamMethods>::ctor(this, detail);
         this
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_ContinuousParam.md"))]
-#[::unity2::class(namespace = "App", name = "BattleDetail.ContinuousParam")]
-#[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-pub struct BattleDetail_ContinuousParam {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_SimpleHitParam.md"))]
+#[::unity2::class(namespace = "App", name = "BattleDetail.SimpleHitParam")]
+#[parent(crate::app::battledetail::BattleDetail_CommandParam)]
+pub struct BattleDetail_SimpleHitParam {}
 
 #[cfg(feature = "app-battledetail")]
 #[::unity2::methods]
-impl BattleDetail_ContinuousParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, detail: crate::app::battledetail::BattleDetail) -> ();
-}
+impl BattleDetail_SimpleHitParam {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 
-#[cfg(feature = "app-battledetail")]
-impl BattleDetail_ContinuousParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
-    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_ContinuousParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleDetail_ContinuousParamMethods>::ctor(this, detail);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battledetail/BattleDetail_AttackParam.md"))]
-#[::unity2::class(namespace = "App", name = "BattleDetail.AttackParam")]
-#[parent(crate::app::battledetail::BattleDetail_DetailParam)]
-pub struct BattleDetail_AttackParam {}
-
-#[cfg(feature = "app-battledetail")]
-#[::unity2::methods]
-impl BattleDetail_AttackParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, detail: crate::app::battledetail::BattleDetail) -> ();
+    #[doc = "`get_Kind()` overload"]
+    #[method(name = "get_Kind", args = 0)]
+    pub fn get_kind(self) -> crate::app::battleparam::BattleParam_Kinds;
 
     #[doc = "`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]
     #[method(name = "Calculate", args = 1)]
@@ -1062,17 +1062,17 @@ impl BattleDetail_AttackParam {
 }
 
 #[cfg(feature = "app-battledetail")]
-impl BattleDetail_AttackParam {
-    #[doc = "`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]
-    pub fn new(detail: crate::app::battledetail::BattleDetail) -> Self {
+impl BattleDetail_SimpleHitParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(BattleDetail_AttackParam),
+                ::core::stringify!(BattleDetail_SimpleHitParam),
                 ::core::stringify!(new),
             )
         });
-        <Self as IBattleDetail_AttackParamMethods>::ctor(this, detail);
+        <Self as IBattleDetail_SimpleHitParamMethods>::ctor(this);
         this
     }
 }

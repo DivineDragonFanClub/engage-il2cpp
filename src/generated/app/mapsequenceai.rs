@@ -12,74 +12,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceai/MapSequenceAI_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapSequenceAI_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapSequenceAI_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapSequenceAI.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapSequenceAI_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapSequenceAI_Label {
-    pub fn think() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn mind() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn engage_start() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn engage_link() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn engage_rewarp() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn god_change() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn entrust_cancel() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 7 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapsequenceai/MapSequenceAI.md"))]
 #[::unity2::class(namespace = "App", name = "MapSequenceAI")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: mapsequenceai :: MapSequenceAI >)]
@@ -224,5 +156,73 @@ impl MapSequenceAI {
         });
         <Self as IMapSequenceAIMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequenceai/MapSequenceAI_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapSequenceAI_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapSequenceAI_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapSequenceAI.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapSequenceAI_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapSequenceAI_Label {
+    pub fn think() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn mind() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn engage_start() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn engage_link() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn engage_rewarp() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn god_change() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn entrust_cancel() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 7 }
     }
 }

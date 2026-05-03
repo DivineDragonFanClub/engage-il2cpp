@@ -12,6 +12,126 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TutorialSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TutorialSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TutorialSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TutorialSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TutorialSequence_Label {
+    pub fn load() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn unload() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_LanguageType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TutorialSequence_LanguageType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TutorialSequence_LanguageType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TutorialSequence.LanguageType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TutorialSequence_LanguageType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TutorialSequence_LanguageType {
+    pub fn japanese() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn english() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn french() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn spanish() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn german() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn italian() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn traditional() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn simplified() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn korean() -> Self {
+        Self { value: 8 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tutorialsequence/TutorialSequence.md"))]
 #[::unity2::class(namespace = "App", name = "TutorialSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: tutorialsequence :: TutorialSequence >)]
@@ -177,125 +297,5 @@ impl TutorialSequence {
         });
         <Self as ITutorialSequenceMethods>::ctor(this, id);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_LanguageType.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TutorialSequence_LanguageType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TutorialSequence_LanguageType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TutorialSequence.LanguageType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TutorialSequence_LanguageType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TutorialSequence_LanguageType {
-    pub fn japanese() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn english() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn french() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn spanish() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn german() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn italian() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn traditional() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn simplified() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn korean() -> Self {
-        Self { value: 8 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/tutorialsequence/TutorialSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TutorialSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TutorialSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TutorialSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TutorialSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TutorialSequence_Label {
-    pub fn load() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn unload() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 2 }
     }
 }

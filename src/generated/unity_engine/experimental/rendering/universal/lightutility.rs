@@ -6,44 +6,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_SpriteLightMeshVertex.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct LightUtility_SpriteLightMeshVertex {
-    pub position: crate::unity_engine::vector3::Vector3,
-    pub color: crate::unity_engine::color::Color,
-    pub uv: crate::unity_engine::vector2::Vector2,
-}
-
-impl ::unity2::ClassIdentity for LightUtility_SpriteLightMeshVertex {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
-
-    const NAME: &'static str = "LightUtility.SpriteLightMeshVertex";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for LightUtility_SpriteLightMeshVertex {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
-#[::unity2::methods(value)]
-impl LightUtility_SpriteLightMeshVertex {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal",
@@ -128,6 +90,44 @@ impl ::unity2::IlType for LightUtility_ParametricLightMeshVertex {
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
 #[::unity2::methods(value)]
 impl LightUtility_ParametricLightMeshVertex {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_SpriteLightMeshVertex.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct LightUtility_SpriteLightMeshVertex {
+    pub position: crate::unity_engine::vector3::Vector3,
+    pub color: crate::unity_engine::color::Color,
+    pub uv: crate::unity_engine::vector2::Vector2,
+}
+
+impl ::unity2::ClassIdentity for LightUtility_SpriteLightMeshVertex {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal";
+
+    const NAME: &'static str = "LightUtility.SpriteLightMeshVertex";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for LightUtility_SpriteLightMeshVertex {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
+#[::unity2::methods(value)]
+impl LightUtility_SpriteLightMeshVertex {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();

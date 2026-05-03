@@ -10,6 +10,129 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/musclesquatsequence/MuscleSquatSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MuscleSquatSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MuscleSquatSequence_Label {
+    const NAMESPACE: &'static str = "App.Squat";
+
+    const NAME: &'static str = "MuscleSquatSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MuscleSquatSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MuscleSquatSequence_Label {
+    pub fn init() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn ready_count() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn tick() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn ready_finish() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn finish() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn result() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn mascot_bond() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn prize() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn r#final() -> Self {
+        Self { value: 8 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence_RandomPack.md"))]
+#[::unity2::class(namespace = "App.Squat", name = "MuscleSquatSequence.RandomPack")]
+#[parent(crate::system::object::Object)]
+pub struct MuscleSquatSequence_RandomPack {
+    #[rename(name = "type")]
+    pub r#type: ::unity2::Il2CppString,
+    #[rename(name = "param")]
+    pub param: f32,
+}
+
+#[cfg(feature = "app-squat-musclesquatsequence")]
+#[::unity2::methods]
+impl MuscleSquatSequence_RandomPack {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.ctor(::unity2::Il2CppString, f32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(self, set_type: ::unity2::Il2CppString, set_param: f32) -> ();
+}
+
+#[cfg(feature = "app-squat-musclesquatsequence")]
+impl MuscleSquatSequence_RandomPack {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleSquatSequence_RandomPack),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMuscleSquatSequence_RandomPackMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::Il2CppString, f32)` — overload selector"]
+    pub fn new_2(set_type: ::unity2::Il2CppString, set_param: f32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MuscleSquatSequence_RandomPack),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IMuscleSquatSequence_RandomPackMethods>::ctor_2(this, set_type, set_param);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence.md"))]
 #[::unity2::class(namespace = "App.Squat", name = "MuscleSquatSequence")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -595,129 +718,6 @@ impl MuscleSquatSequence {
             )
         });
         <Self as IMuscleSquatSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/musclesquatsequence/MuscleSquatSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MuscleSquatSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MuscleSquatSequence_Label {
-    const NAMESPACE: &'static str = "App.Squat";
-
-    const NAME: &'static str = "MuscleSquatSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MuscleSquatSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MuscleSquatSequence_Label {
-    pub fn init() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn ready_count() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn tick() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn ready_finish() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn finish() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn result() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn mascot_bond() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn prize() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn r#final() -> Self {
-        Self { value: 8 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/squat/musclesquatsequence/MuscleSquatSequence_RandomPack.md"))]
-#[::unity2::class(namespace = "App.Squat", name = "MuscleSquatSequence.RandomPack")]
-#[parent(crate::system::object::Object)]
-pub struct MuscleSquatSequence_RandomPack {
-    #[rename(name = "type")]
-    pub r#type: ::unity2::Il2CppString,
-    #[rename(name = "param")]
-    pub param: f32,
-}
-
-#[cfg(feature = "app-squat-musclesquatsequence")]
-#[::unity2::methods]
-impl MuscleSquatSequence_RandomPack {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, f32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(self, set_type: ::unity2::Il2CppString, set_param: f32) -> ();
-}
-
-#[cfg(feature = "app-squat-musclesquatsequence")]
-impl MuscleSquatSequence_RandomPack {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MuscleSquatSequence_RandomPack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMuscleSquatSequence_RandomPackMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString, f32)` — overload selector"]
-    pub fn new_2(set_type: ::unity2::Il2CppString, set_param: f32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MuscleSquatSequence_RandomPack),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IMuscleSquatSequence_RandomPackMethods>::ctor_2(this, set_type, set_param);
         this
     }
 }

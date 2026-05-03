@@ -20,122 +20,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Country.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct PersonData_Country {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for PersonData_Country {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PersonData.Country";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for PersonData_Country {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl PersonData_Country {
-    pub fn free() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn lithos() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn filene() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn brodia() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn ircion() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn solum() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn gradlon() -> Self {
-        Self { value: 6 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Colors.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct PersonData_Colors {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for PersonData_Colors {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PersonData.Colors";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for PersonData_Colors {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl PersonData_Colors {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn red() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn green() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn blue() -> Self {
-        Self { value: 3 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/persondata/PersonData.md"))]
 #[::unity2::class(namespace = "App", name = "PersonData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: persondata :: PersonData >)]
@@ -758,6 +642,70 @@ impl PersonData {
     }
 }
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Country.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct PersonData_Country {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for PersonData_Country {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "PersonData.Country";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PersonData_Country {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl PersonData_Country {
+    pub fn free() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn lithos() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn filene() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn brodia() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn ircion() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn solum() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn gradlon() -> Self {
+        Self { value: 6 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/persondata/PersonData_FlagField.md"))]
 #[::unity2::class(namespace = "App", name = "PersonData.FlagField")]
 # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: persondata :: PersonData_Flags >)]
@@ -805,6 +753,114 @@ impl PersonData_FlagField {
         });
         <Self as IPersonData_FlagFieldMethods>::ctor_2(this, f);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Timing.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct PersonData_Timing {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for PersonData_Timing {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "PersonData.Timing";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PersonData_Timing {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl PersonData_Timing {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn begin() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn chapter() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn eternal() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Colors.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct PersonData_Colors {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for PersonData_Colors {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "PersonData.Colors";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PersonData_Colors {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl PersonData_Colors {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn red() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn green() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn blue() -> Self {
+        Self { value: 3 }
     }
 }
 
@@ -929,61 +985,5 @@ impl PersonData_Ranks {
 
     pub fn rank3() -> Self {
         Self { value: 3 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/persondata/PersonData_Timing.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct PersonData_Timing {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for PersonData_Timing {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PersonData.Timing";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for PersonData_Timing {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl PersonData_Timing {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn begin() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn chapter() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn eternal() -> Self {
-        Self { value: 4 }
     }
 }

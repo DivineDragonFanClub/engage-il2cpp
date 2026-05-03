@@ -12,14 +12,17 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymenu/ChallengeDifficultyMenu_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "ChallengeDifficultyMenu.DecideEventHandler")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymenu/ChallengeDifficultyMenu_RequestCloseEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ChallengeDifficultyMenu.RequestCloseEventHandler"
+)]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ChallengeDifficultyMenu_DecideEventHandler {}
+pub struct ChallengeDifficultyMenu_RequestCloseEventHandler {}
 
 #[cfg(feature = "app-challengedifficultymenu")]
 #[::unity2::methods]
-impl ChallengeDifficultyMenu_DecideEventHandler {
+impl ChallengeDifficultyMenu_RequestCloseEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
@@ -30,17 +33,19 @@ impl ChallengeDifficultyMenu_DecideEventHandler {
 }
 
 #[cfg(feature = "app-challengedifficultymenu")]
-impl ChallengeDifficultyMenu_DecideEventHandler {
+impl ChallengeDifficultyMenu_RequestCloseEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeDifficultyMenu_DecideEventHandler),
+                ::core::stringify!(ChallengeDifficultyMenu_RequestCloseEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IChallengeDifficultyMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IChallengeDifficultyMenu_RequestCloseEventHandlerMethods>::ctor(
+            this, object, method,
+        );
         this
     }
 }
@@ -141,17 +146,14 @@ impl ChallengeDifficultyMenu {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymenu/ChallengeDifficultyMenu_RequestCloseEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ChallengeDifficultyMenu.RequestCloseEventHandler"
-)]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengedifficultymenu/ChallengeDifficultyMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "ChallengeDifficultyMenu.DecideEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ChallengeDifficultyMenu_RequestCloseEventHandler {}
+pub struct ChallengeDifficultyMenu_DecideEventHandler {}
 
 #[cfg(feature = "app-challengedifficultymenu")]
 #[::unity2::methods]
-impl ChallengeDifficultyMenu_RequestCloseEventHandler {
+impl ChallengeDifficultyMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
@@ -162,19 +164,17 @@ impl ChallengeDifficultyMenu_RequestCloseEventHandler {
 }
 
 #[cfg(feature = "app-challengedifficultymenu")]
-impl ChallengeDifficultyMenu_RequestCloseEventHandler {
+impl ChallengeDifficultyMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeDifficultyMenu_RequestCloseEventHandler),
+                ::core::stringify!(ChallengeDifficultyMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IChallengeDifficultyMenu_RequestCloseEventHandlerMethods>::ctor(
-            this, object, method,
-        );
+        <Self as IChallengeDifficultyMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

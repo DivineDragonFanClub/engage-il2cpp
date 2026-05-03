@@ -8,7 +8,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_Type.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_ResultRank.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -17,14 +17,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct Note_Type {
+pub struct Note_ResultRank {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for Note_Type {
+impl ::unity2::ClassIdentity for Note_ResultRank {
     const NAMESPACE: &'static str = "App.Squat";
 
-    const NAME: &'static str = "Note.Type";
+    const NAME: &'static str = "Note.ResultRank";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -33,7 +33,7 @@ impl ::unity2::ClassIdentity for Note_Type {
     }
 }
 
-impl ::unity2::IlType for Note_Type {
+impl ::unity2::IlType for Note_ResultRank {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -42,45 +42,29 @@ impl ::unity2::IlType for Note_Type {
     }
 }
 
-impl Note_Type {
-    pub fn skip() -> Self {
+impl Note_ResultRank {
+    pub fn perfect() -> Self {
         Self { value: 0 }
     }
 
-    pub fn right() -> Self {
+    pub fn good() -> Self {
         Self { value: 1 }
     }
 
-    pub fn left() -> Self {
+    pub fn bad() -> Self {
         Self { value: 2 }
     }
 
-    pub fn up() -> Self {
+    pub fn miss() -> Self {
         Self { value: 3 }
     }
 
-    pub fn down() -> Self {
+    pub fn assist() -> Self {
         Self { value: 4 }
     }
 
-    pub fn clockwise() -> Self {
+    pub fn rank_num() -> Self {
         Self { value: 5 }
-    }
-
-    pub fn un_clockwise() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn clockwise_end() -> Self {
-        Self { value: 50 }
-    }
-
-    pub fn un_clockwise_end() -> Self {
-        Self { value: 60 }
-    }
-
-    pub fn type_count() -> Self {
-        Self { value: 61 }
     }
 }
 
@@ -314,7 +298,7 @@ impl Note {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_ResultRank.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/squat/note/Note_Type.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -323,14 +307,14 @@ impl Note {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct Note_ResultRank {
+pub struct Note_Type {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for Note_ResultRank {
+impl ::unity2::ClassIdentity for Note_Type {
     const NAMESPACE: &'static str = "App.Squat";
 
-    const NAME: &'static str = "Note.ResultRank";
+    const NAME: &'static str = "Note.Type";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -339,7 +323,7 @@ impl ::unity2::ClassIdentity for Note_ResultRank {
     }
 }
 
-impl ::unity2::IlType for Note_ResultRank {
+impl ::unity2::IlType for Note_Type {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -348,28 +332,44 @@ impl ::unity2::IlType for Note_ResultRank {
     }
 }
 
-impl Note_ResultRank {
-    pub fn perfect() -> Self {
+impl Note_Type {
+    pub fn skip() -> Self {
         Self { value: 0 }
     }
 
-    pub fn good() -> Self {
+    pub fn right() -> Self {
         Self { value: 1 }
     }
 
-    pub fn bad() -> Self {
+    pub fn left() -> Self {
         Self { value: 2 }
     }
 
-    pub fn miss() -> Self {
+    pub fn up() -> Self {
         Self { value: 3 }
     }
 
-    pub fn assist() -> Self {
+    pub fn down() -> Self {
         Self { value: 4 }
     }
 
-    pub fn rank_num() -> Self {
+    pub fn clockwise() -> Self {
         Self { value: 5 }
+    }
+
+    pub fn un_clockwise() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn clockwise_end() -> Self {
+        Self { value: 50 }
+    }
+
+    pub fn un_clockwise_end() -> Self {
+        Self { value: 60 }
+    }
+
+    pub fn type_count() -> Self {
+        Self { value: 61 }
     }
 }

@@ -18,117 +18,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodItem.md"))]
-#[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.RodItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct FishingRodSelectMenu_RodItem {
-    #[static_field]
-    #[rename(name = "cTextureRootPath")]
-    pub c_texture_root_path: ::unity2::Il2CppString,
-    #[static_field]
-    #[rename(name = "cAtlasPath")]
-    pub c_atlas_path: ::unity2::Il2CppString,
-    #[static_field]
-    #[rename(name = "cTextureLarge")]
-    pub c_texture_large: ::unity2::Il2CppString,
-    #[static_field]
-    #[rename(name = "cTextureMiddle")]
-    pub c_texture_middle: ::unity2::Il2CppString,
-    #[static_field]
-    #[rename(name = "cTextureSmall")]
-    pub c_texture_small: ::unity2::Il2CppString,
-    #[rename(name = "m_DecideEventHandler")]
-    pub m_decide_event_handler:
-        crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-    #[rename(name = "m_MenuObj")]
-    pub m_menu_obj: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_FishList")]
-    pub m_fish_list: crate::system::collections::generic::list_1::List_1<
-        crate::app::fishing::forecastfishdata::ForecastFishData,
-    >,
-    #[rename(name = "m_Result")]
-    pub m_result: crate::app::fishing::sticktype::StickType,
-    #[rename(name = "m_Label")]
-    pub m_label: ::unity2::Il2CppString,
-    #[rename(name = "m_ItemTrans")]
-    pub m_item_trans: crate::unity_engine::transform::Transform,
-    #[rename(name = "m_Sprites")]
-    pub m_sprites:
-        crate::system::collections::generic::list_1::List_1<crate::unity_engine::sprite::Sprite>,
-}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-#[::unity2::methods]
-impl FishingRodSelectMenu_RodItem {
-    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::app::fishing::sticktype::StickType, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]
-    #[method(name = ".ctor", args = 5)]
-    pub fn ctor(
-        self,
-        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        menu_obj: crate::unity_engine::gameobject::GameObject,
-        trans: crate::unity_engine::transform::Transform,
-        result: crate::app::fishing::sticktype::StickType,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
-    ) -> ();
-
-    #[doc = "`OnBuild()` overload"]
-    #[method(name = "OnBuild", args = 0)]
-    pub fn on_build(self) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`OnSelect()` overload"]
-    #[method(name = "OnSelect", args = 0)]
-    pub fn on_select(self) -> ();
-
-    #[doc = "`OnDeselect()` overload"]
-    #[method(name = "OnDeselect", args = 0)]
-    pub fn on_deselect(self) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`OnClose()` overload"]
-    #[method(name = "OnClose", args = 0)]
-    pub fn on_close(self) -> ();
-}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-impl FishingRodSelectMenu_RodItem {
-    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::app::fishing::sticktype::StickType, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]
-    pub fn new(
-        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        menu_obj: crate::unity_engine::gameobject::GameObject,
-        trans: crate::unity_engine::transform::Transform,
-        result: crate::app::fishing::sticktype::StickType,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingRodSelectMenu_RodItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingRodSelectMenu_RodItemMethods>::ctor(
-            this,
-            event_handler,
-            menu_obj,
-            trans,
-            result,
-            fish_list,
-        );
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodCItem.md"))]
 #[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.RodCItem")]
 #[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]
@@ -243,163 +132,6 @@ impl FishingRodSelectMenu_Result2 {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct FishingRodSelectMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-#[::unity2::methods]
-impl FishingRodSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::fishing::sticktype::StickType)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, result: crate::app::fishing::sticktype::StickType) -> ();
-}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-impl FishingRodSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingRodSelectMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingRodSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodAItem.md"))]
-#[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.RodAItem")]
-#[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]
-pub struct FishingRodSelectMenu_RodAItem {}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-#[::unity2::methods]
-impl FishingRodSelectMenu_RodAItem {
-    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        menu_obj: crate::unity_engine::gameobject::GameObject,
-        item_trans: crate::unity_engine::transform::Transform,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
-    ) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`OnCursorMoveEnd()` overload"]
-    #[method(name = "OnCursorMoveEnd", args = 0)]
-    pub fn on_cursor_move_end(self) -> ();
-}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-impl FishingRodSelectMenu_RodAItem {
-    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]
-    pub fn new(
-        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        menu_obj: crate::unity_engine::gameobject::GameObject,
-        item_trans: crate::unity_engine::transform::Transform,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingRodSelectMenu_RodAItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingRodSelectMenu_RodAItemMethods>::ctor(
-            this,
-            event_handler,
-            menu_obj,
-            item_trans,
-            fish_list,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodBItem.md"))]
-#[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.RodBItem")]
-#[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]
-pub struct FishingRodSelectMenu_RodBItem {}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-#[::unity2::methods]
-impl FishingRodSelectMenu_RodBItem {
-    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        menu_obj: crate::unity_engine::gameobject::GameObject,
-        item_trans: crate::unity_engine::transform::Transform,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
-    ) -> ();
-
-    #[doc = "`BuildAttribute()` overload"]
-    #[method(name = "BuildAttribute", args = 0)]
-    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`OnCursorMoveEnd()` overload"]
-    #[method(name = "OnCursorMoveEnd", args = 0)]
-    pub fn on_cursor_move_end(self) -> ();
-}
-
-#[cfg(feature = "app-fishingrodselectmenu")]
-impl FishingRodSelectMenu_RodBItem {
-    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]
-    pub fn new(
-        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
-        menu_obj: crate::unity_engine::gameobject::GameObject,
-        item_trans: crate::unity_engine::transform::Transform,
-        fish_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::fishing::forecastfishdata::ForecastFishData,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FishingRodSelectMenu_RodBItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFishingRodSelectMenu_RodBItemMethods>::ctor(
-            this,
-            event_handler,
-            menu_obj,
-            item_trans,
-            fish_list,
-        );
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu.md"))]
 #[::unity2::class(namespace = "App", name = "FishingRodSelectMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -486,6 +218,274 @@ impl FishingRodSelectMenu {
             menu_content,
             initial_selected,
             event_handler,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct FishingRodSelectMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+#[::unity2::methods]
+impl FishingRodSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::fishing::sticktype::StickType)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, result: crate::app::fishing::sticktype::StickType) -> ();
+}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+impl FishingRodSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingRodSelectMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingRodSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodBItem.md"))]
+#[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.RodBItem")]
+#[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]
+pub struct FishingRodSelectMenu_RodBItem {}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+#[::unity2::methods]
+impl FishingRodSelectMenu_RodBItem {
+    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+        menu_obj: crate::unity_engine::gameobject::GameObject,
+        item_trans: crate::unity_engine::transform::Transform,
+        fish_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::fishing::forecastfishdata::ForecastFishData,
+        >,
+    ) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`OnCursorMoveEnd()` overload"]
+    #[method(name = "OnCursorMoveEnd", args = 0)]
+    pub fn on_cursor_move_end(self) -> ();
+}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+impl FishingRodSelectMenu_RodBItem {
+    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]
+    pub fn new(
+        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+        menu_obj: crate::unity_engine::gameobject::GameObject,
+        item_trans: crate::unity_engine::transform::Transform,
+        fish_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::fishing::forecastfishdata::ForecastFishData,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingRodSelectMenu_RodBItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingRodSelectMenu_RodBItemMethods>::ctor(
+            this,
+            event_handler,
+            menu_obj,
+            item_trans,
+            fish_list,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodItem.md"))]
+#[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.RodItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct FishingRodSelectMenu_RodItem {
+    #[static_field]
+    #[rename(name = "cTextureRootPath")]
+    pub c_texture_root_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cAtlasPath")]
+    pub c_atlas_path: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cTextureLarge")]
+    pub c_texture_large: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cTextureMiddle")]
+    pub c_texture_middle: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "cTextureSmall")]
+    pub c_texture_small: ::unity2::Il2CppString,
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler:
+        crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+    #[rename(name = "m_MenuObj")]
+    pub m_menu_obj: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_FishList")]
+    pub m_fish_list: crate::system::collections::generic::list_1::List_1<
+        crate::app::fishing::forecastfishdata::ForecastFishData,
+    >,
+    #[rename(name = "m_Result")]
+    pub m_result: crate::app::fishing::sticktype::StickType,
+    #[rename(name = "m_Label")]
+    pub m_label: ::unity2::Il2CppString,
+    #[rename(name = "m_ItemTrans")]
+    pub m_item_trans: crate::unity_engine::transform::Transform,
+    #[rename(name = "m_Sprites")]
+    pub m_sprites:
+        crate::system::collections::generic::list_1::List_1<crate::unity_engine::sprite::Sprite>,
+}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+#[::unity2::methods]
+impl FishingRodSelectMenu_RodItem {
+    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::app::fishing::sticktype::StickType, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]
+    #[method(name = ".ctor", args = 5)]
+    pub fn ctor(
+        self,
+        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+        menu_obj: crate::unity_engine::gameobject::GameObject,
+        trans: crate::unity_engine::transform::Transform,
+        result: crate::app::fishing::sticktype::StickType,
+        fish_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::fishing::forecastfishdata::ForecastFishData,
+        >,
+    ) -> ();
+
+    #[doc = "`OnBuild()` overload"]
+    #[method(name = "OnBuild", args = 0)]
+    pub fn on_build(self) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`OnSelect()` overload"]
+    #[method(name = "OnSelect", args = 0)]
+    pub fn on_select(self) -> ();
+
+    #[doc = "`OnDeselect()` overload"]
+    #[method(name = "OnDeselect", args = 0)]
+    pub fn on_deselect(self) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`OnClose()` overload"]
+    #[method(name = "OnClose", args = 0)]
+    pub fn on_close(self) -> ();
+}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+impl FishingRodSelectMenu_RodItem {
+    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::app::fishing::sticktype::StickType, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]
+    pub fn new(
+        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+        menu_obj: crate::unity_engine::gameobject::GameObject,
+        trans: crate::unity_engine::transform::Transform,
+        result: crate::app::fishing::sticktype::StickType,
+        fish_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::fishing::forecastfishdata::ForecastFishData,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingRodSelectMenu_RodItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingRodSelectMenu_RodItemMethods>::ctor(
+            this,
+            event_handler,
+            menu_obj,
+            trans,
+            result,
+            fish_list,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fishingrodselectmenu/FishingRodSelectMenu_RodAItem.md"))]
+#[::unity2::class(namespace = "App", name = "FishingRodSelectMenu.RodAItem")]
+#[parent(crate::app::fishingrodselectmenu::FishingRodSelectMenu_RodItem)]
+pub struct FishingRodSelectMenu_RodAItem {}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+#[::unity2::methods]
+impl FishingRodSelectMenu_RodAItem {
+    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+        menu_obj: crate::unity_engine::gameobject::GameObject,
+        item_trans: crate::unity_engine::transform::Transform,
+        fish_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::fishing::forecastfishdata::ForecastFishData,
+        >,
+    ) -> ();
+
+    #[doc = "`BuildAttribute()` overload"]
+    #[method(name = "BuildAttribute", args = 0)]
+    pub fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute;
+
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`OnCursorMoveEnd()` overload"]
+    #[method(name = "OnCursorMoveEnd", args = 0)]
+    pub fn on_cursor_move_end(self) -> ();
+}
+
+#[cfg(feature = "app-fishingrodselectmenu")]
+impl FishingRodSelectMenu_RodAItem {
+    #[doc = "`.ctor(crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler, crate::unity_engine::gameobject::GameObject, crate::unity_engine::transform::Transform, crate::system::collections::generic::list_1::List_1<crate::app::fishing::forecastfishdata::ForecastFishData>)` — overload selector"]
+    pub fn new(
+        event_handler: crate::app::fishingrodselectmenu::FishingRodSelectMenu_DecideEventHandler,
+        menu_obj: crate::unity_engine::gameobject::GameObject,
+        item_trans: crate::unity_engine::transform::Transform,
+        fish_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::fishing::forecastfishdata::ForecastFishData,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FishingRodSelectMenu_RodAItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingRodSelectMenu_RodAItemMethods>::ctor(
+            this,
+            event_handler,
+            menu_obj,
+            item_trans,
+            fish_list,
         );
         this
     }

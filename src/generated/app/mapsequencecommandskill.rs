@@ -12,7 +12,7 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Action.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -21,14 +21,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapSequenceCommandSkill_Action {
+pub struct MapSequenceCommandSkill_Label {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapSequenceCommandSkill_Action {
+impl ::unity2::ClassIdentity for MapSequenceCommandSkill_Label {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapSequenceCommandSkill.Action";
+    const NAME: &'static str = "MapSequenceCommandSkill.Label";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -37,7 +37,7 @@ impl ::unity2::ClassIdentity for MapSequenceCommandSkill_Action {
     }
 }
 
-impl ::unity2::IlType for MapSequenceCommandSkill_Action {
+impl ::unity2::IlType for MapSequenceCommandSkill_Label {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -46,12 +46,12 @@ impl ::unity2::IlType for MapSequenceCommandSkill_Action {
     }
 }
 
-impl MapSequenceCommandSkill_Action {
+impl MapSequenceCommandSkill_Label {
     pub fn none() -> Self {
         Self { value: 0 }
     }
 
-    pub fn charge() -> Self {
+    pub fn impact() -> Self {
         Self { value: 1 }
     }
 }
@@ -160,7 +160,7 @@ impl MapSequenceCommandSkill {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Label.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapsequencecommandskill/MapSequenceCommandSkill_Action.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -169,14 +169,14 @@ impl MapSequenceCommandSkill {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct MapSequenceCommandSkill_Label {
+pub struct MapSequenceCommandSkill_Action {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for MapSequenceCommandSkill_Label {
+impl ::unity2::ClassIdentity for MapSequenceCommandSkill_Action {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "MapSequenceCommandSkill.Label";
+    const NAME: &'static str = "MapSequenceCommandSkill.Action";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -185,7 +185,7 @@ impl ::unity2::ClassIdentity for MapSequenceCommandSkill_Label {
     }
 }
 
-impl ::unity2::IlType for MapSequenceCommandSkill_Label {
+impl ::unity2::IlType for MapSequenceCommandSkill_Action {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -194,12 +194,12 @@ impl ::unity2::IlType for MapSequenceCommandSkill_Label {
     }
 }
 
-impl MapSequenceCommandSkill_Label {
+impl MapSequenceCommandSkill_Action {
     pub fn none() -> Self {
         Self { value: 0 }
     }
 
-    pub fn impact() -> Self {
+    pub fn charge() -> Self {
         Self { value: 1 }
     }
 }

@@ -12,102 +12,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct SortieSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for SortieSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for SortieSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl SortieSequence_Label {
-    pub fn notice() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn top_menu() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn selection_unit() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn position_change() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn inventory() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn god() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn tutorial() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn reliance() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn weapon_shop() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn item_shop() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn friend_list() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn ring_list() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn config() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn save() -> Self {
-        Self { value: 13 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 14 }
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Modes.md"))]
 #[repr(C)]
 #[derive(
@@ -273,5 +177,101 @@ impl SortieSequence {
         });
         <Self as ISortieSequenceMethods>::ctor(this, mode);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortiesequence/SortieSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SortieSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SortieSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SortieSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SortieSequence_Label {
+    pub fn notice() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn top_menu() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn selection_unit() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn position_change() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn inventory() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn god() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn tutorial() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn reliance() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn weapon_shop() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn item_shop() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn friend_list() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn ring_list() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn config() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn save() -> Self {
+        Self { value: 13 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 14 }
     }
 }

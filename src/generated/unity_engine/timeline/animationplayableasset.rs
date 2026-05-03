@@ -14,24 +14,6 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Timeline",
-    name = "AnimationPlayableAsset.AnimationPlayableAssetUpgrade"
-)]
-#[parent(crate::system::object::Object)]
-pub struct AnimationPlayableAsset_AnimationPlayableAssetUpgrade {}
-
-#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
-#[::unity2::methods]
-impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade {
-    #[doc = "`ConvertRotationToEuler(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset)` overload"]
-    #[method(name = "ConvertRotationToEuler", args = 1)]
-    pub fn convert_rotation_to_euler(
-        asset: crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset,
-    ) -> ();
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset.md"))]
 #[::unity2::class(namespace = "UnityEngine.Timeline", name = "AnimationPlayableAsset")]
 #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
@@ -271,6 +253,24 @@ impl AnimationPlayableAsset {
         <Self as IAnimationPlayableAssetMethods>::ctor(this);
         this
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_AnimationPlayableAssetUpgrade.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Timeline",
+    name = "AnimationPlayableAsset.AnimationPlayableAssetUpgrade"
+)]
+#[parent(crate::system::object::Object)]
+pub struct AnimationPlayableAsset_AnimationPlayableAssetUpgrade {}
+
+#[cfg(feature = "unity_engine-timeline-animationplayableasset")]
+#[::unity2::methods]
+impl AnimationPlayableAsset_AnimationPlayableAssetUpgrade {
+    #[doc = "`ConvertRotationToEuler(crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset)` overload"]
+    #[method(name = "ConvertRotationToEuler", args = 1)]
+    pub fn convert_rotation_to_euler(
+        asset: crate::unity_engine::timeline::animationplayableasset::AnimationPlayableAsset,
+    ) -> ();
 }
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/timeline/animationplayableasset/AnimationPlayableAsset_LoopMode.md"))]

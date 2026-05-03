@@ -14,6 +14,70 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenucontent/FoodstuffMenuContent_CursorController.md"))]
+#[::unity2::class(
+    namespace = "App.CookingMenu",
+    name = "FoodstuffMenuContent.CursorController"
+)]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct FoodstuffMenuContent_CursorController {
+    #[rename(name = "m_Images")]
+    pub m_images:
+        crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image>,
+    #[rename(name = "EnableColor")]
+    pub enable_color: crate::unity_engine::color::Color,
+    #[rename(name = "DisableColor")]
+    pub disable_color: crate::unity_engine::color::Color,
+}
+
+#[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
+#[::unity2::methods]
+impl FoodstuffMenuContent_CursorController {
+    #[doc = "`Setup()` overload"]
+    #[method(name = "Setup", args = 0)]
+    pub fn setup(self) -> ();
+
+    #[doc = "`SetVisibleWithoutCursorImages(bool)` overload"]
+    #[method(name = "SetVisibleWithoutCursorImages", args = 1)]
+    pub fn set_visible_without_cursor_images(self, is_visible: bool) -> ();
+
+    #[doc = "`SetVisibleCursorImage(bool)` overload"]
+    #[method(name = "SetVisibleCursorImage", args = 1)]
+    pub fn set_visible_cursor_image(self, is_visible: bool) -> ();
+
+    #[doc = "`SetSiblingIndex(i32)` overload"]
+    #[method(name = "SetSiblingIndex", args = 1)]
+    pub fn set_sibling_index(self, index: i32) -> ();
+
+    #[doc = "`SetBackCursorImageEnabled(bool)` overload"]
+    #[method(name = "SetBackCursorImageEnabled", args = 1)]
+    pub fn set_back_cursor_image_enabled(self, value: bool) -> ();
+
+    #[doc = "`SetColor(bool)` overload"]
+    #[method(name = "SetColor", args = 1)]
+    pub fn set_color(self, is_enable: bool) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
+impl FoodstuffMenuContent_CursorController {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(FoodstuffMenuContent_CursorController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFoodstuffMenuContent_CursorControllerMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenucontent/FoodstuffMenuContent.md"))]
 #[::unity2::class(namespace = "App.CookingMenu", name = "FoodstuffMenuContent")]
 #[parent(crate::app::basicmenucontent::BasicMenuContent)]
@@ -135,70 +199,6 @@ impl FoodstuffMenuContent {
             )
         });
         <Self as IFoodstuffMenuContentMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/cooking_menu/foodstuffmenucontent/FoodstuffMenuContent_CursorController.md"))]
-#[::unity2::class(
-    namespace = "App.CookingMenu",
-    name = "FoodstuffMenuContent.CursorController"
-)]
-#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-pub struct FoodstuffMenuContent_CursorController {
-    #[rename(name = "m_Images")]
-    pub m_images:
-        crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image>,
-    #[rename(name = "EnableColor")]
-    pub enable_color: crate::unity_engine::color::Color,
-    #[rename(name = "DisableColor")]
-    pub disable_color: crate::unity_engine::color::Color,
-}
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
-#[::unity2::methods]
-impl FoodstuffMenuContent_CursorController {
-    #[doc = "`Setup()` overload"]
-    #[method(name = "Setup", args = 0)]
-    pub fn setup(self) -> ();
-
-    #[doc = "`SetVisibleWithoutCursorImages(bool)` overload"]
-    #[method(name = "SetVisibleWithoutCursorImages", args = 1)]
-    pub fn set_visible_without_cursor_images(self, is_visible: bool) -> ();
-
-    #[doc = "`SetVisibleCursorImage(bool)` overload"]
-    #[method(name = "SetVisibleCursorImage", args = 1)]
-    pub fn set_visible_cursor_image(self, is_visible: bool) -> ();
-
-    #[doc = "`SetSiblingIndex(i32)` overload"]
-    #[method(name = "SetSiblingIndex", args = 1)]
-    pub fn set_sibling_index(self, index: i32) -> ();
-
-    #[doc = "`SetBackCursorImageEnabled(bool)` overload"]
-    #[method(name = "SetBackCursorImageEnabled", args = 1)]
-    pub fn set_back_cursor_image_enabled(self, value: bool) -> ();
-
-    #[doc = "`SetColor(bool)` overload"]
-    #[method(name = "SetColor", args = 1)]
-    pub fn set_color(self, is_enable: bool) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-cooking_menu-foodstuffmenucontent")]
-impl FoodstuffMenuContent_CursorController {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(FoodstuffMenuContent_CursorController),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFoodstuffMenuContent_CursorControllerMethods>::ctor(this);
         this
     }
 }

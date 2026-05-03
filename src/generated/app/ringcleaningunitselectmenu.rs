@@ -24,43 +24,53 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "RingCleaningUnitSelectMenu.RingCleaningUnitSelectMenuItem.ConfirmDialogItemYes"
+    name = "RingCleaningUnitSelectMenu.RingCleaningUnitSelectMenuItem.ConfirmDialog"
 )]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes {
-    #[rename(name = "m_Action")]
-    pub m_action: crate::system::action::Action,
-}
+#[parent(crate::app::yesnodialog::YesNoDialog)]
+pub struct RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog {}
 
 #[cfg(feature = "app-ringcleaningunitselectmenu")]
 #[::unity2::methods]
-impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, action: crate::system::action::Action, text: ::unity2::Il2CppString) -> ();
+impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> ();
 
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::system::action::Action)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit: crate::app::unit::Unit,
+        action: crate::system::action::Action,
+    ) -> ();
 }
 
 #[cfg(feature = "app-ringcleaningunitselectmenu")]
-impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]
-    pub fn new(action: crate::system::action::Action, text: ::unity2::Il2CppString) -> Self {
+impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<
+            crate::app::basicmenuitem::BasicMenuItem,
+        >,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
                 ::core::stringify!(
-                    RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes
+                    RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog
                 ),
                 ::core::stringify!(new),
             )
         });
-        < Self as IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYesMethods > :: ctor (this , action , text) ;
+        < Self as IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogMethods > :: ctor (this , menu_item_list) ;
         this
     }
 }
@@ -172,6 +182,83 @@ impl ::unity2::IlType for RingCleaningUnitSelectMenu_GodParam {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_DecideEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RingCleaningUnitSelectMenu.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RingCleaningUnitSelectMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+#[::unity2::methods]
+impl RingCleaningUnitSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+impl RingCleaningUnitSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingCleaningUnitSelectMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingCleaningUnitSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RingCleaningUnitSelectMenu.RingCleaningUnitSelectMenuItem.ConfirmDialogItemYes"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes {
+    #[rename(name = "m_Action")]
+    pub m_action: crate::system::action::Action,
+}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+#[::unity2::methods]
+impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes {
+    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, action: crate::system::action::Action, text: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-ringcleaningunitselectmenu")]
+impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes {
+    #[doc = "`.ctor(crate::system::action::Action, ::unity2::Il2CppString)` — overload selector"]
+    pub fn new(action: crate::system::action::Action, text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYes
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        < Self as IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogItemYesMethods > :: ctor (this , action , text) ;
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
@@ -247,93 +334,6 @@ impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem {
             decide_event_handler,
             select_unit,
         );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_DecideEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RingCleaningUnitSelectMenu.DecideEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RingCleaningUnitSelectMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-ringcleaningunitselectmenu")]
-#[::unity2::methods]
-impl RingCleaningUnitSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, unit: crate::app::unit::Unit) -> ();
-}
-
-#[cfg(feature = "app-ringcleaningunitselectmenu")]
-impl RingCleaningUnitSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingCleaningUnitSelectMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingCleaningUnitSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringcleaningunitselectmenu/RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RingCleaningUnitSelectMenu.RingCleaningUnitSelectMenuItem.ConfirmDialog"
-)]
-#[parent(crate::app::yesnodialog::YesNoDialog)]
-pub struct RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog {}
-
-#[cfg(feature = "app-ringcleaningunitselectmenu")]
-#[::unity2::methods]
-impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::system::action::Action)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        unit: crate::app::unit::Unit,
-        action: crate::system::action::Action,
-    ) -> ();
-}
-
-#[cfg(feature = "app-ringcleaningunitselectmenu")]
-impl RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
-    pub fn new(
-        menu_item_list: crate::system::collections::generic::list_1::List_1<
-            crate::app::basicmenuitem::BasicMenuItem,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    RingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialog
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        < Self as IRingCleaningUnitSelectMenu_RingCleaningUnitSelectMenuItem_ConfirmDialogMethods > :: ctor (this , menu_item_list) ;
         this
     }
 }

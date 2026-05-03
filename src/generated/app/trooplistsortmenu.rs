@@ -89,6 +89,54 @@ impl TroopListSortMenu_SortTitle {
     }
 }
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/trooplistsortmenu/TroopListSortMenu_SortOrder.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TroopListSortMenu_SortOrder {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TroopListSortMenu_SortOrder {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TroopListSortMenu.SortOrder";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TroopListSortMenu_SortOrder {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TroopListSortMenu_SortOrder {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn low_to_high() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn high_to_low() -> Self {
+        Self { value: 2 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/trooplistsortmenu/TroopListSortMenu.md"))]
 #[::unity2::class(namespace = "App", name = "TroopListSortMenu")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -252,54 +300,6 @@ impl TroopListSortMenu {
         });
         <Self as ITroopListSortMenuMethods>::ctor(this);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/trooplistsortmenu/TroopListSortMenu_SortOrder.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TroopListSortMenu_SortOrder {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TroopListSortMenu_SortOrder {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TroopListSortMenu.SortOrder";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TroopListSortMenu_SortOrder {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TroopListSortMenu_SortOrder {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn low_to_high() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn high_to_low() -> Self {
-        Self { value: 2 }
     }
 }
 

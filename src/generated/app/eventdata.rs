@@ -14,115 +14,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdata/EventData.md"))]
-#[::unity2::class(namespace = "App", name = "EventData")]
-# [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: eventdata :: EventData >)]
-pub struct EventData {}
-
-#[cfg(feature = "app-eventdata")]
-#[::unity2::methods]
-impl EventData {
-    #[doc = "`get_Command()` overload"]
-    #[method(name = "get_Command", args = 0)]
-    pub fn get_command(self) -> crate::app::eventdata::EventData_Commands;
-
-    #[doc = "`set_Command(crate::app::eventdata::EventData_Commands)` overload"]
-    #[method(name = "set_Command", args = 1)]
-    pub fn set_command(self, value: crate::app::eventdata::EventData_Commands) -> ();
-
-    #[doc = "`get_Arg1()` overload"]
-    #[method(name = "get_Arg1", args = 0)]
-    pub fn get_arg1(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Arg1(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Arg1", args = 1)]
-    pub fn set_arg1(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Arg2()` overload"]
-    #[method(name = "get_Arg2", args = 0)]
-    pub fn get_arg2(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Arg2(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Arg2", args = 1)]
-    pub fn set_arg2(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Arg3()` overload"]
-    #[method(name = "get_Arg3", args = 0)]
-    pub fn get_arg3(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Arg3(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Arg3", args = 1)]
-    pub fn set_arg3(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Arg4()` overload"]
-    #[method(name = "get_Arg4", args = 0)]
-    pub fn get_arg4(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Arg4(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Arg4", args = 1)]
-    pub fn set_arg4(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Arg5()` overload"]
-    #[method(name = "get_Arg5", args = 0)]
-    pub fn get_arg5(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Arg5(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Arg5", args = 1)]
-    pub fn set_arg5(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Arg6()` overload"]
-    #[method(name = "get_Arg6", args = 0)]
-    pub fn get_arg6(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Arg6(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Arg6", args = 1)]
-    pub fn set_arg6(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Arg7()` overload"]
-    #[method(name = "get_Arg7", args = 0)]
-    pub fn get_arg7(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Arg7(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Arg7", args = 1)]
-    pub fn set_arg7(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Condition()` overload"]
-    #[method(name = "get_Condition", args = 0)]
-    pub fn get_condition(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Condition(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Condition", args = 1)]
-    pub fn set_condition(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Load(::unity2::Il2CppString)` overload"]
-    #[method(name = "Load", args = 1)]
-    pub fn load(file_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`GetDebugName()` overload"]
-    #[method(name = "GetDebugName", args = 0)]
-    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-eventdata")]
-impl EventData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventDataMethods>::ctor(this);
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/eventdata/EventData_Commands.md"))]
 #[repr(C)]
 #[derive(
@@ -276,5 +167,114 @@ impl EventData_Commands {
 
     pub fn test_system_voice_play() -> Self {
         Self { value: 102 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/eventdata/EventData.md"))]
+#[::unity2::class(namespace = "App", name = "EventData")]
+# [parent (crate :: app :: structdataarray_1 :: StructDataArray_1 < crate :: app :: eventdata :: EventData >)]
+pub struct EventData {}
+
+#[cfg(feature = "app-eventdata")]
+#[::unity2::methods]
+impl EventData {
+    #[doc = "`get_Command()` overload"]
+    #[method(name = "get_Command", args = 0)]
+    pub fn get_command(self) -> crate::app::eventdata::EventData_Commands;
+
+    #[doc = "`set_Command(crate::app::eventdata::EventData_Commands)` overload"]
+    #[method(name = "set_Command", args = 1)]
+    pub fn set_command(self, value: crate::app::eventdata::EventData_Commands) -> ();
+
+    #[doc = "`get_Arg1()` overload"]
+    #[method(name = "get_Arg1", args = 0)]
+    pub fn get_arg1(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Arg1(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Arg1", args = 1)]
+    pub fn set_arg1(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Arg2()` overload"]
+    #[method(name = "get_Arg2", args = 0)]
+    pub fn get_arg2(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Arg2(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Arg2", args = 1)]
+    pub fn set_arg2(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Arg3()` overload"]
+    #[method(name = "get_Arg3", args = 0)]
+    pub fn get_arg3(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Arg3(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Arg3", args = 1)]
+    pub fn set_arg3(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Arg4()` overload"]
+    #[method(name = "get_Arg4", args = 0)]
+    pub fn get_arg4(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Arg4(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Arg4", args = 1)]
+    pub fn set_arg4(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Arg5()` overload"]
+    #[method(name = "get_Arg5", args = 0)]
+    pub fn get_arg5(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Arg5(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Arg5", args = 1)]
+    pub fn set_arg5(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Arg6()` overload"]
+    #[method(name = "get_Arg6", args = 0)]
+    pub fn get_arg6(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Arg6(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Arg6", args = 1)]
+    pub fn set_arg6(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Arg7()` overload"]
+    #[method(name = "get_Arg7", args = 0)]
+    pub fn get_arg7(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Arg7(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Arg7", args = 1)]
+    pub fn set_arg7(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Condition()` overload"]
+    #[method(name = "get_Condition", args = 0)]
+    pub fn get_condition(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Condition(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Condition", args = 1)]
+    pub fn set_condition(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Load(::unity2::Il2CppString)` overload"]
+    #[method(name = "Load", args = 1)]
+    pub fn load(file_name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`GetDebugName()` overload"]
+    #[method(name = "GetDebugName", args = 0)]
+    pub fn get_debug_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-eventdata")]
+impl EventData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventDataMethods>::ctor(this);
+        this
     }
 }

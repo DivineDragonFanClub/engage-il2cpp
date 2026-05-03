@@ -18,6 +18,42 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmresetdialog/SortieConfirmResetDialog_ConfirmYesDialogItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "SortieConfirmResetDialog.ConfirmYesDialogItem"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct SortieConfirmResetDialog_ConfirmYesDialogItem {}
+
+#[cfg(feature = "app-sortieconfirmresetdialog")]
+#[::unity2::methods]
+impl SortieConfirmResetDialog_ConfirmYesDialogItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, text: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-sortieconfirmresetdialog")]
+impl SortieConfirmResetDialog_ConfirmYesDialogItem {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(text: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieConfirmResetDialog_ConfirmYesDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieConfirmResetDialog_ConfirmYesDialogItemMethods>::ctor(this, text);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmresetdialog/SortieConfirmResetDialog.md"))]
 #[::unity2::class(namespace = "App", name = "SortieConfirmResetDialog")]
 #[parent(crate::app::yesnodialog::YesNoDialog)]
@@ -56,42 +92,6 @@ impl SortieConfirmResetDialog {
             )
         });
         <Self as ISortieConfirmResetDialogMethods>::ctor(this, menu_item_list);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortieconfirmresetdialog/SortieConfirmResetDialog_ConfirmYesDialogItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "SortieConfirmResetDialog.ConfirmYesDialogItem"
-)]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct SortieConfirmResetDialog_ConfirmYesDialogItem {}
-
-#[cfg(feature = "app-sortieconfirmresetdialog")]
-#[::unity2::methods]
-impl SortieConfirmResetDialog_ConfirmYesDialogItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, text: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-sortieconfirmresetdialog")]
-impl SortieConfirmResetDialog_ConfirmYesDialogItem {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(text: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieConfirmResetDialog_ConfirmYesDialogItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieConfirmResetDialog_ConfirmYesDialogItemMethods>::ctor(this, text);
         this
     }
 }

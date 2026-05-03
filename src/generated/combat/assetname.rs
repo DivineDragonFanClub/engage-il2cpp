@@ -8,36 +8,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/assetname/AssetName.md"))]
-#[::unity2::class(namespace = "Combat", name = "AssetName")]
-#[parent(crate::system::object::Object)]
-pub struct AssetName {}
-
-#[cfg(feature = "combat-assetname")]
-#[::unity2::methods]
-impl AssetName {
-    #[doc = "`MakeAddressablesPath(::unity2::Il2CppString)` overload"]
-    #[method(name = "MakeAddressablesPath", args = 1)]
-    pub fn make_addressables_path(name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
-
-    #[doc = "`Tokenize(::unity2::Il2CppString, crate::combat::assetname::AssetName_SplitMode, i32, i32)` overload"]
-    #[method(name = "Tokenize", args = 4)]
-    pub fn tokenize(
-        name: ::unity2::Il2CppString,
-        split_mode: crate::combat::assetname::AssetName_SplitMode,
-        start_index: i32,
-        end_index: i32,
-    ) -> ::unity2::Il2CppString;
-
-    #[doc = "`IsHighClass(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsHighClass", args = 1)]
-    pub fn is_high_class(dress_name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`Is異形(::unity2::Il2CppString)` overload"]
-    #[method(name = "Is異形", args = 1)]
-    pub fn is__(name: ::unity2::Il2CppString) -> bool;
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/assetname/AssetName_SplitMode.md"))]
 #[repr(C)]
 #[derive(
@@ -84,4 +54,34 @@ impl AssetName_SplitMode {
     pub fn discard_hyphen() -> Self {
         Self { value: 2 }
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/assetname/AssetName.md"))]
+#[::unity2::class(namespace = "Combat", name = "AssetName")]
+#[parent(crate::system::object::Object)]
+pub struct AssetName {}
+
+#[cfg(feature = "combat-assetname")]
+#[::unity2::methods]
+impl AssetName {
+    #[doc = "`MakeAddressablesPath(::unity2::Il2CppString)` overload"]
+    #[method(name = "MakeAddressablesPath", args = 1)]
+    pub fn make_addressables_path(name: ::unity2::Il2CppString) -> ::unity2::Il2CppString;
+
+    #[doc = "`Tokenize(::unity2::Il2CppString, crate::combat::assetname::AssetName_SplitMode, i32, i32)` overload"]
+    #[method(name = "Tokenize", args = 4)]
+    pub fn tokenize(
+        name: ::unity2::Il2CppString,
+        split_mode: crate::combat::assetname::AssetName_SplitMode,
+        start_index: i32,
+        end_index: i32,
+    ) -> ::unity2::Il2CppString;
+
+    #[doc = "`IsHighClass(::unity2::Il2CppString)` overload"]
+    #[method(name = "IsHighClass", args = 1)]
+    pub fn is_high_class(dress_name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`Is異形(::unity2::Il2CppString)` overload"]
+    #[method(name = "Is異形", args = 1)]
+    pub fn is__(name: ::unity2::Il2CppString) -> bool;
 }

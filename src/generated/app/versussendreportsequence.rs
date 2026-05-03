@@ -14,35 +14,71 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_EndCallback.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSendReportSequence.EndCallback")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct VersusSendReportSequence_EndCallback {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_UploadInfo.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSendReportSequence.UploadInfo")]
+#[parent(crate::system::object::Object)]
+pub struct VersusSendReportSequence_UploadInfo {}
 
 #[cfg(feature = "app-versussendreportsequence")]
 #[::unity2::methods]
-impl VersusSendReportSequence_EndCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+impl VersusSendReportSequence_UploadInfo {
+    #[doc = "`set_DataId(u64)` overload"]
+    #[method(name = "set_DataId", args = 1)]
+    pub fn set_data_id(self, value: u64) -> ();
 
-    #[doc = "`Invoke(bool)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, is_succeed: bool) -> ();
+    #[doc = "`get_DataId()` overload"]
+    #[method(name = "get_DataId", args = 0)]
+    pub fn get_data_id(self) -> u64;
+
+    #[doc = "`set_ScreenShotId(u64)` overload"]
+    #[method(name = "set_ScreenShotId", args = 1)]
+    pub fn set_screen_shot_id(self, value: u64) -> ();
+
+    #[doc = "`get_ScreenShotId()` overload"]
+    #[method(name = "get_ScreenShotId", args = 0)]
+    pub fn get_screen_shot_id(self) -> u64;
+
+    #[doc = "`set_Reason(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Reason", args = 1)]
+    pub fn set_reason(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Reason()` overload"]
+    #[method(name = "get_Reason", args = 0)]
+    pub fn get_reason(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_PrincipalId(u64)` overload"]
+    #[method(name = "set_PrincipalId", args = 1)]
+    pub fn set_principal_id(self, value: u64) -> ();
+
+    #[doc = "`get_PrincipalId()` overload"]
+    #[method(name = "get_PrincipalId", args = 0)]
+    pub fn get_principal_id(self) -> u64;
+
+    #[doc = "`set_Language(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Language", args = 1)]
+    pub fn set_language(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Language()` overload"]
+    #[method(name = "get_Language", args = 0)]
+    pub fn get_language(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-versussendreportsequence")]
-impl VersusSendReportSequence_EndCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+impl VersusSendReportSequence_UploadInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSendReportSequence_EndCallback),
+                ::core::stringify!(VersusSendReportSequence_UploadInfo),
                 ::core::stringify!(new),
             )
         });
-        <Self as IVersusSendReportSequence_EndCallbackMethods>::ctor(this, object, method);
+        <Self as IVersusSendReportSequence_UploadInfoMethods>::ctor(this);
         this
     }
 }
@@ -175,71 +211,35 @@ impl VersusSendReportSequence {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_UploadInfo.md"))]
-#[::unity2::class(namespace = "App", name = "VersusSendReportSequence.UploadInfo")]
-#[parent(crate::system::object::Object)]
-pub struct VersusSendReportSequence_UploadInfo {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/versussendreportsequence/VersusSendReportSequence_EndCallback.md"))]
+#[::unity2::class(namespace = "App", name = "VersusSendReportSequence.EndCallback")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct VersusSendReportSequence_EndCallback {}
 
 #[cfg(feature = "app-versussendreportsequence")]
 #[::unity2::methods]
-impl VersusSendReportSequence_UploadInfo {
-    #[doc = "`set_DataId(u64)` overload"]
-    #[method(name = "set_DataId", args = 1)]
-    pub fn set_data_id(self, value: u64) -> ();
+impl VersusSendReportSequence_EndCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`get_DataId()` overload"]
-    #[method(name = "get_DataId", args = 0)]
-    pub fn get_data_id(self) -> u64;
-
-    #[doc = "`set_ScreenShotId(u64)` overload"]
-    #[method(name = "set_ScreenShotId", args = 1)]
-    pub fn set_screen_shot_id(self, value: u64) -> ();
-
-    #[doc = "`get_ScreenShotId()` overload"]
-    #[method(name = "get_ScreenShotId", args = 0)]
-    pub fn get_screen_shot_id(self) -> u64;
-
-    #[doc = "`set_Reason(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Reason", args = 1)]
-    pub fn set_reason(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Reason()` overload"]
-    #[method(name = "get_Reason", args = 0)]
-    pub fn get_reason(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_PrincipalId(u64)` overload"]
-    #[method(name = "set_PrincipalId", args = 1)]
-    pub fn set_principal_id(self, value: u64) -> ();
-
-    #[doc = "`get_PrincipalId()` overload"]
-    #[method(name = "get_PrincipalId", args = 0)]
-    pub fn get_principal_id(self) -> u64;
-
-    #[doc = "`set_Language(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Language", args = 1)]
-    pub fn set_language(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Language()` overload"]
-    #[method(name = "get_Language", args = 0)]
-    pub fn get_language(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    #[doc = "`Invoke(bool)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, is_succeed: bool) -> ();
 }
 
 #[cfg(feature = "app-versussendreportsequence")]
-impl VersusSendReportSequence_UploadInfo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl VersusSendReportSequence_EndCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(VersusSendReportSequence_UploadInfo),
+                ::core::stringify!(VersusSendReportSequence_EndCallback),
                 ::core::stringify!(new),
             )
         });
-        <Self as IVersusSendReportSequence_UploadInfoMethods>::ctor(this);
+        <Self as IVersusSendReportSequence_EndCallbackMethods>::ctor(this, object, method);
         this
     }
 }

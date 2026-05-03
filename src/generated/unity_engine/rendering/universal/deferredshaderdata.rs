@@ -6,35 +6,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData_ComputeBufferInfo.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct DeferredShaderData_ComputeBufferInfo {
-    pub frame_used: u32,
-    pub r#type: crate::unity_engine::computebuffertype::ComputeBufferType,
-}
-
-impl ::unity2::ClassIdentity for DeferredShaderData_ComputeBufferInfo {
-    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
-
-    const NAME: &'static str = "DeferredShaderData.ComputeBufferInfo";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for DeferredShaderData_ComputeBufferInfo {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
@@ -105,5 +76,34 @@ impl DeferredShaderData {
         });
         <Self as IDeferredShaderDataMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/rendering/universal/deferredshaderdata/DeferredShaderData_ComputeBufferInfo.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct DeferredShaderData_ComputeBufferInfo {
+    pub frame_used: u32,
+    pub r#type: crate::unity_engine::computebuffertype::ComputeBufferType,
+}
+
+impl ::unity2::ClassIdentity for DeferredShaderData_ComputeBufferInfo {
+    const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
+
+    const NAME: &'static str = "DeferredShaderData.ComputeBufferInfo";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DeferredShaderData_ComputeBufferInfo {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
     }
 }

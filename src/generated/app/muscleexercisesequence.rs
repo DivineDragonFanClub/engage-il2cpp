@@ -10,66 +10,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/muscleexercisesequence/MuscleExerciseSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MuscleExerciseSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MuscleExerciseSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MuscleExerciseSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MuscleExerciseSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MuscleExerciseSequence_Label {
-    pub fn init() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn tick() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn execute_push_up() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn execute_sit_up() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn execute_squat() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn r#final() -> Self {
-        Self { value: 5 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/muscleexercisesequence/MuscleExerciseSequence.md"))]
 #[::unity2::class(namespace = "App", name = "MuscleExerciseSequence")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -192,5 +132,65 @@ impl MuscleExerciseSequence {
         });
         <Self as IMuscleExerciseSequenceMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/muscleexercisesequence/MuscleExerciseSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MuscleExerciseSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MuscleExerciseSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MuscleExerciseSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MuscleExerciseSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MuscleExerciseSequence_Label {
+    pub fn init() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn tick() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn execute_push_up() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn execute_sit_up() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn execute_squat() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn r#final() -> Self {
+        Self { value: 5 }
     }
 }

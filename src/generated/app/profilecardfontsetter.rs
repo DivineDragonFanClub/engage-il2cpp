@@ -16,54 +16,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardfontsetter/ProfileCardFontSetter_FontType.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ProfileCardFontSetter_FontType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for ProfileCardFontSetter_FontType {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProfileCardFontSetter.FontType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ProfileCardFontSetter_FontType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ProfileCardFontSetter_FontType {
-    pub fn talk() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn talk_profile() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn system_profile() -> Self {
-        Self { value: 2 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardfontsetter/ProfileCardFontSetter.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardFontSetter")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -124,5 +76,53 @@ impl ProfileCardFontSetter {
         });
         <Self as IProfileCardFontSetterMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardfontsetter/ProfileCardFontSetter_FontType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ProfileCardFontSetter_FontType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ProfileCardFontSetter_FontType {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ProfileCardFontSetter.FontType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ProfileCardFontSetter_FontType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ProfileCardFontSetter_FontType {
+    pub fn talk() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn talk_profile() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn system_profile() -> Self {
+        Self { value: 2 }
     }
 }

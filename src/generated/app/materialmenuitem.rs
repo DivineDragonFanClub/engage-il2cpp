@@ -43,39 +43,6 @@ impl MaterialMenuItem_SelectEventHandler {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "MaterialMenuItem.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct MaterialMenuItem_DecideEventHandler {}
-
-#[cfg(feature = "app-materialmenuitem")]
-#[::unity2::methods]
-impl MaterialMenuItem_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, material_id: ::unity2::Il2CppString) -> ();
-}
-
-#[cfg(feature = "app-materialmenuitem")]
-impl MaterialMenuItem_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MaterialMenuItem_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMaterialMenuItem_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "MaterialMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -152,6 +119,39 @@ impl MaterialMenuItem {
             select_event_handler,
             decide_event_handler,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/materialmenuitem/MaterialMenuItem_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "MaterialMenuItem.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct MaterialMenuItem_DecideEventHandler {}
+
+#[cfg(feature = "app-materialmenuitem")]
+#[::unity2::methods]
+impl MaterialMenuItem_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(::unity2::Il2CppString)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, material_id: ::unity2::Il2CppString) -> ();
+}
+
+#[cfg(feature = "app-materialmenuitem")]
+impl MaterialMenuItem_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MaterialMenuItem_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMaterialMenuItem_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

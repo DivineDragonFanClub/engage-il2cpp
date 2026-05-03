@@ -12,6 +12,126 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographtopsequence/PhotographTopSequence_UnitAccDataSet.md"))]
+#[::unity2::class(namespace = "App", name = "PhotographTopSequence.UnitAccDataSet")]
+#[parent(crate::system::object::Object)]
+pub struct PhotographTopSequence_UnitAccDataSet {
+    #[rename(name = "m_RecordPid")]
+    pub m_record_pid: ::unity2::Il2CppString,
+    #[rename(name = "m_RecordBodyAccData")]
+    pub m_record_body_acc_data: crate::app::accessorydata::AccessoryData,
+    #[rename(name = "m_RecordFaceAccData")]
+    pub m_record_face_acc_data: crate::app::accessorydata::AccessoryData,
+}
+
+#[cfg(feature = "app-photographtopsequence")]
+#[::unity2::methods]
+impl PhotographTopSequence_UnitAccDataSet {
+    #[doc = "`get_Pid()` overload"]
+    #[method(name = "get_Pid", args = 0)]
+    pub fn get_pid(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Pid(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Pid", args = 1)]
+    pub fn set_pid(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_BodyAccData()` overload"]
+    #[method(name = "get_BodyAccData", args = 0)]
+    pub fn get_body_acc_data(self) -> crate::app::accessorydata::AccessoryData;
+
+    #[doc = "`set_BodyAccData(crate::app::accessorydata::AccessoryData)` overload"]
+    #[method(name = "set_BodyAccData", args = 1)]
+    pub fn set_body_acc_data(self, value: crate::app::accessorydata::AccessoryData) -> ();
+
+    #[doc = "`get_FaceAccData()` overload"]
+    #[method(name = "get_FaceAccData", args = 0)]
+    pub fn get_face_acc_data(self) -> crate::app::accessorydata::AccessoryData;
+
+    #[doc = "`set_FaceAccData(crate::app::accessorydata::AccessoryData)` overload"]
+    #[method(name = "set_FaceAccData", args = 1)]
+    pub fn set_face_acc_data(self, value: crate::app::accessorydata::AccessoryData) -> ();
+
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`SaveAccDataSet()` overload"]
+    #[method(name = "SaveAccDataSet", args = 0)]
+    pub fn save_acc_data_set(self) -> ();
+
+    #[doc = "`LoadAccDataSet()` overload"]
+    #[method(name = "LoadAccDataSet", args = 0)]
+    pub fn load_acc_data_set(self) -> ();
+}
+
+#[cfg(feature = "app-photographtopsequence")]
+impl PhotographTopSequence_UnitAccDataSet {
+    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
+    pub fn new(unit: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PhotographTopSequence_UnitAccDataSet),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPhotographTopSequence_UnitAccDataSetMethods>::ctor(this, unit);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographtopsequence/PhotographTopSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct PhotographTopSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for PhotographTopSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "PhotographTopSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for PhotographTopSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl PhotographTopSequence_Label {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn select_area() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn setup_photograph() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 3 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographtopsequence/PhotographTopSequence.md"))]
 #[::unity2::class(namespace = "App", name = "PhotographTopSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: photographtopsequence :: PhotographTopSequence >)]
@@ -139,126 +259,6 @@ impl PhotographTopSequence {
             )
         });
         <Self as IPhotographTopSequenceMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/photographtopsequence/PhotographTopSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct PhotographTopSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for PhotographTopSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "PhotographTopSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for PhotographTopSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl PhotographTopSequence_Label {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn select_area() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn setup_photograph() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn exit() -> Self {
-        Self { value: 3 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/photographtopsequence/PhotographTopSequence_UnitAccDataSet.md"))]
-#[::unity2::class(namespace = "App", name = "PhotographTopSequence.UnitAccDataSet")]
-#[parent(crate::system::object::Object)]
-pub struct PhotographTopSequence_UnitAccDataSet {
-    #[rename(name = "m_RecordPid")]
-    pub m_record_pid: ::unity2::Il2CppString,
-    #[rename(name = "m_RecordBodyAccData")]
-    pub m_record_body_acc_data: crate::app::accessorydata::AccessoryData,
-    #[rename(name = "m_RecordFaceAccData")]
-    pub m_record_face_acc_data: crate::app::accessorydata::AccessoryData,
-}
-
-#[cfg(feature = "app-photographtopsequence")]
-#[::unity2::methods]
-impl PhotographTopSequence_UnitAccDataSet {
-    #[doc = "`get_Pid()` overload"]
-    #[method(name = "get_Pid", args = 0)]
-    pub fn get_pid(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Pid(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Pid", args = 1)]
-    pub fn set_pid(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_BodyAccData()` overload"]
-    #[method(name = "get_BodyAccData", args = 0)]
-    pub fn get_body_acc_data(self) -> crate::app::accessorydata::AccessoryData;
-
-    #[doc = "`set_BodyAccData(crate::app::accessorydata::AccessoryData)` overload"]
-    #[method(name = "set_BodyAccData", args = 1)]
-    pub fn set_body_acc_data(self, value: crate::app::accessorydata::AccessoryData) -> ();
-
-    #[doc = "`get_FaceAccData()` overload"]
-    #[method(name = "get_FaceAccData", args = 0)]
-    pub fn get_face_acc_data(self) -> crate::app::accessorydata::AccessoryData;
-
-    #[doc = "`set_FaceAccData(crate::app::accessorydata::AccessoryData)` overload"]
-    #[method(name = "set_FaceAccData", args = 1)]
-    pub fn set_face_acc_data(self, value: crate::app::accessorydata::AccessoryData) -> ();
-
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`SaveAccDataSet()` overload"]
-    #[method(name = "SaveAccDataSet", args = 0)]
-    pub fn save_acc_data_set(self) -> ();
-
-    #[doc = "`LoadAccDataSet()` overload"]
-    #[method(name = "LoadAccDataSet", args = 0)]
-    pub fn load_acc_data_set(self) -> ();
-}
-
-#[cfg(feature = "app-photographtopsequence")]
-impl PhotographTopSequence_UnitAccDataSet {
-    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
-    pub fn new(unit: crate::app::unit::Unit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PhotographTopSequence_UnitAccDataSet),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPhotographTopSequence_UnitAccDataSetMethods>::ctor(this, unit);
         this
     }
 }

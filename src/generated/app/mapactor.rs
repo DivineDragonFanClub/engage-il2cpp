@@ -8,54 +8,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapactor/MapActor_MoveResult.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapActor_MoveResult {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapActor_MoveResult {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapActor.MoveResult";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapActor_MoveResult {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapActor_MoveResult {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn r#move() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn hit() -> Self {
-        Self { value: 2 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapactor/MapActor.md"))]
 #[::unity2::class(namespace = "App", name = "MapActor")]
 #[parent(crate::system::object::Object)]
@@ -112,5 +64,53 @@ impl MapActor {
         });
         <Self as IMapActorMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapactor/MapActor_MoveResult.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapActor_MoveResult {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapActor_MoveResult {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapActor.MoveResult";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapActor_MoveResult {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapActor_MoveResult {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn r#move() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn hit() -> Self {
+        Self { value: 2 }
     }
 }

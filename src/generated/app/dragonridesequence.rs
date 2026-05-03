@@ -14,172 +14,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence_PrizeData.md"))]
-#[::unity2::class(namespace = "App", name = "DragonRideSequence.PrizeData")]
-#[parent(crate::system::object::Object)]
-pub struct DragonRideSequence_PrizeData {}
-
-#[cfg(feature = "app-dragonridesequence")]
-#[::unity2::methods]
-impl DragonRideSequence_PrizeData {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(crate::app::itemdata::ItemData, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(self, set_item: crate::app::itemdata::ItemData, set_num: i32) -> ();
-
-    #[doc = "`AddNum(i32)` overload"]
-    #[method(name = "AddNum", args = 1)]
-    pub fn add_num(self, add: i32) -> ();
-
-    #[doc = "`get_ID()` overload"]
-    #[method(name = "get_ID", args = 0)]
-    pub fn get_id(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_ID(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_ID", args = 1)]
-    pub fn set_id(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_item()` overload"]
-    #[method(name = "get_item", args = 0)]
-    pub fn get_item(self) -> crate::app::itemdata::ItemData;
-
-    #[doc = "`set_item(crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "set_item", args = 1)]
-    pub fn set_item(self, value: crate::app::itemdata::ItemData) -> ();
-
-    #[doc = "`get_num()` overload"]
-    #[method(name = "get_num", args = 0)]
-    pub fn get_num(self) -> i32;
-
-    #[doc = "`set_num(i32)` overload"]
-    #[method(name = "set_num", args = 1)]
-    pub fn set_num(self, value: i32) -> ();
-}
-
-#[cfg(feature = "app-dragonridesequence")]
-impl DragonRideSequence_PrizeData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideSequence_PrizeData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDragonRideSequence_PrizeDataMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::itemdata::ItemData, i32)` — overload selector"]
-    pub fn new_2(set_item: crate::app::itemdata::ItemData, set_num: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DragonRideSequence_PrizeData),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IDragonRideSequence_PrizeDataMethods>::ctor_2(this, set_item, set_num);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridesequence/DragonRideSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct DragonRideSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for DragonRideSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DragonRideSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for DragonRideSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl DragonRideSequence_Label {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn init() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn check_test() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn ready_menu() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn play_select() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn check_new_difficult() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn announce_new_difficult() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn difficult_select() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn ready_game() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn execute_game() -> Self {
-        Self { value: 9 }
-    }
-
-    pub fn prize_talk() -> Self {
-        Self { value: 10 }
-    }
-
-    pub fn prize_bond() -> Self {
-        Self { value: 11 }
-    }
-
-    pub fn prize_item() -> Self {
-        Self { value: 12 }
-    }
-
-    pub fn exit() -> Self {
-        Self { value: 13 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence.md"))]
 #[::unity2::class(namespace = "App", name = "DragonRideSequence")]
 # [parent (crate :: app :: procscenesequence_1 :: ProcSceneSequence_1 < crate :: app :: hubsequence :: HubSequence >)]
@@ -363,6 +197,172 @@ impl DragonRideSequence {
             )
         });
         <Self as IDragonRideSequenceMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridesequence/DragonRideSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct DragonRideSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for DragonRideSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DragonRideSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DragonRideSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl DragonRideSequence_Label {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn init() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn check_test() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn ready_menu() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn play_select() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn check_new_difficult() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn announce_new_difficult() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn difficult_select() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn ready_game() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn execute_game() -> Self {
+        Self { value: 9 }
+    }
+
+    pub fn prize_talk() -> Self {
+        Self { value: 10 }
+    }
+
+    pub fn prize_bond() -> Self {
+        Self { value: 11 }
+    }
+
+    pub fn prize_item() -> Self {
+        Self { value: 12 }
+    }
+
+    pub fn exit() -> Self {
+        Self { value: 13 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/dragonridesequence/DragonRideSequence_PrizeData.md"))]
+#[::unity2::class(namespace = "App", name = "DragonRideSequence.PrizeData")]
+#[parent(crate::system::object::Object)]
+pub struct DragonRideSequence_PrizeData {}
+
+#[cfg(feature = "app-dragonridesequence")]
+#[::unity2::methods]
+impl DragonRideSequence_PrizeData {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.ctor(crate::app::itemdata::ItemData, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(self, set_item: crate::app::itemdata::ItemData, set_num: i32) -> ();
+
+    #[doc = "`AddNum(i32)` overload"]
+    #[method(name = "AddNum", args = 1)]
+    pub fn add_num(self, add: i32) -> ();
+
+    #[doc = "`get_ID()` overload"]
+    #[method(name = "get_ID", args = 0)]
+    pub fn get_id(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_ID(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_ID", args = 1)]
+    pub fn set_id(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_item()` overload"]
+    #[method(name = "get_item", args = 0)]
+    pub fn get_item(self) -> crate::app::itemdata::ItemData;
+
+    #[doc = "`set_item(crate::app::itemdata::ItemData)` overload"]
+    #[method(name = "set_item", args = 1)]
+    pub fn set_item(self, value: crate::app::itemdata::ItemData) -> ();
+
+    #[doc = "`get_num()` overload"]
+    #[method(name = "get_num", args = 0)]
+    pub fn get_num(self) -> i32;
+
+    #[doc = "`set_num(i32)` overload"]
+    #[method(name = "set_num", args = 1)]
+    pub fn set_num(self, value: i32) -> ();
+}
+
+#[cfg(feature = "app-dragonridesequence")]
+impl DragonRideSequence_PrizeData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideSequence_PrizeData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDragonRideSequence_PrizeDataMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::itemdata::ItemData, i32)` — overload selector"]
+    pub fn new_2(set_item: crate::app::itemdata::ItemData, set_num: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DragonRideSequence_PrizeData),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IDragonRideSequence_PrizeDataMethods>::ctor_2(this, set_item, set_num);
         this
     }
 }

@@ -12,51 +12,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectroot/ChallengeMapSelectRoot_ItemDropNum.md"))]
-#[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot.ItemDropNum")]
-#[parent(crate::system::object::Object)]
-pub struct ChallengeMapSelectRoot_ItemDropNum {}
-
-#[cfg(feature = "app-challengemapselectroot")]
-#[::unity2::methods]
-impl ChallengeMapSelectRoot_ItemDropNum {
-    #[doc = "`get_Min()` overload"]
-    #[method(name = "get_Min", args = 0)]
-    pub fn get_min(self) -> i32;
-
-    #[doc = "`set_Min(i32)` overload"]
-    #[method(name = "set_Min", args = 1)]
-    pub fn set_min(self, value: i32) -> ();
-
-    #[doc = "`get_Max()` overload"]
-    #[method(name = "get_Max", args = 0)]
-    pub fn get_max(self) -> i32;
-
-    #[doc = "`set_Max(i32)` overload"]
-    #[method(name = "set_Max", args = 1)]
-    pub fn set_max(self, value: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-challengemapselectroot")]
-impl ChallengeMapSelectRoot_ItemDropNum {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ChallengeMapSelectRoot_ItemDropNum),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IChallengeMapSelectRoot_ItemDropNumMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectroot/ChallengeMapSelectRoot.md"))]
 #[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -222,6 +177,51 @@ impl ChallengeMapSelectRoot_RewardInfoItem {
             )
         });
         <Self as IChallengeMapSelectRoot_RewardInfoItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/challengemapselectroot/ChallengeMapSelectRoot_ItemDropNum.md"))]
+#[::unity2::class(namespace = "App", name = "ChallengeMapSelectRoot.ItemDropNum")]
+#[parent(crate::system::object::Object)]
+pub struct ChallengeMapSelectRoot_ItemDropNum {}
+
+#[cfg(feature = "app-challengemapselectroot")]
+#[::unity2::methods]
+impl ChallengeMapSelectRoot_ItemDropNum {
+    #[doc = "`get_Min()` overload"]
+    #[method(name = "get_Min", args = 0)]
+    pub fn get_min(self) -> i32;
+
+    #[doc = "`set_Min(i32)` overload"]
+    #[method(name = "set_Min", args = 1)]
+    pub fn set_min(self, value: i32) -> ();
+
+    #[doc = "`get_Max()` overload"]
+    #[method(name = "get_Max", args = 0)]
+    pub fn get_max(self) -> i32;
+
+    #[doc = "`set_Max(i32)` overload"]
+    #[method(name = "set_Max", args = 1)]
+    pub fn set_max(self, value: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-challengemapselectroot")]
+impl ChallengeMapSelectRoot_ItemDropNum {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ChallengeMapSelectRoot_ItemDropNum),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeMapSelectRoot_ItemDropNumMethods>::ctor(this);
         this
     }
 }

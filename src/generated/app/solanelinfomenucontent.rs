@@ -14,183 +14,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent_Infomation.md"))]
-#[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent.Infomation")]
-#[parent(crate::system::object::Object)]
-pub struct SolanelInfoMenuContent_Infomation {
-    #[rename(name = "m_Root")]
-    pub m_root: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Icon")]
-    pub m_icon: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_Title")]
-    pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_Message")]
-    pub m_message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-}
-
-#[cfg(feature = "app-solanelinfomenucontent")]
-#[::unity2::methods]
-impl SolanelInfoMenuContent_Infomation {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Show(crate::unity_engine::sprite::Sprite, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Show", args = 3)]
-    pub fn show(
-        self,
-        sprite: crate::unity_engine::sprite::Sprite,
-        title: ::unity2::Il2CppString,
-        message: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-}
-
-#[cfg(feature = "app-solanelinfomenucontent")]
-impl SolanelInfoMenuContent_Infomation {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SolanelInfoMenuContent_Infomation),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISolanelInfoMenuContent_InfomationMethods>::ctor(this, root);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent_SolanelUnit.md"))]
-#[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent.SolanelUnit")]
-#[parent(crate::system::object::Object)]
-pub struct SolanelInfoMenuContent_SolanelUnit {
-    #[rename(name = "m_Root")]
-    pub m_root: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Icon")]
-    pub m_icon: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_UnitName")]
-    pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_TalkIcon")]
-    pub m_talk_icon: crate::unity_engine::gameobject::GameObject,
-}
-
-#[cfg(feature = "app-solanelinfomenucontent")]
-#[::unity2::methods]
-impl SolanelInfoMenuContent_SolanelUnit {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`SetUnit(crate::app::unit::Unit, crate::app::hubaccessdata::HubAccessData)` overload"]
-    #[method(name = "SetUnit", args = 2)]
-    pub fn set_unit(
-        self,
-        unit: crate::app::unit::Unit,
-        hub_access_data: crate::app::hubaccessdata::HubAccessData,
-    ) -> ();
-
-    #[doc = "`SetGodUnit(crate::app::goddata::GodData, crate::app::hubaccessdata::HubAccessData)` overload"]
-    #[method(name = "SetGodUnit", args = 2)]
-    pub fn set_god_unit(
-        self,
-        god: crate::app::goddata::GodData,
-        hub_access_data: crate::app::hubaccessdata::HubAccessData,
-    ) -> ();
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`SetTalkIcon(crate::app::hubaccessdata::HubAccessData)` overload"]
-    #[method(name = "SetTalkIcon", args = 1)]
-    pub fn set_talk_icon(self, hub_access_data: crate::app::hubaccessdata::HubAccessData) -> ();
-}
-
-#[cfg(feature = "app-solanelinfomenucontent")]
-impl SolanelInfoMenuContent_SolanelUnit {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SolanelInfoMenuContent_SolanelUnit),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISolanelInfoMenuContent_SolanelUnitMethods>::ctor(this, root);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent_HelpFastTravel.md"))]
-#[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent.HelpFastTravel")]
-#[parent(crate::system::object::Object)]
-pub struct SolanelInfoMenuContent_HelpFastTravel {
-    #[rename(name = "m_Root")]
-    pub m_root: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Icon")]
-    pub m_icon: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_Name")]
-    pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-    #[rename(name = "m_CheckDone")]
-    pub m_check_done: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Value")]
-    pub m_value: crate::unity_engine::gameobject::GameObject,
-}
-
-#[cfg(feature = "app-solanelinfomenucontent")]
-#[::unity2::methods]
-impl SolanelInfoMenuContent_HelpFastTravel {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, root: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`TrySetFastTravel(crate::app::hubfacilitydata::HubFacilityData, crate::unity_engine::sprite::Sprite)` overload"]
-    #[method(name = "TrySetFastTravel", args = 2)]
-    pub fn try_set_fast_travel(
-        self,
-        data: crate::app::hubfacilitydata::HubFacilityData,
-        sprite: crate::unity_engine::sprite::Sprite,
-    ) -> bool;
-
-    #[doc = "`Hide()` overload"]
-    #[method(name = "Hide", args = 0)]
-    pub fn hide(self) -> ();
-
-    #[doc = "`SetOneOnly(bool)` overload"]
-    #[method(name = "SetOneOnly", args = 1)]
-    pub fn set_one_only(self, is_done: bool) -> ();
-
-    #[doc = "`SetOneDone(bool)` overload"]
-    #[method(name = "SetOneDone", args = 1)]
-    pub fn set_one_done(self, is_done: bool) -> ();
-
-    #[doc = "`SetCount(i32)` overload"]
-    #[method(name = "SetCount", args = 1)]
-    pub fn set_count(self, num: i32) -> ();
-}
-
-#[cfg(feature = "app-solanelinfomenucontent")]
-impl SolanelInfoMenuContent_HelpFastTravel {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SolanelInfoMenuContent_HelpFastTravel),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISolanelInfoMenuContent_HelpFastTravelMethods>::ctor(this, root);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent.md"))]
 #[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent")]
 #[parent(crate::app::basicmenucontent::BasicMenuContent)]
@@ -321,6 +144,183 @@ impl SolanelInfoMenuContent {
             )
         });
         <Self as ISolanelInfoMenuContentMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent_HelpFastTravel.md"))]
+#[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent.HelpFastTravel")]
+#[parent(crate::system::object::Object)]
+pub struct SolanelInfoMenuContent_HelpFastTravel {
+    #[rename(name = "m_Root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Icon")]
+    pub m_icon: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_Name")]
+    pub m_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_CheckDone")]
+    pub m_check_done: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Value")]
+    pub m_value: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-solanelinfomenucontent")]
+#[::unity2::methods]
+impl SolanelInfoMenuContent_HelpFastTravel {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`TrySetFastTravel(crate::app::hubfacilitydata::HubFacilityData, crate::unity_engine::sprite::Sprite)` overload"]
+    #[method(name = "TrySetFastTravel", args = 2)]
+    pub fn try_set_fast_travel(
+        self,
+        data: crate::app::hubfacilitydata::HubFacilityData,
+        sprite: crate::unity_engine::sprite::Sprite,
+    ) -> bool;
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[doc = "`SetOneOnly(bool)` overload"]
+    #[method(name = "SetOneOnly", args = 1)]
+    pub fn set_one_only(self, is_done: bool) -> ();
+
+    #[doc = "`SetOneDone(bool)` overload"]
+    #[method(name = "SetOneDone", args = 1)]
+    pub fn set_one_done(self, is_done: bool) -> ();
+
+    #[doc = "`SetCount(i32)` overload"]
+    #[method(name = "SetCount", args = 1)]
+    pub fn set_count(self, num: i32) -> ();
+}
+
+#[cfg(feature = "app-solanelinfomenucontent")]
+impl SolanelInfoMenuContent_HelpFastTravel {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SolanelInfoMenuContent_HelpFastTravel),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISolanelInfoMenuContent_HelpFastTravelMethods>::ctor(this, root);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent_SolanelUnit.md"))]
+#[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent.SolanelUnit")]
+#[parent(crate::system::object::Object)]
+pub struct SolanelInfoMenuContent_SolanelUnit {
+    #[rename(name = "m_Root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Icon")]
+    pub m_icon: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_UnitName")]
+    pub m_unit_name: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_TalkIcon")]
+    pub m_talk_icon: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-solanelinfomenucontent")]
+#[::unity2::methods]
+impl SolanelInfoMenuContent_SolanelUnit {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`SetUnit(crate::app::unit::Unit, crate::app::hubaccessdata::HubAccessData)` overload"]
+    #[method(name = "SetUnit", args = 2)]
+    pub fn set_unit(
+        self,
+        unit: crate::app::unit::Unit,
+        hub_access_data: crate::app::hubaccessdata::HubAccessData,
+    ) -> ();
+
+    #[doc = "`SetGodUnit(crate::app::goddata::GodData, crate::app::hubaccessdata::HubAccessData)` overload"]
+    #[method(name = "SetGodUnit", args = 2)]
+    pub fn set_god_unit(
+        self,
+        god: crate::app::goddata::GodData,
+        hub_access_data: crate::app::hubaccessdata::HubAccessData,
+    ) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+
+    #[doc = "`SetTalkIcon(crate::app::hubaccessdata::HubAccessData)` overload"]
+    #[method(name = "SetTalkIcon", args = 1)]
+    pub fn set_talk_icon(self, hub_access_data: crate::app::hubaccessdata::HubAccessData) -> ();
+}
+
+#[cfg(feature = "app-solanelinfomenucontent")]
+impl SolanelInfoMenuContent_SolanelUnit {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SolanelInfoMenuContent_SolanelUnit),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISolanelInfoMenuContent_SolanelUnitMethods>::ctor(this, root);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/solanelinfomenucontent/SolanelInfoMenuContent_Infomation.md"))]
+#[::unity2::class(namespace = "App", name = "SolanelInfoMenuContent.Infomation")]
+#[parent(crate::system::object::Object)]
+pub struct SolanelInfoMenuContent_Infomation {
+    #[rename(name = "m_Root")]
+    pub m_root: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Icon")]
+    pub m_icon: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_Title")]
+    pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    #[rename(name = "m_Message")]
+    pub m_message: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-solanelinfomenucontent")]
+#[::unity2::methods]
+impl SolanelInfoMenuContent_Infomation {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, root: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Show(crate::unity_engine::sprite::Sprite, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "Show", args = 3)]
+    pub fn show(
+        self,
+        sprite: crate::unity_engine::sprite::Sprite,
+        title: ::unity2::Il2CppString,
+        message: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`Hide()` overload"]
+    #[method(name = "Hide", args = 0)]
+    pub fn hide(self) -> ();
+}
+
+#[cfg(feature = "app-solanelinfomenucontent")]
+impl SolanelInfoMenuContent_Infomation {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(root: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SolanelInfoMenuContent_Infomation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISolanelInfoMenuContent_InfomationMethods>::ctor(this, root);
         this
     }
 }

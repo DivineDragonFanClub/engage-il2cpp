@@ -16,44 +16,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerauto/CameraControllerAuto_CamRotate.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct CameraControllerAuto_CamRotate {
-    pub start_degree: f32,
-    pub end_degree: f32,
-    pub speed: f32,
-}
-
-impl ::unity2::ClassIdentity for CameraControllerAuto_CamRotate {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "CameraControllerAuto.CamRotate";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for CameraControllerAuto_CamRotate {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "combat-cameracontrollerauto")]
-#[::unity2::methods(value)]
-impl CameraControllerAuto_CamRotate {
-    #[doc = "`Get(f32)` overload"]
-    #[method(name = "Get", args = 1)]
-    pub fn get(self, rate: f32) -> f32;
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/cameracontrollerauto/CameraControllerAuto.md"))]
 #[::unity2::class(namespace = "Combat", name = "CameraControllerAuto")]
 #[parent(crate::combat::basecameracontroller::BaseCameraController)]
@@ -153,4 +115,42 @@ impl CameraControllerAuto {
         <Self as ICameraControllerAutoMethods>::ctor(this);
         this
     }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/cameracontrollerauto/CameraControllerAuto_CamRotate.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct CameraControllerAuto_CamRotate {
+    pub start_degree: f32,
+    pub end_degree: f32,
+    pub speed: f32,
+}
+
+impl ::unity2::ClassIdentity for CameraControllerAuto_CamRotate {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CameraControllerAuto.CamRotate";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CameraControllerAuto_CamRotate {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "combat-cameracontrollerauto")]
+#[::unity2::methods(value)]
+impl CameraControllerAuto_CamRotate {
+    #[doc = "`Get(f32)` overload"]
+    #[method(name = "Get", args = 1)]
+    pub fn get(self, rate: f32) -> f32;
 }

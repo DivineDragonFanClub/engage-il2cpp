@@ -24,79 +24,39 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ChangeUnitEventHandle.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ArenaBondGodSelectMenu.ChangeUnitEventHandle"
-)]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_SelectEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "ArenaBondGodSelectMenu.SelectEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ArenaBondGodSelectMenu_ChangeUnitEventHandle {}
+pub struct ArenaBondGodSelectMenu_SelectEventHandler {}
 
 #[cfg(feature = "app-arenabondgodselectmenu")]
 #[::unity2::methods]
-impl ArenaBondGodSelectMenu_ChangeUnitEventHandle {
+impl ArenaBondGodSelectMenu_SelectEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_ChangeUnitEventHandle {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectMenu_ChangeUnitEventHandle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_StartHelpEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ArenaBondGodSelectMenu.StartHelpEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ArenaBondGodSelectMenu_StartHelpEventHandler {}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-#[::unity2::methods]
-impl ArenaBondGodSelectMenu_StartHelpEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::procinst::ProcInst, crate::app::goddata::GodData, i32)` overload"]
-    #[method(name = "Invoke", args = 3)]
+    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
+    #[method(name = "Invoke", args = 2)]
     pub fn invoke(
         self,
-        super_: crate::app::procinst::ProcInst,
-        god: crate::app::goddata::GodData,
-        bond_lv: i32,
+        god: crate::app::godunit::GodUnit,
+        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
     ) -> ();
 }
 
 #[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_StartHelpEventHandler {
+impl ArenaBondGodSelectMenu_SelectEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectMenu_StartHelpEventHandler),
+                ::core::stringify!(ArenaBondGodSelectMenu_SelectEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IArenaBondGodSelectMenu_StartHelpEventHandlerMethods>::ctor(this, object, method);
+        <Self as IArenaBondGodSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -234,85 +194,6 @@ impl ArenaBondGodSelectMenu {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ArenaBondGodSelectMenu.ConfirmDialog.ConfirmDialogItemYes"
-)]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
-    #[rename(name = "m_DecideAction")]
-    pub m_decide_action: crate::system::action::Action,
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-#[::unity2::methods]
-impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::system::action::Action)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, decide_action: crate::system::action::Action) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
-    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
-    pub fn new(decide_action: crate::system::action::Action) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
-            this,
-            decide_action,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "ArenaBondGodSelectMenu.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ArenaBondGodSelectMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-#[::unity2::methods]
-impl ArenaBondGodSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        god: crate::app::godunit::GodUnit,
-        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-    ) -> ();
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaBondGodSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog.md"))]
 #[::unity2::class(namespace = "App", name = "ArenaBondGodSelectMenu.ConfirmDialog")]
 #[parent(crate::app::yesnodialog::YesNoDialog)]
@@ -358,71 +239,44 @@ impl ArenaBondGodSelectMenu_ConfirmDialog {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_SelectEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "ArenaBondGodSelectMenu.SelectEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ArenaBondGodSelectMenu_SelectEventHandler {}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-#[::unity2::methods]
-impl ArenaBondGodSelectMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        god: crate::app::godunit::GodUnit,
-        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
-    ) -> ();
-}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectMenu_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IArenaBondGodSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes.md"))]
 #[::unity2::class(
     namespace = "App",
-    name = "ArenaBondGodSelectMenu.ConfirmDialog.ConfirmDialogItemNo"
+    name = "ArenaBondGodSelectMenu.ConfirmDialog.ConfirmDialogItemYes"
 )]
-#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
-pub struct ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo {}
-
-#[cfg(feature = "app-arenabondgodselectmenu")]
-#[::unity2::methods]
-impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
+    #[rename(name = "m_DecideAction")]
+    pub m_decide_action: crate::system::action::Action,
 }
 
 #[cfg(feature = "app-arenabondgodselectmenu")]
-impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+#[::unity2::methods]
+impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor(crate::system::action::Action)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, decide_action: crate::system::action::Action) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes {
+    #[doc = "`.ctor(crate::system::action::Action)` — overload selector"]
+    pub fn new(decide_action: crate::system::action::Action) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo),
+                ::core::stringify!(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYes),
                 ::core::stringify!(new),
             )
         });
-        <Self as IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
+        <Self as IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemYesMethods>::ctor(
+            this,
+            decide_action,
+        );
         this
     }
 }
@@ -561,6 +415,152 @@ impl ArenaBondGodSelectMenu_ArenaBondEmblemSelectMenuItem {
             change_unit_to_next_event_handler,
             start_help_event_handler,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "ArenaBondGodSelectMenu.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ArenaBondGodSelectMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+#[::unity2::methods]
+impl ArenaBondGodSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        god: crate::app::godunit::GodUnit,
+        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+    ) -> ();
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl ArenaBondGodSelectMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondGodSelectMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondGodSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ChangeUnitEventHandle.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ArenaBondGodSelectMenu.ChangeUnitEventHandle"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ArenaBondGodSelectMenu_ChangeUnitEventHandle {}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+#[::unity2::methods]
+impl ArenaBondGodSelectMenu_ChangeUnitEventHandle {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl ArenaBondGodSelectMenu_ChangeUnitEventHandle {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondGodSelectMenu_ChangeUnitEventHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondGodSelectMenu_ChangeUnitEventHandleMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_StartHelpEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ArenaBondGodSelectMenu.StartHelpEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ArenaBondGodSelectMenu_StartHelpEventHandler {}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+#[::unity2::methods]
+impl ArenaBondGodSelectMenu_StartHelpEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::procinst::ProcInst, crate::app::goddata::GodData, i32)` overload"]
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        god: crate::app::goddata::GodData,
+        bond_lv: i32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl ArenaBondGodSelectMenu_StartHelpEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondGodSelectMenu_StartHelpEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondGodSelectMenu_StartHelpEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/arenabondgodselectmenu/ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ArenaBondGodSelectMenu.ConfirmDialog.ConfirmDialogItemNo"
+)]
+#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+pub struct ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo {}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+#[::unity2::methods]
+impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-arenabondgodselectmenu")]
+impl ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondGodSelectMenu_ConfirmDialog_ConfirmDialogItemNoMethods>::ctor(this);
         this
     }
 }

@@ -10,6 +10,82 @@ use crate::unity_engine::gui::GUI;
 use crate::unity_engine::gui::IGUI;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gx/GX_Anchor.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GX_Anchor {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GX_Anchor {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GX.Anchor";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GX_Anchor {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GX_Anchor {
+    pub fn center() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn left_up() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn up() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn right_up() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn right() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn right_down() -> Self {
+        Self { value: 5 }
+    }
+
+    pub fn down() -> Self {
+        Self { value: 6 }
+    }
+
+    pub fn left_down() -> Self {
+        Self { value: 7 }
+    }
+
+    pub fn left() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 9 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gx/GX.md"))]
 #[::unity2::class(namespace = "App", name = "GX")]
 #[parent(crate::unity_engine::gui::GUI)]
@@ -171,81 +247,5 @@ impl GX {
         });
         <Self as IGXMethods>::ctor(this);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gx/GX_Anchor.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct GX_Anchor {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for GX_Anchor {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GX.Anchor";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for GX_Anchor {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl GX_Anchor {
-    pub fn center() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn left_up() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn up() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn right_up() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn right() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn right_down() -> Self {
-        Self { value: 5 }
-    }
-
-    pub fn down() -> Self {
-        Self { value: 6 }
-    }
-
-    pub fn left_down() -> Self {
-        Self { value: 7 }
-    }
-
-    pub fn left() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 9 }
     }
 }

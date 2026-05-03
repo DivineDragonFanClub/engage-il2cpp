@@ -10,100 +10,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexloginsequence/NexLoginSequence.md"))]
-#[::unity2::class(namespace = "App", name = "NexLoginSequence")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct NexLoginSequence {
-    #[rename(name = "m_IsShowError")]
-    pub m_is_show_error: bool,
-    #[static_field]
-    #[rename(name = "s_LastResult")]
-    pub s_last_result: crate::app::nexloginsequence::NexLoginSequence_Result,
-    #[static_field]
-    #[rename(name = "s_IsGotIntegerSettings")]
-    pub s_is_got_integer_settings: bool,
-}
-
-#[cfg(feature = "app-nexloginsequence")]
-#[::unity2::methods]
-impl NexLoginSequence {
-    #[doc = "`.ctor(bool)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, is_show_error: bool) -> ();
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`WaitAutoLogout()` overload"]
-    #[method(name = "WaitAutoLogout", args = 0)]
-    pub fn wait_auto_logout(self) -> ();
-
-    #[doc = "`InitializeNex()` overload"]
-    #[method(name = "InitializeNex", args = 0)]
-    pub fn initialize_nex(self) -> ();
-
-    #[doc = "`SetupNetworkServiceAccount()` overload"]
-    #[method(name = "SetupNetworkServiceAccount", args = 0)]
-    pub fn setup_network_service_account(self) -> ();
-
-    #[doc = "`LoginGameServer()` overload"]
-    #[method(name = "LoginGameServer", args = 0)]
-    pub fn login_game_server(self) -> ();
-
-    #[doc = "`GetIntegerSettings()` overload"]
-    #[method(name = "GetIntegerSettings", args = 0)]
-    pub fn get_integer_settings(self) -> ();
-
-    #[doc = "`ResultSucceeded()` overload"]
-    #[method(name = "ResultSucceeded", args = 0)]
-    pub fn result_succeeded(self) -> ();
-
-    #[doc = "`ResultCancelled()` overload"]
-    #[method(name = "ResultCancelled", args = 0)]
-    pub fn result_cancelled(self) -> ();
-
-    #[doc = "`ResultFailed()` overload"]
-    #[method(name = "ResultFailed", args = 0)]
-    pub fn result_failed(self) -> ();
-
-    #[doc = "`ShowError()` overload"]
-    #[method(name = "ShowError", args = 0)]
-    pub fn show_error(self) -> ();
-
-    #[doc = "`Cleanup()` overload"]
-    #[method(name = "Cleanup", args = 0)]
-    pub fn cleanup(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst, is_show_error: bool) -> ();
-
-    #[doc = "`get_LastResult()` overload"]
-    #[method(name = "get_LastResult", args = 0)]
-    pub fn get_last_result() -> crate::app::nexloginsequence::NexLoginSequence_Result;
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-nexloginsequence")]
-impl NexLoginSequence {
-    #[doc = "`.ctor(bool)` — overload selector"]
-    pub fn new(is_show_error: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexLoginSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexLoginSequenceMethods>::ctor(this, is_show_error);
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexloginsequence/NexLoginSequence_Result.md"))]
 #[repr(C)]
 #[derive(
@@ -221,5 +127,99 @@ impl NexLoginSequence_Label {
 
     pub fn end() -> Self {
         Self { value: 8 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexloginsequence/NexLoginSequence.md"))]
+#[::unity2::class(namespace = "App", name = "NexLoginSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct NexLoginSequence {
+    #[rename(name = "m_IsShowError")]
+    pub m_is_show_error: bool,
+    #[static_field]
+    #[rename(name = "s_LastResult")]
+    pub s_last_result: crate::app::nexloginsequence::NexLoginSequence_Result,
+    #[static_field]
+    #[rename(name = "s_IsGotIntegerSettings")]
+    pub s_is_got_integer_settings: bool,
+}
+
+#[cfg(feature = "app-nexloginsequence")]
+#[::unity2::methods]
+impl NexLoginSequence {
+    #[doc = "`.ctor(bool)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, is_show_error: bool) -> ();
+
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`WaitAutoLogout()` overload"]
+    #[method(name = "WaitAutoLogout", args = 0)]
+    pub fn wait_auto_logout(self) -> ();
+
+    #[doc = "`InitializeNex()` overload"]
+    #[method(name = "InitializeNex", args = 0)]
+    pub fn initialize_nex(self) -> ();
+
+    #[doc = "`SetupNetworkServiceAccount()` overload"]
+    #[method(name = "SetupNetworkServiceAccount", args = 0)]
+    pub fn setup_network_service_account(self) -> ();
+
+    #[doc = "`LoginGameServer()` overload"]
+    #[method(name = "LoginGameServer", args = 0)]
+    pub fn login_game_server(self) -> ();
+
+    #[doc = "`GetIntegerSettings()` overload"]
+    #[method(name = "GetIntegerSettings", args = 0)]
+    pub fn get_integer_settings(self) -> ();
+
+    #[doc = "`ResultSucceeded()` overload"]
+    #[method(name = "ResultSucceeded", args = 0)]
+    pub fn result_succeeded(self) -> ();
+
+    #[doc = "`ResultCancelled()` overload"]
+    #[method(name = "ResultCancelled", args = 0)]
+    pub fn result_cancelled(self) -> ();
+
+    #[doc = "`ResultFailed()` overload"]
+    #[method(name = "ResultFailed", args = 0)]
+    pub fn result_failed(self) -> ();
+
+    #[doc = "`ShowError()` overload"]
+    #[method(name = "ShowError", args = 0)]
+    pub fn show_error(self) -> ();
+
+    #[doc = "`Cleanup()` overload"]
+    #[method(name = "Cleanup", args = 0)]
+    pub fn cleanup(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst, is_show_error: bool) -> ();
+
+    #[doc = "`get_LastResult()` overload"]
+    #[method(name = "get_LastResult", args = 0)]
+    pub fn get_last_result() -> crate::app::nexloginsequence::NexLoginSequence_Result;
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-nexloginsequence")]
+impl NexLoginSequence {
+    #[doc = "`.ctor(bool)` — overload selector"]
+    pub fn new(is_show_error: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexLoginSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexLoginSequenceMethods>::ctor(this, is_show_error);
+        this
     }
 }

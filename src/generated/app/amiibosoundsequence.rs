@@ -12,54 +12,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibosoundsequence/AmiiboSoundSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AmiiboSoundSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AmiiboSoundSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AmiiboSoundSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AmiiboSoundSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AmiiboSoundSequence_Label {
-    pub fn entry() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn main() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/amiibosoundsequence/AmiiboSoundSequence.md"))]
 #[::unity2::class(namespace = "App", name = "AmiiboSoundSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: amiibosoundsequence :: AmiiboSoundSequence >)]
@@ -106,5 +58,53 @@ impl AmiiboSoundSequence {
         });
         <Self as IAmiiboSoundSequenceMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/amiibosoundsequence/AmiiboSoundSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AmiiboSoundSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AmiiboSoundSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AmiiboSoundSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AmiiboSoundSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AmiiboSoundSequence_Label {
+    pub fn entry() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn main() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
     }
 }

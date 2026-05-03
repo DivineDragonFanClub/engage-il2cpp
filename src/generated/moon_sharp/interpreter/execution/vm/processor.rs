@@ -4,6 +4,58 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/processor/Processor_DebugContext.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Execution.VM",
+    name = "Processor.DebugContext"
+)]
+#[parent(crate::system::object::Object)]
+pub struct Processor_DebugContext {
+    #[rename(name = "DebuggerEnabled")]
+    pub debugger_enabled: bool,
+    #[rename(name = "DebuggerAttached")]
+    pub debugger_attached: crate::moon_sharp::interpreter::debugging::idebugger::IDebugger,
+    #[rename(name = "DebuggerCurrentAction")]
+    pub debugger_current_action:
+        crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction_ActionType,
+    #[rename(name = "DebuggerCurrentActionTarget")]
+    pub debugger_current_action_target: i32,
+    #[rename(name = "LastHlRef")]
+    pub last_hl_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+    #[rename(name = "ExStackDepthAtStep")]
+    pub ex_stack_depth_at_step: i32,
+    #[rename(name = "BreakPoints")]
+    pub break_points: crate::system::collections::generic::list_1::List_1<
+        crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
+    >,
+    #[rename(name = "LineBasedBreakPoints")]
+    pub line_based_break_points: bool,
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
+#[::unity2::methods]
+impl Processor_DebugContext {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
+impl Processor_DebugContext {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Processor_DebugContext),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProcessor_DebugContextMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/processor/Processor.md"))]
 #[::unity2::class(namespace = "MoonSharp.Interpreter.Execution.VM", name = "Processor")]
 #[parent(crate::system::object::Object)]
@@ -802,58 +854,6 @@ impl Processor {
             )
         });
         <Self as IProcessorMethods>::ctor_2(this, parent_processor);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/execution/vm/processor/Processor_DebugContext.md"))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Execution.VM",
-    name = "Processor.DebugContext"
-)]
-#[parent(crate::system::object::Object)]
-pub struct Processor_DebugContext {
-    #[rename(name = "DebuggerEnabled")]
-    pub debugger_enabled: bool,
-    #[rename(name = "DebuggerAttached")]
-    pub debugger_attached: crate::moon_sharp::interpreter::debugging::idebugger::IDebugger,
-    #[rename(name = "DebuggerCurrentAction")]
-    pub debugger_current_action:
-        crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction_ActionType,
-    #[rename(name = "DebuggerCurrentActionTarget")]
-    pub debugger_current_action_target: i32,
-    #[rename(name = "LastHlRef")]
-    pub last_hl_ref: crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-    #[rename(name = "ExStackDepthAtStep")]
-    pub ex_stack_depth_at_step: i32,
-    #[rename(name = "BreakPoints")]
-    pub break_points: crate::system::collections::generic::list_1::List_1<
-        crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,
-    >,
-    #[rename(name = "LineBasedBreakPoints")]
-    pub line_based_break_points: bool,
-}
-
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
-#[::unity2::methods]
-impl Processor_DebugContext {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "moon_sharp-interpreter-execution-vm-processor")]
-impl Processor_DebugContext {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Processor_DebugContext),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProcessor_DebugContextMethods>::ctor(this);
         this
     }
 }

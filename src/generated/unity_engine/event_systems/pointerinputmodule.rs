@@ -16,6 +16,67 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_MouseState.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.EventSystems",
+    name = "PointerInputModule.MouseState"
+)]
+#[parent(crate::system::object::Object)]
+pub struct PointerInputModule_MouseState {
+    #[rename(name = "m_TrackedButtons")]
+    pub m_tracked_buttons: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_ButtonState,
+    >,
+}
+
+#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
+#[::unity2::methods]
+impl PointerInputModule_MouseState {
+    #[doc = "`AnyPressesThisFrame()` overload"]
+    #[method(name = "AnyPressesThisFrame", args = 0)]
+    pub fn any_presses_this_frame(self) -> bool;
+
+    #[doc = "`AnyReleasesThisFrame()` overload"]
+    #[method(name = "AnyReleasesThisFrame", args = 0)]
+    pub fn any_releases_this_frame(self) -> bool;
+
+    #[doc = "`GetButtonState(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)` overload"]
+    #[method(name = "GetButtonState", args = 1)]
+    pub fn get_button_state(
+        self,
+        button: crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton,
+    ) -> crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_ButtonState;
+
+    #[doc = "`SetButtonState(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton, crate::unity_engine::event_systems::pointereventdata::PointerEventData_FramePressState, crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
+    #[method(name = "SetButtonState", args = 3)]
+    pub fn set_button_state(
+        self,
+        button: crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton,
+        state_for_mouse_button : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_FramePressState,
+        data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
+impl PointerInputModule_MouseState {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PointerInputModule_MouseState),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPointerInputModule_MouseStateMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule.md"))]
 #[::unity2::class(namespace = "UnityEngine.EventSystems", name = "PointerInputModule")]
 #[parent(crate::unity_engine::event_systems::baseinputmodule::BaseInputModule)]
@@ -169,113 +230,6 @@ impl PointerInputModule {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_MouseButtonEventData.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.EventSystems",
-    name = "PointerInputModule.MouseButtonEventData"
-)]
-#[parent(crate::system::object::Object)]
-pub struct PointerInputModule_MouseButtonEventData {
-    #[rename(name = "buttonState")]
-    pub button_state:
-        crate::unity_engine::event_systems::pointereventdata::PointerEventData_FramePressState,
-    #[rename(name = "buttonData")]
-    pub button_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-}
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-#[::unity2::methods]
-impl PointerInputModule_MouseButtonEventData {
-    #[doc = "`PressedThisFrame()` overload"]
-    #[method(name = "PressedThisFrame", args = 0)]
-    pub fn pressed_this_frame(self) -> bool;
-
-    #[doc = "`ReleasedThisFrame()` overload"]
-    #[method(name = "ReleasedThisFrame", args = 0)]
-    pub fn released_this_frame(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl PointerInputModule_MouseButtonEventData {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PointerInputModule_MouseButtonEventData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPointerInputModule_MouseButtonEventDataMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_MouseState.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.EventSystems",
-    name = "PointerInputModule.MouseState"
-)]
-#[parent(crate::system::object::Object)]
-pub struct PointerInputModule_MouseState {
-    #[rename(name = "m_TrackedButtons")]
-    pub m_tracked_buttons: crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_ButtonState,
-    >,
-}
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-#[::unity2::methods]
-impl PointerInputModule_MouseState {
-    #[doc = "`AnyPressesThisFrame()` overload"]
-    #[method(name = "AnyPressesThisFrame", args = 0)]
-    pub fn any_presses_this_frame(self) -> bool;
-
-    #[doc = "`AnyReleasesThisFrame()` overload"]
-    #[method(name = "AnyReleasesThisFrame", args = 0)]
-    pub fn any_releases_this_frame(self) -> bool;
-
-    #[doc = "`GetButtonState(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton)` overload"]
-    #[method(name = "GetButtonState", args = 1)]
-    pub fn get_button_state(
-        self,
-        button: crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton,
-    ) -> crate::unity_engine::event_systems::pointerinputmodule::PointerInputModule_ButtonState;
-
-    #[doc = "`SetButtonState(crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton, crate::unity_engine::event_systems::pointereventdata::PointerEventData_FramePressState, crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
-    #[method(name = "SetButtonState", args = 3)]
-    pub fn set_button_state(
-        self,
-        button: crate::unity_engine::event_systems::pointereventdata::PointerEventData_InputButton,
-        state_for_mouse_button : crate :: unity_engine :: event_systems :: pointereventdata :: PointerEventData_FramePressState,
-        data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
-impl PointerInputModule_MouseState {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PointerInputModule_MouseState),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPointerInputModule_MouseStateMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_ButtonState.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.EventSystems",
@@ -331,6 +285,52 @@ impl PointerInputModule_ButtonState {
             )
         });
         <Self as IPointerInputModule_ButtonStateMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/event_systems/pointerinputmodule/PointerInputModule_MouseButtonEventData.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.EventSystems",
+    name = "PointerInputModule.MouseButtonEventData"
+)]
+#[parent(crate::system::object::Object)]
+pub struct PointerInputModule_MouseButtonEventData {
+    #[rename(name = "buttonState")]
+    pub button_state:
+        crate::unity_engine::event_systems::pointereventdata::PointerEventData_FramePressState,
+    #[rename(name = "buttonData")]
+    pub button_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+}
+
+#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
+#[::unity2::methods]
+impl PointerInputModule_MouseButtonEventData {
+    #[doc = "`PressedThisFrame()` overload"]
+    #[method(name = "PressedThisFrame", args = 0)]
+    pub fn pressed_this_frame(self) -> bool;
+
+    #[doc = "`ReleasedThisFrame()` overload"]
+    #[method(name = "ReleasedThisFrame", args = 0)]
+    pub fn released_this_frame(self) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-event_systems-pointerinputmodule")]
+impl PointerInputModule_MouseButtonEventData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PointerInputModule_MouseButtonEventData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPointerInputModule_MouseButtonEventDataMethods>::ctor(this);
         this
     }
 }

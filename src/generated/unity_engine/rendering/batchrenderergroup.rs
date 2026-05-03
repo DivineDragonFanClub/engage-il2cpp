@@ -8,29 +8,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/batchrenderergroup/BatchRendererGroup.md"))]
-#[::unity2::class(namespace = "UnityEngine.Rendering", name = "BatchRendererGroup")]
-#[parent(crate::system::object::Object)]
-pub struct BatchRendererGroup {
-    #[rename(name = "m_GroupHandle")]
-    pub m_group_handle: ::unity2::IntPtr,
-    #[rename(name = "m_PerformCulling")]
-    pub m_perform_culling:
-        crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup_OnPerformCulling,
-}
-
-#[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
-#[::unity2::methods]
-impl BatchRendererGroup {
-    #[doc = "`InvokeOnPerformCulling(crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup, crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput, crate::unity_engine::rendering::lodparameters::LODParameters)` overload"]
-    #[method(name = "InvokeOnPerformCulling", args = 3)]
-    pub fn invoke_on_perform_culling(
-        group: crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup,
-        context : crate :: unity_engine :: rendering :: batchrenderercullingoutput :: BatchRendererCullingOutput,
-        lod_parameters: crate::unity_engine::rendering::lodparameters::LODParameters,
-    ) -> ();
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/batchrenderergroup/BatchRendererGroup_OnPerformCulling.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering",
@@ -61,4 +38,27 @@ impl BatchRendererGroup_OnPerformCulling {
         <Self as IBatchRendererGroup_OnPerformCullingMethods>::ctor(this, object, method);
         this
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/batchrenderergroup/BatchRendererGroup.md"))]
+#[::unity2::class(namespace = "UnityEngine.Rendering", name = "BatchRendererGroup")]
+#[parent(crate::system::object::Object)]
+pub struct BatchRendererGroup {
+    #[rename(name = "m_GroupHandle")]
+    pub m_group_handle: ::unity2::IntPtr,
+    #[rename(name = "m_PerformCulling")]
+    pub m_perform_culling:
+        crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup_OnPerformCulling,
+}
+
+#[cfg(feature = "unity_engine-rendering-batchrenderergroup")]
+#[::unity2::methods]
+impl BatchRendererGroup {
+    #[doc = "`InvokeOnPerformCulling(crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup, crate::unity_engine::rendering::batchrenderercullingoutput::BatchRendererCullingOutput, crate::unity_engine::rendering::lodparameters::LODParameters)` overload"]
+    #[method(name = "InvokeOnPerformCulling", args = 3)]
+    pub fn invoke_on_perform_culling(
+        group: crate::unity_engine::rendering::batchrenderergroup::BatchRendererGroup,
+        context : crate :: unity_engine :: rendering :: batchrenderercullingoutput :: BatchRendererCullingOutput,
+        lod_parameters: crate::unity_engine::rendering::lodparameters::LODParameters,
+    ) -> ();
 }

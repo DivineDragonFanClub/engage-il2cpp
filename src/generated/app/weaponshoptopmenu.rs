@@ -18,6 +18,47 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshoptopmenu/WeaponShopTopMenu_SellMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "WeaponShopTopMenu.SellMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct WeaponShopTopMenu_SellMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler: crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-weaponshoptopmenu")]
+#[::unity2::methods]
+impl WeaponShopTopMenu_SellMenuItem {
+    #[doc = "`.ctor(crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        decide_event_handler: crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-weaponshoptopmenu")]
+impl WeaponShopTopMenu_SellMenuItem {
+    #[doc = "`.ctor(crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        decide_event_handler: crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopTopMenu_SellMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopTopMenu_SellMenuItemMethods>::ctor(this, decide_event_handler);
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/weaponshoptopmenu/WeaponShopTopMenu_Result2.md"))]
 #[repr(C)]
 #[derive(
@@ -99,6 +140,47 @@ impl WeaponShopTopMenu_DecideEventHandler {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshoptopmenu/WeaponShopTopMenu_BuyMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "WeaponShopTopMenu.BuyMenuItem")]
+#[parent(crate::app::basicmenuitem::BasicMenuItem)]
+pub struct WeaponShopTopMenu_BuyMenuItem {
+    #[rename(name = "m_DecideEventHandler")]
+    pub m_decide_event_handler: crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,
+}
+
+#[cfg(feature = "app-weaponshoptopmenu")]
+#[::unity2::methods]
+impl WeaponShopTopMenu_BuyMenuItem {
+    #[doc = "`.ctor(crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        decide_event_handler: crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,
+    ) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+}
+
+#[cfg(feature = "app-weaponshoptopmenu")]
+impl WeaponShopTopMenu_BuyMenuItem {
+    #[doc = "`.ctor(crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(
+        decide_event_handler: crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WeaponShopTopMenu_BuyMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopTopMenu_BuyMenuItemMethods>::ctor(this, decide_event_handler);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshoptopmenu/WeaponShopTopMenu.md"))]
 #[::unity2::class(namespace = "App", name = "WeaponShopTopMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -164,88 +246,6 @@ impl WeaponShopTopMenu {
             initial_selected,
             decide_event_handler,
         );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshoptopmenu/WeaponShopTopMenu_SellMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "WeaponShopTopMenu.SellMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct WeaponShopTopMenu_SellMenuItem {
-    #[rename(name = "m_DecideEventHandler")]
-    pub m_decide_event_handler: crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,
-}
-
-#[cfg(feature = "app-weaponshoptopmenu")]
-#[::unity2::methods]
-impl WeaponShopTopMenu_SellMenuItem {
-    #[doc = "`.ctor(crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        decide_event_handler: crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-weaponshoptopmenu")]
-impl WeaponShopTopMenu_SellMenuItem {
-    #[doc = "`.ctor(crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        decide_event_handler: crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WeaponShopTopMenu_SellMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWeaponShopTopMenu_SellMenuItemMethods>::ctor(this, decide_event_handler);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/weaponshoptopmenu/WeaponShopTopMenu_BuyMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "WeaponShopTopMenu.BuyMenuItem")]
-#[parent(crate::app::basicmenuitem::BasicMenuItem)]
-pub struct WeaponShopTopMenu_BuyMenuItem {
-    #[rename(name = "m_DecideEventHandler")]
-    pub m_decide_event_handler: crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,
-}
-
-#[cfg(feature = "app-weaponshoptopmenu")]
-#[::unity2::methods]
-impl WeaponShopTopMenu_BuyMenuItem {
-    #[doc = "`.ctor(crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        decide_event_handler: crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,
-    ) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-}
-
-#[cfg(feature = "app-weaponshoptopmenu")]
-impl WeaponShopTopMenu_BuyMenuItem {
-    #[doc = "`.ctor(crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler)` — overload selector"]
-    pub fn new(
-        decide_event_handler: crate::app::weaponshoptopmenu::WeaponShopTopMenu_DecideEventHandler,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WeaponShopTopMenu_BuyMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWeaponShopTopMenu_BuyMenuItemMethods>::ctor(this, decide_event_handler);
         this
     }
 }

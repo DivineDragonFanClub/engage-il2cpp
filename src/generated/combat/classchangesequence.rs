@@ -12,6 +12,50 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/classchangesequence/ClassChangeSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ClassChangeSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ClassChangeSequence_Label {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "ClassChangeSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ClassChangeSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ClassChangeSequence_Label {
+    pub fn skip_fade_in() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn skip_fade_out() -> Self {
+        Self { value: 1 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/classchangesequence/ClassChangeSequence.md"))]
 #[::unity2::class(namespace = "Combat", name = "ClassChangeSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: combat :: classchangesequence :: ClassChangeSequence >)]
@@ -163,49 +207,5 @@ impl ClassChangeSequence {
         });
         <Self as IClassChangeSequenceMethods>::ctor(this, before, after, camera_mode);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/classchangesequence/ClassChangeSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ClassChangeSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for ClassChangeSequence_Label {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "ClassChangeSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ClassChangeSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ClassChangeSequence_Label {
-    pub fn skip_fade_in() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn skip_fade_out() -> Self {
-        Self { value: 1 }
     }
 }

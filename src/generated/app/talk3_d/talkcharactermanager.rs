@@ -20,6 +20,79 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkcharactermanager/TalkCharacterManager_ProcFadeOutCharacter.md"))]
+#[::unity2::class(
+    namespace = "App.Talk3D",
+    name = "TalkCharacterManager.ProcFadeOutCharacter"
+)]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct TalkCharacterManager_ProcFadeOutCharacter {
+    #[rename(name = "m_talkCharacterController")]
+    pub m_talk_character_controller:
+        crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
+    #[rename(name = "m_fadeTime")]
+    pub m_fade_time: f32,
+}
+
+#[cfg(feature = "app-talk3_d-talkcharactermanager")]
+#[::unity2::methods]
+impl TalkCharacterManager_ProcFadeOutCharacter {
+    #[doc = "`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        talk_character_controller : crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController,
+        fade_time: f32,
+    ) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`StartFadeOutCharacter()` overload"]
+    #[method(name = "StartFadeOutCharacter", args = 0)]
+    pub fn start_fade_out_character(self) -> ();
+
+    #[doc = "`IsFadingCharacter()` overload"]
+    #[method(name = "IsFadingCharacter", args = 0)]
+    pub fn is_fading_character(self) -> bool;
+
+    #[doc = "`DeleteCharacter()` overload"]
+    #[method(name = "DeleteCharacter", args = 0)]
+    pub fn delete_character(self) -> ();
+
+    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]
+    #[method(name = "Create", args = 3)]
+    pub fn create(
+        super_: crate::app::procinst::ProcInst,
+        talk_character_controller : crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController,
+        fade_time: f32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talkcharactermanager")]
+impl TalkCharacterManager_ProcFadeOutCharacter {
+    #[doc = "`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` — overload selector"]
+    pub fn new(
+        talk_character_controller : crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController,
+        fade_time: f32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkCharacterManager_ProcFadeOutCharacter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkCharacterManager_ProcFadeOutCharacterMethods>::ctor(
+            this,
+            talk_character_controller,
+            fade_time,
+        );
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkcharactermanager/TalkCharacterManager_ProcFadeInCharacter.md"))]
 #[::unity2::class(
     namespace = "App.Talk3D",
@@ -118,79 +191,6 @@ impl TalkCharacterManager_onLoad {
             )
         });
         <Self as ITalkCharacterManager_onLoadMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talkcharactermanager/TalkCharacterManager_ProcFadeOutCharacter.md"))]
-#[::unity2::class(
-    namespace = "App.Talk3D",
-    name = "TalkCharacterManager.ProcFadeOutCharacter"
-)]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct TalkCharacterManager_ProcFadeOutCharacter {
-    #[rename(name = "m_talkCharacterController")]
-    pub m_talk_character_controller:
-        crate::app::talk3_d::talkcharactercontroller::TalkCharacterController,
-    #[rename(name = "m_fadeTime")]
-    pub m_fade_time: f32,
-}
-
-#[cfg(feature = "app-talk3_d-talkcharactermanager")]
-#[::unity2::methods]
-impl TalkCharacterManager_ProcFadeOutCharacter {
-    #[doc = "`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        talk_character_controller : crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController,
-        fade_time: f32,
-    ) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`StartFadeOutCharacter()` overload"]
-    #[method(name = "StartFadeOutCharacter", args = 0)]
-    pub fn start_fade_out_character(self) -> ();
-
-    #[doc = "`IsFadingCharacter()` overload"]
-    #[method(name = "IsFadingCharacter", args = 0)]
-    pub fn is_fading_character(self) -> bool;
-
-    #[doc = "`DeleteCharacter()` overload"]
-    #[method(name = "DeleteCharacter", args = 0)]
-    pub fn delete_character(self) -> ();
-
-    #[doc = "`Create(crate::app::procinst::ProcInst, crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` overload"]
-    #[method(name = "Create", args = 3)]
-    pub fn create(
-        super_: crate::app::procinst::ProcInst,
-        talk_character_controller : crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController,
-        fade_time: f32,
-    ) -> ();
-}
-
-#[cfg(feature = "app-talk3_d-talkcharactermanager")]
-impl TalkCharacterManager_ProcFadeOutCharacter {
-    #[doc = "`.ctor(crate::app::talk3_d::talkcharactercontroller::TalkCharacterController, f32)` — overload selector"]
-    pub fn new(
-        talk_character_controller : crate :: app :: talk3_d :: talkcharactercontroller :: TalkCharacterController,
-        fade_time: f32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkCharacterManager_ProcFadeOutCharacter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkCharacterManager_ProcFadeOutCharacterMethods>::ctor(
-            this,
-            talk_character_controller,
-            fade_time,
-        );
         this
     }
 }

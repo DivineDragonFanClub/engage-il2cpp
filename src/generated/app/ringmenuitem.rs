@@ -10,79 +10,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringmenuitem/RingMenuItem_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "RingMenuItem.DecideEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RingMenuItem_DecideEventHandler {}
-
-#[cfg(feature = "app-ringmenuitem")]
-#[::unity2::methods]
-impl RingMenuItem_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::ringdata::RingData, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` overload"]
-    #[method(name = "Invoke", args = 5)]
-    pub fn invoke(
-        self,
-        ring_data: crate::app::ringdata::RingData,
-        base_ring_count: i32,
-        piece_of_bonds_count: i32,
-        god_unit_index: i32,
-        menu_select: crate::app::basicmenuselect::BasicMenuSelect,
-    ) -> ();
-}
-
-#[cfg(feature = "app-ringmenuitem")]
-impl RingMenuItem_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingMenuItem_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingMenuItem_DecideEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringmenuitem/RingMenuItem_SelectEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "RingMenuItem.SelectEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RingMenuItem_SelectEventHandler {}
-
-#[cfg(feature = "app-ringmenuitem")]
-#[::unity2::methods]
-impl RingMenuItem_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::ringdata::RingData)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, ring_data: crate::app::ringdata::RingData) -> ();
-}
-
-#[cfg(feature = "app-ringmenuitem")]
-impl RingMenuItem_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingMenuItem_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingMenuItem_SelectEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringmenuitem/RingMenuItem.md"))]
 #[::unity2::class(namespace = "App", name = "RingMenuItem")]
 #[parent(crate::app::basicmenuitem::BasicMenuItem)]
@@ -221,6 +148,79 @@ impl RingMenuItem {
             select_event_handler,
             decide_event_handler,
         );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringmenuitem/RingMenuItem_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "RingMenuItem.DecideEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RingMenuItem_DecideEventHandler {}
+
+#[cfg(feature = "app-ringmenuitem")]
+#[::unity2::methods]
+impl RingMenuItem_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::ringdata::RingData, i32, i32, i32, crate::app::basicmenuselect::BasicMenuSelect)` overload"]
+    #[method(name = "Invoke", args = 5)]
+    pub fn invoke(
+        self,
+        ring_data: crate::app::ringdata::RingData,
+        base_ring_count: i32,
+        piece_of_bonds_count: i32,
+        god_unit_index: i32,
+        menu_select: crate::app::basicmenuselect::BasicMenuSelect,
+    ) -> ();
+}
+
+#[cfg(feature = "app-ringmenuitem")]
+impl RingMenuItem_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingMenuItem_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingMenuItem_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringmenuitem/RingMenuItem_SelectEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "RingMenuItem.SelectEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RingMenuItem_SelectEventHandler {}
+
+#[cfg(feature = "app-ringmenuitem")]
+#[::unity2::methods]
+impl RingMenuItem_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::ringdata::RingData)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, ring_data: crate::app::ringdata::RingData) -> ();
+}
+
+#[cfg(feature = "app-ringmenuitem")]
+impl RingMenuItem_SelectEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingMenuItem_SelectEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingMenuItem_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

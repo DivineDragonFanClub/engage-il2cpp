@@ -10,6 +10,46 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procscenemanager/ProcSceneManager_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ProcSceneManager_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ProcSceneManager_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ProcSceneManager.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ProcSceneManager_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ProcSceneManager_Label {
+    pub fn skip() -> Self {
+        Self { value: 0 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/procscenemanager/ProcSceneManager.md"))]
 #[::unity2::class(namespace = "App", name = "ProcSceneManager")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -125,45 +165,5 @@ impl ProcSceneManager {
         });
         <Self as IProcSceneManagerMethods>::ctor(this, name, mode);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/procscenemanager/ProcSceneManager_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ProcSceneManager_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for ProcSceneManager_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProcSceneManager.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ProcSceneManager_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ProcSceneManager_Label {
-    pub fn skip() -> Self {
-        Self { value: 0 }
     }
 }

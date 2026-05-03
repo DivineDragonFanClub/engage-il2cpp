@@ -14,158 +14,73 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_LayerScope.md"))]
-#[::unity2::class(namespace = "App", name = "Fade.LayerScope")]
-#[parent(crate::system::object::Object)]
-pub struct Fade_LayerScope {
-    #[rename(name = "m_Layer")]
-    pub m_layer: crate::app::fade::Fade_Layer,
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fade/Fade_Layer.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct Fade_Layer {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-fade")]
-#[::unity2::methods]
-impl Fade_LayerScope {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, layer: crate::app::fade::Fade_Layer) -> ();
+impl ::unity2::ClassIdentity for Fade_Layer {
+    const NAMESPACE: &'static str = "App";
 
-    #[doc = "`Finalize()` overload"]
-    #[method(name = "Finalize", args = 0)]
-    pub fn finalize(self) -> ();
+    const NAME: &'static str = "Fade.Layer";
 
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
 
-#[cfg(feature = "app-fade")]
-impl Fade_LayerScope {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]
-    pub fn new(layer: crate::app::fade::Fade_Layer) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Fade_LayerScope),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFade_LayerScopeMethods>::ctor(this, layer);
-        this
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcFadeWait.md"))]
-#[::unity2::class(namespace = "App", name = "Fade.ProcFadeWait")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct Fade_ProcFadeWait {
-    #[rename(name = "m_Layer")]
-    pub m_layer: crate::app::fade::Fade_Layer,
-}
-
-#[cfg(feature = "app-fade")]
-#[::unity2::methods]
-impl Fade_ProcFadeWait {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, layer: crate::app::fade::Fade_Layer) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-}
-
-#[cfg(feature = "app-fade")]
-impl Fade_ProcFadeWait {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]
-    pub fn new(layer: crate::app::fade::Fade_Layer) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Fade_ProcFadeWait),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFade_ProcFadeWaitMethods>::ctor(this, layer);
-        this
+impl ::unity2::IlType for Fade_Layer {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcFade.md"))]
-#[::unity2::class(namespace = "App", name = "Fade.ProcFade")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct Fade_ProcFade {
-    #[rename(name = "m_FadeLayer")]
-    pub m_fade_layer: ::unity2::Array<crate::app::fade::Fade_FadeLayer>,
-}
+impl Fade_Layer {
+    pub fn system() -> Self {
+        Self { value: 0 }
+    }
 
-#[cfg(feature = "app-fade")]
-#[::unity2::methods]
-impl Fade_ProcFade {
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::app::fade::Fade_FadeLayer;
+    pub fn skip() -> Self {
+        Self { value: 1 }
+    }
 
-    #[doc = "`Create(crate::unity_engine::color::Color, f32)` overload"]
-    #[method(name = "Create", args = 2)]
-    pub fn create(to_color: crate::unity_engine::color::Color, duration: f32) -> ();
+    pub fn talk() -> Self {
+        Self { value: 2 }
+    }
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    pub fn combat() -> Self {
+        Self { value: 3 }
+    }
 
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`IsActive(crate::app::fade::Fade_Layer)` overload"]
-    #[method(name = "IsActive", args = 1)]
-    pub fn is_active(self, layer: crate::app::fade::Fade_Layer) -> bool;
-}
-
-#[cfg(feature = "app-fade")]
-impl Fade_ProcFade {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Fade_ProcFade),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IFade_ProcFadeMethods>::ctor(this);
-        this
+    pub fn current() -> Self {
+        Self { value: 4 }
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcDescInOut.md"))]
-#[::unity2::class(namespace = "App", name = "Fade.ProcDescInOut")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcDescWait.md"))]
+#[::unity2::class(namespace = "App", name = "Fade.ProcDescWait")]
 #[parent(crate::app::fade::Fade_ProcDescFade)]
-pub struct Fade_ProcDescInOut {
-    #[rename(name = "m_Color")]
-    pub m_color: crate::unity_engine::color::Color,
-    #[rename(name = "m_Duration")]
-    pub m_duration: f32,
-    #[rename(name = "m_IsIn")]
-    pub m_is_in: bool,
-}
+pub struct Fade_ProcDescWait {}
 
 #[cfg(feature = "app-fade")]
 #[::unity2::methods]
-impl Fade_ProcDescInOut {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer, crate::unity_engine::color::Color, f32, bool)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        layer: crate::app::fade::Fade_Layer,
-        color: crate::unity_engine::color::Color,
-        duration: f32,
-        is_in: bool,
-    ) -> ();
+impl Fade_ProcDescWait {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, layer: crate::app::fade::Fade_Layer) -> ();
 
     #[doc = "`Execute(crate::app::procinst::ProcInst)` overload"]
     #[method(name = "Execute", args = 1)]
@@ -176,84 +91,53 @@ impl Fade_ProcDescInOut {
 }
 
 #[cfg(feature = "app-fade")]
-impl Fade_ProcDescInOut {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer, crate::unity_engine::color::Color, f32, bool)` — overload selector"]
-    pub fn new(
-        layer: crate::app::fade::Fade_Layer,
-        color: crate::unity_engine::color::Color,
-        duration: f32,
-        is_in: bool,
-    ) -> Self {
+impl Fade_ProcDescWait {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]
+    pub fn new(layer: crate::app::fade::Fade_Layer) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(Fade_ProcDescInOut),
+                ::core::stringify!(Fade_ProcDescWait),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFade_ProcDescInOutMethods>::ctor(this, layer, color, duration, is_in);
+        <Self as IFade_ProcDescWaitMethods>::ctor(this, layer);
         this
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_FadeLayer.md"))]
-#[::unity2::class(namespace = "App", name = "Fade.FadeLayer")]
-#[parent(crate::system::object::Object)]
-pub struct Fade_FadeLayer {
-    #[rename(name = "m_FromColor")]
-    pub m_from_color: crate::unity_engine::color::Color,
-    #[rename(name = "m_ToColor")]
-    pub m_to_color: crate::unity_engine::color::Color,
-    #[rename(name = "m_Duration")]
-    pub m_duration: f32,
-    #[rename(name = "m_Elapsed")]
-    pub m_elapsed: f32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcDescFade.md"))]
+#[::unity2::class(namespace = "App", name = "Fade.ProcDescFade")]
+#[parent(crate::app::procdescuser::ProcDescUser)]
+pub struct Fade_ProcDescFade {
+    #[rename(name = "m_Layer")]
+    pub m_layer: crate::app::fade::Fade_Layer,
 }
 
 #[cfg(feature = "app-fade")]
 #[::unity2::methods]
-impl Fade_FadeLayer {
-    #[doc = "`Exec(crate::unity_engine::color::Color, f32)` overload"]
-    #[method(name = "Exec", args = 2)]
-    pub fn exec(self, to_color: crate::unity_engine::color::Color, duration: f32) -> ();
+impl Fade_ProcDescFade {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, layer: crate::app::fade::Fade_Layer) -> ();
 
-    #[doc = "`Tick(f32)` overload"]
-    #[method(name = "Tick", args = 1)]
-    pub fn tick(self, delta_time: f32) -> bool;
-
-    #[doc = "`GetColor()` overload"]
-    #[method(name = "GetColor", args = 0)]
-    pub fn get_color(self) -> crate::unity_engine::color::Color;
-
-    #[doc = "`get_ToColor()` overload"]
-    #[method(name = "get_ToColor", args = 0)]
-    pub fn get_to_color(self) -> crate::unity_engine::color::Color;
-
-    #[doc = "`IsActive()` overload"]
-    #[method(name = "IsActive", args = 0)]
-    pub fn is_active(self) -> bool;
-
-    #[doc = "`IsAlive()` overload"]
-    #[method(name = "IsAlive", args = 0)]
-    pub fn is_alive(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    #[doc = "`GetLayer()` overload"]
+    #[method(name = "GetLayer", args = 0)]
+    pub fn get_layer(self) -> crate::app::fade::Fade_Layer;
 }
 
 #[cfg(feature = "app-fade")]
-impl Fade_FadeLayer {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl Fade_ProcDescFade {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]
+    pub fn new(layer: crate::app::fade::Fade_Layer) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(Fade_FadeLayer),
+                ::core::stringify!(Fade_ProcDescFade),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFade_FadeLayerMethods>::ctor(this);
+        <Self as IFade_ProcDescFadeMethods>::ctor(this, layer);
         this
     }
 }
@@ -451,73 +335,168 @@ impl Fade {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/fade/Fade_Layer.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct Fade_Layer {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcFadeWait.md"))]
+#[::unity2::class(namespace = "App", name = "Fade.ProcFadeWait")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct Fade_ProcFadeWait {
+    #[rename(name = "m_Layer")]
+    pub m_layer: crate::app::fade::Fade_Layer,
 }
-
-impl ::unity2::ClassIdentity for Fade_Layer {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Fade.Layer";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Fade_Layer {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl Fade_Layer {
-    pub fn system() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn skip() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn talk() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn combat() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn current() -> Self {
-        Self { value: 4 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcDescWait.md"))]
-#[::unity2::class(namespace = "App", name = "Fade.ProcDescWait")]
-#[parent(crate::app::fade::Fade_ProcDescFade)]
-pub struct Fade_ProcDescWait {}
 
 #[cfg(feature = "app-fade")]
 #[::unity2::methods]
-impl Fade_ProcDescWait {
+impl Fade_ProcFadeWait {
     #[doc = "`.ctor(crate::app::fade::Fade_Layer)` overload"]
     #[method(name = ".ctor", args = 1)]
     pub fn ctor(self, layer: crate::app::fade::Fade_Layer) -> ();
+
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+}
+
+#[cfg(feature = "app-fade")]
+impl Fade_ProcFadeWait {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]
+    pub fn new(layer: crate::app::fade::Fade_Layer) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Fade_ProcFadeWait),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFade_ProcFadeWaitMethods>::ctor(this, layer);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_FadeLayer.md"))]
+#[::unity2::class(namespace = "App", name = "Fade.FadeLayer")]
+#[parent(crate::system::object::Object)]
+pub struct Fade_FadeLayer {
+    #[rename(name = "m_FromColor")]
+    pub m_from_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_ToColor")]
+    pub m_to_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_Duration")]
+    pub m_duration: f32,
+    #[rename(name = "m_Elapsed")]
+    pub m_elapsed: f32,
+}
+
+#[cfg(feature = "app-fade")]
+#[::unity2::methods]
+impl Fade_FadeLayer {
+    #[doc = "`Exec(crate::unity_engine::color::Color, f32)` overload"]
+    #[method(name = "Exec", args = 2)]
+    pub fn exec(self, to_color: crate::unity_engine::color::Color, duration: f32) -> ();
+
+    #[doc = "`Tick(f32)` overload"]
+    #[method(name = "Tick", args = 1)]
+    pub fn tick(self, delta_time: f32) -> bool;
+
+    #[doc = "`GetColor()` overload"]
+    #[method(name = "GetColor", args = 0)]
+    pub fn get_color(self) -> crate::unity_engine::color::Color;
+
+    #[doc = "`get_ToColor()` overload"]
+    #[method(name = "get_ToColor", args = 0)]
+    pub fn get_to_color(self) -> crate::unity_engine::color::Color;
+
+    #[doc = "`IsActive()` overload"]
+    #[method(name = "IsActive", args = 0)]
+    pub fn is_active(self) -> bool;
+
+    #[doc = "`IsAlive()` overload"]
+    #[method(name = "IsAlive", args = 0)]
+    pub fn is_alive(self) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-fade")]
+impl Fade_FadeLayer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Fade_FadeLayer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFade_FadeLayerMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_LayerScope.md"))]
+#[::unity2::class(namespace = "App", name = "Fade.LayerScope")]
+#[parent(crate::system::object::Object)]
+pub struct Fade_LayerScope {
+    #[rename(name = "m_Layer")]
+    pub m_layer: crate::app::fade::Fade_Layer,
+}
+
+#[cfg(feature = "app-fade")]
+#[::unity2::methods]
+impl Fade_LayerScope {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, layer: crate::app::fade::Fade_Layer) -> ();
+
+    #[doc = "`Finalize()` overload"]
+    #[method(name = "Finalize", args = 0)]
+    pub fn finalize(self) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "app-fade")]
+impl Fade_LayerScope {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]
+    pub fn new(layer: crate::app::fade::Fade_Layer) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Fade_LayerScope),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFade_LayerScopeMethods>::ctor(this, layer);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcDescInOut.md"))]
+#[::unity2::class(namespace = "App", name = "Fade.ProcDescInOut")]
+#[parent(crate::app::fade::Fade_ProcDescFade)]
+pub struct Fade_ProcDescInOut {
+    #[rename(name = "m_Color")]
+    pub m_color: crate::unity_engine::color::Color,
+    #[rename(name = "m_Duration")]
+    pub m_duration: f32,
+    #[rename(name = "m_IsIn")]
+    pub m_is_in: bool,
+}
+
+#[cfg(feature = "app-fade")]
+#[::unity2::methods]
+impl Fade_ProcDescInOut {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer, crate::unity_engine::color::Color, f32, bool)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        layer: crate::app::fade::Fade_Layer,
+        color: crate::unity_engine::color::Color,
+        duration: f32,
+        is_in: bool,
+    ) -> ();
 
     #[doc = "`Execute(crate::app::procinst::ProcInst)` overload"]
     #[method(name = "Execute", args = 1)]
@@ -528,53 +507,74 @@ impl Fade_ProcDescWait {
 }
 
 #[cfg(feature = "app-fade")]
-impl Fade_ProcDescWait {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]
-    pub fn new(layer: crate::app::fade::Fade_Layer) -> Self {
+impl Fade_ProcDescInOut {
+    #[doc = "`.ctor(crate::app::fade::Fade_Layer, crate::unity_engine::color::Color, f32, bool)` — overload selector"]
+    pub fn new(
+        layer: crate::app::fade::Fade_Layer,
+        color: crate::unity_engine::color::Color,
+        duration: f32,
+        is_in: bool,
+    ) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(Fade_ProcDescWait),
+                ::core::stringify!(Fade_ProcDescInOut),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFade_ProcDescWaitMethods>::ctor(this, layer);
+        <Self as IFade_ProcDescInOutMethods>::ctor(this, layer, color, duration, is_in);
         this
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcDescFade.md"))]
-#[::unity2::class(namespace = "App", name = "Fade.ProcDescFade")]
-#[parent(crate::app::procdescuser::ProcDescUser)]
-pub struct Fade_ProcDescFade {
-    #[rename(name = "m_Layer")]
-    pub m_layer: crate::app::fade::Fade_Layer,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/fade/Fade_ProcFade.md"))]
+#[::unity2::class(namespace = "App", name = "Fade.ProcFade")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct Fade_ProcFade {
+    #[rename(name = "m_FadeLayer")]
+    pub m_fade_layer: ::unity2::Array<crate::app::fade::Fade_FadeLayer>,
 }
 
 #[cfg(feature = "app-fade")]
 #[::unity2::methods]
-impl Fade_ProcDescFade {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, layer: crate::app::fade::Fade_Layer) -> ();
+impl Fade_ProcFade {
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::app::fade::Fade_FadeLayer;
 
-    #[doc = "`GetLayer()` overload"]
-    #[method(name = "GetLayer", args = 0)]
-    pub fn get_layer(self) -> crate::app::fade::Fade_Layer;
+    #[doc = "`Create(crate::unity_engine::color::Color, f32)` overload"]
+    #[method(name = "Create", args = 2)]
+    pub fn create(to_color: crate::unity_engine::color::Color, duration: f32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[doc = "`IsActive(crate::app::fade::Fade_Layer)` overload"]
+    #[method(name = "IsActive", args = 1)]
+    pub fn is_active(self, layer: crate::app::fade::Fade_Layer) -> bool;
 }
 
 #[cfg(feature = "app-fade")]
-impl Fade_ProcDescFade {
-    #[doc = "`.ctor(crate::app::fade::Fade_Layer)` — overload selector"]
-    pub fn new(layer: crate::app::fade::Fade_Layer) -> Self {
+impl Fade_ProcFade {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(Fade_ProcDescFade),
+                ::core::stringify!(Fade_ProcFade),
                 ::core::stringify!(new),
             )
         });
-        <Self as IFade_ProcDescFadeMethods>::ctor(this, layer);
+        <Self as IFade_ProcFadeMethods>::ctor(this);
         this
     }
 }

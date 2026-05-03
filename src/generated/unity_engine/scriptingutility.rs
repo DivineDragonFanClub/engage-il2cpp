@@ -6,6 +6,19 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scriptingutility/ScriptingUtility.md"))]
+#[::unity2::class(namespace = "UnityEngine", name = "ScriptingUtility")]
+#[parent(crate::system::object::Object)]
+pub struct ScriptingUtility {}
+
+#[cfg(feature = "unity_engine-scriptingutility")]
+#[::unity2::methods]
+impl ScriptingUtility {
+    #[doc = "`IsManagedCodeWorking()` overload"]
+    #[method(name = "IsManagedCodeWorking", args = 0)]
+    pub fn is_managed_code_working() -> bool;
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scriptingutility/ScriptingUtility_TestClass.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
@@ -32,17 +45,4 @@ impl ::unity2::IlType for ScriptingUtility_TestClass {
             ._1
             .byval_arg
     }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scriptingutility/ScriptingUtility.md"))]
-#[::unity2::class(namespace = "UnityEngine", name = "ScriptingUtility")]
-#[parent(crate::system::object::Object)]
-pub struct ScriptingUtility {}
-
-#[cfg(feature = "unity_engine-scriptingutility")]
-#[::unity2::methods]
-impl ScriptingUtility {
-    #[doc = "`IsManagedCodeWorking()` overload"]
-    #[method(name = "IsManagedCodeWorking", args = 0)]
-    pub fn is_managed_code_working() -> bool;
 }

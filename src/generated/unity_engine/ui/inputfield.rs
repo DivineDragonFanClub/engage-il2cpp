@@ -28,6 +28,54 @@ use crate::unity_engine::ui::selectable::ISelectable;
 use crate::unity_engine::ui::selectable::Selectable;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_LineType.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct InputField_LineType {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for InputField_LineType {
+    const NAMESPACE: &'static str = "UnityEngine.UI";
+
+    const NAME: &'static str = "InputField.LineType";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for InputField_LineType {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl InputField_LineType {
+    pub fn single_line() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn multi_line_submit() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn multi_line_newline() -> Self {
+        Self { value: 2 }
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_EditState.md"))]
 #[repr(C)]
 #[derive(
@@ -69,6 +117,35 @@ impl InputField_EditState {
 
     pub fn finish() -> Self {
         Self { value: 1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/inputfield/InputField_OnChangeEvent.md"))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "InputField.OnChangeEvent")]
+# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
+pub struct InputField_OnChangeEvent {}
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+#[::unity2::methods]
+impl InputField_OnChangeEvent {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+impl InputField_OnChangeEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InputField_OnChangeEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInputField_OnChangeEventMethods>::ctor(this);
+        this
     }
 }
 
@@ -958,6 +1035,35 @@ impl InputField {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/inputfield/InputField_SubmitEvent.md"))]
+#[::unity2::class(namespace = "UnityEngine.UI", name = "InputField.SubmitEvent")]
+# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
+pub struct InputField_SubmitEvent {}
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+#[::unity2::methods]
+impl InputField_SubmitEvent {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-ui-inputfield")]
+impl InputField_SubmitEvent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(InputField_SubmitEvent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInputField_SubmitEventMethods>::ctor(this);
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_CharacterValidation.md"))]
 #[repr(C)]
 #[derive(
@@ -1015,83 +1121,6 @@ impl InputField_CharacterValidation {
 
     pub fn email_address() -> Self {
         Self { value: 5 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/ui/inputfield/InputField_LineType.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct InputField_LineType {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for InputField_LineType {
-    const NAMESPACE: &'static str = "UnityEngine.UI";
-
-    const NAME: &'static str = "InputField.LineType";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for InputField_LineType {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl InputField_LineType {
-    pub fn single_line() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn multi_line_submit() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn multi_line_newline() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/inputfield/InputField_OnChangeEvent.md"))]
-#[::unity2::class(namespace = "UnityEngine.UI", name = "InputField.OnChangeEvent")]
-# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
-pub struct InputField_OnChangeEvent {}
-
-#[cfg(feature = "unity_engine-ui-inputfield")]
-#[::unity2::methods]
-impl InputField_OnChangeEvent {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-ui-inputfield")]
-impl InputField_OnChangeEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InputField_OnChangeEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInputField_OnChangeEventMethods>::ctor(this);
-        this
     }
 }
 
@@ -1168,35 +1197,6 @@ impl InputField_ContentType {
 
     pub fn custom() -> Self {
         Self { value: 9 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/ui/inputfield/InputField_SubmitEvent.md"))]
-#[::unity2::class(namespace = "UnityEngine.UI", name = "InputField.SubmitEvent")]
-# [parent (crate :: unity_engine :: events :: unityevent_1 :: UnityEvent_1 < :: unity2 :: Il2CppString >)]
-pub struct InputField_SubmitEvent {}
-
-#[cfg(feature = "unity_engine-ui-inputfield")]
-#[::unity2::methods]
-impl InputField_SubmitEvent {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-ui-inputfield")]
-impl InputField_SubmitEvent {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(InputField_SubmitEvent),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IInputField_SubmitEventMethods>::ctor(this);
-        this
     }
 }
 

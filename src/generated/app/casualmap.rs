@@ -10,6 +10,44 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/casualmap/CasualMap_ObjectData.md"))]
+#[::unity2::class(namespace = "App", name = "CasualMap.ObjectData")]
+#[parent(crate::system::object::Object)]
+pub struct CasualMap_ObjectData {
+    #[rename(name = "x")]
+    pub x: i32,
+    #[rename(name = "z")]
+    pub z: i32,
+    #[rename(name = "id")]
+    pub id: i32,
+    #[rename(name = "rotate")]
+    pub rotate: i32,
+}
+
+#[cfg(feature = "app-casualmap")]
+#[::unity2::methods]
+impl CasualMap_ObjectData {
+    #[doc = "`.ctor(i32, i32, i32, i32)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(self, x: i32, z: i32, id: i32, rotate: i32) -> ();
+}
+
+#[cfg(feature = "app-casualmap")]
+impl CasualMap_ObjectData {
+    #[doc = "`.ctor(i32, i32, i32, i32)` — overload selector"]
+    pub fn new(x: i32, z: i32, id: i32, rotate: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(CasualMap_ObjectData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICasualMap_ObjectDataMethods>::ctor(this, x, z, id, rotate);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/casualmap/CasualMap.md"))]
 #[::unity2::class(namespace = "App", name = "CasualMap")]
 # [parent (crate :: app :: singletonscriptableobject_1 :: SingletonScriptableObject_1 < crate :: app :: casualmap :: CasualMap >)]
@@ -85,44 +123,6 @@ impl CasualMap {
             )
         });
         <Self as ICasualMapMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/casualmap/CasualMap_ObjectData.md"))]
-#[::unity2::class(namespace = "App", name = "CasualMap.ObjectData")]
-#[parent(crate::system::object::Object)]
-pub struct CasualMap_ObjectData {
-    #[rename(name = "x")]
-    pub x: i32,
-    #[rename(name = "z")]
-    pub z: i32,
-    #[rename(name = "id")]
-    pub id: i32,
-    #[rename(name = "rotate")]
-    pub rotate: i32,
-}
-
-#[cfg(feature = "app-casualmap")]
-#[::unity2::methods]
-impl CasualMap_ObjectData {
-    #[doc = "`.ctor(i32, i32, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(self, x: i32, z: i32, id: i32, rotate: i32) -> ();
-}
-
-#[cfg(feature = "app-casualmap")]
-impl CasualMap_ObjectData {
-    #[doc = "`.ctor(i32, i32, i32, i32)` — overload selector"]
-    pub fn new(x: i32, z: i32, id: i32, rotate: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(CasualMap_ObjectData),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ICasualMap_ObjectDataMethods>::ctor(this, x, z, id, rotate);
         this
     }
 }

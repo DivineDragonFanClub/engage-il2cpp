@@ -12,6 +12,59 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattlewindow/MapBattleWindow_MoveParam.md"))]
+#[::unity2::class(namespace = "App", name = "MapBattleWindow.MoveParam")]
+#[parent(crate::system::object::Object)]
+pub struct MapBattleWindow_MoveParam {
+    #[static_field]
+    #[rename(name = "TIME")]
+    pub time: f32,
+    #[rename(name = "m_MoveHP")]
+    pub m_move_hp: crate::app::interpolatorfloat::InterpolatorFloat,
+    #[rename(name = "m_TempHP")]
+    pub m_temp_hp: crate::app::interpolatorfloat::InterpolatorFloat,
+}
+
+#[cfg(feature = "app-mapbattlewindow")]
+#[::unity2::methods]
+impl MapBattleWindow_MoveParam {
+    #[doc = "`GetHP()` overload"]
+    #[method(name = "GetHP", args = 0)]
+    pub fn get_hp(self) -> f32;
+
+    #[doc = "`GetTemp()` overload"]
+    #[method(name = "GetTemp", args = 0)]
+    pub fn get_temp(self) -> f32;
+
+    #[doc = "`Set(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    #[method(name = "Set", args = 1)]
+    pub fn set(self, side: crate::app::battleinfoside::BattleInfoSide) -> ();
+
+    #[doc = "`Tick(crate::app::battleinfoside::BattleInfoSide)` overload"]
+    #[method(name = "Tick", args = 1)]
+    pub fn tick(self, side: crate::app::battleinfoside::BattleInfoSide) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapbattlewindow")]
+impl MapBattleWindow_MoveParam {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapBattleWindow_MoveParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapBattleWindow_MoveParamMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattlewindow/MapBattleWindow.md"))]
 #[::unity2::class(namespace = "App", name = "MapBattleWindow")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -88,59 +141,6 @@ impl MapBattleWindow {
             )
         });
         <Self as IMapBattleWindowMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapbattlewindow/MapBattleWindow_MoveParam.md"))]
-#[::unity2::class(namespace = "App", name = "MapBattleWindow.MoveParam")]
-#[parent(crate::system::object::Object)]
-pub struct MapBattleWindow_MoveParam {
-    #[static_field]
-    #[rename(name = "TIME")]
-    pub time: f32,
-    #[rename(name = "m_MoveHP")]
-    pub m_move_hp: crate::app::interpolatorfloat::InterpolatorFloat,
-    #[rename(name = "m_TempHP")]
-    pub m_temp_hp: crate::app::interpolatorfloat::InterpolatorFloat,
-}
-
-#[cfg(feature = "app-mapbattlewindow")]
-#[::unity2::methods]
-impl MapBattleWindow_MoveParam {
-    #[doc = "`GetHP()` overload"]
-    #[method(name = "GetHP", args = 0)]
-    pub fn get_hp(self) -> f32;
-
-    #[doc = "`GetTemp()` overload"]
-    #[method(name = "GetTemp", args = 0)]
-    pub fn get_temp(self) -> f32;
-
-    #[doc = "`Set(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "Set", args = 1)]
-    pub fn set(self, side: crate::app::battleinfoside::BattleInfoSide) -> ();
-
-    #[doc = "`Tick(crate::app::battleinfoside::BattleInfoSide)` overload"]
-    #[method(name = "Tick", args = 1)]
-    pub fn tick(self, side: crate::app::battleinfoside::BattleInfoSide) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapbattlewindow")]
-impl MapBattleWindow_MoveParam {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapBattleWindow_MoveParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapBattleWindow_MoveParamMethods>::ctor(this);
         this
     }
 }

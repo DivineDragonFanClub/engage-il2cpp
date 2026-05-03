@@ -8,6 +8,53 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/garbagecollector/GarbageCollector.md"))]
+#[::unity2::class(namespace = "UnityEngine.Scripting", name = "GarbageCollector")]
+#[parent(crate::system::object::Object)]
+pub struct GarbageCollector {
+    #[static_field]
+    #[rename(name = "GCModeChanged")]
+    pub gc_mode_changed: crate::system::action_1::Action_1<
+        crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
+    >,
+}
+
+#[cfg(feature = "unity_engine-scripting-garbagecollector")]
+#[::unity2::methods]
+impl GarbageCollector {
+    #[doc = "`get_GCMode()` overload"]
+    #[method(name = "get_GCMode", args = 0)]
+    pub fn get_gc_mode() -> crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode;
+
+    #[doc = "`set_GCMode(crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode)` overload"]
+    #[method(name = "set_GCMode", args = 1)]
+    pub fn set_gc_mode(
+        value: crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
+    ) -> ();
+
+    #[doc = "`SetMode(crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode)` overload"]
+    #[method(name = "SetMode", args = 1)]
+    pub fn set_mode(
+        mode: crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
+    ) -> ();
+
+    #[doc = "`GetMode()` overload"]
+    #[method(name = "GetMode", args = 0)]
+    pub fn get_mode() -> crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode;
+
+    #[doc = "`get_isIncremental()` overload"]
+    #[method(name = "get_isIncremental", args = 0)]
+    pub fn get_is_incremental() -> bool;
+
+    #[doc = "`get_incrementalTimeSliceNanoseconds()` overload"]
+    #[method(name = "get_incrementalTimeSliceNanoseconds", args = 0)]
+    pub fn get_incremental_time_slice_nanoseconds() -> u64;
+
+    #[doc = "`set_incrementalTimeSliceNanoseconds(u64)` overload"]
+    #[method(name = "set_incrementalTimeSliceNanoseconds", args = 1)]
+    pub fn set_incremental_time_slice_nanoseconds(value: u64) -> ();
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/scripting/garbagecollector/GarbageCollector_Mode.md"))]
 #[repr(C)]
 #[derive(
@@ -54,51 +101,4 @@ impl GarbageCollector_Mode {
     pub fn manual() -> Self {
         Self { value: 2 }
     }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/scripting/garbagecollector/GarbageCollector.md"))]
-#[::unity2::class(namespace = "UnityEngine.Scripting", name = "GarbageCollector")]
-#[parent(crate::system::object::Object)]
-pub struct GarbageCollector {
-    #[static_field]
-    #[rename(name = "GCModeChanged")]
-    pub gc_mode_changed: crate::system::action_1::Action_1<
-        crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
-    >,
-}
-
-#[cfg(feature = "unity_engine-scripting-garbagecollector")]
-#[::unity2::methods]
-impl GarbageCollector {
-    #[doc = "`get_GCMode()` overload"]
-    #[method(name = "get_GCMode", args = 0)]
-    pub fn get_gc_mode() -> crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode;
-
-    #[doc = "`set_GCMode(crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode)` overload"]
-    #[method(name = "set_GCMode", args = 1)]
-    pub fn set_gc_mode(
-        value: crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
-    ) -> ();
-
-    #[doc = "`SetMode(crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode)` overload"]
-    #[method(name = "SetMode", args = 1)]
-    pub fn set_mode(
-        mode: crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode,
-    ) -> ();
-
-    #[doc = "`GetMode()` overload"]
-    #[method(name = "GetMode", args = 0)]
-    pub fn get_mode() -> crate::unity_engine::scripting::garbagecollector::GarbageCollector_Mode;
-
-    #[doc = "`get_isIncremental()` overload"]
-    #[method(name = "get_isIncremental", args = 0)]
-    pub fn get_is_incremental() -> bool;
-
-    #[doc = "`get_incrementalTimeSliceNanoseconds()` overload"]
-    #[method(name = "get_incrementalTimeSliceNanoseconds", args = 0)]
-    pub fn get_incremental_time_slice_nanoseconds() -> u64;
-
-    #[doc = "`set_incrementalTimeSliceNanoseconds(u64)` overload"]
-    #[method(name = "set_incrementalTimeSliceNanoseconds", args = 1)]
-    pub fn set_incremental_time_slice_nanoseconds(value: u64) -> ();
 }

@@ -4,53 +4,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditdata/MapEditData_UnitInfo.md"))]
-#[::unity2::class(namespace = "App", name = "MapEditData.UnitInfo")]
-#[parent(crate::system::object::Object)]
-pub struct MapEditData_UnitInfo {
-    #[rename(name = "pid")]
-    pub pid: ::unity2::Il2CppString,
-    #[rename(name = "pos")]
-    pub pos: crate::app::mappos::MapPos,
-    #[rename(name = "aiType")]
-    pub ai_type: crate::app::unitai::UnitAI_VersusTypes,
-}
-
-#[cfg(feature = "app-mapeditdata")]
-#[::unity2::methods]
-impl MapEditData_UnitInfo {
-    #[doc = "`.ctor(::unity2::Il2CppString, i32, i32, crate::app::unitai::UnitAI_VersusTypes)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        pid: ::unity2::Il2CppString,
-        x: i32,
-        z: i32,
-        ai_type: crate::app::unitai::UnitAI_VersusTypes,
-    ) -> ();
-}
-
-#[cfg(feature = "app-mapeditdata")]
-impl MapEditData_UnitInfo {
-    #[doc = "`.ctor(::unity2::Il2CppString, i32, i32, crate::app::unitai::UnitAI_VersusTypes)` — overload selector"]
-    pub fn new(
-        pid: ::unity2::Il2CppString,
-        x: i32,
-        z: i32,
-        ai_type: crate::app::unitai::UnitAI_VersusTypes,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapEditData_UnitInfo),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapEditData_UnitInfoMethods>::ctor(this, pid, x, z, ai_type);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditdata/MapEditData.md"))]
 #[::unity2::class(namespace = "App", name = "MapEditData")]
 #[parent(crate::system::object::Object)]
@@ -266,6 +219,53 @@ impl MapEditData {
             )
         });
         <Self as IMapEditDataMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapeditdata/MapEditData_UnitInfo.md"))]
+#[::unity2::class(namespace = "App", name = "MapEditData.UnitInfo")]
+#[parent(crate::system::object::Object)]
+pub struct MapEditData_UnitInfo {
+    #[rename(name = "pid")]
+    pub pid: ::unity2::Il2CppString,
+    #[rename(name = "pos")]
+    pub pos: crate::app::mappos::MapPos,
+    #[rename(name = "aiType")]
+    pub ai_type: crate::app::unitai::UnitAI_VersusTypes,
+}
+
+#[cfg(feature = "app-mapeditdata")]
+#[::unity2::methods]
+impl MapEditData_UnitInfo {
+    #[doc = "`.ctor(::unity2::Il2CppString, i32, i32, crate::app::unitai::UnitAI_VersusTypes)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        pid: ::unity2::Il2CppString,
+        x: i32,
+        z: i32,
+        ai_type: crate::app::unitai::UnitAI_VersusTypes,
+    ) -> ();
+}
+
+#[cfg(feature = "app-mapeditdata")]
+impl MapEditData_UnitInfo {
+    #[doc = "`.ctor(::unity2::Il2CppString, i32, i32, crate::app::unitai::UnitAI_VersusTypes)` — overload selector"]
+    pub fn new(
+        pid: ::unity2::Il2CppString,
+        x: i32,
+        z: i32,
+        ai_type: crate::app::unitai::UnitAI_VersusTypes,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapEditData_UnitInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapEditData_UnitInfoMethods>::ctor(this, pid, x, z, ai_type);
         this
     }
 }

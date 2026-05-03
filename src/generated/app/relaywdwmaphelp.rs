@@ -12,6 +12,44 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaywdwmaphelp/RelayWdwMapHelp_ShowItem.md"))]
+#[::unity2::class(namespace = "App", name = "RelayWdwMapHelp.ShowItem")]
+#[parent(crate::system::object::Object)]
+pub struct RelayWdwMapHelp_ShowItem {
+    #[rename(name = "m_Object")]
+    pub m_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_Title")]
+    pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+}
+
+#[cfg(feature = "app-relaywdwmaphelp")]
+#[::unity2::methods]
+impl RelayWdwMapHelp_ShowItem {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, item: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Set(crate::app::itemdata::ItemData)` overload"]
+    #[method(name = "Set", args = 1)]
+    pub fn set(self, item_data: crate::app::itemdata::ItemData) -> ();
+}
+
+#[cfg(feature = "app-relaywdwmaphelp")]
+impl RelayWdwMapHelp_ShowItem {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(item: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayWdwMapHelp_ShowItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayWdwMapHelp_ShowItemMethods>::ctor(this, item);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaywdwmaphelp/RelayWdwMapHelp.md"))]
 #[::unity2::class(namespace = "App", name = "RelayWdwMapHelp")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -80,44 +118,6 @@ impl RelayWdwMapHelp {
             )
         });
         <Self as IRelayWdwMapHelpMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaywdwmaphelp/RelayWdwMapHelp_ShowItem.md"))]
-#[::unity2::class(namespace = "App", name = "RelayWdwMapHelp.ShowItem")]
-#[parent(crate::system::object::Object)]
-pub struct RelayWdwMapHelp_ShowItem {
-    #[rename(name = "m_Object")]
-    pub m_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_Title")]
-    pub m_title: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
-}
-
-#[cfg(feature = "app-relaywdwmaphelp")]
-#[::unity2::methods]
-impl RelayWdwMapHelp_ShowItem {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, item: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Set(crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "Set", args = 1)]
-    pub fn set(self, item_data: crate::app::itemdata::ItemData) -> ();
-}
-
-#[cfg(feature = "app-relaywdwmaphelp")]
-impl RelayWdwMapHelp_ShowItem {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(item: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayWdwMapHelp_ShowItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayWdwMapHelp_ShowItemMethods>::ctor(this, item);
         this
     }
 }

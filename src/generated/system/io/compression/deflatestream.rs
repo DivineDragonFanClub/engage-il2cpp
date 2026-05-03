@@ -46,6 +46,39 @@ impl DeflateStream_WriteMethod {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream_ReadMethod.md"))]
+#[::unity2::class(namespace = "System.IO.Compression", name = "DeflateStream.ReadMethod")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct DeflateStream_ReadMethod {}
+
+#[cfg(feature = "system-io-compression-deflatestream")]
+#[::unity2::methods]
+impl DeflateStream_ReadMethod {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(::unity2::Array<u8>, i32, i32)` overload"]
+    #[method(name = "Invoke", args = 3)]
+    pub fn invoke(self, array: ::unity2::Array<u8>, offset: i32, count: i32) -> i32;
+}
+
+#[cfg(feature = "system-io-compression-deflatestream")]
+impl DeflateStream_ReadMethod {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DeflateStream_ReadMethod),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDeflateStream_ReadMethodMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream.md"))]
 #[::unity2::class(namespace = "System.IO.Compression", name = "DeflateStream")]
 #[parent(crate::system::io::stream::Stream)]
@@ -263,39 +296,6 @@ impl DeflateStream {
             )
         });
         <Self as IDeflateStreamMethods>::ctor_5(this, stream, compression_level, leave_open, gzip);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/io/compression/deflatestream/DeflateStream_ReadMethod.md"))]
-#[::unity2::class(namespace = "System.IO.Compression", name = "DeflateStream.ReadMethod")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct DeflateStream_ReadMethod {}
-
-#[cfg(feature = "system-io-compression-deflatestream")]
-#[::unity2::methods]
-impl DeflateStream_ReadMethod {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(::unity2::Array<u8>, i32, i32)` overload"]
-    #[method(name = "Invoke", args = 3)]
-    pub fn invoke(self, array: ::unity2::Array<u8>, offset: i32, count: i32) -> i32;
-}
-
-#[cfg(feature = "system-io-compression-deflatestream")]
-impl DeflateStream_ReadMethod {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DeflateStream_ReadMethod),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDeflateStream_ReadMethodMethods>::ctor(this, object, method);
         this
     }
 }

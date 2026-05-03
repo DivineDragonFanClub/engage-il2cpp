@@ -4,32 +4,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystem/XRSystem_XRShaderIDs.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal",
-    name = "XRSystem.XRShaderIDs"
-)]
-#[parent(crate::system::object::Object)]
-pub struct XRSystem_XRShaderIDs {
-    #[static_field]
-    #[rename(name = "_SourceTexArraySlice")]
-    pub source_tex_array_slice: i32,
-    #[static_field]
-    #[rename(name = "_SRGBRead")]
-    pub srgb_read: i32,
-    #[static_field]
-    #[rename(name = "_SRGBWrite")]
-    pub srgb_write: i32,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
-#[::unity2::methods]
-impl XRSystem_XRShaderIDs {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystem/XRSystem.md"))]
 #[::unity2::class(namespace = "UnityEngine.Rendering.Universal", name = "XRSystem")]
 #[parent(crate::system::object::Object)]
@@ -185,4 +159,30 @@ impl XRSystem {
         <Self as IXRSystemMethods>::ctor(this);
         this
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/xrsystem/XRSystem_XRShaderIDs.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "XRSystem.XRShaderIDs"
+)]
+#[parent(crate::system::object::Object)]
+pub struct XRSystem_XRShaderIDs {
+    #[static_field]
+    #[rename(name = "_SourceTexArraySlice")]
+    pub source_tex_array_slice: i32,
+    #[static_field]
+    #[rename(name = "_SRGBRead")]
+    pub srgb_read: i32,
+    #[static_field]
+    #[rename(name = "_SRGBWrite")]
+    pub srgb_write: i32,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-xrsystem")]
+#[::unity2::methods]
+impl XRSystem_XRShaderIDs {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }

@@ -8,34 +8,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]
-#[::unity2::class(namespace = "UnityEngine", name = "UISystemProfilerApi")]
-#[parent(crate::system::object::Object)]
-pub struct UISystemProfilerApi {}
-
-#[cfg(feature = "unity_engine-uisystemprofilerapi")]
-#[::unity2::methods]
-impl UISystemProfilerApi {
-    #[doc = "`BeginSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"]
-    #[method(name = "BeginSample", args = 1)]
-    pub fn begin_sample(
-        r#type: crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType,
-    ) -> ();
-
-    #[doc = "`EndSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"]
-    #[method(name = "EndSample", args = 1)]
-    pub fn end_sample(
-        r#type: crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType,
-    ) -> ();
-
-    #[doc = "`AddMarker(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"]
-    #[method(name = "AddMarker", args = 2)]
-    pub fn add_marker(
-        name: ::unity2::Il2CppString,
-        obj: crate::unity_engine::object_2::Object_2,
-    ) -> ();
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi_SampleType.md"))]
 #[repr(C)]
 #[derive(
@@ -78,4 +50,32 @@ impl UISystemProfilerApi_SampleType {
     pub fn render() -> Self {
         Self { value: 1 }
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]
+#[::unity2::class(namespace = "UnityEngine", name = "UISystemProfilerApi")]
+#[parent(crate::system::object::Object)]
+pub struct UISystemProfilerApi {}
+
+#[cfg(feature = "unity_engine-uisystemprofilerapi")]
+#[::unity2::methods]
+impl UISystemProfilerApi {
+    #[doc = "`BeginSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"]
+    #[method(name = "BeginSample", args = 1)]
+    pub fn begin_sample(
+        r#type: crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType,
+    ) -> ();
+
+    #[doc = "`EndSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"]
+    #[method(name = "EndSample", args = 1)]
+    pub fn end_sample(
+        r#type: crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType,
+    ) -> ();
+
+    #[doc = "`AddMarker(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"]
+    #[method(name = "AddMarker", args = 2)]
+    pub fn add_marker(
+        name: ::unity2::Il2CppString,
+        obj: crate::unity_engine::object_2::Object_2,
+    ) -> ();
 }

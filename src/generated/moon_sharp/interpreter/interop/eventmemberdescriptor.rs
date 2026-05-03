@@ -8,93 +8,38 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper08.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper00.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Interop",
-    name = "EventMemberDescriptor.EventWrapper08"
+    name = "EventMemberDescriptor.EventWrapper00"
 )]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventMemberDescriptor_EventWrapper08 {}
+pub struct EventMemberDescriptor_EventWrapper00 {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 #[::unity2::methods]
-impl EventMemberDescriptor_EventWrapper08 {
+impl EventMemberDescriptor_EventWrapper00 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Invoke", args = 8)]
-    pub fn invoke(
-        self,
-        o1: crate::system::object::Object,
-        o2: crate::system::object::Object,
-        o3: crate::system::object::Object,
-        o4: crate::system::object::Object,
-        o5: crate::system::object::Object,
-        o6: crate::system::object::Object,
-        o7: crate::system::object::Object,
-        o8: crate::system::object::Object,
-    ) -> ();
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper08 {
+impl EventMemberDescriptor_EventWrapper00 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper08),
+                ::core::stringify!(EventMemberDescriptor_EventWrapper00),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventMemberDescriptor_EventWrapper08Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper07.md"))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Interop",
-    name = "EventMemberDescriptor.EventWrapper07"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventMemberDescriptor_EventWrapper07 {}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-#[::unity2::methods]
-impl EventMemberDescriptor_EventWrapper07 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Invoke", args = 7)]
-    pub fn invoke(
-        self,
-        o1: crate::system::object::Object,
-        o2: crate::system::object::Object,
-        o3: crate::system::object::Object,
-        o4: crate::system::object::Object,
-        o5: crate::system::object::Object,
-        o6: crate::system::object::Object,
-        o7: crate::system::object::Object,
-    ) -> ();
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper07 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper07),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventMemberDescriptor_EventWrapper07Methods>::ctor(this, object, method);
+        <Self as IEventMemberDescriptor_EventWrapper00Methods>::ctor(this, object, method);
         this
     }
 }
@@ -143,23 +88,70 @@ impl EventMemberDescriptor_EventWrapper06 {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper14.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper09.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Interop",
-    name = "EventMemberDescriptor.EventWrapper14"
+    name = "EventMemberDescriptor.EventWrapper09"
 )]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventMemberDescriptor_EventWrapper14 {}
+pub struct EventMemberDescriptor_EventWrapper09 {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 #[::unity2::methods]
-impl EventMemberDescriptor_EventWrapper14 {
+impl EventMemberDescriptor_EventWrapper09 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Invoke", args = 14)]
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[method(name = "Invoke", args = 9)]
+    pub fn invoke(
+        self,
+        o1: crate::system::object::Object,
+        o2: crate::system::object::Object,
+        o3: crate::system::object::Object,
+        o4: crate::system::object::Object,
+        o5: crate::system::object::Object,
+        o6: crate::system::object::Object,
+        o7: crate::system::object::Object,
+        o8: crate::system::object::Object,
+        o9: crate::system::object::Object,
+    ) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl EventMemberDescriptor_EventWrapper09 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventMemberDescriptor_EventWrapper09),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventMemberDescriptor_EventWrapper09Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper16.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "EventMemberDescriptor.EventWrapper16"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct EventMemberDescriptor_EventWrapper16 {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+#[::unity2::methods]
+impl EventMemberDescriptor_EventWrapper16 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[method(name = "Invoke", args = 16)]
     pub fn invoke(
         self,
         o1: crate::system::object::Object,
@@ -176,57 +168,23 @@ impl EventMemberDescriptor_EventWrapper14 {
         o12: crate::system::object::Object,
         o13: crate::system::object::Object,
         o14: crate::system::object::Object,
+        o15: crate::system::object::Object,
+        o16: crate::system::object::Object,
     ) -> ();
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper14 {
+impl EventMemberDescriptor_EventWrapper16 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper14),
+                ::core::stringify!(EventMemberDescriptor_EventWrapper16),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventMemberDescriptor_EventWrapper14Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper00.md"))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Interop",
-    name = "EventMemberDescriptor.EventWrapper00"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventMemberDescriptor_EventWrapper00 {}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-#[::unity2::methods]
-impl EventMemberDescriptor_EventWrapper00 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper00 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper00),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventMemberDescriptor_EventWrapper00Methods>::ctor(this, object, method);
+        <Self as IEventMemberDescriptor_EventWrapper16Methods>::ctor(this, object, method);
         this
     }
 }
@@ -310,6 +268,277 @@ impl EventMemberDescriptor_EventWrapper04 {
             )
         });
         <Self as IEventMemberDescriptor_EventWrapper04Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper01.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "EventMemberDescriptor.EventWrapper01"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct EventMemberDescriptor_EventWrapper01 {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+#[::unity2::methods]
+impl EventMemberDescriptor_EventWrapper01 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::system::object::Object)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, o1: crate::system::object::Object) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl EventMemberDescriptor_EventWrapper01 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventMemberDescriptor_EventWrapper01),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventMemberDescriptor_EventWrapper01Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper05.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "EventMemberDescriptor.EventWrapper05"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct EventMemberDescriptor_EventWrapper05 {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+#[::unity2::methods]
+impl EventMemberDescriptor_EventWrapper05 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[method(name = "Invoke", args = 5)]
+    pub fn invoke(
+        self,
+        o1: crate::system::object::Object,
+        o2: crate::system::object::Object,
+        o3: crate::system::object::Object,
+        o4: crate::system::object::Object,
+        o5: crate::system::object::Object,
+    ) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl EventMemberDescriptor_EventWrapper05 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventMemberDescriptor_EventWrapper05),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventMemberDescriptor_EventWrapper05Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper14.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "EventMemberDescriptor.EventWrapper14"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct EventMemberDescriptor_EventWrapper14 {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+#[::unity2::methods]
+impl EventMemberDescriptor_EventWrapper14 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[method(name = "Invoke", args = 14)]
+    pub fn invoke(
+        self,
+        o1: crate::system::object::Object,
+        o2: crate::system::object::Object,
+        o3: crate::system::object::Object,
+        o4: crate::system::object::Object,
+        o5: crate::system::object::Object,
+        o6: crate::system::object::Object,
+        o7: crate::system::object::Object,
+        o8: crate::system::object::Object,
+        o9: crate::system::object::Object,
+        o10: crate::system::object::Object,
+        o11: crate::system::object::Object,
+        o12: crate::system::object::Object,
+        o13: crate::system::object::Object,
+        o14: crate::system::object::Object,
+    ) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl EventMemberDescriptor_EventWrapper14 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventMemberDescriptor_EventWrapper14),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventMemberDescriptor_EventWrapper14Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper11.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "EventMemberDescriptor.EventWrapper11"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct EventMemberDescriptor_EventWrapper11 {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+#[::unity2::methods]
+impl EventMemberDescriptor_EventWrapper11 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[method(name = "Invoke", args = 11)]
+    pub fn invoke(
+        self,
+        o1: crate::system::object::Object,
+        o2: crate::system::object::Object,
+        o3: crate::system::object::Object,
+        o4: crate::system::object::Object,
+        o5: crate::system::object::Object,
+        o6: crate::system::object::Object,
+        o7: crate::system::object::Object,
+        o8: crate::system::object::Object,
+        o9: crate::system::object::Object,
+        o10: crate::system::object::Object,
+        o11: crate::system::object::Object,
+    ) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl EventMemberDescriptor_EventWrapper11 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventMemberDescriptor_EventWrapper11),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventMemberDescriptor_EventWrapper11Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper07.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "EventMemberDescriptor.EventWrapper07"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct EventMemberDescriptor_EventWrapper07 {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+#[::unity2::methods]
+impl EventMemberDescriptor_EventWrapper07 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[method(name = "Invoke", args = 7)]
+    pub fn invoke(
+        self,
+        o1: crate::system::object::Object,
+        o2: crate::system::object::Object,
+        o3: crate::system::object::Object,
+        o4: crate::system::object::Object,
+        o5: crate::system::object::Object,
+        o6: crate::system::object::Object,
+        o7: crate::system::object::Object,
+    ) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl EventMemberDescriptor_EventWrapper07 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventMemberDescriptor_EventWrapper07),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventMemberDescriptor_EventWrapper07Methods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper08.md"))]
+#[::unity2::class(
+    namespace = "MoonSharp.Interpreter.Interop",
+    name = "EventMemberDescriptor.EventWrapper08"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct EventMemberDescriptor_EventWrapper08 {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+#[::unity2::methods]
+impl EventMemberDescriptor_EventWrapper08 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[method(name = "Invoke", args = 8)]
+    pub fn invoke(
+        self,
+        o1: crate::system::object::Object,
+        o2: crate::system::object::Object,
+        o3: crate::system::object::Object,
+        o4: crate::system::object::Object,
+        o5: crate::system::object::Object,
+        o6: crate::system::object::Object,
+        o7: crate::system::object::Object,
+        o8: crate::system::object::Object,
+    ) -> ();
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
+impl EventMemberDescriptor_EventWrapper08 {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EventMemberDescriptor_EventWrapper08),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventMemberDescriptor_EventWrapper08Methods>::ctor(this, object, method);
         this
     }
 }
@@ -485,60 +714,23 @@ impl EventMemberDescriptor {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper02.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper10.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Interop",
-    name = "EventMemberDescriptor.EventWrapper02"
+    name = "EventMemberDescriptor.EventWrapper10"
 )]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventMemberDescriptor_EventWrapper02 {}
+pub struct EventMemberDescriptor_EventWrapper10 {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 #[::unity2::methods]
-impl EventMemberDescriptor_EventWrapper02 {
+impl EventMemberDescriptor_EventWrapper10 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(self, o1: crate::system::object::Object, o2: crate::system::object::Object)
-        -> ();
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper02 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper02),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventMemberDescriptor_EventWrapper02Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper12.md"))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Interop",
-    name = "EventMemberDescriptor.EventWrapper12"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventMemberDescriptor_EventWrapper12 {}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-#[::unity2::methods]
-impl EventMemberDescriptor_EventWrapper12 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Invoke", args = 12)]
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[method(name = "Invoke", args = 10)]
     pub fn invoke(
         self,
         o1: crate::system::object::Object,
@@ -551,23 +743,21 @@ impl EventMemberDescriptor_EventWrapper12 {
         o8: crate::system::object::Object,
         o9: crate::system::object::Object,
         o10: crate::system::object::Object,
-        o11: crate::system::object::Object,
-        o12: crate::system::object::Object,
     ) -> ();
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper12 {
+impl EventMemberDescriptor_EventWrapper10 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper12),
+                ::core::stringify!(EventMemberDescriptor_EventWrapper10),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventMemberDescriptor_EventWrapper12Methods>::ctor(this, object, method);
+        <Self as IEventMemberDescriptor_EventWrapper10Methods>::ctor(this, object, method);
         this
     }
 }
@@ -676,23 +866,23 @@ impl EventMemberDescriptor_EventWrapper13 {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper16.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper12.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Interop",
-    name = "EventMemberDescriptor.EventWrapper16"
+    name = "EventMemberDescriptor.EventWrapper12"
 )]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventMemberDescriptor_EventWrapper16 {}
+pub struct EventMemberDescriptor_EventWrapper12 {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 #[::unity2::methods]
-impl EventMemberDescriptor_EventWrapper16 {
+impl EventMemberDescriptor_EventWrapper12 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Invoke", args = 16)]
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[method(name = "Invoke", args = 12)]
     pub fn invoke(
         self,
         o1: crate::system::object::Object,
@@ -707,248 +897,58 @@ impl EventMemberDescriptor_EventWrapper16 {
         o10: crate::system::object::Object,
         o11: crate::system::object::Object,
         o12: crate::system::object::Object,
-        o13: crate::system::object::Object,
-        o14: crate::system::object::Object,
-        o15: crate::system::object::Object,
-        o16: crate::system::object::Object,
     ) -> ();
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper16 {
+impl EventMemberDescriptor_EventWrapper12 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper16),
+                ::core::stringify!(EventMemberDescriptor_EventWrapper12),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventMemberDescriptor_EventWrapper16Methods>::ctor(this, object, method);
+        <Self as IEventMemberDescriptor_EventWrapper12Methods>::ctor(this, object, method);
         this
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper10.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper02.md"))]
 #[::unity2::class(
     namespace = "MoonSharp.Interpreter.Interop",
-    name = "EventMemberDescriptor.EventWrapper10"
+    name = "EventMemberDescriptor.EventWrapper02"
 )]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventMemberDescriptor_EventWrapper10 {}
+pub struct EventMemberDescriptor_EventWrapper02 {}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 #[::unity2::methods]
-impl EventMemberDescriptor_EventWrapper10 {
+impl EventMemberDescriptor_EventWrapper02 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Invoke", args = 10)]
-    pub fn invoke(
-        self,
-        o1: crate::system::object::Object,
-        o2: crate::system::object::Object,
-        o3: crate::system::object::Object,
-        o4: crate::system::object::Object,
-        o5: crate::system::object::Object,
-        o6: crate::system::object::Object,
-        o7: crate::system::object::Object,
-        o8: crate::system::object::Object,
-        o9: crate::system::object::Object,
-        o10: crate::system::object::Object,
-    ) -> ();
+    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, o1: crate::system::object::Object, o2: crate::system::object::Object)
+        -> ();
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper10 {
+impl EventMemberDescriptor_EventWrapper02 {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper10),
+                ::core::stringify!(EventMemberDescriptor_EventWrapper02),
                 ::core::stringify!(new),
             )
         });
-        <Self as IEventMemberDescriptor_EventWrapper10Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper05.md"))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Interop",
-    name = "EventMemberDescriptor.EventWrapper05"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventMemberDescriptor_EventWrapper05 {}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-#[::unity2::methods]
-impl EventMemberDescriptor_EventWrapper05 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Invoke", args = 5)]
-    pub fn invoke(
-        self,
-        o1: crate::system::object::Object,
-        o2: crate::system::object::Object,
-        o3: crate::system::object::Object,
-        o4: crate::system::object::Object,
-        o5: crate::system::object::Object,
-    ) -> ();
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper05 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper05),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventMemberDescriptor_EventWrapper05Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper11.md"))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Interop",
-    name = "EventMemberDescriptor.EventWrapper11"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventMemberDescriptor_EventWrapper11 {}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-#[::unity2::methods]
-impl EventMemberDescriptor_EventWrapper11 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Invoke", args = 11)]
-    pub fn invoke(
-        self,
-        o1: crate::system::object::Object,
-        o2: crate::system::object::Object,
-        o3: crate::system::object::Object,
-        o4: crate::system::object::Object,
-        o5: crate::system::object::Object,
-        o6: crate::system::object::Object,
-        o7: crate::system::object::Object,
-        o8: crate::system::object::Object,
-        o9: crate::system::object::Object,
-        o10: crate::system::object::Object,
-        o11: crate::system::object::Object,
-    ) -> ();
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper11 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper11),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventMemberDescriptor_EventWrapper11Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper09.md"))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Interop",
-    name = "EventMemberDescriptor.EventWrapper09"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventMemberDescriptor_EventWrapper09 {}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-#[::unity2::methods]
-impl EventMemberDescriptor_EventWrapper09 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]
-    #[method(name = "Invoke", args = 9)]
-    pub fn invoke(
-        self,
-        o1: crate::system::object::Object,
-        o2: crate::system::object::Object,
-        o3: crate::system::object::Object,
-        o4: crate::system::object::Object,
-        o5: crate::system::object::Object,
-        o6: crate::system::object::Object,
-        o7: crate::system::object::Object,
-        o8: crate::system::object::Object,
-        o9: crate::system::object::Object,
-    ) -> ();
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper09 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper09),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventMemberDescriptor_EventWrapper09Methods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper01.md"))]
-#[::unity2::class(
-    namespace = "MoonSharp.Interpreter.Interop",
-    name = "EventMemberDescriptor.EventWrapper01"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct EventMemberDescriptor_EventWrapper01 {}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-#[::unity2::methods]
-impl EventMemberDescriptor_EventWrapper01 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::system::object::Object)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, o1: crate::system::object::Object) -> ();
-}
-
-#[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
-impl EventMemberDescriptor_EventWrapper01 {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EventMemberDescriptor_EventWrapper01),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEventMemberDescriptor_EventWrapper01Methods>::ctor(this, object, method);
+        <Self as IEventMemberDescriptor_EventWrapper02Methods>::ctor(this, object, method);
         this
     }
 }

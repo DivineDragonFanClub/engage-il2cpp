@@ -6,71 +6,50 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Vertex.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
-    name = "MeshUtils"
+    name = "MeshUtils.Vertex"
 )]
-#[parent(crate::system::object::Object)]
-pub struct MeshUtils {
-    #[static_field]
-    #[rename(name = "Undef")]
-    pub undef: i32,
+# [parent (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Pooled_1 < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex >)]
+pub struct MeshUtils_Vertex {
+# [rename (name = "_prev")] pub prev : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex ,
+# [rename (name = "_next")] pub next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex ,
+# [rename (name = "_anEdge")] pub an_edge : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ,
+# [rename (name = "_coords")] pub coords : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 ,
+# [rename (name = "_s")] pub s : f32 ,
+# [rename (name = "_t")] pub t : f32 ,
+# [rename (name = "_pqHandle")] pub pq_handle : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: pqhandle :: PQHandle ,
+# [rename (name = "_n")] pub n : i32 ,
+# [rename (name = "_data")] pub data : :: unity2 :: IlInstance ,
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
 #[::unity2::methods]
-impl MeshUtils {
-    #[doc = "`MakeEdge(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
-    #[method(name = "MakeEdge", args = 1)]
-    pub fn make_edge (e_next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ;
+impl MeshUtils_Vertex {
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
 
-    #[doc = "`Splice(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
-    #[method(name = "Splice", args = 2)]
-    pub fn splice(
-        a : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        b : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-    ) -> ();
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
 
-    #[doc = "`MakeVertex(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]
-    #[method(name = "MakeVertex", args = 2)]
-    pub fn make_vertex(
-        e_orig : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        v_next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex,
-    ) -> ();
-
-    #[doc = "`MakeFace(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
-    #[method(name = "MakeFace", args = 2)]
-    pub fn make_face(
-        e_orig : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-        f_next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face,
-    ) -> ();
-
-    #[doc = "`KillEdge(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
-    #[method(name = "KillEdge", args = 1)]
-    pub fn kill_edge(
-        e_del : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-    ) -> ();
-
-    #[doc = "`KillVertex(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]
-    #[method(name = "KillVertex", args = 2)]
-    pub fn kill_vertex(
-        v_del : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex,
-        new_org : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex,
-    ) -> ();
-
-    #[doc = "`KillFace(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
-    #[method(name = "KillFace", args = 2)]
-    pub fn kill_face(
-        f_del : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face,
-        new_l_face : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face,
-    ) -> ();
-
-    #[doc = "`FaceArea(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
-    #[method(name = "FaceArea", args = 1)]
-    pub fn face_area(
-        f : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face,
-    ) -> f32;
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
+impl MeshUtils_Vertex {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MeshUtils_Vertex),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMeshUtils_VertexMethods>::ctor(this);
+        this
+    }
 }
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Pooled_1.md"))]
@@ -123,6 +102,47 @@ impl<T0: ::unity2::ClassIdentity> MeshUtils_Pooled_1<T0> {
         <Self as IMeshUtils_Pooled_1Methods<T0>>::ctor(this);
         this
     }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_EdgePair.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MeshUtils_EdgePair {
+    pub e: crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
+    pub e_sym: crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
+}
+
+impl ::unity2::ClassIdentity for MeshUtils_EdgePair {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet";
+
+    const NAME: &'static str = "MeshUtils.EdgePair";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MeshUtils_EdgePair {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
+#[::unity2::methods(value)]
+impl MeshUtils_EdgePair {
+    #[doc = "`Create()` overload"]
+    #[method(name = "Create", args = 0)]
+    pub fn create () -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_EdgePair ;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
 }
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Edge.md"))]
@@ -265,93 +285,6 @@ impl MeshUtils_Edge {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Vertex.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
-    name = "MeshUtils.Vertex"
-)]
-# [parent (crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Pooled_1 < crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex >)]
-pub struct MeshUtils_Vertex {
-# [rename (name = "_prev")] pub prev : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex ,
-# [rename (name = "_next")] pub next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex ,
-# [rename (name = "_anEdge")] pub an_edge : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ,
-# [rename (name = "_coords")] pub coords : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: vec3 :: Vec3 ,
-# [rename (name = "_s")] pub s : f32 ,
-# [rename (name = "_t")] pub t : f32 ,
-# [rename (name = "_pqHandle")] pub pq_handle : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: pqhandle :: PQHandle ,
-# [rename (name = "_n")] pub n : i32 ,
-# [rename (name = "_data")] pub data : :: unity2 :: IlInstance ,
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-#[::unity2::methods]
-impl MeshUtils_Vertex {
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-impl MeshUtils_Vertex {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MeshUtils_Vertex),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMeshUtils_VertexMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_EdgePair.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MeshUtils_EdgePair {
-    pub e: crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-    pub e_sym: crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
-}
-
-impl ::unity2::ClassIdentity for MeshUtils_EdgePair {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet";
-
-    const NAME: &'static str = "MeshUtils.EdgePair";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MeshUtils_EdgePair {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
-#[::unity2::methods(value)]
-impl MeshUtils_EdgePair {
-    #[doc = "`Create()` overload"]
-    #[method(name = "Create", args = 0)]
-    pub fn create () -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_EdgePair ;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Face.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
@@ -398,4 +331,71 @@ impl MeshUtils_Face {
         <Self as IMeshUtils_FaceMethods>::ctor(this);
         this
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",
+    name = "MeshUtils"
+)]
+#[parent(crate::system::object::Object)]
+pub struct MeshUtils {
+    #[static_field]
+    #[rename(name = "Undef")]
+    pub undef: i32,
+}
+
+#[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
+#[::unity2::methods]
+impl MeshUtils {
+    #[doc = "`MakeEdge(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
+    #[method(name = "MakeEdge", args = 1)]
+    pub fn make_edge (e_next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge) -> crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge ;
+
+    #[doc = "`Splice(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
+    #[method(name = "Splice", args = 2)]
+    pub fn splice(
+        a : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
+        b : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
+    ) -> ();
+
+    #[doc = "`MakeVertex(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]
+    #[method(name = "MakeVertex", args = 2)]
+    pub fn make_vertex(
+        e_orig : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
+        v_next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex,
+    ) -> ();
+
+    #[doc = "`MakeFace(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
+    #[method(name = "MakeFace", args = 2)]
+    pub fn make_face(
+        e_orig : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
+        f_next : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face,
+    ) -> ();
+
+    #[doc = "`KillEdge(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]
+    #[method(name = "KillEdge", args = 1)]
+    pub fn kill_edge(
+        e_del : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Edge,
+    ) -> ();
+
+    #[doc = "`KillVertex(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]
+    #[method(name = "KillVertex", args = 2)]
+    pub fn kill_vertex(
+        v_del : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex,
+        new_org : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Vertex,
+    ) -> ();
+
+    #[doc = "`KillFace(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
+    #[method(name = "KillFace", args = 2)]
+    pub fn kill_face(
+        f_del : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face,
+        new_l_face : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face,
+    ) -> ();
+
+    #[doc = "`FaceArea(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]
+    #[method(name = "FaceArea", args = 1)]
+    pub fn face_area(
+        f : crate :: unity_engine :: experimental :: rendering :: universal :: lib_tess_dot_net :: meshutils :: MeshUtils_Face,
+    ) -> f32;
 }

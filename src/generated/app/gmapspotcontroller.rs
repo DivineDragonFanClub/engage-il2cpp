@@ -16,58 +16,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspotcontroller/GmapSpotController_Type.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct GmapSpotController_Type {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for GmapSpotController_Type {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GmapSpotController.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for GmapSpotController_Type {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl GmapSpotController_Type {
-    pub fn main_chapter() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn sub_chapter() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn cleared() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn encount() -> Self {
-        Self { value: 3 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/gmapspotcontroller/GmapSpotController.md"))]
 #[::unity2::class(namespace = "App", name = "GmapSpotController")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -153,5 +101,57 @@ impl GmapSpotController {
         });
         <Self as IGmapSpotControllerMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/gmapspotcontroller/GmapSpotController_Type.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GmapSpotController_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GmapSpotController_Type {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GmapSpotController.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GmapSpotController_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GmapSpotController_Type {
+    pub fn main_chapter() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn sub_chapter() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn cleared() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn encount() -> Self {
+        Self { value: 3 }
     }
 }

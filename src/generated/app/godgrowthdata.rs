@@ -20,80 +20,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowthdata/GodGrowthData_StyleItems.md"))]
-#[::unity2::class(namespace = "App", name = "GodGrowthData.StyleItems")]
-#[parent(crate::system::object::Object)]
-pub struct GodGrowthData_StyleItems {
-    #[rename(name = "m_Items")]
-    pub m_items: ::unity2::Array<
-        crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
-    >,
-    #[rename(name = "m_TotalCount")]
-    pub m_total_count: i32,
-}
-
-#[cfg(feature = "app-godgrowthdata")]
-#[::unity2::methods]
-impl GodGrowthData_StyleItems {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Add(crate::app::battlestyle::BattleStyle_Types, crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "Add", args = 2)]
-    pub fn add(
-        self,
-        style: crate::app::battlestyle::BattleStyle_Types,
-        item: crate::app::itemdata::ItemData,
-    ) -> ();
-
-    #[doc = "`Add(crate::app::battlestyle::BattleStyle_Types, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]
-    #[method(name = "Add", args = 2)]
-    pub fn add_2(
-        self,
-        style: crate::app::battlestyle::BattleStyle_Types,
-        items: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
-    ) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(
-        self,
-        i: i32,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>;
-
-    #[doc = "`get_Item(crate::app::battlestyle::BattleStyle_Types)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item_2(
-        self,
-        style: crate::app::battlestyle::BattleStyle_Types,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>;
-
-    #[doc = "`get_TotalCount()` overload"]
-    #[method(name = "get_TotalCount", args = 0)]
-    pub fn get_total_count(self) -> i32;
-}
-
-#[cfg(feature = "app-godgrowthdata")]
-impl GodGrowthData_StyleItems {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodGrowthData_StyleItems),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGodGrowthData_StyleItemsMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowthdata/GodGrowthData_LevelData.md"))]
 #[::unity2::class(namespace = "App", name = "GodGrowthData.LevelData")]
 #[parent(crate::system::object::Object)]
@@ -192,121 +118,6 @@ impl GodGrowthData_LevelData {
         });
         <Self as IGodGrowthData_LevelDataMethods>::ctor_2(this, src);
         this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowthdata/GodGrowthData_FlagField.md"))]
-#[::unity2::class(namespace = "App", name = "GodGrowthData.FlagField")]
-# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: godgrowthdata :: GodGrowthData_Flags >)]
-pub struct GodGrowthData_FlagField {}
-
-#[cfg(feature = "app-godgrowthdata")]
-#[::unity2::methods]
-impl GodGrowthData_FlagField {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_2(self, f: i32) -> ();
-
-    #[doc = "`.ctor(crate::app::godgrowthdata::GodGrowthData_Flags)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor_3(self, f: crate::app::godgrowthdata::GodGrowthData_Flags) -> ();
-
-    #[doc = "`ToInt(crate::app::godgrowthdata::GodGrowthData_Flags)` overload"]
-    #[method(name = "ToInt", args = 1)]
-    pub fn to_int(self, value: crate::app::godgrowthdata::GodGrowthData_Flags) -> i32;
-}
-
-#[cfg(feature = "app-godgrowthdata")]
-impl GodGrowthData_FlagField {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodGrowthData_FlagField),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGodGrowthData_FlagFieldMethods>::ctor(this);
-        this
-    }
-
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new_2(f: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodGrowthData_FlagField),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as IGodGrowthData_FlagFieldMethods>::ctor_2(this, f);
-        this
-    }
-
-    #[doc = "`.ctor(crate::app::godgrowthdata::GodGrowthData_Flags)` — overload selector"]
-    pub fn new_3(f: crate::app::godgrowthdata::GodGrowthData_Flags) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GodGrowthData_FlagField),
-                ::core::stringify!(new_3),
-            )
-        });
-        <Self as IGodGrowthData_FlagFieldMethods>::ctor_3(this, f);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godgrowthdata/GodGrowthData_Flags.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct GodGrowthData_Flags {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for GodGrowthData_Flags {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "GodGrowthData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for GodGrowthData_Flags {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl GodGrowthData_Flags {
-    pub fn unlock_skill_inheritance() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn add_engage_turn_limit() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn sub_engage_count_limit() -> Self {
-        Self { value: 4 }
     }
 }
 
@@ -675,6 +486,195 @@ impl GodGrowthData {
             )
         });
         <Self as IGodGrowthDataMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/godgrowthdata/GodGrowthData_Flags.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct GodGrowthData_Flags {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for GodGrowthData_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "GodGrowthData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for GodGrowthData_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl GodGrowthData_Flags {
+    pub fn unlock_skill_inheritance() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn add_engage_turn_limit() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn sub_engage_count_limit() -> Self {
+        Self { value: 4 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowthdata/GodGrowthData_StyleItems.md"))]
+#[::unity2::class(namespace = "App", name = "GodGrowthData.StyleItems")]
+#[parent(crate::system::object::Object)]
+pub struct GodGrowthData_StyleItems {
+    #[rename(name = "m_Items")]
+    pub m_items: ::unity2::Array<
+        crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+    >,
+    #[rename(name = "m_TotalCount")]
+    pub m_total_count: i32,
+}
+
+#[cfg(feature = "app-godgrowthdata")]
+#[::unity2::methods]
+impl GodGrowthData_StyleItems {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Add(crate::app::battlestyle::BattleStyle_Types, crate::app::itemdata::ItemData)` overload"]
+    #[method(name = "Add", args = 2)]
+    pub fn add(
+        self,
+        style: crate::app::battlestyle::BattleStyle_Types,
+        item: crate::app::itemdata::ItemData,
+    ) -> ();
+
+    #[doc = "`Add(crate::app::battlestyle::BattleStyle_Types, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]
+    #[method(name = "Add", args = 2)]
+    pub fn add_2(
+        self,
+        style: crate::app::battlestyle::BattleStyle_Types,
+        items: crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>,
+    ) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`get_Item(i32)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(
+        self,
+        i: i32,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>;
+
+    #[doc = "`get_Item(crate::app::battlestyle::BattleStyle_Types)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item_2(
+        self,
+        style: crate::app::battlestyle::BattleStyle_Types,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>;
+
+    #[doc = "`get_TotalCount()` overload"]
+    #[method(name = "get_TotalCount", args = 0)]
+    pub fn get_total_count(self) -> i32;
+}
+
+#[cfg(feature = "app-godgrowthdata")]
+impl GodGrowthData_StyleItems {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodGrowthData_StyleItems),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodGrowthData_StyleItemsMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godgrowthdata/GodGrowthData_FlagField.md"))]
+#[::unity2::class(namespace = "App", name = "GodGrowthData.FlagField")]
+# [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: godgrowthdata :: GodGrowthData_Flags >)]
+pub struct GodGrowthData_FlagField {}
+
+#[cfg(feature = "app-godgrowthdata")]
+#[::unity2::methods]
+impl GodGrowthData_FlagField {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_2(self, f: i32) -> ();
+
+    #[doc = "`.ctor(crate::app::godgrowthdata::GodGrowthData_Flags)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor_3(self, f: crate::app::godgrowthdata::GodGrowthData_Flags) -> ();
+
+    #[doc = "`ToInt(crate::app::godgrowthdata::GodGrowthData_Flags)` overload"]
+    #[method(name = "ToInt", args = 1)]
+    pub fn to_int(self, value: crate::app::godgrowthdata::GodGrowthData_Flags) -> i32;
+}
+
+#[cfg(feature = "app-godgrowthdata")]
+impl GodGrowthData_FlagField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodGrowthData_FlagField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodGrowthData_FlagFieldMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new_2(f: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodGrowthData_FlagField),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IGodGrowthData_FlagFieldMethods>::ctor_2(this, f);
+        this
+    }
+
+    #[doc = "`.ctor(crate::app::godgrowthdata::GodGrowthData_Flags)` — overload selector"]
+    pub fn new_3(f: crate::app::godgrowthdata::GodGrowthData_Flags) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GodGrowthData_FlagField),
+                ::core::stringify!(new_3),
+            )
+        });
+        <Self as IGodGrowthData_FlagFieldMethods>::ctor_3(this, f);
         this
     }
 }

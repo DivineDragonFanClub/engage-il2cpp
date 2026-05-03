@@ -14,58 +14,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectsequence/EffectSequence_Kind.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct EffectSequence_Kind {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for EffectSequence_Kind {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "EffectSequence.Kind";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for EffectSequence_Kind {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl EffectSequence_Kind {
-    pub fn active() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn shoot() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn hit() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 3 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/effectsequence/EffectSequence.md"))]
 #[::unity2::class(namespace = "App", name = "EffectSequence")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: effectsequence :: EffectSequence >)]
@@ -183,5 +131,57 @@ impl EffectSequence {
         });
         <Self as IEffectSequenceMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/effectsequence/EffectSequence_Kind.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct EffectSequence_Kind {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for EffectSequence_Kind {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "EffectSequence.Kind";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for EffectSequence_Kind {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl EffectSequence_Kind {
+    pub fn active() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn shoot() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn hit() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 3 }
     }
 }

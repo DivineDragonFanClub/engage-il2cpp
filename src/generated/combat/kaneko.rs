@@ -4,6 +4,39 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_GUIFitScope.md"))]
+#[::unity2::class(namespace = "Combat", name = "Kaneko.GUIFitScope")]
+#[parent(crate::system::object::Object)]
+pub struct Kaneko_GUIFitScope {}
+
+#[cfg(feature = "combat-kaneko")]
+#[::unity2::methods]
+impl Kaneko_GUIFitScope {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+}
+
+#[cfg(feature = "combat-kaneko")]
+impl Kaneko_GUIFitScope {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Kaneko_GUIFitScope),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IKaneko_GUIFitScopeMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_Screen.md"))]
 #[::unity2::class(namespace = "Combat", name = "Kaneko.Screen")]
 #[parent(crate::system::object::Object)]
@@ -22,6 +55,39 @@ impl Kaneko_Screen {
     #[doc = "`get_WH()` overload"]
     #[method(name = "get_WH", args = 0)]
     pub fn get_wh() -> crate::unity_engine::vector2::Vector2;
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_DummyDisposable.md"))]
+#[::unity2::class(namespace = "Combat", name = "Kaneko.DummyDisposable")]
+#[parent(crate::system::object::Object)]
+pub struct Kaneko_DummyDisposable {}
+
+#[cfg(feature = "combat-kaneko")]
+#[::unity2::methods]
+impl Kaneko_DummyDisposable {
+    #[doc = "`Dispose()` overload"]
+    #[method(name = "Dispose", args = 0)]
+    pub fn dispose(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-kaneko")]
+impl Kaneko_DummyDisposable {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Kaneko_DummyDisposable),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IKaneko_DummyDisposableMethods>::ctor(this);
+        this
+    }
 }
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko.md"))]
@@ -255,70 +321,4 @@ impl Kaneko {
     #[doc = "`.cctor()` overload"]
     #[method(name = ".cctor", args = 0)]
     pub fn cctor() -> ();
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_DummyDisposable.md"))]
-#[::unity2::class(namespace = "Combat", name = "Kaneko.DummyDisposable")]
-#[parent(crate::system::object::Object)]
-pub struct Kaneko_DummyDisposable {}
-
-#[cfg(feature = "combat-kaneko")]
-#[::unity2::methods]
-impl Kaneko_DummyDisposable {
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "combat-kaneko")]
-impl Kaneko_DummyDisposable {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Kaneko_DummyDisposable),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IKaneko_DummyDisposableMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/kaneko/Kaneko_GUIFitScope.md"))]
-#[::unity2::class(namespace = "Combat", name = "Kaneko.GUIFitScope")]
-#[parent(crate::system::object::Object)]
-pub struct Kaneko_GUIFitScope {}
-
-#[cfg(feature = "combat-kaneko")]
-#[::unity2::methods]
-impl Kaneko_GUIFitScope {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Dispose()` overload"]
-    #[method(name = "Dispose", args = 0)]
-    pub fn dispose(self) -> ();
-}
-
-#[cfg(feature = "combat-kaneko")]
-impl Kaneko_GUIFitScope {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Kaneko_GUIFitScope),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IKaneko_GUIFitScopeMethods>::ctor(this);
-        this
-    }
 }

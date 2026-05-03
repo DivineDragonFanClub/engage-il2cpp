@@ -18,6 +18,151 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_ServerSequenceBase_ConfirmRetryDialog.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "NexRelay.ServerSequenceBase.ConfirmRetryDialog"
+)]
+#[parent(crate::system::object::Object)]
+pub struct NexRelay_ServerSequenceBase_ConfirmRetryDialog {}
+
+#[cfg(feature = "app-nexrelay")]
+#[::unity2::methods]
+impl NexRelay_ServerSequenceBase_ConfirmRetryDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, i32)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst, yes_label: i32) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_UploadNewSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct NexRelay_UploadNewSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for NexRelay_UploadNewSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NexRelay.UploadNewSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NexRelay_UploadNewSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl NexRelay_UploadNewSequence_Label {
+    pub fn login() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn error() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_UploadNewSequence.md"))]
+#[::unity2::class(namespace = "App", name = "NexRelay.UploadNewSequence")]
+#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
+pub struct NexRelay_UploadNewSequence {
+    #[rename(name = "m_PlayerName")]
+    pub m_player_name: ::unity2::Il2CppString,
+    #[rename(name = "m_MetaData")]
+    pub m_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+    #[rename(name = "m_Data")]
+    pub m_data: crate::app::relayserverdata::RelayServerData,
+    #[rename(name = "m_IsComplemented")]
+    pub m_is_complemented: bool,
+}
+
+#[cfg(feature = "app-nexrelay")]
+#[::unity2::methods]
+impl NexRelay_UploadNewSequence {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        player_name: ::unity2::Il2CppString,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        data: crate::app::relayserverdata::RelayServerData,
+        is_secret: bool,
+    ) -> ();
+
+    #[doc = "`Postlogin()` overload"]
+    #[method(name = "Postlogin", args = 0)]
+    pub fn postlogin(self) -> ();
+
+    #[doc = "`Post()` overload"]
+    #[method(name = "Post", args = 0)]
+    pub fn post(self) -> ();
+
+    #[doc = "`ComplementMetaData()` overload"]
+    #[method(name = "ComplementMetaData", args = 0)]
+    pub fn complement_meta_data(self) -> ();
+
+    #[doc = "`ConfirmRetry()` overload"]
+    #[method(name = "ConfirmRetry", args = 0)]
+    pub fn confirm_retry(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]
+    #[method(name = "CreateBind", args = 5)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        player_name: ::unity2::Il2CppString,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        data: crate::app::relayserverdata::RelayServerData,
+        is_secret: bool,
+    ) -> ();
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay_UploadNewSequence {
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` — overload selector"]
+    pub fn new(
+        player_name: ::unity2::Il2CppString,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        data: crate::app::relayserverdata::RelayServerData,
+        is_secret: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRelay_UploadNewSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexRelay_UploadNewSequenceMethods>::ctor(
+            this,
+            player_name,
+            meta_data,
+            data,
+            is_secret,
+        );
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_Results.md"))]
 #[repr(C)]
 #[derive(
@@ -71,6 +216,204 @@ impl NexRelay_Results {
 
     pub fn succeeded() -> Self {
         Self { value: 4 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_SearchSequence_DataTypeInfo.md"))]
+#[::unity2::class(namespace = "App", name = "NexRelay.SearchSequence.DataTypeInfo")]
+#[parent(crate::system::object::Object)]
+pub struct NexRelay_SearchSequence_DataTypeInfo {}
+
+#[cfg(feature = "app-nexrelay")]
+#[::unity2::methods]
+impl NexRelay_SearchSequence_DataTypeInfo {
+    #[doc = "`.ctor(u64, bool)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, data_id: u64, is_end: bool) -> ();
+
+    #[doc = "`get_DataId()` overload"]
+    #[method(name = "get_DataId", args = 0)]
+    pub fn get_data_id(self) -> u64;
+
+    #[doc = "`set_DataId(u64)` overload"]
+    #[method(name = "set_DataId", args = 1)]
+    pub fn set_data_id(self, value: u64) -> ();
+
+    #[doc = "`get_IsEnd()` overload"]
+    #[method(name = "get_IsEnd", args = 0)]
+    pub fn get_is_end(self) -> bool;
+
+    #[doc = "`set_IsEnd(bool)` overload"]
+    #[method(name = "set_IsEnd", args = 1)]
+    pub fn set_is_end(self, value: bool) -> ();
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay_SearchSequence_DataTypeInfo {
+    #[doc = "`.ctor(u64, bool)` — overload selector"]
+    pub fn new(data_id: u64, is_end: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRelay_SearchSequence_DataTypeInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexRelay_SearchSequence_DataTypeInfoMethods>::ctor(this, data_id, is_end);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_DownloadMetaSequence.md"))]
+#[::unity2::class(namespace = "App", name = "NexRelay.DownloadMetaSequence")]
+#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
+pub struct NexRelay_DownloadMetaSequence {
+    #[rename(name = "m_DataIds")]
+    pub m_data_ids: crate::system::collections::generic::list_1::List_1<u64>,
+    #[rename(name = "m_Results")]
+    pub m_results: crate::system::collections::generic::list_1::List_1<
+        crate::app::relayservermetadata::RelayServerMetaData,
+    >,
+    #[rename(name = "m_DataCode")]
+    pub m_data_code: ::unity2::Il2CppString,
+    #[rename(name = "m_DataCodeResult")]
+    pub m_data_code_result: crate::app::relayservermetadata::RelayServerMetaData,
+}
+
+#[cfg(feature = "app-nexrelay")]
+#[::unity2::methods]
+impl NexRelay_DownloadMetaSequence {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        data_ids: crate::system::collections::generic::list_1::List_1<u64>,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+    ) -> ();
+
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor_2(
+        self,
+        data_code: ::unity2::Il2CppString,
+        result: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> ();
+
+    #[doc = "`Postlogin()` overload"]
+    #[method(name = "Postlogin", args = 0)]
+    pub fn postlogin(self) -> ();
+
+    #[doc = "`GetMetaInfo()` overload"]
+    #[method(name = "GetMetaInfo", args = 0)]
+    pub fn get_meta_info(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        data_ids: crate::system::collections::generic::list_1::List_1<u64>,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+    ) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind_2(
+        super_: crate::app::procinst::ProcInst,
+        data_code: ::unity2::Il2CppString,
+        result: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> ();
+
+    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::nexrelay::NexRelay_DownloadMetaSequence)` overload"]
+    #[method(name = "CreateBindImpl", args = 2)]
+    pub fn create_bind_impl(
+        super_: crate::app::procinst::ProcInst,
+        p: crate::app::nexrelay::NexRelay_DownloadMetaSequence,
+    ) -> ();
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay_DownloadMetaSequence {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` — overload selector"]
+    pub fn new(
+        data_ids: crate::system::collections::generic::list_1::List_1<u64>,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRelay_DownloadMetaSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexRelay_DownloadMetaSequenceMethods>::ctor(this, data_ids, results);
+        this
+    }
+
+    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` — overload selector"]
+    pub fn new_2(
+        data_code: ::unity2::Il2CppString,
+        result: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRelay_DownloadMetaSequence),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as INexRelay_DownloadMetaSequenceMethods>::ctor_2(this, data_code, result);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "NexRelay.ServerSequenceBase.ConfirmRetryDialog.YesMenuItem"
+)]
+#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+pub struct NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem {
+    #[rename(name = "m_Label")]
+    pub m_label: i32,
+}
+
+#[cfg(feature = "app-nexrelay")]
+#[::unity2::methods]
+impl NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem {
+    #[doc = "`.ctor(i32)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, label: i32) -> ();
+
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
+
+    #[doc = "`GetSequence()` overload"]
+    #[method(name = "GetSequence", args = 0)]
+    pub fn get_sequence(self) -> crate::app::procinst::ProcInst;
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(label: i32) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItemMethods>::ctor(
+            this, label,
+        );
+        this
     }
 }
 
@@ -148,84 +491,7 @@ impl NexRelay_DownloadSequence {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_SetPlayingSequence.md"))]
-#[::unity2::class(namespace = "App", name = "NexRelay.SetPlayingSequence")]
-#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
-pub struct NexRelay_SetPlayingSequence {
-    #[rename(name = "m_DataId")]
-    pub m_data_id: u64,
-    #[rename(name = "m_OldMetaData")]
-    pub m_old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-    #[rename(name = "m_NewMetaData")]
-    pub m_new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-    #[rename(name = "m_IsComplementedNewMetaData")]
-    pub m_is_complemented_new_meta_data: bool,
-}
-
-#[cfg(feature = "app-nexrelay")]
-#[::unity2::methods]
-impl NexRelay_SetPlayingSequence {
-    #[doc = "`.ctor(u64, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        data_id: u64,
-        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-    ) -> ();
-
-    #[doc = "`Postlogin()` overload"]
-    #[method(name = "Postlogin", args = 0)]
-    pub fn postlogin(self) -> ();
-
-    #[doc = "`ChangeMeta()` overload"]
-    #[method(name = "ChangeMeta", args = 0)]
-    pub fn change_meta(self) -> ();
-
-    #[doc = "`ComplementNewMetaData()` overload"]
-    #[method(name = "ComplementNewMetaData", args = 0)]
-    pub fn complement_new_meta_data(self) -> ();
-
-    #[doc = "`ConfirmRetry()` overload"]
-    #[method(name = "ConfirmRetry", args = 0)]
-    pub fn confirm_retry(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    #[method(name = "CreateBind", args = 4)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-    ) -> ();
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay_SetPlayingSequence {
-    #[doc = "`.ctor(u64, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayservermetadata::RelayServerMetaData)` — overload selector"]
-    pub fn new(
-        data_id: u64,
-        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRelay_SetPlayingSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRelay_SetPlayingSequenceMethods>::ctor(
-            this,
-            data_id,
-            old_meta_data,
-            new_meta_data,
-        );
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_DownloadMetaSequence_Label.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_DownloadSequence_Label.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -234,14 +500,14 @@ impl NexRelay_SetPlayingSequence {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct NexRelay_DownloadMetaSequence_Label {
+pub struct NexRelay_DownloadSequence_Label {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for NexRelay_DownloadMetaSequence_Label {
+impl ::unity2::ClassIdentity for NexRelay_DownloadSequence_Label {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "NexRelay.DownloadMetaSequence.Label";
+    const NAME: &'static str = "NexRelay.DownloadSequence.Label";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -250,7 +516,7 @@ impl ::unity2::ClassIdentity for NexRelay_DownloadMetaSequence_Label {
     }
 }
 
-impl ::unity2::IlType for NexRelay_DownloadMetaSequence_Label {
+impl ::unity2::IlType for NexRelay_DownloadSequence_Label {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -259,12 +525,120 @@ impl ::unity2::IlType for NexRelay_DownloadMetaSequence_Label {
     }
 }
 
-impl NexRelay_DownloadMetaSequence_Label {
-    pub fn error() -> Self {
+impl NexRelay_DownloadSequence_Label {
+    pub fn login() -> Self {
         Self { value: 0 }
     }
 
+    pub fn get_data() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn error() -> Self {
+        Self { value: 2 }
+    }
+
     pub fn error_app() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 4 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_SetPlayingSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct NexRelay_SetPlayingSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for NexRelay_SetPlayingSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NexRelay.SetPlayingSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NexRelay_SetPlayingSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl NexRelay_SetPlayingSequence_Label {
+    pub fn login() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn error() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn error_app() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 3 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_SearchSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct NexRelay_SearchSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for NexRelay_SearchSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NexRelay.SearchSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NexRelay_SearchSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl NexRelay_SearchSequence_Label {
+    pub fn fix_data_type_to_relay_end() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn error() -> Self {
         Self { value: 1 }
     }
 
@@ -273,47 +647,136 @@ impl NexRelay_DownloadMetaSequence_Label {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_SearchSequence_DataTypeInfo.md"))]
-#[::unity2::class(namespace = "App", name = "NexRelay.SearchSequence.DataTypeInfo")]
-#[parent(crate::system::object::Object)]
-pub struct NexRelay_SearchSequence_DataTypeInfo {}
-
-#[cfg(feature = "app-nexrelay")]
-#[::unity2::methods]
-impl NexRelay_SearchSequence_DataTypeInfo {
-    #[doc = "`.ctor(u64, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, data_id: u64, is_end: bool) -> ();
-
-    #[doc = "`get_DataId()` overload"]
-    #[method(name = "get_DataId", args = 0)]
-    pub fn get_data_id(self) -> u64;
-
-    #[doc = "`set_DataId(u64)` overload"]
-    #[method(name = "set_DataId", args = 1)]
-    pub fn set_data_id(self, value: u64) -> ();
-
-    #[doc = "`get_IsEnd()` overload"]
-    #[method(name = "get_IsEnd", args = 0)]
-    pub fn get_is_end(self) -> bool;
-
-    #[doc = "`set_IsEnd(bool)` overload"]
-    #[method(name = "set_IsEnd", args = 1)]
-    pub fn set_is_end(self, value: bool) -> ();
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay.md"))]
+#[::unity2::class(namespace = "App", name = "NexRelay")]
+# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexrelay :: NexRelay >)]
+pub struct NexRelay {
+    #[static_field]
+    #[rename(name = "Period")]
+    pub period: u16,
+    #[static_field]
+    #[rename(name = "MaxSearchCount")]
+    pub max_search_count: u32,
+    #[rename(name = "m_LastResult")]
+    pub m_last_result: crate::app::nexrelay::NexRelay_Results,
+    #[rename(name = "m_LastUploadedDataId")]
+    pub m_last_uploaded_data_id: u64,
 }
 
 #[cfg(feature = "app-nexrelay")]
-impl NexRelay_SearchSequence_DataTypeInfo {
-    #[doc = "`.ctor(u64, bool)` — overload selector"]
-    pub fn new(data_id: u64, is_end: bool) -> Self {
+#[::unity2::methods]
+impl NexRelay {
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`UploadNew(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]
+    #[method(name = "UploadNew", args = 5)]
+    pub fn upload_new(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        player_name: ::unity2::Il2CppString,
+        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        data: crate::app::relayserverdata::RelayServerData,
+        is_secret: bool,
+    ) -> ();
+
+    #[doc = "`UploadTakeOver(crate::app::procinst::ProcInst, u64, crate::app::relayservermetadata::RelayServerMetaData, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]
+    #[method(name = "UploadTakeOver", args = 7)]
+    pub fn upload_take_over(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        player_name: ::unity2::Il2CppString,
+        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        data: crate::app::relayserverdata::RelayServerData,
+        is_change_to_public: bool,
+    ) -> ();
+
+    #[doc = "`Search(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
+    #[method(name = "Search", args = 2)]
+    pub fn search(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+    ) -> ();
+
+    #[doc = "`SetPlaying(crate::app::procinst::ProcInst, u64, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    #[method(name = "SetPlaying", args = 4)]
+    pub fn set_playing(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> ();
+
+    #[doc = "`Download(crate::app::procinst::ProcInst, u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    #[method(name = "Download", args = 4)]
+    pub fn download(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        result: crate::app::relayserverdata::RelayServerData,
+        result_meta: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> ();
+
+    #[doc = "`DownloadMeta(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
+    #[method(name = "DownloadMeta", args = 3)]
+    pub fn download_meta(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        data_ids: crate::system::collections::generic::list_1::List_1<u64>,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+    ) -> ();
+
+    #[doc = "`DownloadMeta(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    #[method(name = "DownloadMeta", args = 3)]
+    pub fn download_meta_2(
+        self,
+        super_: crate::app::procinst::ProcInst,
+        data_code: ::unity2::Il2CppString,
+        result: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> ();
+
+    #[doc = "`TryGetPrincipalId(u64)` overload"]
+    #[method(name = "TryGetPrincipalId", args = 1)]
+    pub fn try_get_principal_id(self, principal_id: u64) -> bool;
+
+    #[doc = "`get_LastResult()` overload"]
+    #[method(name = "get_LastResult", args = 0)]
+    pub fn get_last_result(self) -> crate::app::nexrelay::NexRelay_Results;
+
+    #[doc = "`get_LastUploadedDataId()` overload"]
+    #[method(name = "get_LastUploadedDataId", args = 0)]
+    pub fn get_last_uploaded_data_id(self) -> u64;
+
+    #[doc = "`CloseWaitMessage(crate::app::procinst::ProcInst, bool)` overload"]
+    #[method(name = "CloseWaitMessage", args = 2)]
+    pub fn close_wait_message(super_: crate::app::procinst::ProcInst, is_success: bool) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(NexRelay_SearchSequence_DataTypeInfo),
+                ::core::stringify!(NexRelay),
                 ::core::stringify!(new),
             )
         });
-        <Self as INexRelay_SearchSequence_DataTypeInfoMethods>::ctor(this, data_id, is_end);
+        <Self as INexRelayMethods>::ctor(this);
         this
     }
 }
@@ -473,6 +936,199 @@ impl NexRelay_UploadTakeOverSequence_Label {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_SearchSequence.md"))]
+#[::unity2::class(namespace = "App", name = "NexRelay.SearchSequence")]
+#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
+pub struct NexRelay_SearchSequence {
+    #[rename(name = "m_Results")]
+    pub m_results: crate::system::collections::generic::list_1::List_1<
+        crate::app::relayservermetadata::RelayServerMetaData,
+    >,
+    #[rename(name = "m_DataTypeInfos")]
+    pub m_data_type_infos: crate::system::collections::generic::list_1::List_1<
+        crate::app::nexrelay::NexRelay_SearchSequence_DataTypeInfo,
+    >,
+}
+
+#[cfg(feature = "app-nexrelay")]
+#[::unity2::methods]
+impl NexRelay_SearchSequence {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+    ) -> ();
+
+    #[doc = "`Postlogin()` overload"]
+    #[method(name = "Postlogin", args = 0)]
+    pub fn postlogin(self) -> ();
+
+    #[doc = "`Search()` overload"]
+    #[method(name = "Search", args = 0)]
+    pub fn search(self) -> ();
+
+    #[doc = "`FixDataTypeToRelayEnd()` overload"]
+    #[method(name = "FixDataTypeToRelayEnd", args = 0)]
+    pub fn fix_data_type_to_relay_end(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+    ) -> ();
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay_SearchSequence {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` — overload selector"]
+    pub fn new(
+        results: crate::system::collections::generic::list_1::List_1<
+            crate::app::relayservermetadata::RelayServerMetaData,
+        >,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRelay_SearchSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexRelay_SearchSequenceMethods>::ctor(this, results);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_DownloadMetaSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct NexRelay_DownloadMetaSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for NexRelay_DownloadMetaSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "NexRelay.DownloadMetaSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for NexRelay_DownloadMetaSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl NexRelay_DownloadMetaSequence_Label {
+    pub fn error() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn error_app() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_SetPlayingSequence.md"))]
+#[::unity2::class(namespace = "App", name = "NexRelay.SetPlayingSequence")]
+#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
+pub struct NexRelay_SetPlayingSequence {
+    #[rename(name = "m_DataId")]
+    pub m_data_id: u64,
+    #[rename(name = "m_OldMetaData")]
+    pub m_old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+    #[rename(name = "m_NewMetaData")]
+    pub m_new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+    #[rename(name = "m_IsComplementedNewMetaData")]
+    pub m_is_complemented_new_meta_data: bool,
+}
+
+#[cfg(feature = "app-nexrelay")]
+#[::unity2::methods]
+impl NexRelay_SetPlayingSequence {
+    #[doc = "`.ctor(u64, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        data_id: u64,
+        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> ();
+
+    #[doc = "`Postlogin()` overload"]
+    #[method(name = "Postlogin", args = 0)]
+    pub fn postlogin(self) -> ();
+
+    #[doc = "`ChangeMeta()` overload"]
+    #[method(name = "ChangeMeta", args = 0)]
+    pub fn change_meta(self) -> ();
+
+    #[doc = "`ComplementNewMetaData()` overload"]
+    #[method(name = "ComplementNewMetaData", args = 0)]
+    pub fn complement_new_meta_data(self) -> ();
+
+    #[doc = "`ConfirmRetry()` overload"]
+    #[method(name = "ConfirmRetry", args = 0)]
+    pub fn confirm_retry(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, u64, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
+    #[method(name = "CreateBind", args = 4)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        data_id: u64,
+        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> ();
+}
+
+#[cfg(feature = "app-nexrelay")]
+impl NexRelay_SetPlayingSequence {
+    #[doc = "`.ctor(u64, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayservermetadata::RelayServerMetaData)` — overload selector"]
+    pub fn new(
+        data_id: u64,
+        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(NexRelay_SetPlayingSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INexRelay_SetPlayingSequenceMethods>::ctor(
+            this,
+            data_id,
+            old_meta_data,
+            new_meta_data,
+        );
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_ServerSequenceBase.md"))]
 #[::unity2::class(namespace = "App", name = "NexRelay.ServerSequenceBase")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -543,661 +1199,5 @@ impl NexRelay_ServerSequenceBase {
         });
         <Self as INexRelay_ServerSequenceBaseMethods>::ctor(this);
         this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay.md"))]
-#[::unity2::class(namespace = "App", name = "NexRelay")]
-# [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: nexrelay :: NexRelay >)]
-pub struct NexRelay {
-    #[static_field]
-    #[rename(name = "Period")]
-    pub period: u16,
-    #[static_field]
-    #[rename(name = "MaxSearchCount")]
-    pub max_search_count: u32,
-    #[rename(name = "m_LastResult")]
-    pub m_last_result: crate::app::nexrelay::NexRelay_Results,
-    #[rename(name = "m_LastUploadedDataId")]
-    pub m_last_uploaded_data_id: u64,
-}
-
-#[cfg(feature = "app-nexrelay")]
-#[::unity2::methods]
-impl NexRelay {
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`UploadNew(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]
-    #[method(name = "UploadNew", args = 5)]
-    pub fn upload_new(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        player_name: ::unity2::Il2CppString,
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        data: crate::app::relayserverdata::RelayServerData,
-        is_secret: bool,
-    ) -> ();
-
-    #[doc = "`UploadTakeOver(crate::app::procinst::ProcInst, u64, crate::app::relayservermetadata::RelayServerMetaData, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]
-    #[method(name = "UploadTakeOver", args = 7)]
-    pub fn upload_take_over(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        player_name: ::unity2::Il2CppString,
-        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        data: crate::app::relayserverdata::RelayServerData,
-        is_change_to_public: bool,
-    ) -> ();
-
-    #[doc = "`Search(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
-    #[method(name = "Search", args = 2)]
-    pub fn search(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-    ) -> ();
-
-    #[doc = "`SetPlaying(crate::app::procinst::ProcInst, u64, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    #[method(name = "SetPlaying", args = 4)]
-    pub fn set_playing(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        old_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        new_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-    ) -> ();
-
-    #[doc = "`Download(crate::app::procinst::ProcInst, u64, crate::app::relayserverdata::RelayServerData, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    #[method(name = "Download", args = 4)]
-    pub fn download(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        data_id: u64,
-        result: crate::app::relayserverdata::RelayServerData,
-        result_meta: crate::app::relayservermetadata::RelayServerMetaData,
-    ) -> ();
-
-    #[doc = "`DownloadMeta(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
-    #[method(name = "DownloadMeta", args = 3)]
-    pub fn download_meta(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        data_ids: crate::system::collections::generic::list_1::List_1<u64>,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-    ) -> ();
-
-    #[doc = "`DownloadMeta(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    #[method(name = "DownloadMeta", args = 3)]
-    pub fn download_meta_2(
-        self,
-        super_: crate::app::procinst::ProcInst,
-        data_code: ::unity2::Il2CppString,
-        result: crate::app::relayservermetadata::RelayServerMetaData,
-    ) -> ();
-
-    #[doc = "`TryGetPrincipalId(u64)` overload"]
-    #[method(name = "TryGetPrincipalId", args = 1)]
-    pub fn try_get_principal_id(self, principal_id: u64) -> bool;
-
-    #[doc = "`get_LastResult()` overload"]
-    #[method(name = "get_LastResult", args = 0)]
-    pub fn get_last_result(self) -> crate::app::nexrelay::NexRelay_Results;
-
-    #[doc = "`get_LastUploadedDataId()` overload"]
-    #[method(name = "get_LastUploadedDataId", args = 0)]
-    pub fn get_last_uploaded_data_id(self) -> u64;
-
-    #[doc = "`CloseWaitMessage(crate::app::procinst::ProcInst, bool)` overload"]
-    #[method(name = "CloseWaitMessage", args = 2)]
-    pub fn close_wait_message(super_: crate::app::procinst::ProcInst, is_success: bool) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRelay),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRelayMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_SearchSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct NexRelay_SearchSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for NexRelay_SearchSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexRelay.SearchSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for NexRelay_SearchSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl NexRelay_SearchSequence_Label {
-    pub fn fix_data_type_to_relay_end() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn error() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 2 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "NexRelay.ServerSequenceBase.ConfirmRetryDialog.YesMenuItem"
-)]
-#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
-pub struct NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem {
-    #[rename(name = "m_Label")]
-    pub m_label: i32,
-}
-
-#[cfg(feature = "app-nexrelay")]
-#[::unity2::methods]
-impl NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem {
-    #[doc = "`.ctor(i32)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, label: i32) -> ();
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result;
-
-    #[doc = "`GetSequence()` overload"]
-    #[method(name = "GetSequence", args = 0)]
-    pub fn get_sequence(self) -> crate::app::procinst::ProcInst;
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem {
-    #[doc = "`.ctor(i32)` — overload selector"]
-    pub fn new(label: i32) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRelay_ServerSequenceBase_ConfirmRetryDialog_YesMenuItemMethods>::ctor(
-            this, label,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_UploadNewSequence.md"))]
-#[::unity2::class(namespace = "App", name = "NexRelay.UploadNewSequence")]
-#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
-pub struct NexRelay_UploadNewSequence {
-    #[rename(name = "m_PlayerName")]
-    pub m_player_name: ::unity2::Il2CppString,
-    #[rename(name = "m_MetaData")]
-    pub m_meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-    #[rename(name = "m_Data")]
-    pub m_data: crate::app::relayserverdata::RelayServerData,
-    #[rename(name = "m_IsComplemented")]
-    pub m_is_complemented: bool,
-}
-
-#[cfg(feature = "app-nexrelay")]
-#[::unity2::methods]
-impl NexRelay_UploadNewSequence {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        player_name: ::unity2::Il2CppString,
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        data: crate::app::relayserverdata::RelayServerData,
-        is_secret: bool,
-    ) -> ();
-
-    #[doc = "`Postlogin()` overload"]
-    #[method(name = "Postlogin", args = 0)]
-    pub fn postlogin(self) -> ();
-
-    #[doc = "`Post()` overload"]
-    #[method(name = "Post", args = 0)]
-    pub fn post(self) -> ();
-
-    #[doc = "`ComplementMetaData()` overload"]
-    #[method(name = "ComplementMetaData", args = 0)]
-    pub fn complement_meta_data(self) -> ();
-
-    #[doc = "`ConfirmRetry()` overload"]
-    #[method(name = "ConfirmRetry", args = 0)]
-    pub fn confirm_retry(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` overload"]
-    #[method(name = "CreateBind", args = 5)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        player_name: ::unity2::Il2CppString,
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        data: crate::app::relayserverdata::RelayServerData,
-        is_secret: bool,
-    ) -> ();
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay_UploadNewSequence {
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData, crate::app::relayserverdata::RelayServerData, bool)` — overload selector"]
-    pub fn new(
-        player_name: ::unity2::Il2CppString,
-        meta_data: crate::app::relayservermetadata::RelayServerMetaData,
-        data: crate::app::relayserverdata::RelayServerData,
-        is_secret: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRelay_UploadNewSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRelay_UploadNewSequenceMethods>::ctor(
-            this,
-            player_name,
-            meta_data,
-            data,
-            is_secret,
-        );
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_SetPlayingSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct NexRelay_SetPlayingSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for NexRelay_SetPlayingSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexRelay.SetPlayingSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for NexRelay_SetPlayingSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl NexRelay_SetPlayingSequence_Label {
-    pub fn login() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn error() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn error_app() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 3 }
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_DownloadSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct NexRelay_DownloadSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for NexRelay_DownloadSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexRelay.DownloadSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for NexRelay_DownloadSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl NexRelay_DownloadSequence_Label {
-    pub fn login() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn get_data() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn error() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn error_app() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 4 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_ServerSequenceBase_ConfirmRetryDialog.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "NexRelay.ServerSequenceBase.ConfirmRetryDialog"
-)]
-#[parent(crate::system::object::Object)]
-pub struct NexRelay_ServerSequenceBase_ConfirmRetryDialog {}
-
-#[cfg(feature = "app-nexrelay")]
-#[::unity2::methods]
-impl NexRelay_ServerSequenceBase_ConfirmRetryDialog {
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, i32)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst, yes_label: i32) -> ();
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_SearchSequence.md"))]
-#[::unity2::class(namespace = "App", name = "NexRelay.SearchSequence")]
-#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
-pub struct NexRelay_SearchSequence {
-    #[rename(name = "m_Results")]
-    pub m_results: crate::system::collections::generic::list_1::List_1<
-        crate::app::relayservermetadata::RelayServerMetaData,
-    >,
-    #[rename(name = "m_DataTypeInfos")]
-    pub m_data_type_infos: crate::system::collections::generic::list_1::List_1<
-        crate::app::nexrelay::NexRelay_SearchSequence_DataTypeInfo,
-    >,
-}
-
-#[cfg(feature = "app-nexrelay")]
-#[::unity2::methods]
-impl NexRelay_SearchSequence {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-    ) -> ();
-
-    #[doc = "`Postlogin()` overload"]
-    #[method(name = "Postlogin", args = 0)]
-    pub fn postlogin(self) -> ();
-
-    #[doc = "`Search()` overload"]
-    #[method(name = "Search", args = 0)]
-    pub fn search(self) -> ();
-
-    #[doc = "`FixDataTypeToRelayEnd()` overload"]
-    #[method(name = "FixDataTypeToRelayEnd", args = 0)]
-    pub fn fix_data_type_to_relay_end(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-    ) -> ();
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay_SearchSequence {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` — overload selector"]
-    pub fn new(
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRelay_SearchSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRelay_SearchSequenceMethods>::ctor(this, results);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/nexrelay/NexRelay_DownloadMetaSequence.md"))]
-#[::unity2::class(namespace = "App", name = "NexRelay.DownloadMetaSequence")]
-#[parent(crate::app::nexrelay::NexRelay_ServerSequenceBase)]
-pub struct NexRelay_DownloadMetaSequence {
-    #[rename(name = "m_DataIds")]
-    pub m_data_ids: crate::system::collections::generic::list_1::List_1<u64>,
-    #[rename(name = "m_Results")]
-    pub m_results: crate::system::collections::generic::list_1::List_1<
-        crate::app::relayservermetadata::RelayServerMetaData,
-    >,
-    #[rename(name = "m_DataCode")]
-    pub m_data_code: ::unity2::Il2CppString,
-    #[rename(name = "m_DataCodeResult")]
-    pub m_data_code_result: crate::app::relayservermetadata::RelayServerMetaData,
-}
-
-#[cfg(feature = "app-nexrelay")]
-#[::unity2::methods]
-impl NexRelay_DownloadMetaSequence {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        data_ids: crate::system::collections::generic::list_1::List_1<u64>,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-    ) -> ();
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor_2(
-        self,
-        data_code: ::unity2::Il2CppString,
-        result: crate::app::relayservermetadata::RelayServerMetaData,
-    ) -> ();
-
-    #[doc = "`Postlogin()` overload"]
-    #[method(name = "Postlogin", args = 0)]
-    pub fn postlogin(self) -> ();
-
-    #[doc = "`GetMetaInfo()` overload"]
-    #[method(name = "GetMetaInfo", args = 0)]
-    pub fn get_meta_info(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        data_ids: crate::system::collections::generic::list_1::List_1<u64>,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-    ) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind_2(
-        super_: crate::app::procinst::ProcInst,
-        data_code: ::unity2::Il2CppString,
-        result: crate::app::relayservermetadata::RelayServerMetaData,
-    ) -> ();
-
-    #[doc = "`CreateBindImpl(crate::app::procinst::ProcInst, crate::app::nexrelay::NexRelay_DownloadMetaSequence)` overload"]
-    #[method(name = "CreateBindImpl", args = 2)]
-    pub fn create_bind_impl(
-        super_: crate::app::procinst::ProcInst,
-        p: crate::app::nexrelay::NexRelay_DownloadMetaSequence,
-    ) -> ();
-}
-
-#[cfg(feature = "app-nexrelay")]
-impl NexRelay_DownloadMetaSequence {
-    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<u64>, crate::system::collections::generic::list_1::List_1<crate::app::relayservermetadata::RelayServerMetaData>)` — overload selector"]
-    pub fn new(
-        data_ids: crate::system::collections::generic::list_1::List_1<u64>,
-        results: crate::system::collections::generic::list_1::List_1<
-            crate::app::relayservermetadata::RelayServerMetaData,
-        >,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRelay_DownloadMetaSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as INexRelay_DownloadMetaSequenceMethods>::ctor(this, data_ids, results);
-        this
-    }
-
-    #[doc = "`.ctor(::unity2::Il2CppString, crate::app::relayservermetadata::RelayServerMetaData)` — overload selector"]
-    pub fn new_2(
-        data_code: ::unity2::Il2CppString,
-        result: crate::app::relayservermetadata::RelayServerMetaData,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(NexRelay_DownloadMetaSequence),
-                ::core::stringify!(new_2),
-            )
-        });
-        <Self as INexRelay_DownloadMetaSequenceMethods>::ctor_2(this, data_code, result);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/nexrelay/NexRelay_UploadNewSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct NexRelay_UploadNewSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for NexRelay_UploadNewSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "NexRelay.UploadNewSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for NexRelay_UploadNewSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl NexRelay_UploadNewSequence_Label {
-    pub fn login() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn error() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 2 }
     }
 }

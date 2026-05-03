@@ -14,39 +14,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tasteconditiondata/TasteConditionData_ConditionFunc.md"))]
-#[::unity2::class(namespace = "App", name = "TasteConditionData.ConditionFunc")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct TasteConditionData_ConditionFunc {}
-
-#[cfg(feature = "app-tasteconditiondata")]
-#[::unity2::methods]
-impl TasteConditionData_ConditionFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, unit: crate::app::unit::Unit) -> bool;
-}
-
-#[cfg(feature = "app-tasteconditiondata")]
-impl TasteConditionData_ConditionFunc {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TasteConditionData_ConditionFunc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITasteConditionData_ConditionFuncMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tasteconditiondata/TasteConditionData.md"))]
 #[::unity2::class(namespace = "App", name = "TasteConditionData")]
 # [parent (crate :: app :: structdata_1 :: StructData_1 < crate :: app :: tasteconditiondata :: TasteConditionData >)]
@@ -102,6 +69,39 @@ impl TasteConditionData {
             )
         });
         <Self as ITasteConditionDataMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/tasteconditiondata/TasteConditionData_ConditionFunc.md"))]
+#[::unity2::class(namespace = "App", name = "TasteConditionData.ConditionFunc")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct TasteConditionData_ConditionFunc {}
+
+#[cfg(feature = "app-tasteconditiondata")]
+#[::unity2::methods]
+impl TasteConditionData_ConditionFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unit::Unit)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unit::Unit) -> bool;
+}
+
+#[cfg(feature = "app-tasteconditiondata")]
+impl TasteConditionData_ConditionFunc {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TasteConditionData_ConditionFunc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITasteConditionData_ConditionFuncMethods>::ctor(this, object, method);
         this
     }
 }

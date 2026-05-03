@@ -16,48 +16,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_DecideEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ProfileCardCommentIndexMenu.DecideEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ProfileCardCommentIndexMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-profilecardcommentindexmenu")]
-#[::unity2::methods]
-impl ProfileCardCommentIndexMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2, i32)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(
-        self,
-        result: crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2,
-        index: i32,
-    ) -> ();
-}
-
-#[cfg(feature = "app-profilecardcommentindexmenu")]
-impl ProfileCardCommentIndexMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardCommentIndexMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardCommentIndexMenu_DecideEventHandlerMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_Result2.md"))]
 #[repr(C)]
 #[derive(
@@ -232,6 +190,48 @@ impl ProfileCardCommentIndexMenu_DisposeEventHandler {
             )
         });
         <Self as IProfileCardCommentIndexMenu_DisposeEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardcommentindexmenu/ProfileCardCommentIndexMenu_DecideEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ProfileCardCommentIndexMenu.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ProfileCardCommentIndexMenu_DecideEventHandler {}
+
+#[cfg(feature = "app-profilecardcommentindexmenu")]
+#[::unity2::methods]
+impl ProfileCardCommentIndexMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2, i32)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(
+        self,
+        result: crate::app::profilecardcommentindexmenu::ProfileCardCommentIndexMenu_Result2,
+        index: i32,
+    ) -> ();
+}
+
+#[cfg(feature = "app-profilecardcommentindexmenu")]
+impl ProfileCardCommentIndexMenu_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardCommentIndexMenu_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardCommentIndexMenu_DecideEventHandlerMethods>::ctor(
             this, object, method,
         );
         this

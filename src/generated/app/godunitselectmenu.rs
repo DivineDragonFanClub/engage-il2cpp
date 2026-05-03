@@ -12,39 +12,40 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenu/GodUnitSelectMenu_SelectEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "GodUnitSelectMenu.SelectEventHandler")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenu/GodUnitSelectMenu_DecideEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "GodUnitSelectMenu.DecideEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct GodUnitSelectMenu_SelectEventHandler {}
+pub struct GodUnitSelectMenu_DecideEventHandler {}
 
 #[cfg(feature = "app-godunitselectmenu")]
 #[::unity2::methods]
-impl GodUnitSelectMenu_SelectEventHandler {
+impl GodUnitSelectMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
-    #[method(name = "Invoke", args = 2)]
+    #[doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
+    #[method(name = "Invoke", args = 3)]
     pub fn invoke(
         self,
+        result: crate::app::basicmenu::BasicMenu_Result,
         god: crate::app::godunit::GodUnit,
-        optional_type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
     ) -> ();
 }
 
 #[cfg(feature = "app-godunitselectmenu")]
-impl GodUnitSelectMenu_SelectEventHandler {
+impl GodUnitSelectMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GodUnitSelectMenu_SelectEventHandler),
+                ::core::stringify!(GodUnitSelectMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGodUnitSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
+        <Self as IGodUnitSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -101,40 +102,39 @@ impl GodUnitSelectMenu {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenu/GodUnitSelectMenu_DecideEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "GodUnitSelectMenu.DecideEventHandler")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/godunitselectmenu/GodUnitSelectMenu_SelectEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "GodUnitSelectMenu.SelectEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct GodUnitSelectMenu_DecideEventHandler {}
+pub struct GodUnitSelectMenu_SelectEventHandler {}
 
 #[cfg(feature = "app-godunitselectmenu")]
 #[::unity2::methods]
-impl GodUnitSelectMenu_DecideEventHandler {
+impl GodUnitSelectMenu_SelectEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
-    #[method(name = "Invoke", args = 3)]
+    #[doc = "`Invoke(crate::app::godunit::GodUnit, crate::app::ringcleaningsequence::RingCleaningSequence_GodType)` overload"]
+    #[method(name = "Invoke", args = 2)]
     pub fn invoke(
         self,
-        result: crate::app::basicmenu::BasicMenu_Result,
         god: crate::app::godunit::GodUnit,
-        r#type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
+        optional_type: crate::app::ringcleaningsequence::RingCleaningSequence_GodType,
     ) -> ();
 }
 
 #[cfg(feature = "app-godunitselectmenu")]
-impl GodUnitSelectMenu_DecideEventHandler {
+impl GodUnitSelectMenu_SelectEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(GodUnitSelectMenu_DecideEventHandler),
+                ::core::stringify!(GodUnitSelectMenu_SelectEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IGodUnitSelectMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IGodUnitSelectMenu_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

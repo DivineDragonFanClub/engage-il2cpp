@@ -12,6 +12,54 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/situation_converter/convertbrawl/ConvertBrawl_State.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ConvertBrawl_State {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ConvertBrawl_State {
+    const NAMESPACE: &'static str = "Combat.SituationConverter";
+
+    const NAME: &'static str = "ConvertBrawl.State";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ConvertBrawl_State {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ConvertBrawl_State {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn auto____() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn behind____() -> Self {
+        Self { value: 2 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/situation_converter/convertbrawl/ConvertBrawl.md"))]
 #[::unity2::class(namespace = "Combat.SituationConverter", name = "ConvertBrawl")]
 #[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]
@@ -62,53 +110,5 @@ impl ConvertBrawl {
         });
         <Self as IConvertBrawlMethods>::ctor(this, data);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/situation_converter/convertbrawl/ConvertBrawl_State.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ConvertBrawl_State {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for ConvertBrawl_State {
-    const NAMESPACE: &'static str = "Combat.SituationConverter";
-
-    const NAME: &'static str = "ConvertBrawl.State";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ConvertBrawl_State {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ConvertBrawl_State {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn auto____() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn behind____() -> Self {
-        Self { value: 2 }
     }
 }

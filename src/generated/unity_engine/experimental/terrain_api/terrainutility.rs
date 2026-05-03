@@ -14,38 +14,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainGroups.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Experimental.TerrainAPI",
-    name = "TerrainUtility.TerrainGroups"
-)]
-# [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap >)]
-pub struct TerrainUtility_TerrainGroups {}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-#[::unity2::methods]
-impl TerrainUtility_TerrainGroups {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-impl TerrainUtility_TerrainGroups {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TerrainUtility_TerrainGroups),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITerrainUtility_TerrainGroupsMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.TerrainAPI",
@@ -129,6 +97,43 @@ impl TerrainUtility_TerrainMap {
     }
 }
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TileCoord.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct TerrainUtility_TerrainMap_TileCoord {
+    pub tile_x: i32,
+    pub tile_z: i32,
+}
+
+impl ::unity2::ClassIdentity for TerrainUtility_TerrainMap_TileCoord {
+    const NAMESPACE: &'static str = "UnityEngine.Experimental.TerrainAPI";
+
+    const NAME: &'static str = "TerrainUtility.TerrainMap.TileCoord";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TerrainUtility_TerrainMap_TileCoord {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+#[::unity2::methods(value)]
+impl TerrainUtility_TerrainMap_TileCoord {
+    #[doc = "`.ctor(i32, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, tile_x: i32, tile_z: i32) -> ();
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TerrainFilter.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.TerrainAPI",
@@ -161,6 +166,38 @@ impl TerrainUtility_TerrainMap_TerrainFilter {
             )
         });
         <Self as ITerrainUtility_TerrainMap_TerrainFilterMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainGroups.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.TerrainAPI",
+    name = "TerrainUtility.TerrainGroups"
+)]
+# [parent (crate :: system :: collections :: generic :: dictionary_2 :: Dictionary_2 < i32 , crate :: unity_engine :: experimental :: terrain_api :: terrainutility :: TerrainUtility_TerrainMap >)]
+pub struct TerrainUtility_TerrainGroups {}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+#[::unity2::methods]
+impl TerrainUtility_TerrainGroups {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
+impl TerrainUtility_TerrainGroups {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TerrainUtility_TerrainGroups),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITerrainUtility_TerrainGroupsMethods>::ctor(this);
         this
     }
 }
@@ -215,43 +252,6 @@ impl TerrainUtility_TerrainMap_ErrorCode {
     pub fn edge_alignment_mismatch() -> Self {
         Self { value: 8 }
     }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility_TerrainMap_TileCoord.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct TerrainUtility_TerrainMap_TileCoord {
-    pub tile_x: i32,
-    pub tile_z: i32,
-}
-
-impl ::unity2::ClassIdentity for TerrainUtility_TerrainMap_TileCoord {
-    const NAMESPACE: &'static str = "UnityEngine.Experimental.TerrainAPI";
-
-    const NAME: &'static str = "TerrainUtility.TerrainMap.TileCoord";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TerrainUtility_TerrainMap_TileCoord {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terrainutility")]
-#[::unity2::methods(value)]
-impl TerrainUtility_TerrainMap_TileCoord {
-    #[doc = "`.ctor(i32, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, tile_x: i32, tile_z: i32) -> ();
 }
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terrainutility/TerrainUtility.md"))]

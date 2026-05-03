@@ -16,7 +16,7 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_TargetType.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_ExecuteReason.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -25,14 +25,14 @@ use ::unity2::prelude::*;
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct DragonRideTarget_TargetType {
+pub struct DragonRideTarget_ExecuteReason {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for DragonRideTarget_TargetType {
+impl ::unity2::ClassIdentity for DragonRideTarget_ExecuteReason {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "DragonRideTarget.TargetType";
+    const NAME: &'static str = "DragonRideTarget.ExecuteReason";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -41,7 +41,7 @@ impl ::unity2::ClassIdentity for DragonRideTarget_TargetType {
     }
 }
 
-impl ::unity2::IlType for DragonRideTarget_TargetType {
+impl ::unity2::IlType for DragonRideTarget_ExecuteReason {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -50,11 +50,7 @@ impl ::unity2::IlType for DragonRideTarget_TargetType {
     }
 }
 
-impl DragonRideTarget_TargetType {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
+impl DragonRideTarget_ExecuteReason {
     pub fn normal() -> Self {
         Self { value: 1 }
     }
@@ -64,15 +60,11 @@ impl DragonRideTarget_TargetType {
     }
 
     pub fn chain() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn special() -> Self {
         Self { value: 4 }
     }
 
-    pub fn roulette() -> Self {
-        Self { value: 5 }
+    pub fn reason_count() -> Self {
+        Self { value: 8 }
     }
 }
 
@@ -249,7 +241,7 @@ impl DragonRideTarget {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_ExecuteReason.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/dragonridetarget/DragonRideTarget_TargetType.md"))]
 #[repr(C)]
 #[derive(
     ::core::clone::Clone,
@@ -258,14 +250,14 @@ impl DragonRideTarget {
     ::core::cmp::PartialEq,
     ::core::cmp::Eq,
 )]
-pub struct DragonRideTarget_ExecuteReason {
+pub struct DragonRideTarget_TargetType {
     pub value: i32,
 }
 
-impl ::unity2::ClassIdentity for DragonRideTarget_ExecuteReason {
+impl ::unity2::ClassIdentity for DragonRideTarget_TargetType {
     const NAMESPACE: &'static str = "App";
 
-    const NAME: &'static str = "DragonRideTarget.ExecuteReason";
+    const NAME: &'static str = "DragonRideTarget.TargetType";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -274,7 +266,7 @@ impl ::unity2::ClassIdentity for DragonRideTarget_ExecuteReason {
     }
 }
 
-impl ::unity2::IlType for DragonRideTarget_ExecuteReason {
+impl ::unity2::IlType for DragonRideTarget_TargetType {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -283,7 +275,11 @@ impl ::unity2::IlType for DragonRideTarget_ExecuteReason {
     }
 }
 
-impl DragonRideTarget_ExecuteReason {
+impl DragonRideTarget_TargetType {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
     pub fn normal() -> Self {
         Self { value: 1 }
     }
@@ -293,11 +289,15 @@ impl DragonRideTarget_ExecuteReason {
     }
 
     pub fn chain() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn special() -> Self {
         Self { value: 4 }
     }
 
-    pub fn reason_count() -> Self {
-        Self { value: 8 }
+    pub fn roulette() -> Self {
+        Self { value: 5 }
     }
 }
 

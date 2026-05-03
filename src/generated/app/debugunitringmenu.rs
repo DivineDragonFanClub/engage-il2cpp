@@ -14,38 +14,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu_UnitMenuItem.md"))]
-#[::unity2::class(namespace = "App", name = "DebugUnitRingMenu.UnitMenuItem")]
-#[parent(crate::app::menuitem::MenuItem)]
-pub struct DebugUnitRingMenu_UnitMenuItem {
-    #[rename(name = "m_Unit")]
-    pub m_unit: crate::app::unit::Unit,
-}
-
-#[cfg(feature = "app-debugunitringmenu")]
-#[::unity2::methods]
-impl DebugUnitRingMenu_UnitMenuItem {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-}
-
-#[cfg(feature = "app-debugunitringmenu")]
-impl DebugUnitRingMenu_UnitMenuItem {
-    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
-    pub fn new(unit: crate::app::unit::Unit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUnitRingMenu_UnitMenuItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUnitRingMenu_UnitMenuItemMethods>::ctor(this, unit);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu_UnitRingMenu.md"))]
 #[::unity2::class(namespace = "App", name = "DebugUnitRingMenu.UnitRingMenu")]
 #[parent(crate::app::debugmenu::DebugMenu)]
@@ -86,29 +54,31 @@ impl DebugUnitRingMenu_UnitRingMenu {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu_RingLabelItemBase.md"))]
-#[::unity2::class(namespace = "App", name = "DebugUnitRingMenu.RingLabelItemBase")]
-#[parent(crate::app::labelitem::LabelItem)]
-pub struct DebugUnitRingMenu_RingLabelItemBase {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu.md"))]
+#[::unity2::class(namespace = "App", name = "DebugUnitRingMenu")]
+#[parent(crate::system::object::Object)]
+pub struct DebugUnitRingMenu {
+    #[static_field]
+    #[rename(name = "ColumnWidth0")]
+    pub column_width0: f32,
+    #[static_field]
+    #[rename(name = "ColumnWidth1")]
+    pub column_width1: f32,
+    #[static_field]
+    #[rename(name = "ColumnWidth2")]
+    pub column_width2: f32,
+}
 
 #[cfg(feature = "app-debugunitringmenu")]
 #[::unity2::methods]
-impl DebugUnitRingMenu_RingLabelItemBase {
-    #[doc = "`GetColumnCount()` overload"]
-    #[method(name = "GetColumnCount", args = 0)]
-    pub fn get_column_count(self) -> i32;
+impl DebugUnitRingMenu {
+    #[doc = "`CanCreate(crate::app::unit::Unit)` overload"]
+    #[method(name = "CanCreate", args = 1)]
+    pub fn can_create(unit: crate::app::unit::Unit) -> bool;
 
-    #[doc = "`GetColumnWidth0()` overload"]
-    #[method(name = "GetColumnWidth0", args = 0)]
-    pub fn get_column_width0(self) -> f32;
-
-    #[doc = "`GetColumnWidth1()` overload"]
-    #[method(name = "GetColumnWidth1", args = 0)]
-    pub fn get_column_width1(self) -> f32;
-
-    #[doc = "`GetColumnWidth2()` overload"]
-    #[method(name = "GetColumnWidth2", args = 0)]
-    pub fn get_column_width2(self) -> f32;
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]
+    #[method(name = "CreateBind", args = 2)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst, unit: crate::app::unit::Unit) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -116,17 +86,17 @@ impl DebugUnitRingMenu_RingLabelItemBase {
 }
 
 #[cfg(feature = "app-debugunitringmenu")]
-impl DebugUnitRingMenu_RingLabelItemBase {
+impl DebugUnitRingMenu {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUnitRingMenu_RingLabelItemBase),
+                ::core::stringify!(DebugUnitRingMenu),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugUnitRingMenu_RingLabelItemBaseMethods>::ctor(this);
+        <Self as IDebugUnitRingMenuMethods>::ctor(this);
         this
     }
 }
@@ -179,25 +149,29 @@ impl DebugUnitRingMenu_CommonRingItem {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu_CommonRingLabelItem.md"))]
-#[::unity2::class(namespace = "App", name = "DebugUnitRingMenu.CommonRingLabelItem")]
-#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingLabelItemBase)]
-pub struct DebugUnitRingMenu_CommonRingLabelItem {}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu_RingLabelItemBase.md"))]
+#[::unity2::class(namespace = "App", name = "DebugUnitRingMenu.RingLabelItemBase")]
+#[parent(crate::app::labelitem::LabelItem)]
+pub struct DebugUnitRingMenu_RingLabelItemBase {}
 
 #[cfg(feature = "app-debugunitringmenu")]
 #[::unity2::methods]
-impl DebugUnitRingMenu_CommonRingLabelItem {
-    #[doc = "`GetColumnName0()` overload"]
-    #[method(name = "GetColumnName0", args = 0)]
-    pub fn get_column_name0(self) -> ::unity2::Il2CppString;
+impl DebugUnitRingMenu_RingLabelItemBase {
+    #[doc = "`GetColumnCount()` overload"]
+    #[method(name = "GetColumnCount", args = 0)]
+    pub fn get_column_count(self) -> i32;
 
-    #[doc = "`GetColumnName1()` overload"]
-    #[method(name = "GetColumnName1", args = 0)]
-    pub fn get_column_name1(self) -> ::unity2::Il2CppString;
+    #[doc = "`GetColumnWidth0()` overload"]
+    #[method(name = "GetColumnWidth0", args = 0)]
+    pub fn get_column_width0(self) -> f32;
 
-    #[doc = "`GetColumnName2()` overload"]
-    #[method(name = "GetColumnName2", args = 0)]
-    pub fn get_column_name2(self) -> ::unity2::Il2CppString;
+    #[doc = "`GetColumnWidth1()` overload"]
+    #[method(name = "GetColumnWidth1", args = 0)]
+    pub fn get_column_width1(self) -> f32;
+
+    #[doc = "`GetColumnWidth2()` overload"]
+    #[method(name = "GetColumnWidth2", args = 0)]
+    pub fn get_column_width2(self) -> f32;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -205,64 +179,54 @@ impl DebugUnitRingMenu_CommonRingLabelItem {
 }
 
 #[cfg(feature = "app-debugunitringmenu")]
-impl DebugUnitRingMenu_CommonRingLabelItem {
+impl DebugUnitRingMenu_RingLabelItemBase {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUnitRingMenu_CommonRingLabelItem),
+                ::core::stringify!(DebugUnitRingMenu_RingLabelItemBase),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugUnitRingMenu_CommonRingLabelItemMethods>::ctor(this);
+        <Self as IDebugUnitRingMenu_RingLabelItemBaseMethods>::ctor(this);
         this
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu.md"))]
-#[::unity2::class(namespace = "App", name = "DebugUnitRingMenu")]
-#[parent(crate::system::object::Object)]
-pub struct DebugUnitRingMenu {
-    #[static_field]
-    #[rename(name = "ColumnWidth0")]
-    pub column_width0: f32,
-    #[static_field]
-    #[rename(name = "ColumnWidth1")]
-    pub column_width1: f32,
-    #[static_field]
-    #[rename(name = "ColumnWidth2")]
-    pub column_width2: f32,
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu_ClearRingItem.md"))]
+#[::unity2::class(namespace = "App", name = "DebugUnitRingMenu.ClearRingItem")]
+#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_UnitMenuItem)]
+pub struct DebugUnitRingMenu_ClearRingItem {}
 
 #[cfg(feature = "app-debugunitringmenu")]
 #[::unity2::methods]
-impl DebugUnitRingMenu {
-    #[doc = "`CanCreate(crate::app::unit::Unit)` overload"]
-    #[method(name = "CanCreate", args = 1)]
-    pub fn can_create(unit: crate::app::unit::Unit) -> bool;
+impl DebugUnitRingMenu_ClearRingItem {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
 
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]
-    #[method(name = "CreateBind", args = 2)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst, unit: crate::app::unit::Unit) -> ();
+    #[doc = "`GetName()` overload"]
+    #[method(name = "GetName", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
 
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+    #[doc = "`ACall()` overload"]
+    #[method(name = "ACall", args = 0)]
+    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
 }
 
 #[cfg(feature = "app-debugunitringmenu")]
-impl DebugUnitRingMenu {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
+impl DebugUnitRingMenu_ClearRingItem {
+    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
+    pub fn new(unit: crate::app::unit::Unit) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUnitRingMenu),
+                ::core::stringify!(DebugUnitRingMenu_ClearRingItem),
                 ::core::stringify!(new),
             )
         });
-        <Self as IDebugUnitRingMenuMethods>::ctor(this);
+        <Self as IDebugUnitRingMenu_ClearRingItemMethods>::ctor(this, unit);
         this
     }
 }
@@ -304,6 +268,38 @@ impl DebugUnitRingMenu_EmblemRingLabelItem {
             )
         });
         <Self as IDebugUnitRingMenu_EmblemRingLabelItemMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu_UnitMenuItem.md"))]
+#[::unity2::class(namespace = "App", name = "DebugUnitRingMenu.UnitMenuItem")]
+#[parent(crate::app::menuitem::MenuItem)]
+pub struct DebugUnitRingMenu_UnitMenuItem {
+    #[rename(name = "m_Unit")]
+    pub m_unit: crate::app::unit::Unit,
+}
+
+#[cfg(feature = "app-debugunitringmenu")]
+#[::unity2::methods]
+impl DebugUnitRingMenu_UnitMenuItem {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-debugunitringmenu")]
+impl DebugUnitRingMenu_UnitMenuItem {
+    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
+    pub fn new(unit: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUnitRingMenu_UnitMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUnitRingMenu_UnitMenuItemMethods>::ctor(this, unit);
         this
     }
 }
@@ -353,6 +349,76 @@ impl DebugUnitRingMenu_RingItemBase {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu_CurrentRingLabelItem.md"))]
+#[::unity2::class(namespace = "App", name = "DebugUnitRingMenu.CurrentRingLabelItem")]
+#[parent(crate::app::labelitem::LabelItem)]
+pub struct DebugUnitRingMenu_CurrentRingLabelItem {}
+
+#[cfg(feature = "app-debugunitringmenu")]
+#[::unity2::methods]
+impl DebugUnitRingMenu_CurrentRingLabelItem {
+    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
+}
+
+#[cfg(feature = "app-debugunitringmenu")]
+impl DebugUnitRingMenu_CurrentRingLabelItem {
+    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
+    pub fn new(unit: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUnitRingMenu_CurrentRingLabelItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUnitRingMenu_CurrentRingLabelItemMethods>::ctor(this, unit);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu_CommonRingLabelItem.md"))]
+#[::unity2::class(namespace = "App", name = "DebugUnitRingMenu.CommonRingLabelItem")]
+#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingLabelItemBase)]
+pub struct DebugUnitRingMenu_CommonRingLabelItem {}
+
+#[cfg(feature = "app-debugunitringmenu")]
+#[::unity2::methods]
+impl DebugUnitRingMenu_CommonRingLabelItem {
+    #[doc = "`GetColumnName0()` overload"]
+    #[method(name = "GetColumnName0", args = 0)]
+    pub fn get_column_name0(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetColumnName1()` overload"]
+    #[method(name = "GetColumnName1", args = 0)]
+    pub fn get_column_name1(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetColumnName2()` overload"]
+    #[method(name = "GetColumnName2", args = 0)]
+    pub fn get_column_name2(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-debugunitringmenu")]
+impl DebugUnitRingMenu_CommonRingLabelItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(DebugUnitRingMenu_CommonRingLabelItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugUnitRingMenu_CommonRingLabelItemMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu_EmblemRingItem.md"))]
 #[::unity2::class(namespace = "App", name = "DebugUnitRingMenu.EmblemRingItem")]
 #[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_RingItemBase)]
@@ -397,72 +463,6 @@ impl DebugUnitRingMenu_EmblemRingItem {
             )
         });
         <Self as IDebugUnitRingMenu_EmblemRingItemMethods>::ctor(this, unit, god_unit);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu_ClearRingItem.md"))]
-#[::unity2::class(namespace = "App", name = "DebugUnitRingMenu.ClearRingItem")]
-#[parent(crate::app::debugunitringmenu::DebugUnitRingMenu_UnitMenuItem)]
-pub struct DebugUnitRingMenu_ClearRingItem {}
-
-#[cfg(feature = "app-debugunitringmenu")]
-#[::unity2::methods]
-impl DebugUnitRingMenu_ClearRingItem {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`GetName()` overload"]
-    #[method(name = "GetName", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`ACall()` overload"]
-    #[method(name = "ACall", args = 0)]
-    pub fn a_call(self) -> crate::app::menuitem::MenuItem_Result;
-}
-
-#[cfg(feature = "app-debugunitringmenu")]
-impl DebugUnitRingMenu_ClearRingItem {
-    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
-    pub fn new(unit: crate::app::unit::Unit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUnitRingMenu_ClearRingItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUnitRingMenu_ClearRingItemMethods>::ctor(this, unit);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugunitringmenu/DebugUnitRingMenu_CurrentRingLabelItem.md"))]
-#[::unity2::class(namespace = "App", name = "DebugUnitRingMenu.CurrentRingLabelItem")]
-#[parent(crate::app::labelitem::LabelItem)]
-pub struct DebugUnitRingMenu_CurrentRingLabelItem {}
-
-#[cfg(feature = "app-debugunitringmenu")]
-#[::unity2::methods]
-impl DebugUnitRingMenu_CurrentRingLabelItem {
-    #[doc = "`.ctor(crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, unit: crate::app::unit::Unit) -> ();
-}
-
-#[cfg(feature = "app-debugunitringmenu")]
-impl DebugUnitRingMenu_CurrentRingLabelItem {
-    #[doc = "`.ctor(crate::app::unit::Unit)` — overload selector"]
-    pub fn new(unit: crate::app::unit::Unit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(DebugUnitRingMenu_CurrentRingLabelItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IDebugUnitRingMenu_CurrentRingLabelItemMethods>::ctor(this, unit);
         this
     }
 }

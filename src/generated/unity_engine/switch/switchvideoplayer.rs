@@ -12,6 +12,45 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Switch",
+    name = "SwitchVideoPlayer.MovieEventDelegate"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct SwitchVideoPlayer_MovieEventDelegate {}
+
+#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
+#[::unity2::methods]
+impl SwitchVideoPlayer_MovieEventDelegate {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        eventtype: crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event,
+    ) -> ();
+}
+
+#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
+impl SwitchVideoPlayer_MovieEventDelegate {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SwitchVideoPlayer_MovieEventDelegate),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISwitchVideoPlayer_MovieEventDelegateMethods>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer.md"))]
 #[::unity2::class(namespace = "UnityEngine.Switch", name = "SwitchVideoPlayer")]
 #[parent(crate::system::object::Object)]
@@ -94,44 +133,5 @@ impl SwitchVideoPlayer_Event {
 
     pub fn first_frame_ready() -> Self {
         Self { value: 4 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/switchvideoplayer/SwitchVideoPlayer_MovieEventDelegate.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Switch",
-    name = "SwitchVideoPlayer.MovieEventDelegate"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct SwitchVideoPlayer_MovieEventDelegate {}
-
-#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-#[::unity2::methods]
-impl SwitchVideoPlayer_MovieEventDelegate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        eventtype: crate::unity_engine::switch::switchvideoplayer::SwitchVideoPlayer_Event,
-    ) -> ();
-}
-
-#[cfg(feature = "unity_engine-switch-switchvideoplayer")]
-impl SwitchVideoPlayer_MovieEventDelegate {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SwitchVideoPlayer_MovieEventDelegate),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISwitchVideoPlayer_MovieEventDelegateMethods>::ctor(this, object, method);
-        this
     }
 }

@@ -6,6 +6,43 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage.md"))]
+#[::unity2::class(namespace = "App", name = "NetWaitMessage")]
+#[parent(crate::system::object::Object)]
+pub struct NetWaitMessage {}
+
+#[cfg(feature = "app-netwaitmessage")]
+#[::unity2::methods]
+impl NetWaitMessage {
+    #[doc = "`Open(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "Open", args = 1)]
+    pub fn open(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`Close(bool)` overload"]
+    #[method(name = "Close", args = 1)]
+    pub fn close(is_success: bool) -> ();
+
+    #[doc = "`CloseSuccess()` overload"]
+    #[method(name = "CloseSuccess", args = 0)]
+    pub fn close_success() -> ();
+
+    #[doc = "`CloseFailure()` overload"]
+    #[method(name = "CloseFailure", args = 0)]
+    pub fn close_failure() -> ();
+
+    #[doc = "`CloseWait(crate::app::procinst::ProcInst, bool)` overload"]
+    #[method(name = "CloseWait", args = 2)]
+    pub fn close_wait(super_: crate::app::procinst::ProcInst, is_success: bool) -> ();
+
+    #[doc = "`CloseWaitSuccess(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CloseWaitSuccess", args = 1)]
+    pub fn close_wait_success(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`CloseWaitFailure(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CloseWaitFailure", args = 1)]
+    pub fn close_wait_failure(super_: crate::app::procinst::ProcInst) -> ();
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage_ProcOpen.md"))]
 #[::unity2::class(namespace = "App", name = "NetWaitMessage.ProcOpen")]
 #[parent(crate::app::procinst::ProcInst)]
@@ -81,41 +118,4 @@ impl NetWaitMessage_ProcCloseWait {
         <Self as INetWaitMessage_ProcCloseWaitMethods>::ctor(this, is_success);
         this
     }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/netwaitmessage/NetWaitMessage.md"))]
-#[::unity2::class(namespace = "App", name = "NetWaitMessage")]
-#[parent(crate::system::object::Object)]
-pub struct NetWaitMessage {}
-
-#[cfg(feature = "app-netwaitmessage")]
-#[::unity2::methods]
-impl NetWaitMessage {
-    #[doc = "`Open(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "Open", args = 1)]
-    pub fn open(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`Close(bool)` overload"]
-    #[method(name = "Close", args = 1)]
-    pub fn close(is_success: bool) -> ();
-
-    #[doc = "`CloseSuccess()` overload"]
-    #[method(name = "CloseSuccess", args = 0)]
-    pub fn close_success() -> ();
-
-    #[doc = "`CloseFailure()` overload"]
-    #[method(name = "CloseFailure", args = 0)]
-    pub fn close_failure() -> ();
-
-    #[doc = "`CloseWait(crate::app::procinst::ProcInst, bool)` overload"]
-    #[method(name = "CloseWait", args = 2)]
-    pub fn close_wait(super_: crate::app::procinst::ProcInst, is_success: bool) -> ();
-
-    #[doc = "`CloseWaitSuccess(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CloseWaitSuccess", args = 1)]
-    pub fn close_wait_success(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`CloseWaitFailure(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CloseWaitFailure", args = 1)]
-    pub fn close_wait_failure(super_: crate::app::procinst::ProcInst) -> ();
 }

@@ -14,6 +14,1167 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundBankManager.md"))]
+#[::unity2::class(namespace = "App", name = "SoundWwise.SoundBankManager")]
+# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: soundwwise :: SoundWwise_SoundBankManager >)]
+pub struct SoundWwise_SoundBankManager {
+    #[rename(name = "m_bankHandles")]
+    pub m_bank_handles: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle,
+    >,
+    #[rename(name = "m_workRemovingHandles")]
+    pub m_work_removing_handles: crate::system::collections::generic::list_1::List_1<
+        crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle,
+    >,
+}
+
+#[cfg(feature = "app-soundwwise")]
+#[::unity2::methods]
+impl SoundWwise_SoundBankManager {
+    #[doc = "`Create()` overload"]
+    #[method(name = "Create", args = 0)]
+    pub fn create() -> ();
+
+    #[doc = "`LoadBank(::unity2::Il2CppString)` overload"]
+    #[method(name = "LoadBank", args = 1)]
+    pub fn load_bank(name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`LoadBankAsync(::unity2::Il2CppString)` overload"]
+    #[method(name = "LoadBankAsync", args = 1)]
+    pub fn load_bank_async(name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`IsLoading()` overload"]
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading() -> bool;
+
+    #[doc = "`UnloadBank(::unity2::Il2CppString)` overload"]
+    #[method(name = "UnloadBank", args = 1)]
+    pub fn unload_bank(name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`UnloadAllBanks()` overload"]
+    #[method(name = "UnloadAllBanks", args = 0)]
+    pub fn unload_all_banks() -> ();
+
+    #[doc = "`Cleanup()` overload"]
+    #[method(name = "Cleanup", args = 0)]
+    pub fn cleanup() -> ();
+
+    #[doc = "`ReloadBankBySetLanguage(crate::app::language::Language_Voices)` overload"]
+    #[method(name = "ReloadBankBySetLanguage", args = 1)]
+    pub fn reload_bank_by_set_language(language: crate::app::language::Language_Voices) -> ();
+
+    #[doc = "`GetState(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetState", args = 1)]
+    pub fn get_state(
+        name: ::unity2::Il2CppString,
+    ) -> crate::app::soundwwise::SoundWwise_SoundBankManager_States;
+
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+
+    #[doc = "`LoadBankImpl(::unity2::Il2CppString)` overload"]
+    #[method(name = "LoadBankImpl", args = 1)]
+    pub fn load_bank_impl(self, bank_name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`LoadBankAsyncImpl(::unity2::Il2CppString)` overload"]
+    #[method(name = "LoadBankAsyncImpl", args = 1)]
+    pub fn load_bank_async_impl(self, bank_name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`IsLoadingImpl()` overload"]
+    #[method(name = "IsLoadingImpl", args = 0)]
+    pub fn is_loading_impl(self) -> bool;
+
+    #[doc = "`UnloadBankImpl(::unity2::Il2CppString)` overload"]
+    #[method(name = "UnloadBankImpl", args = 1)]
+    pub fn unload_bank_impl(self, bank_name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`UnloadBankImpl(crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle)` overload"]
+    #[method(name = "UnloadBankImpl", args = 1)]
+    pub fn unload_bank_impl_2(
+        self,
+        handle: crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle,
+    ) -> ();
+
+    #[doc = "`UnloadAllBanksImpl()` overload"]
+    #[method(name = "UnloadAllBanksImpl", args = 0)]
+    pub fn unload_all_banks_impl(self) -> ();
+
+    #[doc = "`CleanupImpl()` overload"]
+    #[method(name = "CleanupImpl", args = 0)]
+    pub fn cleanup_impl(self) -> ();
+
+    #[doc = "`ReloadImpl(crate::app::language::Language_Voices)` overload"]
+    #[method(name = "ReloadImpl", args = 1)]
+    pub fn reload_impl(self, language: crate::app::language::Language_Voices) -> ();
+
+    #[doc = "`GetStateImpl(::unity2::Il2CppString)` overload"]
+    #[method(name = "GetStateImpl", args = 1)]
+    pub fn get_state_impl(
+        self,
+        bank_name: ::unity2::Il2CppString,
+    ) -> crate::app::soundwwise::SoundWwise_SoundBankManager_States;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-soundwwise")]
+impl SoundWwise_SoundBankManager {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundWwise_SoundBankManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundWwise_SoundBankManagerMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPrepareManager_EventParam.md"))]
+#[::unity2::class(namespace = "App", name = "SoundWwise.SoundPrepareManager.EventParam")]
+#[parent(crate::app::soundwwise::SoundWwise_SoundPrepareManager_Param)]
+pub struct SoundWwise_SoundPrepareManager_EventParam {
+    #[rename(name = "m_eventName")]
+    pub m_event_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "app-soundwwise")]
+#[::unity2::methods]
+impl SoundWwise_SoundPrepareManager_EventParam {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, event_name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`GetEventName()` overload"]
+    #[method(name = "GetEventName", args = 0)]
+    pub fn get_event_name(self) -> ::unity2::Il2CppString;
+}
+
+#[cfg(feature = "app-soundwwise")]
+impl SoundWwise_SoundPrepareManager_EventParam {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(event_name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundWwise_SoundPrepareManager_EventParam),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundWwise_SoundPrepareManager_EventParamMethods>::ctor(this, event_name);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise.md"))]
+#[::unity2::class(namespace = "App", name = "SoundWwise")]
+#[parent(crate::system::object::Object)]
+pub struct SoundWwise {
+    #[static_field]
+    #[rename(name = "WwiseGlobalObjectName")]
+    pub wwise_global_object_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "AudioListenerObjectName")]
+    pub audio_listener_object_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "s_WwiseGlobalObject")]
+    pub s_wwise_global_object: crate::unity_engine::gameobject::GameObject,
+    #[static_field]
+    #[rename(name = "s_audioListenerObject")]
+    pub s_audio_listener_object: crate::unity_engine::gameobject::GameObject,
+}
+
+#[cfg(feature = "app-soundwwise")]
+#[::unity2::methods]
+impl SoundWwise {
+    #[doc = "`Init(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "Init", args = 1)]
+    pub fn init(wwise_global_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`GetWwiseGlobalObject()` overload"]
+    #[method(name = "GetWwiseGlobalObject", args = 0)]
+    pub fn get_wwise_global_object() -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`GetAudioListenerObject()` overload"]
+    #[method(name = "GetAudioListenerObject", args = 0)]
+    pub fn get_audio_listener_object() -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`SetLanguage(crate::app::language::Language_Voices)` overload"]
+    #[method(name = "SetLanguage", args = 1)]
+    pub fn set_language(language: crate::app::language::Language_Voices) -> ();
+
+    #[doc = "`CalcPrepareEventNameArray(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "CalcPrepareEventNameArray", args = 1)]
+    pub fn calc_prepare_event_name_array(
+        event_name_array: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[doc = "`UnprepareEvent(::unity2::Il2CppString)` overload"]
+    #[method(name = "UnprepareEvent", args = 1)]
+    pub fn unprepare_event(event_name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`UnprepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "UnprepareEvent", args = 1)]
+    pub fn unprepare_event_2(event_name_array: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[doc = "`ClearPrepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "ClearPrepareEvent", args = 1)]
+    pub fn clear_prepare_event(event_name_array: ::unity2::Array<::unity2::Il2CppString>) -> ();
+
+    #[doc = "`CalcUnprepareEventNameArray(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "CalcUnprepareEventNameArray", args = 1)]
+    pub fn calc_unprepare_event_name_array(
+        event_name_array: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> ::unity2::Array<::unity2::Il2CppString>;
+
+    #[doc = "`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "UnprepareSwitch", args = 2)]
+    pub fn unprepare_switch(
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "UnprepareSwitch", args = 2)]
+    pub fn unprepare_switch_2(
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> ();
+
+    #[doc = "`ClearPrepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "ClearPrepareSwitch", args = 2)]
+    pub fn clear_prepare_switch(
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> ();
+
+    #[doc = "`ClearPrepare()` overload"]
+    #[method(name = "ClearPrepare", args = 0)]
+    pub fn clear_prepare() -> ();
+
+    #[doc = "`IsEventLoaded(::unity2::Il2CppString)` overload"]
+    #[method(name = "IsEventLoaded", args = 1)]
+    pub fn is_event_loaded(event_name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`PostEvent(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "PostEvent", args = 2)]
+    pub fn post_event(
+        event_name: ::unity2::Il2CppString,
+        game_object: crate::unity_engine::gameobject::GameObject,
+    ) -> u32;
+
+    #[doc = "`StopSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject, u32)` overload"]
+    #[method(name = "StopSoundOnEvent", args = 4)]
+    pub fn stop_sound_on_event(
+        event_name: ::unity2::Il2CppString,
+        msec: i32,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        playing_id: u32,
+    ) -> ();
+
+    #[doc = "`PauseSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject, u32)` overload"]
+    #[method(name = "PauseSoundOnEvent", args = 4)]
+    pub fn pause_sound_on_event(
+        event_name: ::unity2::Il2CppString,
+        msec: i32,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        playing_id: u32,
+    ) -> ();
+
+    #[doc = "`ResumeSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject, u32)` overload"]
+    #[method(name = "ResumeSoundOnEvent", args = 4)]
+    pub fn resume_sound_on_event(
+        event_name: ::unity2::Il2CppString,
+        msec: i32,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        playing_id: u32,
+    ) -> ();
+
+    #[doc = "`SetVolume(f32, crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "SetVolume", args = 2)]
+    pub fn set_volume(vol: f32, game_object: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`StopByPlayingID(u32, i32)` overload"]
+    #[method(name = "StopByPlayingID", args = 2)]
+    pub fn stop_by_playing_id(playing_id: u32, msec: i32) -> ();
+
+    #[doc = "`GetState(::unity2::Il2CppString, u32)` overload"]
+    #[method(name = "GetState", args = 2)]
+    pub fn get_state(state_group_name: ::unity2::Il2CppString, value: u32) -> bool;
+
+    #[doc = "`GetSwitch(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, u32)` overload"]
+    #[method(name = "GetSwitch", args = 3)]
+    pub fn get_switch(
+        switch_group_name: ::unity2::Il2CppString,
+        game_object_id: crate::unity_engine::gameobject::GameObject,
+        value: u32,
+    ) -> bool;
+
+    #[doc = "`GetGameParameter(::unity2::Il2CppString, f32)` overload"]
+    #[method(name = "GetGameParameter", args = 2)]
+    pub fn get_game_parameter(param_name: ::unity2::Il2CppString, value: f32) -> bool;
+
+    #[doc = "`GetGameParameter(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, f32)` overload"]
+    #[method(name = "GetGameParameter", args = 3)]
+    pub fn get_game_parameter_2(
+        param_name: ::unity2::Il2CppString,
+        game_object_id: crate::unity_engine::gameobject::GameObject,
+        value: f32,
+    ) -> bool;
+
+    #[doc = "`SetState(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "SetState", args = 2)]
+    pub fn set_state(
+        state_group_name: ::unity2::Il2CppString,
+        state_name: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[doc = "`SetState(::unity2::Il2CppString, u32)` overload"]
+    #[method(name = "SetState", args = 2)]
+    pub fn set_state_2(state_group_name: ::unity2::Il2CppString, state_value: u32) -> bool;
+
+    #[doc = "`SetSwitch(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "SetSwitch", args = 3)]
+    pub fn set_switch(
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name: ::unity2::Il2CppString,
+        game_object_id: crate::unity_engine::gameobject::GameObject,
+    ) -> bool;
+
+    #[doc = "`SetSwitch(::unity2::Il2CppString, u32, crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "SetSwitch", args = 3)]
+    pub fn set_switch_2(
+        switch_group_name: ::unity2::Il2CppString,
+        switch_value: u32,
+        game_object_id: crate::unity_engine::gameobject::GameObject,
+    ) -> bool;
+
+    #[doc = "`SetGameParameter(::unity2::Il2CppString, f32, i32)` overload"]
+    #[method(name = "SetGameParameter", args = 3)]
+    pub fn set_game_parameter(param_name: ::unity2::Il2CppString, value: f32, msec: i32) -> bool;
+
+    #[doc = "`SetGameParameter(::unity2::Il2CppString, f32, crate::unity_engine::gameobject::GameObject, i32)` overload"]
+    #[method(name = "SetGameParameter", args = 4)]
+    pub fn set_game_parameter_2(
+        param_name: ::unity2::Il2CppString,
+        value: f32,
+        game_object_id: crate::unity_engine::gameobject::GameObject,
+        msec: i32,
+    ) -> bool;
+
+    #[doc = "`ResetGameParameter(::unity2::Il2CppString, i32)` overload"]
+    #[method(name = "ResetGameParameter", args = 2)]
+    pub fn reset_game_parameter(param_name: ::unity2::Il2CppString, msec: i32) -> bool;
+
+    #[doc = "`ResetGameParameter(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, i32)` overload"]
+    #[method(name = "ResetGameParameter", args = 3)]
+    pub fn reset_game_parameter_2(
+        param_name: ::unity2::Il2CppString,
+        game_object_id: crate::unity_engine::gameobject::GameObject,
+        msec: i32,
+    ) -> bool;
+
+    #[doc = "`GetPlayPosition(u32, i32)` overload"]
+    #[method(name = "GetPlayPosition", args = 2)]
+    pub fn get_play_position(playing_id: u32, position_offset: i32) -> i32;
+
+    #[doc = "`SetPosition(crate::unity_engine::gameobject::GameObject, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "SetPosition", args = 4)]
+    pub fn set_position(
+        game_object: crate::unity_engine::gameobject::GameObject,
+        pos: crate::unity_engine::vector3::Vector3,
+        forward: crate::unity_engine::vector3::Vector3,
+        up: crate::unity_engine::vector3::Vector3,
+    ) -> bool;
+
+    #[doc = "`GetAudioListenerPosistion()` overload"]
+    #[method(name = "GetAudioListenerPosistion", args = 0)]
+    pub fn get_audio_listener_posistion() -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`GetAudioListenerRotation()` overload"]
+    #[method(name = "GetAudioListenerRotation", args = 0)]
+    pub fn get_audio_listener_rotation() -> crate::unity_engine::quaternion::Quaternion;
+
+    #[doc = "`SetAudioListenerPosistion(crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "SetAudioListenerPosistion", args = 1)]
+    pub fn set_audio_listener_posistion(listener_pos: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[doc = "`SetAudioListenerRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
+    #[method(name = "SetAudioListenerRotation", args = 1)]
+    pub fn set_audio_listener_rotation(
+        listener_rot: crate::unity_engine::quaternion::Quaternion,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-soundwwise")]
+impl SoundWwise {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundWwise),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundWwiseMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundHandle.md"))]
+#[::unity2::class(namespace = "App", name = "SoundWwise.SoundHandle")]
+#[parent(crate::app::soundsystem::SoundSystem_SoundHandle)]
+pub struct SoundWwise_SoundHandle {
+    #[rename(name = "m_eventName")]
+    pub m_event_name: ::unity2::Il2CppString,
+    #[rename(name = "m_eventId")]
+    pub m_event_id: u32,
+    #[rename(name = "m_lipSyncDataFileName")]
+    pub m_lip_sync_data_file_name: ::unity2::Il2CppString,
+    #[rename(name = "m_gameObject")]
+    pub m_game_object: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_playingId")]
+    pub m_playing_id: u32,
+    #[rename(name = "m_isPlaying")]
+    pub m_is_playing: bool,
+    #[rename(name = "m_isTemporaryGameObject")]
+    pub m_is_temporary_game_object: bool,
+    #[rename(name = "m_character")]
+    pub m_character: crate::combat::character::Character,
+    #[rename(name = "m_eventCharacterMouthController")]
+    pub m_event_character_mouth_controller:
+        crate::app::eventcharactermouthcontroller::EventCharacterMouthController,
+}
+
+#[cfg(feature = "app-soundwwise")]
+#[::unity2::methods]
+impl SoundWwise_SoundHandle {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`Init(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, u32, bool)` overload"]
+    #[method(name = "Init", args = 4)]
+    pub fn init(
+        self,
+        event_name: ::unity2::Il2CppString,
+        game_object: crate::unity_engine::gameobject::GameObject,
+        playing_id: u32,
+        is_temporary_game_object: bool,
+    ) -> ();
+
+    #[doc = "`GetEventName()` overload"]
+    #[method(name = "GetEventName", args = 0)]
+    pub fn get_event_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`GetEventId()` overload"]
+    #[method(name = "GetEventId", args = 0)]
+    pub fn get_event_id(self) -> u32;
+
+    #[doc = "`IsPlaying()` overload"]
+    #[method(name = "IsPlaying", args = 0)]
+    pub fn is_playing(self) -> bool;
+
+    #[doc = "`GetGameObject()` overload"]
+    #[method(name = "GetGameObject", args = 0)]
+    pub fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`GetPlayingId()` overload"]
+    #[method(name = "GetPlayingId", args = 0)]
+    pub fn get_playing_id(self) -> u32;
+
+    #[doc = "`GetCharacter()` overload"]
+    #[method(name = "GetCharacter", args = 0)]
+    pub fn get_character(self) -> crate::combat::character::Character;
+
+    #[doc = "`GetEventCharacterMouthController()` overload"]
+    #[method(name = "GetEventCharacterMouthController", args = 0)]
+    pub fn get_event_character_mouth_controller(
+        self,
+    ) -> crate::app::eventcharactermouthcontroller::EventCharacterMouthController;
+
+    #[doc = "`SetCharacter(crate::combat::character::Character)` overload"]
+    #[method(name = "SetCharacter", args = 1)]
+    pub fn set_character(self, character: crate::combat::character::Character) -> ();
+
+    #[doc = "`SetEventCharacterMouthController(crate::app::eventcharactermouthcontroller::EventCharacterMouthController)` overload"]
+    #[method(name = "SetEventCharacterMouthController", args = 1)]
+    pub fn set_event_character_mouth_controller(
+        self,
+        event_character_mouth_controller : crate :: app :: eventcharactermouthcontroller :: EventCharacterMouthController,
+    ) -> ();
+
+    #[doc = "`GetLipSyncDataFileName()` overload"]
+    #[method(name = "GetLipSyncDataFileName", args = 0)]
+    pub fn get_lip_sync_data_file_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`IsTemporaryObject()` overload"]
+    #[method(name = "IsTemporaryObject", args = 0)]
+    pub fn is_temporary_object(self) -> bool;
+
+    #[doc = "`SetIsPlaying(bool)` overload"]
+    #[method(name = "SetIsPlaying", args = 1)]
+    pub fn set_is_playing(self, is_playing: bool) -> ();
+
+    #[doc = "`SetLipSyncDataFileName(::unity2::Il2CppString)` overload"]
+    #[method(name = "SetLipSyncDataFileName", args = 1)]
+    pub fn set_lip_sync_data_file_name(self, lip_sync_data_file_name: ::unity2::Il2CppString)
+        -> ();
+
+    #[doc = "`IsEnable()` overload"]
+    #[method(name = "IsEnable", args = 0)]
+    pub fn is_enable(self) -> bool;
+
+    #[doc = "`Stop(i32)` overload"]
+    #[method(name = "Stop", args = 1)]
+    pub fn stop(self, fade_msec: i32) -> ();
+
+    #[doc = "`Pause(i32)` overload"]
+    #[method(name = "Pause", args = 1)]
+    pub fn pause(self, fade_msec: i32) -> ();
+
+    #[doc = "`Resume(i32)` overload"]
+    #[method(name = "Resume", args = 1)]
+    pub fn resume(self, fade_msec: i32) -> ();
+}
+
+#[cfg(feature = "app-soundwwise")]
+impl SoundWwise_SoundHandle {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundWwise_SoundHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundWwise_SoundHandleMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/soundwwise/SoundWwise_SoundBankManager_States.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SoundWwise_SoundBankManager_States {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for SoundWwise_SoundBankManager_States {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SoundWwise.SoundBankManager.States";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SoundWwise_SoundBankManager_States {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SoundWwise_SoundBankManager_States {
+    pub fn loading() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn loaded() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn unexist() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundLoad.md"))]
+#[::unity2::class(namespace = "App", name = "SoundWwise.SoundLoad")]
+#[parent(crate::system::object::Object)]
+pub struct SoundWwise_SoundLoad {}
+
+#[cfg(feature = "app-soundwwise")]
+#[::unity2::methods]
+impl SoundWwise_SoundLoad {
+    #[doc = "`Load(::unity2::Il2CppString)` overload"]
+    #[method(name = "Load", args = 1)]
+    pub fn load(self, name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`LoadAsync(::unity2::Il2CppString)` overload"]
+    #[method(name = "LoadAsync", args = 1)]
+    pub fn load_async(self, name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`IsLoading()` overload"]
+    #[method(name = "IsLoading", args = 0)]
+    pub fn is_loading(self) -> bool;
+
+    #[doc = "`IsLoading(::unity2::Il2CppString)` overload"]
+    #[method(name = "IsLoading", args = 1)]
+    pub fn is_loading_2(self, name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`IsLoaded(::unity2::Il2CppString)` overload"]
+    #[method(name = "IsLoaded", args = 1)]
+    pub fn is_loaded(self, name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`Unload(::unity2::Il2CppString)` overload"]
+    #[method(name = "Unload", args = 1)]
+    pub fn unload(self, name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`UnloadAll()` overload"]
+    #[method(name = "UnloadAll", args = 0)]
+    pub fn unload_all(self) -> ();
+
+    #[doc = "`ReloadBySetLanguage(crate::app::language::Language_Voices)` overload"]
+    #[method(name = "ReloadBySetLanguage", args = 1)]
+    pub fn reload_by_set_language(self, language: crate::app::language::Language_Voices) -> ();
+
+    #[doc = "`PrepareEvent(::unity2::Il2CppString)` overload"]
+    #[method(name = "PrepareEvent", args = 1)]
+    pub fn prepare_event(self, event_name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`PrepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "PrepareEvent", args = 1)]
+    pub fn prepare_event_2(self, event_name_array: ::unity2::Array<::unity2::Il2CppString>)
+        -> bool;
+
+    #[doc = "`PrepareEventAsync(::unity2::Il2CppString, crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]
+    #[method(name = "PrepareEventAsync", args = 2)]
+    pub fn prepare_event_async(
+        self,
+        event_name: ::unity2::Il2CppString,
+        result_sound_load: crate::app::soundsystem::SoundSystem_ResultSoundLoad,
+    ) -> bool;
+
+    #[doc = "`PrepareEventAsync(::unity2::Array<::unity2::Il2CppString>, crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]
+    #[method(name = "PrepareEventAsync", args = 2)]
+    pub fn prepare_event_async_2(
+        self,
+        event_name_array: ::unity2::Array<::unity2::Il2CppString>,
+        result_sound_load: crate::app::soundsystem::SoundSystem_ResultSoundLoad,
+    ) -> bool;
+
+    #[doc = "`UnprepareEvent(::unity2::Il2CppString)` overload"]
+    #[method(name = "UnprepareEvent", args = 1)]
+    pub fn unprepare_event(self, event_name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`UnprepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "UnprepareEvent", args = 1)]
+    pub fn unprepare_event_2(self, event_name_array: ::unity2::Array<::unity2::Il2CppString>)
+        -> ();
+
+    #[doc = "`PrepareSwitch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "PrepareSwitch", args = 2)]
+    pub fn prepare_switch(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[doc = "`PrepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "PrepareSwitch", args = 2)]
+    pub fn prepare_switch_2(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> bool;
+
+    #[doc = "`PrepareSwitchAsync(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]
+    #[method(name = "PrepareSwitchAsync", args = 3)]
+    pub fn prepare_switch_async(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name: ::unity2::Il2CppString,
+        result_sound_load: crate::app::soundsystem::SoundSystem_ResultSoundLoad,
+    ) -> bool;
+
+    #[doc = "`PrepareSwitchAsync(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>, crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]
+    #[method(name = "PrepareSwitchAsync", args = 3)]
+    pub fn prepare_switch_async_2(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
+        result_sound_load: crate::app::soundsystem::SoundSystem_ResultSoundLoad,
+    ) -> bool;
+
+    #[doc = "`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "UnprepareSwitch", args = 2)]
+    pub fn unprepare_switch(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name: ::unity2::Il2CppString,
+    ) -> ();
+
+    #[doc = "`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
+    #[method(name = "UnprepareSwitch", args = 2)]
+    pub fn unprepare_switch_2(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
+    ) -> ();
+
+    #[doc = "`ClearPrepare()` overload"]
+    #[method(name = "ClearPrepare", args = 0)]
+    pub fn clear_prepare(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-soundwwise")]
+impl SoundWwise_SoundLoad {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundWwise_SoundLoad),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundWwise_SoundLoadMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPrepareManager_SwitchParamList.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "SoundWwise.SoundPrepareManager.SwitchParamList"
+)]
+#[parent(crate::system::object::Object)]
+pub struct SoundWwise_SoundPrepareManager_SwitchParamList {
+    #[rename(name = "m_switchGroupName")]
+    pub m_switch_group_name: ::unity2::Il2CppString,
+    #[rename(name = "m_paramList")]
+    pub m_param_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::app::soundwwise::SoundWwise_SoundPrepareManager_SwitchParam,
+    >,
+}
+
+#[cfg(feature = "app-soundwwise")]
+#[::unity2::methods]
+impl SoundWwise_SoundPrepareManager_SwitchParamList {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, switch_group_name: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`IncRef(::unity2::Il2CppString)` overload"]
+    #[method(name = "IncRef", args = 1)]
+    pub fn inc_ref(self, switch_name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`DecRef(::unity2::Il2CppString)` overload"]
+    #[method(name = "DecRef", args = 1)]
+    pub fn dec_ref(self, switch_name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`IsEmpty()` overload"]
+    #[method(name = "IsEmpty", args = 0)]
+    pub fn is_empty(self) -> bool;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+}
+
+#[cfg(feature = "app-soundwwise")]
+impl SoundWwise_SoundPrepareManager_SwitchParamList {
+    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
+    pub fn new(switch_group_name: ::unity2::Il2CppString) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundWwise_SoundPrepareManager_SwitchParamList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundWwise_SoundPrepareManager_SwitchParamListMethods>::ctor(
+            this,
+            switch_group_name,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundBankManager_BankHandle.md"))]
+#[::unity2::class(namespace = "App", name = "SoundWwise.SoundBankManager.BankHandle")]
+#[parent(crate::system::object::Object)]
+pub struct SoundWwise_SoundBankManager_BankHandle {
+    #[rename(name = "m_isPrepareLoad")]
+    pub m_is_prepare_load: bool,
+    #[rename(name = "m_bankName")]
+    pub m_bank_name: ::unity2::Il2CppString,
+    #[rename(name = "m_bankID")]
+    pub m_bank_id: u32,
+    #[rename(name = "m_refCount")]
+    pub m_ref_count: i32,
+    #[rename(name = "m_state")]
+    pub m_state: crate::app::soundwwise::SoundWwise_SoundBankManager_States,
+    #[rename(name = "m_internalState")]
+    pub m_internal_state: crate::app::soundwwise::SoundWwise_SoundBankManager_InternalStates,
+}
+
+#[cfg(feature = "app-soundwwise")]
+#[::unity2::methods]
+impl SoundWwise_SoundBankManager_BankHandle {
+    #[doc = "`.ctor(::unity2::Il2CppString, bool)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, bank_name: ::unity2::Il2CppString, is_prepare_load: bool) -> ();
+
+    #[doc = "`LoadBank()` overload"]
+    #[method(name = "LoadBank", args = 0)]
+    pub fn load_bank(self) -> bool;
+
+    #[doc = "`UnloadBank()` overload"]
+    #[method(name = "UnloadBank", args = 0)]
+    pub fn unload_bank(self) -> ();
+
+    #[doc = "`IncRef()` overload"]
+    #[method(name = "IncRef", args = 0)]
+    pub fn inc_ref(self) -> ();
+
+    #[doc = "`DecRef()` overload"]
+    #[method(name = "DecRef", args = 0)]
+    pub fn dec_ref(self) -> ();
+
+    #[doc = "`get_BankName()` overload"]
+    #[method(name = "get_BankName", args = 0)]
+    pub fn get_bank_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`get_RefCount()` overload"]
+    #[method(name = "get_RefCount", args = 0)]
+    pub fn get_ref_count(self) -> i32;
+
+    #[doc = "`get_State()` overload"]
+    #[method(name = "get_State", args = 0)]
+    pub fn get_state(self) -> crate::app::soundwwise::SoundWwise_SoundBankManager_States;
+
+    #[doc = "`set_State(crate::app::soundwwise::SoundWwise_SoundBankManager_States)` overload"]
+    #[method(name = "set_State", args = 1)]
+    pub fn set_state(self, value: crate::app::soundwwise::SoundWwise_SoundBankManager_States)
+        -> ();
+
+    #[doc = "`get_InternalState()` overload"]
+    #[method(name = "get_InternalState", args = 0)]
+    pub fn get_internal_state(
+        self,
+    ) -> crate::app::soundwwise::SoundWwise_SoundBankManager_InternalStates;
+
+    #[doc = "`DoUnloadBank()` overload"]
+    #[method(name = "DoUnloadBank", args = 0)]
+    pub fn do_unload_bank(self) -> ();
+}
+
+#[cfg(feature = "app-soundwwise")]
+impl SoundWwise_SoundBankManager_BankHandle {
+    #[doc = "`.ctor(::unity2::Il2CppString, bool)` — overload selector"]
+    pub fn new(bank_name: ::unity2::Il2CppString, is_prepare_load: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundWwise_SoundBankManager_BankHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundWwise_SoundBankManager_BankHandleMethods>::ctor(
+            this,
+            bank_name,
+            is_prepare_load,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPrepareManager.md"))]
+#[::unity2::class(namespace = "App", name = "SoundWwise.SoundPrepareManager")]
+#[parent(crate::system::object::Object)]
+pub struct SoundWwise_SoundPrepareManager {
+    #[static_field]
+    #[rename(name = "m_eventParamList")]
+    pub m_event_param_list: crate::app::soundwwise::SoundWwise_SoundPrepareManager_EventParamList,
+    #[static_field]
+    #[rename(name = "m_switchGroupParamList")]
+    pub m_switch_group_param_list:
+        crate::app::soundwwise::SoundWwise_SoundPrepareManager_SwitchGroupParamList,
+}
+
+#[cfg(feature = "app-soundwwise")]
+#[::unity2::methods]
+impl SoundWwise_SoundPrepareManager {
+    #[doc = "`IncRef_Event(::unity2::Il2CppString)` overload"]
+    #[method(name = "IncRef_Event", args = 1)]
+    pub fn inc_ref_event(event_name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`DecRef_Event(::unity2::Il2CppString)` overload"]
+    #[method(name = "DecRef_Event", args = 1)]
+    pub fn dec_ref_event(event_name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`IncRef_Switch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "IncRef_Switch", args = 2)]
+    pub fn inc_ref_switch(
+        switch_group_name: ::unity2::Il2CppString,
+        event_name: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[doc = "`DecRef_Switch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "DecRef_Switch", args = 2)]
+    pub fn dec_ref_switch(
+        switch_group_name: ::unity2::Il2CppString,
+        event_name: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear() -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "app-soundwwise")]
+impl SoundWwise_SoundPrepareManager {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundWwise_SoundPrepareManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundWwise_SoundPrepareManagerMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundBankManager_AsyncBankHandle.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "SoundWwise.SoundBankManager.AsyncBankHandle"
+)]
+#[parent(crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle)]
+pub struct SoundWwise_SoundBankManager_AsyncBankHandle {}
+
+#[cfg(feature = "app-soundwwise")]
+#[::unity2::methods]
+impl SoundWwise_SoundBankManager_AsyncBankHandle {
+    #[doc = "`.ctor(::unity2::Il2CppString, bool)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, name: ::unity2::Il2CppString, is_prepare_load: bool) -> ();
+}
+
+#[cfg(feature = "app-soundwwise")]
+impl SoundWwise_SoundBankManager_AsyncBankHandle {
+    #[doc = "`.ctor(::unity2::Il2CppString, bool)` — overload selector"]
+    pub fn new(name: ::unity2::Il2CppString, is_prepare_load: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundWwise_SoundBankManager_AsyncBankHandle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundWwise_SoundBankManager_AsyncBankHandleMethods>::ctor(
+            this,
+            name,
+            is_prepare_load,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPrepareManager_EventParamList.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "SoundWwise.SoundPrepareManager.EventParamList"
+)]
+#[parent(crate::system::object::Object)]
+pub struct SoundWwise_SoundPrepareManager_EventParamList {
+    #[rename(name = "m_paramList")]
+    pub m_param_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::app::soundwwise::SoundWwise_SoundPrepareManager_EventParam,
+    >,
+}
+
+#[cfg(feature = "app-soundwwise")]
+#[::unity2::methods]
+impl SoundWwise_SoundPrepareManager_EventParamList {
+    #[doc = "`IncRef(::unity2::Il2CppString)` overload"]
+    #[method(name = "IncRef", args = 1)]
+    pub fn inc_ref(self, event_name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`DecRef(::unity2::Il2CppString)` overload"]
+    #[method(name = "DecRef", args = 1)]
+    pub fn dec_ref(self, event_name: ::unity2::Il2CppString) -> bool;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-soundwwise")]
+impl SoundWwise_SoundPrepareManager_EventParamList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundWwise_SoundPrepareManager_EventParamList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundWwise_SoundPrepareManager_EventParamListMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPlay_GameObjectPool.md"))]
+#[::unity2::class(namespace = "App", name = "SoundWwise.SoundPlay.GameObjectPool")]
+#[parent(crate::system::object::Object)]
+pub struct SoundWwise_SoundPlay_GameObjectPool {
+    #[static_field]
+    #[rename(name = "GameObjectDefaultNum")]
+    pub game_object_default_num: i32,
+    #[rename(name = "m_objList")]
+    pub m_obj_list: crate::system::collections::generic::list_1::List_1<
+        crate::unity_engine::gameobject::GameObject,
+    >,
+}
+
+#[cfg(feature = "app-soundwwise")]
+#[::unity2::methods]
+impl SoundWwise_SoundPlay_GameObjectPool {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, parent: crate::unity_engine::gameobject::GameObject) -> ();
+
+    #[doc = "`Pop()` overload"]
+    #[method(name = "Pop", args = 0)]
+    pub fn pop(self) -> crate::unity_engine::gameobject::GameObject;
+
+    #[doc = "`Push(crate::unity_engine::gameobject::GameObject)` overload"]
+    #[method(name = "Push", args = 1)]
+    pub fn push(self, obj: crate::unity_engine::gameobject::GameObject) -> ();
+}
+
+#[cfg(feature = "app-soundwwise")]
+impl SoundWwise_SoundPlay_GameObjectPool {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
+    pub fn new(parent: crate::unity_engine::gameobject::GameObject) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundWwise_SoundPlay_GameObjectPool),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundWwise_SoundPlay_GameObjectPoolMethods>::ctor(this, parent);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPrepareManager_SwitchGroupParamList.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "SoundWwise.SoundPrepareManager.SwitchGroupParamList"
+)]
+#[parent(crate::system::object::Object)]
+pub struct SoundWwise_SoundPrepareManager_SwitchGroupParamList {
+    #[rename(name = "m_paramListList")]
+    pub m_param_list_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
+        ::unity2::Il2CppString,
+        crate::app::soundwwise::SoundWwise_SoundPrepareManager_SwitchParamList,
+    >,
+}
+
+#[cfg(feature = "app-soundwwise")]
+#[::unity2::methods]
+impl SoundWwise_SoundPrepareManager_SwitchGroupParamList {
+    #[doc = "`IncRef(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "IncRef", args = 2)]
+    pub fn inc_ref(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[doc = "`DecRef(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
+    #[method(name = "DecRef", args = 2)]
+    pub fn dec_ref(
+        self,
+        switch_group_name: ::unity2::Il2CppString,
+        switch_name: ::unity2::Il2CppString,
+    ) -> bool;
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-soundwwise")]
+impl SoundWwise_SoundPrepareManager_SwitchGroupParamList {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SoundWwise_SoundPrepareManager_SwitchGroupParamList),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundWwise_SoundPrepareManager_SwitchGroupParamListMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPrepareManager_SwitchParam.md"))]
 #[::unity2::class(namespace = "App", name = "SoundWwise.SoundPrepareManager.SwitchParam")]
 #[parent(crate::app::soundwwise::SoundWwise_SoundPrepareManager_Param)]
@@ -395,139 +1556,6 @@ impl SoundWwise_SoundParam {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundHandle.md"))]
-#[::unity2::class(namespace = "App", name = "SoundWwise.SoundHandle")]
-#[parent(crate::app::soundsystem::SoundSystem_SoundHandle)]
-pub struct SoundWwise_SoundHandle {
-    #[rename(name = "m_eventName")]
-    pub m_event_name: ::unity2::Il2CppString,
-    #[rename(name = "m_eventId")]
-    pub m_event_id: u32,
-    #[rename(name = "m_lipSyncDataFileName")]
-    pub m_lip_sync_data_file_name: ::unity2::Il2CppString,
-    #[rename(name = "m_gameObject")]
-    pub m_game_object: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_playingId")]
-    pub m_playing_id: u32,
-    #[rename(name = "m_isPlaying")]
-    pub m_is_playing: bool,
-    #[rename(name = "m_isTemporaryGameObject")]
-    pub m_is_temporary_game_object: bool,
-    #[rename(name = "m_character")]
-    pub m_character: crate::combat::character::Character,
-    #[rename(name = "m_eventCharacterMouthController")]
-    pub m_event_character_mouth_controller:
-        crate::app::eventcharactermouthcontroller::EventCharacterMouthController,
-}
-
-#[cfg(feature = "app-soundwwise")]
-#[::unity2::methods]
-impl SoundWwise_SoundHandle {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Init(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, u32, bool)` overload"]
-    #[method(name = "Init", args = 4)]
-    pub fn init(
-        self,
-        event_name: ::unity2::Il2CppString,
-        game_object: crate::unity_engine::gameobject::GameObject,
-        playing_id: u32,
-        is_temporary_game_object: bool,
-    ) -> ();
-
-    #[doc = "`GetEventName()` overload"]
-    #[method(name = "GetEventName", args = 0)]
-    pub fn get_event_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`GetEventId()` overload"]
-    #[method(name = "GetEventId", args = 0)]
-    pub fn get_event_id(self) -> u32;
-
-    #[doc = "`IsPlaying()` overload"]
-    #[method(name = "IsPlaying", args = 0)]
-    pub fn is_playing(self) -> bool;
-
-    #[doc = "`GetGameObject()` overload"]
-    #[method(name = "GetGameObject", args = 0)]
-    pub fn get_game_object(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`GetPlayingId()` overload"]
-    #[method(name = "GetPlayingId", args = 0)]
-    pub fn get_playing_id(self) -> u32;
-
-    #[doc = "`GetCharacter()` overload"]
-    #[method(name = "GetCharacter", args = 0)]
-    pub fn get_character(self) -> crate::combat::character::Character;
-
-    #[doc = "`GetEventCharacterMouthController()` overload"]
-    #[method(name = "GetEventCharacterMouthController", args = 0)]
-    pub fn get_event_character_mouth_controller(
-        self,
-    ) -> crate::app::eventcharactermouthcontroller::EventCharacterMouthController;
-
-    #[doc = "`SetCharacter(crate::combat::character::Character)` overload"]
-    #[method(name = "SetCharacter", args = 1)]
-    pub fn set_character(self, character: crate::combat::character::Character) -> ();
-
-    #[doc = "`SetEventCharacterMouthController(crate::app::eventcharactermouthcontroller::EventCharacterMouthController)` overload"]
-    #[method(name = "SetEventCharacterMouthController", args = 1)]
-    pub fn set_event_character_mouth_controller(
-        self,
-        event_character_mouth_controller : crate :: app :: eventcharactermouthcontroller :: EventCharacterMouthController,
-    ) -> ();
-
-    #[doc = "`GetLipSyncDataFileName()` overload"]
-    #[method(name = "GetLipSyncDataFileName", args = 0)]
-    pub fn get_lip_sync_data_file_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`IsTemporaryObject()` overload"]
-    #[method(name = "IsTemporaryObject", args = 0)]
-    pub fn is_temporary_object(self) -> bool;
-
-    #[doc = "`SetIsPlaying(bool)` overload"]
-    #[method(name = "SetIsPlaying", args = 1)]
-    pub fn set_is_playing(self, is_playing: bool) -> ();
-
-    #[doc = "`SetLipSyncDataFileName(::unity2::Il2CppString)` overload"]
-    #[method(name = "SetLipSyncDataFileName", args = 1)]
-    pub fn set_lip_sync_data_file_name(self, lip_sync_data_file_name: ::unity2::Il2CppString)
-        -> ();
-
-    #[doc = "`IsEnable()` overload"]
-    #[method(name = "IsEnable", args = 0)]
-    pub fn is_enable(self) -> bool;
-
-    #[doc = "`Stop(i32)` overload"]
-    #[method(name = "Stop", args = 1)]
-    pub fn stop(self, fade_msec: i32) -> ();
-
-    #[doc = "`Pause(i32)` overload"]
-    #[method(name = "Pause", args = 1)]
-    pub fn pause(self, fade_msec: i32) -> ();
-
-    #[doc = "`Resume(i32)` overload"]
-    #[method(name = "Resume", args = 1)]
-    pub fn resume(self, fade_msec: i32) -> ();
-}
-
-#[cfg(feature = "app-soundwwise")]
-impl SoundWwise_SoundHandle {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundWwise_SoundHandle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundWwise_SoundHandleMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPlay.md"))]
 #[::unity2::class(namespace = "App", name = "SoundWwise.SoundPlay")]
 #[parent(crate::system::object::Object)]
@@ -668,1031 +1696,43 @@ impl SoundWwise_SoundPlay {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPrepareManager_SwitchParamList.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "SoundWwise.SoundPrepareManager.SwitchParamList"
-)]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPrepareManager_Param.md"))]
+#[::unity2::class(namespace = "App", name = "SoundWwise.SoundPrepareManager.Param")]
 #[parent(crate::system::object::Object)]
-pub struct SoundWwise_SoundPrepareManager_SwitchParamList {
-    #[rename(name = "m_switchGroupName")]
-    pub m_switch_group_name: ::unity2::Il2CppString,
-    #[rename(name = "m_paramList")]
-    pub m_param_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
-        ::unity2::Il2CppString,
-        crate::app::soundwwise::SoundWwise_SoundPrepareManager_SwitchParam,
-    >,
+pub struct SoundWwise_SoundPrepareManager_Param {
+    #[rename(name = "m_reference")]
+    pub m_reference: i32,
 }
 
 #[cfg(feature = "app-soundwwise")]
 #[::unity2::methods]
-impl SoundWwise_SoundPrepareManager_SwitchParamList {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, switch_group_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`IncRef(::unity2::Il2CppString)` overload"]
-    #[method(name = "IncRef", args = 1)]
-    pub fn inc_ref(self, switch_name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`DecRef(::unity2::Il2CppString)` overload"]
-    #[method(name = "DecRef", args = 1)]
-    pub fn dec_ref(self, switch_name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`IsEmpty()` overload"]
-    #[method(name = "IsEmpty", args = 0)]
-    pub fn is_empty(self) -> bool;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-}
-
-#[cfg(feature = "app-soundwwise")]
-impl SoundWwise_SoundPrepareManager_SwitchParamList {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(switch_group_name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundWwise_SoundPrepareManager_SwitchParamList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundWwise_SoundPrepareManager_SwitchParamListMethods>::ctor(
-            this,
-            switch_group_name,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPrepareManager.md"))]
-#[::unity2::class(namespace = "App", name = "SoundWwise.SoundPrepareManager")]
-#[parent(crate::system::object::Object)]
-pub struct SoundWwise_SoundPrepareManager {
-    #[static_field]
-    #[rename(name = "m_eventParamList")]
-    pub m_event_param_list: crate::app::soundwwise::SoundWwise_SoundPrepareManager_EventParamList,
-    #[static_field]
-    #[rename(name = "m_switchGroupParamList")]
-    pub m_switch_group_param_list:
-        crate::app::soundwwise::SoundWwise_SoundPrepareManager_SwitchGroupParamList,
-}
-
-#[cfg(feature = "app-soundwwise")]
-#[::unity2::methods]
-impl SoundWwise_SoundPrepareManager {
-    #[doc = "`IncRef_Event(::unity2::Il2CppString)` overload"]
-    #[method(name = "IncRef_Event", args = 1)]
-    pub fn inc_ref_event(event_name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`DecRef_Event(::unity2::Il2CppString)` overload"]
-    #[method(name = "DecRef_Event", args = 1)]
-    pub fn dec_ref_event(event_name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`IncRef_Switch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "IncRef_Switch", args = 2)]
-    pub fn inc_ref_switch(
-        switch_group_name: ::unity2::Il2CppString,
-        event_name: ::unity2::Il2CppString,
-    ) -> bool;
-
-    #[doc = "`DecRef_Switch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "DecRef_Switch", args = 2)]
-    pub fn dec_ref_switch(
-        switch_group_name: ::unity2::Il2CppString,
-        event_name: ::unity2::Il2CppString,
-    ) -> bool;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear() -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-soundwwise")]
-impl SoundWwise_SoundPrepareManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundWwise_SoundPrepareManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundWwise_SoundPrepareManagerMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundBankManager.md"))]
-#[::unity2::class(namespace = "App", name = "SoundWwise.SoundBankManager")]
-# [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: soundwwise :: SoundWwise_SoundBankManager >)]
-pub struct SoundWwise_SoundBankManager {
-    #[rename(name = "m_bankHandles")]
-    pub m_bank_handles: crate::system::collections::generic::dictionary_2::Dictionary_2<
-        ::unity2::Il2CppString,
-        crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle,
-    >,
-    #[rename(name = "m_workRemovingHandles")]
-    pub m_work_removing_handles: crate::system::collections::generic::list_1::List_1<
-        crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle,
-    >,
-}
-
-#[cfg(feature = "app-soundwwise")]
-#[::unity2::methods]
-impl SoundWwise_SoundBankManager {
-    #[doc = "`Create()` overload"]
-    #[method(name = "Create", args = 0)]
-    pub fn create() -> ();
-
-    #[doc = "`LoadBank(::unity2::Il2CppString)` overload"]
-    #[method(name = "LoadBank", args = 1)]
-    pub fn load_bank(name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`LoadBankAsync(::unity2::Il2CppString)` overload"]
-    #[method(name = "LoadBankAsync", args = 1)]
-    pub fn load_bank_async(name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`IsLoading()` overload"]
-    #[method(name = "IsLoading", args = 0)]
-    pub fn is_loading() -> bool;
-
-    #[doc = "`UnloadBank(::unity2::Il2CppString)` overload"]
-    #[method(name = "UnloadBank", args = 1)]
-    pub fn unload_bank(name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UnloadAllBanks()` overload"]
-    #[method(name = "UnloadAllBanks", args = 0)]
-    pub fn unload_all_banks() -> ();
-
-    #[doc = "`Cleanup()` overload"]
-    #[method(name = "Cleanup", args = 0)]
-    pub fn cleanup() -> ();
-
-    #[doc = "`ReloadBankBySetLanguage(crate::app::language::Language_Voices)` overload"]
-    #[method(name = "ReloadBankBySetLanguage", args = 1)]
-    pub fn reload_bank_by_set_language(language: crate::app::language::Language_Voices) -> ();
-
-    #[doc = "`GetState(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetState", args = 1)]
-    pub fn get_state(
-        name: ::unity2::Il2CppString,
-    ) -> crate::app::soundwwise::SoundWwise_SoundBankManager_States;
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-
-    #[doc = "`LoadBankImpl(::unity2::Il2CppString)` overload"]
-    #[method(name = "LoadBankImpl", args = 1)]
-    pub fn load_bank_impl(self, bank_name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`LoadBankAsyncImpl(::unity2::Il2CppString)` overload"]
-    #[method(name = "LoadBankAsyncImpl", args = 1)]
-    pub fn load_bank_async_impl(self, bank_name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`IsLoadingImpl()` overload"]
-    #[method(name = "IsLoadingImpl", args = 0)]
-    pub fn is_loading_impl(self) -> bool;
-
-    #[doc = "`UnloadBankImpl(::unity2::Il2CppString)` overload"]
-    #[method(name = "UnloadBankImpl", args = 1)]
-    pub fn unload_bank_impl(self, bank_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UnloadBankImpl(crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle)` overload"]
-    #[method(name = "UnloadBankImpl", args = 1)]
-    pub fn unload_bank_impl_2(
-        self,
-        handle: crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle,
-    ) -> ();
-
-    #[doc = "`UnloadAllBanksImpl()` overload"]
-    #[method(name = "UnloadAllBanksImpl", args = 0)]
-    pub fn unload_all_banks_impl(self) -> ();
-
-    #[doc = "`CleanupImpl()` overload"]
-    #[method(name = "CleanupImpl", args = 0)]
-    pub fn cleanup_impl(self) -> ();
-
-    #[doc = "`ReloadImpl(crate::app::language::Language_Voices)` overload"]
-    #[method(name = "ReloadImpl", args = 1)]
-    pub fn reload_impl(self, language: crate::app::language::Language_Voices) -> ();
-
-    #[doc = "`GetStateImpl(::unity2::Il2CppString)` overload"]
-    #[method(name = "GetStateImpl", args = 1)]
-    pub fn get_state_impl(
-        self,
-        bank_name: ::unity2::Il2CppString,
-    ) -> crate::app::soundwwise::SoundWwise_SoundBankManager_States;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-soundwwise")]
-impl SoundWwise_SoundBankManager {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundWwise_SoundBankManager),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundWwise_SoundBankManagerMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPrepareManager_EventParam.md"))]
-#[::unity2::class(namespace = "App", name = "SoundWwise.SoundPrepareManager.EventParam")]
-#[parent(crate::app::soundwwise::SoundWwise_SoundPrepareManager_Param)]
-pub struct SoundWwise_SoundPrepareManager_EventParam {
-    #[rename(name = "m_eventName")]
-    pub m_event_name: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "app-soundwwise")]
-#[::unity2::methods]
-impl SoundWwise_SoundPrepareManager_EventParam {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, event_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`GetEventName()` overload"]
-    #[method(name = "GetEventName", args = 0)]
-    pub fn get_event_name(self) -> ::unity2::Il2CppString;
-}
-
-#[cfg(feature = "app-soundwwise")]
-impl SoundWwise_SoundPrepareManager_EventParam {
-    #[doc = "`.ctor(::unity2::Il2CppString)` — overload selector"]
-    pub fn new(event_name: ::unity2::Il2CppString) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundWwise_SoundPrepareManager_EventParam),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundWwise_SoundPrepareManager_EventParamMethods>::ctor(this, event_name);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPrepareManager_SwitchGroupParamList.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "SoundWwise.SoundPrepareManager.SwitchGroupParamList"
-)]
-#[parent(crate::system::object::Object)]
-pub struct SoundWwise_SoundPrepareManager_SwitchGroupParamList {
-    #[rename(name = "m_paramListList")]
-    pub m_param_list_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
-        ::unity2::Il2CppString,
-        crate::app::soundwwise::SoundWwise_SoundPrepareManager_SwitchParamList,
-    >,
-}
-
-#[cfg(feature = "app-soundwwise")]
-#[::unity2::methods]
-impl SoundWwise_SoundPrepareManager_SwitchGroupParamList {
-    #[doc = "`IncRef(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "IncRef", args = 2)]
-    pub fn inc_ref(
-        self,
-        switch_group_name: ::unity2::Il2CppString,
-        switch_name: ::unity2::Il2CppString,
-    ) -> bool;
-
-    #[doc = "`DecRef(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "DecRef", args = 2)]
-    pub fn dec_ref(
-        self,
-        switch_group_name: ::unity2::Il2CppString,
-        switch_name: ::unity2::Il2CppString,
-    ) -> bool;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-soundwwise")]
-impl SoundWwise_SoundPrepareManager_SwitchGroupParamList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundWwise_SoundPrepareManager_SwitchGroupParamList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundWwise_SoundPrepareManager_SwitchGroupParamListMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundLoad.md"))]
-#[::unity2::class(namespace = "App", name = "SoundWwise.SoundLoad")]
-#[parent(crate::system::object::Object)]
-pub struct SoundWwise_SoundLoad {}
-
-#[cfg(feature = "app-soundwwise")]
-#[::unity2::methods]
-impl SoundWwise_SoundLoad {
-    #[doc = "`Load(::unity2::Il2CppString)` overload"]
-    #[method(name = "Load", args = 1)]
-    pub fn load(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`LoadAsync(::unity2::Il2CppString)` overload"]
-    #[method(name = "LoadAsync", args = 1)]
-    pub fn load_async(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`IsLoading()` overload"]
-    #[method(name = "IsLoading", args = 0)]
-    pub fn is_loading(self) -> bool;
-
-    #[doc = "`IsLoading(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsLoading", args = 1)]
-    pub fn is_loading_2(self, name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`IsLoaded(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsLoaded", args = 1)]
-    pub fn is_loaded(self, name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`Unload(::unity2::Il2CppString)` overload"]
-    #[method(name = "Unload", args = 1)]
-    pub fn unload(self, name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UnloadAll()` overload"]
-    #[method(name = "UnloadAll", args = 0)]
-    pub fn unload_all(self) -> ();
-
-    #[doc = "`ReloadBySetLanguage(crate::app::language::Language_Voices)` overload"]
-    #[method(name = "ReloadBySetLanguage", args = 1)]
-    pub fn reload_by_set_language(self, language: crate::app::language::Language_Voices) -> ();
-
-    #[doc = "`PrepareEvent(::unity2::Il2CppString)` overload"]
-    #[method(name = "PrepareEvent", args = 1)]
-    pub fn prepare_event(self, event_name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`PrepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "PrepareEvent", args = 1)]
-    pub fn prepare_event_2(self, event_name_array: ::unity2::Array<::unity2::Il2CppString>)
-        -> bool;
-
-    #[doc = "`PrepareEventAsync(::unity2::Il2CppString, crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]
-    #[method(name = "PrepareEventAsync", args = 2)]
-    pub fn prepare_event_async(
-        self,
-        event_name: ::unity2::Il2CppString,
-        result_sound_load: crate::app::soundsystem::SoundSystem_ResultSoundLoad,
-    ) -> bool;
-
-    #[doc = "`PrepareEventAsync(::unity2::Array<::unity2::Il2CppString>, crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]
-    #[method(name = "PrepareEventAsync", args = 2)]
-    pub fn prepare_event_async_2(
-        self,
-        event_name_array: ::unity2::Array<::unity2::Il2CppString>,
-        result_sound_load: crate::app::soundsystem::SoundSystem_ResultSoundLoad,
-    ) -> bool;
-
-    #[doc = "`UnprepareEvent(::unity2::Il2CppString)` overload"]
-    #[method(name = "UnprepareEvent", args = 1)]
-    pub fn unprepare_event(self, event_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UnprepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "UnprepareEvent", args = 1)]
-    pub fn unprepare_event_2(self, event_name_array: ::unity2::Array<::unity2::Il2CppString>)
-        -> ();
-
-    #[doc = "`PrepareSwitch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "PrepareSwitch", args = 2)]
-    pub fn prepare_switch(
-        self,
-        switch_group_name: ::unity2::Il2CppString,
-        switch_name: ::unity2::Il2CppString,
-    ) -> bool;
-
-    #[doc = "`PrepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "PrepareSwitch", args = 2)]
-    pub fn prepare_switch_2(
-        self,
-        switch_group_name: ::unity2::Il2CppString,
-        switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> bool;
-
-    #[doc = "`PrepareSwitchAsync(::unity2::Il2CppString, ::unity2::Il2CppString, crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]
-    #[method(name = "PrepareSwitchAsync", args = 3)]
-    pub fn prepare_switch_async(
-        self,
-        switch_group_name: ::unity2::Il2CppString,
-        switch_name: ::unity2::Il2CppString,
-        result_sound_load: crate::app::soundsystem::SoundSystem_ResultSoundLoad,
-    ) -> bool;
-
-    #[doc = "`PrepareSwitchAsync(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>, crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]
-    #[method(name = "PrepareSwitchAsync", args = 3)]
-    pub fn prepare_switch_async_2(
-        self,
-        switch_group_name: ::unity2::Il2CppString,
-        switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
-        result_sound_load: crate::app::soundsystem::SoundSystem_ResultSoundLoad,
-    ) -> bool;
-
-    #[doc = "`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "UnprepareSwitch", args = 2)]
-    pub fn unprepare_switch(
-        self,
-        switch_group_name: ::unity2::Il2CppString,
-        switch_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "UnprepareSwitch", args = 2)]
-    pub fn unprepare_switch_2(
-        self,
-        switch_group_name: ::unity2::Il2CppString,
-        switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> ();
-
-    #[doc = "`ClearPrepare()` overload"]
-    #[method(name = "ClearPrepare", args = 0)]
-    pub fn clear_prepare(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-soundwwise")]
-impl SoundWwise_SoundLoad {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundWwise_SoundLoad),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundWwise_SoundLoadMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPrepareManager_EventParamList.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "SoundWwise.SoundPrepareManager.EventParamList"
-)]
-#[parent(crate::system::object::Object)]
-pub struct SoundWwise_SoundPrepareManager_EventParamList {
-    #[rename(name = "m_paramList")]
-    pub m_param_list: crate::system::collections::generic::dictionary_2::Dictionary_2<
-        ::unity2::Il2CppString,
-        crate::app::soundwwise::SoundWwise_SoundPrepareManager_EventParam,
-    >,
-}
-
-#[cfg(feature = "app-soundwwise")]
-#[::unity2::methods]
-impl SoundWwise_SoundPrepareManager_EventParamList {
-    #[doc = "`IncRef(::unity2::Il2CppString)` overload"]
-    #[method(name = "IncRef", args = 1)]
-    pub fn inc_ref(self, event_name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`DecRef(::unity2::Il2CppString)` overload"]
-    #[method(name = "DecRef", args = 1)]
-    pub fn dec_ref(self, event_name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-soundwwise")]
-impl SoundWwise_SoundPrepareManager_EventParamList {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundWwise_SoundPrepareManager_EventParamList),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundWwise_SoundPrepareManager_EventParamListMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundBankManager_AsyncBankHandle.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "SoundWwise.SoundBankManager.AsyncBankHandle"
-)]
-#[parent(crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle)]
-pub struct SoundWwise_SoundBankManager_AsyncBankHandle {}
-
-#[cfg(feature = "app-soundwwise")]
-#[::unity2::methods]
-impl SoundWwise_SoundBankManager_AsyncBankHandle {
-    #[doc = "`.ctor(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, name: ::unity2::Il2CppString, is_prepare_load: bool) -> ();
-}
-
-#[cfg(feature = "app-soundwwise")]
-impl SoundWwise_SoundBankManager_AsyncBankHandle {
-    #[doc = "`.ctor(::unity2::Il2CppString, bool)` — overload selector"]
-    pub fn new(name: ::unity2::Il2CppString, is_prepare_load: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundWwise_SoundBankManager_AsyncBankHandle),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundWwise_SoundBankManager_AsyncBankHandleMethods>::ctor(
-            this,
-            name,
-            is_prepare_load,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPlay_GameObjectPool.md"))]
-#[::unity2::class(namespace = "App", name = "SoundWwise.SoundPlay.GameObjectPool")]
-#[parent(crate::system::object::Object)]
-pub struct SoundWwise_SoundPlay_GameObjectPool {
-    #[static_field]
-    #[rename(name = "GameObjectDefaultNum")]
-    pub game_object_default_num: i32,
-    #[rename(name = "m_objList")]
-    pub m_obj_list: crate::system::collections::generic::list_1::List_1<
-        crate::unity_engine::gameobject::GameObject,
-    >,
-}
-
-#[cfg(feature = "app-soundwwise")]
-#[::unity2::methods]
-impl SoundWwise_SoundPlay_GameObjectPool {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, parent: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`Pop()` overload"]
-    #[method(name = "Pop", args = 0)]
-    pub fn pop(self) -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`Push(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "Push", args = 1)]
-    pub fn push(self, obj: crate::unity_engine::gameobject::GameObject) -> ();
-}
-
-#[cfg(feature = "app-soundwwise")]
-impl SoundWwise_SoundPlay_GameObjectPool {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]
-    pub fn new(parent: crate::unity_engine::gameobject::GameObject) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundWwise_SoundPlay_GameObjectPool),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundWwise_SoundPlay_GameObjectPoolMethods>::ctor(this, parent);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise.md"))]
-#[::unity2::class(namespace = "App", name = "SoundWwise")]
-#[parent(crate::system::object::Object)]
-pub struct SoundWwise {
-    #[static_field]
-    #[rename(name = "WwiseGlobalObjectName")]
-    pub wwise_global_object_name: ::unity2::Il2CppString,
-    #[static_field]
-    #[rename(name = "AudioListenerObjectName")]
-    pub audio_listener_object_name: ::unity2::Il2CppString,
-    #[static_field]
-    #[rename(name = "s_WwiseGlobalObject")]
-    pub s_wwise_global_object: crate::unity_engine::gameobject::GameObject,
-    #[static_field]
-    #[rename(name = "s_audioListenerObject")]
-    pub s_audio_listener_object: crate::unity_engine::gameobject::GameObject,
-}
-
-#[cfg(feature = "app-soundwwise")]
-#[::unity2::methods]
-impl SoundWwise {
-    #[doc = "`Init(crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "Init", args = 1)]
-    pub fn init(wwise_global_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`GetWwiseGlobalObject()` overload"]
-    #[method(name = "GetWwiseGlobalObject", args = 0)]
-    pub fn get_wwise_global_object() -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`GetAudioListenerObject()` overload"]
-    #[method(name = "GetAudioListenerObject", args = 0)]
-    pub fn get_audio_listener_object() -> crate::unity_engine::gameobject::GameObject;
-
-    #[doc = "`SetLanguage(crate::app::language::Language_Voices)` overload"]
-    #[method(name = "SetLanguage", args = 1)]
-    pub fn set_language(language: crate::app::language::Language_Voices) -> ();
-
-    #[doc = "`CalcPrepareEventNameArray(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "CalcPrepareEventNameArray", args = 1)]
-    pub fn calc_prepare_event_name_array(
-        event_name_array: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> ::unity2::Array<::unity2::Il2CppString>;
-
-    #[doc = "`UnprepareEvent(::unity2::Il2CppString)` overload"]
-    #[method(name = "UnprepareEvent", args = 1)]
-    pub fn unprepare_event(event_name: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`UnprepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "UnprepareEvent", args = 1)]
-    pub fn unprepare_event_2(event_name_array: ::unity2::Array<::unity2::Il2CppString>) -> ();
-
-    #[doc = "`ClearPrepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "ClearPrepareEvent", args = 1)]
-    pub fn clear_prepare_event(event_name_array: ::unity2::Array<::unity2::Il2CppString>) -> ();
-
-    #[doc = "`CalcUnprepareEventNameArray(::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "CalcUnprepareEventNameArray", args = 1)]
-    pub fn calc_unprepare_event_name_array(
-        event_name_array: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> ::unity2::Array<::unity2::Il2CppString>;
-
-    #[doc = "`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "UnprepareSwitch", args = 2)]
-    pub fn unprepare_switch(
-        switch_group_name: ::unity2::Il2CppString,
-        switch_name: ::unity2::Il2CppString,
-    ) -> ();
-
-    #[doc = "`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "UnprepareSwitch", args = 2)]
-    pub fn unprepare_switch_2(
-        switch_group_name: ::unity2::Il2CppString,
-        switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> ();
-
-    #[doc = "`ClearPrepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]
-    #[method(name = "ClearPrepareSwitch", args = 2)]
-    pub fn clear_prepare_switch(
-        switch_group_name: ::unity2::Il2CppString,
-        switch_name_array: ::unity2::Array<::unity2::Il2CppString>,
-    ) -> ();
-
-    #[doc = "`ClearPrepare()` overload"]
-    #[method(name = "ClearPrepare", args = 0)]
-    pub fn clear_prepare() -> ();
-
-    #[doc = "`IsEventLoaded(::unity2::Il2CppString)` overload"]
-    #[method(name = "IsEventLoaded", args = 1)]
-    pub fn is_event_loaded(event_name: ::unity2::Il2CppString) -> bool;
-
-    #[doc = "`PostEvent(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "PostEvent", args = 2)]
-    pub fn post_event(
-        event_name: ::unity2::Il2CppString,
-        game_object: crate::unity_engine::gameobject::GameObject,
-    ) -> u32;
-
-    #[doc = "`StopSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject, u32)` overload"]
-    #[method(name = "StopSoundOnEvent", args = 4)]
-    pub fn stop_sound_on_event(
-        event_name: ::unity2::Il2CppString,
-        msec: i32,
-        game_object: crate::unity_engine::gameobject::GameObject,
-        playing_id: u32,
-    ) -> ();
-
-    #[doc = "`PauseSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject, u32)` overload"]
-    #[method(name = "PauseSoundOnEvent", args = 4)]
-    pub fn pause_sound_on_event(
-        event_name: ::unity2::Il2CppString,
-        msec: i32,
-        game_object: crate::unity_engine::gameobject::GameObject,
-        playing_id: u32,
-    ) -> ();
-
-    #[doc = "`ResumeSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject, u32)` overload"]
-    #[method(name = "ResumeSoundOnEvent", args = 4)]
-    pub fn resume_sound_on_event(
-        event_name: ::unity2::Il2CppString,
-        msec: i32,
-        game_object: crate::unity_engine::gameobject::GameObject,
-        playing_id: u32,
-    ) -> ();
-
-    #[doc = "`SetVolume(f32, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "SetVolume", args = 2)]
-    pub fn set_volume(vol: f32, game_object: crate::unity_engine::gameobject::GameObject) -> ();
-
-    #[doc = "`StopByPlayingID(u32, i32)` overload"]
-    #[method(name = "StopByPlayingID", args = 2)]
-    pub fn stop_by_playing_id(playing_id: u32, msec: i32) -> ();
-
-    #[doc = "`GetState(::unity2::Il2CppString, u32)` overload"]
-    #[method(name = "GetState", args = 2)]
-    pub fn get_state(state_group_name: ::unity2::Il2CppString, value: u32) -> bool;
-
-    #[doc = "`GetSwitch(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, u32)` overload"]
-    #[method(name = "GetSwitch", args = 3)]
-    pub fn get_switch(
-        switch_group_name: ::unity2::Il2CppString,
-        game_object_id: crate::unity_engine::gameobject::GameObject,
-        value: u32,
-    ) -> bool;
-
-    #[doc = "`GetGameParameter(::unity2::Il2CppString, f32)` overload"]
-    #[method(name = "GetGameParameter", args = 2)]
-    pub fn get_game_parameter(param_name: ::unity2::Il2CppString, value: f32) -> bool;
-
-    #[doc = "`GetGameParameter(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, f32)` overload"]
-    #[method(name = "GetGameParameter", args = 3)]
-    pub fn get_game_parameter_2(
-        param_name: ::unity2::Il2CppString,
-        game_object_id: crate::unity_engine::gameobject::GameObject,
-        value: f32,
-    ) -> bool;
-
-    #[doc = "`SetState(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]
-    #[method(name = "SetState", args = 2)]
-    pub fn set_state(
-        state_group_name: ::unity2::Il2CppString,
-        state_name: ::unity2::Il2CppString,
-    ) -> bool;
-
-    #[doc = "`SetState(::unity2::Il2CppString, u32)` overload"]
-    #[method(name = "SetState", args = 2)]
-    pub fn set_state_2(state_group_name: ::unity2::Il2CppString, state_value: u32) -> bool;
-
-    #[doc = "`SetSwitch(::unity2::Il2CppString, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "SetSwitch", args = 3)]
-    pub fn set_switch(
-        switch_group_name: ::unity2::Il2CppString,
-        switch_name: ::unity2::Il2CppString,
-        game_object_id: crate::unity_engine::gameobject::GameObject,
-    ) -> bool;
-
-    #[doc = "`SetSwitch(::unity2::Il2CppString, u32, crate::unity_engine::gameobject::GameObject)` overload"]
-    #[method(name = "SetSwitch", args = 3)]
-    pub fn set_switch_2(
-        switch_group_name: ::unity2::Il2CppString,
-        switch_value: u32,
-        game_object_id: crate::unity_engine::gameobject::GameObject,
-    ) -> bool;
-
-    #[doc = "`SetGameParameter(::unity2::Il2CppString, f32, i32)` overload"]
-    #[method(name = "SetGameParameter", args = 3)]
-    pub fn set_game_parameter(param_name: ::unity2::Il2CppString, value: f32, msec: i32) -> bool;
-
-    #[doc = "`SetGameParameter(::unity2::Il2CppString, f32, crate::unity_engine::gameobject::GameObject, i32)` overload"]
-    #[method(name = "SetGameParameter", args = 4)]
-    pub fn set_game_parameter_2(
-        param_name: ::unity2::Il2CppString,
-        value: f32,
-        game_object_id: crate::unity_engine::gameobject::GameObject,
-        msec: i32,
-    ) -> bool;
-
-    #[doc = "`ResetGameParameter(::unity2::Il2CppString, i32)` overload"]
-    #[method(name = "ResetGameParameter", args = 2)]
-    pub fn reset_game_parameter(param_name: ::unity2::Il2CppString, msec: i32) -> bool;
-
-    #[doc = "`ResetGameParameter(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, i32)` overload"]
-    #[method(name = "ResetGameParameter", args = 3)]
-    pub fn reset_game_parameter_2(
-        param_name: ::unity2::Il2CppString,
-        game_object_id: crate::unity_engine::gameobject::GameObject,
-        msec: i32,
-    ) -> bool;
-
-    #[doc = "`GetPlayPosition(u32, i32)` overload"]
-    #[method(name = "GetPlayPosition", args = 2)]
-    pub fn get_play_position(playing_id: u32, position_offset: i32) -> i32;
-
-    #[doc = "`SetPosition(crate::unity_engine::gameobject::GameObject, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetPosition", args = 4)]
-    pub fn set_position(
-        game_object: crate::unity_engine::gameobject::GameObject,
-        pos: crate::unity_engine::vector3::Vector3,
-        forward: crate::unity_engine::vector3::Vector3,
-        up: crate::unity_engine::vector3::Vector3,
-    ) -> bool;
-
-    #[doc = "`GetAudioListenerPosistion()` overload"]
-    #[method(name = "GetAudioListenerPosistion", args = 0)]
-    pub fn get_audio_listener_posistion() -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GetAudioListenerRotation()` overload"]
-    #[method(name = "GetAudioListenerRotation", args = 0)]
-    pub fn get_audio_listener_rotation() -> crate::unity_engine::quaternion::Quaternion;
-
-    #[doc = "`SetAudioListenerPosistion(crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "SetAudioListenerPosistion", args = 1)]
-    pub fn set_audio_listener_posistion(listener_pos: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`SetAudioListenerRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
-    #[method(name = "SetAudioListenerRotation", args = 1)]
-    pub fn set_audio_listener_rotation(
-        listener_rot: crate::unity_engine::quaternion::Quaternion,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "app-soundwwise")]
-impl SoundWwise {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundWwise),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundWwiseMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundBankManager_BankHandle.md"))]
-#[::unity2::class(namespace = "App", name = "SoundWwise.SoundBankManager.BankHandle")]
-#[parent(crate::system::object::Object)]
-pub struct SoundWwise_SoundBankManager_BankHandle {
-    #[rename(name = "m_isPrepareLoad")]
-    pub m_is_prepare_load: bool,
-    #[rename(name = "m_bankName")]
-    pub m_bank_name: ::unity2::Il2CppString,
-    #[rename(name = "m_bankID")]
-    pub m_bank_id: u32,
-    #[rename(name = "m_refCount")]
-    pub m_ref_count: i32,
-    #[rename(name = "m_state")]
-    pub m_state: crate::app::soundwwise::SoundWwise_SoundBankManager_States,
-    #[rename(name = "m_internalState")]
-    pub m_internal_state: crate::app::soundwwise::SoundWwise_SoundBankManager_InternalStates,
-}
-
-#[cfg(feature = "app-soundwwise")]
-#[::unity2::methods]
-impl SoundWwise_SoundBankManager_BankHandle {
-    #[doc = "`.ctor(::unity2::Il2CppString, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, bank_name: ::unity2::Il2CppString, is_prepare_load: bool) -> ();
-
-    #[doc = "`LoadBank()` overload"]
-    #[method(name = "LoadBank", args = 0)]
-    pub fn load_bank(self) -> bool;
-
-    #[doc = "`UnloadBank()` overload"]
-    #[method(name = "UnloadBank", args = 0)]
-    pub fn unload_bank(self) -> ();
-
+impl SoundWwise_SoundPrepareManager_Param {
     #[doc = "`IncRef()` overload"]
     #[method(name = "IncRef", args = 0)]
-    pub fn inc_ref(self) -> ();
+    pub fn inc_ref(self) -> bool;
 
     #[doc = "`DecRef()` overload"]
     #[method(name = "DecRef", args = 0)]
-    pub fn dec_ref(self) -> ();
+    pub fn dec_ref(self) -> bool;
 
-    #[doc = "`get_BankName()` overload"]
-    #[method(name = "get_BankName", args = 0)]
-    pub fn get_bank_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`get_RefCount()` overload"]
-    #[method(name = "get_RefCount", args = 0)]
-    pub fn get_ref_count(self) -> i32;
-
-    #[doc = "`get_State()` overload"]
-    #[method(name = "get_State", args = 0)]
-    pub fn get_state(self) -> crate::app::soundwwise::SoundWwise_SoundBankManager_States;
-
-    #[doc = "`set_State(crate::app::soundwwise::SoundWwise_SoundBankManager_States)` overload"]
-    #[method(name = "set_State", args = 1)]
-    pub fn set_state(self, value: crate::app::soundwwise::SoundWwise_SoundBankManager_States)
-        -> ();
-
-    #[doc = "`get_InternalState()` overload"]
-    #[method(name = "get_InternalState", args = 0)]
-    pub fn get_internal_state(
-        self,
-    ) -> crate::app::soundwwise::SoundWwise_SoundBankManager_InternalStates;
-
-    #[doc = "`DoUnloadBank()` overload"]
-    #[method(name = "DoUnloadBank", args = 0)]
-    pub fn do_unload_bank(self) -> ();
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "app-soundwwise")]
-impl SoundWwise_SoundBankManager_BankHandle {
-    #[doc = "`.ctor(::unity2::Il2CppString, bool)` — overload selector"]
-    pub fn new(bank_name: ::unity2::Il2CppString, is_prepare_load: bool) -> Self {
+impl SoundWwise_SoundPrepareManager_Param {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(SoundWwise_SoundBankManager_BankHandle),
+                ::core::stringify!(SoundWwise_SoundPrepareManager_Param),
                 ::core::stringify!(new),
             )
         });
-        <Self as ISoundWwise_SoundBankManager_BankHandleMethods>::ctor(
-            this,
-            bank_name,
-            is_prepare_load,
-        );
+        <Self as ISoundWwise_SoundPrepareManager_ParamMethods>::ctor(this);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/soundwwise/SoundWwise_SoundBankManager_States.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct SoundWwise_SoundBankManager_States {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for SoundWwise_SoundBankManager_States {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SoundWwise.SoundBankManager.States";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for SoundWwise_SoundBankManager_States {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl SoundWwise_SoundBankManager_States {
-    pub fn loading() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn loaded() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn unexist() -> Self {
-        Self { value: 2 }
     }
 }
 
@@ -1741,45 +1781,5 @@ impl SoundWwise_SoundBankManager_InternalStates {
 
     pub fn load_failed() -> Self {
         Self { value: 2 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/soundwwise/SoundWwise_SoundPrepareManager_Param.md"))]
-#[::unity2::class(namespace = "App", name = "SoundWwise.SoundPrepareManager.Param")]
-#[parent(crate::system::object::Object)]
-pub struct SoundWwise_SoundPrepareManager_Param {
-    #[rename(name = "m_reference")]
-    pub m_reference: i32,
-}
-
-#[cfg(feature = "app-soundwwise")]
-#[::unity2::methods]
-impl SoundWwise_SoundPrepareManager_Param {
-    #[doc = "`IncRef()` overload"]
-    #[method(name = "IncRef", args = 0)]
-    pub fn inc_ref(self) -> bool;
-
-    #[doc = "`DecRef()` overload"]
-    #[method(name = "DecRef", args = 0)]
-    pub fn dec_ref(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-soundwwise")]
-impl SoundWwise_SoundPrepareManager_Param {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SoundWwise_SoundPrepareManager_Param),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISoundWwise_SoundPrepareManager_ParamMethods>::ctor(this);
-        this
     }
 }

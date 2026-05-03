@@ -12,58 +12,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalsequence/AnimalSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct AnimalSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for AnimalSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "AnimalSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AnimalSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl AnimalSequence_Label {
-    pub fn init() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn main() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn load() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 3 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/animalsequence/AnimalSequence.md"))]
 #[::unity2::class(namespace = "App", name = "AnimalSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: animalsequence :: AnimalSequence >)]
@@ -179,5 +127,57 @@ impl AnimalSequence {
         });
         <Self as IAnimalSequenceMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/animalsequence/AnimalSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct AnimalSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for AnimalSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "AnimalSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AnimalSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl AnimalSequence_Label {
+    pub fn init() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn main() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn load() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 3 }
     }
 }

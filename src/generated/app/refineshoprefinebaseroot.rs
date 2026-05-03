@@ -16,48 +16,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinebaseroot/RefineShopRefineBaseRoot_ReturnEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RefineShopRefineBaseRoot.ReturnEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RefineShopRefineBaseRoot_ReturnEventHandler {}
-
-#[cfg(feature = "app-refineshoprefinebaseroot")]
-#[::unity2::methods]
-impl RefineShopRefineBaseRoot_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds)` overload"]
-    #[method(name = "Invoke", args = 4)]
-    pub fn invoke(
-        self,
-        result: crate::app::basicmenu::BasicMenu_Result,
-        unit: crate::app::unit::Unit,
-        owner_item_index: i32,
-        kind: crate::app::itemdata::ItemData_Kinds,
-    ) -> ();
-}
-
-#[cfg(feature = "app-refineshoprefinebaseroot")]
-impl RefineShopRefineBaseRoot_ReturnEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefineShopRefineBaseRoot_ReturnEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefineShopRefineBaseRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinebaseroot/RefineShopRefineBaseRoot.md"))]
 #[::unity2::class(namespace = "App", name = "RefineShopRefineBaseRoot")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -185,6 +143,48 @@ impl RefineShopRefineBaseRoot {
             )
         });
         <Self as IRefineShopRefineBaseRootMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refineshoprefinebaseroot/RefineShopRefineBaseRoot_ReturnEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefineShopRefineBaseRoot.ReturnEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefineShopRefineBaseRoot_ReturnEventHandler {}
+
+#[cfg(feature = "app-refineshoprefinebaseroot")]
+#[::unity2::methods]
+impl RefineShopRefineBaseRoot_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::basicmenu::BasicMenu_Result, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds)` overload"]
+    #[method(name = "Invoke", args = 4)]
+    pub fn invoke(
+        self,
+        result: crate::app::basicmenu::BasicMenu_Result,
+        unit: crate::app::unit::Unit,
+        owner_item_index: i32,
+        kind: crate::app::itemdata::ItemData_Kinds,
+    ) -> ();
+}
+
+#[cfg(feature = "app-refineshoprefinebaseroot")]
+impl RefineShopRefineBaseRoot_ReturnEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefineShopRefineBaseRoot_ReturnEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefineShopRefineBaseRoot_ReturnEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

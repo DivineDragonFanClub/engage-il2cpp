@@ -18,6 +18,41 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/publicobject/PublicObject_Func_1.md"))]
+#[::unity2::class(namespace = "App", name = "PublicObject.Func`1")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+#[parent(crate::system::delegate::Delegate)]
+#[parent(crate::system::object::Object)]
+pub struct PublicObject_Func_1<T0: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-publicobject")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity> PublicObject_Func_1<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(::unity2::Il2CppString, T0)` overload"]
+    #[method(name = "Invoke", args = 2)]
+    pub fn invoke(self, group: ::unity2::Il2CppString, obj: T0) -> ();
+}
+
+#[cfg(feature = "app-publicobject")]
+impl<T0: ::unity2::ClassIdentity> PublicObject_Func_1<T0> {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(PublicObject_Func_1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPublicObject_Func_1Methods<T0>>::ctor(this, object, method);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/publicobject/PublicObject_Group.md"))]
 #[::unity2::class(namespace = "App", name = "PublicObject.Group")]
 #[parent(crate::system::object::Object)]
@@ -134,41 +169,6 @@ impl PublicObject {
             )
         });
         <Self as IPublicObjectMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/publicobject/PublicObject_Func_1.md"))]
-#[::unity2::class(namespace = "App", name = "PublicObject.Func`1")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-#[parent(crate::system::delegate::Delegate)]
-#[parent(crate::system::object::Object)]
-pub struct PublicObject_Func_1<T0: ::unity2::ClassIdentity> {}
-
-#[cfg(feature = "app-publicobject")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity> PublicObject_Func_1<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(::unity2::Il2CppString, T0)` overload"]
-    #[method(name = "Invoke", args = 2)]
-    pub fn invoke(self, group: ::unity2::Il2CppString, obj: T0) -> ();
-}
-
-#[cfg(feature = "app-publicobject")]
-impl<T0: ::unity2::ClassIdentity> PublicObject_Func_1<T0> {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(PublicObject_Func_1),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IPublicObject_Func_1Methods<T0>>::ctor(this, object, method);
         this
     }
 }

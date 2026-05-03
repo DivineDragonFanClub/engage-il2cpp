@@ -8,39 +8,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlemath/BattleMath_Probability.md"))]
-#[::unity2::class(namespace = "App", name = "BattleMath.Probability")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct BattleMath_Probability {}
-
-#[cfg(feature = "app-battlemath")]
-#[::unity2::methods]
-impl BattleMath_Probability {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(i32)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, ratio: i32) -> bool;
-}
-
-#[cfg(feature = "app-battlemath")]
-impl BattleMath_Probability {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(BattleMath_Probability),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IBattleMath_ProbabilityMethods>::ctor(this, object, method);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlemath/BattleMath.md"))]
 #[::unity2::class(namespace = "App", name = "BattleMath")]
 #[parent(crate::system::object::Object)]
@@ -156,6 +123,39 @@ impl BattleMath {
             )
         });
         <Self as IBattleMathMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/battlemath/BattleMath_Probability.md"))]
+#[::unity2::class(namespace = "App", name = "BattleMath.Probability")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct BattleMath_Probability {}
+
+#[cfg(feature = "app-battlemath")]
+#[::unity2::methods]
+impl BattleMath_Probability {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(i32)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, ratio: i32) -> bool;
+}
+
+#[cfg(feature = "app-battlemath")]
+impl BattleMath_Probability {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(BattleMath_Probability),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBattleMath_ProbabilityMethods>::ctor(this, object, method);
         this
     }
 }

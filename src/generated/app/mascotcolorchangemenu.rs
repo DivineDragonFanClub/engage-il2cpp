@@ -10,6 +10,78 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcolorchangemenu/MascotColorChangeMenu_CursorTop.md"))]
+#[::unity2::class(namespace = "App", name = "MascotColorChangeMenu.CursorTop")]
+#[parent(crate::system::object::Object)]
+pub struct MascotColorChangeMenu_CursorTop {
+    #[rename(name = "XCount")]
+    pub x_count: i32,
+    #[rename(name = "YCount")]
+    pub y_count: i32,
+    #[rename(name = "MoveFrame")]
+    pub move_frame: f32,
+    #[rename(name = "m_cursorTop")]
+    pub m_cursor_top: crate::unity_engine::recttransform::RectTransform,
+    #[rename(name = "m_moveTick")]
+    pub m_move_tick: f32,
+}
+
+#[cfg(feature = "app-mascotcolorchangemenu")]
+#[::unity2::methods]
+impl MascotColorChangeMenu_CursorTop {
+    #[doc = "`get_SelectIndexX()` overload"]
+    #[method(name = "get_SelectIndexX", args = 0)]
+    pub fn get_select_index_x(self) -> i32;
+
+    #[doc = "`get_SelectIndexY()` overload"]
+    #[method(name = "get_SelectIndexY", args = 0)]
+    pub fn get_select_index_y(self) -> i32;
+
+    #[doc = "`.ctor(crate::unity_engine::recttransform::RectTransform)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, transform: crate::unity_engine::recttransform::RectTransform) -> ();
+
+    #[doc = "`SetIndexInstant(i32)` overload"]
+    #[method(name = "SetIndexInstant", args = 1)]
+    pub fn set_index_instant(self, index: i32) -> ();
+
+    #[doc = "`MoveCursor(i32, i32, bool)` overload"]
+    #[method(name = "MoveCursor", args = 3)]
+    pub fn move_cursor(self, move_x: i32, move_y: i32, is_trigger: bool) -> bool;
+
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[doc = "`SetPosition(f32, f32)` overload"]
+    #[method(name = "SetPosition", args = 2)]
+    pub fn set_position(self, x: f32, y: f32) -> ();
+
+    #[doc = "`GetPositionX(i32)` overload"]
+    #[method(name = "GetPositionX", args = 1)]
+    pub fn get_position_x(self, select_index: i32) -> f32;
+
+    #[doc = "`GetPositionY(i32)` overload"]
+    #[method(name = "GetPositionY", args = 1)]
+    pub fn get_position_y(self, select_index: i32) -> f32;
+}
+
+#[cfg(feature = "app-mascotcolorchangemenu")]
+impl MascotColorChangeMenu_CursorTop {
+    #[doc = "`.ctor(crate::unity_engine::recttransform::RectTransform)` — overload selector"]
+    pub fn new(transform: crate::unity_engine::recttransform::RectTransform) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MascotColorChangeMenu_CursorTop),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMascotColorChangeMenu_CursorTopMethods>::ctor(this, transform);
+        this
+    }
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mascotcolorchangemenu/MascotColorChangeMenu_Label.md"))]
 #[repr(C)]
 #[derive(
@@ -194,78 +266,6 @@ impl MascotColorChangeMenu {
             )
         });
         <Self as IMascotColorChangeMenuMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mascotcolorchangemenu/MascotColorChangeMenu_CursorTop.md"))]
-#[::unity2::class(namespace = "App", name = "MascotColorChangeMenu.CursorTop")]
-#[parent(crate::system::object::Object)]
-pub struct MascotColorChangeMenu_CursorTop {
-    #[rename(name = "XCount")]
-    pub x_count: i32,
-    #[rename(name = "YCount")]
-    pub y_count: i32,
-    #[rename(name = "MoveFrame")]
-    pub move_frame: f32,
-    #[rename(name = "m_cursorTop")]
-    pub m_cursor_top: crate::unity_engine::recttransform::RectTransform,
-    #[rename(name = "m_moveTick")]
-    pub m_move_tick: f32,
-}
-
-#[cfg(feature = "app-mascotcolorchangemenu")]
-#[::unity2::methods]
-impl MascotColorChangeMenu_CursorTop {
-    #[doc = "`get_SelectIndexX()` overload"]
-    #[method(name = "get_SelectIndexX", args = 0)]
-    pub fn get_select_index_x(self) -> i32;
-
-    #[doc = "`get_SelectIndexY()` overload"]
-    #[method(name = "get_SelectIndexY", args = 0)]
-    pub fn get_select_index_y(self) -> i32;
-
-    #[doc = "`.ctor(crate::unity_engine::recttransform::RectTransform)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, transform: crate::unity_engine::recttransform::RectTransform) -> ();
-
-    #[doc = "`SetIndexInstant(i32)` overload"]
-    #[method(name = "SetIndexInstant", args = 1)]
-    pub fn set_index_instant(self, index: i32) -> ();
-
-    #[doc = "`MoveCursor(i32, i32, bool)` overload"]
-    #[method(name = "MoveCursor", args = 3)]
-    pub fn move_cursor(self, move_x: i32, move_y: i32, is_trigger: bool) -> bool;
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`SetPosition(f32, f32)` overload"]
-    #[method(name = "SetPosition", args = 2)]
-    pub fn set_position(self, x: f32, y: f32) -> ();
-
-    #[doc = "`GetPositionX(i32)` overload"]
-    #[method(name = "GetPositionX", args = 1)]
-    pub fn get_position_x(self, select_index: i32) -> f32;
-
-    #[doc = "`GetPositionY(i32)` overload"]
-    #[method(name = "GetPositionY", args = 1)]
-    pub fn get_position_y(self, select_index: i32) -> f32;
-}
-
-#[cfg(feature = "app-mascotcolorchangemenu")]
-impl MascotColorChangeMenu_CursorTop {
-    #[doc = "`.ctor(crate::unity_engine::recttransform::RectTransform)` — overload selector"]
-    pub fn new(transform: crate::unity_engine::recttransform::RectTransform) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MascotColorChangeMenu_CursorTop),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMascotColorChangeMenu_CursorTopMethods>::ctor(this, transform);
         this
     }
 }

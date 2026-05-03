@@ -10,94 +10,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/engagesequence/EngageSequence.md"))]
-#[::unity2::class(namespace = "Combat", name = "EngageSequence")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct EngageSequence {
-    #[rename(name = "m_Master")]
-    pub m_master: crate::combat::engagesequence::EngageSequence_Cast,
-    #[rename(name = "m_Grandew")]
-    pub m_grandew: crate::combat::engagesequence::EngageSequence_Cast,
-    #[rename(name = "m_CamGO")]
-    pub m_cam_go: crate::unity_engine::gameobject::GameObject,
-    #[rename(name = "m_bSetupDone")]
-    pub m_b_setup_done: bool,
-    #[rename(name = "m_bSkipped")]
-    pub m_b_skipped: bool,
-}
-
-#[cfg(feature = "combat-engagesequence")]
-#[::unity2::methods]
-impl EngageSequence {
-    #[doc = "`GetMode()` overload"]
-    #[method(name = "GetMode", args = 0)]
-    pub fn get_mode() -> crate::combat::engagesequence::EngageSequence_Mode;
-
-    #[doc = "`IsExist()` overload"]
-    #[method(name = "IsExist", args = 0)]
-    pub fn is_exist() -> bool;
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::procinst::ProcInst,
-        unit1: crate::app::unit::Unit,
-        unit2: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`CreteaCombatBorders()` overload"]
-    #[method(name = "CreteaCombatBorders", args = 0)]
-    pub fn cretea_combat_borders(self) -> ();
-
-    #[doc = "`DeleteCombatBorders()` overload"]
-    #[method(name = "DeleteCombatBorders", args = 0)]
-    pub fn delete_combat_borders(self) -> ();
-
-    #[doc = "`IsSetupDone()` overload"]
-    #[method(name = "IsSetupDone", args = 0)]
-    pub fn is_setup_done(self) -> bool;
-
-    #[doc = "`WaitFinish()` overload"]
-    #[method(name = "WaitFinish", args = 0)]
-    pub fn wait_finish(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, unit1: crate::app::unit::Unit, unit2: crate::app::unit::Unit) -> ();
-
-    #[doc = "`LoadAndSetupAndRun()` overload"]
-    #[method(name = "LoadAndSetupAndRun", args = 0)]
-    pub fn load_and_setup_and_run(self) -> crate::system::collections::ienumerator::IEnumerator;
-
-    #[doc = "`CalcHeightOffset(crate::combat::character::Character, crate::combat::character::Character)` overload"]
-    #[method(name = "CalcHeightOffset", args = 2)]
-    pub fn calc_height_offset(
-        self,
-        c: crate::combat::character::Character,
-        g: crate::combat::character::Character,
-    ) -> f32;
-
-    #[doc = "`Exit()` overload"]
-    #[method(name = "Exit", args = 0)]
-    pub fn exit(self) -> crate::system::collections::ienumerator::IEnumerator;
-}
-
-#[cfg(feature = "combat-engagesequence")]
-impl EngageSequence {
-    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"]
-    pub fn new(unit1: crate::app::unit::Unit, unit2: crate::app::unit::Unit) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EngageSequence),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEngageSequenceMethods>::ctor(this, unit1, unit2);
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/engagesequence/EngageSequence_Mode.md"))]
 #[repr(C)]
 #[derive(
@@ -205,6 +117,94 @@ impl EngageSequence_Cast {
             )
         });
         <Self as IEngageSequence_CastMethods>::ctor_2(this, god);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/engagesequence/EngageSequence.md"))]
+#[::unity2::class(namespace = "Combat", name = "EngageSequence")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct EngageSequence {
+    #[rename(name = "m_Master")]
+    pub m_master: crate::combat::engagesequence::EngageSequence_Cast,
+    #[rename(name = "m_Grandew")]
+    pub m_grandew: crate::combat::engagesequence::EngageSequence_Cast,
+    #[rename(name = "m_CamGO")]
+    pub m_cam_go: crate::unity_engine::gameobject::GameObject,
+    #[rename(name = "m_bSetupDone")]
+    pub m_b_setup_done: bool,
+    #[rename(name = "m_bSkipped")]
+    pub m_b_skipped: bool,
+}
+
+#[cfg(feature = "combat-engagesequence")]
+#[::unity2::methods]
+impl EngageSequence {
+    #[doc = "`GetMode()` overload"]
+    #[method(name = "GetMode", args = 0)]
+    pub fn get_mode() -> crate::combat::engagesequence::EngageSequence_Mode;
+
+    #[doc = "`IsExist()` overload"]
+    #[method(name = "IsExist", args = 0)]
+    pub fn is_exist() -> bool;
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::procinst::ProcInst,
+        unit1: crate::app::unit::Unit,
+        unit2: crate::app::unit::Unit,
+    ) -> ();
+
+    #[doc = "`CreteaCombatBorders()` overload"]
+    #[method(name = "CreteaCombatBorders", args = 0)]
+    pub fn cretea_combat_borders(self) -> ();
+
+    #[doc = "`DeleteCombatBorders()` overload"]
+    #[method(name = "DeleteCombatBorders", args = 0)]
+    pub fn delete_combat_borders(self) -> ();
+
+    #[doc = "`IsSetupDone()` overload"]
+    #[method(name = "IsSetupDone", args = 0)]
+    pub fn is_setup_done(self) -> bool;
+
+    #[doc = "`WaitFinish()` overload"]
+    #[method(name = "WaitFinish", args = 0)]
+    pub fn wait_finish(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, unit1: crate::app::unit::Unit, unit2: crate::app::unit::Unit) -> ();
+
+    #[doc = "`LoadAndSetupAndRun()` overload"]
+    #[method(name = "LoadAndSetupAndRun", args = 0)]
+    pub fn load_and_setup_and_run(self) -> crate::system::collections::ienumerator::IEnumerator;
+
+    #[doc = "`CalcHeightOffset(crate::combat::character::Character, crate::combat::character::Character)` overload"]
+    #[method(name = "CalcHeightOffset", args = 2)]
+    pub fn calc_height_offset(
+        self,
+        c: crate::combat::character::Character,
+        g: crate::combat::character::Character,
+    ) -> f32;
+
+    #[doc = "`Exit()` overload"]
+    #[method(name = "Exit", args = 0)]
+    pub fn exit(self) -> crate::system::collections::ienumerator::IEnumerator;
+}
+
+#[cfg(feature = "combat-engagesequence")]
+impl EngageSequence {
+    #[doc = "`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"]
+    pub fn new(unit1: crate::app::unit::Unit, unit2: crate::app::unit::Unit) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EngageSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEngageSequenceMethods>::ctor(this, unit1, unit2);
         this
     }
 }

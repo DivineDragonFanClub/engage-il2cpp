@@ -10,6 +10,43 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry_AssetPathString.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
+    pub original: ::unity2::Il2CppString,
+    pub lower: ::unity2::Il2CppString,
+}
+
+impl ::unity2::ClassIdentity for AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
+    const NAMESPACE: &'static str = "UnityEngine.AssetGraph";
+
+    const NAME: &'static str = "AssetBundleBuildMap.AssetBundleEntry.AssetPathString";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
+#[::unity2::methods(value)]
+impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
+    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(self, s: ::unity2::Il2CppString) -> ();
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.AssetGraph",
@@ -93,43 +130,6 @@ impl AssetBundleBuildMap_AssetBundleEntry {
         );
         this
     }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap_AssetBundleEntry_AssetPathString.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
-    pub original: ::unity2::Il2CppString,
-    pub lower: ::unity2::Il2CppString,
-}
-
-impl ::unity2::ClassIdentity for AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
-    const NAMESPACE: &'static str = "UnityEngine.AssetGraph";
-
-    const NAME: &'static str = "AssetBundleBuildMap.AssetBundleEntry.AssetPathString";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "unity_engine-asset_graph-assetbundlebuildmap")]
-#[::unity2::methods(value)]
-impl AssetBundleBuildMap_AssetBundleEntry_AssetPathString {
-    #[doc = "`.ctor(::unity2::Il2CppString)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(self, s: ::unity2::Il2CppString) -> ();
 }
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/asset_graph/assetbundlebuildmap/AssetBundleBuildMap.md"))]

@@ -10,51 +10,52 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortietrademanager/SortieTradeManager_SideId.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct SortieTradeManager_SideId {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager_Side.md"))]
+#[::unity2::class(namespace = "App", name = "SortieTradeManager.Side")]
+#[parent(crate::system::object::Object)]
+pub struct SortieTradeManager_Side {}
+
+#[cfg(feature = "app-sortietrademanager")]
+#[::unity2::methods]
+impl SortieTradeManager_Side {
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+
+    #[doc = "`get_Unit()` overload"]
+    #[method(name = "get_Unit", args = 0)]
+    pub fn get_unit(self) -> crate::app::unit::Unit;
+
+    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
+    #[method(name = "set_Unit", args = 1)]
+    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
+
+    #[doc = "`get_OwnerItemIndex()` overload"]
+    #[method(name = "get_OwnerItemIndex", args = 0)]
+    pub fn get_owner_item_index(self) -> i32;
+
+    #[doc = "`set_OwnerItemIndex(i32)` overload"]
+    #[method(name = "set_OwnerItemIndex", args = 1)]
+    pub fn set_owner_item_index(self, value: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
-impl ::unity2::ClassIdentity for SortieTradeManager_SideId {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "SortieTradeManager.SideId";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for SortieTradeManager_SideId {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl SortieTradeManager_SideId {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn from() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn to() -> Self {
-        Self { value: 2 }
+#[cfg(feature = "app-sortietrademanager")]
+impl SortieTradeManager_Side {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SortieTradeManager_Side),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieTradeManager_SideMethods>::ctor(this);
+        this
     }
 }
 
@@ -127,51 +128,50 @@ impl SortieTradeManager {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/sortietrademanager/SortieTradeManager_Side.md"))]
-#[::unity2::class(namespace = "App", name = "SortieTradeManager.Side")]
-#[parent(crate::system::object::Object)]
-pub struct SortieTradeManager_Side {}
-
-#[cfg(feature = "app-sortietrademanager")]
-#[::unity2::methods]
-impl SortieTradeManager_Side {
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-
-    #[doc = "`get_Unit()` overload"]
-    #[method(name = "get_Unit", args = 0)]
-    pub fn get_unit(self) -> crate::app::unit::Unit;
-
-    #[doc = "`set_Unit(crate::app::unit::Unit)` overload"]
-    #[method(name = "set_Unit", args = 1)]
-    pub fn set_unit(self, value: crate::app::unit::Unit) -> ();
-
-    #[doc = "`get_OwnerItemIndex()` overload"]
-    #[method(name = "get_OwnerItemIndex", args = 0)]
-    pub fn get_owner_item_index(self) -> i32;
-
-    #[doc = "`set_OwnerItemIndex(i32)` overload"]
-    #[method(name = "set_OwnerItemIndex", args = 1)]
-    pub fn set_owner_item_index(self, value: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/sortietrademanager/SortieTradeManager_SideId.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct SortieTradeManager_SideId {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-sortietrademanager")]
-impl SortieTradeManager_Side {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SortieTradeManager_Side),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISortieTradeManager_SideMethods>::ctor(this);
-        this
+impl ::unity2::ClassIdentity for SortieTradeManager_SideId {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "SortieTradeManager.SideId";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for SortieTradeManager_SideId {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl SortieTradeManager_SideId {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn from() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn to() -> Self {
+        Self { value: 2 }
     }
 }

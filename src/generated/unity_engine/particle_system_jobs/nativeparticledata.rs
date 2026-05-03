@@ -6,15 +6,15 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData_Array3.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData_Array4.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct NativeParticleData_Array3 {}
+pub struct NativeParticleData_Array4 {}
 
-impl ::unity2::ClassIdentity for NativeParticleData_Array3 {
+impl ::unity2::ClassIdentity for NativeParticleData_Array4 {
     const NAMESPACE: &'static str = "UnityEngine.ParticleSystemJobs";
 
-    const NAME: &'static str = "NativeParticleData.Array3";
+    const NAME: &'static str = "NativeParticleData.Array4";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -23,7 +23,7 @@ impl ::unity2::ClassIdentity for NativeParticleData_Array3 {
     }
 }
 
-impl ::unity2::IlType for NativeParticleData_Array3 {
+impl ::unity2::IlType for NativeParticleData_Array4 {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()
@@ -58,15 +58,15 @@ impl ::unity2::IlType for NativeParticleData {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData_Array4.md"))]
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/particle_system_jobs/nativeparticledata/NativeParticleData_Array3.md"))]
 #[repr(C)]
 #[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct NativeParticleData_Array4 {}
+pub struct NativeParticleData_Array3 {}
 
-impl ::unity2::ClassIdentity for NativeParticleData_Array4 {
+impl ::unity2::ClassIdentity for NativeParticleData_Array3 {
     const NAMESPACE: &'static str = "UnityEngine.ParticleSystemJobs";
 
-    const NAME: &'static str = "NativeParticleData.Array4";
+    const NAME: &'static str = "NativeParticleData.Array3";
 
     fn class() -> ::unity2::Class {
         static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
@@ -75,7 +75,7 @@ impl ::unity2::ClassIdentity for NativeParticleData_Array4 {
     }
 }
 
-impl ::unity2::IlType for NativeParticleData_Array4 {
+impl ::unity2::IlType for NativeParticleData_Array3 {
     fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
         &<Self as ::unity2::ClassIdentity>::class()
             .raw()

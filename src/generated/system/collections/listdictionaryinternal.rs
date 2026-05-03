@@ -4,142 +4,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/listdictionaryinternal/ListDictionaryInternal_NodeEnumerator.md"))]
-#[::unity2::class(
-    namespace = "System.Collections",
-    name = "ListDictionaryInternal.NodeEnumerator"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ListDictionaryInternal_NodeEnumerator {
-    #[rename(name = "list")]
-    pub list: crate::system::collections::listdictionaryinternal::ListDictionaryInternal,
-    #[rename(name = "current")]
-    pub current:
-        crate::system::collections::listdictionaryinternal::ListDictionaryInternal_DictionaryNode,
-    #[rename(name = "version")]
-    pub version: i32,
-    #[rename(name = "start")]
-    pub start: bool,
-}
-
-#[cfg(feature = "system-collections-listdictionaryinternal")]
-#[::unity2::methods]
-impl ListDictionaryInternal_NodeEnumerator {
-    #[doc = "`.ctor(crate::system::collections::listdictionaryinternal::ListDictionaryInternal)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        list: crate::system::collections::listdictionaryinternal::ListDictionaryInternal,
-    ) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Entry()` overload"]
-    #[method(name = "get_Entry", args = 0)]
-    pub fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry;
-
-    #[doc = "`get_Key()` overload"]
-    #[method(name = "get_Key", args = 0)]
-    pub fn get_key(self) -> crate::system::object::Object;
-
-    #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-}
-
-#[cfg(feature = "system-collections-listdictionaryinternal")]
-impl ListDictionaryInternal_NodeEnumerator {
-    #[doc = "`.ctor(crate::system::collections::listdictionaryinternal::ListDictionaryInternal)` — overload selector"]
-    pub fn new(
-        list: crate::system::collections::listdictionaryinternal::ListDictionaryInternal,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ListDictionaryInternal_NodeEnumerator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IListDictionaryInternal_NodeEnumeratorMethods>::ctor(this, list);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/listdictionaryinternal/ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator.md"))]
-#[::unity2::class(
-    namespace = "System.Collections",
-    name = "ListDictionaryInternal.NodeKeyValueCollection.NodeKeyValueEnumerator"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator {
-    #[rename(name = "list")]
-    pub list: crate::system::collections::listdictionaryinternal::ListDictionaryInternal,
-    #[rename(name = "current")]
-    pub current:
-        crate::system::collections::listdictionaryinternal::ListDictionaryInternal_DictionaryNode,
-    #[rename(name = "version")]
-    pub version: i32,
-    #[rename(name = "isKeys")]
-    pub is_keys: bool,
-    #[rename(name = "start")]
-    pub start: bool,
-}
-
-#[cfg(feature = "system-collections-listdictionaryinternal")]
-#[::unity2::methods]
-impl ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator {
-    #[doc = "`.ctor(crate::system::collections::listdictionaryinternal::ListDictionaryInternal, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(
-        self,
-        list: crate::system::collections::listdictionaryinternal::ListDictionaryInternal,
-        is_keys: bool,
-    ) -> ();
-
-    #[doc = "`get_Current()` overload"]
-    #[method(name = "get_Current", args = 0)]
-    pub fn get_current(self) -> crate::system::object::Object;
-
-    #[doc = "`MoveNext()` overload"]
-    #[method(name = "MoveNext", args = 0)]
-    pub fn move_next(self) -> bool;
-
-    #[doc = "`Reset()` overload"]
-    #[method(name = "Reset", args = 0)]
-    pub fn reset(self) -> ();
-}
-
-#[cfg(feature = "system-collections-listdictionaryinternal")]
-impl ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator {
-    #[doc = "`.ctor(crate::system::collections::listdictionaryinternal::ListDictionaryInternal, bool)` — overload selector"]
-    pub fn new(
-        list: crate::system::collections::listdictionaryinternal::ListDictionaryInternal,
-        is_keys: bool,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(
-                    ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator
-                ),
-                ::core::stringify!(new),
-            )
-        });
-        < Self as IListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods > :: ctor (this , list , is_keys) ;
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/listdictionaryinternal/ListDictionaryInternal.md"))]
 #[::unity2::class(namespace = "System.Collections", name = "ListDictionaryInternal")]
 #[parent(crate::system::object::Object)]
@@ -321,6 +185,71 @@ impl ListDictionaryInternal_NodeKeyValueCollection {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/listdictionaryinternal/ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator.md"))]
+#[::unity2::class(
+    namespace = "System.Collections",
+    name = "ListDictionaryInternal.NodeKeyValueCollection.NodeKeyValueEnumerator"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator {
+    #[rename(name = "list")]
+    pub list: crate::system::collections::listdictionaryinternal::ListDictionaryInternal,
+    #[rename(name = "current")]
+    pub current:
+        crate::system::collections::listdictionaryinternal::ListDictionaryInternal_DictionaryNode,
+    #[rename(name = "version")]
+    pub version: i32,
+    #[rename(name = "isKeys")]
+    pub is_keys: bool,
+    #[rename(name = "start")]
+    pub start: bool,
+}
+
+#[cfg(feature = "system-collections-listdictionaryinternal")]
+#[::unity2::methods]
+impl ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator {
+    #[doc = "`.ctor(crate::system::collections::listdictionaryinternal::ListDictionaryInternal, bool)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(
+        self,
+        list: crate::system::collections::listdictionaryinternal::ListDictionaryInternal,
+        is_keys: bool,
+    ) -> ();
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+}
+
+#[cfg(feature = "system-collections-listdictionaryinternal")]
+impl ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator {
+    #[doc = "`.ctor(crate::system::collections::listdictionaryinternal::ListDictionaryInternal, bool)` — overload selector"]
+    pub fn new(
+        list: crate::system::collections::listdictionaryinternal::ListDictionaryInternal,
+        is_keys: bool,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(
+                    ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator
+                ),
+                ::core::stringify!(new),
+            )
+        });
+        < Self as IListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods > :: ctor (this , list , is_keys) ;
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/listdictionaryinternal/ListDictionaryInternal_DictionaryNode.md"))]
 #[::unity2::class(
     namespace = "System.Collections",
@@ -357,6 +286,77 @@ impl ListDictionaryInternal_DictionaryNode {
             )
         });
         <Self as IListDictionaryInternal_DictionaryNodeMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/system/collections/listdictionaryinternal/ListDictionaryInternal_NodeEnumerator.md"))]
+#[::unity2::class(
+    namespace = "System.Collections",
+    name = "ListDictionaryInternal.NodeEnumerator"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ListDictionaryInternal_NodeEnumerator {
+    #[rename(name = "list")]
+    pub list: crate::system::collections::listdictionaryinternal::ListDictionaryInternal,
+    #[rename(name = "current")]
+    pub current:
+        crate::system::collections::listdictionaryinternal::ListDictionaryInternal_DictionaryNode,
+    #[rename(name = "version")]
+    pub version: i32,
+    #[rename(name = "start")]
+    pub start: bool,
+}
+
+#[cfg(feature = "system-collections-listdictionaryinternal")]
+#[::unity2::methods]
+impl ListDictionaryInternal_NodeEnumerator {
+    #[doc = "`.ctor(crate::system::collections::listdictionaryinternal::ListDictionaryInternal)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        list: crate::system::collections::listdictionaryinternal::ListDictionaryInternal,
+    ) -> ();
+
+    #[doc = "`get_Current()` overload"]
+    #[method(name = "get_Current", args = 0)]
+    pub fn get_current(self) -> crate::system::object::Object;
+
+    #[doc = "`get_Entry()` overload"]
+    #[method(name = "get_Entry", args = 0)]
+    pub fn get_entry(self) -> crate::system::collections::dictionaryentry::DictionaryEntry;
+
+    #[doc = "`get_Key()` overload"]
+    #[method(name = "get_Key", args = 0)]
+    pub fn get_key(self) -> crate::system::object::Object;
+
+    #[doc = "`get_Value()` overload"]
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> crate::system::object::Object;
+
+    #[doc = "`MoveNext()` overload"]
+    #[method(name = "MoveNext", args = 0)]
+    pub fn move_next(self) -> bool;
+
+    #[doc = "`Reset()` overload"]
+    #[method(name = "Reset", args = 0)]
+    pub fn reset(self) -> ();
+}
+
+#[cfg(feature = "system-collections-listdictionaryinternal")]
+impl ListDictionaryInternal_NodeEnumerator {
+    #[doc = "`.ctor(crate::system::collections::listdictionaryinternal::ListDictionaryInternal)` — overload selector"]
+    pub fn new(
+        list: crate::system::collections::listdictionaryinternal::ListDictionaryInternal,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ListDictionaryInternal_NodeEnumerator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IListDictionaryInternal_NodeEnumeratorMethods>::ctor(this, list);
         this
     }
 }

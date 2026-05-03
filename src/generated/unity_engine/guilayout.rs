@@ -6,110 +6,6 @@ use crate::unity_engine::gui::GUI_Scope;
 use crate::unity_engine::gui::IGUI_Scope;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_ScrollViewScope.md"))]
-#[::unity2::class(namespace = "UnityEngine", name = "GUILayout.ScrollViewScope")]
-#[parent(crate::unity_engine::gui::GUI_Scope)]
-pub struct GUILayout_ScrollViewScope {}
-
-#[cfg(feature = "unity_engine-guilayout")]
-#[::unity2::methods]
-impl GUILayout_ScrollViewScope {
-    #[doc = "`get_scrollPosition()` overload"]
-    #[method(name = "get_scrollPosition", args = 0)]
-    pub fn get_scroll_position(self) -> crate::unity_engine::vector2::Vector2;
-
-    #[doc = "`set_scrollPosition(crate::unity_engine::vector2::Vector2)` overload"]
-    #[method(name = "set_scrollPosition", args = 1)]
-    pub fn set_scroll_position(self, value: crate::unity_engine::vector2::Vector2) -> ();
-
-    #[doc = "`get_handleScrollWheel()` overload"]
-    #[method(name = "get_handleScrollWheel", args = 0)]
-    pub fn get_handle_scroll_wheel(self) -> bool;
-
-    #[doc = "`set_handleScrollWheel(bool)` overload"]
-    #[method(name = "set_handleScrollWheel", args = 1)]
-    pub fn set_handle_scroll_wheel(self, value: bool) -> ();
-
-    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    #[method(name = ".ctor", args = 4)]
-    pub fn ctor(
-        self,
-        scroll_position: crate::unity_engine::vector2::Vector2,
-        always_show_horizontal: bool,
-        always_show_vertical: bool,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-    ) -> ();
-
-    #[doc = "`CloseScope()` overload"]
-    #[method(name = "CloseScope", args = 0)]
-    pub fn close_scope(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-guilayout")]
-impl GUILayout_ScrollViewScope {
-    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]
-    pub fn new(
-        scroll_position: crate::unity_engine::vector2::Vector2,
-        always_show_horizontal: bool,
-        always_show_vertical: bool,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUILayout_ScrollViewScope),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGUILayout_ScrollViewScopeMethods>::ctor(
-            this,
-            scroll_position,
-            always_show_horizontal,
-            always_show_vertical,
-            options,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_HorizontalScope.md"))]
-#[::unity2::class(namespace = "UnityEngine", name = "GUILayout.HorizontalScope")]
-#[parent(crate::unity_engine::gui::GUI_Scope)]
-pub struct GUILayout_HorizontalScope {}
-
-#[cfg(feature = "unity_engine-guilayout")]
-#[::unity2::methods]
-impl GUILayout_HorizontalScope {
-    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-    ) -> ();
-
-    #[doc = "`CloseScope()` overload"]
-    #[method(name = "CloseScope", args = 0)]
-    pub fn close_scope(self) -> ();
-}
-
-#[cfg(feature = "unity_engine-guilayout")]
-impl GUILayout_HorizontalScope {
-    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]
-    pub fn new(
-        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(GUILayout_HorizontalScope),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IGUILayout_HorizontalScopeMethods>::ctor(this, options);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout.md"))]
 #[::unity2::class(namespace = "UnityEngine", name = "GUILayout")]
 #[parent(crate::system::object::Object)]
@@ -248,6 +144,110 @@ impl GUILayout {
     #[doc = "`Height(f32)` overload"]
     #[method(name = "Height", args = 1)]
     pub fn height(height: f32) -> crate::unity_engine::guilayoutoption::GUILayoutOption;
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_ScrollViewScope.md"))]
+#[::unity2::class(namespace = "UnityEngine", name = "GUILayout.ScrollViewScope")]
+#[parent(crate::unity_engine::gui::GUI_Scope)]
+pub struct GUILayout_ScrollViewScope {}
+
+#[cfg(feature = "unity_engine-guilayout")]
+#[::unity2::methods]
+impl GUILayout_ScrollViewScope {
+    #[doc = "`get_scrollPosition()` overload"]
+    #[method(name = "get_scrollPosition", args = 0)]
+    pub fn get_scroll_position(self) -> crate::unity_engine::vector2::Vector2;
+
+    #[doc = "`set_scrollPosition(crate::unity_engine::vector2::Vector2)` overload"]
+    #[method(name = "set_scrollPosition", args = 1)]
+    pub fn set_scroll_position(self, value: crate::unity_engine::vector2::Vector2) -> ();
+
+    #[doc = "`get_handleScrollWheel()` overload"]
+    #[method(name = "get_handleScrollWheel", args = 0)]
+    pub fn get_handle_scroll_wheel(self) -> bool;
+
+    #[doc = "`set_handleScrollWheel(bool)` overload"]
+    #[method(name = "set_handleScrollWheel", args = 1)]
+    pub fn set_handle_scroll_wheel(self, value: bool) -> ();
+
+    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    #[method(name = ".ctor", args = 4)]
+    pub fn ctor(
+        self,
+        scroll_position: crate::unity_engine::vector2::Vector2,
+        always_show_horizontal: bool,
+        always_show_vertical: bool,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+    ) -> ();
+
+    #[doc = "`CloseScope()` overload"]
+    #[method(name = "CloseScope", args = 0)]
+    pub fn close_scope(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-guilayout")]
+impl GUILayout_ScrollViewScope {
+    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]
+    pub fn new(
+        scroll_position: crate::unity_engine::vector2::Vector2,
+        always_show_horizontal: bool,
+        always_show_vertical: bool,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUILayout_ScrollViewScope),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUILayout_ScrollViewScopeMethods>::ctor(
+            this,
+            scroll_position,
+            always_show_horizontal,
+            always_show_vertical,
+            options,
+        );
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_HorizontalScope.md"))]
+#[::unity2::class(namespace = "UnityEngine", name = "GUILayout.HorizontalScope")]
+#[parent(crate::unity_engine::gui::GUI_Scope)]
+pub struct GUILayout_HorizontalScope {}
+
+#[cfg(feature = "unity_engine-guilayout")]
+#[::unity2::methods]
+impl GUILayout_HorizontalScope {
+    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+    ) -> ();
+
+    #[doc = "`CloseScope()` overload"]
+    #[method(name = "CloseScope", args = 0)]
+    pub fn close_scope(self) -> ();
+}
+
+#[cfg(feature = "unity_engine-guilayout")]
+impl GUILayout_HorizontalScope {
+    #[doc = "`.ctor(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]
+    pub fn new(
+        options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(GUILayout_HorizontalScope),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUILayout_HorizontalScopeMethods>::ctor(this, options);
+        this
+    }
 }
 
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/guilayout/GUILayout_LayoutedWindow.md"))]

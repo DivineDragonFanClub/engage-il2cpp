@@ -10,45 +10,43 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_RenderObjectsSettings.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_CustomCameraSettings.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal",
-    name = "RenderObjects.RenderObjectsSettings"
+    name = "RenderObjects.CustomCameraSettings"
 )]
 #[parent(crate::system::object::Object)]
-pub struct RenderObjects_RenderObjectsSettings {
-# [rename (name = "passTag")] pub pass_tag : :: unity2 :: Il2CppString ,
-# [rename (name = "Event")] pub event : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent ,
-# [rename (name = "filterSettings")] pub filter_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_FilterSettings ,
-# [rename (name = "overrideMaterial")] pub override_material : crate :: unity_engine :: material :: Material ,
-# [rename (name = "overrideMaterialPassIndex")] pub override_material_pass_index : i32 ,
-# [rename (name = "overrideDepthState")] pub override_depth_state : bool ,
-# [rename (name = "depthCompareFunction")] pub depth_compare_function : crate :: unity_engine :: rendering :: comparefunction :: CompareFunction ,
-# [rename (name = "enableWrite")] pub enable_write : bool ,
-# [rename (name = "stencilSettings")] pub stencil_settings : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
-# [rename (name = "cameraSettings")] pub camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings ,
+pub struct RenderObjects_CustomCameraSettings {
+    #[rename(name = "overrideCamera")]
+    pub override_camera: bool,
+    #[rename(name = "restoreCamera")]
+    pub restore_camera: bool,
+    #[rename(name = "offset")]
+    pub offset: crate::unity_engine::vector4::Vector4,
+    #[rename(name = "cameraFieldOfView")]
+    pub camera_field_of_view: f32,
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
 #[::unity2::methods]
-impl RenderObjects_RenderObjectsSettings {
+impl RenderObjects_CustomCameraSettings {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl RenderObjects_RenderObjectsSettings {
+impl RenderObjects_CustomCameraSettings {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RenderObjects_RenderObjectsSettings),
+                ::core::stringify!(RenderObjects_CustomCameraSettings),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRenderObjects_RenderObjectsSettingsMethods>::ctor(this);
+        <Self as IRenderObjects_CustomCameraSettingsMethods>::ctor(this);
         this
     }
 }
@@ -102,43 +100,45 @@ impl RenderObjects {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_CustomCameraSettings.md"))]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_RenderObjectsSettings.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.Rendering.Universal",
-    name = "RenderObjects.CustomCameraSettings"
+    name = "RenderObjects.RenderObjectsSettings"
 )]
 #[parent(crate::system::object::Object)]
-pub struct RenderObjects_CustomCameraSettings {
-    #[rename(name = "overrideCamera")]
-    pub override_camera: bool,
-    #[rename(name = "restoreCamera")]
-    pub restore_camera: bool,
-    #[rename(name = "offset")]
-    pub offset: crate::unity_engine::vector4::Vector4,
-    #[rename(name = "cameraFieldOfView")]
-    pub camera_field_of_view: f32,
+pub struct RenderObjects_RenderObjectsSettings {
+# [rename (name = "passTag")] pub pass_tag : :: unity2 :: Il2CppString ,
+# [rename (name = "Event")] pub event : crate :: unity_engine :: rendering :: universal :: renderpassevent :: RenderPassEvent ,
+# [rename (name = "filterSettings")] pub filter_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_FilterSettings ,
+# [rename (name = "overrideMaterial")] pub override_material : crate :: unity_engine :: material :: Material ,
+# [rename (name = "overrideMaterialPassIndex")] pub override_material_pass_index : i32 ,
+# [rename (name = "overrideDepthState")] pub override_depth_state : bool ,
+# [rename (name = "depthCompareFunction")] pub depth_compare_function : crate :: unity_engine :: rendering :: comparefunction :: CompareFunction ,
+# [rename (name = "enableWrite")] pub enable_write : bool ,
+# [rename (name = "stencilSettings")] pub stencil_settings : crate :: unity_engine :: rendering :: universal :: stencilstatedata :: StencilStateData ,
+# [rename (name = "cameraSettings")] pub camera_settings : crate :: unity_engine :: experimental :: rendering :: universal :: renderobjects :: RenderObjects_CustomCameraSettings ,
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
 #[::unity2::methods]
-impl RenderObjects_CustomCameraSettings {
+impl RenderObjects_RenderObjectsSettings {
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
     pub fn ctor(self) -> ();
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
-impl RenderObjects_CustomCameraSettings {
+impl RenderObjects_RenderObjectsSettings {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RenderObjects_CustomCameraSettings),
+                ::core::stringify!(RenderObjects_RenderObjectsSettings),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRenderObjects_CustomCameraSettingsMethods>::ctor(this);
+        <Self as IRenderObjects_RenderObjectsSettingsMethods>::ctor(this);
         this
     }
 }

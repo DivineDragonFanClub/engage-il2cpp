@@ -12,6 +12,88 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))]
+#[::unity2::class(namespace = "UnityEngine.Switch", name = "NetworkInterfaceWrapper")]
+#[parent(crate::system::object::Object)]
+pub struct NetworkInterfaceWrapper {
+# [static_field] # [rename (name = "_networkConnected")] pub network_connected : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler ,
+}
+
+#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
+#[::unity2::methods]
+impl NetworkInterfaceWrapper {
+    #[doc = "`EnterNetworkConnecting(bool)` overload"]
+    #[method(name = "EnterNetworkConnecting", args = 1)]
+    pub fn enter_network_connecting(is_local_network_mode: bool) -> bool;
+
+    #[doc = "`EnterNetworkConnecting(bool, bool)` overload"]
+    #[method(name = "EnterNetworkConnecting", args = 2)]
+    pub fn enter_network_connecting_2(
+        is_local_network_mode: bool,
+        report_if_unavailable: bool,
+    ) -> bool;
+
+    #[doc = "`WeakEnterNetworkConnecting()` overload"]
+    #[method(name = "WeakEnterNetworkConnecting", args = 0)]
+    pub fn weak_enter_network_connecting() -> bool;
+
+    #[doc = "`LeaveNetworkConnecting()` overload"]
+    #[method(name = "LeaveNetworkConnecting", args = 0)]
+    pub fn leave_network_connecting() -> ();
+
+    #[doc = "`IsNetworkConnecting()` overload"]
+    #[method(name = "IsNetworkConnecting", args = 0)]
+    pub fn is_network_connecting() -> bool;
+
+    #[doc = "`WaitForNetworkConnecting()` overload"]
+    #[method(name = "WaitForNetworkConnecting", args = 0)]
+    pub fn wait_for_network_connecting() -> ();
+
+    #[doc = "`IsNetworkAccepted()` overload"]
+    #[method(name = "IsNetworkAccepted", args = 0)]
+    pub fn is_network_accepted() -> bool;
+
+    #[doc = "`IsNetworkFinished()` overload"]
+    #[method(name = "IsNetworkFinished", args = 0)]
+    pub fn is_network_finished() -> bool;
+
+    #[doc = "`GetNetworkReferenceCount()` overload"]
+    #[method(name = "GetNetworkReferenceCount", args = 0)]
+    pub fn get_network_reference_count() -> i32;
+
+    #[doc = "`IsNetworkAvailable()` overload"]
+    #[method(name = "IsNetworkAvailable", args = 0)]
+    pub fn is_network_available() -> bool;
+
+    #[doc = "`IsNetworkConnectingOnBackground()` overload"]
+    #[method(name = "IsNetworkConnectingOnBackground", args = 0)]
+    pub fn is_network_connecting_on_background() -> bool;
+
+    #[doc = "`SetNetworkConnectingOnBackground(bool)` overload"]
+    #[method(name = "SetNetworkConnectingOnBackground", args = 1)]
+    pub fn set_network_connecting_on_background(is_background: bool) -> ();
+
+    #[doc = "`SetNetworkConnectedEnabled(bool)` overload"]
+    #[method(name = "SetNetworkConnectedEnabled", args = 1)]
+    pub fn set_network_connected_enabled(is_enabled: bool) -> ();
+
+    #[doc = "`InvokeNetworkConnected()` overload"]
+    #[method(name = "InvokeNetworkConnected", args = 0)]
+    pub fn invoke_network_connected() -> i32;
+
+    #[doc = "`add_networkConnected(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)` overload"]
+    #[method(name = "add_networkConnected", args = 1)]
+    pub fn add_network_connected(
+        value : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler,
+    ) -> ();
+
+    #[doc = "`remove_networkConnected(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)` overload"]
+    #[method(name = "remove_networkConnected", args = 1)]
+    pub fn remove_network_connected(
+        value : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler,
+    ) -> ();
+}
+
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedResult.md"))]
 #[repr(C)]
 #[derive(
@@ -96,86 +178,4 @@ impl NetworkInterfaceWrapper_NetworkConnectedHandler {
         );
         this
     }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))]
-#[::unity2::class(namespace = "UnityEngine.Switch", name = "NetworkInterfaceWrapper")]
-#[parent(crate::system::object::Object)]
-pub struct NetworkInterfaceWrapper {
-# [static_field] # [rename (name = "_networkConnected")] pub network_connected : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler ,
-}
-
-#[cfg(feature = "unity_engine-switch-networkinterfacewrapper")]
-#[::unity2::methods]
-impl NetworkInterfaceWrapper {
-    #[doc = "`EnterNetworkConnecting(bool)` overload"]
-    #[method(name = "EnterNetworkConnecting", args = 1)]
-    pub fn enter_network_connecting(is_local_network_mode: bool) -> bool;
-
-    #[doc = "`EnterNetworkConnecting(bool, bool)` overload"]
-    #[method(name = "EnterNetworkConnecting", args = 2)]
-    pub fn enter_network_connecting_2(
-        is_local_network_mode: bool,
-        report_if_unavailable: bool,
-    ) -> bool;
-
-    #[doc = "`WeakEnterNetworkConnecting()` overload"]
-    #[method(name = "WeakEnterNetworkConnecting", args = 0)]
-    pub fn weak_enter_network_connecting() -> bool;
-
-    #[doc = "`LeaveNetworkConnecting()` overload"]
-    #[method(name = "LeaveNetworkConnecting", args = 0)]
-    pub fn leave_network_connecting() -> ();
-
-    #[doc = "`IsNetworkConnecting()` overload"]
-    #[method(name = "IsNetworkConnecting", args = 0)]
-    pub fn is_network_connecting() -> bool;
-
-    #[doc = "`WaitForNetworkConnecting()` overload"]
-    #[method(name = "WaitForNetworkConnecting", args = 0)]
-    pub fn wait_for_network_connecting() -> ();
-
-    #[doc = "`IsNetworkAccepted()` overload"]
-    #[method(name = "IsNetworkAccepted", args = 0)]
-    pub fn is_network_accepted() -> bool;
-
-    #[doc = "`IsNetworkFinished()` overload"]
-    #[method(name = "IsNetworkFinished", args = 0)]
-    pub fn is_network_finished() -> bool;
-
-    #[doc = "`GetNetworkReferenceCount()` overload"]
-    #[method(name = "GetNetworkReferenceCount", args = 0)]
-    pub fn get_network_reference_count() -> i32;
-
-    #[doc = "`IsNetworkAvailable()` overload"]
-    #[method(name = "IsNetworkAvailable", args = 0)]
-    pub fn is_network_available() -> bool;
-
-    #[doc = "`IsNetworkConnectingOnBackground()` overload"]
-    #[method(name = "IsNetworkConnectingOnBackground", args = 0)]
-    pub fn is_network_connecting_on_background() -> bool;
-
-    #[doc = "`SetNetworkConnectingOnBackground(bool)` overload"]
-    #[method(name = "SetNetworkConnectingOnBackground", args = 1)]
-    pub fn set_network_connecting_on_background(is_background: bool) -> ();
-
-    #[doc = "`SetNetworkConnectedEnabled(bool)` overload"]
-    #[method(name = "SetNetworkConnectedEnabled", args = 1)]
-    pub fn set_network_connected_enabled(is_enabled: bool) -> ();
-
-    #[doc = "`InvokeNetworkConnected()` overload"]
-    #[method(name = "InvokeNetworkConnected", args = 0)]
-    pub fn invoke_network_connected() -> i32;
-
-    #[doc = "`add_networkConnected(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)` overload"]
-    #[method(name = "add_networkConnected", args = 1)]
-    pub fn add_network_connected(
-        value : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler,
-    ) -> ();
-
-    #[doc = "`remove_networkConnected(crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler)` overload"]
-    #[method(name = "remove_networkConnected", args = 1)]
-    pub fn remove_network_connected(
-        value : crate :: unity_engine :: switch :: networkinterfacewrapper :: NetworkInterfaceWrapper_NetworkConnectedHandler,
-    ) -> ();
 }

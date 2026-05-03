@@ -14,48 +14,55 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/templateonedata/TemplateOneData_SampleClass.md"))]
-#[::unity2::class(namespace = "App", name = "TemplateOneData.SampleClass")]
-#[parent(crate::system::object::Object)]
-pub struct TemplateOneData_SampleClass {}
-
-#[cfg(feature = "app-templateonedata")]
-#[::unity2::methods]
-impl TemplateOneData_SampleClass {
-    #[doc = "`get_Name()` overload"]
-    #[method(name = "get_Name", args = 0)]
-    pub fn get_name(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Name", args = 1)]
-    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> i32;
-
-    #[doc = "`set_Value(i32)` overload"]
-    #[method(name = "set_Value", args = 1)]
-    pub fn set_value(self, value: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/templateonedata/TemplateOneData_Flags.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TemplateOneData_Flags {
+    pub value: i32,
 }
 
-#[cfg(feature = "app-templateonedata")]
-impl TemplateOneData_SampleClass {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TemplateOneData_SampleClass),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITemplateOneData_SampleClassMethods>::ctor(this);
-        this
+impl ::unity2::ClassIdentity for TemplateOneData_Flags {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TemplateOneData.Flags";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TemplateOneData_Flags {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TemplateOneData_Flags {
+    pub fn flag1() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn flag2() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn flag3() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn flag4() -> Self {
+        Self { value: 8 }
     }
 }
 
@@ -168,54 +175,47 @@ impl TemplateOneData {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/templateonedata/TemplateOneData_Flags.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TemplateOneData_Flags {
-    pub value: i32,
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/templateonedata/TemplateOneData_SampleClass.md"))]
+#[::unity2::class(namespace = "App", name = "TemplateOneData.SampleClass")]
+#[parent(crate::system::object::Object)]
+pub struct TemplateOneData_SampleClass {}
+
+#[cfg(feature = "app-templateonedata")]
+#[::unity2::methods]
+impl TemplateOneData_SampleClass {
+    #[doc = "`get_Name()` overload"]
+    #[method(name = "get_Name", args = 0)]
+    pub fn get_name(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`set_Name(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Name", args = 1)]
+    pub fn set_name(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Value()` overload"]
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> i32;
+
+    #[doc = "`set_Value(i32)` overload"]
+    #[method(name = "set_Value", args = 1)]
+    pub fn set_value(self, value: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 }
 
-impl ::unity2::ClassIdentity for TemplateOneData_Flags {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TemplateOneData.Flags";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TemplateOneData_Flags {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TemplateOneData_Flags {
-    pub fn flag1() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn flag2() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn flag3() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn flag4() -> Self {
-        Self { value: 8 }
+#[cfg(feature = "app-templateonedata")]
+impl TemplateOneData_SampleClass {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TemplateOneData_SampleClass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITemplateOneData_SampleClassMethods>::ctor(this);
+        this
     }
 }

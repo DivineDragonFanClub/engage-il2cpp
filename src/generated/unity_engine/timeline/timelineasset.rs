@@ -14,64 +14,6 @@ use crate::unity_engine::scriptableobject::IScriptableObject;
 use crate::unity_engine::scriptableobject::ScriptableObject;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset_EditorSettings.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Timeline",
-    name = "TimelineAsset.EditorSettings"
-)]
-#[parent(crate::system::object::Object)]
-pub struct TimelineAsset_EditorSettings {
-    #[static_field]
-    #[rename(name = "kMinFps")]
-    pub k_min_fps: f32,
-    #[static_field]
-    #[rename(name = "kMaxFps")]
-    pub k_max_fps: f32,
-    #[static_field]
-    #[rename(name = "kDefaultFps")]
-    pub k_default_fps: f32,
-    #[rename(name = "m_Framerate")]
-    pub m_framerate: f32,
-    #[rename(name = "m_ScenePreview")]
-    pub m_scene_preview: bool,
-}
-
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-#[::unity2::methods]
-impl TimelineAsset_EditorSettings {
-    #[doc = "`get_fps()` overload"]
-    #[method(name = "get_fps", args = 0)]
-    pub fn get_fps(self) -> f32;
-
-    #[doc = "`set_fps(f32)` overload"]
-    #[method(name = "set_fps", args = 1)]
-    pub fn set_fps(self, value: f32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
-#[cfg(feature = "unity_engine-timeline-timelineasset")]
-impl TimelineAsset_EditorSettings {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TimelineAsset_EditorSettings),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITimelineAsset_EditorSettingsMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset.md"))]
 #[::unity2::class(namespace = "UnityEngine.Timeline", name = "TimelineAsset")]
 #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
@@ -416,5 +358,63 @@ impl TimelineAsset_DurationMode {
 
     pub fn fixed_length() -> Self {
         Self { value: 1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/timeline/timelineasset/TimelineAsset_EditorSettings.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Timeline",
+    name = "TimelineAsset.EditorSettings"
+)]
+#[parent(crate::system::object::Object)]
+pub struct TimelineAsset_EditorSettings {
+    #[static_field]
+    #[rename(name = "kMinFps")]
+    pub k_min_fps: f32,
+    #[static_field]
+    #[rename(name = "kMaxFps")]
+    pub k_max_fps: f32,
+    #[static_field]
+    #[rename(name = "kDefaultFps")]
+    pub k_default_fps: f32,
+    #[rename(name = "m_Framerate")]
+    pub m_framerate: f32,
+    #[rename(name = "m_ScenePreview")]
+    pub m_scene_preview: bool,
+}
+
+#[cfg(feature = "unity_engine-timeline-timelineasset")]
+#[::unity2::methods]
+impl TimelineAsset_EditorSettings {
+    #[doc = "`get_fps()` overload"]
+    #[method(name = "get_fps", args = 0)]
+    pub fn get_fps(self) -> f32;
+
+    #[doc = "`set_fps(f32)` overload"]
+    #[method(name = "set_fps", args = 1)]
+    pub fn set_fps(self, value: f32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
+}
+
+#[cfg(feature = "unity_engine-timeline-timelineasset")]
+impl TimelineAsset_EditorSettings {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TimelineAsset_EditorSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITimelineAsset_EditorSettingsMethods>::ctor(this);
+        this
     }
 }

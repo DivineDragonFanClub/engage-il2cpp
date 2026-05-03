@@ -47,6 +47,44 @@ impl ProfileCardPublicSettingDialog {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardpublicsettingdialog/ProfileCardPublicSettingDialog_DecideEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ProfileCardPublicSettingDialog.DecideEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ProfileCardPublicSettingDialog_DecideEventHandler {}
+
+#[cfg(feature = "app-profilecardpublicsettingdialog")]
+#[::unity2::methods]
+impl ProfileCardPublicSettingDialog_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-profilecardpublicsettingdialog")]
+impl ProfileCardPublicSettingDialog_DecideEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ProfileCardPublicSettingDialog_DecideEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardPublicSettingDialog_DecideEventHandlerMethods>::ctor(
+            this, object, method,
+        );
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardpublicsettingdialog/ProfileCardPublicSettingDialog_DialogMenuItem.md"))]
 #[::unity2::class(
     namespace = "App",
@@ -91,44 +129,6 @@ impl ProfileCardPublicSettingDialog_DialogMenuItem {
             this,
             message,
             decide_event_handler,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardpublicsettingdialog/ProfileCardPublicSettingDialog_DecideEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ProfileCardPublicSettingDialog.DecideEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ProfileCardPublicSettingDialog_DecideEventHandler {}
-
-#[cfg(feature = "app-profilecardpublicsettingdialog")]
-#[::unity2::methods]
-impl ProfileCardPublicSettingDialog_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
-}
-
-#[cfg(feature = "app-profilecardpublicsettingdialog")]
-impl ProfileCardPublicSettingDialog_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ProfileCardPublicSettingDialog_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IProfileCardPublicSettingDialog_DecideEventHandlerMethods>::ctor(
-            this, object, method,
         );
         this
     }

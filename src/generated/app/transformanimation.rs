@@ -16,6 +16,159 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation_Animator.md"))]
+#[::unity2::class(namespace = "App", name = "TransformAnimation.Animator")]
+#[parent(crate::system::object::Object)]
+pub struct TransformAnimation_Animator {
+    #[rename(name = "m_Animation")]
+    pub m_animation: crate::app::transformanimation::TransformAnimation_Animation,
+    #[rename(name = "m_Time")]
+    pub m_time: f32,
+    #[rename(name = "m_Cycle")]
+    pub m_cycle: f32,
+    #[rename(name = "m_Inverse")]
+    pub m_inverse: f32,
+    #[rename(name = "m_Nodes")]
+    pub m_nodes: crate::system::collections::generic::list_1::List_1<
+        crate::app::transformanimation::TransformAnimation_Animator_Node,
+    >,
+}
+
+#[cfg(feature = "app-transformanimation")]
+#[::unity2::methods]
+impl TransformAnimation_Animator {
+    #[doc = "`.ctor(crate::app::transformanimation::TransformAnimation_Animation)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        animation: crate::app::transformanimation::TransformAnimation_Animation,
+    ) -> ();
+
+    #[doc = "`Commit()` overload"]
+    #[method(name = "Commit", args = 0)]
+    pub fn commit(self) -> ();
+
+    #[doc = "`Update(f32)` overload"]
+    #[method(name = "Update", args = 1)]
+    pub fn update(self, delta_time: f32) -> ();
+}
+
+#[cfg(feature = "app-transformanimation")]
+impl TransformAnimation_Animator {
+    #[doc = "`.ctor(crate::app::transformanimation::TransformAnimation_Animation)` — overload selector"]
+    pub fn new(animation: crate::app::transformanimation::TransformAnimation_Animation) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TransformAnimation_Animator),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITransformAnimation_AnimatorMethods>::ctor(this, animation);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/transformanimation/TransformAnimation_Kinds.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TransformAnimation_Kinds {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TransformAnimation_Kinds {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "TransformAnimation.Kinds";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TransformAnimation_Kinds {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TransformAnimation_Kinds {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn position() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn rotation() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn scale() -> Self {
+        Self { value: 3 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation.md"))]
+#[::unity2::class(namespace = "App", name = "TransformAnimation")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct TransformAnimation {
+    #[rename(name = "m_Animations")]
+    pub m_animations: ::unity2::Array<crate::app::transformanimation::TransformAnimation_Animation>,
+    #[rename(name = "m_Animators")]
+    pub m_animators: crate::system::collections::generic::list_1::List_1<
+        crate::app::transformanimation::TransformAnimation_Animator,
+    >,
+}
+
+#[cfg(feature = "app-transformanimation")]
+#[::unity2::methods]
+impl TransformAnimation {
+    #[doc = "`Start()` overload"]
+    #[method(name = "Start", args = 0)]
+    pub fn start(self) -> ();
+
+    #[doc = "`Update()` overload"]
+    #[method(name = "Update", args = 0)]
+    pub fn update(self) -> ();
+
+    #[doc = "`Commit()` overload"]
+    #[method(name = "Commit", args = 0)]
+    pub fn commit(self) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-transformanimation")]
+impl TransformAnimation {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TransformAnimation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITransformAnimationMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation_Animation.md"))]
 #[::unity2::class(namespace = "App", name = "TransformAnimation.Animation")]
 #[parent(crate::system::object::Object)]
@@ -164,158 +317,5 @@ impl TransformAnimation_Actions {
 
     pub fn repeat() -> Self {
         Self { value: 2 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation.md"))]
-#[::unity2::class(namespace = "App", name = "TransformAnimation")]
-#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-pub struct TransformAnimation {
-    #[rename(name = "m_Animations")]
-    pub m_animations: ::unity2::Array<crate::app::transformanimation::TransformAnimation_Animation>,
-    #[rename(name = "m_Animators")]
-    pub m_animators: crate::system::collections::generic::list_1::List_1<
-        crate::app::transformanimation::TransformAnimation_Animator,
-    >,
-}
-
-#[cfg(feature = "app-transformanimation")]
-#[::unity2::methods]
-impl TransformAnimation {
-    #[doc = "`Start()` overload"]
-    #[method(name = "Start", args = 0)]
-    pub fn start(self) -> ();
-
-    #[doc = "`Update()` overload"]
-    #[method(name = "Update", args = 0)]
-    pub fn update(self) -> ();
-
-    #[doc = "`Commit()` overload"]
-    #[method(name = "Commit", args = 0)]
-    pub fn commit(self) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-transformanimation")]
-impl TransformAnimation {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TransformAnimation),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITransformAnimationMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/transformanimation/TransformAnimation_Animator.md"))]
-#[::unity2::class(namespace = "App", name = "TransformAnimation.Animator")]
-#[parent(crate::system::object::Object)]
-pub struct TransformAnimation_Animator {
-    #[rename(name = "m_Animation")]
-    pub m_animation: crate::app::transformanimation::TransformAnimation_Animation,
-    #[rename(name = "m_Time")]
-    pub m_time: f32,
-    #[rename(name = "m_Cycle")]
-    pub m_cycle: f32,
-    #[rename(name = "m_Inverse")]
-    pub m_inverse: f32,
-    #[rename(name = "m_Nodes")]
-    pub m_nodes: crate::system::collections::generic::list_1::List_1<
-        crate::app::transformanimation::TransformAnimation_Animator_Node,
-    >,
-}
-
-#[cfg(feature = "app-transformanimation")]
-#[::unity2::methods]
-impl TransformAnimation_Animator {
-    #[doc = "`.ctor(crate::app::transformanimation::TransformAnimation_Animation)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        animation: crate::app::transformanimation::TransformAnimation_Animation,
-    ) -> ();
-
-    #[doc = "`Commit()` overload"]
-    #[method(name = "Commit", args = 0)]
-    pub fn commit(self) -> ();
-
-    #[doc = "`Update(f32)` overload"]
-    #[method(name = "Update", args = 1)]
-    pub fn update(self, delta_time: f32) -> ();
-}
-
-#[cfg(feature = "app-transformanimation")]
-impl TransformAnimation_Animator {
-    #[doc = "`.ctor(crate::app::transformanimation::TransformAnimation_Animation)` — overload selector"]
-    pub fn new(animation: crate::app::transformanimation::TransformAnimation_Animation) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TransformAnimation_Animator),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITransformAnimation_AnimatorMethods>::ctor(this, animation);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/transformanimation/TransformAnimation_Kinds.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TransformAnimation_Kinds {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TransformAnimation_Kinds {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "TransformAnimation.Kinds";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TransformAnimation_Kinds {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TransformAnimation_Kinds {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn position() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn rotation() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn scale() -> Self {
-        Self { value: 3 }
     }
 }

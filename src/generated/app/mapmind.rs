@@ -18,157 +18,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_CommandStack.md"))]
-#[::unity2::class(namespace = "App", name = "MapMind.CommandStack")]
-#[parent(crate::system::object::Object)]
-pub struct MapMind_CommandStack {
-    #[rename(name = "m_Statck")]
-    pub m_statck:
-        crate::system::collections::generic::stack_1::Stack_1<crate::app::mapmind::MapMind_Record>,
-}
-
-#[cfg(feature = "app-mapmind")]
-#[::unity2::methods]
-impl MapMind_CommandStack {
-    #[doc = "`Peek()` overload"]
-    #[method(name = "Peek", args = 0)]
-    pub fn peek(self) -> crate::app::mapmind::MapMind_Type;
-
-    #[doc = "`Push(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = "Push", args = 3)]
-    pub fn push(
-        self,
-        r#type: crate::app::mapmind::MapMind_Type,
-        unit: crate::app::unit::Unit,
-        link: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`Pop()` overload"]
-    #[method(name = "Pop", args = 0)]
-    pub fn pop(self) -> bool;
-
-    #[doc = "`Decide()` overload"]
-    #[method(name = "Decide", args = 0)]
-    pub fn decide(self) -> ();
-
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`get_Exist()` overload"]
-    #[method(name = "get_Exist", args = 0)]
-    pub fn get_exist(self) -> bool;
-
-    #[doc = "`TryAddAchieveEngage(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit)` overload"]
-    #[method(name = "TryAddAchieveEngage", args = 2)]
-    pub fn try_add_achieve_engage(
-        self,
-        r#type: crate::app::mapmind::MapMind_Type,
-        unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-mapmind")]
-impl MapMind_CommandStack {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapMind_CommandStack),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapMind_CommandStackMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_MultiTargets.md"))]
-#[::unity2::class(namespace = "App", name = "MapMind.MultiTargets")]
-# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapmind :: MapMind_Target >)]
-pub struct MapMind_MultiTargets {}
-
-#[cfg(feature = "app-mapmind")]
-#[::unity2::methods]
-impl MapMind_MultiTargets {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-
-    #[doc = "`Exists(crate::app::unit::Unit)` overload"]
-    #[method(name = "Exists", args = 1)]
-    pub fn exists(self, unit: crate::app::unit::Unit) -> bool;
-
-    #[doc = "`IndexOf(crate::app::unit::Unit)` overload"]
-    #[method(name = "IndexOf", args = 1)]
-    pub fn index_of(self, unit: crate::app::unit::Unit) -> i32;
-
-    #[doc = "`IndexOf(crate::app::terraindata_2::TerrainData_2)` overload"]
-    #[method(name = "IndexOf", args = 1)]
-    pub fn index_of_2(self, terrain: crate::app::terraindata_2::TerrainData_2) -> i32;
-
-    #[doc = "`IndexOf(i32, i32)` overload"]
-    #[method(name = "IndexOf", args = 2)]
-    pub fn index_of_3(self, x: i32, z: i32) -> i32;
-
-    #[doc = "`Add(crate::app::unit::Unit)` overload"]
-    #[method(name = "Add", args = 1)]
-    pub fn add(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Add(i32, i32, crate::app::unit::Unit)` overload"]
-    #[method(name = "Add", args = 3)]
-    pub fn add_2(self, x: i32, z: i32, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`Add(i32, i32, ::unity2::Il2CppString)` overload"]
-    #[method(name = "Add", args = 3)]
-    pub fn add_3(self, x: i32, z: i32, tid: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`Add(i32, i32, crate::app::terraindata_2::TerrainData_2)` overload"]
-    #[method(name = "Add", args = 3)]
-    pub fn add_4(self, x: i32, z: i32, terrain: crate::app::terraindata_2::TerrainData_2) -> ();
-
-    #[doc = "`Add(crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "Add", args = 2)]
-    pub fn add_5(self, unit: crate::app::unit::Unit, value: i32) -> ();
-
-    #[doc = "`Add(i32, i32)` overload"]
-    #[method(name = "Add", args = 2)]
-    pub fn add_6(self, x: i32, z: i32) -> ();
-
-    #[doc = "`Remove(crate::app::unit::Unit)` overload"]
-    #[method(name = "Remove", args = 1)]
-    pub fn remove(self, unit: crate::app::unit::Unit) -> ();
-
-    #[doc = "`GetCneter()` overload"]
-    #[method(name = "GetCneter", args = 0)]
-    pub fn get_cneter(self) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`GetUnitCount()` overload"]
-    #[method(name = "GetUnitCount", args = 0)]
-    pub fn get_unit_count(self) -> i32;
-}
-
-#[cfg(feature = "app-mapmind")]
-impl MapMind_MultiTargets {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(MapMind_MultiTargets),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMapMind_MultiTargetsMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind.md"))]
 #[::unity2::class(namespace = "App", name = "MapMind")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < crate :: app :: mapmind :: MapMind >)]
@@ -581,66 +430,6 @@ impl MapMind {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Done.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct MapMind_Done {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for MapMind_Done {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapMind.Done";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for MapMind_Done {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl MapMind_Done {
-    pub fn talk() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn trade() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn putoff() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn transporter() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn action() -> Self {
-        Self { value: 16 }
-    }
-
-    pub fn sight() -> Self {
-        Self { value: 32 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_DoneField.md"))]
 #[::unity2::class(namespace = "App", name = "MapMind.DoneField")]
 # [parent (crate :: app :: bitfieldtemplate32_1 :: BitFieldTemplate32_1 < crate :: app :: mapmind :: MapMind_Done >)]
@@ -719,98 +508,85 @@ impl MapMind_Record_Value {
     pub fn cancel(self) -> ();
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Record.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapMind_Record {
-    pub r#type: crate::app::mapmind::MapMind_Type,
-    pub main: crate::app::mapmind::MapMind_Record_Value,
-    pub link: crate::app::mapmind::MapMind_Record_Value,
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_MultiTargets.md"))]
+#[::unity2::class(namespace = "App", name = "MapMind.MultiTargets")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: mapmind :: MapMind_Target >)]
+pub struct MapMind_MultiTargets {}
 
-impl ::unity2::ClassIdentity for MapMind_Record {
-    const NAMESPACE: &'static str = "App";
+#[cfg(feature = "app-mapmind")]
+#[::unity2::methods]
+impl MapMind_MultiTargets {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
 
-    const NAME: &'static str = "MapMind.Record";
+    #[doc = "`Exists(crate::app::unit::Unit)` overload"]
+    #[method(name = "Exists", args = 1)]
+    pub fn exists(self, unit: crate::app::unit::Unit) -> bool;
 
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+    #[doc = "`IndexOf(crate::app::unit::Unit)` overload"]
+    #[method(name = "IndexOf", args = 1)]
+    pub fn index_of(self, unit: crate::app::unit::Unit) -> i32;
 
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
+    #[doc = "`IndexOf(crate::app::terraindata_2::TerrainData_2)` overload"]
+    #[method(name = "IndexOf", args = 1)]
+    pub fn index_of_2(self, terrain: crate::app::terraindata_2::TerrainData_2) -> i32;
 
-impl ::unity2::IlType for MapMind_Record {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
+    #[doc = "`IndexOf(i32, i32)` overload"]
+    #[method(name = "IndexOf", args = 2)]
+    pub fn index_of_3(self, x: i32, z: i32) -> i32;
+
+    #[doc = "`Add(crate::app::unit::Unit)` overload"]
+    #[method(name = "Add", args = 1)]
+    pub fn add(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Add(i32, i32, crate::app::unit::Unit)` overload"]
+    #[method(name = "Add", args = 3)]
+    pub fn add_2(self, x: i32, z: i32, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`Add(i32, i32, ::unity2::Il2CppString)` overload"]
+    #[method(name = "Add", args = 3)]
+    pub fn add_3(self, x: i32, z: i32, tid: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`Add(i32, i32, crate::app::terraindata_2::TerrainData_2)` overload"]
+    #[method(name = "Add", args = 3)]
+    pub fn add_4(self, x: i32, z: i32, terrain: crate::app::terraindata_2::TerrainData_2) -> ();
+
+    #[doc = "`Add(crate::app::unit::Unit, i32)` overload"]
+    #[method(name = "Add", args = 2)]
+    pub fn add_5(self, unit: crate::app::unit::Unit, value: i32) -> ();
+
+    #[doc = "`Add(i32, i32)` overload"]
+    #[method(name = "Add", args = 2)]
+    pub fn add_6(self, x: i32, z: i32) -> ();
+
+    #[doc = "`Remove(crate::app::unit::Unit)` overload"]
+    #[method(name = "Remove", args = 1)]
+    pub fn remove(self, unit: crate::app::unit::Unit) -> ();
+
+    #[doc = "`GetCneter()` overload"]
+    #[method(name = "GetCneter", args = 0)]
+    pub fn get_cneter(self) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`GetUnitCount()` overload"]
+    #[method(name = "GetUnitCount", args = 0)]
+    pub fn get_unit_count(self) -> i32;
 }
 
 #[cfg(feature = "app-mapmind")]
-#[::unity2::methods(value)]
-impl MapMind_Record {
-    #[doc = "`.ctor(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        r#type: crate::app::mapmind::MapMind_Type,
-        unit: crate::app::unit::Unit,
-        link: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`Cancel()` overload"]
-    #[method(name = "Cancel", args = 0)]
-    pub fn cancel(self) -> ();
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Target.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct MapMind_Target {
-    pub unit: crate::app::unit::Unit,
-    pub terrain: crate::app::terraindata_2::TerrainData_2,
-    pub x: i8,
-    pub z: i8,
-}
-
-impl ::unity2::ClassIdentity for MapMind_Target {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "MapMind.Target";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+impl MapMind_MultiTargets {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapMind_MultiTargets),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapMind_MultiTargetsMethods>::ctor(this);
+        this
     }
-}
-
-impl ::unity2::IlType for MapMind_Target {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-mapmind")]
-#[::unity2::methods(value)]
-impl MapMind_Target {
-    #[doc = "`get_Value()` overload"]
-    #[method(name = "get_Value", args = 0)]
-    pub fn get_value(self) -> i8;
-
-    #[doc = "`set_Value(i8)` overload"]
-    #[method(name = "set_Value", args = 1)]
-    pub fn set_value(self, value: i8) -> ();
-
-    #[doc = "`get_Position()` overload"]
-    #[method(name = "get_Position", args = 0)]
-    pub fn get_position(self) -> crate::unity_engine::vector3::Vector3;
 }
 
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Type.md"))]
@@ -1071,4 +847,228 @@ impl MapMind_Type {
     pub fn sub_menu() -> Self {
         Self { value: 55 }
     }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Record.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapMind_Record {
+    pub r#type: crate::app::mapmind::MapMind_Type,
+    pub main: crate::app::mapmind::MapMind_Record_Value,
+    pub link: crate::app::mapmind::MapMind_Record_Value,
+}
+
+impl ::unity2::ClassIdentity for MapMind_Record {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapMind.Record";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapMind_Record {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapmind")]
+#[::unity2::methods(value)]
+impl MapMind_Record {
+    #[doc = "`.ctor(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        r#type: crate::app::mapmind::MapMind_Type,
+        unit: crate::app::unit::Unit,
+        link: crate::app::unit::Unit,
+    ) -> ();
+
+    #[doc = "`Cancel()` overload"]
+    #[method(name = "Cancel", args = 0)]
+    pub fn cancel(self) -> ();
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Done.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct MapMind_Done {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for MapMind_Done {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapMind.Done";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapMind_Done {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl MapMind_Done {
+    pub fn talk() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn trade() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn putoff() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn transporter() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn action() -> Self {
+        Self { value: 16 }
+    }
+
+    pub fn sight() -> Self {
+        Self { value: 32 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/mapmind/MapMind_CommandStack.md"))]
+#[::unity2::class(namespace = "App", name = "MapMind.CommandStack")]
+#[parent(crate::system::object::Object)]
+pub struct MapMind_CommandStack {
+    #[rename(name = "m_Statck")]
+    pub m_statck:
+        crate::system::collections::generic::stack_1::Stack_1<crate::app::mapmind::MapMind_Record>,
+}
+
+#[cfg(feature = "app-mapmind")]
+#[::unity2::methods]
+impl MapMind_CommandStack {
+    #[doc = "`Peek()` overload"]
+    #[method(name = "Peek", args = 0)]
+    pub fn peek(self) -> crate::app::mapmind::MapMind_Type;
+
+    #[doc = "`Push(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]
+    #[method(name = "Push", args = 3)]
+    pub fn push(
+        self,
+        r#type: crate::app::mapmind::MapMind_Type,
+        unit: crate::app::unit::Unit,
+        link: crate::app::unit::Unit,
+    ) -> ();
+
+    #[doc = "`Pop()` overload"]
+    #[method(name = "Pop", args = 0)]
+    pub fn pop(self) -> bool;
+
+    #[doc = "`Decide()` overload"]
+    #[method(name = "Decide", args = 0)]
+    pub fn decide(self) -> ();
+
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`get_Exist()` overload"]
+    #[method(name = "get_Exist", args = 0)]
+    pub fn get_exist(self) -> bool;
+
+    #[doc = "`TryAddAchieveEngage(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit)` overload"]
+    #[method(name = "TryAddAchieveEngage", args = 2)]
+    pub fn try_add_achieve_engage(
+        self,
+        r#type: crate::app::mapmind::MapMind_Type,
+        unit: crate::app::unit::Unit,
+    ) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-mapmind")]
+impl MapMind_CommandStack {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(MapMind_CommandStack),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapMind_CommandStackMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/mapmind/MapMind_Target.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct MapMind_Target {
+    pub unit: crate::app::unit::Unit,
+    pub terrain: crate::app::terraindata_2::TerrainData_2,
+    pub x: i8,
+    pub z: i8,
+}
+
+impl ::unity2::ClassIdentity for MapMind_Target {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "MapMind.Target";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for MapMind_Target {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-mapmind")]
+#[::unity2::methods(value)]
+impl MapMind_Target {
+    #[doc = "`get_Value()` overload"]
+    #[method(name = "get_Value", args = 0)]
+    pub fn get_value(self) -> i8;
+
+    #[doc = "`set_Value(i8)` overload"]
+    #[method(name = "set_Value", args = 1)]
+    pub fn set_value(self, value: i8) -> ();
+
+    #[doc = "`get_Position()` overload"]
+    #[method(name = "get_Position", args = 0)]
+    pub fn get_position(self) -> crate::unity_engine::vector3::Vector3;
 }

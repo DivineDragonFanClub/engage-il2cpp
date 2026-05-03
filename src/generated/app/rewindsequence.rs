@@ -12,62 +12,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rewindsequence/RewindSequence_Label.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RewindSequence_Label {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RewindSequence_Label {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RewindSequence.Label";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RewindSequence_Label {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RewindSequence_Label {
-    pub fn start() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn menu() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn execute_rewind() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn cancel_rewind() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn end() -> Self {
-        Self { value: 4 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/rewindsequence/RewindSequence.md"))]
 #[::unity2::class(namespace = "App", name = "RewindSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: rewindsequence :: RewindSequence >)]
@@ -204,5 +148,61 @@ impl RewindSequence {
         });
         <Self as IRewindSequenceMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/rewindsequence/RewindSequence_Label.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RewindSequence_Label {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RewindSequence_Label {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RewindSequence.Label";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RewindSequence_Label {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RewindSequence_Label {
+    pub fn start() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn menu() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn execute_rewind() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn cancel_rewind() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn end() -> Self {
+        Self { value: 4 }
     }
 }

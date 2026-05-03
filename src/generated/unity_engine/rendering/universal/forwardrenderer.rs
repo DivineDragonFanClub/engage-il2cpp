@@ -39,30 +39,6 @@ impl ::unity2::IlType for ForwardRenderer_RenderPassInputSummary {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer_Profiling.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Rendering.Universal",
-    name = "ForwardRenderer.Profiling"
-)]
-#[parent(crate::system::object::Object)]
-pub struct ForwardRenderer_Profiling {
-    #[static_field]
-    #[rename(name = "k_Name")]
-    pub k_name: ::unity2::Il2CppString,
-    #[static_field]
-    #[rename(name = "createCameraRenderTarget")]
-    pub create_camera_render_target:
-        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
-}
-
-#[cfg(feature = "unity_engine-rendering-universal-forwardrenderer")]
-#[::unity2::methods]
-impl ForwardRenderer_Profiling {
-    #[doc = "`.cctor()` overload"]
-    #[method(name = ".cctor", args = 0)]
-    pub fn cctor() -> ();
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Rendering.Universal",
@@ -240,4 +216,28 @@ impl ForwardRenderer {
         <Self as IForwardRendererMethods>::ctor(this, data);
         this
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/rendering/universal/forwardrenderer/ForwardRenderer_Profiling.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Rendering.Universal",
+    name = "ForwardRenderer.Profiling"
+)]
+#[parent(crate::system::object::Object)]
+pub struct ForwardRenderer_Profiling {
+    #[static_field]
+    #[rename(name = "k_Name")]
+    pub k_name: ::unity2::Il2CppString,
+    #[static_field]
+    #[rename(name = "createCameraRenderTarget")]
+    pub create_camera_render_target:
+        crate::unity_engine::rendering::profilingsampler::ProfilingSampler,
+}
+
+#[cfg(feature = "unity_engine-rendering-universal-forwardrenderer")]
+#[::unity2::methods]
+impl ForwardRenderer_Profiling {
+    #[doc = "`.cctor()` overload"]
+    #[method(name = ".cctor", args = 0)]
+    pub fn cctor() -> ();
 }

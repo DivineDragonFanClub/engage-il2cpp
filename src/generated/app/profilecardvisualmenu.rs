@@ -55,66 +55,6 @@ impl ProfileCardVisualMenu_DecideEventHandler {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardvisualmenu/ProfileCardVisualMenu_Category.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ProfileCardVisualMenu_Category {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for ProfileCardVisualMenu_Category {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ProfileCardVisualMenu.Category";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ProfileCardVisualMenu_Category {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ProfileCardVisualMenu_Category {
-    pub fn bg() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn frame() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn text_deco() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn text_color() -> Self {
-        Self { value: 3 }
-    }
-
-    pub fn character_stamp() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn num() -> Self {
-        Self { value: 5 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/profilecardvisualmenu/ProfileCardVisualMenu.md"))]
 #[::unity2::class(namespace = "App", name = "ProfileCardVisualMenu")]
 #[parent(crate::app::gridmenu::GridMenu)]
@@ -260,6 +200,66 @@ impl ProfileCardVisualMenu {
             dispose_event_handler,
         );
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/profilecardvisualmenu/ProfileCardVisualMenu_Category.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ProfileCardVisualMenu_Category {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ProfileCardVisualMenu_Category {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ProfileCardVisualMenu.Category";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ProfileCardVisualMenu_Category {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ProfileCardVisualMenu_Category {
+    pub fn bg() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn frame() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn text_deco() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn text_color() -> Self {
+        Self { value: 3 }
+    }
+
+    pub fn character_stamp() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn num() -> Self {
+        Self { value: 5 }
     }
 }
 

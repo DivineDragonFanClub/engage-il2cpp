@@ -16,178 +16,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_Result1Proc.md"))]
-#[::unity2::class(namespace = "App", name = "RingGachaSequence.Result1Proc")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct RingGachaSequence_Result1Proc {
-    #[rename(name = "m_RefineRingResult1Window")]
-    pub m_refine_ring_result1_window: crate::app::refineringresult1window::RefineRingResult1Window,
-    #[rename(name = "m_UnitRing")]
-    pub m_unit_ring: crate::app::unitring::UnitRing,
-    #[rename(name = "m_New")]
-    pub m_new: bool,
-    #[rename(name = "m_TitleBar")]
-    pub m_title_bar: crate::app::titlebar::TitleBar,
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-#[::unity2::methods]
-impl RingGachaSequence_Result1Proc {
-    #[doc = "`CreateBind(crate::app::ringgachasequence::RingGachaSequence, crate::app::unitring::UnitRing, bool)` overload"]
-    #[method(name = "CreateBind", args = 3)]
-    pub fn create_bind(
-        super_: crate::app::ringgachasequence::RingGachaSequence,
-        ring_data: crate::app::unitring::UnitRing,
-        new_ring: bool,
-    ) -> crate::app::ringgachasequence::RingGachaSequence_Result1Proc;
-
-    #[doc = "`.ctor(crate::app::unitring::UnitRing, bool)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, ring_data: crate::app::unitring::UnitRing, new_ring: bool) -> ();
-
-    #[doc = "`OnCreate()` overload"]
-    #[method(name = "OnCreate", args = 0)]
-    pub fn on_create(self) -> ();
-
-    #[doc = "`IsOpening()` overload"]
-    #[method(name = "IsOpening", args = 0)]
-    pub fn is_opening(self) -> bool;
-
-    #[doc = "`IsKeyInputted()` overload"]
-    #[method(name = "IsKeyInputted", args = 0)]
-    pub fn is_key_inputted(self) -> bool;
-
-    #[doc = "`IsClosing()` overload"]
-    #[method(name = "IsClosing", args = 0)]
-    pub fn is_closing(self) -> bool;
-
-    #[doc = "`OnDispose()` overload"]
-    #[method(name = "OnDispose", args = 0)]
-    pub fn on_dispose(self) -> ();
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-impl RingGachaSequence_Result1Proc {
-    #[doc = "`.ctor(crate::app::unitring::UnitRing, bool)` — overload selector"]
-    pub fn new(ring_data: crate::app::unitring::UnitRing, new_ring: bool) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingGachaSequence_Result1Proc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingGachaSequence_Result1ProcMethods>::ctor(this, ring_data, new_ring);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc_SkipCallback.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RingGachaSequence.SkipListenerProc.SkipCallback"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RingGachaSequence_SkipListenerProc_SkipCallback {}
-
-#[cfg(feature = "app-ringgachasequence")]
-#[::unity2::methods]
-impl RingGachaSequence_SkipListenerProc_SkipCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        r#type: crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type,
-    ) -> ();
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-impl RingGachaSequence_SkipListenerProc_SkipCallback {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingGachaSequence_SkipListenerProc_SkipCallback),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingGachaSequence_SkipListenerProc_SkipCallbackMethods>::ctor(
-            this, object, method,
-        );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc.md"))]
-#[::unity2::class(namespace = "App", name = "RingGachaSequence.SkipListenerProc")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct RingGachaSequence_SkipListenerProc {
-    #[rename(name = "m_SkipCallback")]
-    pub m_skip_callback:
-        crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback,
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-#[::unity2::methods]
-impl RingGachaSequence_SkipListenerProc {
-    #[doc = "`get_m_Pause()` overload"]
-    #[method(name = "get_m_Pause", args = 0)]
-    pub fn get_m_pause(self) -> bool;
-
-    #[doc = "`set_m_Pause(bool)` overload"]
-    #[method(name = "set_m_Pause", args = 1)]
-    pub fn set_m_pause(self, value: bool) -> ();
-
-    #[doc = "`get_m_PauseOne()` overload"]
-    #[method(name = "get_m_PauseOne", args = 0)]
-    pub fn get_m_pause_one(self) -> bool;
-
-    #[doc = "`set_m_PauseOne(bool)` overload"]
-    #[method(name = "set_m_PauseOne", args = 1)]
-    pub fn set_m_pause_one(self, value: bool) -> ();
-
-    #[doc = "`Create(crate::app::ringgachasequence::RingGachaSequence, crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)` overload"]
-    #[method(name = "Create", args = 2)]
-    pub fn create(
-        super_: crate::app::ringgachasequence::RingGachaSequence,
-        skip_callback : crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback,
-    ) -> crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc;
-
-    #[doc = "`.ctor(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)` overload"]
-    #[method(name = ".ctor", args = 1)]
-    pub fn ctor(
-        self,
-        skip_callback : crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback,
-    ) -> ();
-
-    #[doc = "`OnTick()` overload"]
-    #[method(name = "OnTick", args = 0)]
-    pub fn on_tick(self) -> ();
-}
-
-#[cfg(feature = "app-ringgachasequence")]
-impl RingGachaSequence_SkipListenerProc {
-    #[doc = "`.ctor(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)` — overload selector"]
-    pub fn new(
-        skip_callback : crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RingGachaSequence_SkipListenerProc),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRingGachaSequence_SkipListenerProcMethods>::ctor(this, skip_callback);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence.md"))]
 #[::unity2::class(namespace = "App", name = "RingGachaSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: ringgachasequence :: RingGachaSequence >)]
@@ -415,54 +243,6 @@ impl RingGachaSequence {
     }
 }
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc_Type.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RingGachaSequence_SkipListenerProc_Type {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RingGachaSequence_SkipListenerProc_Type {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RingGachaSequence.SkipListenerProc.Type";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RingGachaSequence_SkipListenerProc_Type {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RingGachaSequence_SkipListenerProc_Type {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn one() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn all() -> Self {
-        Self { value: 2 }
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringgachasequence/RingGachaSequence_Label.md"))]
 #[repr(C)]
 #[derive(
@@ -516,6 +296,47 @@ impl RingGachaSequence_Label {
 
     pub fn end() -> Self {
         Self { value: 4 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc_SkipCallback.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RingGachaSequence.SkipListenerProc.SkipCallback"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RingGachaSequence_SkipListenerProc_SkipCallback {}
+
+#[cfg(feature = "app-ringgachasequence")]
+#[::unity2::methods]
+impl RingGachaSequence_SkipListenerProc_SkipCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        r#type: crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_Type,
+    ) -> ();
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+impl RingGachaSequence_SkipListenerProc_SkipCallback {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingGachaSequence_SkipListenerProc_SkipCallback),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingGachaSequence_SkipListenerProc_SkipCallbackMethods>::ctor(
+            this, object, method,
+        );
+        this
     }
 }
 
@@ -596,6 +417,185 @@ impl RingGachaSequence_Result10Proc {
             )
         });
         <Self as IRingGachaSequence_Result10ProcMethods>::ctor(this, ring_data_list, new_list);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_Result1Proc.md"))]
+#[::unity2::class(namespace = "App", name = "RingGachaSequence.Result1Proc")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RingGachaSequence_Result1Proc {
+    #[rename(name = "m_RefineRingResult1Window")]
+    pub m_refine_ring_result1_window: crate::app::refineringresult1window::RefineRingResult1Window,
+    #[rename(name = "m_UnitRing")]
+    pub m_unit_ring: crate::app::unitring::UnitRing,
+    #[rename(name = "m_New")]
+    pub m_new: bool,
+    #[rename(name = "m_TitleBar")]
+    pub m_title_bar: crate::app::titlebar::TitleBar,
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+#[::unity2::methods]
+impl RingGachaSequence_Result1Proc {
+    #[doc = "`CreateBind(crate::app::ringgachasequence::RingGachaSequence, crate::app::unitring::UnitRing, bool)` overload"]
+    #[method(name = "CreateBind", args = 3)]
+    pub fn create_bind(
+        super_: crate::app::ringgachasequence::RingGachaSequence,
+        ring_data: crate::app::unitring::UnitRing,
+        new_ring: bool,
+    ) -> crate::app::ringgachasequence::RingGachaSequence_Result1Proc;
+
+    #[doc = "`.ctor(crate::app::unitring::UnitRing, bool)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, ring_data: crate::app::unitring::UnitRing, new_ring: bool) -> ();
+
+    #[doc = "`OnCreate()` overload"]
+    #[method(name = "OnCreate", args = 0)]
+    pub fn on_create(self) -> ();
+
+    #[doc = "`IsOpening()` overload"]
+    #[method(name = "IsOpening", args = 0)]
+    pub fn is_opening(self) -> bool;
+
+    #[doc = "`IsKeyInputted()` overload"]
+    #[method(name = "IsKeyInputted", args = 0)]
+    pub fn is_key_inputted(self) -> bool;
+
+    #[doc = "`IsClosing()` overload"]
+    #[method(name = "IsClosing", args = 0)]
+    pub fn is_closing(self) -> bool;
+
+    #[doc = "`OnDispose()` overload"]
+    #[method(name = "OnDispose", args = 0)]
+    pub fn on_dispose(self) -> ();
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+impl RingGachaSequence_Result1Proc {
+    #[doc = "`.ctor(crate::app::unitring::UnitRing, bool)` — overload selector"]
+    pub fn new(ring_data: crate::app::unitring::UnitRing, new_ring: bool) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingGachaSequence_Result1Proc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingGachaSequence_Result1ProcMethods>::ctor(this, ring_data, new_ring);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc_Type.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RingGachaSequence_SkipListenerProc_Type {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RingGachaSequence_SkipListenerProc_Type {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RingGachaSequence.SkipListenerProc.Type";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RingGachaSequence_SkipListenerProc_Type {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RingGachaSequence_SkipListenerProc_Type {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn one() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn all() -> Self {
+        Self { value: 2 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/ringgachasequence/RingGachaSequence_SkipListenerProc.md"))]
+#[::unity2::class(namespace = "App", name = "RingGachaSequence.SkipListenerProc")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RingGachaSequence_SkipListenerProc {
+    #[rename(name = "m_SkipCallback")]
+    pub m_skip_callback:
+        crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback,
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+#[::unity2::methods]
+impl RingGachaSequence_SkipListenerProc {
+    #[doc = "`get_m_Pause()` overload"]
+    #[method(name = "get_m_Pause", args = 0)]
+    pub fn get_m_pause(self) -> bool;
+
+    #[doc = "`set_m_Pause(bool)` overload"]
+    #[method(name = "set_m_Pause", args = 1)]
+    pub fn set_m_pause(self, value: bool) -> ();
+
+    #[doc = "`get_m_PauseOne()` overload"]
+    #[method(name = "get_m_PauseOne", args = 0)]
+    pub fn get_m_pause_one(self) -> bool;
+
+    #[doc = "`set_m_PauseOne(bool)` overload"]
+    #[method(name = "set_m_PauseOne", args = 1)]
+    pub fn set_m_pause_one(self, value: bool) -> ();
+
+    #[doc = "`Create(crate::app::ringgachasequence::RingGachaSequence, crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)` overload"]
+    #[method(name = "Create", args = 2)]
+    pub fn create(
+        super_: crate::app::ringgachasequence::RingGachaSequence,
+        skip_callback : crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback,
+    ) -> crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc;
+
+    #[doc = "`.ctor(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)` overload"]
+    #[method(name = ".ctor", args = 1)]
+    pub fn ctor(
+        self,
+        skip_callback : crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback,
+    ) -> ();
+
+    #[doc = "`OnTick()` overload"]
+    #[method(name = "OnTick", args = 0)]
+    pub fn on_tick(self) -> ();
+}
+
+#[cfg(feature = "app-ringgachasequence")]
+impl RingGachaSequence_SkipListenerProc {
+    #[doc = "`.ctor(crate::app::ringgachasequence::RingGachaSequence_SkipListenerProc_SkipCallback)` — overload selector"]
+    pub fn new(
+        skip_callback : crate :: app :: ringgachasequence :: RingGachaSequence_SkipListenerProc_SkipCallback,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RingGachaSequence_SkipListenerProc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRingGachaSequence_SkipListenerProcMethods>::ctor(this, skip_callback);
         this
     }
 }

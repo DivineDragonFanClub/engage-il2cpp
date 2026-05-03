@@ -8,6 +8,62 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/camerasituationconverter/CameraSituationConverter_CameraLocateStyle.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct CameraSituationConverter_CameraLocateStyle {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for CameraSituationConverter_CameraLocateStyle {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "CameraSituationConverter.CameraLocateStyle";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for CameraSituationConverter_CameraLocateStyle {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl CameraSituationConverter_CameraLocateStyle {
+    pub fn normal() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn m000() -> Self {
+        Self { value: 4 }
+    }
+
+    pub fn last_boss() -> Self {
+        Self { value: 8 }
+    }
+
+    pub fn look_up() -> Self {
+        Self { value: 256 }
+    }
+
+    pub fn high() -> Self {
+        Self { value: 512 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/camerasituationconverter/CameraSituationConverter.md"))]
 #[::unity2::class(namespace = "Combat", name = "CameraSituationConverter")]
 #[parent(crate::system::object::Object)]
@@ -71,61 +127,5 @@ impl CameraSituationConverter {
         });
         <Self as ICameraSituationConverterMethods>::ctor(this, record, swt, pos_data);
         this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/camerasituationconverter/CameraSituationConverter_CameraLocateStyle.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct CameraSituationConverter_CameraLocateStyle {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for CameraSituationConverter_CameraLocateStyle {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "CameraSituationConverter.CameraLocateStyle";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for CameraSituationConverter_CameraLocateStyle {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl CameraSituationConverter_CameraLocateStyle {
-    pub fn normal() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn m000() -> Self {
-        Self { value: 4 }
-    }
-
-    pub fn last_boss() -> Self {
-        Self { value: 8 }
-    }
-
-    pub fn look_up() -> Self {
-        Self { value: 256 }
-    }
-
-    pub fn high() -> Self {
-        Self { value: 512 }
     }
 }

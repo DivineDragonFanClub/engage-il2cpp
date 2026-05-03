@@ -10,54 +10,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugmenu/DebugMenu_BindMode.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct DebugMenu_BindMode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for DebugMenu_BindMode {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "DebugMenu.BindMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for DebugMenu_BindMode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl DebugMenu_BindMode {
-    pub fn none() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn hide() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn alpha() -> Self {
-        Self { value: 2 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/debugmenu/DebugMenu_AnchorLocation.md"))]
 #[::unity2::class(namespace = "App", name = "DebugMenu.AnchorLocation")]
 #[parent(crate::system::object::Object)]
@@ -620,5 +572,53 @@ impl DebugMenu {
         });
         <Self as IDebugMenuMethods>::ctor(this);
         this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/debugmenu/DebugMenu_BindMode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct DebugMenu_BindMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for DebugMenu_BindMode {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "DebugMenu.BindMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for DebugMenu_BindMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl DebugMenu_BindMode {
+    pub fn none() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn hide() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn alpha() -> Self {
+        Self { value: 2 }
     }
 }

@@ -10,68 +10,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily.md"))]
-#[::unity2::class(namespace = "App", name = "RelayTicketSequence.ProcDaily")]
-#[parent(crate::app::procinst::ProcInst)]
-pub struct RelayTicketSequence_ProcDaily {}
-
-#[cfg(feature = "app-relayticketsequence")]
-#[::unity2::methods]
-impl RelayTicketSequence_ProcDaily {
-    #[doc = "`Check()` overload"]
-    #[method(name = "Check", args = 0)]
-    pub fn check(self) -> ();
-
-    #[doc = "`Message()` overload"]
-    #[method(name = "Message", args = 0)]
-    pub fn message(self) -> ();
-
-    #[doc = "`AddTicketCount()` overload"]
-    #[method(name = "AddTicketCount", args = 0)]
-    pub fn add_ticket_count(self) -> ();
-
-    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBind", args = 1)]
-    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relayticketsequence")]
-impl RelayTicketSequence_ProcDaily {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayTicketSequence_ProcDaily),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayTicketSequence_ProcDailyMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence.md"))]
-#[::unity2::class(namespace = "App", name = "RelayTicketSequence")]
-#[parent(crate::system::object::Object)]
-pub struct RelayTicketSequence {}
-
-#[cfg(feature = "app-relayticketsequence")]
-#[::unity2::methods]
-impl RelayTicketSequence {
-    #[doc = "`CreateBindUse(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindUse", args = 1)]
-    pub fn create_bind_use(super_: crate::app::procinst::ProcInst) -> ();
-
-    #[doc = "`CreateBindDaily(crate::app::procinst::ProcInst)` overload"]
-    #[method(name = "CreateBindDaily", args = 1)]
-    pub fn create_bind_daily(super_: crate::app::procinst::ProcInst) -> ();
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily_Label.md"))]
 #[repr(C)]
 #[derive(
@@ -151,4 +89,66 @@ impl RelayTicketSequence_ProcUse {
         <Self as IRelayTicketSequence_ProcUseMethods>::ctor(this);
         this
     }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence_ProcDaily.md"))]
+#[::unity2::class(namespace = "App", name = "RelayTicketSequence.ProcDaily")]
+#[parent(crate::app::procinst::ProcInst)]
+pub struct RelayTicketSequence_ProcDaily {}
+
+#[cfg(feature = "app-relayticketsequence")]
+#[::unity2::methods]
+impl RelayTicketSequence_ProcDaily {
+    #[doc = "`Check()` overload"]
+    #[method(name = "Check", args = 0)]
+    pub fn check(self) -> ();
+
+    #[doc = "`Message()` overload"]
+    #[method(name = "Message", args = 0)]
+    pub fn message(self) -> ();
+
+    #[doc = "`AddTicketCount()` overload"]
+    #[method(name = "AddTicketCount", args = 0)]
+    pub fn add_ticket_count(self) -> ();
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBind", args = 1)]
+    pub fn create_bind(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relayticketsequence")]
+impl RelayTicketSequence_ProcDaily {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayTicketSequence_ProcDaily),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayTicketSequence_ProcDailyMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relayticketsequence/RelayTicketSequence.md"))]
+#[::unity2::class(namespace = "App", name = "RelayTicketSequence")]
+#[parent(crate::system::object::Object)]
+pub struct RelayTicketSequence {}
+
+#[cfg(feature = "app-relayticketsequence")]
+#[::unity2::methods]
+impl RelayTicketSequence {
+    #[doc = "`CreateBindUse(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindUse", args = 1)]
+    pub fn create_bind_use(super_: crate::app::procinst::ProcInst) -> ();
+
+    #[doc = "`CreateBindDaily(crate::app::procinst::ProcInst)` overload"]
+    #[method(name = "CreateBindDaily", args = 1)]
+    pub fn create_bind_daily(super_: crate::app::procinst::ProcInst) -> ();
 }

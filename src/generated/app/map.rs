@@ -10,17 +10,77 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_FillList.md"))]
-#[::unity2::class(namespace = "App", name = "Map.FillList")]
-# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: map :: Map_Pos >)]
-pub struct Map_FillList {}
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/map/Map_Pos.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct Map_Pos {
+    pub x: i32,
+    pub z: i32,
+}
+
+impl ::unity2::ClassIdentity for Map_Pos {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "Map.Pos";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for Map_Pos {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "app-map")]
+#[::unity2::methods(value)]
+impl Map_Pos {
+    #[doc = "`.ctor(i32, i32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, x: i32, z: i32) -> ();
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_CellVertex.md"))]
+#[::unity2::class(namespace = "App", name = "Map.CellVertex")]
+#[parent(crate::system::object::Object)]
+pub struct Map_CellVertex {
+    #[rename(name = "m_Position")]
+    pub m_position: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
+}
 
 #[cfg(feature = "app-map")]
 #[::unity2::methods]
-impl Map_FillList {
-    #[doc = "`FillTerrain(i32, i32, i32, i32)` overload"]
-    #[method(name = "FillTerrain", args = 4)]
-    pub fn fill_terrain(self, x: i32, z: i32, before: i32, after: i32) -> ();
+impl Map_CellVertex {
+    #[doc = "`Clear()` overload"]
+    #[method(name = "Clear", args = 0)]
+    pub fn clear(self) -> ();
+
+    #[doc = "`Calc(i32, i32)` overload"]
+    #[method(name = "Calc", args = 2)]
+    pub fn calc(self, x: i32, z: i32) -> ();
+
+    #[doc = "`get_Item(i32)` overload"]
+    #[method(name = "get_Item", args = 1)]
+    pub fn get_item(self, i: i32) -> crate::unity_engine::vector3::Vector3;
+
+    #[doc = "`set_Item(i32, crate::unity_engine::vector3::Vector3)` overload"]
+    #[method(name = "set_Item", args = 2)]
+    pub fn set_item(self, i: i32, value: crate::unity_engine::vector3::Vector3) -> ();
+
+    #[doc = "`get_MinHeight()` overload"]
+    #[method(name = "get_MinHeight", args = 0)]
+    pub fn get_min_height(self) -> f32;
+
+    #[doc = "`get_MaxHeight()` overload"]
+    #[method(name = "get_MaxHeight", args = 0)]
+    pub fn get_max_height(self) -> f32;
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -28,17 +88,150 @@ impl Map_FillList {
 }
 
 #[cfg(feature = "app-map")]
-impl Map_FillList {
+impl Map_CellVertex {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(Map_FillList),
+                ::core::stringify!(Map_CellVertex),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMap_FillListMethods>::ctor(this);
+        <Self as IMap_CellVertexMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_CellMesh.md"))]
+#[::unity2::class(namespace = "App", name = "Map.CellMesh")]
+#[parent(crate::app::dynamicmesh::DynamicMesh)]
+pub struct Map_CellMesh {
+    #[rename(name = "m_CellVertex")]
+    pub m_cell_vertex: crate::app::map::Map_CellVertex,
+}
+
+#[cfg(feature = "app-map")]
+#[::unity2::methods]
+impl Map_CellMesh {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        go: crate::unity_engine::gameobject::GameObject,
+        sub_mesh_count: i32,
+        vertex_capacity: i32,
+    ) -> ();
+
+    #[doc = "`AddTangents5(crate::unity_engine::vector4::Vector4)` overload"]
+    #[method(name = "AddTangents5", args = 1)]
+    pub fn add_tangents5(self, tangent: crate::unity_engine::vector4::Vector4) -> ();
+
+    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, f32)` overload"]
+    #[method(name = "AddCell", args = 4)]
+    pub fn add_cell(
+        self,
+        x: i32,
+        z: i32,
+        color: crate::unity_engine::color::Color,
+        distance: f32,
+    ) -> ();
+
+    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, i32, f32)` overload"]
+    #[method(name = "AddCell", args = 7)]
+    pub fn add_cell_2(
+        self,
+        x: i32,
+        z: i32,
+        color: crate::unity_engine::color::Color,
+        uv0: crate::unity_engine::vector2::Vector2,
+        uv2: crate::unity_engine::vector2::Vector2,
+        rotation: i32,
+        distance: f32,
+    ) -> ();
+
+    #[doc = "`AddCell(i32, i32, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
+    #[method(name = "AddCell", args = 5)]
+    pub fn add_cell_3(
+        self,
+        x: i32,
+        z: i32,
+        uv0: crate::unity_engine::vector2::Vector2,
+        uv2: crate::unity_engine::vector2::Vector2,
+        distance: f32,
+    ) -> ();
+
+    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32)` overload"]
+    #[method(name = "AddCell", args = 7)]
+    pub fn add_cell_4(
+        self,
+        x: i32,
+        z: i32,
+        color0: crate::unity_engine::color::Color,
+        color1: crate::unity_engine::color::Color,
+        color2: crate::unity_engine::color::Color,
+        color3: crate::unity_engine::color::Color,
+        distance: f32,
+    ) -> ();
+
+    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
+    #[method(name = "AddCell", args = 9)]
+    pub fn add_cell_5(
+        self,
+        x: i32,
+        z: i32,
+        color0: crate::unity_engine::color::Color,
+        color1: crate::unity_engine::color::Color,
+        color2: crate::unity_engine::color::Color,
+        color3: crate::unity_engine::color::Color,
+        uv0: crate::unity_engine::vector2::Vector2,
+        uv2: crate::unity_engine::vector2::Vector2,
+        distance: f32,
+    ) -> ();
+
+    #[doc = "`AddCell(i32, i32, crate::app::dir_2::Dir_Type, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
+    #[method(name = "AddCell", args = 7)]
+    pub fn add_cell_6(
+        self,
+        x: i32,
+        z: i32,
+        dir: crate::app::dir_2::Dir_Type,
+        color: crate::unity_engine::color::Color,
+        uv0: crate::unity_engine::vector2::Vector2,
+        uv2: crate::unity_engine::vector2::Vector2,
+        distance: f32,
+    ) -> ();
+
+    #[doc = "`AddStraddleCell(crate::app::unit::Unit, crate::unity_engine::color::Color, f32)` overload"]
+    #[method(name = "AddStraddleCell", args = 3)]
+    pub fn add_straddle_cell(
+        self,
+        unit: crate::app::unit::Unit,
+        color: crate::unity_engine::color::Color,
+        uv_rotate: f32,
+    ) -> ();
+
+    #[doc = "`AddEventCell(i32, i32, crate::unity_engine::color::Color)` overload"]
+    #[method(name = "AddEventCell", args = 3)]
+    pub fn add_event_cell(self, x: i32, z: i32, color: crate::unity_engine::color::Color) -> ();
+}
+
+#[cfg(feature = "app-map")]
+impl Map_CellMesh {
+    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` — overload selector"]
+    pub fn new(
+        go: crate::unity_engine::gameobject::GameObject,
+        sub_mesh_count: i32,
+        vertex_capacity: i32,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(Map_CellMesh),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMap_CellMeshMethods>::ctor(this, go, sub_mesh_count, vertex_capacity);
         this
     }
 }
@@ -719,40 +912,17 @@ impl Map {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_CellVertex.md"))]
-#[::unity2::class(namespace = "App", name = "Map.CellVertex")]
-#[parent(crate::system::object::Object)]
-pub struct Map_CellVertex {
-    #[rename(name = "m_Position")]
-    pub m_position: ::unity2::Array<crate::unity_engine::vector3::Vector3>,
-}
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_FillList.md"))]
+#[::unity2::class(namespace = "App", name = "Map.FillList")]
+# [parent (crate :: system :: collections :: generic :: list_1 :: List_1 < crate :: app :: map :: Map_Pos >)]
+pub struct Map_FillList {}
 
 #[cfg(feature = "app-map")]
 #[::unity2::methods]
-impl Map_CellVertex {
-    #[doc = "`Clear()` overload"]
-    #[method(name = "Clear", args = 0)]
-    pub fn clear(self) -> ();
-
-    #[doc = "`Calc(i32, i32)` overload"]
-    #[method(name = "Calc", args = 2)]
-    pub fn calc(self, x: i32, z: i32) -> ();
-
-    #[doc = "`get_Item(i32)` overload"]
-    #[method(name = "get_Item", args = 1)]
-    pub fn get_item(self, i: i32) -> crate::unity_engine::vector3::Vector3;
-
-    #[doc = "`set_Item(i32, crate::unity_engine::vector3::Vector3)` overload"]
-    #[method(name = "set_Item", args = 2)]
-    pub fn set_item(self, i: i32, value: crate::unity_engine::vector3::Vector3) -> ();
-
-    #[doc = "`get_MinHeight()` overload"]
-    #[method(name = "get_MinHeight", args = 0)]
-    pub fn get_min_height(self) -> f32;
-
-    #[doc = "`get_MaxHeight()` overload"]
-    #[method(name = "get_MaxHeight", args = 0)]
-    pub fn get_max_height(self) -> f32;
+impl Map_FillList {
+    #[doc = "`FillTerrain(i32, i32, i32, i32)` overload"]
+    #[method(name = "FillTerrain", args = 4)]
+    pub fn fill_terrain(self, x: i32, z: i32, before: i32, after: i32) -> ();
 
     #[doc = "`.ctor()` overload"]
     #[method(name = ".ctor", args = 0)]
@@ -760,187 +930,17 @@ impl Map_CellVertex {
 }
 
 #[cfg(feature = "app-map")]
-impl Map_CellVertex {
+impl Map_FillList {
     #[doc = "`.ctor()` — no args"]
     pub fn new() -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(Map_CellVertex),
+                ::core::stringify!(Map_FillList),
                 ::core::stringify!(new),
             )
         });
-        <Self as IMap_CellVertexMethods>::ctor(this);
+        <Self as IMap_FillListMethods>::ctor(this);
         this
     }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/map/Map_CellMesh.md"))]
-#[::unity2::class(namespace = "App", name = "Map.CellMesh")]
-#[parent(crate::app::dynamicmesh::DynamicMesh)]
-pub struct Map_CellMesh {
-    #[rename(name = "m_CellVertex")]
-    pub m_cell_vertex: crate::app::map::Map_CellVertex,
-}
-
-#[cfg(feature = "app-map")]
-#[::unity2::methods]
-impl Map_CellMesh {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        go: crate::unity_engine::gameobject::GameObject,
-        sub_mesh_count: i32,
-        vertex_capacity: i32,
-    ) -> ();
-
-    #[doc = "`AddTangents5(crate::unity_engine::vector4::Vector4)` overload"]
-    #[method(name = "AddTangents5", args = 1)]
-    pub fn add_tangents5(self, tangent: crate::unity_engine::vector4::Vector4) -> ();
-
-    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, f32)` overload"]
-    #[method(name = "AddCell", args = 4)]
-    pub fn add_cell(
-        self,
-        x: i32,
-        z: i32,
-        color: crate::unity_engine::color::Color,
-        distance: f32,
-    ) -> ();
-
-    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, i32, f32)` overload"]
-    #[method(name = "AddCell", args = 7)]
-    pub fn add_cell_2(
-        self,
-        x: i32,
-        z: i32,
-        color: crate::unity_engine::color::Color,
-        uv0: crate::unity_engine::vector2::Vector2,
-        uv2: crate::unity_engine::vector2::Vector2,
-        rotation: i32,
-        distance: f32,
-    ) -> ();
-
-    #[doc = "`AddCell(i32, i32, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
-    #[method(name = "AddCell", args = 5)]
-    pub fn add_cell_3(
-        self,
-        x: i32,
-        z: i32,
-        uv0: crate::unity_engine::vector2::Vector2,
-        uv2: crate::unity_engine::vector2::Vector2,
-        distance: f32,
-    ) -> ();
-
-    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32)` overload"]
-    #[method(name = "AddCell", args = 7)]
-    pub fn add_cell_4(
-        self,
-        x: i32,
-        z: i32,
-        color0: crate::unity_engine::color::Color,
-        color1: crate::unity_engine::color::Color,
-        color2: crate::unity_engine::color::Color,
-        color3: crate::unity_engine::color::Color,
-        distance: f32,
-    ) -> ();
-
-    #[doc = "`AddCell(i32, i32, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
-    #[method(name = "AddCell", args = 9)]
-    pub fn add_cell_5(
-        self,
-        x: i32,
-        z: i32,
-        color0: crate::unity_engine::color::Color,
-        color1: crate::unity_engine::color::Color,
-        color2: crate::unity_engine::color::Color,
-        color3: crate::unity_engine::color::Color,
-        uv0: crate::unity_engine::vector2::Vector2,
-        uv2: crate::unity_engine::vector2::Vector2,
-        distance: f32,
-    ) -> ();
-
-    #[doc = "`AddCell(i32, i32, crate::app::dir_2::Dir_Type, crate::unity_engine::color::Color, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, f32)` overload"]
-    #[method(name = "AddCell", args = 7)]
-    pub fn add_cell_6(
-        self,
-        x: i32,
-        z: i32,
-        dir: crate::app::dir_2::Dir_Type,
-        color: crate::unity_engine::color::Color,
-        uv0: crate::unity_engine::vector2::Vector2,
-        uv2: crate::unity_engine::vector2::Vector2,
-        distance: f32,
-    ) -> ();
-
-    #[doc = "`AddStraddleCell(crate::app::unit::Unit, crate::unity_engine::color::Color, f32)` overload"]
-    #[method(name = "AddStraddleCell", args = 3)]
-    pub fn add_straddle_cell(
-        self,
-        unit: crate::app::unit::Unit,
-        color: crate::unity_engine::color::Color,
-        uv_rotate: f32,
-    ) -> ();
-
-    #[doc = "`AddEventCell(i32, i32, crate::unity_engine::color::Color)` overload"]
-    #[method(name = "AddEventCell", args = 3)]
-    pub fn add_event_cell(self, x: i32, z: i32, color: crate::unity_engine::color::Color) -> ();
-}
-
-#[cfg(feature = "app-map")]
-impl Map_CellMesh {
-    #[doc = "`.ctor(crate::unity_engine::gameobject::GameObject, i32, i32)` — overload selector"]
-    pub fn new(
-        go: crate::unity_engine::gameobject::GameObject,
-        sub_mesh_count: i32,
-        vertex_capacity: i32,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(Map_CellMesh),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IMap_CellMeshMethods>::ctor(this, go, sub_mesh_count, vertex_capacity);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/map/Map_Pos.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct Map_Pos {
-    pub x: i32,
-    pub z: i32,
-}
-
-impl ::unity2::ClassIdentity for Map_Pos {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "Map.Pos";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for Map_Pos {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "app-map")]
-#[::unity2::methods(value)]
-impl Map_Pos {
-    #[doc = "`.ctor(i32, i32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, x: i32, z: i32) -> ();
 }

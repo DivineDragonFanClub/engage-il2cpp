@@ -12,6 +12,42 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/emittersconstraint/EmittersConstraint_Pair.md"))]
+#[::unity2::class(namespace = "Combat", name = "EmittersConstraint.Pair")]
+#[parent(crate::system::object::Object)]
+pub struct EmittersConstraint_Pair {
+    #[rename(name = "ParticleSystem")]
+    pub particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+    #[rename(name = "AttachTransform")]
+    pub attach_transform: crate::unity_engine::transform::Transform,
+    #[rename(name = "TargetBoneName")]
+    pub target_bone_name: ::unity2::Il2CppString,
+}
+
+#[cfg(feature = "combat-emittersconstraint")]
+#[::unity2::methods]
+impl EmittersConstraint_Pair {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "combat-emittersconstraint")]
+impl EmittersConstraint_Pair {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(EmittersConstraint_Pair),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEmittersConstraint_PairMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/emittersconstraint/EmittersConstraint.md"))]
 #[::unity2::class(namespace = "Combat", name = "EmittersConstraint")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -54,42 +90,6 @@ impl EmittersConstraint {
             )
         });
         <Self as IEmittersConstraintMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/emittersconstraint/EmittersConstraint_Pair.md"))]
-#[::unity2::class(namespace = "Combat", name = "EmittersConstraint.Pair")]
-#[parent(crate::system::object::Object)]
-pub struct EmittersConstraint_Pair {
-    #[rename(name = "ParticleSystem")]
-    pub particle_system: crate::unity_engine::particlesystem::ParticleSystem,
-    #[rename(name = "AttachTransform")]
-    pub attach_transform: crate::unity_engine::transform::Transform,
-    #[rename(name = "TargetBoneName")]
-    pub target_bone_name: ::unity2::Il2CppString,
-}
-
-#[cfg(feature = "combat-emittersconstraint")]
-#[::unity2::methods]
-impl EmittersConstraint_Pair {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "combat-emittersconstraint")]
-impl EmittersConstraint_Pair {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(EmittersConstraint_Pair),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IEmittersConstraint_PairMethods>::ctor(this);
         this
     }
 }

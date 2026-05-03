@@ -8,160 +8,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange.md"))]
-#[::unity2::class(namespace = "App", name = "ClassChange")]
-#[parent(crate::system::object::Object)]
-pub struct ClassChange {}
-
-#[cfg(feature = "app-classchange")]
-#[::unity2::methods]
-impl ClassChange {
-    #[doc = "`GetSelectJobList(crate::app::jobdata::JobData)` overload"]
-    #[method(name = "GetSelectJobList", args = 1)]
-    pub fn get_select_job_list(
-        job_data: crate::app::jobdata::JobData,
-    ) -> crate::system::collections::generic::list_1::List_1<
-        crate::app::classchange::ClassChange_ChangeJobData,
-    >;
-
-    #[doc = "`GetJobListAll()` overload"]
-    #[method(name = "GetJobListAll", args = 0)]
-    pub fn get_job_list_all() -> crate::system::collections::generic::list_1::List_1<
-        crate::app::classchange::ClassChange_ChangeJobData,
-    >;
-
-    #[doc = "`GetJobList(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
-    #[method(name = "GetJobList", args = 2)]
-    pub fn get_job_list(
-        unit: crate::app::unit::Unit,
-        item: crate::app::itemdata::ItemData,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>;
-
-    #[doc = "`GetJobListByMaster(crate::app::unit::Unit)` overload"]
-    #[method(name = "GetJobListByMaster", args = 1)]
-    pub fn get_job_list_by_master(
-        unit: crate::app::unit::Unit,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>;
-
-    #[doc = "`GetJobListByChange(crate::app::unit::Unit)` overload"]
-    #[method(name = "GetJobListByChange", args = 1)]
-    pub fn get_job_list_by_change(
-        unit: crate::app::unit::Unit,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>;
-
-    #[doc = "`AddToListForMaster(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>)` overload"]
-    #[method(name = "AddToListForMaster", args = 3)]
-    pub fn add_to_list_for_master(
-        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-        unit: crate::app::unit::Unit,
-        high_jobs: crate::system::collections::generic::list_1::List_1<
-            crate::app::jobdata::JobData,
-        >,
-    ) -> ();
-
-    #[doc = "`AddToListForChange(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit)` overload"]
-    #[method(name = "AddToListForChange", args = 2)]
-    pub fn add_to_list_for_change(
-        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-        unit: crate::app::unit::Unit,
-    ) -> ();
-
-    #[doc = "`AddToList(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit, crate::app::jobdata::JobData, bool, bool)` overload"]
-    #[method(name = "AddToList", args = 5)]
-    pub fn add_to_list(
-        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-        unit: crate::app::unit::Unit,
-        job: crate::app::jobdata::JobData,
-        include_current_job: bool,
-        ignore_aptitude_check: bool,
-    ) -> ();
-
-    #[doc = "`GetRelationalJobs(crate::app::jobdata::JobData)` overload"]
-    #[method(name = "GetRelationalJobs", args = 1)]
-    pub fn get_relational_jobs(
-        job: crate::app::jobdata::JobData,
-    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>;
-
-    #[doc = "`IsExists(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::jobdata::JobData)` overload"]
-    #[method(name = "IsExists", args = 2)]
-    pub fn is_exists(
-        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
-        target_job: crate::app::jobdata::JobData,
-    ) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-classchange")]
-impl ClassChange {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ClassChange),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IClassChangeMethods>::ctor(this);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/classchange/ClassChange_ChangeJobData_ProofTypes.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct ClassChange_ChangeJobData_ProofTypes {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for ClassChange_ChangeJobData_ProofTypes {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "ClassChange.ChangeJobData.ProofTypes";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for ClassChange_ChangeJobData_ProofTypes {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl ClassChange_ChangeJobData_ProofTypes {
-    pub fn master() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn change() -> Self {
-        Self { value: 1 }
-    }
-
-    pub fn enchant() -> Self {
-        Self { value: 2 }
-    }
-
-    pub fn gunner() -> Self {
-        Self { value: 3 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange_ChangeJobData.md"))]
 #[::unity2::class(namespace = "App", name = "ClassChange.ChangeJobData")]
 #[parent(crate::system::object::Object)]
@@ -319,5 +165,159 @@ impl ClassChange_ChangeJobData {
         });
         <Self as IClassChange_ChangeJobDataMethods>::ctor(this, job, weapon_mask);
         this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/classchange/ClassChange.md"))]
+#[::unity2::class(namespace = "App", name = "ClassChange")]
+#[parent(crate::system::object::Object)]
+pub struct ClassChange {}
+
+#[cfg(feature = "app-classchange")]
+#[::unity2::methods]
+impl ClassChange {
+    #[doc = "`GetSelectJobList(crate::app::jobdata::JobData)` overload"]
+    #[method(name = "GetSelectJobList", args = 1)]
+    pub fn get_select_job_list(
+        job_data: crate::app::jobdata::JobData,
+    ) -> crate::system::collections::generic::list_1::List_1<
+        crate::app::classchange::ClassChange_ChangeJobData,
+    >;
+
+    #[doc = "`GetJobListAll()` overload"]
+    #[method(name = "GetJobListAll", args = 0)]
+    pub fn get_job_list_all() -> crate::system::collections::generic::list_1::List_1<
+        crate::app::classchange::ClassChange_ChangeJobData,
+    >;
+
+    #[doc = "`GetJobList(crate::app::unit::Unit, crate::app::itemdata::ItemData)` overload"]
+    #[method(name = "GetJobList", args = 2)]
+    pub fn get_job_list(
+        unit: crate::app::unit::Unit,
+        item: crate::app::itemdata::ItemData,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>;
+
+    #[doc = "`GetJobListByMaster(crate::app::unit::Unit)` overload"]
+    #[method(name = "GetJobListByMaster", args = 1)]
+    pub fn get_job_list_by_master(
+        unit: crate::app::unit::Unit,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>;
+
+    #[doc = "`GetJobListByChange(crate::app::unit::Unit)` overload"]
+    #[method(name = "GetJobListByChange", args = 1)]
+    pub fn get_job_list_by_change(
+        unit: crate::app::unit::Unit,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>;
+
+    #[doc = "`AddToListForMaster(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>)` overload"]
+    #[method(name = "AddToListForMaster", args = 3)]
+    pub fn add_to_list_for_master(
+        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+        unit: crate::app::unit::Unit,
+        high_jobs: crate::system::collections::generic::list_1::List_1<
+            crate::app::jobdata::JobData,
+        >,
+    ) -> ();
+
+    #[doc = "`AddToListForChange(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit)` overload"]
+    #[method(name = "AddToListForChange", args = 2)]
+    pub fn add_to_list_for_change(
+        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+        unit: crate::app::unit::Unit,
+    ) -> ();
+
+    #[doc = "`AddToList(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::unit::Unit, crate::app::jobdata::JobData, bool, bool)` overload"]
+    #[method(name = "AddToList", args = 5)]
+    pub fn add_to_list(
+        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+        unit: crate::app::unit::Unit,
+        job: crate::app::jobdata::JobData,
+        include_current_job: bool,
+        ignore_aptitude_check: bool,
+    ) -> ();
+
+    #[doc = "`GetRelationalJobs(crate::app::jobdata::JobData)` overload"]
+    #[method(name = "GetRelationalJobs", args = 1)]
+    pub fn get_relational_jobs(
+        job: crate::app::jobdata::JobData,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>;
+
+    #[doc = "`IsExists(crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>, crate::app::jobdata::JobData)` overload"]
+    #[method(name = "IsExists", args = 2)]
+    pub fn is_exists(
+        job_list: crate::system::collections::generic::list_1::List_1<crate::app::jobdata::JobData>,
+        target_job: crate::app::jobdata::JobData,
+    ) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-classchange")]
+impl ClassChange {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ClassChange),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IClassChangeMethods>::ctor(this);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/classchange/ClassChange_ChangeJobData_ProofTypes.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct ClassChange_ChangeJobData_ProofTypes {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for ClassChange_ChangeJobData_ProofTypes {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "ClassChange.ChangeJobData.ProofTypes";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for ClassChange_ChangeJobData_ProofTypes {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl ClassChange_ChangeJobData_ProofTypes {
+    pub fn master() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn change() -> Self {
+        Self { value: 1 }
+    }
+
+    pub fn enchant() -> Self {
+        Self { value: 2 }
+    }
+
+    pub fn gunner() -> Self {
+        Self { value: 3 }
     }
 }

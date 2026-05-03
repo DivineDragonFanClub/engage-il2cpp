@@ -12,50 +12,6 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_PlayMode.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct TalkSequence_PlayMode {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for TalkSequence_PlayMode {
-    const NAMESPACE: &'static str = "App.Talk3D";
-
-    const NAME: &'static str = "TalkSequence.PlayMode";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for TalkSequence_PlayMode {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl TalkSequence_PlayMode {
-    pub fn manual() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn auto_play() -> Self {
-        Self { value: 1 }
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence.md"))]
 #[::unity2::class(namespace = "App.Talk3D", name = "TalkSequence")]
 # [parent (crate :: app :: singletonprocinst_1 :: SingletonProcInst_1 < crate :: app :: talk3_d :: talksequence :: TalkSequence >)]
@@ -396,60 +352,6 @@ impl TalkSequence {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence_ReplaceText.md"))]
-#[::unity2::class(namespace = "App.Talk3D", name = "TalkSequence.ReplaceText")]
-#[parent(crate::system::object::Object)]
-pub struct TalkSequence_ReplaceText {
-    #[rename(name = "m_Text")]
-    pub m_text: ::unity2::Il2CppString,
-    #[rename(name = "m_Index")]
-    pub m_index: i32,
-}
-
-#[cfg(feature = "app-talk3_d-talksequence")]
-#[::unity2::methods]
-impl TalkSequence_ReplaceText {
-    #[doc = "`set_Text(::unity2::Il2CppString)` overload"]
-    #[method(name = "set_Text", args = 1)]
-    pub fn set_text(self, value: ::unity2::Il2CppString) -> ();
-
-    #[doc = "`get_Text()` overload"]
-    #[method(name = "get_Text", args = 0)]
-    pub fn get_text(self) -> ::unity2::Il2CppString;
-
-    #[doc = "`Next()` overload"]
-    #[method(name = "Next", args = 0)]
-    pub fn next(self) -> ();
-
-    #[doc = "`get_CurrentCharacter()` overload"]
-    #[method(name = "get_CurrentCharacter", args = 0)]
-    pub fn get_current_character(self) -> u16;
-
-    #[doc = "`NeedReplace()` overload"]
-    #[method(name = "NeedReplace", args = 0)]
-    pub fn need_replace(self) -> bool;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-talk3_d-talksequence")]
-impl TalkSequence_ReplaceText {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(TalkSequence_ReplaceText),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ITalkSequence_ReplaceTextMethods>::ctor(this);
-        this
-    }
-}
-
 #[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_Label.md"))]
 #[repr(C)]
 #[derive(
@@ -523,5 +425,103 @@ impl TalkSequence_Label {
 
     pub fn end() -> Self {
         Self { value: 9 }
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/talk3_d/talksequence/TalkSequence_PlayMode.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct TalkSequence_PlayMode {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for TalkSequence_PlayMode {
+    const NAMESPACE: &'static str = "App.Talk3D";
+
+    const NAME: &'static str = "TalkSequence.PlayMode";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for TalkSequence_PlayMode {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl TalkSequence_PlayMode {
+    pub fn manual() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn auto_play() -> Self {
+        Self { value: 1 }
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/talk3_d/talksequence/TalkSequence_ReplaceText.md"))]
+#[::unity2::class(namespace = "App.Talk3D", name = "TalkSequence.ReplaceText")]
+#[parent(crate::system::object::Object)]
+pub struct TalkSequence_ReplaceText {
+    #[rename(name = "m_Text")]
+    pub m_text: ::unity2::Il2CppString,
+    #[rename(name = "m_Index")]
+    pub m_index: i32,
+}
+
+#[cfg(feature = "app-talk3_d-talksequence")]
+#[::unity2::methods]
+impl TalkSequence_ReplaceText {
+    #[doc = "`set_Text(::unity2::Il2CppString)` overload"]
+    #[method(name = "set_Text", args = 1)]
+    pub fn set_text(self, value: ::unity2::Il2CppString) -> ();
+
+    #[doc = "`get_Text()` overload"]
+    #[method(name = "get_Text", args = 0)]
+    pub fn get_text(self) -> ::unity2::Il2CppString;
+
+    #[doc = "`Next()` overload"]
+    #[method(name = "Next", args = 0)]
+    pub fn next(self) -> ();
+
+    #[doc = "`get_CurrentCharacter()` overload"]
+    #[method(name = "get_CurrentCharacter", args = 0)]
+    pub fn get_current_character(self) -> u16;
+
+    #[doc = "`NeedReplace()` overload"]
+    #[method(name = "NeedReplace", args = 0)]
+    pub fn need_replace(self) -> bool;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-talk3_d-talksequence")]
+impl TalkSequence_ReplaceText {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(TalkSequence_ReplaceText),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITalkSequence_ReplaceTextMethods>::ctor(this);
+        this
     }
 }

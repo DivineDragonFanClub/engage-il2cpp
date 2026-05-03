@@ -14,6 +14,40 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymessagemenucontent/RelayMessageMenuContent_KindIcon.md"))]
+#[::unity2::class(namespace = "App", name = "RelayMessageMenuContent.KindIcon")]
+#[parent(crate::system::object::Object)]
+pub struct RelayMessageMenuContent_KindIcon {
+    #[rename(name = "m_Image")]
+    pub m_image: crate::unity_engine::ui::image::Image,
+    #[rename(name = "m_Kind")]
+    pub m_kind: crate::app::relaystampdata::RelayStampData_Kinds,
+}
+
+#[cfg(feature = "app-relaymessagemenucontent")]
+#[::unity2::methods]
+impl RelayMessageMenuContent_KindIcon {
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-relaymessagemenucontent")]
+impl RelayMessageMenuContent_KindIcon {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RelayMessageMenuContent_KindIcon),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayMessageMenuContent_KindIconMethods>::ctor(this);
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymessagemenucontent/RelayMessageMenuContent.md"))]
 #[::unity2::class(namespace = "App", name = "RelayMessageMenuContent")]
 #[parent(crate::app::basicmenucontent::BasicMenuContent)]
@@ -102,40 +136,6 @@ impl RelayMessageMenuContent {
             )
         });
         <Self as IRelayMessageMenuContentMethods>::ctor(this);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/relaymessagemenucontent/RelayMessageMenuContent_KindIcon.md"))]
-#[::unity2::class(namespace = "App", name = "RelayMessageMenuContent.KindIcon")]
-#[parent(crate::system::object::Object)]
-pub struct RelayMessageMenuContent_KindIcon {
-    #[rename(name = "m_Image")]
-    pub m_image: crate::unity_engine::ui::image::Image,
-    #[rename(name = "m_Kind")]
-    pub m_kind: crate::app::relaystampdata::RelayStampData_Kinds,
-}
-
-#[cfg(feature = "app-relaymessagemenucontent")]
-#[::unity2::methods]
-impl RelayMessageMenuContent_KindIcon {
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-relaymessagemenucontent")]
-impl RelayMessageMenuContent_KindIcon {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RelayMessageMenuContent_KindIcon),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRelayMessageMenuContent_KindIconMethods>::ctor(this);
         this
     }
 }

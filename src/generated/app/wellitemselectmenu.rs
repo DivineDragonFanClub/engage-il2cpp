@@ -66,6 +66,62 @@ impl WellItemSelectMenu_Kinds {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenu/WellItemSelectMenu_SelectedItem.md"))]
+#[::unity2::class(namespace = "App", name = "WellItemSelectMenu.SelectedItem")]
+#[parent(crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)]
+pub struct WellItemSelectMenu_SelectedItem {
+    #[rename(name = "m_MenuItem")]
+    pub m_menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
+}
+
+#[cfg(feature = "app-wellitemselectmenu")]
+#[::unity2::methods]
+impl WellItemSelectMenu_SelectedItem {
+    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)` overload"]
+    #[method(name = ".ctor", args = 3)]
+    pub fn ctor(
+        self,
+        unit: crate::app::unit::Unit,
+        owner_item_index: i32,
+        menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
+    ) -> ();
+
+    #[doc = "`IsSame(crate::app::unit::Unit, i32)` overload"]
+    #[method(name = "IsSame", args = 2)]
+    pub fn is_same(self, unit: crate::app::unit::Unit, owner_item_index: i32) -> bool;
+
+    #[doc = "`get_OriginalMenuItem()` overload"]
+    #[method(name = "get_OriginalMenuItem", args = 0)]
+    pub fn get_original_menu_item(
+        self,
+    ) -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem;
+}
+
+#[cfg(feature = "app-wellitemselectmenu")]
+impl WellItemSelectMenu_SelectedItem {
+    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)` — overload selector"]
+    pub fn new(
+        unit: crate::app::unit::Unit,
+        owner_item_index: i32,
+        menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
+    ) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(WellItemSelectMenu_SelectedItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWellItemSelectMenu_SelectedItemMethods>::ctor(
+            this,
+            unit,
+            owner_item_index,
+            menu_item,
+        );
+        this
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenu/WellItemSelectMenu.md"))]
 #[::unity2::class(namespace = "App", name = "WellItemSelectMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -299,62 +355,6 @@ impl WellItemSelectMenu {
             )
         });
         <Self as IWellItemSelectMenuMethods>::ctor(this, menu_item_list, menu_content);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/wellitemselectmenu/WellItemSelectMenu_SelectedItem.md"))]
-#[::unity2::class(namespace = "App", name = "WellItemSelectMenu.SelectedItem")]
-#[parent(crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)]
-pub struct WellItemSelectMenu_SelectedItem {
-    #[rename(name = "m_MenuItem")]
-    pub m_menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
-}
-
-#[cfg(feature = "app-wellitemselectmenu")]
-#[::unity2::methods]
-impl WellItemSelectMenu_SelectedItem {
-    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)` overload"]
-    #[method(name = ".ctor", args = 3)]
-    pub fn ctor(
-        self,
-        unit: crate::app::unit::Unit,
-        owner_item_index: i32,
-        menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
-    ) -> ();
-
-    #[doc = "`IsSame(crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "IsSame", args = 2)]
-    pub fn is_same(self, unit: crate::app::unit::Unit, owner_item_index: i32) -> bool;
-
-    #[doc = "`get_OriginalMenuItem()` overload"]
-    #[method(name = "get_OriginalMenuItem", args = 0)]
-    pub fn get_original_menu_item(
-        self,
-    ) -> crate::app::wellitemselectmenuitem::WellItemSelectMenuItem;
-}
-
-#[cfg(feature = "app-wellitemselectmenu")]
-impl WellItemSelectMenu_SelectedItem {
-    #[doc = "`.ctor(crate::app::unit::Unit, i32, crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)` — overload selector"]
-    pub fn new(
-        unit: crate::app::unit::Unit,
-        owner_item_index: i32,
-        menu_item: crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,
-    ) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(WellItemSelectMenu_SelectedItem),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IWellItemSelectMenu_SelectedItemMethods>::ctor(
-            this,
-            unit,
-            owner_item_index,
-            menu_item,
-        );
         this
     }
 }

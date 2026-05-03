@@ -50,6 +50,38 @@ impl TerrainCallbacks_TextureChangedCallback {
     }
 }
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terraincallbacks/TerrainCallbacks.md"))]
+#[::unity2::class(
+    namespace = "UnityEngine.Experimental.TerrainAPI",
+    name = "TerrainCallbacks"
+)]
+#[parent(crate::system::object::Object)]
+pub struct TerrainCallbacks {
+# [static_field] # [rename (name = "heightmapChanged")] pub heightmap_changed : crate :: unity_engine :: experimental :: terrain_api :: terraincallbacks :: TerrainCallbacks_HeightmapChangedCallback ,
+# [static_field] # [rename (name = "textureChanged")] pub texture_changed : crate :: unity_engine :: experimental :: terrain_api :: terraincallbacks :: TerrainCallbacks_TextureChangedCallback ,
+}
+
+#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
+#[::unity2::methods]
+impl TerrainCallbacks {
+    #[doc = "`InvokeHeightmapChangedCallback(crate::unity_engine::terraindata::TerrainData, crate::unity_engine::rectint::RectInt, bool)` overload"]
+    #[method(name = "InvokeHeightmapChangedCallback", args = 3)]
+    pub fn invoke_heightmap_changed_callback(
+        terrain_data: crate::unity_engine::terraindata::TerrainData,
+        height_region: crate::unity_engine::rectint::RectInt,
+        synched: bool,
+    ) -> ();
+
+    #[doc = "`InvokeTextureChangedCallback(crate::unity_engine::terraindata::TerrainData, ::unity2::Il2CppString, crate::unity_engine::rectint::RectInt, bool)` overload"]
+    #[method(name = "InvokeTextureChangedCallback", args = 4)]
+    pub fn invoke_texture_changed_callback(
+        terrain_data: crate::unity_engine::terraindata::TerrainData,
+        texture_name: ::unity2::Il2CppString,
+        texel_region: crate::unity_engine::rectint::RectInt,
+        synched: bool,
+    ) -> ();
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terraincallbacks/TerrainCallbacks_HeightmapChangedCallback.md"))]
 #[::unity2::class(
     namespace = "UnityEngine.Experimental.TerrainAPI",
@@ -89,36 +121,4 @@ impl TerrainCallbacks_HeightmapChangedCallback {
         <Self as ITerrainCallbacks_HeightmapChangedCallbackMethods>::ctor(this, object, method);
         this
     }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/unity_engine/experimental/terrain_api/terraincallbacks/TerrainCallbacks.md"))]
-#[::unity2::class(
-    namespace = "UnityEngine.Experimental.TerrainAPI",
-    name = "TerrainCallbacks"
-)]
-#[parent(crate::system::object::Object)]
-pub struct TerrainCallbacks {
-# [static_field] # [rename (name = "heightmapChanged")] pub heightmap_changed : crate :: unity_engine :: experimental :: terrain_api :: terraincallbacks :: TerrainCallbacks_HeightmapChangedCallback ,
-# [static_field] # [rename (name = "textureChanged")] pub texture_changed : crate :: unity_engine :: experimental :: terrain_api :: terraincallbacks :: TerrainCallbacks_TextureChangedCallback ,
-}
-
-#[cfg(feature = "unity_engine-experimental-terrain_api-terraincallbacks")]
-#[::unity2::methods]
-impl TerrainCallbacks {
-    #[doc = "`InvokeHeightmapChangedCallback(crate::unity_engine::terraindata::TerrainData, crate::unity_engine::rectint::RectInt, bool)` overload"]
-    #[method(name = "InvokeHeightmapChangedCallback", args = 3)]
-    pub fn invoke_heightmap_changed_callback(
-        terrain_data: crate::unity_engine::terraindata::TerrainData,
-        height_region: crate::unity_engine::rectint::RectInt,
-        synched: bool,
-    ) -> ();
-
-    #[doc = "`InvokeTextureChangedCallback(crate::unity_engine::terraindata::TerrainData, ::unity2::Il2CppString, crate::unity_engine::rectint::RectInt, bool)` overload"]
-    #[method(name = "InvokeTextureChangedCallback", args = 4)]
-    pub fn invoke_texture_changed_callback(
-        terrain_data: crate::unity_engine::terraindata::TerrainData,
-        texture_name: ::unity2::Il2CppString,
-        texel_region: crate::unity_engine::rectint::RectInt,
-        synched: bool,
-    ) -> ();
 }

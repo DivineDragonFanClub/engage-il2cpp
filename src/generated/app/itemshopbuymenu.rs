@@ -12,35 +12,35 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuymenu/ItemShopBuyMenu_RequestCloseEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "ItemShopBuyMenu.RequestCloseEventHandler")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuymenu/ItemShopBuyMenu_SelectEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "ItemShopBuyMenu.SelectEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ItemShopBuyMenu_RequestCloseEventHandler {}
+pub struct ItemShopBuyMenu_SelectEventHandler {}
 
 #[cfg(feature = "app-itemshopbuymenu")]
 #[::unity2::methods]
-impl ItemShopBuyMenu_RequestCloseEventHandler {
+impl ItemShopBuyMenu_SelectEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+    #[doc = "`Invoke(crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit: crate::app::unititem::UnitItem) -> ();
 }
 
 #[cfg(feature = "app-itemshopbuymenu")]
-impl ItemShopBuyMenu_RequestCloseEventHandler {
+impl ItemShopBuyMenu_SelectEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(ItemShopBuyMenu_RequestCloseEventHandler),
+                ::core::stringify!(ItemShopBuyMenu_SelectEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IItemShopBuyMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
+        <Self as IItemShopBuyMenu_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -74,6 +74,75 @@ impl ItemShopBuyMenu_DecideEventHandler {
             )
         });
         <Self as IItemShopBuyMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuymenu/ItemShopBuyMenu_RequestCloseEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "ItemShopBuyMenu.RequestCloseEventHandler")]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ItemShopBuyMenu_RequestCloseEventHandler {}
+
+#[cfg(feature = "app-itemshopbuymenu")]
+#[::unity2::methods]
+impl ItemShopBuyMenu_RequestCloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-itemshopbuymenu")]
+impl ItemShopBuyMenu_RequestCloseEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemShopBuyMenu_RequestCloseEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemShopBuyMenu_RequestCloseEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuymenu/ItemShopBuyMenu_ChangeUnitToPrevEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "ItemShopBuyMenu.ChangeUnitToPrevEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct ItemShopBuyMenu_ChangeUnitToPrevEventHandler {}
+
+#[cfg(feature = "app-itemshopbuymenu")]
+#[::unity2::methods]
+impl ItemShopBuyMenu_ChangeUnitToPrevEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke(crate::app::unititem::UnitItem)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(self, unit_item: crate::app::unititem::UnitItem) -> ();
+}
+
+#[cfg(feature = "app-itemshopbuymenu")]
+impl ItemShopBuyMenu_ChangeUnitToPrevEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ItemShopBuyMenu_ChangeUnitToPrevEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemShopBuyMenu_ChangeUnitToPrevEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -342,75 +411,6 @@ impl ItemShopBuyMenu_SwitchDetailDisplaywayEventHandler {
         <Self as IItemShopBuyMenu_SwitchDetailDisplaywayEventHandlerMethods>::ctor(
             this, object, method,
         );
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuymenu/ItemShopBuyMenu_ChangeUnitToPrevEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "ItemShopBuyMenu.ChangeUnitToPrevEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ItemShopBuyMenu_ChangeUnitToPrevEventHandler {}
-
-#[cfg(feature = "app-itemshopbuymenu")]
-#[::unity2::methods]
-impl ItemShopBuyMenu_ChangeUnitToPrevEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, unit_item: crate::app::unititem::UnitItem) -> ();
-}
-
-#[cfg(feature = "app-itemshopbuymenu")]
-impl ItemShopBuyMenu_ChangeUnitToPrevEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemShopBuyMenu_ChangeUnitToPrevEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemShopBuyMenu_ChangeUnitToPrevEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/itemshopbuymenu/ItemShopBuyMenu_SelectEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "ItemShopBuyMenu.SelectEventHandler")]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct ItemShopBuyMenu_SelectEventHandler {}
-
-#[cfg(feature = "app-itemshopbuymenu")]
-#[::unity2::methods]
-impl ItemShopBuyMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::unititem::UnitItem)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(self, unit: crate::app::unititem::UnitItem) -> ();
-}
-
-#[cfg(feature = "app-itemshopbuymenu")]
-impl ItemShopBuyMenu_SelectEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ItemShopBuyMenu_SelectEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IItemShopBuyMenu_SelectEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }

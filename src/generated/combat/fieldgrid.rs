@@ -14,43 +14,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fieldgrid/FieldGrid_PlayFieldRect.md"))]
-#[repr(C)]
-#[derive(::core::clone::Clone, ::core::marker::Copy)]
-pub struct FieldGrid_PlayFieldRect {
-    pub play_field: crate::unity_engine::rect::Rect,
-    pub cell_size: f32,
-}
-
-impl ::unity2::ClassIdentity for FieldGrid_PlayFieldRect {
-    const NAMESPACE: &'static str = "Combat";
-
-    const NAME: &'static str = "FieldGrid.PlayFieldRect";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for FieldGrid_PlayFieldRect {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-#[cfg(feature = "combat-fieldgrid")]
-#[::unity2::methods(value)]
-impl FieldGrid_PlayFieldRect {
-    #[doc = "`.ctor(crate::unity_engine::rect::Rect, f32)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, rect: crate::unity_engine::rect::Rect, size: f32) -> ();
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/combat/fieldgrid/FieldGrid.md"))]
 #[::unity2::class(namespace = "Combat", name = "FieldGrid")]
 #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
@@ -111,4 +74,41 @@ impl FieldGrid {
         <Self as IFieldGridMethods>::ctor(this);
         this
     }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/combat/fieldgrid/FieldGrid_PlayFieldRect.md"))]
+#[repr(C)]
+#[derive(::core::clone::Clone, ::core::marker::Copy)]
+pub struct FieldGrid_PlayFieldRect {
+    pub play_field: crate::unity_engine::rect::Rect,
+    pub cell_size: f32,
+}
+
+impl ::unity2::ClassIdentity for FieldGrid_PlayFieldRect {
+    const NAMESPACE: &'static str = "Combat";
+
+    const NAME: &'static str = "FieldGrid.PlayFieldRect";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for FieldGrid_PlayFieldRect {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+#[cfg(feature = "combat-fieldgrid")]
+#[::unity2::methods(value)]
+impl FieldGrid_PlayFieldRect {
+    #[doc = "`.ctor(crate::unity_engine::rect::Rect, f32)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, rect: crate::unity_engine::rect::Rect, size: f32) -> ();
 }

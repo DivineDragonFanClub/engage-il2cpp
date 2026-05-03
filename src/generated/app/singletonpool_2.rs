@@ -6,39 +6,6 @@ use crate::system::object::IObject;
 use crate::system::object::Object;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/singletonpool_2/SingletonPool_2_Comparer.md"))]
-#[::unity2::class(namespace = "App", name = "SingletonPool`2.Comparer")]
-#[parent(crate::system::object::Object)]
-pub struct SingletonPool_2_Comparer<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {}
-
-#[cfg(feature = "app-singletonpool_2")]
-#[::unity2::methods]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SingletonPool_2_Comparer<T0, T1> {
-    #[doc = "`Compare(T1, T1)` overload"]
-    #[method(name = "Compare", args = 2)]
-    pub fn compare(self, x: T1, y: T1) -> i32;
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-singletonpool_2")]
-impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SingletonPool_2_Comparer<T0, T1> {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(SingletonPool_2_Comparer),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as ISingletonPool_2_ComparerMethods<T0, T1>>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/singletonpool_2/SingletonPool_2.md"))]
 #[::unity2::class(namespace = "App", name = "SingletonPool`2")]
 # [parent (crate :: app :: singletonclass_1 :: SingletonClass_1 < T0 >)]
@@ -172,6 +139,39 @@ impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SingletonPool_2<T
             )
         });
         <Self as ISingletonPool_2Methods<T0, T1>>::ctor(this, capacity);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/singletonpool_2/SingletonPool_2_Comparer.md"))]
+#[::unity2::class(namespace = "App", name = "SingletonPool`2.Comparer")]
+#[parent(crate::system::object::Object)]
+pub struct SingletonPool_2_Comparer<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> {}
+
+#[cfg(feature = "app-singletonpool_2")]
+#[::unity2::methods]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SingletonPool_2_Comparer<T0, T1> {
+    #[doc = "`Compare(T1, T1)` overload"]
+    #[method(name = "Compare", args = 2)]
+    pub fn compare(self, x: T1, y: T1) -> i32;
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-singletonpool_2")]
+impl<T0: ::unity2::ClassIdentity, T1: ::unity2::ClassIdentity> SingletonPool_2_Comparer<T0, T1> {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(SingletonPool_2_Comparer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISingletonPool_2_ComparerMethods<T0, T1>>::ctor(this);
         this
     }
 }

@@ -12,52 +12,6 @@ use crate::unity_engine::object_2::IObject_2;
 use crate::unity_engine::object_2::Object_2;
 use ::unity2::prelude::*;
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/expsetter/ExpSetter.md"))]
-#[::unity2::class(namespace = "App", name = "ExpSetter")]
-#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
-pub struct ExpSetter {
-    #[rename(name = "InAnimWait")]
-    pub in_anim_wait: f32,
-    #[rename(name = "m_UnitWindow")]
-    pub m_unit_window: crate::app::expsetter::ExpSetter_ExpWindow,
-}
-
-#[cfg(feature = "app-expsetter")]
-#[::unity2::methods]
-impl ExpSetter {
-    #[doc = "`Setup(crate::app::unit::Unit, i32)` overload"]
-    #[method(name = "Setup", args = 2)]
-    pub fn setup(self, unit: crate::app::unit::Unit, gain_exp: i32) -> ();
-
-    #[doc = "`SetExp(crate::app::unit::Unit)` overload"]
-    #[method(name = "SetExp", args = 1)]
-    pub fn set_exp(self, main: crate::app::unit::Unit) -> ();
-
-    #[doc = "`SetAddExpMain(i32)` overload"]
-    #[method(name = "SetAddExpMain", args = 1)]
-    pub fn set_add_exp_main(self, exp: i32) -> ();
-
-    #[doc = "`.ctor()` overload"]
-    #[method(name = ".ctor", args = 0)]
-    pub fn ctor(self) -> ();
-}
-
-#[cfg(feature = "app-expsetter")]
-impl ExpSetter {
-    #[doc = "`.ctor()` — no args"]
-    pub fn new() -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(ExpSetter),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IExpSetterMethods>::ctor(this);
-        this
-    }
-}
-
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/expsetter/ExpSetter_ExpWindow.md"))]
 #[::unity2::class(namespace = "App", name = "ExpSetter.ExpWindow")]
 #[parent(crate::system::object::Object)]
@@ -124,6 +78,52 @@ impl ExpSetter_ExpWindow {
             )
         });
         <Self as IExpSetter_ExpWindowMethods>::ctor(this);
+        this
+    }
+}
+
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/expsetter/ExpSetter.md"))]
+#[::unity2::class(namespace = "App", name = "ExpSetter")]
+#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+pub struct ExpSetter {
+    #[rename(name = "InAnimWait")]
+    pub in_anim_wait: f32,
+    #[rename(name = "m_UnitWindow")]
+    pub m_unit_window: crate::app::expsetter::ExpSetter_ExpWindow,
+}
+
+#[cfg(feature = "app-expsetter")]
+#[::unity2::methods]
+impl ExpSetter {
+    #[doc = "`Setup(crate::app::unit::Unit, i32)` overload"]
+    #[method(name = "Setup", args = 2)]
+    pub fn setup(self, unit: crate::app::unit::Unit, gain_exp: i32) -> ();
+
+    #[doc = "`SetExp(crate::app::unit::Unit)` overload"]
+    #[method(name = "SetExp", args = 1)]
+    pub fn set_exp(self, main: crate::app::unit::Unit) -> ();
+
+    #[doc = "`SetAddExpMain(i32)` overload"]
+    #[method(name = "SetAddExpMain", args = 1)]
+    pub fn set_add_exp_main(self, exp: i32) -> ();
+
+    #[doc = "`.ctor()` overload"]
+    #[method(name = ".ctor", args = 0)]
+    pub fn ctor(self) -> ();
+}
+
+#[cfg(feature = "app-expsetter")]
+impl ExpSetter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(ExpSetter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExpSetterMethods>::ctor(this);
         this
     }
 }

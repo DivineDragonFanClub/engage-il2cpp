@@ -18,6 +18,86 @@ use crate::system::valuetype::IValueType;
 use crate::system::valuetype::ValueType;
 use ::unity2::prelude::*;
 
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyDownEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefreshUnitSetDecideMenu.KeyDownEventHandler"
+)]
+#[parent(crate::system::multicastdelegate::MulticastDelegate)]
+pub struct RefreshUnitSetDecideMenu_KeyDownEventHandler {}
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+#[::unity2::methods]
+impl RefreshUnitSetDecideMenu_KeyDownEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
+    #[method(name = ".ctor", args = 2)]
+    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
+
+    #[doc = "`Invoke()` overload"]
+    #[method(name = "Invoke", args = 0)]
+    pub fn invoke(self) -> ();
+}
+
+#[cfg(feature = "app-refreshunitsetdecidemenu")]
+impl RefreshUnitSetDecideMenu_KeyDownEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
+        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}::{} failed to instantiate",
+                ::core::stringify!(RefreshUnitSetDecideMenu_KeyDownEventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
+}
+
+#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_Result2.md"))]
+#[repr(C)]
+#[derive(
+    ::core::clone::Clone,
+    ::core::marker::Copy,
+    ::core::fmt::Debug,
+    ::core::cmp::PartialEq,
+    ::core::cmp::Eq,
+)]
+pub struct RefreshUnitSetDecideMenu_Result2 {
+    pub value: i32,
+}
+
+impl ::unity2::ClassIdentity for RefreshUnitSetDecideMenu_Result2 {
+    const NAMESPACE: &'static str = "App";
+
+    const NAME: &'static str = "RefreshUnitSetDecideMenu.Result2";
+
+    fn class() -> ::unity2::Class {
+        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+
+        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
+    }
+}
+
+impl ::unity2::IlType for RefreshUnitSetDecideMenu_Result2 {
+    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
+        &<Self as ::unity2::ClassIdentity>::class()
+            .raw()
+            ._1
+            .byval_arg
+    }
+}
+
+impl RefreshUnitSetDecideMenu_Result2 {
+    pub fn ok() -> Self {
+        Self { value: 0 }
+    }
+
+    pub fn cancel() -> Self {
+        Self { value: 1 }
+    }
+}
+
 # [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu.md"))]
 #[::unity2::class(namespace = "App", name = "RefreshUnitSetDecideMenu")]
 #[parent(crate::app::basicmenu::BasicMenu)]
@@ -158,17 +238,14 @@ impl RefreshUnitSetDecideMenu {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyDownEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RefreshUnitSetDecideMenu.KeyDownEventHandler"
-)]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyUpEventHandler.md"))]
+#[::unity2::class(namespace = "App", name = "RefreshUnitSetDecideMenu.KeyUpEventHandler")]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RefreshUnitSetDecideMenu_KeyDownEventHandler {}
+pub struct RefreshUnitSetDecideMenu_KeyUpEventHandler {}
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
 #[::unity2::methods]
-impl RefreshUnitSetDecideMenu_KeyDownEventHandler {
+impl RefreshUnitSetDecideMenu_KeyUpEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
@@ -179,100 +256,17 @@ impl RefreshUnitSetDecideMenu_KeyDownEventHandler {
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl RefreshUnitSetDecideMenu_KeyDownEventHandler {
+impl RefreshUnitSetDecideMenu_KeyUpEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetDecideMenu_KeyDownEventHandler),
+                ::core::stringify!(RefreshUnitSetDecideMenu_KeyUpEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRefreshUnitSetDecideMenu_KeyDownEventHandlerMethods>::ctor(this, object, method);
-        this
-    }
-}
-
-#[doc = include_str!(concat!(env!("CARGO_MANIFEST_DIR"), "/", "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_Result2.md"))]
-#[repr(C)]
-#[derive(
-    ::core::clone::Clone,
-    ::core::marker::Copy,
-    ::core::fmt::Debug,
-    ::core::cmp::PartialEq,
-    ::core::cmp::Eq,
-)]
-pub struct RefreshUnitSetDecideMenu_Result2 {
-    pub value: i32,
-}
-
-impl ::unity2::ClassIdentity for RefreshUnitSetDecideMenu_Result2 {
-    const NAMESPACE: &'static str = "App";
-
-    const NAME: &'static str = "RefreshUnitSetDecideMenu.Result2";
-
-    fn class() -> ::unity2::Class {
-        static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
-
-        *CACHE.get_or_init(|| ::unity2::Class::lookup(Self::NAMESPACE, Self::NAME))
-    }
-}
-
-impl ::unity2::IlType for RefreshUnitSetDecideMenu_Result2 {
-    fn il_type() -> &'static ::unity2::il2cpp::Il2CppType {
-        &<Self as ::unity2::ClassIdentity>::class()
-            .raw()
-            ._1
-            .byval_arg
-    }
-}
-
-impl RefreshUnitSetDecideMenu_Result2 {
-    pub fn ok() -> Self {
-        Self { value: 0 }
-    }
-
-    pub fn cancel() -> Self {
-        Self { value: 1 }
-    }
-}
-
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_DecideEventHandler.md"))]
-#[::unity2::class(
-    namespace = "App",
-    name = "RefreshUnitSetDecideMenu.DecideEventHandler"
-)]
-#[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RefreshUnitSetDecideMenu_DecideEventHandler {}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-#[::unity2::methods]
-impl RefreshUnitSetDecideMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
-    #[method(name = ".ctor", args = 2)]
-    pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
-
-    #[doc = "`Invoke(crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2)` overload"]
-    #[method(name = "Invoke", args = 1)]
-    pub fn invoke(
-        self,
-        result: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2,
-    ) -> ();
-}
-
-#[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl RefreshUnitSetDecideMenu_DecideEventHandler {
-    #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
-    pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
-        let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
-            panic!(
-                "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetDecideMenu_DecideEventHandler),
-                ::core::stringify!(new),
-            )
-        });
-        <Self as IRefreshUnitSetDecideMenu_DecideEventHandlerMethods>::ctor(this, object, method);
+        <Self as IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
@@ -371,35 +365,41 @@ impl RefreshUnitSetDecideMenu_RefreshUnitSetDecideMenuItem {
     }
 }
 
-# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_KeyUpEventHandler.md"))]
-#[::unity2::class(namespace = "App", name = "RefreshUnitSetDecideMenu.KeyUpEventHandler")]
+# [doc = include_str ! (concat ! (env ! ("CARGO_MANIFEST_DIR") , "/" , "docs/app/refreshunitsetdecidemenu/RefreshUnitSetDecideMenu_DecideEventHandler.md"))]
+#[::unity2::class(
+    namespace = "App",
+    name = "RefreshUnitSetDecideMenu.DecideEventHandler"
+)]
 #[parent(crate::system::multicastdelegate::MulticastDelegate)]
-pub struct RefreshUnitSetDecideMenu_KeyUpEventHandler {}
+pub struct RefreshUnitSetDecideMenu_DecideEventHandler {}
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
 #[::unity2::methods]
-impl RefreshUnitSetDecideMenu_KeyUpEventHandler {
+impl RefreshUnitSetDecideMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]
     #[method(name = ".ctor", args = 2)]
     pub fn ctor(self, object: crate::system::object::Object, method: ::unity2::IntPtr) -> ();
 
-    #[doc = "`Invoke()` overload"]
-    #[method(name = "Invoke", args = 0)]
-    pub fn invoke(self) -> ();
+    #[doc = "`Invoke(crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2)` overload"]
+    #[method(name = "Invoke", args = 1)]
+    pub fn invoke(
+        self,
+        result: crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu_Result2,
+    ) -> ();
 }
 
 #[cfg(feature = "app-refreshunitsetdecidemenu")]
-impl RefreshUnitSetDecideMenu_KeyUpEventHandler {
+impl RefreshUnitSetDecideMenu_DecideEventHandler {
     #[doc = "`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]
     pub fn new(object: crate::system::object::Object, method: ::unity2::IntPtr) -> Self {
         let this = <Self as ::unity2::FromIlInstance>::instantiate().unwrap_or_else(|| {
             panic!(
                 "{}::{} failed to instantiate",
-                ::core::stringify!(RefreshUnitSetDecideMenu_KeyUpEventHandler),
+                ::core::stringify!(RefreshUnitSetDecideMenu_DecideEventHandler),
                 ::core::stringify!(new),
             )
         });
-        <Self as IRefreshUnitSetDecideMenu_KeyUpEventHandlerMethods>::ctor(this, object, method);
+        <Self as IRefreshUnitSetDecideMenu_DecideEventHandlerMethods>::ctor(this, object, method);
         this
     }
 }
