@@ -1386,6 +1386,14 @@ mod asset_bundle_ext {
     use crate::unity_engine::assetbundlecreaterequest::AssetBundleCreateRequest;
     use unity2::{Array, OptionalMethod};
 
+    #[skyline::from_offset(0x491ff0)]
+    unsafe fn engage_method_from_full_name(name: *const u8) -> *const u8;
+
+    fn lookup_method_by_signature(full_signature: &str) -> *const u8 {
+        let c = std::ffi::CString::new(full_signature).unwrap();
+        unsafe { engage_method_from_full_name(c.as_ptr() as *const u8) }
+    }
+
     pub trait AssetBundleExt {
         fn load_from_memory_async_internal(binary: Array<u8>, crc: u32) -> AssetBundleCreateRequest;
     }
@@ -1394,15 +1402,14 @@ mod asset_bundle_ext {
         fn load_from_memory_async_internal(binary: Array<u8>, crc: u32) -> AssetBundleCreateRequest {
             static METHOD_PTR: ::std::sync::OnceLock<usize> = ::std::sync::OnceLock::new();
             let ptr = *METHOD_PTR.get_or_init(|| {
-                let mi = ::unity2::lookup::method_info_on_class(
-                    <AssetBundle as ::unity2::ClassIdentity>::class(),
-                    "LoadFromMemoryAsync_Internal",
-                    2,
-                )
-                .expect(
-                    "UnityEngine.AssetBundle.LoadFromMemoryAsync_Internal not found in metadata",
+                let p = lookup_method_by_signature(
+                    "UnityEngine.AssetBundle::LoadFromMemoryAsync_Internal(System.Byte[],System.UInt32)",
                 );
-                mi.method_ptr as usize
+                assert!(
+                    !p.is_null(),
+                    "UnityEngine.AssetBundle.LoadFromMemoryAsync_Internal not found via runtime full-signature lookup"
+                );
+                p as usize
             });
 
             type RawFn = extern "C" fn(Array<u8>, u32, OptionalMethod) -> AssetBundleCreateRequest;
