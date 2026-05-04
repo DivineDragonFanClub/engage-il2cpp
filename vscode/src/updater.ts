@@ -2,9 +2,7 @@ import * as vscode from "vscode";
 
 const REPO = "DivineDragonFanClub/engage-il2cpp";
 const TAG_PREFIX = "vscode-v";
-const CACHE_KEY = "engage.updater.lastCheck";
 const ETAG_KEY = "engage.updater.lastEtag";
-const CHECK_INTERVAL_MS = 24 * 60 * 60 * 1000;
 
 interface GitHubRelease {
     tag_name: string;
@@ -34,26 +32,17 @@ export function activateUpdater(context: vscode.ExtensionContext, output: vscode
 }
 
 async function checkForUpdates(context: vscode.ExtensionContext, output: vscode.OutputChannel, autoApply: boolean): Promise<void> {
-    const lastCheck = context.globalState.get<number>(CACHE_KEY, 0);
-    const now = Date.now();
+    const fetched = await fetchLatestRelease(context.globalState.get<string>(ETAG_KEY));
 
-    if (now - lastCheck < CHECK_INTERVAL_MS) {
+    if (fetched === "not-modified" || !fetched) {
         return;
     }
 
-    const release = await fetchLatestRelease(context.globalState.get<string>(ETAG_KEY));
-
-    if (release === "not-modified") {
-        await context.globalState.update(CACHE_KEY, now);
-        return;
+    if (fetched.etag) {
+        await context.globalState.update(ETAG_KEY, fetched.etag);
     }
 
-    if (!release) {
-        return;
-    }
-
-    await context.globalState.update(CACHE_KEY, now);
-
+    const release = fetched.release;
     const currentVersion = context.extension.packageJSON.version as string;
     const latestVersion = release.tag_name.replace(TAG_PREFIX, "").replace(/^v/, "");
 
@@ -84,7 +73,12 @@ async function checkForUpdates(context: vscode.ExtensionContext, output: vscode.
     }
 }
 
-async function fetchLatestRelease(etag: string | undefined): Promise<GitHubRelease | "not-modified" | undefined> {
+interface FetchedRelease {
+    release: GitHubRelease;
+    etag: string | null;
+}
+
+async function fetchLatestRelease(etag: string | undefined): Promise<FetchedRelease | "not-modified" | undefined> {
     const url = `https://api.github.com/repos/${REPO}/releases/latest`;
     const headers: Record<string, string> = {
         Accept: "application/vnd.github+json",
@@ -105,7 +99,10 @@ async function fetchLatestRelease(etag: string | undefined): Promise<GitHubRelea
         return undefined;
     }
 
-    return (await response.json()) as GitHubRelease;
+    const release = (await response.json()) as GitHubRelease;
+    const newEtag = response.headers.get("etag");
+
+    return { release, etag: newEtag };
 }
 
 async function applyUpdate(vsixUrl: string, output: vscode.OutputChannel): Promise<void> {
