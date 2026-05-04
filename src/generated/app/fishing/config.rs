@@ -2,5 +2,3 @@
 
 #[cfg(any(feature = "app-fishing-config-fixcameraconfig-types"))]
 pub mod fixcameraconfig;
-#[cfg(any(feature = "app-fishing-config-fixcameraconfig-types"))]
-pub use fixcameraconfig::*;

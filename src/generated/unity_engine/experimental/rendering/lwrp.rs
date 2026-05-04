@@ -2,5 +2,3 @@
 
 #[cfg(any(feature = "unity_engine-experimental-rendering-lwrp-light2d-types"))]
 pub mod light2d;
-#[cfg(any(feature = "unity_engine-experimental-rendering-lwrp-light2d-types"))]
-pub use light2d::*;

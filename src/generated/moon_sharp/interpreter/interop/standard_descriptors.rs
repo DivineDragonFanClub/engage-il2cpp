@@ -2,8 +2,6 @@
 
 #[cfg(any(feature = "moon_sharp-interpreter-interop-standard_descriptors-eventfacade-types"))]
 pub mod eventfacade;
-#[cfg(any(feature = "moon_sharp-interpreter-interop-standard_descriptors-eventfacade-types"))]
-pub use eventfacade::*;
 #[cfg(any(
     feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-defaultvalue-types",
     feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwiredmemberdescriptor-types",

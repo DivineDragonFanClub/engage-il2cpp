@@ -2,21 +2,11 @@
 
 #[cfg(any(feature = "app-struct_object-basearrayitem_1-types"))]
 pub mod basearrayitem_1;
-#[cfg(any(feature = "app-struct_object-basearrayitem_1-types"))]
-pub use basearrayitem_1::*;
 #[cfg(any(feature = "app-struct_object-basedata_3-types"))]
 pub mod basedata_3;
-#[cfg(any(feature = "app-struct_object-basedata_3-types"))]
-pub use basedata_3::*;
 #[cfg(any(feature = "app-struct_object-baseitem-types"))]
 pub mod baseitem;
-#[cfg(any(feature = "app-struct_object-baseitem-types"))]
-pub use baseitem::*;
 #[cfg(any(feature = "app-struct_object-basepiece-types"))]
 pub mod basepiece;
-#[cfg(any(feature = "app-struct_object-basepiece-types"))]
-pub use basepiece::*;
 #[cfg(any(feature = "app-struct_object-runtimesample-types"))]
 pub mod runtimesample;
-#[cfg(any(feature = "app-struct_object-runtimesample-types"))]
-pub use runtimesample::*;

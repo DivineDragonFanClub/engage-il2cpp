@@ -2,8 +2,6 @@
 
 #[cfg(any(feature = "moon_sharp-interpreter-diagnostics-namespacedoc_7-types"))]
 pub mod namespacedoc_7;
-#[cfg(any(feature = "moon_sharp-interpreter-diagnostics-namespacedoc_7-types"))]
-pub use namespacedoc_7::*;
 #[cfg(any(
     feature = "moon_sharp-interpreter-diagnostics-performance_counters-dummyperformancestopwatch-types",
     feature = "moon_sharp-interpreter-diagnostics-performance_counters-globalperformancestopwatch-types",
@@ -13,17 +11,9 @@ pub use namespacedoc_7::*;
 pub mod performance_counters;
 #[cfg(any(feature = "moon_sharp-interpreter-diagnostics-performancecounter-types"))]
 pub mod performancecounter;
-#[cfg(any(feature = "moon_sharp-interpreter-diagnostics-performancecounter-types"))]
-pub use performancecounter::*;
 #[cfg(any(feature = "moon_sharp-interpreter-diagnostics-performancecountertype-types"))]
 pub mod performancecountertype;
-#[cfg(any(feature = "moon_sharp-interpreter-diagnostics-performancecountertype-types"))]
-pub use performancecountertype::*;
 #[cfg(any(feature = "moon_sharp-interpreter-diagnostics-performanceresult-types"))]
 pub mod performanceresult;
-#[cfg(any(feature = "moon_sharp-interpreter-diagnostics-performanceresult-types"))]
-pub use performanceresult::*;
 #[cfg(any(feature = "moon_sharp-interpreter-diagnostics-performancestatistics-types"))]
 pub mod performancestatistics;
-#[cfg(any(feature = "moon_sharp-interpreter-diagnostics-performancestatistics-types"))]
-pub use performancestatistics::*;

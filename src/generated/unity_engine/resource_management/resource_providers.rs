@@ -5,176 +5,82 @@
 ))]
 pub mod assetbundlelocalprovider;
 #[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-assetbundlelocalprovider-types"
-))]
-pub use assetbundlelocalprovider::*;
-#[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource-types"
 ))]
 pub mod assetbundlelocalresource;
-#[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-assetbundlelocalresource-types"
-))]
-pub use assetbundlelocalresource::*;
 #[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-assetbundlemanager-types"
 ))]
 pub mod assetbundlemanager;
 #[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-assetbundlemanager-types"
-))]
-pub use assetbundlemanager::*;
-#[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-assetbundleprovider-types"
 ))]
 pub mod assetbundleprovider;
-#[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-assetbundleprovider-types"
-))]
-pub use assetbundleprovider::*;
 #[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-assetbundlerequestoptions-types"
 ))]
 pub mod assetbundlerequestoptions;
 #[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-assetbundlerequestoptions-types"
-))]
-pub use assetbundlerequestoptions::*;
-#[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-assetbundleresource-types"
 ))]
 pub mod assetbundleresource;
-#[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-assetbundleresource-types"
-))]
-pub use assetbundleresource::*;
 #[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-atlasspriteprovider-types"
 ))]
 pub mod atlasspriteprovider;
 #[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-atlasspriteprovider-types"
-))]
-pub use atlasspriteprovider::*;
-#[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-bundledassetprovider-types"
 ))]
 pub mod bundledassetprovider;
-#[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-bundledassetprovider-types"
-))]
-pub use bundledassetprovider::*;
 #[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-iassetbundleresource_interface-types"
 ))]
 pub mod iassetbundleresource_interface;
 #[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-iassetbundleresource_interface-types"
-))]
-pub use iassetbundleresource_interface::*;
-#[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-iinstanceprovider_interface-types"
 ))]
 pub mod iinstanceprovider_interface;
-#[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-iinstanceprovider_interface-types"
-))]
-pub use iinstanceprovider_interface::*;
 #[cfg(any(feature = "unity_engine-resource_management-resource_providers-instanceprovider-types"))]
 pub mod instanceprovider;
-#[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-instanceprovider-types"
-))]
-pub use instanceprovider::*;
 #[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-instantiationparameters-types"
 ))]
 pub mod instantiationparameters;
 #[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-instantiationparameters-types"
-))]
-pub use instantiationparameters::*;
-#[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-iresourceprovider-types"
 ))]
 pub mod iresourceprovider;
-#[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-iresourceprovider-types"
-))]
-pub use iresourceprovider::*;
 #[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-isceneprovider_interface-types"
 ))]
 pub mod isceneprovider_interface;
 #[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-isceneprovider_interface-types"
-))]
-pub use isceneprovider_interface::*;
-#[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-jsonassetprovider-types"
 ))]
 pub mod jsonassetprovider;
 #[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-jsonassetprovider-types"
-))]
-pub use jsonassetprovider::*;
-#[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider-types"
 ))]
 pub mod legacyresourcesprovider;
-#[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-legacyresourcesprovider-types"
-))]
-pub use legacyresourcesprovider::*;
 #[cfg(any(feature = "unity_engine-resource_management-resource_providers-logger_2-types"))]
 pub mod logger_2;
-#[cfg(any(feature = "unity_engine-resource_management-resource_providers-logger_2-types"))]
-pub use logger_2::*;
 #[cfg(any(feature = "unity_engine-resource_management-resource_providers-providehandle-types"))]
 pub mod providehandle;
-#[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-providehandle-types"
-))]
-pub use providehandle::*;
 #[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-providerbehaviourflags-types"
 ))]
 pub mod providerbehaviourflags;
 #[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-providerbehaviourflags-types"
-))]
-pub use providerbehaviourflags::*;
-#[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-providerloadrequestoptions-types"
 ))]
 pub mod providerloadrequestoptions;
 #[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-providerloadrequestoptions-types"
-))]
-pub use providerloadrequestoptions::*;
-#[cfg(any(
     feature = "unity_engine-resource_management-resource_providers-resourceproviderbase-types"
 ))]
 pub mod resourceproviderbase;
-#[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-resourceproviderbase-types"
-))]
-pub use resourceproviderbase::*;
 #[cfg(any(feature = "unity_engine-resource_management-resource_providers-sceneinstance-types"))]
 pub mod sceneinstance;
-#[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-sceneinstance-types"
-))]
-pub use sceneinstance::*;
 #[cfg(any(feature = "unity_engine-resource_management-resource_providers-sceneprovider-types"))]
 pub mod sceneprovider;
-#[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-sceneprovider-types"
-))]
-pub use sceneprovider::*;
 #[cfg(any(feature = "unity_engine-resource_management-resource_providers-textdataprovider-types"))]
 pub mod textdataprovider;
-#[cfg(any(
-    feature = "unity_engine-resource_management-resource_providers-textdataprovider-types"
-))]
-pub use textdataprovider::*;

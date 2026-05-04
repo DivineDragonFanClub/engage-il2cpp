@@ -4,97 +4,47 @@
     feature = "unity_engine-rendering-universal-internal-additionallightsshadowcasterpass-types"
 ))]
 pub mod additionallightsshadowcasterpass;
-#[cfg(any(
-    feature = "unity_engine-rendering-universal-internal-additionallightsshadowcasterpass-types"
-))]
-pub use additionallightsshadowcasterpass::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-bitarray_2-types"))]
 pub mod bitarray_2;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-bitarray_2-types"))]
-pub use bitarray_2::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass-types"))]
 pub mod colorgradinglutpass;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-colorgradinglutpass-types"))]
-pub use colorgradinglutpass::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-copycolorpass-types"))]
 pub mod copycolorpass;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-copycolorpass-types"))]
-pub use copycolorpass::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-copydepthpass-types"))]
 pub mod copydepthpass;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-copydepthpass-types"))]
-pub use copydepthpass::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-deferredconfig-types"))]
 pub mod deferredconfig;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-deferredconfig-types"))]
-pub use deferredconfig::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-deferredlights-types"))]
 pub mod deferredlights;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-deferredlights-types"))]
-pub use deferredlights::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-deferredpass-types"))]
 pub mod deferredpass;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-deferredpass-types"))]
-pub use deferredpass::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-deferredtiler-types"))]
 pub mod deferredtiler;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-deferredtiler-types"))]
-pub use deferredtiler::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-depthnormalonlypass-types"))]
 pub mod depthnormalonlypass;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-depthnormalonlypass-types"))]
-pub use depthnormalonlypass::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-depthonlypass-types"))]
 pub mod depthonlypass;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-depthonlypass-types"))]
-pub use depthonlypass::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-drawobjectspass-types"))]
 pub mod drawobjectspass;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-drawobjectspass-types"))]
-pub use drawobjectspass::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-finalblitpass-types"))]
 pub mod finalblitpass;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-finalblitpass-types"))]
-pub use finalblitpass::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-forwardlights-types"))]
 pub mod forwardlights;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-forwardlights-types"))]
-pub use forwardlights::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-gbufferpass-types"))]
 pub mod gbufferpass;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-gbufferpass-types"))]
-pub use gbufferpass::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-lightflag-types"))]
 pub mod lightflag;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-lightflag-types"))]
-pub use lightflag::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-mainlightshadowcasterpass-types"))]
 pub mod mainlightshadowcasterpass;
-#[cfg(any(
-    feature = "unity_engine-rendering-universal-internal-mainlightshadowcasterpass-types"
-))]
-pub use mainlightshadowcasterpass::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-postprocesspass-types"))]
 pub mod postprocesspass;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-postprocesspass-types"))]
-pub use postprocesspass::*;
 #[cfg(any(
     feature = "unity_engine-rendering-universal-internal-screenspaceshadowresolvepass-types"
 ))]
 pub mod screenspaceshadowresolvepass;
-#[cfg(any(
-    feature = "unity_engine-rendering-universal-internal-screenspaceshadowresolvepass-types"
-))]
-pub use screenspaceshadowresolvepass::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-sortprepunctuallight-types"))]
 pub mod sortprepunctuallight;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-sortprepunctuallight-types"))]
-pub use sortprepunctuallight::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-stencilusage-types"))]
 pub mod stencilusage;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-stencilusage-types"))]
-pub use stencilusage::*;
 #[cfg(any(feature = "unity_engine-rendering-universal-internal-tiledepthrangepass-types"))]
 pub mod tiledepthrangepass;
-#[cfg(any(feature = "unity_engine-rendering-universal-internal-tiledepthrangepass-types"))]
-pub use tiledepthrangepass::*;

@@ -3,44 +3,20 @@
 #[cfg(any(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata-types"))]
 pub mod contentcatalogdata;
 #[cfg(any(
-    feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata-types"
-))]
-pub use contentcatalogdata::*;
-#[cfg(any(
     feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry-types"
 ))]
 pub mod contentcatalogdataentry;
-#[cfg(any(
-    feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdataentry-types"
-))]
-pub use contentcatalogdataentry::*;
 #[cfg(any(feature = "unity_engine-addressable_assets-resource_locators-iresourcelocator-types"))]
 pub mod iresourcelocator;
-#[cfg(any(
-    feature = "unity_engine-addressable_assets-resource_locators-iresourcelocator-types"
-))]
-pub use iresourcelocator::*;
 #[cfg(any(
     feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator-types"
 ))]
 pub mod legacyresourceslocator;
 #[cfg(any(
-    feature = "unity_engine-addressable_assets-resource_locators-legacyresourceslocator-types"
-))]
-pub use legacyresourceslocator::*;
-#[cfg(any(
     feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata-types"
 ))]
 pub mod resourcelocationdata;
 #[cfg(any(
-    feature = "unity_engine-addressable_assets-resource_locators-resourcelocationdata-types"
-))]
-pub use resourcelocationdata::*;
-#[cfg(any(
     feature = "unity_engine-addressable_assets-resource_locators-resourcelocationmap-types"
 ))]
 pub mod resourcelocationmap;
-#[cfg(any(
-    feature = "unity_engine-addressable_assets-resource_locators-resourcelocationmap-types"
-))]
-pub use resourcelocationmap::*;
