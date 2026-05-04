@@ -38,6 +38,10 @@ impl Manifest {
         self.crate_name.replace('-', "_")
     }
 
+    pub fn paths_with_leaf(&self, leaf: &str) -> Vec<(&String, &String)> {
+        self.paths.iter().filter(|(path, _)| path.split("::").last() == Some(leaf)).collect()
+    }
+
     pub fn closure(&self, feature: &str) -> BTreeSet<String> {
         let mut out = BTreeSet::new();
         let mut stack = vec![feature.to_string()];

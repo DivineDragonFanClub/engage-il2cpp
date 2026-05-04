@@ -1,13 +1,7 @@
 use anyhow::Result;
 use clap::{Parser, Subcommand};
 
-mod cargo_check;
-mod commands;
-mod cover;
-mod manifest;
-mod scan;
-mod toml_writer;
-mod workspace;
+use engage::commands;
 
 #[derive(Parser)]
 #[command(name = "engage", version, about = "Manage engage-il2cpp Cargo features for your project")]
@@ -31,6 +25,9 @@ enum FeaturesAction {
         #[arg(long)]
         yes: bool,
     },
+    Add {
+        name: String,
+    },
     Explain {
         path: String,
     },
@@ -48,6 +45,7 @@ fn main() -> Result<()> {
             match action.unwrap_or(FeaturesAction::Check) {
                 FeaturesAction::Check => commands::check(),
                 FeaturesAction::Apply { yes } => commands::apply(yes),
+                FeaturesAction::Add { name } => commands::add_feature(&name),
                 FeaturesAction::Explain { path } => commands::explain(&path),
                 FeaturesAction::Prune { yes } => commands::prune(yes),
             }
