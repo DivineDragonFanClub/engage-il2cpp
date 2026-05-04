@@ -1,3 +1,5 @@
+import * as fs from "fs";
+import * as path from "path";
 import * as vscode from "vscode";
 
 const REPO = "DivineDragonFanClub/engage-il2cpp";
@@ -58,7 +60,7 @@ async function checkForUpdates(context: vscode.ExtensionContext, output: vscode.
     }
 
     if (autoApply) {
-        await applyUpdate(vsix.browser_download_url, output);
+        await applyUpdate(context, vsix.browser_download_url, output);
         return;
     }
 
@@ -69,7 +71,7 @@ async function checkForUpdates(context: vscode.ExtensionContext, output: vscode.
     );
 
     if (choice === "Update") {
-        await applyUpdate(vsix.browser_download_url, output);
+        await applyUpdate(context, vsix.browser_download_url, output);
     }
 }
 
@@ -105,15 +107,31 @@ async function fetchLatestRelease(etag: string | undefined): Promise<FetchedRele
     return { release, etag: newEtag };
 }
 
-async function applyUpdate(vsixUrl: string, output: vscode.OutputChannel): Promise<void> {
-    output.appendLine(`installing update from ${vsixUrl}`);
+async function applyUpdate(context: vscode.ExtensionContext, vsixUrl: string, output: vscode.OutputChannel): Promise<void> {
+    output.appendLine(`downloading update from ${vsixUrl}`);
+
+    let localPath: string;
 
     try {
-        await vscode.commands.executeCommand("workbench.extensions.installExtension", vscode.Uri.parse(vsixUrl));
+        localPath = await downloadVsix(context, vsixUrl);
+    } catch (err) {
+        const message = err instanceof Error ? err.message : String(err);
+
+        output.appendLine(`download failed: ${message}`);
+        vscode.window.showErrorMessage(`engage: download failed. ${message}`);
+
+        return;
+    }
+
+    output.appendLine(`installing from ${localPath}`);
+
+    try {
+        await vscode.commands.executeCommand("workbench.extensions.installExtension", vscode.Uri.file(localPath));
     } catch (err) {
         const message = err instanceof Error ? err.message : String(err);
 
         vscode.window.showErrorMessage(`engage: install failed. ${message}`);
+
         return;
     }
 
@@ -122,6 +140,43 @@ async function applyUpdate(vsixUrl: string, output: vscode.OutputChannel): Promi
     if (reload === "Reload now") {
         vscode.commands.executeCommand("workbench.action.reloadWindow");
     }
+}
+
+async function downloadVsix(context: vscode.ExtensionContext, url: string): Promise<string> {
+    const cacheDir = path.join(context.globalStorageUri.fsPath, "updates");
+    await fs.promises.mkdir(cacheDir, { recursive: true });
+
+    const filename = inferFilename(url);
+    const target = path.join(cacheDir, filename);
+
+    const response = await fetch(url, {
+        redirect: "follow",
+        headers: { "User-Agent": "engage-vscode" },
+    });
+
+    if (!response.ok) {
+        throw new Error(`HTTP ${response.status} fetching ${url}`);
+    }
+
+    const data = Buffer.from(await response.arrayBuffer());
+    await fs.promises.writeFile(target, data);
+
+    return target;
+}
+
+function inferFilename(url: string): string {
+    try {
+        const u = new URL(url);
+        const last = u.pathname.split("/").filter((p) => p.length > 0).pop();
+
+        if (last && last.endsWith(".vsix")) {
+            return last;
+        }
+    } catch {
+        // ignore
+    }
+
+    return `engage-update-${Date.now()}.vsix`;
 }
 
 function matchesPlatform(assetName: string): boolean {
