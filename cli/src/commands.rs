@@ -43,17 +43,29 @@ pub fn scan_all_layouts(use_cargo_check_fallback: bool) -> Result<Vec<ScanResult
 fn scan_layout(layout: &workspace::Layout, use_cargo_check_fallback: bool) -> Result<ScanResult> {
     let manifest = Manifest::load(&layout.bindings_root.join("features.json"))?;
 
+    let listed = toml_writer::read_features(&layout.features_manifest).unwrap_or_default();
+    let mut enabled: BTreeSet<String> = BTreeSet::new();
+    for f in &listed {
+        enabled.extend(manifest.closure(f));
+    }
+
     let mut referenced_paths = BTreeSet::new();
 
     for root in &layout.scan_roots {
-        let found = scan::collect_paths(root, &manifest, &[], &[])?;
+        let found = scan::collect_paths(root, &manifest, &[], &[], &enabled)?;
         referenced_paths.extend(found);
     }
 
     let bindings_src = layout.bindings_root.join("src");
 
     if bindings_src.exists() {
-        let found = scan::collect_paths(&bindings_src, &manifest, &["crate"], &["generated"])?;
+        let found = scan::collect_paths(
+            &bindings_src,
+            &manifest,
+            &["crate"],
+            &["generated"],
+            &enabled,
+        )?;
         referenced_paths.extend(found);
     }
 

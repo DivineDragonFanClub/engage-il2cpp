@@ -7,8 +7,14 @@ use syn::{Item, UseTree};
 
 use crate::manifest::Manifest;
 
-pub fn collect_paths(src_root: &Path, manifest: &Manifest, crate_synonyms: &[&str], skip_dirs: &[&str]) -> Result<BTreeSet<String>> {
-    let mut visitor = PathVisitor::new(manifest, crate_synonyms);
+pub fn collect_paths(
+    src_root: &Path,
+    manifest: &Manifest,
+    crate_synonyms: &[&str],
+    skip_dirs: &[&str],
+    enabled_features: &BTreeSet<String>,
+) -> Result<BTreeSet<String>> {
+    let mut visitor = PathVisitor::new(manifest, crate_synonyms, enabled_features);
 
     for entry in walkdir::WalkDir::new(src_root)
         .into_iter()
@@ -46,11 +52,16 @@ pub fn paths_to_features(paths: &BTreeSet<String>, manifest: &Manifest) -> BTree
 struct PathVisitor<'a> {
     manifest: &'a Manifest,
     accepted_prefixes: Vec<String>,
+    enabled_features: &'a BTreeSet<String>,
     out: BTreeSet<String>,
 }
 
 impl<'a> PathVisitor<'a> {
-    fn new(manifest: &'a Manifest, synonyms: &[&str]) -> Self {
+    fn new(
+        manifest: &'a Manifest,
+        synonyms: &[&str],
+        enabled_features: &'a BTreeSet<String>,
+    ) -> Self {
         let crate_ident = manifest.crate_ident();
         let mut accepted_prefixes = vec![crate_ident.clone()];
 
@@ -61,6 +72,7 @@ impl<'a> PathVisitor<'a> {
         Self {
             manifest,
             accepted_prefixes,
+            enabled_features,
             out: BTreeSet::new(),
         }
     }
@@ -131,6 +143,12 @@ fn replace_last_segment(segments: &[String], replacement: &str) -> String {
 
 impl<'a, 'ast> Visit<'ast> for PathVisitor<'a> {
     fn visit_item(&mut self, item: &'ast Item) {
+        if let Some(attrs) = item_attrs(item) {
+            if !cfg_satisfied(attrs, self.enabled_features) {
+                return;
+            }
+        }
+
         if let Item::Use(use_item) = item {
             walk_use_tree(&use_item.tree, &mut Vec::new(), self);
         }
@@ -304,4 +322,77 @@ fn il2cpp_path_to_rust(namespace: &str, name: &str, crate_ident: &str) -> Option
     }
 
     Some(out)
+}
+
+fn item_attrs(item: &Item) -> Option<&[syn::Attribute]> {
+    match item {
+        Item::Const(i) => Some(&i.attrs),
+        Item::Enum(i) => Some(&i.attrs),
+        Item::ExternCrate(i) => Some(&i.attrs),
+        Item::Fn(i) => Some(&i.attrs),
+        Item::ForeignMod(i) => Some(&i.attrs),
+        Item::Impl(i) => Some(&i.attrs),
+        Item::Macro(i) => Some(&i.attrs),
+        Item::Mod(i) => Some(&i.attrs),
+        Item::Static(i) => Some(&i.attrs),
+        Item::Struct(i) => Some(&i.attrs),
+        Item::Trait(i) => Some(&i.attrs),
+        Item::TraitAlias(i) => Some(&i.attrs),
+        Item::Type(i) => Some(&i.attrs),
+        Item::Union(i) => Some(&i.attrs),
+        Item::Use(i) => Some(&i.attrs),
+        _ => None,
+    }
+}
+
+fn cfg_satisfied(attrs: &[syn::Attribute], enabled: &BTreeSet<String>) -> bool {
+    for attr in attrs {
+        if !attr.path().is_ident("cfg") {
+            continue;
+        }
+        let predicate: syn::Meta = match attr.parse_args() {
+            Ok(m) => m,
+            Err(_) => continue,
+        };
+        if !eval_cfg(&predicate, enabled) {
+            return false;
+        }
+    }
+    true
+}
+
+fn eval_cfg(meta: &syn::Meta, enabled: &BTreeSet<String>) -> bool {
+    match meta {
+        syn::Meta::Path(_) => true,
+        syn::Meta::NameValue(nv) => {
+            if !nv.path.is_ident("feature") {
+                return true;
+            }
+            match &nv.value {
+                syn::Expr::Lit(syn::ExprLit { lit: syn::Lit::Str(s), .. }) => {
+                    enabled.contains(&s.value())
+                },
+                _ => true,
+            }
+        },
+        syn::Meta::List(list) => {
+            let parsed: syn::punctuated::Punctuated<syn::Meta, syn::Token![,]> =
+                match list.parse_args_with(syn::punctuated::Punctuated::parse_terminated) {
+                    Ok(p) => p,
+                    Err(_) => return true,
+                };
+            if list.path.is_ident("all") {
+                parsed.iter().all(|m| eval_cfg(m, enabled))
+            } else if list.path.is_ident("any") {
+                parsed.iter().any(|m| eval_cfg(m, enabled))
+            } else if list.path.is_ident("not") {
+                match parsed.iter().next() {
+                    Some(m) => !eval_cfg(m, enabled),
+                    None => true,
+                }
+            } else {
+                true
+            }
+        },
+    }
 }

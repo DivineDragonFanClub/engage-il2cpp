@@ -14,8 +14,11 @@ pub use unity2::{
 };
 
 // System collection types — `List_1<T>` and `Dictionary_2<K, V>` show up
-// constantly in IL2CPP signatures.
-pub use crate::system::collections::generic::{dictionary_2::Dictionary_2, list_1::List_1};
+#[cfg(feature = "system-collections-generic-dictionary_2-types")]
+pub use crate::system::collections::generic::dictionary_2::Dictionary_2;
+#[cfg(feature = "system-collections-generic-list_1-types")]
+pub use crate::system::collections::generic::list_1::List_1;
+#[cfg(feature = "system-object-types")]
 pub use crate::system::object::Object;
 
 // Every ext trait + helper from `crate::ext`.
